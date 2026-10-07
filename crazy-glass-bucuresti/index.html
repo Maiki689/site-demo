@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f9fc">
+  <meta name="description" content="Crazy Glass — montaj, reparații și modernizare ferestre în București. Consultanță personalizată, reglaje, etanșeizări și înlocuire geam spart.">
+  <title>Crazy Glass — Ferestre inovatoare pentru casa ta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0ea5e9;
+      --deep: #03658f;
+      --ink: #102b3b;
+      --muted: #506775;
+      --paper: #f5f9fc;
+      --line: #d8e5eb;
+      --white: #fff;
+      --radius: 22px;
+      --ease: cubic-bezier(.22,.7,.24,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; -webkit-font-smoothing: antialiased; }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { display: block; width: 100%; height: auto; }
+    svg { flex-shrink: 0; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { font-family: "Manrope", sans-serif; }
+    p { line-height: 1.75; }
+    ::selection { background: #b7eaff; color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--deep); outline-offset: 5px; }
+    .container { width: min(1240px, calc(100% - 88px)); margin-inline: auto; }
+    .icon { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .skip { position: fixed; z-index: 100; left: 16px; top: -80px; background: var(--ink); color: white; padding: 14px 20px; border-radius: 8px; }
+    .skip:focus { top: 16px; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 14px; min-height: 54px; padding: 16px 22px; border: 1px solid transparent; border-radius: 8px; font-size: 14px; font-weight: 600; line-height: 1.4; transition: background .25s, transform .25s, box-shadow .25s; }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: var(--ink); color: white; }
+    .btn-primary:hover { background: var(--deep); box-shadow: 0 8px 24px #03658f20; }
+    .btn-outline { border-color: #bfcfd8; background: transparent; }
+    .btn-outline:hover { background: white; }
+    .text-link { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; padding-bottom: 7px; border-bottom: 1px solid currentColor; }
+    .text-link .icon { transition: transform .25s; }
+    .text-link:hover .icon { transform: translate(3px, -3px); }
+
+    /* O identitate inspirată de liniile unei ferestre. */
+    .site-header { position: sticky; top: 0; z-index: 30; background: rgba(245,249,252,.93); backdrop-filter: blur(18px); border-bottom: 1px solid transparent; transition: border-color .25s, box-shadow .25s; }
+    .site-header.scrolled { border-color: var(--line); box-shadow: 0 3px 20px #102b3b05; }
+    .header-inner { min-height: 88px; display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 11px; }
+    .brand-mark { width: 36px; height: 42px; color: var(--deep); }
+    .brand-name { font-family: "Manrope", sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -.9px; }
+    .brand-name span { color: var(--deep); }
+    .nav { display: flex; align-items: center; gap: 29px; }
+    .nav > a:not(.nav-phone) { font-size: 13px; font-weight: 500; position: relative; padding: 12px 0; }
+    .nav > a:not(.nav-phone)::after { content: ""; position: absolute; bottom: 5px; left: 0; width: 100%; height: 2px; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+    .nav > a:hover::after { transform: scaleX(1); }
+    .nav-phone { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; border: 1px solid var(--line); border-radius: 7px; padding: 12px 15px; transition: background .25s; }
+    .nav-phone:hover { background: #e4f4fc; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: white; border-radius: 8px; align-items: center; justify-content: center; }
+
+    .hero { position: relative; isolation: isolate; padding: 58px 0 42px; overflow: hidden; }
+    .hero-wash { position: absolute; pointer-events: none; z-index: -1; width: 700px; height: 700px; border-radius: 50%; right: -200px; top: -170px; background: radial-gradient(circle, #b9e9fb85, #cfeefa30 48%, transparent 70%); animation: atmosphere 15s ease-in-out infinite alternate; }
+    .hero-grid { display: grid; grid-template-columns: 1.06fr 1fr; gap: 50px; align-items: center; }
+    .hero-copy { padding: 22px 0 35px; }
+    .hero .eyebrow { margin-bottom: 28px; }
+    h1 { font-size: clamp(42px, 5.15vw, 72px); font-weight: 500; line-height: 1.08; letter-spacing: -.055em; }
+    h1 .accent { color: var(--deep); }
+    .hero-description { font-size: 17px; color: var(--muted); max-width: 370px; margin-top: 25px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .hero-note { display: flex; align-items: center; gap: 9px; font-size: 12px; color: var(--muted); margin-top: 22px; }
+    .hero-note .icon { width: 16px; height: 16px; color: var(--deep); }
+    .hero-visual { position: relative; padding: 0 0 40px 20px; }
+    .window-photo { position: relative; aspect-ratio: .92; border-radius: 160px 160px 12px 12px; overflow: hidden; background: #cee4ed; box-shadow: 0 18px 50px #102b3b0d; }
+    .window-photo > img { height: 100%; object-fit: cover; object-position: 50% 50%; }
+    .window-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, #102b3b55); pointer-events: none; }
+    .window-lines { position: absolute; inset: 13px; border: 1px solid #ffffff80; border-radius: 150px 150px 5px 5px; z-index: 1; pointer-events: none; }
+    .window-lines::before { content: ""; position: absolute; height: 100%; width: 1px; left: 50%; background: #ffffff65; }
+    .window-lines::after { content: ""; position: absolute; width: 100%; height: 1px; top: 38%; background: #ffffff65; }
+    .light-sweep { position: absolute; inset: -50%; background: linear-gradient(115deg, transparent 43%, #ffffff14 48%, #ffffff35 50%, transparent 57%); animation: light 12s ease-in-out infinite; pointer-events: none; z-index: 2; }
+    .photo-label { position: absolute; left: 30px; bottom: 28px; color: white; z-index: 3; font-size: 11px; letter-spacing: .11em; text-transform: uppercase; }
+    .floating-tag { position: absolute; left: -12px; bottom: 12px; display: flex; gap: 16px; align-items: center; background: white; border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; box-shadow: 0 10px 35px #102b3b0a; }
+    .tag-icon { width: 45px; height: 45px; display: grid; place-items: center; background: #e6f6fd; border-radius: 50%; color: var(--deep); }
+    .floating-tag strong { display: block; font-size: 14px; margin-bottom: 4px; }
+    .floating-tag span { font-size: 12px; color: var(--muted); }
+    .visual-index { position: absolute; right: -12px; top: 46%; writing-mode: vertical-rl; font-size: 10px; letter-spacing: .18em; color: var(--muted); }
+    .hero-bottom { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-size: 12px; color: var(--muted); }
+    .hero-bottom > span { display: flex; gap: 9px; align-items: center; }
+    .hero-bottom a { display: flex; align-items: center; gap: 9px; color: var(--ink); }
+
+    .section { padding: 105px 0; }
+    .section-title { font-size: clamp(32px, 3.5vw, 48px); line-height: 1.15; letter-spacing: -.045em; font-weight: 500; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 50px; margin-bottom: 45px; }
+    .section-head .eyebrow { margin-bottom: 18px; }
+    .section-head > p { max-width: 335px; font-size: 15px; color: var(--muted); }
+    .services { background: white; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service-card { min-height: 260px; border: 1px solid var(--line); padding: 27px; border-radius: 12px; display: flex; flex-direction: column; transition: transform .3s var(--ease), border-color .3s, background .3s; }
+    .service-card:hover { transform: translateY(-5px); border-color: #85c9e7; background: #f5fbfe; }
+    .card-top { display: flex; justify-content: space-between; align-items: center; color: var(--deep); margin-bottom: 35px; }
+    .service-icon { width: 34px; height: 34px; stroke-width: 1.2; }
+    .card-number { font-size: 11px; letter-spacing: .1em; color: #6b838f; }
+    .service-card h3 { font-size: 19px; font-weight: 600; letter-spacing: -.5px; margin-bottom: 11px; }
+    .service-card p { font-size: 14px; color: var(--muted); max-width: 260px; }
+    .service-cta { background: #e7f5fc; border-color: #e7f5fc; justify-content: space-between; }
+    .service-cta:hover { background: #def1fa; }
+    .service-cta h3 { font-size: 24px; line-height: 1.25; max-width: 210px; }
+    .service-cta .text-link { align-self: flex-start; margin-top: 22px; color: var(--deep); }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+    .about-image { position: relative; padding-bottom: 23px; }
+    .about-image img { aspect-ratio: 1.02; object-fit: cover; border-radius: 12px; }
+    .image-caption { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-top: 13px; font-size: 10px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+    .about-copy .eyebrow { margin-bottom: 23px; }
+    .about-copy .section-title { margin-bottom: 25px; }
+    .about-copy > p { color: var(--muted); font-size: 15px; margin-bottom: 17px; }
+    .about-copy .text-link { margin-top: 10px; }
+    .advantages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 65px; border-top: 1px solid var(--line); padding-top: 33px; }
+    .advantage { display: flex; align-items: flex-start; gap: 17px; }
+    .advantage-icon { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #c8e1ee; border-radius: 10px; color: var(--deep); flex-shrink: 0; }
+    .advantage h3 { font-size: 16px; margin: 0 0 7px; font-weight: 600; }
+    .advantage p { font-size: 13px; color: var(--muted); }
+
+    .gallery { padding-top: 30px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 22px; }
+    .gallery figure { min-width: 0; }
+    .gallery-photo { overflow: hidden; border-radius: 12px; background: #d7e7ee; }
+    .gallery-photo img { height: 365px; object-fit: cover; transition: transform .8s var(--ease); }
+    .gallery-photo:hover img { transform: scale(1.035); }
+    .gallery figcaption { display: flex; justify-content: space-between; gap: 15px; padding-top: 16px; font-size: 13px; }
+    .gallery figcaption span { font-size: 11px; color: var(--muted); }
+
+    .contact { background: #e8f3f9; border-top: 1px solid #d4e7f1; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 75px; }
+    .contact .eyebrow { margin-bottom: 20px; }
+    .contact .section-title { max-width: 440px; }
+    .contact-intro { margin-top: 22px; max-width: 400px; font-size: 15px; color: var(--muted); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 36px; }
+    .detail-label { display: block; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .contact-details p, .contact-details a { font-size: 14px; line-height: 1.65; }
+    .contact-details a:hover { color: var(--deep); }
+    .hours { grid-column: 1 / -1; border-top: 1px solid #cddfe9; padding-top: 20px; display: flex; justify-content: space-between; gap: 15px; }
+    .hours .detail-label { margin-bottom: 0; padding-top: 5px; }
+    .map-card { display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; border: 1px solid #cadde8; background: white; min-height: 450px; }
+    .map-card iframe { display: block; border: 0; width: 100%; height: 100%; flex: 1; min-height: 340px; }
+    .map-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 23px; }
+    .map-footer strong { display: block; font-size: 14px; margin-bottom: 5px; }
+    .map-footer p { font-size: 12px; color: var(--muted); }
+    .map-directions { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; background: #e8f5fc; color: var(--deep); transition: background .25s, transform .25s; }
+    .map-directions:hover { transform: translate(2px,-2px); background: #cceafb; }
+
+    .site-footer { background: var(--ink); color: #fff; padding: 40px 0 25px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-bottom: 32px; }
+    .site-footer .brand-mark, .site-footer .brand-name span { color: #73d3fd; }
+    .footer-slogan { font-size: 14px; color: #b9cbd5; }
+    .footer-bottom { border-top: 1px solid #ffffff20; padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 30px; color: #b9cbd5; font-size: 11px; }
+    .reveal { opacity: 1; transform: none; }
+    .motion-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .motion-ready .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes atmosphere { from { transform: translate(0,0) scale(.95); } to { transform: translate(-70px,70px) scale(1.1); } }
+    @keyframes light { 0%, 20% { transform: translateX(-45%); opacity: 0; } 35% { opacity: .8; } 65%, 100% { transform: translateX(45%); opacity: 0; } }
+
+    @media (min-width: 1450px) { .hero { padding-top: 75px; } }
+    @media (max-width: 1050px) {
+      .container { width: calc(100% - 56px); }
+      .nav { gap: 20px; }
+      .hero-grid { gap: 25px; }
+      .hero-actions .btn { padding-inline: 17px; font-size: 13px; }
+      .about-grid { gap: 45px; }
+      .contact-grid { gap: 35px; }
+      .floating-tag { padding: 16px 18px; }
+      .service-card { padding: 23px; }
+    }
+    @media (max-width: 780px) {
+      html { scroll-padding-top: 85px; }
+      .container { width: calc(100% - 40px); }
+      .header-inner { min-height: 74px; flex-wrap: wrap; gap: 0; }
+      .brand-name { font-size: 20px; }
+      .brand-mark { width: 31px; height: 37px; }
+      .nav { width: 100%; flex-wrap: wrap; justify-content: center; padding-bottom: 16px; gap: 10px 20px; }
+      .js .menu-toggle { display: flex; }
+      .js .nav { display: none; }
+      .js .nav.open { display: flex; position: absolute; top: 74px; left: 0; right: 0; width: 100%; padding: 25px 20px 35px; flex-direction: column; align-items: stretch; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 16px 24px #102b3b10; }
+      .js .nav.open > a:not(.nav-phone) { font-size: 18px; padding: 13px 6px; }
+      .js .nav.open .nav-phone { justify-content: center; margin-top: 12px; }
+      .hero { padding: 35px 0 30px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+      .hero-copy { padding: 10px 0 12px; }
+      h1 { font-size: clamp(45px, 8.7vw, 68px); max-width: 600px; }
+      .hero .eyebrow { margin-bottom: 22px; }
+      .hero-description { max-width: 440px; }
+      .hero-visual { width: min(100%, 520px); margin: 10px auto 0; padding-left: 14px; }
+      .window-photo { aspect-ratio: 1.12; border-radius: 130px 130px 12px 12px; }
+      .window-lines { border-radius: 120px 120px 5px 5px; }
+      .floating-tag { left: 0; }
+      .visual-index { right: -8px; }
+      .hero-bottom { margin-top: 18px; }
+      .section { padding: 72px 0; }
+      .section-head { gap: 25px; align-items: flex-start; flex-direction: column; margin-bottom: 32px; }
+      .section-head > p { max-width: 500px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .service-card { min-height: 255px; }
+      .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .about-image { max-width: 570px; width: 100%; padding-bottom: 0; }
+      .about-image img { aspect-ratio: 1.3; }
+      .about-copy { max-width: 600px; }
+      .advantages { gap: 22px; margin-top: 40px; }
+      .advantage { flex-direction: column; gap: 14px; }
+      .gallery { padding-top: 10px; }
+      .gallery-grid { gap: 18px; grid-template-columns: 1fr 1fr; }
+      .gallery-photo img { height: 280px; }
+      .gallery figcaption { flex-direction: column; gap: 5px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact .section-title { max-width: 550px; }
+      .contact-intro { max-width: 510px; }
+      .map-card { min-height: 390px; }
+      .map-card iframe { min-height: 310px; }
+      .footer-top { flex-direction: column; align-items: flex-start; gap: 18px; }
+    }
+    @media (max-width: 480px) {
+      .container { width: calc(100% - 36px); }
+      .hero .eyebrow { font-size: 10px; letter-spacing: .12em; }
+      h1 { font-size: 45px; }
+      .hero-description { font-size: 16px; margin-top: 20px; }
+      .hero-actions { gap: 10px; }
+      .hero-actions .btn { min-height: 52px; }
+      .hero-actions .btn-primary { flex: 1 1 100%; }
+      .hero-actions .btn-outline { flex: 1 1 100%; }
+      .hero-note { margin-top: 17px; font-size: 11px; }
+      .hero-visual { margin-top: 12px; padding-bottom: 32px; }
+      .floating-tag { padding: 14px 17px; bottom: 0; gap: 12px; }
+      .floating-tag strong { font-size: 13px; }
+      .floating-tag span { font-size: 11px; }
+      .tag-icon { width: 37px; height: 37px; }
+      .photo-label { bottom: 45px; left: 25px; font-size: 9px; }
+      .hero-bottom { align-items: flex-start; font-size: 11px; gap: 14px; }
+      .hero-bottom > span { max-width: 180px; line-height: 1.6; }
+      .hero-bottom > span .icon { width: 16px; }
+      .hero-bottom a { white-space: nowrap; padding-top: 3px; }
+      .section { padding: 58px 0; }
+      .section-title { font-size: 34px; }
+      .service-grid { grid-template-columns: 1fr; gap: 12px; }
+      .service-card { min-height: 215px; padding: 24px; }
+      .card-top { margin-bottom: 24px; }
+      .service-card p { max-width: none; }
+      .service-cta h3 { max-width: none; }
+      .advantages { grid-template-columns: 1fr; gap: 26px; }
+      .advantage { flex-direction: row; align-items: flex-start; }
+      .gallery { padding-top: 0; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 28px; }
+      .gallery-photo img { height: 290px; }
+      .gallery figcaption { flex-direction: row; }
+      .contact-actions { flex-direction: column; align-items: stretch; }
+      .contact-details { gap: 25px 15px; }
+      .hours { flex-direction: column; gap: 8px; }
+      .hours br { display: none; }
+      .map-footer { padding: 18px; gap: 12px; }
+      .footer-bottom { line-height: 1.7; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .motion-ready .reveal { opacity: 1; transform: none; }
+      .btn:hover, .service-card:hover, .gallery-photo:hover img { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v16m-6-6 6 6 6-6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="m7 3 3 5-2 2c1.5 3 3 4.5 6 6l2-2 5 3c0 3-2 4-4 4C10 21 3 14 3 7c0-2 1-4 4-4Z"/></symbol>
+      <symbol id="i-window" viewBox="0 0 32 32"><rect x="5" y="3" width="22" height="26" rx="1"/><path d="M16 3v26M5 14h22M20 20v4"/></symbol>
+      <symbol id="i-tool" viewBox="0 0 32 32"><path d="M20 5a7 7 0 0 0-8 9L4 22a3 3 0 0 0 6 6l8-8a7 7 0 0 0 9-8l-5 5-5-5 5-5Z"/></symbol>
+      <symbol id="i-glass" viewBox="0 0 32 32"><path d="M6 3h20v26H6zM18 3l-5 10 6 4-5 12M24 8l-7 5"/></symbol>
+      <symbol id="i-adjust" viewBox="0 0 32 32"><path d="M7 4v24M16 4v24M25 4v24"/><path d="M4 10h6v5H4zM13 19h6v5h-6zM22 8h6v5h-6z" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 32 32"><path d="M6 5h20a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H14l-8 5v-5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3Z"/><path d="M10 11h12M10 17h8"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m6 12 4 4 8-8"/><circle cx="12" cy="12" r="9"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-5"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></symbol>
+      <symbol id="i-logo" viewBox="0 0 38 44"><path d="M3 41V15a16 16 0 0 1 32 0v26H3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19 1v40M3 20h32" fill="none" stroke="currentColor" stroke-width="2"/><path d="m23 25 7 7m-7-1 4 4" stroke="currentColor" stroke-width="1.5"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#acasa" aria-label="Crazy Glass — acasă">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="brand-name">crazy<span>glass</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navigare">
+        <svg class="icon menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="navigare" aria-label="Navigare principală">
+        <a href="#servicii">Servicii</a>
+        <a href="#despre">Despre noi</a>
+        <a href="#galerie">Inspirație</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-phone" href="tel:+40723423187">
+          <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+          0723 423 187
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="continut">
+    <section class="hero" id="acasa" aria-labelledby="hero-title">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Crazy Glass · București</p>
+            <h1 id="hero-title">Ferestre<br><span class="accent">inovatoare</span><br>pentru casa ta.</h1>
+            <p class="hero-description">Montăm, reparăm și modernizăm ferestre. Pentru un spațiu în care să te simți bine, în fiecare zi.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://wa.me/40723423187?text=Bun%C4%83%20ziua%21%20Vreau%20ofert%C4%83%20pentru%20ferestre%20sau%20repara%C8%9Bii." target="_blank" rel="noopener noreferrer">
+                Solicită ofertă pe WhatsApp
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </a>
+              <a class="btn btn-outline" href="#servicii">Descoperă serviciile</a>
+            </div>
+            <p class="hero-note"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Consultanță gratuită, adaptată nevoilor tale.</p>
+          </div>
+          <div class="hero-visual">
+            <div class="window-photo">
+              <img src="img/1.jpg" alt="Lucrători care transportă un panou de sticlă pentru instalarea unei ferestre" fetchpriority="high">
+              <div class="window-lines" aria-hidden="true"></div>
+              <div class="light-sweep" aria-hidden="true"></div>
+              <span class="photo-label">Un nou fel de a privi acasă.</span>
+            </div>
+            <div class="floating-tag">
+              <div class="tag-icon"><svg class="icon" aria-hidden="true"><use href="#i-window"/></svg></div>
+              <div><strong>Grijă pentru fiecare detaliu</strong><span>Montaj · Reparații · Modernizare</span></div>
+            </div>
+            <span class="visual-index" aria-hidden="true">LUMINĂ / CONFORT / ACASĂ</span>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <span><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Bulevardul Camil Ressu 62, București</span>
+          <a href="#servicii">Mai departe <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicii" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">01 / Servicii</p>
+            <h2 class="section-title" id="services-title">O soluție potrivită.<br>Pentru fiecare fereastră.</h2>
+          </div>
+          <p>De la un geam spart la ferestre noi, te ajutăm să alegi ce are nevoie spațiul tău.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="card-top"><svg class="icon service-icon" aria-hidden="true"><use href="#i-window"/></svg><span class="card-number">01</span></div>
+            <h3>Montaj ferestre termopan</h3>
+            <p>Instalăm ferestre termopan potrivite pentru fiecare cameră.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="card-top"><svg class="icon service-icon" aria-hidden="true"><use href="#i-tool"/></svg><span class="card-number">02</span></div>
+            <h3>Reparații ferestre</h3>
+            <p>Reparăm ferestre defecte sau învechite, ca să le poți folosi din nou cu ușurință.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="card-top"><svg class="icon service-icon" aria-hidden="true"><use href="#i-glass"/></svg><span class="card-number">03</span></div>
+            <h3>Schimbare geam spart</h3>
+            <p>Înlocuim rapid sticla spartă, cu grijă pentru siguranța casei tale.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="card-top"><svg class="icon service-icon" aria-hidden="true"><use href="#i-adjust"/></svg><span class="card-number">04</span></div>
+            <h3>Reglaje și etanșeizări</h3>
+            <p>Verificăm, reglăm și etanșăm ferestrele pentru o funcționare corectă.</p>
+          </article>
+          <article class="service-card reveal">
+            <div class="card-top"><svg class="icon service-icon" aria-hidden="true"><use href="#i-chat"/></svg><span class="card-number">05</span></div>
+            <h3>Consultanță personalizată</h3>
+            <p>Îți explicăm opțiunile și te ajutăm să alegi soluția potrivită nevoilor tale.</p>
+          </article>
+          <div class="service-card service-cta reveal">
+            <div>
+              <h3>Nu știi de unde să începi?</h3>
+              <p>Spune-ne ce problemă ai. Găsim împreună următorul pas.</p>
+            </div>
+            <a class="text-link" href="tel:+40723423187">Hai să vorbim <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="despre" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <figure class="about-image reveal">
+            <img src="img/2.jpg" alt="Lucrători care manevrează un panou de sticlă" loading="lazy">
+            <figcaption class="image-caption"><span>Precizie în fiecare detaliu</span><span>Imagine ilustrativă</span></figcaption>
+          </figure>
+          <div class="about-copy reveal">
+            <p class="eyebrow">02 / Despre Crazy Glass</p>
+            <h2 class="section-title" id="about-title">Ferestrele potrivite<br>schimbă un spațiu.</h2>
+            <p>Crazy Glass te ajută să alegi și să montezi ferestre potrivite casei tale. Lucrăm cu materiale de calitate și soluții moderne, eficiente, adaptate nevoilor fiecărui spațiu.</p>
+            <p>Punem preț pe intervenții rapide, lucrări curate și standarde înalte. Fie că montezi ferestre noi sau le repari pe cele existente, suntem aici să te ajutăm.</p>
+            <a class="text-link" href="#contact">Să vorbim despre ferestrele tale <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="advantages">
+          <article class="advantage reveal">
+            <div class="advantage-icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+            <div><h3>Echipă rapidă</h3><p>Rezolvăm eficient problemele ferestrelor.</p></div>
+          </article>
+          <article class="advantage reveal">
+            <div class="advantage-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
+            <div><h3>Siguranță</h3><p>Soluții fiabile pentru casa ta.</p></div>
+          </article>
+          <article class="advantage reveal">
+            <div class="advantage-icon"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></div>
+            <div><h3>Tehnologie nouă</h3><p>Montăm doar produse actuale.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galerie" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">03 / Inspirație</p>
+            <h2 class="section-title" id="gallery-title">Lasă lumina să intre.</h2>
+          </div>
+          <p>Sticlă, linii simple și perspective noi. Imagini ilustrative din lumea ferestrelor și a arhitecturii.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="reveal">
+            <div class="gallery-photo"><img src="img/4.jpg" alt="Fațadă de clădire cu ferestre mari și panouri de sticlă" loading="lazy"></div>
+            <figcaption>Lumină și transparență <span>01 / Arhitectură</span></figcaption>
+          </figure>
+          <figure class="reveal">
+            <div class="gallery-photo"><img src="img/5.jpg" alt="Detaliu de fațadă modernă cu ferestre și suprafețe vitrate" loading="lazy"></div>
+            <figcaption>Perspective moderne <span>02 / Detalii</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">04 / Contact</p>
+          <h2 class="section-title" id="contact-title">O fereastră nouă?<br>Începem cu o discuție.</h2>
+          <p class="contact-intro">Contactează-ne pentru o programare rapidă sau pentru consultanță gratuită. Povestește-ne ce ai nevoie și te ajutăm să alegi.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/40723423187?text=Bun%C4%83%20ziua%21%20Vreau%20ofert%C4%83%20pentru%20ferestre%20sau%20repara%C8%9Bii." target="_blank" rel="noopener noreferrer">
+              Solicită ofertă pe WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-outline" href="tel:+40723423187"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Sună-ne</a>
+          </div>
+          <div class="contact-details">
+            <div>
+              <span class="detail-label">Telefon</span>
+              <a href="tel:+40723423187">+40 723 423 187</a>
+            </div>
+            <div>
+              <span class="detail-label">Ne găsești în</span>
+              <p>Bulevardul Camil Ressu 62<br>București</p>
+            </div>
+            <div class="hours">
+              <span class="detail-label">Program de lucru</span>
+              <p>Luni – sâmbătă<br><strong>09:00 – 18:30</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="map-card reveal">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1499204,44.4123217,26.157920400000002,44.416321700000005&layer=mapnik&marker=44.4143217,26.1539204" title="Hartă — Crazy Glass, Bulevardul Camil Ressu 62, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-footer">
+            <div><strong>Te așteptăm în București.</strong><p>Bulevardul Camil Ressu 62</p></div>
+            <a class="map-directions" href="https://www.google.com/maps/search/?api=1&query=Crazy+Glass+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer" aria-label="Deschide locația Crazy Glass în Google Maps"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="#acasa" aria-label="Crazy Glass — înapoi sus">
+          <svg class="brand-mark" aria-hidden="true"><use href="#i-logo"/></svg>
+          <span class="brand-name">crazy<span>glass</span></span>
+        </a>
+        <p class="footer-slogan">Ferestre inovatoare pentru casa ta.</p>
+      </div>
+      <div class="footer-bottom">
+        <span>Crazy Glass · București · Model de site (demo)</span>
+        <span>Fotografii ilustrative de pe Pixabay: DokaRyan, jarmoluk, wal_172619</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      document.documentElement.classList.add('js');
+
+      const header = document.querySelector('.site-header');
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      const menuIcon = toggle.querySelector('path');
+
+      function setMenu(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+        menuIcon.setAttribute('d', open ? 'M6 6l12 12M6 18 18 6' : 'M4 7h16M4 12h16M4 17h16');
+      }
+
+      toggle.addEventListener('click', () => {
+        setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => setMenu(false));
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && nav.classList.contains('open')) {
+          setMenu(false);
+          toggle.focus();
+        }
+      });
+
+      document.addEventListener('click', event => {
+        if (nav.classList.contains('open') && !header.contains(event.target)) setMenu(false);
+      });
+
+      const desktop = window.matchMedia('(min-width: 781px)');
+      desktop.addEventListener('change', event => {
+        if (event.matches) setMenu(false);
+      });
+
+      function updateHeader() {
+        header.classList.toggle('scrolled', window.scrollY > 15);
+      }
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if ('IntersectionObserver' in window && !reducedMotion.matches) {
+        const elements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+        document.body.classList.add('motion-ready');
+        elements.forEach(element => observer.observe(element));
+
+        reducedMotion.addEventListener('change', event => {
+          if (event.matches) {
+            document.body.classList.remove('motion-ready');
+            observer.disconnect();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
