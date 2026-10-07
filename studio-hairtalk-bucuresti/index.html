@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e7490">
+  <meta name="description" content="Studio Hairtalk, salon de coafură în București, Piața Montreal 10. Tuns damă și bărbați, vopsit, coafat și tratamente pentru păr.">
+  <title>Studio Hairtalk — Un look care te reprezintă</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #0e7490;
+      --teal-dark: #07556a;
+      --ink: #173c43;
+      --muted: #5a7073;
+      --paper: #faf9f5;
+      --white: #fff;
+      --wash: #eaf2ef;
+      --line: #d8e1dc;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --gutter: clamp(22px, 5vw, 88px);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    ::selection { color: white; background: var(--teal); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-offset: 6px; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    svg { display: block; }
+    h1, h2, h3, p, figure { margin: 0; }
+    .wrap { max-width: 1440px; margin-inline: auto; padding-inline: var(--gutter); }
+    .eyebrow { font-size: 11px; letter-spacing: .19em; font-weight: 800; text-transform: uppercase; }
+    .eyebrow.with-line { display: flex; align-items: center; gap: 13px; }
+    .eyebrow.with-line::before { content: ""; width: 32px; height: 1px; background: currentColor; }
+    .serif { font-family: var(--serif); font-weight: 400; }
+    .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; padding: 19px 24px; border: 1px solid transparent; background: var(--teal); color: white; font-size: 12px; font-weight: 700; transition: background .25s, transform .25s, box-shadow .25s; }
+    .button:hover { background: var(--teal-dark); transform: translateY(-3px); box-shadow: 0 8px 24px #0e74901a; }
+    .text-link { display: inline-flex; gap: 15px; align-items: center; font-size: 12px; font-weight: 700; padding-block: 10px; border-bottom: 1px solid currentColor; }
+    .text-link .icon { transition: transform .25s; }
+    .text-link:hover .icon { transform: translate(3px, -3px); }
+    .skip { position: fixed; top: 10px; left: 10px; z-index: 100; background: white; padding: 15px; transform: translateY(-160%); }
+    .skip:focus { transform: none; }
+    .site-header { position: sticky; top: 0; z-index: 30; background: #faf9f5f5; border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); }
+    .header-inner { min-height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .brand { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
+    .brand-icon { width: 35px; height: 40px; color: var(--teal); }
+    .brand-name { font-family: var(--serif); font-size: 30px; line-height: .95; font-weight: 600; letter-spacing: -.8px; }
+    .brand-sub { display: block; font-family: var(--sans); font-size: 8px; font-weight: 700; letter-spacing: .25em; line-height: 1.5; margin-top: 7px; }
+    .nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 45px); }
+    .nav > a { font-size: 11px; font-weight: 700; position: relative; }
+    .nav > a:not(.nav-cta)::after { content: ""; position: absolute; bottom: -7px; left: 0; width: 0; height: 1px; background: var(--teal); transition: width .25s; }
+    .nav > a:hover::after { width: 100%; }
+    .nav .nav-cta { border: 1px solid var(--teal); color: var(--teal); padding: 13px 18px; transition: color .25s, background .25s; }
+    .nav .nav-cta:hover { background: var(--teal); color: white; }
+    .menu-toggle { display: none; padding: 10px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; }
+    .hero-inner { position: relative; display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 30px; padding-block: 70px 65px; min-height: 760px; }
+    .hero-decoration { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+    .hero-decoration path { fill: none; stroke: #0e749018; stroke-width: 1; animation: flowing 16s ease-in-out infinite alternate; transform-origin: center; }
+    .hero-decoration path:nth-child(2) { animation-delay: -5s; }
+    .hero-decoration path:nth-child(3) { animation-delay: -9s; }
+    .hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, #d8ebe2a0, transparent 68%); right: -90px; top: -100px; z-index: -2; animation: drift 18s ease-in-out infinite alternate; }
+    .hero-copy { position: relative; z-index: 2; padding-block: 35px; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(64px, 7.6vw, 112px); font-weight: 400; line-height: .94; letter-spacing: -.05em; margin: 29px 0 28px; }
+    .hero h1 em { display: block; color: var(--teal); font-weight: 400; }
+    .hero-description { max-width: 330px; font-size: 14px; line-height: 1.9; color: var(--muted); }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 23px; margin-top: 30px; }
+    .hero-location { display: flex; align-items: center; gap: 9px; font-size: 11px; color: var(--muted); margin-top: 42px; }
+    .hero-location .icon { width: 16px; height: 16px; }
+    .hero-visual { position: relative; padding: 0 0 18px 18px; min-width: 0; }
+    .hero-photo { height: clamp(430px, 43vw, 610px); overflow: hidden; border-radius: 48% 48% 2px 2px; background: var(--wash); position: relative; }
+    .hero-photo img { object-position: center 35%; transition: transform 1s ease; }
+    .hero-photo:hover img { transform: scale(1.035); }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 65%, #132e352e); }
+    .photo-caption { position: absolute; bottom: 18px; left: 23px; right: 23px; z-index: 1; color: white; font-size: 9px; letter-spacing: .08em; }
+    .vertical-note { position: absolute; right: -22px; top: 45%; writing-mode: vertical-rl; font-size: 9px; letter-spacing: .2em; text-transform: uppercase; }
+    .hero-badge { position: absolute; left: -42px; bottom: 55px; width: 145px; height: 145px; background: var(--paper); border: 1px solid var(--line); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; transform: rotate(-9deg); box-shadow: 0 10px 30px #173c4308; }
+    .hero-badge .icon { color: var(--teal); margin-bottom: 9px; width: 25px; height: 25px; }
+    .hero-badge span { font-family: var(--serif); font-size: 24px; line-height: 1; }
+    .hero-badge small { font-size: 8px; letter-spacing: .15em; text-transform: uppercase; margin-top: 8px; }
+    .principles { border-block: 1px solid var(--line); }
+    .principles-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .principle { display: flex; align-items: center; gap: 18px; padding: 30px 24px; }
+    .principle:first-child { padding-left: 0; }
+    .principle + .principle { border-left: 1px solid var(--line); }
+    .principle-symbol { flex-shrink: 0; width: 42px; height: 42px; color: var(--teal); display: grid; place-items: center; }
+    .principle-symbol .icon { width: 29px; height: 29px; }
+    .principle h3 { font-size: 12px; font-weight: 800; margin-bottom: 7px; }
+    .principle p { font-size: 11px; line-height: 1.7; color: var(--muted); }
+    .section { padding-block: 115px; }
+    .section-title { font-family: var(--serif); font-size: clamp(45px, 5vw, 74px); line-height: 1.02; font-weight: 400; letter-spacing: -.035em; }
+    .section-title em { font-weight: 400; color: var(--teal); }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(45px, 8vw, 120px); align-items: center; }
+    .about-visual { position: relative; padding: 0 30px 30px 0; }
+    .about-visual::before { content: ""; position: absolute; inset: 35px 0 0 35px; background: var(--wash); z-index: -1; }
+    .about-visual figure { height: 530px; overflow: hidden; }
+    .about-visual img { object-position: center; transition: transform .7s; }
+    .about-visual:hover img { transform: scale(1.035); }
+    .about-note { display: flex; align-items: center; gap: 13px; position: absolute; bottom: 7px; right: 15px; background: var(--paper); padding: 16px 22px; font-family: var(--serif); font-size: 23px; }
+    .about-note .icon { color: var(--teal); }
+    .about-copy .eyebrow { margin-bottom: 24px; }
+    .about-copy .section-title { margin-bottom: 28px; }
+    .body-copy { font-size: 13px; line-height: 2; color: var(--muted); }
+    .body-copy + .body-copy { margin-top: 17px; }
+    .about-copy .text-link { margin-top: 28px; color: var(--teal); }
+    .services-section { background: var(--wash); position: relative; overflow: hidden; }
+    .services-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 85px; }
+    .services-intro .eyebrow { margin-bottom: 25px; }
+    .services-intro .body-copy { max-width: 300px; margin-top: 25px; }
+    .services-intro .text-link { margin-top: 30px; color: var(--teal); }
+    .service-list { border-top: 1px solid #bacdc9; }
+    .service { display: grid; grid-template-columns: 36px 1fr 26px; gap: 18px; padding: 27px 0; border-bottom: 1px solid #bacdc9; align-items: center; transition: padding .3s, background .3s; }
+    .service:hover { padding-inline: 12px; background: #ffffff50; }
+    .service-number { font-size: 10px; font-weight: 700; color: var(--teal); align-self: start; margin-top: 8px; }
+    .service h3 { font-family: var(--serif); font-weight: 500; font-size: 31px; margin-bottom: 6px; }
+    .service p { color: var(--muted); font-size: 11px; line-height: 1.8; }
+    .service .icon { color: var(--teal); opacity: .65; }
+    .gallery-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 35px; margin-bottom: 45px; }
+    .gallery-head .eyebrow { margin-bottom: 22px; }
+    .gallery-head .body-copy { max-width: 280px; font-size: 12px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 24px; align-items: start; }
+    .gallery-item:nth-child(2) { margin-top: 65px; }
+    .gallery-image { height: 360px; overflow: hidden; background: var(--wash); }
+    .gallery-item:first-child .gallery-image { height: 425px; }
+    .gallery-image img { transition: transform .65s ease; }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item figcaption { display: flex; justify-content: space-between; gap: 12px; padding-top: 17px; border-top: 1px solid var(--line); margin-top: 15px; }
+    .gallery-item figcaption span { font-family: var(--serif); font-size: 24px; }
+    .gallery-item figcaption small { font-size: 9px; letter-spacing: .1em; margin-top: 8px; color: var(--muted); }
+    .gallery-disclaimer { font-size: 10px; color: var(--muted); line-height: 1.8; margin-top: 30px; }
+    .contact-section { background: var(--teal-dark); color: white; position: relative; overflow: hidden; padding-block: 88px; }
+    .contact-section::before { content: ""; position: absolute; width: 650px; height: 650px; border: 1px solid #ffffff12; border-radius: 50%; left: -280px; bottom: -380px; pointer-events: none; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; position: relative; }
+    .contact-copy .eyebrow { color: #c4e4e4; margin-bottom: 22px; }
+    .contact-copy .section-title { font-size: clamp(49px, 5.5vw, 76px); }
+    .contact-copy .section-title em { color: #c4e4e4; }
+    .contact-copy > p { font-size: 12px; line-height: 1.9; color: #d1e4e7; max-width: 360px; margin-top: 25px; }
+    .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 32px 0; padding-top: 26px; border-top: 1px solid #ffffff30; }
+    .detail-label { display: block; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; color: #badbdd; margin-bottom: 10px; }
+    .detail-value { font-size: 13px; line-height: 1.7; }
+    a.detail-value:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .contact-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .button.light { background: var(--paper); color: var(--teal-dark); }
+    .button.light:hover { background: white; }
+    .contact-actions .text-link { color: white; }
+    .contact-section a:focus-visible { outline-color: white; }
+    .map-panel { align-self: center; min-width: 0; background: var(--paper); padding: 10px; color: var(--ink); }
+    .map-panel iframe { display: block; width: 100%; height: 360px; border: 0; background: var(--wash); }
+    .map-footer { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 18px 12px 9px; }
+    .map-footer p { font-size: 11px; font-weight: 700; }
+    .map-footer small { display: block; font-size: 10px; font-weight: 400; margin-top: 5px; color: var(--muted); }
+    .map-footer a { display: flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 700; color: var(--teal); }
+    .map-footer a:focus-visible { outline-color: var(--teal); }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 35px; border-bottom: 1px solid var(--line); }
+    .footer-tagline { font-family: var(--serif); font-style: italic; font-size: 25px; color: var(--muted); }
+    .footer-bottom { padding-block: 22px 28px; display: flex; justify-content: space-between; gap: 25px; color: var(--muted); font-size: 9px; line-height: 1.9; }
+    .footer-bottom p:last-child { text-align: right; max-width: 570px; }
+    .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+    .js .reveal.visible { opacity: 1; transform: none; }
+    @keyframes flowing { from { transform: translate(-15px, 0) rotate(-2deg); } to { transform: translate(20px, 12px) rotate(2deg); } }
+    @keyframes drift { from { transform: translate(0, 0); } to { transform: translate(-60px, 60px); } }
+    @media (min-width: 1441px) { .hero-inner { min-height: 820px; } }
+    @media (max-width: 1050px) {
+      .nav { gap: 20px; }
+      .hero-inner { min-height: 650px; gap: 15px; padding-block: 45px; }
+      .hero h1 { font-size: clamp(60px, 8vw, 85px); }
+      .hero-badge { width: 120px; height: 120px; left: -25px; }
+      .hero-badge span { font-size: 21px; }
+      .principle { padding-inline: 17px; gap: 10px; }
+      .principle p { font-size: 10px; }
+      .section { padding-block: 85px; }
+      .about-visual figure { height: 450px; }
+      .services-layout { gap: 45px; }
+      .contact-grid { gap: 40px; }
+      .gallery-image { height: 300px; }
+      .gallery-item:first-child .gallery-image { height: 365px; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 80px; }
+      .header-inner { min-height: 76px; }
+      .brand-name { font-size: 27px; }
+      .brand-icon { width: 29px; }
+      .menu-toggle { display: block; }
+      .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); padding: 25px var(--gutter) 30px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; box-shadow: 0 15px 25px #173c430a; }
+      .nav.open { display: flex; }
+      .nav > a { padding: 14px 0; font-size: 13px; }
+      .nav > a::after { display: none; }
+      .nav .nav-cta { text-align: center; margin-top: 15px; padding: 15px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 28px; padding-block: 30px 45px; }
+      .hero-copy { padding-block: 15px 0; }
+      .hero h1 { font-size: clamp(64px, 12vw, 90px); margin-top: 24px; }
+      .hero-description { max-width: 400px; }
+      .hero-actions { gap: 18px; }
+      .button { font-size: 11px; padding: 18px 20px; gap: 17px; }
+      .hero-location { margin-top: 25px; }
+      .hero-visual { width: min(100%, 510px); justify-self: center; padding: 0 15px 0 20px; margin-top: 5px; }
+      .hero-photo { height: 480px; }
+      .hero-badge { width: 115px; height: 115px; left: 0; bottom: 25px; }
+      .vertical-note { right: -1px; font-size: 8px; }
+      .photo-caption { left: auto; text-align: right; max-width: 150px; line-height: 1.6; }
+      .principles-inner { grid-template-columns: 1fr; }
+      .principle, .principle:first-child { padding: 21px 0; gap: 18px; }
+      .principle + .principle { border-left: 0; border-top: 1px solid var(--line); }
+      .principle p { font-size: 11px; }
+      .section { padding-block: 70px; }
+      .about { grid-template-columns: 1fr; gap: 37px; }
+      .about-copy { grid-row: 1; }
+      .about-visual { max-width: 540px; width: 100%; }
+      .about-visual figure { height: 440px; }
+      .about-note { font-size: 22px; }
+      .section-title { font-size: clamp(46px, 8vw, 64px); }
+      .services-layout { grid-template-columns: 1fr; gap: 35px; }
+      .services-intro .body-copy { max-width: 420px; }
+      .services-intro .text-link { margin-top: 17px; }
+      .service { padding-block: 23px; }
+      .gallery-head { align-items: flex-start; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+      .gallery-head .body-copy { max-width: 400px; }
+      .gallery-grid { gap: 16px; grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-column: 1 / -1; }
+      .gallery-item:first-child .gallery-image { height: 350px; }
+      .gallery-item:nth-child(2) { margin-top: 0; }
+      .gallery-image { height: 260px; }
+      .gallery-item figcaption span { font-size: 20px; }
+      .gallery-item figcaption small { font-size: 8px; }
+      .contact-section { padding-block: 65px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 42px; }
+      .map-panel iframe { height: 320px; }
+      .footer-top { align-items: flex-start; flex-direction: column; gap: 23px; }
+      .footer-bottom { flex-direction: column; gap: 12px; }
+      .footer-bottom p:last-child { text-align: left; }
+    }
+    @media (max-width: 390px) {
+      .hero h1 { font-size: 61px; }
+      .hero-photo { height: 395px; }
+      .gallery-image { height: 205px; }
+      .gallery-item figcaption span { font-size: 18px; }
+      .contact-details { grid-template-columns: 1fr; }
+      .map-footer { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#continut">Mergi la conținut</a>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+    <defs>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+      <symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="scissors" viewBox="0 0 24 24"><circle cx="5" cy="6" r="3"/><circle cx="5" cy="18" r="3"/><path d="m7.5 7.5 13 13M7.5 16.5 21 3M13 12l8-9"/></symbol>
+      <symbol id="spark" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4L12 3Z"/></symbol>
+      <symbol id="palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h1a2 2 0 0 0 1-3.7 1.6 1.6 0 0 1 1-2.9h2A4 4 0 0 0 21 10c0-4-4-7-9-7Z"/><circle cx="7" cy="10" r="1"/><circle cx="10" cy="6.8" r="1"/><circle cx="15" cy="7.5" r="1"/></symbol>
+      <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-9 9 10 10 0 0 1-4-.9L3 21l1.4-4.5A9 9 0 1 1 21 11.5Z"/><path d="M8 11h8M8 14h5"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#acasa" class="brand" aria-label="Studio Hairtalk — Acasă">
+        <svg class="icon brand-icon" aria-hidden="true"><use href="#scissors"/></svg>
+        <span class="brand-name">Studio Hairtalk<span class="brand-sub">HAIR & STYLE · BUCUREȘTI</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Deschide meniul" aria-controls="navigare" aria-expanded="false">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+      <nav id="navigare" class="nav" aria-label="Navigare principală">
+        <a href="#despre">Povestea noastră</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#inspiratie">Inspirație</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/40723688039?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Studio%20Hairtalk." target="_blank" rel="noopener noreferrer">Hai să vorbim ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="continut">
+    <section id="acasa" class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <svg class="hero-decoration" viewBox="0 0 1440 850" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path d="M-200 650C150 950 500 500 650 180S1150-130 1550 260"/>
+        <path d="M-200 680C170 980 530 530 680 200S1180-100 1580 280"/>
+        <path d="M-200 710C190 1010 560 560 710 220S1210-70 1610 300"/>
+      </svg>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow with-line">Un strop de schimbare. Multă personalitate.</p>
+          <h1 id="hero-title">Transformă-ți<br>look-ul <em>cu stil.</em></h1>
+          <p class="hero-description">Tunsori moderne și culori vibrante în București. Un look proaspăt, care vorbește despre tine.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/40723688039?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Studio%20Hairtalk." target="_blank" rel="noopener noreferrer">
+              Programează-te pe WhatsApp
+              <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+            </a>
+            <a class="text-link" href="#servicii">Descoperă serviciile</a>
+          </div>
+          <a class="hero-location" href="https://www.google.com/maps/search/?api=1&amp;query=Studio+Hairtalk+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#pin"/></svg>
+            Piața Montreal 10, București
+          </a>
+        </div>
+        <div class="hero-visual">
+          <figure class="hero-photo">
+            <img src="img/1.jpg" alt="Portret ilustrativ al unei femei cu păr creț și un look expresiv" fetchpriority="high" width="800" height="1000">
+            <figcaption class="photo-caption">Inspirație de stil · fotografie ilustrativă</figcaption>
+          </figure>
+          <span class="vertical-note">Personalitate, până la ultimul fir.</span>
+          <div class="hero-badge" aria-hidden="true">
+            <svg class="icon"><use href="#spark"/></svg>
+            <span>Stilul tău.<br>Povestea ta.</span>
+            <small>Studio Hairtalk</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="De ce Studio Hairtalk">
+      <div class="wrap principles-inner">
+        <div class="principle reveal">
+          <span class="principle-symbol"><svg class="icon" aria-hidden="true"><use href="#scissors"/></svg></span>
+          <div><h3>Servicii variate</h3><p>Soluții pentru orice tip de păr.</p></div>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-symbol"><svg class="icon" aria-hidden="true"><use href="#palette"/></svg></span>
+          <div><h3>Culori vibrante</h3><p>Vopsele profesionale, rezultate intense.</p></div>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-symbol"><svg class="icon" aria-hidden="true"><use href="#chat"/></svg></span>
+          <div><h3>Consiliere personală</h3><p>Alegem împreună stilul potrivit.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="despre" class="section" aria-labelledby="about-title">
+      <div class="wrap about">
+        <div class="about-visual reveal">
+          <figure>
+            <img src="img/2.jpg" alt="Fotografie ilustrativă: o femeie blondă își admiră coafura în oglindă" loading="lazy" width="700" height="850">
+          </figure>
+          <div class="about-note">
+            <svg class="icon" aria-hidden="true"><use href="#spark"/></svg>
+            Un moment doar pentru tine.
+          </div>
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow with-line">Bine ai venit la Studio Hairtalk</p>
+          <h2 id="about-title" class="section-title">Mai mult decât<br>un look nou.<br><em>Un pic mai mult tu.</em></h2>
+          <p class="body-copy">Studio Hairtalk este un salon de coafură dedicat celor care își doresc un look proaspăt și personalizat. Pentru noi, schimbarea începe cu o conversație despre tine și despre stilul în care te simți bine.</p>
+          <p class="body-copy">Echipa noastră te așteaptă cu idei creative pentru orice ocazie. Fie că îți dorești o tunsoare nouă, o culoare vibrantă sau un moment de răsfăț, alegem împreună direcția potrivită.</p>
+          <a class="text-link" href="#contact">Ne cunoaștem la salon?
+            <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicii" class="section services-section" aria-labelledby="services-title">
+      <div class="wrap services-layout">
+        <div class="services-intro reveal">
+          <p class="eyebrow with-line">Servicii</p>
+          <h2 id="services-title" class="section-title">O schimbare mică.<br>Sau <em>un nou început.</em></h2>
+          <p class="body-copy">De la forma tunsorii la nuanța preferată, găsește serviciul care se potrivește următorului tău look.</p>
+          <a class="text-link" href="tel:+40723688039">Întreabă-ne despre servicii
+            <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+          </a>
+        </div>
+        <div class="service-list">
+          <article class="service reveal">
+            <span class="service-number">01</span>
+            <div><h3>Tuns damă</h3><p>Tunsori pentru toate tipurile de păr.</p></div>
+            <svg class="icon" aria-hidden="true"><use href="#scissors"/></svg>
+          </article>
+          <article class="service reveal">
+            <span class="service-number">02</span>
+            <div><h3>Vopsit</h3><p>Culori profesionale, rezultate vibrante.</p></div>
+            <svg class="icon" aria-hidden="true"><use href="#palette"/></svg>
+          </article>
+          <article class="service reveal">
+            <span class="service-number">03</span>
+            <div><h3>Coafat</h3><p>Coafuri pentru evenimente sau zi de zi.</p></div>
+            <svg class="icon" aria-hidden="true"><use href="#spark"/></svg>
+          </article>
+          <article class="service reveal">
+            <span class="service-number">04</span>
+            <div><h3>Tuns bărbați</h3><p>Tunsori moderne, stil masculin.</p></div>
+            <svg class="icon" aria-hidden="true"><use href="#scissors"/></svg>
+          </article>
+          <article class="service reveal">
+            <span class="service-number">05</span>
+            <div><h3>Tratamente păr</h3><p>Hidratare și revitalizare cu produse premium.</p></div>
+            <svg class="icon" aria-hidden="true"><use href="#spark"/></svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="inspiratie" class="section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="gallery-head reveal">
+          <div>
+            <p class="eyebrow with-line">Inspirație de stil</p>
+            <h2 id="gallery-title" class="section-title">Detaliile fac <em>diferența.</em></h2>
+          </div>
+          <p class="body-copy">Formă, textură, personalitate. Câteva imagini pentru a deschide conversația despre următorul tău look.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal">
+            <div class="gallery-image"><img src="img/3.jpg" alt="Fotografie ilustrativă cu un hairstylist care lucrează la o coafură în salon" loading="lazy" width="800" height="950"></div>
+            <figcaption><span>Stil în mișcare</span><small>01 / INSPIRAȚIE</small></figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <div class="gallery-image"><img src="img/4.jpg" alt="Fotografie ilustrativă: realizarea unei tunsori bărbătești cu ajutorul unui pieptene" loading="lazy" width="650" height="850"></div>
+            <figcaption><span>Formă & detaliu</span><small>02 / INSPIRAȚIE</small></figcaption>
+          </figure>
+          <figure class="gallery-item reveal">
+            <div class="gallery-image"><img src="img/5.jpg" alt="Fotografie ilustrativă cu un bărbat în timpul îngrijirii părului și bărbii la salon" loading="lazy" width="650" height="850"></div>
+            <figcaption><span>Stil masculin</span><small>03 / INSPIRAȚIE</small></figcaption>
+          </figure>
+        </div>
+        <p class="gallery-disclaimer">Imaginile de pe această pagină sunt fotografii de stoc, folosite pentru inspirație. Nu reprezintă lucrări realizate la Studio Hairtalk.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow with-line">Hai să vorbim despre părul tău</p>
+          <h2 id="contact-title" class="section-title">Noul tău look<br>începe cu <em>un salut.</em></h2>
+          <p>Scrie-ne pe WhatsApp sau sună-ne pentru o programare și detalii despre servicii. Te așteptăm în București, la Piața Montreal 10.</p>
+          <div class="contact-details">
+            <div><span class="detail-label">Ne găsești aici</span><p class="detail-value">Piața Montreal 10<br>București</p></div>
+            <div><span class="detail-label">Sună-ne</span><a class="detail-value" href="tel:+40723688039">+40 723 688 039</a></div>
+          </div>
+          <div class="contact-actions">
+            <a class="button light" href="https://wa.me/40723688039?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Studio%20Hairtalk." target="_blank" rel="noopener noreferrer">
+              Programează-te pe WhatsApp
+              <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+            </a>
+            <a class="text-link" href="tel:+40723688039">Sună acum</a>
+          </div>
+        </div>
+        <div class="map-panel reveal">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0656528,44.473447099999994,26.0736528,44.4774471&amp;layer=mapnik&amp;marker=44.4754471,26.0696528" title="Hartă: locația Studio Hairtalk, Piața Montreal 10, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-footer">
+            <p>Studio Hairtalk<small>Piața Montreal 10, București</small></p>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Studio+Hairtalk+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">
+              Deschide în Google Maps
+              <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top">
+      <a href="#acasa" class="brand" aria-label="Studio Hairtalk — Înapoi sus">
+        <svg class="icon brand-icon" aria-hidden="true"><use href="#scissors"/></svg>
+        <span class="brand-name">Studio Hairtalk<span class="brand-sub">HAIR & STYLE · BUCUREȘTI</span></span>
+      </a>
+      <p class="footer-tagline">Stilul tău merită o conversație.</p>
+      <a class="text-link" href="#acasa">Înapoi sus <span aria-hidden="true">↑</span></a>
+    </div>
+    <div class="footer-bottom">
+      <p>Studio Hairtalk · București<br>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Starkvisuals, OlgaVolkovitskaia, alexkrasovsky, OrnaW, DadionGomez</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul');
+      }
+
+      toggle.addEventListener('click', () => {
+        const open = !nav.classList.contains('open');
+        nav.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      });
+
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && nav.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!event.target.closest('.site-header')) closeMenu();
+      });
+      window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if ('IntersectionObserver' in window && !reducedMotion.matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+        document.documentElement.classList.add('js');
+        reducedMotion.addEventListener('change', event => {
+          if (event.matches) {
+            document.documentElement.classList.remove('js');
+            observer.disconnect();
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
