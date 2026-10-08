@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-app-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f6f7f9">
+<title>Evidența haine revânzare</title>
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--ink:#172823;--muted:#707d78;--line:#e6ebe8;--green:#247454;--green-light:#eaf5ee;--lime:#dbf49c;--red:#be5349;--red-light:#fff0ed;--radius:18px;--shadow:0 8px 32px #1d382108}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px;line-height:1.5}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,a:focus-visible{outline:3px solid #83b75b;outline-offset:3px}input:focus,select:focus,textarea:focus{outline:2px solid #4f9471;outline-offset:1px}svg{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.sidebar{position:fixed;inset:0 auto 0 0;width:238px;background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;padding:34px 23px;z-index:2}.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:750;letter-spacing:-.6px}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:var(--ink);color:var(--lime)}.logo svg{width:25px;height:25px}.brand-sub{font-size:10px;color:var(--muted);letter-spacing:1.4px;font-weight:650;text-transform:uppercase;margin-top:1px}.nav-label{color:#88938d;font-size:10px;letter-spacing:1.5px;font-weight:700;margin:45px 12px 14px}.nav-item{display:flex;gap:12px;align-items:center;padding:13px;border-radius:10px;background:var(--green-light);color:var(--green);font-weight:650}.nav-item .dot{margin-left:auto;width:6px;height:6px;border-radius:50%;background:var(--green)}.sidebar-bottom{margin-top:auto}.local-note{background:#f6f8f5;padding:17px;border-radius:13px;font-size:12px;color:var(--muted)}.local-note svg{color:var(--green);margin-bottom:8px}.local-note strong{display:block;color:var(--ink);font-size:13px;margin-bottom:5px}.sidebar-actions{margin-top:17px;display:grid;gap:4px}.text-button{border:0;background:transparent;display:flex;align-items:center;gap:10px;text-align:left;padding:11px 8px;color:var(--muted);border-radius:9px}.text-button:hover{background:#f5f7f5;color:var(--ink)}.text-button.danger:hover{color:var(--red);background:var(--red-light)}main{margin-left:238px;max-width:1700px;padding:39px 42px 24px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:32px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--green);text-transform:uppercase;margin:0 0 7px}h1{font-size:30px;letter-spacing:-1.2px;line-height:1.2;margin:0 0 9px;font-weight:750}.subtitle{color:var(--muted);margin:0;font-size:13px}.button{border:1px solid var(--line);border-radius:10px;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:44px;padding:11px 17px;font-weight:600;background:#fff;color:var(--ink);white-space:nowrap}.button:hover{background:#f5f8f5}.button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.button.primary:hover{background:#2a4438}.button.lime{background:var(--lime);border-color:var(--lime)}.button.danger{color:var(--red);border-color:#efd1cb}.period-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}.period-description{font-weight:600;font-size:14px;display:flex;align-items:center;gap:9px}.period-description span{font-size:11px;border:1px solid var(--line);padding:3px 8px;border-radius:6px;color:var(--muted);font-weight:500;background:#fff}.period-control{display:flex;align-items:center;gap:4px;padding:4px;border:1px solid var(--line);border-radius:10px;background:#fff}.icon-button{width:36px;height:36px;border:0;background:transparent;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;color:var(--muted)}.icon-button:hover{background:#edf3ee;color:var(--ink)}.period-control input{border:0;background:transparent;color:var(--ink);width:160px;min-height:34px;text-align:center;font-weight:600;padding:4px 6px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:24px}.stat{background:var(--surface);border:1px solid var(--line);padding:21px;border-radius:var(--radius);box-shadow:var(--shadow);min-width:0}.stat.featured{background:var(--ink);color:#fff;border-color:var(--ink)}.stat-top{display:flex;justify-content:space-between;align-items:center;gap:7px;font-size:12px;color:var(--muted);font-weight:550}.stat.featured .stat-top{color:#cfdbd3}.stat-icon{display:grid;place-items:center;width:33px;height:33px;border-radius:10px;background:#f1f5f1;color:var(--green)}.stat.featured .stat-icon{background:#33483a;color:var(--lime)}.stat-value{font-size:29px;line-height:1.3;letter-spacing:-1px;font-weight:750;margin:19px 0 7px;overflow-wrap:anywhere}.stat.featured .stat-value{color:var(--lime)}.stat-value small{font-size:13px;letter-spacing:0;font-weight:500;color:var(--muted);margin-left:4px}.stat.featured .stat-value small{color:#c6d2c5}.stat-foot{color:var(--muted);font-size:11px}.stat.featured .stat-foot{color:#b9c9bd}.stat-value.negative{color:#ffb6a9}.panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.overview{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(250px,1fr);gap:20px;margin-bottom:26px}.panel-heading{padding:21px 23px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}h2{margin:0;font-size:16px;letter-spacing:-.3px}.panel-description{margin:4px 0 0;font-size:12px;color:var(--muted)}.legend{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:11px;white-space:nowrap;margin-top:5px}.legend-dot{width:7px;height:7px;background:var(--green);border-radius:50%}.chart{height:180px;display:flex;gap:14px;padding:17px 23px 16px;position:relative}.chart-col{flex:1;min-width:0;text-align:center;display:flex;flex-direction:column}.chart-amount{font-size:10px;font-weight:600;height:21px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--green)}.chart-amount.loss{color:var(--red)}.chart-area{flex:1;position:relative;background:linear-gradient(to bottom,transparent calc(50% - .5px),#e0e7e1 calc(50% - .5px),#e0e7e1 calc(50% + .5px),transparent calc(50% + .5px))}.chart-bar{position:absolute;left:18%;width:64%;bottom:50%;border-radius:5px 5px 0 0;background:#bdd9c8;min-height:0}.chart-bar.current{background:var(--green)}.chart-bar.loss{top:50%;bottom:auto;background:#e6afa7;border-radius:0 0 5px 5px}.chart-label{font-size:11px;margin-top:10px;color:var(--muted)}.chart-label.current{color:var(--green);font-weight:700}.chart-footer{padding:0 23px 16px;color:var(--muted);font-size:11px}.inventory-summary{padding:22px 24px;position:relative;background:#f0f4e9;border-color:#e3e9d8;display:flex;flex-direction:column;justify-content:space-between}.inventory-summary .summary-icon{width:38px;height:38px;background:#e0eacf;border-radius:11px;display:grid;place-items:center;color:#5b7143;margin-bottom:13px}.inventory-summary h2{font-size:17px}.inventory-summary p{font-size:12px;color:#66735d;margin:7px 0 18px;max-width:310px}.stock-value{font-size:25px;font-weight:750;letter-spacing:-.6px}.stock-label{font-size:11px;color:#66735d}.inventory-summary .summary-bottom{display:flex;align-items:end;justify-content:space-between;gap:8px}.list-header{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:17px}.title-count{display:flex;align-items:center;gap:10px}.count-badge{background:#e8ece9;color:#607166;border-radius:6px;padding:2px 7px;font-size:11px}.list-hint{font-size:12px;color:var(--muted);margin:4px 0 0}.filters{display:flex;align-items:center;gap:10px;padding:17px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}.search-wrap{position:relative;flex:1;min-width:180px;max-width:370px}.search-wrap svg{position:absolute;top:12px;left:12px;width:18px;color:#88958d}.search-wrap input{width:100%;padding:11px 12px 11px 39px;border:1px solid var(--line);border-radius:9px;background:#fafbfa;min-height:43px}.filters select{min-height:43px;border:1px solid var(--line);border-radius:9px;padding:9px 31px 9px 12px;background:#fff;color:var(--ink);max-width:100%}.filter-checkbox{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px;cursor:pointer;margin-left:auto}.filter-checkbox input{accent-color:var(--green);width:16px;height:16px}.table-wrap{width:100%}table{border-collapse:collapse;width:100%;text-align:left;table-layout:fixed}th{font-size:10px;letter-spacing:.6px;text-transform:uppercase;font-weight:600;color:#7c8880;padding:13px 18px;background:#fcfdfc;border-bottom:1px solid var(--line)}td{padding:17px 18px;border-bottom:1px solid var(--line);vertical-align:middle;font-size:12px}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fbfcfa}th:first-child{width:29%}th:last-child{width:85px}th:nth-child(5){width:112px}.item-cell{display:flex;align-items:center;gap:11px;min-width:0}.item-icon{background:#f0f3ef;color:#789078;border-radius:10px;width:39px;height:43px;flex-shrink:0;display:grid;place-items:center}.item-name{font-size:13px;font-weight:600;overflow-wrap:anywhere}.item-meta,.date-small{font-size:10px;color:var(--muted);margin-top:4px;overflow-wrap:anywhere}.amount{font-weight:600;white-space:nowrap}.profit{color:var(--green);font-weight:650;white-space:nowrap}.profit.loss{color:var(--red)}.muted{color:var(--muted)}.badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:5px 8px;border-radius:6px;white-space:nowrap}.badge.sold{background:var(--green-light);color:var(--green)}.badge.stock{background:#f5f0e2;color:#88702d}.badge::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.row-actions{display:flex;gap:0;justify-content:end}.row-actions .icon-button{width:28px;height:34px}.row-actions svg{width:15px;height:15px}.row-actions .delete:hover{color:var(--red);background:var(--red-light)}.empty{padding:48px 20px 45px;text-align:center}.empty-icon{width:60px;height:60px;border-radius:18px;background:#f0f5ec;color:#7d9672;display:grid;place-items:center;margin:0 auto 17px}.empty-icon svg{width:28px;height:28px}.empty h3{font-size:17px;margin:0 0 7px}.empty p{color:var(--muted);font-size:13px;max-width:350px;margin:0 auto 20px}.table-footer{padding:13px 20px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:12px}.page-footer{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#8b968f;margin-top:23px}.mobile-actions{display:none}.storage-warning{background:#fff2df;color:#805223;padding:13px 18px;border-radius:10px;margin-bottom:20px;font-size:12px}dialog{border:1px solid var(--line);border-radius:20px;padding:0;width:min(540px,calc(100% - 28px));max-height:calc(100dvh - 36px);color:var(--ink);box-shadow:0 25px 100px #0f251b30;overflow:auto}dialog::backdrop{background:#12271b66;backdrop-filter:blur(3px)}.dialog-header{display:flex;justify-content:space-between;align-items:flex-start;padding:23px 25px 17px;border-bottom:1px solid var(--line)}.dialog-header h2{font-size:21px}.dialog-header p{font-size:12px;color:var(--muted);margin:5px 0 0}.form-body{padding:21px 25px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field.full{grid-column:1/-1}.field label{display:block;font-weight:600;font-size:12px;margin-bottom:7px}.field label span{color:var(--muted);font-weight:400}.field input,.field select,.field textarea{width:100%;min-height:43px;padding:10px 12px;border:1px solid #dce4dd;border-radius:9px;background:#fff;color:var(--ink)}.field textarea{min-height:72px;resize:vertical}.field input::placeholder,.field textarea::placeholder{color:#9aa59d}.field small{display:block;font-size:10px;color:var(--muted);margin-top:5px}.status-switch{display:flex;gap:10px}.status-option{position:relative;flex:1}.status-option input{position:absolute;opacity:0;width:1px;height:1px}.status-option label{border:1px solid var(--line);padding:11px;text-align:center;border-radius:9px;margin:0;cursor:pointer;font-size:12px}.status-option input:checked+label{background:var(--green-light);border-color:#8cba9d;color:var(--green)}.status-option input:focus-visible+label{outline:2px solid var(--green);outline-offset:2px}.sale-section{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#f4f8f3;border:1px solid #e3ece2;border-radius:12px;padding:15px;margin-top:18px}.profit-preview{grid-column:1/-1;border-top:1px solid #dde6da;padding-top:12px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted)}.profit-preview strong{font-size:18px;color:var(--green)}.profit-preview strong.loss{color:var(--red)}.form-error{font-size:12px;color:var(--red);background:var(--red-light);border-radius:8px;padding:10px 12px;margin-top:14px}.dialog-footer{display:flex;justify-content:flex-end;gap:10px;padding:17px 25px;border-top:1px solid var(--line);background:#fafcf9}.toast{position:fixed;bottom:24px;left:calc(50% + 119px);transform:translateX(-50%);z-index:10;background:var(--ink);color:white;box-shadow:0 8px 30px #0002;border-radius:11px;padding:13px 20px;max-width:calc(100% - 32px);font-size:13px;text-align:center}.hidden,[hidden]{display:none!important}
+@media(min-width:1450px){main{padding:45px 55px}.stat-value{font-size:34px}.chart{height:190px}}
+@media(max-width:1150px){.sidebar{width:200px;padding:30px 17px}main{margin-left:200px;padding:30px 24px}.brand{font-size:18px}.stats{gap:11px}.stat{padding:16px}.stat-value{font-size:25px}.stat-top{font-size:11px}.overview{grid-template-columns:minmax(0,1.6fr) minmax(230px,1fr)}td,th{padding-left:12px;padding-right:12px}.item-icon{display:none}.toast{left:calc(50% + 100px)}}
+@media(max-width:900px){.sidebar{width:76px;padding:25px 16px;align-items:center}.brand-text,.nav-label,.nav-item span,.sidebar-bottom{display:none}.nav-item{margin-top:35px;padding:12px}.nav-item .dot{display:none}main{margin-left:76px;padding:28px 22px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat-value{font-size:30px;margin-top:12px}.overview{grid-template-columns:minmax(0,1.5fr) minmax(205px,1fr);gap:14px}.inventory-summary{padding:20px}.panel-heading{padding:19px 18px 0}.legend{display:none}.chart{gap:8px;padding-left:18px;padding-right:18px}.mobile-actions{display:flex;gap:8px}.toast{left:calc(50% + 38px)}.filters{padding:14px}.filter-checkbox{margin-left:0}th:nth-child(5){width:97px}th:last-child{width:70px}td,th{padding-left:9px;padding-right:9px}.amount,.profit{font-size:11px}.page-footer{align-items:center;flex-wrap:wrap}}
+@media(max-width:640px){.sidebar{position:static;width:100%;height:auto;display:flex;flex-direction:row;justify-content:space-between;border-right:0;border-bottom:1px solid var(--line);padding:14px 20px}.brand-text{display:block}.brand{font-size:18px}.brand-sub{font-size:9px}.logo{width:35px;height:35px;border-radius:10px}.logo svg{width:22px;height:22px}.nav-item{margin:0;padding:8px;border-radius:9px}.nav-item svg{width:18px;height:18px}main{margin:0;padding:25px 16px 20px}.topbar{margin-bottom:24px;align-items:start;gap:10px}h1{font-size:25px;letter-spacing:-.9px}.eyebrow{font-size:10px}.subtitle{font-size:12px;max-width:230px}.topbar .button{padding:10px 12px;min-height:42px;font-size:12px;margin-top:20px;gap:5px}.topbar .button svg{width:16px}.period-row{gap:8px}.period-description{font-size:12px}.period-description span{display:none}.period-control input{width:139px;font-size:12px}.period-control .icon-button{width:28px}.stats{gap:10px;margin-bottom:18px}.stat{padding:15px;border-radius:14px}.stat-icon{width:27px;height:27px;border-radius:8px}.stat-icon svg{width:16px}.stat-top{font-size:11px}.stat-value{font-size:26px;margin:13px 0 6px}.stat-value small{font-size:11px}.stat-foot{font-size:10px}.overview{grid-template-columns:1fr;gap:13px;margin-bottom:25px}.chart{height:174px}.inventory-summary{padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}.inventory-summary .summary-icon{display:none}.inventory-summary h2{font-size:14px}.inventory-summary p{font-size:11px;margin:5px 0 0}.inventory-summary .summary-bottom{justify-content:end}.stock-value{font-size:23px;text-align:right}.stock-label{text-align:right;font-size:10px}.list-header{gap:8px}.list-header h2{font-size:16px}.list-hint{font-size:11px}.list-header .button{font-size:11px;padding:9px 11px;min-height:39px}.list-header .button svg{width:16px}.filters{gap:10px}.search-wrap{max-width:none;flex-basis:100%}.filters select{flex:1;font-size:12px;min-width:0}.filter-checkbox{font-size:11px;flex:1;justify-content:end}.table-wrap table,.table-wrap tbody{display:block;width:100%}.table-wrap thead{display:none}.table-wrap tr{display:grid;grid-template-columns:1fr 1fr 1fr;position:relative;padding:17px 15px;gap:12px 8px;border-bottom:1px solid var(--line)}.table-wrap tr:last-child{border:0}.table-wrap td{display:block;border:0;padding:0;min-width:0}.table-wrap td:first-child{grid-column:1/-1;padding-right:80px}.item-icon{display:grid;width:34px;height:37px;border-radius:8px}.item-icon svg{width:18px}.item-meta{margin-top:2px}.table-wrap td:nth-child(2)::before{content:"Cumpărare"}.table-wrap td:nth-child(3)::before{content:"Vânzare"}.table-wrap td:nth-child(4)::before{content:"Profit"}.table-wrap td:nth-child(n+2):nth-child(-n+4)::before{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.table-wrap td:nth-child(5){position:absolute;right:15px;top:21px}.table-wrap td:last-child{grid-column:1/-1;position:absolute;right:10px;bottom:15px}.table-wrap td:nth-child(4){padding-right:30px}.row-actions{flex-direction:column;gap:1px}.row-actions .icon-button{height:27px;width:25px}.amount,.profit{font-size:12px}.date-small{font-size:9px}.badge{font-size:9px;padding:4px 6px}.table-footer{font-size:10px;padding:12px 15px}.page-footer{font-size:10px}.mobile-actions .text-button{font-size:10px;padding:7px 4px;gap:5px}.mobile-actions svg{width:14px;height:14px}.toast{left:50%;bottom:18px}.dialog-header{padding:20px}.form-body{padding:19px 20px}.dialog-footer{padding:15px 20px}.form-grid{gap:14px}.field label{font-size:11px}.field input,.field select{font-size:13px;min-width:0}.sale-section{gap:12px;padding:13px}.empty{padding:35px 18px}}
+@media(prefers-reduced-motion:no-preference){button{transition:background .15s,color .15s}.chart-bar{transition:height .3s}.toast{animation:appear .2s ease-out}@keyframes appear{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}}
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-shirt" viewBox="0 0 24 24"><path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4a4 4 0 0 1-8 0Z"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-10M15 5h6v6"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><path d="M20 8V5H5a2 2 0 0 0 0 4h15v11H5a2 2 0 0 1-2-2V7"/><path d="M20 12h-5v5h5M17 14.5h.1"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m6 12 4 4 8-9"/><circle cx="12" cy="12" r="9"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 5v10l9 5 9-5V8M12 13v10M7.5 5.5l9 5"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-4-4L5 15l-1 5Z"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7M14 10v7"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 11h18"/></symbol>
+</svg>
+<aside class="sidebar" aria-label="Navigație principală">
+<div class="brand"><div class="logo"><svg aria-hidden="true"><use href="#i-shirt"/></svg></div><div class="brand-text">Rewear<span class="brand-sub" style="display:block">Evidență revânzare</span></div></div>
+<div class="nav-label">SPAȚIUL TĂU</div>
+<div class="nav-item" aria-current="page"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>Privire de ansamblu</span><i class="dot"></i></div>
+<div class="sidebar-bottom">
+<div class="local-note"><svg aria-hidden="true"><use href="#i-shield"/></svg><strong>Datele tale rămân la tine.</strong>Salvare automată în acest browser. Exportă periodic o copie pentru siguranță.</div>
+<div class="sidebar-actions">
+<button class="text-button" data-action="export"><svg aria-hidden="true"><use href="#i-download"/></svg>Exportă evidența</button>
+<button class="text-button danger" data-action="clear"><svg aria-hidden="true"><use href="#i-trash"/></svg>Șterge toate datele</button>
+</div>
+</div>
+</aside>
+<main>
+<div id="storageWarning" class="storage-warning" role="alert" hidden></div>
+<header class="topbar">
+<div><p class="eyebrow">Mai multă ordine. Mai multă claritate.</p><h1>Evidența haine revânzare</h1><p class="subtitle">De la prima achiziție la următorul profit.</p></div>
+<button class="button primary" id="addButton"><svg aria-hidden="true"><use href="#i-plus"/></svg>Adaugă articol</button>
+</header>
+<section aria-label="Rezumat lunar">
+<div class="period-row">
+<div class="period-description"><svg aria-hidden="true"><use href="#i-calendar"/></svg>Rezumatul lunii <span>RON</span></div>
+<div class="period-control">
+<button class="icon-button" id="prevMonth" aria-label="Luna precedentă"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+<input type="month" id="monthFilter" aria-label="Luna pentru calculul profitului" required min="1900-01" max="9999-12">
+<button class="icon-button" id="nextMonth" aria-label="Luna următoare"><svg aria-hidden="true"><use href="#i-right"/></svg></button>
+</div>
+</div>
+<div class="stats">
+<article class="stat featured"><div class="stat-top">Profitul lunii <span class="stat-icon"><svg aria-hidden="true"><use href="#i-trend"/></svg></span></div><div class="stat-value" id="profitValue">0 <small>lei</small></div><div class="stat-foot">Vânzări − costul articolelor vândute</div></article>
+<article class="stat"><div class="stat-top">Încasări <span class="stat-icon"><svg aria-hidden="true"><use href="#i-wallet"/></svg></span></div><div class="stat-value" id="revenueValue">0 <small>lei</small></div><div class="stat-foot">Din vânzările lunii selectate</div></article>
+<article class="stat"><div class="stat-top">Articole vândute <span class="stat-icon"><svg aria-hidden="true"><use href="#i-check"/></svg></span></div><div class="stat-value" id="soldValue">0 <small>articole</small></div><div class="stat-foot">În luna selectată</div></article>
+<article class="stat"><div class="stat-top">În stoc <span class="stat-icon"><svg aria-hidden="true"><use href="#i-shirt"/></svg></span></div><div class="stat-value" id="stockValue">0 <small>articole</small></div><div class="stat-foot">Toate articolele încă nevândute</div></article>
+</div>
+</section>
+<section class="overview" aria-label="Evoluție și stoc">
+<div class="panel">
+<div class="panel-heading"><div><h2>Profit, lună de lună</h2><p class="panel-description">Cele 6 luni până la luna selectată</p></div><div class="legend"><span class="legend-dot"></span>Profit realizat</div></div>
+<div class="chart" id="profitChart" aria-label="Profitul pe ultimele șase luni"></div>
+<div class="chart-footer" id="chartFoot">Profitul se înregistrează în luna vânzării.</div>
+</div>
+<div class="panel inventory-summary">
+<div><div class="summary-icon"><svg aria-hidden="true"><use href="#i-box"/></svg></div><h2>Potențialul din garderobă</h2><p>Valoarea de cumpărare a hainelor care așteaptă un nou proprietar.</p></div>
+<div class="summary-bottom"><div><div class="stock-value" id="stockInvestment">0 lei</div><div class="stock-label">investiți în stocul actual</div></div></div>
+</div>
+</section>
+<section aria-labelledby="articlesTitle">
+<div class="list-header"><div><div class="title-count"><h2 id="articlesTitle">Articolele tale</h2><span class="count-badge" id="totalCount">0</span></div><p class="list-hint">Fiecare articol, fiecare leu, la un loc.</p></div><button class="button" data-action="export"><svg aria-hidden="true"><use href="#i-download"/></svg>Export CSV</button></div>
+<div class="panel">
+<div class="filters">
+<div class="search-wrap"><svg aria-hidden="true"><use href="#i-search"/></svg><input id="searchInput" type="search" placeholder="Caută un articol, o categorie…" aria-label="Caută articole" maxlength="200"></div>
+<select id="statusFilter" aria-label="Filtrează după stare"><option value="all">Toate articolele</option><option value="stock">În stoc</option><option value="sold">Vândute</option></select>
+<label class="filter-checkbox"><input id="onlyMonth" type="checkbox">Doar luna selectată</label>
+</div>
+<div class="table-wrap" id="tableWrap">
+<table><thead><tr><th scope="col">Articol</th><th scope="col">Cumpărare</th><th scope="col">Vânzare</th><th scope="col">Profit</th><th scope="col">Stare</th><th scope="col"><span class="muted">Acțiuni</span></th></tr></thead><tbody id="articleRows"></tbody></table>
+</div>
+<div class="empty" id="emptyState" hidden></div>
+<div class="table-footer"><span id="listCount">0 articole</span><span id="listFooter">Toate sumele sunt în lei (RON).</span></div>
+</div>
+</section>
+<footer class="page-footer"><span>O nouă viață pentru haine. O evidență mai bună pentru tine.</span><div class="mobile-actions"><button class="text-button" data-action="clear"><svg aria-hidden="true"><use href="#i-trash"/></svg>Șterge datele</button></div><span>Salvat local · Fără cont</span></footer>
+</main>
+
+<dialog id="articleDialog" aria-labelledby="dialogTitle">
+<form id="articleForm">
+<div class="dialog-header"><div><h2 id="dialogTitle">Adaugă un articol</h2><p>Înregistrează achiziția și, dacă e cazul, vânzarea.</p></div><button type="button" class="icon-button" id="closeDialog" aria-label="Închide formularul"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div>
+<div class="form-body">
+<div class="form-grid">
+<div class="field full"><label for="articleName">Denumirea articolului *</label><input id="articleName" name="name" required maxlength="120" placeholder="De exemplu: cămașă din in, mărimea M" autocomplete="off"></div>
+<div class="field"><label for="category">Categorie</label><select id="category" name="category"><option>Altele</option><option>Tricouri & topuri</option><option>Cămăși & bluze</option><option>Pantaloni & jeans</option><option>Rochii & fuste</option><option>Pulovere & hanorace</option><option>Jachete & paltoane</option><option>Încălțăminte</option><option>Accesorii</option></select></div>
+<div class="field"><label for="purchaseDate">Data cumpărării *</label><input id="purchaseDate" name="purchaseDate" type="date" min="1900-01-01" max="9999-12-31" required></div>
+<div class="field full"><label for="buyPrice">Preț de cumpărare (lei) *</label><input id="buyPrice" name="buyPrice" type="text" inputmode="decimal" placeholder="0,00" required maxlength="15" autocomplete="off"><small>Costul efectiv al articolului; poți include transportul alocat acestuia.</small></div>
+<div class="field full"><label>Starea articolului</label><div class="status-switch"><div class="status-option"><input type="radio" id="stateStock" name="status" value="stock" checked><label for="stateStock">În stoc</label></div><div class="status-option"><input type="radio" id="stateSold" name="status" value="sold"><label for="stateSold">Vândut</label></div></div></div>
+</div>
+<div class="sale-section" id="saleSection" hidden>
+<div class="field"><label for="sellPrice">Preț de vânzare (lei) *</label><input id="sellPrice" name="sellPrice" type="text" inputmode="decimal" placeholder="0,00" maxlength="15" autocomplete="off"></div>
+<div class="field"><label for="saleDate">Data vânzării *</label><input id="saleDate" name="saleDate" type="date" min="1900-01-01" max="9999-12-31"></div>
+<div class="profit-preview"><span>Profitul acestui articol</span><strong id="previewProfit">—</strong></div>
+</div>
+<div class="field" style="margin-top:18px"><label for="notes">Notițe <span>· opțional</span></label><textarea id="notes" name="notes" maxlength="1000" placeholder="Mărime, brand, platformă de vânzare…"></textarea></div>
+<div class="form-error" id="formError" role="alert" hidden></div>
+</div>
+<div class="dialog-footer"><button type="button" class="button" id="cancelDialog">Anulează</button><button type="submit" class="button primary" id="saveButton">Salvează articolul</button></div>
+</form>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script>
+"use strict";
+const KEY="evidenta-haine-revanzare-v1";
+const $=id=>document.getElementById(id);
+const icon=name=>`<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
+const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+const currentMonth=()=>today().slice(0,7);
+const moneyFormat=new Intl.NumberFormat("ro-RO",{minimumFractionDigits:2,maximumFractionDigits:2});
+const shortFormat=new Intl.NumberFormat("ro-RO",{maximumFractionDigits:0});
+const money=cents=>moneyFormat.format(cents/100);
+const dateText=value=>value?value.slice(8,10)+"."+value.slice(5,7)+"."+value.slice(0,4):"";
+const validMonth=m=>/^\d{4}-(0[1-9]|1[0-2])$/.test(m)&&m>="1900-01"&&m<="9999-12";
+function validDate(s){if(!/^\d{4}-\d{2}-\d{2}$/.test(s)||s<"1900-01-01"||s>"9999-12-31")return false;const d=new Date(s+"T12:00:00");return !isNaN(d)&&d.getFullYear()===+s.slice(0,4)&&d.getMonth()+1===+s.slice(5,7)&&d.getDate()===+s.slice(8,10)}
+let state={articles:[],month:currentMonth(),search:"",status:"all",onlyMonth:false};
+let editingId=null,toastTimer,storageBlocked=false;
+function storageWarning(text){$("storageWarning").textContent=text;$("storageWarning").hidden=false}
+try{
+ const saved=localStorage.getItem(KEY);
+ if(saved){
+  const parsed=JSON.parse(saved);
+  if(!parsed||!Array.isArray(parsed.articles))throw new Error("Date invalide");
+  const valid=parsed.articles.every(a=>a&&typeof a.id==="string"&&typeof a.name==="string"&&a.name.trim()&&typeof a.category==="string"&&validDate(a.purchaseDate)&&Number.isSafeInteger(a.buy)&&a.buy>=0&&["stock","sold"].includes(a.status)&&(a.status!=="sold"||(Number.isSafeInteger(a.sell)&&a.sell>=0&&validDate(a.saleDate)&&a.saleDate>=a.purchaseDate)));
+  if(!valid||new Set(parsed.articles.map(a=>a.id)).size!==parsed.articles.length)throw new Error("Date invalide");
+  state={articles:parsed.articles,month:validMonth(parsed.month)?parsed.month:currentMonth(),search:typeof parsed.search==="string"?parsed.search:"",status:["all","stock","sold"].includes(parsed.status)?parsed.status:"all",onlyMonth:parsed.onlyMonth===true};
+ }
+}catch(e){storageBlocked=true;storageWarning("Datele locale nu pot fi citite. Pentru a nu le suprascrie, salvarea este oprită. Verifică setările browserului sau folosește „Șterge toate datele” pentru a reseta aplicația.")}
+function persist(){
+ if(storageBlocked)return false;
+ try{localStorage.setItem(KEY,JSON.stringify(state));return true}
+ catch(e){storageWarning("Browserul nu a putut salva modificările. Datele sunt disponibile doar în această sesiune. Exportă evidența înainte să închizi pagina.");return false}
+}
+function toast(message){clearTimeout(toastTimer);$("toast").textContent=message;$("toast").hidden=false;toastTimer=setTimeout(()=>$("toast").hidden=true,3800)}
+function setStat(id,value,unit){$(id).innerHTML=`${value} <small>${unit}</small>`}
+function shiftMonth(month,delta){const [year,m]=month.split("-").map(Number);const index=year*12+m-1+delta;const y=Math.floor(index/12),n=index%12+1;return `${String(y).padStart(4,"0")}-${String(n).padStart(2,"0")}`}
+function profitOf(a){return a.sell-a.buy}
+function render(){
+ const month=state.month;
+ const sold=state.articles.filter(a=>a.status==="sold"&&a.saleDate.slice(0,7)===month);
+ const stock=state.articles.filter(a=>a.status==="stock");
+ const profit=sold.reduce((t,a)=>t+profitOf(a),0);
+ setStat("profitValue",money(profit),"lei");$("profitValue").classList.toggle("negative",profit<0);
+ setStat("revenueValue",money(sold.reduce((t,a)=>t+a.sell,0)),"lei");
+ setStat("soldValue",sold.length,sold.length===1?"articol":"articole");
+ setStat("stockValue",stock.length,stock.length===1?"articol":"articole");
+ $("stockInvestment").textContent=money(stock.reduce((t,a)=>t+a.buy,0))+" lei";
+ $("totalCount").textContent=state.articles.length;
+ $("monthFilter").value=month;
+ $("prevMonth").disabled=month==="1900-01";$("nextMonth").disabled=month==="9999-12";
+ renderChart();
+ renderList();
+ document.querySelectorAll('[data-action="export"]').forEach(b=>b.disabled=state.articles.length===0);
+ document.querySelectorAll('[data-action="clear"]').forEach(b=>b.disabled=state.articles.length===0&&!storageBlocked);
+}
+function renderChart(){
+ const months=Array.from({length:6},(_,i)=>shiftMonth(state.month,i-5));
+ const values=months.map(m=>state.articles.reduce((s,a)=>s+(a.status==="sold"&&a.saleDate.slice(0,7)===m?profitOf(a):0),0));
+ const max=Math.max(1,...values.map(Math.abs));
+ $("profitChart").innerHTML=months.map((m,i)=>{
+  const value=values[i],current=m===state.month;
+  const d=new Date(m+"-01T12:00:00");
+  const label=d.toLocaleDateString("ro-RO",{month:"short"}).replace(".","");
+  const full=d.toLocaleDateString("ro-RO",{month:"long",year:"numeric"});
+  const amount=money(value)+" lei";
+  return `<div class="chart-col" aria-label="${esc(full+": "+amount)}" title="${esc(full+": "+amount)}"><div class="chart-amount ${value<0?"loss":""}">${value===0?"0":shortFormat.format(value/100)} lei</div><div class="chart-area"><div class="chart-bar ${current?"current":""} ${value<0?"loss":""}" style="height:${Math.abs(value)/max*45}%"></div></div><div class="chart-label ${current?"current":""}">${esc(label)}${m.slice(0,4)!==state.month.slice(0,4)?` '${m.slice(2,4)}`:""}</div></div>`;
+ }).join("");
+ const hasSales=state.articles.some(a=>a.status==="sold"&&months.includes(a.saleDate.slice(0,7)));
+ $("chartFoot").textContent=hasSales?"Profitul se înregistrează în luna vânzării. Sub linie = pierdere.":"Nicio vânzare în această perioadă. Profitul va apărea după prima vânzare.";
+}
+function normalize(s){return s.toLocaleLowerCase("ro-RO").normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function renderList(){
+ const search=normalize(state.search.trim());
+ const list=state.articles.filter(a=>{
+  const match=normalize(a.name+" "+a.category+" "+(a.notes||"")).includes(search);
+  const relevantDate=a.status==="sold"?a.saleDate:a.purchaseDate;
+  return match&&(state.status==="all"||a.status===state.status)&&(!state.onlyMonth||relevantDate.slice(0,7)===state.month);
+ }).sort((a,b)=>(b.status==="sold"?b.saleDate:b.purchaseDate).localeCompare(a.status==="sold"?a.saleDate:a.purchaseDate)||(b.created||0)-(a.created||0));
+ $("tableWrap").hidden=!list.length;
+ $("emptyState").hidden=!!list.length;
+ if(!list.length){
+  const isEmpty=state.articles.length===0;
+  $("emptyState").innerHTML=`<div class="empty-icon">${icon(isEmpty?"shirt":"search")}</div><h3>${isEmpty?"O garderobă nouă începe aici":"Niciun articol găsit"}</h3><p>${isEmpty?"Adaugă prima haină cumpărată. Noi ținem evidența costurilor, vânzărilor și profitului.":"Încearcă altă căutare sau elimină filtrele pentru a vedea toate articolele."}</p><button class="button ${isEmpty?"primary":""}" id="emptyAction">${isEmpty?icon("plus")+"Adaugă primul articol":"Resetează filtrele"}</button>`;
+  $("emptyAction").onclick=isEmpty?()=>openArticle():resetFilters;
+ }
+ $("articleRows").innerHTML=list.map(a=>{
+  const sold=a.status==="sold",p=sold?profitOf(a):0;
+  return `<tr>
+  <td><div class="item-cell"><div class="item-icon">${icon("shirt")}</div><div><div class="item-name">${esc(a.name)}</div><div class="item-meta">${esc(a.category)}</div></div></div></td>
+  <td><div class="amount">${money(a.buy)} lei</div><div class="date-small">${dateText(a.purchaseDate)}</div></td>
+  <td>${sold?`<div class="amount">${money(a.sell)} lei</div><div class="date-small">${dateText(a.saleDate)}</div>`:'<span class="muted">—</span>'}</td>
+  <td>${sold?`<span class="profit ${p<0?"loss":""}">${p>0?"+":""}${money(p)} lei</span>`:'<span class="muted">—</span>'}</td>
+  <td><span class="badge ${sold?"sold":"stock"}">${sold?"Vândut":"În stoc"}</span></td>
+  <td><div class="row-actions"><button class="icon-button" data-edit="${esc(a.id)}" aria-label="${esc("Editează "+a.name)}" title="Editează / înregistrează vânzarea">${icon("edit")}</button><button class="icon-button delete" data-delete="${esc(a.id)}" aria-label="${esc("Șterge "+a.name)}" title="Șterge articolul">${icon("trash")}</button></div></td>
+  </tr>`;
+ }).join("");
+ $("listCount").textContent=`${list.length} ${list.length===1?"articol afișat":"articole afișate"} din ${state.articles.length}`;
+ $("listFooter").textContent=state.onlyMonth?"Vândute: data vânzării · În stoc: data cumpărării":"Toate sumele sunt în lei (RON).";
+}
+function resetFilters(){
+ state.search="";state.status="all";state.onlyMonth=false;
+ $("searchInput").value="";$("statusFilter").value="all";$("onlyMonth").checked=false;
+ persist();renderList();
+}
+$("searchInput").value=state.search;$("statusFilter").value=state.status;$("onlyMonth").checked=state.onlyMonth;
+$("searchInput").addEventListener("input",e=>{state.search=e.target.value;persist();renderList()});
+$("statusFilter").addEventListener("change",e=>{state.status=e.target.value;persist();renderList()});
+$("onlyMonth").addEventListener("change",e=>{state.onlyMonth=e.target.checked;persist();renderList()});
+$("monthFilter").addEventListener("change",e=>{if(validMonth(e.target.value)){state.month=e.target.value;persist();render()}else e.target.value=state.month});
+$("prevMonth").onclick=()=>{if(state.month>"1900-01"){state.month=shiftMonth(state.month,-1);persist();render()}};
+$("nextMonth").onclick=()=>{if(state.month<"9999-12"){state.month=shiftMonth(state.month,1);persist();render()}};
+function parsePrice(text){
+ const clean=String(text).trim().replace(/\s/g,"").replace(",",".");
+ if(!/^\d+(?:\.\d{1,2})?$/.test(clean))return null;
+ const n=Math.round(Number(clean)*100);
+ return Number.isSafeInteger(n)&&n>=0&&n<=100000000000?n:null;
+}
+function syncSale(){
+ const sold=$("stateSold").checked;
+ $("saleSection").hidden=!sold;
+ $("sellPrice").required=sold;$("saleDate").required=sold;
+ $("sellPrice").disabled=!sold;$("saleDate").disabled=!sold;
+ preview();
+}
+function preview(){
+ const buy=parsePrice($("buyPrice").value),sell=parsePrice($("sellPrice").value);
+ const result=buy===null||sell===null?null:sell-buy;
+ $("previewProfit").textContent=result===null?"—":(result>0?"+":"")+money(result)+" lei";
+ $("previewProfit").classList.toggle("loss",result!==null&&result<0);
+}
+function openArticle(id=null){
+ const a=id?state.articles.find(a=>a.id===id):null;if(id&&!a)return;
+ editingId=a?a.id:null;
+ $("articleForm").reset();$("formError").hidden=true;
+ $("dialogTitle").textContent=a?"Editează articolul":"Adaugă un articol";
+ $("saveButton").textContent=a?"Salvează modificările":"Salvează articolul";
+ $("articleName").value=a?a.name:"";
+ $("category").value=a?a.category:"Altele";
+ $("purchaseDate").value=a?a.purchaseDate:today();
+ $("buyPrice").value=a?money(a.buy).replace(/\s/g,""):"";
+ $("stateSold").checked=!!a&&a.status==="sold";$("stateStock").checked=!a||a.status==="stock";
+ $("sellPrice").value=a&&a.status==="sold"?money(a.sell).replace(/\s/g,""):"";
+ $("saleDate").value=a&&a.status==="sold"?a.saleDate:today();
+ $("notes").value=a?a.notes||"":"";
+ syncSale();
+ $("articleDialog").showModal();
+ $("articleName").focus();
+}
+$("addButton").onclick=()=>openArticle();
+$("closeDialog").onclick=()=>$("articleDialog").close();
+$("cancelDialog").onclick=()=>$("articleDialog").close();
+document.querySelectorAll('input[name="status"]').forEach(i=>i.addEventListener("change",syncSale));
+$("buyPrice").addEventListener("input",preview);$("sellPrice").addEventListener("input",preview);
+$("articleForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const name=$("articleName").value.trim(),buy=parsePrice($("buyPrice").value),sold=$("stateSold").checked,sell=sold?parsePrice($("sellPrice").value):null;
+ const purchaseDate=$("purchaseDate").value,saleDate=sold?$("saleDate").value:"";
+ let error="";
+ if(!name)error="Introdu denumirea articolului.";
+ else if(buy===null)error="Introdu un preț de cumpărare valid, între 0 și 1.000.000.000 lei, cu cel mult două zecimale.";
+ else if(!validDate(purchaseDate))error="Alege o dată de cumpărare validă.";
+ else if(sold&&sell===null)error="Introdu un preț de vânzare valid, între 0 și 1.000.000.000 lei, cu cel mult două zecimale.";
+ else if(sold&&!validDate(saleDate))error="Alege o dată de vânzare validă.";
+ else if(sold&&saleDate<purchaseDate)error="Data vânzării nu poate fi înaintea datei cumpărării.";
+ if(error){$("formError").textContent=error;$("formError").hidden=false;return}
+ const old=editingId?state.articles.find(a=>a.id===editingId):null;
+ const a={id:editingId||(globalThis.crypto&&typeof crypto.randomUUID==="function"?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2)),name,category:$("category").value,buy,purchaseDate,status:sold?"sold":"stock",sell,saleDate,notes:$("notes").value.trim(),created:old?old.created:Date.now()};
+ if(editingId)state.articles=state.articles.map(item=>item.id===editingId?a:item);else state.articles.push(a);
+ const saved=persist();
+ $("articleDialog").close();render();
+ toast(saved?(editingId?"Modificările au fost salvate.":"Articolul a fost adăugat."):"Articol actualizat doar în sesiunea curentă. Exportă datele pentru siguranță.");
+});
+$("articleRows").addEventListener("click",e=>{
+ const edit=e.target.closest("[data-edit]"),del=e.target.closest("[data-delete]");
+ if(edit)openArticle(edit.dataset.edit);
+ if(del){
+  const a=state.articles.find(x=>x.id===del.dataset.delete);if(!a)return;
+  if(confirm(`Ștergi articolul „${a.name}”? Această acțiune nu poate fi anulată.`)){
+   state.articles=state.articles.filter(x=>x.id!==a.id);const saved=persist();render();toast(saved?"Articolul a fost șters.":"Articol șters doar în sesiunea curentă.");
+  }
+ }
+});
+function exportCSV(){
+ if(!state.articles.length){toast("Nu există articole de exportat.");return}
+ const cell=v=>{
+  let s=String(v??"");
+  if(/^\s*[=+\-@]/.test(s))s="'"+s;
+  return '"'+s.replace(/"/g,'""')+'"';
+ };
+ const header=["Articol","Categorie","Data cumpărării","Preț cumpărare (RON)","Stare","Data vânzării","Preț vânzare (RON)","Profit (RON)","Notițe"];
+ const lines=state.articles.map(a=>[a.name,a.category,a.purchaseDate,(a.buy/100).toFixed(2).replace(".",","),a.status==="sold"?"Vândut":"În stoc",a.saleDate,a.status==="sold"?(a.sell/100).toFixed(2).replace(".",","):"",a.status==="sold"?(profitOf(a)/100).toFixed(2).replace(".",","):"",a.notes||""]);
+ const csv="\uFEFF"+[header,...lines].map(row=>row.map(cell).join(";")).join("\r\n");
+ const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download=`evidenta-haine-${today()}.csv`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+ toast("Evidența completă a fost exportată în CSV.");
+}
+function clearAll(){
+ if(!confirm("Ștergi definitiv toate articolele și evidența profitului din acest browser? Exportă mai întâi datele dacă vrei să le păstrezi."))return;
+ try{localStorage.removeItem(KEY);storageBlocked=false;$("storageWarning").hidden=true}
+ catch(e){storageWarning("Datele din browser nu au putut fi șterse. Verifică permisiunile pentru stocare locală.");toast("Ștergerea nu a reușit.");return}
+ state={articles:[],month:currentMonth(),search:"",status:"all",onlyMonth:false};
+ $("searchInput").value="";$("statusFilter").value="all";$("onlyMonth").checked=false;
+ persist();render();toast("Toate datele au fost șterse.");
+}
+document.querySelectorAll('[data-action="export"]').forEach(b=>b.onclick=exportCSV);
+document.querySelectorAll('[data-action="clear"]').forEach(b=>b.onclick=clearAll);
+render();
+</script>
+</body>
+</html>
