@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta name="generator" content="jarvis-v1">
-  <meta charset="UTF-8">
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#be123c">
   <meta name="description" content="e. ni. wear — haine confortabile și moderne pentru femei și bărbați, în București. Descoperă piese versatile pentru stilul tău de zi cu zi.">
   <title>e. ni. wear — energie și stil, în București</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23be123c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3Ee.%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
@@ -165,6 +166,7 @@
       html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal{opacity:1;transform:none}.ticker-track{transform:none}.hero::before{transform:none}
     }
   </style>
+  <link rel="stylesheet" href="magazin.css?v=2">
 </head>
 <body id="top">
   <a class="skip" href="#continut">Sari la conținut</a>
@@ -179,14 +181,21 @@
   <header class="site-header">
     <nav class="nav wrap" aria-label="Navigare principală">
       <a class="logo" href="#top" aria-label="e. ni. wear — prima pagină">e. ni. <span>wear</span></a>
-      <button class="menu-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-links">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
       <div class="nav-links" id="nav-links">
+        <a href="#produse">Noutăți</a>
+        <a href="#colectie">Colecție</a>
         <a href="#despre">Despre noi</a>
-        <a href="#produse">Produse</a>
         <a href="#inspiratie">Inspirație</a>
         <a class="nav-contact" href="#contact">Hai în magazin <svg class="icon" aria-hidden="true"><use href="#diagonal"/></svg></a>
+      </div>
+      <div class="nav-actions">
+        <button class="cart-btn" type="button" data-cos aria-label="Deschide coșul">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </button>
+        <button class="menu-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -251,36 +260,47 @@
       </div>
     </section>
 
-    <section class="section products" id="produse" aria-labelledby="products-title">
-      <div class="wrap product-layout">
-        <div class="products-intro reveal">
-          <div class="eyebrow">Produse · Femei & bărbați</div>
-          <h2 id="products-title">Zile diferite.<br><span class="serif">Stilul tău.</span></h2>
-          <p>De la o ținută lejeră la un detaliu care schimbă totul. Descoperă piesele pentru garderoba ta de zi cu zi.</p>
-          <a class="text-link" href="https://wa.me/40722516773?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produse." target="_blank" rel="noopener noreferrer">Întreabă-ne despre produse <svg class="icon" aria-hidden="true"><use href="#diagonal"/></svg></a>
+    <section class="section shop-new" id="produse" aria-labelledby="new-title">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div><div class="eyebrow">Noutăți · Toamnă 2026</div><h2 id="new-title">Abia<br><span class="serif">sosite.</span></h2></div>
+          <div class="rail-side">
+            <p class="section-intro">Piesele noi stau separat de restul colecției, ca să le găsești dintr-o privire.</p>
+            <div class="rail-nav">
+              <button type="button" data-sir="inapoi" aria-label="Produsele dinainte"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+              <button type="button" data-sir="inainte" aria-label="Produsele următoare"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+            </div>
+          </div>
         </div>
-        <div class="product-list reveal">
-          <details class="product-row" open>
-            <summary><span class="product-number">01</span><h3>Rochii casual</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Modele pentru zi sau seară.</p>
-          </details>
-          <details class="product-row">
-            <summary><span class="product-number">02</span><h3>Tricouri</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Bumbac de calitate, modele uni sau imprimate.</p>
-          </details>
-          <details class="product-row">
-            <summary><span class="product-number">03</span><h3>Pantaloni</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Croieli lejere și moderne.</p>
-          </details>
-          <details class="product-row">
-            <summary><span class="product-number">04</span><h3>Hanorace</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Călduroase și practice pentru toamnă.</p>
-          </details>
-          <details class="product-row">
-            <summary><span class="product-number">05</span><h3>Accesorii</h3><span class="plus" aria-hidden="true"></span></summary>
-            <p>Genți, curele și eșarfe la modă.</p>
-          </details>
+        <div class="rail" id="noutati" aria-label="Produse noi"></div>
+      </div>
+    </section>
+
+    <section class="section" id="colectie" aria-labelledby="collection-title">
+      <div class="wrap">
+        <div class="section-top reveal">
+          <div><div class="eyebrow">Toată colecția · Femei &amp; bărbați</div><h2 id="collection-title">Găsești repede<br><span class="serif">ce cauți.</span></h2></div>
+          <p class="section-intro">Caută după nume sau alege o categorie. Intri pe produs, îți alegi mărimea și îl pui în coș.</p>
         </div>
+        <div class="shop-tools">
+          <div class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+            <input type="search" id="cauta" placeholder="Caută: rochie, tricou, geantă…" aria-label="Caută în produse" autocomplete="off" enterkeyhint="search">
+            <button class="clear" type="button" aria-label="Șterge căutarea" hidden>×</button>
+          </div>
+          <div class="sort">
+            <select id="ordine" aria-label="Ordonează produsele">
+              <option value="recomandate">Recomandate</option>
+              <option value="pret-cresc">Preț: de la mic la mare</option>
+              <option value="pret-desc">Preț: de la mare la mic</option>
+              <option value="nume">Nume: de la A la Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="chips" id="filtre" role="group" aria-label="Filtrează produsele"></div>
+        <div class="result-line" id="cate" aria-live="polite"></div>
+        <div class="cards" id="grila"></div>
+        <p class="shop-note">Produsele, prețurile și mărimile de aici sunt exemple, puse ca să se vadă cum arată magazinul. Fotografii ilustrative.</p>
       </div>
     </section>
 
@@ -352,7 +372,7 @@
       </div>
       <div class="footer-bottom">
         <span>e. ni. wear · București · Model de site (demo)</span>
-        <span>Fotografii ilustrative de pe Pixabay: Pexels, hulkiokantabak, 1139623, congerdesign</span>
+        <span>Fotografii ilustrative de pe Pixabay: Pexels, hulkiokantabak, 1139623, congerdesign, chentusoul, Engin_Akyurt, Surprising_Media și alții</span>
       </div>
     </div>
   </footer>
@@ -409,5 +429,7 @@
       }
     })();
   </script>
+  <script src="produse.js?v=2"></script>
+  <script src="magazin.js?v=2"></script>
 </body>
 </html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#be123c">
+  <meta name="description" content="e. ni. wear — haine confortabile și moderne, în București.">
+  <title>Produs — e. ni. wear</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23be123c'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' text-anchor='middle' fill='white'%3Ee.%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    /* aceeași bază ca prima pagină: culori, fonturi, antet și subsol */
+    :root{--red:#be123c;--red-dark:#971031;--ink:#302424;--muted:#706563;--cream:#faf7f2;--pink:#f3e5e4;--line:#e2d9d3;--sans:'DM Sans',sans-serif;--display:'Manrope',sans-serif;--serif:'Playfair Display',serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
+    button,a{-webkit-tap-highlight-color:transparent}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    ::selection{background:var(--red);color:white}
+    :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+    h1,h2,h3,p{margin:0}
+    .wrap{width:min(1280px,calc(100% - 112px));margin-inline:auto}
+    .skip{position:fixed;z-index:100;top:-80px;left:20px;padding:12px 20px;background:var(--red);color:white}
+    .skip:focus{top:12px}
+    .site-header{position:sticky;top:0;z-index:30;background:rgba(250,247,242,.95);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .nav{height:90px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .logo{font-family:var(--display);font-weight:800;font-size:29px;letter-spacing:-1.6px;line-height:1}
+    .logo span{color:var(--red)}
+    .nav-links{display:flex;align-items:center;gap:33px;font-size:13px;font-weight:500}
+    .nav-links>a:not(.nav-contact){position:relative;padding:9px 0}
+    .nav-links>a:not(.nav-contact)::after{content:"";position:absolute;left:0;bottom:3px;width:0;height:1px;background:var(--red);transition:width .25s}
+    .nav-links>a:hover::after{width:100%}
+    .nav-contact{display:flex;align-items:center;gap:16px;border:1px solid var(--ink);padding:11px 19px;border-radius:3px;transition:background .25s,color .25s}
+    .nav-contact:hover{background:var(--ink);color:white}
+    .menu-toggle{display:none;border:0;background:none;padding:12px;color:var(--ink)}
+    .eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase}
+    .eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+    .serif{font-family:var(--serif);font-weight:500;font-style:italic}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:24px;padding:16px 24px;border-radius:3px;background:var(--red);color:white;font-size:13px;font-weight:600;border:1px solid var(--red);transition:background .25s,transform .25s}
+    .button:hover{background:var(--red-dark);transform:translateY(-3px)}
+    .text-link{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:500;border-bottom:1px solid currentColor;padding:5px 0;transition:color .2s}
+    .text-link:hover{color:var(--red)}
+    footer{padding:37px 0 25px;border-top:1px solid var(--line)}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:27px}
+    .footer-slogan{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--muted)}
+    .back-top{display:flex;align-items:center;gap:10px;font-size:11px}
+    .back-top .icon{width:17px;height:17px}
+    .footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--muted)}
+    @media(max-width:1100px){.wrap{width:calc(100% - 64px)}}
+    @media(max-width:800px){.wrap{width:calc(100% - 40px)}.nav{height:74px}.nav-links{gap:19px;font-size:12px}.nav-contact{padding:9px 12px;gap:10px}.logo{font-size:25px}.footer-slogan{font-size:17px}}
+    @media(max-width:600px){
+      .nav{height:70px}.menu-toggle{display:block}
+      .nav-links{display:none;position:fixed;inset:70px 0 auto;background:var(--cream);padding:25px 25px 35px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:10px}
+      .nav-links.open{display:flex}.nav-links>a:not(.nav-contact){font-size:22px;padding:11px 0}.nav-contact{justify-content:space-between;margin-top:10px}
+      .footer-top{flex-wrap:wrap;gap:20px}.footer-slogan{order:3;width:100%;font-size:20px}.footer-bottom{flex-direction:column;gap:10px}.back-top{margin-left:auto}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+  <link rel="stylesheet" href="magazin.css?v=2">
+</head>
+<body id="top">
+  <a class="skip" href="#produs">Sari la produs</a>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="logo" href="./" aria-label="e. ni. wear — prima pagină">e. ni. <span>wear</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="./#produse">Noutăți</a>
+        <a href="./#colectie">Colecție</a>
+        <a href="./#despre">Despre noi</a>
+        <a class="nav-contact" href="./#contact">Hai în magazin <svg class="icon" aria-hidden="true"><use href="#diagonal"/></svg></a>
+      </div>
+      <div class="nav-actions">
+        <button class="cart-btn" type="button" data-cos aria-label="Deschide coșul">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="cart-count" hidden>0</span>
+        </button>
+        <button class="menu-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-links">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pdp wrap" id="produs">
+    <noscript><p style="padding:60px 0;text-align:center">Pentru pagina de produs e nevoie de JavaScript. <a href="./" style="text-decoration:underline">Înapoi la prima pagină</a></p></noscript>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="logo" href="./" aria-label="e. ni. wear — prima pagină">e. ni. <span>wear</span></a>
+        <p class="footer-slogan">îmbracă-te cu energie și stil</p>
+        <a class="back-top" href="./#colectie">Toată colecția <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="footer-bottom">
+        <span>e. ni. wear · București · Model de site (demo)</span>
+        <span>Produse, prețuri și mărimi de exemplu · Fotografii ilustrative de pe Pixabay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {   // meniul de pe telefon, ca pe prima pagină
+      const toggle = document.querySelector('.menu-toggle'), menu = document.querySelector('.nav-links');
+      function closeMenu() {
+        menu.classList.remove('open');
+        document.body.classList.remove('menu-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul');
+      }
+      toggle.addEventListener('click', function () {
+        const open = !menu.classList.contains('open');
+        menu.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); toggle.focus(); }
+      });
+      window.addEventListener('resize', function () { if (window.innerWidth > 600) closeMenu(); });
+    })();
+  </script>
+  <script src="produse.js?v=2"></script>
+  <script src="magazin.js?v=2"></script>
+</body>
+</html>
