@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15803d">
+  <meta name="description" content="Casa Eco&Clean, București. Produse ecologice pentru curățenia casei, de la detergenți eco la accesorii reutilizabile.">
+  <title>Casa Eco&Clean — Curățenie impecabilă, zi de zi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#15803d;--dark:#14271b;--muted:#536359;--paper:#f6faf7;--line:#ccdcd0;--soft:#eaf4ed;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;--cut:22px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;color:var(--dark);background:var(--paper);font-family:"Lora",serif;font-size:16px;line-height:1.7}
+    button,a{-webkit-tap-highlight-color:transparent}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3,.brand,.button,.nav-link{font-family:"Outfit",sans-serif}
+    h1,h2,h3{font-weight:500;line-height:1.06;letter-spacing:-.045em}
+    h1{font-size:clamp(52px,6.3vw,88px)}
+    h2{font-size:clamp(36px,4.2vw,58px)}
+    h3{font-size:25px}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:5px}
+    ::selection{background:var(--green);color:white}
+    .wrap{max-width:1320px;margin:auto;padding:0 36px}
+    .mono{font-family:var(--mono);font-size:11px;line-height:1.6;letter-spacing:.1em;text-transform:uppercase}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--green);margin-bottom:24px}
+    .eyebrow:before{content:"";width:7px;height:7px;background:var(--green);box-shadow:0 0 0 4px var(--soft)}
+    .green{color:var(--green)}
+    .skip{position:fixed;top:-100px;left:20px;z-index:100;background:var(--dark);color:white;padding:12px}
+    .skip:focus{top:12px}
+    header{position:sticky;top:0;z-index:20;background:rgba(246,250,247,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .header-inner{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:23px;font-weight:600;letter-spacing:-.04em;white-space:nowrap}
+    .brand-mark{width:38px;height:38px;color:var(--green)}
+    nav{display:flex;align-items:center;gap:28px}
+    .nav-link{font-size:14px;position:relative}
+    .nav-link:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:1px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+    .nav-link:hover:after{transform:scaleX(1)}
+    .header-phone{font-family:var(--mono);font-size:12px;border-left:1px solid var(--line);padding-left:26px}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);padding:8px 12px;color:var(--dark);font-family:"Outfit",sans-serif}
+    main{padding-top:26px}
+    .frame{position:relative;background:white;border:1px solid var(--line);clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+    .frame:before,.frame:after{content:"";position:absolute;width:32px;height:1px;background:var(--line);z-index:4;pointer-events:none}
+    .frame:before{right:-5px;top:10px;transform:rotate(45deg)}
+    .frame:after{left:-5px;bottom:10px;transform:rotate(45deg)}
+    .section-code{display:flex;justify-content:space-between;gap:15px;padding:14px 24px;border-bottom:1px solid var(--line);color:var(--muted)}
+    .section-code span:last-child{color:var(--green)}
+    .hero{background:#f0f7f2;isolation:isolate}
+    .hero-grid{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(21,128,61,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(21,128,61,.055) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to right,black,transparent)}
+    .hero-glow{position:absolute;width:450px;height:450px;left:5%;top:12%;z-index:-1;background:radial-gradient(circle,rgba(21,128,61,.1),transparent 68%);animation:breathe 9s ease-in-out infinite alternate}
+    @keyframes breathe{to{transform:translate(60px,35px) scale(1.15);opacity:.5}}
+    .hero-content{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;padding:58px 48px 46px;align-items:center}
+    .hero h1{margin-bottom:25px}
+    .hero-copy>p{max-width:390px;color:var(--muted);font-size:17px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:31px}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:22px;padding:15px 22px;font-size:15px;font-weight:500;min-height:52px;background:var(--green);color:white;border:1px solid var(--green);transition:background .2s,transform .2s}
+    .button:hover{background:#106330;transform:translateY(-3px)}
+    .button.secondary{background:transparent;color:var(--dark);border-color:var(--line)}
+    .button.secondary:hover{background:var(--soft)}
+    .button svg{width:18px;height:18px;flex:none}
+    .hero-note{margin-top:30px;display:flex;gap:10px;align-items:center;color:var(--muted)}
+    .hero-note svg{color:var(--green);width:18px;height:18px}
+    .visual{position:relative}
+    .photo-frame{border:1px solid var(--green);padding:9px;background:rgba(255,255,255,.6)}
+    .hero-image{height:410px;clip-path:polygon(0 0,calc(100% - 36px) 0,100% 36px,100% 100%,0 100%)}
+    .visual-label{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:15px 4px 3px;font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:.08em;text-transform:uppercase}
+    .visual-label svg{width:24px;height:24px}
+    .hero-bottom{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:rgba(255,255,255,.65)}
+    .value{display:flex;align-items:center;gap:17px;padding:24px 30px}
+    .value+.value{border-left:1px solid var(--line)}
+    .value svg{width:30px;height:30px;flex:none;color:var(--green)}
+    .value strong{display:block;font:500 16px "Outfit",sans-serif}
+    .value small{font-size:12px;color:var(--muted)}
+    .connector{height:76px;display:flex;justify-content:center;position:relative}
+    .connector:before{content:"";position:absolute;top:0;bottom:0;left:50%;border-left:1px dashed var(--line)}
+    .connector svg{width:150px;height:76px;position:relative}
+    .connector path{fill:none;stroke:var(--green);stroke-width:1.5}
+    .js .connector path{stroke-dasharray:220;stroke-dashoffset:220;transition:stroke-dashoffset 1.4s ease}
+    .js .connector.is-visible path{stroke-dashoffset:0}
+    .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+    .js .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .section-body{padding:48px}
+    .section-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+    .section-heading>p{max-width:350px;font-size:15px;color:var(--muted)}
+    .about-layout{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+    .about-text{font-size:17px;color:var(--muted)}
+    .about-text p+p{margin-top:18px}
+    .advice{margin-top:28px;border:1px solid var(--line);background:var(--soft);padding:22px;display:flex;gap:18px;align-items:flex-start}
+    .advice svg{width:27px;height:27px;color:var(--green);flex:none}
+    .advice h3{font-size:20px;letter-spacing:-.02em;margin-bottom:8px}
+    .advice p{font-size:14px}
+    .about-symbol{display:flex;gap:16px;align-items:center;margin-top:35px;color:var(--green)}
+    .about-symbol svg{width:66px;height:66px}
+    .about-symbol span{max-width:145px}
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .product{padding:29px;min-height:243px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .25s}
+    .product:hover{background:var(--soft)}
+    .product-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;color:var(--green)}
+    .product-top svg{width:38px;height:38px;transition:transform .3s}
+    .product:hover svg{transform:translateY(-4px)}
+    .product h3{font-size:23px;letter-spacing:-.025em;margin-bottom:12px}
+    .product p{font-size:14px;color:var(--muted)}
+    .product.help{background:var(--green);color:white;display:flex;flex-direction:column;justify-content:space-between}
+    .product.help p{color:white;opacity:.9}
+    .product.help a{font:500 15px "Outfit",sans-serif;display:flex;justify-content:space-between;align-items:center;margin-top:24px;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:8px}
+    .gallery{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+    figure{margin:0;min-width:0}
+    .gallery-image{height:285px;overflow:hidden;background:var(--soft)}
+    .gallery-image img{transition:transform .6s}
+    figure:hover img{transform:scale(1.04)}
+    figcaption{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;display:flex;justify-content:space-between;gap:12px;padding-top:14px;color:var(--muted)}
+    .gallery-note{margin-top:25px;color:var(--muted);font-size:12px}
+    .contact-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:45px}
+    .contact-intro{color:var(--muted);margin:20px 0 30px}
+    .contact-row{padding:17px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:95px 1fr;gap:15px}
+    .contact-row .mono{color:var(--green);padding-top:4px}
+    address{font-style:normal;font-size:15px}
+    .contact-row p{font-size:14px}
+    .contact-row a{font-family:"Outfit",sans-serif;font-size:22px}
+    .hours{display:flex;justify-content:space-between;gap:12px}
+    .map-panel{border:1px solid var(--line);background:var(--soft);display:flex;flex-direction:column;min-width:0}
+    iframe{width:100%;height:360px;border:0;display:block;filter:saturate(.65)}
+    .map-footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px}
+    .map-footer a{font:500 14px "Outfit",sans-serif;color:var(--green)}
+    .map-footer .mono{font-size:10px}
+    footer{padding:32px 0 28px}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+    .footer-top .brand{font-size:20px}
+    .footer-top p{font-size:13px;color:var(--muted)}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:18px;font-size:11px;color:var(--muted)}
+    .footer-bottom span:first-child{font-family:var(--mono)}
+    .icons{position:absolute;width:0;height:0;overflow:hidden}
+    @media(min-width:1500px){.hero-content{padding-top:75px;padding-bottom:65px}}
+    @media(max-width:1050px){
+      .wrap{padding:0 24px}.header-phone{display:none}.hero-content{gap:28px;padding:40px 30px}.hero-image{height:370px}
+      .section-body{padding:36px}.about-layout{gap:35px}.value{padding:21px 20px}.value small{font-size:11px}.product{padding:23px}.contact-layout{gap:28px}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:84px}.wrap{padding:0 16px}.header-inner{height:72px}.brand{font-size:21px}.brand-mark{width:32px}
+      .menu-toggle{display:block}nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:22px}nav.open{display:flex}
+      main{padding-top:16px}.section-code{padding:12px 17px;font-size:9px}.section-code span:last-child{text-align:right}
+      .hero-content{grid-template-columns:1fr;padding:34px 23px;gap:32px}h1{font-size:clamp(48px,11vw,72px)}.hero-copy>p{font-size:16px}.hero-image{height:310px}
+      .hero-bottom{grid-template-columns:1fr}.value{padding:17px 23px}.value+.value{border-left:0;border-top:1px solid var(--line)}.value small{font-size:12px}
+      .section-body{padding:30px 23px}.section-heading{display:block;margin-bottom:28px}.section-heading>p{margin-top:22px}.about-layout{grid-template-columns:1fr;gap:26px}.about-symbol{margin-top:24px}.about-text{font-size:15px}
+      .products-grid{grid-template-columns:repeat(2,1fr)}.product{padding:22px 18px;min-height:230px}.product h3{font-size:21px}.product p{font-size:13px}
+      .gallery{grid-template-columns:1fr;gap:28px}.gallery-image{height:310px}.contact-layout{grid-template-columns:1fr;gap:32px}.contact-row{grid-template-columns:80px 1fr}.map-footer{padding:16px}.map-footer .mono{max-width:120px}
+      .connector{height:58px}.connector svg{height:58px}.footer-top{align-items:flex-start;flex-direction:column;gap:12px}.footer-bottom{flex-direction:column;gap:8px}
+    }
+    @media(max-width:390px){.products-grid{grid-template-columns:1fr}.product{min-height:210px}.actions .button{width:100%}.hero-image{height:260px}.hours{display:block}.hours span{display:block}.section-code{letter-spacing:.04em}}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
+      .js .reveal{opacity:1;transform:none}.js .connector path{stroke-dashoffset:0}
+    }
+  </style>
+</head>
+<body>
+  <svg class="icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <symbol id="leaf" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M31 7C14 5 6 15 11 25s23 6 20-18Z"/><path d="M7 34 26 14M17 24l-1-8m7 2 7 1"/></g></symbol>
+      <symbol id="bottle" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16 4h8v6h-8zM16 10v5l-5 5v15h18V20l-5-5v-5M11 24h18"/><path d="M20 28v4m-2-2h4"/></g></symbol>
+      <symbol id="spray" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5h16v5h-9v6l6 6v13H10V22l6-6V10h-3zM22 10l4 6M29 7h5M32 3l3-1M32 11l3 2M10 26h16"/></g></symbol>
+      <symbol id="sponge" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="6" y="11" width="28" height="20" rx="4"/><path d="M6 25h28M13 17h2m6 3h2m4-4h2m-17 6h2"/></g></symbol>
+      <symbol id="scent" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 19h14v16H13zM17 15h6v4M17 12l-4-9m7 9V3m3 9 5-9M17 26c4-5 7-2 5 1-2 3-5 2-5-1Z"/></g></symbol>
+      <symbol id="cloth" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m7 10 21-4 5 24-21 4zM7 10l-3 6 5 21 24-7M13 14l11-2M14 19l11-2M15 24l11-2"/></g></symbol>
+      <symbol id="family" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><circle cx="28" cy="12" r="4"/><circle cx="20" cy="23" r="3"/><path d="M5 30v-6a7 7 0 0 1 9-7m21 13v-6a7 7 0 0 0-9-7M15 34v-3a5 5 0 0 1 10 0v3"/></g></symbol>
+      <symbol id="grid" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="7" width="10" height="10"/><rect x="23" y="7" width="10" height="10"/><rect x="7" y="23" width="10" height="10"/><path d="M23 28h10m-5-5v10"/></g></symbol>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+      <symbol id="chat" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h28v22H17L6 35V7Z"/><path d="M13 15h14M13 21h9"/></g></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#continut">Mergi la conținut</a>
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#acasa" aria-label="Casa Eco&Clean — Acasă">
+        <svg class="brand-mark" aria-hidden="true"><use href="#leaf"/></svg>
+        <span>Casa <span class="green">Eco&Clean</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigatie">Meniu <span aria-hidden="true">+</span></button>
+      <nav id="navigatie" aria-label="Navigare principală">
+        <a class="nav-link" href="#despre">Despre noi</a>
+        <a class="nav-link" href="#produse">Produse</a>
+        <a class="nav-link" href="#galerie">În imagini</a>
+        <a class="nav-link" href="#contact">Contact <span class="green" aria-hidden="true">↗</span></a>
+      </nav>
+      <a class="header-phone" href="tel:+40766662228">+40 766 662 228</a>
+    </div>
+  </header>
+
+  <main id="continut" class="wrap">
+    <section id="acasa" class="frame hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="section-code mono"><span>01 / Casa Eco&Clean</span><span>București · Curățenie cu grijă</span></div>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="eyebrow mono">O casă curată. O alegere eco.</div>
+          <h1 id="hero-title">Curățenie<br><span class="green">impecabilă,</span><br>zi de zi.</h1>
+          <p>Produse ecologice pentru curățenia casei tale. Mai multă grijă pentru spațiul în care trăiești, mai puțin efort în rutina de zi cu zi.</p>
+          <div class="actions">
+            <a class="button" href="#produse">Descoperă produsele <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+            <a class="button secondary" href="https://wa.me/40766662228?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produsele%20ecologice%20de%20cur%C4%83%C8%9Benie.">Întreabă pe WhatsApp</a>
+          </div>
+          <div class="hero-note mono"><svg aria-hidden="true"><use href="#pin"/></svg>Str. Constantin Rădulescu Motru, București</div>
+        </div>
+        <div class="visual">
+          <div class="photo-frame">
+            <div class="hero-image"><img src="img/1.jpg" alt="Produse și accesorii pentru curățenie, cu burete și recipient pentru săpun" fetchpriority="high"></div>
+            <div class="visual-label"><span>Grijă pentru casă / în fiecare zi</span><svg aria-hidden="true"><use href="#leaf"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="value"><svg aria-hidden="true"><use href="#leaf"/></svg><div><strong>Eco-friendly</strong><small>Fără substanțe toxice</small></div></div>
+        <div class="value"><svg aria-hidden="true"><use href="#family"/></svg><div><strong>Sigur pentru familie</strong><small>Ideal și pentru cei mici</small></div></div>
+        <div class="value"><svg aria-hidden="true"><use href="#grid"/></svg><div><strong>Gamă variată</strong><small>Soluții pentru orice nevoie</small></div></div>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true"><svg viewBox="0 0 150 76"><path d="M75 0v20l30 18v18L75 76"/></svg></div>
+
+    <section id="despre" class="frame reveal" aria-labelledby="about-title">
+      <div class="section-code mono"><span>02 / Despre noi</span><span>Casă + familie + mediu</span></div>
+      <div class="section-body about-layout">
+        <div>
+          <div class="eyebrow mono">Grija începe cu alegerile mici</div>
+          <h2 id="about-title">Bine pentru casă.<br><span class="green">Cu grijă pentru natură.</span></h2>
+          <div class="about-symbol"><svg aria-hidden="true"><use href="#leaf"/></svg><span class="mono">Mai simplu.<br>Mai curat.<br>Mai aproape de natură.</span></div>
+        </div>
+        <div class="about-text">
+          <p>La Casa Eco&Clean găsești produse de curățenie ecologice și eficiente, ideale pentru orice spațiu. Alegem soluții cu grijă pentru familia ta și pentru mediul înconjurător.</p>
+          <p>Fie că împrospătezi bucătăria sau te ocupi de întreaga casă, suntem aici să te ajutăm să transformi curățenia într-o rutină ușoară.</p>
+          <div class="advice">
+            <svg aria-hidden="true"><use href="#chat"/></svg>
+            <div><h3>Consultanță gratuită</h3><p>Nu știi ce să alegi? Îți oferim recomandări pentru orice tip de curățenie.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true"><svg viewBox="0 0 150 76"><path d="M75 0v20L45 38v18l30 20"/></svg></div>
+
+    <section id="produse" class="frame reveal" aria-labelledby="products-title">
+      <div class="section-code mono"><span>03 / Produse</span><span>Rutina ta, în variantă eco</span></div>
+      <div class="section-body">
+        <div class="section-heading">
+          <div><div class="eyebrow mono">Soluții pentru întreaga casă</div><h2 id="products-title">Tot ce îți trebuie.<br><span class="green">Nimic complicat.</span></h2></div>
+          <p>De la suprafețe curate la detalii proaspete, găsește produsele potrivite pentru fiecare pas al rutinei tale.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product">
+            <div class="product-top"><span class="mono">P / 01</span><svg aria-hidden="true"><use href="#bottle"/></svg></div>
+            <h3>Detergenți eco</h3><p>Soluții prietenoase cu mediul pentru suprafețe multiple.</p>
+          </article>
+          <article class="product">
+            <div class="product-top"><span class="mono">P / 02</span><svg aria-hidden="true"><use href="#spray"/></svg></div>
+            <h3>Degresanți naturali</h3><p>Puternici împotriva grăsimii, blânzi cu pielea.</p>
+          </article>
+          <article class="product">
+            <div class="product-top"><span class="mono">P / 03</span><svg aria-hidden="true"><use href="#sponge"/></svg></div>
+            <h3>Bureți biodegradabili</h3><p>Curățenie eficientă, fără plastic.</p>
+          </article>
+          <article class="product">
+            <div class="product-top"><span class="mono">P / 04</span><svg aria-hidden="true"><use href="#scent"/></svg></div>
+            <h3>Odorizante naturale</h3><p>Arome proaspete pentru o casă în care îți face plăcere să revii.</p>
+          </article>
+          <article class="product">
+            <div class="product-top"><span class="mono">P / 05</span><svg aria-hidden="true"><use href="#cloth"/></svg></div>
+            <h3>Șervețele reutilizabile</h3><p>Eco și practice pentru întreaga casă.</p>
+          </article>
+          <article class="product help">
+            <div><div class="mono" style="margin-bottom:24px">Un sfat bun face diferența</div><h3>Ce vrei să cureți?</h3><p style="margin-top:12px">Spune-ne de ce ai nevoie. Te ajutăm să alegi.</p></div>
+            <a href="https://wa.me/40766662228?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produsele%20ecologice%20de%20cur%C4%83%C8%9Benie.">Hai să vorbim <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true"><svg viewBox="0 0 150 76"><path d="M75 0v20l30 18v18L75 76"/></svg></div>
+
+    <section id="galerie" class="frame reveal" aria-labelledby="gallery-title">
+      <div class="section-code mono"><span>04 / În imagini</span><span>Detaliile unei case îngrijite</span></div>
+      <div class="section-body">
+        <div class="section-heading">
+          <div><div class="eyebrow mono">Inspirație pentru rutina ta</div><h2 id="gallery-title">Curat, până la<br><span class="green">ultimul detaliu.</span></h2></div>
+          <p>Gesturi simple, accesorii utile și puțină grijă în fiecare zi.</p>
+        </div>
+        <div class="gallery">
+          <figure><div class="gallery-image"><img src="img/2.jpg" alt="Lavete și accesorii pentru curățenia de zi cu zi" loading="lazy"></div><figcaption><span>01 / Rutina de zi cu zi</span><span>+</span></figcaption></figure>
+          <figure><div class="gallery-image"><img src="img/3.jpg" alt="Bureți și produse pentru întreținerea suprafețelor" loading="lazy"></div><figcaption><span>02 / Suprafețe îngrijite</span><span>+</span></figcaption></figure>
+          <figure><div class="gallery-image"><img src="img/4.jpg" alt="Accesorii și soluții pentru curățenia casei" loading="lazy"></div><figcaption><span>03 / Grijă în fiecare gest</span><span>+</span></figcaption></figure>
+        </div>
+        <p class="gallery-note">Fotografii ilustrative. Pentru detalii despre produsele disponibile, scrie-ne sau sună-ne.</p>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true"><svg viewBox="0 0 150 76"><path d="M75 0v20L45 38v18l30 20"/></svg></div>
+
+    <section id="contact" class="frame reveal" aria-labelledby="contact-title">
+      <div class="section-code mono"><span>05 / Contact</span><span>44.41378° N / 26.10847° E</span></div>
+      <div class="section-body contact-layout">
+        <div>
+          <div class="eyebrow mono">Ne găsești în București</div>
+          <h2 id="contact-title">O casă mai curată<br>începe cu <span class="green">o conversație.</span></h2>
+          <p class="contact-intro">Vino să descoperi produsele sau întreabă-ne ce soluție se potrivește casei tale.</p>
+          <div class="contact-row"><span class="mono">Adresă</span><address>Strada Constantin Rădulescu Motru<br>București</address></div>
+          <div class="contact-row"><span class="mono">Telefon</span><a href="tel:+40766662228">+40 766 662 228</a></div>
+          <div class="contact-row">
+            <span class="mono">Program</span>
+            <div><p class="hours"><span>Luni – Vineri</span><span>8:30 – 19:00</span></p><p class="hours"><span>Sâmbătă</span><span>8:30 – 15:00</span></p></div>
+          </div>
+          <div class="actions"><a class="button" href="https://wa.me/40766662228?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produsele%20ecologice%20de%20cur%C4%83%C8%9Benie.">Întreabă pe WhatsApp <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </div>
+        <div class="map-panel">
+          <div class="section-code mono"><span>Localizare / București</span><span aria-hidden="true">⊕</span></div>
+          <iframe title="Localizarea Casa Eco&Clean pe OpenStreetMap" src="https://www.openstreetmap.org/export/embed.html?bbox=26.104471,44.411776499999995,26.112471000000003,44.4157765&layer=mapnik&marker=44.4137765,26.108471" loading="lazy"></iframe>
+          <div class="map-footer"><span class="mono">Te așteptăm la Casa Eco&Clean</span><a href="https://www.google.com/maps/search/?api=1&query=Casa+Eco%26Clean+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#acasa"><svg class="brand-mark" aria-hidden="true"><use href="#leaf"/></svg><span>Casa <span class="green">Eco&Clean</span></span></a>
+      <p>Curățenie impecabilă, zi de zi.</p>
+      <a class="mono green" href="#acasa">Înapoi sus ↑</a>
+    </div>
+    <div class="footer-bottom"><span>Model de site (demo)</span><span>Fotografii ilustrative de pe Pixabay: Monfocus, congerdesign, ds_30</span></div>
+  </footer>
+
+  <script>
+    (function(){
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if ('IntersectionObserver' in window && !reduced) {
+        document.documentElement.classList.add('js');
+        const observer = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {threshold:0.08});
+        document.querySelectorAll('.reveal, .connector').forEach(function(el){observer.observe(el)});
+      }
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('navigatie');
+      function closeMenu(){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.innerHTML='Meniu <span aria-hidden="true">+</span>';
+      }
+      toggle.addEventListener('click', function(){
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        nav.classList.toggle('open', open);
+        toggle.innerHTML = open ? 'Închide <span aria-hidden="true">−</span>' : 'Meniu <span aria-hidden="true">+</span>';
+      });
+      nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape' && nav.classList.contains('open')){closeMenu();toggle.focus()}});
+      window.addEventListener('resize',function(){if(window.innerWidth>760)closeMenu()});
+    })();
+  </script>
+</body>
+</html>
