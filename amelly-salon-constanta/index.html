@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#be123c">
+  <meta name="description" content="Amelly Salon, Constanța. Tuns, spălat, îngrijirea gheruțelor și răsfăț pentru prietenul tău blănos. Programează o vizită pe WhatsApp.">
+  <title>Amelly Salon — Iubire pentru prietenii blănoși</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #be123c;
+      --rose-dark: #981035;
+      --ink: #352532;
+      --muted: #71636c;
+      --paper: #faf8f9;
+      --line: #e8dfe4;
+      --pink: #fbe9ee;
+      --radius: 32px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Archivo", sans-serif; font-size: 16px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    svg { width: 24px; height: 24px; flex-shrink: 0; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2 { font-family: "Archivo Black", sans-serif; font-weight: 400; letter-spacing: -.055em; line-height: 1.06; }
+    h2 { font-size: clamp(34px, 4.4vw, 58px); }
+    h3 { line-height: 1.25; }
+    ::selection { color: white; background: var(--rose); }
+    :focus-visible { outline: 3px solid var(--rose); outline-offset: 5px; }
+    .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+    .wrap { width: min(1280px, calc(100% - 64px)); margin-inline: auto; }
+    .skip { position: fixed; left: 20px; top: -100px; padding: 10px 20px; background: white; z-index: 100; border-radius: 12px; }
+    .skip:focus { top: 15px; }
+    .header { position: sticky; top: 0; z-index: 30; background: rgba(250,248,249,.94); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; gap: 12px; align-items: center; }
+    .brand-mark { display: grid; place-items: center; background: var(--rose); color: white; width: 43px; height: 43px; border-radius: 16px 16px 19px 10px; }
+    .brand-mark svg { width: 27px; height: 27px; }
+    .brand-name { font-size: 22px; font-weight: 800; letter-spacing: -.8px; line-height: 1.1; }
+    .brand-name small { display: block; font-size: 10px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 6px; font-weight: 600; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600; }
+    .nav-links > a:not(.button) { position: relative; }
+    .nav-links > a:not(.button)::after { content: ""; position: absolute; height: 2px; background: var(--rose); left: 0; bottom: -5px; width: 0; transition: width .25s; }
+    .nav-links > a:hover::after { width: 100%; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 23px; border-radius: 100px; background: var(--rose); color: white; font-weight: 700; font-size: 14px; line-height: 1.4; border: 1px solid transparent; transition: transform .25s, background .25s, box-shadow .25s; }
+    .button:hover { background: var(--rose-dark); transform: translateY(-3px); box-shadow: 0 8px 22px #be123c20; }
+    .button svg { width: 18px; height: 18px; }
+    .button.small { padding: 12px 20px; }
+    .button.outline { background: transparent; color: var(--ink); border-color: #35253235; }
+    .button.outline:hover { background: white; }
+    .menu-toggle { display: none; background: white; border: 1px solid var(--line); border-radius: 14px; padding: 10px; cursor: pointer; }
+    main { padding-top: 26px; }
+    .chapter { margin-bottom: 30px; perspective: 1400px; }
+    .window { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: white; box-shadow: 0 10px 35px #35253204; transform-origin: 50% 30%; }
+    .window-bar { min-height: 47px; display: flex; align-items: center; justify-content: space-between; padding: 0 25px; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.85); gap: 16px; }
+    .dots { display: flex; gap: 7px; width: 48px; }
+    .dots i { width: 9px; height: 9px; border-radius: 50%; background: #d9cbd2; }
+    .dots i:first-child { background: #df7791; }
+    .dots i:nth-child(2) { background: #efc585; }
+    .dots i:nth-child(3) { background: #adcdbb; }
+    .window-title { font-size: 11px; letter-spacing: 1.6px; font-weight: 600; color: var(--muted); text-transform: uppercase; }
+    .window-bar > svg { width: 15px; height: 15px; color: #b7a2ad; }
+    .js .reveal { opacity: 0; transform: rotateX(8deg) rotateY(-3deg) translateY(50px); transition: opacity .9s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.visible { opacity: 1; transform: rotateX(0) rotateY(0) translateY(0); }
+    .hero-body { min-height: 645px; padding: 64px 55px; background: linear-gradient(120deg, #fff1f4 5%, #ffd5e3 49%, #f8b6cc 100%); position: relative; isolation: isolate; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 36px; overflow: hidden; }
+    .blob { position: absolute; border-radius: 40% 60% 65% 35% / 55% 40% 60% 45%; z-index: -1; pointer-events: none; animation: float 15s ease-in-out infinite alternate; }
+    .blob.one { width: 470px; height: 470px; background: #f39db94d; right: -180px; top: -160px; }
+    .blob.two { width: 350px; height: 320px; background: #ffffff66; left: 25%; bottom: -240px; animation-delay: -6s; }
+    .blob.three { width: 240px; height: 240px; background: #e87c9a25; left: -140px; top: 40%; animation-delay: -9s; }
+    @keyframes float { to { transform: translate(28px, 20px) rotate(18deg); border-radius: 60% 40% 35% 65% / 40% 60% 40% 60%; } }
+    .eyebrow { display: flex; align-items: center; gap: 9px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.7px; margin-bottom: 23px; color: var(--rose); }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; background: currentColor; border-radius: 50%; }
+    h1 { font-size: clamp(45px, 5.4vw, 72px); max-width: 660px; }
+    h1 span { color: var(--rose); }
+    .hero-copy > p { margin-top: 25px; max-width: 355px; font-size: 17px; color: #64505d; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-note { display: flex; align-items: center; gap: 9px; margin-top: 28px; font-size: 12px; color: #745462; }
+    .hero-note svg { width: 17px; height: 17px; }
+    .hero-visual { position: relative; min-width: 0; padding: 16px 10px; }
+    .photo-halo { position: absolute; inset: 0; border: 1px solid #ffffffa8; border-radius: 43% 43% 35% 40%; transform: rotate(7deg); }
+    .hero-photo { height: 465px; border-radius: 45% 45% 35% 35%; overflow: hidden; border: 8px solid #ffffff80; position: relative; }
+    .hero-photo img { transition: transform .8s ease; }
+    .hero-photo:hover img { transform: scale(1.045); }
+    .photo-detail { display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 12px; font-weight: 600; color: #704452; margin-top: 18px; }
+    .photo-detail svg { width: 18px; height: 18px; }
+    .hero-paw { position: absolute; right: -5px; top: -4px; width: 60px; height: 60px; color: var(--rose); transform: rotate(20deg); }
+    .section-inner { padding: 60px 55px; }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 36px; }
+    .section-head h2 { max-width: 650px; }
+    .section-head > p { max-width: 310px; color: var(--muted); font-size: 15px; }
+    .services-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 68px; }
+    .services-intro p { color: var(--muted); margin-top: 24px; max-width: 340px; }
+    .service-decoration { display: flex; align-items: center; gap: 16px; margin-top: 35px; }
+    .icon-bubble { display: grid; place-items: center; width: 65px; height: 65px; border-radius: 25px 30px 22px 30px; background: var(--pink); color: var(--rose); }
+    .icon-bubble:nth-child(2) { background: #edf3ee; color: #467859; }
+    .icon-bubble:nth-child(3) { background: #f4eef8; color: #806095; }
+    .icon-bubble svg { width: 28px; height: 28px; }
+    .service { display: grid; grid-template-columns: 36px 1fr 32px; align-items: center; gap: 16px; padding: 23px 12px; border-bottom: 1px solid var(--line); border-radius: 12px 12px 0 0; transition: background .25s, padding .25s; }
+    .service:first-child { padding-top: 5px; }
+    .service:last-child { border-bottom: 0; }
+    .service:hover { background: #fdf4f7; padding-left: 20px; }
+    .service-number { font-size: 12px; color: var(--rose); font-weight: 700; align-self: start; padding-top: 4px; }
+    .service h3 { font-size: 21px; letter-spacing: -.5px; }
+    .service p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+    .service > svg { color: #c597a6; width: 20px; height: 20px; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 65px; align-items: center; }
+    .about-photo { height: 420px; border-radius: 100px 30px 100px 30px; overflow: hidden; background: var(--pink); }
+    .about-copy p { color: var(--muted); margin-top: 22px; }
+    .about-copy .text-link { margin-top: 25px; }
+    .text-link { display: inline-flex; gap: 12px; align-items: center; color: var(--rose); font-size: 14px; font-weight: 700; }
+    .text-link svg { width: 19px; height: 19px; transition: transform .25s; }
+    .text-link:hover svg { transform: translateX(5px); }
+    .advantages { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .advantage { background: #f7f5f6; border: 1px solid #eee8eb; border-radius: 24px; padding: 25px; display: flex; gap: 15px; transition: transform .25s; }
+    .advantage:hover { transform: translateY(-4px); }
+    .advantage .emoji { font-size: 26px; line-height: 1.2; }
+    .advantage h3 { font-size: 16px; }
+    .advantage p { color: var(--muted); font-size: 13px; margin-top: 7px; line-height: 1.5; }
+    .gallery-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 18px; }
+    figure { margin: 0; min-width: 0; }
+    .gallery-image { height: 315px; border-radius: 26px; overflow: hidden; background: var(--pink); }
+    .gallery-grid figure:nth-child(2) .gallery-image { border-radius: 90px 90px 26px 26px; }
+    .gallery-image img { transition: transform .6s; }
+    .gallery-image:hover img { transform: scale(1.06); }
+    figcaption { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 13px; color: var(--muted); }
+    figcaption span { color: var(--rose); font-size: 10px; font-weight: 700; }
+    .gallery-note { font-size: 11px; color: var(--muted); margin-top: 26px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    .contact-copy { position: relative; overflow: hidden; padding: 55px; background: #fcecf1; }
+    .contact-copy h2 { max-width: 430px; }
+    .contact-copy > p { max-width: 350px; color: var(--muted); margin-top: 24px; }
+    .contact-copy .hero-actions { flex-direction: column; align-items: flex-start; }
+    .phone-link { display: inline-flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; margin-top: 25px; letter-spacing: -.5px; }
+    .phone-link:hover { color: var(--rose); }
+    .location { display: flex; gap: 10px; align-items: center; margin-top: 30px; font-size: 14px; font-weight: 600; }
+    .contact-map { display: flex; flex-direction: column; background: #f1f3ef; min-height: 520px; }
+    .contact-map iframe { display: block; border: 0; width: 100%; flex: 1; min-height: 360px; }
+    .map-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; background: white; border-top: 1px solid var(--line); padding: 23px 26px; }
+    .map-footer span { font-size: 12px; color: var(--muted); }
+    footer { padding: 16px 0 35px; }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding: 15px 0 28px; }
+    .footer-top > p { color: var(--muted); font-size: 13px; }
+    .footer-bottom { border-top: 1px solid var(--line); padding-top: 22px; display: flex; justify-content: space-between; gap: 20px; font-size: 11px; color: var(--muted); }
+    @media (min-width: 1500px) { .hero-body { min-height: 700px; } }
+    @media (max-width: 1050px) {
+      .wrap { width: calc(100% - 40px); }
+      .nav-links { gap: 20px; }
+      .hero-body, .section-inner { padding: 45px 35px; }
+      .hero-body { gap: 20px; min-height: 580px; }
+      h1 { font-size: 54px; }
+      .hero-photo { height: 400px; }
+      .services-layout { gap: 35px; }
+      .about-grid { gap: 35px; }
+      .advantages { gap: 12px; }
+      .advantage { padding: 20px 15px; gap: 10px; }
+      .contact-copy { padding: 45px 35px; }
+      .gallery-image { height: 260px; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 85px; }
+      .wrap { width: calc(100% - 28px); }
+      .nav { min-height: 76px; }
+      .brand-name { font-size: 20px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links { display: none; position: absolute; left: 14px; right: 14px; top: 82px; padding: 24px; background: white; border: 1px solid var(--line); border-radius: 24px; box-shadow: 0 15px 35px #35253215; align-items: stretch; gap: 20px; flex-direction: column; }
+      .nav-links.open { display: flex; }
+      main { padding-top: 16px; }
+      .chapter { margin-bottom: 20px; }
+      .window { border-radius: 25px; }
+      .window-bar { padding: 0 19px; min-height: 42px; }
+      .window-title { font-size: 9px; letter-spacing: 1px; }
+      .hero-body { grid-template-columns: 1fr; padding: 36px 26px 28px; gap: 30px; }
+      h1 { font-size: clamp(43px, 8.6vw, 64px); max-width: 560px; }
+      .hero-copy > p { font-size: 16px; margin-top: 20px; }
+      .hero-actions { margin-top: 25px; }
+      .hero-note { margin-top: 20px; }
+      .hero-visual { width: min(440px, 100%); margin-inline: auto; padding: 10px; }
+      .hero-photo { height: 360px; }
+      .hero-paw { width: 45px; height: 45px; right: 4px; }
+      .section-inner { padding: 35px 26px; }
+      .services-layout, .about-grid { grid-template-columns: 1fr; gap: 35px; }
+      .services-intro p { max-width: 100%; margin-top: 18px; }
+      .service-decoration { margin-top: 22px; }
+      .icon-bubble { width: 48px; height: 48px; border-radius: 18px; }
+      .icon-bubble svg { width: 23px; height: 23px; }
+      .service { padding: 20px 0; gap: 8px; grid-template-columns: 28px 1fr 20px; }
+      .service h3 { font-size: 19px; }
+      .service p { font-size: 13px; }
+      .about-photo { height: 320px; border-radius: 70px 25px; }
+      .about-copy { grid-row: 1; }
+      .advantages { grid-template-columns: 1fr; margin-top: 30px; }
+      .advantage { padding: 22px; gap: 18px; }
+      .section-head { display: block; margin-bottom: 28px; }
+      .section-head > p { margin-top: 18px; max-width: 100%; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 25px; }
+      .gallery-image { height: 310px; }
+      .gallery-grid figure:nth-child(2) .gallery-image { border-radius: 26px 70px 26px 70px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-copy { padding: 35px 26px; }
+      .contact-map { min-height: 380px; }
+      .contact-map iframe { min-height: 310px; }
+      .map-footer { padding: 19px 22px; }
+      .footer-top { align-items: flex-start; flex-direction: column; gap: 18px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 380px) {
+      .hero-body, .section-inner, .contact-copy { padding-inline: 20px; }
+      h1 { font-size: 39px; }
+      .button { padding: 15px 18px; font-size: 13px; }
+      .hero-photo { height: 290px; }
+      .map-footer { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="paw" viewBox="0 0 32 32">
+      <ellipse cx="7" cy="11" rx="3.5" ry="4.5" fill="currentColor" transform="rotate(-24 7 11)"/>
+      <ellipse cx="14" cy="7" rx="3.4" ry="4.5" fill="currentColor" transform="rotate(-8 14 7)"/>
+      <ellipse cx="22" cy="8" rx="3.4" ry="4.5" fill="currentColor" transform="rotate(16 22 8)"/>
+      <ellipse cx="27" cy="15" rx="3.2" ry="4.2" fill="currentColor" transform="rotate(29 27 15)"/>
+      <path d="M8 23c0-4 4-9 8-9s7 4 9 8c2 5-2 8-6 6-2-1-4-1-6 0-4 2-7-1-5-5Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="m7 3 3 5-2 2c1 3 3 5 6 6l2-2 5 3-1 4C11 22 2 13 3 4l4-1Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M20 5c-3-3-6-1-8 1-2-2-5-4-8-1-5 5 2 11 8 15 6-4 13-10 8-15Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="scissors" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="18" cy="17" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m8 15 10-12M16 15 6 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="drop" viewBox="0 0 24 24"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 15c0 2 1 3 3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="sparkle" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5A9 9 0 1 1 21 11.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 10h8M8 14h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  </svg>
+  <a class="skip" href="#continut">Sari la conținut</a>
+
+  <header class="header">
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="brand" href="#acasa" aria-label="Amelly Salon — Acasă">
+        <span class="brand-mark"><svg aria-hidden="true"><use href="#paw"/></svg></span>
+        <span class="brand-name">amelly salon<small>Grijă & răsfăț · Constanța</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Deschide meniul">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#servicii">Servicii</a>
+        <a href="#despre">Despre noi</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+        <a class="button small" href="https://wa.me/40752850959?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sesiune%20pentru%20animalul%20meu%20de%20companie." target="_blank" rel="noopener noreferrer">Hai la răsfăț <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap" id="continut">
+    <section class="chapter" id="acasa" aria-labelledby="hero-title">
+      <div class="window reveal">
+        <div class="window-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">Amelly · locul lor de răsfăț</span>
+          <svg aria-hidden="true"><use href="#paw"/></svg>
+        </div>
+        <div class="hero-body">
+          <div class="blob one"></div><div class="blob two"></div><div class="blob three"></div>
+          <div class="hero-copy">
+            <div class="eyebrow">Salon pentru animale · Constanța</div>
+            <h1 id="hero-title">Iubire pentru prietenii <span>blănoși.</span></h1>
+            <p>Îngrijim cu grijă și răsfăț animalele de companie. Cu răbdare, blândețe și atenție la fiecare lăbuță.</p>
+            <div class="hero-actions">
+              <a class="button" href="https://wa.me/40752850959?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sesiune%20pentru%20animalul%20meu%20de%20companie." target="_blank" rel="noopener noreferrer">Programează-te pe WhatsApp <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+              <a class="button outline" href="#servicii">Vezi serviciile</a>
+            </div>
+            <div class="hero-note"><svg aria-hidden="true"><use href="#heart"/></svg>Blăniță îngrijită. Prieten răsfățat.</div>
+          </div>
+          <div class="hero-visual">
+            <div class="photo-halo" aria-hidden="true"></div>
+            <div class="hero-photo"><img src="img/1.jpg" alt="Câine îngrijit într-un salon de grooming — fotografie ilustrativă" fetchpriority="high"></div>
+            <svg class="hero-paw" aria-hidden="true"><use href="#paw"/></svg>
+            <div class="photo-detail"><svg aria-hidden="true"><use href="#sparkle"/></svg>Un pic de răsfăț face toată diferența.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="servicii" aria-labelledby="services-title">
+      <div class="window reveal">
+        <div class="window-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">01 · Meniul de îngrijire</span>
+          <svg aria-hidden="true"><use href="#paw"/></svg>
+        </div>
+        <div class="section-inner services-layout">
+          <div class="services-intro">
+            <div class="eyebrow">Servicii</div>
+            <h2 id="services-title">Din vârful urechilor până la lăbuțe.</h2>
+            <p>O tunsoare, o baie sau mici detalii care contează. Alegem împreună îngrijirea potrivită pentru prietenul tău.</p>
+            <div class="service-decoration" aria-hidden="true">
+              <span class="icon-bubble"><svg><use href="#scissors"/></svg></span>
+              <span class="icon-bubble"><svg><use href="#drop"/></svg></span>
+              <span class="icon-bubble"><svg><use href="#sparkle"/></svg></span>
+            </div>
+          </div>
+          <div class="service-list">
+            <article class="service"><span class="service-number">01</span><div><h3>Tuns câini</h3><p>Tăiere și aranjare a blănii pentru orice rasă.</p></div><svg aria-hidden="true"><use href="#scissors"/></svg></article>
+            <article class="service"><span class="service-number">02</span><div><h3>Spălat și uscat</h3><p>Spălarea blăniței și uscare blândă.</p></div><svg aria-hidden="true"><use href="#drop"/></svg></article>
+            <article class="service"><span class="service-number">03</span><div><h3>Tăiat gheare</h3><p>Scurtare sigură a gheruțelor, cu grijă.</p></div><svg aria-hidden="true"><use href="#paw"/></svg></article>
+            <article class="service"><span class="service-number">04</span><div><h3>Curățat urechi</h3><p>Îngrijire atentă pentru urechile animalului.</p></div><svg aria-hidden="true"><use href="#heart"/></svg></article>
+            <article class="service"><span class="service-number">05</span><div><h3>Coafat și parfum</h3><p>Blăniță aranjată și parfumare discretă.</p></div><svg aria-hidden="true"><use href="#sparkle"/></svg></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="despre" aria-labelledby="about-title">
+      <div class="window reveal">
+        <div class="window-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">02 · Oameni cu drag de animale</span>
+          <svg aria-hidden="true"><use href="#paw"/></svg>
+        </div>
+        <div class="section-inner">
+          <div class="about-grid">
+            <div class="about-photo"><img src="img/2.jpg" alt="Îngrijirea atentă a gheruțelor unui câine — fotografie ilustrativă" loading="lazy"></div>
+            <div class="about-copy">
+              <div class="eyebrow">Despre Amelly Salon</div>
+              <h2 id="about-title">Mâini atente.<br>Multă afecțiune.</h2>
+              <p>La Amelly Salon, animalele tale de companie se bucură de atenție și afecțiune la fiecare vizită. Folosim produse de calitate și lucrăm cu răbdare, pentru ca experiența să fie plăcută atât pentru tine, cât și pentru prietenul tău blănos.</p>
+              <p>Fie că e vorba de o tunsoare sau doar de un spălat, le facem să se simtă speciale.</p>
+              <a class="text-link" href="#contact">Hai să vorbim despre prietenul tău <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+            </div>
+          </div>
+          <div class="advantages">
+            <article class="advantage"><span class="emoji" aria-hidden="true">💖</span><div><h3>Blândețe maximă</h3><p>O abordare calmă, pentru animale liniștite.</p></div></article>
+            <article class="advantage"><span class="emoji" aria-hidden="true">🚿</span><div><h3>Curățenie garantată</h3><p>Salon igienizat după fiecare vizită.</p></div></article>
+            <article class="advantage"><span class="emoji" aria-hidden="true">🎀</span><div><h3>Rezultate deosebite</h3><p>Un prieten care arată grozav, de la urechi la coadă.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="galerie" aria-labelledby="gallery-title">
+      <div class="window reveal">
+        <div class="window-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">03 · Blănițe & detalii</span>
+          <svg aria-hidden="true"><use href="#paw"/></svg>
+        </div>
+        <div class="section-inner">
+          <div class="section-head">
+            <div><div class="eyebrow">Galerie de inspirație</div><h2 id="gallery-title">Răsfățul se vede.</h2></div>
+            <p>Blănițe, lăbuțe și mici gesturi de îngrijire. O privire în lumea prietenilor noștri blănoși.</p>
+          </div>
+          <div class="gallery-grid">
+            <figure><div class="gallery-image"><img src="img/3.jpg" alt="Câine în timpul îngrijirii blănii — imagine ilustrativă" loading="lazy"></div><figcaption><span>01</span>Grijă pentru fiecare blăniță</figcaption></figure>
+            <figure><div class="gallery-image"><img src="img/4.jpg" alt="Aranjarea blănii unui câine cu instrumente de grooming — imagine ilustrativă" loading="lazy"></div><figcaption><span>02</span>Detalii care fac diferența</figcaption></figure>
+            <figure><div class="gallery-image"><img src="img/5.jpg" alt="Îngrijirea și coafarea unui câine — imagine ilustrativă" loading="lazy"></div><figcaption><span>03</span>Un strop de răsfăț</figcaption></figure>
+          </div>
+          <p class="gallery-note">Fotografiile sunt ilustrative și nu reprezintă lucrări realizate la Amelly Salon.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="contact" aria-labelledby="contact-title">
+      <div class="window reveal">
+        <div class="window-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="window-title">04 · Următoarea vizită</span>
+          <svg aria-hidden="true"><use href="#paw"/></svg>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <div class="eyebrow">Contact & programări</div>
+            <h2 id="contact-title">O lăbuță mai aproape de răsfăț.</h2>
+            <p>Spune-ne câteva lucruri despre animalul tău și ce îngrijire îți dorești. Stabilim împreună detaliile vizitei.</p>
+            <a class="phone-link" href="tel:0752850959"><svg aria-hidden="true"><use href="#phone"/></svg>0752 850 959</a>
+            <div class="hero-actions">
+              <a class="button" href="https://wa.me/40752850959?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sesiune%20pentru%20animalul%20meu%20de%20companie." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#chat"/></svg>Programează-te pe WhatsApp</a>
+            </div>
+            <div class="location"><svg aria-hidden="true"><use href="#pin"/></svg>Amelly Salon · Constanța</div>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6365894,44.1917903,28.6445894,44.195790300000006&amp;layer=mapnik&amp;marker=44.1937903,28.6405894" title="Localizarea Amelly Salon în Constanța pe OpenStreetMap" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-footer"><span>Ne găsești în Constanța</span><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Amelly+Salon+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#acasa"><span class="brand-mark"><svg aria-hidden="true"><use href="#paw"/></svg></span><span class="brand-name">amelly salon<small>Iubire pentru prietenii blănoși</small></span></a>
+      <p>Cu grijă pentru ei. Cu drag, în Constanța.</p>
+    </div>
+    <div class="footer-bottom"><span>Model de site (demo)</span><span>Fotografii ilustrative de pe Pixabay: alektas</span></div>
+  </footer>
+
+  <script>
+    (() => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const frames = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !reducedMotion.matches) {
+        document.documentElement.classList.add('js');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -25px 0px' });
+        frames.forEach(frame => observer.observe(frame));
+        reducedMotion.addEventListener('change', event => {
+          if (event.matches) {
+            frames.forEach(frame => frame.classList.add('visible'));
+            observer.disconnect();
+          }
+        });
+      }
+
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.nav-links');
+      const closeMenu = () => {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul');
+      };
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+      });
+      window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+    })();
+  </script>
+<script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
