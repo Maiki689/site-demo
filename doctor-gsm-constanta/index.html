@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090f16">
+  <meta name="description" content="Doctor GSM Constanța — service pentru telefoane și electronice. Reparații ecrane, baterii, porturi de încărcare și diagnosticare. Bulevardul Tomis 238.">
+  <title>Doctor GSM — Reconectăm. Reparăm. Constanța.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#090f16;--panel:#101a24;--panel-deep:#0c141e;--line:#263743;--text:#eff7fc;--muted:#a6b9c7;--cyan:#38bdf8;--mint:#9de8dd;--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",sans-serif;--mono:"IBM Plex Mono",monospace;--radius:24px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65}
+    body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#38bdf806 1px,transparent 1px),linear-gradient(90deg,#38bdf806 1px,transparent 1px);background-size:72px 72px}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    svg{display:block}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.035em}
+    h2{font-size:clamp(38px,4.6vw,64px)}
+    ::selection{background:var(--cyan);color:var(--bg)}
+    :focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
+    .wrap{width:min(1320px,calc(100% - 64px));margin:auto}
+    .icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    .mono{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .muted{color:var(--muted)}
+    .skip{position:fixed;top:10px;left:20px;padding:12px 20px;background:var(--cyan);color:var(--bg);z-index:100;transform:translateY(-150%)}
+    .skip:focus{transform:none}
+    .topbar{position:sticky;top:0;z-index:30;background:#090f16ee;border-bottom:1px solid var(--line);backdrop-filter:blur(18px)}
+    .nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .brand-mark{height:40px;width:40px;display:grid;place-items:center;border:1px solid #38bdf865;border-radius:11px;background:#38bdf810;color:var(--cyan);position:relative}
+    .brand-mark::after{content:"";width:6px;height:6px;background:var(--mint);border:2px solid var(--bg);border-radius:50%;position:absolute;right:-3px;bottom:3px}
+    .brand-name{font-size:22px;line-height:1.1;font-weight:700;letter-spacing:-1px}
+    .brand-name span{color:var(--cyan)}
+    .brand-sub{margin-top:5px;color:var(--muted);font-size:9px;letter-spacing:.18em}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links>a:not(.nav-call){font-size:13px;color:var(--muted);position:relative;padding:8px 0}
+    .nav-links>a:not(.nav-call)::after{content:"";position:absolute;bottom:1px;left:0;width:0;height:1px;background:var(--cyan);transition:width .25s}
+    .nav-links>a:hover{color:var(--text)}
+    .nav-links>a:hover::after{width:100%}
+    .nav-call{display:flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid var(--line);border-radius:9px;font-size:13px;transition:border-color .2s,background .2s}
+    .nav-call:hover{background:#38bdf815;border-color:var(--cyan)}
+    .nav-call .icon{width:16px;height:16px;color:var(--cyan)}
+    .menu-toggle{display:none}
+    main{padding-top:26px}
+    .panel{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);position:relative;isolation:isolate;overflow:hidden}
+    .panel-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:51px;padding:15px 28px;border-bottom:1px solid var(--line);color:var(--muted)}
+    .panel-label{display:flex;gap:12px;align-items:center}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px #38bdf850;flex-shrink:0}
+    .panel-coordinates{font-size:10px;letter-spacing:.05em}
+    .hero{background:#0d1823}
+    .hero-glow{position:absolute;inset:0;z-index:-1;overflow:hidden}
+    .hero-glow::before{content:"";position:absolute;width:85%;height:110%;left:-35%;top:-15%;background:radial-gradient(ellipse,#007db42e 0%,#1278a81a 35%,transparent 65%);animation:gradient-drift 14s ease-in-out infinite alternate}
+    .hero-glow::after{content:"";position:absolute;inset:0;background-image:linear-gradient(#38bdf80b 1px,transparent 1px),linear-gradient(90deg,#38bdf80b 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(90deg,#000,transparent)}
+    @keyframes gradient-drift{to{transform:translate(45%,20%) scale(1.25)}}
+    .hero-grid{display:grid;grid-template-columns:1.12fr 1fr}
+    .hero-copy{padding:58px 40px 56px 48px;position:relative}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--cyan);margin-bottom:24px}
+    .eyebrow::before{content:"";height:1px;width:26px;background:var(--cyan)}
+    h1{font-size:clamp(52px,5.8vw,83px)}
+    h1 .highlight{color:var(--cyan)}
+    .hero-copy>p{color:var(--muted);font-size:17px;max-width:360px;margin-top:26px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:13px;border:1px solid var(--line);border-radius:10px;padding:15px 20px;font-size:13px;font-weight:600;line-height:1.4;transition:transform .25s,background .25s,border-color .25s}
+    .btn:hover{transform:translateY(-3px);border-color:var(--cyan)}
+    .btn-primary{background:var(--cyan);border-color:var(--cyan);color:#062033}
+    .btn-primary:hover{background:#7dd3fc}
+    .btn-secondary{background:#0b1420a0;color:var(--text)}
+    .btn .icon{width:19px;height:19px}
+    .hero-footnote{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px;margin-top:27px}
+    .hero-footnote .icon{width:16px;height:16px;color:var(--cyan)}
+    .hero-visual{border-left:1px solid var(--line);display:flex;flex-direction:column;margin:24px 24px 24px 0;border:1px solid #385569;border-radius:16px;overflow:hidden;background:#0a121a;position:relative}
+    .visual-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 18px;color:var(--muted);font-size:9px}
+    .toolbar-dots{display:flex;gap:5px}
+    .toolbar-dots i{width:5px;height:5px;border-radius:50%;background:#465c6b}
+    .toolbar-dots i:last-child{background:var(--cyan)}
+    .hero-photo{flex:1;min-height:330px;position:relative;overflow:hidden}
+    .hero-photo img{position:absolute;inset:0;filter:brightness(.78) saturate(.72);transition:transform 1s,filter 1s}
+    .hero-visual:hover img{transform:scale(1.04);filter:brightness(.93) saturate(.9)}
+    .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0a121a90,transparent 50%);pointer-events:none}
+    .image-corners{position:absolute;inset:20px;z-index:1;background:linear-gradient(var(--cyan),var(--cyan)) left top/24px 1px no-repeat,linear-gradient(var(--cyan),var(--cyan)) left top/1px 24px no-repeat,linear-gradient(var(--cyan),var(--cyan)) right bottom/24px 1px no-repeat,linear-gradient(var(--cyan),var(--cyan)) right bottom/1px 24px no-repeat;pointer-events:none}
+    .visual-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border-top:1px solid var(--line)}
+    .visual-bottom strong{display:block;font-size:15px;font-weight:500}
+    .visual-bottom .mono{color:var(--muted);font-size:9px}
+    .signal{display:flex;align-items:flex-end;gap:4px;height:20px;color:var(--cyan)}
+    .signal i{width:4px;background:currentColor;border-radius:1px;animation:signal 2.5s ease-in-out infinite alternate}
+    .signal i:nth-child(1){height:6px}.signal i:nth-child(2){height:10px;animation-delay:.3s}.signal i:nth-child(3){height:15px;animation-delay:.6s}.signal i:nth-child(4){height:20px;animation-delay:.9s}
+    @keyframes signal{to{opacity:.35}}
+    .benefits{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);background:#090f1640}
+    .benefit{display:flex;align-items:flex-start;gap:15px;padding:25px 28px}
+    .benefit+.benefit{border-left:1px solid var(--line)}
+    .benefit-icon{width:39px;height:39px;border-radius:10px;background:#38bdf80d;border:1px solid #38bdf826;display:grid;place-items:center;color:var(--cyan);flex-shrink:0}
+    .benefit h3{font-size:15px;font-weight:500;margin-bottom:3px}
+    .benefit p{font-size:12px;color:var(--muted);line-height:1.6}
+    .connector{height:78px;display:flex;align-items:center;position:relative;padding-left:48px}
+    .connector svg{height:78px;width:160px;overflow:visible}
+    .circuit-base{stroke:#243743;fill:none;stroke-width:1}
+    .circuit-path{stroke:var(--cyan);fill:none;stroke-width:1.5;filter:drop-shadow(0 0 5px #38bdf855)}
+    .connector .mono{color:#7e96a6;font-size:9px;margin-left:20px}
+    .js .circuit-path{stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.4s ease}
+    .js .connector.visible .circuit-path{stroke-dashoffset:0}
+    .js .reveal{opacity:0;transform:translateY(34px) scale(.975);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+    .js .reveal.visible{opacity:1;transform:translateY(0) scale(1)}
+    .about-grid{display:grid;grid-template-columns:1fr 1.05fr}
+    .about-photo{margin:30px;border-radius:14px;overflow:hidden;min-height:440px;position:relative}
+    .about-photo img{position:absolute;inset:0;filter:saturate(.6) brightness(.85);transition:transform .8s}
+    .about-photo:hover img{transform:scale(1.04)}
+    .photo-caption{position:absolute;bottom:0;left:0;right:0;padding:40px 20px 18px;background:linear-gradient(transparent,#09121ee6);font-size:9px;color:#e0edf4}
+    .about-copy{padding:56px 44px 50px 18px}
+    .about-copy p{color:var(--muted);margin-top:22px;max-width:440px;font-size:15px}
+    .about-copy h2 span{color:var(--mint)}
+    .about-note{border-top:1px solid var(--line);margin-top:32px;padding-top:22px;display:flex;align-items:center;gap:13px}
+    .about-note .icon{width:32px;height:32px;color:var(--cyan)}
+    .about-note strong{font-size:13px;font-weight:500;display:block}
+    .about-note span{font-size:11px;color:var(--muted)}
+    .services-layout{display:grid;grid-template-columns:.8fr 1.2fr}
+    .services-intro{padding:46px 40px;border-right:1px solid var(--line);position:relative;overflow:hidden}
+    .services-intro>p{color:var(--muted);font-size:15px;margin-top:24px;max-width:300px}
+    .device-art{width:215px;height:235px;position:relative;margin:40px auto 12px}
+    .phone-outline{position:absolute;width:102px;height:190px;left:57px;top:15px;border:1px solid #38bdf884;border-radius:20px;background:linear-gradient(135deg,#38bdf815,transparent);box-shadow:0 0 55px #38bdf809,inset 0 0 25px #38bdf805}
+    .phone-outline::before{content:"";position:absolute;left:35px;right:35px;top:9px;height:3px;border-radius:5px;background:#38bdf85c}
+    .phone-outline::after{content:"+";position:absolute;inset:0;display:grid;place-items:center;font:70px var(--mono);font-weight:400;color:var(--cyan);text-shadow:0 0 30px #38bdf850}
+    .device-art svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#38bdf860;stroke-width:1}
+    .device-label{position:absolute;bottom:2px;text-align:center;width:100%;font-size:9px;color:var(--muted)}
+    .service-list{list-style:none;padding:0;margin:0}
+    .service{display:flex;align-items:center;gap:22px;padding:27px 32px;min-height:115px;position:relative;transition:background .3s}
+    .service+.service{border-top:1px solid var(--line)}
+    .service:hover{background:#38bdf80a}
+    .service::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--cyan);transform:scaleY(0);transition:transform .3s}
+    .service:hover::before{transform:scaleY(1)}
+    .service-number{font-family:var(--mono);color:#7b99aa;font-size:11px}
+    .service-icon{color:var(--cyan);width:42px;height:42px;display:grid;place-items:center;border:1px solid #38bdf830;border-radius:10px;flex-shrink:0}
+    .service-icon .icon{width:24px;height:24px}
+    .service h3{font-size:17px;font-weight:500;letter-spacing:-.02em}
+    .service p{font-size:13px;color:var(--muted);margin-top:4px}
+    .gallery-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:40px 36px 30px}
+    .gallery-head p{max-width:270px;color:var(--muted);font-size:13px}
+    .gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;padding:0 24px 24px}
+    .gallery-item{height:310px;overflow:hidden;border:1px solid var(--line);border-radius:13px;position:relative;background:var(--panel-deep)}
+    .gallery-item img{filter:saturate(.65) brightness(.8);transition:transform .7s,filter .7s}
+    .gallery-item:hover img{transform:scale(1.06);filter:saturate(1) brightness(1)}
+    .gallery-item figcaption{position:absolute;inset:auto 0 0;padding:50px 18px 19px;background:linear-gradient(transparent,#06121bed);font-size:13px}
+    .gallery-item figcaption span{display:block;color:var(--cyan);font-size:9px;margin-bottom:6px}
+    .contact{background:linear-gradient(125deg,#122333,var(--panel) 55%)}
+    .contact-heading{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:42px 40px 32px}
+    .contact-heading .eyebrow{margin-bottom:15px}
+    .contact-heading h2{font-size:clamp(38px,4.5vw,61px)}
+    .contact-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:30px;padding:0 40px 40px}
+    .contact-info{display:flex;flex-direction:column}
+    .address{padding-bottom:24px;border-bottom:1px solid var(--line)}
+    .address h3{font-size:20px;font-weight:500;margin-bottom:6px}
+    .address p{color:var(--muted);font-size:13px;max-width:370px}
+    .text-link{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:13px;margin-top:15px;border-bottom:1px solid #38bdf845;padding-bottom:3px;transition:gap .25s}
+    .text-link:hover{gap:15px}
+    .text-link .icon{width:16px;height:16px}
+    .hours{margin-top:24px}
+    .hours h3{font-size:10px;font-weight:400;color:var(--muted);margin-bottom:12px}
+    .hours dl{margin:0}
+    .hours dl>div{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:9px 0;border-bottom:1px solid #26374380;font-size:13px}
+    .hours dt,.hours dd{margin:0}
+    .hours dd{font-family:var(--mono);font-size:12px}
+    .hours .closed{color:var(--muted)}
+    .contact-phone{margin-top:25px;display:flex;align-items:center;gap:15px;width:fit-content}
+    .contact-phone .icon{color:var(--cyan);width:27px;height:27px}
+    .contact-phone span{display:block;color:var(--muted);font-size:9px}
+    .contact-phone strong{font-size:27px;font-weight:500;letter-spacing:-.05em;transition:color .2s}
+    .contact-phone:hover strong{color:var(--cyan)}
+    .map-wrap{min-height:395px;border:1px solid #3b5364;border-radius:14px;overflow:hidden;background:#0b141c;display:flex;flex-direction:column}
+    .map-toolbar{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line);color:var(--muted);font-size:9px}
+    .map-wrap iframe{border:0;width:100%;flex:1;min-height:340px;display:block;color-scheme:light}
+    footer{padding:34px 0 26px}
+    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:24px}
+    .footer-top>p{font-size:13px;color:var(--muted)}
+    .back-top{display:flex;align-items:center;gap:10px;font-size:10px;color:var(--muted)}
+    .back-top .icon{width:17px;height:17px;color:var(--cyan)}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;margin-top:20px;font-size:11px;color:#93a6b5}
+    @media(min-width:1450px){.hero-copy{padding-top:70px;padding-bottom:70px}}
+    @media(max-width:1100px){
+      .wrap{width:calc(100% - 40px)}
+      .nav-links{gap:18px}
+      .hero-copy{padding:40px 28px}
+      h1{font-size:62px}
+      .hero-visual{margin:20px 20px 20px 0}
+      .btn{padding:14px 15px;font-size:12px}
+      .benefit{padding:23px 20px;gap:12px}
+      .about-copy{padding:40px 28px 40px 0}
+      .about-photo{margin:24px}
+      .services-intro{padding:36px 28px}
+      .service{padding:25px 24px;gap:16px}
+      .contact-heading{padding:36px 28px 26px}
+      .contact-layout{padding:0 28px 28px;gap:24px}
+    }
+    @media(max-width:800px){
+      .nav{height:76px}
+      .menu-toggle{display:flex;align-items:center;gap:9px;background:none;border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--text);font-size:12px}
+      .menu-toggle .icon{width:18px;height:18px}
+      .nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:20px;background:#0c1620;border-bottom:1px solid var(--line);align-items:stretch;gap:10px}
+      .nav-links.open{display:flex;flex-direction:column}
+      .nav-links>a:not(.nav-call){padding:9px;font-size:15px}
+      .nav-call{justify-content:center;margin-top:6px}
+      .hero-grid{grid-template-columns:1fr 1fr}
+      h1{font-size:50px}
+      .hero-copy{padding:35px 24px}
+      .hero-copy>p{font-size:15px}
+      .hero-visual{margin:18px 18px 18px 0}
+      .visual-toolbar{padding:13px 12px;font-size:8px;letter-spacing:.04em}
+      .visual-bottom{padding:15px 12px}
+      .visual-bottom strong{font-size:13px}
+      .benefit{padding:19px 14px;flex-direction:column;gap:10px}
+      .benefit h3{font-size:14px}
+      .benefit p{font-size:11px}
+      .panel-coordinates{display:none}
+      .about-grid{grid-template-columns:.9fr 1.1fr}
+      .about-photo{margin:20px;min-height:440px}
+      .about-copy{padding:34px 22px 34px 0}
+      .about-copy h2{font-size:39px}
+      .about-copy p{font-size:14px}
+      .services-layout{grid-template-columns:1fr}
+      .services-intro{border-right:none;border-bottom:1px solid var(--line);padding:32px;display:grid;grid-template-columns:1fr 180px;column-gap:25px}
+      .services-intro .eyebrow,.services-intro h2,.services-intro>p{grid-column:1}
+      .device-art{grid-column:2;grid-row:1/5;width:170px;height:225px;margin:0;align-self:center}
+      .phone-outline{left:34px}
+      .gallery-head{padding:30px 24px;align-items:flex-start}
+      .gallery-head h2{font-size:42px}
+      .gallery-head p{max-width:210px}
+      .gallery-grid{gap:10px;padding:0 18px 18px}
+      .gallery-item{height:240px}
+      .contact-heading{align-items:flex-start;flex-direction:column}
+      .contact-heading .btn{margin:0}
+      .contact-layout{grid-template-columns:1fr 1fr;gap:22px}
+      .address h3{font-size:18px}
+      .hours dl>div{font-size:12px;gap:10px}
+      .hours dd{font-size:11px}
+      .contact-phone strong{font-size:24px}
+      .footer-top>p{display:none}
+    }
+    @media(max-width:580px){
+      .wrap{width:calc(100% - 24px)}
+      main{padding-top:12px}
+      .brand-name{font-size:20px}
+      .brand-mark{height:36px;width:36px}
+      .panel{border-radius:18px}
+      .panel-bar{padding:13px 20px;min-height:45px;font-size:9px}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-copy{padding:34px 22px 30px}
+      .eyebrow{font-size:9px;margin-bottom:20px}
+      h1{font-size:clamp(46px,11.9vw,67px)}
+      .hero-copy>p{margin-top:20px}
+      .actions{margin-top:25px;gap:10px}
+      .actions .btn-primary{width:100%;padding:16px 12px}
+      .actions .btn-secondary{width:100%}
+      .hero-footnote{margin-top:19px;font-size:10px}
+      .hero-visual{margin:0 16px 20px}
+      .hero-photo{min-height:260px}
+      .visual-toolbar{font-size:9px}
+      .visual-bottom strong{font-size:14px}
+      .benefits{grid-template-columns:1fr}
+      .benefit{padding:19px 22px;flex-direction:row;align-items:center}
+      .benefit+.benefit{border-left:0;border-top:1px solid var(--line)}
+      .benefit h3{font-size:15px}
+      .benefit p{font-size:12px}
+      .connector{height:60px;padding-left:24px}
+      .connector svg{height:60px;width:123px}
+      .connector .mono{font-size:8px;margin-left:12px}
+      .about-grid{display:flex;flex-direction:column-reverse}
+      .about-copy{padding:32px 24px 24px}
+      .about-copy h2{font-size:44px}
+      .about-copy p{font-size:14px;max-width:none}
+      .about-photo{min-height:280px;margin:0 16px 16px}
+      .about-note{margin-top:24px}
+      .services-intro{padding:32px 24px;display:block}
+      .services-intro h2{font-size:45px}
+      .services-intro>p{max-width:none;margin-top:20px}
+      .device-art{display:none}
+      .service{padding:24px 18px;gap:12px;min-height:110px}
+      .service-number{font-size:9px}
+      .service-icon{width:36px;height:40px}
+      .service h3{font-size:15px}
+      .service p{font-size:12px}
+      .gallery-head{padding:30px 24px 24px;flex-direction:column;gap:18px}
+      .gallery-head p{max-width:none}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .gallery-item:first-child{grid-column:1/-1;height:260px}
+      .gallery-item{height:210px}
+      .gallery-item figcaption{font-size:11px;padding:40px 12px 14px}
+      .gallery-item figcaption span{font-size:8px}
+      .contact-heading{padding:32px 24px 24px;gap:24px}
+      .contact-heading h2{font-size:43px}
+      .contact-heading .btn{width:100%}
+      .contact-layout{grid-template-columns:1fr;padding:0 24px 24px;gap:28px}
+      .hours dl>div{font-size:13px}
+      .hours dd{font-size:12px}
+      .map-wrap{min-height:320px}
+      .map-wrap iframe{min-height:280px}
+      .footer-top{gap:12px}
+      .back-top{font-size:8px}
+      .footer-bottom{flex-direction:column;gap:7px;font-size:10px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .js .reveal{opacity:1;transform:none}
+      .js .circuit-path{stroke-dashoffset:0}
+    }
+  </style>
+</head>
+<body id="sus">
+  <a href="#continut" class="skip">Sari la conținut</a>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14 6a5 5 0 0 0-6 6L3 17a2.8 2.8 0 0 0 4 4l5-5a5 5 0 0 0 6-6l-3 3-4-4 3-3Z"/><path d="m4.5 19.5 1-1"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="m7 3 3 5-2 2a15 15 0 0 0 6 6l2-2 5 3c0 3-2 4-4 4C10 20 4 14 3 7c0-2 1-4 4-4Z"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13 8L3 21l1.5-5a9 9 0 1 1 16.5-4.5Z"/><path d="M8 10h8m-8 4h5"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="m14 6-4 5 4 2-3 4m0 2h2"/></symbol>
+      <symbol id="i-battery" viewBox="0 0 24 24"><rect x="3" y="6" width="17" height="12" rx="2"/><path d="M22 10v4m-11-6-3 5h5l-3 3"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6m-14-11h6m-3-3v6"/></symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24"><path d="M8 3v5m8-5v5M6 8h12v4a6 6 0 0 1-12 0V8Zm6 10v4"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="brand" href="#sus" aria-label="Doctor GSM — prima pagină">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg></span>
+        <span><span class="brand-name">Doctor <span>GSM</span></span><span class="brand-sub mono" style="display:block">Service · Constanța</span></span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Deschide meniul">Meniu <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#despre">Despre noi</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">În detaliu</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:0723046904" class="nav-call"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>0723 046 904</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="continut" class="wrap">
+    <section class="panel hero reveal" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="panel-bar mono">
+        <span class="panel-label"><span class="dot"></span>Doctor GSM / Conexiuni restabilite</span>
+        <span class="panel-coordinates">CT · 44.1963° N / 28.6334° E</span>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow mono">Service telefoane & electronice</div>
+          <h1 id="hero-title">Reparăm rapid.<br><span class="highlight">Vă conectați</span><br>din nou.</h1>
+          <p>Telefonul are o problemă? Găsim soluția. Cu grijă pentru dispozitiv și pentru tot ce te conectează.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://wa.me/40723046904?text=Bun%C4%83%20ziua%21%20Doresc%20o%20repara%C8%9Bie%20pentru%20dispozitivul%20meu.">
+              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Solicită reparație pe WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="#servicii">Vezi serviciile <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="hero-footnote"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Bulevardul Tomis 238 · Constanța</div>
+        </div>
+        <figure class="hero-visual">
+          <div class="visual-toolbar mono"><span>01 / La bancul de lucru</span><span class="toolbar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="hero-photo">
+            <img src="img/1.jpg" alt="Fotografie ilustrativă: tehnician reparând un smartphone la bancul de lucru" fetchpriority="high">
+            <div class="image-corners" aria-hidden="true"></div>
+          </div>
+          <figcaption class="visual-bottom">
+            <div><strong>Grijă pentru fiecare circuit.</strong><span class="mono">Fotografie ilustrativă</span></div>
+            <span class="signal" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="benefits">
+        <article class="benefit">
+          <div class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-bolt"/></svg></div>
+          <div><h3>Reparăm rapid</h3><p>Majoritatea reparațiilor în aceeași zi.</p></div>
+        </article>
+        <article class="benefit">
+          <div class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></div>
+          <div><h3>Diagnoză gratuită</h3><p>Află problema fără costuri suplimentare.</p></div>
+        </article>
+        <article class="benefit">
+          <div class="benefit-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
+          <div><h3>Date în siguranță</h3><p>Tratăm responsabil informațiile clienților.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true">
+      <svg viewBox="0 0 160 78"><path class="circuit-base" d="M8 0v25h125v28h19v25"/><path class="circuit-path" d="M8 0v25h125v28h19v25"/><circle cx="8" cy="5" r="3" fill="#38bdf8"/><circle cx="133" cy="25" r="3" fill="#090f16" stroke="#38bdf8"/></svg>
+      <span class="mono">01 → Oameni & grijă</span>
+    </div>
+
+    <section class="panel reveal" id="despre" aria-labelledby="about-title">
+      <div class="panel-bar mono"><span class="panel-label"><span class="dot"></span>01 / Despre Doctor GSM</span><span class="panel-coordinates">Oameni. Dispozitive. Conexiuni.</span></div>
+      <div class="about-grid">
+        <figure class="about-photo">
+          <img src="img/2.jpg" loading="lazy" alt="Fotografie ilustrativă: examinarea atentă a unui dispozitiv cu instrumente de diagnosticare">
+          <figcaption class="photo-caption mono">În atenție: fiecare detaliu · Imagine ilustrativă</figcaption>
+        </figure>
+        <div class="about-copy">
+          <div class="eyebrow mono">Mai mult decât o reparație</div>
+          <h2 id="about-title">În spatele ecranului,<br><span>conexiunile tale.</span></h2>
+          <p>La Doctor GSM găsești soluții rapide pentru problemele telefonului sau gadgetului tău. Suntem un service modern pentru telefoane și electronice, aici, în Constanța.</p>
+          <p>Echipa noastră lucrează cu grijă și profesionalism. De la primul diagnostic până la reparație, ne concentrăm pe ceea ce contează: să îți poți folosi din nou dispozitivul.</p>
+          <div class="about-note">
+            <svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg>
+            <div><strong>Tehnologie reparată. Conexiuni păstrate.</strong><span>Spune-ne ce problemă are dispozitivul tău.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true">
+      <svg viewBox="0 0 160 78"><path class="circuit-base" d="M8 0v25h125v28h19v25"/><path class="circuit-path" d="M8 0v25h125v28h19v25"/><circle cx="8" cy="5" r="3" fill="#38bdf8"/><circle cx="133" cy="25" r="3" fill="#090f16" stroke="#38bdf8"/></svg>
+      <span class="mono">02 → Soluții pentru dispozitiv</span>
+    </div>
+
+    <section class="panel reveal" id="servicii" aria-labelledby="services-title">
+      <div class="panel-bar mono"><span class="panel-label"><span class="dot"></span>02 / Servicii</span><span class="panel-coordinates">Diagnostic → Intervenție → Reconectare</span></div>
+      <div class="services-layout">
+        <div class="services-intro">
+          <div class="eyebrow mono">De la problemă la soluție</div>
+          <h2 id="services-title">Un nou început<br>pentru telefon.</h2>
+          <p>Ecran spart, baterie obosită sau încărcare cu întreruperi? Începem cu o diagnoză gratuită și identificăm problema.</p>
+          <div class="device-art" aria-hidden="true">
+            <svg viewBox="0 0 215 235"><path d="M57 55H25V25H5M159 75h35V35h16M57 140H15v45H3M159 160h26v40h27"/><circle cx="5" cy="25" r="3"/><circle cx="210" cy="35" r="3"/><circle cx="3" cy="185" r="3"/><circle cx="212" cy="200" r="3"/></svg>
+            <div class="phone-outline"></div>
+            <div class="device-label mono">Doctor GSM / Diagnostic & reparații</div>
+          </div>
+        </div>
+        <ol class="service-list">
+          <li class="service">
+            <span class="service-number">01</span>
+            <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-screen"/></svg></span>
+            <div><h3>Reparații ecrane smartphone</h3><p>Schimbăm ecrane sparte sau defecte.</p></div>
+          </li>
+          <li class="service">
+            <span class="service-number">02</span>
+            <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-battery"/></svg></span>
+            <div><h3>Înlocuire baterie</h3><p>Montăm baterii noi, originale.</p></div>
+          </li>
+          <li class="service">
+            <span class="service-number">03</span>
+            <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
+            <div><h3>Diagnosticare dispozitiv</h3><p>Identificăm rapid problema dispozitivului.</p></div>
+          </li>
+          <li class="service">
+            <span class="service-number">04</span>
+            <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-plug"/></svg></span>
+            <div><h3>Reparare port încărcare</h3><p>Remediem problemele de alimentare.</p></div>
+          </li>
+          <li class="service">
+            <span class="service-number">05</span>
+            <span class="service-icon"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></span>
+            <div><h3>Curățare telefoane de lichide</h3><p>Intervenție profesională anti-umiditate.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true">
+      <svg viewBox="0 0 160 78"><path class="circuit-base" d="M8 0v25h125v28h19v25"/><path class="circuit-path" d="M8 0v25h125v28h19v25"/><circle cx="8" cy="5" r="3" fill="#38bdf8"/><circle cx="133" cy="25" r="3" fill="#090f16" stroke="#38bdf8"/></svg>
+      <span class="mono">03 → Privire în detaliu</span>
+    </div>
+
+    <section class="panel reveal" id="galerie" aria-labelledby="gallery-title">
+      <div class="panel-bar mono"><span class="panel-label"><span class="dot"></span>03 / În detaliu</span><span class="panel-coordinates">Componente / Instrumente / Precizie</span></div>
+      <div class="gallery-head">
+        <h2 id="gallery-title">Lumea de sub ecran.</h2>
+        <p>O privire asupra reparațiilor și componentelor electronice. Fotografii de stoc, ilustrative.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="img/3.jpg" loading="lazy" alt="Fotografie ilustrativă: intervenție tehnică asupra unui telefon mobil">
+          <figcaption><span class="mono">Cadru 01 / Intervenție</span>Atenție la fiecare detaliu</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/4.jpg" loading="lazy" alt="Fotografie ilustrativă: telefon dezasamblat și instrumente folosite pentru reparații">
+          <figcaption><span class="mono">Cadru 02 / Instrumente</span>Dincolo de ecran</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="img/5.jpg" loading="lazy" alt="Fotografie ilustrativă: detaliu al unei plăci electronice de telefon">
+          <figcaption><span class="mono">Cadru 03 / Circuite</span>Tehnologie în detaliu</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="connector" aria-hidden="true">
+      <svg viewBox="0 0 160 78"><path class="circuit-base" d="M8 0v25h125v28h19v25"/><path class="circuit-path" d="M8 0v25h125v28h19v25"/><circle cx="8" cy="5" r="3" fill="#38bdf8"/><circle cx="133" cy="25" r="3" fill="#090f16" stroke="#38bdf8"/></svg>
+      <span class="mono">04 → Hai să ne conectăm</span>
+    </div>
+
+    <section class="panel contact reveal" id="contact" aria-labelledby="contact-title">
+      <div class="panel-bar mono"><span class="panel-label"><span class="dot"></span>04 / Contact & acces</span><span class="panel-coordinates">Doctor GSM · Constanța</span></div>
+      <div class="contact-heading">
+        <div><div class="eyebrow mono">Primul pas e un mesaj</div><h2 id="contact-title">Ne spui ce nu merge?</h2></div>
+        <a class="btn btn-primary" href="https://wa.me/40723046904?text=Bun%C4%83%20ziua%21%20Doresc%20o%20repara%C8%9Bie%20pentru%20dispozitivul%20meu."><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Solicită reparație pe WhatsApp</a>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="address">
+            <h3>Bulevardul Tomis 238, Constanța</h3>
+            <p>Ne găsești în zona centrală, cu parcare publică în apropiere.</p>
+            <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Doctor+GSM+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <div class="hours">
+            <h3 class="mono">Program de funcționare</h3>
+            <dl>
+              <div><dt>Luni – Vineri</dt><dd>09:00 – 18:00</dd></div>
+              <div><dt>Sâmbătă</dt><dd>10:00 – 14:00</dd></div>
+              <div class="closed"><dt>Duminică</dt><dd>Închis</dd></div>
+            </dl>
+          </div>
+          <a class="contact-phone" href="tel:0723046904">
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <div><span class="mono">Preferi să ne suni?</span><strong>0723 046 904</strong></div>
+          </a>
+        </div>
+        <div class="map-wrap">
+          <div class="map-toolbar mono"><span class="panel-label"><span class="dot"></span>Localizare / Constanța</span><svg class="icon" style="width:15px;height:15px;color:var(--cyan)" aria-hidden="true"><use href="#i-pin"/></svg></div>
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.629381199999997,44.194277199999995,28.6373812,44.1982772&layer=mapnik&marker=44.1962772,28.6333812" title="Harta locației Doctor GSM, Bulevardul Tomis 238, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#sus" aria-label="Doctor GSM — înapoi la început">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg></span>
+        <span class="brand-name">Doctor <span>GSM</span></span>
+      </a>
+      <p>Reparăm rapid, vă conectați din nou.</p>
+      <a href="#sus" class="back-top mono">Înapoi sus <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></a>
+    </div>
+    <div class="footer-bottom">
+      <span>Model de site (demo)</span>
+      <span>Fotografii ilustrative de pe Pixabay: Militiamobiles, Bru-nO</span>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const links = document.querySelector('.nav-links');
+      function closeMenu() {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul');
+      }
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        links.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      });
+      links.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && links.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!event.target.closest('.nav')) closeMenu();
+      });
+      const elements = document.querySelectorAll('.reveal, .connector');
+      if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+        document.documentElement.classList.add('js');
+        elements.forEach(element => observer.observe(element));
+      } else {
+        elements.forEach(element => element.classList.add('visible'));
+      }
+    })();
+  </script>
+<script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
