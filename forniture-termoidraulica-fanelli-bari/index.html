@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f766e">
+  <title>Fanelli | Forniture e servizi termoidraulici a Bari</title>
+  <meta name="description" content="Forniture Termoidraulica Fanelli a Bari. Materiale idraulico, installazione caldaie, riparazioni, manutenzione e consulenza tecnica. Corso Cavour 180.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--teal:#0f766e;--deep:#103e3b;--mint:#eaf1ec;--paper:#f8faf7;--copper:#994d3a;--rose:#eedbd2;--gold:#b39560;--ink:#173d38;--line:rgba(143,119,74,.48);--font-title:'Bebas Neue',sans-serif;--font-body:'Karla',sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--font-body);overflow-x:clip}
+    body.modal-open{overflow:hidden}
+    ::selection{background:var(--teal);color:white}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button{cursor:pointer}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    button{color:inherit}
+    svg{display:block}
+    .icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+    :focus-visible{outline:3px solid var(--copper);outline-offset:6px}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{font-weight:400}
+    h1,h2,.display{font-family:var(--font-title);line-height:.98;letter-spacing:.025em}
+    h2{font-size:clamp(48px,6.5vw,88px)}
+    .eyebrow{text-transform:uppercase;font-size:11px;font-weight:700;letter-spacing:.23em;line-height:1.7}
+    .lead{font-size:clamp(18px,2vw,22px);line-height:1.65}
+    .muted{opacity:.75}
+    .container{width:min(1360px,calc(100% - 80px));margin-inline:auto}
+    .section{position:relative;padding-block:58px}
+    .frame{position:relative;border:1px solid var(--line);padding:80px 50px 55px}
+    .chapter{position:absolute;top:0;left:28px;transform:translateY(-50%);display:flex;align-items:center;gap:17px;padding:0 16px;background:var(--paper);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    .chapter b{font-family:var(--font-title);font-size:21px;letter-spacing:.08em;font-weight:400}
+    .section-heading{text-align:center;max-width:770px;margin:0 auto 48px}
+    .section-heading .eyebrow{display:block;margin-bottom:18px;color:var(--teal)}
+    .section-heading p{max-width:560px;margin:25px auto 0}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:24px;min-height:54px;padding:15px 26px;border:1px solid var(--teal);background:var(--teal);color:#fff;font-size:13px;font-weight:600;line-height:1.5;transition:background .25s,color .25s,box-shadow .25s;position:relative}
+    .btn:hover{background:var(--deep);box-shadow:0 8px 25px #103e3b14}
+    .btn-light{background:transparent;color:var(--teal)}
+    .btn-light:hover{background:var(--teal);color:white}
+    .btn-white{background:var(--paper);color:var(--deep);border-color:var(--paper)}
+    .btn-white:hover{background:var(--rose);color:var(--deep)}
+    .text-link{display:inline-flex;align-items:center;gap:14px;font-size:13px;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:8px;transition:gap .25s}
+    .text-link:hover{gap:23px}
+    .skip-link{position:fixed;top:-100px;left:15px;z-index:100;background:white;padding:12px 24px}
+    .skip-link:focus{top:10px}
+    .intro-line{position:fixed;z-index:200;left:0;top:0;width:100%;height:3px;background:var(--gold);transform-origin:left;animation:loadline .8s ease both;pointer-events:none}
+    @keyframes loadline{0%{transform:scaleX(0);opacity:1}75%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+    .site-header{height:90px;position:fixed;top:0;left:0;width:100%;z-index:50;border-bottom:1px solid transparent;transition:background .3s,border-color .3s,box-shadow .3s}
+    .site-header.scrolled,.site-header.menu-open{background:rgba(248,250,247,.97);border-color:var(--line);box-shadow:0 3px 20px #103e3b06}
+    .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:12px;flex:none}
+    .brand-mark{width:38px;height:43px;color:var(--teal)}
+    .brand-name{font-family:var(--font-title);font-size:32px;line-height:1;letter-spacing:.09em}
+    .brand-small{display:block;font-size:8px;letter-spacing:.12em;line-height:1.8;margin-top:4px;text-transform:uppercase}
+    .desktop-nav{display:flex;gap:32px;align-items:center}
+    .desktop-nav>a{font-size:12px;letter-spacing:.025em;position:relative}
+    .desktop-nav>a:not(.nav-contact)::after{content:"";position:absolute;bottom:-7px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+    .desktop-nav>a:hover::after{transform:scaleX(1)}
+    .desktop-nav .nav-contact{border:1px solid var(--line);padding:10px 20px;display:flex;align-items:center;gap:14px}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);padding:10px}
+    .hero{min-height:900px;height:100svh;max-height:1150px;background:var(--mint);position:relative;isolation:isolate;padding:120px 30px 30px;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 72%,#fff 0,transparent 49%),linear-gradient(120deg,#dcebe3,transparent 65%);animation:ambient 12s ease-in-out infinite alternate}
+    @keyframes ambient{from{transform:scale(1);opacity:.6}to{transform:scale(1.15);opacity:1}}
+    .hero-frame{position:absolute;inset:111px 30px 30px;border:1px solid var(--line);pointer-events:none;z-index:3}
+    .hero-frame::before,.hero-frame::after{content:"";position:absolute;bottom:26px;width:6px;height:6px;border:1px solid var(--gold);border-radius:50%}
+    .hero-frame::before{left:26px}.hero-frame::after{right:26px}
+    .hero .chapter{background:#e4eee7}
+    .hero-copy{text-align:center;position:relative;z-index:4;margin:33px auto 0;max-width:900px;pointer-events:none}
+    .hero-copy a{pointer-events:auto}
+    .hero-copy>.eyebrow{margin-bottom:20px;color:var(--teal)}
+    h1{font-size:clamp(65px,7.9vw,112px)}
+    h1 .wordline{display:block;overflow:hidden}
+    h1 .wordline span{display:block;animation:titleIn .9s cubic-bezier(.2,.7,.2,1) both}
+    h1 .wordline:nth-child(2) span{animation-delay:.14s;color:var(--teal)}
+    @keyframes titleIn{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
+    .hero-copy .hero-subtitle{margin:21px auto 23px;font-size:16px}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .hero-bottom{position:absolute;z-index:4;bottom:57px;left:65px;right:65px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .hero-bottom .eyebrow{font-size:9px}
+    .scroll-link{display:flex;gap:12px;align-items:center;font-size:11px}
+    .scroll-link .icon{animation:arrowFloat 2.5s ease-in-out infinite}
+    @keyframes arrowFloat{50%{transform:translateY(5px)}}
+    .hero-side{position:absolute;left:55px;top:60%;writing-mode:vertical-rl;font-size:9px;letter-spacing:.22em;text-transform:uppercase;z-index:4}
+    .hero-side.right{left:auto;right:55px;transform:rotate(180deg)}
+    #hero-scene{position:absolute;inset:0;z-index:1;pointer-events:none}
+    #hero-scene canvas{width:100%;height:100%;display:block}
+    .scene-fallback{position:absolute;width:min(610px,75%);height:340px;left:50%;bottom:90px;transform:translateX(-50%);z-index:0;transition:opacity .5s}
+    .scene-ready .scene-fallback{opacity:0}
+    .hero-annotation{position:absolute;bottom:205px;left:calc(50% + 205px);z-index:3;font-size:9px;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:13px;white-space:nowrap}
+    .hero-annotation::before{content:"";width:55px;height:1px;background:var(--gold)}
+    .about{padding-top:85px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}
+    .about-visual{position:relative;margin:0 0 35px 12px}
+    .about-visual::before{content:"";position:absolute;inset:25px 24px -24px -24px;border:1px solid var(--gold);z-index:0}
+    .photo-mask{position:relative;overflow:hidden}
+    .about-photo{aspect-ratio:4/4.7;border-radius:180px 180px 0 0}
+    .about-photo img{object-position:center}
+    .image-caption{position:relative;font-size:9px;text-transform:uppercase;letter-spacing:.16em;text-align:center;margin:15px 0 0}
+    .about-copy{text-align:center;padding-top:40px}
+    .about-copy>.eyebrow{color:var(--teal);margin-bottom:23px}
+    .about-copy h2{font-size:clamp(48px,5.6vw,75px)}
+    .about-copy p{margin:26px auto;max-width:420px;font-size:16px}
+    .small-rule{width:50px;height:1px;background:var(--gold);margin:29px auto}
+    .about-foot{margin-top:55px;display:flex;justify-content:center;align-items:center;gap:25px;border-top:1px solid var(--line);padding-top:27px;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+    .about-foot i{width:4px;height:4px;background:var(--gold);border-radius:50%}
+    .services{background:var(--teal);color:var(--paper);padding-block:76px}
+    .services .chapter{background:var(--teal)}
+    .services .section-heading .eyebrow{color:#d8cfac}
+    .services .frame{border-color:#c1b58a80}
+    .services-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+    .service-card{grid-column:span 2;border:1px solid #d0d8c94d;padding:34px 27px 30px;text-align:center;position:relative;min-height:280px;display:flex;align-items:center;flex-direction:column;transition:transform .35s,background .35s,border-color .35s}
+    .service-card:nth-child(4){grid-column:2 / span 2}
+    .service-card:hover{transform:translateY(-6px);background:#ffffff0d;border-color:#d7c698}
+    .service-number{position:absolute;top:16px;left:18px;font-size:10px;letter-spacing:.15em;color:#d8d8bb}
+    .service-symbol{width:51px;height:51px;stroke:#e0c995;stroke-width:1.1;fill:none;margin:11px auto 25px}
+    .service-card h3{font-family:var(--font-title);font-size:30px;letter-spacing:.03em;line-height:1.15;max-width:240px}
+    .service-card p{font-size:14px;line-height:1.6;margin:15px auto 0;max-width:235px;color:#e0ede7}
+    .service-note{margin:35px 0 0;text-align:center;font-size:13px}
+    .service-note a{border-bottom:1px solid var(--gold);padding-bottom:3px}
+    .why{background:var(--rose);padding-block:80px}
+    .why .chapter{background:var(--rose)}
+    .why .frame{padding-bottom:65px;outline:1px solid var(--line);outline-offset:-11px}
+    .why h2{color:var(--copper)}
+    .why .section-heading .eyebrow{color:var(--copper)}
+    .flow-divider{height:55px;max-width:750px;margin:0 auto 35px;position:relative;display:flex;align-items:center;justify-content:center}
+    .flow-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold)}
+    .flow-divider svg{width:52px;height:52px;background:var(--rose);position:relative;padding:10px;color:var(--copper);border:1px solid var(--gold);border-radius:50%}
+    .advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:38px;text-align:center}
+    .advantage+.advantage{border-left:1px solid var(--line);padding-left:38px}
+    .advantage .eyebrow{font-size:9px;color:var(--copper);margin-bottom:16px}
+    .advantage h3{font-family:var(--font-title);font-size:36px;margin-bottom:13px;letter-spacing:.04em;line-height:1.1}
+    .advantage p{font-size:15px;max-width:235px;margin:auto}
+    .gallery{padding-top:83px}
+    .gallery .frame{padding-inline:32px}
+    .gallery-grid{display:grid;grid-template-columns:1fr 1.22fr 1fr;gap:22px;align-items:center}
+    .gallery-item{margin:0}
+    .gallery-item:nth-child(1){padding-top:70px}
+    .gallery-item:nth-child(3){padding-top:130px}
+    .gallery-open{border:0;padding:0;background:var(--mint);display:block;width:100%;position:relative;overflow:hidden}
+    .gallery-item:nth-child(1) .gallery-open{aspect-ratio:3/4;border-radius:100px 100px 0 0}
+    .gallery-item:nth-child(2) .gallery-open{aspect-ratio:3/4.7}
+    .gallery-item:nth-child(3) .gallery-open{aspect-ratio:3/4;border-radius:0 0 100px 100px}
+    .gallery-open img{transition:transform .7s}
+    .gallery-open:hover img{transform:scale(1.045)}
+    .zoom-sign{position:absolute;bottom:14px;right:14px;width:39px;height:39px;display:grid;place-items:center;border:1px solid #ffffff99;background:#103e3bb3;color:white;transition:background .3s}
+    .gallery-open:hover .zoom-sign{background:var(--teal)}
+    .gallery-item figcaption{font-size:10px;letter-spacing:.13em;text-transform:uppercase;text-align:center;margin-top:15px}
+    .gallery-note{font-size:11px;text-align:center;margin-top:42px;opacity:.7}
+    .location{padding-block:76px;background:var(--mint)}
+    .location .chapter{background:var(--mint)}
+    .location .frame{padding:75px 0 0}
+    .location-top{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;gap:50px;padding:0 60px 45px;text-align:center}
+    .location-top .eyebrow{color:var(--teal);margin-bottom:20px}
+    .location-top h2{font-size:clamp(55px,6vw,80px)}
+    .address{border-left:1px solid var(--line);padding-left:45px}
+    .address address{font-size:23px;font-style:normal;line-height:1.5}
+    .address .hours{font-size:13px;margin:18px auto 20px;max-width:300px}
+    .map-wrap{height:390px;position:relative;border-top:1px solid var(--line);background:#dde5dd}
+    .map-wrap iframe{width:100%;height:100%;display:block;border:0}
+    .map-strip{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:19px 35px;gap:20px}
+    .map-strip .eyebrow{font-size:10px}
+    .map-strip a{font-size:12px;display:flex;gap:12px;align-items:center}
+    .faq .frame{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;padding-block:75px}
+    .faq-title{text-align:center;padding-top:15px}
+    .faq-title .eyebrow{color:var(--teal);margin-bottom:22px}
+    .faq-title h2{font-size:clamp(48px,5vw,70px)}
+    .faq-title p{margin:25px auto 0;font-size:15px;max-width:275px}
+    details{border-bottom:1px solid var(--line)}
+    details:first-child{border-top:1px solid var(--line)}
+    summary{list-style:none;padding:25px 35px 25px 0;position:relative;font-size:16px;line-height:1.45;cursor:pointer;font-weight:600}
+    summary::-webkit-details-marker{display:none}
+    summary::before,summary::after{content:"";position:absolute;right:3px;top:50%;background:var(--teal);width:13px;height:1px;transition:transform .25s}
+    summary::after{transform:rotate(90deg)}
+    details[open] summary::after{transform:rotate(0)}
+    details p{padding:0 28px 25px 0;font-size:14px;line-height:1.8;max-width:560px}
+    .contact{background:var(--copper);color:var(--paper);padding-block:75px}
+    .contact .frame{border-color:#dfc99b80;padding-block:80px;overflow:visible}
+    .contact .chapter{background:var(--copper)}
+    .contact-inner{max-width:800px;margin:auto;text-align:center;position:relative}
+    .contact .eyebrow{color:#f1dcc1;margin-bottom:23px}
+    .contact h2{font-size:clamp(62px,8vw,112px)}
+    .contact p{max-width:535px;margin:25px auto 30px;font-size:17px}
+    .contact-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+    .contact .btn-light{color:white;border-color:#e7d0ac}
+    .contact .btn-light:hover{background:#ffffff14}
+    .contact-number{font-family:var(--font-title);font-size:clamp(36px,5vw,56px);letter-spacing:.05em;display:inline-block;margin-top:32px}
+    .contact-bottom{border-top:1px solid #dec9a36b;margin:35px auto 0;padding-top:23px;max-width:600px;display:flex;justify-content:center;align-items:center;gap:20px;font-size:12px}
+    .contact-corner{position:absolute;width:65px;height:65px;border-color:#d4ba87;border-style:solid;pointer-events:none}
+    .contact-corner.tl{top:10px;left:10px;border-width:1px 0 0 1px}
+    .contact-corner.br{bottom:10px;right:10px;border-width:0 1px 1px 0}
+    .site-footer{padding:60px 0 25px;background:var(--deep);color:#e7eee7}
+    .footer-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:50px;padding-bottom:45px}
+    .site-footer .brand-mark{color:#d3bd89}
+    .site-footer .brand-name{font-size:40px}
+    .footer-description{max-width:290px;font-size:13px;opacity:.8;margin-top:20px}
+    .footer-column{text-align:center}
+    .footer-column .eyebrow{font-size:10px;color:#d3bd89;margin-bottom:18px}
+    .footer-column a{display:block;width:fit-content;margin:7px auto;font-size:13px}
+    .footer-column a:hover{text-decoration:underline;text-underline-offset:5px}
+    .footer-column p{font-size:13px}
+    .footer-bottom{border-top:1px solid #c5ba903b;padding-top:22px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:15px;font-size:10px;color:#c0d1c8}
+    .demo-note{font-size:9px;opacity:.8}
+    .lightbox{width:min(1100px,94vw);max-width:none;max-height:93svh;background:var(--deep);border:1px solid var(--gold);padding:55px 50px 22px;color:white}
+    .lightbox::backdrop{background:#092b28ed}
+    .lightbox-photo{width:100%;height:min(70svh,760px);object-fit:contain}
+    .lightbox-close{position:absolute;right:14px;top:12px;border:1px solid #ffffff5c;background:none;color:white;padding:7px}
+    .lightbox-controls{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:18px}
+    .lightbox-controls button{background:transparent;color:white;border:1px solid #ffffff5c;padding:8px}
+    .lightbox-caption{text-align:center;font-size:12px}
+    .js .reveal{opacity:0;transform:translateY(30px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+    .js .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .js .photo-mask{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s cubic-bezier(.2,.65,.2,1)}
+    .js .photo-mask.is-visible{clip-path:inset(0 0 0 0)}
+    @media(min-width:1500px){.hero-copy{margin-top:45px}.hero{min-height:970px}.hero-annotation{bottom:240px}}
+    @media(max-width:1100px){
+      .container{width:calc(100% - 48px)}.desktop-nav{gap:21px}.frame{padding-inline:32px}.hero-annotation{left:calc(50% + 150px);font-size:8px}.hero-annotation::before{width:25px}
+      .about-grid{gap:6%}.service-card{padding-inline:18px}.service-card h3{font-size:27px}.faq .frame{gap:35px}.location-top{padding-inline:30px}
+    }
+    @media(max-width:760px){
+      body{font-size:16px}.container{width:calc(100% - 32px)}.section{padding-block:42px}.frame{padding:58px 22px 33px}.chapter{left:12px;padding-inline:10px;font-size:8px;gap:10px}.chapter b{font-size:19px}
+      .site-header{height:76px}.brand-mark{width:30px;height:36px}.brand-name{font-size:28px}.brand-small{font-size:7px}.menu-toggle{display:block}
+      .desktop-nav{display:none;position:absolute;top:76px;left:0;right:0;background:var(--paper);padding:26px 24px 35px;border-bottom:1px solid var(--gold);flex-direction:column;gap:25px}
+      .menu-open .desktop-nav{display:flex}.desktop-nav>a{font-size:15px}
+      .hero{padding:95px 16px 20px;min-height:800px;height:100svh;max-height:950px}.hero-frame{inset:95px 16px 20px}.hero-copy{margin-top:37px}.hero-copy>.eyebrow{font-size:9px;margin-bottom:20px}
+      h1{font-size:clamp(56px,11.5vw,84px)}.hero-copy .hero-subtitle{font-size:14px;max-width:280px;margin:20px auto}.hero-actions{gap:9px}.hero-actions .btn{padding:12px 16px;min-height:47px;font-size:11px;gap:11px}
+      .hero-side,.hero-annotation{display:none}.hero-bottom{left:36px;right:36px;bottom:43px}.hero-bottom>.eyebrow{max-width:145px;font-size:8px}.hero-bottom .scroll-link{font-size:10px}
+      .scene-fallback{height:285px;width:90%;bottom:92px}.hero-frame::before,.hero-frame::after{display:none}
+      .section-heading{margin-bottom:32px}.section-heading .eyebrow{font-size:9px}.section-heading p{font-size:15px}
+      .about-grid{grid-template-columns:1fr;gap:15px}.about-visual{max-width:400px;width:calc(100% - 20px);margin:0 auto 25px}.about-photo{aspect-ratio:4/4}.about-visual::before{inset:18px 18px -17px -13px}
+      .about-copy{padding-top:22px}.about-copy p{font-size:15px}.about-foot{margin-top:32px;gap:12px;font-size:8px;letter-spacing:.1em;flex-wrap:wrap}
+      .services-grid{grid-template-columns:1fr 1fr;gap:12px}.service-card,.service-card:nth-child(4){grid-column:auto;min-height:253px;padding:30px 13px 24px}.service-card:last-child{grid-column:1/-1;min-height:220px}
+      .service-card h3{font-size:25px}.service-card p{font-size:12px}.service-symbol{width:42px;height:42px;margin:13px auto 20px}.service-number{font-size:8px;left:12px;top:12px}.services .frame{padding-inline:13px}
+      .service-note{font-size:12px;padding-inline:8px}
+      .why .frame{padding:58px 29px 38px}.advantages{grid-template-columns:1fr;gap:26px}.advantage+.advantage{border-left:0;border-top:1px solid var(--line);padding:25px 0 0}.advantage p{max-width:290px}.advantage h3{font-size:32px}.advantage .eyebrow{margin-bottom:10px}.flow-divider{margin-bottom:27px}
+      .gallery .frame{padding-inline:18px}.gallery-grid{grid-template-columns:1fr 1fr;gap:22px 14px;align-items:start}.gallery-item:nth-child(1),.gallery-item:nth-child(3){padding-top:0}.gallery-item:nth-child(2){padding-top:50px}.gallery-item:nth-child(2) .gallery-open{aspect-ratio:3/4}
+      .gallery-item:nth-child(3){grid-column:1/-1;width:72%;margin:0 auto}.gallery-item:nth-child(3) .gallery-open{aspect-ratio:4/3;border-radius:0 0 100px 100px}.gallery-item figcaption{font-size:8px;letter-spacing:.06em}.zoom-sign{width:30px;height:30px;right:8px;bottom:8px}.gallery-note{margin-top:27px;font-size:10px}
+      .location .frame{padding-top:58px}.location-top{grid-template-columns:1fr;gap:30px;padding:0 22px 30px}.address{border-left:0;border-top:1px solid var(--line);padding:26px 0 0}.address address{font-size:21px}.map-wrap{height:320px}.map-strip{padding:18px;flex-direction:column;gap:12px}
+      .faq .frame{grid-template-columns:1fr;gap:30px;padding-block:55px 25px}.faq-title{padding:0}.faq-title p{max-width:310px;margin-top:18px}summary{font-size:14px;padding-block:22px}details p{font-size:13px}
+      .contact .frame{padding:58px 20px 35px}.contact h2{font-size:clamp(56px,12vw,85px)}.contact p{font-size:15px}.contact-buttons{flex-direction:column;align-items:center}.contact-buttons .btn{width:min(100%,300px);font-size:12px}.contact-number{margin-top:27px}.contact-bottom{flex-direction:column;gap:9px;margin-top:24px;padding-top:20px;font-size:11px}
+      .footer-top{grid-template-columns:1fr 1fr;gap:32px 20px}.footer-brand{grid-column:1/-1;text-align:center}.footer-brand .brand{justify-content:center}.footer-description{margin:18px auto 0}.footer-bottom{justify-content:center;text-align:center;gap:10px}.site-footer{padding-top:40px}
+      .lightbox{padding:54px 12px 17px}.lightbox-photo{height:62svh}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}
+      .js .reveal{opacity:1;transform:none}.js .photo-mask{clip-path:none}.intro-line{display:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <div class="intro-line" aria-hidden="true"></div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+      <symbol id="i-diagonal" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="m8 3 3 5-3 3c1.5 3 3 4.5 6 6l3-3 4 3c-1 4-3 5-7 3C7 17 3 12 3 7c0-3 2-4 5-4Z"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.6-4.7A9 9 0 1 1 21 11.5Z"/><path d="M8 8c.5 4 2 5.5 6 7l2-2-2-1-1 1-3-3 1-1-1-2Z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+      <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 2C10 6 5 10 5 15a7 7 0 0 0 14 0c0-5-5-9-7-13Z"/><path d="M8 15c0 2 1 3 3 3"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+      <symbol id="i-brand" viewBox="0 0 42 48"><path d="M9 44V12a7 7 0 0 1 7-7h19v8H18v8h13v8H18v15Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M31 32c-1.8 3-4 5.6-4 8a4 4 0 0 0 8 0c0-2.4-2.2-5-4-8Z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header" id="header">
+    <div class="container nav-inner">
+      <a class="brand" href="#inizio" aria-label="Fanelli, torna all’inizio">
+        <svg class="brand-mark" aria-hidden="true"><use href="#i-brand"/></svg>
+        <span><span class="brand-name">FANELLI</span><span class="brand-small">Forniture termoidraulica</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="navigazione"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="desktop-nav" id="navigazione" aria-label="Navigazione principale">
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#galleria">Galleria</a>
+        <a href="#dove-siamo">Dove siamo</a>
+        <a class="nav-contact" href="#contatti">Parliamone <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <section class="hero" id="inizio" aria-labelledby="hero-title">
+      <div class="hero-frame"><span class="chapter"><b>01</b> L’acqua, il calore, la cura</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Forniture Termoidraulica Fanelli · Bari</p>
+        <h1 id="hero-title"><span class="wordline"><span>Soluzioni idrauliche</span></span><span class="wordline"><span>per ogni esigenza.</span></span></h1>
+        <p class="hero-subtitle">I prodotti giusti. Il supporto che serve.<br>Per la tua casa e la tua attività.</p>
+        <div class="hero-actions">
+          <a class="btn magnetic" href="#servizi">Scopri i servizi <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-light magnetic" href="tel:+393339277570">Parla con noi <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+        </div>
+      </div>
+      <div id="hero-scene" aria-hidden="true"></div>
+      <svg class="scene-fallback" viewBox="0 0 700 360" aria-hidden="true">
+        <defs>
+          <linearGradient id="metal" x1="0" x2="1"><stop stop-color="#536762"/><stop offset=".23" stop-color="#dbe2d9"/><stop offset=".45" stop-color="#fff"/><stop offset=".65" stop-color="#9daea4"/><stop offset="1" stop-color="#486e63"/></linearGradient>
+          <linearGradient id="brass"><stop stop-color="#8b6c39"/><stop offset=".5" stop-color="#e6cd96"/><stop offset="1" stop-color="#a5864c"/></linearGradient>
+          <radialGradient id="shade"><stop stop-color="#244a40" stop-opacity=".18"/><stop offset="1" stop-color="#244a40" stop-opacity="0"/></radialGradient>
+        </defs>
+        <ellipse cx="350" cy="314" rx="270" ry="35" fill="url(#shade)"/>
+        <ellipse cx="350" cy="299" rx="207" ry="30" fill="#d3e1d7"/>
+        <ellipse cx="350" cy="291" rx="207" ry="30" fill="#f4f7ef" stroke="#b39560" stroke-width="1"/>
+        <path d="M305 271V119c0-61 134-61 134 0v28" fill="none" stroke="url(#metal)" stroke-width="30"/>
+        <rect x="277" y="251" width="57" height="18" rx="5" fill="url(#brass)"/>
+        <rect x="286" y="198" width="38" height="56" rx="5" fill="url(#metal)"/>
+        <rect x="291" y="189" width="91" height="11" rx="5" fill="url(#brass)"/>
+        <rect x="423" y="140" width="32" height="16" rx="3" fill="url(#brass)"/>
+        <path d="M438 172c-5 8-9 13-9 19a9 9 0 0 0 18 0c0-6-4-11-9-19Z" fill="#65b2a2" opacity=".8"/>
+        <circle cx="216" cy="236" r="27" fill="none" stroke="url(#brass)" stroke-width="12"/>
+        <circle cx="492" cy="248" r="25" fill="none" stroke="url(#metal)" stroke-width="13"/>
+      </svg>
+      <span class="hero-side">Materiali · competenza · attenzione</span>
+      <span class="hero-side right">Al servizio di privati e aziende</span>
+      <span class="hero-annotation">La qualità, in ogni dettaglio</span>
+      <div class="hero-bottom">
+        <p class="eyebrow">Corso Cavour 180<br>Bari, Italia</p>
+        <a class="scroll-link" href="#chi-siamo">Entra nel mondo Fanelli <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v17m-5-5 5 5 5-5"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section about" id="chi-siamo" aria-labelledby="about-title">
+      <div class="container frame reveal">
+        <span class="chapter"><b>02</b> Chi siamo</span>
+        <div class="about-grid">
+          <figure class="about-visual">
+            <div class="about-photo photo-mask"><img src="img/1.jpg" alt="Materiali e strumenti per la progettazione e il lavoro idraulico" loading="lazy" width="800" height="950"></div>
+            <figcaption class="image-caption">Dalla scelta del materiale alla soluzione</figcaption>
+          </figure>
+          <div class="about-copy">
+            <p class="eyebrow">Un riferimento, qui a Bari</p>
+            <h2>Ogni impianto.<br>Ogni esigenza.<br>La stessa cura.</h2>
+            <div class="small-rule"></div>
+            <p>Dietro un impianto che funziona ci sono materiali adatti e scelte consapevoli. Da Fanelli aiutiamo privati e aziende a trovare soluzioni termoidrauliche affidabili e su misura.</p>
+            <p>Ascoltiamo ciò di cui hai bisogno, ti orientiamo tra i prodotti e mettiamo attenzione e professionalità in ogni servizio.</p>
+            <a class="text-link" href="#contatti">Raccontaci il tuo progetto <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+          </div>
+        </div>
+        <div class="about-foot"><span>Forniture selezionate</span><i></i><span>Consulenza tecnica</span><i></i><span>Soluzioni su misura</span></div>
+      </div>
+    </section>
+
+    <section class="section services" id="servizi" aria-labelledby="services-title">
+      <div class="container frame reveal">
+        <span class="chapter"><b>03</b> Cosa facciamo</span>
+        <div class="section-heading">
+          <span class="eyebrow">Dalla fornitura alla manutenzione</span>
+          <h2 id="services-title">Il tuo impianto,<br>in buone mani.</h2>
+          <p>Prodotti e servizi che rispondono a esigenze concrete. Con il supporto tecnico per scegliere bene.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-number">01 /</span>
+            <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 48h21V25h22V11H19v23h-9M10 30v22M6 30h8v22H6zM49 7h8v22h-8z"/><path d="M24 15v25h-6M28 43v5"/></svg>
+            <h3>Fornitura<br>materiale idraulico</h3>
+            <p>Una gamma di prodotti di qualità per le esigenze del tuo impianto.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">02 /</span>
+            <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><rect x="15" y="7" width="34" height="44" rx="5"/><path d="M23 51v8m18-8v8M15 40h34M24 16h16"/><circle cx="25" cy="45" r="2"/><path d="M33 21c-1 4-6 6-6 10a5 5 0 0 0 10 0c0-3-3-6-4-10Z"/></svg>
+            <h3>Installazione<br>caldaie</h3>
+            <p>Montaggio professionale e sicuro, con attenzione a ogni dettaglio.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">03 /</span>
+            <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><path d="m37 8-4 11 11 10 11-4a16 16 0 0 1-20 16L18 57 7 46l18-17A16 16 0 0 1 37 8Z"/><circle cx="16" cy="47" r="3"/></svg>
+            <h3>Riparazioni<br>urgenti</h3>
+            <p>Interventi rapidi su tutta Bari. Chiamaci per descrivere il problema.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">04 /</span>
+            <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="31" r="19"/><path d="M32 5v7m0 38v8M6 31h7m38 0h7M14 13l5 5m26 27 5 5M14 50l5-5m26-27 5-5M23 32l6 6 13-14"/></svg>
+            <h3>Manutenzione<br>impianti</h3>
+            <p>Controlli periodici per la sicurezza e la cura del tuo impianto.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number">05 /</span>
+            <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><path d="M11 10h42v33H31L18 54V43h-7Z"/><path d="M23 22h18M23 30h12"/></svg>
+            <h3>Consulenza<br>tecnica</h3>
+            <p>Un aiuto concreto per individuare i prodotti e le soluzioni più adatti.</p>
+          </article>
+        </div>
+        <p class="service-note">Non sai da dove iniziare? <a href="tel:+393339277570">Una telefonata è un buon primo passo.</a></p>
+      </div>
+    </section>
+
+    <section class="section why" id="perche-fanelli" aria-labelledby="why-title">
+      <div class="container frame reveal" id="care-frame">
+        <span class="chapter"><b>04</b> Il nostro modo di lavorare</span>
+        <div class="section-heading">
+          <span class="eyebrow">Prima di tutto, le persone</span>
+          <h2 id="why-title">La differenza<br>è nell’attenzione.</h2>
+          <p>Un dubbio tecnico, un guasto, una nuova installazione.<br>Partiamo sempre dall’ascolto.</p>
+        </div>
+        <div class="flow-divider"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></div>
+        <div class="advantages">
+          <article class="advantage"><p class="eyebrow">Capire</p><h3>Consigli esperti</h3><p>Ti aiutiamo nelle scelte tecniche, rendendo più chiaro ciò che serve davvero.</p></article>
+          <article class="advantage"><p class="eyebrow">Rispondere</p><h3>Risposta rapida</h3><p>Attenzione alle tue richieste e interventi senza lunghe attese.</p></article>
+          <article class="advantage"><p class="eyebrow">Prendersi cura</p><h3>Professionalità</h3><p>Servizi precisi e affidabili, con cura per il lavoro e per le tue esigenze.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galleria" aria-labelledby="gallery-title">
+      <div class="container frame reveal">
+        <span class="chapter"><b>05</b> Il mondo termoidraulico</span>
+        <div class="section-heading">
+          <span class="eyebrow">Materia, acqua, precisione</span>
+          <h2 id="gallery-title">Piccoli dettagli.<br>Un grande equilibrio.</h2>
+          <p>Uno sguardo ai materiali e ai gesti che fanno parte del lavoro termoidraulico.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <button class="gallery-open photo-mask" data-photo="img/2.jpg" data-caption="Rubinetteria e cura dei particolari" aria-label="Ingrandisci la fotografia della rubinetteria">
+              <img src="img/2.jpg" alt="Rubinetteria e componenti idraulici di un lavabo" width="600" height="800" loading="lazy">
+              <span class="zoom-sign"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+            </button>
+            <figcaption>01 — I particolari</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-open photo-mask" data-photo="img/3.jpg" data-caption="Strumenti e precisione nel lavoro idraulico" aria-label="Ingrandisci la fotografia del lavoro idraulico">
+              <img src="img/3.jpg" alt="Intervento idraulico sulla rubinetteria" width="600" height="940" loading="lazy">
+              <span class="zoom-sign"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+            </button>
+            <figcaption>02 — La precisione</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-open photo-mask" data-photo="img/4.jpg" data-caption="Acqua e funzionalità quotidiana" aria-label="Ingrandisci la fotografia del rubinetto">
+              <img src="img/4.jpg" alt="Dettaglio di un rubinetto e del passaggio dell’acqua" width="600" height="800" loading="lazy">
+              <span class="zoom-sign"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span>
+            </button>
+            <figcaption>03 — La funzionalità</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-note">Immagini illustrative del settore termoidraulico, non di lavori realizzati da Fanelli.</p>
+      </div>
+    </section>
+
+    <section class="section location" id="dove-siamo" aria-labelledby="location-title">
+      <div class="container frame reveal">
+        <span class="chapter"><b>06</b> Vieni a trovarci</span>
+        <div class="location-top">
+          <div><p class="eyebrow">Vicini alle tue esigenze</p><h2 id="location-title">Ci trovi<br>nel cuore di Bari.</h2></div>
+          <div class="address">
+            <address>Corso Cavour 180<br>Bari, Italia</address>
+            <p class="hours">Per conoscere gli orari di apertura, contattaci prima della tua visita.</p>
+            <a class="text-link" href="tel:+393339277570">Chiedi gli orari <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe title="Mappa di Forniture Termoidraulica Fanelli, Corso Cavour 180, Bari" src="https://www.openstreetmap.org/export/embed.html?bbox=16.8689432,41.1169759,16.876943200000003,41.120975900000005&amp;layer=mapnik&amp;marker=41.1189759,16.8729432" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map-strip"><span class="eyebrow">Forniture Termoidraulica Fanelli</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Forniture+Termoidraulica+Fanelli+Bari" target="_blank" rel="noopener noreferrer">Apri le indicazioni stradali <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a></div>
+      </div>
+    </section>
+
+    <section class="section faq" id="domande" aria-labelledby="faq-title">
+      <div class="container frame reveal">
+        <span class="chapter"><b>07</b> Qualche risposta utile</span>
+        <div class="faq-title"><p class="eyebrow">Facciamo chiarezza</p><h2 id="faq-title">Hai una<br>domanda?</h2><p>Qui trovi alcune indicazioni generali. Per il tuo caso specifico, parliamone direttamente.</p></div>
+        <div class="accordion">
+          <details><summary>Come posso richiedere un preventivo?</summary><p>Puoi telefonarci o scriverci su WhatsApp. Descrivi il servizio o il materiale di cui hai bisogno: potremo raccogliere le informazioni utili per un preventivo personalizzato.</p></details>
+          <details><summary>Cosa serve per scegliere un ricambio?</summary><p>Una foto, le misure e, se disponibili, marca e modello del componente aiutano a identificarlo. Prima di acquistare un ricambio, è importante verificarne la compatibilità con l’impianto.</p></details>
+          <details><summary>Ogni quanto va controllata una caldaia?</summary><p>La periodicità dipende dall’impianto, dalle indicazioni del costruttore e dalla normativa applicabile. Consulta il libretto e chiedi a un tecnico di verificare le scadenze relative alla tua caldaia.</p></details>
+          <details><summary>Cosa fare in caso di perdita d’acqua?</summary><p>Se puoi farlo in sicurezza, chiudi il rubinetto generale dell’acqua ed evita il contatto con apparecchi o prese elettriche bagnate. Contatta un professionista e descrivi il problema. Tempi e disponibilità dell’intervento vanno verificati direttamente.</p></details>
+          <details><summary>Vi rivolgete anche alle aziende?</summary><p>Sì, offriamo prodotti e servizi termoidraulici per privati e aziende. Contattaci per valutare insieme le necessità della tua attività.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contatti" aria-labelledby="contact-title">
+      <div class="container frame reveal">
+        <span class="chapter"><b>08</b> Il prossimo passo</span>
+        <span class="contact-corner tl" aria-hidden="true"></span><span class="contact-corner br" aria-hidden="true"></span>
+        <div class="contact-inner">
+          <p class="eyebrow">Consulenze e preventivi personalizzati</p>
+          <h2 id="contact-title">La soluzione inizia<br>da una conversazione.</h2>
+          <p>Un progetto da realizzare o un problema da risolvere? Siamo a disposizione su WhatsApp e al telefono.</p>
+          <div class="contact-buttons">
+            <a class="btn btn-white magnetic" href="https://wa.me/393339277570?text=Buongiorno%21%20Vorrei%20ricevere%20maggiori%20informazioni%20sui%20vostri%20servizi." target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Scrivi su WhatsApp <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+            <a class="btn btn-light magnetic" href="tel:+393339277570"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Chiamaci <svg class="icon" aria-hidden="true"><use href="#i-diagonal"/></svg></a>
+          </div>
+          <a class="contact-number" href="tel:+393339277570">+39 333 927 7570</a>
+          <div class="contact-bottom"><span>Corso Cavour 180 · Bari</span><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Forniture+Termoidraulica+Fanelli+Bari" target="_blank" rel="noopener noreferrer">Raggiungici <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="#inizio" aria-label="Fanelli, torna all’inizio"><svg class="brand-mark" aria-hidden="true"><use href="#i-brand"/></svg><span><span class="brand-name">FANELLI</span><span class="brand-small">Forniture termoidraulica</span></span></a>
+          <p class="footer-description">Soluzioni idrauliche per ogni esigenza.<br>Prodotti, competenza e attenzione, a Bari.</p>
+        </div>
+        <div class="footer-column"><p class="eyebrow">Esplora</p><a href="#chi-siamo">Chi siamo</a><a href="#servizi">I nostri servizi</a><a href="#galleria">Galleria</a><a href="#domande">Domande frequenti</a></div>
+        <div class="footer-column"><p class="eyebrow">Restiamo in contatto</p><p>Corso Cavour 180, Bari</p><a href="tel:+393339277570">+39 333 927 7570</a><a href="https://wa.me/393339277570?text=Buongiorno%21%20Vorrei%20ricevere%20maggiori%20informazioni%20sui%20vostri%20servizi." target="_blank" rel="noopener noreferrer">Scrivi su WhatsApp</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Forniture+Termoidraulica+Fanelli+Bari" target="_blank" rel="noopener noreferrer">Indicazioni stradali</a></div>
+      </div>
+      <div class="footer-bottom"><span>Sito dimostrativo <span class="demo-note" lang="ro">· Sito dimostrativo</span></span><span>Fotografie illustrative da Pixabay: AS_Photography, jarmoluk</span><a href="#inizio">Torna all’inizio ↑</a></div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Galleria fotografica ingrandita">
+    <button class="lightbox-close" aria-label="Chiudi la fotografia"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <img class="lightbox-photo" alt="" width="1100" height="800">
+    <div class="lightbox-controls"><button id="photo-prev" aria-label="Fotografia precedente"><svg class="icon" style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow"/></svg></button><p class="lightbox-caption" aria-live="polite"></p><button id="photo-next" aria-label="Fotografia successiva"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+  </dialog>
+
+  <script>
+    document.documentElement.classList.add('js');
+    const motionQuery=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const header=document.getElementById('header');
+    const menuButton=document.querySelector('.menu-toggle');
+    const nav=document.getElementById('navigazione');
+    function setMenu(open){
+      header.classList.toggle('menu-open',open);
+      menuButton.setAttribute('aria-expanded',String(open));
+      menuButton.setAttribute('aria-label',open?'Chiudi il menu':'Apri il menu');
+    }
+    menuButton.addEventListener('click',()=>setMenu(menuButton.getAttribute('aria-expanded')!=='true'));
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&header.classList.contains('menu-open')){setMenu(false);menuButton.focus()}});
+    document.addEventListener('click',e=>{if(!header.contains(e.target))setMenu(false)});
+    let scrollScheduled=false;
+    window.addEventListener('scroll',()=>{
+      if(!scrollScheduled){requestAnimationFrame(()=>{header.classList.toggle('scrolled',window.scrollY>35);scrollScheduled=false});scrollScheduled=true}
+    },{passive:true});
+    header.classList.toggle('scrolled',window.scrollY>35);
+    if('IntersectionObserver' in window){
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}
+      }),{threshold:.08,rootMargin:'0px 0px -25px 0px'});
+      document.querySelectorAll('.reveal,.photo-mask').forEach(el=>observer.observe(el));
+    }else document.querySelectorAll('.reveal,.photo-mask').forEach(el=>el.classList.add('is-visible'));
+
+    const galleryButtons=[...document.querySelectorAll('.gallery-open')];
+    const lightbox=document.getElementById('lightbox');
+    const fullPhoto=lightbox.querySelector('.lightbox-photo');
+    let currentPhoto=0,opener=null;
+    function showPhoto(index){
+      currentPhoto=(index+galleryButtons.length)%galleryButtons.length;
+      const item=galleryButtons[currentPhoto];
+      fullPhoto.src=item.dataset.photo;
+      fullPhoto.alt=item.querySelector('img').alt;
+      lightbox.querySelector('.lightbox-caption').textContent=(currentPhoto+1)+' / '+galleryButtons.length+' — '+item.dataset.caption;
+    }
+    galleryButtons.forEach((button,index)=>button.addEventListener('click',()=>{
+      opener=button;showPhoto(index);lightbox.showModal();document.body.classList.add('modal-open');
+    }));
+    function closePhoto(){lightbox.close()}
+    lightbox.querySelector('.lightbox-close').addEventListener('click',closePhoto);
+    lightbox.addEventListener('close',()=>{document.body.classList.remove('modal-open');if(opener)opener.focus({preventScroll:true})});
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox){const r=lightbox.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closePhoto()}});
+    document.getElementById('photo-prev').addEventListener('click',()=>showPhoto(currentPhoto-1));
+    document.getElementById('photo-next').addEventListener('click',()=>showPhoto(currentPhoto+1));
+    lightbox.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();showPhoto(currentPhoto-1)}if(e.key==='ArrowRight'){e.preventDefault();showPhoto(currentPhoto+1)}});
+    document.querySelectorAll('details').forEach(item=>item.addEventListener('toggle',()=>{
+      if(item.open)document.querySelectorAll('details').forEach(other=>{if(other!==item)other.open=false});
+    }));
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    (function(){
+      if(!window.gsap||!window.ScrollTrigger)return;
+      gsap.registerPlugin(ScrollTrigger);
+      const mm=gsap.matchMedia();
+      mm.add('(min-width: 1000px) and (prefers-reduced-motion: no-preference)',()=>{
+        gsap.to('.about-photo img',{yPercent:7,ease:'none',scrollTrigger:{trigger:'.about',start:'top bottom',end:'bottom top',scrub:1}});
+        const care=document.getElementById('care-frame');
+        gsap.timeline({scrollTrigger:{trigger:'#perche-fanelli',start:'center center',end:'+=240',pin:true,scrub:1,anticipatePin:1}})
+          .to(care.querySelectorAll('.advantage'),{y:-8,stagger:.08,duration:1})
+          .to(care.querySelector('.flow-divider svg'),{rotation:16,duration:1},0);
+        document.querySelectorAll('.magnetic').forEach(button=>{
+          const move=e=>{const r=button.getBoundingClientRect();gsap.to(button,{x:(e.clientX-r.left-r.width/2)*.12,y:(e.clientY-r.top-r.height/2)*.15,duration:.35,overwrite:true})};
+          const leave=()=>gsap.to(button,{x:0,y:0,duration:.5,ease:'power2.out'});
+          button.addEventListener('pointermove',move);button.addEventListener('pointerleave',leave);
+          button._magneticCleanup=()=>{button.removeEventListener('pointermove',move);button.removeEventListener('pointerleave',leave);gsap.set(button,{x:0,y:0})};
+        });
+        return()=>document.querySelectorAll('.magnetic').forEach(b=>b._magneticCleanup&&b._magneticCleanup());
+      });
+      window.addEventListener('load',()=>ScrollTrigger.refresh());
+    })();
+
+    (function(){
+      const host=document.getElementById('hero-scene');
+      const hero=document.querySelector('.hero');
+      const isMobile=window.innerWidth<761;
+      const lowPower=(navigator.deviceMemory&&navigator.deviceMemory<=2)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=2);
+      if(!window.THREE||lowPower)return;
+      let renderer;
+      try{
+        renderer=new THREE.WebGLRenderer({alpha:true,antialias:!isMobile,powerPreference:'low-power'});
+      }catch(e){return}
+      try{
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio,isMobile?1.25:1.7));
+        renderer.setSize(host.clientWidth,host.clientHeight);
+        renderer.setClearColor(0x000000,0);
+        renderer.outputColorSpace=THREE.SRGBColorSpace;
+        renderer.toneMapping=THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure=1.35;
+        renderer.shadowMap.enabled=!isMobile;
+        renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+        host.appendChild(renderer.domElement);
+        const scene=new THREE.Scene();
+        const camera=new THREE.PerspectiveCamera(34,host.clientWidth/host.clientHeight,.1,70);
+        camera.position.set(0,3.8,15);
+        camera.lookAt(0,2.6,0);
+        scene.add(new THREE.HemisphereLight(0xfaffef,0x47796a,2.8));
+        const key=new THREE.DirectionalLight(0xfff2cf,4);
+        key.position.set(-4,8,6);key.castShadow=!isMobile;
+        key.shadow.mapSize.set(1024,1024);key.shadow.camera.left=-7;key.shadow.camera.right=7;key.shadow.camera.top=7;key.shadow.camera.bottom=-7;key.shadow.normalBias=.03;
+        scene.add(key);
+        const rim=new THREE.DirectionalLight(0xffffff,3);rim.position.set(5,3,-3);scene.add(rim);
+        const fill=new THREE.PointLight(0x9dd8c8,24,20);fill.position.set(-4,2,4);scene.add(fill);
+
+        const envCanvas=document.createElement('canvas');envCanvas.width=512;envCanvas.height=256;
+        const ctx=envCanvas.getContext('2d');
+        const grad=ctx.createLinearGradient(0,0,0,256);grad.addColorStop(0,'#eff5ed');grad.addColorStop(.45,'#a1b9aa');grad.addColorStop(.52,'#365a4c');grad.addColorStop(1,'#c6d1be');
+        ctx.fillStyle=grad;ctx.fillRect(0,0,512,256);
+        ctx.fillStyle='#ffffff';ctx.fillRect(75,15,45,155);ctx.fillRect(340,25,90,130);
+        ctx.fillStyle='#dec69a';ctx.fillRect(215,30,20,120);
+        const texture=new THREE.CanvasTexture(envCanvas);texture.mapping=THREE.EquirectangularReflectionMapping;
+        const pmrem=new THREE.PMREMGenerator(renderer);
+        const env=pmrem.fromEquirectangular(texture);scene.environment=env.texture;texture.dispose();pmrem.dispose();
+        const silver=new THREE.MeshStandardMaterial({color:0xc9d6cd,metalness:1,roughness:.18,envMapIntensity:1.2});
+        const brass=new THREE.MeshStandardMaterial({color:0xb99b5e,metalness:.88,roughness:.24});
+        const ceramic=new THREE.MeshStandardMaterial({color:0xe3ece0,metalness:.05,roughness:.6});
+        const dark=new THREE.MeshStandardMaterial({color:0x154f47,metalness:.5,roughness:.3});
+        const water=new THREE.MeshPhysicalMaterial({color:0x78c6b5,metalness:.05,roughness:.08,transparent:true,opacity:.72,clearcoat:1});
+        const assembly=new THREE.Group();scene.add(assembly);
+        assembly.position.set(0,-1.15,0);
+        assembly.rotation.y=-.28;
+        const segments=isMobile?32:64;
+        function mesh(geometry,material,parent=assembly){
+          const m=new THREE.Mesh(geometry,material);m.castShadow=!isMobile;m.receiveShadow=!isMobile;parent.add(m);return m;
+        }
+        function cylinder(radius,height,material,x,y,z){
+          const m=mesh(new THREE.CylinderGeometry(radius,radius,height,segments),material);m.position.set(x,y,z);return m;
+        }
+        const plinth=cylinder(2.65,.18,ceramic,0,0,0);
+        cylinder(2.67,.025,brass,0,-.065,0);
+        cylinder(.41,.09,brass,-.55,.14,0);
+        cylinder(.32,.12,silver,-.55,.235,0);
+        cylinder(.23,.83,silver,-.55,.69,0);
+        cylinder(.25,.055,brass,-.55,1.03,0);
+        const pipeCurve=new THREE.CatmullRomCurve3([
+          new THREE.Vector3(-.55,.92,0),new THREE.Vector3(-.55,1.65,0),
+          new THREE.Vector3(-.53,2.2,0),new THREE.Vector3(-.27,2.56,0),
+          new THREE.Vector3(.23,2.68,0),new THREE.Vector3(.77,2.58,0),
+          new THREE.Vector3(1.04,2.22,0),new THREE.Vector3(1.04,1.98,0)
+        ]);
+        mesh(new THREE.TubeGeometry(pipeCurve,isMobile?48:90,.145,isMobile?12:24,false),silver);
+        cylinder(.164,.15,brass,1.04,1.97,0);
+        cylinder(.133,.016,dark,1.04,1.89,0);
+        cylinder(.14,.13,brass,-.55,1.12,0);
+        const handle=mesh(new THREE.BoxGeometry(.86,.055,.14),brass);handle.position.set(-.22,1.2,.06);
+        const handleTip=mesh(new THREE.SphereGeometry(.07,16,12),brass);handleTip.scale.y=.4;handleTip.position.set(.21,1.2,.06);
+
+        const drop=mesh(new THREE.SphereGeometry(.085,isMobile?16:28,18),water);
+        drop.scale.set(.83,1.5,.83);drop.position.set(1.04,1.55,0);
+        const dropTop=mesh(new THREE.ConeGeometry(.052,.11,20),water);dropTop.position.set(1.04,1.69,0);
+        const droplet=new THREE.Group();
+        assembly.add(droplet);droplet.attach(drop);droplet.attach(dropTop);
+
+        const ring1=mesh(new THREE.TorusGeometry(.28,.105,12,segments),brass);
+        ring1.position.set(-1.65,.43,.25);ring1.rotation.set(-.3,.4,.2);
+        const ring2=mesh(new THREE.TorusGeometry(.25,.085,12,segments),silver);
+        ring2.position.set(1.7,.43,.48);ring2.rotation.set(-.4,-.35,0);
+        const joint=cylinder(.21,.4,brass,-1.3,.3,-.68);joint.rotation.z=Math.PI/2;
+        const jointRing=mesh(new THREE.TorusGeometry(.22,.032,10,segments),silver);jointRing.position.set(-1.09,.3,-.68);jointRing.rotation.y=Math.PI/2;
+
+        const floor=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.ShadowMaterial({opacity:.1}));
+        floor.rotation.x=-Math.PI/2;floor.position.y=-1.26;floor.receiveShadow=true;scene.add(floor);
+        let pointerX=0,pointerY=0,scrollRatio=0,visible=true,raf=0;
+        const clock=new THREE.Clock();
+        function resize(){
+          const w=host.clientWidth,h=host.clientHeight;
+          renderer.setSize(w,h);camera.aspect=w/h;
+          camera.position.z=w<761?19.4:15;
+          camera.position.y=w<761?4.6:3.8;
+          camera.lookAt(0,w<761?3.4:2.6,0);
+          if(w<420){assembly.scale.setScalar(.83)}else{assembly.scale.setScalar(w<761?.95:1)}
+          camera.updateProjectionMatrix();
+          renderOnce();
+        }
+        function renderOnce(){renderer.render(scene,camera)}
+        function loop(){
+          if(!visible||document.hidden||motionQuery.matches){raf=0;return}
+          const time=clock.getElapsedTime();
+          assembly.rotation.y+=(-.28+pointerX*.13+scrollRatio*.15-assembly.rotation.y)*.035;
+          assembly.rotation.x+=(pointerY*.035-assembly.rotation.x)*.035;
+          ring1.position.y=.43+Math.sin(time*.8)*.055;
+          ring2.position.y=.43+Math.sin(time*.8+1.4)*.045;
+          droplet.position.y=Math.sin(time*1.25)*.055;
+          renderer.render(scene,camera);
+          raf=requestAnimationFrame(loop);
+        }
+        function start(){if(!raf&&!motionQuery.matches&&visible&&!document.hidden)raf=requestAnimationFrame(loop);else if(motionQuery.matches)renderOnce()}
+        if(!isMobile)hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();pointerX=(e.clientX-r.left)/r.width*2-1;pointerY=(e.clientY-r.top)/r.height*2-1},{passive:true});
+        hero.addEventListener('pointerleave',()=>{pointerX=0;pointerY=0});
+        window.addEventListener('scroll',()=>{scrollRatio=Math.min(window.scrollY/hero.offsetHeight,1)},{passive:true});
+        window.addEventListener('resize',resize,{passive:true});
+        if('IntersectionObserver'in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start()},{threshold:0}).observe(hero);
+        document.addEventListener('visibilitychange',()=>{if(!document.hidden)start()});
+        motionQuery.addEventListener('change',()=>{if(motionQuery.matches){cancelAnimationFrame(raf);raf=0;renderOnce()}else start()});
+        renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(raf);raf=0;hero.classList.remove('scene-ready');host.style.display='none'},false);
+        resize();hero.classList.add('scene-ready');start();
+      }catch(e){
+        if(renderer){renderer.dispose();if(renderer.domElement.parentNode)renderer.domElement.remove()}
+        hero.classList.remove('scene-ready');
+      }
+    })();
+  </script>
+</body>
+</html>
