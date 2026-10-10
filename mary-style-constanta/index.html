@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fbe8ef">
+  <meta name="description" content="Mary Style, salon de înfrumusețare în Constanța. Tunsori moderne, culori personalizate, coafat și îngrijire pentru păr.">
+  <title>Mary Style — Stilul tău, în Constanța</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Work+Sans:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #be123c;
+      --ink: #4b1024;
+      --muted: #795261;
+      --line: rgba(128, 37, 66, .18);
+      --page-bg: #fbe8ef;
+      --font-body: "Work Sans", sans-serif;
+      --font-title: "Fraunces", serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { margin: 0; background: var(--page-bg); color: var(--ink); font-family: var(--font-body); line-height: 1.65; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input { font: inherit; }
+    a { color: inherit; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    button { cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+    ::selection { background: #be123c; color: white; }
+    .skip { position: fixed; top: -100px; left: 20px; z-index: 100; background: white; padding: 12px 20px; }
+    .skip:focus { top: 10px; }
+    .wrap { width: min(1320px, calc(100% - 64px)); margin-inline: auto; }
+    .header { position: sticky; top: 0; z-index: 20; background: rgba(255, 243, 247, .87); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; font-family: var(--font-title); font-size: 30px; font-weight: 600; letter-spacing: -1.5px; line-height: 1; }
+    .brand span { color: var(--accent); }
+    .brand small { display: block; font: 500 9px var(--font-body); letter-spacing: 3px; text-transform: uppercase; margin-top: 9px; }
+    .navlinks { display: flex; align-items: center; gap: 30px; }
+    .navlinks a { font-size: 13px; font-weight: 500; text-decoration: none; position: relative; }
+    .navlinks a:not(.nav-cta)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -5px; height: 1px; background: var(--accent); transition: right .25s; }
+    .navlinks a:hover::after { right: 0; }
+    .nav-cta { border: 1px solid var(--accent); border-radius: 30px; padding: 11px 19px; color: var(--accent); transition: background .2s, color .2s; }
+    .nav-cta:hover { background: var(--accent); color: white; }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; border-radius: 20px; padding: 8px 15px; color: var(--ink); }
+    main { padding: 24px 0 0; }
+    .glass { position: relative; border: 1px solid rgba(255, 255, 255, .95); background: linear-gradient(125deg, rgba(255,255,255,.7), rgba(255,255,255,.25) 55%, rgba(255,255,255,.48)); box-shadow: 0 18px 70px rgba(91, 18, 45, .045), inset 0 0 0 1px rgba(128,37,66,.055); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 8px; }
+    .glass::before { content: ""; position: absolute; top: 0; left: 6%; width: 65%; height: 1px; background: linear-gradient(90deg, transparent, white, transparent); pointer-events: none; }
+    .chapter { margin-bottom: 24px; }
+    .reveal-ready .reveal { opacity: 0; transform: translateY(35px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal-ready .reveal.visible { opacity: 1; transform: translateY(0); }
+    .eyebrow { display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: 2px; font-size: 10px; font-weight: 600; margin: 0 0 26px; }
+    .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; flex-shrink: 0; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--font-title); font-weight: 500; }
+    h2 { font-size: clamp(36px, 4.3vw, 62px); line-height: 1.08; letter-spacing: -2px; }
+    .hero { min-height: 700px; padding: 52px; overflow: hidden; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 20px; }
+    .hero-glow { position: absolute; width: 620px; height: 620px; border-radius: 50%; right: -180px; top: -180px; background: radial-gradient(circle, rgba(224,92,139,.25), rgba(246,183,206,.13) 45%, transparent 70%); animation: breathe 9s ease-in-out infinite alternate; pointer-events: none; }
+    @keyframes breathe { from { transform: translate(0,0) scale(.9); } to { transform: translate(-100px,90px) scale(1.15); } }
+    .hero-copy { position: relative; z-index: 2; padding-bottom: 25px; }
+    .hero h1 { font-size: clamp(66px, 7.5vw, 108px); line-height: .96; letter-spacing: -5px; margin: 30px 0; }
+    .hero h1 span { color: var(--accent); display: block; }
+    .hero-lead { max-width: 330px; font-size: 16px; color: var(--muted); margin-bottom: 30px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 18px; padding: 16px 23px; border-radius: 4px; background: var(--accent); color: white; text-decoration: none; font-size: 13px; font-weight: 500; border: 1px solid var(--accent); transition: transform .25s, background .25s, box-shadow .25s; }
+    .button:hover { background: #970c30; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(190,18,60,.16); }
+    .button.light { background: rgba(255,255,255,.45); color: var(--ink); border-color: var(--line); }
+    .button.light:hover { background: white; }
+    .text-link { display: inline-flex; gap: 10px; text-decoration: none; border-bottom: 1px solid var(--line); font-size: 13px; padding-bottom: 4px; transition: color .2s; }
+    .text-link:hover { color: var(--accent); }
+    .hero-bottom { margin-top: 32px; display: flex; align-items: center; gap: 16px; }
+    .tiny-palette { display: flex; gap: 5px; }
+    .tiny-palette i { width: 13px; height: 13px; border-radius: 50%; background: var(--swatch); border: 1px solid rgba(75,16,36,.08); }
+    .hero-bottom small { font-size: 10px; text-transform: uppercase; letter-spacing: 1.2px; }
+    .collage { position: relative; height: 550px; }
+    .photo-main { position: absolute; width: 74%; height: 440px; right: 10px; top: 15px; border-radius: 180px 180px 5px 5px; border: 7px solid rgba(255,255,255,.8); overflow: hidden; }
+    .photo-main img { object-position: center; transition: transform .8s; }
+    .photo-main:hover img { transform: scale(1.035); }
+    .photo-cut { position: absolute; width: 44%; height: 245px; left: 0; bottom: 2px; border: 7px solid #fff4f7; overflow: hidden; border-radius: 3px; box-shadow: 0 12px 30px rgba(75,16,36,.1); }
+    .collage-label { position: absolute; right: 3px; bottom: 33px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.3px; writing-mode: vertical-rl; }
+    .round-stamp { position: absolute; left: 1px; top: 9px; width: 97px; height: 97px; border: 1px solid var(--accent); border-radius: 50%; display: grid; place-content: center; text-align: center; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; color: var(--accent); background: rgba(255,235,242,.8); }
+    .round-stamp svg { margin: 0 auto 5px; width: 25px; height: 25px; }
+    .drawn-arrow { position: absolute; width: 98px; height: 90px; right: 21%; bottom: 5px; color: var(--accent); }
+    .vertical-note { position: absolute; left: 17px; bottom: 25px; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; writing-mode: vertical-rl; transform: rotate(180deg); }
+    .section-pad { padding: 58px 52px; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; }
+    .about-image { position: relative; padding: 18px 18px 42px; background: rgba(255,255,255,.5); border: 1px solid white; }
+    .about-image img { height: 370px; }
+    .image-caption { display: flex; justify-content: space-between; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-top: 15px; }
+    .about-copy > p:not(.eyebrow) { font-size: 15px; color: var(--muted); max-width: 490px; }
+    .about-copy h2 { margin-bottom: 25px; }
+    .benefits { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; border-top: 1px solid var(--line); margin-top: 46px; padding-top: 27px; }
+    .benefit-icon { width: 30px; height: 30px; color: var(--accent); margin-bottom: 10px; }
+    .benefits h3 { font-size: 21px; line-height: 1.15; margin-bottom: 8px; }
+    .benefits p { font-size: 12px; color: var(--muted); margin: 0; }
+    .section-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 36px; }
+    .section-top h2 { margin: 0; }
+    .section-top > p { max-width: 280px; color: var(--muted); font-size: 13px; margin: 0; }
+    .palette-box { border: 1px solid var(--line); border-radius: 80px 80px 12px 12px; background: rgba(255,255,255,.34); padding: 45px 30px 25px; box-shadow: inset 0 2px 10px rgba(255,255,255,.8); }
+    .palette-tabs { display: grid; grid-template-columns: repeat(5,1fr); gap: 26px; }
+    .service-tab { border: none; background: none; color: var(--ink); padding: 0; text-align: center; min-width: 0; }
+    .swatch { display: grid; place-content: center; position: relative; aspect-ratio: 1; width: 100%; max-width: 150px; margin: 0 auto 19px; border-radius: 50%; background: var(--swatch); border: 7px solid rgba(255,255,255,.7); box-shadow: inset 0 3px 14px rgba(75,16,36,.1), 0 3px 10px rgba(75,16,36,.05); transition: transform .3s, box-shadow .3s; }
+    .swatch::after { content: ""; position: absolute; inset: 11px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; }
+    .swatch span { color: var(--swatch-text); font-family: var(--font-title); font-size: 30px; }
+    .service-tab:hover .swatch { transform: translateY(-5px); }
+    .service-tab[aria-selected="true"] .swatch { box-shadow: 0 0 0 2px var(--accent), inset 0 3px 14px rgba(75,16,36,.1); transform: translateY(-5px); }
+    .tab-title { font-size: 13px; font-weight: 500; }
+    .palette-caption { display: flex; align-items: center; justify-content: space-between; margin-top: 25px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; }
+    .service-detail { margin-top: 25px; padding: 27px 30px; border: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 25px; background: rgba(255,255,255,.38); border-radius: 4px; }
+    .service-detail h3 { font-size: 29px; margin-bottom: 6px; }
+    .service-detail p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+    .service-detail[hidden] { display: none; }
+    .gallery-grid { display: grid; grid-template-columns: 1.05fr .8fr 1.05fr; gap: 24px; align-items: start; }
+    .gallery-item { margin: 0; padding: 10px 10px 16px; background: rgba(255,255,255,.6); border: 1px solid white; transition: transform .3s; }
+    .gallery-item:hover { transform: translateY(-6px); }
+    .gallery-item:nth-child(2) { margin-top: 60px; }
+    .gallery-item img { height: 310px; }
+    .gallery-item:nth-child(2) img { height: 250px; }
+    .gallery-item figcaption { display: flex; justify-content: space-between; gap: 10px; margin-top: 15px; font-size: 11px; }
+    .gallery-item figcaption span { color: var(--accent); }
+    .gallery-note { font-size: 11px; color: var(--muted); margin: 22px 0 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .contact-copy h2 { margin-bottom: 24px; }
+    .contact-copy > p:not(.eyebrow) { color: var(--muted); font-size: 15px; max-width: 390px; }
+    .phone { display: block; width: fit-content; text-decoration: none; font-family: var(--font-title); font-size: clamp(30px,3.5vw,45px); letter-spacing: -1px; margin: 25px 0; }
+    .phone:hover { color: var(--accent); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .map-frame { border: 1px solid white; padding: 12px; background: rgba(255,255,255,.5); }
+    .map-frame iframe { display: block; width: 100%; height: 330px; border: 0; border-radius: 2px; }
+    .map-caption { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 16px 5px 4px; font-size: 12px; }
+    .map-caption .text-link { font-size: 11px; }
+    footer { padding: 29px 0 34px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: 24px; gap: 20px; }
+    .footer-top p { font-size: 12px; margin: 0; }
+    .footer-bottom { padding-top: 18px; display: flex; justify-content: space-between; gap: 25px; font-size: 10px; color: var(--muted); }
+    .footer-bottom p { margin: 0; }
+    @media (min-width: 1500px) { .hero { min-height: 740px; } }
+    @media (max-width: 1000px) {
+      .wrap { width: calc(100% - 40px); }
+      .hero { padding: 40px 32px; min-height: 610px; }
+      .hero h1 { font-size: 76px; }
+      .collage { height: 480px; }
+      .photo-main { height: 370px; width: 82%; }
+      .photo-cut { height: 210px; width: 52%; }
+      .round-stamp { width: 78px; height: 78px; font-size: 8px; top: 0; }
+      .section-pad { padding: 44px 32px; }
+      .about-grid { gap: 35px; }
+      .about-image img { height: 340px; }
+      .palette-tabs { gap: 18px; }
+      .contact-grid { gap: 32px; }
+      .gallery-item img { height: 240px; }
+      .gallery-item:nth-child(2) img { height: 200px; }
+    }
+    @media (max-width: 700px) {
+      html { scroll-padding-top: 90px; }
+      .wrap { width: calc(100% - 28px); }
+      .nav { min-height: 75px; }
+      .brand { font-size: 27px; }
+      .menu-toggle { display: block; }
+      .navlinks { display: none; position: absolute; top: 75px; left: 0; right: 0; padding: 24px; background: #fff1f5; flex-direction: column; align-items: stretch; gap: 20px; border-bottom: 1px solid var(--line); }
+      .navlinks.open { display: flex; }
+      .navlinks a { font-size: 15px; }
+      .nav-cta { text-align: center; }
+      main { padding-top: 14px; }
+      .chapter { margin-bottom: 14px; }
+      .hero { grid-template-columns: 1fr; padding: 30px 25px 20px; gap: 15px; }
+      .hero-copy { padding-bottom: 0; }
+      .eyebrow { margin-bottom: 20px; font-size: 9px; letter-spacing: 1.6px; }
+      .hero h1 { font-size: clamp(62px,15vw,90px); letter-spacing: -3.5px; margin: 22px 0; }
+      .hero-lead { font-size: 14px; max-width: 310px; margin-bottom: 23px; }
+      .hero-bottom { margin-top: 24px; }
+      .collage { height: 390px; width: min(420px,100%); margin: 5px auto 0; }
+      .photo-main { height: 320px; width: 70%; right: 10px; }
+      .photo-cut { height: 182px; width: 43%; bottom: 0; }
+      .round-stamp { top: 15px; left: 2px; }
+      .collage-label { bottom: 10px; right: 0; }
+      .drawn-arrow { width: 70px; right: 20%; bottom: 0; }
+      .vertical-note { display: none; }
+      .section-pad { padding: 34px 24px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-copy { order: -1; }
+      h2 { font-size: 39px; letter-spacing: -1.5px; }
+      .about-image img { height: 300px; }
+      .benefits { gap: 15px; margin-top: 28px; padding-top: 24px; }
+      .benefits h3 { font-size: 17px; }
+      .benefits p { font-size: 11px; }
+      .section-top { display: block; margin-bottom: 27px; }
+      .section-top > p { margin-top: 18px; max-width: 100%; }
+      .palette-box { padding: 30px 16px 18px; border-radius: 38px 38px 8px 8px; }
+      .palette-tabs { grid-template-columns: repeat(6,1fr); gap: 25px 15px; }
+      .service-tab { grid-column: span 2; }
+      .service-tab:nth-child(4) { grid-column: 2 / span 2; }
+      .service-tab:nth-child(5) { grid-column: 4 / span 2; }
+      .swatch { border-width: 5px; margin-bottom: 12px; }
+      .swatch span { font-size: 25px; }
+      .tab-title { font-size: 10px; line-height: 1.3; display: block; }
+      .palette-caption { font-size: 8px; letter-spacing: 1px; gap: 12px; }
+      .service-detail { padding: 22px; display: block; }
+      .service-detail .text-link { margin-top: 18px; }
+      .service-detail h3 { font-size: 26px; }
+      .gallery-grid { gap: 15px; grid-template-columns: 1fr 1fr; }
+      .gallery-item:nth-child(2) { margin-top: 35px; }
+      .gallery-item:nth-child(3) { grid-column: 1 / -1; width: 80%; margin: 0 auto; }
+      .gallery-item img { height: 220px; }
+      .gallery-item:nth-child(2) img { height: 185px; }
+      .gallery-item:nth-child(3) img { height: 260px; }
+      .gallery-item figcaption { font-size: 10px; }
+      .map-frame iframe { height: 280px; }
+      .contact-actions .button { width: 100%; }
+      .footer-top { align-items: start; }
+      .footer-top p { max-width: 130px; text-align: right; font-size: 10px; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal-ready .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#principal">Sari la conținut</a>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="brand" href="#acasa" aria-label="Mary Style, acasă">Mary<span> Style</span><small>Salon · Constanța</small></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navlinks">Meniu <span aria-hidden="true">＋</span></button>
+      <div class="navlinks" id="navlinks">
+        <a href="#despre">Despre noi</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#inspiratie">Inspirație</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://wa.me/40724799350?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Mary%20Style.">Hai să te programăm ↗</a>
+      </div>
+    </nav>
+  </header>
+  <main id="principal" class="wrap">
+    <section class="hero glass chapter" id="acasa" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Frumusețe cu personalitate · Constanța</p>
+        <h1 id="hero-title">Părul tău.<br><span>Stilul tău.</span></h1>
+        <p class="hero-lead">Coafuri pentru orice ocazie. Tunsori moderne și culori vibrante, alese să te reprezinte.</p>
+        <a class="button" href="https://wa.me/40724799350?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Mary%20Style.">Programează-te pe WhatsApp <span aria-hidden="true">↗</span></a>
+        <div class="hero-bottom">
+          <div class="tiny-palette" aria-hidden="true">
+            <i style="--swatch:#f8cbd9"></i><i style="--swatch:#ed9ab3"></i><i style="--swatch:#d85b80"></i><i style="--swatch:#be123c"></i><i style="--swatch:#68122d"></i>
+          </div>
+          <small>O nuanță de tine, în fiecare detaliu</small>
+        </div>
+      </div>
+      <div class="collage">
+        <div class="photo-main"><img src="img/1.jpg" alt="Portret de frumusețe cu accente de culoare și coafură expresivă, fotografie ilustrativă" fetchpriority="high"></div>
+        <div class="photo-cut"><img src="img/2.jpg" alt="Stilistă în salon, fotografie ilustrativă"></div>
+        <div class="round-stamp">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="24" r="4"></circle><circle cx="24" cy="24" r="4"></circle><path d="M11 21 26 4M21 21 6 4"></path><circle cx="16" cy="15" r="1"></circle></svg>
+          Mary Style<br>Tu, în prim-plan
+        </div>
+        <svg class="drawn-arrow" viewBox="0 0 110 90" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M104 9C108 60 70 76 17 60M17 60l16-9M17 60l13 15" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="collage-label">Detalii care schimbă totul</span>
+      </div>
+      <span class="vertical-note">01 / Un nou look începe aici</span>
+    </section>
+
+    <section class="glass chapter section-pad reveal" id="despre" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="img/3.jpg" alt="Moment de îngrijire a părului într-un salon, fotografie ilustrativă" loading="lazy">
+          <div class="image-caption"><span>Un moment pentru tine</span><span aria-hidden="true">↗</span></div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">02 / Bine ai venit la Mary Style</p>
+          <h2 id="about-title">Mai mult decât<br>o schimbare de look.</h2>
+          <p>Salonul tău de înfrumusețare din Constanța, dedicat stilului tău personal. Suntem aici să te ajutăm să arăți minunat și să te simți sigură pe tine la fiecare vizită.</p>
+          <p>Îmbinăm produse profesionale cu tehnici actuale și atenție la ceea ce îți dorești. De la o tunsoare nouă la o nuanță care te pune în valoare, pornim întotdeauna de la tine.</p>
+          <a href="#servicii" class="text-link">Găsește-ți ritualul de îngrijire <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="benefits">
+        <div>
+          <svg class="benefit-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M16 4C9 4 4 9 4 16s5 12 12 12h2c3 0 4-3 2-5-2-2 0-4 2-4h2c7 0 3-15-8-15Z"></path><circle cx="11" cy="11" r="1.5"></circle><circle cx="19" cy="10" r="1.5"></circle><circle cx="9" cy="18" r="1.5"></circle></svg>
+          <h3>Culori moderne</h3><p>Nuanțe personalizate, alese pentru tine.</p>
+        </div>
+        <div>
+          <svg class="benefit-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M16 26S4 19 4 11c0-6 8-8 12-2 4-6 12-4 12 2 0 8-12 15-12 15Z"></path></svg>
+          <h3>Atmosferă relaxantă</h3><p>Un loc în care te simți ca acasă.</p>
+        </div>
+        <div>
+          <svg class="benefit-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="8" cy="24" r="4"></circle><circle cx="24" cy="24" r="4"></circle><path d="M11 21 26 4M21 21 6 4"></path></svg>
+          <h3>Stiliști atenți</h3><p>Consiliere pentru o tunsoare care te reprezintă.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass chapter section-pad reveal" id="servicii" aria-labelledby="services-title">
+      <div class="section-top">
+        <div><p class="eyebrow">03 / Paleta ta de îngrijire</p><h2 id="services-title">Un strop de culoare.<br>Un plus de încredere.</h2></div>
+        <p>Alege un serviciu din paletă și descoperă ce putem face pentru părul tău.</p>
+      </div>
+      <div class="palette-box">
+        <div class="palette-tabs" role="tablist" aria-label="Servicii Mary Style">
+          <button class="service-tab" id="tab-1" role="tab" aria-selected="true" aria-controls="service-1" tabindex="0">
+            <span class="swatch" style="--swatch:#f8cbd9;--swatch-text:#68122d"><span>01</span></span><span class="tab-title">Tuns femei</span>
+          </button>
+          <button class="service-tab" id="tab-2" role="tab" aria-selected="false" aria-controls="service-2" tabindex="-1">
+            <span class="swatch" style="--swatch:#ed9ab3;--swatch-text:#4b1024"><span>02</span></span><span class="tab-title">Vopsit păr</span>
+          </button>
+          <button class="service-tab" id="tab-3" role="tab" aria-selected="false" aria-controls="service-3" tabindex="-1">
+            <span class="swatch" style="--swatch:#d85b80;--swatch-text:#3e071a"><span>03</span></span><span class="tab-title">Coafat</span>
+          </button>
+          <button class="service-tab" id="tab-4" role="tab" aria-selected="false" aria-controls="service-4" tabindex="-1">
+            <span class="swatch" style="--swatch:#be123c;--swatch-text:#fff4f7"><span>04</span></span><span class="tab-title">Tratamente păr</span>
+          </button>
+          <button class="service-tab" id="tab-5" role="tab" aria-selected="false" aria-controls="service-5" tabindex="-1">
+            <span class="swatch" style="--swatch:#68122d;--swatch-text:#fff4f7"><span>05</span></span><span class="tab-title">Spălat și aranjat</span>
+          </button>
+        </div>
+        <div class="palette-caption"><span>Mary Style / Servicii</span><span>Atinge o nuanță pentru detalii ↗</span></div>
+      </div>
+      <div class="service-detail" id="service-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+        <div><h3>Tuns femei</h3><p>Tunsori adaptate fizionomiei și stilului tău.</p></div><a href="#contact" class="text-link">Hai să vorbim despre noul tău look ↗</a>
+      </div>
+      <div class="service-detail" id="service-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
+        <div><h3>Vopsit păr</h3><p>Culori vibrante și nuanțe personalizate, potrivite pentru tine.</p></div><a href="#contact" class="text-link">Alege o schimbare de culoare ↗</a>
+      </div>
+      <div class="service-detail" id="service-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
+        <div><h3>Coafat</h3><p>Stilizare pentru ocazii speciale sau pentru zilele de zi cu zi.</p></div><a href="#contact" class="text-link">Povestește-ne despre ocazia ta ↗</a>
+      </div>
+      <div class="service-detail" id="service-4" role="tabpanel" aria-labelledby="tab-4" tabindex="0" hidden>
+        <div><h3>Tratamente păr</h3><p>Îngrijire intensivă pentru un păr sănătos.</p></div><a href="#contact" class="text-link">Oferă-i părului tău atenție ↗</a>
+      </div>
+      <div class="service-detail" id="service-5" role="tabpanel" aria-labelledby="tab-5" tabindex="0" hidden>
+        <div><h3>Spălat și aranjat</h3><p>Un răsfăț rapid, cu styling lejer.</p></div><a href="#contact" class="text-link">Rezervă un moment pentru tine ↗</a>
+      </div>
+      <noscript><p>Vopsit păr — culori vibrante, potrivite pentru tine. Coafat — stilizare pentru ocazii speciale sau zilnic. Tratamente păr — îngrijire intensivă pentru un păr sănătos. Spălat și aranjat — răsfăț rapid cu styling lejer.</p></noscript>
+    </section>
+
+    <section class="glass chapter section-pad reveal" id="inspiratie" aria-labelledby="gallery-title">
+      <div class="section-top">
+        <div><p class="eyebrow">04 / File de inspirație</p><h2 id="gallery-title">Frumusețea are<br>multe nuanțe.</h2></div>
+        <p>Culoare, textură și grijă. Câteva imagini care surprind universul îngrijirii părului.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item"><img src="img/1.jpg" alt="Look expresiv cu accente de culoare, imagine de inspirație" loading="lazy"><figcaption>Culoare & personalitate <span>01</span></figcaption></figure>
+        <figure class="gallery-item"><img src="img/3.jpg" alt="Îngrijirea părului și relaxare în salon, imagine de inspirație" loading="lazy"><figcaption>Grijă & răsfăț <span>02</span></figcaption></figure>
+        <figure class="gallery-item"><img src="img/4.jpg" alt="Coafură realizată de un stilist la o prezentare de frumusețe, imagine ilustrativă" loading="lazy"><figcaption>Formă & stil <span>03</span></figcaption></figure>
+      </div>
+      <p class="gallery-note">Fotografii de stoc, cu rol ilustrativ. Nu reprezintă lucrări realizate de Mary Style.</p>
+    </section>
+
+    <section class="glass chapter section-pad reveal" id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">05 / Ne vedem la salon</p>
+          <h2 id="contact-title">O schimbare bună<br>începe cu un „bună”.</h2>
+          <p>Spune-ne ce îți dorești pentru părul tău. Sună-ne sau scrie-ne pe WhatsApp pentru detalii și programare la Mary Style, în Constanța.</p>
+          <a class="phone" href="tel:0724799350" aria-label="Sună Mary Style la 0724 799 350">0724 799 350 <span aria-hidden="true">↗</span></a>
+          <div class="contact-actions">
+            <a class="button" href="https://wa.me/40724799350?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Mary%20Style.">Programează-te pe WhatsApp <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="map-frame">
+          <iframe title="Hartă cu localizarea Mary Style în Constanța" src="https://www.openstreetmap.org/export/embed.html?bbox=28.6430881,44.2036078,28.651088100000003,44.207607800000005&layer=mapnik&marker=44.2056078,28.6470881" loading="lazy"></iframe>
+          <div class="map-caption"><span>Mary Style · Constanța</span><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Mary+Style+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide harta ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#acasa">Mary<span> Style</span><small>Salon · Constanța</small></a>
+      <p>Coafuri pentru orice ocazie.<br>Încredere pentru fiecare zi.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: StockSnap, andrey_braynsk, MonayHairCryotherapy, nuno_lopes</p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.navlinks');
+      function closeMenu() {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.querySelector('span').textContent = '＋';
+      }
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.querySelector('span').textContent = open ? '−' : '＋';
+      });
+      menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      if ('IntersectionObserver' in window && !reduced.matches) {
+        document.documentElement.classList.add('reveal-ready');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
+      }
+
+      const tabs = Array.from(document.querySelectorAll('.service-tab'));
+      const panels = Array.from(document.querySelectorAll('.service-detail'));
+      function selectTab(index, focus = false) {
+        tabs.forEach((tab, i) => {
+          tab.setAttribute('aria-selected', String(i === index));
+          tab.tabIndex = i === index ? 0 : -1;
+          panels[i].hidden = i !== index;
+        });
+        if (focus) tabs[index].focus();
+      }
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(index));
+        tab.addEventListener('keydown', event => {
+          let target;
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') target = (index + 1) % tabs.length;
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') target = (index + tabs.length - 1) % tabs.length;
+          if (event.key === 'Home') target = 0;
+          if (event.key === 'End') target = tabs.length - 1;
+          if (target !== undefined) {
+            event.preventDefault();
+            selectTab(target, true);
+          }
+        });
+      });
+
+      const shades = [[251,232,239], [255,243,247], [246,216,229], [252,235,241], [240,206,221]];
+      let scheduled = false;
+      function updateBackground() {
+        scheduled = false;
+        if (reduced.matches) {
+          document.body.style.setProperty('--page-bg', '#fbe8ef');
+          return;
+        }
+        const maxScroll = document.documentElement.scrollHeight - innerHeight;
+        const progress = Math.max(0, Math.min(1, scrollY / Math.max(1, maxScroll))) * (shades.length - 1);
+        const index = Math.min(Math.floor(progress), shades.length - 2);
+        const blend = progress - index;
+        const rgb = shades[index].map((value, channel) => Math.round(value + (shades[index + 1][channel] - value) * blend));
+        document.body.style.setProperty('--page-bg', `rgb(${rgb.join(',')})`);
+      }
+      function queueUpdate() {
+        if (!scheduled) {
+          scheduled = true;
+          requestAnimationFrame(updateBackground);
+        }
+      }
+      window.addEventListener('scroll', queueUpdate, { passive: true });
+      window.addEventListener('resize', queueUpdate, { passive: true });
+      reduced.addEventListener('change', () => {
+        if (reduced.matches) document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        queueUpdate();
+      });
+      updateBackground();
+    })();
+  </script>
+<script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
