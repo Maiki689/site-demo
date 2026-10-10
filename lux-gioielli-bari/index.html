@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#d8f1df">
+<meta name="description" content="Lux Gioielli a Bari: anelli di fidanzamento, collane in oro, orecchini con diamanti e gioielli personalizzati. Ti aspettiamo in Corso Cavour 175.">
+<title>Lux Gioielli — Eleganza che illumina ogni momento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#be123c;--darkred:#940d2e;--mint:#d8f1df;--green:#b7dec3;--paper:#f9fbf8;--ink:#202d26;--line:rgba(32,45,38,.22);--heading:"Unbounded",sans-serif;--body:"Manrope",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;color:var(--ink);background:var(--mint);font:500 16px/1.7 var(--body);overflow-x:clip}
+body.modal-open{overflow:hidden}
+::selection{color:var(--paper);background:var(--red)}
+button,a{-webkit-tap-highlight-color:transparent}
+button,input{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;object-fit:cover}
+svg{display:block}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid currentColor;outline-offset:6px}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{font-family:var(--heading);font-weight:500}
+h2{font-size:clamp(2rem,4.7vw,4.5rem);line-height:1.17;letter-spacing:-.055em}
+h3{line-height:1.35;letter-spacing:-.035em}
+p{max-width:58ch}
+.wrap{width:min(1400px,calc(100% - 96px));margin:auto}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;display:flex;align-items:center;gap:12px;margin-bottom:25px}
+.eyebrow:before{content:"";height:7px;width:7px;background:currentColor;border-radius:50%}
+.section{position:relative;padding:110px 0;scroll-margin-top:40px}
+.chapter{position:absolute;top:27px;right:32px;font-size:11px;font-weight:700;letter-spacing:.16em}
+.rule{height:1px;background:currentColor;opacity:.25}
+.button{display:inline-flex;min-height:54px;align-items:center;justify-content:center;gap:26px;padding:14px 25px;border:1px solid var(--red);background:var(--red);color:white;border-radius:2px;font-size:13px;font-weight:800;position:relative;transition:box-shadow .25s,background .25s;will-change:transform}
+.button:hover{background:var(--darkred);box-shadow:5px 5px 0 rgba(190,18,60,.18)}
+.button svg,.text-link svg{width:19px;height:19px;flex-shrink:0;transition:transform .25s}
+.button:hover svg,.text-link:hover svg{transform:translate(3px,-3px)}
+.button.outline{background:transparent;color:var(--red)}
+.button.outline:hover{background:rgba(190,18,60,.06)}
+.button.light{color:var(--red);background:var(--mint);border-color:var(--mint)}
+.text-link{display:inline-flex;gap:17px;align-items:center;font-size:13px;font-weight:800;border-bottom:1px solid currentColor;padding:8px 0}
+.tag-hole{position:absolute;width:18px;height:18px;border:1px solid currentColor;border-radius:50%;top:30px;left:31px}
+.tag-hole:after{content:"";position:absolute;bottom:8px;left:7px;width:1px;height:75px;background:currentColor;transform:rotate(-28deg);transform-origin:bottom;opacity:.55}
+.spark{font-family:var(--body);font-size:80px;line-height:1;font-weight:400}
+.reveal{transition:opacity .85s ease,transform .85s cubic-bezier(.2,.65,.25,1)}
+.js .reveal:not(.visible){opacity:0;transform:translateY(42px)}
+.skip{position:fixed;top:-100px;left:20px;background:var(--paper);padding:10px 20px;z-index:100}
+.skip:focus{top:12px}
+.intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;color:var(--mint);background:var(--red);pointer-events:none;animation:load-out .75s cubic-bezier(.7,0,.2,1) both}
+.intro span{font:600 clamp(3rem,10vw,8rem)/1 var(--heading);letter-spacing:-.08em}
+@keyframes load-out{0%,28%{transform:translateY(0)}100%{transform:translateY(-102%);visibility:hidden}}
+header{height:90px;position:sticky;top:0;z-index:50;background:var(--mint);border-bottom:1px solid var(--line);transition:background .3s,box-shadow .3s}
+header.scrolled{background:rgba(249,251,248,.96);box-shadow:0 3px 20px #202d2608}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{display:flex;gap:12px;align-items:center}
+.logo-symbol{width:35px;height:44px;color:var(--red)}
+.logo-name{font:700 25px/1 var(--heading);letter-spacing:-.065em}
+.logo-name small{font:700 9px/1.2 var(--body);letter-spacing:.38em;display:block;margin-top:7px}
+nav{display:flex;align-items:center;gap:29px}
+nav>a:not(.nav-contact){font-size:12px;font-weight:700;position:relative}
+nav>a:not(.nav-contact):after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:1px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav>a:hover:after{transform:scaleX(1)}
+.nav-contact{border:1px solid var(--red);color:var(--red);font-size:12px;font-weight:800;padding:10px 19px;display:flex;align-items:center;gap:22px}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);padding:8px 12px;color:var(--ink);font-size:12px}
+.hero{min-height:770px;height:calc(100svh - 90px);max-height:1100px;position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--ink)}
+.hero:before{content:"";position:absolute;z-index:-2;inset:-30%;background:radial-gradient(ellipse at 68% 35%,#f9fbf8 0%,transparent 35%),radial-gradient(ellipse at 80% 70%,#a9d7b9 0%,transparent 48%),radial-gradient(ellipse at 15% 20%,#edcdd2 0%,transparent 38%);animation:glow 16s ease-in-out infinite alternate}
+@keyframes glow{from{transform:translate(-3%,-3%) rotate(-6deg)}to{transform:translate(4%,3%) rotate(9deg)}}
+.hero .wrap{height:100%;position:relative;z-index:3;pointer-events:none;display:flex;flex-direction:column;justify-content:center;padding-top:10px;padding-bottom:96px}
+.hero .wrap a{pointer-events:auto}
+.hero-copy{width:62%}
+.hero .eyebrow{color:var(--red);margin-bottom:34px}
+h1{font-size:clamp(3.6rem,6.5vw,7rem);line-height:1.12;letter-spacing:-.065em;color:var(--red);position:relative}
+h1 .word{display:block;overflow:hidden}
+h1 .word>span{display:block;animation:word-in 1s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.28s + var(--i)*.12s)}
+h1 .last-word{font-size:.73em;margin-top:10px}
+@keyframes word-in{from{opacity:0;transform:translateY(105%)}to{opacity:1;transform:translateY(0)}}
+.hero-desc{font-size:16px;max-width:340px;margin:30px 0 25px}
+.hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:23px}
+.hero-note{position:absolute;right:4%;top:12%;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--red);writing-mode:vertical-rl}
+.model-stage{position:absolute;inset:0;z-index:1;pointer-events:none}
+.model-stage canvas{width:100%;height:100%;display:block}
+.model-fallback{position:absolute;top:16%;right:4%;width:39%;height:65%;border-radius:48% 48% 3px 3px;overflow:hidden;box-shadow:0 25px 50px #35544015}
+.model-fallback img{width:100%;height:100%}
+.model-stage.ready .model-fallback{opacity:0;transition:opacity .7s}
+.hero-orbit{position:absolute;width:39%;aspect-ratio:1;border:1px solid rgba(190,18,60,.18);border-radius:50%;right:2%;top:15%;z-index:0}
+.hero-orbit:after{content:"";position:absolute;inset:12%;border:1px dashed rgba(190,18,60,.16);border-radius:50%}
+.gem-caption{position:absolute;right:10%;bottom:150px;z-index:4;color:var(--red);display:flex;gap:15px;align-items:center}
+.gem-caption .draw-arrow{width:80px;height:55px}
+.gem-caption p{font-size:12px;max-width:155px;line-height:1.5}
+.hero-bottom{position:absolute;bottom:0;left:0;right:0;z-index:5}
+.hero-bottom-inner{border-top:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+.hero-bottom a{display:flex;gap:12px;align-items:center}
+.hero-bottom span:last-child{color:var(--red)}
+.about{background:var(--paper)}
+.about-frame{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink);position:relative}
+.about-photo{position:relative;padding:34px 34px 58px;border-right:1px solid var(--ink);background:var(--mint)}
+.photo-window{height:540px;overflow:hidden;border-radius:46% 46% 0 0}
+.photo-window img{height:115%;width:100%;object-position:center 40%}
+.photo-label{position:absolute;bottom:18px;left:34px;right:34px;display:flex;justify-content:space-between;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.about-text{padding:80px 55px 60px;position:relative;display:flex;flex-direction:column;justify-content:center}
+.about-text h2{font-size:clamp(2rem,3.6vw,3.6rem);margin-bottom:30px}
+.about-text p+p{margin-top:18px}
+.about-text .text-link{align-self:flex-start;margin-top:24px;color:var(--red)}
+.about-stamp{position:absolute;left:calc(50% - 54px);top:35px;border:1px solid var(--red);width:108px;height:108px;border-radius:50%;background:var(--paper);display:grid;place-content:center;text-align:center;z-index:2;color:var(--red);transform:rotate(-12deg);font-size:10px;font-weight:800;letter-spacing:.12em;line-height:1.8}
+.about-stamp strong{font:500 28px var(--heading)}
+.products{background:var(--red);color:var(--mint);padding-bottom:90px}
+.section-heading{display:flex;justify-content:space-between;gap:35px;align-items:flex-end;margin-bottom:58px}
+.section-heading>p{font-size:14px;max-width:310px}
+.products-frame{position:relative;border:1px solid rgba(216,241,223,.5);padding:60px 30px 30px}
+.products-frame>.tag-hole{top:22px;left:25px}
+.products-frame>.frame-label{position:absolute;right:24px;top:24px;text-transform:uppercase;letter-spacing:.15em;font-size:10px}
+.shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;border-bottom:10px solid var(--mint);box-shadow:0 12px 0 -7px rgba(0,0,0,.18);padding:0 0 20px}
+.product{position:relative;background:var(--mint);color:var(--red);padding:20px 21px 25px;min-width:0;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .6s;transition-delay:calc(var(--n)*.1s)}
+.js .shelf:not(.filled) .product{opacity:0;transform:translateY(65px)}
+.product:hover{transform:translateY(-12px);transition-delay:0s}
+.product-number{font-size:10px;letter-spacing:.12em}
+.product-art{height:180px;display:grid;place-items:center}
+.product-art svg{width:130px;height:150px;filter:drop-shadow(4px 10px 4px #7a18391c);transition:transform .5s}
+.product:hover .product-art svg{transform:rotate(-8deg) scale(1.05)}
+.product h3{font-size:17px;margin-bottom:13px;min-height:47px}
+.product p{font-size:12px;line-height:1.7;color:var(--ink)}
+.product .product-dot{position:absolute;top:18px;right:26px;width:9px;height:9px;border-radius:50%;border:1px solid var(--red)}
+.repair-strip{display:flex;align-items:center;gap:24px;padding:32px 5px 0}
+.repair-strip>svg{width:34px;flex-shrink:0}
+.repair-strip h3{font-size:16px;margin-bottom:4px}
+.repair-strip p{font-size:12px}
+.repair-strip .text-link{margin-left:auto;white-space:nowrap}
+.values{background:var(--mint)}
+.values-heading{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-bottom:65px}
+.values-heading h2{color:var(--red)}
+.values-aside{display:flex;align-items:flex-end;justify-content:space-between}
+.values-aside p{max-width:280px;font-size:15px}
+.values-aside .spark{color:var(--red)}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.value-card{border:1px solid var(--ink);position:relative;padding:78px 32px 36px;min-height:300px;background:var(--paper);box-shadow:5px 5px 0 #202d260b;transition:transform .3s}
+.value-card:nth-child(2){background:var(--red);color:var(--mint)}
+.value-card:nth-child(3){border-radius:0 60px 0 0;background:transparent}
+.value-card:hover{transform:translateY(-7px)}
+.value-card .tag-hole{top:24px;left:28px;width:13px;height:13px}
+.value-card .tag-hole:after{height:52px;left:5px;bottom:5px;transform:rotate(20deg)}
+.value-card .value-icon{position:absolute;right:26px;top:27px;width:37px;height:37px}
+.value-card h3{font-size:20px;margin:14px 0 18px;max-width:230px}
+.value-card p{font-size:14px;max-width:29ch}
+.gallery{background:var(--paper);border-top:1px solid var(--ink);padding-top:85px}
+.gallery .section-heading{color:var(--red)}
+.gallery-collage{display:grid;grid-template-columns:1.1fr .8fr 1fr;gap:28px;align-items:start;position:relative}
+.gallery-item{border:1px solid var(--ink);padding:12px;background:var(--paper);position:relative;min-width:0}
+.gallery-item:nth-child(1){margin-top:65px}
+.gallery-item:nth-child(2){margin-top:0}
+.gallery-item:nth-child(3){margin-top:100px}
+.gallery-item:nth-child(4){grid-column:2/4;width:66%;margin-top:-40px;justify-self:end;background:var(--mint)}
+.gallery-button{display:block;border:none;padding:0;width:100%;position:relative;overflow:hidden;background:var(--mint);color:white}
+.gallery-button img{width:100%;height:330px;transition:transform .75s}
+.gallery-item:nth-child(2) img{height:400px}
+.gallery-item:nth-child(3) img{height:300px}
+.gallery-item:nth-child(4) img{height:250px}
+.gallery-button:hover img{transform:scale(1.055)}
+.gallery-plus{position:absolute;right:14px;bottom:14px;width:38px;height:38px;border-radius:50%;background:var(--paper);color:var(--red);display:grid;place-items:center;font-size:25px;transition:transform .3s}
+.gallery-button:hover .gallery-plus{transform:rotate(90deg)}
+.gallery-item figcaption{display:flex;align-items:center;justify-content:space-between;font-size:10px;text-transform:uppercase;letter-spacing:.12em;padding:13px 2px 1px}
+.gallery-note{position:absolute;bottom:50px;left:6%;color:var(--red);font-family:var(--heading);font-size:clamp(20px,2.7vw,35px);line-height:1.5;letter-spacing:-.04em;transform:rotate(-6deg)}
+.gallery-note svg{width:90px;height:60px;margin:15px 0 0 60px}
+.gallery-disclaimer{margin-top:28px;font-size:11px;color:#536157}
+.visit{padding:95px 0;background:var(--mint)}
+.visit-frame{border:1px solid var(--ink);display:grid;grid-template-columns:.85fr 1.15fr;background:var(--paper);position:relative}
+.visit-info{padding:68px 48px}
+.visit-info h2{color:var(--red);font-size:clamp(2rem,3.7vw,3.7rem);margin-bottom:33px}
+address{font-style:normal;font-size:19px;line-height:1.6;margin-bottom:28px}
+.visit-info .hours{border-top:1px solid var(--line);padding-top:22px;font-size:13px;margin-bottom:25px}
+.hours strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px}
+.hours a{text-decoration:underline;text-underline-offset:3px}
+.map-wrap{border-left:1px solid var(--ink);min-height:520px;position:relative;background:#e2e8df}
+.map-wrap iframe{width:100%;height:100%;min-height:520px;border:0;display:block}
+.faq{background:var(--paper)}
+.faq-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px}
+.faq-title{color:var(--red);position:relative}
+.faq-title .spark{margin-top:36px;display:block}
+.faq-list{border-top:1px solid var(--ink)}
+details{border-bottom:1px solid var(--ink)}
+summary{list-style:none;cursor:pointer;padding:25px 45px 25px 0;font-weight:700;font-size:15px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:6px;top:20px;color:var(--red);font-size:27px;font-weight:400;transition:transform .25s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{font-size:14px;padding:0 35px 25px 0;color:#46534b}
+details[open] p{animation:answer .3s ease}
+@keyframes answer{from{opacity:0;transform:translateY(-7px)}to{opacity:1;transform:translateY(0)}}
+.contact{background:var(--red);color:var(--mint);padding:80px 0}
+.contact-tag{border:1px solid var(--mint);padding:85px 65px 55px;position:relative;clip-path:polygon(0 0,calc(100% - 60px) 0,100% 60px,100% 100%,0 100%)}
+.contact-tag:after{content:"";position:absolute;width:85px;height:1px;background:var(--mint);right:-12px;top:29px;transform:rotate(45deg)}
+.contact-tag .tag-hole{width:23px;height:23px;top:28px;left:36px}
+.contact-tag .tag-hole:after{left:10px;bottom:10px;height:120px;transform:rotate(57deg)}
+.contact-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:70px;align-items:end}
+.contact h2{font-size:clamp(2.6rem,5vw,5.2rem)}
+.contact p{font-size:15px;margin:24px 0 30px;max-width:390px}
+.contact-buttons{display:flex;flex-wrap:wrap;gap:14px}
+.contact .button.outline{color:var(--mint);border-color:var(--mint)}
+.contact .button.outline:hover{background:var(--darkred)}
+.contact-details{padding-bottom:8px}
+.contact-details .contact-label{font-size:10px;text-transform:uppercase;letter-spacing:.16em;display:block;margin:24px 0 8px;opacity:.8}
+.contact-phone{font:500 clamp(16px,1.6vw,24px) var(--heading);letter-spacing:-.04em;white-space:nowrap}
+.contact-details address{font-size:15px;margin:0 0 9px}
+footer{padding:60px 0 24px;background:var(--ink);color:var(--mint)}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr .65fr;gap:50px;padding-bottom:45px}
+.footer-brand{font:600 clamp(25px,3.5vw,46px) var(--heading);letter-spacing:-.065em}
+.footer-top p{font-size:12px;margin-top:12px;max-width:260px}
+.footer-heading{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;margin-bottom:15px;display:block}
+.footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:5px;font-size:12px}
+.footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.footer-bottom{border-top:1px solid #d8f1df38;padding-top:22px;display:flex;gap:25px;justify-content:space-between;align-items:flex-end;font-size:10px;color:#b1c7b8}
+.footer-bottom p{max-width:600px}
+.demo span{display:block}
+dialog.lightbox{padding:0;border:1px solid var(--mint);background:var(--ink);color:var(--paper);width:min(1100px,92vw);max-height:92svh;overflow:auto}
+dialog.lightbox::backdrop{background:rgba(15,28,20,.9);backdrop-filter:blur(8px)}
+.lightbox-image{max-height:77svh;width:100%;object-fit:contain}
+.lightbox-bottom{padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.lightbox-caption{font-size:12px}
+.lightbox-close{border:1px solid var(--mint);background:none;color:var(--mint);padding:7px 16px;font-size:12px}
+@media(min-width:1600px){.hero-copy{width:65%}.model-fallback{right:8%}.gem-caption{right:15%}}
+@media(max-width:1100px){
+.wrap{width:calc(100% - 56px)}nav{gap:19px}
+h1{font-size:6.8vw}.hero{min-height:690px}
+.about-text{padding:65px 33px 40px}.photo-window{height:480px}
+.shelf{gap:12px}.product{padding:18px 15px}.product h3{font-size:14px}.product-art{height:150px}
+.products-frame{padding-left:20px;padding-right:20px}.value-card{padding-left:24px;padding-right:24px}.value-card h3{font-size:17px}
+.contact-tag{padding-left:40px;padding-right:40px}.contact-layout{gap:35px}
+}
+@media(max-width:800px){
+.wrap{width:calc(100% - 40px)}header{height:76px}
+.logo-name{font-size:22px}.logo-symbol{width:28px}
+.menu-toggle{display:block}
+nav{position:absolute;top:75px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--ink);padding:26px 22px;display:none;align-items:stretch;gap:20px;box-shadow:0 12px 15px #202d2610}
+nav.open{display:flex;flex-direction:column}nav>a:not(.nav-contact){font-size:16px}.nav-contact{justify-content:space-between}
+.section{padding:75px 0}.chapter{right:20px;top:22px}
+.hero{height:auto;min-height:970px}
+.hero .wrap{padding-top:55px;padding-bottom:485px;justify-content:flex-start;min-height:970px}
+.hero-copy{width:100%}h1{font-size:clamp(43px,8.3vw,68px);max-width:650px}
+.hero .eyebrow{margin-bottom:23px}.hero-desc{max-width:400px;margin:25px 0 22px}
+.model-fallback{top:auto;bottom:100px;right:15%;width:70%;height:345px;border-radius:47% 47% 3px 3px}
+.hero-orbit{top:auto;bottom:100px;right:20%;width:60%}
+.hero-note{top:auto;bottom:245px;right:6%;font-size:9px}
+.gem-caption{bottom:100px;right:8%;font-size:10px}.gem-caption .draw-arrow{width:55px}.gem-caption p{max-width:135px;font-size:10px}
+.hero-bottom-inner{font-size:9px;gap:15px}.hero-bottom-inner>span{display:none}
+.about-frame{grid-template-columns:1fr 1fr}.about-photo{padding:20px 20px 50px}.photo-window{height:450px}.about-text{padding:58px 25px 35px}.about-text h2{font-size:28px}.about-text p{font-size:13px}.about-stamp{width:85px;height:85px;left:calc(50% - 42px);top:22px;font-size:8px}.about-stamp strong{font-size:22px}
+.section-heading{margin-bottom:40px}.section-heading>p{max-width:230px;font-size:13px}
+.shelf{grid-template-columns:repeat(2,1fr);gap:24px 18px;border-bottom:none;box-shadow:none;padding-bottom:0}
+.product{border-bottom:7px solid var(--green);clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);padding:20px 25px 25px}.product h3{font-size:18px;min-height:0}.product-art{height:160px}
+.values-heading{gap:35px}.values-aside .spark{display:none}.value-grid{gap:15px}.value-card{min-height:315px;padding:75px 19px 25px}.value-card h3{font-size:15px}.value-card p{font-size:12px}
+.gallery-collage{gap:18px}.gallery-button img{height:240px}.gallery-item:nth-child(2) img{height:290px}.gallery-item:nth-child(3) img{height:220px}.gallery-item:nth-child(4) img{height:200px}.gallery-item figcaption{font-size:8px;letter-spacing:.05em}.gallery-note{bottom:35px;left:2%;font-size:22px}
+.visit-info{padding:50px 25px}.map-wrap,.map-wrap iframe{min-height:480px}.faq-layout{gap:35px}.faq-title h2{font-size:32px}
+.contact-layout{grid-template-columns:1fr}.contact-details{display:grid;grid-template-columns:1fr 1fr;gap:25px;border-top:1px solid #d8f1df55;padding-top:15px}
+.footer-top{gap:25px;grid-template-columns:1fr 1fr .6fr}
+}
+@media(max-width:560px){
+.wrap{width:calc(100% - 32px)}.section{padding:62px 0}
+.hero{min-height:950px}.hero .wrap{min-height:950px;padding-top:42px;padding-bottom:460px}
+h1{font-size:clamp(35px,9.9vw,54px)}h1 .last-word{font-size:.69em;margin-top:9px}
+.hero-desc{font-size:14px;max-width:280px;margin:23px 0}
+.hero-actions{gap:17px}.button{font-size:12px;padding:13px 18px;gap:17px;min-height:50px}.hero-actions .text-link{font-size:11px}
+.hero .eyebrow{font-size:9px;letter-spacing:.14em}
+.model-fallback{bottom:116px;right:10%;width:80%;height:345px}
+.hero-orbit{bottom:128px;right:9%;width:82%}
+.hero-note{right:3%;bottom:265px}
+.hero-bottom-inner{padding:20px 0}.hero-bottom-inner a{gap:7px;font-size:8px;letter-spacing:.08em}
+.gem-caption{bottom:88px;right:7%}
+.about-frame{grid-template-columns:1fr}.about-photo{border-right:none;border-bottom:1px solid var(--ink);padding:25px 25px 45px}
+.photo-window{height:390px}.about-stamp{left:auto;right:14px;top:355px;width:91px;height:91px}.about-text{padding:50px 26px 35px}.about-text h2{font-size:32px}.about-text p{font-size:14px}
+.section-heading{display:block}.section-heading>p{margin-top:23px;max-width:300px}
+h2{font-size:34px}.products-frame{padding:60px 12px 22px}
+.products .section-heading h2{font-size:33px}.shelf{gap:15px 10px}.product{padding:17px 13px 22px}.product-art{height:140px}.product-art svg{width:100px;height:130px}.product h3{font-size:13px;min-height:36px}.product p{font-size:11px}
+.repair-strip{gap:14px;flex-wrap:wrap;padding:26px 7px 0}.repair-strip h3{font-size:13px}.repair-strip>svg{width:27px}.repair-strip .text-link{margin-left:41px;font-size:11px}
+.values-heading{display:block;margin-bottom:42px}.values-aside{margin-top:25px}.values-aside p{max-width:100%;font-size:14px}
+.value-grid{grid-template-columns:1fr;gap:27px}.value-card{min-height:220px;padding:63px 27px 30px}.value-card h3{max-width:none;font-size:20px}.value-card p{font-size:14px;max-width:none}.value-card .value-icon{width:40px;height:40px}
+.gallery-collage{grid-template-columns:1fr 1fr;gap:20px 13px}
+.gallery-item{padding:8px}.gallery-item:nth-child(1){margin-top:25px}.gallery-item:nth-child(2){margin-top:0}.gallery-item:nth-child(3){margin-top:0}.gallery-item:nth-child(4){margin-top:25px;grid-column:auto;width:100%}
+.gallery-button img,.gallery-item:nth-child(2) img,.gallery-item:nth-child(3) img,.gallery-item:nth-child(4) img{height:225px}
+.gallery-item figcaption{font-size:8px;gap:7px;align-items:start;line-height:1.5}.gallery-item figcaption span:last-child{display:none}.gallery-note{display:none}.gallery-plus{width:30px;height:30px;font-size:21px;bottom:10px;right:10px}
+.visit-frame{grid-template-columns:1fr}.visit-info{padding:52px 27px 35px}.map-wrap{border-left:0;border-top:1px solid var(--ink)}.map-wrap,.map-wrap iframe{min-height:350px;height:350px}
+.faq-layout{grid-template-columns:1fr;gap:35px}.faq-title .spark{display:none}.faq-title h2{font-size:34px}summary{font-size:14px}
+.contact-tag{padding:80px 24px 32px;clip-path:polygon(0 0,calc(100% - 38px) 0,100% 38px,100% 100%,0 100%)}
+.contact-tag:after{width:54px;right:-8px;top:19px}.contact h2{font-size:34px}.contact p{font-size:14px}.contact-buttons{align-items:stretch;flex-direction:column}
+.contact-details{grid-template-columns:1fr;gap:0}.contact-phone{font-size:21px}
+.footer-top{grid-template-columns:1fr 1fr;gap:30px}.footer-top>div:first-child{grid-column:1/-1}.footer-brand{font-size:36px}.footer-bottom{flex-direction:column;align-items:flex-start;gap:15px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
+.intro{display:none}.js .reveal:not(.visible),.js .shelf:not(.filled) .product{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<div class="intro" aria-hidden="true"><span>Lux.</span></div>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+<defs>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="diamond" viewBox="0 0 60 60"><path d="m8 21 12-13h20l12 13-22 31L8 21Zm0 0h44M20 8l-3 13 13 31 13-31-3-13M17 21 30 8l13 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="gift" viewBox="0 0 60 60"><path d="M10 27h40v26H10zM7 19h46v8H7zM30 19v34M30 19C10 20 10 4 20 7c7 2 10 12 10 12Zm0 0C50 20 50 4 40 7c-7 2-10 12-10 12Z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+<symbol id="star" viewBox="0 0 60 60"><path d="M30 4c0 19-7 26-26 26 19 0 26 7 26 26 0-19 7-26 26-26-19 0-26-7-26-26Z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+</defs>
+</svg>
+<header id="header">
+<div class="wrap nav-inner">
+<a class="logo" href="#inizio" aria-label="Lux Gioielli, pagina iniziale">
+<svg class="logo-symbol" aria-hidden="true"><use href="#diamond"/></svg>
+<span class="logo-name">lux<span aria-hidden="true">.</span><small>GIOIELLI</small></span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">＋</span></button>
+<nav id="navigation" aria-label="Navigazione principale">
+<a href="#chi-siamo">Il mondo Lux</a>
+<a href="#collezione">I gioielli</a>
+<a href="#galleria">Ispirazioni</a>
+<a href="#dove-siamo">Dove siamo</a>
+<a href="#contatti" class="nav-contact">Parliamone <span aria-hidden="true">↗</span></a>
+</nav>
+</div>
+</header>
+<main id="contenuto">
+<section class="hero" id="inizio" aria-labelledby="hero-title">
+<div class="hero-orbit" data-depth=".045" aria-hidden="true"></div>
+<div class="model-stage" id="model-stage" aria-hidden="true">
+<div class="model-fallback"><img src="img/1.jpg" alt="" fetchpriority="high"></div>
+</div>
+<span class="hero-note" aria-hidden="true">Piccoli dettagli. Grandi emozioni.</span>
+<div class="wrap">
+<div class="hero-copy">
+<div class="eyebrow">Lux Gioielli · Bari, Corso Cavour 175</div>
+<h1 id="hero-title">
+<span class="word"><span style="--i:0">Eleganza</span></span>
+<span class="word"><span style="--i:1">che illumina</span></span>
+<span class="word last-word"><span style="--i:2">ogni momento.</span></span>
+</h1>
+<p class="hero-desc">Scopri gioielli unici e preziosi a Bari.<br>Il prossimo dettaglio speciale parla di te.</p>
+<div class="hero-actions">
+<a class="button magnetic" href="#collezione">Esplora i gioielli <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+<a class="text-link" href="#dove-siamo">Vieni a trovarci <span aria-hidden="true">↓</span></a>
+</div>
+</div>
+</div>
+<div class="gem-caption" data-depth="-.06">
+<svg class="draw-arrow" viewBox="0 0 100 65" aria-hidden="true"><path d="M94 54C40 62 13 38 24 8m-12 9L24 8l9 13" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+<p>La luce cambia.<br>Il desiderio di brillare, no.</p>
+</div>
+<div class="hero-bottom">
+<div class="wrap hero-bottom-inner">
+<a href="#chi-siamo">Un mondo da scoprire <span aria-hidden="true">↓</span></a>
+<span>Selezione · Personalizzazione · Cura</span>
+<a href="tel:+393402999124">+39 340 299 9124 <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+</section>
+
+<section class="section about" id="chi-siamo" aria-labelledby="about-title">
+<div class="wrap">
+<div class="about-frame reveal">
+<div class="about-photo">
+<div class="photo-window"><img class="parallax-photo" src="img/4.jpg" alt="Ritratto femminile ispirato all'eleganza dei gioielli" loading="lazy" width="700" height="850"></div>
+<div class="photo-label"><span>Il mondo Lux</span><span>Bari, Italia</span></div>
+</div>
+<div class="about-stamp" aria-hidden="true">SCELTO<strong>per te</strong>CON CURA</div>
+<div class="about-text">
+<span class="chapter">01 / INCONTRIAMOCI</span>
+<div class="eyebrow">Piacere, Lux Gioielli</div>
+<h2>Un gioiello.<br>Il tuo modo<br>di essere.</h2>
+<p>Ci sono dettagli che senti subito tuoi. Da Lux Gioielli trovi una raffinata selezione di gioielli per ogni occasione, da scegliere con calma e indossare con piacere.</p>
+<p>Il nostro team ti accompagna nella ricerca del pezzo perfetto: per te, per un regalo speciale, per un momento da ricordare.</p>
+<a class="text-link" href="#contatti">Troviamolo insieme <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section products" id="collezione" aria-labelledby="products-title">
+<div class="wrap">
+<div class="section-heading reveal">
+<div><div class="eyebrow">02 / La nostra selezione</div><h2 id="products-title">Desideri<br>in vetrina.</h2></div>
+<p>Forme classiche, linee contemporanee e dettagli personali. Da quale gioiello comincia la tua storia?</p>
+</div>
+<div class="products-frame reveal">
+<span class="tag-hole" aria-hidden="true"></span>
+<span class="frame-label">Gioielli da scoprire</span>
+<div class="shelf">
+<article class="product" style="--n:0">
+<span class="product-number">01 / ANELLI</span><span class="product-dot" aria-hidden="true"></span>
+<div class="product-art" aria-hidden="true">
+<svg viewBox="0 0 150 170"><ellipse cx="75" cy="105" rx="37" ry="44" fill="none" stroke="currentColor" stroke-width="7"/><ellipse cx="75" cy="105" rx="28" ry="37" fill="none" stroke="currentColor" stroke-width="1"/><path d="m51 48 12-14h24l12 14-24 26-24-26Zm0 0h48M63 34l-3 14 15 26 15-26-3-14" fill="var(--paper)" stroke="currentColor" stroke-width="1.5"/><path d="M75 15V7m35 33 9-4M38 36l-8-5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+</div>
+<h3>Anelli di fidanzamento</h3><p>Soluzioni classiche o moderne, personalizzabili.</p>
+</article>
+<article class="product" style="--n:1">
+<span class="product-number">02 / COLLANE</span><span class="product-dot" aria-hidden="true"></span>
+<div class="product-art" aria-hidden="true">
+<svg viewBox="0 0 150 170"><path d="M37 20C1 119 56 132 75 133c19-1 74-14 38-113M42 20c-29 89 16 106 33 107 17-1 62-18 33-107" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="137" r="7" fill="var(--mint)" stroke="currentColor" stroke-width="2"/><path d="m75 141 10 12-10 12-10-12Z" fill="var(--paper)" stroke="currentColor" stroke-width="2"/><path d="M111 78h17m-8-8v16" stroke="currentColor" stroke-width="1.3"/></svg>
+</div>
+<h3>Collane<br>in oro</h3><p>Design eleganti e raffinati per ogni stile.</p>
+</article>
+<article class="product" style="--n:2">
+<span class="product-number">03 / ORECCHINI</span><span class="product-dot" aria-hidden="true"></span>
+<div class="product-art" aria-hidden="true">
+<svg viewBox="0 0 150 170"><circle cx="48" cy="49" r="9" fill="var(--paper)" stroke="currentColor" stroke-width="2"/><circle cx="101" cy="68" r="9" fill="var(--paper)" stroke="currentColor" stroke-width="2"/><path d="M48 58v18m53 1v18M48 76c-38 39-27 58 0 58s38-19 0-58Zm53 19c-38 39-27 58 0 58s38-19 0-58Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="m48 91-15 25 15 10 15-10Zm53 19-15 25 15 10 15-10Z" fill="var(--paper)" stroke="currentColor" stroke-width="1.3"/><path d="M93 21h18m-9-9v18" stroke="currentColor" stroke-width="1.3"/></svg>
+</div>
+<h3>Orecchini<br>con diamanti</h3><p>Brillantezza senza tempo per ogni occasione.</p>
+</article>
+<article class="product" style="--n:3">
+<span class="product-number">04 / BRACCIALI</span><span class="product-dot" aria-hidden="true"></span>
+<div class="product-art" aria-hidden="true">
+<svg viewBox="0 0 150 170"><ellipse cx="75" cy="93" rx="48" ry="44" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="75" cy="93" rx="40" ry="37" fill="none" stroke="currentColor" stroke-width="1"/><path d="M50 126c17 8 33 8 50 0l4 11c-19 10-39 10-58 0Z" fill="var(--paper)" stroke="currentColor" stroke-width="2"/><path d="m75 129 2 4 5 1-4 3 1 4-4-2-4 2 1-4-4-3 5-1Z" fill="currentColor"/><path d="M75 43v13M21 91h13m82 0h13M40 61l8 9m54 0 8-9" stroke="currentColor" stroke-width="2"/><circle cx="75" cy="48" r="5" fill="var(--mint)" stroke="currentColor" stroke-width="2"/></svg>
+</div>
+<h3>Bracciali personalizzati</h3><p>Incisioni e dettagli su misura.</p>
+</article>
+</div>
+<div class="repair-strip">
+<svg viewBox="0 0 60 60" aria-hidden="true"><use href="#star"/></svg>
+<div><h3>La cura continua.</h3><p>Riparazione gioielli: un servizio professionale e rapido.</p></div>
+<a class="text-link" href="https://wa.me/393402999124?text=Buongiorno%21%20Vorrei%20informazioni%20su%20un%20gioiello." target="_blank" rel="noopener">Chiedici informazioni <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section values" id="perche-lux" aria-labelledby="values-title">
+<div class="wrap">
+<div class="values-heading reveal">
+<div><div class="eyebrow">03 / Il valore dei dettagli</div><h2 id="values-title">Non solo<br>un gioiello.</h2></div>
+<div class="values-aside"><p>Conta quello che scegli.<br>E anche l'attenzione con cui viene scelto, personalizzato e donato.</p><span class="spark" aria-hidden="true">✳</span></div>
+</div>
+<div class="value-grid">
+<article class="value-card reveal"><span class="tag-hole" aria-hidden="true"></span><svg class="value-icon" aria-hidden="true"><use href="#diamond"/></svg><h3>Collezioni<br>esclusive</h3><p>Solo pezzi selezionati di alta qualità. Una selezione da guardare da vicino, per trovare ciò che ti rappresenta.</p></article>
+<article class="value-card reveal"><span class="tag-hole" aria-hidden="true"></span><svg class="value-icon" aria-hidden="true"><use href="#gift"/></svg><h3>Il piacere<br>di regalare</h3><p>Ogni gioiello viene elegantemente confezionato. Perché un pensiero speciale comincia già da come si presenta.</p></article>
+<article class="value-card reveal"><span class="tag-hole" aria-hidden="true"></span><svg class="value-icon" aria-hidden="true"><use href="#star"/></svg><h3>Un tocco<br>tutto tuo</h3><p>Personalizzazione e assistenza dedicata. Ti aiutiamo a dare forma a un dettaglio che senti davvero tuo.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section gallery" id="galleria" aria-labelledby="gallery-title">
+<div class="wrap">
+<div class="section-heading reveal">
+<div><div class="eyebrow">04 / Appunti di stile</div><h2 id="gallery-title">La luce,<br>da vicino.</h2></div>
+<p>Un piccolo viaggio tra riflessi, forme e occasioni speciali. Lasciati ispirare.</p>
+</div>
+<div class="gallery-collage">
+<figure class="gallery-item reveal">
+<button class="gallery-button" data-image="img/1.jpg" data-caption="La bellezza di un dettaglio" aria-label="Ingrandisci la fotografia dell'anello con diamante"><img src="img/1.jpg" alt="Dettaglio ravvicinato di un anello con diamante" loading="lazy" width="650" height="750"><span class="gallery-plus" aria-hidden="true">+</span></button>
+<figcaption><span>La bellezza di un dettaglio</span><span>01</span></figcaption>
+</figure>
+<figure class="gallery-item reveal">
+<button class="gallery-button" data-image="img/3.jpg" data-caption="Momenti da custodire" aria-label="Ingrandisci la fotografia di ispirazione nuziale"><img src="img/3.jpg" alt="Una sposa e i dettagli preziosi del suo abito" loading="lazy" width="550" height="800"><span class="gallery-plus" aria-hidden="true">+</span></button>
+<figcaption><span>Momenti da custodire</span><span>02</span></figcaption>
+</figure>
+<figure class="gallery-item reveal">
+<button class="gallery-button" data-image="img/2.jpg" data-caption="Una promessa di luce" aria-label="Ingrandisci la fotografia del gioiello con diamante"><img src="img/2.jpg" alt="Anello prezioso con diamante, ispirazione per un'occasione speciale" loading="lazy" width="600" height="700"><span class="gallery-plus" aria-hidden="true">+</span></button>
+<figcaption><span>Una promessa di luce</span><span>03</span></figcaption>
+</figure>
+<figure class="gallery-item reveal">
+<button class="gallery-button" data-image="img/5.jpg" data-caption="Riflessi da scoprire" aria-label="Ingrandisci la fotografia del diamante"><img src="img/5.jpg" alt="Sfaccettature e riflessi di un diamante" loading="lazy" width="850" height="550"><span class="gallery-plus" aria-hidden="true">+</span></button>
+<figcaption><span>Riflessi da scoprire</span><span>04</span></figcaption>
+</figure>
+<div class="gallery-note" aria-hidden="true">Questione<br>di dettagli.<svg viewBox="0 0 100 60"><path d="M3 4c8 37 36 42 87 34M77 28l13 10-9 13" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+</div>
+<p class="gallery-disclaimer">Immagini illustrative d'ispirazione. Per conoscere i gioielli disponibili, contattaci o vieni in negozio.</p>
+</div>
+</section>
+
+<section class="section visit" id="dove-siamo" aria-labelledby="visit-title">
+<div class="wrap">
+<div class="visit-frame reveal">
+<div class="visit-info">
+<div class="eyebrow">05 / Ci vediamo a Bari</div>
+<h2 id="visit-title">Il tuo prossimo<br>colpo di luce.</h2>
+<address>Lux Gioielli<br>Corso Cavour 175<br>Bari, Italia</address>
+<div class="hours"><strong>Organizza la tua visita</strong>Per conoscere gli orari di apertura, <a href="tel:+393402999124">chiamaci</a> o scrivici su WhatsApp.</div>
+<a class="button magnetic" href="https://www.google.com/maps/search/?api=1&query=Lux+Gioielli+Bari" target="_blank" rel="noopener">Come raggiungerci <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+</div>
+<div class="map-wrap">
+<iframe title="Mappa di Lux Gioielli, Corso Cavour 175 a Bari" src="https://www.openstreetmap.org/export/embed.html?bbox=16.8683999,41.118676199999996,16.876399900000003,41.1226762&layer=mapnik&marker=41.1206762,16.8723999" loading="lazy" referrerpolicy="no-referrer"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section faq" id="domande" aria-labelledby="faq-title">
+<div class="wrap faq-layout">
+<div class="faq-title reveal"><div class="eyebrow">06 / Qualche consiglio</div><h2 id="faq-title">Prima di<br>scegliere.</h2><span class="spark" aria-hidden="true">✳</span></div>
+<div class="faq-list reveal">
+<details><summary>Come scelgo un gioiello da regalare?</summary><p>Parti dallo stile della persona che lo riceverà: forme essenziali o dettagli più ricercati, un gioiello da indossare ogni giorno oppure per le occasioni speciali. Raccontaci la tua idea: ti aiutiamo a orientarti nella selezione.</p></details>
+<details><summary>Posso personalizzare un gioiello?</summary><p>La nostra proposta comprende anelli personalizzabili e bracciali con incisioni e dettagli su misura. Contattaci per valutare le possibilità sul gioiello che ti interessa e conoscere tempi e modalità.</p></details>
+<details><summary>Come posso conoscere la misura di un anello?</summary><p>La misura corretta deve essere comoda e permettere all'anello di passare sulla nocca senza risultare troppo largo. Se hai dubbi, vieni in negozio: ti aiutiamo nella scelta.</p></details>
+<details><summary>Come posso prendermi cura dei miei gioielli?</summary><p>Riponi i gioielli separatamente ed evita il contatto con prodotti aggressivi. Materiali e pietre possono richiedere attenzioni diverse: chiedici un consiglio specifico prima di procedere con la pulizia.</p></details>
+<details><summary>Ho un gioiello da riparare. Come procedo?</summary><p>Contattaci e descrivici il problema, oppure porta il gioiello in negozio. Potremo valutare l'intervento e darti informazioni su possibilità, tempi e costi.</p></details>
+</div>
+</div>
+</section>
+
+<section class="section contact" id="contatti" aria-labelledby="contact-title">
+<div class="wrap">
+<div class="contact-tag reveal">
+<span class="tag-hole" aria-hidden="true"></span>
+<div class="contact-layout">
+<div>
+<div class="eyebrow">07 / Scegliamo insieme</div>
+<h2 id="contact-title">Hai in mente<br>qualcosa<br>di speciale?</h2>
+<p>Un regalo, una promessa o un desiderio tutto tuo. Raccontacelo: il primo passo è una conversazione.</p>
+<div class="contact-buttons">
+<a class="button light magnetic" href="https://wa.me/393402999124?text=Buongiorno%21%20Vorrei%20informazioni%20su%20un%20gioiello." target="_blank" rel="noopener">Contattaci su WhatsApp <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+<a class="button outline magnetic" href="tel:+393402999124">Chiamaci <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+</div>
+</div>
+<div class="contact-details">
+<div><span class="contact-label">Parliamone a voce</span><a class="contact-phone" href="tel:+393402999124">+39 340 299 9124</a></div>
+<div><span class="contact-label">Vieni a conoscerci</span><address>Corso Cavour 175<br>Bari, Italia</address><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Lux+Gioielli+Bari" target="_blank" rel="noopener">Apri la mappa <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="footer-top">
+<div><a class="footer-brand" href="#inizio">Lux Gioielli.</a><p>Eleganza che illumina ogni momento.<br>Ti aspettiamo nel cuore di Bari.</p></div>
+<div><span class="footer-heading">Un mondo da esplorare</span><div class="footer-links"><a href="#chi-siamo">Il mondo Lux</a><a href="#collezione">Gioielli e servizi</a><a href="#galleria">Ispirazioni</a><a href="#domande">Domande frequenti</a></div></div>
+<div><span class="footer-heading">Restiamo in contatto</span><div class="footer-links"><a href="tel:+393402999124">Telefono</a><a href="https://wa.me/393402999124?text=Buongiorno%21%20Vorrei%20informazioni%20su%20un%20gioiello." target="_blank" rel="noopener">WhatsApp ↗</a><a href="https://www.google.com/maps/search/?api=1&query=Lux+Gioielli+Bari" target="_blank" rel="noopener">Indicazioni ↗</a><a href="#inizio">Torna all'inizio ↑</a></div></div>
+</div>
+<div class="footer-bottom">
+<div class="demo"><span>Sito dimostrativo</span><span lang="ro">Sito dimostrativo</span></div>
+<p>Fotografie illustrative da Pixabay: Pexels, PRISCILAFLORES, scottwebb, RingsOfAustralia, GrownDiamond. Composizione tridimensionale illustrativa.</p>
+<span>Lux Gioielli · Bari</span>
+</div>
+</div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Fotografia ingrandita">
+<img class="lightbox-image" alt="">
+<div class="lightbox-bottom"><p class="lightbox-caption"></p><button class="lightbox-close" autofocus>Chiudi ×</button></div>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+'use strict';
+document.documentElement.classList.add('js');
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const small=window.matchMedia('(max-width: 800px)');
+const header=document.getElementById('header');
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.getElementById('navigation');
+function closeMenu(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='Menu <span aria-hidden="true">＋</span>';}
+toggle.addEventListener('click',()=>{
+const open=nav.classList.toggle('open');
+toggle.setAttribute('aria-expanded',String(open));
+toggle.innerHTML=open?'Chiudi <span aria-hidden="true">−</span>':'Menu <span aria-hidden="true">＋</span>';
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();toggle.focus();}});
+document.addEventListener('click',e=>{if(!header.contains(e.target))closeMenu();});
+let scrollY=window.scrollY;
+window.addEventListener('scroll',()=>{scrollY=window.scrollY;header.classList.toggle('scrolled',scrollY>25);},{passive:true});
+header.classList.toggle('scrolled',scrollY>25);
+
+const reveals=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
+}),{threshold:.08,rootMargin:'0px 0px -25px 0px'});
+reveals.forEach(el=>observer.observe(el));
+const shelfObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('filled');shelfObserver.unobserve(entry.target);}
+}),{threshold:.15});
+shelfObserver.observe(document.querySelector('.shelf'));
+}else{reveals.forEach(el=>el.classList.add('visible'));document.querySelector('.shelf').classList.add('filled');}
+
+const dialog=document.getElementById('lightbox');
+const largeImage=dialog.querySelector('img');
+let opener=null;
+document.querySelectorAll('.gallery-button').forEach(button=>button.addEventListener('click',()=>{
+opener=button;
+largeImage.src=button.dataset.image;
+largeImage.alt=button.querySelector('img').alt;
+dialog.querySelector('.lightbox-caption').textContent=button.dataset.caption;
+dialog.showModal();
+document.body.classList.add('modal-open');
+}));
+function closeLightbox(){dialog.close();}
+dialog.querySelector('.lightbox-close').addEventListener('click',closeLightbox);
+dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeLightbox();}});
+dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');if(opener)opener.focus();});
+
+if(window.gsap&&window.ScrollTrigger){
+gsap.registerPlugin(ScrollTrigger);
+const mm=gsap.matchMedia();
+mm.add('(prefers-reduced-motion: no-preference)',()=>{
+gsap.utils.toArray('.parallax-photo').forEach(photo=>{
+gsap.fromTo(photo,{yPercent:-8},{yPercent:0,ease:'none',scrollTrigger:{trigger:photo.parentElement,start:'top bottom',end:'bottom top',scrub:1}});
+});
+});
+mm.add('(min-width: 1000px) and (prefers-reduced-motion: no-preference)',()=>{
+gsap.utils.toArray('[data-depth]').forEach(el=>{
+gsap.to(el,{y:()=>parseFloat(el.dataset.depth)*1600,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}});
+});
+ScrollTrigger.create({trigger:'.values',start:'top top+=88',end:'+=230',pin:true,pinSpacing:true,anticipatePin:1});
+gsap.to('.values-aside .spark',{rotation:100,ease:'none',scrollTrigger:{trigger:'.values',start:'top bottom',end:'bottom top',scrub:1}});
+document.querySelectorAll('.magnetic').forEach(button=>{
+const move=e=>{const r=button.getBoundingClientRect();gsap.to(button,{x:(e.clientX-r.left-r.width/2)*.11,y:(e.clientY-r.top-r.height/2)*.16,duration:.35});};
+const leave=()=>gsap.to(button,{x:0,y:0,duration:.5,ease:'power3.out'});
+button.addEventListener('pointermove',move);button.addEventListener('pointerleave',leave);
+});
+});
+window.addEventListener('load',()=>ScrollTrigger.refresh(),{once:true});
+}
+
+const stage=document.getElementById('model-stage');
+const hero=document.querySelector('.hero');
+const weakPhone=small.matches&&((navigator.deviceMemory&&navigator.deviceMemory<=2)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=2));
+if(!window.THREE||weakPhone)return;
+
+let renderer,animationId;
+try{
+const T=THREE;
+renderer=new T.WebGLRenderer({alpha:true,antialias:!small.matches,powerPreference:'low-power'});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,small.matches?1.25:1.75));
+renderer.setClearColor(0x000000,0);
+renderer.outputColorSpace=T.SRGBColorSpace;
+renderer.toneMapping=T.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.2;
+stage.appendChild(renderer.domElement);
+renderer.domElement.setAttribute('aria-hidden','true');
+const scene=new T.Scene();
+const camera=new T.PerspectiveCamera(34,1,.1,100);
+camera.position.set(0,0,11);
+
+const studio=new T.Scene();
+studio.background=new T.Color('#879e90');
+const room=new T.Mesh(new T.BoxGeometry(30,30,30),new T.MeshBasicMaterial({color:0xd8e2da,side:T.BackSide}));
+studio.add(room);
+function softbox(w,h,x,y,z,color,intensity,ry){
+const mesh=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({color:new T.Color(color).multiplyScalar(intensity),side:T.DoubleSide}));
+mesh.position.set(x,y,z);mesh.rotation.y=ry||0;studio.add(mesh);
+}
+softbox(4,12,-6,3,4,'#ffffff',5,.5);
+softbox(6,7,7,4,1,'#fff1d4',4,-.7);
+softbox(9,3,0,8,-4,'#ffffff',5,0);
+softbox(3,9,0,-1,-9,'#911b35',.6,0);
+const pmrem=new T.PMREMGenerator(renderer);
+const env=pmrem.fromScene(studio,.08);
+scene.environment=env.texture;
+pmrem.dispose();
+studio.traverse(o=>{if(o.isMesh){o.geometry.dispose();o.material.dispose();}});
+scene.add(new T.HemisphereLight(0xffffff,0x53765e,2));
+const key=new T.DirectionalLight(0xfff5e5,4);key.position.set(-4,7,7);scene.add(key);
+const fill=new T.DirectionalLight(0xffffff,3);fill.position.set(5,0,4);scene.add(fill);
+const rim=new T.PointLight(0xffffff,70,30);rim.position.set(1,5,-3);scene.add(rim);
+
+const rig=new T.Group();scene.add(rig);
+const jewel=new T.Group();rig.add(jewel);
+const gold=new T.MeshStandardMaterial({color:0xe4c78a,metalness:1,roughness:.18,envMapIntensity:1.5});
+const whiteGold=new T.MeshStandardMaterial({color:0xe8eae5,metalness:1,roughness:.14,envMapIntensity:1.7});
+const band=new T.Mesh(new T.TorusGeometry(1.13,.105,small.matches?12:24,small.matches?72:140),gold);
+jewel.add(band);
+const edge=new T.Mesh(new T.TorusGeometry(1.13,.03,10,90),whiteGold);edge.position.z=.088;jewel.add(edge);
+const setting=new T.Mesh(new T.CylinderGeometry(.32,.2,.2,8),whiteGold);setting.position.set(0,1.17,0);jewel.add(setting);
+
+const points=[],indices=[];
+const rows=[{y:1.21,r:0},{y:1.53,r:.43},{y:1.58,r:.43},{y:1.82,r:.235}];
+rows.forEach(row=>{for(let i=0;i<8;i++){const a=i/8*Math.PI*2+Math.PI/8;points.push(Math.cos(a)*row.r,row.y,Math.sin(a)*row.r);}});
+for(let row=0;row<3;row++){for(let i=0;i<8;i++){const a=row*8+i,b=row*8+(i+1)%8,c=(row+1)*8+i,d=(row+1)*8+(i+1)%8;indices.push(a,c,b,b,c,d);}}
+points.push(0,1.82,0);
+for(let i=0;i<8;i++)indices.push(32,24+i,24+(i+1)%8);
+let geometry=new T.BufferGeometry();
+geometry.setAttribute('position',new T.Float32BufferAttribute(points,3));
+geometry.setIndex(indices);
+geometry=geometry.toNonIndexed();geometry.computeVertexNormals();
+const diamondMat=new T.MeshPhysicalMaterial({color:0xf1fffc,metalness:.12,roughness:.025,transmission:small.matches?0:.35,thickness:.65,ior:2.42,clearcoat:1,clearcoatRoughness:0,envMapIntensity:2.3,transparent:true,opacity:.96,side:T.DoubleSide,flatShading:true});
+jewel.add(new T.Mesh(geometry,diamondMat));
+const facetLines=new T.LineSegments(new T.EdgesGeometry(geometry,18),new T.LineBasicMaterial({color:0xffffff,transparent:true,opacity:.4}));
+jewel.add(facetLines);
+for(let i=0;i<4;i++){
+const angle=i/4*Math.PI*2+Math.PI/4;
+const prong=new T.Mesh(new T.CylinderGeometry(.024,.027,.36,8),whiteGold);
+prong.position.set(Math.cos(angle)*.35,1.43,Math.sin(angle)*.35);
+prong.rotation.z=-Math.cos(angle)*.22;prong.rotation.x=Math.sin(angle)*.22;
+jewel.add(prong);
+const tip=new T.Mesh(new T.SphereGeometry(.038,10,8),whiteGold);tip.position.set(Math.cos(angle)*.38,1.61,Math.sin(angle)*.38);jewel.add(tip);
+}
+jewel.rotation.set(.26,-.32,-.37);
+
+const dustCount=small.matches?12:30;
+const dustPositions=new Float32Array(dustCount*3);
+for(let i=0;i<dustCount;i++){dustPositions[i*3]=(Math.random()-.5)*4.8;dustPositions[i*3+1]=(Math.random()-.5)*4.6;dustPositions[i*3+2]=(Math.random()-.5)*2;}
+const dustGeo=new T.BufferGeometry();dustGeo.setAttribute('position',new T.BufferAttribute(dustPositions,3));
+const dust=new T.Points(dustGeo,new T.PointsMaterial({color:0xffffff,size:.027,transparent:true,opacity:.7}));
+rig.add(dust);
+let baseX=0,baseY=0;
+function resize(){
+const w=hero.clientWidth,h=hero.clientHeight;
+renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+const visibleHeight=2*Math.tan(T.MathUtils.degToRad(17))*11;
+const visibleWidth=visibleHeight*camera.aspect;
+if(w<=800){
+const scale=Math.min(visibleWidth*.30,1.1);
+rig.scale.setScalar(scale);
+baseX=0;
+const centerPx=h-290;
+baseY=(.5-centerPx/h)*visibleHeight-.15;
+}else{
+rig.scale.setScalar(Math.min(1.45,visibleWidth*.16));
+baseX=visibleWidth*.255;
+baseY=-.10;
+}
+rig.position.set(baseX,baseY,0);
+renderOnce();
+}
+let mx=0,my=0,rx=0,ry=0,visible=true;
+hero.addEventListener('pointermove',e=>{
+if(small.matches||reduced.matches)return;
+const r=hero.getBoundingClientRect();
+mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5;
+},{passive:true});
+hero.addEventListener('pointerleave',()=>{mx=0;my=0;});
+function renderOnce(){renderer.render(scene,camera);}
+function animate(time){
+animationId=requestAnimationFrame(animate);
+if(!visible||document.hidden)return;
+const t=time*.001;
+rx+=(mx-rx)*.04;ry+=(my-ry)*.04;
+rig.rotation.y=rx*.35+Math.sin(t*.28)*.1;
+rig.rotation.x=ry*.18;
+rig.rotation.z=Math.sin(t*.3)*.025;
+rig.position.y=baseY+Math.sin(t*.75)*.045+(small.matches?0:Math.min(scrollY/hero.clientHeight,1)*.4);
+jewel.rotation.y=-.32+Math.sin(t*.36)*.16;
+dust.rotation.y=t*.025;
+renderOnce();
+}
+resize();
+stage.classList.add('ready');
+if(!reduced.matches)animationId=requestAnimationFrame(animate);
+const resizeObserver=new ResizeObserver(resize);resizeObserver.observe(hero);
+const modelObserver=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;},{threshold:0});modelObserver.observe(hero);
+reduced.addEventListener('change',()=>{
+cancelAnimationFrame(animationId);
+if(!reduced.matches)animationId=requestAnimationFrame(animate);else renderOnce();
+});
+renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(animationId);stage.classList.remove('ready');renderer.domElement.style.display='none';});
+}catch(error){
+if(animationId)cancelAnimationFrame(animationId);
+if(renderer){renderer.dispose();renderer.domElement.remove();}
+stage.classList.remove('ready');
+}
+})();
+</script>
+</body>
+</html>
