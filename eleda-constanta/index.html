@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta name="generator" content="jarvis-v1">
-  <meta charset="UTF-8">
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fbf7f0">
   <meta name="description" content="Eleda — patiserie artizanală din 2006, în Constanța. Prăjituri fine, tarte cu fructe, foietaje, croissante cu unt și torturi personalizate.">
@@ -166,6 +166,139 @@
       .beans,.cursor{display:none}
       .reveal.ready{opacity:1;transform:none}
     }
+    /* Finișaje comune, inclusiv la toate dimensiunile de ecran. */
+    html{scroll-padding-top:7rem}
+    body{font-size:.9375rem;line-height:1.5;letter-spacing:0}
+    .wrap{width:min(82.5rem,calc(100% - 5rem))}
+    h1,h2,h3{letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
+    h1{font-size:clamp(3.75rem,7.8vw,7.25rem);margin:1.9rem 0}
+    h2{font-size:clamp(2.75rem,5.3vw,4.875rem);margin-bottom:1.625rem}
+    h3{font-size:2.125rem}
+    p{letter-spacing:0;line-height:1.5}
+    .header{position:sticky;top:0;border:0;background:rgba(251,247,240,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);isolation:isolate}
+    .header::before{content:"";position:absolute;inset:0;pointer-events:none;border-top:.0625rem solid rgba(255,255,255,.8)}
+    .header::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:0 .4rem 1.5rem rgba(59,47,36,.1);opacity:0;transition:opacity .2s ease}
+    .header.scrolled::after{opacity:1}
+    .nav{min-height:6rem;gap:1.875rem}
+    .logo{font-size:2.875rem;letter-spacing:-.02em}
+    .logo img{height:3.625rem}
+    .logo-hero{width:min(23.75rem,82%);margin:0 0 1.625rem -.5rem}
+    .footer-logo img{width:12.5rem}
+    .nav-links{gap:1.875rem}
+    .nav-links>a:not(.button){font-size:.75rem;font-weight:700;min-height:2.75rem;display:inline-flex;align-items:center;letter-spacing:.04em}
+    .nav-links>a:not(.button)::after{right:0;bottom:.25rem;height:.125rem;transform:scaleX(0);transform-origin:left;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+    .nav-links>a:hover::after,.nav-links>a:focus-visible::after{transform:scaleX(1)}
+    .button{min-height:3.625rem;gap:1.5rem;padding:1.0625rem 1.4375rem;border-width:.125rem;font-size:.75rem;line-height:1.4;letter-spacing:.025em;color:var(--ink);box-shadow:.25rem .25rem 0 var(--line);transition:transform .1s ease;touch-action:manipulation}
+    .button:hover{background:#c9b38e;box-shadow:.125rem .125rem 0 var(--line)}
+    .button.secondary:hover{background:var(--panel)}
+    .button:active,.menu-toggle:active,.dialog-close:active,.gallery-image:active{transform:scale(.97)}
+    .menu-toggle,.dialog-close{min-width:2.75rem;min-height:2.75rem;transition:transform .1s ease}
+    .menu-toggle{padding:.625rem .9375rem;font-weight:600}
+    .text-link{font-size:.75rem;display:inline-flex;align-items:center;min-height:2.75rem;line-height:1.5}
+    .arrow{font-size:1.4375rem}
+    .eyebrow{gap:.75rem;font-size:.625rem;letter-spacing:.16em;line-height:1.5}
+    .eyebrow::before{width:1.4375rem;height:.1875rem}
+    .hero{padding:3.75rem 0 4.75rem}
+    .hero-layout{gap:4rem;min-width:0}
+    .hero-copy,.hero-photo{min-width:0}
+    .hero-copy p{max-width:24.375rem;margin-bottom:1.9375rem}
+    .hero-copy h1 em{line-height:1.05;letter-spacing:-.02em}
+    .hero-actions{gap:1.4375rem}
+    .hero-foot{gap:1rem;margin-top:2.625rem;font-size:.625rem;line-height:1.5;letter-spacing:.12em}
+    .beans,.cursor{display:none}
+    .hero-photo img{height:30.625rem;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+    .hero-photo:hover img{transform:scale(1.02)}
+    .display-bar{padding:.8125rem 1.1875rem;font-size:.625rem;letter-spacing:.12em}
+    .photo-caption{padding:1.0625rem 1.1875rem;gap:1rem}
+    .photo-caption strong{font-size:1.625rem;line-height:1.15;letter-spacing:-.02em}
+    .photo-caption span{font-size:.5625rem;line-height:1.5}
+    .chapter{margin-bottom:5rem}
+    .chapter-bar{gap:1.25rem;padding:.9375rem 1.6875rem;font-size:.625rem;line-height:1.5;letter-spacing:.14em}
+    .about-copy{padding:3.4375rem}
+    .about-copy p{max-width:33.75rem}
+    .about-side{padding:2.5rem}
+    .oven{width:6.875rem;height:5.25rem;margin-bottom:1.375rem}
+    .benefit{padding:1.1875rem 0;grid-template-columns:2.1875rem 1fr;gap:.875rem}
+    .benefit-number{font-size:1.4375rem}
+    .benefit h3{font-size:1.75rem;margin:0 0 .4375rem}
+    .benefit p{font-size:.75rem}
+    .products-intro{padding:3rem 3.4375rem 2.25rem;gap:1.875rem}
+    .products-intro p{font-size:.8125rem;max-width:16.25rem}
+    .product{grid-template-columns:4.0625rem 1.2fr 1fr 2.1875rem;gap:1.5625rem;padding:1.6875rem 3.4375rem;transition:none}
+    .product-index{font-size:1.6875rem}
+    .product h3{font-size:2.125rem}
+    .product p{font-size:.75rem}
+    .product-symbol{font-size:1.75rem;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+    .products-bottom{padding:1.5625rem 3.4375rem;gap:1.25rem}
+    .products-bottom p{font-size:.75rem}
+    .gallery-heading{padding:2.8125rem 3.4375rem 2.1875rem;gap:1.875rem}
+    .gallery-heading p{font-size:.6875rem;max-width:15rem}
+    .gallery-image{transition:transform .1s ease}
+    .gallery-image img{height:18.125rem;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+    .gallery-image:hover img{transform:scale(1.03)}
+    .zoom{bottom:.8125rem;right:.8125rem;width:2rem;height:2rem;font-size:1.25rem}
+    .gallery-item figcaption{padding:1.125rem 1rem;font-size:1.5rem;line-height:1.15;letter-spacing:-.02em}
+    .contact-copy{padding:3.125rem 3.4375rem;min-width:0}
+    .contact-copy>p{max-width:23.125rem;font-size:.8125rem}
+    .contact-actions{gap:1.375rem;margin:1.875rem 0}
+    .phone{font-size:clamp(1.6875rem,3vw,2.5rem);min-height:2.75rem;display:inline-flex;align-items:center;letter-spacing:-.02em}
+    .location{gap:1.25rem;padding-top:1.5rem;margin-top:2.1875rem;font-size:.75rem;align-items:center}
+    .map-wrap,.map-wrap iframe{min-height:28.125rem}
+    footer{padding:2rem 0}
+    .footer-top{gap:1.5625rem;margin-bottom:1.625rem}
+    .footer-top p{font-size:.625rem;line-height:1.5;letter-spacing:.1em}
+    .footer-bottom{gap:1.5625rem;font-size:.625rem;letter-spacing:.025em}
+    .reveal.ready{transform:translateY(1.25rem);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1)}
+    .reveal.ready.visible{transform:translateY(0)}
+    dialog{max-width:min(56.25rem,90vw)}
+    .dialog-head{gap:1.25rem;padding:.75rem 1.125rem;font-size:.75rem;letter-spacing:.025em}
+    .dialog-close{font-size:1.5rem;flex-shrink:0}
+    a:focus-visible,button:focus-visible{outline:.1875rem solid var(--ink);outline-offset:.25rem}
+    .skip{padding:.75rem 1.25rem;color:var(--ink);font-weight:600}
+    @media(min-width:1500px){.hero{padding-top:5.3125rem;padding-bottom:6.25rem}}
+    @media(max-width:1050px){
+      .wrap{width:calc(100% - 3rem)}.nav-links{gap:1.1875rem}.hero-layout{gap:2.1875rem}
+      .hero-photo img{height:28.75rem}.about-copy,.contact-copy{padding:2.25rem}.about-side{padding:1.875rem}
+      .product{padding:1.5625rem 2.1875rem;gap:1.25rem;grid-template-columns:2.5rem 1.2fr 1fr 1.5625rem}
+      .product h3{font-size:1.8125rem}.gallery-image img{height:14.375rem}.gallery-item figcaption{font-size:1.3125rem}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:6rem}.wrap{width:calc(100% - 2.25rem)}.nav{min-height:5rem;gap:1rem}
+      .logo img{height:3.25rem;max-width:10rem}.nav-links{top:5rem;padding:1.6875rem;gap:.75rem;background:var(--bg);border:0;box-shadow:0 .75rem 1.5rem rgba(59,47,36,.12);max-height:calc(100dvh - 5rem);overflow-y:auto}
+      .nav-links>a:not(.button){font-size:.875rem}.hero{padding:2.1875rem 0 3.4375rem}.hero-layout{gap:2.1875rem}
+      h1{font-size:clamp(3.75rem,13vw,6.25rem);margin:1.5625rem 0}.hero-copy p{max-width:30rem}
+      .hero-foot{margin-top:1.875rem}.hero-photo img{height:22.5rem}
+      .chapter{margin-bottom:3.125rem}.chapter-bar{padding:.8125rem 1.125rem;font-size:.5625rem;letter-spacing:.08em}
+      .about-copy,.contact-copy{padding:2rem 1.5rem}.about-side{padding:1.5625rem}.oven{width:5.3125rem;height:4.0625rem;margin-bottom:.3125rem}
+      .products-intro,.gallery-heading{padding:2rem 1.5rem}.products-intro p,.gallery-heading p{max-width:none;margin-top:1.375rem}
+      .product{grid-template-columns:1.875rem 1fr 1.25rem;padding:1.5rem;gap:.8125rem}.product h3{font-size:1.875rem}.product-index{font-size:1.375rem}
+      .products-bottom{padding:1.5625rem 1.5rem}.gallery-image img{height:15rem}.gallery-item figcaption{font-size:1.5rem}
+      .map-wrap,.map-wrap iframe{min-height:20.625rem}.footer-bottom{gap:.625rem}.footer-top{flex-wrap:wrap}
+      .hero-actions .button{max-width:100%}.chapter-bar span{min-width:0}
+    }
+    @media(max-width:420px){
+      .hero-actions{gap:1.25rem}.button{padding:.9375rem 1.0625rem;gap:1rem;font-size:.6875rem}
+      .hero-photo img{height:18.75rem}.photo-caption{padding:.875rem .75rem}.photo-caption strong{font-size:1.4375rem}
+      .gallery-image img{height:11.875rem}.gallery-item figcaption{font-size:1.3125rem;padding:.9375rem .75rem}
+      .chapter-bar span:last-child{font-size:.5rem}.location{align-items:flex-start;gap:.5rem}
+    }
+    @media(prefers-reduced-transparency:reduce){
+      .header{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}.glass::after{display:none}
+    }
+    @media(prefers-contrast:more){
+      :root{--muted:#3b2f24}.header{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}
+      .header::before{border-color:var(--ink)}.glass::after{display:none}
+      .button,.menu-toggle,.dialog-close,.frame,.display{border-color:var(--ink)}
+      .benefit,.product,.location{border-color:var(--ink)}.button:hover{background:var(--line)}
+      .hero-copy h1 em{color:var(--ink)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition-property:opacity!important;transition-duration:.2s!important}
+      .reveal.ready,.reveal.ready.visible{opacity:1;transform:none}
+      .button:active,.menu-toggle:active,.dialog-close:active,.gallery-image:active,.hero-photo:hover img,.gallery-image:hover img,.product:hover .product-symbol{transform:none}
+      .nav-links>a:not(.button)::after{transform:none;opacity:0}.nav-links>a:hover::after,.nav-links>a:focus-visible::after{opacity:1}
+    }
   </style>
 </head>
 <body>
@@ -252,7 +385,7 @@
       <div class="product"><span class="product-index">05</span><h3>Croissante cu unt</h3><p>Croissante fragede preparate zilnic.</p><span class="product-symbol" aria-hidden="true">✳</span></div>
       <div class="products-bottom">
         <p>Ai ceva în minte? Scrie-ne pentru detalii și disponibilitate.</p>
-        <a class="button secondary magnetic" href="https://wa.me/40722450601?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20produse%20de%20la%20Eleda.">Hai să vorbim <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="button secondary magnetic" aria-label="Hai să vorbim — scrie pe WhatsApp" href="https://wa.me/40722450601?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20produse%20de%20la%20Eleda.">Hai să vorbim <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
     </section>
 
@@ -348,30 +481,20 @@
       }
 
       const cursor = document.querySelector('.cursor');
-      const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
-      if (fine.matches && !reduced.matches) {
-        document.addEventListener('pointermove', e => {
-          cursor.style.left = e.clientX + 'px';
-          cursor.style.top = e.clientY + 'px';
-          cursor.style.opacity = '1';
-        });
-        document.documentElement.addEventListener('pointerleave', () => cursor.style.opacity = '0');
-        document.querySelectorAll('a,button').forEach(el => {
-          el.addEventListener('pointerenter', () => cursor.classList.add('active'));
-          el.addEventListener('pointerleave', () => cursor.classList.remove('active'));
-        });
-        document.querySelectorAll('.magnetic').forEach(button => {
-          button.addEventListener('pointermove', e => {
-            if (reduced.matches) return;
-            const r = button.getBoundingClientRect();
-            const x = (e.clientX - r.left - r.width / 2) * .1;
-            const y = (e.clientY - r.top - r.height / 2) * .16;
-            button.style.transform = `translate(${x}px,${y}px)`;
-          });
-          button.addEventListener('pointerleave', () => button.style.transform = '');
-          button.addEventListener('blur', () => button.style.transform = '');
-        });
-      }
+      const header = document.querySelector('.header');
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 8);
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      document.addEventListener('click', e => {
+        if (!header.contains(e.target)) setMenu(false);
+      });
+      menu.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { setMenu(false); menu.focus(); }
+      });
+      links.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { setMenu(false); menu.focus(); }
+      });
+      window.matchMedia('(max-width: 760px)').addEventListener('change', () => setMenu(false));
 
       const dialog = document.querySelector('#photo-dialog');
       const image = document.querySelector('#dialog-image');
