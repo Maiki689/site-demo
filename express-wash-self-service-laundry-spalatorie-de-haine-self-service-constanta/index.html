@@ -4,24 +4,24 @@
 <meta name="generator" content="jarvis-v1">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0ea5e9">
+<meta name="theme-color" content="#ffffff">
 <meta name="description" content="Express Wash, spălătorie de haine self service în Constanța. Spălare și uscare, non-stop, pe Strada Bogdan Petriceicu Hașdeu 83.">
 <title>Express Wash — Haine curate, oricând. Constanța</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Kaushan+Script&family=Instrument+Serif&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#0ea5e9;--ink:#101010;--white:#fff;--muted:#555;--line:3px solid var(--ink);--shadow:7px 7px 0 var(--ink)}
+:root{--blue:#ecedef;--ink:#101010;--white:#fff;--muted:#555;--line:3px solid var(--ink);--shadow:7px 7px 0 var(--ink)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:105px}
 body{margin:0;color:var(--ink);background:#fff;font-family:"Geist",sans-serif;font-size:16px;line-height:1.6}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 img{display:block;width:100%;object-fit:cover}
-::selection{background:var(--blue);color:#000}
+::selection{background:var(--ink);color:#fff}
 .container{width:min(1280px,calc(100% - 72px));margin-inline:auto}
 h1,h2,h3,p{margin:0}
-h1,h2,.serif{font-family:"Instrument Serif",serif;font-weight:400;line-height:.98;letter-spacing:-.045em}
+h1,h2,.serif{font-family:"Kaushan Script",cursive;font-weight:400;line-height:1.08;letter-spacing:0}
 h1{font-size:clamp(64px,7.8vw,110px)}
 h2{font-size:clamp(48px,5.5vw,78px)}
 h3{font-size:22px;line-height:1.2;letter-spacing:-.04em}
@@ -32,32 +32,39 @@ p{max-width:65ch}
 .panel{border:var(--line);padding:48px;background:white;box-shadow:var(--shadow)}
 .reveal{transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
 .js .reveal:not(.visible){opacity:0;transform:translateY(32px)}
-.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;border:var(--line);padding:16px 22px;background:var(--blue);box-shadow:5px 5px 0 var(--ink);font-size:14px;font-weight:700;line-height:1.4;transition:transform .2s,box-shadow .2s}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;border:var(--line);padding:16px 22px;background:var(--ink);color:#fff;box-shadow:5px 5px 0 var(--ink);font-size:14px;font-weight:700;line-height:1.4;transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
-.btn.secondary{background:#fff}
+.btn.secondary{background:#fff;color:var(--ink)}
 .btn svg{width:21px;height:21px;flex-shrink:0}
-a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:6px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:6px}
 header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:var(--line)}
 .nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:28px}
 .logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .logo-icon{width:44px;height:48px;border:3px solid var(--ink);background:var(--blue);position:relative;box-shadow:3px 3px 0 var(--ink)}
 .logo-icon::before{content:"";position:absolute;inset:12px 6px 5px;border:3px solid var(--ink);border-radius:50%}
 .logo-icon::after{content:"••";position:absolute;top:-7px;left:6px;font-size:19px;letter-spacing:3px}
+.logo-img{height:58px;width:auto;object-fit:contain}
+.hero-logo{width:min(440px,100%);height:auto;object-fit:contain;margin:0 0 26px -6px}
+.footer-logo{height:70px;width:auto;object-fit:contain}
+.bule{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.bule i{position:absolute;bottom:-60px;border:2.5px solid var(--ink);border-radius:50%;opacity:.16;animation:urca linear infinite}
+.bule i::after{content:"";position:absolute;top:22%;left:24%;width:22%;height:22%;border-top:2.5px solid var(--ink);border-radius:50%;transform:rotate(-30deg)}
+@keyframes urca{to{transform:translateY(-115vh) translateX(30px)}}
 .brand{font-weight:800;font-size:22px;letter-spacing:-.07em;line-height:1.1}
 .brand small{display:block;font-size:9px;font-weight:600;letter-spacing:.16em;margin-top:5px}
 .nav-links{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:600}
 .nav-links>a:not(.btn){position:relative}
-.nav-links>a:not(.btn)::after{content:"";height:3px;background:var(--blue);position:absolute;bottom:-6px;left:0;right:100%;transition:right .2s}
+.nav-links>a:not(.btn)::after{content:"";height:3px;background:var(--ink);position:absolute;bottom:-6px;left:0;right:100%;transition:right .2s}
 .nav-links>a:hover::after{right:0}
 .nav-links .btn{padding:10px 17px}
 .menu-toggle{display:none;border:2px solid var(--ink);background:#fff;padding:8px 12px;font-weight:700}
 .hero{position:relative;padding:58px 0 54px;overflow:hidden}
-.hero::before{content:"";position:absolute;top:65px;right:-130px;width:530px;height:530px;border:1px solid #0ea5e930;border-radius:50%;box-shadow:0 0 0 70px #0ea5e90b,0 0 0 140px #0ea5e907;animation:breathe 12s ease-in-out infinite;pointer-events:none}
+.hero::before{content:"";position:absolute;top:65px;right:-130px;width:530px;height:530px;border:2px solid #10101014;border-radius:50%;box-shadow:0 0 0 70px #1010100a,0 0 0 140px #10101006;animation:breathe 12s ease-in-out infinite;pointer-events:none}
 @keyframes breathe{50%{transform:translateY(20px) scale(1.07)}}
 .hero-frame{position:relative;border:var(--line);display:grid;grid-template-columns:1.1fr 1fr;box-shadow:var(--shadow);background:rgba(255,255,255,.9)}
 .hero-copy{padding:49px 42px 37px}
 .hero .eyebrow{margin-bottom:28px}
-.hero h1 span{display:inline-block;background:var(--blue);padding:0 9px 7px;margin-top:5px}
+.hero h1 span{display:inline-block;background:var(--ink);color:#fff;padding:0 14px 6px;margin-top:8px;transform:rotate(-2deg)}
 .hero-description{margin-top:25px;font-size:16px;max-width:370px;color:#454545}
 .hero-actions{display:flex;align-items:center;gap:25px;margin-top:29px}
 .round-text{width:108px;height:108px;flex-shrink:0;position:relative}
@@ -71,7 +78,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-
 .hero-photo:hover img{transform:scale(1.04)}
 .photo-caption{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:19px 3px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
 .photo-caption .serif{font-size:32px;text-transform:none}
-.hero-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:var(--line);padding:17px 26px;background:var(--blue);font-size:12px;font-weight:600}
+.hero-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:var(--line);padding:17px 26px;background:var(--ink);color:#fff;font-size:12px;font-weight:600}
 .hero-bottom span{display:flex;align-items:center;gap:9px}
 .hero-bottom svg{width:19px;height:19px}
 .section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
@@ -112,7 +119,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-
 .gallery-grid figure:hover{transform:translateY(-6px)}
 .gallery-grid img{height:235px;border:2px solid var(--ink);filter:saturate(.8)}
 .gallery-grid figcaption{display:flex;justify-content:space-between;align-items:center;padding:18px 3px;font-size:12px;font-weight:600}
-.gallery-grid figcaption span{font-family:"Instrument Serif",serif;font-size:25px}
+.gallery-grid figcaption span{font-family:"Kaushan Script",cursive;font-size:24px}
 .gallery-note{font-size:11px;color:#555;margin-top:24px}
 .contact-panel{background:var(--blue);padding:0}
 .contact-heading{padding:38px 42px;display:flex;justify-content:space-between;align-items:center;gap:25px;border-bottom:var(--line)}
@@ -148,7 +155,7 @@ footer{margin-top:40px;border-top:var(--line);padding:32px 0}
 .about-panel{grid-template-columns:1fr;gap:27px}.about-copy{grid-row:1}.about-photo img{height:280px;min-height:0}.advantages{grid-template-columns:1fr;margin-top:26px}.advantage{padding:22px}.advantage+.advantage{border-left:0;border-top:var(--line)}.gallery-grid{grid-template-columns:1fr;gap:25px}.gallery-grid img{height:260px}.gallery-grid figcaption{padding:15px 3px}.contact-panel{padding:0}.contact-heading{padding:28px 22px}.contact-heading h2{font-size:47px}.open-badge{width:84px;height:84px}.open-badge strong{font-size:29px}.open-badge span{font-size:8px}.contact-heading .eyebrow{font-size:10px}.contact-body{grid-template-columns:1fr}.contact-details{padding:28px 22px}.map{border-left:0;border-top:var(--line);min-height:300px}.map iframe{min-height:290px}.contact-buttons{flex-direction:column;align-items:stretch}.contact-buttons .btn{font-size:13px}.footer-top,.footer-bottom{align-items:start;flex-direction:column;gap:15px}.footer-bottom{font-size:11px}footer{margin-top:24px}
 }
 @media(max-width:380px){.services-grid{grid-template-columns:1fr}.hero-actions{gap:10px}.round-text{width:78px;height:78px}.hero-actions .btn{font-size:12px;padding:13px}.contact-heading{gap:12px}.contact-heading h2{font-size:40px}.open-badge{width:70px;height:70px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal:not(.visible){opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.bule{display:none}html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal:not(.visible){opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -164,8 +171,7 @@ footer{margin-top:40px;border-top:var(--line);padding:32px 0}
 <header>
 <div class="container nav">
 <a class="logo" href="#acasa" aria-label="Express Wash — acasă">
-<span class="logo-icon" aria-hidden="true"></span>
-<span class="brand">express wash<small>SELF SERVICE · CONSTANȚA</small></span>
+<img class="logo-img" src="img/logo.png" alt="Express Wash — Spălătorie Self Service">
 </a>
 <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" type="button">Meniu +</button>
 <nav class="nav-links" id="navigation" aria-label="Navigare principală">
@@ -179,9 +185,11 @@ footer{margin-top:40px;border-top:var(--line);padding:32px 0}
 
 <main>
 <section class="hero" id="acasa" aria-labelledby="hero-title">
+<div class="bule" aria-hidden="true"><i style="left:4%;width:34px;height:34px;animation-duration:17s"></i><i style="left:18%;width:16px;height:16px;animation-duration:12s;animation-delay:-5s"></i><i style="left:47%;width:24px;height:24px;animation-duration:15s;animation-delay:-9s"></i><i style="left:71%;width:42px;height:42px;animation-duration:21s;animation-delay:-3s"></i><i style="left:88%;width:18px;height:18px;animation-duration:13s;animation-delay:-7s"></i></div>
 <div class="container">
 <div class="hero-frame reveal">
 <div class="hero-copy">
+<img class="hero-logo" src="img/logo.png" alt="Logo Express Wash — Spălătorie Self Service">
 <p class="eyebrow">Spălătorie self service · Constanța</p>
 <h1 id="hero-title">Haine curate.<br>Mai simplu.<br><span>Oricând.</span></h1>
 <p class="hero-description">Spală-ți hainele rapid și simplu. Tu alegi momentul, noi punem la dispoziție mașinile pentru spălare și uscare.</p>
@@ -304,7 +312,7 @@ footer{margin-top:40px;border-top:var(--line);padding:32px 0}
 <footer>
 <div class="container">
 <div class="footer-top">
-<a class="logo" href="#acasa"><span class="logo-icon" aria-hidden="true"></span><span class="brand">express wash<small>SELF SERVICE · CONSTANȚA</small></span></a>
+<a class="logo" href="#acasa"><img class="footer-logo" src="img/logo.png" alt="Express Wash — Spălătorie Self Service"></a>
 <p>Haine curate. Mai simplu. Oricând.</p>
 <a class="maps-link" href="#acasa">Înapoi sus <span aria-hidden="true">↑</span></a>
 </div>
