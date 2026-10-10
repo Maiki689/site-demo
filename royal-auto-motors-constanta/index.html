@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101419">
+  <meta name="description" content="Royal Auto Motors — service auto în Constanța, Bulevardul Tomis 358. Diagnoză, revizii, reparații mecanice, anvelope și climă auto.">
+  <title>Royal Auto Motors — Service auto în Constanța</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#101419;--panel:#161b21;--panel-light:#1b222a;--text:#eff3f5;--muted:#aab5c1;--line:#343d47;--blue:#38bdf8;--yellow:#f2d34f;--heading:"Unbounded",sans-serif;--body:"Manrope",sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:94px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    svg{display:block}
+    ::selection{background:var(--blue);color:var(--bg)}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:6px}
+    .wrap{width:min(1400px,calc(100% - 80px));margin:auto}
+    .skip{position:fixed;top:10px;left:12px;z-index:100;background:var(--blue);color:#101419;padding:12px;transform:translateY(-150%)}
+    .skip:focus{transform:translateY(0)}
+    header{position:sticky;top:0;z-index:30;background:rgba(16,20,25,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand-mark{width:41px;height:43px;color:var(--blue)}
+    .brand-name{font-family:var(--heading);font-size:13px;font-weight:700;line-height:1.5;letter-spacing:-.5px}
+    .brand-name span{display:block;font-family:var(--body);color:var(--muted);font-weight:600;font-size:10px;letter-spacing:3.1px;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:700}
+    .nav-links a:not(.nav-phone){position:relative;padding:8px 0}
+    .nav-links a:not(.nav-phone):after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+    .nav-links a:hover:after{transform:scaleX(1)}
+    .nav-phone{border:1px solid var(--line);padding:12px 18px;display:flex;align-items:center;gap:12px;transition:border-color .25s,color .25s}
+    .nav-phone:hover{color:var(--blue);border-color:var(--blue)}
+    .menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);width:44px;height:44px;align-items:center;justify-content:center}
+    .icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+    main{padding-top:24px}
+    .chapter{position:relative;border:1px solid var(--line);margin-bottom:28px;background:var(--panel);scroll-margin-top:108px}
+    .chapter:before{content:"";position:absolute;top:0;bottom:0;left:0;width:6px;background:repeating-linear-gradient(145deg,var(--yellow) 0,var(--yellow) 9px,#17191c 9px,#17191c 18px);z-index:2}
+    .chapter-label{display:flex;align-items:center;gap:16px;text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:800;color:var(--muted)}
+    .chapter-label b{font-family:var(--heading);color:var(--blue);font-size:11px}
+    .chapter-label:after{content:"";height:1px;width:65px;background:var(--line)}
+    .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:800}
+    .hero{overflow:hidden;min-height:730px;background:radial-gradient(ellipse at 30% 25%,#1d2b38 0%,#131a21 45%,#101419 90%)}
+    .hero-top{display:flex;justify-content:space-between;align-items:center;padding:30px 38px 0;position:relative;z-index:3}
+    .location{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:11px}
+    .location .dot{width:6px;height:6px;background:var(--blue);border-radius:50%;box-shadow:0 0 15px #38bdf850}
+    .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;position:relative;z-index:1;padding:49px 38px 38px}
+    .hero-copy{position:relative;z-index:3;padding:16px 0 28px}
+    h1,h2,h3,p{margin:0}
+    h1{font-family:var(--heading);font-size:clamp(44px,5.7vw,86px);font-weight:700;line-height:1.14;letter-spacing:-4px}
+    h1 .small-line{display:block;font-size:.52em;line-height:1.3;letter-spacing:-1.7px;margin-bottom:16px}
+    h1 .blue{color:var(--blue);display:block}
+    .hero-desc{max-width:340px;color:var(--muted);font-size:17px;line-height:1.8;margin-top:28px}
+    .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px;margin-top:32px}
+    .button{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;padding:17px 22px;background:var(--blue);border:1px solid var(--blue);color:#071923;font-weight:800;font-size:13px;line-height:1.4;transition:background .25s,transform .25s}
+    .button:hover{background:#85d9ff;transform:translateY(-3px)}
+    .button.secondary{background:transparent;color:var(--text);border-color:var(--line)}
+    .button.secondary:hover{border-color:var(--blue);color:var(--blue)}
+    .text-link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800}
+    .text-link:hover{color:var(--blue)}
+    .hero-note{display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted);margin-top:38px}
+    .hero-note:before{content:"";width:28px;height:1px;background:var(--blue)}
+    .hero-photo{position:relative;margin-top:20px;align-self:stretch;min-height:445px;border:1px solid #4a5661;background:#202831}
+    .hero-photo img{position:absolute;inset:0;filter:saturate(.6);object-position:50% 50%}
+    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,#090e16c9)}
+    .image-caption{position:absolute;bottom:22px;left:22px;right:22px;z-index:2;display:flex;justify-content:space-between;gap:12px;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+    .photo-corner{position:absolute;top:-9px;right:-9px;width:36px;height:36px;border-top:2px solid var(--blue);border-right:2px solid var(--blue);z-index:3}
+    .hero-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;gap:20px;margin:0 38px;padding:17px 0;border-top:1px solid var(--line);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted)}
+    .hero-bottom span:first-child{color:var(--blue)}
+    .gear{position:absolute;pointer-events:none;color:var(--blue);opacity:.075;animation:rotate 110s linear infinite}
+    .gear-one{width:510px;height:510px;left:18%;top:15%}
+    .gear-two{width:210px;height:210px;left:4%;bottom:-90px;animation-direction:reverse}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    .section-pad{padding:42px 44px 48px}
+    .section-heading{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-top:32px;margin-bottom:38px}
+    h2{font-family:var(--heading);font-size:clamp(28px,3.6vw,52px);font-weight:500;line-height:1.2;letter-spacing:-1.8px}
+    h2 .accent{color:var(--blue)}
+    .section-heading>p{max-width:330px;color:var(--muted);font-size:14px}
+    .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+    .about-intro{color:var(--muted);font-size:15px;max-width:470px}
+    .quote{font-family:var(--heading);font-size:clamp(22px,2.4vw,35px);line-height:1.55;letter-spacing:-1px;border-left:2px solid var(--blue);padding-left:26px}
+    .quote span{color:var(--blue)}
+    .advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:45px;border-top:1px solid var(--line);padding-top:28px}
+    .advantage{display:flex;gap:16px;align-items:flex-start}
+    .advantage>.icon{width:30px;height:30px;color:var(--blue)}
+    .advantage h3{font-size:15px;font-weight:800;margin-bottom:5px}
+    .advantage p{font-size:12px;color:var(--muted)}
+    .services{background:#13181e}
+    .services-layout{display:grid;grid-template-columns:.74fr 1.26fr;gap:54px;margin-top:34px}
+    .service-intro{position:relative;padding-top:12px}
+    .service-intro h2{margin-bottom:24px}
+    .service-intro p{color:var(--muted);font-size:14px;max-width:290px}
+    .technical-art{width:225px;max-width:100%;height:auto;margin:36px 0 15px;color:var(--blue)}
+    .technical-label{font-family:var(--body);font-size:9px;letter-spacing:1.7px;color:var(--muted);text-transform:uppercase}
+    .service-list{border-top:1px solid var(--line)}
+    .service-row{display:grid;grid-template-columns:35px 1fr 38px;gap:18px;align-items:center;padding:25px 12px 25px 0;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+    .service-row:hover{background:#38bdf807;padding-left:10px}
+    .service-number{font-family:var(--heading);font-size:11px;color:var(--blue)}
+    .service-row h3{font-family:var(--heading);font-size:clamp(15px,1.5vw,20px);font-weight:500;letter-spacing:-.4px;margin-bottom:7px}
+    .service-row p{font-size:13px;color:var(--muted)}
+    .service-row>.icon{color:var(--muted);width:28px;height:28px;transition:color .25s}
+    .service-row:hover>.icon{color:var(--blue)}
+    .service-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;border-top:1px solid var(--line);padding-top:28px;margin-top:32px}
+    .service-footer p{font-size:13px;color:var(--muted)}
+    .gallery-grid{display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:18px;align-items:start}
+    figure{margin:0}
+    .gallery-image{height:300px;position:relative;overflow:hidden;background:var(--panel-light);border:1px solid var(--line)}
+    .gallery-grid figure:nth-child(2){margin-top:55px}
+    .gallery-grid figure:nth-child(3){margin-top:110px}
+    .gallery-grid figure:first-child .gallery-image{height:355px}
+    .gallery-image img{filter:saturate(.55);transition:transform .7s,filter .7s}
+    .gallery-image:hover img{transform:scale(1.045);filter:saturate(1)}
+    figcaption{padding-top:13px;display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)}
+    figcaption span{font-family:var(--heading);color:var(--blue);font-size:9px}
+    .gallery-disclaimer{font-size:10px;color:var(--muted);margin-top:26px}
+    .contact{overflow:hidden}
+    .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:35px}
+    .contact-copy h2{margin-bottom:25px}
+    .contact-copy>p{color:var(--muted);max-width:400px;font-size:14px}
+    .contact-details{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin:31px 0}
+    .detail-label{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+    .detail-value{font-size:15px;font-weight:700}
+    .detail-value a:hover{color:var(--blue)}
+    .contact-copy .button{margin-bottom:14px}
+    .extra-details{display:flex;flex-direction:column;gap:15px;margin-top:27px}
+    .extra-detail{display:flex;gap:13px;font-size:12px;color:var(--muted)}
+    .extra-detail .icon{color:var(--blue);width:20px;height:20px;margin-top:3px}
+    .extra-detail strong{display:block;color:var(--text);font-size:13px;margin-bottom:2px}
+    .map-panel{border:1px solid var(--line);background:var(--panel-light);display:flex;flex-direction:column;min-height:440px}
+    iframe{width:100%;flex:1;min-height:350px;border:0;display:block}
+    .map-bottom{padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:11px}
+    .map-bottom>span{color:var(--muted)}
+    footer{padding:12px 0 30px}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:20px 0 27px;border-bottom:1px solid var(--line)}
+    .footer-signoff{font-family:var(--heading);font-size:14px;color:var(--muted)}
+    .footer-bottom{display:flex;justify-content:space-between;gap:30px;padding-top:21px;font-size:10px;color:var(--muted)}
+    .footer-bottom p:last-child{max-width:600px;text-align:right}
+    .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+    .js .reveal.is-visible{opacity:1;transform:translateY(0)}
+    .js .image-reveal{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.22,.68,.15,1)}
+    .js .image-reveal.is-visible{clip-path:inset(0 0 0 0)}
+    @media(min-width:1500px){h1{font-size:86px}}
+    @media(max-width:1100px){
+      .wrap{width:calc(100% - 44px)}
+      .nav-links{gap:20px}
+      .hero-grid{padding:35px 30px 30px;gap:22px;grid-template-columns:1fr 1fr}
+      .hero-top{padding:25px 30px 0}
+      h1{letter-spacing:-2.8px;font-size:clamp(43px,5.8vw,70px)}
+      .hero-photo{min-height:435px}
+      .section-pad{padding:35px 30px}
+      .services-layout{gap:30px}
+      .about-layout{gap:35px}
+      .contact-layout{gap:30px}
+      .contact-details{grid-template-columns:1fr}
+      .gallery-image{height:260px}
+      .gallery-grid figure:first-child .gallery-image{height:310px}
+    }
+    @media(max-width:780px){
+      .wrap{width:calc(100% - 32px)}
+      .nav{min-height:72px}
+      .menu-toggle{display:flex}
+      .nav-links{display:none;position:absolute;left:0;right:0;top:72px;background:#13181e;border-bottom:1px solid var(--line);padding:24px;flex-direction:column;align-items:stretch;gap:12px}
+      .nav-links.open{display:flex}
+      .nav-phone{justify-content:center}
+      main{padding-top:16px}
+      .hero{min-height:0}
+      .hero-top{padding:22px 25px 0}
+      .location{font-size:9px}
+      .chapter-label{font-size:9px;gap:10px;letter-spacing:1.3px}
+      .chapter-label:after{width:25px}
+      .hero-grid{grid-template-columns:1fr;padding:30px 25px 26px;gap:6px}
+      .hero-copy{padding-top:0}
+      h1{font-size:clamp(44px,9.6vw,72px);letter-spacing:-2.6px}
+      .hero-desc{max-width:440px;margin-top:22px;font-size:15px}
+      .hero-actions{margin-top:26px}
+      .hero-note{margin-top:24px}
+      .hero-photo{margin-top:0;min-height:330px}
+      .hero-bottom{margin:0 25px;font-size:8px;letter-spacing:1px}
+      .gear-one{left:25%;top:0;width:400px;height:400px}
+      .section-pad{padding:28px 25px 32px}
+      .section-heading{display:block;margin-top:26px;margin-bottom:28px}
+      .section-heading>p{margin-top:20px;max-width:430px}
+      h2{font-size:clamp(27px,5.5vw,40px);letter-spacing:-1px}
+      .about-layout{grid-template-columns:1fr;gap:26px}
+      .quote{font-size:25px}
+      .advantages{gap:20px;grid-template-columns:1fr;margin-top:30px}
+      .services-layout{grid-template-columns:1fr;gap:28px;margin-top:26px}
+      .service-intro p{max-width:440px}
+      .technical-art,.technical-label{display:none}
+      .service-row{padding-top:22px;padding-bottom:22px;gap:10px}
+      .service-row h3{font-size:17px}
+      .service-footer{align-items:start;flex-direction:column;gap:20px}
+      .gallery-grid{grid-template-columns:1fr 1fr;gap:24px 14px}
+      .gallery-grid figure:first-child{grid-column:1/-1}
+      .gallery-grid figure:nth-child(2),.gallery-grid figure:nth-child(3){margin-top:0}
+      .gallery-image{height:230px}
+      .gallery-grid figure:first-child .gallery-image{height:320px}
+      .contact-layout{grid-template-columns:1fr;gap:32px;margin-top:27px}
+      .contact-details{grid-template-columns:1fr 1fr}
+      .map-panel{min-height:350px}
+      iframe{min-height:290px}
+      .footer-signoff{font-size:11px}
+      .footer-bottom{flex-direction:column;gap:10px}
+      .footer-bottom p:last-child{text-align:left}
+    }
+    @media(max-width:420px){
+      .hero-top{flex-wrap:wrap;gap:12px}
+      .hero-grid{padding-top:26px}
+      h1{font-size:43px;letter-spacing:-2px}
+      .hero-photo{min-height:260px}
+      .hero-bottom span:last-child{display:none}
+      .hero-actions .button{width:100%}
+      .gallery-image{height:185px}
+      .gallery-grid figure:first-child .gallery-image{height:260px}
+      .service-row h3{font-size:15px}
+      .service-row p{font-size:12px}
+      .contact-details{grid-template-columns:1fr}
+      .contact-copy .button{width:100%;font-size:12px;gap:10px;padding:16px}
+      .footer-top{align-items:start;flex-direction:column}
+      .map-bottom{flex-wrap:wrap}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .js .reveal{opacity:1;transform:none}
+      .js .image-reveal{clip-path:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#principal">Sari la conținut</a>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+    <defs>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="phone" viewBox="0 0 24 24"><path d="M8 3H4a1 1 0 0 0-1 1c0 9 8 17 17 17a1 1 0 0 0 1-1v-4l-5-2-2 3a16 16 0 0 1-7-7l3-2-2-5Z"/></symbol>
+      <symbol id="wrench" viewBox="0 0 24 24"><path d="M14 5a6 6 0 0 0-7 7l-4 4a3 3 0 0 0 4 4l4-4a6 6 0 0 0 7-7l-4 3-3-3 3-4Z"/></symbol>
+      <symbol id="shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+      <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6m0 6v6M3 12h6m6 0h6M6 6l4 4m4 4 4 4M6 18l4-4m4-4 4-4"/></symbol>
+      <symbol id="diagnosis" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><path d="M8 21h8m-4-4v4M6 11h3l2-4 3 7 2-3h2"/></symbol>
+      <symbol id="oil" viewBox="0 0 24 24"><path d="m12 3 6 9a7 7 0 1 1-12 0l6-9Z"/><path d="M8 15a4 4 0 0 0 4 4"/></symbol>
+      <symbol id="snow" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M3 10l4-1-1-4M18 19l-1-4 4-1M3 14l4 1-1 4M18 5l-1 4 4 1"/></symbol>
+      <symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+      <symbol id="gear" viewBox="0 0 200 200"><path fill="currentColor" d="m88 8 24 0 4 19 14 5 17-11 17 17-11 17 5 14 19 4 0 24-19 4-5 14 11 17-17 17-17-11-14 5-4 19-24 0-4-19-14-5-17 11-17-17 11-17-5-14-19-4 0-24 19-4 5-14-11-17 17-17 17 11 14-5Z" transform="translate(0 15)" fill-rule="evenodd"/><circle cx="100" cy="100" r="45" fill="#101419"/><circle cx="100" cy="100" r="31" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    </defs>
+  </svg>
+
+  <header>
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="brand" href="#principal" aria-label="Royal Auto Motors — început">
+        <svg class="brand-mark" viewBox="0 0 44 46" fill="none" aria-hidden="true"><path d="m3 8 8 5 11-9 11 9 8-5-5 17H8L3 8Z" stroke="currentColor" stroke-width="2"/><path d="M8 31h28M13 38h18M22 17v7" stroke="currentColor" stroke-width="2"/><circle cx="22" cy="38" r="4" fill="#101419" stroke="currentColor" stroke-width="2"/></svg>
+        <span class="brand-name">ROYAL AUTO MOTORS<span>Service auto · Constanța</span></span>
+      </a>
+      <button class="menu-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-links">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#despre">Despre noi</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">În detaliu</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-phone" href="tel:+40735220400"><svg class="icon" aria-hidden="true"><use href="#phone"/></svg>0735 220 400</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="principal" class="wrap">
+    <section class="chapter hero" aria-labelledby="hero-title">
+      <svg class="gear gear-one" viewBox="0 0 200 200" aria-hidden="true"><use href="#gear"/></svg>
+      <svg class="gear gear-two" viewBox="0 0 200 200" aria-hidden="true"><use href="#gear"/></svg>
+      <div class="hero-top">
+        <div class="chapter-label"><b>01 /</b> Grijă pentru fiecare kilometru</div>
+        <div class="location"><span class="dot"></span>CONSTANȚA · BD. TOMIS 358</div>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 id="hero-title"><span class="small-line">Pentru mașina ta,</span>ca <span class="blue">nouă.</span></h1>
+          <p class="hero-desc">Service auto dedicat mașinii tale. De la întreținere la reparații, cu atenție la fiecare detaliu.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/40735220400?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20programez%20ma%C8%99ina%20la%20service." target="_blank" rel="noopener noreferrer">Programează pe WhatsApp<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+            <a class="text-link" href="#servicii">Vezi serviciile<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+          </div>
+          <div class="hero-note">Mecanică. Întreținere. Drumuri mai sigure.</div>
+        </div>
+        <div class="hero-photo image-reveal">
+          <img src="img/1.jpg" alt="Intervenție de întreținere auto într-un atelier — fotografie ilustrativă" fetchpriority="high">
+          <span class="photo-corner" aria-hidden="true"></span>
+          <div class="image-caption"><span>În detaliu / întreținere auto</span><span>Imagine ilustrativă</span></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><span>Royal Auto Motors / Service auto</span><span>Mai puține griji. Mai mult drum.</span><a href="#despre">Descoperă ↓</a></div>
+    </section>
+
+    <section class="chapter section-pad reveal" id="despre" aria-labelledby="about-title">
+      <div class="chapter-label"><b>02 /</b> Oamenii din spatele reparației</div>
+      <div class="section-heading">
+        <h2 id="about-title">Mașina ta.<br><span class="accent">Grija noastră.</span></h2>
+        <p>Un service în care atenția la detalii merge mână în mână cu respectul pentru client.</p>
+      </div>
+      <div class="about-layout">
+        <p class="about-intro">La Royal Auto Motors, ne ocupăm atât de reparații, cât și de întreținerea autoturismului tău. Lucrăm cu grijă la fiecare intervenție, pentru ca mașina să te țină cât mai mult și tu să ai mereu drumuri sigure.</p>
+        <blockquote class="quote" style="margin:0">„În spatele unui drum bun stă o mașină <span>bine îngrijită.</span>”</blockquote>
+      </div>
+      <div class="advantages">
+        <div class="advantage">
+          <svg class="icon" aria-hidden="true"><use href="#wrench"/></svg>
+          <div><h3>Profesioniști</h3><p>Personal cu experiență reală.</p></div>
+        </div>
+        <div class="advantage">
+          <svg class="icon" aria-hidden="true"><use href="#clock"/></svg>
+          <div><h3>Intervenții prompte</h3><p>Ne ocupăm cu atenție de problema ta.</p></div>
+        </div>
+        <div class="advantage">
+          <svg class="icon" aria-hidden="true"><use href="#shield"/></svg>
+          <div><h3>Siguranță</h3><p>Folosim doar piese de calitate.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter section-pad services reveal" id="servicii" aria-labelledby="services-title">
+      <div class="chapter-label"><b>03 /</b> Fișa de service</div>
+      <div class="services-layout">
+        <div class="service-intro">
+          <h2 id="services-title">Totul începe<br>cu o <span class="accent">verificare.</span></h2>
+          <p>Întreținerea potrivită și reparațiile necesare, într-un singur loc. Spune-ne ce are nevoie mașina ta.</p>
+          <svg class="technical-art" viewBox="0 0 250 220" fill="none" aria-hidden="true">
+            <g stroke="currentColor" stroke-width="1">
+              <circle cx="120" cy="100" r="73" opacity=".25"/><circle cx="120" cy="100" r="61"/><circle cx="120" cy="100" r="47" opacity=".6"/><circle cx="120" cy="100" r="13"/>
+              <path d="M120 27v60m0 26v60M47 100h60m26 0h60M68 48l43 43m18 18 43 43M68 152l43-43m18-18 43-43"/>
+              <path d="M23 100h20m154 0h25M120 7v16m0 154v16M31 190h178M31 185v10m178-10v10" opacity=".45"/>
+            </g>
+            <g fill="currentColor"><circle cx="120" cy="100" r="3"/><circle cx="120" cy="40" r="2"/><circle cx="120" cy="160" r="2"/><circle cx="60" cy="100" r="2"/><circle cx="180" cy="100" r="2"/></g>
+            <text x="120" y="212" fill="currentColor" text-anchor="middle" font-size="9" font-family="monospace" letter-spacing="3">ATENȚIE LA DETALIU</text>
+          </svg>
+          <div class="technical-label">Sistemul funcționează când fiecare piesă contează.</div>
+        </div>
+        <div class="service-list">
+          <article class="service-row"><span class="service-number">01</span><div><h3>Diagnoză completă</h3><p>Verificare electronică și mecanică detaliată.</p></div><svg class="icon" aria-hidden="true"><use href="#diagnosis"/></svg></article>
+          <article class="service-row"><span class="service-number">02</span><div><h3>Revizie auto</h3><p>Schimb de ulei, filtre și verificare completă.</p></div><svg class="icon" aria-hidden="true"><use href="#oil"/></svg></article>
+          <article class="service-row"><span class="service-number">03</span><div><h3>Reparații mecanice</h3><p>Intervenții la frâne, suspensie și direcție.</p></div><svg class="icon" aria-hidden="true"><use href="#wrench"/></svg></article>
+          <article class="service-row"><span class="service-number">04</span><div><h3>Schimb anvelope</h3><p>Montare și echilibrare roți.</p></div><svg class="icon" aria-hidden="true"><use href="#wheel"/></svg></article>
+          <article class="service-row"><span class="service-number">05</span><div><h3>Climă auto</h3><p>Încărcare și mentenanță a sistemului AC.</p></div><svg class="icon" aria-hidden="true"><use href="#snow"/></svg></article>
+        </div>
+      </div>
+      <div class="service-footer">
+        <p>Nu știi de unde să începi? Îți oferim consultanță gratuită înainte de orice reparație.</p>
+        <a class="text-link" href="tel:+40735220400">Hai să vorbim<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+      </div>
+    </section>
+
+    <section class="chapter section-pad reveal" id="galerie" aria-labelledby="gallery-title">
+      <div class="chapter-label"><b>04 /</b> Privire în detaliu</div>
+      <div class="section-heading">
+        <h2 id="gallery-title">Dincolo de<br><span class="accent">capotă.</span></h2>
+        <p>Verificare, întreținere, mecanică. Fiecare intervenție începe cu atenție la ceea ce contează.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure>
+          <div class="gallery-image image-reveal"><img src="img/2.jpg" alt="Mecanic verificând componentele unui motor — fotografie de stoc" loading="lazy"></div>
+          <figcaption><span>01 /</span> Verificare și diagnoză</figcaption>
+        </figure>
+        <figure>
+          <div class="gallery-image image-reveal"><img src="img/3.jpg" alt="Lucrări de mecanică auto — fotografie de stoc" loading="lazy"></div>
+          <figcaption><span>02 /</span> Atenție la mecanică</figcaption>
+        </figure>
+        <figure>
+          <div class="gallery-image image-reveal"><img src="img/5.jpg" alt="Detaliu al unui motor de autoturism — fotografie de stoc" loading="lazy"></div>
+          <figcaption><span>03 /</span> Fiecare piesă contează</figcaption>
+        </figure>
+      </div>
+      <p class="gallery-disclaimer">Fotografii ilustrative; nu prezintă atelierul Royal Auto Motors.</p>
+    </section>
+
+    <section class="chapter section-pad contact reveal" id="contact" aria-labelledby="contact-title">
+      <div class="chapter-label"><b>05 /</b> Următoarea oprire</div>
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <h2 id="contact-title">Hai să punem<br>lucrurile <span class="accent">în mișcare.</span></h2>
+          <p>Sună-ne sau scrie-ne pe WhatsApp. Spune-ne ce problemă ai observat și discutăm despre programarea mașinii tale.</p>
+          <div class="contact-details">
+            <div><div class="detail-label">Ne găsești la</div><div class="detail-value">Bulevardul Tomis 358<br>Constanța</div></div>
+            <div><div class="detail-label">Telefon</div><div class="detail-value"><a href="tel:+40735220400">+40 735 220 400</a></div></div>
+          </div>
+          <a class="button" href="https://wa.me/40735220400?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20programez%20ma%C8%99ina%20la%20service." target="_blank" rel="noopener noreferrer">Solicită o programare pe WhatsApp<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+          <div class="extra-details">
+            <div class="extra-detail"><svg class="icon" aria-hidden="true"><use href="#pin"/></svg><div><strong>Parcare la dispoziție</strong>Ai loc de parcare chiar lângă service.</div></div>
+            <div class="extra-detail"><svg class="icon" aria-hidden="true"><use href="#wrench"/></svg><div><strong>Consultanță gratuită</strong>Îți oferim sfaturi înainte de orice reparație.</div></div>
+          </div>
+        </div>
+        <div class="map-panel">
+          <iframe title="Localizarea Royal Auto Motors pe OpenStreetMap" src="https://www.openstreetmap.org/export/embed.html?bbox=28.610439399999997,44.2108248,28.6184394,44.2148248&layer=mapnik&marker=44.2128248,28.6144394" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-bottom"><span>Constanța / Bulevardul Tomis 358</span><a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Royal+Auto+Motors+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide harta<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#principal"><span class="brand-name">ROYAL AUTO MOTORS<span>Service auto · Constanța</span></span></a>
+      <p class="footer-signoff">Pentru mașina ta, ca nouă.</p>
+      <a class="text-link" href="#principal">Sus ↑</a>
+    </div>
+    <div class="footer-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: DokaRyan, flyingbirdtruckrepair, FaKra, suvajit, ClickerHappy</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if ('IntersectionObserver' in window && !reduced) {
+        document.documentElement.classList.add('js');
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+        document.querySelectorAll('.reveal, .image-reveal').forEach(function (element) {
+          observer.observe(element);
+        });
+      }
+      var toggle = document.querySelector('.menu-toggle');
+      var links = document.querySelector('.nav-links');
+      function closeMenu() {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul');
+      }
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      });
+      links.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && links.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('click', function (event) {
+        if (!event.target.closest('nav')) closeMenu();
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 780) closeMenu();
+      });
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
