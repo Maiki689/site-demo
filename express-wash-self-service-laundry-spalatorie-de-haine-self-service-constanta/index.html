@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0ea5e9">
+<meta name="description" content="Express Wash, spălătorie de haine self service în Constanța. Spălare și uscare, non-stop, pe Strada Bogdan Petriceicu Hașdeu 83.">
+<title>Express Wash — Haine curate, oricând. Constanța</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0ea5e9;--ink:#101010;--white:#fff;--muted:#555;--line:3px solid var(--ink);--shadow:7px 7px 0 var(--ink)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{margin:0;color:var(--ink);background:#fff;font-family:"Geist",sans-serif;font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;width:100%;object-fit:cover}
+::selection{background:var(--blue);color:#000}
+.container{width:min(1280px,calc(100% - 72px));margin-inline:auto}
+h1,h2,h3,p{margin:0}
+h1,h2,.serif{font-family:"Instrument Serif",serif;font-weight:400;line-height:.98;letter-spacing:-.045em}
+h1{font-size:clamp(64px,7.8vw,110px)}
+h2{font-size:clamp(48px,5.5vw,78px)}
+h3{font-size:22px;line-height:1.2;letter-spacing:-.04em}
+p{max-width:65ch}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.13em;font-weight:700;text-transform:uppercase}
+.eyebrow::before{content:"";width:10px;height:10px;background:var(--blue);border:2px solid var(--ink)}
+.section{padding:65px 0}
+.panel{border:var(--line);padding:48px;background:white;box-shadow:var(--shadow)}
+.reveal{transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.js .reveal:not(.visible){opacity:0;transform:translateY(32px)}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:24px;border:var(--line);padding:16px 22px;background:var(--blue);box-shadow:5px 5px 0 var(--ink);font-size:14px;font-weight:700;line-height:1.4;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.secondary{background:#fff}
+.btn svg{width:21px;height:21px;flex-shrink:0}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:6px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:var(--line)}
+.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo-icon{width:44px;height:48px;border:3px solid var(--ink);background:var(--blue);position:relative;box-shadow:3px 3px 0 var(--ink)}
+.logo-icon::before{content:"";position:absolute;inset:12px 6px 5px;border:3px solid var(--ink);border-radius:50%}
+.logo-icon::after{content:"••";position:absolute;top:-7px;left:6px;font-size:19px;letter-spacing:3px}
+.brand{font-weight:800;font-size:22px;letter-spacing:-.07em;line-height:1.1}
+.brand small{display:block;font-size:9px;font-weight:600;letter-spacing:.16em;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:600}
+.nav-links>a:not(.btn){position:relative}
+.nav-links>a:not(.btn)::after{content:"";height:3px;background:var(--blue);position:absolute;bottom:-6px;left:0;right:100%;transition:right .2s}
+.nav-links>a:hover::after{right:0}
+.nav-links .btn{padding:10px 17px}
+.menu-toggle{display:none;border:2px solid var(--ink);background:#fff;padding:8px 12px;font-weight:700}
+.hero{position:relative;padding:58px 0 54px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:65px;right:-130px;width:530px;height:530px;border:1px solid #0ea5e930;border-radius:50%;box-shadow:0 0 0 70px #0ea5e90b,0 0 0 140px #0ea5e907;animation:breathe 12s ease-in-out infinite;pointer-events:none}
+@keyframes breathe{50%{transform:translateY(20px) scale(1.07)}}
+.hero-frame{position:relative;border:var(--line);display:grid;grid-template-columns:1.1fr 1fr;box-shadow:var(--shadow);background:rgba(255,255,255,.9)}
+.hero-copy{padding:49px 42px 37px}
+.hero .eyebrow{margin-bottom:28px}
+.hero h1 span{display:inline-block;background:var(--blue);padding:0 9px 7px;margin-top:5px}
+.hero-description{margin-top:25px;font-size:16px;max-width:370px;color:#454545}
+.hero-actions{display:flex;align-items:center;gap:25px;margin-top:29px}
+.round-text{width:108px;height:108px;flex-shrink:0;position:relative}
+.round-text>svg{width:100%;height:100%;animation:rotate 35s linear infinite}
+.round-text text{font-family:"Geist",sans-serif;font-size:10px;letter-spacing:1.8px;font-weight:700;fill:var(--ink)}
+.round-text .center{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:21px;letter-spacing:-.08em}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero-photo{border-left:var(--line);padding:17px 17px 0;display:flex;flex-direction:column;min-width:0}
+.hero-photo .image-wrap{position:relative;flex:1;min-height:350px;overflow:hidden;border:2px solid var(--ink)}
+.hero-photo img{height:100%;position:absolute;inset:0;transition:transform .8s}
+.hero-photo:hover img{transform:scale(1.04)}
+.photo-caption{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:19px 3px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:600}
+.photo-caption .serif{font-size:32px;text-transform:none}
+.hero-bottom{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:var(--line);padding:17px 26px;background:var(--blue);font-size:12px;font-weight:600}
+.hero-bottom span{display:flex;align-items:center;gap:9px}
+.hero-bottom svg{width:19px;height:19px}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+.section-top .eyebrow{margin-bottom:16px}
+.section-top>p{font-size:14px;max-width:280px;color:var(--muted)}
+.section-no{font-size:12px;font-weight:600;border:2px solid var(--ink);padding:4px 9px;display:inline-block}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.service{border:var(--line);box-shadow:5px 5px 0 var(--ink);padding:12px 12px 24px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.service:hover{transform:translateY(-5px);box-shadow:5px 10px 0 var(--ink)}
+.service-art{height:155px;background:#f5f5f5;border:2px solid var(--ink);display:grid;place-items:center;position:relative;margin-bottom:22px}
+.service-art svg{width:83px;height:83px;stroke:var(--ink);fill:none;stroke-width:2.2}
+.service:nth-child(1) .service-art,.service:nth-child(4) .service-art{background:var(--blue)}
+.service-art .num{position:absolute;top:9px;left:12px;font-size:11px;font-weight:700}
+.service h3,.service p{margin-inline:9px}
+.service h3{margin-bottom:12px}
+.service p{font-size:13px;color:#4a4a4a;line-height:1.7}
+.about-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px}
+.polaroid{margin:0;border:var(--line);padding:12px 12px 0;background:white;box-shadow:5px 5px 0 var(--ink)}
+.about-photo{display:flex;flex-direction:column}
+.about-photo img{min-height:280px;height:100%;max-height:470px;border:2px solid var(--ink)}
+.about-photo figcaption{padding:17px 3px;font-size:11px;letter-spacing:.07em;text-transform:uppercase}
+.about-copy{padding:8px 0}
+.about-copy .eyebrow{margin-bottom:24px}
+.about-copy h2{margin-bottom:24px}
+.about-copy>p{font-size:15px;color:#444}
+.about-copy .note{display:flex;align-items:center;gap:17px;border-top:2px solid var(--ink);margin-top:28px;padding-top:22px}
+.note svg{width:40px;height:40px;flex-shrink:0}
+.note strong{display:block;font-size:15px}
+.note span{font-size:12px;color:#555}
+.advantages{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);border:var(--line);box-shadow:5px 5px 0 var(--ink)}
+.advantage{padding:27px;display:flex;gap:17px;align-items:start}
+.advantage+.advantage{border-left:var(--line)}
+.advantage .emoji{font-size:27px;line-height:1.2}
+.advantage h3{font-size:17px;margin-bottom:5px}
+.advantage p{font-size:12px;color:#444}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.gallery-grid figure{transition:transform .25s}
+.gallery-grid figure:hover{transform:translateY(-6px)}
+.gallery-grid img{height:235px;border:2px solid var(--ink);filter:saturate(.8)}
+.gallery-grid figcaption{display:flex;justify-content:space-between;align-items:center;padding:18px 3px;font-size:12px;font-weight:600}
+.gallery-grid figcaption span{font-family:"Instrument Serif",serif;font-size:25px}
+.gallery-note{font-size:11px;color:#555;margin-top:24px}
+.contact-panel{background:var(--blue);padding:0}
+.contact-heading{padding:38px 42px;display:flex;justify-content:space-between;align-items:center;gap:25px;border-bottom:var(--line)}
+.contact-heading .eyebrow::before{background:#fff}
+.contact-heading .eyebrow{margin-bottom:17px}
+.open-badge{width:126px;height:126px;border:var(--line);border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;flex-direction:column;flex-shrink:0}
+.open-badge strong{font-size:39px;letter-spacing:-.07em;line-height:1}
+.open-badge span{font-size:10px;font-weight:700;letter-spacing:.12em;margin-top:8px}
+.contact-body{display:grid;grid-template-columns:1fr 1fr;background:#fff}
+.contact-details{padding:37px 42px}
+.contact-details h3{font-size:23px;margin-bottom:12px}
+.contact-details address{font-style:normal;font-size:17px;margin-bottom:23px}
+.contact-details .hours{font-size:13px;border-top:2px solid #101010;padding-top:20px;margin-bottom:25px}
+.contact-buttons{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:22px}
+.contact-buttons .btn{font-size:12px;padding:13px 16px;gap:13px}
+.maps-link{display:inline-flex;gap:12px;font-size:13px;font-weight:700;border-bottom:2px solid var(--ink);padding-bottom:4px}
+.maps-link:hover{color:#036b9a}
+.map{border-left:var(--line);padding:14px;display:flex;min-height:360px}
+.map iframe{width:100%;height:100%;min-height:335px;border:2px solid var(--ink)}
+footer{margin-top:40px;border-top:var(--line);padding:32px 0}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px}
+.footer-top p{font-size:12px}
+.footer-bottom{margin-top:25px;padding-top:19px;border-top:1px solid #ccc;display:flex;justify-content:space-between;gap:25px;font-size:10px;color:#555}
+.icons{position:absolute;width:0;height:0;overflow:hidden}
+@media(min-width:1400px){.hero-copy{padding:58px 48px}}
+@media(max-width:1050px){.container{width:calc(100% - 48px)}.nav-links{gap:20px}.hero-copy{padding:35px 28px}.hero-actions{gap:15px}.round-text{width:88px;height:88px}.hero-actions .btn{padding:15px;font-size:12px;gap:15px}.services-grid{grid-template-columns:repeat(2,1fr)}.panel{padding:32px}.about-panel{gap:30px}.contact-panel{padding:0}.gallery-grid img{height:185px}.advantage{padding:20px 16px;gap:10px}}
+@media(max-width:760px){
+.container{width:calc(100% - 32px)}.nav{min-height:75px}.brand{font-size:20px}.logo-icon{width:36px;height:41px}.logo-icon::before{inset:12px 4px 4px}.menu-toggle{display:block}
+.nav-links{display:none;position:absolute;top:75px;left:0;right:0;background:#fff;border-bottom:var(--line);padding:24px;flex-direction:column;align-items:stretch;gap:22px}
+.nav-links.open{display:flex}.nav-links .btn{justify-content:center}.hero{padding:28px 0 32px}.hero-frame{grid-template-columns:1fr}.hero-copy{padding:30px 23px}.hero h1{font-size:clamp(62px,12vw,86px)}.hero .eyebrow{font-size:10px;margin-bottom:24px}.hero-description{font-size:14px}.hero-actions{justify-content:space-between;max-width:365px;margin-top:20px}.hero-actions .btn{font-size:13px;padding:15px 17px}.round-text{width:96px;height:96px}
+.hero-photo{border-left:0;border-top:var(--line);padding:12px 12px 0}.hero-photo .image-wrap{min-height:285px}.photo-caption{padding:13px 3px}.photo-caption .serif{font-size:27px}.hero-bottom{padding:16px;align-items:start;flex-direction:column;gap:10px;font-size:11px}
+.section{padding:32px 0}.panel{padding:24px 20px}h2{font-size:52px}.section-top{display:block;margin-bottom:28px}.section-top>p{margin-top:18px;max-width:none}.services-grid{gap:17px}.service{padding:8px 8px 20px}.service-art{height:120px;margin-bottom:19px}.service-art svg{width:65px;height:65px}.service h3{font-size:18px}.service p{font-size:12px}.service h3,.service p{margin-inline:4px}
+.about-panel{grid-template-columns:1fr;gap:27px}.about-copy{grid-row:1}.about-photo img{height:280px;min-height:0}.advantages{grid-template-columns:1fr;margin-top:26px}.advantage{padding:22px}.advantage+.advantage{border-left:0;border-top:var(--line)}.gallery-grid{grid-template-columns:1fr;gap:25px}.gallery-grid img{height:260px}.gallery-grid figcaption{padding:15px 3px}.contact-panel{padding:0}.contact-heading{padding:28px 22px}.contact-heading h2{font-size:47px}.open-badge{width:84px;height:84px}.open-badge strong{font-size:29px}.open-badge span{font-size:8px}.contact-heading .eyebrow{font-size:10px}.contact-body{grid-template-columns:1fr}.contact-details{padding:28px 22px}.map{border-left:0;border-top:var(--line);min-height:300px}.map iframe{min-height:290px}.contact-buttons{flex-direction:column;align-items:stretch}.contact-buttons .btn{font-size:13px}.footer-top,.footer-bottom{align-items:start;flex-direction:column;gap:15px}.footer-bottom{font-size:11px}footer{margin-top:24px}
+}
+@media(max-width:380px){.services-grid{grid-template-columns:1fr}.hero-actions{gap:10px}.round-text{width:78px;height:78px}.hero-actions .btn{font-size:12px;padding:13px}.contact-heading{gap:12px}.contact-heading h2{font-size:40px}.open-badge{width:70px;height:70px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal:not(.visible){opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<svg class="icons" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+<symbol id="washer" viewBox="0 0 80 80"><rect x="15" y="8" width="50" height="64" rx="3"/><path d="M15 24h50M23 16h10"/><circle cx="54" cy="16" r="2"/><circle cx="40" cy="46" r="17"/><path d="M25 49c7-7 13 8 21 0s10-2 10-2"/></symbol>
+<symbol id="dryer" viewBox="0 0 80 80"><rect x="15" y="8" width="50" height="64" rx="3"/><path d="M15 24h50M23 16h10"/><circle cx="54" cy="16" r="2"/><circle cx="40" cy="46" r="17"/><path d="M33 37c-7 8 7 9 0 18M41 37c-7 8 7 9 0 18M49 37c-7 8 7 9 0 18"/></symbol>
+<symbol id="clean" viewBox="0 0 80 80"><path d="M40 11 64 21v20c0 16-24 29-24 29S16 57 16 41V21Z"/><path d="m28 40 8 8 17-18M40 17v9M35 22h10"/></symbol>
+<symbol id="duvet" viewBox="0 0 80 80"><rect x="12" y="15" width="56" height="50" rx="6"/><path d="M12 32h56M12 49h56M31 15v50M49 15v50"/><path d="M18 21h7M55 55h7"/></symbol>
+</svg>
+
+<header>
+<div class="container nav">
+<a class="logo" href="#acasa" aria-label="Express Wash — acasă">
+<span class="logo-icon" aria-hidden="true"></span>
+<span class="brand">express wash<small>SELF SERVICE · CONSTANȚA</small></span>
+</a>
+<button class="menu-toggle" aria-controls="navigation" aria-expanded="false" type="button">Meniu +</button>
+<nav class="nav-links" id="navigation" aria-label="Navigare principală">
+<a href="#servicii">Servicii</a>
+<a href="#despre">Despre noi</a>
+<a href="#galerie">În imagini</a>
+<a href="#contact" class="btn">Ne găsești aici <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="acasa" aria-labelledby="hero-title">
+<div class="container">
+<div class="hero-frame reveal">
+<div class="hero-copy">
+<p class="eyebrow">Spălătorie self service · Constanța</p>
+<h1 id="hero-title">Haine curate.<br>Mai simplu.<br><span>Oricând.</span></h1>
+<p class="hero-description">Spală-ți hainele rapid și simplu. Tu alegi momentul, noi punem la dispoziție mașinile pentru spălare și uscare.</p>
+<div class="hero-actions">
+<a class="btn" href="https://www.google.com/maps/search/?api=1&query=Express+Wash+Self+Service+Laundry+Spalatorie+de+haine+self+service+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Vino la Express Wash <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+<div class="round-text" aria-label="Deschis non-stop, 24 de ore din 24">
+<svg viewBox="0 0 120 120" aria-hidden="true">
+<defs><path id="circle-text" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+<text><textPath href="#circle-text" textLength="288">DESCHIS NON-STOP • ZI ȘI NOAPTE • </textPath></text>
+</svg>
+<span class="center">24/7</span>
+</div>
+</div>
+</div>
+<div class="hero-photo">
+<div class="image-wrap"><img src="img/1.jpg" alt="Mașini de spălat într-o spălătorie self service — fotografie ilustrativă" fetchpriority="high"></div>
+<div class="photo-caption"><span>Spală. Usucă. Gata.</span><span class="serif">Cu spor!</span></div>
+</div>
+<div class="hero-bottom">
+<span><svg aria-hidden="true"><use href="#pin"/></svg> Str. Bogdan Petriceicu Hașdeu 83, Constanța</span>
+<span>Fără grija orei. Deschis în fiecare zi. ↗</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="servicii" aria-labelledby="services-title">
+<div class="container panel reveal">
+<div class="section-top">
+<div><p class="eyebrow">01 / Servicii</p><h2 id="services-title">Un program pentru<br>rufele tale.</h2></div>
+<p>De la hainele de zi cu zi la pilote, alegi serviciul de care ai nevoie.</p>
+</div>
+<div class="services-grid">
+<article class="service">
+<div class="service-art"><span class="num">01 / SPĂLARE</span><svg aria-hidden="true"><use href="#washer"/></svg></div>
+<h3>Spălare haine</h3><p>Alegi programul potrivit. Detergenții sunt incluși.</p>
+</article>
+<article class="service">
+<div class="service-art"><span class="num">02 / USCARE</span><svg aria-hidden="true"><use href="#dryer"/></svg></div>
+<h3>Uscare rapidă</h3><p>Uscare eficientă pentru rufele tale, cu programul potrivit tipului de material.</p>
+</article>
+<article class="service">
+<div class="service-art"><span class="num">03 / IGIENIZARE</span><svg aria-hidden="true"><use href="#clean"/></svg></div>
+<h3>Spălare cu antialergeni</h3><p>Un program dedicat igienizării hainelor și îndepărtării alergenilor.</p>
+</article>
+<article class="service">
+<div class="service-art"><span class="num">04 / VOLUMINOASE</span><svg aria-hidden="true"><use href="#duvet"/></svg></div>
+<h3>Program pentru pilote</h3><p>Spălare și uscare pentru pilote și alte obiecte voluminoase.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section" id="despre" aria-labelledby="about-title">
+<div class="container">
+<div class="panel about-panel reveal">
+<figure class="polaroid about-photo">
+<img src="img/4.jpg" alt="Persoană într-o spălătorie cu mașini de spălat și coșuri pentru rufe — fotografie ilustrativă" loading="lazy">
+<figcaption>Mai puțină grijă pentru coșul cu rufe. ↗</figcaption>
+</figure>
+<div class="about-copy">
+<p class="eyebrow">02 / Despre Express Wash</p>
+<h2 id="about-title">Tu îți vezi de zi.<br>Rufele, de program.</h2>
+<p>Express Wash îți pune la dispoziție mașini moderne pentru spălare și uscare rapidă. Îți aduci hainele când vrei și alegi programul de care ai nevoie.</p>
+<p style="margin-top:16px">Suntem o spălătorie self service, mereu deschisă. Dimineața devreme sau seara târziu, găsești aici un loc pentru rufele tale.</p>
+<div class="note">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M20 10v11l7 4"/></svg>
+<div><strong>Programul nostru? Programul tău.</strong><span>24 de ore din 24, în fiecare zi.</span></div>
+</div>
+</div>
+</div>
+<div class="advantages reveal" aria-label="Avantajele Express Wash">
+<div class="advantage"><span class="emoji" aria-hidden="true">⏰</span><div><h3>Non-stop, cu adevărat</h3><p>Poți veni oricând ai nevoie, zi sau noapte.</p></div></div>
+<div class="advantage"><span class="emoji" aria-hidden="true">💳</span><div><h3>Plată rapidă</h3><p>Plătești ușor, cu cardul sau în numerar.</p></div></div>
+<div class="advantage"><span class="emoji" aria-hidden="true">🚗</span><div><h3>Parcare simplă</h3><p>Locuri de parcare chiar lângă spălătorie.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="galerie" aria-labelledby="gallery-title">
+<div class="container panel reveal">
+<div class="section-top">
+<div><p class="eyebrow">03 / În imagini</p><h2 id="gallery-title">În ritmul rufelor.</h2></div>
+<p>Spălare, uscare și un coș pregătit pentru o nouă zi.</p>
+</div>
+<div class="gallery-grid">
+<figure class="polaroid"><img src="img/2.jpg" alt="Interior de spălătorie self service din Florența — imagine ilustrativă" loading="lazy"><figcaption>Un loc pentru spălare <span>01</span></figcaption></figure>
+<figure class="polaroid"><img src="img/3.jpg" alt="Mașini de spălat și uscătoare colorate într-o spălătorie — imagine ilustrativă" loading="lazy"><figcaption>Urmează uscarea <span>02</span></figcaption></figure>
+<figure class="polaroid"><img src="img/5.jpg" alt="Coș pentru rufe într-o spălătorie — imagine ilustrativă" loading="lazy"><figcaption>Gata de luat acasă <span>03</span></figcaption></figure>
+</div>
+<p class="gallery-note">Fotografiile sunt ilustrative și nu prezintă locația Express Wash.</p>
+</div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-title">
+<div class="container panel contact-panel reveal">
+<div class="contact-heading">
+<div><p class="eyebrow">04 / Ne găsești aici</p><h2 id="contact-title">Ia coșul. Hai la noi.</h2></div>
+<div class="open-badge"><strong>24/7</strong><span>NON-STOP</span></div>
+</div>
+<div class="contact-body">
+<div class="contact-details">
+<h3>Express Wash · Constanța</h3>
+<address>Strada Bogdan Petriceicu Hașdeu 83<br>Constanța</address>
+<p class="hours"><strong>Deschis non-stop</strong><br>24 de ore din 24, în fiecare zi.</p>
+<div class="contact-buttons">
+<a class="btn" href="tel:0720736729">Sună: 0720 736 729 <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+<a class="btn secondary" href="https://wa.me/40720736729?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20serviciile%20de%20sp%C4%83lare." target="_blank" rel="noopener noreferrer">Întreabă-ne pe WhatsApp <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+</div>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Express+Wash+Self+Service+Laundry+Spalatorie+de+haine+self+service+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide traseul în Google Maps <span aria-hidden="true">↗</span></a>
+</div>
+<div class="map">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6240857,44.1949725,28.6320857,44.1989725&layer=mapnik&marker=44.1969725,28.6280857" title="Harta locației Express Wash, Strada Bogdan Petriceicu Hașdeu 83, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-top">
+<a class="logo" href="#acasa"><span class="logo-icon" aria-hidden="true"></span><span class="brand">express wash<small>SELF SERVICE · CONSTANȚA</small></span></a>
+<p>Haine curate. Mai simplu. Oricând.</p>
+<a class="maps-link" href="#acasa">Înapoi sus <span aria-hidden="true">↑</span></a>
+</div>
+<div class="footer-bottom"><span>Model de site (demo)</span><p>Fotografii ilustrative de pe Pixabay: Alterfines, IgorSaveliev, auntmasako, RyanMcGuire, DominiqueVince</p></div>
+</div>
+</footer>
+
+<script>
+(function(){
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if('IntersectionObserver' in window && !reduced){
+document.documentElement.classList.add('js');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('.nav-links');
+function closeMenu(){
+nav.classList.remove('open');
+toggle.setAttribute('aria-expanded','false');
+toggle.textContent='Meniu +';
+}
+toggle.addEventListener('click',()=>{
+const open=nav.classList.toggle('open');
+toggle.setAttribute('aria-expanded',String(open));
+toggle.textContent=open?'Închide −':'Meniu +';
+});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{
+if(e.key==='Escape' && nav.classList.contains('open')){
+closeMenu();toggle.focus();
+}
+});
+window.addEventListener('resize',()=>{if(window.innerWidth>760)closeMenu();});
+})();
+</script>
+<script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
