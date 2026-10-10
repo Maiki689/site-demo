@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <meta name="description" content="Cămara Mariei, Constanța — alimente sănătoase și produse locale pentru un stil de viață echilibrat. Descoperă produsele și contactează-ne pe WhatsApp.">
+  <title>Cămara Mariei — Alege natural, alege sănătos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;450;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#0f766e;--dark:#111713;--white:#fff;--line:#d7ded9;--muted:#5c655f;--soft:#f4f7f5;--serif:"Instrument Serif",Georgia,serif;--sans:"Geist",Arial,sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    body{margin:0;background:var(--white);color:var(--dark);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+    ::selection{background:var(--green);color:#fff}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3{font-weight:400}
+    a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--green);outline-offset:6px}
+    .wrap{width:min(1400px,calc(100% - 80px));margin:auto}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;display:flex;gap:12px;align-items:center}
+    .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0}
+    .section-number{font-size:12px;letter-spacing:.1em;color:var(--muted)}
+    .skip{position:fixed;top:-70px;left:20px;z-index:100;background:var(--green);color:white;padding:12px 20px}
+    .skip:focus{top:12px}
+    header{background:rgba(255,255,255,.96);position:relative;z-index:20;border-bottom:1px solid var(--line)}
+    .nav{height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;line-height:1}
+    .brand-mark{width:37px;height:44px;color:var(--green)}
+    .brand-name{font-family:var(--serif);font-size:32px;letter-spacing:-1px}
+    .brand small{display:block;font-family:var(--sans);font-size:9px;letter-spacing:.25em;text-transform:uppercase;margin-top:7px}
+    .nav-links{display:flex;align-items:center;gap:34px;font-size:13px}
+    .nav-links>a:not(.nav-contact){position:relative;padding:8px 0}
+    .nav-links>a:not(.nav-contact)::after{content:"";position:absolute;bottom:1px;left:0;width:100%;height:1px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+    .nav-links>a:hover::after{transform:scaleX(1)}
+    .nav-contact{border:1px solid var(--dark);padding:12px 20px;transition:background .25s,color .25s}
+    .nav-contact:hover{background:var(--dark);color:white}
+    .menu-toggle{display:none;border:1px solid var(--line);background:white;padding:9px 13px;color:var(--dark);cursor:pointer}
+    .paper{position:relative;border:1px solid var(--line);background:white}
+    .paper::before,.paper::after{content:"";position:absolute;z-index:-1;border:1px solid var(--line);background:white;pointer-events:none}
+    .paper::before{inset:8px -8px -8px 8px}
+    .paper::after{inset:16px -16px -16px 16px}
+    .chapter{margin-top:95px;margin-bottom:110px;isolation:isolate}
+    .reveal{transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
+    .js .reveal:not(.visible){opacity:0;transform:translateY(38px)}
+    .hero{position:relative;isolation:isolate;padding:45px 0 35px}
+    .hero-panel{display:grid;grid-template-columns:1.04fr 1fr;min-height:660px}
+    .hero-copy{padding:54px 38px 35px 48px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start}
+    .hero-copy .eyebrow{margin-bottom:35px}
+    h1{font-family:var(--serif);font-size:clamp(64px,6.65vw,104px);line-height:.95;letter-spacing:-.045em;position:relative;z-index:1}
+    h1 span{display:block}
+    .hero-description{max-width:330px;font-size:15px;line-height:1.8;color:var(--muted);margin-top:30px;position:relative;z-index:1}
+    .hero-actions{display:flex;align-items:center;gap:24px;margin-top:31px;position:relative;z-index:1}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:22px;background:var(--green);color:white;padding:17px 23px;font-size:12px;font-weight:500;transition:background .25s,transform .25s;min-height:54px}
+    .button:hover{background:#095d57;transform:translateY(-3px)}
+    .button .arrow{font-size:21px;line-height:1;transition:transform .25s}
+    .button:hover .arrow{transform:translate(3px,-3px)}
+    .round-seal{width:100px;height:100px;position:relative;flex-shrink:0;color:var(--green)}
+    .round-seal svg{width:100%;height:100%;animation:rotate 35s linear infinite}
+    .round-seal text{font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:2.1px;fill:currentColor}
+    .seal-leaf{position:absolute;inset:35px;display:grid;place-items:center}
+    .seal-leaf svg{animation:none;width:30px;height:30px}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    .hero-bottom{margin-top:auto;padding-top:27px;display:flex;align-items:center;gap:18px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .hero-bottom .line{width:35px;height:1px;background:var(--line)}
+    .hero-photo{position:relative;overflow:hidden;margin:12px 12px 12px 0}
+    .hero-photo img{transition:transform 1.2s ease}
+    .hero-photo:hover img{transform:scale(1.035)}
+    .photo-caption{position:absolute;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;color:white;background:linear-gradient(transparent,rgba(0,0,0,.55));font-size:11px;letter-spacing:.04em;gap:15px}
+    .hero-art{position:absolute;width:340px;height:340px;right:-180px;bottom:-85px;color:var(--green);opacity:.075;pointer-events:none;animation:breathe 12s ease-in-out infinite alternate}
+    @keyframes breathe{from{transform:translateY(0) rotate(-5deg)}to{transform:translateY(-20px) rotate(7deg)}}
+    .under-hero{display:flex;justify-content:space-between;align-items:center;margin-top:35px;font-size:11px;color:var(--muted)}
+    .under-hero a{display:flex;align-items:center;gap:14px}
+    .under-hero a span{font-size:20px;color:var(--green)}
+    .about-panel{padding:48px}
+    .section-top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+    .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:80px;padding:45px 0 48px}
+    h2{font-family:var(--serif);font-size:clamp(46px,5.4vw,78px);line-height:1.02;letter-spacing:-.035em}
+    h2 em{font-weight:400;color:var(--green)}
+    .about-text{padding-top:9px;max-width:480px}
+    .about-text p{font-size:16px;line-height:1.9;color:var(--muted)}
+    .about-text p+p{margin-top:18px}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+    .value{padding:31px 28px 0}
+    .value:first-child{padding-left:0}
+    .value+.value{border-left:1px solid var(--line)}
+    .value-icon{height:36px;width:36px;color:var(--green);margin-bottom:15px}
+    .value h3{font-family:var(--serif);font-size:29px;line-height:1.2;margin-bottom:8px}
+    .value p{font-size:13px;color:var(--muted)}
+    .products-panel{display:grid;grid-template-columns:.85fr 1.15fr}
+    .products-intro{background:var(--green);color:#fff;padding:48px;display:flex;flex-direction:column;align-items:flex-start;position:relative;overflow:hidden}
+    .products-intro .eyebrow::before{background:white}
+    .products-intro h2{margin-top:58px;font-size:clamp(52px,5.4vw,78px)}
+    .products-intro p{margin-top:24px;font-size:14px;max-width:285px;opacity:.88}
+    .products-intro .text-link{margin-top:42px;border-bottom:1px solid #ffffff70;padding-bottom:7px;font-size:12px;display:flex;gap:30px;align-items:center;position:relative;z-index:1}
+    .text-link:hover{border-color:white}
+    .basket-art{width:205px;height:170px;align-self:flex-end;opacity:.2;margin-top:50px;margin-bottom:-15px}
+    .product-list{padding:18px 40px}
+    .product{display:grid;grid-template-columns:32px 1fr 26px;gap:20px;align-items:center;padding:27px 0;border-bottom:1px solid var(--line)}
+    .product:last-child{border-bottom:0}
+    .product-index{align-self:start;margin-top:10px;font-size:10px;color:var(--green)}
+    .product h3{font-family:var(--serif);font-size:32px;line-height:1.15;transition:color .25s,transform .25s}
+    .product p{font-size:12px;color:var(--muted);margin-top:6px}
+    .product-leaf{width:23px;height:23px;color:var(--green);opacity:.45;transition:opacity .25s,transform .25s}
+    .product:hover h3{color:var(--green);transform:translateX(4px)}
+    .product:hover .product-leaf{opacity:1;transform:rotate(20deg)}
+    .gallery-section{position:relative;margin-top:110px;margin-bottom:110px}
+    .gallery-pin{position:sticky;top:20px;overflow:hidden;padding:18px 16px 26px 0}
+    .gallery-frame{padding:35px 0 26px;overflow:hidden}
+    .gallery-heading{padding:0 38px;display:flex;align-items:flex-end;justify-content:space-between;gap:25px}
+    .gallery-heading h2{font-size:57px;margin-top:18px}
+    .gallery-note{max-width:245px;font-size:12px;color:var(--muted)}
+    .gallery-track{display:flex;gap:22px;margin:30px 0 0;padding:0 38px;will-change:transform}
+    .gallery-card{flex:0 0 350px;min-width:0}
+    .gallery-image{height:310px;overflow:hidden;background:var(--soft)}
+    .gallery-image img{transition:transform .7s}
+    .gallery-card:hover img{transform:scale(1.04)}
+    .gallery-caption{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}
+    .gallery-caption h3{font-family:var(--serif);font-size:25px}
+    .gallery-caption span{font-size:10px;color:var(--muted)}
+    .gallery-footer{margin:24px 38px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:10px;color:var(--muted)}
+    .progress{height:2px;background:var(--line);width:150px;overflow:hidden}
+    .progress span{display:block;height:100%;width:25%;background:var(--green);transform-origin:left;transition:width .1s}
+    .contact-panel{padding:45px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding-top:42px}
+    .contact-copy h2{margin-bottom:24px}
+    .contact-copy>p{max-width:350px;color:var(--muted);font-size:14px}
+    .contact-copy .button{margin-top:26px}
+    .contact-details{margin-top:32px;border-top:1px solid var(--line)}
+    .contact-row{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid var(--line);padding:16px 0;font-size:13px}
+    .contact-row span{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+    .contact-row a{transition:color .2s}
+    .contact-row a:hover{color:var(--green)}
+    .map-wrap{display:flex;flex-direction:column;min-width:0}
+    .map{flex:1;min-height:330px;border:1px solid var(--line);background:var(--soft)}
+    .map iframe{height:100%;min-height:330px;width:100%;border:0;display:block}
+    .map-bottom{padding:15px 0;display:flex;justify-content:space-between;gap:16px;font-size:11px}
+    .map-bottom a{color:var(--green);border-bottom:1px solid var(--green)}
+    footer{border-top:1px solid var(--line);padding:35px 0 25px}
+    .footer-top{display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .footer-slogan{font-family:var(--serif);font-size:27px}
+    .footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;gap:30px;color:var(--muted);font-size:10px}
+    .footer-bottom p:last-child{text-align:right;max-width:560px}
+    @media(min-width:1500px){.hero-photo{max-height:740px}.hero-copy{padding-top:65px}}
+    @media(max-width:1100px){
+      .wrap{width:calc(100% - 48px)}.nav-links{gap:22px}.hero-copy{padding:40px 25px}.hero-panel{min-height:610px}h1{font-size:76px}.hero-actions{gap:13px}.round-seal{width:85px;height:85px}.seal-leaf{inset:28px}.button{padding:16px 18px;gap:14px}.about-grid{gap:40px}.products-intro{padding:35px}.product-list{padding:16px 28px}.product{gap:12px}.product h3{font-size:29px}.contact-grid{gap:35px}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:25px}.wrap{width:calc(100% - 36px)}.nav{height:80px}.brand-name{font-size:27px}.brand-mark{width:30px;height:36px}.menu-toggle{display:block;font-size:12px}.nav-links{display:none;position:absolute;top:79px;left:0;right:0;background:white;padding:24px;box-shadow:0 10px 15px #0000000a;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:10px}.nav-links.open{display:flex}.nav-contact{text-align:center;margin-top:8px}.hero{padding-top:25px}.hero-panel{grid-template-columns:1fr}.hero-copy{padding:35px 26px 30px}.hero-copy .eyebrow{margin-bottom:27px}h1{font-size:clamp(62px,11vw,85px)}.hero-description{max-width:340px;margin-top:24px}.hero-actions{gap:18px;margin-top:20px}.hero-bottom{padding-top:24px}.hero-photo{height:380px;margin:0 10px 10px}.under-hero{margin-top:29px;gap:15px;font-size:10px}.under-hero>span{max-width:170px}.chapter{margin-top:65px;margin-bottom:80px}.about-panel{padding:28px}.about-grid{grid-template-columns:1fr;gap:26px;padding:33px 0}.about-text{max-width:none;padding:0}.about-text p{font-size:14px}.values{grid-template-columns:1fr}.value,.value:first-child{padding:23px 0;display:grid;grid-template-columns:40px 1fr;gap:0 15px}.value+.value{border-left:0;border-top:1px solid var(--line)}.value-icon{grid-row:span 2;margin:0;width:30px}.value h3{font-size:26px;margin-bottom:5px}.value:last-child{padding-bottom:0}.products-panel{grid-template-columns:1fr}.products-intro{padding:32px}.products-intro h2{margin-top:32px;font-size:59px}.products-intro p{max-width:310px}.products-intro .text-link{margin-top:25px}.basket-art{position:absolute;right:-35px;bottom:-25px;width:160px;height:130px;opacity:.15;margin:0}.product-list{padding:8px 24px}.product{padding:24px 0;grid-template-columns:23px 1fr 20px;gap:10px}.product h3{font-size:28px}.product p{font-size:11px}.gallery-section{margin:80px auto}.gallery-pin{position:relative;top:0;padding-top:0}.gallery-frame{padding:28px 0 25px}.gallery-heading{padding:0 25px;display:block}.gallery-heading h2{font-size:48px;margin-top:17px}.gallery-note{margin-top:18px;max-width:290px}.gallery-track{padding:0 25px;gap:18px;margin-top:25px;overflow-x:auto;scroll-snap-type:x mandatory;will-change:auto;transform:none!important;scrollbar-width:thin;scrollbar-color:var(--green) var(--soft);padding-bottom:12px}.gallery-card{flex-basis:80%;scroll-snap-align:center}.gallery-image{height:290px}.gallery-footer{margin:17px 25px 0}.gallery-caption h3{font-size:24px}.contact-panel{padding:28px}.contact-grid{grid-template-columns:1fr;gap:35px;padding-top:32px}.contact-copy h2{font-size:54px}.contact-row{font-size:12px;flex-wrap:wrap}.map,.map iframe{min-height:310px}.footer-top{align-items:flex-start;flex-direction:column;gap:20px}.footer-slogan{font-size:26px}.footer-bottom{flex-direction:column;gap:12px}.footer-bottom p:last-child{text-align:left}
+    }
+    @media(max-width:380px){.wrap{width:calc(100% - 30px)}.hero-copy{padding:30px 21px}h1{font-size:58px}.hero-actions{gap:8px}.round-seal{width:76px;height:76px}.seal-leaf{inset:23px}.button{font-size:11px;padding:15px 13px}.hero-photo{height:300px}.about-panel,.contact-panel{padding:23px}.gallery-card{flex-basis:88%}}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal:not(.visible){opacity:1;transform:none}.gallery-pin{position:relative;top:0}.gallery-track{overflow-x:auto;transform:none!important;will-change:auto}.gallery-section{height:auto!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="leaf" viewBox="0 0 48 48"><path d="M10 37C5 20 15 9 39 7c2 23-11 33-29 30Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 42 31 16M16 32l-1-11M23 25l11 1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+      <symbol id="sprout" viewBox="0 0 48 48"><path d="M24 43V24M24 31C11 31 5 22 7 12c11-1 18 6 17 19ZM24 24C24 11 31 5 42 7c1 11-6 18-18 17M12 43h24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="farm" viewBox="0 0 48 48"><path d="M9 42V21L24 9l15 12v21H9ZM3 23 24 5l21 18M19 42V29h10v13M19 19h10v5H19M4 42h40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+      <symbol id="bread" viewBox="0 0 48 48"><path d="M8 34C3 29 7 21 15 15c9-7 19-8 24-3s3 14-5 22-20 6-26 0ZM17 17l6 7M25 12l6 8M11 24l6 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header>
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="brand" href="#" aria-label="Cămara Mariei — acasă">
+        <svg class="brand-mark" aria-hidden="true"><use href="#sprout"/></svg>
+        <span class="brand-name">Cămara Mariei<small>Natural · Local · Constanța</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Meniu +</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#despre">Povestea noastră</a>
+        <a href="#produse">Produse</a>
+        <a href="#galerie">Inspirație</a>
+        <a class="nav-contact" href="#contact">Hai să vorbim <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="continut">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-panel paper reveal">
+        <div class="hero-copy">
+          <div class="eyebrow">O cămară cu grijă pentru tine</div>
+          <h1 id="hero-title"><span>Alege natural.</span><span>Alege sănătos.</span></h1>
+          <p class="hero-description">Alimente sănătoase și produse locale pentru un stil de viață echilibrat. Bine ai venit la Cămara Mariei.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://wa.me/40726853578?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20plasez%20o%20comand%C4%83%20la%20C%C4%83mara%20Mariei.">Comandă pe WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+            <div class="round-seal" aria-hidden="true">
+              <svg viewBox="0 0 100 100"><defs><path id="circle-text" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#circle-text" textLength="235">NATURAL · LOCAL · CU GRIJĂ · </textPath></text></svg>
+              <span class="seal-leaf"><svg viewBox="0 0 48 48"><use href="#leaf"/></svg></span>
+            </div>
+          </div>
+          <div class="hero-bottom"><span>Din natură, în cămara ta</span><span class="line"></span><span>Constanța</span></div>
+          <svg class="hero-art" viewBox="0 0 48 48" aria-hidden="true"><use href="#sprout"/></svg>
+        </div>
+        <div class="hero-photo">
+          <img src="img/5.jpg" alt="Salată proaspătă, cu ingrediente naturale — fotografie ilustrativă" fetchpriority="high">
+          <div class="photo-caption"><span>Mai multă prospețime în fiecare farfurie.</span><span aria-hidden="true">↗</span></div>
+        </div>
+      </div>
+      <div class="under-hero"><span>Alegeri simple. Gusturi firești.</span><a href="#despre">Descoperă cămara <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="chapter wrap" id="despre" aria-labelledby="about-title">
+      <div class="paper about-panel reveal">
+        <div class="section-top"><span class="eyebrow">Povestea noastră</span><span class="section-number">01 / CU GRIJĂ</span></div>
+        <div class="about-grid">
+          <h2 id="about-title">Lucrurile bune<br>încep cu <em>natural.</em></h2>
+          <div class="about-text">
+            <p>La Cămara Mariei găsești produse naturale și locale, atent selecționate pentru tine. Punem accent pe calitate, prospețime și grija pentru sănătate.</p>
+            <p>De la fructe și legume la pâine cu maia, alegem alimente care își găsesc firesc locul într-o alimentație echilibrată. Pentru mesele tale de zi cu zi.</p>
+          </div>
+        </div>
+        <div class="values">
+          <article class="value">
+            <svg class="value-icon" aria-hidden="true"><use href="#sprout"/></svg>
+            <h3>Local și proaspăt</h3><p>Găsești produse naturale.</p>
+          </article>
+          <article class="value">
+            <svg class="value-icon" aria-hidden="true"><use href="#farm"/></svg>
+            <h3>Direct de la fermă</h3><p>Sprijini producătorii locali.</p>
+          </article>
+          <article class="value">
+            <svg class="value-icon" aria-hidden="true"><use href="#bread"/></svg>
+            <h3>Fără aditivi</h3><p>Alegi alimente sănătoase.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter wrap" id="produse" aria-labelledby="products-title">
+      <div class="paper products-panel reveal">
+        <div class="products-intro">
+          <span class="eyebrow">02 / Produse</span>
+          <h2 id="products-title">Bunătăți pentru<br>cămara ta.</h2>
+          <p>O selecție cu gust, de la producători locali. Tu alegi ce îți place, noi îți răspundem cu drag.</p>
+          <a class="text-link" href="https://wa.me/40726853578?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20plasez%20o%20comand%C4%83%20la%20C%C4%83mara%20Mariei.">Întreabă-ne despre produse <span aria-hidden="true">↗</span></a>
+          <svg class="basket-art" viewBox="0 0 220 180" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m28 84 18 73h130l18-73H28ZM55 84l32-50M167 84l-30-50M62 100l8 41M91 100l3 41M121 100l-3 41M151 100l-8 41M35 109h152M41 132h139M26 83h170"/>
+            <path d="M83 74C57 48 69 18 99 14c8 19 8 42-16 60ZM83 74l5-42M126 76c-5-29 8-48 36-51 3 24-8 43-36 51ZM127 75l23-34"/>
+          </svg>
+        </div>
+        <div class="product-list">
+          <article class="product"><span class="product-index">01</span><div><h3>Fructe și legume bio</h3><p>Proaspete, de la producători locali.</p></div><svg class="product-leaf" aria-hidden="true"><use href="#leaf"/></svg></article>
+          <article class="product"><span class="product-index">02</span><div><h3>Miere naturală</h3><p>100% din stupina locală.</p></div><svg class="product-leaf" aria-hidden="true"><use href="#leaf"/></svg></article>
+          <article class="product"><span class="product-index">03</span><div><h3>Lactate artizanale</h3><p>Brânzeturi și iaurturi fără aditivi.</p></div><svg class="product-leaf" aria-hidden="true"><use href="#leaf"/></svg></article>
+          <article class="product"><span class="product-index">04</span><div><h3>Pâine cu maia</h3><p>Coaptă zilnic, din făină integrală.</p></div><svg class="product-leaf" aria-hidden="true"><use href="#leaf"/></svg></article>
+          <article class="product"><span class="product-index">05</span><div><h3>Ceaiuri și siropuri naturale</h3><p>Din plante culese manual.</p></div><svg class="product-leaf" aria-hidden="true"><use href="#leaf"/></svg></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section wrap" id="galerie" aria-labelledby="gallery-title">
+      <div class="gallery-pin">
+        <div class="paper gallery-frame reveal">
+          <div class="gallery-heading">
+            <div><span class="eyebrow">03 / Inspirație din natură</span><h2 id="gallery-title">Culori. Texturi. Gust.</h2></div>
+            <p class="gallery-note">Un strop de inspirație pentru alegerile tale. Fotografii ilustrative, nu imagini ale magazinului.</p>
+          </div>
+          <div class="gallery-track" tabindex="0" role="region" aria-label="Galerie foto; folosește săgețile sau glisează pentru a vedea fotografiile">
+            <figure class="gallery-card" style="margin:0">
+              <div class="gallery-image"><img src="img/2.jpg" alt="Morcovi și detalii ale recoltei — fotografie ilustrativă" loading="lazy"></div>
+              <figcaption class="gallery-caption"><h3>Din grădină</h3><span>01 / 05</span></figcaption>
+            </figure>
+            <figure class="gallery-card" style="margin:0">
+              <div class="gallery-image"><img src="img/4.jpg" alt="Mure proaspete, în prim-plan — fotografie ilustrativă" loading="lazy"></div>
+              <figcaption class="gallery-caption"><h3>Culori firești</h3><span>02 / 05</span></figcaption>
+            </figure>
+            <figure class="gallery-card" style="margin:0">
+              <div class="gallery-image"><img src="img/3.jpg" alt="Migdale la o tarabă din piață — fotografie ilustrativă" loading="lazy"></div>
+              <figcaption class="gallery-caption"><h3>Texturi din natură</h3><span>03 / 05</span></figcaption>
+            </figure>
+            <figure class="gallery-card" style="margin:0">
+              <div class="gallery-image"><img src="img/1.jpg" alt="Rafturi cu borcane și plante într-un magazin de produse din plante — fotografie ilustrativă" loading="lazy"></div>
+              <figcaption class="gallery-caption"><h3>Lumea plantelor</h3><span>04 / 05</span></figcaption>
+            </figure>
+            <figure class="gallery-card" style="margin:0">
+              <div class="gallery-image"><img src="img/5.jpg" alt="Salată cu ingrediente proaspete — fotografie ilustrativă" loading="lazy"></div>
+              <figcaption class="gallery-caption"><h3>În farfuria ta</h3><span>05 / 05</span></figcaption>
+            </figure>
+          </div>
+          <div class="gallery-footer"><span id="gallery-hint">Derulează și descoperă <span aria-hidden="true">→</span></span><div class="progress" aria-hidden="true"><span></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter wrap" id="contact" aria-labelledby="contact-title">
+      <div class="paper contact-panel reveal">
+        <div class="section-top"><span class="eyebrow">Suntem aici pentru tine</span><span class="section-number">04 / CONTACT</span></div>
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <h2 id="contact-title">Ce punem în<br><em>cămara ta?</em></h2>
+            <p>Scrie-ne pentru o comandă sau pentru detalii despre produsele disponibile. Ne bucurăm să te ajutăm să alegi.</p>
+            <a class="button" href="https://wa.me/40726853578?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20plasez%20o%20comand%C4%83%20la%20C%C4%83mara%20Mariei.">Comandă pe WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+            <div class="contact-details">
+              <div class="contact-row"><span>Sună-ne</span><a href="tel:+40726853578">+40 726 853 578 ↗</a></div>
+              <div class="contact-row"><span>Scrie-ne</span><a href="mailto:camaramariei@yahoo.com">camaramariei@yahoo.com ↗</a></div>
+              <div class="contact-row"><span>Ne găsești în</span><p>Constanța</p></div>
+            </div>
+          </div>
+          <div class="map-wrap">
+            <div class="map">
+              <iframe title="Hartă — localizarea Cămara Mariei în Constanța" src="https://www.openstreetmap.org/export/embed.html?bbox=28.642059,44.183509699999995,28.650059000000002,44.1875097&amp;layer=mapnik&amp;marker=44.1855097,28.646059" loading="lazy"></iframe>
+            </div>
+            <div class="map-bottom"><span>Cămara Mariei · Constanța</span><a href="https://www.google.com/maps/search/?api=1&amp;query=C%C4%83mara+Mariei+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide harta ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="brand" href="#" aria-label="Cămara Mariei — înapoi sus"><svg class="brand-mark" aria-hidden="true"><use href="#sprout"/></svg><span class="brand-name">Cămara Mariei<small>Natural · Local · Constanța</small></span></a>
+        <p class="footer-slogan">Alege natural, alege sănătos.</p>
+      </div>
+      <div class="footer-bottom"><p>Model de site (demo)</p><p>Fotografii ilustrative de pe Pixabay: Pexels, klimkin, PublicDomainPictures, NoName_13, stevepb</p></div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      document.documentElement.classList.add('js');
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08, rootMargin: '0px 0px -25px 0px' });
+        reveals.forEach(el => observer.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('visible'));
+      }
+
+      const toggle = document.querySelector('.menu-toggle');
+      const links = document.querySelector('.nav-links');
+      function closeMenu() {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = 'Meniu +';
+      }
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.textContent = open ? 'Închide −' : 'Meniu +';
+      });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+      const section = document.querySelector('.gallery-section');
+      const pin = document.querySelector('.gallery-pin');
+      const frame = document.querySelector('.gallery-frame');
+      const track = document.querySelector('.gallery-track');
+      const progress = document.querySelector('.progress span');
+      const hint = document.querySelector('#gallery-hint');
+      let horizontal = false;
+      let distance = 0;
+      let scheduled = false;
+
+      function setupGallery() {
+        horizontal = window.innerWidth > 760 && !reduced.matches && window.innerHeight > 640;
+        track.style.transform = '';
+        track.style.overflowX = horizontal ? 'visible' : 'auto';
+        track.scrollLeft = 0;
+        pin.style.position = horizontal ? 'sticky' : 'relative';
+        pin.style.top = horizontal ? '20px' : '0';
+        distance = Math.max(0, track.scrollWidth - frame.clientWidth);
+        section.style.height = horizontal ? (pin.offsetHeight + distance + 40) + 'px' : 'auto';
+        hint.textContent = horizontal ? 'Continue à deruler →' : 'Glisează pentru a descoperi →';
+        if (horizontal) hint.textContent = 'Derulează și descoperă →';
+        updateGallery();
+      }
+      function updateGallery() {
+        scheduled = false;
+        if (horizontal) {
+          const bounds = section.getBoundingClientRect();
+          const moved = Math.max(0, Math.min(distance, 20 - bounds.top));
+          track.style.transform = 'translate3d(' + (-moved) + 'px,0,0)';
+          progress.style.width = (25 + (distance ? moved / distance : 1) * 75) + '%';
+        } else {
+          const max = track.scrollWidth - track.clientWidth;
+          progress.style.width = (25 + (max > 0 ? track.scrollLeft / max : 1) * 75) + '%';
+        }
+      }
+      function requestUpdate() {
+        if (!scheduled) {
+          scheduled = true;
+          requestAnimationFrame(updateGallery);
+        }
+      }
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      track.addEventListener('scroll', requestUpdate, { passive: true });
+      track.addEventListener('keydown', e => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const direction = e.key === 'ArrowRight' ? 1 : -1;
+        const behavior = reduced.matches ? 'auto' : 'smooth';
+        if (horizontal) {
+          window.scrollBy({ top: direction * 372, behavior });
+        } else {
+          track.scrollBy({ left: direction * 300, behavior });
+        }
+      });
+      window.addEventListener('resize', setupGallery);
+      if (reduced.addEventListener) reduced.addEventListener('change', setupGallery);
+      setupGallery();
+      if (document.fonts) document.fonts.ready.then(setupGallery);
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
