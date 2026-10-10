@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0e7490">
+  <meta name="description" content="Optica Tei, Constanța — consult optometric, ochelari de vedere și de soare, lentile de contact și reparații. Ne găsești pe Bulevardul Tomis 310.">
+  <title>Optica Tei — Vezi lumea mai clar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #243e3c;
+      --teal: #0e7490;
+      --teal-dark: #09566b;
+      --olive: #657454;
+      --clay: #a75e45;
+      --sand: #f1eee7;
+      --paper: #fbfcf9;
+      --line: #dce2d9;
+      --muted: #616c65;
+      --header: 88px;
+      --left: 43%;
+      --radius: 32px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Montserrat", sans-serif; font-size: 14px; line-height: 1.8; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    button { font: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; font-weight: 500; line-height: 1.02; }
+    h2 { font-size: clamp(42px, 4.2vw, 64px); letter-spacing: -1.5px; }
+    ::selection { background: #d6e7df; color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--teal); outline-offset: 5px; }
+    .skip { position: fixed; left: 12px; top: -80px; padding: 10px 20px; background: white; z-index: 100; }
+    .skip:focus { top: 10px; }
+    .icon { width: 27px; height: 27px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .site-header { height: var(--header); position: fixed; inset: 0 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 4%; background: rgba(251,252,249,.96); border-bottom: 1px solid var(--line); z-index: 30; backdrop-filter: blur(15px); }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; }
+    .brand .icon { width: 46px; height: 35px; color: var(--teal); }
+    .brand-name { display: block; font-family: "Cormorant Garamond", serif; font-size: 32px; font-weight: 600; line-height: 1; letter-spacing: -.8px; }
+    .brand-location { display: block; margin-top: 6px; font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; }
+    .nav { display: flex; align-items: center; gap: 28px; }
+    .nav a { text-decoration: none; font-size: 11px; font-weight: 600; transition: color .2s; }
+    .nav a:hover { color: var(--teal); }
+    .nav .nav-contact { border: 1px solid #cbd6d1; border-radius: 30px; padding: 10px 19px; }
+    .menu-button { display: none; border: 1px solid var(--line); background: transparent; padding: 8px 13px; border-radius: 20px; color: var(--ink); cursor: pointer; }
+    .visual { position: fixed; top: calc(var(--header) + 20px); bottom: 20px; left: 20px; width: calc(var(--left) - 30px); border-radius: 36px; overflow: hidden; background: #758a7b; }
+    .visual-photo { height: 100%; object-position: 50% center; }
+    .visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,42,36,.12), transparent 38%, rgba(18,42,36,.8)); pointer-events: none; }
+    .visual-top { position: absolute; z-index: 2; top: 27px; left: 28px; display: flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.5); border-radius: 25px; color: white; background: rgba(24,46,39,.22); backdrop-filter: blur(8px); padding: 8px 15px; font-size: 10px; letter-spacing: 1.2px; }
+    .small-dot { width: 6px; height: 6px; border-radius: 50%; background: #d5e8c6; }
+    .visual-copy { position: absolute; bottom: 40px; left: 38px; right: 34px; z-index: 2; color: white; }
+    .visual-copy .icon { width: 66px; height: 38px; margin-bottom: 20px; }
+    .visual-copy p { font-family: "Cormorant Garamond", serif; font-size: clamp(32px, 3.7vw, 57px); line-height: 1.1; max-width: 430px; }
+    .visual-bottom { margin-top: 25px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.35); display: flex; justify-content: space-between; gap: 12px; font-size: 9px; letter-spacing: 1px; }
+    main { margin-left: var(--left); padding: calc(var(--header) + 20px) 24px 0 10px; }
+    .chapter { position: relative; border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 22px; padding: 46px 42px; overflow: hidden; box-shadow: 0 8px 35px rgba(36,62,60,.025); scroll-margin-top: 110px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 9px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--olive); margin-bottom: 28px; }
+    .eyebrow::before { content: ""; width: 23px; height: 1px; background: currentColor; }
+    .hero { min-height: calc(100svh - var(--header) - 40px); display: flex; flex-direction: column; justify-content: center; background: #f0f5f0; isolation: isolate; }
+    .hero::before { content: ""; position: absolute; z-index: -1; width: 450px; height: 450px; top: -200px; right: -180px; border-radius: 50%; background: radial-gradient(circle, #dbe8df 0%, transparent 68%); animation: breathe 9s ease-in-out infinite alternate; }
+    .hero::after { content: ""; position: absolute; z-index: -1; width: 300px; height: 300px; bottom: -140px; left: -140px; border-radius: 50%; background: radial-gradient(circle, #e8dfcf, transparent 70%); animation: breathe 11s ease-in-out infinite alternate-reverse; }
+    @keyframes breathe { to { transform: translate(-35px, 45px) scale(1.18); } }
+    .lens-lines { position: absolute; top: 36px; right: 30px; width: 83px; height: 83px; color: var(--olive); opacity: .2; animation: lensFloat 8s ease-in-out infinite; }
+    @keyframes lensFloat { 50% { transform: translateY(8px) rotate(7deg); } }
+    h1 { font-size: clamp(66px, 6.8vw, 104px); letter-spacing: -3.5px; line-height: .96; margin: 16px 0 28px; position: relative; }
+    .title-line { display: block; }
+    .keyword { transition: color 1.1s ease; }
+    .typed .keyword { color: var(--teal); }
+    .char { display: inline-block; }
+    .typing .char { opacity: 0; animation: letterIn .3s ease forwards; animation-delay: var(--delay); }
+    @keyframes letterIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-description { max-width: 350px; font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 13px; min-height: 52px; padding: 15px 23px; background: var(--teal); color: white; border: 1px solid var(--teal); border-radius: 28px; font-size: 11px; font-weight: 600; line-height: 1.5; text-decoration: none; transition: background .25s, transform .25s, box-shadow .25s; width: fit-content; }
+    .button:hover { background: var(--teal-dark); transform: translateY(-3px); box-shadow: 0 6px 18px #0e749020; }
+    .button .icon { width: 19px; height: 19px; }
+    .button-outline { background: transparent; color: var(--ink); border-color: #c5cec3; }
+    .button-outline:hover { background: #e7eee7; }
+    .hero-foot { margin-top: 42px; padding-top: 20px; border-top: 1px solid #d6ded3; display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 10px; color: var(--muted); }
+    .scroll-link { display: flex; gap: 7px; align-items: center; text-decoration: none; }
+    .scroll-link .icon { width: 15px; height: 15px; }
+    .about { background: white; }
+    .body-copy { margin-top: 24px; color: var(--muted); }
+    .body-copy p + p { margin-top: 15px; }
+    .advantages { margin-top: 32px; border-top: 1px solid var(--line); }
+    .advantage { display: flex; align-items: flex-start; gap: 17px; padding-top: 24px; }
+    .icon-holder { width: 44px; height: 44px; border: 1px solid #d9e1d3; border-radius: 15px; display: grid; place-items: center; color: var(--olive); flex-shrink: 0; }
+    .advantage h3 { font-size: 25px; margin: 0 0 6px; }
+    .advantage p { color: var(--muted); font-size: 12px; }
+    .services { background: var(--sand); }
+    .section-intro { color: var(--muted); margin-top: 18px; max-width: 400px; }
+    .service-list { list-style: none; padding: 0; margin: 30px 0 0; }
+    .service { padding: 23px 0; border-top: 1px solid #d8d8cd; display: grid; grid-template-columns: 32px 1fr 30px; gap: 14px; align-items: center; transition: padding .25s; }
+    .service:hover { padding-left: 7px; }
+    .service-number { font-size: 10px; color: var(--clay); align-self: start; padding-top: 5px; }
+    .service h3 { font-size: 28px; margin-bottom: 8px; }
+    .service p { font-size: 11px; color: var(--muted); line-height: 1.7; }
+    .service .icon { color: var(--olive); }
+    .gallery { background: white; }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+    .gallery figure { margin: 0; min-width: 0; }
+    .photo-wrap { border-radius: 21px; overflow: hidden; background: var(--sand); }
+    .gallery img { aspect-ratio: 1 / 1.06; transition: transform .65s; }
+    .gallery figure:hover img { transform: scale(1.045); }
+    .gallery figcaption { font-size: 10px; color: var(--muted); margin: 9px 3px 10px; }
+    .gallery-note { margin-top: 10px; font-size: 10px; color: var(--muted); }
+    .contact { background: #edf3ef; }
+    .contact-address { margin-top: 24px; display: flex; gap: 12px; align-items: flex-start; }
+    .contact-address .icon { color: var(--teal); margin-top: 3px; }
+    address { font-style: normal; }
+    .address-main { font-size: 16px; font-weight: 500; }
+    .address-city { color: var(--muted); font-size: 12px; }
+    .hours { margin: 27px 0; padding: 22px; border: 1px solid #d4dfd4; background: #f7f9f4; border-radius: 23px; }
+    .hours-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+    .hours-heading h3 { font-size: 27px; }
+    .hours-heading .icon { width: 21px; height: 21px; color: var(--olive); }
+    .hour-row { display: flex; justify-content: space-between; gap: 14px; font-size: 12px; }
+    .hour-row + .hour-row { margin-top: 8px; }
+    .hour-row strong { font-weight: 600; white-space: nowrap; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-bottom: 27px; }
+    .map-frame { border: 1px solid #d0dbd1; border-radius: 23px; overflow: hidden; background: #dfe7dc; }
+    iframe { display: block; width: 100%; height: 265px; border: 0; }
+    .map-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 15px 18px; background: #f7f9f4; font-size: 11px; text-decoration: none; transition: color .2s; }
+    .map-link:hover { color: var(--teal); }
+    .map-link .icon { width: 18px; height: 18px; }
+    footer { padding: 10px 16px 32px; font-size: 10px; color: var(--muted); }
+    .footer-first { display: flex; justify-content: space-between; gap: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+    .footer-first a { text-decoration: none; }
+    .footer-credit { max-width: 450px; font-size: 9px; }
+    .js-motion .reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .js-motion .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (min-width: 1500px) {
+      :root { --left: 46%; }
+      main { padding-right: 40px; padding-left: 15px; }
+      .chapter { padding: 58px 60px; }
+    }
+    @media (max-width: 1100px) {
+      :root { --left: 40%; }
+      .chapter { padding: 36px 28px; }
+      .nav { gap: 19px; }
+      h1 { font-size: 78px; }
+      .visual-copy { left: 26px; right: 26px; }
+      .visual-bottom { flex-direction: column; gap: 4px; }
+      .contact-actions .button { width: 100%; }
+    }
+    @media (max-width: 760px) {
+      :root { --header: 76px; --radius: 28px; }
+      .site-header { padding: 0 22px; }
+      .brand-name { font-size: 28px; }
+      .brand .icon { width: 39px; }
+      .menu-button { display: block; font-size: 11px; }
+      .nav { display: none; position: absolute; top: 75px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 25px; box-shadow: 0 12px 20px #243e3c0a; }
+      .nav.open { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
+      .visual { position: relative; inset: auto; width: auto; height: 340px; margin: calc(var(--header) + 14px) 14px 14px; border-radius: 28px; }
+      .visual-photo { object-position: center 42%; }
+      .visual-top { top: 19px; left: 20px; }
+      .visual-copy { bottom: 22px; left: 24px; }
+      .visual-copy p { font-size: 36px; max-width: 280px; }
+      .visual-copy > .icon { display: none; }
+      .visual-bottom { margin-top: 16px; padding-top: 10px; flex-direction: row; font-size: 8px; }
+      main { margin-left: 0; padding: 0 14px; }
+      .chapter { padding: 34px 27px; margin-bottom: 14px; }
+      .hero { min-height: 570px; }
+      h1 { font-size: clamp(66px, 12vw, 92px); margin-top: 4px; letter-spacing: -2.5px; }
+      h2 { font-size: 48px; }
+      .hero-description { font-size: 14px; }
+      .hero-foot { margin-top: 32px; font-size: 9px; }
+      .contact-actions .button { width: auto; }
+      .gallery-grid { gap: 10px; }
+      .service h3 { font-size: 27px; }
+      .lens-lines { right: 24px; width: 67px; }
+      footer { padding: 13px 10px 28px; }
+    }
+    @media (max-width: 380px) {
+      .chapter { padding: 30px 21px; }
+      h1 { font-size: 65px; }
+      .button { padding: 14px 17px; font-size: 10px; }
+      .contact-actions .button { width: 100%; }
+      .hero-foot { align-items: flex-start; flex-direction: column; }
+      .visual { height: 295px; }
+      .service { grid-template-columns: 24px 1fr 23px; gap: 9px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .js-motion .reveal, .typing .char { opacity: 1; transform: none; }
+      .keyword { color: var(--teal); }
+    }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <symbol id="glasses" viewBox="0 0 48 32"><path d="M3 12 6 4h6M45 12 42 4h-6M19 16c3-3 7-3 10 0M2 13h17v8a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7zM29 13h17v8a7 7 0 0 1-7 7h-3a7 7 0 0 1-7-7z"/></symbol>
+      <symbol id="eye" viewBox="0 0 32 32"><path d="M3 16s5-9 13-9 13 9 13 9-5 9-13 9S3 16 3 16Z"/><circle cx="16" cy="16" r="4"/></symbol>
+      <symbol id="lens" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M10 16a6 6 0 0 1 6-6M20 22a7 7 0 0 0 4-6"/></symbol>
+      <symbol id="clock" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></symbol>
+      <symbol id="sun" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6"/><path d="M16 2v3M16 27v3M2 16h3M27 16h3M6 6l2 2M24 24l2 2M26 6l-2 2M8 24l-2 2"/></symbol>
+      <symbol id="tool" viewBox="0 0 32 32"><path d="m20 4-4 4 1 5 5 1 4-4a8 8 0 0 1-10 10L7 29l-4-4 9-9A8 8 0 0 1 20 4Z"/></symbol>
+      <symbol id="pin" viewBox="0 0 32 32"><path d="M26 13c0 8-10 16-10 16S6 21 6 13a10 10 0 1 1 20 0Z"/><circle cx="16" cy="13" r="3"/></symbol>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="down" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
+      <symbol id="phone" viewBox="0 0 24 24"><path d="m8 3 3 5-3 3c1 3 3 5 5 6l3-3 5 3c0 3-2 5-5 4C9 19 5 15 3 8 2 5 5 3 8 3Z"/></symbol>
+      <symbol id="chat" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 1-8 8c-2 0-3-.4-4-1L3 20l1-5a8 8 0 1 1 16-4Z"/><path d="M8 9h8M8 13h5"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip" href="#continut">Sari la conținut</a>
+
+  <header class="site-header">
+    <a class="brand" href="#acasa" aria-label="Optica Tei — Acasă">
+      <svg class="icon" aria-hidden="true"><use href="#glasses"/></svg>
+      <span><span class="brand-name">Optica Tei</span><span class="brand-location">Constanța</span></span>
+    </a>
+    <button class="menu-button" aria-expanded="false" aria-controls="navigation" type="button">Meniu +</button>
+    <nav class="nav" id="navigation" aria-label="Navigare principală">
+      <a href="#despre">Despre noi</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">În imagini</a>
+      <a class="nav-contact" href="#contact">Hai să ne cunoaștem ↗</a>
+    </nav>
+  </header>
+
+  <aside class="visual" aria-label="O perspectivă mai clară">
+    <img class="visual-photo" src="img/1.jpg" alt="Detaliu al privirii și al ochelarilor — fotografie ilustrativă" fetchpriority="high">
+    <div class="visual-top"><span class="small-dot"></span> OPTICĂ · CONSTANȚA</div>
+    <div class="visual-copy">
+      <svg class="icon" aria-hidden="true"><use href="#glasses"/></svg>
+      <p>Grijă pentru vedere.<br>Loc pentru tine.</p>
+      <div class="visual-bottom">
+        <span>BULEVARDUL TOMIS 310</span>
+        <span>Fotografie ilustrativă</span>
+      </div>
+    </div>
+  </aside>
+
+  <main id="continut">
+    <section class="chapter hero" id="acasa" aria-labelledby="hero-title">
+      <svg class="lens-lines" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width=".8" aria-hidden="true">
+        <circle cx="50" cy="50" r="43"/><circle cx="50" cy="50" r="33"/><circle cx="50" cy="50" r="22"/><path d="M50 0v17M50 83v17M0 50h17M83 50h17"/>
+      </svg>
+      <div class="eyebrow">Un pas spre o vedere mai bună</div>
+      <h1 id="hero-title" aria-label="Vezi lumea mai clar">
+        <span class="title-line" aria-hidden="true">Vezi lumea</span>
+        <span class="title-line keyword" aria-hidden="true">mai clar.</span>
+      </h1>
+      <p class="hero-description">Consultanță, rame moderne și lentile de calitate. Cu atenție la nevoile tale, la Optica Tei.</p>
+      <a class="button" href="https://wa.me/40771125223?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20Optica%20Tei.">
+        <svg class="icon" aria-hidden="true"><use href="#chat"/></svg>
+        Programează-te pe WhatsApp
+        <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+      </a>
+      <div class="hero-foot">
+        <span>Vederea ta. Stilul tău. Alegerea potrivită.</span>
+        <a class="scroll-link" href="#despre">Descoperă <svg class="icon" aria-hidden="true"><use href="#down"/></svg></a>
+      </div>
+    </section>
+
+    <section class="chapter about reveal" id="despre" aria-labelledby="about-title">
+      <div class="eyebrow">01 / Despre Optica Tei</div>
+      <h2 id="about-title">Mai întâi, ascultăm.<br>Apoi, recomandăm.</h2>
+      <div class="body-copy">
+        <p>Fiecare privire are nevoile ei. La Optica Tei găsești o gamă diversă de ochelari, lentile și accesorii, alături de recomandări personalizate.</p>
+        <p>Suntem alături de tine cu servicii profesionale, fie că alegi o ramă nouă, ai nevoie de un consult sau vrei să îți ajustezi ochelarii. Te așteptăm pe Bulevardul Tomis 310, în Constanța.</p>
+      </div>
+      <div class="advantages">
+        <div class="advantage">
+          <span class="icon-holder"><svg class="icon" aria-hidden="true"><use href="#eye"/></svg></span>
+          <div><h3>Verificare atentă</h3><p>Atenție la acuratețea vederii și la nevoile fiecărui client.</p></div>
+        </div>
+        <div class="advantage">
+          <span class="icon-holder"><svg class="icon" aria-hidden="true"><use href="#glasses"/></svg></span>
+          <div><h3>Rame variate</h3><p>Modele pentru orice stil și vârstă.</p></div>
+        </div>
+        <div class="advantage">
+          <span class="icon-holder"><svg class="icon" aria-hidden="true"><use href="#clock"/></svg></span>
+          <div><h3>Servicii rapide</h3><p>Multe lucrări pot fi făcute pe loc sau în aceeași zi.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter services reveal" id="servicii" aria-labelledby="services-title">
+      <div class="eyebrow">02 / Servicii</div>
+      <h2 id="services-title">Soluții pentru<br>privirea ta.</h2>
+      <p class="section-intro">De la verificarea vederii la micile ajustări care fac diferența în fiecare zi.</p>
+      <ol class="service-list">
+        <li class="service">
+          <span class="service-number">01</span>
+          <div><h3>Consult optometric</h3><p>Verificarea acurateței vederii.</p></div>
+          <svg class="icon" aria-hidden="true"><use href="#eye"/></svg>
+        </li>
+        <li class="service">
+          <span class="service-number">02</span>
+          <div><h3>Ochelari de vedere</h3><p>Rame moderne, alese pentru nevoile și stilul tău.</p></div>
+          <svg class="icon" aria-hidden="true"><use href="#glasses"/></svg>
+        </li>
+        <li class="service">
+          <span class="service-number">03</span>
+          <div><h3>Ochelari de soare</h3><p>Protecție UV și modele care îți completează stilul.</p></div>
+          <svg class="icon" aria-hidden="true"><use href="#sun"/></svg>
+        </li>
+        <li class="service">
+          <span class="service-number">04</span>
+          <div><h3>Lentile de contact</h3><p>Montaj și recomandări individuale.</p></div>
+          <svg class="icon" aria-hidden="true"><use href="#lens"/></svg>
+        </li>
+        <li class="service">
+          <span class="service-number">05</span>
+          <div><h3>Reparații ochelari</h3><p>Ajustări rapide, pe loc.</p></div>
+          <svg class="icon" aria-hidden="true"><use href="#tool"/></svg>
+        </li>
+      </ol>
+    </section>
+
+    <section class="chapter gallery reveal" id="galerie" aria-labelledby="gallery-title">
+      <div class="eyebrow">03 / În imagini</div>
+      <h2 id="gallery-title">O lume de detalii.</h2>
+      <p class="section-intro">Instrumente, rame și atenție pentru vedere — câteva imagini din universul opticii.</p>
+      <div class="gallery-grid">
+        <figure>
+          <div class="photo-wrap"><img src="img/2.jpg" loading="lazy" alt="Instrument optometric pentru examinarea vederii, fotografie ilustrativă"></div>
+          <figcaption>Precizie în fiecare detaliu</figcaption>
+        </figure>
+        <figure>
+          <div class="photo-wrap"><img src="img/3.jpg" loading="lazy" alt="Examinarea vederii în cadrul unui consult, fotografie ilustrativă"></div>
+          <figcaption>Atenție pentru privirea ta</figcaption>
+        </figure>
+        <figure>
+          <div class="photo-wrap"><img src="img/4.jpg" loading="lazy" alt="Rame de ochelari expuse într-un magazin de optică, fotografie ilustrativă"></div>
+          <figcaption>Forme pentru stiluri diferite</figcaption>
+        </figure>
+        <figure>
+          <div class="photo-wrap"><img src="img/5.jpg" loading="lazy" alt="Selecție de ochelari într-un spațiu de optică, fotografie ilustrativă"></div>
+          <figcaption>Loc pentru noi perspective</figcaption>
+        </figure>
+      </div>
+      <p class="gallery-note">Fotografii de stoc, cu rol ilustrativ; nu prezintă spațiul Optica Tei.</p>
+    </section>
+
+    <section class="chapter contact reveal" id="contact" aria-labelledby="contact-title">
+      <div class="eyebrow">04 / Ne găsești aici</div>
+      <h2 id="contact-title">Hai să vedem<br>ce ți se potrivește.</h2>
+      <p class="section-intro">Scrie-ne pentru o programare sau sună-ne. Te așteptăm la Optica Tei.</p>
+      <div class="contact-address">
+        <svg class="icon" aria-hidden="true"><use href="#pin"/></svg>
+        <address>
+          <div class="address-main">Bulevardul Tomis 310</div>
+          <div class="address-city">Constanța</div>
+        </address>
+      </div>
+      <div class="hours">
+        <div class="hours-heading"><svg class="icon" aria-hidden="true"><use href="#clock"/></svg><h3>Program</h3></div>
+        <div class="hour-row"><span>Luni – Vineri</span><strong>08:00 – 20:00</strong></div>
+        <div class="hour-row"><span>Sâmbătă</span><strong>10:00 – 14:00</strong></div>
+      </div>
+      <div class="contact-actions">
+        <a class="button" href="https://wa.me/40771125223?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20Optica%20Tei.">
+          <svg class="icon" aria-hidden="true"><use href="#chat"/></svg>Programează-te pe WhatsApp
+        </a>
+        <a class="button button-outline" href="tel:+40771125223">
+          <svg class="icon" aria-hidden="true"><use href="#phone"/></svg>+40 771 125 223
+        </a>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6257116,44.1968744,28.6337116,44.200874400000004&layer=mapnik&marker=44.1988744,28.6297116" title="Hartă: Optica Tei, Bulevardul Tomis 310, Constanța" loading="lazy"></iframe>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Optica+Tei+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">
+          Deschide în Google Maps
+          <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-first"><span>Optica Tei · Constanța</span><a href="#acasa">Înapoi sus ↑</a></div>
+      <p>Model de site (demo)</p>
+      <p class="footer-credit">Fotografii ilustrative de pe Pixabay: newarta, martinlutze-fotografie, limorcohen</p>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.menu-button');
+      const navigation = document.querySelector('.nav');
+
+      function closeMenu() {
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = 'Meniu +';
+      }
+
+      menuButton.addEventListener('click', () => {
+        const isOpen = navigation.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.textContent = isOpen ? 'Închide −' : 'Meniu +';
+      });
+      navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navigation.classList.contains('open')) {
+          closeMenu();
+          menuButton.focus();
+        }
+      });
+
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const title = document.getElementById('hero-title');
+
+      if (!motionPreference.matches) {
+        let characterIndex = 0;
+        title.querySelectorAll('.title-line').forEach(line => {
+          const text = line.textContent;
+          line.textContent = '';
+          for (const character of text) {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.textContent = character === ' ' ? '\u00a0' : character;
+            span.style.setProperty('--delay', `${characterIndex * 55 + 180}ms`);
+            line.appendChild(span);
+            characterIndex++;
+          }
+        });
+        title.classList.add('typing');
+        window.setTimeout(() => title.classList.add('typed'), characterIndex * 55 + 500);
+
+        if ('IntersectionObserver' in window) {
+          document.documentElement.classList.add('js-motion');
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.07, rootMargin: '0px 0px -25px 0px' });
+          document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
+        }
+      } else {
+        title.classList.add('typed');
+      }
+
+      motionPreference.addEventListener('change', event => {
+        if (event.matches) {
+          document.documentElement.classList.remove('js-motion');
+          title.classList.remove('typing');
+          title.classList.add('typed');
+        }
+      });
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
