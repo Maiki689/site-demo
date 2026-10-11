@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spălătoria Auto Maty, Constanța | Spălătorie auto deschisă zilnic</title>
+<meta name="description" content="Spălătoria Auto Maty din Constanța: spălare exterior, curățare interior, polish faruri, covorașe și ceară de protecție. Deschis zilnic, 07:00–21:00.">
+<meta name="theme-color" content="#061426">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#061426;
+  --navy:#0B2545;
+  --navy-2:#0f2f57;
+  --ink:#EAF4FF;
+  --bleu:#D6ECFF;
+  --muted:#A9BED6;
+  --accent:#38bdf8;
+  --accent-hi:#7dd3fc;
+  --accent-ink:#03253c;
+  --water:#1E88E5;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --r-lg:1.5rem;
+  --r-md:1.125rem;
+  --font-d:"Outfit",system-ui,sans-serif;
+  --font-t:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--font-t);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-d);font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+.container{width:100%;max-width:76rem;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,2.5rem)}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--accent);color:var(--accent-ink);padding:.75rem 1rem;border-radius:.75rem;font-weight:600;text-decoration:none}
+.skip:focus{top:1rem}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:.5rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:.75rem 1.4rem;border-radius:999px;
+  font:600 1rem/1.2 var(--font-t);text-decoration:none;border:0;cursor:pointer;
+  transition:transform .1s ease,background-color .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-hi);box-shadow:0 .5rem 1.5rem rgba(56,189,248,.28)}
+.btn-ghost{background:rgba(6,20,38,.35);color:#fff;box-shadow:inset 0 0 0 1px rgba(214,236,255,.45)}
+.btn-ghost:hover{background:rgba(214,236,255,.12);box-shadow:inset 0 0 0 1px rgba(214,236,255,.75)}
+.btn-sm{min-height:2.75rem;padding:.6rem 1.1rem;font-size:.9375rem}
+
+/* ---------- Navigare ---------- */
+.nav{
+  position:fixed;z-index:50;top:.75rem;left:0;right:0;margin-inline:auto;
+  width:min(76rem,calc(100% - 1.5rem));
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.5rem .5rem .5rem 1rem;border-radius:1.125rem;
+  background:rgba(6,20,38,.5);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  transition:box-shadow .35s var(--ease),background-color .35s var(--ease);
+}
+.nav.scrolled{background:rgba(6,20,38,.72);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 .75rem 2rem rgba(0,0,0,.35)}
+.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;min-height:2.75rem}
+.brand svg{width:1.6rem;height:1.6rem;color:var(--accent)}
+.brand b{font:700 1.3rem/1 var(--font-d);letter-spacing:-.01em}
+.brand small{display:none;font-size:.75rem;color:var(--bleu);letter-spacing:.03em;font-weight:500}
+.links{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.links a{display:block;padding:.6rem .85rem;border-radius:.75rem;text-decoration:none;font-weight:600;font-size:.9375rem;color:#fff;transition:background-color .2s}
+.links a:hover{background:rgba(214,236,255,.1)}
+.nav-actions{display:flex;align-items:center;gap:.4rem}
+.menu-btn{
+  min-width:2.75rem;min-height:2.75rem;border-radius:.85rem;border:0;cursor:pointer;
+  background:rgba(214,236,255,.1);color:#fff;display:grid;place-items:center;
+  transition:transform .1s ease,background-color .2s;
+}
+.menu-btn:active{transform:scale(.97)}
+.menu-btn svg{width:1.3rem;height:1.3rem}
+.menu-btn .x{display:none}
+.menu-btn[aria-expanded="true"] .x{display:block}
+.menu-btn[aria-expanded="true"] .bars{display:none}
+.menu{
+  position:fixed;z-index:49;top:5.1rem;left:0;right:0;margin-inline:auto;width:min(76rem,calc(100% - 1.5rem));
+  background:var(--navy);border-radius:1.125rem;padding:.5rem;
+  box-shadow:0 1.25rem 3rem rgba(0,0,0,.45);
+  opacity:0;visibility:hidden;transform:translateY(-.5rem);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s linear .3s;
+}
+.menu.open{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--ease),transform .3s var(--ease),visibility 0s}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu a{display:flex;align-items:center;min-height:3.25rem;padding:0 1rem;border-radius:.75rem;text-decoration:none;font:600 1.15rem var(--font-d)}
+.menu a:hover{background:rgba(214,236,255,.08)}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding:.75rem}
+.hero-media{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);background:var(--navy);
+  min-height:calc(100vh - 1.5rem);min-height:calc(100svh - 1.5rem);
+  display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;
+}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;animation:heroImg 1.6s var(--ease) both}
+#rain{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;animation:fadeIn 1s .9s both}
+.hero-shade{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,rgba(6,20,38,.94) 0%,rgba(6,20,38,.72) 32%,rgba(6,20,38,.18) 62%,rgba(6,20,38,.4) 100%);
+}
+.hero-text{position:relative;z-index:3;padding-top:7rem;padding-bottom:clamp(1.5rem,5vw,4rem)}
+.hero h1{font-size:clamp(2.4rem,9.6vw,6.25rem);font-weight:700;letter-spacing:-.025em;line-height:1.02;max-width:12ch;color:#fff;text-shadow:0 .1rem 1.5rem rgba(0,0,0,.25)}
+.hero-slogan{margin-top:1rem;font:500 clamp(1.25rem,3.4vw,1.75rem)/1.25 var(--font-d);color:var(--bleu);letter-spacing:-.01em}
+.hero-sub{margin-top:.6rem;color:#d3e2f2;max-width:38ch;font-size:1rem}
+.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.1rem;font-size:.9rem;font-weight:500;color:#fff;letter-spacing:.01em}
+.dot{width:.55rem;height:.55rem;border-radius:50%;background:var(--muted);flex:none}
+.status.open .dot{background:var(--accent);box-shadow:0 0 0 .25rem rgba(56,189,248,.2)}
+.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}
+.hero-text > *{animation:up .8s var(--ease) both}
+.hero-text > :nth-child(1){animation-delay:.3s}
+.hero-text > :nth-child(2){animation-delay:.45s}
+.hero-text > :nth-child(3){animation-delay:.55s}
+.hero-text > :nth-child(4){animation-delay:.65s}
+.hero-text > :nth-child(5){animation-delay:.75s}
+@keyframes heroImg{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(1.25rem)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ---------- Secțiuni ---------- */
+.section{padding-block:clamp(5rem,13vw,9.5rem)}
+.h2{font-size:clamp(2rem,5.6vw,3.75rem);max-width:16ch}
+.lead{font-size:clamp(1.125rem,2.2vw,1.3rem);line-height:1.5;color:var(--ink);max-width:36em}
+.muted{color:var(--muted)}
+
+/* Despre */
+.about-grid{display:grid;gap:3rem}
+.about-text .lead{margin-top:1.5rem}
+.about-text p + p{margin-top:1rem}
+.about-text p.muted{max-width:34em}
+.photo{margin:0;border-radius:var(--r-lg);overflow:hidden;background:var(--navy)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about-photo{aspect-ratio:4/5}
+.perks{list-style:none;margin:clamp(3.5rem,8vw,6rem) auto 0;display:grid;gap:2.25rem}
+.perks li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:start}
+.ico{width:3rem;height:3rem;border-radius:1rem;display:grid;place-items:center;background:rgba(56,189,248,.12);color:var(--accent)}
+.ico svg{width:1.5rem;height:1.5rem}
+.perks h3{font-size:1.3rem;font-weight:600;margin-top:.2rem}
+.perks p{color:var(--muted);margin-top:.3rem}
+
+/* Servicii */
+.services{background:var(--navy)}
+.svc-grid{display:grid;gap:3rem}
+.svc-photo{aspect-ratio:4/3}
+.svc-head p{margin-top:1.25rem;color:var(--muted);max-width:32em}
+.svc-list{list-style:none;margin:2.5rem 0 0;padding:0}
+.svc-list li{
+  position:relative;display:grid;grid-template-columns:3rem 1fr;gap:1.1rem;align-items:start;
+  padding:1.6rem 0;
+}
+.svc-list li::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(214,236,255,.16);
+  transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease);transition-delay:var(--d,0s);
+}
+.svc-list li.in::before{transform:scaleX(1)}
+.svc-list li > *{opacity:0;transition:opacity .6s var(--ease);transition-delay:calc(var(--d,0s) + .15s)}
+.svc-list li.in > *{opacity:1}
+.svc-list .ico{transition:background-color .3s var(--ease),color .3s var(--ease)}
+.svc-list li:hover .ico{background:var(--accent);color:var(--accent-ink)}
+.svc-list h3{font-size:clamp(1.35rem,3vw,1.75rem);font-weight:600;margin-top:.15rem}
+.svc-list p{color:var(--muted);margin-top:.35rem}
+.svc-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2.5rem;padding-top:2rem;box-shadow:0 -1px 0 rgba(214,236,255,.16)}
+.svc-cta p{font:500 1.15rem/1.35 var(--font-d);color:var(--bleu)}
+
+/* Galerie */
+.gal-head{display:grid;gap:1rem}
+.gal-head p{color:var(--muted);max-width:30em}
+.gal{display:grid;gap:1rem;margin-top:3rem}
+.gal .photo{aspect-ratio:4/3}
+
+/* Program și contact */
+.contact{background:var(--navy)}
+.contact-grid{display:grid;gap:3rem}
+.contact .h2{max-width:14ch}
+.hours{margin-top:2.5rem}
+.hours-label{font-weight:600;color:var(--bleu)}
+.hours-time{font:600 clamp(3rem,12vw,6.5rem)/1 var(--font-d);letter-spacing:-.03em;margin-top:.4rem;color:#fff;white-space:nowrap}
+.contact .status{margin-top:1rem}
+.contact-note{margin-top:1.75rem;color:var(--muted);max-width:30em}
+.contact-actions{display:flex;flex-direction:column;gap:.65rem;margin-top:2rem;max-width:24rem}
+.contact-actions .btn{justify-content:flex-start;padding-inline:1.25rem}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(214,236,255,.3)}
+.btn-line:hover{background:rgba(214,236,255,.08);box-shadow:inset 0 0 0 1px rgba(214,236,255,.6)}
+.map{border-radius:var(--r-lg);overflow:hidden;background:var(--bg);aspect-ratio:4/3.4;min-height:18rem}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:invert(.9) hue-rotate(180deg) saturate(.75) brightness(.95)}
+
+/* Subsol */
+footer{padding-block:3.5rem 3rem;font-size:.875rem;letter-spacing:.02em;color:var(--muted)}
+.foot{display:grid;gap:1.5rem}
+.foot b{font:700 1.25rem var(--font-d);color:var(--ink);letter-spacing:-.01em}
+.foot a{color:var(--bleu);text-decoration:none;display:inline-flex;align-items:center;min-height:2.75rem}
+.foot a:hover{text-decoration:underline}
+.foot-meta p + p{margin-top:.35rem}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js [data-r]{opacity:0;transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js [data-r="rise"]{transform:translateY(1.25rem)}
+.js [data-r="zoom"]{transform:scale(.97)}
+.js [data-r="left"]{transform:translateX(-1.5rem)}
+.js [data-r="right"]{transform:translateX(1.5rem)}
+.js [data-r="line"]{opacity:1}
+.js [data-r].in{opacity:1;transform:none}
+html:not(.js) .svc-list li::before{transform:none}
+html:not(.js) .svc-list li > *{opacity:1}
+
+/* ---------- Ecrane mai mari ---------- */
+@media (min-width:560px){
+  .brand small{display:block}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .perks li{grid-template-columns:1fr;gap:1.1rem}
+  .gal{grid-template-columns:1fr 1fr;gap:1.25rem}
+  .gal .photo{aspect-ratio:4/5}
+  .gal .photo:last-child{margin-top:4rem}
+}
+@media (min-width:900px){
+  .links{display:flex}
+  .menu-btn,.menu{display:none}
+  .nav{padding-left:1.25rem}
+  .hero-shade{background:
+    linear-gradient(90deg,rgba(6,20,38,.6) 0%,rgba(6,20,38,0) 60%),
+    linear-gradient(to top,rgba(6,20,38,.9) 0%,rgba(6,20,38,.5) 30%,rgba(6,20,38,.05) 60%,rgba(6,20,38,.35) 100%)}
+  .hero-text{padding-bottom:4.5rem}
+  .about-grid{grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}
+  .svc-grid{grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+  .svc-photo{position:sticky;top:6.5rem;aspect-ratio:3/4}
+  .gal-head{grid-template-columns:1fr 1fr;align-items:end;gap:3rem}
+  .gal{grid-template-columns:7fr 5fr;gap:1.5rem}
+  .gal .photo:first-child{aspect-ratio:4/3.6}
+  .gal .photo:last-child{aspect-ratio:4/5;margin-top:6rem}
+  .contact-grid{grid-template-columns:5fr 7fr;gap:5rem;align-items:stretch}
+  .map{aspect-ratio:auto;height:100%;min-height:34rem}
+  .foot{grid-template-columns:1fr auto;align-items:end}
+}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.2s!important;animation-delay:0s!important;transition-duration:.2s!important;transition-delay:0s!important}
+  .hero-media img,.hero-text > *{animation-name:fadeIn!important}
+  .js [data-r]{transform:none!important}
+  .svc-list li::before{transform:none!important}
+  .menu{transform:none}
+  .btn:active,.menu-btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav,.nav.scrolled{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-ghost{background:var(--navy)}
+}
+@media (prefers-contrast:more){
+  :root{--muted:#d8e6f5;--ink:#fff}
+  .nav,.nav.scrolled{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 0 0 2px var(--bleu)}
+  .hero-shade{background:linear-gradient(to top,rgba(6,20,38,.97) 0%,rgba(6,20,38,.9) 45%,rgba(6,20,38,.5) 100%)}
+  .btn-ghost,.btn-line{background:var(--bg);box-shadow:inset 0 0 0 2px #fff}
+  .btn-primary{box-shadow:inset 0 0 0 2px #fff}
+  .svc-list li::before{background:var(--bleu)}
+  .map iframe{filter:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Spălătoria Auto Maty, începutul paginii">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5c3.6 4.6 6.6 8.3 6.6 11.8a6.6 6.6 0 0 1-13.2 0C5.4 10.8 8.4 7.1 12 2.5z"/><path d="M9.2 14.6a2.9 2.9 0 0 0 2.6 2.6" stroke="#061426" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <span><b>Maty</b><small>Spălătorie auto</small></span>
+  </a>
+  <nav aria-label="Navigare principală">
+    <ul class="links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Program și hartă</a></li>
+    </ul>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn btn-primary btn-sm" href="tel:0720038757">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></svg>
+      Sună acum
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+</header>
+<div class="menu" id="menu">
+  <ul>
+    <li><a href="#despre">Despre</a></li>
+    <li><a href="#servicii">Servicii</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#contact">Program și hartă</a></li>
+  </ul>
+</div>
+
+<main id="top">
+  <section class="hero" aria-labelledby="titlu">
+    <div class="hero-media" id="heroMedia">
+      <img id="heroImg" src="img/1.jpg" alt="Mașină la spălătorie, cu apă pe caroserie (fotografie ilustrativă)" fetchpriority="high">
+      <canvas id="rain" aria-hidden="true"></canvas>
+      <div class="hero-shade"></div>
+      <div class="hero-text container">
+        <h1 id="titlu">Spălătoria Auto Maty</h1>
+        <p class="hero-slogan">Mașina ta merită strălucire.</p>
+        <p class="hero-sub">Spălătorie auto modernă în Constanța, rapidă și atentă la detalii.</p>
+        <p class="status" data-status><span class="dot" aria-hidden="true"></span><span class="status-txt">Deschis zilnic, 07:00–21:00</span></p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0720038757">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/40720038757?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20sp%C4%83l%C4%83torie.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9.5 9.5c.3 1.9 2.2 3.8 4 4l1-1 1.8.9"/></svg>
+            Programează-te pe WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="continut"></div>
+
+  <section class="section about" id="despre" aria-labelledby="t-despre">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2 class="h2" id="t-despre" data-r="rise">Rapid, dar atent la fiecare detaliu.</h2>
+        <p class="lead" data-r="rise" style="--d:.08s">Spălătoria Auto Maty din Constanța curăță orice tip de mașină, repede și cu grijă.</p>
+        <p class="muted" data-r="rise" style="--d:.16s">Lucrăm cu echipamente de ultimă generație, ca spălarea să fie sigură pentru mașina ta și plăcută pentru tine. Îți lăsăm mereu mașina ca nouă.</p>
+      </div>
+      <figure class="photo about-photo" data-r="zoom">
+        <img src="img/5.jpg" alt="Mână cu burete care spală caroseria unei mașini albastre (fotografie ilustrativă)" loading="lazy">
+      </figure>
+    </div>
+    <ul class="perks container">
+      <li data-r="fade">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V9.5M9.5 2.5h5M18.5 6.5l1.5-1.5"/></svg></span>
+        <div><h3>Rapid și atent</h3><p>Terminăm repede, fără compromis la calitate.</p></div>
+      </li>
+      <li data-r="fade" style="--d:.12s">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span>
+        <div><h3>Tehnologie nouă</h3><p>Aparate moderne și eficiente.</p></div>
+      </li>
+      <li data-r="fade" style="--d:.24s">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M9.5 16.5v-9h3.2a2.8 2.8 0 0 1 0 5.6H9.5"/></svg></span>
+        <div><h3>Locuri de parcare</h3><p>Parcare comodă pentru clienți.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section services" id="servicii" aria-labelledby="t-servicii">
+    <div class="container svc-grid">
+      <figure class="photo svc-photo" data-r="left">
+        <img src="img/2.jpg" alt="Mașină roșie acoperită cu spumă activă (fotografie ilustrativă)" loading="lazy">
+      </figure>
+      <div>
+        <div class="svc-head">
+          <h2 class="h2" id="t-servicii" data-r="rise">Servicii</h2>
+          <p data-r="rise" style="--d:.08s">Spune-ne de ce are nevoie mașina ta azi. Te programăm la telefon sau pe WhatsApp.</p>
+        </div>
+        <ul class="svc-list">
+          <li data-r="line">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5.2A2 2 0 0 1 6.9 6.5h10.2a2 2 0 0 1 1.9 1.3L21 13v4H3z"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/></svg></span>
+            <div><h3>Spălare exterior</h3><p>Curățăm caroseria, roțile și geamurile.</p></div>
+          </li>
+          <li data-r="line" style="--d:.08s">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h5a1 1 0 0 1 1 1.1L13 13H8.5L7 4.1A1 1 0 0 1 8 3z"/><path d="M6 13h11a2 2 0 0 1 2 2v2H7z"/><path d="M9 17v4M16 17v4"/></svg></span>
+            <div><h3>Curățare interior</h3><p>Aspirăm și ștergem totul, dus la perfecțiune.</p></div>
+          </li>
+          <li data-r="line" style="--d:.16s">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 6a6 6 0 0 0 0 12h1V6z"/><path d="M16 8.5l5-1M16 12h5M16 15.5l5 1"/></svg></span>
+            <div><h3>Polish faruri</h3><p>Farurile își recapătă claritatea.</p></div>
+          </li>
+          <li data-r="line" style="--d:.24s">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 7v10M12 7v10M15 7v10"/></svg></span>
+            <div><h3>Curățare covorașe</h3><p>Scăpăm covorașele de pete și mirosuri.</p></div>
+          </li>
+          <li data-r="line" style="--d:.32s">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 5 6.8 5 9.5a5 5 0 0 1-10 0C7 9.8 9 7 12 3z"/><path d="M10 13a2.2 2.2 0 0 0 2 2"/></svg></span>
+            <div><h3>Ceară de protecție</h3><p>Luciu și protecție pentru caroserie, tot anul.</p></div>
+          </li>
+        </ul>
+        <div class="svc-cta" data-r="fade">
+          <p>Nu știi ce să alegi? Sună-ne și te ajutăm.</p>
+          <a class="btn btn-primary" href="tel:0720038757">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="galerie" aria-labelledby="t-galerie">
+    <div class="container">
+      <div class="gal-head">
+        <h2 class="h2" id="t-galerie" data-r="rise">Spumă, apă și luciu.</h2>
+        <p data-r="rise" style="--d:.08s">Două imagini ilustrative cu ce înseamnă o spălare făcută cu grijă: jet de apă, spumă și răbdare.</p>
+      </div>
+      <div class="gal">
+        <figure class="photo" data-r="left">
+          <img src="img/3.jpg" alt="Jantă spălată cu jet de apă sub presiune și spumă (fotografie ilustrativă)" loading="lazy">
+        </figure>
+        <figure class="photo" data-r="right" style="--d:.1s">
+          <img src="img/4.jpg" alt="Burete cu spumă pe caroseria unei mașini gri (fotografie ilustrativă)" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="t-contact">
+    <div class="container contact-grid">
+      <div>
+        <h2 class="h2" id="t-contact" data-r="rise">Vino cu mașina, noi ne ocupăm de rest.</h2>
+        <div class="hours" data-r="fade" style="--d:.1s">
+          <p class="hours-label">Deschis zilnic</p>
+          <p class="hours-time">07:00–21:00</p>
+          <p class="status" data-status><span class="dot" aria-hidden="true"></span><span class="status-txt">Program zilnic, de la 07:00 la 21:00</span></p>
+        </div>
+        <p class="contact-note" data-r="fade" style="--d:.15s">Ne găsești în Constanța și avem parcare comodă pentru clienți. Sună-ne sau scrie-ne pe WhatsApp ca să-ți faci programarea.</p>
+        <div class="contact-actions" data-r="rise" style="--d:.2s">
+          <a class="btn btn-primary" href="tel:0720038757">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></svg>
+            Sună acum: 0720 038 757
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40720038757?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20sp%C4%83l%C4%83torie.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9.5 9.5c.3 1.9 2.2 3.8 4 4l1-1 1.8.9"/></svg>
+            Programează-te pe WhatsApp
+          </a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Sp%C4%83l%C4%83toria+Auto+Maty+Constan%C8%9Ba" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+            Deschide în Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="map" data-r="zoom" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.5979286,44.161519,28.605928600000002,44.165519&amp;layer=mapnik&amp;marker=44.163519,28.6019286" title="Harta cu locația Spălătoriei Auto Maty din Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div>
+      <b>Spălătoria Auto Maty</b>
+      <p>Constanța. Deschis zilnic, între 07:00 și 21:00.</p>
+      <a href="tel:0720038757">0720 038 757</a>
+    </div>
+    <div class="foot-meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: RobbieWi, JLMedia, HutchRock, VintageBlue, kaboompics</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* Navigare: umbră la derulare + meniu pe telefon */
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>12)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  var btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  function setOpen(o){
+    btn.setAttribute('aria-expanded',o?'true':'false');
+    btn.setAttribute('aria-label',o?'Închide meniul':'Deschide meniul');
+    menu.classList.toggle('open',o);
+  }
+  btn.addEventListener('click',function(){setOpen(btn.getAttribute('aria-expanded')!=='true')});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false)});
+})();
+
+/* Dezvăluiri la derulare */
+(function(){
+  var els=document.querySelectorAll('[data-r]');
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+})();
+
+/* Deschis / închis acum, după programul 07:00–21:00 (ora României) */
+(function(){
+  function update(){
+    var h,m;
+    try{
+      var parts=new Intl.DateTimeFormat('en-GB',{hour:'2-digit',minute:'2-digit',hourCycle:'h23',timeZone:'Europe/Bucharest'}).formatToParts(new Date());
+      parts.forEach(function(p){if(p.type==='hour')h=+p.value;if(p.type==='minute')m=+p.value;});
+    }catch(e){var d=new Date();h=d.getHours();m=d.getMinutes();}
+    var open=h>=7&&h<21;
+    var txt=open?'Acum e deschis, până la 21:00':'Acum e închis. Deschidem la 07:00';
+    document.querySelectorAll('[data-status]').forEach(function(el){
+      el.classList.toggle('open',open);
+      el.querySelector('.status-txt').textContent=txt;
+    });
+  }
+  update();setInterval(update,60000);
+})();
+
+/* Picături de apă care alunecă pe fotografia principală, plus câteva bule de săpun */
+(function(){
+  var media=document.getElementById('heroMedia'),img=document.getElementById('heroImg'),cv=document.getElementById('rain');
+  if(!cv||!cv.getContext)return;
+  var ctx;try{ctx=cv.getContext('2d');}catch(e){return;}
+  if(!ctx)return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var weak=(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=2)||(navigator.connection&&navigator.connection.saveData);
+  var animate=!reduce&&!weak;
+  var W=0,H=0,dpr=1,cov=null,drops=[],runners=[],bubbles=[],target=0,lastW=0;
+  var raf=0,last=0,clock=0,nextRun=1.6,running=false,ready=false,TAU=Math.PI*2;
+  function rnd(a,b){return a+Math.random()*(b-a)}
+
+  function fit(){
+    var r=media.getBoundingClientRect();W=r.width;H=r.height;if(!W||!H)return;
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    var iw=img.naturalWidth,ih=img.naturalHeight,s=Math.max(W/iw,H/ih);
+    cov={s:s,dx:(W-iw*s)/2,dy:(H-ih*s)/2,iw:iw,ih:ih};
+    target=Math.min(W<600?45:110,Math.round(W*H/8500));
+    if(Math.abs(W-lastW)>2){lastW=W;seed();}
+    else drops=drops.filter(function(d){return d.y<H+10&&d.x<W+10});
+    if(!running)draw();
+  }
+  function makeDrop(x,y,r,a){
+    var big=Math.random()<.12;
+    return{x:x!=null?x:rnd(0,W),y:y!=null?y:rnd(0,H),r:r!=null?r:(big?rnd(4,6.5):rnd(1.2,3.4)),a:a!=null?a:1};
+  }
+  function seed(){
+    drops=[];for(var i=0;i<target;i++)drops.push(makeDrop());
+    runners=[];bubbles=[];
+    if(animate){var n=W<600?3:5;for(var j=0;j<n;j++)spawnBubble(true);}
+  }
+
+  function lens(x,y,r,ry){
+    var R=r*3.2,sw=2*R/cov.s,sx=(x-R-cov.dx)/cov.s,sy=(y-R-cov.dy)/cov.s;
+    sw=Math.min(sw,cov.iw,cov.ih);
+    sx=Math.max(0,Math.min(cov.iw-sw,sx));sy=Math.max(0,Math.min(cov.ih-sw,sy));
+    ctx.save();ctx.beginPath();ctx.ellipse(x,y,r,ry,0,0,TAU);ctx.clip();
+    ctx.translate(x,y);ctx.scale(1,-1);
+    ctx.drawImage(img,sx,sy,sw,sw,-r,-ry,2*r,2*ry);
+    ctx.restore();
+  }
+  function drawDrop(d,stretch){
+    var x=d.x,y=d.y,r=d.r,ry=r*(stretch||1.1);
+    ctx.globalAlpha=d.a;
+    if(r>2.3){lens(x,y,r,ry);}
+    else{ctx.fillStyle='rgba(214,236,255,.16)';ctx.beginPath();ctx.ellipse(x,y,r,ry,0,0,TAU);ctx.fill();}
+    var g=ctx.createRadialGradient(x,y+r*.15,r*.2,x,y,ry);
+    g.addColorStop(0,'rgba(6,20,38,0)');g.addColorStop(.72,'rgba(6,20,38,.1)');g.addColorStop(1,'rgba(6,20,38,.5)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.ellipse(x,y,r,ry,0,0,TAU);ctx.fill();
+    ctx.fillStyle='rgba(255,255,255,.78)';ctx.beginPath();ctx.ellipse(x-r*.32,y-ry*.42,Math.max(.5,r*.26),Math.max(.35,r*.15),-.5,0,TAU);ctx.fill();
+    if(r>3){ctx.fillStyle='rgba(214,236,255,.35)';ctx.beginPath();ctx.ellipse(x+r*.08,y+ry*.62,r*.36,r*.1,0,0,TAU);ctx.fill();}
+    ctx.globalAlpha=1;
+  }
+
+  function spawnRunner(){
+    runners.push({x:rnd(W*.04,W*.96),y:rnd(-8,H*.4),r:rnd(5.5,8.5),vy:0,hold:rnd(.2,.6),trail:0,next:rnd(10,20),a:1,wob:rnd(0,50)});
+  }
+  function spawnBubble(initial){
+    var r=rnd(9,Math.max(14,Math.min(32,W*.055)));
+    bubbles.push({x:rnd(r,W-r),y:initial?rnd(H*.35,H):H+r+rnd(0,60),r:r,vy:rnd(16,30),ph:rnd(0,TAU),pop:-1,popAt:rnd(H*.08,H*.5)});
+  }
+  function drawBubble(b){
+    var s=b.pop>=0?1+b.pop*1.6:1,a=b.pop>=0?Math.max(0,1-b.pop/.22):Math.min(1,(H+b.r-b.y)/80);
+    var r=b.r*s;ctx.globalAlpha=a*.9;
+    var f=ctx.createRadialGradient(b.x,b.y,r*.55,b.x,b.y,r);
+    f.addColorStop(0,'rgba(214,236,255,0)');f.addColorStop(1,'rgba(214,236,255,.14)');
+    ctx.fillStyle=f;ctx.beginPath();ctx.arc(b.x,b.y,r,0,TAU);ctx.fill();
+    var l=ctx.createLinearGradient(b.x-r,b.y-r,b.x+r,b.y+r);
+    l.addColorStop(0,'rgba(56,189,248,.65)');l.addColorStop(.4,'rgba(244,170,220,.35)');
+    l.addColorStop(.7,'rgba(250,220,140,.3)');l.addColorStop(1,'rgba(214,236,255,.6)');
+    ctx.strokeStyle=l;ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(b.x,b.y,r,0,TAU);ctx.stroke();
+    ctx.strokeStyle='rgba(255,255,255,.7)';ctx.lineWidth=1.6;ctx.lineCap='round';
+    ctx.beginPath();ctx.arc(b.x,b.y,r*.68,-2.5,-1.7);ctx.stroke();
+    ctx.globalAlpha=1;
+  }
+
+  function update(dt){
+    clock+=dt;
+    if(clock>nextRun&&runners.length<(W<600?2:4)){spawnRunner();nextRun=clock+rnd(1.4,3.6);}
+    for(var i=runners.length-1;i>=0;i--){
+      var u=runners[i];
+      if(u.hold>0){u.hold-=dt;}
+      else{
+        u.vy=Math.min(u.vy+260*dt,60+u.r*26);
+        if(Math.random()<dt*.5){u.hold=rnd(.08,.45);u.vy*=.15;}
+      }
+      var step=u.vy*dt;u.y+=step;u.x+=Math.sin((u.y+u.wob)/34)*step*.12;
+      u.trail+=step;
+      if(u.trail>u.next){
+        u.trail=0;u.next=rnd(9,22);
+        if(Math.random()<.75&&drops.length<target*1.6)drops.push(makeDrop(u.x+rnd(-1.5,1.5),u.y-u.r*1.4,rnd(1,2.3)*(u.r/7.5),1));
+        u.r=Math.max(3.8,u.r-.05);
+      }
+      for(var j=drops.length-1;j>=0;j--){
+        var d=drops[j];
+        if(d.y<u.y-u.r*.2)continue;
+        var dx=d.x-u.x,dy=d.y-u.y,lim=u.r+d.r*.8;
+        if(dx*dx+dy*dy<lim*lim){u.r=Math.min(10,Math.sqrt(u.r*u.r+d.r*d.r*.6));drops.splice(j,1);}
+      }
+      if(u.y-u.r*2>H)runners.splice(i,1);
+    }
+    if(drops.length<target&&Math.random()<dt*6)drops.push(makeDrop(null,null,rnd(1,2.6),0));
+    for(var k=0;k<drops.length;k++){if(drops[k].a<1)drops[k].a=Math.min(1,drops[k].a+dt*.8);}
+    var bt=W<600?4:7;
+    for(var n=bubbles.length-1;n>=0;n--){
+      var b=bubbles[n];
+      if(b.pop>=0){b.pop+=dt;if(b.pop>.22)bubbles.splice(n,1);continue;}
+      b.y-=b.vy*dt;b.x+=Math.sin(b.ph+b.y/70)*10*dt;
+      if(b.y<b.popAt)b.pop=0;
+    }
+    if(bubbles.length<bt&&Math.random()<dt*.5)spawnBubble(false);
+  }
+  function draw(){
+    if(!cov)return;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<drops.length;i++)drawDrop(drops[i]);
+    for(var j=0;j<runners.length;j++)drawDrop(runners[j],1.28);
+    for(var k=0;k<bubbles.length;k++)drawBubble(bubbles[k]);
+  }
+  function frame(t){
+    raf=requestAnimationFrame(frame);
+    var dt=last?Math.min(.05,(t-last)/1000):0;last=t;
+    update(dt);draw();
+  }
+  function start(){if(running||!ready||!animate)return;running=true;last=0;raf=requestAnimationFrame(frame);}
+  function stop(){running=false;cancelAnimationFrame(raf);}
+
+  function init(){
+    if(!img.naturalWidth)return;
+    ready=true;fit();
+    if(!animate){draw();return;}
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es[0].isIntersecting?start():stop();}).observe(media);
+    }else start();
+  }
+  var pend=false;
+  function onResize(){if(pend||!ready)return;pend=true;requestAnimationFrame(function(){pend=false;fit();});}
+  if('ResizeObserver' in window)new ResizeObserver(onResize).observe(media);
+  else window.addEventListener('resize',onResize);
+
+  /* Cu mouse-ul, ștergi picăturile ca pe un geam aburit */
+  media.addEventListener('pointermove',function(e){
+    if(e.pointerType!=='mouse'||!ready)return;
+    var r=media.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+    var before=drops.length;
+    drops=drops.filter(function(d){var dx=d.x-x,dy=d.y-y;return dx*dx+dy*dy>480;});
+    if(!running&&drops.length!==before)draw();
+  });
+
+  if(img.complete&&img.naturalWidth)init();
+  else img.addEventListener('load',init);
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
