@@ -292,6 +292,13 @@ html{scroll-behavior:auto}
 .nav-shell{background:#fff;border-bottom:2px solid #111;backdrop-filter:none;-webkit-backdrop-filter:none}
 .button.ghost{border-color:#fff}
 }
+/* reparat: «flex:1» anula înălțimea ramei pe telefon, iar arcada se strângea la lățime zero */
+.hero-photo .photo{flex:1 0 auto}
+.arch-wrap{width:100%}
+/* firma de pe perete e o poză lată: rama ia forma ei, ca numele să se vadă întreg */
+.hero-photo .photo{flex:0 0 auto;height:auto!important;min-height:0!important;aspect-ratio:1206/256}
+.hero-photo{justify-content:center;gap:1rem}
+.hero-photo .caption{position:static!important;align-self:flex-start;transform:none!important}
 </style>
 <style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
 </head>
