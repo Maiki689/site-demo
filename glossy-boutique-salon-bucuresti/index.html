@@ -1,408 +1,95 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta name="generator" content="jarvis-v1">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Glossy Boutique Salon, București — coafat, manichiură, make-up și îngrijire. Deschis non-stop, pe Șoseaua Mihai Bravu 110.">
-  <title>Glossy Boutique Salon — Frumusețea ta, prioritatea noastră</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--accent:#b45309;--ink:#171717;--muted:#626262;--line:#dedede;--soft:#f7f7f7;--title:'Unbounded',sans-serif;--body:'Manrope',sans-serif}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:100px}
-    body{margin:0;background:#fff;color:var(--ink);font-family:var(--body);line-height:1.65}
-    button,a{-webkit-tap-highlight-color:transparent}
-    a{color:inherit}
-    button{font:inherit}
-    img{display:block;width:100%;height:100%;object-fit:cover}
-    svg{display:block}
-    ::selection{background:var(--accent);color:white}
-    :focus-visible{outline:3px solid var(--accent);outline-offset:5px}
-    .skip{position:fixed;top:8px;left:8px;transform:translateY(-150%);padding:12px;background:#fff;z-index:100}
-    .skip:focus{transform:none}
-    .wrap{width:min(1400px,calc(100% - 80px));margin:auto}
-    header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;backdrop-filter:blur(16px)}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:90px}
-    .brand{text-decoration:none;line-height:1.15;flex-shrink:0}
-    .brand strong{font-family:var(--title);font-size:25px;letter-spacing:-1.3px}
-    .brand span{display:block;font-size:10px;letter-spacing:3px;margin-top:5px;font-weight:700}
-    .nav-links{display:flex;align-items:center;gap:30px}
-    .nav-links>a{font-size:13px;font-weight:700;text-decoration:none;position:relative}
-    .nav-links>a:not(.nav-cta)::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
-    .nav-links>a:hover::after{transform:scaleX(1)}
-    .nav-cta{padding:12px 19px;border:1px solid var(--ink);transition:background .2s,color .2s}
-    .nav-cta:hover{background:var(--ink);color:white}
-    .menu-toggle{display:none;border:1px solid var(--line);background:white;padding:10px 14px;font-weight:700}
-    main{padding:30px 0 0}
-    .chapter{position:relative;margin-bottom:38px;padding:38px;border:1px solid #c9c9c9;background:#fff;isolation:isolate;scroll-margin-top:115px}
-    .chapter::before{content:"";position:absolute;inset:8px;border:1px solid #ededed;pointer-events:none;z-index:-1}
-    .bulbs{position:absolute;pointer-events:none;display:flex;justify-content:space-around;z-index:2}
-    .bulbs.top,.bulbs.bottom{left:24px;right:24px;height:10px}
-    .bulbs.top{top:-5px}.bulbs.bottom{bottom:-5px}
-    .bulbs.left,.bulbs.right{top:28px;bottom:28px;flex-direction:column;width:10px}
-    .bulbs.left{left:-5px}.bulbs.right{right:-5px}
-    .bulbs i{display:block;width:10px;height:10px;flex-shrink:0;border-radius:50%;background:#fff;border:1px solid #ccc;box-shadow:0 0 9px #b453091a;transition:box-shadow .5s,border-color .5s}
-    .chapter:hover .bulbs i{border-color:#d3b599;box-shadow:0 0 12px #b4530933}
-    .chapter-head{display:flex;justify-content:space-between;align-items:flex-start;gap:25px;border-bottom:1px solid var(--line);padding-bottom:22px;margin-bottom:36px}
-    .label{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:800;display:flex;align-items:center;gap:12px}
-    .label::before{content:"";width:7px;height:7px;background:var(--accent);border-radius:50%;flex-shrink:0}
-    .number{font-family:var(--title);font-weight:400;line-height:1;font-size:58px;letter-spacing:-4px}
-    h1,h2,h3,p{margin-top:0}
-    h1,h2,h3{font-family:var(--title);font-weight:500}
-    h1{font-size:clamp(34px,4.5vw,68px);line-height:1.18;letter-spacing:-3px;margin-bottom:28px}
-    h2{font-size:clamp(27px,3vw,43px);line-height:1.3;letter-spacing:-1.8px;margin-bottom:24px}
-    h3{font-size:16px;line-height:1.5;letter-spacing:-.5px}
-    p{font-size:15px}
-    .muted{color:var(--muted)}
-    .button{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;padding:17px 23px;text-decoration:none;font-size:13px;font-weight:800;border:1px solid var(--ink);background:var(--ink);color:#fff;transition:background .25s,transform .25s,border-color .25s}
-    .button:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-3px)}
-    .button.light{background:white;color:var(--ink);border-color:var(--line)}
-    .button.light:hover{border-color:var(--ink)}
-    .arrow{font-size:23px;line-height:1;font-weight:400}
-    .hero{overflow:hidden}
-    .hero .chapter-head{position:relative;z-index:2}
-    .hero-layout{display:grid;grid-template-columns:1.1fr 1fr;gap:45px;align-items:center;position:relative;z-index:1}
-    .hero-copy{padding:18px 0}
-    .hero-copy>p{max-width:350px;font-size:16px;margin-bottom:28px}
-    .accent{color:var(--accent)}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-    .hero-photo{margin:0;position:relative}
-    .hero-photo .photo-window{height:505px;overflow:hidden;border:1px solid var(--line);padding:7px;background:white}
-    .hero-photo img{object-position:center;transition:transform 1s}
-    .hero-photo:hover img{transform:scale(1.035)}
-    .photo-caption{display:flex;justify-content:space-between;gap:16px;font-size:10px;text-transform:uppercase;letter-spacing:1.4px;margin-top:13px}
-    .hero-bottom{display:grid;grid-template-columns:1fr 1fr;margin-top:35px;border-top:1px solid var(--line);padding-top:22px;gap:20px;font-size:12px}
-    .open-status{display:flex;align-items:center;gap:9px;font-weight:700}
-    .open-status i{height:7px;width:7px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px #b4530910}
-    .hero-address{text-align:right;color:var(--muted)}
-    .serum-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-    .drop{position:absolute;width:22px;height:34px;border:1px solid #b453092b;border-radius:70% 30% 65% 35% / 65% 35% 65% 35%;background:linear-gradient(135deg,#fff0,#b453090d);box-shadow:inset 3px 2px 5px #fff;animation:slide-oil 18s linear infinite;opacity:.65}
-    .drop:nth-child(1){left:35%;top:-50px;animation-delay:-4s;width:40px;height:60px}
-    .drop:nth-child(2){left:8%;top:-60px;animation-delay:-13s}
-    .drop:nth-child(3){left:47%;top:-50px;animation-delay:-8s;width:16px;height:26px}
-    .drop:nth-child(4){left:93%;top:-60px;animation-delay:-2s;width:30px;height:47px}
-    @keyframes slide-oil{0%{transform:translateY(-60px) rotate(-22deg)}100%{transform:translateY(950px) rotate(10deg)}}
-    .about-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px}
-    .about-copy p{max-width:530px;color:var(--muted);font-size:16px}
-    .oil-panel{min-height:350px;background:var(--accent);color:white;padding:32px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
-    .oil-panel .mini{font-size:10px;letter-spacing:2px;text-transform:uppercase}
-    .oil-panel strong{font-family:var(--title);font-size:48px;font-weight:400;letter-spacing:-3px;position:relative;z-index:1}
-    .oil-panel p{margin:6px 0 0;position:relative;z-index:1;max-width:270px}
-    .oil-art{position:absolute;width:200px;height:260px;right:22px;top:27px;opacity:.75}
-    .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px;border-top:1px solid var(--line);padding-top:30px}
-    .benefit{border-left:2px solid var(--accent);padding-left:18px}
-    .benefit h3{font-size:13px;margin-bottom:9px}
-    .benefit p{font-size:13px;color:var(--muted);margin-bottom:0}
-    .services-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px}
-    .services-intro p{color:var(--muted);max-width:300px}
-    .service-photo{height:275px;margin:30px 0 0;overflow:hidden}
-    .service-photo img{transition:transform .8s}
-    .service-photo:hover img{transform:scale(1.04)}
-    .service{display:grid;grid-template-columns:30px 1fr 22px;gap:16px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .3s}
-    .service:first-child{border-top:1px solid var(--line)}
-    .service:hover{padding-left:12px}
-    .service-index{font-size:11px;color:var(--accent);font-weight:800;padding-top:4px}
-    .service h3{font-size:17px;margin-bottom:6px}
-    .service p{font-size:13px;color:var(--muted);margin:0}
-    .service .spark{color:var(--accent);font-size:23px}
-    .gallery-title{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:30px}
-    .gallery-title h2{margin:0}
-    .gallery-title p{font-size:12px;max-width:230px;margin:0;color:var(--muted)}
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .gallery-card{margin:0}
-    .gallery-image{padding:0;display:block;width:100%;border:0;background:var(--soft);position:relative;cursor:zoom-in;overflow:hidden;aspect-ratio:4/5}
-    .gallery-image img{transition:transform .65s,filter .65s}
-    .gallery-image:hover img{transform:scale(1.055)}
-    .zoom{position:absolute;right:12px;bottom:12px;width:35px;height:35px;background:white;display:grid;place-items:center;font-size:22px;transition:background .25s,color .25s}
-    .gallery-image:hover .zoom{background:var(--accent);color:white}
-    .gallery-card figcaption{padding-top:15px;display:flex;justify-content:space-between;font-size:12px;font-weight:700}
-    .gallery-card figcaption span{font-size:10px;color:var(--muted);font-weight:500}
-    .visit-banner{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:30px;background:var(--accent);color:white;margin-bottom:35px}
-    .visit-banner h3{font-size:23px;margin:0}
-    .visit-banner p{margin:0;align-self:center;font-size:14px}
-    .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
-    .contact-info h2{margin-bottom:28px}
-    .contact-detail{padding:18px 0;border-top:1px solid var(--line)}
-    .contact-detail small{display:block;color:var(--muted);text-transform:uppercase;font-size:10px;letter-spacing:1.8px;margin-bottom:8px}
-    .contact-detail p{margin:0}
-    .phone{font-size:25px;font-weight:600;text-decoration:none;letter-spacing:-1px}
-    .phone:hover{color:var(--accent)}
-    .contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}
-    .map{display:flex;flex-direction:column;min-height:400px;border:1px solid var(--line);background:var(--soft)}
-    .map iframe{width:100%;flex:1;min-height:330px;border:0;filter:grayscale(.8)}
-    .map a{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;text-decoration:none;font-size:12px;font-weight:800;background:#fff;border-top:1px solid var(--line)}
-    .map a:hover{color:var(--accent)}
-    footer{padding:5px 0 32px}
-    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:15px 0 26px}
-    .footer-top p{margin:0;font-size:12px;color:var(--muted)}
-    .footer-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:30px;font-size:10px;color:var(--muted)}
-    .footer-bottom p{font-size:10px;margin:0;max-width:600px}
-    .js .reveal{opacity:0;transform:perspective(1400px) rotateX(7deg) rotateY(-2deg) translateY(45px);transform-origin:center top;transition:opacity .9s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
-    .js .reveal.visible{opacity:1;transform:perspective(1400px) rotateX(0) rotateY(0) translateY(0)}
-    dialog{border:1px solid var(--line);padding:12px;background:white;max-width:min(900px,92vw);max-height:92vh}
-    dialog::backdrop{background:#111c;backdrop-filter:blur(8px)}
-    dialog img{width:auto;max-width:100%;height:auto;max-height:76vh;object-fit:contain;margin:auto}
-    .dialog-bar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:10px 2px 0}
-    .dialog-bar p{font-size:12px;margin:0}
-    .dialog-bar button{cursor:pointer;padding:8px 13px;border:1px solid var(--line);background:#fff}
-    @media(min-width:1500px){h1{font-size:70px}}
-    @media(max-width:1100px){
-      .wrap{width:calc(100% - 48px)}.chapter{padding:28px}.nav-links{gap:19px}
-      .hero-layout{gap:28px}.hero-photo .photo-window{height:460px}h1{letter-spacing:-2px}
-      .hero-actions{flex-direction:column;align-items:flex-start}.about-grid,.services-grid{gap:30px}.service h3{font-size:15px}
-    }
-    @media(max-width:760px){
-      html{scroll-padding-top:85px}.wrap{width:calc(100% - 32px)}.nav{min-height:74px}.brand strong{font-size:22px}
-      .menu-toggle{display:block}.nav-links{display:none;position:absolute;top:74px;left:0;right:0;padding:25px;background:white;border-bottom:1px solid var(--line);align-items:stretch;gap:22px}
-      .nav-links.open{display:flex;flex-direction:column}.nav-links a{font-size:15px}.nav-cta{text-align:center}
-      main{padding-top:22px}.chapter{padding:24px 19px;margin-bottom:28px}.chapter-head{padding-bottom:17px;margin-bottom:26px}
-      .number{font-size:43px;letter-spacing:-3px}.label{font-size:9px;letter-spacing:1.4px}
-      .hero-layout,.about-grid,.services-grid,.contact-grid{grid-template-columns:1fr;gap:28px}
-      h1{font-size:clamp(34px,7.9vw,54px);letter-spacing:-1.8px;max-width:560px}
-      h2{font-size:28px;letter-spacing:-1px}.hero-copy{padding:0}.hero-copy>p{font-size:15px}
-      .hero-actions{flex-direction:row}.button{padding:15px 17px;font-size:12px;gap:15px}
-      .hero-photo .photo-window{height:380px}.hero-bottom{grid-template-columns:1fr;gap:12px;margin-top:25px}.hero-address{text-align:left}
-      .oil-panel{min-height:280px}.oil-panel strong{font-size:43px}.oil-art{width:150px;right:18px}
-      .benefits{grid-template-columns:1fr;gap:23px;margin-top:28px;padding-top:25px}.benefit h3{margin-bottom:5px}
-      .service-photo{height:260px}.service{padding:21px 0;gap:11px;grid-template-columns:23px 1fr 19px}
-      .gallery-title{display:block}.gallery-title p{margin-top:15px;max-width:none}
-      .gallery-grid{grid-template-columns:1fr 1fr;gap:18px 12px}.gallery-card:last-child{grid-column:1/-1}
-      .gallery-card:last-child .gallery-image{aspect-ratio:1.5;max-height:330px}
-      .gallery-card figcaption{font-size:10px;gap:5px;flex-wrap:wrap}.gallery-card figcaption span{font-size:9px}
-      .visit-banner{grid-template-columns:1fr;gap:12px;padding:22px}.visit-banner h3{font-size:20px}
-      .map{min-height:340px}.map iframe{min-height:290px}.footer-top{align-items:flex-start}.footer-top p{max-width:130px;text-align:right}
-      .footer-bottom{flex-direction:column;gap:10px}.contact-actions{flex-direction:column;align-items:stretch}
-    }
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}
-      .js .reveal{opacity:1;transform:none}.drop{top:25%!important}.drop:nth-child(2){top:60%!important}.drop:nth-child(3){top:80%!important}
-    }
-  </style>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fa8ac5">
+<meta name="description" content="Glossy Boutique Salon, București — coafat, manichiură, make-up și îngrijire. Deschis non-stop, pe Șoseaua Mihai Bravu 110.">
+<title>Glossy Boutique Salon — Frumusețea ta, prioritatea noastră</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#fa8ac5;--pale:#ffe6f3;--paper:#fff7fb;--ink:#191519;--muted:#685b65;--line:#ddcbd6;--title:'Unbounded',sans-serif;--body:'Manrope',sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:7rem}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.5;letter-spacing:0}a{color:inherit}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}img{display:block;width:100%;height:100%;object-fit:cover}figure,p,h1,h2,h3{margin:0}h1,h2,h3{font-family:var(--title);letter-spacing:-.025em}h2{font-size:clamp(2rem,4.2vw,3.8rem);font-weight:500;line-height:1.12}h3{line-height:1.25}::selection{background:var(--pink);color:var(--ink)}:focus-visible{outline:.2rem solid #a91e6a;outline-offset:.3rem}.wrap{width:min(82rem,calc(100% - 4rem));margin-inline:auto}.skip{position:fixed;top:1rem;left:1rem;padding:1rem;background:white;z-index:100;transform:translateY(-200%)}.skip:focus{transform:none}.eyebrow{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;font-weight:800;display:flex;gap:.7rem;align-items:center}.eyebrow::before{content:'';width:.45rem;height:.45rem;border-radius:50%;background:currentColor;flex-shrink:0}.muted{color:var(--muted)}
+header{position:sticky;top:0;z-index:30;background:rgba(255,247,251,.82);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid #fff9;transition:opacity .2s}header.scrolled{box-shadow:0 .6rem 2rem #3010220e}.nav{min-height:5.7rem;display:flex;justify-content:space-between;align-items:center;gap:2rem}.brand{display:inline-flex;flex-direction:column;text-decoration:none;flex-shrink:0}.brand strong{font-family:var(--title);font-size:1.85rem;letter-spacing:-.06em;line-height:1.05}.brand strong span{color:#b22274}.brand small{font-size:.58rem;font-weight:800;letter-spacing:.23em;margin-top:.35rem}.nav-links{display:flex;align-items:center;gap:1.8rem}.nav-links>a{font-size:.78rem;font-weight:700;text-decoration:none;min-height:2.75rem;display:flex;align-items:center}.nav-links>a:hover{color:#a31c65}.nav-links .nav-cta{background:var(--ink);color:white;border-radius:3rem;padding:.8rem 1.3rem}.menu-toggle{display:none;background:var(--ink);color:white;border:0;border-radius:2rem;min-height:2.75rem;padding:.65rem 1rem;cursor:pointer}.button{display:inline-flex;align-items:center;justify-content:center;gap:1.2rem;padding:1.05rem 1.45rem;min-height:3.25rem;border-radius:3rem;text-decoration:none;background:var(--ink);color:white;font-size:.8rem;font-weight:800;border:1px solid transparent;transition:transform .1s var(--ease),opacity .2s var(--ease)}.button:hover{opacity:.84}.button:active,.nav-cta:active,.menu-toggle:active,.gallery-image:active{transform:scale(.97)}.button.light{background:transparent;color:var(--ink);border-color:#19151945}.button.pink{background:var(--pink);color:var(--ink)}.button.white{background:white;color:var(--ink)}.arrow{font-size:1.4rem;line-height:1;font-weight:500}.actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.hero{background:var(--pink);position:relative;overflow:hidden;padding:3.5rem 0 0;border-radius:0 0 3rem 3rem}.hero-top{display:flex;justify-content:space-between;gap:1rem;margin-bottom:2.8rem}.pill{font-size:.65rem;letter-spacing:.06em;font-weight:800;border:1px solid #19151945;border-radius:2rem;padding:.55rem .8rem}.hero-grid{display:grid;grid-template-columns:1.08fr 1fr;gap:3rem;align-items:center}.hero-copy{position:relative;z-index:2;padding-bottom:2.8rem}.hero h1{font-size:clamp(2.7rem,5.5vw,5.5rem);line-height:1.06;font-weight:500;margin-bottom:1.6rem}.hero h1 span{display:block}.hero h1 .boutique{font-size:.47em;letter-spacing:-.025em;margin-top:.55rem}.slogan{font-size:clamp(1.2rem,2vw,1.65rem);line-height:1.3;font-weight:700;margin-bottom:1.1rem;max-width:24rem}.hero-copy>p:not(.slogan){font-size:.95rem;max-width:27rem;margin-bottom:1.8rem}.hero .button.light{border-color:#19151980}.hero-visual{position:relative;padding:0 1rem 2.8rem}.hero-photo{height:clamp(25rem,39vw,37rem);position:relative;border-radius:12rem 12rem 1.8rem 1.8rem;overflow:hidden;background:#e7c4d7;border:.45rem solid #fff7fb}.hero-photo img{object-position:center;transition:transform .6s var(--ease)}.hero-photo:hover img{transform:scale(1.035)}.photo-caption{position:absolute;left:1.5rem;right:1.5rem;bottom:1.4rem;font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:white;background:#191519e6;border-radius:1rem;padding:.8rem 1rem;display:flex;justify-content:space-between;gap:1rem}.chrome{position:absolute;width:9rem;height:9rem;border-radius:50%;background:radial-gradient(ellipse at 32% 24%,#fff 0%,#fff 3%,#cac7ce 14%,#77717d 25%,#fbf9fc 34%,#e9e4ec 40%,#524d58 56%,#18151e 63%,#bcb6c3 73%,#fff 82%,#68616e 94%);box-shadow:inset -.4rem -.5rem 1rem #16121b55,0 1rem 2rem #34142926;pointer-events:none;z-index:3}.chrome::after{content:'';position:absolute;inset:14% 19% 48% 14%;border-radius:50%;background:linear-gradient(135deg,#fff9,#fff0);transform:rotate(-28deg)}.chrome.hero-orb{right:-1rem;top:3rem}.chrome.small-orb{left:-2.5rem;bottom:3.5rem;width:5rem;height:5rem}.hero-bottom{display:flex;justify-content:space-between;gap:1.5rem;padding:1.4rem 0;border-top:1px solid #19151930;font-size:.75rem;position:relative;z-index:4}.open-status{display:flex;align-items:center;gap:.6rem;font-weight:800}.open-status i{width:.5rem;height:.5rem;border-radius:50%;background:var(--ink);box-shadow:0 0 0 .25rem #19151912}.ticker{overflow:hidden;background:var(--ink);color:var(--pale);padding:1.2rem 0;margin-top:1.2rem}.ticker-inner{display:flex;justify-content:center;align-items:center;gap:2.5rem;white-space:nowrap;font-family:var(--title);font-size:clamp(.85rem,1.4vw,1.2rem);letter-spacing:-.02em}.ticker b{color:var(--pink);font-size:1.5rem;font-weight:400}
+.section{padding:6rem 0}.section-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2.5rem;gap:1rem}.section-number{font-size:.75rem;letter-spacing:.1em;color:var(--muted)}.about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}.oil-panel{min-height:28rem;background:var(--ink);border-radius:2rem;padding:2.2rem;color:white;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}.oil-panel .mini{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--pale)}.oil-panel strong{font-family:var(--title);font-size:clamp(2.6rem,4vw,4rem);letter-spacing:-.025em;line-height:1.1;font-weight:500;position:relative;z-index:2}.oil-panel p{margin-top:1rem;max-width:18rem;color:#ded2dc;font-size:.9rem;position:relative;z-index:2}.oil-art{position:absolute;width:17rem;height:17rem;right:-2.5rem;top:1rem;transform:rotate(-20deg)}.about-copy h2{margin-bottom:1.6rem}.about-copy p{color:var(--muted);margin-bottom:1.1rem;max-width:34rem}.about-copy .button{margin-top:.7rem}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}.benefit{padding:1.8rem;background:#fff;border-radius:1.5rem;border:1px solid #eadce4}.benefit-icon{width:2.8rem;height:2.8rem;display:grid;place-items:center;background:var(--pale);border-radius:50%;font-size:1.2rem;margin-bottom:1.3rem}.benefit h3{font-size:.9rem;margin-bottom:.7rem}.benefit p{font-size:.85rem;color:var(--muted)}
+.services-section{background:#f5e8f0;border-radius:3rem}.services-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:5rem}.services-intro h2{margin-bottom:1.5rem}.services-intro>p{color:var(--muted);max-width:23rem}.service-photo{height:19rem;margin-top:2rem;border-radius:1.5rem;overflow:hidden;background:#e5cfde}.service-photo img{transition:transform .6s var(--ease)}.service-photo:hover img{transform:scale(1.035)}.service{position:relative;display:grid;grid-template-columns:2rem 1fr 2rem;gap:1rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid #cebac8}.service:first-child{border-top:1px solid #cebac8}.service-index{font-size:.7rem;color:#973a70;padding-top:.3rem;font-weight:800}.service h3{font-size:clamp(.95rem,1.5vw,1.15rem);margin-bottom:.6rem}.service p{font-size:.86rem;color:var(--muted)}.service .spark{font-size:1.6rem;color:#96306b;transition:transform .4s var(--ease)}.service:hover .spark{transform:rotate(45deg)}.service>div{transition:transform .4s var(--ease)}.service:hover>div{transform:translateX(.35rem)}
+.gallery-title{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem}.gallery-title p{font-size:.85rem;color:var(--muted);max-width:20rem}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.gallery-card:nth-child(2){padding-top:3rem}.gallery-image{display:block;position:relative;aspect-ratio:4/5;width:100%;padding:0;border:0;border-radius:1.6rem;overflow:hidden;cursor:zoom-in;background:#ead5e2;transition:transform .1s var(--ease)}.gallery-image img{transition:transform .55s var(--ease)}.gallery-image:hover img{transform:scale(1.045)}.zoom{position:absolute;bottom:1rem;right:1rem;width:2.8rem;height:2.8rem;display:grid;place-items:center;background:var(--ink);color:white;border-radius:50%;font-size:1.4rem;transition:transform .4s var(--ease)}.gallery-image:hover .zoom{transform:rotate(90deg)}.gallery-card figcaption{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1rem;font-size:.8rem;font-weight:700}.gallery-card figcaption span{font-size:.65rem;font-weight:500;color:var(--muted);letter-spacing:.04em}
+.contact-section{background:var(--ink);color:white;border-radius:3rem 3rem 0 0;padding-bottom:3rem}.contact-section .section-number{color:#d0bfc9}.visit-banner{background:var(--pink);color:var(--ink);display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:center;border-radius:1.7rem;padding:2.4rem;margin-bottom:3.5rem}.visit-banner h3{font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:500;line-height:1.15}.visit-banner p{font-size:.9rem;max-width:32rem}.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem}.contact-info h2{margin-bottom:2rem}.contact-detail{border-top:1px solid #ffffff25;padding:1.2rem 0}.contact-detail small{display:block;font-size:.63rem;color:#d4becd;letter-spacing:.13em;text-transform:uppercase;margin-bottom:.65rem}.contact-detail p{font-size:.95rem}.phone{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;text-decoration:none;letter-spacing:-.02em;display:inline-flex;align-items:center;min-height:2.75rem}.phone:hover{color:var(--pink)}.contact-actions{margin-top:1rem}.map{border-radius:1.7rem;overflow:hidden;background:#f5e8f0;display:flex;flex-direction:column;min-height:30rem}.map iframe{display:block;width:100%;border:0;flex:1;min-height:25rem}.map a{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.2rem 1.5rem;background:var(--pale);color:var(--ink);font-size:.8rem;font-weight:800;text-decoration:none;min-height:3rem}.map a:hover{background:var(--pink)}footer{background:var(--ink);color:white;padding:1rem 0 2rem}.footer-top{display:flex;justify-content:space-between;gap:2rem;align-items:center;padding-bottom:2rem}.footer-top .brand strong span{color:var(--pink)}.footer-top p{font-size:.8rem;color:#d4becd}.footer-bottom{display:flex;justify-content:space-between;gap:2rem;border-top:1px solid #ffffff25;padding-top:1.5rem;font-size:.65rem;letter-spacing:.025em;color:#d4becd}.footer-bottom p{max-width:35rem}.footer-bottom a{flex-shrink:0;min-height:2.75rem;display:inline-flex;align-items:flex-start}
+.reveal{opacity:1}.js .reveal{opacity:0;transform:translateY(1.25rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}.js .reveal.visible{opacity:1;transform:none}.js .intro{opacity:0;transform:translateY(1rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}.js.ready .intro{opacity:1;transform:none}.js.ready .hero-visual.intro{transition-delay:.12s}dialog{border:0;background:var(--paper);color:var(--ink);border-radius:1.5rem;padding:1rem;max-width:min(58rem,94vw);max-height:92dvh}dialog::backdrop{background:#100c13dc}dialog img{width:auto;max-width:100%;height:auto;max-height:75dvh;object-fit:contain;margin:auto;border-radius:.6rem}.dialog-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1rem}.dialog-bar p{font-size:.75rem}.dialog-bar button{border:0;background:var(--ink);color:white;min-height:2.75rem;border-radius:2rem;padding:.6rem 1rem;cursor:pointer}
+@media(min-width:1600px){.hero h1{font-size:5.5rem}}
+@media(max-width:1050px){.nav-links{gap:1rem}.nav-links>a{font-size:.7rem}.hero-grid{gap:1.5rem}.hero h1{font-size:clamp(2.5rem,5.7vw,4rem)}.about-grid,.services-grid{gap:2.5rem}.contact-grid{gap:2rem}.hero-visual{padding-inline:0}.chrome.hero-orb{right:-.5rem;width:7rem;height:7rem}.gallery-grid{gap:1rem}}
+@media(max-width:760px){.wrap{width:calc(100% - 2rem)}html{scroll-padding-top:6rem}.nav{min-height:4.6rem}.brand strong{font-size:1.55rem}.brand small{font-size:.5rem}.menu-toggle{display:block}.nav-links{display:none;position:absolute;left:1rem;right:1rem;top:4.8rem;background:var(--paper);box-shadow:0 1rem 3rem #19151920;border-radius:1.4rem;padding:1rem;gap:.25rem;align-items:stretch}.nav-links.open{display:flex;flex-direction:column}.nav-links>a{padding:.6rem .8rem;font-size:.85rem;min-height:2.8rem}.nav-links .nav-cta{justify-content:center;margin-top:.5rem}.hero{padding-top:1.8rem;border-radius:0 0 2rem 2rem}.hero-top{margin-bottom:2rem;align-items:flex-start}.hero-top .eyebrow{font-size:.57rem;max-width:12rem}.pill{font-size:.55rem;flex-shrink:0}.hero-grid,.about-grid,.services-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}.hero h1{font-size:clamp(2.4rem,10vw,4rem)}.hero-copy{padding-bottom:0}.hero-copy>p:not(.slogan){font-size:.9rem}.slogan{font-size:1.3rem}.hero .actions{flex-direction:column;align-items:stretch}.button{font-size:.77rem;padding:1rem 1.1rem}.hero-visual{padding:0 .5rem 1.5rem}.hero-photo{height:26rem;border-radius:10rem 10rem 1.3rem 1.3rem}.chrome.hero-orb{right:-.1rem;top:2.5rem;width:6rem;height:6rem}.chrome.small-orb{left:-.2rem;bottom:3rem;width:4rem;height:4rem}.photo-caption{left:.8rem;right:.8rem;bottom:.8rem;font-size:.53rem;padding:.75rem;gap:.5rem}.hero-bottom{flex-direction:column;gap:.7rem;font-size:.72rem}.ticker-inner{justify-content:flex-start;gap:1.5rem;padding-inline:1rem;font-size:.8rem}.section{padding:3.5rem 0}.section-top{margin-bottom:1.7rem}.section-top .eyebrow{font-size:.62rem}h2{font-size:clamp(1.9rem,7.5vw,3rem)}.oil-panel{min-height:23rem;padding:1.7rem;border-radius:1.5rem}.oil-panel strong{font-size:3rem}.oil-art{width:15rem;height:15rem}.benefits{grid-template-columns:1fr;gap:.75rem;margin-top:2rem}.benefit{padding:1.3rem;display:grid;grid-template-columns:2.8rem 1fr;gap:0 1rem;align-items:center}.benefit-icon{grid-row:1/3;margin:0}.benefit h3{margin-bottom:.35rem}.services-section{border-radius:2rem}.service-photo{height:15rem}.service{padding:1.45rem 0;grid-template-columns:1.5rem 1fr 1.4rem;gap:.75rem}.service h3{font-size:1rem;overflow-wrap:anywhere}.service p{font-size:.82rem}.gallery-title{display:block;margin-bottom:1.7rem}.gallery-title p{margin-top:1.2rem;max-width:27rem}.gallery-grid{grid-template-columns:1fr 1fr;gap:1.5rem .75rem}.gallery-card:nth-child(2){padding-top:1.5rem}.gallery-card:last-child{grid-column:1/-1}.gallery-card:last-child .gallery-image{aspect-ratio:4/3}.gallery-image{border-radius:1.2rem}.gallery-card figcaption{font-size:.72rem;gap:.35rem}.gallery-card figcaption span{font-size:.6rem}.contact-section{border-radius:2rem 2rem 0 0}.visit-banner{grid-template-columns:1fr;gap:1rem;padding:1.5rem;margin-bottom:2rem}.visit-banner p{font-size:.85rem}.contact-actions{flex-direction:column}.map{min-height:24rem;border-radius:1.3rem}.map iframe{min-height:20rem}.footer-top{align-items:flex-start}.footer-top p{text-align:right;font-size:.72rem}.footer-bottom{flex-direction:column;gap:1rem}.dialog-bar p{font-size:.65rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.18s!important;transition-property:opacity!important}.js .reveal,.js .intro{opacity:1;transform:none!important}.parallax{transform:none!important}.hero-photo:hover img,.gallery-image:hover img,.service-photo:hover img,.service:hover>div,.service:hover .spark,.gallery-image:hover .zoom{transform:none}}
+@media(prefers-reduced-transparency:reduce){header{background:var(--paper);backdrop-filter:none;-webkit-backdrop-filter:none}.photo-caption{background:var(--ink)}}
+@media(prefers-contrast:more){header{background:white;backdrop-filter:none;-webkit-backdrop-filter:none}.muted,.about-copy p,.service p,.gallery-title p,.benefit p{color:#45303e}.button.light{border:2px solid currentColor}.benefit{border-color:var(--ink)}.photo-caption{background:#000}.contact-detail,.footer-bottom{border-color:#ddd}.contact-detail small,.footer-bottom,.footer-top p{color:#fff}}
+</style>
 </head>
 <body>
-  <a href="#continut" class="skip">Sari la conținut</a>
-  <header>
-    <nav class="nav wrap" aria-label="Navigare principală">
-      <a class="brand" href="#acasa" aria-label="Glossy Boutique Salon — Acasă"><strong>glossy<span style="display:inline;color:var(--accent);font-size:inherit;letter-spacing:inherit">.</span></strong><span>BOUTIQUE SALON</span></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Meniu <span aria-hidden="true">＋</span></button>
-      <div class="nav-links" id="nav-links">
-        <a href="#despre">Despre noi</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#galerie">Inspirație</a>
-        <a href="#contact">Ne găsești aici</a>
-        <a class="nav-cta" href="tel:+40731342845">Sună-ne <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="continut" class="wrap">
-    <section id="acasa" class="chapter hero reveal" aria-labelledby="hero-title">
-      <div class="serum-bg" aria-hidden="true"><i class="drop"></i><i class="drop"></i><i class="drop"></i><i class="drop"></i></div>
-      <div class="chapter-head"><span class="label">Glossy Boutique Salon · București</span><span class="number" aria-hidden="true">01</span></div>
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <h1 id="hero-title">Frumusețea ta,<br>prioritatea<br><span class="accent">noastră.</span></h1>
-          <p class="muted">Un salon dedicat stilului tău. Un moment de răsfăț, în ritmul tău — la orice oră.</p>
-          <div class="hero-actions">
-            <a class="button" href="https://wa.me/40731342845?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Glossy%20Boutique%20Salon.">Programează-te pe WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
-            <a class="button light" href="#servicii">Descoperă serviciile <span class="arrow" aria-hidden="true">↓</span></a>
-          </div>
-        </div>
-        <figure class="hero-photo">
-          <div class="photo-window"><img src="img/1.jpg" alt="Moment de relaxare și îngrijire a părului într-un salon" fetchpriority="high"></div>
-          <figcaption class="photo-caption"><span>Îngrijire. Stil. Încredere.</span><span>Imagine ilustrativă</span></figcaption>
-        </figure>
-      </div>
-      <div class="hero-bottom">
-        <div class="open-status"><i aria-hidden="true"></i> Deschis non-stop · 24 de ore din 24</div>
-        <div class="hero-address">Șoseaua Mihai Bravu 110, București</div>
-      </div>
-    </section>
-
-    <section id="despre" class="chapter reveal" aria-labelledby="about-title">
-      <div class="chapter-head"><span class="label">Despre noi</span><span class="number" aria-hidden="true">02</span></div>
-      <div class="about-grid">
-        <div class="oil-panel">
-          <span class="mini">Un moment doar pentru tine</span>
-          <svg class="oil-art" viewBox="0 0 200 280" fill="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="serum" x1="35" y1="35" x2="160" y2="250" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity=".48"/><stop offset=".5" stop-color="white" stop-opacity=".04"/><stop offset="1" stop-color="#472000" stop-opacity=".3"/></linearGradient>
-            </defs>
-            <path d="M100 18C90 58 29 118 29 171C29 219 60 252 100 252C143 252 175 219 175 173C175 119 115 64 100 18Z" fill="url(#serum)" stroke="white" stroke-opacity=".6"/>
-            <path d="M58 152C45 181 51 209 75 224" stroke="white" stroke-width="4" stroke-linecap="round" opacity=".55"/>
-            <ellipse cx="103" cy="266" rx="53" ry="5" fill="#572500" opacity=".16"/>
-          </svg>
-          <div><strong>Starea<br>de bine.</strong><p>Începe cu un pic de grijă pentru tine.</p></div>
-        </div>
-        <div class="about-copy">
-          <h2 id="about-title">Răsfățul se oferă<br>cu un zâmbet.</h2>
-          <p>La Glossy Boutique Salon, ne bucurăm să îți oferim un loc în care frumusețea și relaxarea merg împreună.</p>
-          <p>Echipa noastră de profesioniști te ajută să te simți și să arăți minunat. Ascultăm ce îți dorești și folosim produse de calitate pentru rezultate sigure.</p>
-          <a class="button light" href="#contact">Hai să ne cunoaștem <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="benefits">
-        <div class="benefit"><h3>Program non-stop</h3><p>Suntem aici 24/7, în fiecare zi.</p></div>
-        <div class="benefit"><h3>Atmosferă relaxantă</h3><p>Un timp pentru liniște și răsfăț.</p></div>
-        <div class="benefit"><h3>Produse premium</h3><p>Folosim doar produse profesionale.</p></div>
-      </div>
-    </section>
-
-    <section id="servicii" class="chapter reveal" aria-labelledby="services-title">
-      <div class="chapter-head"><span class="label">Servicii</span><span class="number" aria-hidden="true">03</span></div>
-      <div class="services-grid">
-        <div class="services-intro">
-          <h2 id="services-title">Grijă pentru<br>fiecare detaliu.</h2>
-          <p>De la păr la unghii și ten, alege îngrijirea care ți se potrivește.</p>
-          <figure class="service-photo"><img src="img/2.jpg" alt="Aplicarea unui produs pentru colorarea părului, cu o pensulă profesională" loading="lazy"></figure>
-        </div>
-        <div class="service-list">
-          <article class="service"><span class="service-index">01</span><div><h3>Coafat</h3><p>Stilizare a părului pentru orice ocazie.</p></div><span class="spark" aria-hidden="true">✳</span></article>
-          <article class="service"><span class="service-index">02</span><div><h3>Manichiură &amp; pedichiură</h3><p>Îngrijire completă pentru unghii perfecte.</p></div><span class="spark" aria-hidden="true">✳</span></article>
-          <article class="service"><span class="service-index">03</span><div><h3>Make-up profesional</h3><p>Machiaj personalizat, de zi sau de seară.</p></div><span class="spark" aria-hidden="true">✳</span></article>
-          <article class="service"><span class="service-index">04</span><div><h3>Tratament facial</h3><p>Îngrijire și hidratare pentru tenul tău.</p></div><span class="spark" aria-hidden="true">✳</span></article>
-          <article class="service"><span class="service-index">05</span><div><h3>Epilare cu ceară</h3><p>Piele fină, fără compromisuri.</p></div><span class="spark" aria-hidden="true">✳</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="galerie" class="chapter reveal" aria-labelledby="gallery-title">
-      <div class="chapter-head"><span class="label">Inspirație în detalii</span><span class="number" aria-hidden="true">04</span></div>
-      <div class="gallery-title">
-        <h2 id="gallery-title">Frumusețea,<br>de aproape.</h2>
-        <p>Imagini ilustrative din lumea îngrijirii. Nu reprezintă lucrări realizate în salon.</p>
-      </div>
-      <div class="gallery-grid">
-        <figure class="gallery-card">
-          <button class="gallery-image" type="button" aria-label="Mărește fotografia de manichiură"><img src="img/3.jpg" alt="Detaliu de manichiură și unghii îngrijite" loading="lazy"><span class="zoom" aria-hidden="true">＋</span></button>
-          <figcaption>Un gest de finețe <span>01 / Unghii</span></figcaption>
-        </figure>
-        <figure class="gallery-card">
-          <button class="gallery-image" type="button" aria-label="Mărește fotografia de machiaj"><img src="img/4.jpg" alt="Aplicarea machiajului de către un make-up artist" loading="lazy"><span class="zoom" aria-hidden="true">＋</span></button>
-          <figcaption>Accente personale <span>02 / Make-up</span></figcaption>
-        </figure>
-        <figure class="gallery-card">
-          <button class="gallery-image" type="button" aria-label="Mărește portretul de frumusețe"><img src="img/5.jpg" alt="Portret feminin cu machiaj și păr aranjat" loading="lazy"><span class="zoom" aria-hidden="true">＋</span></button>
-          <figcaption>Stilul tău, firesc <span>03 / Beauty</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="contact" class="chapter reveal" aria-labelledby="contact-title">
-      <div class="chapter-head"><span class="label">Te așteptăm</span><span class="number" aria-hidden="true">05</span></div>
-      <div class="visit-banner">
-        <h3>Fără programare.<br>Fără grabă.</h3>
-        <p>Poți veni oricând dorești, suntem deschiși permanent. Iar dacă preferi să îți planifici vizita, scrie-ne pe WhatsApp.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2 id="contact-title">Fă loc unui<br>moment pentru tine.</h2>
-          <div class="contact-detail"><small>Adresa salonului</small><p>Șoseaua Mihai Bravu 110<br>București</p></div>
-          <div class="contact-detail"><small>Program</small><p>Suntem deschiși non-stop, 24 de ore din 24, în fiecare zi.</p></div>
-          <div class="contact-detail"><small>Vorbim cu drag</small><a class="phone" href="tel:+40731342845">+40 731 342 845</a></div>
-          <div class="contact-actions">
-            <a class="button" href="https://wa.me/40731342845?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Glossy%20Boutique%20Salon.">Programează-te pe WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div class="map">
-          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1276151,44.4399373,26.135615100000003,44.4439373&layer=mapnik&marker=44.4419373,26.1316151" title="Hartă cu locația Glossy Boutique Salon, Șoseaua Mihai Bravu 110, București" loading="lazy"></iframe>
-          <a href="https://www.google.com/maps/search/?api=1&query=Glossy+Boutique+Salon+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="wrap">
-    <div class="footer-top">
-      <a class="brand" href="#acasa"><strong>glossy.</strong><span>BOUTIQUE SALON</span></a>
-      <p>Frumusețea ta,<br>prioritatea noastră.</p>
-    </div>
-    <div class="footer-bottom">
-      <span>Model de site (demo)</span>
-      <p>Fotografii ilustrative de pe Pixabay: MonayHairCryotherapy, artursfoto, picjumbo_com, kaboompics, Rufiyana</p>
-      <a href="#acasa">Înapoi sus ↑</a>
-    </div>
-  </footer>
-
-  <dialog id="photo-dialog" aria-label="Fotografie mărită">
-    <img id="dialog-image" alt="">
-    <div class="dialog-bar"><p>Fotografie de stoc, ilustrativă</p><button type="button" id="close-dialog" autofocus>Închide ×</button></div>
-  </dialog>
-
-  <script>
-    (() => {
-      const chapters = document.querySelectorAll('.chapter');
-      chapters.forEach(chapter => {
-        ['top', 'bottom', 'left', 'right'].forEach(side => {
-          const lights = document.createElement('div');
-          lights.className = 'bulbs ' + side;
-          lights.setAttribute('aria-hidden', 'true');
-          const count = side === 'top' || side === 'bottom' ? 10 : 5;
-          for (let i = 0; i < count; i++) lights.appendChild(document.createElement('i'));
-          chapter.appendChild(lights);
-        });
-      });
-
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if ('IntersectionObserver' in window && !reduced.matches) {
-        document.documentElement.classList.add('js');
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.08 });
-        chapters.forEach(chapter => observer.observe(chapter));
-      }
-
-      const toggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      function closeMenu() {
-        navLinks.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-      toggle.addEventListener('click', () => {
-        const open = navLinks.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', String(open));
-      });
-      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && navLinks.classList.contains('open')) {
-          closeMenu();
-          toggle.focus();
-        }
-      });
-
-      const dialog = document.getElementById('photo-dialog');
-      const enlarged = document.getElementById('dialog-image');
-      if (typeof dialog.showModal === 'function') {
-        document.querySelectorAll('.gallery-image').forEach(button => {
-          button.addEventListener('click', () => {
-            const image = button.querySelector('img');
-            enlarged.src = image.getAttribute('src');
-            enlarged.alt = image.alt;
-            dialog.showModal();
-          });
-        });
-        document.getElementById('close-dialog').addEventListener('click', () => dialog.close());
-        dialog.addEventListener('click', event => {
-          const rect = dialog.getBoundingClientRect();
-          if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-        });
-      } else {
-        document.querySelectorAll('.gallery-image').forEach(button => {
-          button.disabled = true;
-          button.style.cursor = 'default';
-          button.querySelector('.zoom').hidden = true;
-        });
-      }
-    })();
-  </script>
+<a class="skip" href="#continut">Sari la conținut</a>
+<header>
+<nav class="nav wrap" aria-label="Navigare principală">
+<a class="brand" href="#acasa" aria-label="Glossy Boutique Salon — Acasă"><strong>glossy<span>.</span></strong><small>BOUTIQUE SALON</small></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Meniu <span aria-hidden="true">＋</span></button>
+<div class="nav-links" id="nav-links"><a href="#despre">Despre noi</a><a href="#servicii">Servicii</a><a href="#galerie">Inspirație</a><a href="#contact">Ne găsești aici</a><a class="nav-cta" href="tel:+40731342845">Sună acum ↗</a></div>
+</nav>
+</header>
+<main id="continut">
+<section class="hero" id="acasa" aria-labelledby="hero-title">
+<div class="wrap">
+<div class="hero-top intro"><span class="eyebrow">Glossy Boutique Salon · București</span><span class="pill">DESCHIS NON-STOP</span></div>
+<div class="hero-grid">
+<div class="hero-copy intro"><h1 id="hero-title"><span>Glossy</span><span class="boutique">Boutique Salon<span aria-hidden="true">.</span></span></h1><p class="slogan">Frumusețea ta,<br>prioritatea noastră.</p><p>Un salon dedicat stilului tău. Un moment de răsfăț, în ritmul tău — la orice oră.</p><div class="actions"><a class="button" href="https://wa.me/40731342845?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Glossy%20Boutique%20Salon.">Programează-te pe WhatsApp <span class="arrow" aria-hidden="true">↗</span></a><a class="button light" href="#servicii">Descoperă serviciile <span class="arrow" aria-hidden="true">↓</span></a></div></div>
+<div class="hero-visual intro"><figure class="hero-photo"><img src="img/1.jpg" alt="Îngrijire și frumusețe în salon — fotografie ilustrativă" fetchpriority="high"><figcaption class="photo-caption"><span>Îngrijire. Stil. Încredere.</span><span>Imagine ilustrativă</span></figcaption></figure><div class="chrome hero-orb parallax" aria-hidden="true" data-speed="0.035"></div><div class="chrome small-orb parallax" aria-hidden="true" data-speed="-0.025"></div></div>
+</div>
+<div class="hero-bottom intro"><div class="open-status"><i aria-hidden="true"></i>Deschis non-stop · 24 de ore din 24</div><div>Șoseaua Mihai Bravu 110, București</div></div>
+</div>
+<div class="ticker" aria-hidden="true"><div class="ticker-inner"><span>Îngrijire.</span><b>✳</b><span>Stil.</span><b>✳</b><span>Încredere.</span><b>✳</b><span>Glossy Boutique Salon.</span></div></div>
+</section>
+<section class="section wrap" id="despre" aria-labelledby="about-title">
+<div class="section-top reveal"><span class="eyebrow">Despre noi</span><span class="section-number">01 / GLOSSY</span></div>
+<div class="about-grid">
+<div class="oil-panel reveal"><span class="mini">Un moment doar pentru tine</span><svg class="oil-art" viewBox="0 0 240 240" fill="none" aria-hidden="true"><defs><linearGradient id="metal" x1="15" y1="15" x2="230" y2="225" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset=".18" stop-color="#918a98"/><stop offset=".32" stop-color="#fff"/><stop offset=".48" stop-color="#4c4654"/><stop offset=".64" stop-color="#e7e3ea"/><stop offset=".79" stop-color="#fff"/><stop offset="1" stop-color="#6c6475"/></linearGradient></defs><path d="M120 15C137 71 169 103 225 120C169 137 137 169 120 225C103 169 71 137 15 120C71 103 103 71 120 15Z" fill="url(#metal)" stroke="#ffffff70" stroke-width="2"/><path d="M120 35C127 92 148 113 205 120C148 127 127 148 120 205C113 148 92 127 35 120C92 113 113 92 120 35Z" stroke="#fff" stroke-opacity=".5"/></svg><div><strong>Starea<br>de bine.</strong><p>Începe cu un pic de grijă pentru tine.</p></div></div>
+<div class="about-copy reveal"><h2 id="about-title">Răsfățul se oferă<br>cu un zâmbet.</h2><p>La Glossy Boutique Salon, ne bucurăm să îți oferim un loc în care frumusețea și relaxarea merg împreună.</p><p>Echipa noastră de profesioniști te ajută să te simți și să arăți minunat. Ascultăm ce îți dorești și folosim produse de calitate pentru rezultate sigure.</p><a class="button light" href="#contact">Hai să ne cunoaștem <span class="arrow" aria-hidden="true">↗</span></a></div>
+</div>
+<div class="benefits"><div class="benefit reveal"><span class="benefit-icon" aria-hidden="true">⏰</span><h3>Program non-stop</h3><p>Suntem aici 24/7, în fiecare zi.</p></div><div class="benefit reveal"><span class="benefit-icon" aria-hidden="true">🌸</span><h3>Atmosferă relaxantă</h3><p>Un timp pentru liniște și răsfăț.</p></div><div class="benefit reveal"><span class="benefit-icon" aria-hidden="true">🧴</span><h3>Produse premium</h3><p>Folosim doar produse profesionale.</p></div></div>
+</section>
+<section class="section services-section" id="servicii" aria-labelledby="services-title"><div class="wrap">
+<div class="section-top reveal"><span class="eyebrow">Servicii</span><span class="section-number">02 / ÎNGRIJIRE</span></div>
+<div class="services-grid"><div class="services-intro reveal"><h2 id="services-title">Grijă pentru<br>fiecare detaliu.</h2><p>De la păr la unghii și ten, alege îngrijirea care ți se potrivește.</p><figure class="service-photo"><img src="img/2.jpg" alt="Detaliu de îngrijire profesională în salon — fotografie ilustrativă" loading="lazy"></figure></div><div class="service-list">
+<article class="service reveal"><span class="service-index">01</span><div><h3>Coafat</h3><p>Stilizare a părului pentru orice ocazie.</p></div><span class="spark" aria-hidden="true">✳</span></article>
+<article class="service reveal"><span class="service-index">02</span><div><h3>Manichiură &amp; pedichiură</h3><p>Îngrijire completă pentru unghii perfecte.</p></div><span class="spark" aria-hidden="true">✳</span></article>
+<article class="service reveal"><span class="service-index">03</span><div><h3>Make-up profesional</h3><p>Machiaj personalizat, de zi sau de seară.</p></div><span class="spark" aria-hidden="true">✳</span></article>
+<article class="service reveal"><span class="service-index">04</span><div><h3>Tratament facial</h3><p>Îngrijire și hidratare pentru tenul tău.</p></div><span class="spark" aria-hidden="true">✳</span></article>
+<article class="service reveal"><span class="service-index">05</span><div><h3>Epilare cu ceară</h3><p>Piele fină, fără compromisuri.</p></div><span class="spark" aria-hidden="true">✳</span></article>
+</div></div></div></section>
+<section class="section wrap" id="galerie" aria-labelledby="gallery-title"><div class="section-top reveal"><span class="eyebrow">Inspirație în detalii</span><span class="section-number">03 / BEAUTY</span></div><div class="gallery-title reveal"><h2 id="gallery-title">Frumusețea,<br>de aproape.</h2><p>Imagini ilustrative din lumea îngrijirii. Nu reprezintă lucrări realizate în salon.</p></div><div class="gallery-grid">
+<figure class="gallery-card reveal"><button class="gallery-image" type="button" aria-label="Mărește prima fotografie de inspirație"><img src="img/3.jpg" alt="Detaliu de frumusețe și îngrijire — fotografie ilustrativă" loading="lazy"><span class="zoom" aria-hidden="true">＋</span></button><figcaption>Un gest de finețe <span>01 / Unghii</span></figcaption></figure>
+<figure class="gallery-card reveal"><button class="gallery-image" type="button" aria-label="Mărește a doua fotografie de inspirație"><img src="img/4.jpg" alt="Machiaj profesional — fotografie ilustrativă" loading="lazy"><span class="zoom" aria-hidden="true">＋</span></button><figcaption>Accente personale <span>02 / Make-up</span></figcaption></figure>
+<figure class="gallery-card reveal"><button class="gallery-image" type="button" aria-label="Mărește a treia fotografie de inspirație"><img src="img/5.jpg" alt="Frumusețe și stil — fotografie ilustrativă" loading="lazy"><span class="zoom" aria-hidden="true">＋</span></button><figcaption>Stilul tău, firesc <span>03 / Beauty</span></figcaption></figure>
+</div></section>
+<section class="section contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap"><div class="section-top reveal"><span class="eyebrow">Te așteptăm</span><span class="section-number">04 / CONTACT</span></div><div class="visit-banner reveal"><h3>Fără programare.<br>Fără grabă.</h3><p>Poți veni oricând dorești, suntem deschiși permanent. Iar dacă preferi să îți planifici vizita, scrie-ne pe WhatsApp.</p></div><div class="contact-grid"><div class="contact-info reveal"><h2 id="contact-title">Fă loc unui<br>moment pentru tine.</h2><div class="contact-detail"><small>Adresa salonului</small><p>Șoseaua Mihai Bravu 110<br>București</p></div><div class="contact-detail"><small>Program</small><p>Suntem deschiși non-stop, 24 de ore din 24, în fiecare zi.</p></div><div class="contact-detail"><small>Vorbim cu drag</small><a class="phone" href="tel:+40731342845">+40 731 342 845</a></div><div class="actions contact-actions"><a class="button pink" href="https://wa.me/40731342845?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Glossy%20Boutique%20Salon.">Programează-te pe WhatsApp <span class="arrow" aria-hidden="true">↗</span></a><a class="button white" href="tel:+40731342845">Sună acum <span class="arrow" aria-hidden="true">↗</span></a></div></div><div class="map reveal"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1276151,44.4399373,26.135615100000003,44.4439373&layer=mapnik&marker=44.4419373,26.1316151" title="Hartă cu locația Glossy Boutique Salon, Șoseaua Mihai Bravu 110, București" loading="lazy"></iframe><a href="https://www.google.com/maps/search/?api=1&query=Glossy+Boutique+Salon+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps <span class="arrow" aria-hidden="true">↗</span></a></div></div></div></section>
+</main>
+<footer><div class="wrap"><div class="footer-top"><a class="brand" href="#acasa" aria-label="Glossy Boutique Salon — Înapoi sus"><strong>glossy<span>.</span></strong><small>BOUTIQUE SALON</small></a><p>Frumusețea ta,<br>prioritatea noastră.</p></div><div class="footer-bottom"><span>Model de site (demo)</span><p>Fotografii ilustrative de pe Pixabay: MonayHairCryotherapy, artursfoto, picjumbo_com, kaboompics, Rufiyana</p><a href="#acasa">Înapoi sus ↑</a></div></div></footer>
+<dialog id="photo-dialog" aria-label="Fotografie mărită"><img id="dialog-image" alt=""><div class="dialog-bar"><p>Fotografie de stoc, ilustrativă</p><button type="button" id="close-dialog" autofocus>Închide ×</button></div></dialog>
+<script>
+(()=>{
+const root=document.documentElement,reduced=matchMedia('(prefers-reduced-motion: reduce)'),header=document.querySelector('header');
+root.classList.add('js');requestAnimationFrame(()=>requestAnimationFrame(()=>root.classList.add('ready')));
+const items=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08});items.forEach(item=>observer.observe(item))}else items.forEach(item=>item.classList.add('visible'));
+const orbs=[...document.querySelectorAll('.parallax')],hero=document.querySelector('.hero');let pending=false;
+function updateScroll(){pending=false;header.classList.toggle('scrolled',scrollY>12);if(!reduced.matches){const rect=hero.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight){const offset=Math.min(900,Math.max(0,-rect.top));orbs.forEach(orb=>orb.style.transform='translateY('+Math.max(-24,Math.min(24,offset*Number(orb.dataset.speed)))+'px)')}}}
+addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(updateScroll)}},{passive:true});updateScroll();
+reduced.addEventListener('change',()=>{if(reduced.matches)orbs.forEach(orb=>orb.style.transform='none');else updateScroll()});
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav-links');function closeMenu(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));document.addEventListener('click',event=>{if(!header.contains(event.target))closeMenu()});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('open')){closeMenu();toggle.focus()}});matchMedia('(min-width: 761px)').addEventListener('change',closeMenu);
+const dialog=document.getElementById('photo-dialog'),image=document.getElementById('dialog-image');let opener;
+if(typeof dialog.showModal==='function'){document.querySelectorAll('.gallery-image').forEach(button=>button.addEventListener('click',()=>{opener=button;const source=button.querySelector('img');image.src=source.getAttribute('src');image.alt=source.alt;dialog.showModal()}));document.getElementById('close-dialog').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>opener?.focus());dialog.addEventListener('click',event=>{const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()})}else document.querySelectorAll('.gallery-image').forEach(button=>{button.disabled=true;button.style.cursor='default';button.querySelector('.zoom').hidden=true});
+})();
+</script>
 <script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
 </html>
