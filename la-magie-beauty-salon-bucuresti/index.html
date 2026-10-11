@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#be123c">
+  <meta name="description" content="La Magie Beauty Salon, Calea Floreasca 110, București. Tuns, coafat, vopsit și tratamente pentru păr. Programează-te pe WhatsApp.">
+  <title>La Magie Beauty Salon — București</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #be123c;
+      --rose-dark: #940d30;
+      --ink: #302631;
+      --muted: #716772;
+      --paper: #faf8fa;
+      --blush: #f1e8ee;
+      --line: #ded5de;
+      --white: #fff;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Montserrat", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: .95rem; line-height: 1.65; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.025em; line-height: 1.06; }
+    h2 { font-size: clamp(2.8rem, 5.2vw, 4.6rem); }
+    p { max-width: 65ch; }
+    :focus-visible { outline: .18rem solid var(--rose); outline-offset: .3rem; }
+    ::selection { background: var(--rose); color: white; }
+    .skip { position: fixed; top: -6rem; left: 1rem; padding: .8rem; background: white; z-index: 100; }
+    .skip:focus { top: 1rem; }
+    .shell { width: min(86rem, calc(100% - 5rem)); margin-inline: auto; }
+    .mono { font-family: var(--mono); font-size: .72rem; letter-spacing: .02em; }
+    .button {
+      min-height: 3.2rem; display: inline-flex; align-items: center; justify-content: center;
+      gap: .7rem; padding: .9rem 1.3rem; border-radius: .35rem;
+      border: 1px solid transparent; text-decoration: none; font-size: .8rem;
+      font-weight: 600; line-height: 1.45; transition: transform .1s, background .2s, box-shadow .2s;
+    }
+    .button:active, .gallery-item:active, .menu-toggle:active { transform: scale(.97); }
+    .button.primary { background: var(--rose); color: white; }
+    .button.primary:hover { background: var(--rose-dark); box-shadow: 0 .3rem 1.4rem #be123c24; }
+    .button.secondary { background: transparent; border-color: var(--line); color: var(--ink); }
+    .button.secondary:hover { background: var(--blush); }
+    .button svg { width: 1.15rem; height: 1.15rem; flex-shrink: 0; }
+    .site-header {
+      position: fixed; inset: 1rem 0 auto; z-index: 30; width: min(86rem, calc(100% - 5rem));
+      margin: auto; border-radius: .6rem; background: rgba(255,255,255,.84);
+      border-top: 1px solid #fff; backdrop-filter: blur(18px);
+      transition: box-shadow .25s;
+    }
+    .site-header.scrolled { box-shadow: 0 .4rem 2rem #30263112; }
+    .nav { min-height: 4.8rem; display: flex; align-items: center; gap: 2rem; padding: .6rem 1.4rem; }
+    .brand { text-decoration: none; display: flex; align-items: center; gap: .7rem; margin-right: auto; }
+    .brand-symbol { width: 2.1rem; height: 2.5rem; color: var(--rose); }
+    .brand-name { display: block; font-family: var(--serif); font-size: 1.8rem; line-height: 1; font-weight: 600; }
+    .brand-sub { font-size: .57rem; letter-spacing: .14em; line-height: 1.8; }
+    .nav-links { display: flex; align-items: center; gap: 1.7rem; }
+    .nav-links a { text-decoration: none; font-size: .75rem; font-weight: 600; padding-block: .6rem; }
+    .nav-links a:hover { color: var(--rose); }
+    .nav .button { min-height: 2.8rem; padding: .65rem 1rem; font-size: .73rem; }
+    .menu-toggle { display: none; background: none; border: 0; width: 2.8rem; height: 2.8rem; color: var(--ink); }
+    .hero {
+      position: relative; isolation: isolate; overflow: hidden; min-height: 51rem;
+      padding-top: 8.6rem; padding-bottom: 2rem;
+      background: linear-gradient(120deg, #f8e4ea 3%, #f7c7d9 40%, #cd8ea8 73%, #ab627f 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; opacity: .4;
+      background-image: linear-gradient(#ffffff50 1px, transparent 1px), linear-gradient(90deg, #ffffff50 1px, transparent 1px);
+      background-size: 5.5rem 5.5rem;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 1rem; z-index: -1;
+      border: 1px solid #ffffff70; border-radius: .7rem; pointer-events: none;
+    }
+    .hero-layout { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 3rem; }
+    .hero-copy { padding-block: 2rem; position: relative; z-index: 2; }
+    .location { display: inline-flex; gap: .6rem; align-items: center; margin-bottom: 2rem; color: #654652; }
+    .location svg { width: 1rem; height: 1rem; }
+    .hero h1 { font-size: clamp(4.2rem, 7vw, 7.5rem); max-width: 9ch; }
+    .hero h1 span { display: block; font-family: var(--sans); font-size: .22em; font-weight: 500; letter-spacing: .035em; line-height: 1.8; margin-top: .3rem; }
+    .slogan { font-family: var(--serif); font-size: clamp(1.85rem, 3vw, 2.7rem); line-height: 1.13; max-width: 21ch; margin: 2rem 0 1rem; }
+    .hero-description { max-width: 33ch; font-size: .88rem; color: #59414e; }
+    .hero-actions { margin-top: 2rem; display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+    .hero-actions .secondary { border-color: #865f7370; }
+    .mirror-stage { position: relative; padding: 1.8rem; width: min(100%, 31rem); justify-self: center; }
+    .hero-mirror {
+      position: relative; aspect-ratio: .72; border-radius: 50% 50% 46% 46%;
+      border: .45rem solid #eee0e7; box-shadow: 0 0 0 1px #fff8, 0 1rem 4rem #63364d26;
+      overflow: hidden; background: #b68396;
+    }
+    .hero-mirror img { object-position: center 35%; }
+    .hero-mirror::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 1.5rem #48273425; pointer-events: none; }
+    .bulbs { position: absolute; inset: 0; pointer-events: none; }
+    .bulb {
+      position: absolute; width: 1.25rem; height: 1.25rem; margin: -.625rem;
+      background: #fff7e9; border-radius: 50%; border: 1px solid #fff;
+      box-shadow: 0 0 .8rem #fff2ce, 0 0 2rem #fff3db80;
+    }
+    .bulb::after { content: ""; position: absolute; inset: -.3rem; border-radius: inherit; background: #fff3d7; opacity: .16; animation: glow 5s ease-in-out infinite alternate; }
+    .bulb:nth-child(3n)::after { animation-delay: -2s; }
+    .bulb:nth-child(2n)::after { animation-delay: -3.5s; }
+    @keyframes glow { to { opacity: .6; } }
+    .mirror-note { position: absolute; right: 0; bottom: 1.5rem; background: #f8edf4; border: 1px solid #fff; padding: .55rem .75rem; color: #634758; border-radius: .25rem; }
+    .hero-foot { margin-top: 2.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid #ffffff70; padding-top: 1.2rem; color: #59414e; }
+    .hero-foot a { text-decoration: none; font-size: .75rem; display: flex; align-items: center; gap: .6rem; min-height: 2.75rem; }
+    .hero-foot svg { width: 1.3rem; height: 1.3rem; }
+    .hero-enter { animation: hero-entry 1s var(--ease) both; }
+    .mirror-stage.hero-enter { animation-delay: .12s; }
+    .hero-foot.hero-enter { animation-delay: .22s; }
+    @keyframes hero-entry { from { opacity: 0; transform: translateY(1.2rem); } to { opacity: 1; transform: translateY(0); } }
+    .connector { height: 5rem; position: relative; overflow: hidden; }
+    .connector svg { display: block; width: 100%; height: 100%; }
+    .connector .line-reveal { transform: scaleY(0); transform-origin: center top; transition: transform .6s var(--ease); }
+    .connector.is-visible .line-reveal { transform: scaleY(1); }
+    .chapter { border: 1px solid var(--line); background: #fff; position: relative; }
+    .chapter-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .85rem 1.6rem; border-bottom: 1px solid var(--line); background: #f7f4f7; color: var(--muted); }
+    .status { display: flex; align-items: center; gap: .5rem; }
+    .status::before { content: ""; width: .4rem; height: .4rem; border-radius: 50%; background: var(--rose); }
+    .chapter-body { padding: clamp(1.5rem, 4vw, 4rem); }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+    .about-photo { aspect-ratio: .85; border-radius: 50% 50% 45% 45%; overflow: hidden; border: .5rem solid var(--blush); outline: 1px solid var(--line); outline-offset: .65rem; margin: 1rem; }
+    .about-photo img { object-position: center; transition: transform .5s var(--ease); }
+    .about-photo:hover img { transform: scale(1.035); }
+    .about-copy > p { margin-top: 1.7rem; color: var(--muted); }
+    .benefits { margin-top: 2rem; display: grid; gap: 1.1rem; }
+    .benefit { display: grid; grid-template-columns: 2.2rem 1fr; gap: .7rem; align-items: start; }
+    .benefit svg { width: 1.6rem; height: 1.6rem; color: var(--rose); margin-top: .2rem; }
+    .benefit h3 { font-family: var(--sans); font-size: .84rem; font-weight: 600; line-height: 1.5; letter-spacing: 0; }
+    .benefit p { font-size: .78rem; color: var(--muted); margin-top: .15rem; }
+    .section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: end; margin-bottom: 2.5rem; }
+    .section-heading p { max-width: 32ch; color: var(--muted); font-size: .85rem; }
+    .services { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+    .service { padding: 1.6rem 1.5rem; border-bottom: 1px solid var(--line); transition: background .2s; }
+    .service:nth-child(odd) { border-right: 1px solid var(--line); }
+    .service:last-child { grid-column: 1 / -1; border-right: none; }
+    .service:hover, .service[open] { background: #faf4f7; }
+    .service summary { display: flex; align-items: center; justify-content: space-between; list-style: none; cursor: pointer; min-height: 2.8rem; gap: 1rem; }
+    .service summary::-webkit-details-marker { display: none; }
+    .service h3 { font-size: clamp(1.7rem, 2.4vw, 2.3rem); }
+    .service-icon { width: 2rem; height: 2rem; color: var(--rose); flex-shrink: 0; }
+    .service-title { display: flex; align-items: center; gap: 1rem; }
+    .plus { width: 1.4rem; height: 1.4rem; position: relative; flex-shrink: 0; }
+    .plus::before, .plus::after { content: ""; width: .9rem; height: 1px; background: var(--rose); position: absolute; top: 50%; left: 20%; }
+    .plus::after { transform: rotate(90deg); transition: transform .25s var(--ease); }
+    .service[open] .plus::after { transform: rotate(0); }
+    .service p { font-size: .85rem; color: var(--muted); padding: 1rem 2.6rem 0 3rem; }
+    .service[open] p { animation: detail-entry .25s var(--ease); }
+    @keyframes detail-entry { from { opacity: 0; transform: translateY(-.3rem); } to { opacity: 1; transform: translateY(0); } }
+    .service-footer { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding-top: 2rem; }
+    .service-footer p { font-size: .8rem; color: var(--muted); max-width: 40ch; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.3rem; padding: 1rem .5rem; }
+    .gallery-item { display: block; border: 0; padding: 0; background: none; text-align: left; color: var(--ink); transition: transform .1s; width: 100%; }
+    .gallery-mirror { display: block; aspect-ratio: .72; border-radius: 50% 50% 46% 46%; overflow: hidden; border: .35rem solid var(--blush); outline: 1px solid var(--line); outline-offset: .45rem; position: relative; }
+    .gallery-mirror img { transition: transform .5s var(--ease); }
+    .gallery-item:hover img { transform: scale(1.045); }
+    .gallery-zoom { position: absolute; bottom: 1.3rem; left: 50%; transform: translateX(-50%); width: 2.6rem; height: 2.6rem; display: grid; place-items: center; border-radius: 50%; background: #fffffff0; color: var(--rose); box-shadow: 0 .2rem 1rem #30263118; }
+    .gallery-zoom svg { width: 1.1rem; height: 1.1rem; }
+    .gallery-label { display: block; padding-top: 1.3rem; text-align: center; font-family: var(--serif); font-size: 1.55rem; }
+    .gallery-note { margin-top: 1.8rem; color: var(--muted); text-align: center; font-size: .72rem; max-width: none; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; }
+    .contact-info { padding: clamp(1.5rem, 4vw, 4rem); }
+    .contact-info > p { margin-top: 1.25rem; color: var(--muted); font-size: .88rem; }
+    .address { margin-top: 2rem; font-style: normal; }
+    .address strong { font-weight: 600; display: block; }
+    .address span { font-size: .85rem; color: var(--muted); }
+    .hours { margin-top: 2rem; border-block: 1px solid var(--line); padding-block: 1.4rem; }
+    .hours h3 { font-size: 1.9rem; margin-bottom: .8rem; }
+    .hours dl { margin: 0; font-size: .8rem; }
+    .hours dl > div { display: flex; justify-content: space-between; gap: 1rem; padding-block: .25rem; }
+    .hours dd { margin: 0; font-family: var(--mono); font-size: .78rem; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.8rem; }
+    .phone-number { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--mono); font-size: .8rem; margin-top: 1rem; text-decoration: none; min-height: 2.75rem; }
+    .map-panel { min-height: 33rem; position: relative; border-left: 1px solid var(--line); display: flex; flex-direction: column; background: #eeebee; }
+    .map-panel iframe { flex: 1; width: 100%; min-height: 28rem; border: 0; display: block; }
+    .map-footer { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: 1rem 1.4rem; background: white; border-top: 1px solid var(--line); }
+    .map-footer a { font-weight: 600; font-size: .77rem; min-height: 2.75rem; display: inline-flex; align-items: center; }
+    footer { padding: 3rem 0 2rem; }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+    .footer-top > p { font-family: var(--serif); font-size: 1.65rem; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1.25rem; color: var(--muted); font-size: .66rem; letter-spacing: .02em; }
+    .footer-bottom p:last-child { text-align: right; }
+    .js .reveal { opacity: 0; transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .js .reveal[data-reveal="side"] { transform: translateX(-1.2rem); }
+    .js .reveal[data-reveal="scale"] { transform: scale(.98); }
+    .js .reveal[data-reveal="right"] { transform: translateX(1.2rem); }
+    .js .reveal.is-visible { opacity: 1; transform: none; }
+    dialog { border: 1px solid var(--line); background: var(--paper); padding: .8rem; width: min(45rem, calc(100% - 2rem)); max-height: 92dvh; border-radius: .5rem; color: var(--ink); }
+    dialog::backdrop { background: #211622c9; backdrop-filter: blur(8px); }
+    .lightbox-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .6rem; padding-left: .4rem; }
+    .lightbox-top p { font-family: var(--serif); font-size: 1.7rem; }
+    .close-dialog { width: 2.8rem; height: 2.8rem; background: white; border: 1px solid var(--line); border-radius: 50%; font-size: 1.5rem; }
+    .lightbox-image { width: 100%; height: auto; max-height: 72dvh; object-fit: contain; background: var(--blush); }
+    .lightbox-caption { text-align: center; font-size: .7rem; padding-top: .6rem; color: var(--muted); max-width: none; }
+    @media (min-width: 1500px) { .hero { min-height: 57rem; } }
+    @media (max-width: 1000px) {
+      .shell, .site-header { width: calc(100% - 3rem); }
+      .nav { gap: 1rem; padding-inline: 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero-layout { gap: 1.5rem; }
+      .hero { min-height: auto; }
+      .hero h1 { font-size: clamp(4rem, 9vw, 6rem); }
+      .mirror-stage { padding: 1.6rem; }
+      .bulb { width: 1rem; height: 1rem; margin: -.5rem; }
+      .about-grid { gap: 2rem; }
+      .service { padding-inline: 1rem; }
+      .service h3 { font-size: 1.8rem; }
+      .service-icon { width: 1.5rem; }
+      .gallery-grid { gap: 1.4rem; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 740px) {
+      html { scroll-padding-top: 6rem; }
+      .shell, .site-header { width: calc(100% - 2rem); }
+      .site-header { top: .65rem; }
+      .nav { min-height: 4.2rem; gap: .5rem; padding: .55rem .8rem; }
+      .brand-name { font-size: 1.55rem; }
+      .brand-symbol { width: 1.7rem; }
+      .brand-sub { font-size: .5rem; }
+      .nav > .button { font-size: .65rem; padding: .6rem .65rem; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: calc(100% + .5rem); left: 0; right: 0;
+        background: #fff; border: 1px solid var(--line); border-radius: .5rem;
+        padding: .6rem 1rem; box-shadow: 0 .7rem 1.5rem #30263112;
+      }
+      .nav-links.open { display: grid; gap: 0; }
+      .nav-links a { min-height: 2.9rem; display: flex; align-items: center; }
+      .hero { padding-top: 7rem; padding-bottom: 1rem; }
+      .hero-layout { grid-template-columns: 1fr 1fr; gap: .4rem; }
+      .hero-copy { padding: .5rem 0; }
+      .location { font-size: .65rem; margin-bottom: 1.2rem; }
+      .hero h1 { font-size: clamp(3rem, 10.5vw, 4.8rem); }
+      .slogan { font-size: 1.75rem; margin-top: 1.2rem; }
+      .hero-description { font-size: .76rem; }
+      .hero-actions { grid-column: 1 / -1; gap: .5rem; }
+      .hero-actions .button { font-size: .7rem; padding-inline: .9rem; }
+      .mirror-stage { padding: .8rem; align-self: start; margin-top: 1.8rem; }
+      .hero-mirror { border-width: .25rem; aspect-ratio: .59; }
+      .bulb { width: .65rem; height: .65rem; margin: -.325rem; }
+      .mirror-note { font-size: .5rem; bottom: .5rem; right: -.15rem; padding: .3rem; }
+      .hero-foot { margin-top: 1.7rem; align-items: start; }
+      .hero-foot .mono { font-size: .6rem; max-width: 20ch; }
+      .hero-foot a { font-size: .68rem; padding-top: 0; }
+      .connector { height: 3.5rem; }
+      .chapter-bar { padding: .7rem 1rem; font-size: .6rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-photo { width: min(70%, 18rem); justify-self: center; margin-bottom: 1.5rem; aspect-ratio: .92; }
+      .about-copy h2 { max-width: 12ch; }
+      .about-copy > p { font-size: .84rem; }
+      .section-heading { display: block; margin-bottom: 1.8rem; }
+      .section-heading p { margin-top: 1rem; max-width: 40ch; }
+      .services { grid-template-columns: 1fr; }
+      .service:nth-child(odd) { border-right: none; }
+      .service { padding: 1.2rem .2rem; }
+      .service h3 { font-size: 1.9rem; }
+      .service p { padding-left: 2.5rem; padding-right: .5rem; }
+      .service-footer { flex-direction: column; align-items: start; gap: 1rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem 1.2rem; }
+      .gallery-item:last-child { grid-column: 1 / -1; width: calc(50% - .6rem); justify-self: center; }
+      .gallery-label { font-size: 1.35rem; }
+      .gallery-zoom { width: 2.2rem; height: 2.2rem; bottom: .8rem; }
+      .map-panel { border-left: 0; border-top: 1px solid var(--line); min-height: 24rem; }
+      .map-panel iframe { min-height: 22rem; }
+      .map-footer .mono { font-size: .65rem; }
+      .contact-actions { flex-direction: column; align-items: stretch; }
+      .footer-top { align-items: start; flex-direction: column; gap: 1rem; }
+      .footer-bottom { flex-direction: column; }
+      .footer-bottom p:last-child { text-align: left; }
+    }
+    @media (max-width: 370px) {
+      .nav > .button { display: none; }
+      .hero-layout { grid-template-columns: 1fr; }
+      .mirror-stage { width: 70%; margin-top: 0; }
+      .hero-mirror { aspect-ratio: .75; }
+      .hero h1 { max-width: none; font-size: 4rem; }
+      .hero-description { max-width: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: .18s !important; }
+      .js .reveal, .js .reveal.is-visible { transform: none; }
+      .connector .line-reveal { transform: none; opacity: 0; transition: opacity .18s; }
+      .connector.is-visible .line-reveal { opacity: 1; }
+      .gallery-item:hover img, .about-photo:hover img { transform: none; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .site-header { background: #fff; backdrop-filter: none; }
+      dialog::backdrop { background: #302631; backdrop-filter: none; }
+    }
+    @media (prefers-contrast: more) {
+      :root { --muted: #473b47; --line: #8d7b8d; }
+      .site-header { background: white; backdrop-filter: none; border: 1px solid var(--ink); }
+      .hero-description, .hero-foot, .location { color: #302631; }
+      .chapter, .button { border-color: var(--ink); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#continut">Mergi la conținut</a>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+    <defs>
+      <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 5c0-1 1-2 2-2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 2 2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5Z" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+      <symbol id="icon-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="18" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m8 8 13 13M8 16 21 3" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="icon-drop" viewBox="0 0 24 24"><path d="M12 2S5 10 5 15a7 7 0 0 0 14 0c0-5-7-13-7-13Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 16c0 2 1 3 3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="icon-bottle" viewBox="0 0 24 24"><path d="M9 3h6v4H9zM8 7h8l2 4v10H6V11Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 13h6v4H9z" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+      <symbol id="icon-cup" viewBox="0 0 24 24"><path d="M4 9h13v5a6.5 6.5 0 0 1-13 0Zm13 1h2a3 3 0 0 1 0 6h-2M3 22h16M8 2v3m5-3v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 6v6l4 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+      <symbol id="icon-zoom" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m15 15 6 6M7 10h6m-3-3v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Navigare principală">
+      <a class="brand" href="#acasa" aria-label="La Magie Beauty Salon, acasă">
+        <svg class="brand-symbol" viewBox="0 0 36 44" aria-hidden="true"><ellipse cx="18" cy="20" rx="12" ry="17" fill="none" stroke="currentColor"/><path d="M12 40h12M18 37v3M12 28V14l6 9 6-9v14" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+        <span><span class="brand-name">La Magie</span><span class="brand-sub">BEAUTY SALON</span></span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#despre">Despre noi</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">Inspirație</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="button primary" href="tel:0744370667"><svg aria-hidden="true"><use href="#icon-phone"/></svg>Sună acum</a>
+      <button class="menu-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="nav-links">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="continut">
+    <section class="hero" id="acasa" aria-labelledby="hero-title">
+      <div class="shell">
+        <div class="hero-layout">
+          <div class="hero-copy hero-enter">
+            <p class="location mono"><svg aria-hidden="true"><use href="#icon-pin"/></svg>Floreasca, București</p>
+            <h1 id="hero-title">La Magie<span>Beauty Salon</span></h1>
+            <p class="slogan">Simte magia transformării tale.</p>
+            <p class="hero-description">Înfrumusețare cu stil, pentru orice ocazie. Un moment pentru tine, în fața oglinzii.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="https://wa.me/40744370667?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20salon.">Programează-te pe WhatsApp</a>
+              <a class="button secondary" href="#servicii">Vezi serviciile</a>
+            </div>
+          </div>
+          <div class="mirror-stage hero-enter">
+            <div class="hero-mirror">
+              <img src="img/1.jpg" alt="Portret ilustrativ al unei femei cu păr creț și machiaj elegant" fetchpriority="high" width="800" height="1100">
+            </div>
+            <div class="bulbs" aria-hidden="true">
+              <i class="bulb" style="left:50%;top:2%"></i>
+              <i class="bulb" style="left:27%;top:7%"></i>
+              <i class="bulb" style="left:73%;top:7%"></i>
+              <i class="bulb" style="left:10%;top:21%"></i>
+              <i class="bulb" style="left:90%;top:21%"></i>
+              <i class="bulb" style="left:3%;top:40%"></i>
+              <i class="bulb" style="left:97%;top:40%"></i>
+              <i class="bulb" style="left:3%;top:60%"></i>
+              <i class="bulb" style="left:97%;top:60%"></i>
+              <i class="bulb" style="left:11%;top:79%"></i>
+              <i class="bulb" style="left:89%;top:79%"></i>
+              <i class="bulb" style="left:28%;top:93%"></i>
+              <i class="bulb" style="left:72%;top:93%"></i>
+              <i class="bulb" style="left:50%;top:98%"></i>
+            </div>
+            <span class="mirror-note mono">Oglinda de inspirație</span>
+          </div>
+        </div>
+        <div class="hero-foot hero-enter">
+          <span class="mono">Calea Floreasca 110 / București</span>
+          <a href="#despre">Un timp doar pentru tine <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-5-5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector shell" aria-hidden="true">
+      <svg viewBox="0 0 1000 80" preserveAspectRatio="none"><defs><mask id="line-a"><rect class="line-reveal" width="1000" height="80" fill="white"/></mask></defs><path d="M750 0v22q0 18-18 18H268q-18 0-18 18v22" fill="none" stroke="#be123c" stroke-opacity=".4" mask="url(#line-a)"/></svg>
+    </div>
+
+    <section class="chapter shell reveal" data-reveal="side" id="despre" aria-labelledby="about-title">
+      <div class="chapter-bar mono"><span class="status">În salon</span><span>Grijă / stil / stare de bine</span></div>
+      <div class="chapter-body about-grid">
+        <figure class="about-photo">
+          <img src="img/5.jpg" alt="Detaliu ilustrativ din lumea îngrijirii și stilizării părului" loading="lazy" width="700" height="850">
+        </figure>
+        <div class="about-copy">
+          <h2 id="about-title">Frumusețea începe cu tine.</h2>
+          <p>La Magie Beauty Salon punem accent pe frumusețea și starea ta de bine. Te întâmpinăm cu servicii atente și produse profesionale, într-un ambient relaxant.</p>
+          <p>Fiecare vizită este personalizată. Pornim de la stilul tău și de la ceea ce îți dorești, pentru ca timpul petrecut la salon să fie cu adevărat al tău.</p>
+          <div class="benefits">
+            <div class="benefit"><svg aria-hidden="true"><use href="#icon-spark"/></svg><div><h3>Servicii personalizate</h3><p>Adaptate stilului și dorințelor tale.</p></div></div>
+            <div class="benefit"><svg aria-hidden="true"><use href="#icon-cup"/></svg><div><h3>Ambianță relaxantă</h3><p>O pauză plăcută, dedicată îngrijirii tale.</p></div></div>
+            <div class="benefit"><svg aria-hidden="true"><use href="#icon-bottle"/></svg><div><h3>Produse profesionale</h3><p>Folosim branduri recunoscute pentru îngrijirea părului.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector shell" aria-hidden="true">
+      <svg viewBox="0 0 1000 80" preserveAspectRatio="none"><defs><mask id="line-b"><rect class="line-reveal" width="1000" height="80" fill="white"/></mask></defs><path d="M250 0v23q0 17 17 17h466q17 0 17 17v23" fill="none" stroke="#be123c" stroke-opacity=".4" mask="url(#line-b)"/></svg>
+    </div>
+
+    <section class="chapter shell reveal" data-reveal="scale" id="servicii" aria-labelledby="services-title">
+      <div class="chapter-bar mono"><span class="status">Meniul de îngrijire</span><span>Detalii la o atingere</span></div>
+      <div class="chapter-body">
+        <div class="section-heading"><h2 id="services-title">Servicii pentru<br>stilul tău.</h2><p>O schimbare de look sau un plus de îngrijire? Alege serviciul și vezi ce îți oferim.</p></div>
+        <div class="services">
+          <details class="service" open>
+            <summary><span class="service-title"><svg class="service-icon" aria-hidden="true"><use href="#icon-scissors"/></svg><h3>Tuns și coafat</h3></span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Stilizare modernă pentru orice tip de păr.</p>
+          </details>
+          <details class="service">
+            <summary><span class="service-title"><svg class="service-icon" aria-hidden="true"><use href="#icon-drop"/></svg><h3>Vopsit păr</h3></span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Culori vibrante sau naturale, după dorința ta.</p>
+          </details>
+          <details class="service">
+            <summary><span class="service-title"><svg class="service-icon" aria-hidden="true"><use href="#icon-bottle"/></svg><h3>Tratamente păr</h3></span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Hidratare și regenerare profundă pentru părul tău.</p>
+          </details>
+          <details class="service">
+            <summary><span class="service-title"><svg class="service-icon" aria-hidden="true"><use href="#icon-spark"/></svg><h3>Aranjamente speciale</h3></span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Coafuri elegante pentru evenimentele tale.</p>
+          </details>
+          <details class="service">
+            <summary><span class="service-title"><svg class="service-icon" aria-hidden="true"><use href="#icon-clock"/></svg><h3>Styling rapid</h3></span><span class="plus" aria-hidden="true"></span></summary>
+            <p>Pregătire rapidă pentru o zi specială.</p>
+          </details>
+        </div>
+        <div class="service-footer">
+          <p>Pentru detalii și programări, scrie-ne ce serviciu îți dorești.</p>
+          <a class="button primary" href="https://wa.me/40744370667?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20salon.">Programează-te pe WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="connector shell" aria-hidden="true">
+      <svg viewBox="0 0 1000 80" preserveAspectRatio="none"><defs><mask id="line-c"><rect class="line-reveal" width="1000" height="80" fill="white"/></mask></defs><path d="M750 0v22q0 18-18 18H518q-18 0-18 18v22" fill="none" stroke="#be123c" stroke-opacity=".4" mask="url(#line-c)"/></svg>
+    </div>
+
+    <section class="chapter shell reveal" data-reveal="right" id="galerie" aria-labelledby="gallery-title">
+      <div class="chapter-bar mono"><span class="status">Oglinzi de inspirație</span><span>Fotografii ilustrative</span></div>
+      <div class="chapter-body">
+        <div class="section-heading"><h2 id="gallery-title">Cum vrei să te simți?</h2><p>Naturală, îndrăzneață, elegantă. Lasă-te inspirată pentru următoarea vizită.</p></div>
+        <div class="gallery-grid">
+          <button class="gallery-item" data-image="img/2.jpg" data-title="Eleganță" aria-label="Mărește fotografia ilustrativă: Eleganță">
+            <span class="gallery-mirror"><img src="img/2.jpg" alt="Portret feminin cu o coafură și un machiaj elegant" loading="lazy" width="600" height="800"><span class="gallery-zoom"><svg aria-hidden="true"><use href="#icon-zoom"/></svg></span></span>
+            <span class="gallery-label">Eleganță</span>
+          </button>
+          <button class="gallery-item" data-image="img/3.jpg" data-title="Personalitate" aria-label="Mărește fotografia ilustrativă: Personalitate">
+            <span class="gallery-mirror"><img src="img/3.jpg" alt="Look feminin expresiv, cu accente de culoare" loading="lazy" width="600" height="800"><span class="gallery-zoom"><svg aria-hidden="true"><use href="#icon-zoom"/></svg></span></span>
+            <span class="gallery-label">Personalitate</span>
+          </button>
+          <button class="gallery-item" data-image="img/4.jpg" data-title="Stil" aria-label="Mărește fotografia ilustrativă: Stil">
+            <span class="gallery-mirror"><img src="img/4.jpg" alt="Model feminin cu părul aranjat, într-o fotografie de stil" loading="lazy" width="600" height="800"><span class="gallery-zoom"><svg aria-hidden="true"><use href="#icon-zoom"/></svg></span></span>
+            <span class="gallery-label">Stil</span>
+          </button>
+        </div>
+        <p class="gallery-note">Imagini de inspirație, nu fotografii ale lucrărilor realizate în salon.</p>
+      </div>
+    </section>
+
+    <div class="connector shell" aria-hidden="true">
+      <svg viewBox="0 0 1000 80" preserveAspectRatio="none"><defs><mask id="line-d"><rect class="line-reveal" width="1000" height="80" fill="white"/></mask></defs><path d="M500 0v22q0 18-18 18H268q-18 0-18 18v22" fill="none" stroke="#be123c" stroke-opacity=".4" mask="url(#line-d)"/></svg>
+    </div>
+
+    <section class="chapter shell reveal" data-reveal="fade" id="contact" aria-labelledby="contact-title">
+      <div class="chapter-bar mono"><span class="status">Ne vedem în Floreasca</span><span>București</span></div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 id="contact-title">Fă loc unui<br>moment pentru tine.</h2>
+          <p>Sună-ne sau scrie-ne pe WhatsApp pentru a stabili următoarea ta vizită.</p>
+          <address class="address"><strong>Calea Floreasca 110</strong><span>București</span></address>
+          <div class="hours">
+            <h3>Program</h3>
+            <dl>
+              <div><dt>Marți – Vineri</dt><dd>09:30 – 19:00</dd></div>
+              <div><dt>Sâmbătă</dt><dd>09:00 – 15:00</dd></div>
+              <div><dt>Duminică și Luni</dt><dd>Închis</dd></div>
+            </dl>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="https://wa.me/40744370667?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20la%20salon.">Programează-te pe WhatsApp</a>
+            <a class="button secondary" href="tel:0744370667"><svg aria-hidden="true"><use href="#icon-phone"/></svg>Sună acum</a>
+          </div>
+          <a class="phone-number" href="tel:0744370667">0744 370 667</a>
+        </div>
+        <div class="map-panel">
+          <iframe title="Harta La Magie Beauty Salon, Calea Floreasca 110, București" src="https://www.openstreetmap.org/export/embed.html?bbox=26.097433499999998,44.459555599999995,26.1054335,44.4635556&layer=mapnik&marker=44.4615556,26.1014335" loading="lazy"></iframe>
+          <div class="map-footer"><span class="mono">44.4616 N / 26.1014 E</span><a href="https://www.google.com/maps/search/?api=1&query=La+Magie+Beauty+Salon+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <div class="footer-top">
+      <a class="brand" href="#acasa"><span><span class="brand-name">La Magie</span><span class="brand-sub">BEAUTY SALON</span></span></a>
+      <p>Stilul tău. Momentul tău.</p>
+    </div>
+    <div class="footer-bottom"><p>Model de site (demo)</p><p>Fotografii ilustrative de pe Pixabay: Starkvisuals, StockSnap, burnnet, congerdesign</p></div>
+  </footer>
+
+  <dialog id="lightbox" aria-labelledby="lightbox-title">
+    <div class="lightbox-top"><p id="lightbox-title">Inspirație</p><button class="close-dialog" aria-label="Închide fotografia">×</button></div>
+    <img class="lightbox-image" alt="">
+    <p class="lightbox-caption">Fotografie de stoc, ilustrativă.</p>
+  </dialog>
+
+  <script>
+    document.documentElement.classList.add('js');
+
+    const header = document.querySelector('.site-header');
+    const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    window.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.querySelector('.nav-links');
+    function closeMenu() {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Deschide meniul');
+    }
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      links.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toggle.setAttribute('aria-label', isOpen ? 'Închide meniul' : 'Deschide meniul');
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && links.classList.contains('open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', event => {
+      if (!header.contains(event.target)) closeMenu();
+    });
+
+    const observed = document.querySelectorAll('.reveal, .connector');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .08, rootMargin: '0px 0px -20px 0px' });
+      observed.forEach(element => observer.observe(element));
+    } else {
+      observed.forEach(element => element.classList.add('is-visible'));
+    }
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    let previousFocus = null;
+    document.querySelectorAll('.gallery-item').forEach(button => {
+      button.addEventListener('click', () => {
+        if (typeof lightbox.showModal !== 'function') return;
+        previousFocus = button;
+        lightboxImage.src = button.dataset.image;
+        lightboxImage.alt = button.querySelector('img').alt;
+        lightboxTitle.textContent = button.dataset.title;
+        lightbox.showModal();
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    lightbox.querySelector('.close-dialog').addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) {
+        const rect = lightbox.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right ||
+            event.clientY < rect.top || event.clientY > rect.bottom) lightbox.close();
+      }
+    });
+    lightbox.addEventListener('close', () => {
+      document.body.style.overflow = '';
+      if (previousFocus) previousFocus.focus();
+    });
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
