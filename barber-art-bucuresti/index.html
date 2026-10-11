@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c10">
+  <meta name="description" content="Barber Art, frizerie în București, pe Șoseaua Pantelimon. Tunsori bărbătești, bărbierit tradițional și îngrijirea bărbii. Programează-te pe WhatsApp.">
+  <title>Barber Art — Frizerie în București</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #080c10;
+      --panel: #11181e;
+      --white: #f7f9fb;
+      --muted: #c2cbd2;
+      --blue: #38bdf8;
+      --gold: #aa9568;
+      --ease: cubic-bezier(.2,.8,.2,1);
+      --gutter: clamp(1.5rem, 6vw, 7rem);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+    body { margin: 0; background: var(--ink); color: var(--white); font-family: "Archivo", sans-serif; line-height: 1.55; }
+    body.locked { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: .18rem solid var(--blue); outline-offset: .3rem; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2 { font-family: "Archivo Black", sans-serif; font-weight: 400; letter-spacing: -.025em; line-height: 1.07; text-wrap: balance; }
+    h2 { font-size: clamp(2.4rem, 5.3vw, 5.2rem); }
+    h3 { font-size: 1.2rem; line-height: 1.3; }
+    p { max-width: 58ch; }
+    .skip { position: fixed; top: -5rem; left: 1rem; z-index: 100; padding: .8rem 1rem; background: var(--blue); color: var(--ink); }
+    .skip:focus { top: 1rem; }
+    .nav {
+      position: fixed; z-index: 30; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+      padding: .85rem clamp(1.2rem, 4vw, 4rem);
+      background: rgba(8,12,16,.76); backdrop-filter: blur(18px);
+      border-top: 1px solid rgba(255,255,255,.16);
+      transition: box-shadow .2s;
+    }
+    .nav.scrolled { box-shadow: 0 .6rem 2rem rgba(0,0,0,.3); }
+    .brand { display: flex; align-items: center; gap: .75rem; font-family: "Archivo Black", sans-serif; font-size: 1.2rem; white-space: nowrap; }
+    .brand-mark { width: .65rem; height: 1.7rem; border: 1px solid var(--blue); border-radius: 1rem; position: relative; overflow: hidden; }
+    .brand-mark::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, transparent 0 .3rem, var(--blue) .3rem .5rem, transparent .5rem .8rem); }
+    .nav-links { display: flex; align-items: center; gap: 1.7rem; }
+    .nav-links > a:not(.button) { font-size: .9rem; font-weight: 600; padding: .5rem 0; }
+    .nav-links > a:not(.button):hover { color: var(--blue); }
+    .button {
+      display: inline-flex; justify-content: center; align-items: center; gap: .65rem;
+      min-height: 3rem; padding: .85rem 1.3rem; border: 1px solid var(--blue);
+      background: var(--blue); color: #06131a; font-size: .95rem; font-weight: 700;
+      transition: transform .1s, background .2s, box-shadow .2s; text-align: center;
+    }
+    .button:hover { background: #79d4fc; box-shadow: 0 0 1.6rem rgba(56,189,248,.15); }
+    .button:active, .menu-toggle:active, .gallery-shot:active { transform: scale(.97); }
+    .button.secondary { background: rgba(8,12,16,.65); color: var(--white); border-color: #7f8b93; }
+    .button.secondary:hover { background: var(--panel); border-color: var(--white); }
+    .button svg { width: 1.1rem; height: 1.1rem; flex: none; }
+    .menu-toggle { display: none; min-width: 2.8rem; min-height: 2.8rem; color: var(--white); background: transparent; border: 1px solid #66717a; transition: transform .1s; }
+    main { perspective: 1400px; }
+    .chapter {
+      position: relative; isolation: isolate; min-height: 100svh;
+      display: flex; align-items: center; padding: 7.5rem var(--gutter) 5rem;
+      overflow: hidden; background: var(--ink);
+      scroll-margin-top: 0;
+    }
+    .chapter-bg { position: absolute; z-index: -3; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .chapter::before {
+      content: ""; position: absolute; z-index: -2; inset: 0;
+      background: linear-gradient(90deg, rgba(8,12,16,.96) 0%, rgba(8,12,16,.83) 42%, rgba(8,12,16,.35) 100%);
+    }
+    .chapter::after { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(0deg, rgba(8,12,16,.8), transparent 28%, transparent 80%, rgba(8,12,16,.4)); }
+    .frame { position: absolute; inset: 1.15rem; border: 1px solid rgba(170,149,104,.65); pointer-events: none; z-index: 3; }
+    .hero .frame { top: 6rem; }
+    .corner { position: absolute; width: 1.1rem; height: 1.1rem; border-color: var(--gold); border-style: solid; }
+    .corner::after { content: ""; position: absolute; width: .3rem; height: .3rem; background: var(--gold); transform: rotate(45deg); }
+    .corner.tl { top: -.3rem; left: -.3rem; border-width: 1px 0 0 1px; }
+    .corner.tr { top: -.3rem; right: -.3rem; border-width: 1px 1px 0 0; }
+    .corner.bl { bottom: -.3rem; left: -.3rem; border-width: 0 0 1px 1px; }
+    .corner.br { bottom: -.3rem; right: -.3rem; border-width: 0 1px 1px 0; }
+    .tl::after { top: -.2rem; left: -.2rem; }
+    .tr::after { top: -.2rem; right: -.2rem; }
+    .bl::after { bottom: -.2rem; left: -.2rem; }
+    .br::after { bottom: -.2rem; right: -.2rem; }
+    .chapter-content { width: 100%; max-width: 88rem; margin: auto; position: relative; }
+    .hero { padding-top: 9rem; }
+    .hero::before { background: linear-gradient(90deg, rgba(8,12,16,.9), rgba(8,12,16,.55) 65%, rgba(8,12,16,.26)); }
+    .hero h1 { font-size: clamp(4.5rem, 12.5vw, 12rem); max-width: 10ch; }
+    .hero-place { margin-bottom: 1.7rem; color: var(--muted); font-size: 1rem; display: flex; align-items: center; gap: .75rem; }
+    .hero-place::before { content: ""; width: 1.7rem; height: 1px; background: var(--blue); }
+    .hero-slogan { font-size: clamp(1.35rem, 2.7vw, 2.25rem); margin-top: 1.7rem; max-width: 27ch; line-height: 1.3; font-weight: 500; }
+    .hero-description { margin-top: 1rem; color: var(--muted); font-size: 1.05rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .hero-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: clamp(3rem, 8vh, 7rem); font-size: .85rem; color: var(--muted); }
+    .scroll-link { min-height: 2.8rem; display: inline-flex; align-items: center; gap: .85rem; }
+    .scroll-link span { width: 1.1rem; height: 1.7rem; border: 1px solid var(--gold); border-radius: 1rem; position: relative; }
+    .scroll-link span::after { content: ""; position: absolute; top: .35rem; left: .45rem; width: 2px; height: .45rem; background: var(--white); }
+    .serum { position: absolute; z-index: -1; right: 8%; top: 12%; width: 13rem; height: 75%; pointer-events: none; opacity: .7; }
+    .drop { position: absolute; width: 3.4rem; height: 5rem; border-radius: 75% 25% 60% 40% / 70% 25% 75% 30%; transform: rotate(38deg); border: 1px solid rgba(201,237,253,.35); background: linear-gradient(120deg, rgba(56,189,248,.04), rgba(56,189,248,.19) 60%, rgba(240,250,255,.18)); box-shadow: inset .25rem .1rem .45rem rgba(255,255,255,.1); }
+    .drop::after { content: ""; position: absolute; left: .4rem; top: 1rem; width: .2rem; height: 1.7rem; border-radius: 50%; background: rgba(255,255,255,.45); }
+    .drop.a { right: 0; top: 10%; animation: serum-slide 8s var(--ease) both; }
+    .drop.b { left: 1rem; top: 47%; width: 1.9rem; height: 2.9rem; animation: serum-slide 9s .4s var(--ease) both; }
+    .drop.c { right: 2rem; top: 77%; width: 1rem; height: 1.6rem; animation: serum-slide 7s .8s var(--ease) both; }
+    @keyframes serum-slide { from { opacity: 0; transform: translateY(-6rem) rotate(38deg); } 20% { opacity: 1; } to { opacity: 1; transform: translateY(2rem) rotate(38deg); } }
+    @keyframes hero-in { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes image-in { from { opacity: .6; transform: scale(1.035); } to { opacity: 1; transform: scale(1); } }
+    .hero .chapter-bg { animation: image-in 1.4s var(--ease) both; }
+    .hero-place, .hero h1, .hero-slogan, .hero-description, .hero .actions, .hero-bottom { animation: hero-in .8s var(--ease) both; }
+    .hero h1 { animation-delay: .1s; }
+    .hero-slogan { animation-delay: .2s; }
+    .hero-description { animation-delay: .3s; }
+    .hero .actions { animation-delay: .4s; }
+    .hero-bottom { animation-delay: .5s; }
+    .text-column { max-width: 44rem; }
+    .intro { margin-top: 1.7rem; font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--muted); }
+    .about .chapter-bg { object-position: 65% center; }
+    .benefits { margin-top: 3rem; display: grid; gap: 1.5rem; }
+    .benefit { display: grid; grid-template-columns: 2.7rem 1fr; gap: .75rem; align-items: start; }
+    .benefit svg { width: 1.8rem; height: 1.8rem; color: var(--blue); margin-top: .15rem; }
+    .benefit p { color: var(--muted); margin-top: .2rem; }
+    .services::before { background: linear-gradient(90deg, rgba(8,12,16,.97), rgba(8,12,16,.88) 60%, rgba(8,12,16,.5)); }
+    .services-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(3rem, 7vw, 8rem); align-items: start; }
+    .service-list { border-top: 1px solid #66717a; }
+    .service { padding: 1.6rem 0; border-bottom: 1px solid #66717a; }
+    .service h3 { font-size: clamp(1.25rem, 2vw, 1.7rem); font-weight: 600; }
+    .service p { margin-top: .5rem; color: var(--muted); }
+    .service:hover h3 { color: var(--blue); }
+    .service-note { margin-top: 1.5rem; color: var(--muted); font-size: .9rem; }
+    .gallery::before { background: rgba(8,12,16,.86); }
+    .gallery-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: end; margin-bottom: 2.5rem; }
+    .gallery-heading p { max-width: 32ch; color: var(--muted); }
+    .gallery-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 1rem; }
+    .gallery-shot { position: relative; border: 1px solid rgba(170,149,104,.65); padding: .45rem; background: #0b1014; color: var(--white); overflow: hidden; transition: transform .1s, border-color .2s; }
+    .gallery-shot img { width: 100%; height: clamp(17rem, 32vw, 28rem); object-fit: cover; transition: transform .5s var(--ease); }
+    .gallery-shot:hover { border-color: var(--blue); }
+    .gallery-shot:hover img { transform: scale(1.035); }
+    .zoom-label { position: absolute; bottom: 1rem; right: 1rem; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; background: var(--ink); color: var(--white); font-size: 1.5rem; }
+    .gallery-caption { margin-top: 1rem; color: var(--muted); font-size: .85rem; }
+    .contact::before { background: rgba(8,12,16,.9); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+    .contact h2 { max-width: 10ch; }
+    address { font-style: normal; margin-top: 2rem; font-size: 1.15rem; }
+    address a { display: inline-block; font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 600; margin-top: .8rem; }
+    address a:hover { color: var(--blue); }
+    .map-shell { background: var(--panel); border: 1px solid var(--gold); padding: .5rem; }
+    .map-shell iframe { display: block; border: 0; width: 100%; height: 23rem; background: #dce2e5; }
+    .map-bottom { padding: 1rem .65rem .5rem; display: flex; justify-content: space-between; gap: 1rem; align-items: center; }
+    .map-bottom span { color: var(--muted); font-size: .9rem; }
+    .map-bottom a { min-height: 2.75rem; display: inline-flex; align-items: center; font-size: .9rem; font-weight: 600; color: var(--blue); }
+    footer { padding: 2rem var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; color: var(--muted); font-size: .8rem; letter-spacing: .015em; }
+    footer .footer-brand { font-family: "Archivo Black", sans-serif; color: var(--white); font-size: 1rem; }
+    footer p { max-width: 60ch; }
+    .js .reveal { opacity: 0; transform: rotateY(-4deg) rotateX(1deg) scale(.98); transform-origin: left center; transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .js .reveal.from-right { transform: rotateY(4deg) rotateX(-1deg) scale(.98); transform-origin: right center; }
+    .js .reveal.flat { transform: rotateX(3deg) scale(.985); transform-origin: center bottom; }
+    .js .reveal.visible { opacity: 1; transform: none; }
+    dialog { border: 1px solid var(--gold); padding: 1rem; background: var(--ink); color: var(--white); width: min(65rem, 94vw); max-height: 94svh; }
+    dialog::backdrop { background: rgba(0,0,0,.9); }
+    .dialog-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .dialog-top p { font-size: .9rem; color: var(--muted); }
+    .dialog-close { background: var(--panel); border: 1px solid #66717a; color: var(--white); min-height: 2.8rem; padding: .5rem 1rem; }
+    .dialog-photo { width: 100%; height: min(72svh, 45rem); object-fit: contain; }
+    @media (min-width: 1600px) { .chapter { min-height: 58rem; } }
+    @media (max-width: 900px) {
+      .nav-links { gap: 1rem; }
+      .nav-links > a:not(.button) { font-size: .8rem; }
+      .nav .button { padding: .65rem .85rem; font-size: .8rem; }
+      .services-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .service-list { max-width: 45rem; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact h2 { max-width: 15ch; }
+      .map-shell { max-width: 48rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-shot:first-child { grid-column: 1 / -1; }
+      .gallery-shot:first-child img { height: 23rem; }
+    }
+    @media (max-width: 640px) {
+      .nav { padding: .7rem 1.2rem; }
+      .brand { font-size: 1.05rem; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem 1.5rem 1.5rem; background: #0c1218; }
+      .nav-links.open { display: flex; flex-direction: column; align-items: stretch; gap: .25rem; }
+      .nav-links > a:not(.button) { font-size: 1rem; padding: .8rem 0; }
+      .nav .button { font-size: .95rem; margin-top: .5rem; }
+      .chapter { padding: 6rem 1.8rem 3.5rem; }
+      .hero { padding-top: 8rem; }
+      .frame { inset: .7rem; }
+      .hero .frame { top: 5rem; }
+      .hero h1 { font-size: clamp(4rem, 19vw, 7rem); max-width: 6ch; }
+      .hero-slogan { max-width: 23ch; }
+      .hero::before { background: rgba(8,12,16,.72); }
+      .chapter::before { background: rgba(8,12,16,.86); }
+      .hero .chapter-bg { object-position: 62% center; }
+      .serum { right: 5%; width: 5rem; opacity: .45; }
+      .hero-bottom { align-items: start; flex-direction: column; margin-top: 2.8rem; }
+      .actions { flex-direction: column; align-items: stretch; }
+      .actions .button { width: 100%; }
+      .gallery-heading { align-items: start; flex-direction: column; gap: 1rem; }
+      .gallery-grid { gap: .65rem; }
+      .gallery-shot img { height: 14rem; }
+      .gallery-shot:first-child img { height: 21rem; }
+      .map-shell iframe { height: 19rem; }
+      .map-bottom { flex-direction: column; align-items: start; gap: .25rem; }
+      footer { padding: 1.8rem; flex-direction: column; align-items: start; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .nav { background: var(--ink); backdrop-filter: none; }
+      .button.secondary { background: var(--ink); }
+    }
+    @media (prefers-contrast: more) {
+      :root { --muted: #fff; --gold: #d4bd86; }
+      .nav { background: var(--ink); backdrop-filter: none; }
+      .chapter::before, .hero::before { background: rgba(0,0,0,.92); }
+      .frame, .gallery-shot, .service, .service-list { border-color: #d4bd86; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .2s !important; animation-delay: 0s !important; transition-duration: .2s !important; }
+      .hero .chapter-bg, .hero-place, .hero h1, .hero-slogan, .hero-description, .hero .actions, .hero-bottom, .drop { animation: none; }
+      .js .reveal, .js .reveal.from-right, .js .reveal.flat { transform: none; }
+      .gallery-shot:hover img { transform: none; }
+      .button:active, .menu-toggle:active, .gallery-shot:active { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#continut">Mergi la conținut</a>
+  <header class="nav">
+    <a class="brand" href="#acasa" aria-label="Barber Art, începutul paginii">
+      <span class="brand-mark" aria-hidden="true"></span>Barber Art
+    </a>
+    <button class="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false" aria-label="Deschide meniul">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navigation" aria-label="Navigare principală">
+      <a href="#despre">Despre noi</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a class="button" href="tel:0737467774">Sună acum</a>
+    </nav>
+  </header>
+
+  <main id="continut">
+    <section class="chapter hero" id="acasa" aria-labelledby="hero-title">
+      <img class="chapter-bg" src="img/1.jpg" alt="Scenă ilustrativă dintr-o frizerie, cu detalii de salon" fetchpriority="high">
+      <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="serum" aria-hidden="true"><span class="drop a"></span><span class="drop b"></span><span class="drop c"></span></div>
+      <div class="chapter-content">
+        <p class="hero-place">București, Șoseaua Pantelimon</p>
+        <h1 id="hero-title">Barber Art</h1>
+        <p class="hero-slogan">Tunsoare cu stil,<br>rapid și simplu.</p>
+        <p class="hero-description">Experiență modernă de frizerie, în inima Bucureștiului.</p>
+        <div class="actions">
+          <a class="button" href="https://wa.me/40737467774?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20la%20Barber%20Art.">Programează-te pe WhatsApp</a>
+          <a class="button secondary" href="#servicii">Vezi serviciile</a>
+        </div>
+        <div class="hero-bottom">
+          <p>Stilul tău. Atenție la fiecare detaliu.</p>
+          <a class="scroll-link" href="#despre"><span aria-hidden="true"></span>Intră în atmosfera Barber Art</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter about reveal" id="despre" aria-labelledby="about-title">
+      <img class="chapter-bg" src="img/2.jpg" alt="Frizer la lucru, într-o fotografie ilustrativă de salon" loading="lazy">
+      <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="chapter-content">
+        <div class="text-column">
+          <h2 id="about-title">O tunsoare bună.<br>O stare și mai bună.</h2>
+          <p class="intro">La Barber Art, tehnicile tradiționale întâlnesc stilul urban. Avem grijă de detalii, ca tu să pleci mulțumit și încrezător. Într-o atmosferă relaxantă, în care te simți în largul tău.</p>
+          <div class="benefits">
+            <div class="benefit">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="24" r="4"/><circle cx="24" cy="24" r="4"/><path d="M11 21 26 4M21 21 6 4M16 15v2"/></svg>
+              <div><h3>Tunsori precise</h3><p>Măiestrie la fiecare detaliu.</p></div>
+            </div>
+            <div class="benefit">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 17V7a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v10M6 14v8h20v-8M16 22v6M10 28h12M6 18h20"/></svg>
+              <div><h3>Atmosferă relaxantă</h3><p>Ia loc și simte-te ca acasă.</p></div>
+            </div>
+            <div class="benefit">
+              <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M16 8v9l6 3"/></svg>
+              <div><h3>Servicii rapide</h3><p>Grijă pentru stilul tău, fără timp pierdut.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter services reveal from-right" id="servicii" aria-labelledby="services-title">
+      <img class="chapter-bg" src="img/3.jpg" alt="Îngrijirea unei tunsori bărbătești, fotografie ilustrativă" loading="lazy">
+      <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="chapter-content services-layout">
+        <div>
+          <h2 id="services-title">Servicii.<br>De la contur<br>la finisaj.</h2>
+          <p class="intro">Clasic sau modern, alegi ce ți se potrivește. Noi avem grijă de restul.</p>
+          <div class="actions">
+            <a class="button" href="https://wa.me/40737467774?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20la%20Barber%20Art.">Programează-te pe WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <div class="service-list">
+            <article class="service"><h3>Tunsoare bărbătească</h3><p>Tunsori moderne sau clasice, pentru stilul tău.</p></article>
+            <article class="service"><h3>Bărbierit tradițional</h3><p>Ras clasic cu pămătuf și lamă.</p></article>
+            <article class="service"><h3>Aranjat barbă</h3><p>Conturare și definire, cu atenție la detalii.</p></article>
+            <article class="service"><h3>Spălat și coafat</h3><p>Spălat și aranjat după tunsoare.</p></article>
+          </div>
+          <p class="service-note">Pentru tarife și disponibilitate, scrie-ne sau sună-ne.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter gallery reveal flat" id="galerie" aria-labelledby="gallery-title">
+      <img class="chapter-bg" src="img/4.jpg" alt="" loading="lazy">
+      <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="chapter-content">
+        <div class="gallery-heading">
+          <h2 id="gallery-title">În lumea<br>frizeriei.</h2>
+          <p>Gesturi precise, contururi curate și atenție la finisaj.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-shot" type="button" data-photo="img/2.jpg" data-alt="Frizer la lucru într-un salon" aria-label="Mărește fotografia cu frizerul la lucru">
+            <img src="img/2.jpg" alt="Frizer la lucru într-un salon, imagine ilustrativă" loading="lazy">
+            <span class="zoom-label" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-shot" type="button" data-photo="img/4.jpg" data-alt="Detalii din procesul unei tunsori" aria-label="Mărește fotografia cu detaliile unei tunsori">
+            <img src="img/4.jpg" alt="Detalii din procesul unei tunsori, imagine ilustrativă" loading="lazy">
+            <span class="zoom-label" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-shot" type="button" data-photo="img/5.jpg" data-alt="Scenă de îngrijire într-o frizerie" aria-label="Mărește fotografia din frizerie">
+            <img src="img/5.jpg" alt="Scenă de îngrijire într-o frizerie, imagine ilustrativă" loading="lazy">
+            <span class="zoom-label" aria-hidden="true">+</span>
+          </button>
+        </div>
+        <p class="gallery-caption">Fotografii de stoc, ilustrative. Nu reprezintă salonul sau lucrări realizate la Barber Art.</p>
+      </div>
+    </section>
+
+    <section class="chapter contact reveal from-right" id="contact" aria-labelledby="contact-title">
+      <img class="chapter-bg" src="img/5.jpg" alt="" loading="lazy">
+      <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+      <div class="chapter-content contact-layout">
+        <div>
+          <h2 id="contact-title">Ia loc.<br>De stil ne<br>ocupăm noi.</h2>
+          <p class="intro">Scrie-ne pentru o programare sau sună-ne ca să stabilim când vii.</p>
+          <address>
+            Barber Art<br>
+            Șoseaua Pantelimon, București<br>
+            <a href="tel:0737467774">0737 467 774</a>
+          </address>
+          <div class="actions">
+            <a class="button" href="https://wa.me/40737467774?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20la%20Barber%20Art.">Programează-te pe WhatsApp</a>
+            <a class="button secondary" href="tel:0737467774">Sună acum</a>
+          </div>
+        </div>
+        <div class="map-shell">
+          <iframe title="Locația Barber Art pe hartă, Șoseaua Pantelimon, București" src="https://www.openstreetmap.org/export/embed.html?bbox=26.1589547,44.4408819,26.1669547,44.444881900000006&amp;layer=mapnik&amp;marker=44.4428819,26.1629547" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-bottom">
+            <span>Șoseaua Pantelimon, București</span>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Barber+Art+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-brand" href="#acasa">Barber Art</a>
+    <p>Fotografii ilustrative de pe Pixabay: vahidkanani, mostafa_meraji</p>
+    <p>Model de site (demo)</p>
+  </footer>
+
+  <dialog id="photo-dialog" aria-label="Fotografie ilustrativă mărită">
+    <div class="dialog-top">
+      <p>Fotografie de stoc, ilustrativă</p>
+      <button class="dialog-close" type="button">Închide</button>
+    </div>
+    <img class="dialog-photo" id="dialog-photo" alt="">
+  </dialog>
+
+  <script>
+    (() => {
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.menu-toggle');
+      const links = document.querySelector('.nav-links');
+      function setMenu(open) {
+        links.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+      }
+      toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+      links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          toggle.focus();
+        }
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 640) setMenu(false);
+      });
+      function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 20); }
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+
+      if ('IntersectionObserver' in window) {
+        document.documentElement.classList.add('js');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08, rootMargin: '0px 0px -20px 0px' });
+        document.querySelectorAll('.reveal').forEach(section => observer.observe(section));
+      }
+
+      const dialog = document.querySelector('#photo-dialog');
+      const photo = document.querySelector('#dialog-photo');
+      let trigger = null;
+      document.querySelectorAll('.gallery-shot').forEach(button => {
+        button.addEventListener('click', () => {
+          if (typeof dialog.showModal !== 'function') return;
+          trigger = button;
+          photo.src = button.dataset.photo;
+          photo.alt = button.dataset.alt + ', photographie de stoc ilustrativă'.replace('photographie', 'fotografie');
+          dialog.showModal();
+          document.body.classList.add('locked');
+        });
+      });
+      document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => {
+        const rect = dialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        document.body.classList.remove('locked');
+        if (trigger) trigger.focus({ preventScroll: true });
+      });
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
