@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ead5de">
+  <meta name="description" content="Brother's Studio, salon de frizerie și coafură pe Șoseaua Pantelimon, București. Tuns, styling, bărbierit și vopsit. Programează-te pe WhatsApp.">
+  <title>Brother's Studio — te tunzi, te simți bine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #be123c;
+      --rose-dark: #960b2d;
+      --ink: #302630;
+      --muted: #675563;
+      --pink: #ead5de;
+      --lilac: #dfdcec;
+      --blue: #d6e3e8;
+      --sage: #dce4de;
+      --line: rgba(67,43,59,.17);
+      --glass: rgba(255,255,255,.44);
+      --radius: 1.8rem;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+    body { margin: 0; background: var(--pink); color: var(--ink); font-family: "Figtree", sans-serif; line-height: 1.55; }
+    button, a, input { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Bricolage Grotesque", sans-serif; letter-spacing: -.035em; }
+    h2 { font-size: clamp(2.4rem, 4.7vw, 4.4rem); line-height: 1.08; font-weight: 600; }
+    h3 { font-size: clamp(1.4rem, 2.1vw, 1.85rem); line-height: 1.15; font-weight: 600; }
+    p { max-width: 65ch; }
+    :focus-visible { outline: 3px solid var(--rose); outline-offset: 5px; }
+    ::selection { background: var(--rose); color: white; }
+    .skip { position: fixed; z-index: 100; left: 1rem; top: 1rem; padding: .75rem 1rem; background: white; transform: translateY(-200%); }
+    .skip:focus { transform: translateY(0); }
+    .wrap { width: min( eighty, 100%); width: min(84rem, calc(100% - 6rem)); margin-inline: auto; }
+    .site-header { position: sticky; top: 1rem; z-index: 30; margin: 1rem auto 0; width: min(84rem, calc(100% - 6rem)); }
+    .nav-shell {
+      display: flex; align-items: center; gap: 2rem; padding: .7rem .85rem .7rem 1.4rem;
+      background: rgba(255,255,255,.65); backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px); border-radius: 1.25rem;
+      border: 1px solid rgba(255,255,255,.7); box-shadow: 0 .25rem 1.5rem rgba(76,45,62,.035);
+    }
+    .site-header.scrolled .nav-shell { box-shadow: 0 .5rem 2rem rgba(76,45,62,.12); }
+    .brand { display: flex; align-items: center; gap: .65rem; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.25rem; font-weight: 700; white-space: nowrap; }
+    .brand-pole { width: .75rem; height: 1.8rem; border: 1px solid var(--ink); border-radius: .3rem; background: repeating-linear-gradient(135deg, var(--rose) 0 5px, #fff 5px 10px, #647c93 10px 15px, #fff 15px 20px); }
+    .nav-links { display: flex; gap: 1.7rem; margin-left: auto; font-weight: 600; font-size: .93rem; }
+    .nav-links a { padding-block: .6rem; }
+    .nav-links a:hover { color: var(--rose); }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 3rem; padding: .8rem 1.2rem; border: 1px solid transparent; border-radius: .85rem; font-weight: 600; line-height: 1.25; cursor: pointer; transition: transform .1s, background .2s, box-shadow .2s; }
+    .button:active, .gallery-item:active { transform: scale(.97); }
+    .button.primary { background: var(--rose); color: #fff; }
+    .button.primary:hover { background: var(--rose-dark); box-shadow: 0 .35rem 1rem rgba(150,11,45,.16); }
+    .button.secondary { background: rgba(255,255,255,.45); border-color: rgba(67,43,59,.24); }
+    .button.secondary:hover { background: rgba(255,255,255,.85); }
+    .button svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+    .menu-toggle { display: none; background: none; border: 0; width: 2.8rem; height: 2.8rem; padding: .65rem; cursor: pointer; }
+    .menu-toggle span { display: block; height: 2px; background: var(--ink); margin: 5px 0; transition: transform .2s; }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+    .chapter { padding: 5.5rem 0; position: relative; }
+    .hero { padding: 1.3rem 0 4rem; }
+    .bento { display: grid; gap: 1rem; }
+    .glass { position: relative; border: 1px solid rgba(255,255,255,.75); border-radius: var(--radius); background: var(--glass); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); overflow: hidden; }
+    .glass::before { content: ""; pointer-events: none; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 1px 0 rgba(255,255,255,.85); }
+    .hero-grid { grid-template-columns: 1.3fr 1fr; grid-template-rows: minmax(29rem, auto) auto; }
+    .hero-copy { padding: clamp(2rem, 4vw, 4rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; min-height: 31rem; }
+    .location { display: flex; gap: .5rem; align-items: center; color: var(--muted); font-size: .95rem; margin-bottom: 2.2rem; }
+    .location svg { width: 1rem; height: 1rem; }
+    h1 { font-size: clamp(3.7rem, 6.8vw, 6.6rem); line-height: .96; font-weight: 700; position: relative; z-index: 1; }
+    .slogan { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.6rem, 2.7vw, 2.6rem); line-height: 1.15; letter-spacing: -.025em; margin-top: 1.5rem; }
+    .hero-intro { color: var(--muted); font-size: 1.05rem; margin-top: .8rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+    .hero-photo { grid-column: 2; grid-row: 1 / 3; min-height: 38rem; position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.8); background: #766c71; }
+    .hero-photo img { object-position: center; }
+    .image-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(29,22,28,.88); color: white; padding: .8rem 1.2rem; font-size: .8rem; letter-spacing: .015em; }
+    .hero-note { display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem 2rem; }
+    .hero-note p { max-width: 32ch; font-size: 1rem; }
+    .hero-note .note-title { font-weight: 600; margin-bottom: .2rem; }
+    .hero-note .note-detail { color: var(--muted); font-size: .9rem; }
+    .pole { width: 2.4rem; height: 5rem; border-radius: .9rem; border: 2px solid #8a7b84; background: #fff; position: relative; overflow: hidden; flex-shrink: 0; box-shadow: inset -.4rem 0 .6rem rgba(48,38,48,.18); }
+    .pole-stripes { position: absolute; inset: -5rem 0; background: repeating-linear-gradient(135deg, var(--rose) 0 13px, #fff 13px 26px, #687e98 26px 39px, #fff 39px 52px); animation: poleTurn 7s linear infinite; }
+    .pole::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 12%, rgba(255,255,255,.65) 30%, transparent 60%, rgba(40,30,40,.2)); }
+    @keyframes poleTurn { from { transform: translateY(0); } to { transform: translateY(73.54px); } }
+    .hero-copy > * { animation: heroEntrance .75s var(--ease) both; }
+    .hero-copy > :nth-child(2) { animation-delay: .08s; }
+    .hero-copy > :nth-child(3) { animation-delay: .16s; }
+    .hero-copy > :nth-child(4) { animation-delay: .22s; }
+    .hero-copy > :nth-child(5) { animation-delay: .28s; }
+    @keyframes heroEntrance { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+    .scroll-pole { position: fixed; right: .65rem; top: 32%; width: .45rem; height: 36vh; max-height: 16rem; border-radius: 1rem; overflow: hidden; background: rgba(255,255,255,.55); z-index: 20; }
+    .scroll-pole span { display: block; height: 100%; background: repeating-linear-gradient(135deg, var(--rose) 0 5px, #fff 5px 10px, #687e98 10px 15px, #fff 15px 20px); transform: scaleY(0); transform-origin: top; }
+    .about { background: var(--lilac); }
+    .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: 2rem; }
+    .section-heading p { max-width: 31ch; color: var(--muted); font-size: 1.05rem; }
+    .about-grid { grid-template-columns: .9fr 1.1fr; }
+    .about-photo { min-height: 28rem; border-radius: var(--radius); overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,.8); }
+    .about-copy { padding: clamp(1.7rem, 3.6vw, 3.4rem); display: flex; flex-direction: column; justify-content: center; }
+    .about-copy > p { color: var(--muted); font-size: 1.1rem; margin-top: 1.5rem; max-width: 45ch; }
+    .benefits { grid-template-columns: repeat(3, 1fr); margin-top: 1rem; }
+    .benefit { padding: 1.65rem; }
+    .benefit svg { width: 2rem; height: 2rem; color: var(--rose); margin-bottom: 1.3rem; }
+    .benefit h3 { font-size: 1.4rem; }
+    .benefit p { margin-top: .65rem; color: var(--muted); }
+    .services { background: var(--blue); }
+    .services-grid { grid-template-columns: 1.15fr 1fr 1fr; grid-template-rows: auto auto; }
+    .service { padding: 2rem; display: flex; flex-direction: column; align-items: flex-start; min-height: 15rem; transition: background .2s; }
+    .service:hover { background: rgba(255,255,255,.65); }
+    .service p { color: var(--muted); margin-top: .8rem; }
+    .service svg { width: 2.5rem; height: 2.5rem; margin-bottom: 2rem; color: #4b6577; }
+    .service.featured { grid-row: 1 / 3; justify-content: space-between; min-height: 31rem; }
+    .service.featured h3 { font-size: clamp(2.3rem, 3.8vw, 3.7rem); }
+    .comb { width: 100%; height: 8rem; display: flex; align-items: center; margin: 1rem 0 2rem; }
+    .comb-shape { width: 100%; height: 5.5rem; border-radius: .5rem .8rem .25rem .25rem; background: #526879; position: relative; }
+    .comb-shape::after { content: ""; position: absolute; bottom: 0; left: 4%; right: 4%; height: 3.8rem; background: repeating-linear-gradient(90deg, transparent 0 .48rem, #e6eef1 .48rem .68rem); }
+    .service-invite { grid-column: 2 / 4; padding: 1.8rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .service-invite p { max-width: 23ch; font-size: 1.1rem; }
+    .gallery { background: var(--pink); }
+    .gallery-grid { grid-template-columns: 1.2fr .8fr 1fr; align-items: stretch; }
+    .gallery-item { position: relative; display: block; padding: 0; border: 1px solid rgba(255,255,255,.8); border-radius: var(--radius); overflow: hidden; background: #b5a7b0; min-height: 23rem; cursor: zoom-in; transition: transform .1s; }
+    .gallery-item:nth-child(2) { margin-top: 3rem; min-height: 20rem; }
+    .gallery-item:nth-child(3) { margin-bottom: 3rem; }
+    .gallery-item img { transition: transform .55s var(--ease); }
+    .gallery-item:hover img { transform: scale(1.035); }
+    .zoom-symbol { position: absolute; right: 1rem; bottom: 1rem; border-radius: 50%; background: #fff; color: var(--ink); display: grid; place-items: center; width: 2.75rem; height: 2.75rem; font-size: 1.5rem; }
+    .gallery-footnote { color: var(--muted); font-size: .85rem; margin-top: 1.2rem; }
+    .contact { background: var(--sage); }
+    .contact-grid { grid-template-columns: 1fr 1.1fr; }
+    .contact-info { padding: clamp(1.8rem, 4vw, 3.5rem); }
+    .contact-info > p { margin: 1.2rem 0 2rem; color: var(--muted); }
+    .contact-info address { font-style: normal; margin: 2rem 0; }
+    .contact-info address p + p { margin-top: .25rem; }
+    .phone { display: inline-block; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -.02em; margin-bottom: .7rem; }
+    .phone:hover { color: var(--rose); }
+    .contact-buttons { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .map-panel { border: 1px solid rgba(255,255,255,.8); border-radius: var(--radius); overflow: hidden; background: #d5dcd7; display: flex; flex-direction: column; min-height: 30rem; }
+    .map-panel iframe { width: 100%; flex: 1; min-height: 25rem; border: 0; }
+    .map-bottom { padding: 1rem 1.3rem; background: #eef2ee; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .map-bottom span { font-size: .9rem; }
+    .map-bottom a { font-weight: 600; padding: .55rem 0; text-decoration: underline; text-underline-offset: .25em; }
+    footer { background: var(--sage); padding: 0 0 2rem; }
+    .footer-inner { border-top: 1px solid var(--line); padding-top: 1.5rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; }
+    .footer-name { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.3rem; font-weight: 600; }
+    .footer-small { color: var(--muted); font-size: .8rem; letter-spacing: .01em; text-align: right; }
+    .footer-small p + p { margin-top: .3rem; }
+    .js .reveal { opacity: 0; transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .js .reveal.from-left { transform: translateX(-1.4rem); }
+    .js .reveal.from-right { transform: translateX(1.4rem); }
+    .js .reveal.from-scale { transform: scale(.975); }
+    .js .reveal.visible { opacity: 1; transform: none; }
+    .photo-mask { position: absolute; inset: 0; z-index: 2; background: var(--pink); transform-origin: right; pointer-events: none; }
+    .about .photo-mask { background: var(--lilac); }
+    .js .photo-mask { transition: transform .65s var(--ease); }
+    .js .photo-reveal.visible .photo-mask { transform: scaleX(0); }
+    .photo-reveal { clip-path: inset(0 round var(--radius)); }
+    body:not(.js) .photo-mask { display: none; }
+    .lightbox { border: 1px solid rgba(255,255,255,.5); border-radius: 1.3rem; padding: .75rem; background: #242028; width: min(65rem, 92vw); max-height: 92vh; color: #fff; }
+    .lightbox::backdrop { background: rgba(23,17,24,.85); }
+    .lightbox img { width: 100%; height: auto; max-height: 75vh; object-fit: contain; border-radius: .7rem; }
+    .lightbox-top { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding: .1rem .2rem .7rem; }
+    .lightbox-top p { font-size: .9rem; }
+    .lightbox-close { border: 1px solid #756d79; background: transparent; color: white; border-radius: .6rem; padding: .55rem 1rem; min-height: 2.75rem; cursor: pointer; }
+    @media (min-width: 1500px) { .hero-grid { grid-template-rows: minmax(33rem, auto) auto; } }
+    @media (max-width: 1050px) {
+      .wrap, .site-header { width: calc(100% - 3rem); }
+      .nav-shell { gap: 1rem; }
+      .nav-links { gap: 1rem; }
+      .hero-copy { padding: 2rem; }
+      h1 { font-size: clamp(3.6rem, 7.5vw, 5.5rem); }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .service { padding: 1.6rem; }
+      .service-invite { align-items: flex-start; flex-direction: column; }
+      .scroll-pole { right: .4rem; width: .3rem; }
+    }
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 6rem; }
+      .wrap, .site-header { width: calc(100% - 2rem); }
+      .site-header { top: .6rem; margin-top: .6rem; }
+      .nav-shell { padding: .6rem .65rem .6rem 1rem; gap: .5rem; }
+      .brand { font-size: 1.1rem; margin-right: auto; gap: .45rem; }
+      .nav-call { font-size: .85rem; min-height: 2.75rem; padding: .65rem .8rem; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: calc(100% + .5rem); left: 0; right: 0; background: #f2e8ed; border: 1px solid white; border-radius: 1rem; padding: .75rem; box-shadow: 0 1rem 2rem rgba(48,38,48,.12); }
+      .nav-links.open { display: flex; flex-direction: column; gap: 0; }
+      .nav-links a { padding: .8rem 1rem; }
+      .hero { padding-top: 1rem; padding-bottom: 3rem; }
+      .hero-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .hero-copy { padding: 2rem 1.65rem; min-height: 0; }
+      .location { margin-bottom: 1.7rem; font-size: .85rem; }
+      h1 { font-size: clamp(3.6rem, 13vw, 5.8rem); }
+      .slogan { font-size: clamp(1.6rem, 6vw, 2.3rem); }
+      .hero-intro { font-size: 1rem; }
+      .hero-actions { width: 100%; }
+      .hero-actions .primary { width: 100%; }
+      .hero-photo { grid-column: auto; grid-row: auto; min-height: 23rem; height: 23rem; }
+      .hero-note { padding: 1.2rem 1.5rem; }
+      .chapter:not(.hero) { padding: 3.5rem 0; }
+      .section-heading { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .section-heading p { max-width: 40ch; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-copy { grid-row: 1; padding: 2rem 1.5rem; }
+      .about-photo { min-height: 21rem; height: 21rem; }
+      .benefits { grid-template-columns: 1fr; }
+      .benefit { display: grid; grid-template-columns: 2rem 1fr; gap: 0 1rem; padding: 1.4rem; }
+      .benefit svg { grid-row: 1 / 3; margin: 0; }
+      .benefit p { margin-top: .4rem; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service.featured { grid-row: auto; grid-column: 1 / 3; min-height: 0; display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 1.5rem; }
+      .comb { margin: 0; height: 7rem; }
+      .service.featured h3 { font-size: 2.4rem; }
+      .service { min-height: 13rem; padding: 1.4rem; }
+      .service svg { margin-bottom: 1.5rem; }
+      .service:nth-child(4) { grid-column: 1 / 3; min-height: 10rem; }
+      .service-invite { grid-column: 1 / 3; padding: 1.5rem; }
+      .service-invite p { max-width: none; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item { min-height: 17rem; }
+      .gallery-item:first-child { grid-column: 1 / 3; height: 24rem; }
+      .gallery-item:nth-child(2), .gallery-item:nth-child(3) { margin: 0; min-height: 15rem; height: 15rem; }
+      .contact-info { padding: 2rem 1.5rem; }
+      .map-panel { min-height: 23rem; }
+      .map-panel iframe { min-height: 21rem; }
+      .map-bottom { flex-wrap: wrap; gap: .2rem; }
+      .footer-inner { flex-direction: column; gap: 1rem; }
+      .footer-small { text-align: left; }
+      .scroll-pole { display: none; }
+    }
+    @media (max-width: 380px) {
+      .brand { font-size: .98rem; }
+      .nav-call { padding-inline: .6rem; }
+      .hero-copy { padding-inline: 1.35rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service, .service.featured, .service:nth-child(4), .service-invite { grid-column: 1; }
+      .service.featured { display: flex; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: .2s !important; }
+      .js .reveal { transform: none !important; }
+      .js .photo-mask { display: none; }
+      .js .photo-reveal { opacity: 0; transition: opacity .2s; }
+      .js .photo-reveal.visible { opacity: 1; }
+      .gallery-item:hover img { transform: none; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .glass, .nav-shell { background: #f2e8ef; backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .about .glass { background: #efedf5; }
+      .services .glass { background: #eaf0f3; }
+      .contact .glass { background: #eef2ee; }
+    }
+    @media (prefers-contrast: more) {
+      :root { --muted: #392f38; --line: #564650; }
+      .glass, .nav-shell { background: #f7f3f6; border: 2px solid #564650; backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .button.secondary { background: #fff; border-color: var(--ink); }
+      .image-caption { background: #211c21; }
+    }
+  </style>
+</head>
+<body>
+  <script>document.body.classList.add('js');</script>
+  <a class="skip" href="#continut">Sari la conținut</a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M8 3H4.5A1.5 1.5 0 0 0 3 4.5C3 13.6 10.4 21 19.5 21a1.5 1.5 0 0 0 1.5-1.5V16l-5-2-2 2a14 14 0 0 1-6-6l2-2-2-5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="icon-scissors" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="24" r="4"/><circle cx="25" cy="24" r="4"/><path d="m10 21 15-17M22 21 7 4M16 14v2"/></g></symbol>
+    <symbol id="icon-bottle" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M11 10h10l3 5v13H8V15l3-5ZM12 10V5h8v5M16 5V2h9"/><path d="M12 19h8M12 23h5"/></g></symbol>
+    <symbol id="icon-clock" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/></g></symbol>
+    <symbol id="icon-razor" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="m8 5 20 7-3 6-19-8 2-5ZM23 18l-4 10h-4l5-11M11 7l-2 4"/></g></symbol>
+    <symbol id="icon-color" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16 3S7 14 7 20a9 9 0 0 0 18 0c0-6-9-17-9-17Z"/><path d="M11 21a5 5 0 0 0 5 5"/></g></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#acasa" aria-label="Brother's Studio, începutul paginii">
+        <span class="brand-pole" aria-hidden="true"></span> Brother's Studio
+      </a>
+      <nav class="nav-links" id="navigation" aria-label="Navigare principală">
+        <a href="#despre">Studioul</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button primary nav-call" href="tel:0768974454">Sună acum</a>
+      <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Deschide meniul">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="scroll-pole" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+  <main id="continut">
+    <section class="hero chapter" id="acasa" aria-labelledby="hero-title">
+      <div class="wrap bento hero-grid">
+        <div class="glass hero-copy">
+          <p class="location"><svg aria-hidden="true"><use href="#icon-pin"/></svg> Șoseaua Pantelimon, București</p>
+          <h1 id="hero-title">Brother's<br>Studio</h1>
+          <p class="slogan">te tunzi, te simți bine.</p>
+          <p class="hero-intro">Salon modern pentru tunsori și styling.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio." target="_blank" rel="noopener noreferrer">Programează-te pe WhatsApp</a>
+            <a class="button secondary" href="#servicii">Vezi serviciile</a>
+          </div>
+        </div>
+        <figure class="hero-photo photo-reveal" style="margin:0">
+          <img src="img/1.jpg" alt="Frizer la lucru într-un salon modern — fotografie ilustrativă" fetchpriority="high">
+          <span class="photo-mask" aria-hidden="true"></span>
+          <figcaption class="image-caption">Un pic de inspirație pentru următorul tău look. Imagine ilustrativă.</figcaption>
+        </figure>
+        <div class="glass hero-note">
+          <div class="pole" aria-hidden="true"><div class="pole-stripes"></div></div>
+          <div>
+            <p class="note-title">Un look care să fie al tău.</p>
+            <p class="note-detail">Frizerie și coafură, pe gustul tău.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter about" id="despre" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="bento about-grid">
+          <div class="about-photo photo-reveal">
+            <img src="img/2.jpg" alt="Moment de lucru la o tunsoare, într-un salon — fotografie ilustrativă" loading="lazy">
+            <span class="photo-mask" aria-hidden="true"></span>
+          </div>
+          <div class="glass about-copy reveal from-right">
+            <h2 id="about-title">O schimbare de look.<br>Un moment pentru tine.</h2>
+            <p>La Brother's Studio găsești un loc relaxant pentru frizerie și
+              coafură. Vrei o schimbare de look sau doar un styling rapid?
+              Suntem aici pentru tine.</p>
+            <p>Ne concentrăm pe ceea ce ți se potrivește: o tunsoare adaptată
+              personalității tale și îngrijirea de care are nevoie părul tău.</p>
+          </div>
+        </div>
+        <div class="bento benefits">
+          <article class="glass benefit reveal from-left">
+            <svg aria-hidden="true"><use href="#icon-scissors"/></svg>
+            <h3>Tunsori pe gustul tău</h3>
+            <p>Stil adaptat personalității tale.</p>
+          </article>
+          <article class="glass benefit reveal from-scale">
+            <svg aria-hidden="true"><use href="#icon-bottle"/></svg>
+            <h3>Produse profesionale</h3>
+            <p>Îngrijire potrivită pentru părul tău.</p>
+          </article>
+          <article class="glass benefit reveal from-right">
+            <svg aria-hidden="true"><use href="#icon-clock"/></svg>
+            <h3>Programare simplă</h3>
+            <p>Ne scrii pe WhatsApp și stabilim când vii.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter services" id="servicii" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="services-title">Cum vrei să arate<br>următorul tău look?</h2>
+          <p>De la o tunsoare nouă la aranjarea de final, alegi ce ți se potrivește.</p>
+        </div>
+        <div class="bento services-grid">
+          <article class="glass service featured reveal from-left">
+            <div class="comb" aria-hidden="true"><div class="comb-shape"></div></div>
+            <div>
+              <h3>Tuns modern</h3>
+              <p>Tunsori pentru toate vârstele, adaptate stilului tău.</p>
+            </div>
+          </article>
+          <article class="glass service reveal from-scale">
+            <svg aria-hidden="true"><use href="#icon-bottle"/></svg>
+            <h3>Spălat și aranjat</h3>
+            <p>Spălare și styling la final.</p>
+          </article>
+          <article class="glass service reveal from-right">
+            <svg aria-hidden="true"><use href="#icon-razor"/></svg>
+            <h3>Bărbierit clasic</h3>
+            <p>Bărbierit tradițional cu prosop cald.</p>
+          </article>
+          <article class="glass service reveal from-scale">
+            <svg aria-hidden="true"><use href="#icon-color"/></svg>
+            <h3>Vopsit păr</h3>
+            <p>Culori vibrante sau naturale.</p>
+          </article>
+          <div class="glass service-invite reveal">
+            <p>Ai un look în minte? Spune-ne la programare.</p>
+            <a class="button primary" href="https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio." target="_blank" rel="noopener noreferrer">Scrie pe WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter gallery" id="galerie" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="gallery-title">În lumea salonului.</h2>
+          <p>Gesturi, detalii și inspirație pentru următoarea vizită.</p>
+        </div>
+        <div class="bento gallery-grid">
+          <button class="gallery-item photo-reveal" data-image="img/3.jpg" data-alt="Frizerie și îngrijirea bărbii — fotografie ilustrativă" aria-label="Mărește fotografia ilustrativă cu un frizer la lucru">
+            <img src="img/3.jpg" alt="Frizerie și îngrijirea bărbii — fotografie ilustrativă" loading="lazy">
+            <span class="photo-mask" aria-hidden="true"></span>
+            <span class="zoom-symbol" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-item photo-reveal" data-image="img/4.jpg" data-alt="Stylist la lucru într-un salon — fotografie ilustrativă" aria-label="Mărește fotografia ilustrativă cu un stylist">
+            <img src="img/4.jpg" alt="Stylist la lucru într-un salon — fotografie ilustrativă" loading="lazy">
+            <span class="photo-mask" aria-hidden="true"></span>
+            <span class="zoom-symbol" aria-hidden="true">+</span>
+          </button>
+          <button class="gallery-item photo-reveal" data-image="img/5.jpg" data-alt="Scenă de lucru într-o frizerie — fotografie ilustrativă" aria-label="Mărește fotografia ilustrativă din frizerie">
+            <img src="img/5.jpg" alt="Scenă de lucru într-o frizerie — fotografie ilustrativă" loading="lazy">
+            <span class="photo-mask" aria-hidden="true"></span>
+            <span class="zoom-symbol" aria-hidden="true">+</span>
+          </button>
+        </div>
+        <p class="gallery-footnote">Fotografii de stoc, folosite pentru inspirație. Nu prezintă studioul sau lucrări realizate aici.</p>
+      </div>
+    </section>
+
+    <section class="chapter contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap bento contact-grid">
+        <div class="glass contact-info reveal from-left">
+          <h2 id="contact-title">Ne vedem<br>la studio.</h2>
+          <p>Scrie-ne pentru o programare sau sună-ne. Stabilim împreună serviciul și ora potrivită.</p>
+          <a class="phone" href="tel:0768974454">0768 974 454</a>
+          <address>
+            <p><strong>Brother's Studio</strong></p>
+            <p>Șoseaua Pantelimon, București</p>
+          </address>
+          <div class="contact-buttons">
+            <a class="button primary" href="https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio." target="_blank" rel="noopener noreferrer">Programează-te pe WhatsApp</a>
+            <a class="button secondary" href="tel:0768974454"><svg aria-hidden="true"><use href="#icon-phone"/></svg> Sună acum</a>
+          </div>
+        </div>
+        <div class="map-panel reveal from-scale">
+          <iframe title="Hartă: Brother's Studio, Șoseaua Pantelimon, București" src="https://www.openstreetmap.org/export/embed.html?bbox=26.1592161,44.440872299999995,26.1672161,44.4448723&amp;layer=mapnik&amp;marker=44.4428723,26.1632161" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-bottom">
+            <span>Șoseaua Pantelimon, București</span>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Brother%27s+Studio+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <a class="footer-name" href="#acasa">Brother's Studio</a>
+      <div class="footer-small">
+        <p>Model de site (demo)</p>
+        <p>Fotografii ilustrative de pe Pixabay: mostafa_meraji, vahidkanani</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Fotografie mărită">
+    <div class="lightbox-top">
+      <p>Fotografie de stoc, ilustrativă</p>
+      <button class="lightbox-close" type="button">Închide</button>
+    </div>
+    <img alt="" id="lightbox-image">
+  </dialog>
+
+  <script>
+    (() => {
+      const header = document.querySelector('.site-header');
+      const progress = document.getElementById('scroll-progress');
+      const pole = document.querySelector('.pole-stripes');
+      let pending = false;
+
+      function updateScroll() {
+        const distance = document.documentElement.scrollHeight - window.innerHeight;
+        const amount = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+        progress.style.transform = `scaleY(${amount})`;
+        header.classList.toggle('scrolled', window.scrollY > 16);
+        pole.style.animationPlayState = window.scrollY > window.innerHeight ? 'paused' : 'running';
+        pending = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!pending) {
+          pending = true;
+          requestAnimationFrame(updateScroll);
+        }
+      }, { passive: true });
+      window.addEventListener('resize', updateScroll);
+      updateScroll();
+
+      const animated = document.querySelectorAll('.reveal, .photo-reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -20px 0px' });
+        animated.forEach(element => observer.observe(element));
+      } else {
+        animated.forEach(element => element.classList.add('visible'));
+      }
+
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.getElementById('navigation');
+      function closeMenu() {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul');
+      }
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+        nav.classList.toggle('open', open);
+      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && nav.classList.contains('open')) {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!header.contains(event.target)) closeMenu();
+      });
+
+      const dialog = document.querySelector('.lightbox');
+      const enlarged = document.getElementById('lightbox-image');
+      let lastTrigger;
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+          if (typeof dialog.showModal !== 'function') return;
+          lastTrigger = item;
+          enlarged.src = item.dataset.image;
+          enlarged.alt = item.dataset.alt;
+          dialog.showModal();
+        });
+      });
+      document.querySelector('.lightbox-close').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => {
+        const rect = dialog.getBoundingClientRect();
+        if (event.clientX < rect.left || event.clientX > rect.right ||
+            event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        if (lastTrigger) lastTrigger.focus();
+      });
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
