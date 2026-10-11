@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liratop | Magazin cu de toate în Constanța</title>
+<meta name="description" content="Liratop, magazin local din Constanța: articole pentru casă, papetărie, decorațiuni, accesorii mici și jucării. Sună sau întreabă pe WhatsApp.">
+<meta name="theme-color" content="#FFD447">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --y:#FFD447;
+  --b:#2563EB;
+  --bd:#1d4ed8;
+  --k:#111114;
+  --w:#ffffff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sp:clamp(4.5rem,10vw,8rem);
+  --r:1.25rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:"Rubik",system-ui,-apple-system,sans-serif;
+  font-size:1rem;line-height:1.5;letter-spacing:0;color:var(--k);background:var(--w);
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Outfit",system-ui,sans-serif;margin:0;letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+p{margin:0}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+section{scroll-margin-top:5.5rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3.5rem;padding:0 1.6rem;border-radius:999px;border:0;
+  font-family:"Outfit",sans-serif;font-weight:600;font-size:1.06rem;letter-spacing:0;
+  text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:transform .1s ease,box-shadow .25s ease,background-color .25s ease,color .25s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.nav a:focus-visible,.bag:focus-visible,.phone-big:focus-visible{outline:3px solid var(--k);outline-offset:3px}
+.btn-blue{background:var(--b);color:#fff}
+.btn-blue:hover{background:var(--bd);box-shadow:0 .7rem 1.4rem -.7rem rgba(37,99,235,.7)}
+.btn-white{background:#fff;color:var(--k)}
+.btn-white:hover{box-shadow:0 .7rem 1.4rem -.8rem rgba(17,17,20,.45)}
+.btn-black{background:var(--k);color:#fff}
+.btn-black:hover{background:#2a2a30;box-shadow:0 .7rem 1.4rem -.8rem rgba(17,17,20,.6)}
+.btn-small{min-height:2.75rem;padding:0 1.1rem;font-size:.98rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{position:fixed;top:.6rem;left:50%;transform:translateX(-50%);width:min(100% - 1.2rem,74rem);z-index:50}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.45rem .45rem .45rem 1rem;border-radius:1.25rem;
+  background:rgba(255,255,255,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  border-top:1px solid rgba(255,255,255,.95);
+  box-shadow:0 0 0 rgba(17,17,20,0);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled .nav-inner{box-shadow:0 .8rem 1.8rem -1.1rem rgba(17,17,20,.4)}
+.logo{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-family:"Outfit",sans-serif;font-weight:800;font-size:1.45rem;letter-spacing:-.03em;min-height:2.75rem}
+.logo svg{width:1.9rem;height:1.9rem}
+.nav-links{display:none;gap:.25rem;margin:0;padding:0;list-style:none}
+.nav-links a{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .95rem;border-radius:.85rem;text-decoration:none;font-family:"Outfit",sans-serif;font-weight:600;font-size:1rem;transition:background-color .2s ease}
+.nav-links a:hover{background:rgba(37,99,235,.12)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+@media (min-width:48rem){.nav-links{display:flex}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{background:var(--y);padding:6rem 0 3rem;position:relative;overflow:hidden}
+.hero-grid{display:grid;gap:1.5rem;align-items:center}
+.hero h1{font-size:clamp(3.6rem,15vw,8rem);font-weight:800;letter-spacing:-.045em;line-height:.95}
+.slogan{font-family:"Outfit",sans-serif;font-weight:600;font-size:clamp(1.45rem,5vw,2.3rem);line-height:1.15;letter-spacing:-.015em;margin-top:.7rem;max-width:18ch}
+.lead{font-size:1.06rem;max-width:36ch;margin-top:1rem;color:#26262b}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+@media (max-width:30rem){.actions .btn{flex:1 1 100%}}
+
+.stage{position:relative;display:grid;justify-items:center}
+.stage::before{
+  content:"";position:absolute;left:50%;top:52%;width:86%;aspect-ratio:1;border-radius:50%;
+  background:rgba(255,255,255,.72);transform:translate(-50%,-50%);
+}
+.bag{position:relative;width:min(80vw,21rem);padding:0;border:0;background:none;cursor:pointer;border-radius:1.5rem;-webkit-tap-highlight-color:transparent}
+.bag svg{width:100%;height:auto;display:block}
+.hint{position:relative;font-size:.84rem;letter-spacing:.03em;color:#36363c;margin-top:.4rem;text-align:center}
+
+@media (min-width:56rem){
+  .hero{padding:7.5rem 0 4.5rem}
+  .hero-grid{grid-template-columns:1.1fr .9fr;min-height:min(40rem,calc(100svh - 12rem))}
+  .hero h1{font-size:clamp(5rem,9vw,8rem)}
+  .bag{width:min(100%,28rem)}
+}
+
+/* intrarea din prima secțiune */
+.enter{animation:rise .6s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(1.1rem)}to{opacity:1;transform:none}}
+
+/* punga care se umple */
+.bag .item,.bag .scene,.bag .bub{transform-box:fill-box}
+.bag .scene{transform-origin:50% 100%}
+.bag .bub{transform-origin:50% 50%;opacity:0}
+.bag{--t0:.6s;--t1:2.05s}
+.bag.again{--t0:.1s;--t1:1.5s}
+.bag.play .item{animation:drop .7s cubic-bezier(.3,.7,.4,1) both;animation-delay:calc(var(--t0) + var(--i) * .17s)}
+.bag.play .scene{animation:bagIn .5s .2s var(--ease) both,wiggle .5s var(--t1) ease forwards}
+.bag.play.again .scene{animation:wiggle .5s var(--t1) ease forwards}
+.bag.play .bub{animation:bub 1.2s ease-out both;animation-delay:calc(var(--t1) + var(--d))}
+@keyframes drop{
+  0%{transform:translateY(-320px);opacity:0}
+  15%{opacity:1}
+  65%{transform:translateY(10px)}
+  82%{transform:translateY(-5px)}
+  100%{transform:translateY(0);opacity:1}
+}
+@keyframes bagIn{from{opacity:0;transform:translateY(24px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes wiggle{0%{transform:rotate(0)}30%{transform:rotate(-2.5deg)}62%{transform:rotate(1.8deg)}100%{transform:rotate(0)}}
+@keyframes bub{
+  0%{opacity:0;transform:translateY(0) scale(.4)}
+  20%{opacity:1}
+  100%{opacity:0;transform:translateY(var(--h)) scale(1)}
+}
+
+/* ---------- Produse: vitrina pe rafturi ---------- */
+.products{padding-block:var(--sp)}
+.head{display:grid;gap:1rem;margin-bottom:clamp(2.5rem,5vw,3.75rem)}
+.head h2,.about h2,.contact h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:800}
+.head p{font-size:1.1rem;color:#44444b;max-width:44ch}
+@media (min-width:56rem){.head{grid-template-columns:1fr 1fr;align-items:end;gap:3rem}}
+
+.shelf{list-style:none;margin:0;padding:0;display:grid}
+.shelf li{
+  position:relative;display:grid;grid-template-columns:5rem 1fr;gap:1.1rem;align-items:end;
+  padding:1.9rem .25rem .5rem;
+}
+.shelf li::after{content:"";position:absolute;left:0;right:0;bottom:0;height:.5rem;background:var(--k)}
+.shelf .ic{display:flex;align-items:flex-end;justify-content:center;height:6rem;margin-bottom:.5rem}
+.shelf .ic svg{height:100%;width:auto;max-width:100%;transform-origin:50% 100%;transition:transform .35s var(--ease)}
+.shelf li:hover .ic svg{transform:translateY(-.3rem) rotate(-4deg)}
+.shelf .txt{padding-bottom:1.15rem}
+.shelf h3{font-size:1.3rem;font-weight:700;letter-spacing:-.015em}
+.shelf p{margin-top:.25rem;color:#48484f}
+.shelf li.ask{display:block;margin-top:2rem;padding:1.75rem 1.4rem 2.25rem;background:var(--y);border-radius:var(--r) var(--r) 0 0}
+.ask h3{font-size:1.55rem;font-weight:800}
+.ask p{margin:.4rem 0 1.25rem;color:#26262b;max-width:30ch}
+@media (min-width:40rem) and (max-width:55.99rem){
+  .shelf{grid-template-columns:1fr 1fr;column-gap:0}
+  .shelf li.ask{grid-column:1 / -1}
+}
+@media (min-width:56rem){
+  .shelf{grid-template-columns:repeat(3,1fr)}
+  .shelf li{grid-template-columns:1fr;grid-template-rows:auto 1fr;align-items:start;padding:1.75rem 1.75rem .5rem;min-height:18rem;gap:1rem}
+  .shelf .txt{padding-bottom:0}
+  .shelf .ic{order:2;align-self:end;justify-content:flex-start;height:7.5rem}
+  .shelf li.ask{margin-top:0;padding:1.9rem 1.75rem 2rem;display:flex;flex-direction:column;justify-content:flex-end}
+}
+
+/* ---------- Despre ---------- */
+.about{background:var(--b);color:#fff;padding-block:var(--sp)}
+.about-grid{display:grid;gap:2.75rem;align-items:center}
+.pics{display:grid;grid-template-columns:1.25fr 1fr;gap:.75rem;align-items:start;margin:0}
+.pics figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bd)}
+.pics figure:nth-child(2){margin-top:3rem}
+.pics img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.about-text p{font-size:1.12rem;color:rgba(255,255,255,.92);max-width:40ch;margin-top:1.1rem}
+.about-text p:first-of-type{margin-top:1.4rem}
+.perks{list-style:none;padding:0;margin:clamp(3.5rem,7vw,5rem) 0 0;display:grid;gap:1.75rem}
+.perks li{display:grid;grid-template-columns:3.1rem 1fr;gap:1rem;align-items:start}
+.badge{width:3.1rem;height:3.1rem;border-radius:50%;background:var(--y);display:grid;place-items:center}
+.badge svg{width:1.45rem;height:1.45rem}
+.perks h3{font-size:1.3rem;font-weight:700;color:#fff;margin-top:.15rem}
+.perks p{color:rgba(255,255,255,.88);margin-top:.2rem}
+@media (min-width:56rem){
+  .about-grid{grid-template-columns:1fr 1fr;gap:4.5rem}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--y);padding-block:var(--sp)}
+.contact-grid{display:grid;gap:2.5rem;align-items:stretch}
+.contact-text p{font-size:1.1rem;color:#26262b;max-width:40ch;margin-top:1.1rem}
+.phone-big{
+  display:inline-block;margin-top:1.75rem;font-family:"Outfit",sans-serif;font-weight:800;
+  font-size:clamp(2.1rem,8vw,3.4rem);letter-spacing:-.03em;line-height:1.05;text-decoration:none;
+  border-bottom:.2rem solid transparent;transition:border-color .25s ease;border-radius:.2rem;
+}
+.phone-big:hover{border-color:var(--k)}
+.contact .actions{margin-top:1.5rem}
+.map{border-radius:var(--r);overflow:hidden;background:#fff;aspect-ratio:4/3;min-height:16rem}
+.map iframe{display:block;width:100%;height:100%;border:0}
+@media (min-width:56rem){
+  .contact-grid{grid-template-columns:1fr 1.05fr;gap:4rem}
+  .map{aspect-ratio:auto;min-height:28rem}
+}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--k);color:#fff;padding:3.5rem 0 2.5rem}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem 3rem}
+.foot .logo{color:#fff}
+.foot p{color:rgba(255,255,255,.82);margin-top:.6rem;max-width:40ch}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot-links{display:grid;gap:.25rem;align-content:start}
+.foot-links a{display:inline-flex;align-items:center;min-height:2.75rem;font-family:"Outfit",sans-serif;font-weight:600;font-size:1.05rem}
+.legal{margin-top:2.5rem;font-size:.8rem;letter-spacing:.04em;color:rgba(255,255,255,.65);display:flex;flex-wrap:wrap;gap:.4rem 2rem}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js [data-rv]{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i,0) * 70ms)}
+.js [data-rv="pop"]{transform:translateY(.6rem) scale(.95)}
+.js [data-rv="zoom"]{transform:scale(.96)}
+.js [data-rv="slide"]{transform:translateX(-1.25rem)}
+.js [data-rv].in{opacity:1;transform:none}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .enter{animation:fade .2s ease both}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .bag.play .item,.bag.play .scene,.bag.play.again .scene{animation:none}
+  .bag .bub,.hint{display:none}
+  .bag{cursor:default}
+  .js [data-rv]{transform:none !important;transition:opacity .2s ease;transition-delay:0s}
+  .shelf li:hover .ic svg{transform:none}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav-inner{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .stage::before{background:#fff}
+}
+@media (prefers-contrast:more){
+  .nav-inner{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border:2px solid var(--k)}
+  .btn{border:2px solid var(--k)}
+  .lead,.head p,.shelf p,.contact-text p,.ask p{color:var(--k)}
+  .about-text p,.perks p{color:#fff}
+  .stage::before{background:#fff}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<!-- simbolurile produselor, folosite în pungă și pe rafturi -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="s-notebook" viewBox="0 0 90 120">
+    <g stroke="#111114" stroke-width="4" stroke-linejoin="round">
+      <rect x="4" y="4" width="82" height="112" rx="7" fill="#FFD447"/>
+      <rect x="30" y="22" width="44" height="18" rx="3" fill="#fff" stroke-width="3"/>
+    </g>
+    <g fill="#111114">
+      <circle cx="16" cy="20" r="3.2"/><circle cx="16" cy="36" r="3.2"/><circle cx="16" cy="52" r="3.2"/>
+      <circle cx="16" cy="68" r="3.2"/><circle cx="16" cy="84" r="3.2"/><circle cx="16" cy="100" r="3.2"/>
+    </g>
+  </symbol>
+  <symbol id="s-pencil" viewBox="0 0 30 180">
+    <g stroke="#111114" stroke-width="4" stroke-linejoin="round">
+      <path d="M4 42 L15 6 L26 42 Z" fill="#fff"/>
+      <rect x="4" y="42" width="22" height="116" fill="#FFD447"/>
+      <path d="M15 46 V154" stroke-width="2.5"/>
+      <rect x="4" y="158" width="22" height="9" fill="#fff"/>
+      <rect x="4" y="167" width="22" height="10" rx="3" fill="#111114"/>
+    </g>
+    <path d="M10.5 20.5 L15 6 L19.5 20.5 Z" fill="#111114"/>
+  </symbol>
+  <symbol id="s-spray" viewBox="0 0 80 160">
+    <g stroke="#111114" stroke-width="4" stroke-linejoin="round">
+      <rect x="28" y="26" width="28" height="22" fill="#fff"/>
+      <rect x="12" y="46" width="60" height="110" rx="14" fill="#fff"/>
+    </g>
+    <rect x="22" y="76" width="40" height="42" rx="5" fill="#2563EB"/>
+    <path d="M20 4 H62 a6 6 0 0 1 6 6 V26 H20 Z" fill="#111114"/>
+    <rect x="4" y="9" width="20" height="10" rx="2" fill="#111114"/>
+    <path d="M30 26 L22 46 H31 L37 26 Z" fill="#111114"/>
+  </symbol>
+  <symbol id="s-vase" viewBox="0 0 70 140">
+    <g stroke="#111114" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M35 62 V24" fill="none"/>
+      <path d="M35 46 q13 -11 22 -3 q-10 10 -22 3 Z" fill="#fff" stroke-width="3"/>
+      <g fill="#FFD447" stroke-width="3">
+        <circle cx="35" cy="9.5" r="7"/><circle cx="45.5" cy="17" r="7"/><circle cx="41.5" cy="29" r="7"/>
+        <circle cx="28.5" cy="29" r="7"/><circle cx="24.5" cy="17" r="7"/>
+      </g>
+      <path d="M22 62 H48 C52 72 64 84 64 104 C64 124 52 136 35 136 C18 136 6 124 6 104 C6 84 18 72 22 62 Z" fill="#fff"/>
+    </g>
+    <circle cx="35" cy="21" r="6" fill="#111114"/>
+    <path d="M10 104 H60" stroke="#2563EB" stroke-width="7"/>
+  </symbol>
+  <symbol id="s-battery" viewBox="0 0 40 90">
+    <rect x="13" y="2" width="14" height="10" rx="2" fill="#111114"/>
+    <rect x="4" y="10" width="32" height="76" rx="6" fill="#111114"/>
+    <path d="M4 32 V16 a6 6 0 0 1 6 -6 H30 a6 6 0 0 1 6 6 V32 Z" fill="#FFD447" stroke="#111114" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M16 21 H24 M20 17 V25" stroke="#111114" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="s-duck" viewBox="0 0 110 100">
+    <g stroke="#111114" stroke-width="4" stroke-linejoin="round">
+      <path d="M14 64 L4 44 L24 54 Z" fill="#FFD447"/>
+      <ellipse cx="52" cy="70" rx="42" ry="25" fill="#FFD447"/>
+      <circle cx="72" cy="34" r="21" fill="#FFD447"/>
+      <path d="M90 30 Q106 31 106 37 Q100 44 88 41 Z" fill="#fff" stroke-width="3"/>
+      <path d="M34 68 Q48 54 64 66 Q48 80 34 68 Z" fill="#fff" stroke-width="3"/>
+    </g>
+    <circle cx="77" cy="29" r="3.5" fill="#111114"/>
+  </symbol>
+  <symbol id="s-mark" viewBox="0 0 32 32">
+    <path d="M11 12 V9 a5 5 0 0 1 10 0 V12" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M5.5 12 H26.5 L24.8 28 H7.2 Z" fill="#2563EB" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+    <circle cx="16" cy="20" r="2.6" fill="#FFD447"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.12.37 2.33.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24">
+    <path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.4-4.4A8.5 8.5 0 1 1 20.5 11.5z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/>
+    <path d="M9 9.2c.3 2.6 2.3 4.7 5 5.4" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/>
+    <circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2.1"/>
+  </symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <nav class="nav-inner" aria-label="Navigare principală">
+    <a class="logo" href="#top" aria-label="Liratop, începutul paginii">
+      <svg aria-hidden="true" style="color:#111114"><use href="#s-mark"/></svg>
+      Liratop
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-blue btn-small" href="tel:0722931020">
+        <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titlu" class="enter" style="--d:.05s">Liratop</h1>
+        <p class="slogan enter" style="--d:.15s">Tot ce ai nevoie, la un loc</p>
+        <p class="lead enter" style="--d:.25s">Magazin de cartier în Constanța, cu produse utile pentru casă, școală,
+          cadouri și cei mici. Întreabă-ne înainte dacă avem ce cauți.</p>
+        <div class="actions enter" style="--d:.35s">
+          <a class="btn btn-blue" href="tel:0722931020">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+          </a>
+          <a class="btn btn-white" href="https://wa.me/40722931020?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20produsele%20din%20magazin." target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-chat"/></svg>Întreabă pe WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="stage">
+        <button class="bag play" type="button" aria-label="Punga Liratop, cu produse din magazin. Atinge ca să o umpli din nou.">
+          <svg viewBox="0 0 400 460" aria-hidden="true" focusable="false">
+            <ellipse cx="200" cy="449" rx="140" ry="9" fill="rgba(17,17,20,.14)"/>
+            <g class="scene">
+              <path d="M150 216 V160 C150 110 250 110 250 160 V216" fill="none" stroke="#111114" stroke-width="9" stroke-linecap="round"/>
+              <polygon points="60,212 340,212 352,232 48,232" fill="#1e3a8a" stroke="#111114" stroke-width="5" stroke-linejoin="round"/>
+
+              <g class="item" style="--i:1"><use href="#s-pencil" x="198" y="66" width="30" height="180" transform="rotate(9 213 156)"/></g>
+              <g class="item" style="--i:2"><use href="#s-spray" x="240" y="88" width="80" height="160" transform="rotate(7 280 168)"/></g>
+              <g class="item" style="--i:0"><use href="#s-notebook" x="116" y="116" width="90" height="120" transform="rotate(-10 161 176)"/></g>
+              <g class="item" style="--i:3"><use href="#s-vase" x="70" y="120" width="70" height="140" transform="rotate(-7 105 190)"/></g>
+              <g class="item" style="--i:4"><use href="#s-battery" x="206" y="150" width="40" height="90" transform="rotate(-15 226 195)"/></g>
+              <g class="item" style="--i:5"><use href="#s-duck" x="262" y="172" width="88" height="80"/></g>
+
+              <path d="M48 232 H352 L336 438 Q335 444 329 444 H71 Q65 444 64 438 Z" fill="#2563EB" stroke="#111114" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M54 256 H346" stroke="#4f86f0" stroke-width="3" stroke-linecap="round"/>
+              <text x="200" y="352" text-anchor="middle" fill="#fff" font-family="Outfit, sans-serif" font-weight="800" font-size="54" letter-spacing="-1.5">Liratop</text>
+              <text x="200" y="388" text-anchor="middle" fill="#FFD447" font-family="Rubik, sans-serif" font-weight="500" font-size="17" letter-spacing="3">CONSTANȚA</text>
+
+              <g fill="rgba(255,255,255,.9)" stroke="#2563EB" stroke-width="2.5">
+                <circle class="bub" cx="118" cy="208" r="7" style="--d:0s;--h:-150px"/>
+                <circle class="bub" cx="165" cy="204" r="5" style="--d:.08s;--h:-190px"/>
+                <circle class="bub" cx="205" cy="206" r="10" style="--d:.03s;--h:-170px"/>
+                <circle class="bub" cx="248" cy="204" r="6" style="--d:.14s;--h:-200px"/>
+                <circle class="bub" cx="292" cy="208" r="8" style="--d:.1s;--h:-160px"/>
+                <circle class="bub" cx="140" cy="202" r="4" style="--d:.2s;--h:-130px"/>
+              </g>
+            </g>
+          </svg>
+        </button>
+        <p class="hint" aria-hidden="true">Atinge punga și o umplem din nou</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <div class="head" data-rv="fade">
+        <h2 id="t-produse">Ce găsești pe rafturi</h2>
+        <p>De la curățenie și organizarea casei la rechizite, cadouri și jucării:
+          le găsești pe toate în același magazin.</p>
+      </div>
+
+      <ul class="shelf">
+        <li data-rv="pop" style="--i:0">
+          <div class="ic"><svg viewBox="0 0 80 160" role="img" aria-label="Spray de curățenie"><use href="#s-spray"/></svg></div>
+          <div class="txt">
+            <h3>Articole de uz casnic</h3>
+            <p>Pentru curățenie și organizarea casei.</p>
+          </div>
+        </li>
+        <li data-rv="pop" style="--i:1">
+          <div class="ic">
+            <svg viewBox="0 0 120 130" role="img" aria-label="Caiet și creion">
+              <use href="#s-notebook" x="0" y="10" width="90" height="120"/>
+              <use href="#s-pencil" x="84" y="0" width="22" height="130" transform="rotate(10 95 65)"/>
+            </svg>
+          </div>
+          <div class="txt">
+            <h3>Papetărie și rechizite</h3>
+            <p>Caiete, pixuri, accesorii școlare.</p>
+          </div>
+        </li>
+        <li data-rv="pop" style="--i:2">
+          <div class="ic"><svg viewBox="0 0 70 140" role="img" aria-label="Vază cu floare"><use href="#s-vase"/></svg></div>
+          <div class="txt">
+            <h3>Decorațiuni interioare</h3>
+            <p>Obiecte decorative și cadouri.</p>
+          </div>
+        </li>
+        <li data-rv="pop" style="--i:3">
+          <div class="ic"><svg viewBox="0 0 40 90" role="img" aria-label="Baterie"><use href="#s-battery"/></svg></div>
+          <div class="txt">
+            <h3>Accesorii mici</h3>
+            <p>Baterii, cabluri, accesorii diverse.</p>
+          </div>
+        </li>
+        <li data-rv="pop" style="--i:4">
+          <div class="ic"><svg viewBox="0 0 110 100" role="img" aria-label="Rățușcă de jucărie"><use href="#s-duck"/></svg></div>
+          <div class="txt">
+            <h3>Jucării pentru copii</h3>
+            <p>Jucării simple, pentru toate vârstele.</p>
+          </div>
+        </li>
+        <li class="ask" data-rv="pop" style="--i:5">
+          <h3>Nu vezi ce cauți?</h3>
+          <p>Scrie-ne pe WhatsApp și îți spunem dacă îl avem pe raft.</p>
+          <a class="btn btn-blue" href="https://wa.me/40722931020?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20produsele%20din%20magazin." target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-chat"/></svg>Întreabă pe WhatsApp
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="pics">
+          <figure data-rv="zoom" style="--i:0">
+            <img src="img/1.jpg" alt="Raft lung de magazin, plin cu produse aranjate ordonat" loading="lazy" width="900" height="1200">
+          </figure>
+          <figure data-rv="zoom" style="--i:2">
+            <img src="img/3.jpg" alt="Magazin mic, cu rafturi colorate pline de produse" loading="lazy" width="900" height="1200">
+          </figure>
+        </div>
+        <div class="about-text" data-rv="fade">
+          <h2 id="t-despre">Mereu găsești ceva folositor</h2>
+          <p>Liratop este magazinul în care găsești mereu ceva folositor, indiferent de nevoie.
+            Articole pentru casă, accesorii sau mici cadouri: soluția e la un pas distanță.</p>
+          <p>Ne bucurăm să fim aproape de clienți, cu prețuri prietenoase.</p>
+        </div>
+      </div>
+
+      <ul class="perks">
+        <li data-rv="slide" style="--i:0">
+          <span class="badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.5 6 .7-4.4 4.1 1.2 6L12 16.6l-5.4 2.9 1.2-6L3.4 9.4l6-.7z" fill="none" stroke="#111114" stroke-width="2" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h3>Selecție variată</h3>
+            <p>Mereu multe produse utile, pentru casă, școală și cadouri.</p>
+          </div>
+        </li>
+        <li data-rv="slide" style="--i:1">
+          <span class="badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3-8.7 8.7z" fill="none" stroke="#111114" stroke-width="2" stroke-linejoin="round"/><circle cx="8.2" cy="8.2" r="1.6" fill="#111114"/></svg>
+          </span>
+          <div>
+            <h3>Prețuri accesibile</h3>
+            <p>Oferte pentru orice buget.</p>
+          </div>
+        </li>
+        <li data-rv="slide" style="--i:2">
+          <span class="badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24" style="color:#111114"><use href="#i-pin"/></svg>
+          </span>
+          <div>
+            <h3>Acces facil</h3>
+            <p>Poziționare centrală în oraș, ușor de găsit.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div class="contact-text" data-rv="fade">
+        <h2 id="t-contact">Vino la Liratop</h2>
+        <p>Suntem în Constanța. Dacă vrei să știi dacă avem un produs anume,
+          sună-ne sau trimite un mesaj pe WhatsApp înainte să vii.</p>
+        <a class="phone-big" href="tel:0722931020" aria-label="Sună la 0722 931 020">0722 931 020</a>
+        <div class="actions">
+          <a class="btn btn-blue" href="tel:0722931020">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+          </a>
+          <a class="btn btn-black" href="https://wa.me/40722931020?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20produsele%20din%20magazin." target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-chat"/></svg>Întreabă pe WhatsApp
+          </a>
+          <a class="btn btn-white" href="https://www.google.com/maps/search/?api=1&amp;query=Liratop+Constan%C8%9Ba" target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-pin"/></svg>Deschide în Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="map" data-rv="zoom">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6461445,44.197601,28.6541445,44.201601000000004&amp;layer=mapnik&amp;marker=44.199601,28.6501445" title="Harta cu locul magazinului Liratop din Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Liratop, înapoi sus">
+          <svg aria-hidden="true" style="color:#fff"><use href="#s-mark"/></svg>
+          Liratop
+        </a>
+        <p>Magazin local cu o gamă variată de produse utile, în Constanța.</p>
+      </div>
+      <div class="foot-links">
+        <a href="tel:0722931020">0722 931 020</a>
+        <a href="https://wa.me/40722931020?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20produsele%20din%20magazin." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Liratop+Constan%C8%9Ba" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>Model de site (demo)</span>
+      <span>Fotografii ilustrative de pe Pixabay: igorovsyannykov</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8);}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var bag=document.querySelector('.bag');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  bag.addEventListener('click',function(){
+    if(reduce.matches) return;
+    bag.classList.remove('play');
+    void bag.getBoundingClientRect();
+    bag.classList.add('play','again');
+  });
+
+  var els=document.querySelectorAll('[data-rv]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }else{
+    els.forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
