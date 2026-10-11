@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Babylon: bar în Constanța</title>
+<meta name="description" content="Babylon, bar modern în Constanța: cocktailuri signature, bere la draft, seri cu DJ. Deschis zilnic până la 01:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1D3B2A;
+  --green-deep:#10251a;
+  --brown:#6B3E1E;
+  --cream:#F3E9D2;
+  --cream-soft:rgba(243,233,210,.78);
+  --black:#151515;
+  --amber:#f59e0b;
+  --amber-hi:#fbb43a;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --nav-h:3.75rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--black);color:var(--cream);
+  font-family:"Lora",Georgia,serif;font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+.wrap{width:min(72rem,100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--amber);color:var(--black);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.35rem;border-radius:.45rem;
+  font-family:"Archivo Black",sans-serif;font-size:.95rem;letter-spacing:.01em;text-decoration:none;
+  transition:transform .1s ease,background-color .25s ease,box-shadow .25s ease,border-color .25s ease;
+  -webkit-tap-highlight-color:transparent;cursor:pointer;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-amber{background:var(--amber);color:var(--black)}
+.btn-amber:hover{background:var(--amber-hi);box-shadow:0 .5rem 1.6rem rgba(245,158,11,.28)}
+.btn-line{border:2px solid rgba(243,233,210,.45);color:var(--cream)}
+.btn-line:hover{border-color:var(--cream);background:rgba(243,233,210,.06)}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav-h);
+  background:rgba(16,22,18,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(243,233,210,.12);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(243,233,210,.12),0 .6rem 1.6rem rgba(0,0,0,.35)}
+.nav .wrap{height:100%;display:flex;align-items:center;gap:1rem}
+.logo{font-family:"Archivo Black",sans-serif;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;color:var(--cream);margin-right:auto}
+.nav-links{display:none;gap:1.75rem;list-style:none;margin:0 1rem 0 0;padding:0}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.98rem;color:var(--cream);opacity:.9;transition:opacity .2s, color .2s}
+.nav-links a:hover{opacity:1;color:var(--amber)}
+.nav .btn{min-height:2.75rem;padding:0 1rem;font-size:.88rem}
+.menu-btn{
+  width:2.75rem;height:2.75rem;border:0;border-radius:.45rem;background:transparent;color:var(--cream);
+  display:grid;place-items:center;cursor:pointer;transition:transform .1s ease,background-color .2s;
+}
+.menu-btn:active{transform:scale(.95)}
+.menu-btn span{display:block;width:1.3rem;height:2px;background:currentColor;position:relative;transition:transform .3s var(--ease)}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:100%;height:2px;background:currentColor;transition:transform .3s var(--ease)}
+.menu-btn span::before{transform:translateY(-6px)}
+.menu-btn span::after{transform:translateY(6px)}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{transform:rotate(-45deg)}
+.mobile-menu{
+  position:fixed;left:0;right:0;top:var(--nav-h);z-index:49;
+  background:var(--black);padding:1rem 1.25rem 1.75rem;
+  box-shadow:0 1.2rem 2rem rgba(0,0,0,.5);
+  opacity:0;transform:translateY(-.75rem);pointer-events:none;
+  transition:opacity .35s var(--ease),transform .35s var(--ease);
+}
+.mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
+.mobile-menu a{display:flex;align-items:center;min-height:3.25rem;font-family:"Archivo Black",sans-serif;font-size:1.35rem;text-decoration:none;border-bottom:1px solid rgba(243,233,210,.1)}
+.mobile-menu a:last-child{border-bottom:0}
+
+/* ---------- Prima secțiune ---------- */
+.hero{
+  position:relative;overflow:hidden;isolation:isolate;
+  background:var(--green-deep);
+  padding:calc(var(--nav-h) + 2.25rem) 0 clamp(3.5rem,8vw,6rem);
+}
+.hero::before{
+  content:"";position:absolute;inset:-25%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(38% 34% at 28% 30%,rgba(245,158,11,.30),transparent 70%),
+    radial-gradient(34% 30% at 80% 72%,rgba(107,62,30,.55),transparent 70%),
+    radial-gradient(40% 40% at 60% 10%,rgba(29,59,42,.9),transparent 70%);
+  opacity:0;
+  animation:glowIn 1.6s .1s var(--ease) forwards, drift 22s 1.6s ease-in-out infinite alternate;
+}
+@keyframes glowIn{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:none}}
+@keyframes drift{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(4%,-3%,0) scale(1.06)}
+  100%{transform:translate3d(-3%,3%,0) scale(1.02)}
+}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(3.2rem,15vw,7rem);line-height:.95;letter-spacing:-.03em;overflow:hidden;padding-bottom:.06em}
+.hero h1 span{display:block;transform:translateY(105%);animation:rise .9s .25s var(--ease) forwards}
+.hero .slogan{font-size:clamp(1.35rem,4.6vw,2rem);line-height:1.2;font-style:italic;margin-top:1rem;color:var(--cream)}
+.hero .lead{margin-top:.9rem;color:var(--cream-soft);max-width:30rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero .open{margin-top:1.25rem;font-size:.82rem;letter-spacing:.04em;color:var(--cream-soft);display:flex;align-items:center;gap:.55rem}
+.hero .open i{width:.55rem;height:.55rem;border-radius:50%;background:var(--amber);box-shadow:0 0 .8rem var(--amber)}
+.fade-up{opacity:0;transform:translateY(1rem);animation:fadeUp .7s var(--ease) forwards}
+.d1{animation-delay:.55s}.d2{animation-delay:.7s}.d3{animation-delay:.85s}.d4{animation-delay:1s}
+@keyframes rise{to{transform:none}}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+.hero-photo{margin:0;position:relative;border-radius:.6rem;overflow:hidden;aspect-ratio:4/5;max-height:78vh;
+  opacity:0;transform:scale(1.04);animation:photoIn 1.2s .4s var(--ease) forwards;
+  box-shadow:0 2rem 4rem rgba(0,0,0,.45)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(16,37,26,.55))}
+@keyframes photoIn{to{opacity:1;transform:none}}
+
+/* ---------- Despre + halba ---------- */
+.pour{padding:clamp(5rem,12vw,9rem) 0;background:var(--black)}
+.pour-grid{display:grid;grid-template-columns:4.75rem 1fr;gap:1.25rem;align-items:start}
+.glass-col{position:sticky;top:calc(var(--nav-h) + 1.5rem);text-align:center}
+.mug{width:100%;height:auto;overflow:visible}
+#liquid{transform:translateY(236px);will-change:transform}
+.head{transform:scaleY(0);transform-box:fill-box;transform-origin:50% 100%;transition:transform 1s var(--ease)}
+.pour.full .head{transform:scaleY(1)}
+.cheers{display:block;margin-top:.5rem;font-family:"Archivo Black",sans-serif;font-size:.85rem;color:var(--amber);
+  opacity:0;transform:translateY(.4rem);transition:opacity .5s var(--ease) .5s,transform .5s var(--ease) .5s}
+.pour.full .cheers{opacity:1;transform:none}
+.text-col h2{font-size:clamp(1.9rem,5.6vw,3.6rem);max-width:16ch}
+.text-col > p{margin-top:1.25rem;color:var(--cream-soft);max-width:36rem}
+.plaques{list-style:none;margin:3rem 0 0;padding:0;display:grid;gap:2.25rem}
+
+/* plăcile – firme de lemn pictate */
+.plaque{
+  position:relative;padding:1.6rem 1.4rem 1.5rem;border-radius:.35rem;max-width:30rem;
+  background-color:var(--brown);
+  background-image:
+    repeating-linear-gradient(178deg,rgba(0,0,0,.07) 0 2px,transparent 2px 7px,rgba(255,255,255,.025) 7px 8px,transparent 8px 13px),
+    linear-gradient(180deg,rgba(255,255,255,.06),rgba(0,0,0,.18));
+  box-shadow:inset 0 0 0 .45rem var(--brown),inset 0 0 0 .55rem rgba(243,233,210,.55),0 1rem 1.8rem rgba(0,0,0,.45);
+}
+.plaque::before,.plaque::after{content:"";position:absolute;top:.25rem;width:.32rem;height:.32rem;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#d9c9a3,#5a4630)}
+.plaque::before{left:50%;transform:translateX(-50%)}
+.plaque::after{display:none}
+.plaque h3{font-size:clamp(1.15rem,3.6vw,1.45rem);color:var(--cream);text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.plaque p{margin-top:.45rem;color:rgba(243,233,210,.88);font-size:1rem}
+.plaques li:nth-child(2) .plaque{margin-left:auto}
+.plaque.reveal{opacity:0;transform:rotate(-2.5deg) translateY(-.6rem);transform-origin:50% 0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.plaques li:nth-child(2) .plaque.reveal{transform:rotate(2.5deg) translateY(-.6rem)}
+.plaque.reveal.in,.plaques li:nth-child(2) .plaque.reveal.in{opacity:1;transform:none}
+
+/* ---------- Servicii ---------- */
+.menu{background:var(--green);padding:clamp(5rem,12vw,9rem) 0}
+.menu-grid{display:grid;gap:2.5rem}
+.menu h2{font-size:clamp(1.9rem,5.6vw,3.6rem);max-width:14ch}
+.menu .intro{margin-top:1rem;color:var(--cream-soft);max-width:32rem}
+.menu-list{list-style:none;margin:2.5rem 0 0;padding:0}
+.menu-list li{padding:1.35rem 0;border-top:1px solid rgba(243,233,210,.16);display:grid;gap:.3rem}
+.menu-list li:last-child{border-bottom:1px solid rgba(243,233,210,.16)}
+.menu-list h3{font-size:clamp(1.2rem,3.8vw,1.6rem);display:flex;align-items:baseline;gap:.75rem}
+.menu-list h3::before{content:"";flex:none;width:.6rem;height:.6rem;border-radius:50%;background:var(--amber);transform:translateY(-.1em)}
+.menu-list p{color:var(--cream-soft);padding-left:1.35rem}
+.slide.reveal{opacity:0;transform:translateX(-1.25rem);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.slide.reveal.in{opacity:1;transform:none}
+.menu-photo{margin:0;border-radius:.6rem;overflow:hidden;aspect-ratio:4/5;box-shadow:0 1.5rem 3rem rgba(0,0,0,.35)}
+.menu-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- Galerie ---------- */
+.gallery{padding:clamp(5rem,12vw,9rem) 0;background:var(--black)}
+.gallery h2{font-size:clamp(1.9rem,5.6vw,3.6rem)}
+.gallery .intro{margin-top:1rem;color:var(--cream-soft);max-width:32rem}
+.g-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:2.5rem}
+.g-grid figure{margin:0;border-radius:.5rem;overflow:hidden}
+.g-grid img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.g-grid figure:hover img{transform:scale(1.03)}
+.g-wide{grid-column:1 / -1;aspect-ratio:16/10}
+.g-tall{aspect-ratio:4/5}
+.zoom.reveal{opacity:0;transform:scale(.96);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.zoom.reveal.in{opacity:1;transform:none}
+
+/* ---------- Contact ---------- */
+.contact{background:#1c140e;padding:clamp(5rem,12vw,9rem) 0}
+.contact-grid{display:grid;gap:2.5rem}
+.contact h2{font-size:clamp(2.2rem,7vw,4.5rem)}
+.contact address{font-style:normal;margin-top:1rem;color:var(--cream-soft);font-size:1.1rem}
+.hours{margin-top:2rem}
+.hours h3{font-size:1.35rem}
+.hours dl{margin:.9rem 0 0;display:grid;gap:.55rem}
+.hours dl div{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hours dt{color:rgba(243,233,210,.88)}
+.hours dd{margin:0;font-family:"Archivo Black",sans-serif;letter-spacing:.01em}
+.contact .actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem;max-width:26rem}
+.contact .actions .btn{width:100%}
+.map{border-radius:.6rem;overflow:hidden;aspect-ratio:4/3;background:#2a2016;box-shadow:0 1.5rem 3rem rgba(0,0,0,.4)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.fadein.reveal{opacity:0;transition:opacity .6s var(--ease)}
+.fadein.reveal.in{opacity:1}
+
+/* ---------- Subsol ---------- */
+footer{background:var(--black);padding:3rem 0 3.5rem;font-size:.82rem;letter-spacing:.03em;color:rgba(243,233,210,.68)}
+footer .wrap{display:grid;gap:.6rem}
+footer .logo{font-size:1.5rem;margin:0 0 .4rem;color:var(--cream);letter-spacing:-.01em}
+footer a{text-decoration:underline;text-underline-offset:.2em}
+
+/* ---------- Ecrane mai mari ---------- */
+@media (min-width:40rem){
+  .pour-grid{grid-template-columns:8rem 1fr;gap:2.5rem}
+  .contact .actions{flex-direction:row;flex-wrap:wrap;max-width:none}
+  .contact .actions .btn{width:auto}
+}
+@media (min-width:60rem){
+  :root{--nav-h:4.25rem}
+  .nav-links{display:flex}
+  .menu-btn,.mobile-menu{display:none}
+  .hero{min-height:100svh;display:flex;align-items:center}
+  .hero .wrap{width:min(72rem,100% - 4rem)}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:4rem}
+  .pour-grid{grid-template-columns:minmax(14rem,19rem) 1fr;gap:5rem}
+  .glass-col{top:calc(var(--nav-h) + 4rem)}
+  .plaques{gap:3rem;margin-top:4rem}
+  .plaque{padding:2rem 1.9rem 1.8rem}
+  .menu-grid{grid-template-columns:1.2fr .8fr;gap:5rem;align-items:start}
+  .menu-photo{position:sticky;top:calc(var(--nav-h) + 2rem);margin-top:.5rem}
+  .g-grid{grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:1rem}
+  .g-wide{grid-column:1;grid-row:1 / span 2;aspect-ratio:auto;min-height:100%}
+  .g-tall{aspect-ratio:4/3}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+  .contact .actions{flex-direction:column;max-width:24rem}
+  .contact .actions .btn{width:100%}
+}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero::before{animation:fadeOnly .2s forwards}
+  .hero h1 span{transform:none;opacity:0;animation:fadeOnly .2s forwards}
+  .fade-up,.hero-photo{transform:none;animation:fadeOnly .2s forwards}
+  .reveal,.plaque.reveal,.plaques li:nth-child(2) .plaque.reveal,.slide.reveal,.zoom.reveal{transform:none !important;transition:opacity .2s ease !important}
+  .head{transition:none}
+  .cheers{transform:none;transition:opacity .2s}
+  .mobile-menu{transform:none;transition:opacity .2s}
+  .g-grid img{transition:none}
+}
+@keyframes fadeOnly{to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#101612;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--cream-soft:#F3E9D2}
+  .nav{background:#000;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--cream)}
+  .hero::before{display:none}
+  .hero{background:#000}
+  .btn-line{border-color:var(--cream)}
+  .plaque{background-image:none;box-shadow:inset 0 0 0 2px var(--cream)}
+  .menu-list li{border-color:var(--cream)}
+  .hero-photo::after{display:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Babylon, începutul paginii">Babylon</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#bar">La bar</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Program și adresă</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-amber" href="tel:+40730230489">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+      Sună acum
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Deschide meniul"><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#despre">Despre</a>
+  <a href="#bar">La bar</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#contact">Program și adresă</a>
+</div>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titlu"><span>Babylon</span></h1>
+        <p class="slogan fade-up d1">Seara ta, atmosfera noastră.</p>
+        <p class="lead fade-up d2">Bar modern în Constanța, unde poveștile prind gust. Vii cu prietenii, noi ne ocupăm de restul.</p>
+        <div class="actions fade-up d3">
+          <a class="btn btn-amber" href="https://wa.me/40730230489?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Babylon.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.71-1.33a.45.45 0 0 0-.02-.42c-.06-.12-.56-1.35-.77-1.85s-.41-.42-.56-.43h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.86 4.86 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 2.99.62a2.55 2.55 0 0 0 1.68-1.18 2.1 2.1 0 0 0 .14-1.18c-.06-.1-.23-.16-.48-.29z"/></svg>
+            Rezervă masă pe WhatsApp
+          </a>
+          <a class="btn btn-line" href="tel:+40730230489">Sună acum</a>
+        </div>
+        <p class="open fade-up d4"><i aria-hidden="true"></i>Deschis zilnic până la 01:00</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/4.jpg" alt="Prieteni ciocnind pahare la bar, seara" width="900" height="1125" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="pour" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap pour-grid" id="pourGrid">
+      <div class="glass-col" aria-hidden="true">
+        <svg class="mug" viewBox="0 0 220 300" role="presentation">
+          <defs>
+            <clipPath id="inside"><path d="M41 44 H159 L152.5 272 Q151.5 285 139 285 H61 Q48.5 285 47.5 272 Z"/></clipPath>
+            <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fcc451"/>
+              <stop offset=".45" stop-color="#f59e0b"/>
+              <stop offset="1" stop-color="#8a4a17"/>
+            </linearGradient>
+          </defs>
+          <path d="M160 92 h16 q26 0 26 26 v72 q0 26 -26 26 h-19" fill="none" stroke="#F3E9D2" stroke-opacity=".5" stroke-width="12" stroke-linecap="round"/>
+          <g clip-path="url(#inside)">
+            <rect x="38" y="40" width="124" height="250" fill="#F3E9D2" fill-opacity=".04"/>
+            <g id="liquid">
+              <rect x="38" y="54" width="124" height="240" fill="url(#beer)"/>
+              <rect x="38" y="44" width="124" height="14" fill="#F3E9D2"/>
+              <circle cx="50" cy="56" r="7" fill="#F3E9D2"/><circle cx="70" cy="58" r="6" fill="#F3E9D2"/>
+              <circle cx="92" cy="57" r="8" fill="#F3E9D2"/><circle cx="116" cy="58" r="6" fill="#F3E9D2"/>
+              <circle cx="136" cy="56" r="8" fill="#F3E9D2"/><circle cx="154" cy="57" r="6" fill="#F3E9D2"/>
+              <g fill="#fff" fill-opacity=".35">
+                <circle cx="70" cy="110" r="2"/><circle cx="96" cy="150" r="1.6"/><circle cx="128" cy="96" r="2.2"/>
+                <circle cx="112" cy="200" r="1.8"/><circle cx="80" cy="232" r="2"/><circle cx="138" cy="176" r="1.5"/>
+                <circle cx="62" cy="180" r="1.4"/><circle cx="120" cy="250" r="1.6"/>
+              </g>
+            </g>
+          </g>
+          <g stroke="#ffffff" stroke-opacity=".16" stroke-width="7" stroke-linecap="round">
+            <path d="M64 74 V250"/><path d="M88 74 V254"/><path d="M134 74 V250"/>
+          </g>
+          <rect x="47" y="266" width="106" height="20" rx="6" fill="#F3E9D2" fill-opacity=".07"/>
+          <path d="M37 40 H163 L156 274 Q155 289 140 289 H60 Q45 289 44 274 Z" fill="none" stroke="#F3E9D2" stroke-opacity=".75" stroke-width="5" stroke-linejoin="round"/>
+          <g class="head" fill="#F3E9D2">
+            <rect x="38" y="34" width="124" height="16" rx="6"/>
+            <circle cx="50" cy="33" r="13"/><circle cx="72" cy="27" r="16"/><circle cx="98" cy="24" r="18"/>
+            <circle cx="124" cy="27" r="16"/><circle cx="148" cy="32" r="14"/>
+            <circle cx="162" cy="42" r="7"/><circle cx="160" cy="54" r="5"/>
+          </g>
+        </svg>
+        <span class="cheers">Noroc!</span>
+      </div>
+      <div class="text-col">
+        <h2 id="despre-titlu">Un loc unde serile se lungesc frumos</h2>
+        <p>Babylon e locul din Constanța unde vii cu prietenii să te relaxezi. Ambianță plăcută, muzică bună și băuturi variate: din astea se fac serile memorabile. Vino să descoperi cocktailurile noastre speciale și atmosfera vibrantă.</p>
+        <ul class="plaques">
+          <li><div class="plaque reveal"><h3>Ambianță relaxantă</h3><p>Lumini discrete și muzică bună, ca să stai cât ai chef.</p></div></li>
+          <li><div class="plaque reveal"><h3>Cocktailuri creative</h3><p>Combinăm arome inedite, cu ingrediente proaspete.</p></div></li>
+          <li><div class="plaque reveal"><h3>Program extins</h3><p>Deschis până la 01:00 noaptea, în fiecare zi.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="bar" aria-labelledby="bar-titlu">
+    <div class="wrap menu-grid">
+      <div>
+        <h2 id="bar-titlu">Ce găsești la bar</h2>
+        <p class="intro">De la prima bere a serii până la ultimul cocktail, plus ceva bun de ronțăit pentru toată masa.</p>
+        <ul class="menu-list">
+          <li class="slide reveal"><h3>Cocktailuri signature</h3><p>Rețete originale, create de barmanii noștri.</p></li>
+          <li class="slide reveal"><h3>Bere la draft</h3><p>Pentru orice gust, proaspăt turnată.</p></li>
+          <li class="slide reveal"><h3>Seri cu DJ</h3><p>Seri speciale cu muzică live și DJ.</p></li>
+          <li class="slide reveal"><h3>Gustări pentru bar</h3><p>Platouri, nachos și mici delicii pentru grupuri.</p></li>
+          <li class="slide reveal"><h3>Happy Hour</h3><p>Băuturi la prețuri speciale, în fiecare zi.</p></li>
+        </ul>
+      </div>
+      <figure class="menu-photo fadein reveal">
+        <img src="img/2.jpg" alt="Cocktail pe tejghea, în lumina barului" loading="lazy" width="800" height="1000">
+      </figure>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu">Serile la Babylon</h2>
+      <p class="intro">Sticle la rând pe raft, pahare care se ciocnesc și muzică până târziu.</p>
+      <div class="g-grid">
+        <figure class="g-wide zoom reveal"><img src="img/1.jpg" alt="Rafturi cu sticle în spatele tejghelei" loading="lazy" width="1200" height="750"></figure>
+        <figure class="g-tall zoom reveal"><img src="img/3.jpg" alt="Tânără cu un cocktail în mână, într-o seară în club" loading="lazy" width="800" height="1000"></figure>
+        <figure class="g-tall zoom reveal"><img src="img/5.jpg" alt="Cocktail colorat servit la bar" loading="lazy" width="800" height="1000"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-titlu">Vino diseară</h2>
+        <address>Strada Mircea cel Bătrân 150A, Constanța</address>
+        <div class="plaque hours fadein reveal">
+          <h3>Program</h3>
+          <dl>
+            <div><dt>Luni – Vineri</dt><dd>08:00 – 01:00</dd></div>
+            <div><dt>Sâmbătă – Duminică</dt><dd>09:00 – 01:00</dd></div>
+          </dl>
+        </div>
+        <div class="actions">
+          <a class="btn btn-amber" href="https://wa.me/40730230489?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Babylon.">Rezervă masă pe WhatsApp</a>
+          <a class="btn btn-line" href="tel:+40730230489">Sună acum: 0730 230 489</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Babylon+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map fadein reveal">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.637522599999997,44.189026299999995,28.6455226,44.1930263&layer=mapnik&marker=44.1910263,28.6415226" title="Harta: Babylon, Strada Mircea cel Bătrân 150A, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="logo">Babylon</p>
+    <p>Strada Mircea cel Bătrân 150A, Constanța. <a href="tel:+40730230489">+40 730 230 489</a></p>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: Pexels, Josetxu, OurWhiskyFoundation, PhungNguyenPhotography</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var menuBtn=document.getElementById('menuBtn');
+  var menu=document.getElementById('mobileMenu');
+
+  function setMenu(open){
+    menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    menuBtn.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul');
+    menu.classList.toggle('open',open);
+    menu.setAttribute('aria-hidden',open?'false':'true');
+  }
+  menuBtn.addEventListener('click',function(){setMenu(menuBtn.getAttribute('aria-expanded')!=='true')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  /* dezvăluiri la derulare */
+  var items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else{items.forEach(function(el){el.classList.add('in')})}
+
+  /* halba care se umple */
+  var section=document.querySelector('.pour');
+  var grid=document.getElementById('pourGrid');
+  var liquid=document.getElementById('liquid');
+  var full=false,ticking=false;
+  function update(){
+    ticking=false;
+    nav.classList.toggle('scrolled',window.scrollY>8);
+    var r=grid.getBoundingClientRect(),vh=window.innerHeight;
+    var p=(vh*0.78-r.top)/Math.max(r.height*0.8,1);
+    p=Math.min(1,Math.max(0,p));
+    liquid.style.transform='translateY('+((1-p)*236).toFixed(1)+'px)';
+    if(!full&&p>=0.97){full=true;section.classList.add('full');}
+  }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  update();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
