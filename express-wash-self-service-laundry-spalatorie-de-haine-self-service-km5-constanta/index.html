@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Express Wash, spălătorie self service non-stop în KM5, Constanța</title>
+<meta name="description" content="Spălătorie self service deschisă non-stop în Constanța. Express Wash, Strada Pandurului 48, KM5. Mașini moderne de spălat și uscat, la orice oră.">
+<meta name="theme-color" content="#FAF6EF">
+<script>document.documentElement.className += ' js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EF;
+  --sand:#EFE6D8;
+  --map:#F7F0E4;
+  --teal:#0f766e;
+  --teal-dark:#0b5c56;
+  --teal-soft:rgba(15,118,110,.09);
+  --olive:#6B7046;
+  --terra:#B5583A;
+  --ink:#3B2B22;
+  --ink-soft:#64544a;
+  --line:rgba(59,43,34,.2);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --nav-h:4rem;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Figtree',system-ui,-apple-system,sans-serif;
+  font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  color:var(--ink);background:var(--paper);
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+ul{list-style:none}
+h1,h2,h3{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;
+  letter-spacing:-.02em;line-height:1.08;font-optical-sizing:auto;
+}
+h2{font-size:clamp(2.1rem,5.4vw,3.5rem);max-width:16ch}
+h3{font-size:1.35rem;letter-spacing:-.01em;line-height:1.2}
+p{max-width:38rem}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+section{padding-block:clamp(4.5rem,11vw,8.5rem)}
+.intro{margin-top:1.1rem;color:var(--ink-soft);font-size:1.1rem}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:.4rem}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  min-height:3.1rem;padding:.8em 1.45em;border-radius:999px;border:0;
+  font:600 1rem/1.2 'Figtree',sans-serif;text-decoration:none;cursor:pointer;
+  transition:transform .1s ease,background-color .2s ease,box-shadow .25s ease,color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-dark);box-shadow:0 .5rem 1.25rem -.6rem rgba(15,118,110,.7)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(59,43,34,.3)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink);background:rgba(255,255,255,.5)}
+
+/* Navigare */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:50;
+  background:rgba(250,246,239,.74);
+  -webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 .6rem 1.6rem -1.1rem rgba(59,43,34,.4)}
+.nav-in{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.brand{
+  display:flex;align-items:center;gap:.55rem;text-decoration:none;
+  font-family:'Fraunces',serif;font-weight:650;font-size:1.2rem;letter-spacing:-.015em;
+  min-height:2.75rem;
+}
+.brand svg{width:1.75rem;height:1.75rem;flex:none}
+.brand small{display:none;font:600 .78rem/1 'Figtree',sans-serif;letter-spacing:.03em;color:var(--ink-soft);margin-left:.15rem}
+.nav-right{display:flex;align-items:center;gap:.4rem}
+.nav-links{display:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;padding:.6rem .1rem;color:var(--ink)}
+.nav-links a:hover{color:var(--teal-dark)}
+.nav-call{min-height:2.75rem;padding:.5em 1.1em;font-size:.95rem}
+.menu-btn{
+  width:2.75rem;height:2.75rem;border:0;border-radius:50%;background:transparent;color:var(--ink);
+  display:grid;place-items:center;cursor:pointer;transition:transform .1s ease,background-color .2s;
+}
+.menu-btn:active{transform:scale(.94)}
+.menu-btn:hover{background:rgba(59,43,34,.06)}
+.menu-btn span{display:block;width:1.25rem;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .3s var(--ease),background-color .2s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:100%;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--ease)}
+.menu-btn span::before{transform:translateY(-6px)}
+.menu-btn span::after{transform:translateY(6px)}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{transform:rotate(-45deg)}
+.menu-panel{
+  position:fixed;top:var(--nav-h);left:0;right:0;z-index:49;
+  background:var(--paper);padding:.5rem 1.25rem 1.5rem;
+  box-shadow:0 1.2rem 2rem -1.4rem rgba(59,43,34,.45);
+  opacity:0;transform:translateY(-.6rem);visibility:hidden;
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s linear .35s;
+}
+.menu-panel.open{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.menu-panel a{
+  display:flex;align-items:center;min-height:3.25rem;text-decoration:none;
+  font-family:'Fraunces',serif;font-size:1.5rem;font-weight:550;letter-spacing:-.01em;
+}
+@media (min-width:880px){
+  .nav-links{display:flex;gap:1.9rem;align-items:center;margin-right:1rem}
+  .menu-btn,.menu-panel{display:none}
+  .brand small{display:inline}
+}
+
+/* Prima secțiune */
+.hero{padding-top:calc(var(--nav-h) + clamp(1.5rem,5vw,4.5rem));padding-bottom:clamp(3.5rem,8vw,6.5rem)}
+.hero-grid{display:grid;gap:2.5rem}
+.pill{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-size:.86rem;font-weight:600;letter-spacing:.02em;
+  color:var(--teal-dark);background:var(--teal-soft);
+  padding:.45rem .9rem;border-radius:999px;
+}
+.pill i{width:.5rem;height:.5rem;border-radius:50%;background:var(--teal);box-shadow:0 0 0 3px rgba(15,118,110,.18)}
+.hero h1{font-size:clamp(3rem,12.5vw,6.8rem);line-height:1.02;margin-top:1.1rem}
+.hero .sub{margin-top:.8rem;font-size:1.12rem;font-weight:600;color:var(--olive)}
+.hero .lead{margin-top:1.15rem;font-size:1.15rem;max-width:33ch;color:var(--ink-soft)}
+.hero .lead strong{color:var(--ink);font-weight:600}
+.actions{display:flex;flex-direction:column;gap:.7rem;margin-top:1.8rem}
+.addr-link{
+  display:inline-flex;align-items:center;gap:.45rem;margin-top:1.35rem;min-height:2.75rem;
+  font-size:.95rem;font-weight:500;color:var(--ink-soft);text-decoration:none;
+}
+.addr-link svg{width:1.1rem;height:1.1rem;color:var(--terra)}
+.addr-link:hover{color:var(--ink);text-decoration:underline;text-underline-offset:.2em}
+.hero-photo{border-radius:2rem 2rem 7rem 2rem;overflow:hidden;aspect-ratio:5/4;background:var(--sand)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:520px){.actions{flex-direction:row;flex-wrap:wrap}}
+@media (min-width:880px){
+  .hero{min-height:min(100svh,58rem);display:flex;align-items:center}
+  .hero .wrap{width:min(100% - 4rem,72rem)}
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center;gap:4.5rem}
+  .hero-photo{aspect-ratio:4/5;max-height:min(76vh,42rem);border-radius:2.5rem 2.5rem 10rem 2.5rem}
+}
+
+/* Secvența de intrare */
+@keyframes rise{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.seq>*{animation:rise .8s var(--ease) both;animation-delay:calc(var(--i,0) * 90ms + 120ms)}
+.hero-photo img{animation:settle 1.3s var(--ease) both .2s}
+
+/* Dezvăluiri la derulare */
+.js [data-reveal]{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--d,0) * 80ms)}
+.js [data-reveal="scale"]{transform:scale(.965)}
+.js [data-reveal="left"]{transform:translateX(-1.25rem)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* Despre */
+.about{background:var(--sand)}
+.about-grid{display:grid;gap:2.75rem}
+.about-photo{border-radius:6rem 2rem 2rem 2rem;overflow:hidden;aspect-ratio:4/3}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-text p{margin-top:1.25rem;font-size:1.125rem}
+.about-text p+p{color:var(--ink-soft);font-size:1.05rem}
+.perks{display:grid;gap:2rem;margin-top:clamp(3.5rem,8vw,5.5rem)}
+.perk{display:grid;grid-template-columns:2.75rem 1fr;gap:1rem;align-items:start}
+.perk svg{width:2.25rem;height:2.25rem;color:var(--olive);margin-top:.1rem}
+.perk p{color:var(--ink-soft);margin-top:.3rem;font-size:1rem}
+@media (min-width:700px){.perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+@media (min-width:880px){
+  .about-grid{grid-template-columns:.9fr 1.1fr;align-items:center;gap:5.5rem}
+  .about-photo{aspect-ratio:4/5;border-radius:9rem 2.5rem 2.5rem 2.5rem}
+}
+
+/* Servicii */
+.svc-grid{display:grid;gap:2.75rem}
+.svc-photo{margin-top:2.25rem;border-radius:2rem 2rem 2rem 6rem;overflow:hidden;aspect-ratio:4/3}
+.svc-photo img{width:100%;height:100%;object-fit:cover}
+.svc-list li{
+  display:grid;grid-template-columns:3.1rem 1fr;gap:1.2rem;align-items:start;
+  padding-block:1.75rem;border-top:1.5px dashed var(--line);
+}
+.svc-list li:last-child{border-bottom:1.5px dashed var(--line)}
+.svc-ico{width:3.1rem;height:3.1rem;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center}
+.svc-ico svg{width:1.5rem;height:1.5rem}
+.svc-list h3{font-size:clamp(1.4rem,3vw,1.75rem)}
+.svc-list p{margin-top:.35rem;color:var(--ink-soft)}
+@media (min-width:880px){
+  .svc-grid{grid-template-columns:5fr 7fr;gap:5.5rem;align-items:center}
+  .svc-photo{aspect-ratio:1/1}
+  .svc-list li{padding-block:2.1rem}
+}
+
+/* Drumul: harta desenată */
+.route-sec{background:var(--sand)}
+.route-grid{display:grid;gap:2.75rem}
+.facts{margin-top:2rem;display:grid;gap:1.25rem}
+.facts div{display:grid;gap:.15rem}
+.facts dt{font-size:.85rem;font-weight:600;letter-spacing:.03em;color:var(--olive)}
+.facts dd{font-size:1.05rem}
+.route-text .btn{margin-top:2rem}
+.map-figure{margin:0}
+.map-frame{
+  border-radius:2.5rem 4rem 2.5rem 3.5rem;overflow:hidden;background:var(--map);
+  box-shadow:0 2rem 3.5rem -2.6rem rgba(59,43,34,.5);
+}
+.map-frame svg{display:block;width:100%;height:auto}
+.map-figure figcaption{margin-top:1rem;font-size:.88rem;letter-spacing:.01em;color:var(--ink-soft);padding-left:.5rem}
+.m-label{font-family:'Fraunces',Georgia,serif;font-weight:600;fill:#3B2B22;letter-spacing:-.01em}
+.m-small{font-family:'Figtree',sans-serif;font-weight:600;fill:#5a4a3f}
+.halo{paint-order:stroke;stroke:#F7F0E4;stroke-width:7;stroke-linejoin:round}
+.route{
+  fill:none;stroke:var(--teal);stroke-width:8;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1 2;stroke-dashoffset:1;
+  transition:stroke-dashoffset 2.6s cubic-bezier(.45,.05,.25,1) .3s;
+}
+.map-figure.in .route{stroke-dashoffset:0}
+.pin{opacity:0;transform:translateY(-18px);transform-box:fill-box;transform-origin:50% 100%;
+  transition:opacity .5s var(--ease) 2.65s,transform .5s var(--ease) 2.65s}
+.dest{opacity:0;transition:opacity .6s ease 2.95s}
+.map-figure.in .pin{opacity:1;transform:none}
+.map-figure.in .dest{opacity:1}
+.js .map-figure:not(.in) .route{stroke-dashoffset:1}
+html:not(.js) .route{stroke-dashoffset:0}
+html:not(.js) .pin,html:not(.js) .dest{opacity:1;transform:none}
+@media (min-width:960px){
+  .route-grid{grid-template-columns:5fr 7fr;gap:5rem;align-items:center}
+}
+
+/* Contact */
+.contact-grid{display:grid;gap:2.75rem}
+.phone-big{
+  display:inline-block;margin-top:1.75rem;text-decoration:none;
+  font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.015em;
+  font-size:clamp(2.1rem,7vw,3.2rem);line-height:1.1;color:var(--teal-dark);
+}
+.phone-big:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em}
+.contact .actions{margin-top:1.5rem}
+.contact-meta{margin-top:2.25rem;display:grid;gap:1.1rem}
+.contact-meta dt{font-size:.85rem;font-weight:600;letter-spacing:.03em;color:var(--olive)}
+.contact-meta dd a{font-weight:600;text-underline-offset:.2em}
+.contact-meta dd a:hover{color:var(--teal-dark)}
+.osm{border-radius:2rem 2rem 6rem 2rem;overflow:hidden;height:clamp(20rem,60vw,32rem);background:var(--sand)}
+.osm iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.9)}
+@media (min-width:880px){.contact-grid{grid-template-columns:1fr 1.15fr;gap:5rem;align-items:center}}
+
+/* Subsol */
+.foot{background:var(--ink);color:#F3EBDF;padding:3.5rem 0 3rem}
+.foot-grid{display:grid;gap:2rem}
+.foot .brand{color:#FAF6EF}
+.foot p,.foot li{font-size:.9rem;letter-spacing:.015em;color:#D9CDBE;max-width:44rem}
+.foot a{color:#FAF6EF;text-underline-offset:.2em}
+.foot ul{display:grid;gap:.35rem}
+.foot .fine{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(250,246,239,.14);display:grid;gap:.4rem}
+.foot .fine p{font-size:.82rem;letter-spacing:.03em}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+
+/* Bară de contact pe telefon */
+.callbar{
+  position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));z-index:40;
+  display:flex;gap:.5rem;padding:.45rem;background:var(--paper);border-radius:999px;
+  box-shadow:0 .9rem 2rem -.7rem rgba(59,43,34,.5),0 0 0 1px rgba(59,43,34,.06);
+  opacity:0;transform:translateY(160%);visibility:hidden;
+  transition:transform .45s var(--ease),opacity .45s var(--ease),visibility 0s linear .45s;
+}
+.callbar.show{opacity:1;transform:none;visibility:visible;transition-delay:0s}
+.callbar .btn{flex:1;min-height:3rem;padding-inline:1rem}
+@media (max-width:879px){.foot{padding-bottom:calc(6.5rem + env(safe-area-inset-bottom))}}
+@media (min-width:880px){.callbar{display:none}}
+
+/* Preferințe de accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .seq>*,.hero-photo img{animation:fadeIn .2s ease both!important;animation-delay:0s!important}
+  .js [data-reveal]{transform:none!important;transition:opacity .2s ease!important}
+  .route{stroke-dashoffset:0!important;opacity:0;transition:opacity .2s ease!important}
+  .map-figure.in .route{opacity:1}
+  .pin,.dest{transform:none!important;transition:opacity .2s ease!important}
+  .menu-panel,.callbar{transform:none!important;transition:opacity .2s ease,visibility 0s linear .2s!important}
+  .menu-panel.open,.callbar.show{transition:opacity .2s ease!important}
+  .menu-btn span,.menu-btn span::before,.menu-btn span::after{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--ink-soft:#2e211a;--line:rgba(59,43,34,.6)}
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--ink)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--ink)}
+  .btn-primary{background:var(--teal-dark)}
+  .pill{background:#fff;box-shadow:inset 0 0 0 1.5px var(--teal-dark)}
+  .map-frame,.osm{box-shadow:0 0 0 2px var(--ink)}
+  .hero .sub,.facts dt,.contact-meta dt{color:#4d5232}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Express Wash, înapoi sus">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#0f766e" stroke-width="2"/><circle cx="14" cy="14" r="7.5" fill="#0f766e" opacity=".14"/><path d="M8.5 15.5c2-1.6 3.6-1.6 5.5 0s3.5 1.6 5.5 0" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round"/></svg>
+      Express Wash <small>KM5</small>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Navigare principală">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#drum">Cum ajungi</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-call" href="tel:0720736729">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu" aria-label="Deschide meniul"><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="menu-panel" id="meniu" aria-label="Meniu pe telefon">
+  <a href="#despre">Despre</a>
+  <a href="#servicii">Servicii</a>
+  <a href="#drum">Cum ajungi</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="seq">
+        <p class="pill" style="--i:0"><i aria-hidden="true"></i>Deschis non-stop, 24/7</p>
+        <h1 id="titlu" style="--i:1">Express Wash</h1>
+        <p class="sub" style="--i:2">Spălătorie de haine self service în KM5, Constanța</p>
+        <p class="lead" style="--i:3"><strong>Curat rapid, oricând ai nevoie.</strong> Vii cu rufele, alegi mașina și pleci cu ele spălate și uscate, la orice oră.</p>
+        <div class="actions" style="--i:4">
+          <a class="btn btn-primary" href="tel:0720736729">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 5.7 5.7l1.3-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/40720736729?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20serviciile%20de%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1z"/><path d="M9.2 9.3c.2 2.3 2.2 4.3 4.5 4.6l1-1.1 1.6.8-.3 1.3c-3.6.2-7-3.2-6.8-6.8l1.3-.3.8 1.6z"/></svg>
+            Întreabă pe WhatsApp
+          </a>
+        </div>
+        <a class="addr-link" href="#drum" style="--i:5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+          Strada Pandurului 48, Constanța
+        </a>
+      </div>
+      <div class="hero-photo">
+        <img src="img/2.jpg" alt="Interior de spălătorie self service, cu șiruri de mașini de spălat și uscătoare (fotografie ilustrativă)" width="1200" height="1500" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo" data-reveal="scale">
+          <img src="img/3.jpg" alt="Coș cu rufe lângă mașinile de spălat dintr-o spălătorie (fotografie ilustrativă)" width="1000" height="1250" loading="lazy">
+        </div>
+        <div class="about-text" data-reveal="fade">
+          <h2 id="despre-titlu">Haine curate, fără să te uiți la ceas</h2>
+          <p>La Express Wash ai mereu haine curate, fără să depinzi de un program. Găsești mașini moderne de spălat și de uscat, ușor de folosit, la orice oră din zi și din noapte.</p>
+          <p>Vii când îți convine, pornești mașina și pleci cu rufele gata. Totul rapid, eficient și pe înțelesul tuturor.</p>
+        </div>
+      </div>
+      <ul class="perks">
+        <li class="perk" data-reveal="fade" style="--d:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+          <div><h3>Non-stop</h3><p>Intri la orice oră, 24 de ore din 24, 7 zile din 7.</p></div>
+        </li>
+        <li class="perk" data-reveal="fade" style="--d:1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="3.5"/><path d="M10 17V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg>
+          <div><h3>Parcare ușoară</h3><p>Locuri de parcare chiar în fața spălătoriei.</p></div>
+        </li>
+        <li class="perk" data-reveal="fade" style="--d:2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="2.5"/><path d="M2.5 10h19M6.5 15h4"/></svg>
+          <div><h3>Plată rapidă</h3><p>Plătești simplu, inclusiv cu cardul.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap svc-grid">
+      <div>
+        <h2 id="servicii-titlu">Ce găsești la noi</h2>
+        <p class="intro">Tot ce-ți trebuie ca să speli și să usuci singur, repede și fără bătăi de cap.</p>
+        <div class="svc-photo" data-reveal="scale">
+          <img src="img/1.jpg" alt="Rând de mașini de spălat curate într-o spălătorie self service (fotografie ilustrativă)" width="1000" height="1000" loading="lazy">
+        </div>
+      </div>
+      <ul class="svc-list">
+        <li data-reveal="left" style="--d:0">
+          <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><circle cx="12" cy="13.5" r="4.5"/><path d="M7.5 6h3M15.5 6h1"/></svg></span>
+          <div><h3>Spălare rapidă</h3><p>Programe scurte, ca să pleci repede cu rufele curate.</p></div>
+        </li>
+        <li data-reveal="left" style="--d:1">
+          <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9h10a3 3 0 1 0-3-3M3 15h13a3 3 0 1 1-3 3M3 12h16"/></svg></span>
+          <div><h3>Uscare eficientă</h3><p>Uscătoare performante: hainele ies gata de împăturit.</p></div>
+        </li>
+        <li data-reveal="left" style="--d:2">
+          <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.5h4v3h-4zM8.5 9c0-1.9 1.6-3.5 3.5-3.5s3.5 1.6 3.5 3.5v11a1.5 1.5 0 0 1-1.5 1.5h-4A1.5 1.5 0 0 1 8.5 20z"/><path d="M8.5 12.5h7"/></svg></span>
+          <div><h3>Detergenți incluși</h3><p>Detergent și balsam profesionale, cu meniuri simple pe mașină.</p></div>
+        </li>
+        <li data-reveal="left" style="--d:3">
+          <span class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="3"/><circle cx="12" cy="13" r="6"/><path d="M9 13a3 3 0 0 1 3-3M6 5.5h2"/></svg></span>
+          <div><h3>Mașini spațioase</h3><p>Pentru rufe voluminoase, pături sau spălări mari, dintr-o singură tură.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="route-sec" id="drum" aria-labelledby="drum-titlu">
+    <div class="wrap route-grid">
+      <div class="route-text" data-reveal="fade">
+        <h2 id="drum-titlu">Drumul până la noi</h2>
+        <p class="intro">Ne găsești pe Strada Pandurului 48, în KM5. Oprești chiar în fața spălătoriei, așa că rufele nu trebuie cărate departe.</p>
+        <dl class="facts">
+          <div><dt>Adresa</dt><dd>Strada Pandurului 48, Constanța</dd></div>
+          <div><dt>Program</dt><dd>Deschis non-stop, 24 de ore din 24, 7 zile din 7.</dd></div>
+          <div><dt>Parcare</dt><dd>Găsești locuri de parcare în fața spălătoriei.</dd></div>
+        </dl>
+        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Express+Wash+Self+Service+Laundry+Spalatorie+de+haine+self+service+KM5+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide traseul în Google Maps</a>
+      </div>
+
+      <figure class="map-figure">
+        <div class="map-frame">
+          <svg viewBox="0 0 600 640" role="img" aria-labelledby="mt md">
+            <title id="mt">Schiță desenată de mână a drumului până la Express Wash</title>
+            <desc id="md">Traseul pornește de pe drumul mare, cotește pe Strada Pandurului și urcă până la numărul 48, unde e spălătoria. În fața ei sunt locuri de parcare.</desc>
+            <defs>
+              <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="2" seed="7"/>
+                <feDisplacementMap in="SourceGraphic" scale="5"/>
+              </filter>
+              <path id="sA" d="M-20 470 C150 455 300 490 620 440"/>
+              <path id="sB" d="M120 -20 C135 150 105 320 130 660"/>
+              <path id="sP" d="M382 486 C395 380 370 260 420 120 C440 65 465 15 480 -20"/>
+              <path id="sC" d="M-20 200 C150 215 300 185 620 210"/>
+              <path id="sD" d="M125 332 C220 320 300 345 384 330"/>
+            </defs>
+
+            <rect width="600" height="640" fill="#F7F0E4"/>
+
+            <g filter="url(#rough)" fill="#E8DCC7">
+              <rect x="10" y="12" width="88" height="168" rx="14"/>
+              <rect x="10" y="226" width="88" height="212" rx="14"/>
+              <rect x="10" y="496" width="88" height="134" rx="14"/>
+              <rect x="150" y="16" width="250" height="160" rx="16"/>
+              <rect x="150" y="228" width="212" height="86" rx="14"/>
+              <rect x="150" y="350" width="216" height="92" rx="14"/>
+              <rect x="436" y="18" width="154" height="160" rx="16"/>
+              <rect x="408" y="228" width="182" height="210" rx="16"/>
+              <rect x="150" y="498" width="204" height="132" rx="16"/>
+              <rect x="382" y="490" width="208" height="140" rx="16"/>
+            </g>
+
+            <g fill="#A3A47A" opacity=".7" filter="url(#rough)">
+              <circle cx="158" cy="196" r="9"/><circle cx="246" cy="190" r="8"/><circle cx="330" cy="203" r="9"/>
+              <circle cx="560" cy="452" r="9"/><circle cx="470" cy="470" r="8"/>
+              <circle cx="100" cy="470" r="8"/><circle cx="210" cy="482" r="9"/>
+              <circle cx="545" cy="198" r="8"/>
+            </g>
+
+            <g filter="url(#rough)" fill="none" stroke-linecap="round">
+              <g stroke="#D9C9AF" stroke-width="40">
+                <use href="#sA"/>
+              </g>
+              <g stroke="#D9C9AF" stroke-width="33">
+                <use href="#sB"/><use href="#sP"/><use href="#sC"/><use href="#sD"/>
+              </g>
+              <g stroke="#FFFCF6" stroke-width="34">
+                <use href="#sA"/>
+              </g>
+              <g stroke="#FFFCF6" stroke-width="27">
+                <use href="#sB"/><use href="#sP"/><use href="#sC"/><use href="#sD"/>
+              </g>
+              <use href="#sA" stroke="#D3C2A6" stroke-width="2" stroke-dasharray="10 14"/>
+            </g>
+
+            <text class="m-label" font-size="24" dy=".35em" fill="#3B2B22"><textPath href="#sP" startOffset="47%">Strada Pandurului</textPath></text>
+            <text class="m-label halo" x="268" y="104" text-anchor="middle" font-size="30" style="fill:#6B7046">Cartierul KM5</text>
+
+            <g filter="url(#rough)">
+              <rect x="404" y="346" width="16" height="64" rx="3" fill="#EFE4D1" stroke="#CDBB9E" stroke-width="1.5"/>
+              <path d="M404 366h16M404 388h16" stroke="#CDBB9E" stroke-width="1.5"/>
+              <rect x="428" y="350" width="58" height="58" rx="7" fill="#D3E8E4" stroke="#0f766e" stroke-width="2.5"/>
+              <circle cx="457" cy="382" r="12" fill="none" stroke="#0f766e" stroke-width="2.5"/>
+              <path d="M450 384c2.5-2 4.5-2 7 0s4.5 2 7 0" fill="none" stroke="#0f766e" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(430 428)">
+              <circle r="14" fill="#6B7046"/>
+              <text class="m-small" y="7" text-anchor="middle" font-size="20" style="fill:#fff">P</text>
+            </g>
+            <text class="m-small halo" x="452" y="435" font-size="20">parcare</text>
+
+            <path class="route" pathLength="1" filter="url(#rough)" d="M40 462 C140 455 270 476 386 466 C393 440 393 410 389 388 C393 381 405 379 424 379"/>
+
+            <circle cx="40" cy="462" r="10" fill="#3B2B22" stroke="#F7F0E4" stroke-width="4"/>
+            <text class="m-label halo" x="42" y="430" text-anchor="middle" font-size="30">Tu</text>
+
+            <g transform="translate(457 348)">
+              <g class="pin">
+                <path d="M0 0 C-12 -14 -18 -22 -18 -31 A18 18 0 1 1 18 -31 C18 -22 12 -14 0 0 Z" fill="#B5583A"/>
+                <circle cy="-31" r="6.5" fill="#FAF6EF"/>
+              </g>
+            </g>
+            <g class="dest">
+              <text class="m-label halo" x="496" y="258" text-anchor="middle" font-size="30">Express Wash</text>
+              <text class="m-small halo" x="496" y="284" text-anchor="middle" font-size="21">Str. Pandurului 48</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Schiță desenată de mână, ca să te orientezi; nu e la scară. Pentru traseul exact, deschide harta.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div data-reveal="fade">
+        <h2 id="contact-titlu">Ai o întrebare înainte să vii?</h2>
+        <p class="intro">Sună-ne sau scrie-ne pe WhatsApp și îți spunem tot ce vrei să știi despre mașini și programe.</p>
+        <a class="phone-big" href="tel:0720736729" aria-label="Sună la 0720 736 729">0720 736 729</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0720736729">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 5.7 5.7l1.3-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/40720736729?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20serviciile%20de%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1z"/><path d="M9.2 9.3c.2 2.3 2.2 4.3 4.5 4.6l1-1.1 1.6.8-.3 1.3c-3.6.2-7-3.2-6.8-6.8l1.3-.3.8 1.6z"/></svg>
+            Întreabă pe WhatsApp
+          </a>
+        </div>
+        <dl class="contact-meta">
+          <div><dt>Adresa</dt><dd>Strada Pandurului 48, Constanța · <a href="https://www.google.com/maps/search/?api=1&amp;query=Express+Wash+Self+Service+Laundry+Spalatorie+de+haine+self+service+KM5+Constan%C8%9Ba" target="_blank" rel="noopener">Vezi pe Google Maps</a></dd></div>
+          <div><dt>Program</dt><dd>Non-stop, 24 de ore din 24, 7 zile din 7.</dd></div>
+        </dl>
+      </div>
+      <div class="osm" data-reveal="scale">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6196125,44.1393638,28.6276125,44.1433638&amp;layer=mapnik&amp;marker=44.1413638,28.6236125" title="Harta: Express Wash, Strada Pandurului 48, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12.5" fill="none" stroke="#9fd3cc" stroke-width="2"/><path d="M8.5 15.5c2-1.6 3.6-1.6 5.5 0s3.5 1.6 5.5 0" fill="none" stroke="#9fd3cc" stroke-width="2" stroke-linecap="round"/></svg>
+          Express Wash
+        </a>
+        <p style="margin-top:.75rem">Express Wash Self Service Laundry, spălătorie de haine self service KM5. Deschisă non-stop în Constanța.</p>
+      </div>
+      <ul>
+        <li>Strada Pandurului 48, Constanța</li>
+        <li><a href="tel:0720736729">0720 736 729</a></li>
+        <li><a href="https://wa.me/40720736729?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20serviciile%20de%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">Scrie pe WhatsApp</a></li>
+      </ul>
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#drum">Cum ajungi</a></li>
+      </ul>
+    </div>
+    <div class="fine">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Lina_cao, RyanMcGuire, DominiqueVince</p>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar" aria-label="Contact rapid">
+  <a class="btn btn-primary" href="tel:0720736729">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 5.7 5.7l1.3-2 4 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg>
+    Sună acum
+  </a>
+  <a class="btn btn-ghost" href="https://wa.me/40720736729?text=Bun%C4%83%20ziua%21%20Am%20o%20%C3%AEntrebare%20despre%20serviciile%20de%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19.1z"/><path d="M9.2 9.3c.2 2.3 2.2 4.3 4.5 4.6l1-1.1 1.6.8-.3 1.3c-3.6.2-7-3.2-6.8-6.8l1.3-.3.8 1.6z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<script>
+(function(){
+  var nav = document.querySelector('.nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Meniu pe telefon
+  var btn = document.querySelector('.menu-btn');
+  var panel = document.getElementById('meniu');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+    panel.classList.toggle('open', open);
+  }
+  btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  panel.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('[data-reveal], .map-figure').forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+
+  // Dezvăluiri la derulare
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+
+  // Traseul se desenează când harta intră în ecran
+  var map = document.querySelector('.map-figure');
+  var mo = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ map.classList.add('in'); mo.disconnect(); }
+    });
+  }, {threshold:.4});
+  mo.observe(map);
+
+  // Bara de contact pe telefon
+  var bar = document.querySelector('.callbar');
+  var heroActions = document.querySelector('.hero .actions');
+  var heroVisible = true, endVisible = new Set();
+  function update(){ bar.classList.toggle('show', !heroVisible && endVisible.size === 0); }
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ heroVisible = en.isIntersecting || en.boundingClientRect.top > 0; });
+    update();
+  }).observe(heroActions);
+  var eo = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting) endVisible.add(en.target); else endVisible.delete(en.target);
+    });
+    update();
+  }, {threshold:.25});
+  eo.observe(document.getElementById('contact'));
+  eo.observe(document.querySelector('.foot'));
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
