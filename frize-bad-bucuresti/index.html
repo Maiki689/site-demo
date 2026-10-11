@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a24">
+  <meta name="description" content="Frize Bad, frizerie pentru bărbați pe Bulevardul Regina Elisabeta, București. Tuns, bărbierit și îngrijirea bărbii, într-o atmosferă relaxată.">
+  <title>Frize Bad — Frizerie în București</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #101a24;
+      --blue: #38bdf8;
+      --white: #f1f6fa;
+      --muted: #b7c6d0;
+      --line: #435565;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+    body { margin: 0; background: var(--ink); color: var(--white); font-family: "Manrope", sans-serif; line-height: 1.6; }
+    button, a, input { -webkit-tap-highlight-color: transparent; }
+    button, a { touch-action: manipulation; }
+    button { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    button { color: inherit; }
+    ::selection { background: var(--blue); color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Unbounded", sans-serif; letter-spacing: -.025em; }
+    h2 { font-size: clamp(1.9rem, 4.1vw, 3.6rem); line-height: 1.15; font-weight: 500; }
+    h3 { font-weight: 500; line-height: 1.3; }
+    p { max-width:  sixty; max-width: 62ch; }
+    .container { width: min(100% - 4rem, 88rem); margin-inline: auto; }
+    .skip { position: fixed; top: -6rem; left: 1rem; z-index: 100; padding: .8rem 1.2rem; background: var(--white); color: var(--ink); }
+    .skip:focus { top: 1rem; }
+    .header { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); z-index: 20; width: min(100% - 4rem, 88rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: .75rem 1.2rem; background: rgba(14, 24, 34, .85); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-radius: .4rem; border-top: 1px solid rgba(255,255,255,.18); }
+    .header.scrolled { box-shadow: 0 .4rem 2rem rgba(0,0,0,.25); }
+    .brand { display: flex; align-items: center; gap: .75rem; font-family: "Unbounded", sans-serif; font-weight: 600; font-size: 1rem; white-space: nowrap; }
+    .brand-mark { width: .9rem; height: 1.7rem; border: 1px solid #9ab4c6; border-radius: .5rem; background: repeating-linear-gradient(135deg, var(--blue) 0 .3rem, transparent .3rem .6rem, #e1eaf0 .6rem .85rem, transparent .85rem 1.1rem); }
+    nav { display: flex; gap: 1.8rem; align-items: center; }
+    nav a { font-size: .86rem; font-weight: 700; padding-block: .5rem; }
+    nav a:hover { color: var(--blue); }
+    .nav-call { background: var(--blue); color: var(--ink); padding: .65rem 1rem; border-radius: .2rem; white-space: nowrap; }
+    .nav-call:hover { color: var(--ink); background: #82d8fb; }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: .2rem; background: transparent; padding: .55rem .8rem; min-height: 44px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.2rem; padding: .85rem 1.35rem; background: var(--blue); color: var(--ink); font-weight: 800; font-size: .9rem; border: 1px solid transparent; border-radius: .2rem; transition: transform .1s, box-shadow .2s; }
+    .button:hover { box-shadow: 0 0 0 .2rem rgba(56,189,248,.2); }
+    .button:active, button:active, .nav-call:active { transform: scale(.97); }
+    .button.secondary { background: transparent; border-color: #8a9ba8; color: var(--white); }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .chapter { padding: 5.5rem 0; }
+    .section-top { display: flex; gap: 2rem; justify-content: space-between; align-items: end; margin-bottom: 2.5rem; }
+    .section-top p { color: var(--muted); max-width: 30ch; font-size: .95rem; }
+    .mirror { position: relative; border: 1px solid #566975; padding: 1.5rem; background: #16232e; box-shadow: inset 0 0 0 .35rem rgba(255,255,255,.025); }
+    .bulbs { position: absolute; pointer-events: none; display: flex; justify-content: space-around; align-items: center; z-index: 2; }
+    .bulbs.top, .bulbs.bottom { height: 1.5rem; left: 1.5rem; right: 1.5rem; }
+    .bulbs.top { top: 0; } .bulbs.bottom { bottom: 0; }
+    .bulbs.left, .bulbs.right { width: 1.5rem; top: 1.5rem; bottom: 1.5rem; flex-direction: column; }
+    .bulbs.left { left: 0; } .bulbs.right { right: 0; }
+    .bulbs i { width: .36rem; height: .36rem; border-radius: 50%; background: #d5eaf5; box-shadow: 0 0 .6rem rgba(184,223,246,.4); }
+    .hero { background: #101a24; padding: 8.5rem 0 2.5rem; }
+    .hero-frame { overflow: hidden; }
+    .hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; min-height: 37rem; }
+    .hero-copy { padding: clamp(1.5rem, 4vw, 4rem); display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; background: #13202b; overflow: hidden; }
+    .reflection { position: absolute; inset: -20% auto -20% 10%; width: 12%; background: rgba(207,233,249,.035); transform: skew(-18deg); pointer-events: none; transition: transform .5s var(--ease); }
+    .hero-location { color: #c0d1dd; font-size: .92rem; margin-bottom: 2rem; display: flex; align-items: center; gap: .65rem; }
+    .hero-location::before { content: ""; width: 1.6rem; height: 1px; background: var(--blue); }
+    h1 { font-size: clamp(3.4rem, 6.8vw, 6.8rem); line-height: 1.07; font-weight: 600; white-space: nowrap; margin-left: -.04em; }
+    .word { display: block; }
+    .letter { display: inline-block; }
+    .js .letter { opacity: 0; transform: translateY(.25em); }
+    .js .hero.started .letter { animation: type-in .38s var(--ease) forwards; animation-delay: var(--delay); }
+    .hero.title-complete h1 { color: var(--blue); }
+    .hero h1 { transition: color .5s; }
+    .hero-tagline { margin-top: 1.8rem; font-size: clamp(1.2rem, 1.8vw, 1.55rem); font-weight: 600; max-width: 25ch; line-height: 1.4; }
+    .hero-description { color: var(--muted); margin: .8rem 0 2rem; max-width: 29ch; }
+    .hero-photo { position: relative; min-width: 0; overflow: hidden; }
+    .hero-photo img { height: 100%; position: absolute; inset: 0; object-position: center; }
+    .hero-photo figcaption { position: absolute; bottom: 1rem; right: 1rem; background: #101a24; padding: .3rem .6rem; font-size: .65rem; color: #d5e2eb; }
+    figure { margin: 0; }
+    .js .hero-photo { opacity: 0; transform: translateX(1rem); }
+    .js .hero.started .hero-photo { animation: photo-in .8s var(--ease) .15s forwards; }
+    .hero-bottom { display: flex; justify-content: space-between; gap: 1rem; padding: 1.5rem .2rem 0; font-size: .85rem; color: var(--muted); }
+    .hero-bottom a { text-decoration: underline; text-underline-offset: .3rem; }
+    @keyframes type-in { to { opacity: 1; transform: translateY(0); } }
+    @keyframes photo-in { to { opacity: 1; transform: translateX(0); } }
+    .about { background: #1b2e3a; }
+    .about-panel { display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; border: 1px solid #577080; padding: clamp(1.8rem, 4vw, 4rem); }
+    .about-copy p { margin-bottom: 1.3rem; color: #d0dce4; font-size: 1.05rem; }
+    .qualities { margin-top: 2.5rem; display: grid; gap: 1.5rem; }
+    .quality { display: grid; grid-template-columns: 2rem 1fr; gap: .85rem; }
+    .quality svg { width: 1.5rem; height: 1.5rem; stroke: var(--blue); fill: none; stroke-width: 1.5; margin-top: .15rem; }
+    .quality h3 { font-family: "Manrope", sans-serif; font-size: 1.02rem; font-weight: 800; letter-spacing: 0; }
+    .quality p { font-size: .9rem; margin: .1rem 0 0; color: var(--muted); }
+    .services { background: #14202e; }
+    .service-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 2rem; }
+    .palette { display: flex; flex-direction: column; border: 1px solid var(--line); padding: .7rem; background: #0e1924; }
+    .service-tab { display: grid; grid-template-columns: 3.2rem 1fr 1rem; align-items: center; gap: 1.2rem; width: 100%; padding: 1rem; text-align: left; border: none; background: transparent; cursor: pointer; min-height: 5.6rem; border-bottom: 1px solid #2c3b49; }
+    .service-tab:last-child { border-bottom: none; }
+    .service-tab:hover { background: #192938; }
+    .service-tab[aria-selected="true"] { background: #233749; }
+    .swatch { display: block; height: 3.2rem; background: var(--swatch); border-radius: .12rem; box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); position: relative; }
+    .swatch::after { content: ""; position: absolute; top: .35rem; left: .35rem; width: 45%; height: .12rem; background: rgba(255,255,255,.45); }
+    .service-name { font-weight: 700; font-size: 1rem; }
+    .select-dot { width: .5rem; height: .5rem; border: 1px solid #8ba1b3; border-radius: 50%; }
+    [aria-selected="true"] .select-dot { background: var(--blue); border-color: var(--blue); }
+    .service-display { display: flex; }
+    .service-panel { padding: clamp(1.5rem, 3vw, 3rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; background: #192c3c; }
+    .service-panel[hidden] { display: none; }
+    .service-panel h3 { font-size: clamp(1.5rem, 2.8vw, 2.4rem); margin-bottom: 1.2rem; }
+    .service-panel p { color: #c4d5e2; font-size: 1.05rem; max-width: 32ch; }
+    .service-panel .button { margin-top: 2.2rem; }
+    .tool { width: 5rem; height: 5rem; fill: none; stroke: var(--blue); stroke-width: 1.15; margin-bottom: 2rem; }
+    .service-panel.active-in { animation: panel-in .4s var(--ease); }
+    @keyframes panel-in { from { opacity: 0; transform: translateX(.7rem); } to { opacity: 1; transform: translateX(0); } }
+    .gallery { background: #213039; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .photo-frame { border: 1px solid #62737d; padding: .65rem; background: #18252e; }
+    .photo-button { display: block; border: 0; padding: 0; width: 100%; position: relative; background: #15212b; cursor: zoom-in; overflow: hidden; }
+    .photo-button img { aspect-ratio: 3/4; transition: transform .5s var(--ease), opacity .3s; }
+    .photo-button:hover img { transform: scale(1.035); opacity: .85; }
+    .photo-button span { position: absolute; right: .7rem; bottom: .7rem; height: 2rem; width: 2rem; background: #101a24; font-size: 1.4rem; line-height: 2rem; }
+    .gallery-note { margin-top: 1.3rem; color: var(--muted); font-size: .8rem; }
+    .contact { background: #102637; }
+    .contact-frame { display: grid; grid-template-columns: 1fr 1.1fr; border: 1px solid #557181; }
+    .contact-copy { padding: clamp(1.8rem, 4vw, 4rem); }
+    .contact-copy h2 { margin-bottom: 1.4rem; }
+    .contact-copy > p { color: #c6d5df; margin-bottom: 2rem; max-width: 34ch; }
+    address { font-style: normal; margin: 2rem 0; color: #d7e5ed; }
+    address strong { display: block; margin-bottom: .5rem; color: var(--white); }
+    .phone { display: inline-block; font-size: clamp(1.3rem, 2.4vw, 2rem); font-weight: 700; margin-bottom: 1.2rem; }
+    .map { padding: 1rem; background: #1b3546; display: flex; flex-direction: column; gap: 1rem; }
+    .map iframe { width: 100%; min-height: 25rem; flex: 1; border: 0; background: #d1dce4; }
+    .map a { font-size: .9rem; font-weight: 700; padding: .4rem .3rem; text-decoration: underline; text-underline-offset: .25rem; min-height: 44px; }
+    footer { padding: 2.3rem 0; background: #0c1620; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+    .footer-meta { text-align: right; font-size: .74rem; color: #a5b8c7; letter-spacing: .015em; }
+    .footer-meta p + p { margin-top: .3rem; }
+    .js .reveal { opacity: 0; transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .js .reveal[data-motion="left"] { transform: translateX(-1.3rem); }
+    .js .reveal[data-motion="scale"] { transform: scale(.975); }
+    .js .reveal[data-motion="right"] { transform: translateX(1.3rem); }
+    .js .reveal.visible { opacity: 1; transform: none; }
+    dialog { padding: .75rem; border: 1px solid #718694; background: #111e29; color: var(--white); max-width: min(90vw, 65rem); max-height: 90dvh; }
+    dialog::backdrop { background: rgba(3,9,15,.9); }
+    dialog img { height: auto; max-height: 73dvh; width: auto; max-width: 100%; object-fit: contain; margin: auto; }
+    .dialog-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .4rem 0 .9rem; font-size: .8rem; }
+    .dialog-bar button { background: #243a4c; border: 1px solid #657d90; padding: .55rem 1rem; min-height: 44px; cursor: pointer; }
+    @media (min-width: 1500px) { .hero-inner { min-height: 43rem; } }
+    @media (max-width: 1000px) {
+      .container, .header { width: calc(100% - 2.5rem); }
+      nav { gap: 1rem; }
+      .hero-inner { min-height: 33rem; }
+      .hero-copy { padding: 2rem; }
+      .hero-copy .actions { flex-direction: column; align-items: flex-start; }
+      .about-panel { gap: 2rem; }
+      .service-layout { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .service-tab { padding: .8rem; gap: .8rem; grid-template-columns: 2.7rem 1fr .5rem; }
+      .swatch { height: 2.7rem; }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); }
+      .photo-button img { aspect-ratio: 4/3; }
+    }
+    @media (max-width: 700px) {
+      html { scroll-padding-top: 6rem; }
+      .container, .header { width: calc(100% - 2rem); }
+      .header { top: .6rem; padding: .65rem .8rem; gap: .7rem; flex-wrap: wrap; }
+      .brand { font-size: .87rem; }
+      .menu-toggle { display: block; margin-left: auto; }
+      nav { display: none; width: 100%; align-items: stretch; gap: .3rem; padding-bottom: .3rem; }
+      nav.open { display: flex; flex-direction: column; }
+      nav a { padding: .7rem .5rem; min-height: 44px; }
+      nav .nav-call { text-align: center; padding: .7rem; margin-top: .25rem; }
+      .hero { padding-top: 6.5rem; }
+      .mirror { padding: 1.1rem; }
+      .bulbs.top, .bulbs.bottom { height: 1.1rem; }
+      .bulbs.left, .bulbs.right { width: 1.1rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-copy { padding: 2rem 1.2rem 2.4rem; }
+      .hero-location { margin-bottom: 1.4rem; font-size: .8rem; }
+      h1 { font-size: clamp(3rem, 12vw, 5rem); }
+      .word { display: inline; }
+      .word + .word::before { content: " "; }
+      .hero-tagline { margin-top: 1.5rem; }
+      .hero-copy .actions { align-items: stretch; }
+      .hero-photo { height: 19rem; }
+      .hero-photo img { object-position: center 40%; }
+      .hero-bottom { flex-direction: column; gap: .5rem; }
+      .chapter { padding: 3.5rem 0; }
+      .section-top { display: block; margin-bottom: 1.8rem; }
+      .section-top p { margin-top: 1rem; max-width: 40ch; }
+      .about-panel { grid-template-columns: 1fr; gap: 1.8rem; padding: 1.6rem; }
+      .qualities { margin-top: 2rem; }
+      .service-layout { grid-template-columns: 1fr; }
+      .service-tab { min-height: 4.8rem; }
+      .service-panel { min-height: 23rem; }
+      .service-panel .button { width: 100%; }
+      .gallery-grid { gap: .75rem; }
+      .photo-frame { padding: .35rem; }
+      .photo-button img { aspect-ratio: 3/4; }
+      .contact-frame { grid-template-columns: 1fr; }
+      .contact-copy { padding: 1.7rem; }
+      .contact-copy .actions { flex-direction: column; }
+      .map iframe { min-height: 20rem; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.3rem; }
+      .footer-meta { text-align: left; }
+      .js .reveal[data-motion] { transform: none; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .header { background: #101a24; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    }
+    @media (prefers-contrast: more) {
+      :root { --muted: #e1eaf0; --line: #96acbc; }
+      .header { background: #101a24; backdrop-filter: none; }
+      .mirror, .about-panel, .contact-frame, .palette, .photo-frame { border-color: #c1d4e2; }
+      .bulbs i { box-shadow: none; }
+      .service-panel p, .about-copy p, .section-top p { color: #f1f6fa; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .2s !important; animation-delay: 0s !important; transition-duration: .2s !important; }
+      .js .letter { transform: none; }
+      .js .hero-photo { transform: none; }
+      .js .reveal[data-motion] { transform: none; }
+      .photo-button:hover img { transform: none; }
+      .reflection { display: none; }
+      .service-panel.active-in { animation: reduced-fade .2s; }
+      @keyframes reduced-fade { from { opacity: 0; } to { opacity: 1; } }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#principal">Sari la conținut</a>
+  <header class="header">
+    <a href="#acasa" class="brand" aria-label="Frize Bad, prima secțiune">
+      <span class="brand-mark" aria-hidden="true"></span> Frize Bad
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Meniu</button>
+    <nav id="navigation" aria-label="Navigare principală">
+      <a href="#despre">Despre noi</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-call" href="tel:0722400513">Sună acum</a>
+    </nav>
+  </header>
+
+  <main id="principal">
+    <section class="hero" id="acasa" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="mirror hero-frame">
+          <div class="hero-inner">
+            <div class="hero-copy">
+              <div class="reflection" aria-hidden="true"></div>
+              <p class="hero-location">Frizerie pentru bărbați, București</p>
+              <h1 id="hero-title" aria-label="Frize Bad">
+                <span class="word" aria-hidden="true"><span class="letter" style="--delay:.15s">F</span><span class="letter" style="--delay:.23s">r</span><span class="letter" style="--delay:.31s">i</span><span class="letter" style="--delay:.39s">z</span><span class="letter" style="--delay:.47s">e</span></span>
+                <span class="word" aria-hidden="true"><span class="letter" style="--delay:.60s">B</span><span class="letter" style="--delay:.68s">a</span><span class="letter" style="--delay:.76s">d</span></span>
+              </h1>
+              <p class="hero-tagline">Tunsoare modernă,<br>stil perfect.</p>
+              <p class="hero-description">Un look care te reprezintă.<br>O atmosferă în care te relaxezi.</p>
+              <div class="actions">
+                <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+                <a class="button secondary" href="#servicii">Vezi serviciile</a>
+              </div>
+            </div>
+            <figure class="hero-photo">
+              <img src="img/1.jpg" alt="Scenă de frizerie, cu un frizer lucrând la o tunsoare" fetchpriority="high">
+              <figcaption>Fotografie ilustrativă</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <p>Bulevardul Regina Elisabeta, București</p>
+          <a href="tel:0722400513">0722 400 513</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter about" id="despre" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-panel reveal" data-motion="left">
+          <div>
+            <h2 id="about-title">Stilul tău.<br>Atenția noastră.</h2>
+            <div class="qualities">
+              <div class="quality">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M8 15 19 3M16 15 5 3"/></svg>
+                <div><h3>Echipă dedicată</h3><p>Frizeri atenți și pasionați.</p></div>
+              </div>
+              <div class="quality">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10V5h14v5M4 10h3v7h10v-7h3v10H4zM8 20v3m8-3v3"/></svg>
+                <div><h3>Atmosferă relaxată</h3><p>Te simți bine primit, de la primul salut.</p></div>
+              </div>
+              <div class="quality">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v13H8zM10 8V4h4v4M10 4V2h7M10 13h4"/></svg>
+                <div><h3>Produse calitative</h3><p>Îngrijire cu produse profesionale.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="about-copy">
+            <p>La Frize Bad, o tunsoare bună începe cu atenție la ceea ce îți dorești.</p>
+            <p>Ne spui cum îți place să-ți porți părul, iar noi te ajutăm să alegi un look potrivit. Cu grijă pentru detalii și timp pentru o experiență plăcută.</p>
+            <p>Suntem frizeria ta din București, unde profesionalismul și amabilitatea se întâlnesc. Tu te relaxezi. Noi ne ocupăm de stil.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter services" id="servicii" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-top">
+          <h2 id="services-title">Servicii</h2>
+          <p>Alege din paleta de îngrijire.<br>Vezi ce presupune fiecare serviciu.</p>
+        </div>
+        <div class="service-layout reveal" data-motion="scale">
+          <div class="palette" role="tablist" aria-label="Paleta serviciilor" aria-orientation="vertical">
+            <button class="service-tab" id="tab-tuns" role="tab" aria-selected="true" aria-controls="panel-tuns" tabindex="0">
+              <span class="swatch" style="--swatch:#38bdf8" aria-hidden="true"></span><span class="service-name">Tunsoare bărbați</span><span class="select-dot" aria-hidden="true"></span>
+            </button>
+            <button class="service-tab" id="tab-barbierit" role="tab" aria-selected="false" aria-controls="panel-barbierit" tabindex="-1">
+              <span class="swatch" style="--swatch:#789aa9" aria-hidden="true"></span><span class="service-name">Bărbierit clasic</span><span class="select-dot" aria-hidden="true"></span>
+            </button>
+            <button class="service-tab" id="tab-copii" role="tab" aria-selected="false" aria-controls="panel-copii" tabindex="-1">
+              <span class="swatch" style="--swatch:#aba5c7" aria-hidden="true"></span><span class="service-name">Tuns copii</span><span class="select-dot" aria-hidden="true"></span>
+            </button>
+            <button class="service-tab" id="tab-barba" role="tab" aria-selected="false" aria-controls="panel-barba" tabindex="-1">
+              <span class="swatch" style="--swatch:#718ba2" aria-hidden="true"></span><span class="service-name">Modelare barbă</span><span class="select-dot" aria-hidden="true"></span>
+            </button>
+            <button class="service-tab" id="tab-coafat" role="tab" aria-selected="false" aria-controls="panel-coafat" tabindex="-1">
+              <span class="swatch" style="--swatch:#b7cdd3" aria-hidden="true"></span><span class="service-name">Spălat și coafat</span><span class="select-dot" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="mirror service-display">
+            <div class="service-panel" id="panel-tuns" role="tabpanel" aria-labelledby="tab-tuns" tabindex="0">
+              <svg class="tool" viewBox="0 0 80 80" aria-hidden="true"><circle cx="20" cy="58" r="10"/><circle cx="59" cy="58" r="10"/><path d="m27 50 34-40M52 50 18 10M40 34l-4 5"/><circle cx="40" cy="35" r="2"/></svg>
+              <h3>Tunsoare bărbați</h3>
+              <p>Tuns după preferință și consiliere de stil. Alegem împreună forma care ți se potrivește.</p>
+              <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+            </div>
+            <div class="service-panel" id="panel-barbierit" role="tabpanel" aria-labelledby="tab-barbierit" tabindex="0" hidden>
+              <svg class="tool" viewBox="0 0 80 80" aria-hidden="true"><path d="m15 20 49 8-4 15-49-8zM15 20l-4 15M60 43l8 21c2 7-8 10-11 4L43 40"/></svg>
+              <h3>Bărbierit clasic</h3>
+              <p>Ritual tradițional cu prosop cald. Un moment de îngrijire, în ritmul tău.</p>
+              <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+            </div>
+            <div class="service-panel" id="panel-copii" role="tabpanel" aria-labelledby="tab-copii" tabindex="0" hidden>
+              <svg class="tool" viewBox="0 0 80 80" aria-hidden="true"><circle cx="24" cy="57" r="9"/><circle cx="55" cy="57" r="9"/><path d="m30 50 26-33M49 50 24 17M60 8v10m-5-5h10"/></svg>
+              <h3>Tuns copii</h3>
+              <p>O tunsoare pentru cei mici, rapidă și veselă. Cu atenție și o primire prietenoasă.</p>
+              <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+            </div>
+            <div class="service-panel" id="panel-barba" role="tabpanel" aria-labelledby="tab-barba" tabindex="0" hidden>
+              <svg class="tool" viewBox="0 0 80 80" aria-hidden="true"><path d="M18 20v22c0 17 22 28 22 28s22-11 22-28V20l-9 16-13 6-13-6zM29 49l11 7 11-7M30 62l10 4 10-4"/></svg>
+              <h3>Modelare barbă</h3>
+              <p>Conturare și îngrijire pentru o barbă bine definită. Detaliile fac diferența.</p>
+              <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+            </div>
+            <div class="service-panel" id="panel-coafat" role="tabpanel" aria-labelledby="tab-coafat" tabindex="0" hidden>
+              <svg class="tool" viewBox="0 0 80 80" aria-hidden="true"><path d="M17 20h46v13H17zM20 33v20m6-20v20m6-20v20m6-20v20m6-20v20m6-20v20m6-20v20m6-20v20M18 62h44"/></svg>
+              <h3>Spălat și coafat</h3>
+              <p>Spălat profesional și aranjare finală. Pentru un look îngrijit, gata de ieșit în oraș.</p>
+              <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter gallery" id="galerie" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-top">
+          <h2 id="gallery-title">În lumea frizeriei.</h2>
+          <p>Gesturi precise, instrumente de îngrijire și atenție la detalii.</p>
+        </div>
+        <div class="gallery-grid reveal" data-motion="right">
+          <figure class="photo-frame">
+            <button class="photo-button" aria-label="Mărește fotografia: scenă de lucru într-o frizerie">
+              <img src="img/2.jpg" alt="Scenă de lucru într-o frizerie pentru bărbați, fotografie ilustrativă" loading="lazy">
+              <span aria-hidden="true">+</span>
+            </button>
+          </figure>
+          <figure class="photo-frame">
+            <button class="photo-button" aria-label="Mărește fotografia: frizer și client">
+              <img src="img/3.jpg" alt="Frizer și client în timpul unei tunsori, fotografie ilustrativă" loading="lazy">
+              <span aria-hidden="true">+</span>
+            </button>
+          </figure>
+          <figure class="photo-frame">
+            <button class="photo-button" aria-label="Mărește fotografia: îngrijirea unei tunsori">
+              <img src="img/4.jpg" alt="Frizer lucrând cu atenție la tunsoarea unui client, fotografie ilustrativă" loading="lazy">
+              <span aria-hidden="true">+</span>
+            </button>
+          </figure>
+          <figure class="photo-frame">
+            <button class="photo-button" aria-label="Mărește fotografia: îngrijire pentru bărbați">
+              <img src="img/5.jpg" alt="Îngrijirea părului și a bărbii într-o frizerie, fotografie ilustrativă" loading="lazy">
+              <span aria-hidden="true">+</span>
+            </button>
+          </figure>
+        </div>
+        <p class="gallery-note">Imagini de atmosferă, ilustrative. Nu reprezintă salonul sau lucrările Frize Bad.</p>
+      </div>
+    </section>
+
+    <section class="chapter contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-frame reveal" data-motion="scale">
+          <div class="contact-copy">
+            <h2 id="contact-title">Ne vedem<br>la Frize Bad.</h2>
+            <p>Scrie-ne sau sună pentru programare. Stabilim împreună când poți veni.</p>
+            <a class="phone" href="tel:0722400513">0722 400 513</a>
+            <div class="actions">
+              <a class="button" href="https://wa.me/40722400513?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20%C3%AEmi%20fac%20o%20programare%20la%20Frize%20Bad.">Programează-te pe WhatsApp</a>
+              <a class="button secondary" href="tel:0722400513">Sună acum</a>
+            </div>
+            <address>
+              <strong>Unde ne găsești</strong>
+              Bulevardul Regina Elisabeta<br>București
+            </address>
+          </div>
+          <div class="map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0950642,44.4330511,26.103064200000002,44.437051100000005&layer=mapnik&marker=44.4350511,26.0990642" title="Harta locației Frize Bad, Bulevardul Regina Elisabeta, București" loading="lazy" referrerpolicy="no-referrer"></iframe>
+            <a href="https://www.google.com/maps/search/?api=1&query=Frize+Bad+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide locația în Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#acasa"><span class="brand-mark" aria-hidden="true"></span>Frize Bad</a>
+      <div class="footer-meta">
+        <p>Model de site (demo)</p>
+        <p>Fotografii ilustrative de pe Pixabay: vahidkanani, mostafa_meraji</p>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="photo-dialog" aria-label="Fotografie mărită">
+    <div class="dialog-bar">
+      <span>Fotografie de stoc, ilustrativă</span>
+      <button type="button" id="close-photo">Închide</button>
+    </div>
+    <img id="large-photo" alt="">
+  </dialog>
+
+  <script>
+    (() => {
+      document.documentElement.classList.add('js');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const hero = document.querySelector('.hero');
+
+      document.querySelectorAll('.mirror').forEach(frame => {
+        ['top', 'bottom', 'left', 'right'].forEach(side => {
+          const row = document.createElement('span');
+          row.className = 'bulbs ' + side;
+          row.setAttribute('aria-hidden', 'true');
+          const count = side === 'top' || side === 'bottom' ? 9 : 6;
+          for (let i = 0; i < count; i++) row.appendChild(document.createElement('i'));
+          frame.appendChild(row);
+        });
+      });
+
+      requestAnimationFrame(() => {
+        hero.classList.add('started');
+        setTimeout(() => hero.classList.add('title-complete'), reducedMotion.matches ? 220 : 1300);
+      });
+
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12 });
+        reveals.forEach(element => observer.observe(element));
+      } else {
+        reveals.forEach(element => element.classList.add('visible'));
+      }
+
+      const header = document.querySelector('.header');
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 30);
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      const menuButton = document.querySelector('.menu-toggle');
+      const navigation = document.querySelector('#navigation');
+      function closeMenu() {
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = 'Meniu';
+      }
+      menuButton.addEventListener('click', () => {
+        const open = navigation.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.textContent = open ? 'Închide' : 'Meniu';
+      });
+      navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && navigation.classList.contains('open')) {
+          closeMenu();
+          menuButton.focus();
+        }
+      });
+
+      const tabs = Array.from(document.querySelectorAll('.service-tab'));
+      function selectTab(tab) {
+        tabs.forEach(item => {
+          const selected = item === tab;
+          item.setAttribute('aria-selected', String(selected));
+          item.tabIndex = selected ? 0 : -1;
+          const panel = document.getElementById(item.getAttribute('aria-controls'));
+          panel.hidden = !selected;
+          panel.classList.remove('active-in');
+          if (selected) {
+            void panel.offsetWidth;
+            panel.classList.add('active-in');
+          }
+        });
+      }
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', event => {
+          let next = index;
+          if (event.key === 'ArrowDown' || event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+          else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+          else if (event.key === 'Home') next = 0;
+          else if (event.key === 'End') next = tabs.length - 1;
+          else return;
+          event.preventDefault();
+          selectTab(tabs[next]);
+          tabs[next].focus();
+        });
+      });
+
+      const dialog = document.getElementById('photo-dialog');
+      const largePhoto = document.getElementById('large-photo');
+      let lastPhotoButton;
+      document.querySelectorAll('.photo-button').forEach(button => {
+        button.addEventListener('click', () => {
+          if (typeof dialog.showModal !== 'function') return;
+          const image = button.querySelector('img');
+          largePhoto.src = image.getAttribute('src');
+          largePhoto.alt = image.alt;
+          lastPhotoButton = button;
+          dialog.showModal();
+        });
+      });
+      document.getElementById('close-photo').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => {
+        const bounds = dialog.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right ||
+            event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        if (lastPhotoButton) lastPhotoButton.focus();
+      });
+
+      const reflection = document.querySelector('.reflection');
+      if (window.matchMedia('(hover: hover)').matches) {
+        hero.addEventListener('pointermove', event => {
+          if (reducedMotion.matches) return;
+          const rect = hero.getBoundingClientRect();
+          const offset = (event.clientX - rect.left) / rect.width;
+          reflection.style.transform = `translateX(${offset * 140}%) skew(-18deg)`;
+        }, { passive: true });
+        hero.addEventListener('pointerleave', () => {
+          reflection.style.transform = 'translateX(0) skew(-18deg)';
+        });
+      }
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
