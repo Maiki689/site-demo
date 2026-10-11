@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cofetăria Dolce Bia · Constanța</title>
+<meta name="description" content="Cofetăria Dolce Bia din Constanța: prăjituri artizanale și torturi personalizate pentru orice ocazie, proaspete în fiecare zi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF9F2;
+    --pink:#F6E3E1;
+    --pink-deep:#E9CBC6;
+    --mint:#A8D5C2;
+    --mint-deep:#86BEA7;
+    --choc:#4A2C2A;
+    --choc-2:#6B4A47;
+    --ribbon:#be123c;
+    --ribbon-dark:#9f1239;
+    --ease:cubic-bezier(.2,.8,.2,1);
+    --serif:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+    --sans:"Jost", "Futura", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --wrap:72rem;
+    --pad:clamp(1.25rem, 5vw, 3rem);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--cream);color:var(--choc);
+    font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.02em;line-height:1.08}
+  p{margin:0}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  :focus-visible{outline:2px solid var(--ribbon);outline-offset:3px;border-radius:.25rem}
+  .skip{position:absolute;left:1rem;top:-4rem;background:var(--choc);color:var(--cream);padding:.75rem 1rem;border-radius:.5rem;z-index:100;text-decoration:none}
+  .skip:focus{top:1rem}
+
+  /* ---------- Butoane ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    min-height:3rem;padding:.7rem 1.5rem;border-radius:999px;
+    font:600 1rem/1.2 var(--sans);letter-spacing:.01em;text-decoration:none;
+    border:1.5px solid var(--choc);cursor:pointer;
+    transition:transform .1s ease, background-color .25s ease, box-shadow .25s ease, color .25s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn--solid{background:var(--choc);color:var(--cream)}
+  .btn--solid:hover{background:#5a3735;box-shadow:0 .6rem 1.4rem -.8rem rgba(74,44,42,.6)}
+  .btn--line{background:transparent;color:var(--choc)}
+  .btn--line:hover{background:rgba(74,44,42,.06)}
+  .btn--light{background:var(--cream);color:var(--choc);border-color:var(--cream)}
+  .btn--light:hover{box-shadow:0 .6rem 1.4rem -.8rem rgba(74,44,42,.45)}
+
+  /* ---------- Navigare (sticlă) ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,249,242,.74);
+    -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+    transition:box-shadow .3s ease;
+  }
+  .nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.85), 0 .6rem 1.6rem -1.1rem rgba(74,44,42,.45)}
+  .nav__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.75rem}
+  .brand{font-family:var(--serif);font-weight:600;font-size:1.4rem;letter-spacing:-.01em;text-decoration:none;line-height:1}
+  .nav__links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+  .nav__links a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.6rem 0;transition:color .2s ease}
+  .nav__links a:hover{color:var(--ribbon)}
+  .nav .btn{min-height:2.75rem;padding:.55rem 1.15rem;font-size:.95rem}
+  @media (min-width:52rem){ .nav__links{display:flex} }
+
+  /* ---------- Prima secțiune ---------- */
+  .hero{padding:clamp(1.75rem, 5vw, 4rem) 0 clamp(3.5rem, 8vw, 6rem)}
+  .hero__grid{display:grid;gap:2.5rem;align-items:center}
+  .hero__h1{display:flex;flex-direction:column;gap:.35rem}
+  .hero__kicker{font-family:var(--sans);font-weight:500;font-size:1.05rem;letter-spacing:.02em;color:var(--choc-2)}
+  .hero__name{font-size:clamp(3.6rem, 13vw, 7.75rem);line-height:.98;letter-spacing:-.03em;font-weight:500}
+  .hero__slogan{margin-top:1.1rem;font-size:clamp(1.2rem, 2.4vw, 1.5rem);font-weight:500;line-height:1.3}
+  .hero__desc{margin-top:.6rem;color:var(--choc-2);max-width:32em}
+  .hero__cta{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+  .hero__photo{position:relative;margin:0}
+  .arch{
+    position:relative;overflow:hidden;aspect-ratio:1/1;
+    border-radius:999px 999px .35rem .35rem;background:var(--pink);
+  }
+  .arch img{width:100%;height:100%;object-fit:cover}
+  .hero__photo::after{
+    /* tiv subțire de vitrină în jurul arcadei */
+    content:"";position:absolute;inset:-.7rem -.7rem auto -.7rem;bottom:-.7rem;
+    border:1px solid rgba(74,44,42,.22);border-radius:999px 999px .6rem .6rem;pointer-events:none;
+  }
+  @media (min-width:30rem){ .hero__cta{flex-direction:row;flex-wrap:wrap} }
+  @media (min-width:56rem){
+    .hero{padding-top:clamp(3rem,6vw,5rem)}
+    .hero__grid{grid-template-columns:1.15fr .85fr;gap:clamp(3rem,6vw,6rem)}
+    .arch{aspect-ratio:4/5;max-height:72vh;margin-left:auto}
+    .hero__photo{max-width:28rem;justify-self:end;width:100%}
+  }
+
+  /* intrarea din prima secțiune */
+  @keyframes upIn{from{opacity:0;transform:translateY(.8rem)}to{opacity:1;transform:none}}
+  @keyframes photoIn{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .js .h-in{opacity:0;animation:upIn .7s var(--ease) calc(var(--i,0) * 90ms + 120ms) forwards}
+  .js .arch img{opacity:0;animation:photoIn 1.2s var(--ease) .15s forwards}
+  .js .hero__photo::after{opacity:0;animation:fadeIn .9s ease .7s forwards}
+
+  /* ---------- Despre ---------- */
+  .about{background:var(--pink);padding-block:clamp(4.5rem, 10vw, 8rem)}
+  .about__top{display:grid;gap:1.75rem}
+  .about h2{font-size:clamp(2.1rem, 5.2vw, 3.6rem);max-width:13em}
+  .about__text{color:var(--choc-2);max-width:34em;font-size:1.0625rem}
+  .about__text p + p{margin-top:1rem}
+  .perks{list-style:none;margin:clamp(3rem,7vw,5rem) 0 0;padding:0;display:grid;gap:2rem}
+  .perks li{padding-top:1.25rem;border-top:1px solid rgba(74,44,42,.25)}
+  .perks h3{font-size:clamp(1.3rem, 2.4vw, 1.6rem);margin-bottom:.4rem}
+  .perks p{color:var(--choc-2)}
+  @media (min-width:52rem){
+    .about__top{grid-template-columns:1.1fr .9fr;align-items:end;gap:4rem}
+    .perks{grid-template-columns:repeat(3,1fr);gap:3rem}
+  }
+
+  /* ---------- Meniu: vitrina cu cutii ---------- */
+  .menu{padding-block:clamp(4.5rem, 10vw, 8rem)}
+  .menu__head{text-align:center;max-width:40rem;margin:0 auto clamp(2.75rem,6vw,4.5rem)}
+  .menu__head h2{font-size:clamp(2.1rem, 5.2vw, 3.6rem)}
+  .menu__head p{margin-top:1rem;color:var(--choc-2)}
+  .menu__hint{display:block;margin-top:.75rem;font-size:.875rem;letter-spacing:.02em;color:var(--choc-2)}
+
+  .vitrine{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(2,1fr);row-gap:3rem;column-gap:0;max-width:64rem}
+  @media (min-width:56rem){ .vitrine{grid-template-columns:repeat(4,1fr)} }
+  .item{padding-inline:clamp(.55rem, 2vw, 1.25rem);margin:0}
+
+  .box{
+    --box:var(--pink);--box-edge:var(--pink-deep);--box-in:#DDB3AD;
+    position:relative;max-width:14.5rem;margin:0 auto;padding-top:1.5rem;
+    cursor:pointer;-webkit-tap-highlight-color:transparent;outline-offset:6px;
+  }
+  .box--mint{--box:var(--mint);--box-edge:var(--mint-deep);--box-in:#6FA990}
+  .lid{
+    position:relative;z-index:2;height:clamp(2rem, 5vw, 2.5rem);
+    margin:0 -4.5% -.55rem;background:var(--box);border-radius:.3rem .3rem .2rem .2rem;
+    box-shadow:inset 0 -.3rem 0 rgba(74,44,42,.07), inset 0 1px 0 rgba(255,255,255,.55), 0 .45rem .6rem -.45rem rgba(74,44,42,.45);
+    transition:transform .5s var(--ease);transform-origin:50% 100%;
+  }
+  .lid::before{
+    content:"";position:absolute;top:0;bottom:0;left:50%;width:.7rem;transform:translateX(-50%);
+    background:var(--ribbon);box-shadow:inset .12rem 0 0 rgba(255,255,255,.18), inset -.12rem 0 0 rgba(0,0,0,.12);
+  }
+  .bow{position:absolute;left:50%;top:0;width:0;height:0}
+  .bow::before,.bow::after{
+    content:"";position:absolute;bottom:-.05rem;width:1.6rem;height:1.05rem;
+    border:.3rem solid var(--ribbon);border-radius:50%;
+  }
+  .bow::before{right:.08rem;transform:rotate(16deg);transform-origin:100% 100%}
+  .bow::after{left:.08rem;transform:rotate(-16deg);transform-origin:0 100%}
+  .bow i{position:absolute;left:-.4rem;top:-.42rem;width:.8rem;height:.7rem;border-radius:.22rem;background:var(--ribbon-dark);z-index:1}
+  .body{
+    position:relative;background:var(--box);border-radius:0 0 .35rem .35rem;
+    padding:18% 11% 10%;
+    box-shadow:inset .45rem 0 0 rgba(255,255,255,.22), inset -.55rem 0 0 var(--box-edge), 0 1.1rem 1.2rem -1rem rgba(74,44,42,.4);
+  }
+  .body::before{
+    /* interiorul cutiei, se vede doar când capacul e ridicat */
+    content:"";position:absolute;top:0;left:0;right:0;height:.6rem;background:var(--box-in);
+  }
+  .window{position:relative;overflow:hidden;aspect-ratio:5/4;border-radius:.4rem;background:var(--cream)}
+  .window img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+  .window::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(118deg, rgba(255,255,255,.32) 0 16%, transparent 16% 62%, rgba(255,255,255,.14) 62% 67%, transparent 67%);
+    box-shadow:inset 0 0 0 1px rgba(74,44,42,.18);
+  }
+  .mark{display:block;text-align:center;margin-top:10%;font-family:var(--serif);font-weight:500;font-size:clamp(.82rem, 2.4vw, 1rem);letter-spacing:.04em;color:var(--choc)}
+  .box.open .lid{transform:translateY(-1.1rem) rotate(-4deg)}
+  .box.open .window img{transform:scale(1.06)}
+  @media (hover:hover){
+    .box:hover .lid{transform:translateY(-1.1rem) rotate(-4deg)}
+    .box:hover .window img{transform:scale(1.06)}
+  }
+  .box:focus-visible .lid{transform:translateY(-1.1rem) rotate(-4deg)}
+
+  .shelf{
+    display:block;height:.7rem;margin:0 calc(-1 * clamp(.55rem, 2vw, 1.25rem));
+    background:
+      linear-gradient(var(--choc), var(--choc)) 0 0/100% 2px no-repeat,
+      linear-gradient(rgba(74,44,42,.13), rgba(74,44,42,0)) 0 2px/100% .6rem no-repeat;
+    transform-origin:0 50%;transition:transform .7s var(--ease);
+  }
+  .item figcaption{text-align:center;padding:1rem .2rem 0}
+  .item h3{font-size:clamp(1.12rem, 2.6vw, 1.4rem);line-height:1.15}
+  .item p{margin-top:.4rem;font-size:.95rem;line-height:1.45;color:var(--choc-2)}
+
+  /* intrarea vitrinei: cutia apare, capacul se așază */
+  @keyframes lidDrop{from{transform:translateY(-1.3rem)}to{transform:none}}
+  .js .item .box{opacity:0;transition:opacity .5s ease calc(var(--d,0) * 110ms)}
+  .js .item.in .box{opacity:1}
+  .js .item.in .lid{animation:lidDrop .65s var(--ease) calc(var(--d,0) * 110ms + 80ms) backwards}
+  .js .item .shelf{transform:scaleX(0)}
+  .js .item.in .shelf{transform:none}
+  .js .item figcaption{opacity:0;transition:opacity .5s ease calc(var(--d,0) * 110ms + 250ms)}
+  .js .item.in figcaption{opacity:1}
+
+  .coffee{
+    display:flex;align-items:center;justify-content:center;gap:1.1rem;
+    margin:clamp(3.5rem,8vw,5rem) auto 0;max-width:34rem;text-align:left;
+  }
+  .coffee svg{width:3rem;height:3rem;flex:none;color:var(--choc)}
+  .coffee h3{font-size:clamp(1.25rem,2.6vw,1.5rem)}
+  .coffee p{color:var(--choc-2);margin-top:.15rem}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--mint);padding-block:clamp(4.5rem, 10vw, 8rem)}
+  .contact__grid{display:grid;gap:2.75rem;align-items:center}
+  .contact h2{font-size:clamp(2.1rem, 5.2vw, 3.4rem);max-width:12em}
+  .contact__text{margin-top:1.1rem;max-width:30em}
+  .phone{display:inline-block;margin-top:1.5rem;font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem, 6vw, 2.8rem);letter-spacing:-.01em;text-decoration:none;line-height:1.1}
+  .phone:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+  .contact__city{margin-top:.35rem;font-size:.95rem;letter-spacing:.02em}
+  .contact__cta{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+  .maplink{display:inline-flex;align-items:center;min-height:2.75rem;margin-top:.5rem;font-weight:500;text-underline-offset:.25em}
+  .map{margin:0;border-radius:1rem;overflow:hidden;background:var(--cream);box-shadow:0 1.5rem 2.5rem -1.8rem rgba(74,44,42,.55)}
+  .map iframe{display:block;width:100%;height:clamp(18rem, 45vw, 26rem);border:0}
+  .js .map{opacity:0;transform:scale(.98);transition:opacity .6s ease, transform .6s var(--ease)}
+  .js .map.in{opacity:1;transform:none}
+  @media (min-width:30rem){ .contact__cta{flex-direction:row;flex-wrap:wrap} }
+  @media (min-width:56rem){ .contact__grid{grid-template-columns:1fr 1.1fr;gap:4rem} }
+
+  /* ---------- Despre: dezvăluiri ---------- */
+  .js .rise{opacity:0;transform:translateY(1rem);transition:opacity .6s ease, transform .6s var(--ease)}
+  .js .rise.in{opacity:1;transform:none}
+  .js .fade{opacity:0;transition:opacity .7s ease calc(var(--d,0) * 120ms)}
+  .js .fade.in{opacity:1}
+
+  /* ---------- Subsol ---------- */
+  .foot{background:var(--choc);color:var(--cream);padding:3.5rem 0 2.5rem}
+  .foot__grid{display:grid;gap:1.5rem}
+  .foot .brand{font-size:1.8rem}
+  .foot p{font-size:.9rem;letter-spacing:.02em;line-height:1.6;color:rgba(255,249,242,.82)}
+  .foot a{text-underline-offset:.2em}
+  .foot__small{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,249,242,.18);display:grid;gap:.4rem}
+  .foot__small p{font-size:.82rem;letter-spacing:.03em}
+  @media (min-width:52rem){ .foot__grid{grid-template-columns:1fr auto;align-items:end} }
+
+  /* ---------- Preferințe ---------- */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js .h-in,.js .arch img,.js .hero__photo::after{animation:fadeIn .2s ease forwards;transform:none}
+    .js .rise,.js .map{transform:none;transition:opacity .2s ease}
+    .js .fade,.js .item .box,.js .item figcaption{transition:opacity .2s ease}
+    .js .item.in .lid{animation:none}
+    .js .item .shelf{transform:none}
+    .lid,.window img,.shelf{transition:none}
+    .box.open .window img{transform:none}
+    @media (hover:hover){ .box:hover .window img{transform:none} }
+  }
+  @media (prefers-reduced-transparency:reduce){
+    .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  @media (prefers-contrast:more){
+    :root{--choc-2:#3a201e}
+    .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--choc)}
+    .btn{border-width:2px}
+    .btn--light{border-color:var(--choc)}
+    .window::after{box-shadow:inset 0 0 0 2px var(--choc)}
+    .perks li{border-top:2px solid var(--choc)}
+    .map{border:2px solid var(--choc)}
+  }
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Dolce Bia, începutul paginii">Dolce Bia</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav__links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--solid" href="tel:0766493252">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero__grid">
+      <div>
+        <h1 class="hero__h1" id="titlu">
+          <span class="hero__kicker h-in" style="--i:0">Cofetăria din Constanța</span>
+          <span class="hero__name h-in" style="--i:1">Dolce Bia</span>
+        </h1>
+        <p class="hero__slogan h-in" style="--i:2">Dulciuri cu suflet, zilnic proaspete.</p>
+        <p class="hero__desc h-in" style="--i:3">Prăjituri artizanale și torturi pentru orice ocazie, pregătite în fiecare dimineață.</p>
+        <div class="hero__cta h-in" style="--i:4">
+          <a class="btn btn--solid" href="tel:0766493252">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn--line" href="https://wa.me/40766493252?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20comand%C4%83%20la%20Dolce%20Bia." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+            Comandă pe WhatsApp
+          </a>
+        </div>
+      </div>
+      <figure class="hero__photo">
+        <div class="arch">
+          <img src="img/1.jpg" alt="Tort de ciocolată decorat cu zmeură, afine și smochine" width="900" height="1125" fetchpriority="high">
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about__top">
+        <h2 class="rise" id="despre-titlu">Prăjituri făcute cu grijă, pentru bucuriile de fiecare zi</h2>
+        <div class="about__text fade">
+          <p>La Dolce Bia, fiecare prăjitură e pregătită cu grijă, din ingrediente alese, ca să-ți aducă puțină bucurie în fiecare zi. Pasiunea pentru cofetărie se simte în gusturi autentice și rafinate.</p>
+          <p>Fie că vrei să te răsfeți, fie că ai nevoie de un tort pentru o zi specială, te așteptăm cu drag.</p>
+        </div>
+      </div>
+      <ul class="perks">
+        <li class="fade" style="--d:0">
+          <h3>Proaspete zilnic</h3>
+          <p>Deserturile se pregătesc în fiecare dimineață.</p>
+        </li>
+        <li class="fade" style="--d:1">
+          <h3>Torturi unicat</h3>
+          <p>Alegi tema și decorațiunile, noi îl facem așa cum ți-l dorești.</p>
+        </li>
+        <li class="fade" style="--d:2">
+          <h3>Relaxare dulce</h3>
+          <p>O atmosferă caldă, pentru toți cei care vor o pauză bună.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <div class="menu__head">
+        <h2 class="rise" id="meniu-titlu">Meniul din vitrină</h2>
+        <p>Prăjituri de casă, torturi la comandă și variante de post sau fără zahăr, toate proaspete.</p>
+        <span class="menu__hint">Atinge o cutie ca să-i ridici capacul.</span>
+      </div>
+
+      <ul class="vitrine">
+        <li class="item" style="--d:0">
+          <figure style="margin:0">
+            <div class="box" role="button" tabindex="0" aria-pressed="false" aria-label="Ridică capacul cutiei cu prăjituri de casă">
+              <div class="lid"><span class="bow"><i></i></span></div>
+              <div class="body">
+                <div class="window"><img src="img/2.jpg" alt="Felie de tort cu cremă și cireșe" loading="lazy" width="600" height="480"></div>
+                <span class="mark" aria-hidden="true">Dolce Bia</span>
+              </div>
+            </div>
+            <span class="shelf" aria-hidden="true"></span>
+            <figcaption>
+              <h3>Prăjituri de casă</h3>
+              <p>O selecție variată de prăjituri proaspete.</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="item" style="--d:1">
+          <figure style="margin:0">
+            <div class="box box--mint" role="button" tabindex="0" aria-pressed="false" aria-label="Ridică capacul cutiei cu torturi personalizate">
+              <div class="lid"><span class="bow"><i></i></span></div>
+              <div class="body">
+                <div class="window"><img src="img/5.jpg" alt="Tort de ciocolată" loading="lazy" width="600" height="480"></div>
+                <span class="mark" aria-hidden="true">Dolce Bia</span>
+              </div>
+            </div>
+            <span class="shelf" aria-hidden="true"></span>
+            <figcaption>
+              <h3>Torturi personalizate</h3>
+              <p>Pentru aniversări și evenimente, cu tema aleasă de tine.</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="item" style="--d:2">
+          <figure style="margin:0">
+            <div class="box" role="button" tabindex="0" aria-pressed="false" aria-label="Ridică capacul cutiei cu prăjituri de post">
+              <div class="lid"><span class="bow"><i></i></span></div>
+              <div class="body">
+                <div class="window"><img src="img/3.jpg" alt="Prăjituri cu afine pe farfurie" loading="lazy" width="600" height="480"></div>
+                <span class="mark" aria-hidden="true">Dolce Bia</span>
+              </div>
+            </div>
+            <span class="shelf" aria-hidden="true"></span>
+            <figcaption>
+              <h3>Prăjituri de post</h3>
+              <p>Deserturi fără ingrediente de origine animală.</p>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="item" style="--d:3">
+          <figure style="margin:0">
+            <div class="box box--mint" role="button" tabindex="0" aria-pressed="false" aria-label="Ridică capacul cutiei cu prăjituri fără zahăr">
+              <div class="lid"><span class="bow"><i></i></span></div>
+              <div class="body">
+                <div class="window"><img src="img/4.jpg" alt="Brioșe cu fructe de pădure" loading="lazy" width="600" height="480"></div>
+                <span class="mark" aria-hidden="true">Dolce Bia</span>
+              </div>
+            </div>
+            <span class="shelf" aria-hidden="true"></span>
+            <figcaption>
+              <h3>Prăjituri fără zahăr</h3>
+              <p>Pentru cei care vor să evite zahărul.</p>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+
+      <div class="coffee fade">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M9 20h26v8a11 11 0 0 1-11 11h-4A11 11 0 0 1 9 28z"/>
+          <path d="M35 23h2.5a4.5 4.5 0 0 1 0 9H34"/>
+          <path d="M6 43h32"/>
+          <path d="M17 9c-2 2 2 4 0 7M24 7c-2 2.5 2 5 0 9M31 9c-2 2 2 4 0 7"/>
+        </svg>
+        <div>
+          <h3>Cafea proaspătă</h3>
+          <p>Aromată, exact cum trebuie lângă desert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact__grid">
+      <div>
+        <h2 class="rise" id="contact-titlu">Comandă un tort sau întreabă ce e azi în vitrină</h2>
+        <p class="contact__text">Sună-ne sau scrie-ne pe WhatsApp. Îți spunem ce prăjituri avem azi și stabilim împreună tortul pentru ziua ta.</p>
+        <a class="phone" href="tel:0766493252">0766 493 252</a>
+        <p class="contact__city">Cofetăria Dolce Bia, Constanța</p>
+        <div class="contact__cta">
+          <a class="btn btn--solid" href="tel:0766493252">Sună acum</a>
+          <a class="btn btn--light" href="https://wa.me/40766493252?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20comand%C4%83%20la%20Dolce%20Bia." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        </div>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Cofet%C4%83ria+Dolce+Bia+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide locația în Google Maps</a>
+      </div>
+      <figure class="map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.594249599999998,44.1684463,28.6022496,44.172446300000004&layer=mapnik&marker=44.1704463,28.5982496" title="Harta cu locația Cofetăriei Dolce Bia din Constanța" loading="lazy"></iframe>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <a class="brand" href="#top">Dolce Bia</a>
+        <p style="margin-top:.6rem">Cofetărie artizanală în Constanța</p>
+      </div>
+      <p><a href="tel:0766493252">0766 493 252</a></p>
+    </div>
+    <div class="foot__small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: PixelPerfectMom, Couleur, Pexels, varintorn</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // umbră fină sub bara de navigare doar când pagina se derulează
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // dezvăluiri la derulare
+  var els = document.querySelectorAll('.rise, .fade, .item, .map');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // cutiile: capacul se ridică la atingere
+  var boxes = document.querySelectorAll('.box');
+  function toggle(box){
+    var open = !box.classList.contains('open');
+    boxes.forEach(function(b){ if (b !== box){ b.classList.remove('open'); b.setAttribute('aria-pressed','false'); } });
+    box.classList.toggle('open', open);
+    box.setAttribute('aria-pressed', open ? 'true' : 'false');
+  }
+  boxes.forEach(function(box){
+    box.addEventListener('click', function(){ toggle(box); });
+    box.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(box); }
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
