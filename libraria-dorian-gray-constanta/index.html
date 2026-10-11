@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Librăria Dorian Gray, Constanța: cărți pentru toate vârstele</title>
+<meta name="description" content="Librărie primitoare pe Bulevardul Tomis 23, Constanța. Cărți pentru copii, adolescenți și adulți, jocuri educative și recomandări personalizate. Deschis zilnic între 10:00 și 19:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F5EFE6;
+  --cream-2:#ECE2D3;
+  --ink:#141414;
+  --sand:#D8C3A5;
+  --sand-deep:#B99D76;
+  --teal:#0f766e;
+  --teal-dark:#0b5d57;
+  --muted:#4a453f;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --serif:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --sans:"Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --pad:clamp(1.25rem, 4vw, 3rem);
+  --section:clamp(5rem, 12vw, 9rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0;font-optical-sizing:auto}
+p{margin:0}
+.wrap{max-width:76rem;margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--ink);color:var(--cream);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:.5rem}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:.7rem 1.4rem;border-radius:.2rem;
+  font-family:var(--sans);font-size:1rem;font-weight:500;letter-spacing:.01em;
+  text-decoration:none;text-align:center;line-height:1.2;
+  border:1px solid transparent;cursor:pointer;
+  transition:background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-dark);box-shadow:0 .5rem 1.2rem -.6rem rgba(15,118,110,.6)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--cream)}
+.btn-cream{background:var(--cream);color:var(--ink)}
+.btn-cream:hover{background:#fff}
+.btn-ghost{border-color:rgba(245,239,230,.55);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--cream);background:rgba(245,239,230,.08)}
+
+/* ---------- Navigare ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(245,239,230,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 .6rem 1.6rem -1rem rgba(20,20,20,.35)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.12rem;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:2rem}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.95rem;padding:.5rem 0;color:var(--ink);transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav .btn{min-height:2.75rem;padding:.5rem 1.05rem;font-weight:600;font-size:.95rem}
+@media (min-width:880px){.nav-links{display:flex}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding-top:clamp(5.5rem, 12vw, 8rem);padding-bottom:var(--section)}
+.hero-grid{display:grid;gap:clamp(2rem,5vw,4rem)}
+.hero-place{font-size:.9rem;letter-spacing:.04em;color:var(--muted);margin-bottom:1rem}
+.hero h1{margin:0 0 1.4rem}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.hero h1 .ln>span{display:block}
+.hero h1 .l1{font-size:clamp(1.5rem, 4.6vw, 2.3rem);font-weight:400;letter-spacing:-.01em;line-height:1.1}
+.hero h1 .l2{font-size:clamp(3.1rem, 12.8vw, 7.4rem);font-weight:500;line-height:1;letter-spacing:-.03em}
+.hero-slogan{font-family:var(--serif);font-size:clamp(1.25rem,3.4vw,1.65rem);line-height:1.3;letter-spacing:-.01em;max-width:26ch}
+.hero-desc{color:var(--muted);margin-top:.6rem;max-width:44ch}
+.hero-cta{display:flex;flex-direction:column;gap:.7rem;margin-top:1.8rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;margin-top:2.4rem;padding-top:1.2rem;border-top:1px solid rgba(20,20,20,.18);font-size:.92rem;color:var(--muted)}
+.hero-meta strong{display:block;color:var(--ink);font-weight:500}
+.hero-fig{margin:0}
+.hero-photo{overflow:hidden;aspect-ratio:4/3;background:var(--cream-2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-fig figcaption{font-size:.82rem;letter-spacing:.03em;color:var(--muted);margin-top:.7rem}
+@media (min-width:560px){.hero-cta{flex-direction:row;flex-wrap:wrap}}
+@media (min-width:960px){
+  .hero{padding-top:8.5rem}
+  .hero-grid{grid-template-columns:7fr 5fr;align-items:end}
+  .hero-photo{aspect-ratio:4/5}
+}
+
+/* intrarea în pagină: o singură secvență */
+.hero h1 .ln>span{transform:translateY(105%);animation:rise .95s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+.h-fade{opacity:0;animation:fade .8s var(--ease) forwards}
+.d1{animation-delay:.45s}.d2{animation-delay:.6s}.d3{animation-delay:.75s}
+.hero-photo img{opacity:0;transform:scale(1.06);animation:settle 1.3s var(--ease) .2s forwards}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fade{to{opacity:1}}
+@keyframes settle{to{opacity:1;transform:scale(1)}}
+
+/* ---------- Titluri de secțiune ---------- */
+.h2{font-size:clamp(2.2rem, 6vw, 4.25rem)}
+.intro{color:var(--muted);max-width:46ch;margin-top:1rem}
+
+/* ---------- Vitrina cu etichete ---------- */
+.vitrina{background:var(--cream-2);padding-block:var(--section)}
+.vitrina-head{display:grid;gap:1rem;margin-bottom:clamp(3rem,7vw,5rem)}
+@media (min-width:880px){.vitrina-head{grid-template-columns:1fr 1fr;align-items:end}.vitrina-head .intro{justify-self:end}}
+.rail{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;row-gap:clamp(2.5rem,6vw,3.5rem)}
+.rail li{position:relative;flex:0 0 50%;display:flex;justify-content:center;padding-top:.15rem}
+.rail li::before{content:"";position:absolute;left:0;right:0;top:0;height:.28rem;background:var(--ink)}
+@media (min-width:640px){.rail li{flex-basis:33.333%}}
+@media (min-width:1024px){.rail li{flex-basis:20%}}
+.hanger{
+  --r:0deg;--amp:7deg;
+  position:relative;display:flex;flex-direction:column;align-items:center;
+  transform:rotate(var(--r));transform-origin:50% 0;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.hanger .ring{width:.85rem;height:.85rem;border-radius:50%;border:.16rem solid var(--ink);margin-top:-.45rem;background:transparent;position:relative;z-index:3}
+.hanger .string{display:block;width:2.4rem;height:var(--len,3rem);margin-top:-.2rem;position:relative;z-index:3;overflow:visible}
+.hanger .string path{fill:none;stroke:var(--ink);stroke-width:1.3;vector-effect:non-scaling-stroke}
+.tag-shadow{margin-top:-1.55rem;filter:drop-shadow(0 .7rem .9rem rgba(20,20,20,.14))}
+.tag{
+  position:relative;width:clamp(9rem, 41vw, 11.5rem);min-height:15.5rem;
+  padding:2.7rem 1.05rem 1.1rem;display:flex;flex-direction:column;
+  background-color:var(--sand);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  clip-path:polygon(22% 0, 78% 0, 100% 11%, 100% 100%, 0 100%, 0 11%);
+}
+.tag::before{
+  content:"";position:absolute;left:50%;top:1.1rem;width:.9rem;height:.9rem;margin-left:-.45rem;
+  border-radius:50%;background:var(--cream-2);box-shadow:0 0 0 .22rem var(--sand-deep);
+}
+.tag h3{font-size:clamp(1.12rem, 3.6vw, 1.3rem);line-height:1.12;letter-spacing:-.015em;font-weight:600}
+.tag p{font-size:.9rem;line-height:1.45;color:#3a3229;margin-top:.55rem}
+.tag .mark{margin-top:auto;padding-top:.9rem;border-top:1px dashed rgba(20,20,20,.35);font-size:.7rem;letter-spacing:.08em;color:#3a3229;display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.tag .mark svg{width:2.4rem;height:.9rem;flex:none}
+.hanger.swing{animation:swing 1.9s cubic-bezier(.37,0,.63,1)}
+.hanger.soft{--amp:3deg}
+@keyframes swing{
+  0%{transform:rotate(var(--r))}
+  14%{transform:rotate(calc(var(--r) + var(--amp)))}
+  32%{transform:rotate(calc(var(--r) - var(--amp) * .7))}
+  50%{transform:rotate(calc(var(--r) + var(--amp) * .42))}
+  68%{transform:rotate(calc(var(--r) - var(--amp) * .22))}
+  84%{transform:rotate(calc(var(--r) + var(--amp) * .08))}
+  100%{transform:rotate(var(--r))}
+}
+.vitrina-foot{display:flex;flex-direction:column;gap:1.2rem;margin-top:clamp(3.5rem,8vw,5.5rem);padding-top:1.6rem;border-top:1px solid rgba(20,20,20,.15)}
+.vitrina-foot p{font-family:var(--serif);font-size:clamp(1.25rem,3vw,1.6rem);letter-spacing:-.01em;line-height:1.25;max-width:30ch}
+@media (min-width:880px){.vitrina-foot{flex-direction:row;align-items:center;justify-content:space-between}}
+
+/* ---------- Despre ---------- */
+.despre{padding-block:var(--section)}
+.despre-grid{display:grid;gap:clamp(2.5rem,6vw,5rem)}
+.despre-fig{margin:0}
+.despre-photo{overflow:hidden;aspect-ratio:4/3;background:var(--cream-2)}
+.despre-photo img{width:100%;height:100%;object-fit:cover}
+.despre-fig figcaption{font-size:.82rem;letter-spacing:.03em;color:var(--muted);margin-top:.7rem}
+.despre-text .h2{margin-bottom:1.8rem;max-width:14ch}
+.despre-text p{max-width:58ch;margin-top:1rem}
+.despre-text p.lead{margin-top:0}
+.despre-text p.lead::first-letter{font-family:var(--serif);font-weight:500;float:left;font-size:4.1em;line-height:.82;padding:.06em .1em 0 0}
+.despre-text .note{font-family:var(--serif);font-size:clamp(1.2rem,2.6vw,1.45rem);line-height:1.35;letter-spacing:-.01em;margin-top:2rem;padding-left:1.1rem;border-left:2px solid var(--teal);max-width:36ch}
+@media (min-width:880px){
+  .despre-grid{grid-template-columns:5fr 7fr;align-items:center}
+  .despre-photo{aspect-ratio:3/4}
+}
+
+/* ---------- Avantaje ---------- */
+.plus{background:var(--sand);padding-block:var(--section)}
+.plus .h2{max-width:16ch}
+.plus-list{list-style:none;margin:clamp(2.5rem,6vw,4rem) 0 0;padding:0;display:grid;gap:2.2rem}
+.plus-list li{padding-top:1.3rem;border-top:1px solid rgba(20,20,20,.35)}
+.plus-list h3{font-size:clamp(1.5rem,3.4vw,2rem);margin-bottom:.6rem}
+.plus-list p{color:#2e2924;max-width:34ch}
+@media (min-width:760px){.plus-list{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+
+/* ---------- Galerie ---------- */
+.galerie{padding-block:var(--section)}
+.galerie-head{display:grid;gap:1rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+@media (min-width:880px){.galerie-head{grid-template-columns:1fr 1fr;align-items:end}.galerie-head .intro{justify-self:end}}
+.g-grid{display:grid;gap:clamp(.8rem,2vw,1.4rem)}
+.g-item{margin:0;overflow:hidden;background:var(--cream-2);aspect-ratio:4/3}
+.g-item img{width:100%;height:100%;object-fit:cover}
+@media (min-width:760px){
+  .g-grid{grid-template-columns:7fr 5fr;grid-template-rows:1fr 1fr}
+  .g-item.big{grid-row:1 / span 2;aspect-ratio:4/5}
+  .g-item.small{aspect-ratio:auto;height:100%}
+}
+.g-note{font-size:.82rem;letter-spacing:.03em;color:var(--muted);margin-top:.9rem}
+
+/* ---------- Vizită / contact ---------- */
+.vizita{background:var(--ink);color:var(--cream);padding-block:var(--section)}
+.vizita-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem)}
+.vizita .h2{margin-bottom:1.6rem}
+.addr{font-family:var(--serif);font-size:clamp(1.5rem,3.8vw,2.2rem);line-height:1.2;letter-spacing:-.015em;font-style:normal}
+.hours{margin-top:1.4rem;color:rgba(245,239,230,.82)}
+.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:.8rem;font-size:.92rem;font-weight:500;color:var(--cream)}
+.status[hidden]{display:none}
+.status .dot{width:.55rem;height:.55rem;border-radius:50%;background:#5ec9b9}
+.status.closed .dot{background:var(--sand)}
+.phone{display:inline-block;margin-top:1.4rem;font-size:1.15rem;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(245,239,230,.4);padding:.3rem 0;transition:border-color .2s}
+.phone:hover{border-color:var(--cream)}
+.vizita-cta{display:flex;flex-direction:column;gap:.7rem;margin-top:2rem;max-width:26rem}
+.fb{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;min-height:2.75rem;text-decoration:none;color:rgba(245,239,230,.85);font-weight:500;transition:color .2s}
+.fb:hover{color:var(--cream)}
+.fb svg{width:1.25rem;height:1.25rem}
+.map{position:relative;aspect-ratio:4/3;background:#222;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.02)}
+@media (min-width:960px){.vizita-grid{grid-template-columns:5fr 7fr;align-items:center}.map{aspect-ratio:auto;height:100%;min-height:30rem}}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ink);color:rgba(245,239,230,.72);padding-block:2.5rem 3rem;font-size:.82rem;letter-spacing:.03em}
+.foot-in{display:grid;gap:1rem;padding-top:2rem;border-top:1px solid rgba(245,239,230,.14)}
+.foot .brand{color:var(--cream);font-size:1.15rem;letter-spacing:-.01em}
+.foot a{color:rgba(245,239,230,.85)}
+@media (min-width:760px){.foot-in{grid-template-columns:auto 1fr auto;align-items:baseline;gap:2rem}.foot .credit{justify-self:center;text-align:center}}
+
+/* ---------- Dezvăluiri la derulare (variate, discrete) ---------- */
+.js .rv{transition:opacity .55s var(--ease), transform .55s var(--ease)}
+.js .rv-fade{opacity:0}
+.js .rv-left{opacity:0;transform:translateX(-1.4rem)}
+.js .rv-right{opacity:0;transform:translateX(1.4rem)}
+.js .rv-zoom img{transform:scale(1.07);transition:transform .9s var(--ease)}
+.js .rv-zoom{opacity:0;transition:opacity .6s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-zoom.in img{transform:scale(1)}
+.js .plus-list li.rv:nth-child(2){transition-delay:.08s}
+.js .plus-list li.rv:nth-child(3){transition-delay:.16s}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero h1 .ln>span{transform:none;opacity:0;animation:fade .2s ease forwards}
+  .h-fade{animation:fade .2s ease forwards}
+  .hero-photo img{transform:none;animation:fade .2s ease forwards}
+  .hanger.swing{animation:none}
+  .js .rv,.js .rv-zoom{transition:opacity .2s ease}
+  .js .rv-left,.js .rv-right{transform:none}
+  .js .rv-zoom img{transform:none;transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--muted:#2a2622}
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--ink)}
+  .btn-line,.btn-ghost{border-width:2px}
+  .btn-ghost{border-color:var(--cream)}
+  .tag{background-image:none;outline:2px solid var(--ink);outline-offset:-2px}
+  .hours,.fb,.foot{color:var(--cream)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Librăria Dorian Gray, începutul paginii">Librăria Dorian Gray</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#vitrina">Vitrina</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#vizita">Vizită</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-teal" href="tel:+40751115052">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- Prima secțiune -->
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-place h-fade">Librărie în Constanța</p>
+        <h1 id="titlu">
+          <span class="ln"><span class="l1">Librăria</span></span>
+          <span class="ln"><span class="l2">Dorian Gray</span></span>
+        </h1>
+        <p class="hero-slogan h-fade d1">Descoperă o lume de povești.</p>
+        <p class="hero-desc h-fade d1">Cărți pentru toate vârstele, autori români și internaționali, într-o librărie în care te simți ca acasă.</p>
+        <div class="hero-cta h-fade d2">
+          <a class="btn btn-teal" href="tel:+40751115052">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 4h3.2l1.6 4-2 1.3a11 11 0 0 0 5 5l1.3-2 4 1.6V17a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40751115052?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20recomandare%20de%20carte." target="_blank" rel="noopener">Cere o recomandare pe WhatsApp</a>
+        </div>
+        <div class="hero-meta h-fade d3">
+          <p><strong>Bulevardul Tomis 23</strong>Constanța</p>
+          <p><strong>Deschis zilnic</strong>între 10:00 și 19:00</p>
+        </div>
+      </div>
+      <figure class="hero-fig">
+        <div class="hero-photo">
+          <img src="img/1.jpg" alt="Rafturi înalte pline cu cărți într-o librărie" width="1200" height="1500" fetchpriority="high">
+        </div>
+        <figcaption class="h-fade d3">Rafturi pline, de la clasici la noutăți.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Vitrina: etichetele de carton -->
+  <section class="vitrina" id="vitrina" aria-labelledby="t-vitrina">
+    <div class="wrap">
+      <div class="vitrina-head">
+        <h2 class="h2 rv rv-left" id="t-vitrina">În vitrină</h2>
+        <p class="intro rv rv-fade">Ce găsești pe rafturile noastre, de la primele povești citite cu voce tare până la romanul care te ține treaz noaptea. Atinge o etichetă.</p>
+      </div>
+
+      <ul class="rail" id="rail">
+        <li>
+          <div class="hanger" style="--r:-2deg;--len:2.6rem">
+            <span class="ring" aria-hidden="true"></span>
+            <svg class="string" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0 C11 35, 13 80, 20 100 M20 0 C29 35, 27 80, 20 100"/></svg>
+            <div class="tag-shadow"><article class="tag">
+              <h3>Cărți de beletristică</h3>
+              <p>Literatură contemporană și clasică, de la autori români și internaționali.</p>
+              <div class="mark"><span>Dorian Gray</span><svg viewBox="0 0 48 18" aria-hidden="true"><g fill="#141414"><rect x="0" width="2" height="18"/><rect x="4" width="1" height="18"/><rect x="7" width="3" height="18"/><rect x="12" width="1" height="18"/><rect x="15" width="2" height="18"/><rect x="19" width="1" height="18"/><rect x="22" width="3" height="18"/><rect x="27" width="1" height="18"/><rect x="30" width="2" height="18"/><rect x="34" width="1" height="18"/><rect x="37" width="3" height="18"/><rect x="42" width="1" height="18"/><rect x="45" width="2" height="18"/></g></svg></div>
+            </article></div>
+          </div>
+        </li>
+        <li>
+          <div class="hanger" style="--r:1.5deg;--len:4.6rem">
+            <span class="ring" aria-hidden="true"></span>
+            <svg class="string" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0 C11 35, 13 80, 20 100 M20 0 C29 35, 27 80, 20 100"/></svg>
+            <div class="tag-shadow"><article class="tag">
+              <h3>Cărți pentru copii</h3>
+              <p>Povești și aventuri pentru cei mici, de citit împreună sau singuri.</p>
+              <div class="mark"><span>Dorian Gray</span><svg viewBox="0 0 48 18" aria-hidden="true"><g fill="#141414"><rect x="0" width="3" height="18"/><rect x="5" width="1" height="18"/><rect x="8" width="2" height="18"/><rect x="12" width="1" height="18"/><rect x="15" width="3" height="18"/><rect x="20" width="1" height="18"/><rect x="23" width="2" height="18"/><rect x="27" width="1" height="18"/><rect x="30" width="3" height="18"/><rect x="35" width="1" height="18"/><rect x="38" width="2" height="18"/><rect x="42" width="1" height="18"/><rect x="45" width="3" height="18"/></g></svg></div>
+            </article></div>
+          </div>
+        </li>
+        <li>
+          <div class="hanger" style="--r:-1deg;--len:3.2rem">
+            <span class="ring" aria-hidden="true"></span>
+            <svg class="string" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0 C11 35, 13 80, 20 100 M20 0 C29 35, 27 80, 20 100"/></svg>
+            <div class="tag-shadow"><article class="tag">
+              <h3>Manuale și auxiliare</h3>
+              <p>Resurse pentru școală și pentru pregătirea examenelor.</p>
+              <div class="mark"><span>Dorian Gray</span><svg viewBox="0 0 48 18" aria-hidden="true"><g fill="#141414"><rect x="0" width="1" height="18"/><rect x="3" width="3" height="18"/><rect x="8" width="1" height="18"/><rect x="11" width="2" height="18"/><rect x="15" width="1" height="18"/><rect x="18" width="3" height="18"/><rect x="23" width="2" height="18"/><rect x="27" width="1" height="18"/><rect x="30" width="1" height="18"/><rect x="33" width="3" height="18"/><rect x="38" width="1" height="18"/><rect x="41" width="2" height="18"/><rect x="45" width="1" height="18"/></g></svg></div>
+            </article></div>
+          </div>
+        </li>
+        <li>
+          <div class="hanger" style="--r:2deg;--len:5.4rem">
+            <span class="ring" aria-hidden="true"></span>
+            <svg class="string" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0 C11 35, 13 80, 20 100 M20 0 C29 35, 27 80, 20 100"/></svg>
+            <div class="tag-shadow"><article class="tag">
+              <h3>Cărți de dezvoltare personală</h3>
+              <p>Titluri motivaționale și de specialitate.</p>
+              <div class="mark"><span>Dorian Gray</span><svg viewBox="0 0 48 18" aria-hidden="true"><g fill="#141414"><rect x="0" width="2" height="18"/><rect x="4" width="2" height="18"/><rect x="8" width="1" height="18"/><rect x="11" width="3" height="18"/><rect x="16" width="1" height="18"/><rect x="19" width="1" height="18"/><rect x="22" width="2" height="18"/><rect x="26" width="3" height="18"/><rect x="31" width="1" height="18"/><rect x="34" width="2" height="18"/><rect x="38" width="1" height="18"/><rect x="41" width="3" height="18"/><rect x="46" width="1" height="18"/></g></svg></div>
+            </article></div>
+          </div>
+        </li>
+        <li>
+          <div class="hanger" style="--r:-1.5deg;--len:3.6rem">
+            <span class="ring" aria-hidden="true"></span>
+            <svg class="string" viewBox="0 0 40 100" preserveAspectRatio="none" aria-hidden="true"><path d="M20 0 C11 35, 13 80, 20 100 M20 0 C29 35, 27 80, 20 100"/></svg>
+            <div class="tag-shadow"><article class="tag">
+              <h3>Jocuri educative</h3>
+              <p>Jocuri care îi ajută pe copii să se dezvolte în timp ce se distrează.</p>
+              <div class="mark"><span>Dorian Gray</span><svg viewBox="0 0 48 18" aria-hidden="true"><g fill="#141414"><rect x="0" width="3" height="18"/><rect x="5" width="1" height="18"/><rect x="8" width="1" height="18"/><rect x="11" width="2" height="18"/><rect x="15" width="3" height="18"/><rect x="20" width="1" height="18"/><rect x="23" width="1" height="18"/><rect x="26" width="2" height="18"/><rect x="30" width="3" height="18"/><rect x="35" width="1" height="18"/><rect x="38" width="2" height="18"/><rect x="42" width="1" height="18"/><rect x="45" width="2" height="18"/></g></svg></div>
+            </article></div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="vitrina-foot rv rv-fade">
+        <p>Cauți un titlu anume sau nu știi ce să alegi? Întreabă-ne.</p>
+        <a class="btn btn-teal" href="https://wa.me/40751115052?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20recomandare%20de%20carte." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Cere o recomandare pe WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="despre" id="despre" aria-labelledby="t-despre">
+    <div class="wrap despre-grid">
+      <figure class="despre-fig rv rv-zoom">
+        <div class="despre-photo">
+          <img src="img/4.jpg" alt="Șir de cărți așezate pe un raft de lemn" width="1200" height="1600" loading="lazy">
+        </div>
+        <figcaption>Fiecare raft, o altă poveste.</figcaption>
+      </figure>
+      <div class="despre-text">
+        <h2 class="h2 rv rv-right" id="t-despre">O librărie pentru toată familia</h2>
+        <p class="lead rv rv-fade">La Librăria Dorian Gray găsești cărți pentru copii, adolescenți și adulți: autori români și internaționali, noutăți și clasici pe care merită să-i ai în bibliotecă.</p>
+        <p class="rv rv-fade">Atmosfera e caldă și fără grabă. Răsfoiești în voie noutățile sau cauți titlurile tale preferate, iar noi te ajutăm să le găsești.</p>
+        <p class="note rv rv-fade">Spune-ne ce ți-a plăcut ultima oară și îți facem o recomandare pe gustul tău. Din când în când, te așteaptă și câte o surpriză literară.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantaje -->
+  <section class="plus" aria-labelledby="t-plus">
+    <div class="wrap">
+      <h2 class="h2 rv rv-left" id="t-plus">Ce primești când treci pragul</h2>
+      <ul class="plus-list">
+        <li class="rv rv-fade">
+          <h3>Personal prietenos</h3>
+          <p>Primești sfaturi pe măsura ta, fie că știi exact ce cauți, fie că ai doar o idee.</p>
+        </li>
+        <li class="rv rv-fade">
+          <h3>Cadouri inspirate</h3>
+          <p>Ambalăm gratuit cartea aleasă, pentru orice ocazie. O iei direct gata de dăruit.</p>
+        </li>
+        <li class="rv rv-fade">
+          <h3>Colț de lectură</h3>
+          <p>Te așezi și răsfoiești liniștit cărțile care te tentează, înainte să alegi.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="galerie" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="galerie-head">
+        <h2 class="h2 rv rv-left" id="t-galerie">Printre rafturi</h2>
+        <p class="intro rv rv-fade">Culori, cotoare și pagini răsfoite: atmosfera unei după-amiezi petrecute printre cărți.</p>
+      </div>
+      <div class="g-grid">
+        <figure class="g-item big rv rv-zoom"><img src="img/2.jpg" alt="Raft cu cărți colorate într-o librărie, în atmosferă de sărbătoare" width="1200" height="1500" loading="lazy"></figure>
+        <figure class="g-item small rv rv-zoom"><img src="img/3.jpg" alt="Oameni care răsfoiesc cărți la un stand cu volume" width="1200" height="900" loading="lazy"></figure>
+        <figure class="g-item small rv rv-zoom"><img src="img/5.jpg" alt="Rafturi cu cărți de diferite ediții și mărimi" width="1200" height="900" loading="lazy"></figure>
+      </div>
+      <p class="g-note">Imagini ilustrative.</p>
+    </div>
+  </section>
+
+  <!-- Vizită și contact -->
+  <section class="vizita" id="vizita" aria-labelledby="t-vizita">
+    <div class="wrap vizita-grid">
+      <div class="rv rv-fade">
+        <h2 class="h2" id="t-vizita">Te așteptăm în librărie</h2>
+        <address class="addr">Bulevardul Tomis 23,<br>Constanța</address>
+        <p class="hours">Deschis zilnic între 10:00 și 19:00</p>
+        <p class="status" id="status" hidden><span class="dot" aria-hidden="true"></span><span id="status-text"></span></p>
+        <div><a class="phone" href="tel:+40751115052">+40 751 115 052</a></div>
+        <div class="vizita-cta">
+          <a class="btn btn-cream" href="tel:+40751115052">Sună acum</a>
+          <a class="btn btn-teal" href="https://wa.me/40751115052?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20recomandare%20de%20carte." target="_blank" rel="noopener">Cere o recomandare pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Libr%C4%83ria+Dorian+Gray+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+        <a class="fb" href="https://www.facebook.com/LibrariaDorianGray" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4a20 20 0 0 0-2.2-.1c-2.2 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z"/></svg>
+          Urmărește-ne pe Facebook
+        </a>
+      </div>
+      <div class="map rv rv-fade">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.652623499999997,44.1731832,28.6606235,44.1771832&layer=mapnik&marker=44.1751832,28.6566235" title="Hartă: Librăria Dorian Gray, Bulevardul Tomis 23, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="#top">Librăria Dorian Gray</a>
+    <p class="credit">Model de site (demo). Fotografii ilustrative de pe Pixabay: Kollinger, LubosHouska, memyselfaneye, AhmadArdity, Marisa_Sias</p>
+    <p>Bulevardul Tomis 23, Constanța</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* umbra barei de navigare doar când pagina e derulată */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* dezvăluiri la derulare */
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:.12});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* etichetele se leagănă la atingere */
+  var hangers = document.querySelectorAll('.hanger');
+  function swing(el, soft){
+    if (reduce || el.classList.contains('swing')) return;
+    el.classList.toggle('soft', !!soft);
+    el.classList.add('swing');
+  }
+  hangers.forEach(function(el){
+    el.addEventListener('animationend', function(){ el.classList.remove('swing','soft'); });
+    el.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') swing(el); });
+    el.addEventListener('pointerdown', function(e){ if (e.pointerType !== 'mouse') swing(el); });
+    el.addEventListener('click', function(){ swing(el); });
+  });
+  /* o adiere discretă când vitrina intră în ecran */
+  var rail = document.getElementById('rail');
+  if (!reduce && 'IntersectionObserver' in window && rail){
+    var ro = new IntersectionObserver(function(entries){
+      if (entries[0].isIntersecting){
+        hangers.forEach(function(el, i){ setTimeout(function(){ swing(el, true); }, 140 * i); });
+        ro.disconnect();
+      }
+    }, {threshold:.35});
+    ro.observe(rail);
+  }
+
+  /* starea programului, după ora din România */
+  try{
+    var h = parseInt(new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/Bucharest', hour:'2-digit', hourCycle:'h23'}).format(new Date()), 10);
+    var st = document.getElementById('status');
+    var txt = document.getElementById('status-text');
+    if (!isNaN(h)){
+      var open = h >= 10 && h < 19;
+      txt.textContent = open ? 'Acum suntem deschiși' : 'Acum e închis. Deschidem la 10:00.';
+      st.classList.toggle('closed', !open);
+      st.hidden = false;
+    }
+  }catch(err){}
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
