@@ -299,6 +299,10 @@ html{scroll-behavior:auto}
 .hero-photo .photo{flex:0 0 auto;height:auto!important;min-height:0!important;aspect-ratio:1206/256}
 .hero-photo{justify-content:center;gap:1rem}
 .hero-photo .caption{position:static!important;align-self:flex-start;transform:none!important}
+button.button{font:inherit;font-weight:600}
+.program-ore{margin:1.2rem 0 1.4rem}
+.program-ore .mkp-program{font-size:.95rem;opacity:.9}
+.invite .button+.button{margin-top:.6rem}
 </style>
 <style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
 </head>
@@ -324,6 +328,7 @@ html{scroll-behavior:auto}
 <a href='#despre'>Studioul</a>
 <a href='#servicii'>Servicii</a>
 <a href='#galerie'>Galerie</a>
+<a href='#programare'>Programare</a>
 <a href='#contact'>Contact</a>
 </nav>
 <a class='button primary nav-call' href='tel:0768974454'>Sună acum</a>
@@ -342,8 +347,8 @@ html{scroll-behavior:auto}
 <p class='hero-intro hero-fade' style='--d:1.3s'>Salon modern pentru tunsori și styling, pe Șoseaua Pantelimon.</p>
 <div class='hero-actions hero-fade' style='--d:1.4s'>
 <div class='pole' aria-hidden='true'><span class='pole-cap'></span><span class='pole-glass'><span class='pole-stripes'></span></span><span class='pole-cap'></span></div>
-<a class='button primary magnet' href='https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio.' target='_blank' rel='noopener noreferrer'>Programează-te pe WhatsApp</a>
-<a class='button secondary' href='#servicii'>Vezi serviciile</a>
+<button class='button primary magnet' type='button' data-programare>Programează-te online</button>
+<a class='button secondary' href='https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio.' target='_blank' rel='noopener noreferrer'>Programează-te pe WhatsApp</a>
 </div>
 </div>
 <figure class='hero-photo'>
@@ -433,7 +438,8 @@ html{scroll-behavior:auto}
 <div class='invite io wipe'>
 <div class='invite-stripes' aria-hidden='true'></div>
 <p>Ai un look în minte? Spune-ne la programare.</p>
-<a class='button light' href='https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio.' target='_blank' rel='noopener noreferrer'>Scrie pe WhatsApp</a>
+<button class='button light' type='button' data-programare>Programează-te online</button>
+<a class='button ghost' href='https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio.' target='_blank' rel='noopener noreferrer'>Scrie pe WhatsApp</a>
 </div>
 </div>
 </section>
@@ -487,8 +493,10 @@ html{scroll-behavior:auto}
 <p><strong>Brother's Studio</strong></p>
 <p>Șoseaua Pantelimon, București</p>
 </address>
+<div class='program-ore'><p class='label'>Programul</p><div data-programari-info></div></div>
 <div class='contact-buttons'>
-<a class='button light' href='https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio.' target='_blank' rel='noopener noreferrer'>Programează-te pe WhatsApp</a>
+<button class='button light' type='button' data-programare>Programează-te online</button>
+<a class='button light' href='https://wa.me/40768974454?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Brother%27s%20Studio.' target='_blank' rel='noopener noreferrer'>Pe WhatsApp</a>
 <a class='button ghost' href='tel:0768974454'><svg aria-hidden='true'><use href='#icon-phone'/></svg> Sună acum</a>
 </div>
 </div>
@@ -637,5 +645,6 @@ html{scroll-behavior:auto}
 })();
 </script>
 <script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script>
+<script src="programari.js" data-salon="brothers" data-api="https://mk-programari.eni-wear.workers.dev" data-accent="#111111"></script>
 </body>
 </html>
