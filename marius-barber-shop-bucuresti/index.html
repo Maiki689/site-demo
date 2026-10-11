@@ -1,605 +1,111 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-<meta name="generator" content="jarvis-v1">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#eaf7fd">
-  <meta name="description" content="Marius Barber Shop — frizerie modernă pentru bărbați de toate vârstele, pe Șoseaua Colentina 2C, București. Programări prin telefon sau WhatsApp.">
-  <title>Marius Barber Shop — Stilul tău, în cea mai bună formă</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;450;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --blue: #0ea5e9;
-      --ink: #07314b;
-      --muted: #476a80;
-      --light: #edf8fe;
-      --paper: #f8fcff;
-      --line: #c9e3f0;
-      --gold: #b9a16b;
-      --gold-light: #dacdad;
-      --font: 'Rubik', sans-serif;
-      --display: 'Anton', sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--font); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    body.modal-open { overflow: hidden; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; color: inherit; }
-    button, a, summary { touch-action: manipulation; }
-    img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    svg { display: block; }
-    button { cursor: pointer; }
-    :focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
-    ::selection { color: var(--ink); background: #b7e7fc; }
-    h1, h2, h3, p { margin: 0; }
-    .skip { position: fixed; z-index: 100; top: 8px; left: 8px; padding: 12px 20px; background: var(--ink); color: white; transform: translateY(-160%); }
-    .skip:focus { transform: none; }
-    .shell { width: min(1280px, calc(100% - 64px)); margin-inline: auto; }
-    .site-header { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--line); background: rgba(248,252,255,.95); backdrop-filter: blur(18px); }
-    .header-inner { min-height: 94px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-    .brand-icon { width: 39px; height: 49px; color: var(--ink); }
-    .brand-name { font-family: var(--display); font-size: 27px; line-height: 1.15; letter-spacing: .09em; }
-    .brand-sub { display: block; font-size: 9px; letter-spacing: .3em; line-height: 1.8; }
-    .nav { display: flex; align-items: center; gap: 30px; }
-    .nav a { position: relative; font-size: 11px; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; padding-block: 10px; }
-    .nav a::after { content: ''; position: absolute; bottom: 3px; left: 50%; width: 0; height: 1px; background: var(--gold); transition: width .25s, left .25s; }
-    .nav a:hover::after { width: 100%; left: 0; }
-    .header-call { display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 500; }
-    .header-call svg { width: 16px; height: 16px; }
-    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); background: transparent; align-items: center; justify-content: center; }
-    .menu-toggle svg { width: 22px; height: 22px; }
-    main { padding-top: 26px; }
-    .frame { position: relative; border: 1px solid var(--gold-light); background: var(--paper); }
-    .frame::before, .frame::after { content: ''; pointer-events: none; position: absolute; z-index: 3; width: 24px; height: 24px; border-color: var(--gold); border-style: solid; }
-    .frame::before { left: 7px; top: 7px; border-width: 1px 0 0 1px; }
-    .frame::after { right: 7px; bottom: 7px; border-width: 0 1px 1px 0; }
-    .corner { position: absolute; z-index: 3; width: 24px; height: 24px; pointer-events: none; border-color: var(--gold); border-style: solid; }
-    .corner.tr { right: 7px; top: 7px; border-width: 1px 1px 0 0; }
-    .corner.bl { left: 7px; bottom: 7px; border-width: 0 0 1px 1px; }
-    .eyebrow { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .25em; line-height: 1.8; }
-    .chapter { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px; color: var(--muted); }
-    .chapter::before, .chapter::after { content: ''; width: 36px; height: 1px; background: var(--gold); }
-    .hero { isolation: isolate; overflow: hidden; padding: 64px 72px 30px; text-align: center; background: #eaf7fd; }
-    .hero::selection { background: #c0e8fa; }
-    .hero-glow { position: absolute; z-index: -1; inset: -25%; pointer-events: none; background: radial-gradient(ellipse at 24% 30%, #fff 0, transparent 42%), radial-gradient(ellipse at 80% 68%, #b9e7fb88 0, transparent 40%); animation: atmosphere 15s ease-in-out infinite alternate; }
-    @keyframes atmosphere { from { transform: translate(-2%, -2%) scale(1); } to { transform: translate(3%, 3%) scale(1.08); } }
-    .hero-topline { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 28px; }
-    .hero-topline .diamond { width: 5px; height: 5px; background: var(--gold); transform: rotate(45deg); }
-    h1 { font-family: var(--display); font-weight: 400; font-size: clamp(46px, 6.5vw, 88px); line-height: 1.13; letter-spacing: .025em; text-transform: uppercase; }
-    h1 span { color: #167db0; }
-    .hero-description { margin: 25px auto 27px; color: var(--muted); font-size: 15px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-    .button { min-height: 50px; padding: 14px 23px; display: inline-flex; align-items: center; justify-content: center; gap: 13px; border: 1px solid var(--ink); background: var(--ink); color: white; font-size: 12px; font-weight: 500; line-height: 1.5; transition: background .25s, transform .25s, box-shadow .25s; }
-    .button svg { width: 18px; height: 18px; flex-shrink: 0; }
-    .button:hover { background: #0c5075; transform: translateY(-3px); box-shadow: 0 7px 20px #07314b12; }
-    .button.secondary { background: transparent; color: var(--ink); border-color: #94b3c3; }
-    .button.secondary:hover { background: #fff; }
-    .hero-picture { margin: 40px auto 0; max-width: 1030px; padding: 6px; border: 1px solid var(--gold); border-radius: 190px 190px 2px 2px; }
-    .hero-picture .photo-reveal { height: clamp(235px, 29vw, 360px); border-radius: 184px 184px 0 0; }
-    .hero-picture img { object-position: center 45%; }
-    .photo-reveal { overflow: hidden; }
-    .photo-reveal img { transition: transform 1s ease; }
-    .hero-picture:hover img, .gallery-shot:hover img { transform: scale(1.035); }
-    .hero-bottom { margin-top: 19px; display: flex; align-items: center; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
-    .hero-bottom .photo-note { font-size: 9px; letter-spacing: .04em; }
-    .bulbs { position: absolute; z-index: 2; top: 45px; bottom: 42px; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; }
-    .bulbs.left { left: 20px; }
-    .bulbs.right { right: 20px; }
-    .bulb { width: 17px; height: 17px; border-radius: 50%; border: 1px solid #dbcfae; background: radial-gradient(circle at 35% 30%, #fff 0, #fffef5 50%, #ebdfbf 100%); box-shadow: 0 0 12px 4px #fffefa, 0 0 30px 9px #fff5d336; animation: light-breath 7s ease-in-out infinite alternate; }
-    .bulb:nth-child(even) { animation-delay: -3s; }
-    @keyframes light-breath { to { box-shadow: 0 0 15px 5px #fffefa, 0 0 34px 11px #fff5d355; } }
-    .section { margin-top: 34px; padding: 76px 65px; text-align: center; }
-    h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(35px, 4.3vw, 58px); line-height: 1.2; letter-spacing: .035em; }
-    .section-intro { max-width: 640px; margin: 22px auto 0; color: var(--muted); font-size: 15px; }
-    .salon-mark { width: 50px; height: 50px; color: #217ba7; margin: 30px auto 22px; }
-    .about-copy { max-width: 710px; margin: auto; font-size: 17px; line-height: 1.95; color: var(--muted); }
-    .about-copy strong { color: var(--ink); font-weight: 500; }
-    .benefits { margin-top: 47px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--gold-light); border-bottom: 1px solid var(--gold-light); padding: 30px 0; }
-    .benefit { padding: 8px 25px; }
-    .benefit + .benefit { border-left: 1px solid var(--line); }
-    .benefit svg { width: 29px; height: 29px; margin: 0 auto 15px; color: #2783b2; stroke-width: 1.3; }
-    .benefit h3 { font-size: 15px; font-weight: 500; margin-bottom: 7px; }
-    .benefit p { font-size: 12px; color: var(--muted); }
-    .services { background: #eaf6fc; }
-    .service-list { max-width: 920px; margin: 43px auto 0; }
-    .service-row { position: relative; display: grid; grid-template-columns: 70px 1fr 70px; align-items: center; gap: 12px; padding: 27px 15px; border-top: 1px solid #b8d4e2; transition: background .3s; }
-    .service-row:last-child { border-bottom: 1px solid #b8d4e2; }
-    .service-row:hover { background: #ffffff85; }
-    .service-number { font-size: 11px; color: #54859f; letter-spacing: .14em; }
-    .service-row h3 { font-family: var(--display); font-weight: 400; font-size: 27px; letter-spacing: .035em; text-transform: uppercase; }
-    .service-row p { font-size: 13px; color: var(--muted); margin-top: 6px; }
-    .service-star { width: 19px; height: 19px; margin: auto; color: var(--gold); transition: transform .5s; }
-    .service-row:hover .service-star { transform: rotate(90deg); }
-    .service-foot { margin: 30px 0 22px; color: var(--muted); font-size: 13px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; margin-top: 42px; }
-    .gallery-item { margin: 0; grid-column: span 7; min-width: 0; }
-    .gallery-item:nth-child(2), .gallery-item:nth-child(3) { grid-column: span 5; }
-    .gallery-shot { display: block; width: 100%; padding: 6px; border: 1px solid var(--gold-light); background: transparent; position: relative; }
-    .gallery-shot .photo-reveal { height: 305px; }
-    .gallery-zoom { position: absolute; bottom: 18px; right: 18px; width: 37px; height: 37px; background: #f8fcffed; display: grid; place-items: center; border: 1px solid var(--gold-light); transition: background .25s, transform .25s; }
-    .gallery-zoom svg { width: 17px; height: 17px; }
-    .gallery-shot:hover .gallery-zoom { background: white; transform: scale(1.08); }
-    .gallery-item figcaption { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .13em; text-align: left; }
-    .gallery-note { margin-top: 27px; font-size: 11px; color: var(--muted); }
-    .contact { background: #eaf6fc; padding-bottom: 28px; }
-    .contact .actions { margin-top: 30px; }
-    .contact-info { max-width: 890px; margin: 48px auto 35px; padding-block: 30px; border-top: 1px solid var(--gold-light); border-bottom: 1px solid var(--gold-light); display: grid; grid-template-columns: 1fr 1fr; }
-    .contact-info > div { padding: 0 28px; }
-    .contact-info > div + div { border-left: 1px solid #bad9e9; }
-    .info-heading { margin-bottom: 16px; color: #336782; }
-    address { font-style: normal; font-size: 17px; line-height: 1.8; }
-    .address-phone { display: inline-block; margin-top: 12px; font-size: 15px; transition: color .2s; }
-    .address-phone:hover { color: #007cb8; }
-    .hours { max-width: 300px; margin-inline: auto; }
-    .hours div { display: flex; justify-content: space-between; gap: 15px; padding: 4px 0; font-size: 13px; }
-    .hours dt, .hours dd { margin: 0; }
-    .hours dt { color: var(--muted); }
-    .map { border: 1px solid var(--gold-light); padding: 6px; background: var(--paper); }
-    .map iframe { display: block; width: 100%; height: 330px; border: 0; background: #d9edf6; }
-    .map-bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 18px; font-size: 11px; color: var(--muted); }
-    .map-link { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); border-bottom: 1px solid var(--gold); padding-bottom: 3px; }
-    .map-link svg { width: 15px; height: 15px; transition: transform .2s; }
-    .map-link:hover svg { transform: translate(2px,-2px); }
-    .site-footer { text-align: center; padding: 52px 0 28px; }
-    .footer-brand { display: inline-block; font-family: var(--display); font-size: 25px; letter-spacing: .1em; line-height: 1.4; }
-    .footer-tag { margin: 8px 0 26px; font-size: 10px; text-transform: uppercase; letter-spacing: .2em; color: var(--muted); }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 15px; border-top: 1px solid var(--line); padding-top: 20px; font-size: 10px; color: var(--muted); }
-    .js-motion .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.65,.3,1); }
-    .js-motion .reveal.is-visible { opacity: 1; transform: translateY(0); }
-    .js-motion .photo-reveal { clip-path: inset(0 100% 0 0); transition: clip-path 1.3s cubic-bezier(.22,.61,.36,1); }
-    .js-motion .photo-reveal.is-visible { clip-path: inset(0 0 0 0); }
-    .lightbox { padding: 0; border: 1px solid var(--gold); background: var(--paper); color: var(--ink); width: min(1000px, calc(100% - 32px)); max-height: 92dvh; }
-    .lightbox::backdrop { background: #04283ce8; backdrop-filter: blur(6px); }
-    .lightbox-top { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; gap: 20px; font-size: 11px; letter-spacing: .1em; }
-    .lightbox-image { max-height: 70dvh; height: auto; object-fit: contain; background: #062d44; }
-    .icon-button { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); background: transparent; transition: background .2s; }
-    .icon-button:hover { background: #dff1fa; }
-    .icon-button svg { width: 20px; height: 20px; }
-    .lightbox-bottom { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; gap: 20px; font-size: 11px; color: var(--muted); }
-    .lightbox-controls { display: flex; gap: 8px; }
-    @media (min-width: 1500px) { .hero { padding-top: 76px; } }
-    @media (max-width: 1000px) {
-      .shell { width: calc(100% - 40px); }
-      .nav { gap: 19px; }
-      .header-call { font-size: 11px; }
-      .section { padding: 60px 35px; }
-      .hero { padding: 52px 55px 26px; }
-      .gallery-shot .photo-reveal { height: 260px; }
-    }
-    @media (max-width: 760px) {
-      html { scroll-padding-top: 88px; }
-      .shell { width: calc(100% - 28px); }
-      .header-inner { min-height: 76px; gap: 14px; }
-      .brand-name { font-size: 23px; }
-      .brand-icon { width: 30px; height: 39px; }
-      .brand-sub { font-size: 8px; }
-      .header-call { margin-left: auto; }
-      .header-call span { display: none; }
-      .header-call { width: 40px; height: 44px; justify-content: center; }
-      .header-call svg { width: 20px; height: 20px; }
-      .menu-toggle { display: flex; }
-      .nav { position: absolute; left: 0; right: 0; top: 100%; display: none; flex-direction: column; gap: 3px; padding: 18px 24px 25px; border-bottom: 1px solid var(--gold-light); background: var(--paper); box-shadow: 0 15px 25px #07314b12; }
-      .nav.is-open { display: flex; }
-      .nav a { padding: 12px 20px; font-size: 12px; }
-      main { padding-top: 15px; }
-      .hero { padding: 41px 35px 25px; }
-      .hero-topline { font-size: 8px; gap: 10px; margin-bottom: 23px; letter-spacing: .18em; }
-      h1 { font-size: clamp(35px, 7.4vw, 56px); }
-      .hero-description { font-size: 13px; max-width: 320px; margin: 22px auto; }
-      .bulbs.left { left: 11px; }
-      .bulbs.right { right: 11px; }
-      .bulb { width: 11px; height: 11px; }
-      .hero-picture { margin-top: 30px; padding: 4px; border-radius: 100px 100px 0 0; }
-      .hero-picture .photo-reveal { height: 260px; border-radius: 96px 96px 0 0; }
-      .hero-bottom { flex-direction: column; gap: 7px; font-size: 9px; }
-      .section { margin-top: 20px; padding: 48px 24px; }
-      .chapter { font-size: 9px; gap: 12px; margin-bottom: 20px; }
-      .chapter::before, .chapter::after { width: 25px; }
-      .section-intro { font-size: 13px; }
-      .about-copy { font-size: 15px; }
-      .benefits { grid-template-columns: 1fr; padding: 9px 0; margin-top: 30px; }
-      .benefit { padding: 25px 12px; }
-      .benefit + .benefit { border-left: 0; border-top: 1px solid var(--line); }
-      .benefit svg { margin-bottom: 12px; }
-      .service-row { grid-template-columns: 30px 1fr 22px; gap: 6px; padding: 23px 0; }
-      .service-row h3 { font-size: 23px; }
-      .service-row p { font-size: 12px; }
-      .service-list { margin-top: 30px; }
-      .service-star { width: 14px; height: 14px; }
-      .gallery-grid { gap: 25px; margin-top: 30px; }
-      .gallery-item, .gallery-item:nth-child(2), .gallery-item:nth-child(3) { grid-column: 1 / -1; }
-      .gallery-shot .photo-reveal { height: 290px; }
-      .gallery-item figcaption { font-size: 9px; }
-      .contact-info { grid-template-columns: 1fr; margin-top: 32px; padding: 0; }
-      .contact-info > div { padding: 27px 6px; }
-      .contact-info > div + div { border-left: 0; border-top: 1px solid var(--gold-light); }
-      .map iframe { height: 280px; }
-      .map-bottom { flex-direction: column; gap: 12px; }
-      .footer-bottom { flex-direction: column; gap: 7px; }
-      .site-footer { padding-top: 37px; }
-    }
-    @media (max-width: 420px) {
-      .hero { padding-inline: 27px; }
-      h1 { font-size: clamp(30px, 7.5vw, 37px); }
-      .hero .actions { flex-direction: column; }
-      .button { padding: 13px 15px; font-size: 11px; }
-      .hero-picture .photo-reveal { height: 225px; }
-      .section { padding-inline: 20px; }
-      .gallery-shot .photo-reveal { height: 240px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-      .js-motion .reveal { opacity: 1; transform: none; }
-      .js-motion .photo-reveal { clip-path: none; }
-    }
-  </style>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#292019">
+<meta name="description" content="Marius Barber Shop — frizerie modernă pentru bărbați de toate vârstele, pe Șoseaua Colentina 2C, București. Programări prin telefon sau WhatsApp.">
+<title>Marius Barber Shop — Stilul tău, în cea mai bună formă</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5efdf;--paper:#fbf7ee;--ink:#30261f;--muted:#706254;--wood:#292019;--deep:#1c1713;--brass:#c5a36c;--brass-light:#e6cfa5;--line:#d9cbb5;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Rubik',sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:6rem}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:.9375rem;line-height:1.6;letter-spacing:0;-webkit-font-smoothing:antialiased}body.modal-open{overflow:hidden}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}img{display:block;width:100%;height:100%;object-fit:cover}svg{display:block;width:1.25rem;height:1.25rem;flex-shrink:0}h1,h2,h3,p,figure{margin:0}h1,h2,h3{font-family:var(--serif)}h1,h2{font-weight:600;letter-spacing:-.025em;line-height:1.06}h2{font-size:clamp(2.6rem,5.5vw,4.7rem)}h3{font-size:1.7rem;line-height:1.15}button:focus-visible,a:focus-visible{outline:.18rem solid var(--brass);outline-offset:.3rem}::selection{background:var(--brass-light);color:var(--deep)}.shell{width:min(76rem,calc(100% - 4rem));margin-inline:auto}.skip{position:fixed;top:.5rem;left:.5rem;z-index:100;padding:.75rem 1rem;background:var(--cream);color:var(--ink);transform:translateY(-150%)}.skip:focus{transform:none}.wood{background-color:var(--wood);background-image:repeating-linear-gradient(92deg,transparent 0,transparent 2.5rem,rgba(197,163,108,.025) 2.55rem,transparent 2.65rem),linear-gradient(115deg,#37291f,#241d18 60%,#30241c);color:var(--cream)}
+.site-header{position:sticky;top:0;z-index:30;background:rgba(41,32,25,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid #ffffff20;color:var(--cream)}.site-header.is-scrolled{box-shadow:0 .4rem 1.8rem #17120f30}.header-inner{min-height:5.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}.brand{display:flex;align-items:center;gap:.7rem}.brand-mark{width:2.4rem;height:2.7rem;color:var(--brass-light)}.brand-name{display:block;font-family:var(--serif);font-weight:700;font-size:1.7rem;letter-spacing:-.02em;line-height:1}.brand-sub{display:block;font-size:.57rem;letter-spacing:.25em;margin-top:.3rem;color:var(--brass-light)}.nav{display:flex;gap:1.8rem;align-items:center}.nav a{font-size:.74rem;font-weight:500;min-height:2.75rem;display:flex;align-items:center}.nav a:hover{color:var(--brass-light)}.header-call{display:flex;gap:.55rem;align-items:center;justify-content:center;min-height:2.75rem;padding:.65rem 1rem;background:var(--brass-light);color:var(--deep);font-size:.75rem;font-weight:600;border-radius:.15rem}.header-call:active,.button:active,.icon-button:active,.menu-toggle:active{transform:scale(.97);transition:transform .1s}.menu-toggle{display:none;border:1px solid #c5a36c70;background:transparent;width:2.75rem;height:2.75rem;align-items:center;justify-content:center}
+.eyebrow{font-family:var(--sans);font-size:.66rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;line-height:1.6}.eyebrow.line{display:flex;align-items:center;gap:1rem}.eyebrow.line::before{content:'';width:2.5rem;height:1px;background:var(--brass)}.hero{position:relative;overflow:hidden;padding:4.6rem 0 2rem}.hero-grid{display:grid;grid-template-columns:1.04fr 1fr;gap:4rem;align-items:center}.hero-copy{padding-block:1rem}.hero .eyebrow{color:var(--brass-light)}h1{font-size:clamp(3.5rem,7.5vw,7rem);margin:1.4rem 0 1.1rem}h1 span{display:block;font-weight:500;color:var(--brass-light);font-size:.8em}.hero-slogan{font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.2;color:var(--cream)}.hero-description{max-width:28rem;font-size:.86rem;line-height:1.7;color:#d1c3b1;margin:1.2rem 0 1.8rem}.actions{display:flex;flex-wrap:wrap;gap:.75rem}.button{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;min-height:3.2rem;padding:.85rem 1.2rem;border:1px solid var(--ink);border-radius:.15rem;background:var(--ink);color:var(--paper);font-size:.76rem;font-weight:500;line-height:1.4;transition:transform .15s var(--ease),opacity .2s var(--ease)}.button:hover{background:#453326;box-shadow:0 .3rem 1rem #20160f14}.button.brass{background:var(--brass-light);border-color:var(--brass-light);color:var(--deep);font-weight:600}.button.brass:hover{background:#f1debc}.button.outline{background:transparent;border-color:#c5a36c80;color:var(--cream)}.button.outline:hover{background:#ffffff09}.button.secondary{color:var(--ink);background:transparent;border-color:#8b7659}.button.secondary:hover{background:#e9dfce}.hero-visual{position:relative;padding:0 1.2rem 1.2rem 0;min-width:0}.hero-visual::after{content:'';position:absolute;inset:1.2rem 0 0 1.2rem;border:1px solid #c5a36c70;pointer-events:none}.hero-photo{position:relative;z-index:1;aspect-ratio:4/4.8;overflow:hidden;background:#493c30}.hero-photo img{height:112%;position:relative;top:-6%;object-position:center;will-change:transform}.photo-tag{position:absolute;z-index:2;left:-1.4rem;bottom:3rem;padding:1rem 1.4rem;background:var(--cream);color:var(--ink);box-shadow:0 .5rem 2rem #0002}.photo-tag strong{display:block;font-family:var(--serif);font-size:1.55rem;font-weight:600}.photo-tag small{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase}.hero-bottom{display:flex;justify-content:space-between;gap:1rem;margin-top:3rem;padding-top:1.4rem;border-top:1px solid #c5a36c38;color:#d1c3b1;font-size:.62rem;letter-spacing:.1em}.hero-bottom a{min-height:2.75rem;display:flex;align-items:center;gap:.6rem}.hero-bottom span{display:flex;align-items:center}.hero-bottom .photo-note{letter-spacing:.02em;color:#bba992}
+.section{padding-block:6rem}.section-number{font-family:var(--serif);font-size:1.3rem;font-style:italic;color:#94764c}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem}.section-heading .eyebrow{color:var(--muted);margin-bottom:1rem}.section-intro{color:var(--muted);max-width:25rem;font-size:.88rem}.about{position:relative;background:var(--paper)}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:5rem;align-items:center}.about-photo{aspect-ratio:4/4.5;position:relative;background:#d9cbb5;padding:.6rem;border:1px solid var(--line)}.about-photo img{object-position:center}.about-photo figcaption{position:absolute;bottom:1.3rem;left:1.3rem;right:1.3rem;width:fit-content;background:var(--paper);padding:.45rem .7rem;font-size:.6rem;letter-spacing:.06em}.about-copy .eyebrow{color:var(--muted);margin-bottom:1rem}.salon-mark{width:2.7rem;height:2.7rem;color:#927449;margin:1.5rem 0}.about-text{font-size:.94rem;color:var(--muted);line-height:1.9}.about-text strong{color:var(--ink);font-weight:500}.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:4rem;padding-top:2rem;border-top:1px solid var(--line)}.benefit{display:flex;align-items:flex-start;gap:1rem}.benefit svg{width:1.8rem;height:1.8rem;color:#96754a;margin-top:.2rem}.benefit h3{font-size:1.5rem;margin-bottom:.4rem}.benefit p{font-size:.76rem;color:var(--muted)}
+.services{background:var(--cream);position:relative}.service-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:4rem;align-items:start}.service-list{border-top:1px solid #baa78c}.service-row{display:grid;grid-template-columns:2.6rem 1fr 1.5rem;gap:1rem;align-items:center;padding:1.6rem .5rem;border-bottom:1px solid #d3c4ad}.service-row:hover{background:#fff7}.service-number{font-size:.65rem;letter-spacing:.12em;color:#8c7353}.service-row h3{font-size:clamp(1.6rem,2.5vw,2rem);font-weight:600}.service-row p{font-size:.8rem;color:var(--muted);margin-top:.35rem}.service-star{color:#927449;transition:transform .45s var(--ease)}.service-row:hover .service-star{transform:rotate(90deg)}.service-aside{position:sticky;top:7rem;background:var(--wood);padding:1rem;color:var(--cream)}.service-image{aspect-ratio:1/1.1;overflow:hidden}.service-image img{transition:transform .5s var(--ease)}.service-aside:hover img{transform:scale(1.025)}.service-foot{margin:1.4rem .4rem 1rem;font-family:var(--serif);font-size:1.6rem;line-height:1.25}.service-aside .button{margin:0 .4rem .5rem;width:calc(100% - .8rem)}
+.gallery{position:relative;padding-bottom:5rem}.gallery .eyebrow{color:var(--brass-light)}.gallery .section-intro{color:#d1c3b1}.gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem}.gallery-item{min-width:0}.gallery-item:nth-child(2){padding-top:5rem}.gallery-item:nth-child(3){margin-top:-3rem;padding-right:4rem}.gallery-item:nth-child(4){padding-top:2rem}.gallery-shot{position:relative;display:block;width:100%;border:0;padding:0;background:#45392e;overflow:hidden;text-align:left}.gallery-shot .photo-reveal{display:block;aspect-ratio:5/4;overflow:hidden}.gallery-item:nth-child(2) .photo-reveal,.gallery-item:nth-child(3) .photo-reveal{aspect-ratio:4/4.5}.gallery-shot img{transition:transform .55s var(--ease),opacity .4s var(--ease)}.gallery-shot:hover img{transform:scale(1.035);opacity:.9}.gallery-zoom{position:absolute;right:1rem;bottom:1rem;display:grid;place-items:center;background:var(--cream);color:var(--ink);width:2.75rem;height:2.75rem;transition:transform .2s var(--ease)}.gallery-shot:hover .gallery-zoom{transform:scale(1.04)}.gallery-item figcaption{display:flex;justify-content:space-between;gap:1rem;margin-top:1rem;font-size:.65rem;letter-spacing:.12em;color:#dccbad;text-transform:uppercase}.gallery-note{margin-top:3rem;font-size:.72rem;color:#c6b69f;max-width:37rem}.gallery::after{content:'';position:absolute;left:0;bottom:-1px;right:0;height:2.5rem;background:linear-gradient(transparent,#211a15);pointer-events:none}
+.contact{background:var(--paper)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}.contact-copy .eyebrow{color:var(--muted);margin-bottom:1rem}.contact-copy .section-intro{margin:1.5rem 0 1.8rem;max-width:30rem}.contact-info{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;border-top:1px solid var(--line);padding-top:1.7rem}.info-heading{font-family:var(--sans);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;color:var(--muted);line-height:1.5}address{font-style:normal;font-size:.95rem;line-height:1.7}.address-phone{display:inline-flex;align-items:center;min-height:2.75rem;margin-top:.5rem;font-size:.85rem}.hours{margin:0}.hours div{display:flex;justify-content:space-between;gap:.6rem;font-size:.75rem;padding:.3rem 0}.hours dt,.hours dd{margin:0}.hours dt{color:var(--muted)}.map-panel{padding:.65rem;background:var(--cream);border:1px solid var(--line)}.map-panel iframe{display:block;width:100%;height:29rem;border:0;background:#dfd7c6}.map-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem .3rem .2rem;font-size:.65rem;color:var(--muted)}.map-link{display:flex;align-items:center;gap:.5rem;min-height:2.75rem;font-weight:500;color:var(--ink)}.map-link svg{width:1rem;height:1rem}.site-footer{padding:3rem 0 1.5rem;background:var(--deep);color:var(--cream)}.footer-top{display:flex;justify-content:space-between;align-items:center;gap:2rem;padding-bottom:2rem}.footer-brand{font-family:var(--serif);font-size:2rem;font-weight:600;letter-spacing:-.02em}.footer-tag{font-family:var(--serif);font-size:1.45rem;color:var(--brass-light)}.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-top:1px solid #c5a36c30;padding-top:1.3rem;font-size:.62rem;letter-spacing:.03em;color:#c6b69f}.footer-bottom a{min-height:2.75rem;display:flex;align-items:center}
+.js-motion .reveal{opacity:0;transform:translateY(1.3rem);transition:opacity .5s var(--ease),transform .5s var(--ease)}.js-motion .reveal.is-visible{opacity:1;transform:none}.js-motion .hero-copy .reveal:nth-child(2){transition-delay:.08s}.js-motion .hero-copy .reveal:nth-child(3){transition-delay:.13s}.js-motion .hero-copy .reveal:nth-child(4){transition-delay:.18s}.js-motion .hero-copy .reveal:nth-child(5){transition-delay:.22s}.lightbox{padding:0;border:1px solid var(--brass);background:var(--paper);color:var(--ink);width:min(65rem,calc(100% - 2rem));max-height:92dvh}.lightbox::backdrop{background:#17120feb}.lightbox-top,.lightbox-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1rem;font-size:.68rem;letter-spacing:.05em}.lightbox-image{height:auto;max-height:70dvh;object-fit:contain;background:var(--deep)}.lightbox-controls{display:flex;gap:.5rem}.icon-button{display:grid;place-items:center;width:2.75rem;height:2.75rem;border:1px solid var(--line);background:transparent;transition:transform .15s var(--ease)}.icon-button:hover{background:var(--cream)}
+@media(min-width:1500px){.hero{padding-top:5.5rem}}@media(max-width:1050px){.hero-grid{gap:2.5rem}.nav{gap:1rem}.header-call{font-size:.7rem;padding-inline:.8rem}.about-grid,.contact-grid{gap:2.5rem}.service-layout{gap:2rem}.contact-info{gap:1rem}.hero-photo{aspect-ratio:4/5.5}}
+@media(max-width:760px){html{scroll-padding-top:5rem}.shell{width:calc(100% - 2.5rem)}.header-inner{min-height:4.6rem;gap:.7rem}.brand-name{font-size:1.5rem}.brand-mark{width:1.9rem;height:2.2rem}.brand-sub{font-size:.5rem}.header-call{margin-left:auto;width:2.75rem;padding:.5rem}.header-call span{display:none}.menu-toggle{display:flex}.nav{position:absolute;top:100%;left:0;right:0;background:var(--wood);padding:1rem 1.25rem;display:none;box-shadow:0 1rem 2rem #0003}.nav.is-open{display:flex;flex-direction:column;align-items:stretch;gap:.2rem}.nav a{padding:.6rem .7rem;font-size:.86rem}.hero{padding-top:2.5rem}.hero-grid{grid-template-columns:1fr;gap:2rem}.hero-copy{padding:0}.hero-copy h1{font-size:clamp(3.8rem,14vw,6rem);margin:1rem 0}.hero-description{max-width:30rem}.hero-visual{margin-left:.6rem;padding-right:.8rem;padding-bottom:.8rem}.hero-visual::after{inset:.8rem 0 0 .8rem}.hero-photo{aspect-ratio:5/4.5}.photo-tag{left:-.6rem;bottom:1.9rem;padding:.75rem 1rem}.photo-tag strong{font-size:1.35rem}.hero-bottom{margin-top:2rem;display:grid;grid-template-columns:1fr auto;font-size:.55rem;gap:.5rem}.hero-bottom .photo-note{grid-column:1;grid-row:2}.hero-bottom a{grid-column:2;grid-row:1 / 3}.section{padding-block:3.75rem}.section-heading{display:block;margin-bottom:2rem}.section-heading .section-intro{margin-top:1.3rem}.about-grid{grid-template-columns:1fr;gap:2rem}.about-photo{order:2;aspect-ratio:5/4}.about-copy{order:1}.benefits{grid-template-columns:1fr;gap:1.5rem;margin-top:2.5rem;padding-top:1.5rem}.benefit h3{font-size:1.5rem}.service-layout{grid-template-columns:1fr;gap:2rem}.service-row{padding:1.4rem 0;gap:.6rem;grid-template-columns:1.8rem 1fr 1.2rem}.service-row p{font-size:.76rem}.service-aside{position:static;display:grid;grid-template-columns:.8fr 1.2fr;gap:1rem;align-items:center;padding:.8rem}.service-image{aspect-ratio:1/1.4;grid-row:1 / 3}.service-foot{margin:0;font-size:1.4rem;align-self:end}.service-aside .button{margin:0;width:100%;align-self:start;font-size:.68rem;padding-inline:.6rem}.gallery-grid{gap:1.8rem 1rem}.gallery-item:nth-child(2){padding-top:2rem}.gallery-item:nth-child(3){margin-top:-1rem;padding-right:0}.gallery-item:nth-child(4){padding-top:1rem}.gallery-shot .photo-reveal{aspect-ratio:3/4}.gallery-item:nth-child(2) .photo-reveal,.gallery-item:nth-child(3) .photo-reveal{aspect-ratio:3/4.6}.gallery-item figcaption{font-size:.52rem;letter-spacing:.07em;gap:.3rem}.gallery-zoom{width:2.75rem;height:2.75rem;bottom:.6rem;right:.6rem}.gallery-note{font-size:.65rem;margin-top:2rem}.contact-grid{grid-template-columns:1fr;gap:2rem}.contact-info{gap:1.5rem}.map-panel iframe{height:21rem}.footer-top{display:block}.footer-tag{margin-top:.5rem}.footer-bottom{flex-direction:column;align-items:flex-start;gap:.7rem}.footer-brand{font-size:1.85rem}.section-number{display:none}}
+@media(max-width:380px){.shell{width:calc(100% - 2rem)}.hero .actions{flex-direction:column}.hero-bottom{display:flex;flex-wrap:wrap}.hero-bottom a{width:100%}.contact-info{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.gallery-item:nth-child(n){padding:0;margin:0}.gallery-shot .photo-reveal,.gallery-item:nth-child(n) .photo-reveal{aspect-ratio:4/4.5}.map-bottom{flex-direction:column;align-items:flex-start}.service-aside{grid-template-columns:1fr}.service-image{aspect-ratio:5/3;grid-row:auto}.brand-mark{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition-duration:.2s!important;transition-delay:0s!important}.js-motion .reveal{transform:none}.hero-photo img,.gallery-shot:hover img,.service-aside:hover img,.service-row:hover .service-star,.gallery-shot:hover .gallery-zoom{transform:none!important}.button:active,.header-call:active,.icon-button:active,.menu-toggle:active{transform:none}.hero-photo img{will-change:auto}}
+@media(prefers-reduced-transparency:reduce){.site-header{background:var(--wood);backdrop-filter:none;-webkit-backdrop-filter:none}.lightbox::backdrop{background:var(--deep)}}
+@media(prefers-contrast:more){:root{--muted:#4c3c2c;--line:#806c51}.site-header{background:var(--deep);backdrop-filter:none;-webkit-backdrop-filter:none}.hero-description,.hero-bottom,.gallery .section-intro,.gallery-note,.footer-bottom{color:var(--cream)}.button.outline{border-color:var(--cream)}.service-number{color:#60492d}.photo-tag,.map-panel,.gallery-zoom{border:1px solid var(--ink)}}
+</style>
 </head>
 <body>
-  <a class="skip" href="#continut">Sari la conținut</a>
-
-  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-    <defs>
-      <symbol id="i-scissors" viewBox="0 0 48 48">
-        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="13" cy="35" r="6"/><circle cx="35" cy="35" r="6"/>
-          <path d="M17 30 37 6M31 30 11 6M23 20l3 4"/>
-          <circle cx="24" cy="22" r="1.5"/>
-        </g>
-      </symbol>
-      <symbol id="i-phone" viewBox="0 0 24 24">
-        <path d="m7 3 3 5-2 2c1.4 3 3 4.6 6 6l2-2 5 3-1 4C10 23 1 14 3 4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      </symbol>
-      <symbol id="i-arrow" viewBox="0 0 24 24">
-        <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </symbol>
-      <symbol id="i-whatsapp" viewBox="0 0 24 24">
-        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
-          <path d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5a8.5 8.5 0 1 1 16-4.2Z"/>
-          <path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 1c-.3 2-1.8 2.5-3.5 2-3.6-1.1-6.4-4-7-7-.3-1.5.2-2.6 1.5-3Z" stroke-width="1.2"/>
-        </g>
-      </symbol>
-      <symbol id="i-star" viewBox="0 0 24 24">
-        <path d="M12 2c0 7-3 10-10 10 7 0 10 3 10 10 0-7 3-10 10-10-7 0-10-3-10-10Z" fill="none" stroke="currentColor" stroke-width="1"/>
-      </symbol>
-      <symbol id="i-chair" viewBox="0 0 32 32">
-        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 18V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v12M7 14H4v9h24v-9h-3M8 18h16v5M16 23v6M10 29h12"/>
-          <path d="M13 7h6M13 10h6"/>
-        </g>
-      </symbol>
-      <symbol id="i-clock" viewBox="0 0 32 32">
-        <g fill="none" stroke="currentColor" stroke-linecap="round">
-          <circle cx="16" cy="16" r="12"/><path d="M16 8v8l6 3"/>
-        </g>
-      </symbol>
-      <symbol id="i-zoom" viewBox="0 0 24 24">
-        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/>
-        </g>
-      </symbol>
-      <symbol id="i-close" viewBox="0 0 24 24">
-        <path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </symbol>
-    </defs>
-  </svg>
-
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="#acasa" aria-label="Marius Barber Shop — acasă">
-        <svg class="brand-icon" aria-hidden="true"><use href="#i-scissors"/></svg>
-        <div><span class="brand-name">MARIUS</span><span class="brand-sub">BARBER SHOP</span></div>
-      </a>
-      <nav class="nav" id="navigation" aria-label="Navigare principală">
-        <a href="#despre">Despre noi</a>
-        <a href="#servicii">Servicii</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="header-call" href="tel:+40767506563" aria-label="Sună la +40 767 506 563">
-        <svg aria-hidden="true"><use href="#i-phone"/></svg>
-        <span>+40 767 506 563</span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Deschide meniul">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-  </header>
-
-  <main class="shell" id="continut">
-    <section class="hero frame" id="acasa" aria-labelledby="hero-title">
-      <span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span>
-      <div class="hero-glow" aria-hidden="true"></div>
-      <div class="bulbs left" aria-hidden="true">
-        <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
-      </div>
-      <div class="bulbs right" aria-hidden="true">
-        <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
-      </div>
-      <div class="hero-topline eyebrow">
-        <span>București · Colentina</span><span class="diamond" aria-hidden="true"></span><span>Marius Barber Shop</span>
-      </div>
-      <h1 id="hero-title">Tunsoarea perfectă<br><span>pentru orice stil.</span></h1>
-      <p class="hero-description">Frizerie modernă pentru bărbați de toate vârstele.<br>Un look al tău, cu atenție la fiecare detaliu.</p>
-      <div class="actions">
-        <a class="button" href="https://wa.me/40767506563?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns." target="_blank" rel="noopener noreferrer">
-          <svg aria-hidden="true"><use href="#i-whatsapp"/></svg>
-          Programează-te pe WhatsApp
-        </a>
-        <a class="button secondary" href="#servicii">Descoperă serviciile <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-      </div>
-      <div class="hero-picture">
-        <div class="photo-reveal">
-          <img src="img/1.jpg" alt="Frizer în timpul unei tunsori într-un salon — fotografie ilustrativă" fetchpriority="high" decoding="async">
-        </div>
-      </div>
-      <div class="hero-bottom">
-        <span>ȘOSEAUA COLENTINA 2C, BUCUREȘTI</span>
-        <span class="photo-note">Fotografie ilustrativă</span>
-        <a href="#despre">DESCOPERĂ MAI MULT ↓</a>
-      </div>
-    </section>
-
-    <section class="section frame reveal" id="despre" aria-labelledby="about-title">
-      <span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span>
-      <p class="chapter eyebrow">01 / Oglinda stilului tău</p>
-      <h2 id="about-title">Detaliile fac diferența.</h2>
-      <svg class="salon-mark" aria-hidden="true"><use href="#i-scissors"/></svg>
-      <p class="about-copy">La <strong>Marius Barber Shop</strong>, ai mereu parte de atenție la detalii și servicii de calitate. Fie că vrei un look clasic sau modern, te așteptăm cu o atmosferă prietenoasă și profesională.</p>
-      <div class="benefits">
-        <div class="benefit">
-          <svg aria-hidden="true"><use href="#i-scissors"/></svg>
-          <h3>Tunsori moderne</h3>
-          <p>Stiluri potrivite pentru toate vârstele.</p>
-        </div>
-        <div class="benefit">
-          <svg aria-hidden="true"><use href="#i-chair"/></svg>
-          <h3>Loc pentru relaxare</h3>
-          <p>Scaune confortabile, atmosferă prietenoasă.</p>
-        </div>
-        <div class="benefit">
-          <svg aria-hidden="true"><use href="#i-clock"/></svg>
-          <h3>Programări simple</h3>
-          <p>Ne scrii pe WhatsApp sau ne suni.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section services frame reveal" id="servicii" aria-labelledby="services-title">
-      <span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span>
-      <p class="chapter eyebrow">02 / Servicii</p>
-      <h2 id="services-title">Alege-ți următorul look.</h2>
-      <p class="section-intro">De la tunsoarea clasică la o schimbare de stil,<br>îngrijirea începe cu ceea ce ți se potrivește.</p>
-      <div class="service-list">
-        <article class="service-row">
-          <span class="service-number" aria-hidden="true">01</span>
-          <div><h3>Tuns clasic</h3><p>Tuns profesional, adaptat stilului tău.</p></div>
-          <svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg>
-        </article>
-        <article class="service-row">
-          <span class="service-number" aria-hidden="true">02</span>
-          <div><h3>Bărbierit tradițional</h3><p>Răsfăț cu prosop fierbinte și brici.</p></div>
-          <svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg>
-        </article>
-        <article class="service-row">
-          <span class="service-number" aria-hidden="true">03</span>
-          <div><h3>Aranjat barbă</h3><p>Conturare și stilizare pentru orice barbă.</p></div>
-          <svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg>
-        </article>
-        <article class="service-row">
-          <span class="service-number" aria-hidden="true">04</span>
-          <div><h3>Tuns copii</h3><p>Tunsori pentru cei mici, cu răbdare.</p></div>
-          <svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg>
-        </article>
-        <article class="service-row">
-          <span class="service-number" aria-hidden="true">05</span>
-          <div><h3>Vopsit păr</h3><p>O schimbare de look pentru păr masculin.</p></div>
-          <svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg>
-        </article>
-      </div>
-      <p class="service-foot">Ai un stil în minte? Spune-ne la programare.</p>
-      <a class="button secondary" href="tel:+40767506563"><svg aria-hidden="true"><use href="#i-phone"/></svg>Sună pentru o programare</a>
-    </section>
-
-    <section class="section frame reveal" id="galerie" aria-labelledby="gallery-title">
-      <span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span>
-      <p class="chapter eyebrow">03 / Inspirație</p>
-      <h2 id="gallery-title">Arta unui look îngrijit.</h2>
-      <p class="section-intro">Gesturi precise. Contururi curate. Atenție la detalii.</p>
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <button class="gallery-shot" type="button" data-photo="0" aria-label="Mărește fotografia ilustrativă: atenție la detalii">
-            <span class="photo-reveal" style="display:block"><img src="img/2.jpg" alt="Frizer lucrând la tunsoarea unui client — fotografie de stoc" loading="lazy" decoding="async"></span>
-            <span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span>
-          </button>
-          <figcaption><span>Atenție la detalii</span><span>01</span></figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <button class="gallery-shot" type="button" data-photo="1" aria-label="Mărește fotografia ilustrativă: gesturi precise">
-            <span class="photo-reveal" style="display:block"><img src="img/3.jpg" alt="Scenă de îngrijire a părului într-o frizerie — fotografie de stoc" loading="lazy" decoding="async"></span>
-            <span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span>
-          </button>
-          <figcaption><span>Gesturi precise</span><span>02</span></figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <button class="gallery-shot" type="button" data-photo="2" aria-label="Mărește fotografia ilustrativă: contur și stil">
-            <span class="photo-reveal" style="display:block"><img src="img/4.jpg" alt="Îngrijirea părului și a bărbii într-un salon — fotografie de stoc" loading="lazy" decoding="async"></span>
-            <span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span>
-          </button>
-          <figcaption><span>Contur &amp; stil</span><span>03</span></figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <button class="gallery-shot" type="button" data-photo="3" aria-label="Mărește fotografia ilustrativă: finisajul contează">
-            <span class="photo-reveal" style="display:block"><img src="img/5.jpg" alt="Detaliu de tunsoare cu mașina electrică — fotografie de stoc" loading="lazy" decoding="async"></span>
-            <span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span>
-          </button>
-          <figcaption><span>Finisajul contează</span><span>04</span></figcaption>
-        </figure>
-      </div>
-      <p class="gallery-note">Imagini de stoc, cu rol ilustrativ. Nu reprezintă salonul sau lucrările Marius Barber Shop.</p>
-    </section>
-
-    <section class="section contact frame reveal" id="contact" aria-labelledby="contact-title">
-      <span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span>
-      <p class="chapter eyebrow">04 / Ne vedem la salon</p>
-      <h2 id="contact-title">Un look nou începe aici.</h2>
-      <p class="section-intro">Rezervă-ți locul ușor pe WhatsApp sau telefonic.<br>Te așteptăm pe Șoseaua Colentina 2C.</p>
-      <div class="actions">
-        <a class="button" href="https://wa.me/40767506563?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Programează-te pe WhatsApp</a>
-        <a class="button secondary" href="tel:+40767506563"><svg aria-hidden="true"><use href="#i-phone"/></svg>+40 767 506 563</a>
-      </div>
-      <div class="contact-info">
-        <div>
-          <h3 class="info-heading eyebrow">Unde ne găsești</h3>
-          <address>Șoseaua Colentina 2C<br>București</address>
-          <a class="address-phone" href="tel:+40767506563">+40 767 506 563</a>
-        </div>
-        <div>
-          <h3 class="info-heading eyebrow">Program</h3>
-          <dl class="hours">
-            <div><dt>Luni – vineri</dt><dd>09:00 – 20:00</dd></div>
-            <div><dt>Sâmbătă</dt><dd>09:00 – 18:00</dd></div>
-            <div><dt>Duminică</dt><dd>Închis</dd></div>
-          </dl>
-        </div>
-      </div>
-      <div class="map">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1234708,44.4508364,26.131470800000002,44.454836400000005&amp;layer=mapnik&amp;marker=44.4528364,26.1274708" title="Hartă: Marius Barber Shop, Șoseaua Colentina 2C, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="map-bottom">
-        <span>MARIUS BARBER SHOP · BUCUREȘTI</span>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Marius+Barber+Shop+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">
-          Deschide în Google Maps
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18 18 6M6 6h12v12"/></svg>
-        </a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer shell">
-    <a class="footer-brand" href="#acasa">MARIUS BARBER SHOP</a>
-    <p class="footer-tag">Stilul tău. Atenția noastră.</p>
-    <div class="footer-bottom">
-      <span>Model de site (demo)</span>
-      <span>Fotografii ilustrative de pe Pixabay: mostafa_meraji</span>
-      <a href="#acasa">Înapoi sus ↑</a>
-    </div>
-  </footer>
-
-  <dialog class="lightbox" aria-label="Galerie de fotografii ilustrative">
-    <div class="lightbox-top">
-      <span id="lightbox-title">FOTOGRAFIE ILUSTRATIVĂ</span>
-      <button class="icon-button" type="button" id="lightbox-close" aria-label="Închide fotografia"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
-    </div>
-    <img class="lightbox-image" id="lightbox-image" alt="">
-    <div class="lightbox-bottom">
-      <span>Imagine de stoc · <span id="lightbox-counter">1 / 4</span></span>
-      <div class="lightbox-controls">
-        <button class="icon-button" type="button" id="lightbox-prev" aria-label="Fotografia anterioară"><svg style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        <button class="icon-button" type="button" id="lightbox-next" aria-label="Fotografia următoare"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
-      </div>
-    </div>
-  </dialog>
-
-  <script>
-    (() => {
-      const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const revealElements = document.querySelectorAll('.reveal, .photo-reveal');
-      let observer;
-      function configureMotion() {
-        if (observer) observer.disconnect();
-        if (motionQuery.matches || !('IntersectionObserver' in window)) {
-          document.documentElement.classList.remove('js-motion');
-          revealElements.forEach(el => el.classList.add('is-visible'));
-          return;
-        }
-        document.documentElement.classList.add('js-motion');
-        observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-        revealElements.forEach(el => {
-          if (!el.classList.contains('is-visible')) observer.observe(el);
-        });
-      }
-      configureMotion();
-      if (motionQuery.addEventListener) motionQuery.addEventListener('change', configureMotion);
-
-      const menuButton = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.nav');
-      function setMenu(open) {
-        nav.classList.toggle('is-open', open);
-        menuButton.setAttribute('aria-expanded', String(open));
-        menuButton.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
-      }
-      menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
-      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-      document.addEventListener('click', event => {
-        if (!nav.contains(event.target) && !menuButton.contains(event.target)) setMenu(false);
-      });
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
-          setMenu(false);
-          menuButton.focus();
-        }
-      });
-      window.matchMedia('(min-width: 761px)').addEventListener('change', event => {
-        if (event.matches) setMenu(false);
-      });
-
-      const dialog = document.querySelector('.lightbox');
-      const photoButtons = Array.from(document.querySelectorAll('[data-photo]'));
-      const lightboxImage = document.getElementById('lightbox-image');
-      const lightboxTitle = document.getElementById('lightbox-title');
-      const counter = document.getElementById('lightbox-counter');
-      let activePhoto = 0;
-      let opener;
-      function showPhoto(index) {
-        activePhoto = (index + photoButtons.length) % photoButtons.length;
-        const button = photoButtons[activePhoto];
-        const image = button.querySelector('img');
-        lightboxImage.src = image.getAttribute('src');
-        lightboxImage.alt = image.alt;
-        lightboxTitle.textContent = button.parentElement.querySelector('figcaption span').textContent.toLocaleUpperCase('ro-RO');
-        counter.textContent = `${activePhoto + 1} / ${photoButtons.length}`;
-      }
-      photoButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          if (typeof dialog.showModal !== 'function') return;
-          opener = button;
-          showPhoto(index);
-          dialog.showModal();
-          document.body.classList.add('modal-open');
-        });
-      });
-      document.getElementById('lightbox-close').addEventListener('click', () => dialog.close());
-      document.getElementById('lightbox-prev').addEventListener('click', () => showPhoto(activePhoto - 1));
-      document.getElementById('lightbox-next').addEventListener('click', () => showPhoto(activePhoto + 1));
-      dialog.addEventListener('keydown', event => {
-        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-          event.preventDefault();
-          showPhoto(activePhoto + (event.key === 'ArrowLeft' ? -1 : 1));
-        }
-      });
-      dialog.addEventListener('click', event => {
-        const rect = dialog.getBoundingClientRect();
-        if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
-      });
-      dialog.addEventListener('close', () => {
-        document.body.classList.remove('modal-open');
-        if (opener) opener.focus({ preventScroll: true });
-      });
-    })();
-  </script>
-<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+<a class="skip" href="#continut">Sari la conținut</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-scissors" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="35" r="6"/><circle cx="35" cy="35" r="6"/><path d="M17 30 37 6M31 30 11 6M23 20l3 4"/><circle cx="24" cy="22" r="1.5"/></g></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="m7 3 3 5-2 2c1.4 3 3 4.6 6 6l2-2 5 3-1 4C10 23 1 14 3 4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-whatsapp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5a8.5 8.5 0 1 1 16-4.2Z"/><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 1c-.3 2-1.8 2.5-3.5 2-3.6-1.1-6.4-4-7-7-.3-1.5.2-2.6 1.5-3Z" stroke-width="1.2"/></g></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2c0 7-3 10-10 10 7 0 10 3 10 10 0-7 3-10 10-10-7 0-10-3-10-10Z" fill="none" stroke="currentColor" stroke-width="1"/></symbol>
+<symbol id="i-chair" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v12M7 14H4v9h24v-9h-3M8 18h16v5M16 23v6M10 29h12M13 7h6M13 10h6"/></g></symbol>
+<symbol id="i-clock" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l6 3"/></g></symbol>
+<symbol id="i-zoom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/></g></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+</defs></svg>
+<header class="site-header"><div class="shell header-inner">
+<a class="brand" href="#acasa" aria-label="Marius Barber Shop — acasă"><svg class="brand-mark" aria-hidden="true"><use href="#i-scissors"/></svg><span><span class="brand-name">MARIUS</span><span class="brand-sub">BARBER SHOP</span></span></a>
+<nav class="nav" id="navigation" aria-label="Navigare principală"><a href="#despre">Despre noi</a><a href="#servicii">Servicii</a><a href="#galerie">Galerie</a><a href="#contact">Contact</a></nav>
+<a class="header-call" href="tel:+40767506563" aria-label="Sună acum la +40 767 506 563"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Sună acum</span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" aria-label="Deschide meniul"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<main id="continut">
+<section class="hero wood" id="acasa" aria-labelledby="hero-title"><div class="shell">
+<div class="hero-grid"><div class="hero-copy">
+<p class="eyebrow line reveal">București · Colentina</p>
+<h1 class="reveal" id="hero-title">Marius<span>Barber Shop</span></h1>
+<p class="hero-slogan reveal">Tunsoarea perfectă pentru orice stil.</p>
+<p class="hero-description reveal">Frizerie modernă pentru bărbați de toate vârstele.<br>Un look al tău, cu atenție la fiecare detaliu.</p>
+<div class="actions reveal"><a class="button brass" href="https://wa.me/40767506563?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Programează-te pe WhatsApp</a><a class="button outline" href="#servicii">Vezi serviciile<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+</div><div class="hero-visual reveal"><div class="hero-photo"><img src="img/1.jpg" alt="Îngrijire într-o frizerie — fotografie ilustrativă" fetchpriority="high" decoding="async" width="1000" height="1200" data-parallax></div><div class="photo-tag"><strong>Stilul tău.</strong><small>Atenția noastră.</small></div></div></div>
+<div class="hero-bottom reveal"><span>ȘOSEAUA COLENTINA 2C, BUCUREȘTI</span><span class="photo-note">Fotografie ilustrativă</span><a href="#despre">DESCOPERĂ MAI MULT<svg style="transform:rotate(90deg)" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+</div></section>
+<section class="section about" id="despre" aria-labelledby="about-title"><div class="shell">
+<div class="about-grid"><figure class="about-photo reveal"><img src="img/2.jpg" alt="Scenă de lucru într-o frizerie — fotografie de stoc" loading="lazy" decoding="async" width="800" height="900"><figcaption>Fotografie ilustrativă</figcaption></figure><div class="about-copy reveal"><p class="eyebrow line">01 / Oglinda stilului tău</p><h2 id="about-title">Detaliile fac<br>diferența.</h2><svg class="salon-mark" aria-hidden="true"><use href="#i-scissors"/></svg><p class="about-text">La <strong>Marius Barber Shop</strong>, ai mereu parte de atenție la detalii și servicii de calitate. Fie că vrei un look clasic sau modern, te așteptăm cu o atmosferă prietenoasă și profesională.</p></div></div>
+<div class="benefits"><div class="benefit reveal"><svg aria-hidden="true"><use href="#i-scissors"/></svg><div><h3>Tunsori moderne</h3><p>Stiluri potrivite pentru toate vârstele.</p></div></div><div class="benefit reveal"><svg aria-hidden="true"><use href="#i-chair"/></svg><div><h3>Loc pentru relaxare</h3><p>Scaune confortabile, atmosferă prietenoasă.</p></div></div><div class="benefit reveal"><svg aria-hidden="true"><use href="#i-clock"/></svg><div><h3>Programări simple</h3><p>Ne scrii pe WhatsApp sau ne suni.</p></div></div></div>
+</div></section>
+<section class="section services" id="servicii" aria-labelledby="services-title"><div class="shell">
+<div class="section-heading reveal"><div><p class="eyebrow line">02 / Servicii</p><h2 id="services-title">Alege-ți următorul look.</h2></div><p class="section-intro">De la tunsoarea clasică la o schimbare de stil, îngrijirea începe cu ceea ce ți se potrivește.</p></div>
+<div class="service-layout"><div class="service-list">
+<article class="service-row reveal"><span class="service-number" aria-hidden="true">01</span><div><h3>Tuns clasic</h3><p>Tuns profesional, adaptat stilului tău.</p></div><svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg></article>
+<article class="service-row reveal"><span class="service-number" aria-hidden="true">02</span><div><h3>Bărbierit tradițional</h3><p>Răsfăț cu prosop fierbinte și brici.</p></div><svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg></article>
+<article class="service-row reveal"><span class="service-number" aria-hidden="true">03</span><div><h3>Aranjat barbă</h3><p>Conturare și stilizare pentru orice barbă.</p></div><svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg></article>
+<article class="service-row reveal"><span class="service-number" aria-hidden="true">04</span><div><h3>Tuns copii</h3><p>Tunsori pentru cei mici, cu răbdare.</p></div><svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg></article>
+<article class="service-row reveal"><span class="service-number" aria-hidden="true">05</span><div><h3>Vopsit păr</h3><p>O schimbare de look pentru păr masculin.</p></div><svg class="service-star" aria-hidden="true"><use href="#i-star"/></svg></article>
+</div><aside class="service-aside reveal"><div class="service-image"><img src="img/4.jpg" alt="Îngrijire la frizer — fotografie ilustrativă" loading="lazy" decoding="async" width="700" height="800"></div><p class="service-foot">Ai un stil în minte?<br>Spune-ne la programare.</p><a class="button brass" href="tel:+40767506563"><svg aria-hidden="true"><use href="#i-phone"/></svg>Sună pentru o programare</a></aside></div>
+</div></section>
+<section class="section gallery wood" id="galerie" aria-labelledby="gallery-title"><div class="shell">
+<div class="section-heading reveal"><div><p class="eyebrow line">03 / Inspirație</p><h2 id="gallery-title">Arta unui look îngrijit.</h2></div><p class="section-intro">Gesturi precise. Contururi curate.<br>Atenție la detalii.</p></div>
+<div class="gallery-grid">
+<figure class="gallery-item reveal"><button class="gallery-shot" type="button" data-photo="0" aria-label="Mărește fotografia ilustrativă: atenție la detalii"><span class="photo-reveal"><img src="img/2.jpg" alt="Îngrijire într-o frizerie — fotografie de stoc" loading="lazy" decoding="async" width="900" height="720"></span><span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button><figcaption><span>Atenție la detalii</span><span>01</span></figcaption></figure>
+<figure class="gallery-item reveal"><button class="gallery-shot" type="button" data-photo="1" aria-label="Mărește fotografia ilustrativă: gesturi precise"><span class="photo-reveal"><img src="img/3.jpg" alt="Scenă de lucru la frizer — fotografie de stoc" loading="lazy" decoding="async" width="800" height="900"></span><span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button><figcaption><span>Gesturi precise</span><span>02</span></figcaption></figure>
+<figure class="gallery-item reveal"><button class="gallery-shot" type="button" data-photo="2" aria-label="Mărește fotografia ilustrativă: contur și stil"><span class="photo-reveal"><img src="img/4.jpg" alt="Îngrijire la frizer — fotografie de stoc" loading="lazy" decoding="async" width="800" height="900"></span><span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button><figcaption><span>Contur &amp; stil</span><span>03</span></figcaption></figure>
+<figure class="gallery-item reveal"><button class="gallery-shot" type="button" data-photo="3" aria-label="Mărește fotografia ilustrativă: finisajul contează"><span class="photo-reveal"><img src="img/5.jpg" alt="Detaliu de îngrijire într-o frizerie — fotografie de stoc" loading="lazy" decoding="async" width="900" height="720"></span><span class="gallery-zoom"><svg aria-hidden="true"><use href="#i-zoom"/></svg></span></button><figcaption><span>Finisajul contează</span><span>04</span></figcaption></figure>
+</div><p class="gallery-note reveal">Imagini de stoc, cu rol ilustrativ. Nu reprezintă salonul sau lucrările Marius Barber Shop.</p>
+</div></section>
+<section class="section contact" id="contact" aria-labelledby="contact-title"><div class="shell contact-grid">
+<div class="contact-copy reveal"><p class="eyebrow line">04 / Ne vedem la salon</p><h2 id="contact-title">Un look nou<br>începe aici.</h2><p class="section-intro">Rezervă-ți locul ușor pe WhatsApp sau telefonic.<br>Te așteptăm pe Șoseaua Colentina 2C.</p><div class="actions"><a class="button" href="https://wa.me/40767506563?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg>Programează-te pe WhatsApp</a><a class="button secondary" href="tel:+40767506563"><svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum</a></div>
+<div class="contact-info"><div><h3 class="info-heading">Unde ne găsești</h3><address>Șoseaua Colentina 2C<br>București</address><a class="address-phone" href="tel:+40767506563">+40 767 506 563</a></div><div><h3 class="info-heading">Program</h3><dl class="hours"><div><dt>Luni – vineri</dt><dd>09:00 – 20:00</dd></div><div><dt>Sâmbătă</dt><dd>09:00 – 18:00</dd></div><div><dt>Duminică</dt><dd>Închis</dd></div></dl></div></div></div>
+<div class="map-panel reveal"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1234708,44.4508364,26.131470800000002,44.454836400000005&amp;layer=mapnik&amp;marker=44.4528364,26.1274708" title="Hartă: Marius Barber Shop, Șoseaua Colentina 2C, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><div class="map-bottom"><span>BUCUREȘTI · COLENTINA</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Marius+Barber+Shop+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="shell"><div class="footer-top"><a class="footer-brand" href="#acasa">MARIUS BARBER SHOP</a><p class="footer-tag">Stilul tău. Atenția noastră.</p></div><div class="footer-bottom"><span>Model de site (demo)</span><span>Fotografii ilustrative de pe Pixabay: mostafa_meraji</span><a href="#acasa">Înapoi sus ↑</a></div></div></footer>
+<dialog class="lightbox" aria-label="Galerie de fotografii ilustrative"><div class="lightbox-top"><span id="lightbox-title">FOTOGRAFIE ILUSTRATIVĂ</span><button class="icon-button" type="button" id="lightbox-close" aria-label="Închide fotografia"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div><img class="lightbox-image" id="lightbox-image" alt=""><div class="lightbox-bottom"><span>Imagine de stoc · <span id="lightbox-counter" aria-live="polite">1 / 4</span></span><div class="lightbox-controls"><button class="icon-button" type="button" id="lightbox-prev" aria-label="Fotografia anterioară"><svg style="transform:rotate(180deg)" aria-hidden="true"><use href="#i-arrow"/></svg></button><button class="icon-button" type="button" id="lightbox-next" aria-label="Fotografia următoare"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div></div></dialog>
+<script>
+(()=>{
+const motion=matchMedia('(prefers-reduced-motion: reduce)');
+const elements=document.querySelectorAll('.reveal');let observer;
+function configureMotion(){if(observer)observer.disconnect();if(!('IntersectionObserver'in window)){document.documentElement.classList.remove('js-motion');return}document.documentElement.classList.add('js-motion');observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.06,rootMargin:'0px 0px -16px 0px'});elements.forEach(el=>{if(!el.classList.contains('is-visible'))observer.observe(el)})}
+configureMotion();
+const header=document.querySelector('.site-header');const image=document.querySelector('[data-parallax]');let ticking=false;
+function updateScroll(){header.classList.toggle('is-scrolled',scrollY>12);if(!motion.matches&&innerWidth>760){const r=image.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){const y=Math.max(-22,Math.min(22,(innerHeight/2-r.top-r.height/2)*.045));image.style.transform=`translateY(${y}px)`}}else image.style.transform='';ticking=false}
+function scheduleScroll(){if(!ticking){ticking=true;requestAnimationFrame(updateScroll)}}addEventListener('scroll',scheduleScroll,{passive:true});addEventListener('resize',scheduleScroll,{passive:true});updateScroll();if(motion.addEventListener)motion.addEventListener('change',()=>{configureMotion();updateScroll()});
+const menuButton=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');function setMenu(open){nav.classList.toggle('is-open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul')}
+menuButton.addEventListener('click',()=>setMenu(menuButton.getAttribute('aria-expanded')!=='true'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!menuButton.contains(e.target))setMenu(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuButton.getAttribute('aria-expanded')==='true'){setMenu(false);menuButton.focus()}});const desktop=matchMedia('(min-width:761px)');if(desktop.addEventListener)desktop.addEventListener('change',e=>{if(e.matches)setMenu(false)});
+const dialog=document.querySelector('.lightbox');const photos=Array.from(document.querySelectorAll('[data-photo]'));const lightboxImage=document.getElementById('lightbox-image');let active=0,opener;
+function showPhoto(index){active=(index+photos.length)%photos.length;const b=photos[active],img=b.querySelector('img');lightboxImage.src=img.getAttribute('src');lightboxImage.alt=img.alt;document.getElementById('lightbox-title').textContent=b.parentElement.querySelector('figcaption span').textContent.toLocaleUpperCase('ro-RO');document.getElementById('lightbox-counter').textContent=`${active+1} / ${photos.length}`}
+photos.forEach((b,i)=>b.addEventListener('click',()=>{if(typeof dialog.showModal!=='function'){b.querySelector('img').scrollIntoView({block:'center',behavior:'auto'});return}opener=b;showPhoto(i);dialog.showModal();document.body.classList.add('modal-open')}));document.getElementById('lightbox-close').addEventListener('click',()=>dialog.close());document.getElementById('lightbox-prev').addEventListener('click',()=>showPhoto(active-1));document.getElementById('lightbox-next').addEventListener('click',()=>showPhoto(active+1));dialog.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();showPhoto(active+(e.key==='ArrowLeft'?-1:1))}});dialog.addEventListener('click',e=>{const r=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))dialog.close()});dialog.addEventListener('close',()=>{document.body.classList.remove('modal-open');if(opener)opener.focus({preventScroll:true})});
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script>
+<script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script>
+</body>
 </html>
