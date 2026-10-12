@@ -1,208 +1,365 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="ro" class="no-js">
 <head>
-<meta name="generator" content="jarvis-v1">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="VarioDor, Constanța. Uși de interior, exterior și culisante, accesorii și montaj profesional pentru spațiul tău.">
-  <title>VarioDor — Uși pentru case primitoare</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #141414;
-      --muted: #616161;
-      --red: #be123c;
-      --paper: #fff;
-      --soft: #f3f3f1;
-      --line: #dcdcd9;
-      --gutter: clamp(1.25rem, 5vw, 5rem);
-      --ease: cubic-bezier(.2,.8,.2,1);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.6 "Inter", sans-serif; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-    img { display: block; width: 100%; object-fit: cover; }
-    h1,h2,h3,p,figure { margin: 0; }
-    h1,h2,h3 { font-family: "Inter Tight", sans-serif; letter-spacing: -.025em; }
-    h1,h2 { font-weight: 500; line-height: 1.04; }
-    h2 { font-size: clamp(2.5rem, 5vw, 4.75rem); }
-    h3 { font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 500; line-height: 1.15; }
-    p { max-width:  sixty; }
-    ::selection { background: var(--red); color: white; }
-    :focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
-    .wrap { width: min(100% - var(--gutter) * 2, 87.5rem); margin-inline: auto; }
-    .button {
-      display: inline-flex; align-items: center; justify-content: center; gap: .65rem;
-      min-height: 3.2rem; padding: .85rem 1.4rem; background: var(--ink); color: white;
-      font-size: .9rem; font-weight: 600; line-height: 1.4;
-      transition: transform .1s, background .2s, box-shadow .2s;
-    }
-    .button:hover { background: #353535; }
-    .button:active, .menu-button:active { transform: scale(.97); }
-    .button svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
-    .button-outline { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px #aaa; }
-    .button-outline:hover { background: #ececea; }
-    .skip { position: fixed; top: -6rem; left: 1rem; z-index: 100; padding: 1rem; background: white; }
-    .skip:focus { top: 1rem; }
-    header {
-      position: sticky; top: 0; z-index: 20;
-      background: rgba(255,255,255,.9); backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px); border-top: 1px solid rgba(255,255,255,.9);
-      transition: box-shadow .2s;
-    }
-    header.scrolled { box-shadow: 0 .4rem 1.5rem rgba(0,0,0,.045); }
-    .header-inner { min-height: 5.5rem; display: flex; align-items: center; gap: 2rem; }
-    .brand { display: inline-flex; align-items: center; gap: .7rem; margin-right: auto; }
-    .brand svg { width: 1.65rem; height: 2.1rem; }
-    .brand-name { font: 600 1.8rem/1 "Inter Tight",sans-serif; letter-spacing: -.045em; }
-    .nav { display: flex; align-items: center; gap: 2rem; }
-    .nav a { font-size: .88rem; font-weight: 500; padding-block: .75rem; }
-    .nav a:hover { text-decoration: underline; text-underline-offset: .3rem; }
-    .header-call { min-height: 2.8rem; padding: .65rem 1.1rem; }
-    .menu-button { display: none; background: transparent; border: 0; padding: .7rem; min-height: 2.75rem; color: var(--ink); cursor: pointer; }
-    .hero { padding-top: clamp(2.5rem, 5vw, 5.25rem); padding-bottom: clamp(4rem, 7vw, 7.5rem); }
-    .hero-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: .82rem; margin-bottom: 2rem; }
-    .hero-grid { display: grid; grid-template-columns: 1.16fr 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: stretch; }
-    .hero-copy { padding-block: .2rem 1rem; display: flex; flex-direction: column; align-items: flex-start; }
-    h1 { font-size: clamp(3.3rem, 6.9vw, 7.2rem); max-width: 9ch; }
-    .hero-description { max-width: 28rem; color: var(--muted); margin-top: 2rem; font-size: clamp(1rem, 1.4vw, 1.15rem); }
-    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; }
-    .text-link { font-size: .9rem; font-weight: 500; text-decoration: underline; text-underline-offset: .35rem; padding-block: .8rem; }
-    .hero-bottom { margin-top: auto; padding-top: 3rem; font-size: .8rem; color: var(--muted); }
-    .hero-photo { min-height: 32rem; position: relative; }
-    .hero-photo img { height: 100%; position: absolute; inset: 0; }
-    .hero-photo figcaption { position: absolute; bottom: 0; left: 0; background: white; padding: .7rem 1rem .15rem 0; font-size: .75rem; color: var(--muted); }
-    .entry { animation: enter .85s var(--ease) both; }
-    .entry-second { animation-delay: .12s; }
-    .entry-third { animation-delay: .22s; }
-    @keyframes enter { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: translateY(0); } }
+<meta name="generator" content="jarvis-v3">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="VarioDor, Constanța. Uși de interior, exterior și culisante, accesorii și montaj profesional pentru casa sau spațiul tău comercial.">
+<title>VarioDor — Uși pentru case primitoare | Constanța</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141414;--muted:#5d5955;--red:#be123c;--red-deep:#9a0f31;--paper:#fff;--soft:#f6f3ee;--line:#e3ded6;--frame:#fbfaf7;--gutter:clamp(1.25rem,5vw,5rem);--ease:cubic-bezier(.2,.8,.2,1);--dh:min(74vh,44rem);--dw:calc(var(--dh)*.46)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.5 "Inter",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,p,figure,dl,dd{margin:0}
+h1,h2,h3{font-family:"Inter Tight",sans-serif;letter-spacing:-.02em}
+h1,h2{font-weight:500;line-height:1.05}
+h2{font-size:clamp(2.2rem,5vw,4.5rem)}
+h3{font-size:clamp(1.25rem,1.8vw,1.6rem);font-weight:500;line-height:1.15}
+.eyebrow{display:block;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:1.1rem}
+.lead{color:var(--muted);font-size:clamp(1rem,1.3vw,1.15rem);max-width:34rem}
+.small{font-size:.8rem;color:var(--muted);letter-spacing:.02em}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+.wrap{width:min(100% - var(--gutter)*2,82rem);margin-inline:auto}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.2rem;padding:.85rem 1.5rem;background:var(--ink);color:#fff;font-size:.92rem;font-weight:600;line-height:1.4;border:0;cursor:pointer;transition:transform .1s,background .2s,box-shadow .2s}
+.button:hover{background:#333;box-shadow:0 .6rem 1.4rem -.6rem rgba(0,0,0,.4)}
+.button:active,.menu-button:active,.model-scene:active{transform:scale(.97)}
+.button svg{width:1.1rem;height:1.1rem;flex-shrink:0}
+.button-red{background:var(--red)}
+.button-red:hover{background:var(--red-deep)}
+.button-outline{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px #b3aea6}
+.button-outline:hover{background:#efebe5;box-shadow:inset 0 0 0 1px #8a847c}
+.button-light{background:#fff;color:var(--ink)}
+.button-light:hover{background:#f3eee9}
+.button-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.65)}
+.button-ghost:hover{background:rgba(255,255,255,.12)}
+.text-link{font-size:.9rem;font-weight:500;text-decoration:underline;text-underline-offset:.35rem;padding-block:.8rem;display:inline-block}
+.skip{position:fixed;top:-6rem;left:1rem;z-index:100;padding:1rem;background:#fff}
+.skip:focus{top:1rem}
 
-    .about { position: relative; isolation: isolate; color: white; padding-block: clamp(4rem, 8vw, 8rem); }
-    .color-field { position: absolute; inset: 0; z-index: -1; background: var(--red); transform: scaleX(.92); transform-origin: center; will-change: transform; }
-    .about-grid { display: grid; grid-template-columns: 1.16fr 1fr; gap: clamp(2rem,5vw,5rem); }
-    .about h2 { max-width: 11ch; }
-    .about-copy { max-width: 35rem; font-size: clamp(1rem,1.4vw,1.15rem); }
-    .about-copy p + p { margin-top: 1.4rem; }
-    .benefits { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: clamp(3.5rem,6vw,6rem); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.35); }
-    .benefits h3 { font-size: 1.5rem; margin-bottom: .65rem; }
-    .benefits p { color: #ffe5ec; font-size: .95rem; max-width: 25ch; }
+/* ---------- Ușa de intrare ---------- */
+.door-intro{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#f1ece5;perspective:calc(var(--dw)*4);perspective-origin:50% 50%;transition:opacity .6s var(--ease),visibility 0s .6s;cursor:pointer}
+.door-intro.gone{opacity:0;visibility:hidden;pointer-events:none}
+.door-intro.removed,html.no-js .door-intro{display:none}
+.intro-wall{position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 110%,#dcd4c9,#f1ece5 60%)}
+.intro-wall::after{content:"";position:absolute;left:0;right:0;top:calc(50% + var(--dh)/2 + .4rem);height:1px;background:rgba(0,0,0,.08)}
+.intro-glow{position:absolute;left:50%;top:50%;width:calc(var(--dw)*3.2);height:calc(var(--dh)*1.5);transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,236,226,.95),rgba(255,236,226,0));opacity:0;transition:opacity 1.4s var(--ease)}
+.intro-floor{position:absolute;left:50%;top:calc(50% + var(--dh)/2);width:var(--dw);height:40vh;transform:translateX(-50%);background:linear-gradient(rgba(255,240,230,.95),rgba(255,240,230,0));clip-path:polygon(0 0,100% 0,150% 100%,-50% 100%);opacity:0;transition:opacity 1.4s var(--ease) .2s}
+.door-intro.open .intro-glow,.door-intro.open .intro-floor{opacity:1}
+.intro-door{position:relative;width:var(--dw);height:var(--dh);transform-style:preserve-3d;z-index:2}
+.intro-room{position:absolute;inset:0;transform:translateZ(calc(var(--dw)*-1.1)) scale(1.3);background:linear-gradient(#fffaf5 0,#ffeef1 58%,#ead6c9 58.2%,#d7bdae 100%);display:flex;align-items:center;justify-content:center}
+.intro-room span{font:500 clamp(1.1rem,calc(var(--dw)*.09),2rem)/1.1 "Inter Tight",sans-serif;letter-spacing:-.02em;color:var(--red);text-align:center;padding:1rem;opacity:0;transition:opacity 1s var(--ease) .5s}
+.door-intro.open .intro-room span{opacity:1}
+.intro-frame{position:absolute;inset:calc(var(--dw)*-.07) calc(var(--dw)*-.07) 0;border:calc(var(--dw)*.07) solid var(--frame);border-bottom:0;box-shadow:0 1rem 3rem rgba(0,0,0,.14),inset 0 0 0 1px rgba(0,0,0,.1);pointer-events:none}
+.intro-frame::before{content:"";position:absolute;inset:calc(var(--dw)*.02);border:1px solid rgba(0,0,0,.08);border-bottom:0}
+.intro-sill{position:absolute;left:calc(var(--dw)*-.07);right:calc(var(--dw)*-.07);top:100%;height:.5rem;background:linear-gradient(#d9d1c6,#bfb6a9);transform:translateZ(1px)}
+.intro-leaf{position:absolute;inset:0;transform-origin:0 50%;transform-style:preserve-3d;transform:rotateY(0deg);background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,rgba(0,0,0,.06) 2px 8px,rgba(255,255,255,.02) 8px 13px),linear-gradient(105deg,#6a4330,#4b2c1e 40%,#5a382a 65%,#3b2318);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35);transition:transform 1.6s cubic-bezier(.55,.05,.25,1)}
+.intro-leaf::after{content:"";position:absolute;top:0;bottom:0;right:0;width:calc(var(--dw)*.06);background:#2a160e;transform-origin:100% 50%;transform:rotateY(-90deg)}
+.door-intro.open .intro-leaf{transform:rotateY(96deg)}
+.intro-panel{position:absolute;left:13%;right:13%;background:linear-gradient(160deg,#3f2518,#53301f);box-shadow:inset .3rem .3rem .7rem rgba(0,0,0,.55),inset -.15rem -.15rem .4rem rgba(255,255,255,.07),0 0 0 1px rgba(0,0,0,.3)}
+.intro-panel-top{top:7%;height:34%}
+.intro-panel-bottom{top:48%;height:45%}
+.intro-handle{position:absolute;right:9%;top:50%;width:1.4rem;height:1.4rem;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4f4f4,#9a9a9a 70%,#6c6c6c);transform:translateY(-50%);box-shadow:0 .2rem .4rem rgba(0,0,0,.4)}
+.intro-handle::before{content:"";position:absolute;right:50%;top:50%;width:calc(var(--dw)*.28);height:.55rem;border-radius:.3rem;background:linear-gradient(#f0f0f0,#9c9c9c 60%,#d2d2d2);transform:translateY(-50%);box-shadow:0 .25rem .5rem rgba(0,0,0,.4)}
+.intro-handle::after{content:"";position:absolute;left:50%;top:2.2rem;width:.5rem;height:.9rem;border-radius:.25rem .25rem .1rem .1rem;background:linear-gradient(#b9b9b9,#7a7a7a);transform:translateX(-50%)}
+.intro-hinge{position:absolute;left:-.2rem;width:.5rem;height:calc(var(--dh)*.07);background:linear-gradient(90deg,#8a8a8a,#d8d8d8,#8a8a8a);border-radius:.1rem}
+.intro-hinge.h1{top:9%}.intro-hinge.h2{top:47%}.intro-hinge.h3{top:85%}
+.intro-brand{position:absolute;top:1.6rem;left:0;right:0;text-align:center;z-index:3;pointer-events:none}
+.intro-brand strong{display:block;font:600 1.6rem/1 "Inter Tight",sans-serif;letter-spacing:-.045em}
+.intro-brand span{display:block;margin-top:.4rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.intro-hint{position:absolute;bottom:1.6rem;left:var(--gutter);z-index:3;font-size:.78rem;letter-spacing:.06em;color:var(--muted);pointer-events:none}
+.intro-skip{position:absolute;bottom:1.25rem;right:var(--gutter);z-index:3;min-height:2.75rem;padding:.6rem 1rem;background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.15);font-size:.82rem;font-weight:600;cursor:pointer;transition:background .2s,transform .1s}
+.intro-skip:hover{background:#fff}
+.intro-skip:active{transform:scale(.97)}
 
-    .products { padding-block: clamp(4.5rem,8vw,8rem); }
-    .section-heading { display: grid; grid-template-columns: 1.16fr 1fr; gap: clamp(2rem,5vw,5rem); margin-bottom: 3.5rem; align-items: end; }
-    .section-heading p { max-width: 31rem; color: var(--muted); }
-    .product-row { display: grid; grid-template-columns: 5rem 1fr 1fr; align-items: center; gap: 2rem; padding-block: 2rem; border-top: 1px solid var(--line); }
-    .product-row:last-child { border-bottom: 1px solid var(--line); }
-    .product-row p { color: var(--muted); max-width: 30rem; }
-    .door-icon { width: 3rem; height: 3.5rem; fill: none; stroke: currentColor; stroke-width: 1.1; }
-    .product-row h3 { font-size: clamp(1.6rem,2.5vw,2.3rem); }
-    .products-bottom { margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
-    .products-bottom p { color: var(--muted); max-width: 40ch; font-size: .9rem; }
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.9);transition:box-shadow .2s}
+header.scrolled{box-shadow:0 .4rem 1.5rem rgba(0,0,0,.05)}
+.header-inner{min-height:5.25rem;display:flex;align-items:center;gap:2rem}
+.brand{display:inline-flex;align-items:center;gap:.7rem;margin-right:auto}
+.brand svg{width:1.6rem;height:2rem}
+.brand-name{font:600 1.7rem/1 "Inter Tight",sans-serif;letter-spacing:-.045em}
+.nav{display:flex;align-items:center;gap:1.8rem}
+.nav a{font-size:.88rem;font-weight:600;padding-block:.75rem;color:#111}
+.nav a:hover{color:var(--red)}
+.header-call{min-height:2.8rem;padding:.65rem 1.1rem}
+.menu-button{display:none;background:transparent;border:0;padding:.7rem;min-height:2.75rem;cursor:pointer;font-weight:600}
 
-    .gallery { background: var(--soft); padding-block: clamp(4rem,7vw,7rem); }
-    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .gallery figure img { aspect-ratio: 4/3; }
-    .gallery figcaption { padding-top: 1rem; display: flex; justify-content: space-between; gap: 1rem; font-size: .87rem; }
-    .gallery figcaption span:last-child { color: var(--muted); font-size: .75rem; }
-    .fade-in { opacity: 1; }
-    .js .fade-in { opacity: 0; transition: opacity .6s var(--ease); }
-    .js .fade-in.visible { opacity: 1; }
+/* ---------- Secțiuni-camere ---------- */
+.room{position:relative;padding-block:clamp(4rem,8vw,7.5rem)}
+.room::before{content:"";position:absolute;top:0;left:var(--gutter);right:var(--gutter);height:.25rem;background:linear-gradient(90deg,transparent,#d8d0c5 12%,#d8d0c5 88%,transparent);transform-origin:50% 50%}
+.js .room::before{transform:scaleX(0);transition:transform .9s var(--ease)}
+.js .room.in::before{transform:scaleX(1)}
+.room-red::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,.4) 12%,rgba(255,255,255,.4) 88%,transparent)}
+.js .reveal{opacity:0;transform:translateY(1.5rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.words .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.1em 0 .14em;margin:-.1em 0 -.14em}
+.js .words .w>span{display:inline-block;transform:translateY(110%);opacity:0;transition:transform .6s var(--ease),opacity .5s var(--ease)}
+.js .words.in .w>span{transform:none;opacity:1}
+.section-head{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
 
-    .contact { padding-block: clamp(4.5rem,8vw,8rem); }
-    .contact-grid { display: grid; grid-template-columns: 1.16fr 1fr; gap: clamp(2rem,5vw,5rem); }
-    .contact h2 { max-width: 11ch; margin-bottom: 1.75rem; }
-    .contact-description { color: var(--muted); max-width: 36ch; }
-    .phone { display: inline-block; font: 500 clamp(1.9rem,3.3vw,3.25rem)/1.2 "Inter Tight",sans-serif; letter-spacing: -.02em; margin-top: 2rem; padding-block: .4rem; }
-    .phone:hover { text-decoration: underline; text-underline-offset: .3rem; }
-    .contact-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
-    .map { width: 100%; height: 23rem; border: 0; display: block; background: var(--soft); }
-    .map-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .8rem; }
-    .map-footer p { font-size: .9rem; }
-    footer { padding-block: 2rem; border-top: 1px solid var(--line); }
-    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
-    .footer-top .brand-name { font-size: 1.4rem; }
-    .footer-top p { font-size: .8rem; color: var(--muted); }
-    .credits { margin-top: 1.25rem; font-size: .72rem; color: var(--muted); letter-spacing: .01em; max-width: 75ch; }
+/* ---------- Cadre ---------- */
+.frame{position:relative;background:var(--frame);padding:.6rem;box-shadow:0 0 0 1px rgba(20,20,20,.08),0 2rem 3rem -1.5rem rgba(20,20,20,.35)}
+.frame::after{content:"";position:absolute;inset:.6rem;box-shadow:inset 0 0 0 1px rgba(20,20,20,.14),inset 0 .5rem 1rem rgba(0,0,0,.18);pointer-events:none}
+.frame-caption{display:flex;justify-content:space-between;gap:1rem;padding:.9rem .1rem 0;font-size:.82rem}
+.frame-caption span:last-child{color:var(--muted);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.opening{position:relative;aspect-ratio:1/2.05;border:.35rem solid #e9e3da;border-bottom:0;background:linear-gradient(#fff,#ffe9ee 60%,#e7d2c6 60.5%,#d4b9aa);box-shadow:0 .4rem 1rem -.3rem rgba(0,0,0,.3),inset 0 0 0 1px rgba(0,0,0,.08);perspective:40rem}
+.opening::after{content:"";position:absolute;left:-.35rem;right:-.35rem;top:100%;height:.3rem;background:#cfc6ba}
+.opening-slide::before{content:"";position:absolute;left:-6%;right:-70%;top:-.7rem;height:.3rem;background:linear-gradient(#a7a7a7,#6d6d6d);border-radius:.2rem}
+.leaf{position:absolute;inset:0;transform-origin:0 50%;transition:transform .6s var(--ease);box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.leaf-panel{position:absolute;left:14%;right:14%;top:var(--t);height:var(--h);box-shadow:inset .15rem .15rem .35rem rgba(0,0,0,.25),inset -.1rem -.1rem .25rem rgba(255,255,255,.25);border:1px solid rgba(0,0,0,.12)}
+.leaf-handle{position:absolute;right:10%;top:50%;width:24%;height:4%;border-radius:1rem;background:linear-gradient(#eee,#9b9b9b);transform:translateY(-50%);box-shadow:0 .1rem .2rem rgba(0,0,0,.35)}
+.leaf-handle::after{content:"";position:absolute;right:-6%;top:50%;width:28%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#f4f4f4,#8f8f8f);transform:translateY(-50%)}
+.leaf-handle-dark{background:linear-gradient(#444,#111)}
+.leaf-handle-dark::after{background:radial-gradient(circle at 35% 35%,#555,#111)}
+.leaf-bar{position:absolute;right:12%;top:30%;width:5%;height:40%;border-radius:1rem;background:linear-gradient(90deg,#d9d9d9,#8a8a8a);box-shadow:0 .1rem .3rem rgba(0,0,0,.5)}
+.leaf-pane{position:absolute;left:16%;right:16%;top:8%;bottom:8%;background:linear-gradient(160deg,rgba(220,234,242,.95),rgba(190,212,226,.85));box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.leaf-white{background:linear-gradient(170deg,#fbfaf7,#e9e6e0)}
+.leaf-oak{background:repeating-linear-gradient(90deg,rgba(255,255,255,.08) 0 2px,rgba(0,0,0,.04) 2px 7px),linear-gradient(170deg,#c8a67c,#a9845d)}
+.leaf-walnut{background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,rgba(0,0,0,.06) 2px 8px),linear-gradient(105deg,#6a4330,#4b2c1e 45%,#5a382a 70%,#3b2318)}
+.leaf-steel{background:linear-gradient(170deg,#3a3d42,#1f2124)}
+.leaf-slide{box-shadow:inset 0 0 0 1px rgba(0,0,0,.15),.3rem 0 .6rem rgba(0,0,0,.15)}
+.is-open .leaf,.model-scene:focus-visible .leaf{transform:rotateY(-34deg)}
+.is-open .leaf-slide,.model-scene:focus-visible .leaf-slide{transform:translateX(62%)}
+@media (hover:hover){.model-scene:hover .leaf,.type-card:hover .leaf,.shop-card:hover .leaf{transform:rotateY(-34deg)}.model-scene:hover .leaf-slide,.type-card:hover .leaf-slide,.shop-card:hover .leaf-slide{transform:translateX(62%)}}
 
-    @media (min-width: 1500px) { .color-field { transform: scaleX(.88); } }
-    @media (max-width: 900px) {
-      .nav { gap: 1rem; }
-      .header-inner { gap: 1rem; }
-      .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 2rem; }
-      h1 { font-size: clamp(3.3rem,7.5vw,5rem); }
-      .hero-photo { min-height: 29rem; }
-      .benefits { gap: 1.5rem; }
-      .product-row { grid-template-columns: 3rem 1fr 1fr; gap: 1.5rem; }
-    }
-    @media (max-width: 650px) {
-      .header-inner { min-height: 4.7rem; gap: .45rem; }
-      .brand { gap: .4rem; }
-      .brand-name { font-size: 1.45rem; }
-      .brand svg { width: 1.3rem; height: 1.7rem; }
-      .header-call { padding: .65rem .8rem; font-size: .8rem; }
-      .header-call svg { display: none; }
-      .menu-button { display: block; font-size: .8rem; padding-inline: .5rem; }
-      .nav {
-        display: none; position: absolute; top: 100%; left: 0; right: 0;
-        background: white; padding: 1rem var(--gutter) 1.5rem; box-shadow: 0 1rem 1.5rem rgba(0,0,0,.06);
-      }
-      .nav.open { display: grid; gap: .25rem; }
-      .nav a { padding-block: .75rem; font-size: 1rem; }
-      .hero { padding-top: 1.8rem; }
-      .hero-meta { margin-bottom: 1.5rem; font-size: .75rem; }
-      .hero-meta span:last-child { max-width: 14ch; text-align: right; }
-      .hero-grid,.about-grid,.section-heading,.contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-      h1 { font-size: clamp(3.5rem, 14.2vw, 5.5rem); max-width: 9ch; }
-      .hero-description { margin-top: 1.4rem; }
-      .hero-actions { gap: 1rem; margin-top: 1.5rem; }
-      .hero-actions .button { padding-inline: 1rem; font-size: .83rem; }
-      .hero-bottom { padding-top: 1.5rem; }
-      .hero-photo { min-height: 0; aspect-ratio: 5/4; }
-      .hero-photo img { object-position: center 55%; }
-      .color-field { transform: scaleX(.96); }
-      .benefits { grid-template-columns: 1fr; gap: 1.8rem; margin-top: 2.5rem; }
-      .benefits p { max-width: none; }
-      .section-heading { margin-bottom: 2.25rem; }
-      .product-row { grid-template-columns: 2.5rem 1fr; gap: .5rem 1.25rem; padding-block: 1.5rem; }
-      .door-icon { width: 2.3rem; height: 3rem; grid-row: span 2; align-self: start; }
-      .product-row p { grid-column: 2; font-size: .92rem; }
-      .products-bottom { flex-direction: column; align-items: flex-start; }
-      .gallery-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .gallery figcaption { font-size: .85rem; }
-      .map { height: 20rem; }
-      .contact-grid { gap: 3rem; }
-      .contact-actions { flex-direction: column; align-items: stretch; }
-      .footer-top { align-items: flex-start; }
-      .footer-top p { text-align: right; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .entry { animation: gentle-fade .2s both; animation-delay: 0s; }
-      @keyframes gentle-fade { from { opacity: 0; } to { opacity: 1; } }
-      .color-field { transform: none !important; will-change: auto; }
-      .js .fade-in { transition-duration: .2s; }
-      .button,.menu-button { transition: opacity .2s; }
-      .button:active,.menu-button:active { transform: none; }
-    }
-    @media (prefers-reduced-transparency: reduce) {
-      header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
-    }
-    @media (prefers-contrast: more) {
-      :root { --muted: #333; --line: #555; }
-      header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
-      .button-outline { box-shadow: inset 0 0 0 2px var(--ink); }
-      .benefits p { color: white; }
-      .color-field { transform: none !important; }
-    }
-  </style>
+/* ---------- Ilustrații ---------- */
+.art{position:relative;overflow:hidden;isolation:isolate;aspect-ratio:4/3;--floor:76%;background:linear-gradient(180deg,#f5f0e9,#ece4d9 var(--floor),#d8ccbb var(--floor),#c8b8a3)}
+.art-stage{position:absolute;left:0;right:0;bottom:calc(100% - var(--floor));display:flex;justify-content:center;align-items:flex-end;gap:7%}
+.art-stage .opening{width:var(--w,16%);flex:none}
+.art-plant{position:absolute;left:8%;bottom:calc(100% - var(--floor));width:14%;height:auto}
+.art-lamp{position:absolute;left:73%;top:30%;width:4%;aspect-ratio:1/1.6;background:linear-gradient(#fff6e8,#f1dcc0);border-radius:40% 40% .2rem .2rem;box-shadow:0 0 0 .15rem #3a3a3a}
+.art-lamp::before{content:"";position:absolute;left:50%;top:50%;width:900%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,226,190,.6),rgba(255,226,190,0));z-index:-1}
+.art-mat{position:absolute;left:50%;top:calc(var(--floor) + 2.5%);width:calc(var(--w)*1.05);height:2.6%;transform:translateX(-50%);background:linear-gradient(#7a5c46,#634a38);border-radius:.15rem;box-shadow:0 .2rem .4rem rgba(0,0,0,.18)}
+.art-spill{position:absolute;left:50%;top:var(--floor);width:var(--w);height:20%;transform:translateX(-50%);background:linear-gradient(rgba(255,240,228,.95),rgba(255,240,228,0));clip-path:polygon(0 0,100% 0,135% 100%,-35% 100%);opacity:0;transition:opacity 1.2s var(--ease) .8s}
+.hero-art{aspect-ratio:4/5;--w:34%}
+.hero-art .opening{border-width:.55rem;border-color:var(--frame)}
+.hero-art .opening::after{left:-.55rem;right:-.55rem}
+.hero-art .leaf{transition:transform 1.4s var(--ease) .5s}
+.hero-art.deschisa .leaf,html.no-js .hero-art .leaf{transform:rotateY(-78deg)}
+.hero-art .leaf{transition:transform 1.8s cubic-bezier(.55,.05,.25,1) .6s}
+.art-message{position:absolute;left:6%;right:6%;top:7%;z-index:3;text-align:center;opacity:0;transform:translateY(.8rem);transition:opacity 1.2s var(--ease) 1.9s,transform 1.2s var(--ease) 1.9s;pointer-events:none}
+.art-message strong{display:block;font:600 clamp(1.35rem,4.2vw,2.3rem)/1.08 "Inter Tight",sans-serif;letter-spacing:-.035em;color:var(--ink)}
+.art-message strong em{font-style:normal;color:var(--red)}
+.art-message small{display:block;margin-top:.55rem;font-size:clamp(.8rem,2.4vw,.98rem);line-height:1.45;color:var(--muted)}
+.hero-art.deschisa .art-message,html.no-js .art-message{opacity:1;transform:none}
+.hero-art .art-lamp{top:44%}
+.hero-art.deschisa .art-spill{opacity:1}
+.lineup-art{aspect-ratio:3/2;--w:15%;background:radial-gradient(55% 50% at 50% 38%,rgba(255,255,255,.8),rgba(255,255,255,0)),linear-gradient(180deg,#f5f0e9,#ece4d9 var(--floor),#d8ccbb var(--floor),#c8b8a3)}
+.office-art{--floor:78%;background:linear-gradient(180deg,#f4f2ef,#e7e3dd var(--floor),#cdc5ba var(--floor),#bdb3a6)}
+.office-art .art-plant{left:auto;right:4%;width:11%}
+.glass{position:absolute;left:50%;bottom:calc(100% - var(--floor));width:66%;aspect-ratio:3/2;transform:translateX(-50%);display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem;padding:.35rem;background:#2b2d31;box-shadow:0 .6rem 1.4rem -.6rem rgba(0,0,0,.4)}
+.glass-pane{position:relative;overflow:hidden;background:linear-gradient(160deg,rgba(226,238,245,.97),rgba(188,210,224,.9));box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.glass-pane::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 38%,transparent 46%)}
+.glass-door{z-index:1;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2),.3rem 0 .6rem rgba(0,0,0,.18);transition:transform .9s var(--ease) .3s}
+.frame.in .glass-door{transform:translateX(-62%)}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:clamp(2rem,5vw,5rem);padding-bottom:clamp(4rem,7vw,7rem)}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+h1{font-size:clamp(2.8rem,6.5vw,6.2rem);max-width:10ch}
+h1 em{font-style:normal;color:var(--red)}
+.hero .lead{margin-top:1.6rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-notes{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.hero-visual{position:relative;isolation:isolate;padding:0 1.5rem 1.5rem 0}
+.hero-visual::before{content:"";position:absolute;inset:1.5rem 0 0 1.5rem;background:var(--red);z-index:-1}
+.js .entry{opacity:0}
+.js .revealed .entry{animation:enter .8s var(--ease) both}
+.js .revealed .entry-2{animation-delay:.12s}
+.js .revealed .entry-3{animation-delay:.22s}
+.js .revealed .entry-4{animation-delay:.32s}
+@keyframes enter{from{opacity:0;transform:translateY(1.25rem)}to{opacity:1;transform:none}}
+@keyframes gentle{from{opacity:0}to{opacity:1}}
+
+/* ---------- Tipuri ---------- */
+.types{background:var(--soft)}
+.types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.type-card{position:relative;background:var(--frame);padding:1.6rem 1.5rem 1.75rem;box-shadow:0 0 0 1px rgba(20,20,20,.08),0 1.5rem 2.5rem -1.5rem rgba(0,0,0,.25);transition:box-shadow .3s var(--ease)}
+.type-card::after{content:"";position:absolute;inset:.55rem;box-shadow:inset 0 0 0 1px rgba(20,20,20,.1);pointer-events:none}
+.type-card:hover{box-shadow:0 0 0 1px rgba(20,20,20,.12),0 2rem 3rem -1.25rem rgba(0,0,0,.3)}
+.type-card .opening{width:4.6rem;margin:.5rem 0 2rem .35rem}
+.type-card h3{margin-bottom:.5rem}
+.type-card p{color:var(--muted);font-size:.95rem}
+.type-num{position:absolute;top:1.2rem;right:1.4rem;font-size:.72rem;letter-spacing:.12em;color:var(--muted)}
+
+/* ---------- Modele ---------- */
+.models-head{align-items:center}
+.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.model-scene{display:block;width:100%;border:0;padding:12% 24% 14%;background:linear-gradient(#f3efe9,#e6e0d6);position:relative;cursor:pointer;text-align:left;box-shadow:0 0 0 1px rgba(20,20,20,.08);transition:transform .1s}
+.model-scene::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 55%,rgba(255,232,220,.9),rgba(255,232,220,0));opacity:0;transition:opacity .6s var(--ease)}
+.model-scene.is-open::before{opacity:1}
+@media (hover:hover){.model-scene:hover::before{opacity:1}}
+.model-scene .opening{position:relative}
+.model h3{margin-top:1.1rem;font-size:1.15rem}
+.model p{color:var(--muted);font-size:.92rem;margin-top:.35rem}
+.models-note{margin-top:2rem}
+
+/* ---------- De ce ---------- */
+.why{background:var(--red);color:#fff}
+.why-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.why .eyebrow{color:#ffd0db}
+.why .lead{color:#ffe3ea}
+.why p+p{margin-top:1rem}
+.benefits{margin-top:2.25rem;border-top:1px solid rgba(255,255,255,.35)}
+.benefit{display:grid;grid-template-columns:2.75rem 1fr;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.benefit-icon{width:2.75rem;height:2.75rem;border:1px solid rgba(255,255,255,.55);display:grid;place-items:center}
+.benefit-icon svg{width:1.3rem;height:1.3rem;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.benefit h3{font-size:1.2rem;margin-bottom:.25rem}
+.benefit p{color:#ffe3ea;font-size:.95rem}
+.why .frame-caption{color:#fff}
+.why .frame-caption span:last-child{color:#ffd0db}
+.why .frame{color:var(--ink)}
+.why .frame .frame-caption{color:var(--ink)}
+.why .frame .frame-caption span:last-child{color:var(--muted)}
+
+/* ---------- Magazin online ---------- */
+.shop{background:var(--soft)}
+.notice{display:inline-flex;align-items:center;gap:.6rem;border:1px dashed var(--red);color:var(--red);background:#fff;padding:.6rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.02em;margin-bottom:1.5rem}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.shop-card{position:relative;background:var(--frame);box-shadow:0 0 0 1px rgba(20,20,20,.08),0 1.5rem 2.5rem -1.5rem rgba(0,0,0,.25);display:flex;flex-direction:column;transition:box-shadow .3s var(--ease)}
+.shop-card:hover{box-shadow:0 0 0 1px rgba(20,20,20,.12),0 2rem 3rem -1.25rem rgba(0,0,0,.3)}
+.shop-thumb{padding:2.2rem 32% 1.6rem;background:linear-gradient(#f3efe9,#e6e0d6);position:relative}
+.shop-tag{position:absolute;top:.75rem;left:.75rem;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;background:#fff;padding:.3rem .5rem;font-weight:600;color:var(--muted)}
+.shop-body{padding:1.25rem 1.25rem 1.4rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.shop-body h3{font-size:1.1rem}
+.shop-type{font-size:.72rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.shop-body>p:not(.shop-type):not(.price){color:var(--muted);font-size:.9rem}
+.price{margin-top:auto;padding-top:.9rem;font-weight:600;font-size:.95rem}
+.price span{color:var(--red)}
+.shop-body .button{margin-top:.6rem;width:100%}
+
+/* ---------- Magazin Constanța ---------- */
+.store-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.store-facts{margin-top:2rem;border-top:1px solid var(--line)}
+.store-facts div{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.store-facts dt{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-top:.25rem}
+.store-facts dd{font-weight:500}
+.store-facts dd a:hover{text-decoration:underline;text-underline-offset:.3rem}
+.todo{display:inline-block;background:#fff1f4;color:var(--red);padding:.15rem .55rem;border:1px dashed var(--red);font-size:.85rem;font-weight:600}
+.store-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.75rem}
+.map{height:24rem;width:100%;border:0;display:block;background:var(--soft)}
+
+/* ---------- Contact ---------- */
+.contact{text-align:center}
+.contact-inner{max-width:48rem;margin-inline:auto;display:flex;flex-direction:column;align-items:center}
+.contact h2{max-width:14ch}
+.contact .lead{margin-top:1.25rem;max-width:30rem}
+.phone{display:inline-block;font:500 clamp(2rem,6vw,4.6rem)/1.1 "Inter Tight",sans-serif;letter-spacing:-.03em;margin-top:1.75rem;padding-block:.3rem}
+.phone:hover{color:var(--red)}
+.contact-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:1.5rem}
+
+footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--line)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.footer-top .brand-name{font-size:1.4rem}
+.footer-top p{font-size:.8rem;color:var(--muted);letter-spacing:.02em;text-align:right}
+
+@media (max-width:1000px){
+  .types-grid,.shop-grid,.models-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{gap:2.5rem}
+  h1{font-size:clamp(2.8rem,7vw,5rem)}
+  .store-grid,.why-grid{grid-template-columns:1fr;gap:2.5rem}
+}
+@media (max-width:650px){
+  :root{--dh:min(62vh,30rem)}
+  .header-inner{min-height:4.6rem;gap:.5rem}
+  .brand{gap:.4rem}
+  .brand-name{font-size:1.45rem}
+  .brand svg{width:1.3rem;height:1.6rem}
+  .header-call{padding:.65rem .8rem;font-size:.8rem}
+  .header-call svg{display:none}
+  .menu-button{display:block;font-size:.8rem;padding-inline:.5rem}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:1rem var(--gutter) 1.5rem;box-shadow:0 1rem 1.5rem rgba(0,0,0,.06)}
+  .nav.open{display:grid;gap:.25rem}
+  .nav a{padding-block:.75rem;font-size:1rem}
+  .hero{padding-top:1.5rem}
+  .hero-grid,.section-head{grid-template-columns:1fr;gap:2rem}
+  h1{font-size:clamp(2.6rem,12.5vw,4.2rem)}
+  .hero-actions{gap:.6rem}
+  .hero-actions .button{flex:1 1 100%}
+  .hero-visual{padding:0 1rem 1rem 0}
+  .hero-visual::before{inset:1rem 0 0 1rem}
+  .hero-art{aspect-ratio:3/4;--w:22%}
+  .art-message{top:5%;left:5%;right:5%}
+  .art-message small{font-size:.8rem;line-height:1.4}
+  .hero-art .opening{border-width:.4rem}
+  .hero-art .opening::after{left:-.4rem;right:-.4rem}
+  .types-grid{grid-template-columns:1fr}
+  .type-card .opening{width:3.8rem}
+  .models-grid{gap:.9rem}
+  .model h3{font-size:1rem}
+  .model p{font-size:.85rem}
+  .shop-grid{grid-template-columns:1fr}
+  .shop-thumb{padding:2rem 36% 1.5rem}
+  .store-facts div{grid-template-columns:1fr;gap:.25rem}
+  .map{height:19rem}
+  .contact-actions{flex-direction:column;align-items:stretch;width:100%}
+  .footer-top{flex-direction:column;align-items:flex-start}
+  .footer-top p{text-align:left}
+  .intro-hint{display:none}
+}
+@media (max-width:420px){.models-grid{grid-template-columns:1fr 1fr;gap:.7rem}.model-scene{padding:10% 20% 12%}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .door-intro{display:none}
+  .js .entry,.js .revealed .entry{animation:gentle .2s both!important;animation-delay:0s!important}
+  .js .reveal{transform:none;transition:opacity .2s}
+  .js .words .w>span{transform:none;transition:opacity .2s}
+  .leaf,.type-card,.shop-card,.model-scene::before{transition-duration:.2s}
+  .hero-art .leaf,.glass-door{transition:none}
+  .art-message{transition:none}
+  .art-spill{transition-duration:.2s;transition-delay:0s}
+  .js .room::before{transition-duration:.2s}
+  .button:active,.menu-button:active,.model-scene:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  header{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .intro-skip{background:#fff}
+}
+@media (prefers-contrast:more){
+  :root{--muted:#333;--line:#666}
+  header{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .button-outline{box-shadow:inset 0 0 0 2px var(--ink)}
+  .button-ghost{box-shadow:inset 0 0 0 2px #fff}
+  .benefit p,.why .lead{color:#fff}
+  .type-card,.shop-card,.frame{box-shadow:0 0 0 2px var(--ink)}
+  .todo,.notice{border-style:solid;border-width:2px}
+}
+</style>
 <style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
 </head>
 <body>
   <a href="#continut" class="skip">Sari la conținut</a>
+
+  <div class="door-intro" id="intro">
+    <div class="intro-wall" aria-hidden="true"></div>
+    <div class="intro-glow" aria-hidden="true"></div>
+    <div class="intro-floor" aria-hidden="true"></div>
+    <p class="intro-brand" aria-hidden="true"><strong>VarioDor</strong><span>Uși pentru case primitoare</span></p>
+    <div class="intro-door" aria-hidden="true">
+      <div class="intro-room"><span>Bine ați venit<br>la VarioDor</span></div>
+      <div class="intro-frame"></div>
+      <div class="intro-sill"></div>
+      <div class="intro-leaf">
+        <div class="intro-panel intro-panel-top"></div>
+        <div class="intro-panel intro-panel-bottom"></div>
+        <div class="intro-hinge h1"></div>
+        <div class="intro-hinge h2"></div>
+        <div class="intro-hinge h3"></div>
+        <div class="intro-handle"></div>
+      </div>
+    </div>
+    <p class="intro-hint">Apasă pe ușă pentru a intra</p>
+    <button class="intro-skip" type="button">Sari peste</button>
+  </div>
+
   <header id="header">
     <div class="wrap header-inner">
       <a class="brand" href="#acasa" aria-label="VarioDor — prima pagină">
@@ -213,8 +370,10 @@
         <span class="brand-name">VarioDor</span>
       </a>
       <nav class="nav" id="navigation" aria-label="Navigare principală">
-        <a href="#despre">Despre noi</a>
         <a href="#produse">Produse</a>
+        <a href="#modele">Modele</a>
+        <a href="#magazin-online">Magazin online</a>
+        <a href="#magazin">Showroom</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="button header-call" href="tel:0759333888">
@@ -227,123 +386,259 @@
 
   <main id="continut">
     <section class="hero wrap" id="acasa" aria-labelledby="hero-title">
-      <div class="hero-meta entry">
-        <span>VarioDor / Constanța</span>
-        <span>Interior și exterior</span>
-      </div>
       <div class="hero-grid">
         <div class="hero-copy">
-          <h1 class="entry" id="hero-title">Uși pentru case primitoare.</h1>
-          <p class="hero-description entry entry-second">Descoperă soluții moderne pentru uși de interior și exterior. Alege ce se potrivește spațiului tău.</p>
-          <div class="hero-actions entry entry-second">
-            <a class="button" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Solicită ofertă pe WhatsApp</a>
-            <a class="text-link" href="#produse">Vezi produsele</a>
+          <span class="eyebrow entry">VarioDor · Constanța</span>
+          <h1 class="entry" id="hero-title">Uși pentru case <em>primitoare</em>.</h1>
+          <p class="lead entry entry-2">Descoperă soluții moderne pentru uși de interior și exterior. Calitate, design și montaj profesional, adaptate spațiului tău.</p>
+          <div class="hero-actions entry entry-3">
+            <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+              Solicită ofertă pe WhatsApp
+            </a>
+            <a class="button button-outline" href="tel:0759333888">Sună acum</a>
           </div>
-          <p class="hero-bottom entry entry-second">Design, siguranță și montaj profesional.</p>
+          <div class="hero-notes entry entry-4">
+            <span class="small">Interior · Exterior · Culisante · Accesorii</span>
+            <span class="small">Montaj inclus</span>
+          </div>
         </div>
-        <figure class="hero-photo entry entry-third">
-          <img src="img/1.jpg" alt="Ușă de intrare într-o fațadă din cărămidă, înconjurată de plante" fetchpriority="high">
-          <figcaption>O intrare care spune „acasă”. Imagine ilustrativă.</figcaption>
+        <div class="hero-visual entry entry-3">
+          <figure class="frame">
+            <div class="art hero-art" role="img" aria-label="Ușă de intrare din lemn de nuc care se deschide spre o cameră luminată">
+              <span class="art-lamp"></span>
+              <svg class="art-plant" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 82C22 60 10 52 4 34c12 4 22 18 26 40" fill="#6f8f63"/><path d="M30 82C34 56 44 40 56 30c-2 18-14 34-24 52" fill="#5b7a55"/><path d="M30 84C28 58 26 34 32 8c6 24 4 50-2 76" fill="#7c9c6e"/><path d="M16 82h28l-4 38H20Z" fill="#c9b8a3"/><path d="M16 82h28v5H16Z" fill="#b7a58e"/></svg>
+              <span class="art-mat"></span>
+              <span class="art-spill"></span>
+              <p class="art-message"><strong>Uși care spun <em>„bine ați venit”</em>.</strong><small>VarioDor aduce în Constanța uși de interior și exterior alese cu grijă și montate profesionist, pentru case în care te simți acasă.</small></p>
+              <div class="art-stage">
+                <span class="opening"><span class="leaf leaf-walnut"><span class="leaf-panel" style="--t:7%;--h:34%"></span><span class="leaf-panel" style="--t:48%;--h:45%"></span><span class="leaf-handle"></span></span></span>
+              </div>
+            </div>
+            <figcaption class="frame-caption"><span>O intrare care spune „acasă”.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="room types" id="produse" aria-labelledby="types-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Produse</span>
+            <h2 class="words" id="types-title">Pentru fiecare fel de spațiu.</h2>
+          </div>
+          <p class="lead reveal">De la ușa de la intrare până la detaliul mânerului, găsești la VarioDor soluția potrivită pentru casa sau spațiul tău comercial.</p>
+        </div>
+        <div class="types-grid stagger">
+          <article class="type-card">
+            <span class="type-num">01</span>
+            <div class="opening" aria-hidden="true"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></div>
+            <h3>Uși de interior</h3>
+            <p>Varietate de modele pentru toate gusturile, pentru camere în care te simți acasă.</p>
+          </article>
+          <article class="type-card">
+            <span class="type-num">02</span>
+            <div class="opening" aria-hidden="true"><span class="leaf leaf-steel"><span class="leaf-panel" style="--t:10%;--h:22%"></span><span class="leaf-bar"></span></span></div>
+            <h3>Uși de exterior</h3>
+            <p>Rezistente și elegante, ideale pentru apartamente sau case.</p>
+          </article>
+          <article class="type-card">
+            <span class="type-num">03</span>
+            <div class="opening opening-slide" aria-hidden="true"><span class="leaf leaf-oak leaf-slide"><span class="leaf-pane"></span></span></div>
+            <h3>Uși culisante</h3>
+            <p>Funcționale și moderne, pentru spații practice.</p>
+          </article>
+          <article class="type-card">
+            <span class="type-num">04</span>
+            <div class="opening" aria-hidden="true"><span class="leaf leaf-walnut"><span class="leaf-panel" style="--t:8%;--h:84%"></span><span class="leaf-handle"></span></span></div>
+            <h3>Accesorii uși</h3>
+            <p>Broaște, mânere și alte accesorii care completează ușa aleasă.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="room models" id="modele" aria-labelledby="models-title">
+      <div class="wrap">
+        <div class="section-head models-head">
+          <div>
+            <span class="eyebrow reveal">Modele în cadre</span>
+            <h2 class="words" id="models-title">Deschide și privește.</h2>
+            <p class="lead reveal" style="margin-top:1.25rem">Patru stiluri, patru caractere. Atinge sau treci cu mouse-ul peste o ușă ca să o deschizi și să vezi lumina din cameră.</p>
+          </div>
+          <figure class="frame reveal">
+            <div class="art lineup-art" role="img" aria-label="Trei uși expuse alăturat — albă cu panouri, din stejar cu geam și metalică">
+              <div class="art-stage">
+                <span class="opening"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></span>
+                <span class="opening"><span class="leaf leaf-oak"><span class="leaf-pane"></span><span class="leaf-handle leaf-handle-dark"></span></span></span>
+                <span class="opening"><span class="leaf leaf-steel"><span class="leaf-panel" style="--t:10%;--h:22%"></span><span class="leaf-panel" style="--t:36%;--h:22%"></span><span class="leaf-bar"></span></span></span>
+              </div>
+            </div>
+            <figcaption class="frame-caption"><span>Caracter, chiar de la intrare.</span></figcaption>
+          </figure>
+        </div>
+        <div class="models-grid stagger">
+          <article class="model">
+            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: interior, panou plin">
+              <span class="opening"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></span>
+            </button>
+            <h3>Interior · panou plin</h3>
+            <p>Linii curate, finisaj mat. Pentru dormitoare și living.</p>
+          </article>
+          <article class="model">
+            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: interior, cu geam">
+              <span class="opening"><span class="leaf leaf-white"><span class="leaf-pane"></span><span class="leaf-handle leaf-handle-dark"></span></span></span>
+            </button>
+            <h3>Interior · cu geam</h3>
+            <p>Lasă lumina să treacă dintr-o cameră în alta.</p>
+          </article>
+          <article class="model">
+            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: exterior, metalică">
+              <span class="opening"><span class="leaf leaf-steel"><span class="leaf-panel" style="--t:10%;--h:22%"></span><span class="leaf-panel" style="--t:36%;--h:22%"></span><span class="leaf-bar"></span></span></span>
+            </button>
+            <h3>Exterior · metalică</h3>
+            <p>Solidă și elegantă, pentru intrarea în casă sau apartament.</p>
+          </article>
+          <article class="model">
+            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: culisantă, stejar">
+              <span class="opening opening-slide"><span class="leaf leaf-oak leaf-slide"><span class="leaf-pane"></span></span></span>
+            </button>
+            <h3>Culisantă · stejar</h3>
+            <p>Economisește spațiu în bucătării, dressinguri sau birouri.</p>
+          </article>
+        </div>
+        <p class="small models-note reveal">Gama completă o vedeți în showroom, cu sfaturi despre dimensiuni și montaj.</p>
+      </div>
+    </section>
+
+    <section class="room room-red why" id="de-ce" aria-labelledby="why-title">
+      <div class="wrap why-grid">
+        <div>
+          <span class="eyebrow reveal">De ce VarioDor</span>
+          <h2 class="words" id="why-title">Calitate, design, montaj.</h2>
+          <div class="lead reveal" style="margin-top:1.4rem">
+            <p>VarioDor aduce în Constanța o gamă variată de uși pentru orice locuință sau spațiu comercial. Punem accent pe calitate, design și montaj profesional, adaptat fiecărui client.</p>
+            <p>Alege ușa perfectă pentru spațiul tău și bucură-te de siguranță, confort și stil.</p>
+          </div>
+          <div class="benefits stagger">
+            <div class="benefit">
+              <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4M12 15v2"/></svg></span>
+              <div><h3>Siguranță sporită</h3><p>Uși solide, pentru liniștea ta.</p></div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></span>
+              <div><h3>Design modern</h3><p>Se potrivesc oricărui stil interior.</p></div>
+            </div>
+            <div class="benefit">
+              <span class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.5 5.5a4 4 0 0 0-5 5L4 16a2 2 0 1 0 3 3l5.5-5.5a4 4 0 0 0 5-5l-2.5 2.5-2-2Z"/></svg></span>
+              <div><h3>Montaj inclus</h3><p>Montăm rapid și profesionist.</p></div>
+            </div>
+          </div>
+        </div>
+        <figure class="frame reveal">
+          <div class="art office-art" role="img" aria-label="Perete despărțitor din sticlă cu ușă culisantă, într-un spațiu de birouri">
+            <div class="glass">
+              <span class="glass-pane"></span>
+              <span class="glass-pane glass-door"><span class="leaf-bar"></span></span>
+              <span class="glass-pane"></span>
+            </div>
+            <svg class="art-plant" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 82C22 60 10 52 4 34c12 4 22 18 26 40" fill="#6f8f63"/><path d="M30 82C34 56 44 40 56 30c-2 18-14 34-24 52" fill="#5b7a55"/><path d="M30 84C28 58 26 34 32 8c6 24 4 50-2 76" fill="#7c9c6e"/><path d="M16 82h28l-4 38H20Z" fill="#c9b8a3"/><path d="M16 82h28v5H16Z" fill="#b7a58e"/></svg>
+          </div>
+          <figcaption class="frame-caption"><span>Spații comerciale: mai mult loc pentru lumină.</span></figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="about" id="despre" aria-labelledby="about-title">
-      <div class="color-field" aria-hidden="true"></div>
+    <section class="room shop" id="magazin-online" aria-labelledby="shop-title">
       <div class="wrap">
-        <div class="about-grid">
-          <h2 id="about-title">Spațiul tău.<br>Ușa potrivită.</h2>
-          <div class="about-copy">
-            <p>La VarioDor, în Constanța, găsești uși pentru locuințe și spații comerciale. Punem accent pe calitate, design și montaj profesional, adaptat fiecărui client.</p>
-            <p>Fie că amenajezi o cameră sau alegi intrarea în casă, o ușă bine aleasă aduce siguranță, confort și stil.</p>
+        <div class="section-head">
+          <div>
+            <span class="eyebrow reveal">Magazin online · previzualizare</span>
+            <h2 class="words" id="shop-title">Comandă de acasă.</h2>
+          </div>
+          <div class="reveal">
+            <p class="notice">Exemple — de completat cu produsele și prețurile dvs.</p>
+            <p class="lead">Așa ar putea arăta vitrina online VarioDor: fiecare produs cu fotografie, descriere, preț și buton de comandă.</p>
           </div>
         </div>
-        <div class="benefits">
-          <div>
-            <h3>Siguranță sporită</h3>
-            <p>Uși solide, pentru liniștea ta.</p>
-          </div>
-          <div>
-            <h3>Design modern</h3>
-            <p>Modele care se potrivesc stilului casei tale.</p>
-          </div>
-          <div>
-            <h3>Montaj inclus</h3>
-            <p>Montăm rapid și profesionist.</p>
-          </div>
+        <div class="shop-grid stagger">
+          <article class="shop-card">
+            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></div></div>
+            <div class="shop-body">
+              <p class="shop-type">Uși de interior</p>
+              <h3>Ușă de interior — panou plin</h3>
+              <p>Descriere, dimensiuni și finisaje: de completat.</p>
+              <p class="price">Preț: <span>de completat</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+            </div>
+          </article>
+          <article class="shop-card">
+            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening"><span class="leaf leaf-white"><span class="leaf-pane"></span><span class="leaf-handle leaf-handle-dark"></span></span></div></div>
+            <div class="shop-body">
+              <p class="shop-type">Uși de interior</p>
+              <h3>Ușă de interior — cu geam</h3>
+              <p>Descriere, dimensiuni și finisaje: de completat.</p>
+              <p class="price">Preț: <span>de completat</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+            </div>
+          </article>
+          <article class="shop-card">
+            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening"><span class="leaf leaf-steel"><span class="leaf-panel" style="--t:10%;--h:22%"></span><span class="leaf-panel" style="--t:36%;--h:22%"></span><span class="leaf-bar"></span></span></div></div>
+            <div class="shop-body">
+              <p class="shop-type">Uși de exterior</p>
+              <h3>Ușă de exterior — metalică</h3>
+              <p>Descriere, dimensiuni și finisaje: de completat.</p>
+              <p class="price">Preț: <span>de completat</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+            </div>
+          </article>
+          <article class="shop-card">
+            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening opening-slide"><span class="leaf leaf-oak leaf-slide"><span class="leaf-pane"></span></span></div></div>
+            <div class="shop-body">
+              <p class="shop-type">Uși culisante</p>
+              <h3>Ușă culisantă — stejar</h3>
+              <p>Descriere, dimensiuni și finisaje: de completat.</p>
+              <p class="price">Preț: <span>de completat</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+            </div>
+          </article>
         </div>
+        <p class="small reveal" style="margin-top:1.5rem">În această previzualizare, butonul „Comandă” deschide o conversație pe WhatsApp. Produsele, fotografiile și prețurile se completează de către VarioDor.</p>
       </div>
     </section>
 
-    <section class="products wrap" id="produse" aria-labelledby="products-title">
-      <div class="section-heading">
-        <h2 id="products-title">Pentru fiecare<br>fel de spațiu.</h2>
-        <p>De la ușa de la intrare până la detaliul mânerului, găsește soluția potrivită pentru casa sau spațiul tău comercial.</p>
-      </div>
-      <div class="product-list">
-        <article class="product-row">
-          <svg class="door-icon" viewBox="0 0 48 56" aria-hidden="true"><path d="M9 51V5h30v46M14 51V10h20v41M5 51h38M29 29h-3"/></svg>
-          <h3>Uși de interior</h3>
-          <p>O varietate de modele pentru toate gusturile și pentru camere în care te simți acasă.</p>
-        </article>
-        <article class="product-row">
-          <svg class="door-icon" viewBox="0 0 48 56" aria-hidden="true"><path d="M8 51V5h32v46M13 51V10h22v41M5 51h38M18 15h12v13H18zM18 34h12v11H18zM32 29v4"/></svg>
-          <h3>Uși de exterior</h3>
-          <p>Rezistente și elegante, ideale pentru intrarea în apartament sau în casă.</p>
-        </article>
-        <article class="product-row">
-          <svg class="door-icon" viewBox="0 0 48 56" aria-hidden="true"><path d="M3 8h42M7 12h17v37H7zM25 12h16v37H25zM20 27v7M29 27v7M3 51h42"/></svg>
-          <h3>Uși culisante</h3>
-          <p>Funcționale și moderne, pentru spații practice și o amenajare bine gândită.</p>
-        </article>
-        <article class="product-row">
-          <svg class="door-icon" viewBox="0 0 48 56" aria-hidden="true"><path d="M16 8h11v40H16zM21.5 25h19v5h-19a2.5 2.5 0 0 1 0-5ZM21.5 37v5"/></svg>
-          <h3>Accesorii uși</h3>
-          <p>Broaște, mânere și alte accesorii care completează ușa aleasă.</p>
-        </article>
-      </div>
-      <div class="products-bottom">
-        <p>Ai în minte un anumit model? Scrie-ne despre ce ai nevoie.</p>
-        <a class="text-link" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Întreabă despre modelele disponibile</a>
-      </div>
-    </section>
-
-    <section class="gallery" aria-labelledby="gallery-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2 id="gallery-title">O ușă schimbă<br>un spațiu.</h2>
-          <p>Inspirație pentru următoarea amenajare. Fotografiile sunt ilustrative, nu prezintă produse sau lucrări VarioDor.</p>
-        </div>
-        <div class="gallery-grid">
-          <figure class="fade-in">
-            <img src="img/2.jpg" alt="Ușă de intrare integrată în fațada unei clădiri, alături de vegetație" loading="lazy" decoding="async">
-            <figcaption><span>Caracter, chiar de la intrare.</span><span>Exterior</span></figcaption>
-          </figure>
-          <figure class="fade-in">
-            <img src="img/3.jpg" alt="Uși din sticlă într-un spațiu de birouri luminos" loading="lazy" decoding="async">
-            <figcaption><span>Mai mult loc pentru lumină.</span><span>Spații comerciale</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact wrap" id="contact" aria-labelledby="contact-title">
-      <div class="contact-grid">
+    <section class="room store" id="magazin" aria-labelledby="store-title">
+      <div class="wrap store-grid">
         <div>
-          <h2 id="contact-title">Hai să alegem<br>ușa ta.</h2>
-          <p class="contact-description">Spune-ne ce spațiu amenajezi și ce fel de ușă cauți. Vorbim despre modele și montaj.</p>
-          <a class="phone" href="tel:0759333888" aria-label="Sună la 0759 333 888">0759 333 888</a>
-          <div class="contact-actions">
-            <a class="button" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Solicită ofertă pe WhatsApp</a>
-            <a class="button button-outline" href="tel:0759333888">Sună acum</a>
+          <span class="eyebrow reveal">Showroom · Constanța</span>
+          <h2 class="words" id="store-title">Vino să le vezi pe viu.</h2>
+          <p class="lead reveal" style="margin-top:1.25rem">Alege ușa direct din magazin, cu sfaturi despre model, dimensiuni și montaj.</p>
+          <dl class="store-facts reveal">
+            <div><dt>Adresă</dt><dd><span class="todo">de completat</span></dd></div>
+            <div><dt>Program</dt><dd><span class="todo">de completat</span></dd></div>
+            <div><dt>Telefon</dt><dd><a href="tel:0759333888">0759 333 888</a></dd></div>
+          </dl>
+          <div class="store-actions reveal">
+            <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=VarioDor+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+            <a class="button button-outline" href="tel:0759333888">Sună înainte să vii</a>
           </div>
         </div>
-        <div>
+        <div class="frame reveal">
           <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=28.6444758,44.195019699999996,28.6524758,44.1990197&amp;layer=mapnik&amp;marker=44.1970197,28.6484758" title="Hartă de localizare VarioDor în Constanța" loading="lazy" referrerpolicy="no-referrer"></iframe>
-          <div class="map-footer">
-            <p>VarioDor, Constanța</p>
-            <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=VarioDor+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide Google Maps</a>
-          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="room contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner">
+        <span class="eyebrow reveal">Contact</span>
+        <h2 class="words" id="contact-title">Hai să alegem ușa ta.</h2>
+        <p class="lead reveal">Spune-ne ce spațiu amenajezi și ce fel de ușă cauți. Vorbim despre modele și montaj.</p>
+        <a class="phone reveal" href="tel:0759333888" aria-label="Sună la 0759 333 888">0759 333 888</a>
+        <div class="contact-actions reveal">
+          <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Solicită ofertă pe WhatsApp</a>
+          <a class="button button-outline" href="tel:0759333888">Sună acum</a>
         </div>
       </div>
     </section>
@@ -355,75 +650,147 @@
         <a href="#acasa" class="brand-name" aria-label="VarioDor — înapoi la început">VarioDor</a>
         <p>Constanța<br>Model de site (demo)</p>
       </div>
-      <p class="credits">Fotografii ilustrative de pe Pixabay: StockSnap, lecreusois, Michael_Pointner</p>
     </div>
   </footer>
-  <script>
-    (() => {
-      const header = document.getElementById('header');
-      const nav = document.getElementById('navigation');
-      const menu = document.querySelector('.menu-button');
-      const about = document.querySelector('.about');
-      const field = document.querySelector('.color-field');
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const contrast = window.matchMedia('(prefers-contrast: more)');
-      let ticking = false;
 
-      const closeMenu = () => {
+  <script>
+    (function () {
+      var html = document.documentElement;
+      html.classList.remove('no-js');
+      html.classList.add('js');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var body = document.body;
+
+      /* Ușa de intrare */
+      var intro = document.getElementById('intro');
+      var skip = intro.querySelector('.intro-skip');
+      var opened = false, done = false;
+      function finish() {
+        if (done) return;
+        done = true;
+        body.classList.add('revealed');
+        intro.classList.add('gone');
+        setTimeout(function () { intro.classList.add('removed'); }, 700);
+      }
+      function openDoor() {
+        if (opened) return;
+        opened = true;
+        intro.classList.add('open');
+        setTimeout(finish, 1700);
+      }
+      if (reduced.matches) {
+        intro.classList.add('removed');
+        body.classList.add('revealed');
+      } else {
+        setTimeout(openDoor, 1000);
+        setTimeout(finish, 5000);
+        intro.addEventListener('click', openDoor);
+        skip.addEventListener('click', function (e) { e.stopPropagation(); opened = true; finish(); });
+      }
+
+      /* Meniu */
+      var header = document.getElementById('header');
+      var nav = document.getElementById('navigation');
+      var menu = document.querySelector('.menu-button');
+      function closeMenu() {
         nav.classList.remove('open');
         menu.setAttribute('aria-expanded', 'false');
         menu.textContent = 'Meniu';
-      };
-      menu.addEventListener('click', () => {
-        const open = menu.getAttribute('aria-expanded') !== 'true';
+      }
+      menu.addEventListener('click', function () {
+        var open = menu.getAttribute('aria-expanded') !== 'true';
         nav.classList.toggle('open', open);
         menu.setAttribute('aria-expanded', String(open));
         menu.textContent = open ? 'Închide' : 'Meniu';
       });
-      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
-          closeMenu();
-          menu.focus();
-        }
+      nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); }
       });
-      document.addEventListener('click', event => {
-        if (!header.contains(event.target)) closeMenu();
+      document.addEventListener('click', function (e) { if (!header.contains(e.target)) closeMenu(); });
+
+      /* Titluri pe cuvinte */
+      document.querySelectorAll('.words').forEach(function (el) {
+        var i = 0;
+        Array.prototype.slice.call(el.childNodes).forEach(function (n) {
+          if (n.nodeType !== 3) return;
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (p) {
+            if (!p) return;
+            if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(' ')); return; }
+            var w = document.createElement('span'); w.className = 'w';
+            var s = document.createElement('span'); s.textContent = p; s.style.transitionDelay = (i++ * 70) + 'ms';
+            w.appendChild(s); frag.appendChild(w);
+          });
+          el.replaceChild(frag, n);
+        });
       });
 
-      function updateScroll() {
-        header.classList.toggle('scrolled', window.scrollY > 12);
-        if (!reduced.matches && !contrast.matches) {
-          const rect = about.getBoundingClientRect();
-          const height = window.innerHeight;
-          const progress = Math.max(0, Math.min(1, (height - rect.top) / (height * .65)));
-          const initial = window.innerWidth < 651 ? .96 : window.innerWidth > 1500 ? .88 : .92;
-          field.style.transform = 'scaleX(' + (initial + (1 - initial) * progress) + ')';
+      /* Grupuri cu decalaj */
+      document.querySelectorAll('.stagger').forEach(function (g) {
+        Array.prototype.forEach.call(g.children, function (c, i) {
+          c.classList.add('reveal');
+          c.style.transitionDelay = (i * 80) + 'ms';
+        });
+      });
+
+      /* Apariții la derulare */
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (!en.isIntersecting) return;
+            var t = en.target;
+            t.classList.add('in');
+            setTimeout(function () { t.style.transitionDelay = ''; }, 1000);
+            io.unobserve(t);
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -5% 0px' });
+        document.querySelectorAll('.reveal, .words, .room').forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal, .words, .room').forEach(function (el) { el.classList.add('in'); });
+      }
+
+      /* Ușa din prima secțiune se deschide când ajungi la ea */
+      var usa = document.querySelector('.hero-art');
+      if (usa) {
+        if (reduced.matches || !('IntersectionObserver' in window)) {
+          usa.classList.add('deschisa');
         } else {
-          field.style.transform = 'none';
+          var verificaUsa = function () {
+            if (usa.classList.contains('deschisa') || !body.classList.contains('revealed')) return;
+            var r = usa.getBoundingClientRect();
+            if (r.top < window.innerHeight * .7 && r.bottom > window.innerHeight * .2) {
+              usa.classList.add('deschisa');
+              window.removeEventListener('scroll', verificaUsa);
+            }
+          };
+          window.addEventListener('scroll', verificaUsa, { passive: true });
+          new MutationObserver(function (m, o) {
+            if (body.classList.contains('revealed')) { o.disconnect(); setTimeout(verificaUsa, 400); }
+          }).observe(body, { attributes: true, attributeFilter: ['class'] });
+          setTimeout(verificaUsa, 400);
         }
+      }
+
+      /* Umbra barei la derulare */
+      var ticking = false;
+      function update() {
+        header.classList.toggle('scrolled', window.scrollY > 12);
         ticking = false;
       }
-      window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
       }, { passive: true });
-      window.addEventListener('resize', updateScroll);
-      reduced.addEventListener('change', updateScroll);
-      contrast.addEventListener('change', updateScroll);
-      updateScroll();
+      update();
 
-      if ('IntersectionObserver' in window) {
-        document.documentElement.classList.add('js');
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: .12 });
-        document.querySelectorAll('.fade-in').forEach(element => observer.observe(element));
-      }
+      /* Uși din galerie: deschidere la atingere / clic */
+      document.querySelectorAll('.model-scene').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var o = !b.classList.contains('is-open');
+          b.classList.toggle('is-open', o);
+          b.setAttribute('aria-pressed', String(o));
+        });
+      });
     })();
   </script>
 <script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
