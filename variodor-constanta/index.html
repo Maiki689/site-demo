@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<meta name="description" content="VarioDor, Constanța. Uși de interior, exterior și culisante, accesorii și montaj profesional pentru casa sau spațiul tău comercial.">
+<meta name="description" content="VarioDor, Bd. Mamaia 142, Constanța. Uși de interior și exterior, accesorii și montaj, cu showroom deschis de luni până sâmbătă.">
 <title>VarioDor — Uși pentru case primitoare | Constanța</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,6 +86,13 @@ header.scrolled{box-shadow:0 .4rem 1.5rem rgba(0,0,0,.05)}
 .brand{display:inline-flex;align-items:center;gap:.7rem;margin-right:auto}
 .brand svg{width:1.6rem;height:2rem}
 .brand-name{font:600 1.7rem/1 "Inter Tight",sans-serif;letter-spacing:-.045em}
+/* Logo VARIO DOR (ca pe firma din showroom): VARIO plin, DOR roșu subțire, triunghiul roșu pe V */
+.logo{display:inline-flex;align-items:baseline;font:700 1.75rem/1 "Inter Tight",sans-serif;letter-spacing:-.01em;white-space:nowrap}
+.logo-v{position:relative;color:currentColor}
+.logo-v::before{content:"";position:absolute;left:-.04em;top:.02em;width:.34em;height:.36em;background:#d7192d;clip-path:polygon(0 0,100% 0,62% 100%)}
+.logo-d{font-weight:300;color:#d7192d;margin-left:.08em}
+.intro-brand .logo{font-size:2rem}
+.footer-top .logo{font-size:1.5rem}
 .nav{display:flex;align-items:center;gap:1.8rem}
 .nav a{font-size:.88rem;font-weight:600;padding-block:.75rem;color:#111}
 .nav a:hover{color:var(--red)}
@@ -181,7 +188,7 @@ h1 em{font-style:normal;color:var(--red)}
 
 /* ---------- Tipuri ---------- */
 .types{background:var(--soft)}
-.types-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .type-card{position:relative;background:var(--frame);padding:1.6rem 1.5rem 1.75rem;box-shadow:0 0 0 1px rgba(20,20,20,.08),0 1.5rem 2.5rem -1.5rem rgba(0,0,0,.25);transition:box-shadow .3s var(--ease)}
 .type-card::after{content:"";position:absolute;inset:.55rem;box-shadow:inset 0 0 0 1px rgba(20,20,20,.1);pointer-events:none}
 .type-card:hover{box-shadow:0 0 0 1px rgba(20,20,20,.12),0 2rem 3rem -1.25rem rgba(0,0,0,.3)}
@@ -192,7 +199,10 @@ h1 em{font-style:normal;color:var(--red)}
 
 /* ---------- Modele ---------- */
 .models-head{align-items:center}
-.models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.model-photo{padding:.5rem}
+.model-photo img,.why-photo img{display:block;width:100%;height:auto;aspect-ratio:3/4.4;object-fit:cover;object-position:50% 45%}
+.model-tag{display:inline-block;margin-top:1rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--red)}
 .model-scene{display:block;width:100%;border:0;padding:12% 24% 14%;background:linear-gradient(#f3efe9,#e6e0d6);position:relative;cursor:pointer;text-align:left;box-shadow:0 0 0 1px rgba(20,20,20,.08);transition:transform .1s}
 .model-scene::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 55%,rgba(255,232,220,.9),rgba(255,232,220,0));opacity:0;transition:opacity .6s var(--ease)}
 .model-scene.is-open::before{opacity:1}
@@ -223,7 +233,20 @@ h1 em{font-style:normal;color:var(--red)}
 /* ---------- Magazin online ---------- */
 .shop{background:var(--soft)}
 .notice{display:inline-flex;align-items:center;gap:.6rem;border:1px dashed var(--red);color:var(--red);background:#fff;padding:.6rem 1rem;font-size:.82rem;font-weight:600;letter-spacing:.02em;margin-bottom:1.5rem}
-.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.shop-thumb.shop-photo{padding:0;background:#ece7e0}
+.shop-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%}
+/* ---------- Specificații ---------- */
+.specs-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.sizes{margin-top:2rem;border-top:1px solid var(--line)}
+.sizes div{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.sizes dt{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-top:.3rem}
+.sizes dd{font:500 1.25rem/1.3 "Inter Tight",sans-serif}
+.spec-list{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.spec-list li{display:grid;grid-template-columns:2.4rem 1fr;gap:1rem;align-items:start;background:var(--frame);padding:1rem 1.1rem;box-shadow:0 0 0 1px rgba(20,20,20,.08)}
+.spec-list li b{display:block;font:600 1.02rem/1.3 "Inter Tight",sans-serif;margin-bottom:.15rem}
+.spec-list li span{color:var(--muted);font-size:.92rem}
+.spec-ico{width:2.4rem;height:2.4rem;display:grid;place-items:center;background:#fff1f4;color:var(--red);font-weight:700}
 .shop-card{position:relative;background:var(--frame);box-shadow:0 0 0 1px rgba(20,20,20,.08),0 1.5rem 2.5rem -1.5rem rgba(0,0,0,.25);display:flex;flex-direction:column;transition:box-shadow .3s var(--ease)}
 .shop-card:hover{box-shadow:0 0 0 1px rgba(20,20,20,.12),0 2rem 3rem -1.25rem rgba(0,0,0,.3)}
 .shop-thumb{padding:2.2rem 32% 1.6rem;background:linear-gradient(#f3efe9,#e6e0d6);position:relative}
@@ -263,6 +286,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
 
 @media (max-width:1000px){
   .types-grid,.shop-grid,.models-grid{grid-template-columns:repeat(2,1fr)}
+  .specs-grid{grid-template-columns:1fr;gap:2.5rem}
   .hero-grid{gap:2.5rem}
   h1{font-size:clamp(2.8rem,7vw,5rem)}
   .store-grid,.why-grid{grid-template-columns:1fr;gap:2.5rem}
@@ -297,6 +321,8 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
   .model h3{font-size:1rem}
   .model p{font-size:.85rem}
   .shop-grid{grid-template-columns:1fr}
+  .sizes div{grid-template-columns:1fr;gap:.2rem}
+  .logo{font-size:1.45rem}
   .shop-thumb{padding:2rem 36% 1.5rem}
   .store-facts div{grid-template-columns:1fr;gap:.25rem}
   .map{height:19rem}
@@ -305,7 +331,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
   .footer-top p{text-align:left}
   .intro-hint{display:none}
 }
-@media (max-width:420px){.models-grid{grid-template-columns:1fr 1fr;gap:.7rem}.model-scene{padding:10% 20% 12%}}
+@media (max-width:420px){.models-grid{grid-template-columns:1fr;gap:1.5rem}}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .door-intro{display:none}
@@ -342,7 +368,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
     <div class="intro-wall" aria-hidden="true"></div>
     <div class="intro-glow" aria-hidden="true"></div>
     <div class="intro-floor" aria-hidden="true"></div>
-    <p class="intro-brand" aria-hidden="true"><strong>VarioDor</strong><span>Uși pentru case primitoare</span></p>
+    <p class="intro-brand" aria-hidden="true"><span class="logo" aria-label="VarioDor"><span class="logo-v" aria-hidden="true">VARIO</span><span class="logo-d" aria-hidden="true">DOR</span></span><span>Uși pentru case primitoare</span></p>
     <div class="intro-door" aria-hidden="true">
       <div class="intro-room"><span>Bine ați venit<br>la VarioDor</span></div>
       <div class="intro-frame"></div>
@@ -363,15 +389,12 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
   <header id="header">
     <div class="wrap header-inner">
       <a class="brand" href="#acasa" aria-label="VarioDor — prima pagină">
-        <svg viewBox="0 0 28 36" fill="none" aria-hidden="true">
-          <path d="M2 34V2h24v32M8 34V7l13-3v30H2" stroke="currentColor" stroke-width="1.7"/>
-          <path d="M17 19v3" stroke="currentColor" stroke-width="1.7"/>
-        </svg>
-        <span class="brand-name">VarioDor</span>
+        <span class="logo" aria-label="VarioDor"><span class="logo-v" aria-hidden="true">VARIO</span><span class="logo-d" aria-hidden="true">DOR</span></span>
       </a>
       <nav class="nav" id="navigation" aria-label="Navigare principală">
         <a href="#produse">Produse</a>
         <a href="#modele">Modele</a>
+        <a href="#specificatii">Specificații</a>
         <a href="#magazin-online">Magazin online</a>
         <a href="#magazin">Showroom</a>
         <a href="#contact">Contact</a>
@@ -399,7 +422,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
             <a class="button button-outline" href="tel:0759333888">Sună acum</a>
           </div>
           <div class="hero-notes entry entry-4">
-            <span class="small">Interior · Exterior · Culisante · Accesorii</span>
+            <span class="small">Interior · Exterior · Accesorii</span>
             <span class="small">Montaj inclus</span>
           </div>
         </div>
@@ -435,7 +458,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
             <span class="type-num">01</span>
             <div class="opening" aria-hidden="true"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></div>
             <h3>Uși de interior</h3>
-            <p>Varietate de modele pentru toate gusturile, pentru camere în care te simți acasă.</p>
+            <p>Albe, bej sau cu linii moderne, insonorizate și rezistente la umezeală, pentru fiecare cameră.</p>
           </article>
           <article class="type-card">
             <span class="type-num">02</span>
@@ -445,12 +468,6 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
           </article>
           <article class="type-card">
             <span class="type-num">03</span>
-            <div class="opening opening-slide" aria-hidden="true"><span class="leaf leaf-oak leaf-slide"><span class="leaf-pane"></span></span></div>
-            <h3>Uși culisante</h3>
-            <p>Funcționale și moderne, pentru spații practice.</p>
-          </article>
-          <article class="type-card">
-            <span class="type-num">04</span>
             <div class="opening" aria-hidden="true"><span class="leaf leaf-walnut"><span class="leaf-panel" style="--t:8%;--h:84%"></span><span class="leaf-handle"></span></span></div>
             <h3>Accesorii uși</h3>
             <p>Broaște, mânere și alte accesorii care completează ușa aleasă.</p>
@@ -463,9 +480,9 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
       <div class="wrap">
         <div class="section-head models-head">
           <div>
-            <span class="eyebrow reveal">Modele în cadre</span>
-            <h2 class="words" id="models-title">Deschide și privește.</h2>
-            <p class="lead reveal" style="margin-top:1.25rem">Patru stiluri, patru caractere. Atinge sau treci cu mouse-ul peste o ușă ca să o deschizi și să vezi lumina din cameră.</p>
+            <span class="eyebrow reveal">Pe stoc în showroom</span>
+            <h2 class="words" id="models-title">Modelele noastre.</h2>
+            <p class="lead reveal" style="margin-top:1.25rem">Fotografiate chiar la noi, în showroom-ul din Constanța. Le găsiți pe stoc, în mai multe dimensiuni.</p>
           </div>
           <figure class="frame reveal">
             <div class="art lineup-art" role="img" aria-label="Trei uși expuse alăturat — albă cu panouri, din stejar cu geam și metalică">
@@ -480,35 +497,49 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
         </div>
         <div class="models-grid stagger">
           <article class="model">
-            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: interior, panou plin">
-              <span class="opening"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></span>
-            </button>
-            <h3>Interior · panou plin</h3>
-            <p>Linii curate, finisaj mat. Pentru dormitoare și living.</p>
+            <figure class="frame model-photo"><img src="img/usa-luxury-white.jpg" alt="Ușa de interior Luxury White: albă, cu două panouri clasice în relief și mâner inox" loading="lazy" width="900" height="1600"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Luxury White</h3>
+            <p>Albă, cu două panouri clasice în relief. Eleganță care merge în orice casă.</p>
           </article>
           <article class="model">
-            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: interior, cu geam">
-              <span class="opening"><span class="leaf leaf-white"><span class="leaf-pane"></span><span class="leaf-handle leaf-handle-dark"></span></span></span>
-            </button>
-            <h3>Interior · cu geam</h3>
-            <p>Lasă lumina să treacă dintr-o cameră în alta.</p>
+            <figure class="frame model-photo"><img src="img/usa-neo-soft-bej.jpg" alt="Ușa de interior Neo Soft Bej: bej cald, cu un panou înalt în relief și mâner auriu" loading="lazy" width="900" height="1600"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Neo Soft Bej</h3>
+            <p>Bej cald, un singur panou înalt și mâner auriu. Pentru interioare calde, moderne.</p>
           </article>
           <article class="model">
-            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: exterior, metalică">
-              <span class="opening"><span class="leaf leaf-steel"><span class="leaf-panel" style="--t:10%;--h:22%"></span><span class="leaf-panel" style="--t:36%;--h:22%"></span><span class="leaf-bar"></span></span></span>
-            </button>
-            <h3>Exterior · metalică</h3>
-            <p>Solidă și elegantă, pentru intrarea în casă sau apartament.</p>
-          </article>
-          <article class="model">
-            <button class="model-scene" type="button" aria-pressed="false" aria-label="Deschide ușa: culisantă, stejar">
-              <span class="opening opening-slide"><span class="leaf leaf-oak leaf-slide"><span class="leaf-pane"></span></span></span>
-            </button>
-            <h3>Culisantă · stejar</h3>
-            <p>Economisește spațiu în bucătării, dressinguri sau birouri.</p>
+            <figure class="frame model-photo"><img src="img/usa-vda-80.jpg" alt="Ușa de interior VDA 80: albă, cu linii orizontale fine și mâner cromat" loading="lazy" width="900" height="1600"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>VDA 80</h3>
+            <p>Albă, cu linii orizontale fine. Simplă, modernă, luminoasă.</p>
           </article>
         </div>
         <p class="small models-note reveal">Gama completă o vedeți în showroom, cu sfaturi despre dimensiuni și montaj.</p>
+      </div>
+    </section>
+
+    <section class="room specs" id="specificatii" aria-labelledby="specs-title">
+      <div class="wrap specs-grid">
+        <div>
+          <span class="eyebrow reveal">Specificații tehnice</span>
+          <h2 class="words" id="specs-title">Făcute să reziste.</h2>
+          <p class="lead reveal" style="margin-top:1.25rem">Liniștite, rezistente și ușor de întreținut, oricare ar fi modelul ales.</p>
+          <dl class="sizes reveal">
+            <div><dt>Gol de zidărie</dt><dd>60 · 70 · 80 · 90 cm</dd></div>
+            <div><dt>Înălțime</dt><dd>2,05 – 2,07 m</dd></div>
+            <div><dt>Toc</dt><dd>Reglabil, până la 40 cm</dd></div>
+          </dl>
+        </div>
+        <ul class="spec-list stagger">
+          <li><span class="spec-ico" aria-hidden="true">dB</span><div><b>Insonorizate 38 dB</b><span>Liniște între camere.</span></div></li>
+          <li><span class="spec-ico" aria-hidden="true">≈</span><div><b>Rezistente la umezeală</b><span>Abur și condens, potrivite și pentru baie.</span></div></li>
+          <li><span class="spec-ico" aria-hidden="true">41′</span><div><b>Anti-incendiu</b><span>Rezistență la foc 41 de minute.</span></div></li>
+          <li><span class="spec-ico" aria-hidden="true">✓</span><div><b>Rezistente la zgârieturi</b><span>Recomandate celor cu animale de casă; rezistă și la produse abrazive.</span></div></li>
+          <li><span class="spec-ico" aria-hidden="true">°C</span><div><b>Lângă surse de căldură</b><span>Se pot monta lângă radiatoare, ventilatoare, becuri incandescente.</span></div></li>
+          <li><span class="spec-ico" aria-hidden="true">✦</span><div><b>Ușor de curățat</b><span>Cu orice soluție chimică de uz casnic.</span></div></li>
+          <li><span class="spec-ico" aria-hidden="true">⚙</span><div><b>Complete</b><span>Cu cheder, toc reglabil, broască și balamale reglabile.</span></div></li>
+        </ul>
       </div>
     </section>
 
@@ -536,16 +567,9 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
             </div>
           </div>
         </div>
-        <figure class="frame reveal">
-          <div class="art office-art" role="img" aria-label="Perete despărțitor din sticlă cu ușă culisantă, într-un spațiu de birouri">
-            <div class="glass">
-              <span class="glass-pane"></span>
-              <span class="glass-pane glass-door"><span class="leaf-bar"></span></span>
-              <span class="glass-pane"></span>
-            </div>
-            <svg class="art-plant" viewBox="0 0 60 120" aria-hidden="true"><path d="M30 82C22 60 10 52 4 34c12 4 22 18 26 40" fill="#6f8f63"/><path d="M30 82C34 56 44 40 56 30c-2 18-14 34-24 52" fill="#5b7a55"/><path d="M30 84C28 58 26 34 32 8c6 24 4 50-2 76" fill="#7c9c6e"/><path d="M16 82h28l-4 38H20Z" fill="#c9b8a3"/><path d="M16 82h28v5H16Z" fill="#b7a58e"/></svg>
-          </div>
-          <figcaption class="frame-caption"><span>Spații comerciale: mai mult loc pentru lumină.</span></figcaption>
+        <figure class="frame reveal why-photo">
+          <img src="img/usa-neo-soft-bej.jpg" alt="Ușa Neo Soft Bej expusă în showroom-ul VarioDor din Constanța" loading="lazy" width="900" height="1600">
+          <figcaption class="frame-caption"><span>Neo Soft Bej, în showroom.</span></figcaption>
         </figure>
       </div>
     </section>
@@ -558,53 +582,43 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
             <h2 class="words" id="shop-title">Comandă de acasă.</h2>
           </div>
           <div class="reveal">
-            <p class="notice">Exemple — de completat cu produsele și prețurile dvs.</p>
-            <p class="lead">Așa ar putea arăta vitrina online VarioDor: fiecare produs cu fotografie, descriere, preț și buton de comandă.</p>
+            <p class="notice">Previzualizare — prețurile și comanda online le adăugăm în etapa următoare.</p>
+            <p class="lead">Vitrina online VarioDor: fiecare model cu fotografie, descriere și buton de ofertă pe WhatsApp.</p>
           </div>
         </div>
         <div class="shop-grid stagger">
           <article class="shop-card">
-            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening"><span class="leaf leaf-white"><span class="leaf-panel" style="--t:8%;--h:34%"></span><span class="leaf-panel" style="--t:50%;--h:42%"></span><span class="leaf-handle leaf-handle-dark"></span></span></div></div>
+            <div class="shop-thumb shop-photo"><span class="shop-tag">Pe stoc</span><img src="img/usa-luxury-white.jpg" alt="Ușa de interior Luxury White: albă, cu două panouri clasice în relief și mâner inox" loading="lazy" width="900" height="1600"></div>
             <div class="shop-body">
               <p class="shop-type">Uși de interior</p>
-              <h3>Ușă de interior — panou plin</h3>
-              <p>Descriere, dimensiuni și finisaje: de completat.</p>
-              <p class="price">Preț: <span>de completat</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+              <h3>Luxury White</h3>
+              <p>Albă, cu două panouri clasice în relief. Eleganță care merge în orice casă. Gol 60–90 cm, toc reglabil.</p>
+              <p class="price">Preț: <span>la cerere</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Luxury%20White." target="_blank" rel="noopener noreferrer">Cere ofertă</a>
             </div>
           </article>
           <article class="shop-card">
-            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening"><span class="leaf leaf-white"><span class="leaf-pane"></span><span class="leaf-handle leaf-handle-dark"></span></span></div></div>
+            <div class="shop-thumb shop-photo"><span class="shop-tag">Pe stoc</span><img src="img/usa-neo-soft-bej.jpg" alt="Ușa de interior Neo Soft Bej: bej cald, cu un panou înalt în relief și mâner auriu" loading="lazy" width="900" height="1600"></div>
             <div class="shop-body">
               <p class="shop-type">Uși de interior</p>
-              <h3>Ușă de interior — cu geam</h3>
-              <p>Descriere, dimensiuni și finisaje: de completat.</p>
-              <p class="price">Preț: <span>de completat</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+              <h3>Neo Soft Bej</h3>
+              <p>Bej cald, un singur panou înalt și mâner auriu. Pentru interioare calde, moderne. Gol 60–90 cm, toc reglabil.</p>
+              <p class="price">Preț: <span>la cerere</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Neo%20Soft%20Bej." target="_blank" rel="noopener noreferrer">Cere ofertă</a>
             </div>
           </article>
           <article class="shop-card">
-            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening"><span class="leaf leaf-steel"><span class="leaf-panel" style="--t:10%;--h:22%"></span><span class="leaf-panel" style="--t:36%;--h:22%"></span><span class="leaf-bar"></span></span></div></div>
+            <div class="shop-thumb shop-photo"><span class="shop-tag">Pe stoc</span><img src="img/usa-vda-80.jpg" alt="Ușa de interior VDA 80: albă, cu linii orizontale fine și mâner cromat" loading="lazy" width="900" height="1600"></div>
             <div class="shop-body">
-              <p class="shop-type">Uși de exterior</p>
-              <h3>Ușă de exterior — metalică</h3>
-              <p>Descriere, dimensiuni și finisaje: de completat.</p>
-              <p class="price">Preț: <span>de completat</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
-            </div>
-          </article>
-          <article class="shop-card">
-            <div class="shop-thumb" aria-hidden="true"><span class="shop-tag">Ilustrație · aici vine poza produsului</span><div class="opening opening-slide"><span class="leaf leaf-oak leaf-slide"><span class="leaf-pane"></span></span></div></div>
-            <div class="shop-body">
-              <p class="shop-type">Uși culisante</p>
-              <h3>Ușă culisantă — stejar</h3>
-              <p>Descriere, dimensiuni și finisaje: de completat.</p>
-              <p class="price">Preț: <span>de completat</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20u%C8%99ile%20disponibile." target="_blank" rel="noopener noreferrer">Comandă</a>
+              <p class="shop-type">Uși de interior</p>
+              <h3>VDA 80</h3>
+              <p>Albă, cu linii orizontale fine. Simplă, modernă, luminoasă. Gol 60–90 cm, toc reglabil.</p>
+              <p class="price">Preț: <span>la cerere</span></p>
+              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20VDA%2080." target="_blank" rel="noopener noreferrer">Cere ofertă</a>
             </div>
           </article>
         </div>
-        <p class="small reveal" style="margin-top:1.5rem">În această previzualizare, butonul „Comandă” deschide o conversație pe WhatsApp. Produsele, fotografiile și prețurile se completează de către VarioDor.</p>
+        <p class="small reveal" style="margin-top:1.5rem">Deocamdată, butonul „Cere ofertă” deschide o conversație pe WhatsApp, cu modelul ales deja scris.</p>
       </div>
     </section>
 
@@ -615,17 +629,17 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
           <h2 class="words" id="store-title">Vino să le vezi pe viu.</h2>
           <p class="lead reveal" style="margin-top:1.25rem">Alege ușa direct din magazin, cu sfaturi despre model, dimensiuni și montaj.</p>
           <dl class="store-facts reveal">
-            <div><dt>Adresă</dt><dd><span class="todo">de completat</span></dd></div>
-            <div><dt>Program</dt><dd><span class="todo">de completat</span></dd></div>
+            <div><dt>Adresă</dt><dd>Bd. Mamaia 142, Constanța</dd></div>
+            <div><dt>Program</dt><dd>Luni – Vineri: 9:30 – 18:30<br>Sâmbătă: 10:00 – 16:00</dd></div>
             <div><dt>Telefon</dt><dd><a href="tel:0759333888">0759 333 888</a></dd></div>
           </dl>
           <div class="store-actions reveal">
-            <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=VarioDor+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+            <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Bulevardul+Mamaia+142%2C+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
             <a class="button button-outline" href="tel:0759333888">Sună înainte să vii</a>
           </div>
         </div>
         <div class="frame reveal">
-          <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=28.6444758,44.195019699999996,28.6524758,44.1990197&amp;layer=mapnik&amp;marker=44.1970197,28.6484758" title="Hartă de localizare VarioDor în Constanța" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <iframe class="map" src="https://www.google.com/maps?q=Bulevardul+Mamaia+142,+Constan%C8%9Ba&amp;output=embed" title="Hartă: VarioDor, Bd. Mamaia 142, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -647,8 +661,8 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
   <footer>
     <div class="wrap">
       <div class="footer-top">
-        <a href="#acasa" class="brand-name" aria-label="VarioDor — înapoi la început">VarioDor</a>
-        <p>Constanța<br>Model de site (demo)</p>
+        <a href="#acasa" aria-label="VarioDor — înapoi la început"><span class="logo" aria-label="VarioDor"><span class="logo-v" aria-hidden="true">VARIO</span><span class="logo-d" aria-hidden="true">DOR</span></span></a>
+        <p>Bd. Mamaia 142, Constanța<br>0759 333 888</p>
       </div>
     </div>
   </footer>
