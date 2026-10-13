@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PlantEat /it/ | Restaurant vegan și vegetarian în Constanța</title>
+<meta name="description" content="PlantEat /it/, Strada Unirii 25, Constanța. Preparate vegane și vegetariene, proaspăt gătite în fiecare zi. Rezervă o masă online, scrie-ne pe WhatsApp sau sună-ne.">
+<meta name="theme-color" content="#F7F5EF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141311;
+  --ink-soft:#3d3a34;
+  --bg:#F7F5EF;
+  --bg2:#EDE6D8;
+  --green:#16a34a;
+  --green-d:#15803d;
+  --moss:#6B7A4B;
+  --mustard:#D4A72C;
+  --light:#F7F5EF;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem, 5vw, 4rem);
+  --max:78rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-0.02em;line-height:1.05}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--light);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+:focus-visible{outline:2px solid var(--green-d);outline-offset:3px;border-radius:.25rem}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.4rem;border-radius:999px;
+  font:600 1rem/1 var(--sans);letter-spacing:0;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease, background-color .25s ease, box-shadow .25s ease, color .25s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-primary{background:var(--green-d);color:#fff}
+.btn-primary:hover{background:#166534;box-shadow:0 .5rem 1.4rem rgba(21,128,61,.28)}
+.btn-light{background:var(--light);color:var(--ink)}
+.btn-light:hover{box-shadow:0 .5rem 1.4rem rgba(0,0,0,.25)}
+.btn-ghost{border-color:rgba(20,19,17,.22);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(20,19,17,.04)}
+
+/* ---------- Nav (glass) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(247,245,239,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+  transition:box-shadow .35s ease, background-color .35s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.75), 0 .5rem 1.75rem rgba(20,19,17,.10)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.75rem;padding-top:env(safe-area-inset-top)}
+.brand{font-family:var(--serif);font-size:1.6rem;letter-spacing:-0.01em;text-decoration:none;line-height:1;white-space:nowrap}
+.brand .slash{color:var(--green-d)}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{font-weight:500;font-size:.95rem;text-decoration:none;padding:.5rem 0;color:var(--ink)}
+.nav-links a:hover{color:var(--green-d)}
+.nav .btn{min-height:2.75rem;padding:0 1.1rem;font-size:.95rem}
+@media (min-width:52rem){.nav-links{display:flex}}
+
+/* ---------- Full-bleed chapters ---------- */
+.chapter{position:relative;overflow:hidden;background:var(--ink);color:var(--light)}
+.frame{position:relative;overflow:hidden;margin:0;height:100%}
+.frame img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transform:scale(1.06);transform-origin:50% 55%;will-change:transform;
+}
+.scrim::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top, rgba(20,19,17,.82) 0%, rgba(20,19,17,.5) 38%, rgba(20,19,17,0) 72%);
+}
+.chapter-text{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:clamp(2.25rem,7vh,5rem)}
+.chapter-text h2{font-size:clamp(2.6rem,8vw,6rem);max-width:14ch}
+.chapter-text p{margin-top:1rem;max-width:34rem;font-size:clamp(1.05rem,1.6vw,1.2rem);color:rgba(247,245,239,.9)}
+
+/* ---------- Hero ---------- */
+.hero{height:100svh;min-height:36rem}
+.hero-media{position:absolute;inset:0}
+.hero-media .frame{position:absolute;inset:0}
+.hero-content{position:absolute;inset:auto 0 0 0;z-index:2;padding-bottom:clamp(2rem,6vh,4.5rem)}
+.hero h1{font-size:clamp(3.4rem,14vw,9.5rem);line-height:.95;letter-spacing:-0.025em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line > span{display:inline-block}
+.hero h1 .slash{color:#7ee2a0}
+.hero .slogan{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.4rem);line-height:1.15;letter-spacing:-0.01em;margin-top:.6rem}
+.hero .lede{margin-top:.9rem;max-width:32rem;color:rgba(247,245,239,.88)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+
+/* hero entrance */
+.js .hero-media{animation:heroIn 2.4s var(--ease) both}
+.js .hero h1 .line > span{animation:lineUp 1.2s var(--ease) both}
+.js .hero h1 .line:nth-child(2) > span{animation-delay:.12s}
+.js .hero .slogan{animation:fadeUp 1s var(--ease) .55s both}
+.js .hero .lede{animation:fadeUp 1s var(--ease) .7s both}
+.js .hero .actions{animation:fadeUp 1s var(--ease) .85s both}
+.js .hero h1 .line > span{animation-delay:.35s}
+.js .hero h1 .line:nth-child(2) > span{animation-delay:.47s}
+@keyframes heroIn{from{opacity:0;transform:scale(1.08)}to{opacity:1;transform:scale(1)}}
+@keyframes lineUp{from{transform:translateY(105%)}to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}
+
+/* ---------- Light sections ---------- */
+.section{padding:clamp(5rem,12vw,9.5rem) 0}
+.about-grid{display:grid;gap:2.5rem}
+.about h2{font-size:clamp(2.2rem,5.6vw,4.4rem);max-width:16ch}
+.about .body{max-width:36rem;color:var(--ink-soft);font-size:1.125rem}
+.about .body p + p{margin-top:1rem}
+.facts{display:grid;gap:2rem;margin-top:clamp(3.5rem,8vw,6rem);list-style:none;padding:0}
+.facts li{padding-top:1.25rem;border-top:1px solid rgba(20,19,17,.14)}
+.facts svg{width:1.6rem;height:1.6rem;color:var(--green-d);margin-bottom:.9rem}
+.facts h3{font-family:var(--sans);font-weight:600;font-size:1.05rem;letter-spacing:0;line-height:1.3}
+.facts p{margin-top:.35rem;color:var(--ink-soft);max-width:22rem}
+@media (min-width:56rem){
+  .about-grid{grid-template-columns:7fr 5fr;align-items:end;gap:4rem}
+  .facts{grid-template-columns:repeat(3,1fr);gap:3rem}
+}
+
+.ch-menu{height:88svh;min-height:32rem}
+.ch-menu .frame{position:absolute;inset:0}
+
+.menu-grid{display:grid;gap:3rem}
+.menu-side h2{font-size:clamp(2rem,4.6vw,3.4rem);max-width:12ch}
+.menu-side p{margin-top:1rem;color:var(--ink-soft);max-width:26rem}
+.menu-side .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.menu-list{list-style:none;margin:0;padding:0}
+.menu-list li{
+  display:grid;gap:.35rem;padding:1.6rem 0;border-top:1px solid rgba(20,19,17,.14);
+}
+.menu-list li:last-child{border-bottom:1px solid rgba(20,19,17,.14)}
+.menu-list h3{font-size:clamp(1.75rem,3.6vw,2.6rem);line-height:1.1;transition:color .3s ease}
+.menu-list p{color:var(--ink-soft)}
+.menu-list li:hover h3{color:var(--green-d)}
+@media (min-width:56rem){
+  .menu-grid{grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+  .menu-side{position:sticky;top:7rem}
+  .menu-list li{grid-template-columns:1.15fr 1fr;align-items:baseline;gap:2rem}
+}
+
+/* diptych */
+.ch-kitchen .frames{display:grid;grid-template-rows:1fr 1fr;height:110svh;min-height:40rem;gap:.375rem;background:var(--bg)}
+.ch-kitchen .frames .frame{height:auto}
+.ch-kitchen .frames .frame:last-child::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top, rgba(20,19,17,.85) 0%, rgba(20,19,17,.45) 45%, rgba(20,19,17,0) 80%);
+}
+@media (min-width:52rem){
+  .ch-kitchen .frames{grid-template-rows:none;grid-template-columns:1fr 1fr;height:100svh}
+  .ch-kitchen .frames .frame::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to top, rgba(20,19,17,.8) 0%, rgba(20,19,17,.35) 40%, rgba(20,19,17,0) 70%);
+  }
+}
+
+/* contact */
+.contact{background:var(--bg2)}
+.contact-grid{display:grid;gap:3rem}
+.contact h2{font-size:clamp(2.4rem,6vw,4.6rem)}
+.contact .intro{margin-top:1rem;color:var(--ink-soft);max-width:32rem;font-size:1.125rem}
+.contact .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.info{display:grid;gap:2rem;margin-top:3rem}
+.info h3{font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:none;color:var(--moss);line-height:1.3;margin-bottom:.6rem}
+.info address{font-style:normal;font-size:1.125rem}
+.info address a{display:inline-block;margin-top:.4rem;font-weight:500;color:var(--green-d);text-underline-offset:.2em}
+.hours{list-style:none;margin:0;padding:0}
+.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0 .55rem .9rem;border-left:2px solid transparent;transition:border-color .4s ease}
+.hours li.today{border-left-color:var(--mustard);font-weight:600}
+.hours .t{font-variant-numeric:tabular-nums}
+.status{display:inline-flex;align-items:center;gap:.55rem;margin-top:.9rem;font-weight:500}
+.status .dot{width:.6rem;height:.6rem;border-radius:50%;background:#8a8579}
+.status.open .dot{background:var(--green)}
+.links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.links a{display:inline-flex;align-items:center;min-height:2.75rem;font-weight:500;text-underline-offset:.22em;text-decoration-thickness:1px}
+.links a:hover{color:var(--green-d)}
+.map{position:relative;border-radius:.75rem;overflow:hidden;aspect-ratio:4/5;background:#ddd5c4}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:40rem){.map{aspect-ratio:4/3}.info{grid-template-columns:1fr 1fr}}
+@media (min-width:60rem){
+  .contact-grid{grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .map{aspect-ratio:auto;height:100%;min-height:34rem}
+}
+
+/* footer */
+.footer{background:var(--ink);color:rgba(247,245,239,.78);padding:3.5rem 0 calc(2.5rem + env(safe-area-inset-bottom));font-size:.85rem;letter-spacing:.02em}
+.footer-in{display:grid;gap:1.5rem}
+.footer .brand{color:var(--light);font-size:2rem}
+.footer .brand .slash{color:#7ee2a0}
+.footer p + p{margin-top:.35rem}
+.footer a{text-underline-offset:.2em}
+@media (min-width:52rem){.footer-in{grid-template-columns:1fr auto;align-items:end}.footer .meta{text-align:right}}
+
+/* ---------- Reveals (varied, transform + opacity only) ---------- */
+.js .rv{transition:opacity .6s var(--ease), transform .6s var(--ease)}
+.js .rv-fade{opacity:0}
+.js .rv-side{opacity:0;transform:translateX(-1.25rem)}
+.js .rv-rise{opacity:0;transform:translateY(1.25rem)}
+.js .rv-scale{opacity:0;transform:scale(.975)}
+.js .rv.in{opacity:1;transform:none}
+.js .menu-list .rv:nth-child(2){transition-delay:.06s}
+.js .menu-list .rv:nth-child(3){transition-delay:.12s}
+.js .menu-list .rv:nth-child(4){transition-delay:.18s}
+.js .menu-list .rv:nth-child(5){transition-delay:.24s}
+.js .facts .rv:nth-child(2){transition-delay:.08s}
+.js .facts .rv:nth-child(3){transition-delay:.16s}
+
+/* ---------- Preferences ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .hero-media,.js .hero h1 .line > span,.js .hero .slogan,.js .hero .lede,.js .hero .actions{animation:fadeOnly .2s ease both !important}
+  .js .rv{transition:opacity .2s ease !important;transform:none !important}
+  .frame img{transform:none !important}
+  .btn{transition:none}
+  .btn:active{transform:none}
+}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--ink)}
+  .scrim::after,.ch-kitchen .frames .frame::after{background:rgba(20,19,17,.72) !important}
+  .btn-ghost{border-color:var(--ink)}
+  .menu-list li,.facts li{border-color:var(--ink)}
+  .about .body,.menu-list p,.facts p,.contact .intro{color:var(--ink)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="PlantEat /it/, începutul paginii">PlantEat <span class="slash">/it/</span></a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:+40720231132">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- HERO -->
+  <section class="chapter hero" id="top" aria-label="PlantEat /it/">
+    <div class="hero-media">
+      <figure class="frame scrim">
+        <img data-zoom src="img/1.jpg" alt="Bol cu legume verzi, busuioc și ierburi proaspete, văzut de sus" fetchpriority="high">
+      </figure>
+    </div>
+    <div class="hero-content">
+      <div class="wrap">
+        <h1>
+          <span class="line"><span>PlantEat</span></span>
+          <span class="line"><span class="slash">/it/</span></span>
+        </h1>
+        <p class="slogan">Bucură-te de gustul plantelor.</p>
+        <p class="lede">Preparate vegane și vegetariene, proaspăt gătite în fiecare zi. Strada Unirii 25, Constanța.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/40720231132?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3"/></svg>
+            Scrie pe WhatsApp
+          </a>
+          <a class="btn btn-light" href="tel:+40720231132">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESPRE -->
+  <section class="section about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <h2 id="despre-titlu" class="rv rv-fade">Un restaurant din Constanța unde totul pornește de la plante.</h2>
+        <div class="body rv rv-side">
+          <p>PlantEat este un restaurant dedicat preparatelor vegane și vegetariene. Meniul reunește gusturi autentice și ingrediente de origine vegetală.</p>
+          <p>Vino să descoperi savoarea bucătăriei moderne, în fiecare farfurie. Iar dacă vrei să fii sigur că ai loc, îți rezervi masa online, din câteva atingeri.</p>
+        </div>
+      </div>
+
+      <ul class="facts">
+        <li class="rv rv-rise">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15"/><path d="M5 19l7-7"/></svg>
+          <h3>Meniu vegan și vegetarian</h3>
+          <p>Preparate fără carne, pentru oricine se așază la masă.</p>
+        </li>
+        <li class="rv rv-rise">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8h10V3"/><path d="M5 11h14v3H5z"/><path d="M7 14v7M17 14v7"/></svg>
+          <h3>Rezervare online</h3>
+          <p>Îți rezervi rapid o masă online.</p>
+        </li>
+        <li class="rv rv-rise">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h13a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5z"/><path d="M16 12h5"/><path d="M8 8c0-1.5 1-1.5 1-3M12 8c0-1.5 1-1.5 1-3"/></svg>
+          <h3>Gătit proaspăt</h3>
+          <p>Preparatele sunt făcute la comandă, în fiecare zi.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CAPITOL MENIU -->
+  <section class="chapter ch-menu" id="meniu" aria-labelledby="meniu-titlu">
+    <figure class="frame scrim">
+      <img data-zoom src="img/2.jpg" alt="Farfurie cu salată colorată din legume proaspete" loading="lazy">
+    </figure>
+    <div class="chapter-text">
+      <div class="wrap">
+        <h2 id="meniu-titlu" class="rv rv-fade">Meniu</h2>
+        <p class="rv rv-fade">Platouri pentru mic dejun, salate colorate, preparate calde cu legume proaspete și ceva dulce la final.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Preparatele din meniu">
+    <div class="wrap menu-grid">
+      <div class="menu-side rv rv-fade">
+        <h2>Ce găsești la noi</h2>
+        <p>Toate preparatele sunt vegane sau vegetariene și se gătesc la comandă. Vrei să știi ce gătim azi? Sună-ne sau scrie-ne.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+40720231132">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40720231132?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+      <ul class="menu-list">
+        <li class="rv rv-side"><h3>Mic dejun vegan</h3><p>Platouri cu ingrediente vegetale variate, pentru o dimineață fără grabă.</p></li>
+        <li class="rv rv-side"><h3>Fel principal vegetarian</h3><p>Preparat cald, cu legume proaspete.</p></li>
+        <li class="rv rv-side"><h3>Salate asortate</h3><p>Salate colorate, proaspăt preparate.</p></li>
+        <li class="rv rv-side"><h3>Desert vegan</h3><p>Dulciuri fără ingrediente de origine animală.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CAPITOL BUCĂTĂRIE (diptic) -->
+  <section class="chapter ch-kitchen" aria-labelledby="bucatarie-titlu">
+    <div class="frames">
+      <figure class="frame">
+        <img data-zoom src="img/3.jpg" alt="Bucătar care pregătește preparate în bucătăria restaurantului" loading="lazy">
+      </figure>
+      <figure class="frame">
+        <img data-zoom src="img/4.jpg" alt="Ingrediente pe masa de lucru din bucătărie: roșii, făină și aluat" loading="lazy">
+      </figure>
+    </div>
+    <div class="chapter-text">
+      <div class="wrap">
+        <h2 id="bucatarie-titlu" class="rv rv-fade">Gătit la comandă</h2>
+        <p class="rv rv-fade">Farfuria ta se pregătește când o comanzi, din ingrediente vegetale gătite proaspăt în fiecare zi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-titlu" class="rv rv-fade">Rezervă o masă</h2>
+        <p class="intro rv rv-fade">Ne găsești pe Strada Unirii 25, în Constanța. Scrie-ne pe WhatsApp sau sună-ne pentru orice întrebare.</p>
+        <div class="actions rv rv-rise">
+          <a class="btn btn-primary" href="https://wa.me/40720231132?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+40720231132">Sună la +40720231132</a>
+        </div>
+
+        <div class="info">
+          <div class="rv rv-fade">
+            <h3>Adresa</h3>
+            <address>
+              Strada Unirii 25<br>Constanța
+              <br><a href="https://www.google.com/maps/search/?api=1&query=PlantEat+%2Fit%2F+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+            </address>
+          </div>
+          <div class="rv rv-fade">
+            <h3>Program</h3>
+            <ul class="hours" id="hours">
+              <li data-days="1,2,3,4"><span>Luni–joi</span><span class="t">09:00–21:00</span></li>
+              <li data-days="5,6"><span>Vineri–sâmbătă</span><span class="t">09:00–22:00</span></li>
+              <li data-days="0"><span>Duminică</span><span class="t">09:00–21:00</span></li>
+            </ul>
+            <p class="status" id="status" hidden><span class="dot" aria-hidden="true"></span><span class="txt"></span></p>
+          </div>
+        </div>
+
+        <div class="info rv rv-fade" style="grid-template-columns:1fr">
+          <div>
+            <h3>Ne mai găsești și aici</h3>
+            <div class="links">
+              <a href="mailto:contact@planteat.ro">contact@planteat.ro</a>
+              <a href="https://www.facebook.com/planteatit/" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map rv rv-scale">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.645977199999997,44.199171899999996,28.6539772,44.2031719&layer=mapnik&marker=44.2011719,28.6499772" title="Harta: PlantEat /it/, Strada Unirii 25, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand" href="#top">PlantEat <span class="slash">/it/</span></a>
+      <p style="margin-top:.75rem">Restaurant vegan și vegetarian, Strada Unirii 25, Constanța</p>
+    </div>
+    <div class="meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Kost9n4, TheDesignLady87, MatteoPhotoPro2020</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* nav shadow */
+  var nav = document.getElementById('nav');
+  function onNav(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+
+  /* reveals: same path in and out */
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.target.classList.toggle('in', e.isIntersecting); });
+    }, {threshold:0.15, rootMargin:'0px 0px -5% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* cinematic slow push-in on scroll */
+  var zooms = Array.prototype.slice.call(document.querySelectorAll('[data-zoom]'));
+  var ticking = false;
+  function zoom(){
+    ticking = false;
+    var vh = window.innerHeight;
+    zooms.forEach(function(img){
+      var r = img.parentElement.getBoundingClientRect();
+      if (r.bottom < -50 || r.top > vh + 50) return;
+      var p = (vh - r.top) / (vh + r.height);
+      p = Math.max(0, Math.min(1, p));
+      img.style.transform = 'scale(' + (1.02 + 0.14 * p).toFixed(4) + ') translateY(' + (-1.5 * p).toFixed(3) + '%)';
+    });
+  }
+  function onScroll(){
+    onNav();
+    if (!reduce && !ticking){ ticking = true; requestAnimationFrame(zoom); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onNav();
+  if (!reduce) zoom();
+
+  /* today + open now (Europe/Bucharest) */
+  try{
+    var parts = new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Bucharest',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var get = function(t){ for (var i=0;i<parts.length;i++){ if(parts[i].type===t) return parts[i].value; } };
+    var dayMap = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    var d = dayMap[get('weekday')];
+    var h = parseInt(get('hour'),10) % 24, m = parseInt(get('minute'),10);
+    var now = h*60 + m;
+    var closeAt = (d===5 || d===6) ? 22 : 21;
+    document.querySelectorAll('#hours li').forEach(function(li){
+      if (li.getAttribute('data-days').split(',').indexOf(String(d)) > -1) li.classList.add('today');
+    });
+    var st = document.getElementById('status');
+    var open = now >= 540 && now < closeAt*60;
+    st.classList.toggle('open', open);
+    st.querySelector('.txt').textContent = open
+      ? 'Deschis acum, până la ' + closeAt + ':00'
+      : (now < 540 ? 'Închis acum. Deschidem azi la 09:00.' : 'Închis acum. Deschidem mâine la 09:00.');
+    st.hidden = false;
+  }catch(e){}
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
