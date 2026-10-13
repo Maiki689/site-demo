@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matonia | Coafură și frizerie în Cotroceni, București</title>
+<meta name="description" content="Matonia: tunsori și coafuri pentru femei, bărbați și copii, în Cotroceni, București. Sună la 0771 017 478.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --mist:#f5f5f4;
+  --muted:#575757;
+  --line:rgba(0,0,0,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --script:"Dancing Script","Brush Script MT",cursive;
+  --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(1.25rem,5vw,4rem);
+  --section:clamp(5rem,12vw,9.5rem);
+  --header:4rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header) + 1rem);-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:400;
+  font-size:clamp(1rem,.96rem + .2vw,1.0625rem);line-height:1.6;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{width:100%;max-width:82rem;margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:#fff;padding:.75rem 1rem;text-decoration:none}
+.skip:focus{top:1rem}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* Titluri */
+.title{
+  font-family:var(--script);font-weight:500;
+  font-size:clamp(2.7rem,7vw,5rem);line-height:1.05;letter-spacing:-.01em;
+}
+.lead{font-weight:300;font-size:clamp(1.15rem,1rem + .6vw,1.4rem);line-height:1.45;letter-spacing:-.01em}
+.muted{color:var(--muted)}
+.small{font-size:.8125rem;letter-spacing:.03em;line-height:1.5}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.5rem;border-radius:2px;
+  font-family:var(--sans);font-weight:500;font-size:.9rem;letter-spacing:.02em;
+  text-decoration:none;white-space:nowrap;cursor:pointer;
+  border:1px solid var(--ink);
+  transition:transform .1s ease,background-color .25s ease,box-shadow .25s ease,color .25s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#222;box-shadow:0 .6rem 1.4rem -.8rem rgba(0,0,0,.55)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:rgba(0,0,0,.05)}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+.on-dark .btn-solid{background:#fff;color:#000;border-color:#fff}
+.on-dark .btn-line{color:#fff;border-color:rgba(255,255,255,.7)}
+.text-link{text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px;font-weight:500}
+.text-link:hover{text-decoration-thickness:2px}
+
+/* Antet */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header);
+  background:rgba(255,255,255,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:box-shadow .3s ease;
+}
+.site-header.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 .5rem 1.5rem -1rem rgba(0,0,0,.35)}
+.header-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;min-height:44px;text-decoration:none}
+.brand img{height:2.4rem;width:auto;max-width:9.5rem;object-fit:contain;object-position:left center}
+.brand .logo-text{font-family:var(--script);font-weight:600;font-size:1.9rem;line-height:1}
+.nav{display:none}
+.nav a{
+  text-decoration:none;font-weight:500;font-size:.875rem;letter-spacing:.02em;
+  padding:.65rem .2rem;position:relative;
+}
+.nav a::after{content:"";position:absolute;left:.2rem;right:.2rem;bottom:.35rem;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover::after{transform:scaleX(1)}
+.header-actions{display:flex;align-items:center;gap:.5rem}
+.header-actions .btn{min-height:2.75rem;padding:0 1.1rem;font-weight:600}
+.menu-btn{
+  width:2.75rem;height:2.75rem;display:grid;place-items:center;border:0;background:transparent;cursor:pointer;
+  border-radius:2px;transition:transform .1s ease;
+}
+.menu-btn:active{transform:scale(.94)}
+.menu-btn span{display:block;width:1.3rem;height:1.5px;background:var(--ink);transition:transform .35s var(--ease)}
+.menu-btn span+span{margin-top:-.85rem}
+.menu-btn .bars{display:grid;gap:.35rem}
+.menu-btn .bars span{margin:0}
+.menu-btn[aria-expanded="true"] .bars span:first-child{transform:translateY(.21rem) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .bars span:last-child{transform:translateY(-.21rem) rotate(-45deg)}
+.mobile-panel{
+  position:fixed;left:0;right:0;top:var(--header);z-index:49;
+  background:#fff;padding:1rem var(--pad) 1.75rem;
+  box-shadow:0 1.5rem 2rem -1.5rem rgba(0,0,0,.35);
+  opacity:0;transform:translateY(-.75rem);pointer-events:none;visibility:hidden;
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s .35s;
+}
+.mobile-panel.open{opacity:1;transform:none;pointer-events:auto;visibility:visible;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.mobile-panel a{display:flex;align-items:center;min-height:3.25rem;text-decoration:none;font-family:var(--script);font-size:1.9rem;border-bottom:1px solid var(--line)}
+.mobile-panel a:last-child{border-bottom:0}
+
+/* Mască foto: se dezvăluie de jos în sus */
+.mask{position:relative;overflow:hidden;background:var(--mist)}
+.mask img{width:100%;height:100%;object-fit:cover}
+.js .mask img{transform:scale(1.06);transition:transform 1.4s var(--ease)}
+.js .mask::before{
+  content:"";position:absolute;inset:0;z-index:3;background:var(--cover,#fff);
+  transform-origin:top;transform:scaleY(1);transition:transform .9s var(--ease);
+}
+.js .mask.in::before{transform:scaleY(0)}
+.js .mask.in img{transform:scale(1)}
+
+/* Prima secțiune */
+.hero{padding-top:calc(var(--header) + .5rem);padding-bottom:clamp(3.5rem,8vw,6rem)}
+.hero-grid{display:grid;position:relative}
+.hero-photo{
+  height:clamp(14rem,40svh,26rem);
+  width:calc(100% + var(--pad) * 2);margin-inline:calc(var(--pad) * -1);
+}
+.hero-photo img{object-position:50% 30%}
+.hero-photo::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(to top,#fff 0%,rgba(255,255,255,.8) 16%,rgba(255,255,255,0) 44%);
+}
+.hero-logo{position:relative;z-index:4;margin-top:calc(-1 * clamp(3.25rem,10vw,4.75rem))}
+.hero-logo img{
+  width:min(80vw,21rem);height:auto;max-height:8.5rem;
+  object-fit:contain;object-position:left bottom;
+  filter:drop-shadow(0 0 .5rem rgba(255,255,255,.85));
+}
+.hero-logo .logo-text{
+  display:block;font-family:var(--script);font-weight:600;
+  font-size:clamp(4.5rem,20vw,11rem);line-height:.85;letter-spacing:-.02em;
+  text-shadow:0 0 1.2rem rgba(255,255,255,.9);
+}
+.hero-copy{margin-top:1rem;max-width:34rem}
+.hero-slogan{font-weight:300;font-size:clamp(1.45rem,1.1rem + 1.6vw,2.4rem);line-height:1.15;letter-spacing:-.02em}
+.hero-lead{margin-top:.65rem;color:var(--muted);max-width:30rem}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.25rem}
+.hero-note{margin-top:1.1rem;display:flex;align-items:center;gap:.6rem;color:var(--muted)}
+.hero-note::before{content:"";width:1.75rem;height:1px;background:currentColor}
+
+.js .hero .hero-logo,.js .hero .hero-copy>*{opacity:0;transform:translateY(.75rem);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .hero.in .hero-logo{opacity:1;transform:none;transition-delay:.45s}
+.js .hero.in .hero-copy>*{opacity:1;transform:none}
+.js .hero.in .hero-copy>*:nth-child(1){transition-delay:.7s}
+.js .hero.in .hero-copy>*:nth-child(2){transition-delay:.8s}
+.js .hero.in .hero-copy>*:nth-child(3){transition-delay:.9s}
+.js .hero.in .hero-copy>*:nth-child(4){transition-delay:1s}
+
+/* Dezvăluiri la derulare, variate */
+.js [data-reveal="fade"]{opacity:0;transition:opacity .6s var(--ease)}
+.js [data-reveal="rise"]{opacity:0;transform:translateY(1rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js [data-reveal="side"]{opacity:0;transform:translateX(-1.25rem);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(var(--i,0) * 70ms)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* Despre */
+.about{padding-block:var(--section)}
+.about-grid{display:grid;gap:2.25rem}
+.about-text{max-width:32rem}
+.about-text .lead{margin-top:1.5rem}
+.about-text p+p{margin-top:1rem}
+.about-photo{aspect-ratio:4/5;width:86%;margin-left:auto}
+.perks{list-style:none;margin:0;padding:0}
+.perks li{padding:1.25rem 0;border-top:1px solid var(--line);display:grid;gap:.2rem}
+.perks li:last-child{border-bottom:1px solid var(--line)}
+.perks h3{font-weight:600;font-size:1rem;letter-spacing:.01em}
+.perks p{color:var(--muted)}
+
+/* Servicii */
+.services{background:var(--mist);padding-block:var(--section);--cover:var(--mist)}
+.services-grid{display:grid;gap:2.5rem}
+.services-photo{aspect-ratio:3/2;background:#e9e9e7}
+.services-head p{margin-top:1rem;max-width:30rem;color:var(--muted)}
+.service-list{list-style:none;margin:2.25rem 0 0;padding:0}
+.service-list li{
+  display:grid;gap:.15rem;padding:1.35rem 0;border-top:1px solid var(--line);
+  transition:border-color .3s ease;
+}
+.service-list li:last-child{border-bottom:1px solid var(--line)}
+.service-list li:hover{border-top-color:rgba(0,0,0,.5)}
+.service-list h3{font-family:var(--script);font-weight:500;font-size:clamp(1.9rem,1.5rem + 1.6vw,2.6rem);line-height:1.1;letter-spacing:-.01em}
+.service-list p{color:var(--muted)}
+.services-cta{margin-top:2.25rem;max-width:34rem}
+.services-cta .actions{margin-top:1rem}
+
+/* Galerie */
+.gallery{background:#000;color:#fff;padding-block:var(--section);--cover:#000}
+.gallery .mask{background:#111}
+.gallery-head{display:grid;gap:1rem;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.gallery-head p{color:rgba(255,255,255,.72);max-width:28rem}
+.gallery-grid{display:grid;gap:2rem}
+.gallery figure{margin:0}
+.g1 .mask{aspect-ratio:4/3}
+.g2{width:78%;margin-left:auto}
+.g2 .mask{aspect-ratio:4/5}
+.gallery figcaption{margin-top:.85rem;color:rgba(255,255,255,.72)}
+
+/* Contact */
+.contact{padding-block:var(--section)}
+.contact-grid{display:grid;gap:3rem}
+.contact-text .lead{margin-top:1.25rem;max-width:30rem}
+.phone{
+  display:inline-block;margin-top:1.75rem;text-decoration:none;
+  font-weight:300;font-size:clamp(2rem,1.4rem + 3vw,3.2rem);line-height:1.05;letter-spacing:-.02em;
+  border-bottom:1px solid var(--line);padding-bottom:.2rem;transition:border-color .3s ease;
+}
+.phone:hover{border-color:var(--ink)}
+.hours{margin:2.5rem 0 0;max-width:26rem}
+.hours h3{font-weight:600;font-size:1rem;margin-bottom:.5rem}
+.hours dl{margin:0}
+.hours .row{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line)}
+.hours .row:last-child{border-bottom:1px solid var(--line)}
+.hours dt,.hours dd{margin:0}
+.hours dd{font-variant-numeric:tabular-nums}
+.hours .today{font-weight:600}
+.hours .tag{display:inline-block;margin-left:.5rem;padding:.05rem .5rem;background:#000;color:#fff;font-size:.7rem;letter-spacing:.06em;border-radius:2px;vertical-align:.1em}
+.map-wrap{display:grid;gap:.9rem}
+.map{aspect-ratio:4/3;width:100%;background:var(--mist);overflow:hidden}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(1) contrast(1.05)}
+.map-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;align-items:center}
+
+/* Subsol */
+.site-footer{background:var(--mist);padding:clamp(3.5rem,8vw,5.5rem) 0 2rem}
+.footer-top{display:grid;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid var(--line)}
+.footer-logo img{height:clamp(3.25rem,9vw,4.75rem);width:auto;max-width:15rem;object-fit:contain;object-position:left center}
+.footer-logo .logo-text{font-family:var(--script);font-weight:600;font-size:3rem;line-height:1}
+.footer-cols{display:grid;gap:1.75rem}
+.footer-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:.15rem}
+.footer-cols a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none}
+.footer-cols a:hover{text-decoration:underline;text-underline-offset:.25em}
+.footer-cols h3{font-weight:600;font-size:.875rem;letter-spacing:.03em;margin-bottom:.35rem}
+.footer-bottom{padding-top:1.5rem;display:grid;gap:.4rem;color:var(--muted)}
+
+/* Tabletă */
+@media (min-width:40rem){
+  .actions .btn{min-width:11rem}
+  .perks li{grid-template-columns:12rem 1fr;align-items:baseline;gap:1rem}
+  .service-list li{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:baseline;gap:1.5rem}
+  .footer-cols{grid-template-columns:repeat(3,auto);justify-content:start;column-gap:4rem}
+  .map{aspect-ratio:16/10}
+}
+
+/* Calculator */
+@media (min-width:60rem){
+  .nav{display:flex;gap:1.75rem}
+  .menu-btn{display:none}
+  .mobile-panel{display:none}
+
+  .hero{padding-top:calc(var(--header) + 2rem)}
+  .hero-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;grid-template-rows:1fr auto}
+  .hero-photo{grid-column:6/13;grid-row:1/3;width:auto;margin:0;height:min(84svh,52rem);min-height:34rem}
+  .hero-photo::after{background:linear-gradient(to right,#fff 0%,rgba(255,255,255,.72) 14%,rgba(255,255,255,0) 40%)}
+  .hero-logo{grid-column:1/10;grid-row:1;align-self:end;margin:0;padding-bottom:2.25rem}
+  .hero-logo img{width:clamp(24rem,46vw,42rem);max-height:17rem}
+  .hero-copy{grid-column:1/6;grid-row:2;margin:0;padding-bottom:.5rem}
+
+  .about-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;row-gap:3.5rem;align-items:start}
+  .about-text{grid-column:1/6;grid-row:1}
+  .about-photo{grid-column:7/13;grid-row:1/3;width:100%;margin-top:6rem}
+  .perks{grid-column:1/7;grid-row:2;align-self:end}
+
+  .services-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;align-items:start}
+  .services-photo{grid-column:1/5;aspect-ratio:3/4;position:sticky;top:calc(var(--header) + 2rem)}
+  .services-body{grid-column:6/13}
+
+  .gallery-head{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;align-items:end}
+  .gallery-head .title{grid-column:1/7}
+  .gallery-head p{grid-column:8/12}
+  .gallery-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;align-items:start}
+  .g1{grid-column:1/8}
+  .g2{grid-column:9/13;width:auto;margin:9rem 0 0}
+
+  .contact-grid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;align-items:start}
+  .contact-text{grid-column:1/6}
+  .map-wrap{grid-column:7/13;margin-top:1rem}
+  .map{aspect-ratio:4/5}
+
+  .footer-top{grid-template-columns:auto 1fr;align-items:start;column-gap:6rem}
+  .footer-cols{justify-content:end}
+  .footer-bottom{grid-template-columns:1fr auto}
+}
+@media (max-width:22rem){
+  .header-actions .btn{padding:0 .85rem;font-size:.85rem}
+  .brand img{max-width:7.5rem}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .js .mask img{transform:none!important;transition:none}
+  .js .mask::before{transform:none!important;transition:opacity .2s ease}
+  .js .mask.in::before{opacity:0}
+  .js .hero .hero-logo,.js .hero .hero-copy>*,.js [data-reveal]{transform:none!important;transition:opacity .2s ease!important;transition-delay:0s!important}
+  .mobile-panel,.mobile-panel.open{transform:none;transition:opacity .2s ease,visibility 0s}
+  .btn:active,.menu-btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--muted:#222;--line:rgba(0,0,0,.6)}
+  .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 #000}
+  .gallery-head p,.gallery figcaption{color:#fff}
+  .btn{border-width:2px}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="site-header" id="antet">
+  <div class="wrap header-in">
+    <a class="brand" href="#sus" aria-label="Matonia, începutul paginii">
+      <img src="logo.png" alt="Matonia" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <span class="logo-text" hidden>Matonia</span>
+    </a>
+    <nav class="nav" aria-label="Navigare principală">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Program și contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-solid" href="tel:0771017478">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu-mobil" aria-label="Deschide meniul">
+        <span class="bars"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-panel" id="meniu-mobil" aria-label="Meniu">
+  <a href="#despre">Despre</a>
+  <a href="#servicii">Servicii</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#contact">Program și contact</a>
+</nav>
+
+<main id="continut">
+  <section class="hero" id="sus" aria-label="Matonia">
+    <div class="wrap hero-grid">
+      <figure class="hero-photo mask" style="margin-block:0">
+        <img src="img/5.jpg" alt="Coafeză care tunde părul unei cliente în salon" fetchpriority="high">
+      </figure>
+      <h1 class="hero-logo">
+        <img src="logo.png" alt="Matonia" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo-text" hidden>Matonia</span>
+        <span class="sr-only">, coafură și frizerie în Cotroceni, București</span>
+      </h1>
+      <div class="hero-copy">
+        <p class="hero-slogan">Tunsori și coafuri pentru toți</p>
+        <p class="hero-lead">Coafură și frizerie pentru femei, bărbați și copii, în Cotroceni, București.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="tel:0771017478">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40771017478?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20Matonia.">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.3 19z"/></svg>
+            Cere detalii pe WhatsApp
+          </a>
+        </div>
+        <p class="hero-note small">Luni – Vineri 09:00 – 21:00 · Sâmbătă 09:00 – 19:00 · Duminică 09:00 – 14:00</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <h2 class="title" id="despre-titlu" data-reveal="fade">Aproape de tine, în Cotroceni</h2>
+        <p class="lead" data-reveal="rise">Coafură și frizerie, în același loc, pentru toată familia.</p>
+        <p class="muted" data-reveal="rise">La Matonia găsești servicii simple de coafură și frizerie, potrivite pentru femei, bărbați și copii. Ne găsești în inima cartierului Cotroceni.</p>
+        <p class="muted" data-reveal="rise">Vrei un nou look sau doar o tunsoare îngrijită? Ne bucurăm să te ajutăm, oricând ai nevoie.</p>
+      </div>
+      <figure class="about-photo mask" data-reveal-mask style="margin-block:0">
+        <img src="img/3.jpg" alt="Păr pieptănat și uscat cu foehnul" loading="lazy">
+      </figure>
+      <ul class="perks" aria-label="De ce să vii la noi">
+        <li data-reveal="side" style="--i:0"><h3>Tuns rapid</h3><p>Fără timp pierdut, cu un stil modern.</p></li>
+        <li data-reveal="side" style="--i:1"><h3>Pentru toată familia</h3><p>Servicii pentru toate vârstele.</p></li>
+        <li data-reveal="side" style="--i:2"><h3>În Cotroceni</h3><p>Ne găsești în cartierul Cotroceni, București.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap services-grid">
+      <figure class="services-photo mask" data-reveal-mask style="margin-block:0">
+        <img src="img/4.jpg" alt="Foarfecă și pieptene în timpul unei tunsori" loading="lazy">
+      </figure>
+      <div class="services-body">
+        <div class="services-head">
+          <h2 class="title" id="servicii-titlu" data-reveal="fade">Servicii</h2>
+          <p data-reveal="fade">Spune-ne ce îți dorești și găsim împreună varianta potrivită pentru tine.</p>
+        </div>
+        <ul class="service-list">
+          <li data-reveal="side" style="--i:0"><h3>Tuns bărbați</h3><p>Tuns clasic sau modern pentru bărbați.</p></li>
+          <li data-reveal="side" style="--i:1"><h3>Tuns femei</h3><p>Tuns și aranjat pentru femei.</p></li>
+          <li data-reveal="side" style="--i:2"><h3>Tuns copii</h3><p>Tunsori pentru cei mici.</p></li>
+          <li data-reveal="side" style="--i:3"><h3>Coafat</h3><p>Coafuri pentru orice ocazie.</p></li>
+          <li data-reveal="side" style="--i:4"><h3>Spălat păr</h3><p>Spălat și uscat păr.</p></li>
+        </ul>
+        <div class="services-cta" data-reveal="fade">
+          <p class="muted">Pentru prețuri și o oră liberă, întreabă-ne direct. Îți răspundem cu drag.</p>
+          <div class="actions">
+            <a class="btn btn-solid" href="https://wa.me/40771017478?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20Matonia.">Cere detalii pe WhatsApp</a>
+            <a class="btn btn-line" href="tel:0771017478">Sună acum</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery on-dark" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="gallery-head">
+        <h2 class="title" id="galerie-titlu" data-reveal="fade">În salon</h2>
+        <p data-reveal="fade">Câteva imagini din lumea în care lucrăm: păr îngrijit, tunsori atente, detalii.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g1">
+          <div class="mask" data-reveal-mask><img src="img/1.jpg" alt="Coafeză lucrând cu atenție la părul unei cliente" loading="lazy"></div>
+          <figcaption class="small" data-reveal="fade">Fiecare șuviță, cu răbdare. Fotografie ilustrativă.</figcaption>
+        </figure>
+        <figure class="g2">
+          <div class="mask" data-reveal-mask><img src="img/2.jpg" alt="Frizer care tunde un client într-o frizerie" loading="lazy"></div>
+          <figcaption class="small" data-reveal="fade">Frizerie pentru bărbați. Fotografie ilustrativă.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-text">
+        <h2 class="title" id="contact-titlu" data-reveal="fade">Te așteptăm</h2>
+        <p class="lead" data-reveal="fade">În Cotroceni, București. Sună-ne sau scrie-ne pe WhatsApp ca să afli când ai loc.</p>
+        <a class="phone" href="tel:0771017478" aria-label="Sună la 0771 017 478">0771 017 478</a>
+        <div class="actions">
+          <a class="btn btn-solid" href="tel:0771017478">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40771017478?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20Matonia.">Cere detalii pe WhatsApp</a>
+        </div>
+        <div class="hours" data-reveal="rise">
+          <h3>Program</h3>
+          <dl>
+            <div class="row" data-days="1,2,3,4,5"><dt>Luni – Vineri</dt><dd>09:00 – 21:00</dd></div>
+            <div class="row" data-days="6"><dt>Sâmbătă</dt><dd>09:00 – 19:00</dd></div>
+            <div class="row" data-days="0"><dt>Duminică</dt><dd>09:00 – 14:00</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="map-wrap" data-reveal="fade">
+        <div class="map">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.064020799999998,44.434833999999995,26.0720208,44.438834&amp;layer=mapnik&amp;marker=44.436834,26.0680208" title="Harta: Matonia, Cotroceni, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="map-meta">
+          <span class="small muted">Cotroceni, București</span>
+          <a class="text-link small" href="https://www.google.com/maps/search/?api=1&amp;query=Matonia+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="footer-logo" href="#sus" aria-label="Matonia, începutul paginii">
+        <img src="logo.png" alt="Matonia" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo-text" hidden>Matonia</span>
+      </a>
+      <div class="footer-cols">
+        <div>
+          <h3>Pagina</h3>
+          <ul>
+            <li><a href="#despre">Despre</a></li>
+            <li><a href="#servicii">Servicii</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="tel:0771017478">0771 017 478</a></li>
+            <li><a href="https://wa.me/40771017478?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20Matonia.">WhatsApp</a></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Matonia+Bucure%C8%99ti" target="_blank" rel="noopener">Google Maps</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Program</h3>
+          <p class="small muted">Luni – Vineri: 09:00 – 21:00<br>Sâmbătă: 09:00 – 19:00<br>Duminică: 09:00 – 14:00</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom small">
+      <p>Matonia, coafură și frizerie în Cotroceni, București. Model de site (demo).</p>
+      <p>Fotografii ilustrative de pe Pixabay: jackmac34, mostafa_meraji, Krzysiek, xenostral</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header=document.getElementById('antet');
+  var onScroll=function(){header.classList.toggle('scrolled',window.scrollY>8)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  /* Meniu pe telefon */
+  var btn=document.querySelector('.menu-btn'),panel=document.getElementById('meniu-mobil');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded',open);
+    btn.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul');
+    panel.classList.toggle('open',open);
+  }
+  btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true')});
+  panel.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>=960)setMenu(false)});
+
+  /* Secvența de intrare */
+  var hero=document.querySelector('.hero'),heroPhoto=document.querySelector('.hero-photo');
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    heroPhoto.classList.add('in');hero.classList.add('in');
+  })});
+
+  /* Dezvăluiri la derulare */
+  var items=document.querySelectorAll('[data-reveal],[data-reveal-mask]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var el=en.target;
+          el.classList.add('in');
+          io.unobserve(el);
+        }
+      });
+    },{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }else{
+    items.forEach(function(el){el.classList.add('in')});
+  }
+  document.querySelectorAll('[data-reveal-mask]').forEach(function(el){el.classList.add('mask')});
+
+  /* Ziua de azi în program */
+  var d=new Date().getDay();
+  document.querySelectorAll('.hours .row').forEach(function(r){
+    if(r.getAttribute('data-days').split(',').indexOf(String(d))>-1){
+      r.classList.add('today');
+      var t=document.createElement('span');t.className='tag';t.textContent='azi';
+      r.querySelector('dt').appendChild(t);
+    }
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
