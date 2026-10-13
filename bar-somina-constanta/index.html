@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bar Somina — terasă-bar în Constanța</title>
+<meta name="description" content="Bar Somina, terasă-bar pe Bulevardul 1 Mai 40, Constanța. Băuturi, cocktailuri și gustări într-o atmosferă relaxată. Sună sau rezervă pe WhatsApp.">
+<meta name="theme-color" content="#151515">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1D3B2A;
+  --brown:#6B3E1E;
+  --cream:#F3E9D2;
+  --black:#151515;
+  --amber:#f59e0b;
+  --cream-soft:rgba(243,233,210,.78);
+  --cream-faint:rgba(243,233,210,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,5vw,3rem);
+  --max:72rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--black);color:var(--cream);
+  font-family:"Lora",Georgia,serif;font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Archivo Black",Impact,sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.05;margin:0}
+p{margin:0}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:0;background:var(--amber);color:var(--black);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.35rem;border-radius:.4rem;
+  font-family:"Lora",serif;font-weight:600;font-size:1rem;text-decoration:none;
+  border:2px solid transparent;cursor:pointer;
+  transition:transform .1s ease,background-color .2s ease,box-shadow .2s ease,border-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-amber{background:var(--amber);color:var(--black)}
+.btn-amber:hover{background:#fbb02c;box-shadow:0 .5rem 1.5rem rgba(245,158,11,.28)}
+.btn-line{border-color:rgba(243,233,210,.55);color:var(--cream)}
+.btn-line:hover{border-color:var(--cream);background:rgba(243,233,210,.08)}
+
+/* ---------- Nav (glass) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(21,21,21,.58);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(243,233,210,.14);
+  transition:box-shadow .3s ease,background-color .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(243,233,210,.14),0 .6rem 1.8rem rgba(0,0,0,.35)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.plaque{
+  display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .9rem;
+  background:var(--brown);border-radius:.3rem;text-decoration:none;
+  font-family:"Archivo Black",sans-serif;font-size:1.05rem;letter-spacing:.01em;color:var(--cream);
+  box-shadow:inset 0 0 0 3px var(--brown),inset 0 0 0 4.5px rgba(243,233,210,.4);
+}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .85rem;
+  text-decoration:none;font-weight:600;color:var(--cream);border-radius:.3rem;
+  transition:background-color .2s ease;
+}
+.nav-links a:hover{background:rgba(243,233,210,.1)}
+.nav .btn{min-height:2.75rem;padding:0 1rem}
+@media (min-width:860px){.nav-links{display:flex}}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(21,21,21,.45) 0%,rgba(21,21,21,.25) 30%,rgba(21,21,21,.82) 68%,#151515 100%);
+}
+.hero-content{padding-top:6rem;padding-bottom:clamp(2.5rem,7vh,5rem)}
+.hero-where{font-size:.95rem;letter-spacing:.02em;color:var(--cream-soft);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.hero-where svg{width:1rem;height:1rem;color:var(--amber);flex:none}
+.hero h1{font-size:clamp(3.6rem,18vw,9.5rem);line-height:.95;letter-spacing:-.03em}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .line span{display:block}
+.hero-slogan{font-size:clamp(1.25rem,3.6vw,1.65rem);font-weight:500;margin-top:1.1rem;max-width:30ch;line-height:1.3}
+.hero-desc{color:var(--cream-soft);margin-top:.5rem;max-width:44ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+.js .hero-img img{transform:scale(1.06);opacity:.4;transition:transform 1.6s var(--ease),opacity 1.2s ease}
+.js .hero h1 .line span{transform:translateY(105%);transition:transform .9s var(--ease)}
+.js .hero h1 .line:nth-child(2) span{transition-delay:.12s}
+.js .hero-where,.js .hero-slogan,.js .hero-desc,.js .hero-actions{opacity:0;transform:translateY(.75rem);transition:opacity .6s ease,transform .6s var(--ease)}
+.js .hero-where{transition-delay:.05s}
+.js .hero-slogan{transition-delay:.45s}
+.js .hero-desc{transition-delay:.55s}
+.js .hero-actions{transition-delay:.68s}
+.ready .hero-img img{transform:scale(1);opacity:1}
+.ready .hero h1 .line span{transform:none}
+.ready .hero-where,.ready .hero-slogan,.ready .hero-desc,.ready .hero-actions{opacity:1;transform:none}
+
+/* ---------- Sections ---------- */
+section{scroll-margin-top:4rem}
+.sec{padding:clamp(5rem,12vw,9rem) 0}
+.sec-title{font-size:clamp(2.2rem,6vw,4.2rem);max-width:16ch}
+.lead{font-size:clamp(1.08rem,2vw,1.2rem);color:var(--cream-soft);max-width:60ch;margin-top:1.25rem}
+
+/* ---------- Despre + halba ---------- */
+.about{background:var(--black)}
+.about-grid{display:grid;gap:3rem}
+.mug-wrap{display:flex;justify-content:center}
+.mug{width:min(15rem,62vw);height:auto;overflow:visible}
+.mug .foam{transform-box:fill-box;transform-origin:50% 100%;transform:translateY(28px) scaleY(.35);opacity:0;transition:transform 1.2s var(--ease),opacity .5s ease}
+.mug.full .foam{transform:none;opacity:1}
+.about-text p.lead{color:var(--cream-soft)}
+.perks{list-style:none;margin:2.75rem 0 0;padding:0;display:grid;gap:0}
+.perks li{display:grid;grid-template-columns:2.75rem 1fr;gap:1rem;align-items:start;padding:1.35rem 0;border-top:1px solid var(--cream-faint)}
+.perks li:last-child{border-bottom:1px solid var(--cream-faint)}
+.perks svg{width:2rem;height:2rem;color:var(--amber);margin-top:.1rem}
+.perks h3{font-size:1.2rem;letter-spacing:-.01em;line-height:1.2}
+.perks p{color:var(--cream-soft);margin-top:.25rem}
+.js .about-text .fade{opacity:0;transition:opacity .6s ease}
+.js .about-text .fade.in{opacity:1}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+  .mug-wrap{position:sticky;top:18vh;justify-content:flex-start}
+  .mug{width:min(20rem,100%)}
+  .about-text{padding-top:2rem}
+}
+
+/* ---------- Meniu: firme de lemn ---------- */
+.menu{background:var(--green)}
+.menu-head{display:grid;gap:1rem}
+.signs{list-style:none;margin:3.5rem 0 0;padding:0;display:grid;gap:1.5rem}
+.sign{
+  position:relative;padding:2.4rem 1.75rem 2.2rem;border-radius:.45rem;text-align:center;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.07),rgba(0,0,0,.12)),
+    repeating-linear-gradient(91deg,rgba(0,0,0,.07) 0 2px,transparent 2px 11px,rgba(255,255,255,.025) 11px 13px,transparent 13px 23px),
+    var(--brown);
+  box-shadow:0 1.1rem 2rem -1rem rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.12);
+  transform-origin:50% 0;
+  transition:box-shadow .25s ease;
+}
+.sign::before{
+  content:"";position:absolute;inset:.6rem;border:1.5px solid rgba(243,233,210,.42);border-radius:.25rem;pointer-events:none;
+}
+.sign::after{
+  content:"";position:absolute;top:1.05rem;left:1.05rem;right:1.05rem;height:.42rem;pointer-events:none;
+  background:radial-gradient(circle at .21rem .21rem,rgba(243,233,210,.55) .13rem,transparent .16rem) left/0.42rem no-repeat,
+             radial-gradient(circle at .21rem .21rem,rgba(243,233,210,.55) .13rem,transparent .16rem) right/0.42rem no-repeat;
+}
+.sign:hover{box-shadow:0 1.4rem 2.4rem -1rem rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.12)}
+.sign h3{font-size:clamp(1.9rem,5.5vw,2.5rem);text-transform:capitalize;color:var(--cream);text-shadow:0 1px 0 rgba(0,0,0,.25)}
+.sign .orn{display:block;width:6rem;height:.9rem;margin:.9rem auto 1rem;color:var(--amber)}
+.sign p{color:rgba(243,233,210,.88);max-width:28ch;margin:0 auto}
+.menu-note{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.menu-note p{color:var(--cream-soft);max-width:44ch}
+.js .sign{opacity:0;transform:rotate(-2deg) translateY(.6rem);transition:opacity .55s ease var(--d,0s),transform .6s var(--ease) var(--d,0s),box-shadow .25s ease}
+.js .sign.in{opacity:1;transform:none}
+@media (min-width:760px){.signs{grid-template-columns:repeat(3,1fr)}.menu-head{grid-template-columns:1fr 1fr;align-items:end;gap:3rem}.menu-head .lead{margin-top:0}}
+
+/* ---------- Galerie ---------- */
+.gallery{background:var(--black)}
+.gal-grid{display:grid;gap:1rem;margin-top:3rem}
+.gal-grid figure{margin:0;overflow:hidden;border-radius:.4rem;background:#222}
+.gal-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.js .gal-grid figure{opacity:0;transition:opacity .6s ease var(--d,0s)}
+.js .gal-grid figure img{transform:scale(1.07);transition:transform .9s var(--ease) var(--d,0s)}
+.js .gal-grid figure.in{opacity:1}
+.js .gal-grid figure.in img{transform:none}
+@media (min-width:760px){
+  .gal-grid{grid-template-columns:7fr 5fr;grid-template-rows:1fr 1fr;gap:1.25rem}
+  .gal-grid .g1{grid-row:1 / span 2}
+  .gal-grid .g1 img{aspect-ratio:auto;min-height:100%}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--green)}
+.contact-grid{display:grid;gap:3rem;margin-top:3rem}
+.phone-big{
+  display:inline-block;font-family:"Archivo Black",sans-serif;font-size:clamp(2rem,7vw,3.2rem);
+  letter-spacing:-.02em;line-height:1.05;text-decoration:none;color:var(--amber);
+  transition:color .2s ease;
+}
+.phone-big:hover{color:#fbbf24}
+.info{display:grid;gap:1.75rem}
+.info dl{margin:0;display:grid;gap:1.25rem}
+.info dt{font-size:.85rem;letter-spacing:.04em;color:var(--cream-soft);margin-bottom:.2rem}
+.info dd{margin:0;font-size:1.15rem;font-weight:500}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.map{border-radius:.45rem;overflow:hidden;background:#0f2419;box-shadow:0 1rem 2.5rem -1.2rem rgba(0,0,0,.6)}
+.map iframe{display:block;width:100%;aspect-ratio:4/3;border:0}
+.map a{display:flex;align-items:center;min-height:3rem;padding:.6rem 1rem;font-weight:600;text-decoration:none;color:var(--cream);background:rgba(0,0,0,.25)}
+.map a:hover{background:rgba(0,0,0,.35)}
+.js .contact .map{opacity:0;transform:translateX(1.25rem);transition:opacity .6s ease,transform .6s var(--ease)}
+.js .contact .map.in{opacity:1;transform:none}
+@media (min-width:900px){.contact-grid{grid-template-columns:5fr 7fr;gap:4rem;align-items:start}}
+
+/* ---------- Footer ---------- */
+footer{background:#0e0e0e;padding:3rem 0 calc(3rem + env(safe-area-inset-bottom))}
+footer .wrap{display:grid;gap:1.25rem}
+.foot-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
+footer small,footer p{font-size:.85rem;letter-spacing:.02em;color:rgba(243,233,210,.62);line-height:1.6}
+footer a{text-decoration:underline;text-underline-offset:.2em}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .hero-img img,.js .hero h1 .line span,.js .hero-where,.js .hero-slogan,.js .hero-desc,.js .hero-actions,
+  .js .sign,.js .gal-grid figure,.js .gal-grid figure img,.js .contact .map,.mug .foam{
+    transform:none!important;transition:opacity .2s ease!important;
+  }
+  .js .hero h1 .line span{opacity:0}
+  .ready .hero h1 .line span{opacity:1}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#151515;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--cream-soft:#F3E9D2;--cream-faint:rgba(243,233,210,.5)}
+  .nav{background:#151515;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--cream)}
+  .hero::after{background:linear-gradient(180deg,rgba(21,21,21,.6),rgba(21,21,21,.92) 55%,#151515)}
+  .btn-line{border-color:var(--cream)}
+  .sign::before{border-color:var(--cream)}
+  footer small,footer p{color:var(--cream)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="plaque" href="#top" aria-label="Bar Somina, începutul paginii">Somina</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-amber" href="tel:0726963580">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- HERO -->
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="hero-img">
+      <img src="img/3.jpg" alt="Seară la bar, cu lumini calde și oameni la povești" fetchpriority="high">
+    </div>
+    <div class="wrap hero-content">
+      <p class="hero-where">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Terasă-bar pe Bulevardul 1 Mai 40, Constanța
+      </p>
+      <h1 id="titlu"><span class="line"><span>Bar</span></span><span class="line"><span>Somina</span></span></h1>
+      <p class="hero-slogan">Relaxează-te la barul din cartier.</p>
+      <p class="hero-desc">Terasa-bar ideală pentru timpul tău liber.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="tel:0726963580">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          Sună acum
+        </a>
+        <a class="btn btn-line" href="https://wa.me/40726963580?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Bar%20Somina." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.3-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zm8.4-18.2C18.1 1.3 15.2.1 12 .1 5.5.1.2 5.4.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.7c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.4-8.3z"/></svg>
+          Scrie pe WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESPRE + HALBA -->
+  <section class="about sec" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <div class="mug-wrap" id="mugWrap" aria-hidden="true">
+        <svg class="mug" id="mug" viewBox="0 0 220 280" role="presentation">
+          <defs>
+            <clipPath id="glassIn"><rect x="34" y="40" width="122" height="200" rx="8"/></clipPath>
+            <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fbbf24"/>
+              <stop offset=".55" stop-color="#f59e0b"/>
+              <stop offset="1" stop-color="#b45309"/>
+            </linearGradient>
+          </defs>
+          <!-- lichidul -->
+          <g clip-path="url(#glassIn)">
+            <g id="liquid" transform="translate(0 180)">
+              <rect x="30" y="62" width="130" height="184" fill="url(#beer)"/>
+              <g fill="rgba(255,244,214,.55)">
+                <circle cx="58" cy="120" r="2.2"/><circle cx="66" cy="168" r="1.6"/><circle cx="52" cy="206" r="2.6"/>
+                <circle cx="104" cy="96" r="1.7"/><circle cx="112" cy="146" r="2.4"/><circle cx="98" cy="196" r="1.5"/>
+                <circle cx="138" cy="112" r="2"/><circle cx="132" cy="178" r="1.8"/><circle cx="144" cy="222" r="2.3"/>
+              </g>
+            </g>
+          </g>
+          <!-- spuma -->
+          <g class="foam">
+            <path d="M30 74 L30 54 A11 11 0 0 1 46 40 A14 14 0 0 1 72 34 A14 14 0 0 1 98 36 A15 15 0 0 1 126 33 A12 12 0 0 1 148 43 A9 9 0 0 1 160 54 L160 74 Z" fill="#F3E9D2"/>
+            <path d="M150 60 q8 0 8 10 v16 a4 4 0 0 1 -8 0 z" fill="#F3E9D2"/>
+            <g fill="rgba(107,62,30,.12)"><circle cx="60" cy="52" r="3"/><circle cx="92" cy="48" r="2.4"/><circle cx="122" cy="50" r="3.2"/></g>
+          </g>
+          <!-- sticla halbei -->
+          <rect x="28" y="34" width="134" height="212" rx="12" fill="rgba(243,233,210,.05)" stroke="#F3E9D2" stroke-width="4"/>
+          <g stroke="rgba(243,233,210,.14)" stroke-width="7" stroke-linecap="round">
+            <line x1="62" y1="64" x2="62" y2="222"/><line x1="95" y1="64" x2="95" y2="222"/><line x1="128" y1="64" x2="128" y2="222"/>
+          </g>
+          <rect x="30" y="230" width="130" height="14" rx="4" fill="rgba(243,233,210,.16)"/>
+          <path d="M40 52 v60" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M162 78 h16 a28 28 0 0 1 28 28 v72 a28 28 0 0 1 -28 28 h-16" fill="none" stroke="#F3E9D2" stroke-width="4"/>
+          <path d="M162 98 h14 a12 12 0 0 1 12 12 v64 a12 12 0 0 1 -12 12 h-14" fill="none" stroke="#F3E9D2" stroke-width="4"/>
+        </svg>
+      </div>
+
+      <div class="about-text">
+        <h2 class="sec-title fade" id="despre-titlu">O pauză bună, cu prietenii aproape</h2>
+        <p class="lead fade">La Bar Somina te așteaptă o atmosferă relaxată și prietenoasă. Iei loc pe terasă,
+          comanzi o băutură, un cocktail sau ceva de gustat și lași ziua în urmă. E locul potrivit
+          pentru o seară liniștită sau pentru o întâlnire cu toată gașca.</p>
+        <ul class="perks">
+          <li class="fade">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 29V17"/><path d="M16 21l-4-3M16 19l4-3"/><path d="M9 20a6 6 0 0 1-1-11 8 8 0 0 1 16 0 6 6 0 0 1-1 11z"/></svg>
+            <div><h3>Terasă spațioasă</h3><p>Locuri în aer liber, pentru serile în care vrei să stai afară.</p></div>
+          </li>
+          <li class="fade">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="10" r="4"/><circle cx="22" cy="11" r="3.5"/><path d="M3 27v-2a7 7 0 0 1 14 0v2"/><path d="M19 19.5a6 6 0 0 1 10 4.5v3"/></svg>
+            <div><h3>Atmosferă prietenoasă</h3><p>Ideal pentru ieșiri cu prietenii, fără grabă.</p></div>
+          </li>
+          <li class="fade">
+            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 5h18l-9 11z"/><path d="M16 16v10"/><path d="M11 27h10"/><path d="M21 3l3 4"/></svg>
+            <div><h3>Meniu variat</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p><p>Băuturi și gustări pentru toate gusturile de la masă.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENIU -->
+  <section class="menu sec" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <div class="menu-head">
+        <h2 class="sec-title" id="meniu-titlu">Meniu</h2>
+        <p class="lead">Trei motive bune să tragi un scaun la masă. Ce avem în fiecare zi îți spunem la bar.</p>
+      </div>
+      <ul class="signs">
+        <li class="sign" style="--d:0s">
+          <h3>Băuturi</h3>
+          <svg class="orn" viewBox="0 0 96 14" aria-hidden="true"><path d="M2 7h36M58 7h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M48 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+          <p>Bere rece, vin sau o răcoritoare, după cum ți-e pofta în seara asta.</p>
+        </li>
+        <li class="sign" style="--d:.12s">
+          <h3>Cocktailuri</h3>
+          <svg class="orn" viewBox="0 0 96 14" aria-hidden="true"><path d="M2 7h36M58 7h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M48 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+          <p>Pentru serile în care vrei ceva mai special în pahar.</p>
+        </li>
+        <li class="sign" style="--d:.24s">
+          <h3>Gustări</h3>
+          <svg class="orn" viewBox="0 0 96 14" aria-hidden="true"><path d="M2 7h36M58 7h36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M48 1l6 6-6 6-6-6z" fill="currentColor"/></svg>
+          <p>Ceva bun lângă băutură, cât stai la povești cu prietenii.</p>
+        </li>
+      </ul>
+      <div class="menu-note">
+        <p>Vrei să știi ce avem azi sau să ții o masă pentru diseară? Scrie-ne și îți răspundem.</p>
+        <a class="btn btn-amber" href="https://wa.me/40726963580?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Bar%20Somina." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="gallery sec" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 class="sec-title" id="galerie-titlu">Seara la bar</h2>
+      <p class="lead">Lumini calde, pahare pline și timp pentru tine.</p>
+      <div class="gal-grid">
+        <figure class="g1" style="--d:0s"><img src="img/1.jpg" alt="Sticlă și pahar de vin pe o masă de lemn, în aer liber" loading="lazy"></figure>
+        <figure class="g2" style="--d:.1s"><img src="img/2.jpg" alt="Rafturi cu sticle de băuturi în spatele barului" loading="lazy"></figure>
+        <figure class="g3" style="--d:.2s"><img src="img/4.jpg" alt="Halbă de bere rece, cu spumă" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact sec" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap">
+      <h2 class="sec-title" id="contact-titlu">Te așteptăm la o masă</h2>
+      <div class="contact-grid">
+        <div class="info">
+          <a class="phone-big" href="tel:0726963580" aria-label="Sună la 0726 963 580">0726 963 580</a>
+          <dl>
+            <div><dt>Adresă</dt><dd>Bulevardul 1 Mai 40, Constanța</dd></div>
+          </dl>
+          <div class="contact-actions">
+            <a class="btn btn-amber" href="tel:0726963580">Sună acum</a>
+            <a class="btn btn-line" href="https://wa.me/40726963580?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Bar%20Somina." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          </div>
+        </div>
+        <div class="map">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6282084,44.161223799999995,28.6362084,44.1652238&amp;layer=mapnik&amp;marker=44.1632238,28.6322084" title="Hartă: Bar Somina, Bulevardul 1 Mai 40, Constanța" loading="lazy"></iframe>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Bar+Somina+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide traseul în Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <span class="plaque" aria-hidden="true">Somina</span>
+      <p>Bar Somina, Bulevardul 1 Mai 40, Constanța · <a href="tel:0726963580">0726 963 580</a></p>
+    </div>
+    <small>Model de site (demo). Fotografii ilustrative de pe Pixabay: tianya1223, DuyNod, StockSnap, Alexas_Fotos.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Intrarea din prima secțiune
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ document.body.classList.add('ready'); }); });
+
+  // Umbra meniului la derulare
+  var nav = document.getElementById('nav');
+  function navShadow(){ nav.classList.toggle('scrolled', window.scrollY > 10); }
+
+  // Dezvăluiri
+  var items = document.querySelectorAll('.about-text .fade, .sign, .gal-grid figure, .contact .map');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:.15});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Halba care se umple
+  var liquid = document.getElementById('liquid');
+  var mug = document.getElementById('mug');
+  var mugWrap = document.getElementById('mugWrap');
+  var sec = document.getElementById('despre');
+  var desk = window.matchMedia('(min-width: 900px)');
+  var full = false, ticking = false;
+
+  function setLevel(p){
+    liquid.setAttribute('transform', 'translate(0 ' + (180 * (1 - p)).toFixed(1) + ')');
+    if (p >= 0.985 && !full){ full = true; mug.classList.add('full'); }
+  }
+  function update(){
+    ticking = false;
+    navShadow();
+    if (reduce){ return; }
+    var vh = window.innerHeight, p, r;
+    if (desk.matches){
+      r = sec.getBoundingClientRect();
+      p = (vh * 0.8 - r.top) / (r.height * 0.6);
+    } else {
+      r = mugWrap.getBoundingClientRect();
+      p = (vh - r.top) / (vh * 0.7);
+    }
+    p = Math.min(1, Math.max(0, p));
+    if (full) p = Math.max(p, 0); // spuma rămâne, lichidul urmează derularea
+    setLevel(p);
+  }
+  function onScroll(){ if (!ticking){ ticking = true; requestAnimationFrame(update); } }
+
+  if (reduce){ setLevel(1); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
