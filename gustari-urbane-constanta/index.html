@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFD23F">
+  <meta name="description" content="Gustări Urbane, Constanța. Preparate calde, gustări și băuturi pentru pauza ta. Întreabă pe WhatsApp despre meniu.">
+  <title>Gustări Urbane — O pauză cu poftă, în Constanța</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #FFD23F;
+      --ink: #111111;
+      --red: #be123c;
+      --white: #fff;
+      --muted: #585858;
+      --font-heading: "Anton", sans-serif;
+      --font-body: "Rubik", sans-serif;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: var(--font-body); line-height: 1.55; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    a { color: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-weight: 400; }
+    h1, h2 { font-family: var(--font-heading); letter-spacing: -.02em; line-height: 1.08; }
+    h2 { font-size: clamp(2.5rem, 5.4vw, 4.5rem); }
+    p { max-width: 60ch; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--red); outline-offset: 5px; }
+    .wrap { width: min(100% - 2.5rem, 76rem); margin-inline: auto; }
+    .skip { position: fixed; top: -5rem; left: 1rem; z-index: 100; padding: .8rem; background: white; }
+    .skip:focus { top: 1rem; }
+    .site-header { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.91); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 1px solid rgba(255,255,255,.8); transition: box-shadow .2s; }
+    .site-header.scrolled { box-shadow: 0 5px 20px #1111110c; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; min-height: 5rem; }
+    .brand { text-decoration: none; font-family: var(--font-heading); font-size: 1.45rem; line-height: 1; letter-spacing: -.025em; }
+    .brand span { display: block; margin-top: .4rem; font: 400 .68rem var(--font-body); letter-spacing: .04em; }
+    .nav { display: flex; gap: 2rem; align-items: center; }
+    .nav a { text-decoration: none; font-size: .88rem; font-weight: 500; padding-block: .6rem; }
+    .nav a:hover { color: var(--red); }
+    .header-actions { display: flex; align-items: center; gap: .65rem; }
+    .button { display: inline-flex; min-height: 3rem; justify-content: center; align-items: center; gap: .65rem; padding: .85rem 1.25rem; background: var(--ink); color: white; border: 2px solid var(--ink); border-radius: .3rem; text-decoration: none; font-weight: 600; font-size: .9rem; cursor: pointer; transition: transform .1s, background .2s, box-shadow .2s; }
+    .button:hover { background: #303030; box-shadow: 0 4px 0 #11111120; }
+    .button:active { transform: scale(.97); }
+    .button.red { background: var(--red); border-color: var(--red); }
+    .button.red:hover { background: #a10e32; }
+    .button.outline { background: transparent; color: var(--ink); }
+    .button.outline:hover { background: #11111108; }
+    .button svg { width: 1rem; height: 1rem; flex-shrink: 0; }
+    .menu-toggle { display: none; min-width: 2.75rem; min-height: 2.75rem; background: transparent; border: 0; cursor: pointer; }
+    .menu-toggle span { display: block; height: 2px; width: 1.25rem; margin: 5px auto; background: var(--ink); transition: transform .2s; }
+    .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+    .hero { background: var(--yellow); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem; padding-block: 4.5rem 3.5rem; }
+    .hero-copy { position: relative; z-index: 2; animation: hero-copy .65s var(--ease) both; }
+    .hero h1 { font-size: clamp(4rem, 7.9vw, 7.6rem); text-transform: uppercase; }
+    .hero-copy > p { margin-top: 1.5rem; font-size: 1.08rem; max-width: 29ch; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .hero-foot { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.3rem; border-top: 2px solid #111111; font-size: .78rem; font-weight: 500; }
+    .sticker-scene { position: relative; height: 32rem; isolation: isolate; }
+    .food-sticker { position: absolute; border: .55rem solid white; box-shadow: 0 .6rem 0 #111111, 0 1rem 1.8rem #11111113; overflow: hidden; background: white; }
+    .food-sticker img { height: 100%; }
+    .sticker-sweet { width: 67%; height: 60%; left: 2%; top: 2%; border-radius: 48% 48% 42% 45%; transform: rotate(-9deg); animation: sticker-one .85s var(--ease) .12s both; }
+    .sticker-snack { width: 58%; height: 45%; right: -1%; bottom: 8%; border-radius: 46% 42% 48% 38%; transform: rotate(8deg); animation: sticker-two .85s var(--ease) .24s both; }
+    .sticker-fries { width: 37%; height: 36%; left: 1%; bottom: 1%; border-radius: 50%; transform: rotate(-7deg); animation: sticker-three .85s var(--ease) .36s both; }
+    .scene-label { position: absolute; z-index: 3; right: 1%; top: 8%; padding: .7rem 1rem; background: var(--red); color: white; font-family: var(--font-heading); font-size: 1.6rem; line-height: 1.1; transform: rotate(7deg); animation: label-in .6s var(--ease) .5s both; }
+    .bubble { position: absolute; z-index: -1; border: 2px solid var(--ink); border-radius: 50%; animation: bubble-in .75s var(--ease) .45s both; }
+    .bubble.one { width: 2rem; height: 2rem; top: 0; right: 25%; }
+    .bubble.two { width: 1rem; height: 1rem; bottom: 3%; right: 5%; }
+    .bubble.three { width: 3rem; height: 3rem; top: 46%; left: -2%; background: white; border: 0; }
+    section:not(.hero) { padding-block: 6rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .about-copy { padding-top: .35rem; }
+    .about-copy p { font-size: 1.08rem; }
+    .about-copy p + p { margin-top: 1.25rem; color: var(--muted); font-size: 1rem; }
+    .about-sign { margin-top: 2rem; display: inline-flex; align-items: center; gap: .6rem; font-weight: 500; font-size: .85rem; }
+    .about-sign svg { width: 1.2rem; height: 1.2rem; color: var(--red); }
+    .menu-section { background: #f5f5f3; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; margin-bottom: 3rem; }
+    .section-head p { max-width: 32ch; color: var(--muted); font-size: .95rem; }
+    .menu-row { display: grid; grid-template-columns: .65fr 1fr; gap: 2rem; padding-block: 1.6rem; border-top: 1px solid #1111112b; align-items: center; }
+    .menu-row:last-of-type { border-bottom: 1px solid #1111112b; }
+    .menu-row h3 { font-family: var(--font-heading); font-size: clamp(1.9rem, 3.2vw, 2.8rem); letter-spacing: -.015em; }
+    .menu-row p { color: var(--muted); font-size: .97rem; max-width: 43ch; }
+    .menu-bottom { display: flex; justify-content: space-between; align-items: center; gap: 2rem; margin-top: 2rem; }
+    .menu-bottom p { font-size: .78rem; color: var(--muted); max-width: 48ch; }
+    .gallery-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 1.2rem; }
+    figure { margin: 0; }
+    .gallery-grid img { aspect-ratio: 4 / 5; }
+    .gallery-grid figure:first-child img { aspect-ratio: 5.2 / 5; }
+    figcaption { font-size: .8rem; padding-top: .8rem; color: var(--muted); }
+    .gallery-note { font-size: .75rem; margin-top: 1.6rem; color: var(--muted); }
+    .contact-section { background: var(--yellow); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 5rem; align-items: start; }
+    .contact-copy > p { margin-top: 1.4rem; max-width: 34ch; }
+    .phone { display: inline-block; margin-block: 1.8rem; font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); text-decoration-thickness: 2px; text-underline-offset: .3rem; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+    .map-frame { background: #e5e5e5; height: 23rem; }
+    iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .map-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1rem; font-size: .85rem; }
+    .map-bottom a { font-weight: 600; min-height: 2.75rem; display: inline-flex; align-items: center; text-underline-offset: .25rem; }
+    footer { background: var(--ink); color: white; padding-block: 2.5rem; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .footer-brand { font-family: var(--font-heading); font-size: 1.6rem; }
+    .footer-top p { font-size: .78rem; color: #d4d4d4; }
+    .credits { margin-top: 1.5rem; max-width: 85ch; font-size: .68rem; color: #b9b9b9; letter-spacing: .015em; }
+    .js .reveal { opacity: 0; transition: opacity .55s var(--ease); }
+    .js .reveal.visible { opacity: 1; }
+    @keyframes hero-copy { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes sticker-one { from { opacity: 0; transform: translateY(2rem) rotate(-15deg) scale(.94); } to { opacity: 1; transform: rotate(-9deg); } }
+    @keyframes sticker-two { from { opacity: 0; transform: translateY(2rem) rotate(14deg) scale(.94); } to { opacity: 1; transform: rotate(8deg); } }
+    @keyframes sticker-three { from { opacity: 0; transform: translateY(2rem) rotate(-13deg) scale(.94); } to { opacity: 1; transform: rotate(-7deg); } }
+    @keyframes label-in { from { opacity: 0; transform: rotate(7deg) scale(.8); } to { opacity: 1; transform: rotate(7deg) scale(1); } }
+    @keyframes bubble-in { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+    @media (min-width: 1500px) { .hero-grid { padding-block: 6rem 4rem; } }
+    @media (max-width: 900px) {
+      .nav { gap: 1.2rem; }
+      .hero-grid { gap: 1rem; }
+      .sticker-scene { height: 26rem; }
+      .about-grid, .contact-grid { gap: 2.5rem; }
+      .scene-label { font-size: 1.25rem; }
+      section:not(.hero) { padding-block: 4.5rem; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 5rem; }
+      .wrap { width: calc(100% - 2.25rem); }
+      .header-inner { min-height: 4.65rem; gap: .5rem; }
+      .brand { font-size: 1.17rem; }
+      .brand span { font-size: .62rem; margin-top: .3rem; }
+      .header-actions { gap: .25rem; }
+      .header-actions .button { min-height: 2.75rem; padding: .55rem .7rem; font-size: .75rem; }
+      .header-actions .button svg { display: none; }
+      .menu-toggle { display: block; }
+      .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; padding: 1rem 1.125rem 1.4rem; background: white; box-shadow: 0 10px 15px #1111110c; gap: 0; }
+      .nav.open { display: flex; flex-direction: column; align-items: stretch; }
+      .nav a { padding: .75rem; }
+      .hero-grid { grid-template-columns: 1fr; padding-block: 2.5rem 1.5rem; gap: 1.5rem; }
+      .hero h1 { font-size: clamp(3.8rem, 17vw, 6.5rem); }
+      .hero-copy > p { margin-top: 1.2rem; font-size: 1rem; max-width: 28ch; }
+      .hero-actions { margin-top: 1.4rem; gap: .6rem; }
+      .hero-actions .button { font-size: .82rem; padding: .8rem 1rem; }
+      .sticker-scene { height: 23rem; width: min(100%, 26rem); margin-inline: auto; }
+      .scene-label { top: 7%; right: 1%; font-size: 1.35rem; }
+      .food-sticker { border-width: .4rem; box-shadow: 0 .4rem 0 #111111, 0 .7rem 1rem #11111110; }
+      .hero-foot { font-size: .69rem; padding-block: 1rem; gap: .75rem; }
+      .hero-foot span:last-child { text-align: right; }
+      section:not(.hero) { padding-block: 3.75rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-copy p { font-size: 1rem; }
+      .section-head { display: block; margin-bottom: 2rem; }
+      .section-head p { margin-top: 1.2rem; max-width: 38ch; }
+      .menu-row { grid-template-columns: 1fr; gap: .6rem; padding-block: 1.5rem; }
+      .menu-row p { font-size: .9rem; }
+      .menu-bottom { align-items: flex-start; flex-direction: column-reverse; gap: 1rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem .85rem; }
+      .gallery-grid figure:first-child { grid-column: 1 / -1; }
+      .gallery-grid figure:first-child img { aspect-ratio: 4 / 3; }
+      .gallery-grid img { aspect-ratio: 4 / 5; }
+      .map-frame { height: 20rem; }
+      .map-bottom { font-size: .78rem; }
+      .footer-top { flex-direction: column; align-items: flex-start; gap: .8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition-duration: .15s !important; }
+      .js .reveal { transition: opacity .2s !important; }
+      .button:active { transform: none; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .site-header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    }
+    @media (prefers-contrast: more) {
+      :root { --muted: #222; }
+      .site-header { background: white; backdrop-filter: none; }
+      .button { border: 2px solid currentColor; }
+      .menu-row { border-color: var(--ink); }
+      .credits, .footer-top p { color: white; }
+    }
+  </style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#acasa" aria-label="Gustări Urbane, prima secțiune">Gustări Urbane<span>Constanța</span></a>
+      <nav class="nav" id="navigare" aria-label="Navigare principală">
+        <a href="#despre">Despre</a>
+        <a href="#meniu">Meniu</a>
+        <a href="#galerie">În imagini</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button red" href="tel:0759975390">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C9 21 3 15 3 5a2 2 0 0 1 2-2Z"/></svg>
+          Sună acum
+        </a>
+        <button class="menu-toggle" aria-label="Deschide meniul de navigare" aria-controls="navigare" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="continut">
+    <section class="hero" id="acasa" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <h1 id="hero-title">Poftă de<br>o pauză?</h1>
+            <p>Preparate calde, gustări și băuturi pentru orice poftă.</p>
+            <div class="hero-actions">
+              <a class="button" href="#meniu">Vezi meniul</a>
+              <a class="button outline" href="https://wa.me/40759975390?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniu." target="_blank" rel="noopener noreferrer">Întreabă pe WhatsApp</a>
+            </div>
+          </div>
+          <div class="sticker-scene" aria-label="Colaj de fotografii ilustrative cu gustări">
+            <span class="bubble one" aria-hidden="true"></span>
+            <span class="bubble two" aria-hidden="true"></span>
+            <span class="bubble three" aria-hidden="true"></span>
+            <div class="food-sticker sticker-sweet"><img src="img/1.jpg" alt="Clătită cu banană și ciocolată, fotografie ilustrativă" fetchpriority="high"></div>
+            <div class="food-sticker sticker-snack"><img src="img/3.jpg" alt="Hot dog, fotografie ilustrativă"></div>
+            <div class="food-sticker sticker-fries"><img src="img/4.jpg" alt="Bol cu cartofi prăjiți, fotografie ilustrativă"></div>
+            <span class="scene-label" aria-hidden="true">PAUZĂ<br>CU POFTĂ!</span>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <span>Gustări rapide, oricând în oraș.</span>
+          <span>Imagini pentru inspirație.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="despre" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <h2 class="reveal" id="about-title">Orașul are ritmul lui.<br>Tu ai pauza ta.</h2>
+        <div class="about-copy reveal">
+          <p>Între două drumuri sau când apare pofta, o gustare poate fi exact pauza de care ai nevoie.</p>
+          <p>La Gustări Urbane, conversația începe simplu: ceva cald, o gustare sau o băutură? Scrie-ne și află ce poți alege din meniu.</p>
+          <div class="about-sign">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Ne găsești în Constanța
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="meniu" aria-labelledby="menu-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="menu-title">Ce fel de poftă ai?</h2>
+          <p>De aici începe alegerea. Pentru preparatele disponibile și prețuri, întreabă-ne direct.</p>
+        </div>
+        <div class="menu-list">
+          <article class="menu-row reveal">
+            <h3>Preparate calde</h3>
+            <p>Pentru pauza în care vrei ceva cald și sățios.</p>
+          </article>
+          <article class="menu-row reveal">
+            <h3>Gustări</h3>
+            <p>Pentru o poftă mică între drumurile prin oraș.</p>
+          </article>
+          <article class="menu-row reveal">
+            <h3>Băuturi</h3>
+            <p>Ceva de băut lângă gustarea pe care o alegi.</p>
+          </article>
+        </div>
+        <div class="menu-bottom">
+          <p>Categoriile sunt orientative. Fotografiile nu reprezintă un meniu confirmat.</p>
+          <a class="button red" href="https://wa.me/40759975390?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniu." target="_blank" rel="noopener noreferrer">Întreabă pe WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="galerie" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="gallery-title">Puțină inspirație.<br>Multă poftă.</h2>
+          <p>Dulce sau sărat? Câteva imagini din lumea gustărilor.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="reveal">
+            <img src="img/2.jpg" alt="Clătite servite pe o farfurie" loading="lazy" decoding="async">
+            <figcaption>O pauză dulce</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="img/5.jpg" alt="Pizza fotografiată de aproape" loading="lazy" decoding="async">
+            <figcaption>Poftă de ceva sărat</figcaption>
+          </figure>
+          <figure class="reveal">
+            <img src="img/1.jpg" alt="Detaliu de clătită cu banană și ciocolată" loading="lazy" decoding="async">
+            <figcaption>Ceva pentru răsfăț</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-note">Fotografii de stoc, ilustrative. Întreabă-ne ce preparate sunt disponibile.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy reveal">
+          <h2 id="contact-title">Hai să vorbim<br>despre meniu.</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+          <p>Sună sau scrie-ne pe WhatsApp pentru detalii despre meniu.</p>
+          <a class="phone" href="tel:0759975390">0759 975 390</a>
+          <div class="contact-actions">
+            <a class="button" href="tel:0759975390">Sună acum</a>
+            <a class="button outline" href="https://wa.me/40759975390?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniu." target="_blank" rel="noopener noreferrer">Întreabă pe WhatsApp</a>
+          </div>
+        </div>
+        <div class="map-area reveal">
+          <div class="map-frame">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6521065,44.1733713,28.6601065,44.177371300000004&layer=mapnik&marker=44.1753713,28.6561065" title="Hartă pentru Gustări Urbane, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="map-bottom">
+            <span>Gustări Urbane, Constanța</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Gust%C4%83ri+Urbane+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">Gustări Urbane</div>
+        <p>Constanța — Model de site (demo)</p>
+      </div>
+      <p class="credits">Fotografii ilustrative de pe Pixabay: drawsandcooks, RitaE, fernandovillalobos, Pexels, Daria-Yakovleva</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const header = document.querySelector('.site-header');
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Deschide meniul de navigare');
+        nav.classList.remove('open');
+      }
+
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Închide meniul de navigare' : 'Deschide meniul de navigare');
+        nav.classList.toggle('open', open);
+      });
+      nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!header.contains(event.target)) closeMenu();
+      });
+      window.matchMedia('(min-width: 681px)').addEventListener('change', closeMenu);
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      if ('IntersectionObserver' in window) {
+        document.documentElement.classList.add('js');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08 });
+        document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+      }
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
