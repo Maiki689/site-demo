@@ -246,7 +246,7 @@ h1 em{font-style:normal;color:var(--red)}
 .spec-list li{display:grid;grid-template-columns:2.4rem 1fr;gap:1rem;align-items:start;background:var(--frame);padding:1rem 1.1rem;box-shadow:0 0 0 1px rgba(20,20,20,.08)}
 .spec-list li b{display:block;font:600 1.02rem/1.3 "Inter Tight",sans-serif;margin-bottom:.15rem}
 .spec-list li span{color:var(--muted);font-size:.92rem}
-.spec-ico{width:2.4rem;height:2.4rem;display:grid;place-items:center;background:#fff1f4;color:var(--red);font-weight:700}
+.spec-ico{width:2.4rem;height:2.4rem;font-size:.78rem;display:grid;place-items:center;background:#fff1f4;color:var(--red);font-weight:700}
 .shop-card{position:relative;background:var(--frame);box-shadow:0 0 0 1px rgba(20,20,20,.08),0 1.5rem 2.5rem -1.5rem rgba(0,0,0,.25);display:flex;flex-direction:column;transition:box-shadow .3s var(--ease)}
 .shop-card:hover{box-shadow:0 0 0 1px rgba(20,20,20,.12),0 2rem 3rem -1.25rem rgba(0,0,0,.3)}
 .shop-thumb{padding:2.2rem 32% 1.6rem;background:linear-gradient(#f3efe9,#e6e0d6);position:relative}
@@ -359,6 +359,21 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
   .todo,.notice{border-style:solid;border-width:2px}
 }
 </style>
+<style id="catalog">
+.filtre{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.filtru{border:1px solid var(--line);background:#fff;padding:.6rem 1rem;min-height:2.75rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.filtru:hover{border-color:#8a847c}
+.filtru.activ{background:var(--ink);color:#fff;border-color:var(--ink)}
+.model[hidden]{display:none}
+.model-oferta{font-size:.85rem;padding-block:.5rem;color:var(--red)}
+.pasi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.pasi li{background:var(--frame);padding:1.6rem 1.5rem;box-shadow:0 0 0 1px rgba(20,20,20,.08),0 1.5rem 2.5rem -1.5rem rgba(0,0,0,.25)}
+.pasi h3{margin:.9rem 0 .4rem}.pasi p{color:var(--muted);font-size:.95rem}
+.pas-nr{display:grid;place-items:center;width:2.6rem;height:2.6rem;background:var(--red);color:#fff;font:600 1.1rem/1 "Inter Tight",sans-serif}
+@media (min-width:1001px){.models-grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:650px){.pasi{grid-template-columns:1fr}.models-grid{grid-template-columns:1fr 1fr;gap:.9rem}}
+@media (max-width:420px){.models-grid{grid-template-columns:1fr 1fr}}
+</style>
 <style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
 </head>
 <body>
@@ -422,7 +437,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
             <a class="button button-outline" href="tel:0759333888">Sună acum</a>
           </div>
           <div class="hero-notes entry entry-4">
-            <span class="small">Interior · Exterior · Accesorii</span>
+            <span class="small">Uși pline MDF · Interior · Exterior · Accesorii</span>
             <span class="small">Montaj inclus</span>
           </div>
         </div>
@@ -482,7 +497,7 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
           <div>
             <span class="eyebrow reveal">Pe stoc în showroom</span>
             <h2 class="words" id="models-title">Modelele noastre.</h2>
-            <p class="lead reveal" style="margin-top:1.25rem">Fotografiate chiar la noi, în showroom-ul din Constanța. Le găsiți pe stoc, în mai multe dimensiuni.</p>
+            <p class="lead reveal" style="margin-top:1.25rem">Fotografiate chiar la noi, în showroom-ul din Constanța. Toate sunt pe stoc, în mai multe dimensiuni. Alege o culoare sau un stil:</p>
           </div>
           <figure class="frame reveal">
             <div class="art lineup-art" role="img" aria-label="Trei uși expuse alăturat — albă cu panouri, din stejar cu geam și metalică">
@@ -495,26 +510,123 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
             <figcaption class="frame-caption"><span>Caracter, chiar de la intrare.</span></figcaption>
           </figure>
         </div>
+        <!--catalog-->
+        <div class="filtre reveal" role="group" aria-label="Filtrează modelele"><button type="button" class="filtru activ" data-filtru="toate" aria-pressed="true">Toate</button><button type="button" class="filtru" data-filtru="alb" aria-pressed="false">Albe</button><button type="button" class="filtru" data-filtru="gri" aria-pressed="false">Gri & bej</button><button type="button" class="filtru" data-filtru="lemn" aria-pressed="false">Aspect lemn</button><button type="button" class="filtru" data-filtru="geam" aria-pressed="false">Cu geam</button></div>
         <div class="models-grid stagger">
-          <article class="model">
-            <figure class="frame model-photo"><img src="img/usa-luxury-white.jpg" alt="Ușa de interior Luxury White: albă, cu două panouri clasice în relief și mâner inox" loading="lazy" width="900" height="1600"></figure>
+          <article class="model" data-cat="alb">
+            <figure class="frame model-photo"><img src="img/usa-luxury-white.jpg" alt="Ușa de interior Luxury White: albă, cu două panouri clasice în relief și mâner inox" loading="lazy" width="720" height="1280"></figure>
             <span class="model-tag">Pe stoc · interior</span>
             <h3>Luxury White</h3>
-            <p>Albă, cu două panouri clasice în relief. Eleganță care merge în orice casă.</p>
+            <p>Albă, cu două panouri clasice în relief.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Luxury%20White." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
           </article>
-          <article class="model">
-            <figure class="frame model-photo"><img src="img/usa-neo-soft-bej.jpg" alt="Ușa de interior Neo Soft Bej: bej cald, cu un panou înalt în relief și mâner auriu" loading="lazy" width="900" height="1600"></figure>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-neo-soft-bej.jpg" alt="Ușa de interior Neo Soft Bej: bej cald, cu un panou înalt în relief și mâner auriu" loading="lazy" width="720" height="1280"></figure>
             <span class="model-tag">Pe stoc · interior</span>
             <h3>Neo Soft Bej</h3>
-            <p>Bej cald, un singur panou înalt și mâner auriu. Pentru interioare calde, moderne.</p>
+            <p>Bej cald, un panou înalt, mâner auriu.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Neo%20Soft%20Bej." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
           </article>
-          <article class="model">
-            <figure class="frame model-photo"><img src="img/usa-vda-80.jpg" alt="Ușa de interior VDA 80: albă, cu linii orizontale fine și mâner cromat" loading="lazy" width="900" height="1600"></figure>
+          <article class="model" data-cat="alb">
+            <figure class="frame model-photo"><img src="img/usa-vda-80.jpg" alt="Ușa de interior VDA 80: albă, cu linii orizontale fine și mâner cromat" loading="lazy" width="720" height="1280"></figure>
             <span class="model-tag">Pe stoc · interior</span>
             <h3>VDA 80</h3>
-            <p>Albă, cu linii orizontale fine. Simplă, modernă, luminoasă.</p>
+            <p>Albă, cu linii orizontale fine.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20VDA%2080." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-style-neo-bej.jpg" alt="Ușa de interior Style Neo Bej: bej deschis, cu un panou înalt și unul mic jos, mâner inox" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Style Neo Bej</h3>
+            <p>Bej deschis, panou înalt și panou mic jos.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Style%20Neo%20Bej." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="alb">
+            <figure class="frame model-photo"><img src="img/usa-vda-06.jpg" alt="Ușa de interior VDA 06: albă, cu trei panouri în relief și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>VDA 06</h3>
+            <p>Albă, cu trei panouri în relief, mâner negru.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20VDA%2006." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-h2-haky-grey.jpg" alt="Ușa de interior H2 Haky Grey: gri kaki deschis, cu linii orizontale asimetrice și mâner inox" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>H2 Haky Grey</h3>
+            <p>Gri kaki deschis, cu linii orizontale asimetrice.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20H2%20Haky%20Grey." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="alb">
+            <figure class="frame model-photo"><img src="img/usa-neo-white.jpg" alt="Ușa de interior Neo White: albă, cu un panou înalt fin și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Neo White</h3>
+            <p>Albă, cu un panou înalt fin, mâner negru.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Neo%20White." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-vda-100.jpg" alt="Ușa de interior VDA 100: gri deschis, cu linii curbe și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>VDA 100</h3>
+            <p>Gri deschis, cu linii curbe.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20VDA%20100." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="alb">
+            <figure class="frame model-photo"><img src="img/usa-d1-white.jpg" alt="Ușa de interior D1 White: albă, cu linii decorative în formă de L și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>D1 White</h3>
+            <p>Albă, cu linii decorative, mâner negru.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20D1%20White." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="geam">
+            <figure class="frame model-photo"><img src="img/usa-natural-white-geam.jpg" alt="Ușa de interior Natural White Geam: albă, cu o fâșie verticală de sticlă mată și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Natural White Geam</h3>
+            <p>Albă, cu fâșie de sticlă mată: lasă lumina să treacă.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Natural%20White%20Geam." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="lemn">
+            <figure class="frame model-photo"><img src="img/usa-lara.jpg" alt="Ușa de interior Lara: cu aspect de lemn deschis, alb-gri, și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Lara</h3>
+            <p>Aspect de lemn deschis, alb-gri.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Lara." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-luxury-haky-grey.jpg" alt="Ușa de interior Luxury Haky Grey: gri kaki, cu două panouri clasice în relief și mâner negru" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Luxury Haky Grey</h3>
+            <p>Gri kaki, cu panouri clasice, mâner negru.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Luxury%20Haky%20Grey." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-d1-modern-antrachite.jpg" alt="Ușa de interior D1 Modern Antrachite: gri antracit, cu linii decorative în formă de L" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>D1 Modern Antrachite</h3>
+            <p>Gri antracit, cu linii decorative.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20D1%20Modern%20Antrachite." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="gri">
+            <figure class="frame model-photo"><img src="img/usa-h1-haky-grey.jpg" alt="Ușa de interior H1 Haky Grey: gri kaki, cu linii diagonale și mâner inox" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>H1 Haky Grey</h3>
+            <p>Gri kaki, cu linii diagonale.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20H1%20Haky%20Grey." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="alb">
+            <figure class="frame model-photo"><img src="img/usa-natural-white.jpg" alt="Ușa de interior Natural White: albă, netedă, cu mâner inox" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Natural White</h3>
+            <p>Albă, netedă și simplă. Merge oriunde.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Natural%20White." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
+          </article>
+          <article class="model" data-cat="lemn">
+            <figure class="frame model-photo"><img src="img/usa-atlantis.jpg" alt="Ușa de interior Atlantis: cu aspect de lemn gri-maroniu, cu fibră orizontală" loading="lazy" width="720" height="1280"></figure>
+            <span class="model-tag">Pe stoc · interior</span>
+            <h3>Atlantis</h3>
+            <p>Aspect de lemn gri-maroniu, cu fibră orizontală.</p>
+            <a class="text-link model-oferta" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Atlantis." target="_blank" rel="noopener noreferrer">Cere ofertă pe WhatsApp →</a>
           </article>
         </div>
+        <!--/catalog-->
         <p class="small models-note reveal">Gama completă o vedeți în showroom, cu sfaturi despre dimensiuni și montaj.</p>
       </div>
     </section>
@@ -524,14 +636,15 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
         <div>
           <span class="eyebrow reveal">Specificații tehnice</span>
           <h2 class="words" id="specs-title">Făcute să reziste.</h2>
-          <p class="lead reveal" style="margin-top:1.25rem">Liniștite, rezistente și ușor de întreținut, oricare ar fi modelul ales.</p>
+          <p class="lead reveal" style="margin-top:1.25rem">Uși pline din MDF, nu de tip fagure: liniștite, rezistente și ușor de întreținut, oricare ar fi modelul ales.</p>
           <dl class="sizes reveal">
             <div><dt>Gol de zidărie</dt><dd>60 · 70 · 80 · 90 cm</dd></div>
             <div><dt>Înălțime</dt><dd>2,05 – 2,07 m</dd></div>
-            <div><dt>Toc</dt><dd>Reglabil, până la 40 cm</dd></div>
+            <div><dt>Toc</dt><dd>Reglabil; cu extensii, până la 40 cm</dd></div>
           </dl>
         </div>
         <ul class="spec-list stagger">
+          <li><span class="spec-ico" aria-hidden="true">MDF</span><div><b>Uși pline din MDF</b><span>Nu de tip fagure: grele, solide, stabile în timp.</span></div></li>
           <li><span class="spec-ico" aria-hidden="true">dB</span><div><b>Insonorizate 38 dB</b><span>Liniște între camere.</span></div></li>
           <li><span class="spec-ico" aria-hidden="true">≈</span><div><b>Rezistente la umezeală</b><span>Abur și condens, potrivite și pentru baie.</span></div></li>
           <li><span class="spec-ico" aria-hidden="true">41′</span><div><b>Anti-incendiu</b><span>Rezistență la foc 41 de minute.</span></div></li>
@@ -578,47 +691,21 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow reveal">Magazin online · previzualizare</span>
+            <span class="eyebrow reveal">Cum comanzi</span>
             <h2 class="words" id="shop-title">Comandă de acasă.</h2>
           </div>
           <div class="reveal">
             <p class="notice">Previzualizare — prețurile și comanda online le adăugăm în etapa următoare.</p>
-            <p class="lead">Vitrina online VarioDor: fiecare model cu fotografie, descriere și buton de ofertă pe WhatsApp.</p>
+            <p class="lead">Fără drumuri inutile: alegi de pe site, ne scrii, iar noi venim să măsurăm și să montăm.</p>
           </div>
         </div>
-        <div class="shop-grid stagger">
-          <article class="shop-card">
-            <div class="shop-thumb shop-photo"><span class="shop-tag">Pe stoc</span><img src="img/usa-luxury-white.jpg" alt="Ușa de interior Luxury White: albă, cu două panouri clasice în relief și mâner inox" loading="lazy" width="900" height="1600"></div>
-            <div class="shop-body">
-              <p class="shop-type">Uși de interior</p>
-              <h3>Luxury White</h3>
-              <p>Albă, cu două panouri clasice în relief. Eleganță care merge în orice casă. Gol 60–90 cm, toc reglabil.</p>
-              <p class="price">Preț: <span>la cerere</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Luxury%20White." target="_blank" rel="noopener noreferrer">Cere ofertă</a>
-            </div>
-          </article>
-          <article class="shop-card">
-            <div class="shop-thumb shop-photo"><span class="shop-tag">Pe stoc</span><img src="img/usa-neo-soft-bej.jpg" alt="Ușa de interior Neo Soft Bej: bej cald, cu un panou înalt în relief și mâner auriu" loading="lazy" width="900" height="1600"></div>
-            <div class="shop-body">
-              <p class="shop-type">Uși de interior</p>
-              <h3>Neo Soft Bej</h3>
-              <p>Bej cald, un singur panou înalt și mâner auriu. Pentru interioare calde, moderne. Gol 60–90 cm, toc reglabil.</p>
-              <p class="price">Preț: <span>la cerere</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20Neo%20Soft%20Bej." target="_blank" rel="noopener noreferrer">Cere ofertă</a>
-            </div>
-          </article>
-          <article class="shop-card">
-            <div class="shop-thumb shop-photo"><span class="shop-tag">Pe stoc</span><img src="img/usa-vda-80.jpg" alt="Ușa de interior VDA 80: albă, cu linii orizontale fine și mâner cromat" loading="lazy" width="900" height="1600"></div>
-            <div class="shop-body">
-              <p class="shop-type">Uși de interior</p>
-              <h3>VDA 80</h3>
-              <p>Albă, cu linii orizontale fine. Simplă, modernă, luminoasă. Gol 60–90 cm, toc reglabil.</p>
-              <p class="price">Preț: <span>la cerere</span></p>
-              <a class="button button-red" href="https://wa.me/40759333888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20ofert%C4%83%20pentru%20u%C8%99a%20VDA%2080." target="_blank" rel="noopener noreferrer">Cere ofertă</a>
-            </div>
-          </article>
-        </div>
-        <p class="small reveal" style="margin-top:1.5rem">Deocamdată, butonul „Cere ofertă” deschide o conversație pe WhatsApp, cu modelul ales deja scris.</p>
+        <!--pasi-->
+        <ol class="pasi stagger">
+          <li><span class="pas-nr">1</span><h3>Alegi modelul</h3><p>Din catalogul de mai sus sau direct în showroom, pe Bd. Mamaia 142.</p></li>
+          <li><span class="pas-nr">2</span><h3>Ne scrii pe WhatsApp</h3><p>Butonul „Cere ofertă” deschide conversația cu modelul deja scris.</p></li>
+          <li><span class="pas-nr">3</span><h3>Măsurăm și montăm</h3><p>Venim la tine, luăm măsurile și montăm ușa, cu toc reglabil.</p></li>
+        </ol>
+        <!--/pasi-->
       </div>
     </section>
 
@@ -796,6 +883,19 @@ footer{padding-block:2.25rem;background:var(--soft);border-top:1px solid var(--l
         if (!ticking) { requestAnimationFrame(update); ticking = true; }
       }, { passive: true });
       update();
+
+
+      /* Filtrele catalogului */
+      document.querySelectorAll('.filtru').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var f = b.getAttribute('data-filtru');
+          document.querySelectorAll('.filtru').forEach(function (x) { var a = x === b; x.classList.toggle('activ', a); x.setAttribute('aria-pressed', String(a)); });
+          document.querySelectorAll('.models-grid .model').forEach(function (m) {
+            var ok = f === 'toate' || m.getAttribute('data-cat') === f;
+            m.hidden = !ok; if (ok) m.classList.add('in');
+          });
+        });
+      });
 
       /* Uși din galerie: deschidere la atingere / clic */
       document.querySelectorAll('.model-scene').forEach(function (b) {
