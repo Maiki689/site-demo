@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heruvim | Tunsori masculine în București</title>
+<meta name="description" content="Heruvim: tuns și styling dedicat bărbaților, în București. Sună acum pentru programare.">
+<meta name="theme-color" content="#0E0E0E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
+<style>
+:root{
+  --bg:#0E0E0E;
+  --fg:#FFFFFF;
+  --gray:#9A9A9A;
+  --accent:#38bdf8;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,5vw,4rem);
+  --max:90rem;
+  --rule:rgba(255,255,255,.14);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--fg);color:var(--bg);
+  padding:.75rem 1rem;font-weight:600;text-decoration:none}
+.skip:focus{top:1rem}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
+.display{
+  font-family:"Anton",Impact,"Arial Narrow",sans-serif;font-weight:400;
+  text-transform:uppercase;letter-spacing:-.01em;line-height:.95;margin:0;
+}
+.lead{font-size:clamp(1.125rem,1.6vw,1.3rem);line-height:1.5;max-width:36rem}
+.muted{color:var(--gray)}
+.small{font-size:.8125rem;letter-spacing:.02em}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.5rem;border:1px solid transparent;border-radius:0;
+  font:600 1rem/1 "Inter",sans-serif;text-decoration:none;cursor:pointer;
+  transition:transform .1s ease,background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-primary{background:var(--accent);color:#0E0E0E}
+.btn-primary:hover{box-shadow:0 .5rem 1.5rem rgba(56,189,248,.28)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--fg);background:rgba(255,255,255,.06)}
+
+/* ---------- Navigation (glass) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(14,14,14,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 .75rem 2rem rgba(0,0,0,.45)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.logo{font-family:"Anton",sans-serif;font-size:1.6rem;letter-spacing:.04em;text-decoration:none;line-height:1}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{font-weight:600;font-size:.9375rem;text-decoration:none;color:rgba(255,255,255,.88);
+  padding:.75rem 0;transition:color .2s ease}
+.nav-links a:hover{color:#fff}
+.nav .btn{min-height:2.75rem;padding:0 1.1rem;font-size:.9375rem}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:5.25rem}
+.hero h1{
+  font-size:clamp(4.25rem,24vw,24rem);line-height:.9;letter-spacing:-.015em;
+  margin-left:-.035em;
+}
+.hero h1 .mask{display:block;overflow:hidden;padding:.04em 0 .02em}
+.hero h1 .ch{display:inline-block;transform:translateY(108%);animation:rise .62s var(--ease) forwards;
+  animation-delay:calc(var(--i) * 45ms + 80ms)}
+.hero-meta{display:grid;gap:1.25rem;margin-top:1rem;padding-bottom:2.5rem;
+  opacity:0;transform:translateY(.75rem);animation:settle .5s var(--ease) .5s forwards}
+.slogan{font-size:clamp(1.4rem,3.4vw,2.6rem);font-weight:600;line-height:1.12;letter-spacing:-.02em;max-width:18ch}
+.hero-text{display:grid;gap:1.25rem;align-content:start}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.cta-row .btn{flex:1 1 12rem}
+.hero-photo{opacity:0;transform:translateY(2rem);animation:settle .6s var(--ease) .7s forwards}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes settle{to{opacity:1;transform:none}}
+
+/* ---------- Photos: B/W that turn colour ---------- */
+.photo{position:relative;overflow:hidden;margin:0;background:#1a1a1a;cursor:pointer;
+  -webkit-tap-highlight-color:transparent}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .bw{filter:grayscale(1) contrast(1.06) brightness(.92)}
+.photo .col{opacity:0;transition:opacity .7s var(--ease)}
+.photo.is-color .col,.photo.tapped .col{opacity:1}
+@media (hover:hover){.photo:hover .col{opacity:1}}
+.full{width:100%;aspect-ratio:4/5}
+.hero-photo.full{aspect-ratio:4/5}
+
+/* ---------- Sections ---------- */
+section{position:relative}
+.sec{padding-block:clamp(5rem,12vw,10rem)}
+.about-grid{display:grid;gap:2.5rem}
+.about h2{font-size:clamp(3.2rem,13vw,11rem);line-height:.92;margin-left:-.04em}
+.about-copy{display:grid;gap:1.5rem;align-content:end}
+.perks{display:grid;gap:2rem;margin-top:clamp(3.5rem,8vw,6rem);list-style:none;padding:0}
+.perks li{padding-top:1.25rem;border-top:1px solid var(--rule)}
+.perks h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.05;margin:0 0 .4rem;letter-spacing:0}
+
+/* Services: white magazine page */
+.services{background:#fff;color:#0E0E0E;overflow:hidden}
+.services h2{font-size:clamp(4.5rem,21vw,19rem);line-height:.86;text-align:right;
+  margin-right:-.07em;letter-spacing:-.02em}
+.services-intro{display:grid;gap:1rem;margin-top:1.5rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.services-intro .muted{color:#5c5c5c}
+.svc{list-style:none;margin:0;padding:0}
+.svc li{display:grid;gap:.4rem;padding:1.5rem 0;border-top:1px solid rgba(14,14,14,.16)}
+.svc li:last-child{border-bottom:1px solid rgba(14,14,14,.16)}
+.svc h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;margin:0;
+  font-size:clamp(2rem,6.5vw,4.75rem);line-height:1;letter-spacing:-.01em;
+  transition:transform .35s var(--ease)}
+.svc p{color:#4a4a4a;max-width:32rem}
+@media (hover:hover){.svc li:hover h3{transform:translateX(.5rem)}}
+.svc-note{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center}
+.svc-note a{font-weight:700;text-decoration:underline;text-underline-offset:.25em;
+  min-height:2.75rem;display:inline-flex;align-items:center}
+
+/* Gallery */
+.gallery h2{font-size:clamp(3.2rem,12vw,10rem);line-height:.92;margin-left:-.04em}
+.gal-head{display:grid;gap:1.25rem;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.gal{display:grid;gap:1rem}
+.gal .photo{aspect-ratio:4/5}
+.gal .g-c{aspect-ratio:4/3}
+
+/* Contact */
+.contact{border-top:1px solid var(--rule)}
+.contact h2{font-size:clamp(3.2rem,13vw,11rem);line-height:.92;margin-left:-.04em;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.contact-grid{display:grid;gap:3rem}
+.info{display:grid;gap:2.25rem;align-content:start}
+.info h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:1.5rem;
+  margin:0 0 .6rem;letter-spacing:.01em}
+.hours{margin:0;display:grid;gap:.35rem}
+.hours div{display:flex;justify-content:space-between;gap:1rem;max-width:22rem;
+  padding-bottom:.35rem;border-bottom:1px solid var(--rule)}
+.hours dt{color:var(--gray)}
+.hours dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+.phone-big{font-family:"Anton",sans-serif;font-size:clamp(2.2rem,6vw,3.5rem);line-height:1;
+  text-decoration:none;letter-spacing:.01em;display:inline-block;padding:.2rem 0}
+.contact-btns{display:grid;gap:.75rem;max-width:26rem}
+.map{position:relative;width:100%;aspect-ratio:4/3;background:#1a1a1a;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+.map-link{margin-top:.9rem;display:inline-flex;align-items:center;min-height:2.75rem;
+  font-weight:600;text-decoration:underline;text-underline-offset:.25em}
+
+/* Footer */
+footer{padding-block:3rem 3.5rem;border-top:1px solid var(--rule);color:var(--gray)}
+.foot{display:grid;gap:1rem}
+.foot .logo{color:var(--fg);font-size:2.25rem}
+.foot p{max-width:60ch}
+
+/* ---------- Scroll reveals (varied) ---------- */
+.js .rv{opacity:0;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .rv-left{transform:translateX(-2.5rem)}
+.js .rv-right{transform:translateX(2.5rem)}
+.js .rv-up{transform:translateY(1.5rem)}
+.js .rv-scale{transform:scale(.97)}
+.js .rv-fade{transform:none}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- Larger screens ---------- */
+@media (min-width:48rem){
+  .nav-links{display:flex}
+  .hero-meta{grid-template-columns:repeat(12,1fr);gap:2rem;margin-top:1.5rem;padding-bottom:3.5rem}
+  .slogan{grid-column:1/7}
+  .hero-text{grid-column:7/13}
+  .hero-photo.full{aspect-ratio:21/9;max-height:82vh}
+  .full{aspect-ratio:16/9;max-height:90vh}
+  .about-grid{grid-template-columns:repeat(12,1fr);gap:2rem}
+  .about h2{grid-column:1/9}
+  .about-copy{grid-column:8/13}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .services-intro{grid-template-columns:repeat(12,1fr);gap:2rem}
+  .services-intro p{grid-column:1/7}
+  .svc li{grid-template-columns:7fr 5fr;align-items:baseline;gap:2rem;padding:1.75rem 0}
+  .gal-head{grid-template-columns:repeat(12,1fr);gap:2rem;align-items:end}
+  .gal-head h2{grid-column:1/9}
+  .gal-head p{grid-column:9/13}
+  .gal{grid-template-columns:repeat(12,1fr);gap:1.5rem}
+  .g-a{grid-column:1/8}
+  .g-b{grid-column:8/13;align-self:end}
+  .gal .g-c{grid-column:3/11;margin-top:1.5rem;aspect-ratio:16/9}
+  .contact-grid{grid-template-columns:5fr 7fr;gap:4rem}
+  .map{aspect-ratio:auto;height:100%;min-height:30rem}
+  .foot{grid-template-columns:1fr auto;align-items:end}
+}
+@media (min-width:64rem){
+  .g-b{margin-bottom:-6rem}
+}
+
+/* ---------- Preferences ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 .ch{transform:none;opacity:0;animation:fadeIn .2s ease forwards;animation-delay:0s}
+  .hero-meta,.hero-photo{transform:none;animation:fadeIn .2s ease .1s forwards}
+  .js .rv,.js .rv-left,.js .rv-right,.js .rv-up,.js .rv-scale{transform:none;transition:opacity .2s ease}
+  .photo .col{transition:opacity .2s ease}
+  .svc h3{transition:none}
+  .svc li:hover h3{transform:none}
+  .btn:active{transform:none}
+}
+@keyframes fadeIn{to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#0E0E0E;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--gray:#C8C8C8;--rule:rgba(255,255,255,.5)}
+  .nav{background:#0E0E0E;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid #fff}
+  .btn-ghost{border-color:#fff}
+  .svc p,.services-intro .muted{color:#0E0E0E}
+  .svc li{border-color:#0E0E0E}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Heruvim, începutul paginii">HERUVIM</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:0751460479">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap">
+      <h1 class="display" id="titlu" aria-label="Heruvim">
+        <span class="mask" aria-hidden="true"><span class="ch" style="--i:0">H</span><span class="ch" style="--i:1">E</span><span class="ch" style="--i:2">R</span><span class="ch" style="--i:3">U</span><span class="ch" style="--i:4">V</span><span class="ch" style="--i:5">I</span><span class="ch" style="--i:6">M</span></span>
+      </h1>
+      <div class="hero-meta">
+        <p class="slogan">Tunsori masculine, stil modern.</p>
+        <div class="hero-text">
+          <p class="lead muted">Tuns și styling dedicat bărbaților, în București. Deschis luni–vineri 10:00–20:00 și sâmbătă 10:00–18:00.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:0751460479">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg>
+              Sună acum
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <figure class="photo full hero-photo" tabindex="0" aria-label="Fotografie: frizer la lucru într-un salon modern. Atinge ca s-o vezi în culori.">
+      <img class="bw" src="img/1.jpg" alt="Frizer tunzând un client într-un salon pentru bărbați">
+      <img class="col" src="img/1.jpg" alt="" aria-hidden="true">
+    </figure>
+  </section>
+
+  <section class="about sec" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <h2 class="display rv rv-left" id="despre-titlu">Doar pentru bărbați.</h2>
+        <div class="about-copy rv rv-fade">
+          <p class="lead">Heruvim este un salon dedicat exclusiv tunsorilor și stylingului pentru bărbați.</p>
+          <p class="muted">Atmosfera e modernă și relaxată, gândită pentru confortul tău și pentru un look mereu proaspăt. Te așteptăm într-un spațiu primitor, în București.</p>
+        </div>
+      </div>
+      <ul class="perks">
+        <li class="rv rv-up">
+          <h3>Experiență masculină</h3>
+          <p class="muted">Servicii doar pentru bărbați: tuns și styling.</p>
+        </li>
+        <li class="rv rv-up" style="transition-delay:.08s">
+          <h3>Stil modern</h3>
+          <p class="muted">Tunsori și styling actual, pe gustul tău.</p>
+        </li>
+        <li class="rv rv-up" style="transition-delay:.16s">
+          <h3>Program clar</h3>
+          <p class="muted">Luni–vineri 10:00–20:00, sâmbătă 10:00–18:00.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <figure class="photo full" tabindex="0" aria-label="Fotografie: tuns cu foarfeca. Atinge ca s-o vezi în culori.">
+    <img class="bw" src="img/5.jpg" alt="Frizer tunzând cu foarfeca părul unui bărbat" loading="lazy">
+    <img class="col" src="img/5.jpg" alt="" aria-hidden="true" loading="lazy">
+  </figure>
+
+  <section class="services sec" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <h2 class="display rv rv-right" id="servicii-titlu">Servicii</h2>
+      <div class="services-intro">
+        <p class="lead muted">Tuns și styling pentru bărbați. Pentru detalii și programare, sună-ne.</p>
+      </div>
+      <ul class="svc">
+        <li class="rv rv-left">
+          <h3>Tuns bărbătesc</h3>
+          <p>Tunsori clasice și moderne pentru bărbați.</p>
+        </li>
+        <li class="rv rv-left" style="transition-delay:.06s">
+          <h3>Styling</h3>
+          <p>Aranjare și finisare a părului, pentru bărbați.</p>
+        </li>
+      </ul>
+      <div class="svc-note">
+        <a href="tel:0751460479">Sună pentru programare: 0751460479</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery sec" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="gal-head">
+        <h2 class="display rv rv-left" id="galerie-titlu">Meseria, de aproape.</h2>
+        <p class="muted rv rv-fade">Fotografiile capătă culoare când ajung în mijlocul ecranului. Le poți și atinge.</p>
+      </div>
+      <div class="gal">
+        <figure class="photo g-a rv rv-scale" tabindex="0" aria-label="Fotografie: frizer la lucru. Atinge ca s-o vezi în culori.">
+          <img class="bw" src="img/2.jpg" alt="Frizer lucrând la tunsoarea unui client" loading="lazy">
+          <img class="col" src="img/2.jpg" alt="" aria-hidden="true" loading="lazy">
+        </figure>
+        <figure class="photo g-b rv rv-scale" tabindex="0" aria-label="Fotografie: tuns cu mașina electrică. Atinge ca s-o vezi în culori.">
+          <img class="bw" src="img/3.jpg" alt="Tuns cu mașina electrică într-o frizerie" loading="lazy">
+          <img class="col" src="img/3.jpg" alt="" aria-hidden="true" loading="lazy">
+        </figure>
+        <figure class="photo g-c rv rv-scale" tabindex="0" aria-label="Fotografie: aranjarea părului în salon. Atinge ca s-o vezi în culori.">
+          <img class="bw" src="img/4.jpg" alt="Stilist aranjând părul unui client în salon" loading="lazy">
+          <img class="col" src="img/4.jpg" alt="" aria-hidden="true" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact sec" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap">
+      <h2 class="display rv rv-left" id="contact-titlu">Vino la tuns.</h2>
+      <div class="contact-grid">
+        <div class="info rv rv-up">
+          <div>
+            <h3>Programare</h3>
+            <a class="phone-big" href="tel:0751460479">0751460479</a>
+          </div>
+          <div class="contact-btns">
+            <a class="btn btn-primary" href="tel:0751460479">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2z"/></svg>
+              Sună acum
+            </a>
+          </div>
+          <div>
+            <h3>Program</h3>
+            <dl class="hours">
+              <div><dt>Luni – Vineri</dt><dd>10:00 – 20:00</dd></div>
+              <div><dt>Sâmbătă</dt><dd>10:00 – 18:00</dd></div>
+            </dl>
+          </div>
+          <div>
+            <h3>Unde ne găsești</h3>
+            <p class="muted">București.</p>
+          </div>
+        </div>
+        <div class="rv rv-fade">
+          <div class="map">
+            <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1442096,44.4407122,26.152209600000003,44.444712200000005&layer=mapnik&marker=44.4427122,26.1482096" title="Hartă: Heruvim, București" loading="lazy"></iframe>
+          </div>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Heruvim+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide traseul în Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="logo" href="#top">HERUVIM</a>
+      <p class="small" style="margin-top:.5rem">Tunsori masculine, stil modern. București.</p>
+    </div>
+    <div class="small">
+      <p>Model de site (demo). © <span id="an"></span> Heruvim</p>
+      <p>Fotografii ilustrative de pe Pixabay: vahidkanani, mostafa_meraji, shameersrk</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  document.getElementById('an').textContent = new Date().getFullYear();
+
+  // Nav shadow only when content scrolls under it
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  var photos = document.querySelectorAll('.photo');
+  var reveals = document.querySelectorAll('.rv');
+
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+    photos.forEach(function(p){ p.classList.add('is-color'); });
+  } else {
+    // Short, firm reveals
+    var rvObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); rvObs.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -10% 0px', threshold:0.12});
+    reveals.forEach(function(el){ rvObs.observe(el); });
+
+    // Photos gain colour in the middle band of the screen
+    var colObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.target.classList.toggle('is-color', e.isIntersecting); });
+    }, {rootMargin:'-42% 0px -42% 0px', threshold:0});
+    photos.forEach(function(p){ colObs.observe(p); });
+  }
+
+  // Tap / keyboard toggles colour
+  photos.forEach(function(p){
+    p.addEventListener('click', function(){ p.classList.toggle('tapped'); });
+    p.addEventListener('keydown', function(ev){
+      if (ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); p.classList.toggle('tapped'); }
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script><a href="https://wa.me/40751460479?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20serviciile%20pentru%20b%C4%83rba%C8%9Bi." style="position:fixed;right:16px;bottom:16px;z-index:999;padding:14px 20px;border-radius:999px;background:#38bdf8;color:#fff;font:700 16px system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3)">💬 WhatsApp</a></body>
+</html>
