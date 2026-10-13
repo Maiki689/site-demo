@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dimico | Gustări calde non-stop în Constanța</title>
+<meta name="description" content="Dimico, Strada Cișmelei 14A, Constanța. Preparate calde, gustări și băuturi. Deschis non-stop, în fiecare zi.">
+<meta name="theme-color" content="#FFD23F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌯</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --y:#FFD23F;
+  --k:#111111;
+  --r:#be123c;
+  --w:#ffffff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pop:cubic-bezier(.34,1.5,.64,1);
+  --wrap:min(100% - 2.5rem, 72rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--w);color:var(--k);
+  font-family:"Rubik",system-ui,sans-serif;font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:var(--wrap);margin-inline:auto}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--k);color:var(--w);padding:.75rem 1rem;border-radius:.5rem;z-index:100;text-decoration:none}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--k);outline-offset:3px;border-radius:.4rem}
+
+h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;margin:0;letter-spacing:-.015em;line-height:1.05}
+h2{font-size:clamp(2.4rem,7vw,4.6rem)}
+p{margin:0}
+.lead{max-width:36rem}
+.small{font-size:.875rem;letter-spacing:.02em}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3.25rem;padding:0 1.5rem;border-radius:999px;border:0;
+  font:600 1.0625rem/1 "Rubik",sans-serif;text-decoration:none;cursor:pointer;
+  transition:transform .1s ease, box-shadow .2s ease, background-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn:hover{box-shadow:0 .6rem 1.2rem -.4rem rgba(0,0,0,.35)}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--k);color:var(--w)}
+.btn-dark:hover{background:#2a2a2a}
+.btn-red{background:var(--r);color:var(--w)}
+.btn-red:hover{background:#a50f33}
+.btn-yellow{background:var(--y);color:var(--k)}
+.btn-white{background:var(--w);color:var(--r)}
+.btn-line{background:transparent;color:var(--k);box-shadow:inset 0 0 0 2px var(--k)}
+.btn-line:hover{background:rgba(17,17,17,.06);box-shadow:inset 0 0 0 2px var(--k)}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Navigare */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,210,63,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 .6rem 1.6rem -1rem rgba(0,0,0,.45)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.75rem}
+.logo{font-family:"Anton",sans-serif;font-size:1.7rem;text-transform:uppercase;text-decoration:none;letter-spacing:-.01em;line-height:1}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:1.75rem}
+.nav ul a{text-decoration:none;font-weight:600;font-size:.98rem;padding:.6rem 0;display:inline-block}
+.nav ul a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em}
+.nav .btn{min-height:2.75rem;padding:0 1.1rem;font-size:.98rem}
+
+/* Prima secțiune */
+.hero{background:var(--y);padding:calc(3.75rem + clamp(1.5rem,5vw,4rem)) 0 clamp(3.5rem,8vw,6rem);overflow:hidden}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero h1{
+  display:flex;overflow:hidden;
+  font-size:clamp(5.5rem,25vw,11rem);line-height:.95;letter-spacing:-.01em;
+  padding-top:.04em;margin-left:-.03em;
+}
+.hero h1 span{display:inline-block}
+.hero-meta{display:flex;align-items:center;gap:1rem;margin-top:1rem}
+.slogan{font-size:clamp(1.35rem,4.6vw,1.9rem);font-weight:700;line-height:1.2;letter-spacing:-.01em;max-width:20ch}
+.stamp{
+  --r:-10deg;flex:none;width:5.75rem;height:5.75rem;
+  transform:rotate(var(--r));cursor:pointer;touch-action:manipulation;
+}
+.stamp svg{width:100%;height:100%;display:block}
+.hero .desc{margin-top:1rem;font-size:1.0625rem;max-width:30rem}
+.hero .btns{margin-top:1.75rem}
+.hero .where{margin-top:1.5rem;display:flex;align-items:center;gap:.5rem;font-weight:500}
+.hero .where svg{width:1.1rem;height:1.1rem;flex:none}
+.hero-photo{position:relative;border-radius:1.5rem;overflow:hidden;aspect-ratio:4/5;background:#e9bd2f}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+/* Intrarea din prima secțiune */
+.js .hero h1 span{transform:translateY(105%)}
+.js .hero [data-in]{opacity:0;transform:translateY(.9rem)}
+.js .hero .hero-photo{opacity:0;transform:scale(1.04)}
+.js .hero .stamp{opacity:0;transform:rotate(-40deg) scale(.5)}
+.ready .hero h1 span{transform:none;transition:transform .75s var(--ease) calc(var(--i) * 55ms)}
+.ready .hero [data-in]{opacity:1;transform:none;transition:opacity .55s var(--ease) var(--d),transform .55s var(--ease) var(--d)}
+.ready .hero .hero-photo{opacity:1;transform:none;transition:opacity .8s var(--ease) .2s,transform 1.1s var(--ease) .2s}
+.ready .hero .stamp{opacity:1;transform:rotate(var(--r));transition:opacity .3s ease .7s,transform .55s var(--pop) .7s}
+
+/* Despre */
+.about{padding:clamp(4.5rem,10vw,8rem) 0}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+.about h2{max-width:12ch}
+.about .lead{margin-top:1.25rem;font-size:1.125rem}
+.about-photo{border-radius:1.5rem;overflow:hidden;aspect-ratio:4/5}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.perks{list-style:none;margin:clamp(3rem,7vw,5rem) 0 0;padding:0;display:grid;gap:1.75rem}
+.perks li{display:grid;grid-template-columns:3.25rem 1fr;gap:1rem;align-items:start}
+.perk-ico{width:3.25rem;height:3.25rem;border-radius:50%;background:var(--y);display:grid;place-items:center}
+.perk-ico svg{width:1.6rem;height:1.6rem}
+.perks h3{font-size:1.65rem;line-height:1}
+.perks p{margin-top:.3rem;color:#3a3a3a}
+
+/* Meniu: abțibildurile */
+.menu{background:var(--k);color:var(--w);padding:clamp(4.5rem,10vw,8rem) 0 clamp(5rem,11vw,9rem);overflow:hidden}
+.menu h2{color:var(--y);font-size:clamp(3.4rem,13vw,7.5rem);line-height:.95}
+.menu .lead{margin-top:1rem;color:rgba(255,255,255,.82);font-size:1.125rem}
+.board{display:grid;gap:3.5rem;margin-top:clamp(3rem,7vw,5rem);list-style:none;padding:0}
+.item{width:min(78vw,19rem)}
+.item:nth-child(2){justify-self:end}
+.sticker{
+  --r:-4deg;position:relative;background:var(--w);padding:.6rem;border-radius:1.6rem;
+  box-shadow:0 1.2rem 1.6rem -.8rem rgba(0,0,0,.7),0 .15rem .3rem rgba(0,0,0,.4);
+  transform:rotate(var(--r));transition:transform .3s var(--ease);
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.sticker::after{
+  content:"";position:absolute;inset:.6rem;border-radius:1.1rem;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.38) 0%,rgba(255,255,255,0) 38%);
+}
+.sticker img,.sticker .art{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:1.1rem}
+.sticker.round{border-radius:50%}
+.sticker.round img,.sticker.round::after{border-radius:50%}
+.sticker:hover{transform:rotate(0deg) translateY(-.3rem) scale(1.02)}
+.sticker.boing{animation:boing .45s var(--ease)}
+@keyframes boing{
+  0%{transform:rotate(var(--r)) scale(1)}
+  30%{transform:rotate(calc(var(--r) * -1)) scale(.92)}
+  62%{transform:rotate(var(--r)) scale(1.06)}
+  100%{transform:rotate(var(--r)) scale(1)}
+}
+.stamp.boing{animation:boing .45s var(--ease)}
+.tag{
+  position:absolute;left:50%;bottom:-1.15rem;transform:translateX(-50%) rotate(5deg);
+  white-space:nowrap;background:var(--y);color:var(--k);
+  font-size:clamp(1.35rem,4vw,1.6rem);line-height:1;padding:.5rem .85rem .45rem;border-radius:.35rem;
+  box-shadow:0 .35rem .7rem -.2rem rgba(0,0,0,.45);z-index:1;
+}
+.item:nth-child(2) .tag{transform:translateX(-50%) rotate(-4deg)}
+.item:nth-child(3) .tag{background:var(--r);color:var(--w);transform:translateX(-50%) rotate(3deg)}
+.item p{margin-top:2.4rem;color:rgba(255,255,255,.82);max-width:22rem}
+.menu-cta{margin-top:clamp(3.5rem,8vw,5.5rem);display:grid;gap:1.25rem}
+.menu-cta p{font-size:1.25rem;font-weight:600;max-width:30rem}
+
+/* Livrare */
+.delivery{background:var(--r);color:var(--w);padding:clamp(4.5rem,10vw,8rem) 0;overflow:hidden}
+.delivery-grid{display:grid;gap:2.5rem;align-items:center}
+.delivery h2{font-size:clamp(3rem,10vw,6rem);line-height:.98}
+.delivery .lead{margin-top:1.1rem;font-size:1.2rem}
+.delivery .btns{margin-top:1.75rem}
+.delivery .btn-dark{background:var(--k)}
+.delivery-photo{border-radius:1.5rem;overflow:hidden;aspect-ratio:4/3}
+.delivery-photo img{width:100%;height:100%;object-fit:cover}
+
+/* Contact */
+.contact{background:var(--y);padding:clamp(4.5rem,10vw,8rem) 0}
+.contact-grid{display:grid;gap:2.5rem}
+.facts{margin:1.75rem 0 0;display:grid;gap:1.25rem}
+.facts div{display:grid;gap:.15rem}
+.facts dt{font-size:.875rem;letter-spacing:.03em;font-weight:600;color:#4a3d0a}
+.facts dd{margin:0;font-size:1.2rem;font-weight:600}
+.facts a{text-decoration:none}
+.facts a:hover{text-decoration:underline;text-underline-offset:.2em}
+.contact .btns{margin-top:2rem}
+.map{border-radius:1.25rem;overflow:hidden;box-shadow:0 0 0 3px var(--k);background:#f3e2a0;min-height:20rem}
+.map iframe{display:block;width:100%;height:100%;min-height:20rem;border:0}
+
+/* Subsol */
+footer{background:var(--k);color:rgba(255,255,255,.78);padding:3.5rem 0 2.5rem}
+footer .logo{color:var(--y);font-size:2.4rem}
+.foot-grid{display:grid;gap:1.5rem}
+footer p{font-size:.9rem;letter-spacing:.02em}
+footer a{color:var(--w)}
+.foot-bottom{margin-top:2.5rem;padding-top:1.5rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.12);display:grid;gap:.4rem}
+
+/* Dezvăluiri la derulare (variate) */
+.js [data-reveal]{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js [data-reveal="zoom"]{transform:scale(.95)}
+.js [data-reveal="left"]{transform:translateX(-2.25rem)}
+.js [data-reveal="right"]{transform:translateX(2.25rem)}
+.js [data-reveal="slap"]{transform:scale(1.18);transition:opacity .35s ease var(--d,0s),transform .45s var(--ease) var(--d,0s)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* Tabletă și calculator */
+@media (min-width:40rem){
+  .perks{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .perks li{grid-template-columns:1fr;gap:1rem}
+  .menu-cta{grid-template-columns:1fr auto;align-items:center}
+}
+@media (min-width:56rem){
+  .nav ul{display:flex}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:3.5rem}
+  .hero h1{font-size:clamp(7rem,11vw,11rem)}
+  .about-grid{grid-template-columns:1fr 1fr;gap:5rem}
+  .about-photo{order:2}
+  .board{grid-template-columns:repeat(3,1fr);gap:3rem;align-items:start}
+  .item{width:auto}
+  .item:nth-child(2){justify-self:auto;margin-top:4.5rem}
+  .item:nth-child(3){margin-top:1.5rem}
+  .delivery-grid{grid-template-columns:1fr 1fr;gap:4.5rem}
+  .contact-grid{grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:stretch}
+  .foot-grid{grid-template-columns:1fr auto;align-items:end}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important}
+  .js .hero h1 span,.js .hero [data-in],.js .hero .hero-photo,.js [data-reveal]{transform:none!important}
+  .js .hero .stamp{transform:rotate(-10deg)!important}
+  .ready .hero h1 span,.ready .hero [data-in],.ready .hero .hero-photo,.ready .hero .stamp,.js [data-reveal]{transition:opacity .2s linear!important}
+  .js .hero h1 span{opacity:0}
+  .ready .hero h1 span{opacity:1}
+  .sticker,.btn{transition:none}
+  .sticker:hover{transform:rotate(var(--r))}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--y);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--y);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--k)}
+  .menu .lead,.item p{color:var(--w)}
+  .perks p{color:var(--k)}
+  .btn-line{box-shadow:inset 0 0 0 3px var(--k)}
+  .facts dt{color:var(--k)}
+  footer,footer p{color:var(--w)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Dimico, începutul paginii">Dimico</a>
+    <nav aria-label="Navigare principală">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#non-stop">Non-stop</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-dark" href="tel:+40733058070">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titlu" aria-label="Dimico">
+          <span aria-hidden="true" style="--i:0">D</span><span aria-hidden="true" style="--i:1">I</span><span aria-hidden="true" style="--i:2">M</span><span aria-hidden="true" style="--i:3">I</span><span aria-hidden="true" style="--i:4">C</span><span aria-hidden="true" style="--i:5">O</span>
+        </h1>
+        <div class="hero-meta">
+          <p class="slogan" data-in style="--d:.38s">Gust rapid, oricând ți-e poftă.</p>
+          <div class="stamp" role="img" aria-label="Deschis non-stop, zi și noapte">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <defs><path id="cerc" d="M50,50 m-37,0 a37,37 0 1,1 74,0 a37,37 0 1,1 -74,0"/></defs>
+              <circle cx="50" cy="50" r="49" fill="#be123c"/>
+              <circle cx="50" cy="50" r="27" fill="none" stroke="#fff" stroke-width="1.2" stroke-dasharray="2 2.4"/>
+              <text font-family="Anton, Impact, sans-serif" font-size="10" fill="#fff"><textPath href="#cerc" textLength="230" lengthAdjust="spacing">DESCHIS NON-STOP — ZI ȘI NOAPTE —</textPath></text>
+              <text x="50" y="58" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="22" fill="#FFD23F">24/7</text>
+            </svg>
+          </div>
+        </div>
+        <p class="desc" data-in style="--d:.48s">Bucură-te de gustări calde, la orice oră. Te așteptăm în Constanța, pe Strada Cișmelei.</p>
+        <div class="btns" data-in style="--d:.58s">
+          <a class="btn btn-dark" href="tel:+40733058070">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-red" href="https://wa.me/40733058070?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20de%20la%20Dimico.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>
+            Comandă pe WhatsApp
+          </a>
+        </div>
+        <p class="where small" data-in style="--d:.68s">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Strada Cișmelei 14A, Constanța
+        </p>
+      </div>
+      <figure class="hero-photo" style="margin:0">
+        <img src="img/1.jpg" alt="Wrap cald cu carne, umplut din belșug" width="900" height="1125" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <figure class="about-photo" style="margin:0" data-reveal="zoom">
+          <img src="img/4.jpg" alt="Dürüm cu pui, roșii și ceapă, pe farfurie" loading="lazy" width="900" height="1125">
+        </figure>
+        <div data-reveal="left">
+          <h2 id="despre-titlu">Ceva gustos, fie zi, fie noapte</h2>
+          <p class="lead">Dimico e locul unde găsești mereu ceva gustos. Pregătim preparate calde și gustări rapide, gata să-ți potolească pofta la orice oră.</p>
+          <p class="lead" style="margin-top:1rem">Alege ce îți place și ia-ți porția de energie.</p>
+        </div>
+      </div>
+      <ul class="perks">
+        <li data-reveal="right" style="transition-delay:0s">
+          <span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></span>
+          <div><h3>Non-stop</h3><p>Deschis zi și noapte, în fiecare zi.</p></div>
+        </li>
+        <li data-reveal="right" style="transition-delay:.08s">
+          <span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h10l-1.2 10H8.2Z"/><path d="M8.5 10 8 4M11 10V3.5M13.5 10l.5-6M16 10l1-5"/></svg></span>
+          <div><h3>Rapid</h3><p>Proaspăt și servit repede.</p></div>
+        </li>
+        <li data-reveal="right" style="transition-delay:.16s">
+          <span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          <div><h3>La îndemână</h3><p>Pe Strada Cișmelei 14A, în Constanța.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <h2 id="meniu-titlu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="lead">Trei feluri de poftă, la orice oră. Atinge un abțibild.</p>
+
+      <ul class="board">
+        <li class="item" data-reveal="slap" style="--d:0s">
+          <div class="sticker round" style="--r:-6deg">
+            <img src="img/3.jpg" alt="Shawarma caldă, tăiată, văzută de aproape" loading="lazy" width="600" height="600">
+            <h3 class="tag">Preparate calde</h3>
+          </div>
+          <p>Porții calde și consistente, pregătite pe loc, pentru foamea adevărată.</p>
+        </li>
+        <li class="item" data-reveal="slap" style="--d:.12s">
+          <div class="sticker" style="--r:4deg">
+            <img src="img/2.jpg" alt="Sandviș cu kebab, gata de luat la pachet" loading="lazy" width="600" height="600">
+            <h3 class="tag">Gustări</h3>
+          </div>
+          <p>Ceva rapid de luat cu tine, când ai doar câteva minute.</p>
+        </li>
+        <li class="item" data-reveal="slap" style="--d:.24s">
+          <div class="sticker" style="--r:-3deg">
+            <svg class="art" viewBox="0 0 200 200" role="img" aria-label="Pahar de băutură cu pai, desenat">
+              <defs>
+                <clipPath id="pahar"><path d="M60 74h80l-11 98H71Z"/></clipPath>
+              </defs>
+              <rect width="200" height="200" fill="#FFD23F"/>
+              <circle cx="100" cy="112" r="74" fill="#ffe586"/>
+              <path d="M112 18l-8 46" stroke="#111" stroke-width="12" stroke-linecap="round"/>
+              <path d="M112 18l-8 46" stroke="#be123c" stroke-width="7" stroke-linecap="round"/>
+              <g clip-path="url(#pahar)">
+                <rect x="50" y="70" width="100" height="110" fill="#fff"/>
+                <g fill="#be123c">
+                  <rect x="58" y="70" width="12" height="110"/>
+                  <rect x="82" y="70" width="12" height="110"/>
+                  <rect x="106" y="70" width="12" height="110"/>
+                  <rect x="130" y="70" width="12" height="110"/>
+                </g>
+              </g>
+              <path d="M60 74h80l-11 98H71Z" fill="none" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+              <rect x="52" y="60" width="96" height="16" rx="7" fill="#111"/>
+              <rect x="62" y="64" width="36" height="4" rx="2" fill="#fff" opacity=".35"/>
+            </svg>
+            <h3 class="tag">Băuturi</h3>
+          </div>
+          <p>Ceva de băut lângă porția ta, ca să fie masa completă.</p>
+        </li>
+      </ul>
+
+      <div class="menu-cta" data-reveal="zoom">
+        <p>Vrei să știi ce avem acum? Sună-ne sau scrie-ne și îți spunem pe loc.</p>
+        <div class="btns">
+          <a class="btn btn-yellow" href="tel:+40733058070">Sună acum</a>
+          <a class="btn btn-red" href="https://wa.me/40733058070?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20de%20la%20Dimico.">Comandă pe WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="delivery" id="non-stop" aria-labelledby="non-stop-titlu">
+    <div class="wrap delivery-grid">
+      <div data-reveal="left">
+        <h2 id="non-stop-titlu">Oricând ți-e poftă</h2>
+        <p class="lead">Suntem deschiși non-stop, în fiecare zi, pe Strada Cișmelei 14A. Ai o întrebare? Sună-ne sau scrie-ne pe WhatsApp.</p>
+        <div class="btns">
+          <a class="btn btn-white" href="https://wa.me/40733058070?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20de%20la%20Dimico.">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>
+            Comandă pe WhatsApp
+          </a>
+          <a class="btn btn-dark" href="tel:+40733058070">Sună acum</a>
+        </div>
+      </div>
+      <figure class="delivery-photo" style="margin:0" data-reveal="right">
+        <img src="img/5.jpg" alt="Sandviș cald cu carne, roșii și legume" loading="lazy" width="1000" height="750">
+      </figure>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div data-reveal="zoom">
+        <h2 id="contact-titlu">Treci pe la noi</h2>
+        <dl class="facts">
+          <div><dt>Adresa</dt><dd>Strada Cișmelei 14A, Constanța</dd></div>
+          <div><dt>Program</dt><dd>Deschis non-stop, în fiecare zi</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+40733058070">+40 733 058 070</a></dd></div>
+        </dl>
+        <div class="btns">
+          <a class="btn btn-dark" href="tel:+40733058070">Sună acum</a>
+          <a class="btn btn-red" href="https://wa.me/40733058070?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20de%20la%20Dimico.">Comandă pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Dimico+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map" data-reveal="right">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6184788,44.2056707,28.6264788,44.209670700000004&layer=mapnik&marker=44.2076707,28.6224788" title="Harta: Dimico, Strada Cișmelei 14A, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top">Dimico</a>
+        <p style="margin-top:.6rem">Strada Cișmelei 14A, Constanța. Deschis non-stop, în fiecare zi.</p>
+      </div>
+      <p><a href="tel:+40733058070">+40 733 058 070</a></p>
+    </div>
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: MurrrPhoto, 2SIF, olgazeren, ha11ok, angelorosa</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Intrarea din prima secțiune
+  requestAnimationFrame(function(){
+    requestAnimationFrame(function(){ document.body.classList.add('ready'); });
+  });
+
+  // Umbra barei de navigare doar la derulare
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Dezvăluiri la derulare
+  var els = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Săritură scurtă la atingerea abțibildurilor și a ștampilei
+  if (!reduce) {
+    document.querySelectorAll('.sticker, .stamp').forEach(function(el){
+      el.addEventListener('pointerdown', function(){
+        el.classList.remove('boing');
+        void el.offsetWidth;
+        el.classList.add('boing');
+      });
+      el.addEventListener('animationend', function(){ el.classList.remove('boing'); });
+    });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
