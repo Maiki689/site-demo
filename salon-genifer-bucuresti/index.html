@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Salon Genifer | Hair styling și colorare în Ghencea, București</title>
+<meta name="description" content="Salon Genifer: hair styling și colorare în zona Ghencea, București. Parcare în apropiere, programări la telefon: 0722612761.">
+<meta name="theme-color" content="#F4EFE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --paper:#F4EFE8;
+  --ink:#1F1B18;
+  --pink:#D9B8B0;
+  --gray:#8C847C;
+  --gray-text:#625a53;
+  --rose:#be123c;
+  --rose-d:#9f1239;
+  --bg:var(--paper);
+  --serif:'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --sans:'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --gutter:clamp(1.25rem, 5vw, 4rem);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --mask:cubic-bezier(.7,0,.2,1);
+  --nav-h:3.75rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;overflow-x:clip;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--pink);color:var(--ink)}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1rem;text-decoration:none}
+.skip:focus{top:1rem}
+
+.wrap{max-width:84rem;margin:0 auto;padding:0 var(--gutter)}
+.section{padding-block:clamp(5.5rem, 13vw, 10.5rem);background:var(--bg)}
+
+h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.3rem, 5.6vw, 4.3rem);
+  line-height:1.05;letter-spacing:-.02em;
+}
+h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,2.4vw,1.85rem);line-height:1.15;letter-spacing:-.01em}
+.lead{font-size:1.125rem;max-width:32em}
+.muted{color:var(--gray-text)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.5rem;border-radius:2px;
+  font-family:var(--sans);font-weight:500;font-size:1rem;letter-spacing:.01em;
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--rose-d);box-shadow:0 .5rem 1.25rem -.75rem rgba(159,18,57,.55)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn-paper{background:var(--paper);color:var(--ink)}
+.btn-paper:hover{background:#fff}
+.btn-sm{min-height:2.75rem;padding:0 1.1rem;font-size:.9375rem}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn-row .btn{flex:1 1 auto}
+@media (min-width:36em){.btn-row .btn{flex:0 0 auto}}
+
+.text-link{
+  display:inline-flex;align-items:center;min-height:2.75rem;
+  font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em;
+  text-decoration-color:var(--gray);transition:text-decoration-color .25s ease, color .25s ease;
+}
+.text-link:hover{text-decoration-color:currentColor}
+
+/* ---------- Nav (glass) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:var(--nav-h);
+  background:rgba(244,239,232,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 .75rem 2rem -1.5rem rgba(31,27,24,.5)}
+.nav-in{height:100%;max-width:84rem;margin:0 auto;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--serif);font-weight:500;font-size:1.45rem;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;line-height:1}
+.nav-links{display:none}
+.nav-actions{display:flex;align-items:center;gap:.4rem}
+.menu-btn{
+  width:2.75rem;height:2.75rem;display:grid;place-items:center;border:0;background:transparent;color:var(--ink);cursor:pointer;
+  border-radius:2px;-webkit-tap-highlight-color:transparent;transition:transform .1s ease;
+}
+.menu-btn:active{transform:scale(.94)}
+.menu-btn span{display:block;width:1.35rem;height:1.5px;background:currentColor;transition:transform .35s var(--ease)}
+.menu-btn span+span{margin-top:-1.5px}
+.menu-btn .bars{display:grid;gap:.4rem}
+.menu-btn[aria-expanded="true"] .b1{transform:translateY(.25rem) rotate(45deg)}
+.menu-btn[aria-expanded="true"] .b2{transform:translateY(-.25rem) rotate(-45deg)}
+
+.menu{
+  position:fixed;top:var(--nav-h);left:0;right:0;z-index:49;
+  background:var(--paper);padding:1.5rem var(--gutter) 2rem;
+  box-shadow:0 1.5rem 2.5rem -2rem rgba(31,27,24,.45);
+  opacity:0;transform:translateY(-.75rem);visibility:hidden;
+  transition:opacity .35s var(--ease), transform .35s var(--ease), visibility 0s linear .35s;
+}
+.menu.open{opacity:1;transform:none;visibility:visible;transition:opacity .35s var(--ease), transform .35s var(--ease)}
+.menu ul{list-style:none;margin:0 0 1.5rem;padding:0}
+.menu li a{display:flex;align-items:center;min-height:3.25rem;font-family:var(--serif);font-size:2rem;font-weight:400;text-decoration:none;letter-spacing:-.01em}
+
+@media (min-width:56em){
+  .nav-links{display:flex;gap:2rem}
+  .nav-links a{font-weight:500;font-size:.9375rem;text-decoration:none;display:inline-flex;align-items:center;min-height:2.75rem;color:var(--ink);transition:color .2s ease}
+  .nav-links a:hover{color:var(--rose)}
+  .menu-btn,.menu{display:none}
+}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding-top:calc(var(--nav-h) + .75rem);background:var(--paper)}
+.stage{
+  position:relative;
+  height:clamp(21rem, 56vh, 34rem);
+  height:clamp(21rem, 56svh, 34rem);
+  --pl:22%;--pb:2.75rem;
+}
+.hero-photo{position:absolute;top:0;right:0;bottom:var(--pb);left:var(--pl);overflow:hidden;margin:0;z-index:1;background:#d9cfc4}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.shade{position:absolute;inset:0;background:linear-gradient(to top, rgba(31,27,24,.62) 0%, rgba(31,27,24,.2) 38%, rgba(31,27,24,0) 62%)}
+.cover{position:absolute;inset:0;background:var(--paper);transform-origin:50% 0;transform:scaleY(0)}
+.layer{position:absolute;inset:0;z-index:2;pointer-events:none}
+.layer--ink{color:var(--ink);clip-path:polygon(0 0, var(--pl) 0, var(--pl) calc(100% - var(--pb)), 100% calc(100% - var(--pb)), 100% 100%, 0 100%)}
+.layer--paper{color:var(--paper);clip-path:inset(0 0 var(--pb) var(--pl));text-shadow:0 .1rem 1.5rem rgba(31,27,24,.25)}
+.name{position:absolute;left:var(--gutter);bottom:0;margin:0;font-family:var(--serif);font-weight:300;color:inherit}
+.name-small{display:block;font-size:clamp(1.5rem, 6vw, 3.25rem);font-weight:400;line-height:1;letter-spacing:.01em;margin:0 0 .12em .06em}
+.name-big{display:block;font-size:clamp(5rem, 29vw, 16rem);line-height:.8;letter-spacing:-.035em;white-space:nowrap}
+
+.hero-text{padding:1.6rem var(--gutter) 0;max-width:38rem}
+.slogan{font-family:var(--serif);font-weight:400;font-size:clamp(1.85rem, 3.2vw, 2.75rem);line-height:1.1;letter-spacing:-.015em;max-width:15ch;margin-bottom:1.35rem}
+.hero-note{margin-top:1.4rem;font-size:.9375rem;color:var(--gray-text);max-width:30em}
+
+@media (min-width:36em) and (max-width:59.99em){
+  .stage{height:clamp(24rem, 60svh, 38rem);--pl:30%;--pb:3.5rem}
+}
+@media (min-width:60em){
+  .hero{padding-top:calc(var(--nav-h) + 1.25rem)}
+  .stage{height:clamp(40rem, calc(100vh - 5rem), 54rem);height:clamp(40rem, calc(100svh - 5rem), 54rem);--pl:44%;--pb:5rem}
+  .name-big{font-size:clamp(9rem, 19vw, 22rem)}
+  .name-small{font-size:clamp(2.25rem, 3.3vw, 3.5rem)}
+  .hero-text{position:absolute;z-index:3;top:clamp(1.5rem, 6vh, 4rem);left:var(--gutter);width:calc(var(--pl) - var(--gutter) - 3rem);max-width:30rem;padding:0}
+}
+
+/* hero intro sequence */
+.js .hero-photo .cover{transform:scaleY(1);transition:transform 1.15s var(--mask) .1s}
+.js .hero-photo img{transform:scale(1.07);transition:transform 1.8s var(--ease) .1s}
+.js .name{opacity:0;transform:translateY(1.5rem);transition:opacity .9s var(--ease) .55s, transform .9s var(--ease) .55s}
+.js .hero-text > *{opacity:0;transition:opacity .7s ease}
+.js .ready .hero-photo .cover{transform:scaleY(0)}
+.js .ready .hero-photo img{transform:none}
+.js .ready .name{opacity:1;transform:none}
+.js .ready .hero-text > *{opacity:1}
+.js .ready .hero-text > :nth-child(1){transition-delay:.85s}
+.js .ready .hero-text > :nth-child(2){transition-delay:1s}
+.js .ready .hero-text > :nth-child(3){transition-delay:1.15s}
+
+/* ---------- Scroll reveals (varied) ---------- */
+.frame{position:relative;overflow:hidden;background:#d9cfc4}
+.frame img{width:100%;height:100%;object-fit:cover}
+.r-45{aspect-ratio:4/5}.r-34{aspect-ratio:3/4}.r-43{aspect-ratio:4/3}
+figure{margin:0}
+figcaption{margin-top:.75rem;font-size:.8125rem;letter-spacing:.03em;color:var(--gray-text)}
+
+.js [data-reveal="mask"] .frame::after{content:"";position:absolute;inset:0;background:var(--bg);transform-origin:50% 0;transform:scaleY(1);transition:transform 1s var(--mask)}
+.js [data-reveal="mask"] .frame img{transform:scale(1.08);transition:transform 1.5s var(--ease)}
+.js [data-reveal="mask"] figcaption{opacity:0;transition:opacity .5s ease .7s}
+.js [data-reveal="mask"].in .frame::after{transform:scaleY(0)}
+.js [data-reveal="mask"].in .frame img{transform:none}
+.js [data-reveal="mask"].in figcaption{opacity:1}
+
+.js [data-reveal="rise"]{opacity:0;transform:translateY(.9rem);transition:opacity .55s var(--ease), transform .55s var(--ease)}
+.js [data-reveal="rise"].in{opacity:1;transform:none}
+.js [data-reveal="fade"]{opacity:0;transition:opacity .6s ease .1s}
+.js [data-reveal="fade"].in{opacity:1}
+
+/* ---------- About ---------- */
+.about{--bg:var(--paper)}
+.about-grid{display:grid;gap:3.5rem}
+.about h2{max-width:13ch;margin-bottom:2rem}
+.prose p{max-width:32em}
+.prose p+p{margin-top:1rem}
+.facts{display:grid;gap:2.25rem;margin-top:3.5rem}
+.fact h3{margin-bottom:.6rem}
+.fact h3::before{content:"";display:block;width:2.25rem;height:2px;background:var(--pink);margin-bottom:1.1rem}
+.fact p{color:var(--gray-text);max-width:26em;font-size:1rem}
+.fact .text-link{margin-top:.35rem}
+.about-photo{width:86%;margin-left:auto}
+@media (min-width:40em){.facts{grid-template-columns:1fr 1fr;gap:2.5rem}}
+@media (min-width:60em){
+  .about-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:start}
+  .about-text{grid-column:1 / 7;padding-top:2rem}
+  .about-photo{grid-column:8 / 13;width:auto;margin:0}
+}
+
+/* ---------- Services ---------- */
+.services{--bg:var(--ink);color:var(--paper)}
+.services .muted{color:rgba(244,239,232,.74)}
+.svc-grid{display:grid;gap:3rem;grid-template-areas:"head" "list" "photo"}
+.svc-head{grid-area:head}
+.svc-head h2{margin-bottom:1.25rem}
+.svc-list-wrap{grid-area:list}
+.svc-photo{grid-area:photo;width:72%;margin-left:auto}
+.svc-photo figcaption{color:rgba(244,239,232,.68)}
+.svc-list{list-style:none;margin:0;padding:0}
+.svc{position:relative;padding:1.6rem 0 1.7rem;display:grid;gap:.4rem}
+.svc::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(217,184,176,.45);transform-origin:0 50%}
+.svc:last-child::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(217,184,176,.45)}
+.svc h3{font-weight:400;font-size:clamp(1.75rem, 3.6vw, 2.75rem);line-height:1.08;letter-spacing:-.02em;transition:color .3s ease}
+.svc p{color:rgba(244,239,232,.74);font-size:1rem;max-width:30em}
+.svc:hover h3{color:var(--pink)}
+.svc-cta{margin-top:2.5rem}
+.js .svc::before{transform:scaleX(0);transition:transform .9s var(--ease)}
+.js .svc > *{opacity:0;transition:opacity .6s ease .25s}
+.js .svc.in::before{transform:scaleX(1)}
+.js .svc.in > *{opacity:1}
+@media (min-width:40em){
+  .svc{grid-template-columns:1.1fr 1fr;align-items:baseline;gap:2rem}
+}
+@media (min-width:60em){
+  .svc-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;grid-template-areas:none;align-items:start}
+  .svc-head{grid-area:auto;grid-column:1 / 5;grid-row:1}
+  .svc-photo{grid-area:auto;grid-column:1 / 5;grid-row:2;width:auto;margin:0}
+  .svc-list-wrap{grid-area:auto;grid-column:6 / 13;grid-row:1 / 3;padding-top:.5rem}
+}
+
+/* ---------- Gallery ---------- */
+.gallery{--bg:var(--paper)}
+.gal-grid{display:grid;gap:2.75rem}
+.gal-head h2{max-width:11ch;margin-bottom:1.1rem}
+.gal-head p{max-width:28em}
+.gal-b{width:70%;margin-left:auto}
+@media (min-width:60em){
+  .gal-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;row-gap:3rem;align-items:start}
+  .gal-a{grid-column:1 / 8;grid-row:1 / 3}
+  .gal-head{grid-column:9 / 13;grid-row:1;padding-top:1rem}
+  .gal-b{grid-column:9 / 13;grid-row:2;width:auto;margin:0}
+}
+
+/* ---------- Contact ---------- */
+.contact{--bg:var(--pink)}
+.contact-grid{display:grid;gap:3.5rem}
+.contact h2{max-width:12ch;margin-bottom:1.25rem}
+.contact .lead{color:#3b3430}
+.phone{
+  display:inline-block;margin:1.75rem 0 1.5rem;
+  font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem, 7vw, 4.25rem);line-height:1;letter-spacing:-.02em;
+  text-decoration:none;border-bottom:1px solid rgba(31,27,24,.35);padding-bottom:.15em;
+  transition:border-color .25s ease;
+}
+.phone:hover{border-color:var(--ink)}
+.where{margin-top:2.75rem}
+.where h3{margin-bottom:.4rem}
+.where p{color:#3b3430}
+.map{position:relative;aspect-ratio:4/3;background:#cdb0a8;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.35) contrast(1.02)}
+.js .map{opacity:0;transform:scale(.985);transition:opacity .6s var(--ease), transform .6s var(--ease)}
+.js .map.in{opacity:1;transform:none}
+@media (min-width:60em){
+  .contact-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:center}
+  .contact-text{grid-column:1 / 6}
+  .map{grid-column:7 / 13;aspect-ratio:1/1}
+}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--ink);color:var(--paper);padding:clamp(3.5rem,8vw,5.5rem) 0 2rem}
+.foot-grid{display:grid;gap:2.25rem}
+.foot-brand{font-family:var(--serif);font-size:2.25rem;font-weight:400;letter-spacing:-.02em;line-height:1}
+.foot-grid p{color:rgba(244,239,232,.74);font-size:.9375rem;margin-top:.6rem}
+.foot-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 1.5rem}
+.foot-links a,.foot-contact a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none;font-size:.9375rem;transition:color .2s ease}
+.foot-links a:hover,.foot-contact a:hover{color:var(--pink)}
+.foot-contact{display:grid}
+.foot-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(244,239,232,.14);display:grid;gap:.5rem;font-size:.8125rem;letter-spacing:.03em;color:rgba(244,239,232,.66)}
+@media (min-width:48em){
+  .foot-grid{grid-template-columns:1.4fr 1fr 1fr;align-items:start}
+  .foot-bottom{grid-template-columns:auto 1fr;gap:2rem}
+  .foot-bottom span:last-child{text-align:right}
+}
+
+/* ---------- Accessibility preferences ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important;transition-delay:0s !important;animation:none !important}
+  .js .hero-photo .cover,.js [data-reveal="mask"] .frame::after{display:none}
+  .js .hero-photo img,.js [data-reveal="mask"] .frame img{transform:none;opacity:0;transition:opacity .2s ease}
+  .js .ready .hero-photo img,.js [data-reveal="mask"].in .frame img{opacity:1}
+  .js .name,.js [data-reveal="rise"],.js .map{transform:none !important}
+  .js .svc::before{transform:none}
+  .menu,.menu.open{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--gray-text:#3a342f}
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--ink)}
+  .btn{border-width:2px}
+  .btn-rose{border-color:#7a0d2b}
+  .btn-paper{border-color:var(--paper)}
+  .svc::before,.svc:last-child::after{background:var(--pink)}
+  .shade{background:linear-gradient(to top, rgba(31,27,24,.8) 0%, rgba(31,27,24,.35) 45%, rgba(31,27,24,0) 70%)}
+  .services .muted,.svc p{color:var(--paper)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Salon Genifer, începutul paginii">Salon Genifer</a>
+    <nav class="nav-links" aria-label="Navigare principală">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-rose btn-sm" href="tel:0722612761">Sună acum</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+        <span class="bars"><span class="b1"></span><span class="b2"></span></span>
+      </button>
+    </div>
+  </div>
+  <div class="menu" id="menu">
+    <nav aria-label="Meniu telefon">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-line" href="https://wa.me/40722612761?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20Genifer." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" aria-label="Salon Genifer">
+    <div class="stage">
+      <figure class="hero-photo">
+        <img src="img/4.jpg" alt="Coafeză aplicând vopsea pe părul unei cliente, cu pensula" width="1200" height="1500" fetchpriority="high">
+        <span class="shade" aria-hidden="true"></span>
+        <span class="cover" aria-hidden="true"></span>
+      </figure>
+      <div class="layer layer--ink">
+        <h1 class="name"><span class="name-small">Salon</span><span class="name-big">Genifer</span></h1>
+      </div>
+      <div class="layer layer--paper" aria-hidden="true">
+        <div class="name"><span class="name-small">Salon</span><span class="name-big">Genifer</span></div>
+      </div>
+
+      <div class="hero-text">
+        <p class="slogan">Stilul tău, rafinat cu grijă</p>
+        <div class="btn-row">
+          <a class="btn btn-rose" href="tel:0722612761">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 7.7 7.7l1.3-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40722612761?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20Genifer." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <p class="hero-note">Hair styling și colorare în zona Ghencea, București. Parcare în apropiere, programări la telefon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="despre">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <h2 data-reveal="rise">Aproape de inima Ghencei, cu timp doar pentru tine</h2>
+        <div class="prose" data-reveal="fade">
+          <p class="lead">Salon Genifer te așteaptă într-o atmosferă relaxată, aproape de inima zonei Ghencea din București. Ne ocupăm de hair styling și colorare, cu atenție la detalii și la ce îți dorești tu.</p>
+          <p class="muted">Te rugăm să ne suni înainte, ca să-ți rezervăm un timp dedicat, fără așteptare.</p>
+        </div>
+        <div class="facts">
+          <div class="fact" data-reveal="rise">
+            <h3>Parcare în apropiere</h3>
+            <p>Găsești locuri de parcare aproape de salon, ca să vii fără grija drumului.</p>
+          </div>
+          <div class="fact" data-reveal="rise">
+            <h3>Programări la telefon</h3>
+            <p>Sună-ne pentru o programare și eviți timpul de așteptare.</p>
+            <a class="text-link" href="tel:0722612761">Sună la 0722612761</a>
+          </div>
+        </div>
+      </div>
+      <figure class="about-photo" data-reveal="mask">
+        <div class="frame r-45">
+          <img src="img/3.jpg" alt="Coafeză pieptănând și uscând părul unei cliente cu foehnul" width="1200" height="1500" loading="lazy">
+        </div>
+        <figcaption>Uscat și coafat</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section services" id="servicii">
+    <div class="wrap svc-grid">
+      <div class="svc-head">
+        <h2 data-reveal="rise">Servicii</h2>
+        <p class="muted" data-reveal="fade" style="max-width:26em">Spune-ne ce îți dorești și pornim de acolo: o tunsoare nouă, o culoare care te pune în valoare sau o coafură pentru o seară specială.</p>
+      </div>
+      <div class="svc-list-wrap">
+        <ul class="svc-list">
+          <li class="svc" data-reveal="line">
+            <h3>Tuns femei</h3>
+            <p>Tuns modern sau clasic, cu consultanță inclusă.</p>
+          </li>
+          <li class="svc" data-reveal="line">
+            <h3>Colorare păr</h3>
+            <p>Nuanțe vibrante sau naturale, pentru orice stil.</p>
+          </li>
+          <li class="svc" data-reveal="line">
+            <h3>Coafat de zi sau de ocazie</h3>
+            <p>Coafuri lejere sau elegante, pentru orice eveniment.</p>
+          </li>
+          <li class="svc" data-reveal="line">
+            <h3>Tuns bărbați</h3>
+            <p>Tunsori de întreținere sau o schimbare de look.</p>
+          </li>
+        </ul>
+        <div class="svc-cta">
+          <a class="btn btn-paper" href="tel:0722612761">Sună pentru programare</a>
+        </div>
+      </div>
+      <figure class="svc-photo" data-reveal="mask">
+        <div class="frame r-34">
+          <img src="img/5.jpg" alt="Mostre de păr în nuanțe diferite, folosite la alegerea culorii" width="1200" height="1600" loading="lazy">
+        </div>
+        <figcaption>Mostre de nuanțe</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section gallery" id="galerie">
+    <div class="wrap gal-grid">
+      <div class="gal-head">
+        <h2 data-reveal="rise">Culoare, tuns și coafat</h2>
+        <p class="muted" data-reveal="fade">Câteva imagini din lumea în care lucrăm: șuvițe, nuanțe alese cu răbdare și coafuri pentru zile obișnuite sau speciale.</p>
+      </div>
+      <figure class="gal-a" data-reveal="mask">
+        <div class="frame r-43">
+          <img src="img/1.jpg" alt="Coafeză lucrând la șuvițe colorate în salon" width="1600" height="1200" loading="lazy">
+        </div>
+        <figcaption>Șuvițe și colorare</figcaption>
+      </figure>
+      <figure class="gal-b" data-reveal="mask">
+        <div class="frame r-34">
+          <img src="img/2.jpg" alt="Coafeză aranjând un coc pentru o clientă" width="1200" height="1600" loading="lazy">
+        </div>
+        <figcaption>Coafat de ocazie</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-text">
+        <h2 data-reveal="rise">Sună și îți facem loc</h2>
+        <p class="lead" data-reveal="fade">Găsim împreună o oră potrivită. Dacă îți e mai comod, ne poți scrie și pe WhatsApp.</p>
+        <a class="phone" href="tel:0722612761" aria-label="Sună la 0722612761">0722612761</a>
+        <div class="btn-row">
+          <a class="btn btn-rose" href="tel:0722612761">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3.5h3l1.5 4-2 1.3a11 11 0 0 0 7.7 7.7l1.3-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5Z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40722612761?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20Genifer." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <div class="where">
+          <h3>Zona Ghencea, București</h3>
+          <p>Ai locuri de parcare în apropierea salonului.</p>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Salon+Genifer+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map" data-reveal="map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0571538,44.4133449,26.0651538,44.4173449&amp;layer=mapnik&amp;marker=44.4153449,26.0611538" title="Harta: Salon Genifer, zona Ghencea, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Salon Genifer</div>
+        <p>Hair styling și colorare în zona Ghencea, București.</p>
+      </div>
+      <nav aria-label="Navigare subsol">
+        <ul class="foot-links">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#servicii">Servicii</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="foot-contact">
+        <a href="tel:0722612761">0722612761</a>
+        <a href="https://wa.me/40722612761?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20Genifer." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Salon+Genifer+Bucure%C8%99ti" target="_blank" rel="noopener">Vezi pe Google Maps</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Model de site (demo)</span>
+      <span>Fotografii ilustrative de pe Pixabay: jackmac34, Engin_Akyurt, Krzysiek, artursfoto, stux</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc = document, body = doc.body;
+
+  /* intro sequence: wait briefly for fonts so the big name doesn't jump */
+  function start(){ requestAnimationFrame(function(){ requestAnimationFrame(function(){ body.classList.add('ready'); }); }); }
+  var started = false;
+  function go(){ if(!started){ started = true; start(); } }
+  if (doc.fonts && doc.fonts.ready) { doc.fonts.ready.then(go); }
+  setTimeout(go, 700);
+
+  /* nav shadow only when content scrolls beneath it */
+  var nav = doc.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* mobile menu */
+  var btn = doc.getElementById('menuBtn'), menu = doc.getElementById('menu');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+    menu.classList.toggle('open', open);
+  }
+  btn.addEventListener('click', function(){ setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  menu.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  doc.addEventListener('keydown', function(e){ if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); btn.focus(); } });
+  window.addEventListener('resize', function(){ if (window.innerWidth >= 896) setMenu(false); });
+
+  /* scroll reveals */
+  var items = doc.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.18, rootMargin:'0px 0px -8% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
