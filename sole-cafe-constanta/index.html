@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sole Cafe, Constanța | Cafea și espresso pe Bulevardul Tomis</title>
+<meta name="description" content="Sole Cafe, Bulevardul Tomis 391, Constanța. Cafea și espresso pregătite pe loc, la masă sau la pachet. Deschis zilnic între 08:00 și 21:00.">
+<meta name="theme-color" content="#ffffff">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#ffffff;
+  --espresso:#3B2A20;
+  --espresso-deep:#2c1f17;
+  --milk:#EADFD3;
+  --milk-soft:#F4EDE5;
+  --accent:#be123c;
+  --accent-dark:#9f1239;
+  --muted:#6b5649;
+  --line:rgba(59,42,32,.16);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:72rem;
+  --gutter:clamp(1.25rem,5vw,3rem);
+  --section:clamp(5rem,12vw,9rem);
+  --head:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--white);color:var(--espresso);
+  font-family:var(--body);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);margin:0;letter-spacing:-0.025em;line-height:1.08;font-weight:600}
+p{margin:0}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:.35rem}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:1rem;top:1rem;z-index:100;background:#fff;padding:.75rem 1rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3.125rem;padding:.8rem 1.4rem;border-radius:.65rem;
+  font-family:var(--body);font-weight:600;font-size:1rem;letter-spacing:.005em;
+  text-decoration:none;cursor:pointer;border:1.5px solid transparent;
+  transition:background-color .2s var(--ease),box-shadow .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);box-shadow:0 .5rem 1.25rem -.6rem rgba(190,18,60,.55)}
+.btn-line{border-color:rgba(59,42,32,.35);color:var(--espresso);background:transparent}
+.btn-line:hover{border-color:var(--espresso);background:rgba(59,42,32,.04)}
+.on-dark .btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.on-dark .btn-line:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:saturate(160%) blur(18px);backdrop-filter:saturate(160%) blur(18px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:box-shadow .3s var(--ease),background-color .3s var(--ease);
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 .6rem 1.6rem -1rem rgba(59,42,32,.35)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.nav{background:rgba(255,255,255,.97)}}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;font-family:var(--head);font-weight:700;font-size:1.2rem;letter-spacing:-0.02em;min-height:44px}
+.brand svg{width:1.7rem;height:1.7rem}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--espresso);padding:.6rem 0;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav .btn{min-height:2.75rem;padding:.55rem 1rem;font-size:.95rem}
+@media (min-width:52rem){.nav-links{display:flex}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding-top:calc(4rem + clamp(2rem,6vw,5rem));padding-bottom:var(--section)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+.hero h1{font-size:clamp(3.2rem,11vw,7.25rem);font-weight:700;letter-spacing:-0.04em;line-height:.98}
+.hero .lead{font-family:var(--head);font-weight:500;font-size:clamp(1.35rem,3.4vw,1.9rem);letter-spacing:-0.02em;line-height:1.2;margin-top:1.1rem;max-width:22ch}
+.hero .intro{color:var(--muted);margin-top:1.1rem;max-width:34rem}
+.actions{display:flex;flex-direction:column;gap:.75rem;margin-top:1.9rem}
+.meta{margin-top:1.75rem;font-size:.9rem;color:var(--muted);letter-spacing:.01em;line-height:1.6}
+.meta strong{color:var(--espresso);font-weight:600}
+@media (min-width:30rem){.actions{flex-direction:row;flex-wrap:wrap}}
+@media (min-width:56rem){.hero-grid{grid-template-columns:1.05fr 1fr}.hero{min-height:100svh;display:flex;align-items:center}}
+
+.hero-text>*{animation:rise .6s var(--ease) both;animation-delay:calc(var(--i,0)*70ms)}
+@keyframes rise{from{opacity:0;transform:translateY(.6rem)}to{opacity:1;transform:none}}
+
+/* Ceașca văzută de sus */
+.cup-wrap{display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.cup-btn{
+  appearance:none;border:0;background:none;padding:0;cursor:pointer;
+  width:min(84vw,32rem);aspect-ratio:1;border-radius:50%;
+  animation:settle .7s var(--ease) .12s both;-webkit-tap-highlight-color:transparent;
+}
+.cup-btn:active svg{transform:scale(.985)}
+.cup-btn svg{width:100%;height:100%;display:block;transition:transform .12s ease}
+@keyframes settle{from{opacity:0;transform:scale(.95) rotate(-7deg)}to{opacity:1;transform:none}}
+.cup-note{font-size:.8rem;letter-spacing:.03em;color:var(--muted)}
+
+.cup .milk,.cup .ring,.cup .core,.cup .ripple,.cup .pull{transform-box:fill-box;transform-origin:50% 50%}
+.cup .pull{transform-origin:50% 0}
+.cup .ripple{opacity:0}
+.cup.pour .ripple{animation:ripple 1s var(--ease) .45s both}
+.cup.pour .milk{animation:grow .85s var(--ease) .55s both}
+.cup.pour .ring{animation:grow .55s var(--ease) 1.05s both}
+.cup.pour .core{animation:grow .5s var(--ease) 1.25s both}
+.cup.pour .pull{animation:pull .4s var(--ease) 1.65s both}
+@keyframes grow{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes pull{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes ripple{from{opacity:.55;transform:scale(.2)}to{opacity:0;transform:scale(2.4)}}
+
+/* ---------- Secțiuni ---------- */
+section{padding-block:var(--section)}
+.sec-head h2{font-size:clamp(2.1rem,5.5vw,3.75rem);max-width:16ch}
+.sec-head p{margin-top:1.1rem;color:var(--muted);max-width:34rem}
+
+/* Despre */
+.about-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.photo{overflow:hidden;border-radius:.9rem;background:var(--milk)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about .photo{aspect-ratio:4/5}
+.about-text p.body{margin-top:1.4rem;max-width:34rem}
+.perks{list-style:none;margin:clamp(3rem,7vw,4.5rem) 0 0;padding:0;display:grid;gap:1.75rem}
+.perks li{padding-top:1.1rem;border-top:1px solid var(--line)}
+.perks h3{font-size:1.15rem;letter-spacing:-0.015em}
+.perks p{color:var(--muted);margin-top:.35rem;font-size:.98rem}
+@media (min-width:40rem){.perks{grid-template-columns:repeat(3,1fr);gap:2rem}}
+@media (min-width:56rem){.about-grid{grid-template-columns:5fr 6fr}}
+
+/* Meniu */
+.menu{background:var(--milk)}
+.menu-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);margin-top:clamp(2.5rem,6vw,4rem)}
+.menu .photo{aspect-ratio:4/5;background:#e0d2c3}
+.groups{display:grid;gap:2.75rem}
+.group h3{font-size:.85rem;font-family:var(--body);font-weight:600;letter-spacing:.06em;color:var(--accent);margin-bottom:.4rem}
+.items{list-style:none;margin:0;padding:0}
+.items li{padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.items li:first-child{border-top:1px solid var(--line)}
+.items .name{font-family:var(--head);font-weight:600;font-size:clamp(1.3rem,3vw,1.6rem);letter-spacing:-0.02em;line-height:1.15;display:block}
+.items .desc{color:var(--muted);margin-top:.3rem;display:block}
+.order{margin-top:2.75rem;display:flex;flex-direction:column;gap:1rem;align-items:flex-start}
+.order p{max-width:30rem}
+@media (min-width:56rem){
+  .menu-grid{grid-template-columns:5fr 6fr;align-items:start}
+  .menu .photo{position:sticky;top:6rem}
+}
+
+/* Galerie */
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.75rem,2vw,1.25rem);margin-top:clamp(2.5rem,6vw,4rem)}
+.gallery-grid .photo{aspect-ratio:4/5}
+.gallery-grid .photo:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.gallery-note{margin-top:1rem;font-size:.8rem;letter-spacing:.03em;color:var(--muted)}
+@media (min-width:44rem){
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .gallery-grid .photo:first-child{grid-column:auto;aspect-ratio:4/5}
+}
+
+/* Contact */
+.visit{background:var(--espresso);color:#fff}
+.visit .sec-head p{color:rgba(255,255,255,.75)}
+.visit-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:start}
+.facts{margin:2.25rem 0 0;display:grid;gap:1.4rem}
+.facts div{display:grid;gap:.2rem}
+.facts dt{font-size:.8rem;letter-spacing:.06em;color:rgba(255,255,255,.62)}
+.facts dd{margin:0;font-family:var(--head);font-size:clamp(1.2rem,2.6vw,1.45rem);font-weight:500;letter-spacing:-0.01em}
+.facts dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.facts dd a:hover{border-color:#fff}
+.visit .actions{margin-top:2.25rem}
+.map{border-radius:.9rem;overflow:hidden;aspect-ratio:4/3;background:#4a372b}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (min-width:56rem){.visit-grid{grid-template-columns:1fr 1.1fr}.map{aspect-ratio:1/1}}
+
+/* Subsol */
+footer{background:var(--espresso-deep);color:rgba(255,255,255,.72);padding-block:3rem 3.5rem;font-size:.85rem;letter-spacing:.02em}
+.foot{display:grid;gap:1.25rem}
+.foot .brand{color:#fff;font-size:1.1rem}
+.foot p{max-width:40rem;line-height:1.6}
+@media (min-width:48rem){.foot{grid-template-columns:auto 1fr;align-items:end;column-gap:4rem}.foot .small{text-align:right}}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js [data-reveal]{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.js [data-reveal="slide"]{transform:translateX(-.75rem)}
+.js [data-reveal="zoom"] img{transform:scale(1.07);transition:transform .6s var(--ease);transition-delay:calc(var(--i,0)*90ms)}
+.js [data-reveal].in{opacity:1;transform:none}
+.js [data-reveal="zoom"].in img{transform:none}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-text>*,.cup-btn{animation:fade .2s ease both}
+  .cup.pour .milk,.cup.pour .ring,.cup.pour .core,.cup.pour .pull,.cup.pour .ripple{animation:none}
+  .js [data-reveal],.js [data-reveal="slide"]{transform:none;transition:opacity .2s ease}
+  .js [data-reveal="zoom"] img{transform:none;transition:none}
+  .btn:active,.cup-btn:active svg{transform:none}
+  .cup-note{display:none}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--muted:#3B2A20;--line:rgba(59,42,32,.6)}
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--espresso)}
+  .btn-line{border-width:2px;border-color:var(--espresso)}
+  .on-dark .btn-line{border-color:#fff}
+  .btn-primary{border:2px solid var(--accent-dark)}
+  .visit .sec-head p,.facts dt{color:#fff}
+  footer{color:#fff}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Sole Cafe, începutul paginii">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#EADFD3"/><circle cx="16" cy="16" r="10.5" fill="#3B2A20"/><path d="M16 22.2c-2.4-1.6-4.8-3.5-4.8-5.8 0-1.6 1.2-2.6 2.4-2.6 1 0 1.8.6 2.4 1.5.6-.9 1.4-1.5 2.4-1.5 1.2 0 2.4 1 2.4 2.6 0 2.3-2.4 4.2-4.8 5.8z" fill="#F4EDE5"/></svg>
+      Sole Cafe
+    </a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#vizita">Unde ne găsești</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:+40743996633">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- Prima secțiune -->
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" style="--i:0">Sole Cafe</h1>
+        <p class="lead" style="--i:1">Timp pentru cafeaua ta preferată.</p>
+        <p class="intro" style="--i:2">Cafea și espresso pregătite pe loc, de băut aici sau de luat cu tine. La Sole Cafe descoperi gustul cafelei adevărate.</p>
+        <div class="actions" style="--i:3">
+          <a class="btn btn-primary" href="tel:+40743996633">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40743996633?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20cafea%20la%20pachet." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+        <p class="meta" style="--i:4"><strong>Bulevardul Tomis 391, Constanța</strong><br>Deschis zilnic între 08:00 și 21:00</p>
+      </div>
+
+      <div class="cup-wrap">
+        <button class="cup-btn" type="button" id="cupBtn" aria-label="Ceașcă de cafea văzută de sus, cu o inimă din spumă de lapte. Apasă ca să se deseneze din nou.">
+          <svg class="cup pour" id="cup" viewBox="0 0 440 440" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="coffee" cx=".44" cy=".4" r=".7">
+                <stop offset="0" stop-color="#7b5539"/>
+                <stop offset=".55" stop-color="#563827"/>
+                <stop offset="1" stop-color="#3B2A20"/>
+              </radialGradient>
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
+              <clipPath id="coffeeClip"><circle cx="210" cy="222" r="114"/></clipPath>
+              <clipPath id="heartClip">
+                <path d="M210 300 C180 278 132 240 134 200 C136 168 162 150 186 158 C198 162 206 170 210 180 C214 170 222 162 234 158 C258 150 284 168 286 200 C288 240 240 278 210 300 Z"/>
+              </clipPath>
+            </defs>
+            <!-- farfuria -->
+            <circle cx="222" cy="230" r="194" fill="rgba(59,42,32,.10)" filter="url(#soft)"/>
+            <circle cx="220" cy="220" r="196" fill="#EADFD3"/>
+            <circle cx="220" cy="220" r="160" fill="#E2D4C5"/>
+            <!-- toarta -->
+            <rect x="336" y="206" width="66" height="32" rx="16" fill="#ffffff"/>
+            <rect x="336" y="206" width="66" height="32" rx="16" fill="none" stroke="#dccbb9" stroke-width="2"/>
+            <!-- ceașca -->
+            <circle cx="214" cy="228" r="142" fill="rgba(59,42,32,.14)" filter="url(#soft)"/>
+            <circle cx="210" cy="222" r="142" fill="#ffffff"/>
+            <circle cx="210" cy="222" r="128" fill="#F7F2EC"/>
+            <circle cx="210" cy="222" r="118" fill="url(#coffee)"/>
+            <circle cx="210" cy="222" r="113" fill="none" stroke="#a87650" stroke-width="6" opacity=".35"/>
+            <!-- cercul care pornește turnarea -->
+            <g clip-path="url(#coffeeClip)">
+              <circle class="ripple" cx="210" cy="240" r="40" fill="none" stroke="#F4EDE5" stroke-width="3"/>
+            </g>
+            <!-- inima de latte art -->
+            <g clip-path="url(#heartClip)">
+              <circle class="milk" cx="210" cy="240" r="122" fill="#F4EDE5"/>
+              <g transform="translate(210 228) scale(.72) translate(-210 -228)">
+                <path class="ring" d="M210 300 C180 278 132 240 134 200 C136 168 162 150 186 158 C198 162 206 170 210 180 C214 170 222 162 234 158 C258 150 284 168 286 200 C288 240 240 278 210 300 Z" fill="#b8875f" opacity=".75"/>
+              </g>
+              <g transform="translate(210 230) scale(.56) translate(-210 -230)">
+                <path class="core" d="M210 300 C180 278 132 240 134 200 C136 168 162 150 186 158 C198 162 206 170 210 180 C214 170 222 162 234 158 C258 150 284 168 286 200 C288 240 240 278 210 300 Z" fill="#F4EDE5"/>
+              </g>
+              <rect class="pull" x="208.8" y="168" width="2.4" height="136" rx="1.2" fill="#a87650" opacity=".8"/>
+            </g>
+          </svg>
+        </button>
+        <p class="cup-note" aria-hidden="true">Atinge ceașca pentru încă o inimă</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="about-grid">
+        <figure class="photo" data-reveal="zoom" style="margin:0">
+          <img src="img/2.jpg" alt="Barista care toarnă cafea proaspăt preparată" loading="lazy" width="800" height="1000">
+        </figure>
+        <div class="about-text sec-head" data-reveal="fade">
+          <h2 id="t-despre">O ceașcă făcută cu grijă, în fiecare zi</h2>
+          <p class="body">Sole Cafe este locul din Constanța unde savurezi o cafea pregătită cu grijă, într-o atmosferă relaxantă. Aici fiecare ceașcă de cafea sau espresso contează.</p>
+          <p class="body" style="margin-top:1rem">Te așteptăm la o pauză plăcută, zi de zi, pe Bulevardul Tomis.</p>
+        </div>
+      </div>
+      <ul class="perks">
+        <li data-reveal="fade" style="--i:0"><h3>Atmosferă liniștită</h3><p>Perfectă pentru pauze relaxante.</p></li>
+        <li data-reveal="fade" style="--i:1"><h3>Cafea autentică</h3><p>Gust bogat, arome deosebite.</p></li>
+        <li data-reveal="fade" style="--i:2"><h3>Servire prietenoasă</h3><p>Întotdeauna cu zâmbetul pe buze.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="menu" id="meniu" aria-labelledby="t-meniu">
+    <div class="wrap">
+      <div class="sec-head" data-reveal="fade">
+        <h2 id="t-meniu">Meniu</h2>
+        <p>Cafea și espresso, la masă sau la pachet. Alegi cum îți place.</p>
+      </div>
+      <div class="menu-grid">
+        <figure class="photo" data-reveal="zoom" style="margin:0">
+          <img src="img/3.jpg" alt="Cappuccino cu desen din spumă de lapte" loading="lazy" width="800" height="1000">
+        </figure>
+        <div>
+          <div class="groups">
+            <div class="group">
+              <h3>La masă</h3>
+              <ul class="items">
+                <li data-reveal="slide" style="--i:0"><span class="name">Cafea proaspătă</span><span class="desc">Cafea preparată pe loc, cu aromă intensă.</span></li>
+                <li data-reveal="slide" style="--i:1"><span class="name">Espresso</span><span class="desc">Espresso scurt sau lung, după preferință.</span></li>
+              </ul>
+            </div>
+            <div class="group">
+              <h3>La pachet</h3>
+              <ul class="items">
+                <li data-reveal="slide" style="--i:0"><span class="name">Cafea la pachet</span><span class="desc">Cafeaua preferată, de luat cu tine.</span></li>
+                <li data-reveal="slide" style="--i:1"><span class="name">Espresso la pachet</span><span class="desc">Espresso aromat pentru zilele pe fugă.</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="order" data-reveal="fade">
+            <p>Cafeaua sau espresso-ul preferat, de băut aici sau de luat cu tine.</p>
+            <a class="btn btn-primary" href="https://wa.me/40743996633?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20cafea%20la%20pachet." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>
+              Scrie pe WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="gallery" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="sec-head" data-reveal="fade">
+        <h2 id="t-galerie">Aromă, de aproape</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="photo" data-reveal="zoom" style="margin:0;--i:0"><img src="img/1.jpg" alt="Ceașcă de cafea caldă pe masă" loading="lazy" width="800" height="1000"></figure>
+        <figure class="photo" data-reveal="zoom" style="margin:0;--i:1"><img src="img/4.jpg" alt="Cafea neagră într-o ceașcă, pe o masă de lemn" loading="lazy" width="800" height="1000"></figure>
+        <figure class="photo" data-reveal="zoom" style="margin:0;--i:2"><img src="img/5.jpg" alt="Cafea proaspăt măcinată" loading="lazy" width="800" height="1000"></figure>
+      </div>
+      <p class="gallery-note">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="visit on-dark" id="vizita" aria-labelledby="t-vizita">
+    <div class="wrap visit-grid">
+      <div class="sec-head" data-reveal="fade">
+        <h2 id="t-vizita">Vino la o cafea</h2>
+        <p>Ne găsești pe Bulevardul Tomis. Sună-ne sau scrie-ne dacă vrei cafeaua la pachet.</p>
+        <dl class="facts">
+          <div><dt>Adresă</dt><dd>Bulevardul Tomis 391, Constanța</dd></div>
+          <div><dt>Program</dt><dd>Deschis zilnic, 08:00–21:00</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+40743996633">+40 743 996 633</a></dd></div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+40743996633">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40743996633?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20cafea%20la%20pachet." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Sole+Cafe+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map" data-reveal="fade" style="--i:1">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6005503,44.210455499999995,28.6085503,44.2144555&amp;layer=mapnik&amp;marker=44.2124555,28.6045503" title="Harta: Sole Cafe, Bulevardul Tomis 391, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#top">Sole Cafe ☕</a>
+      <p style="margin-top:.5rem">Bulevardul Tomis 391, Constanța<br>Deschis zilnic între 08:00 și 21:00</p>
+    </div>
+    <div class="small">
+      <p>Model de site (demo)</p>
+      <p style="margin-top:.4rem">Fotografii ilustrative de pe Pixabay: Engin_Akyurt, 20926038, minhthai0105, eliasfalla</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8);}
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  var items=document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{threshold:.15,rootMargin:'0px 0px -5% 0px'});
+    items.forEach(function(el){io.observe(el);});
+  }else{
+    items.forEach(function(el){el.classList.add('in');});
+  }
+
+  var cup=document.getElementById('cup');
+  document.getElementById('cupBtn').addEventListener('click',function(){
+    cup.classList.remove('pour');
+    void cup.getBoundingClientRect();
+    cup.classList.add('pour');
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
