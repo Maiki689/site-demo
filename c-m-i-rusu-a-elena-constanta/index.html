@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C.M.I Rusu A. Elena · Cabinet stomatologic în Constanța</title>
+<meta name="description" content="C.M.I Rusu A. Elena – servicii stomatologice în Constanța, pe Strada Adamclisi 2. Consultații, tratamente carii, igienizare, extracții. Sunați pentru programare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300..600,0..100&display=swap" rel="stylesheet">
+<style>
+:root{
+  --peach:#F7D9C4;
+  --peach-soft:#FBE9DC;
+  --sage:#7FA88B;
+  --sage-deep:#4E7A5E;
+  --cream:#FFF8F1;
+  --brown:#3A2E28;
+  --brown-soft:rgba(58,46,40,.74);
+  --teal:#0f766e;
+  --teal-deep:#0b5e57;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:72rem;
+  --gutter:clamp(1.25rem,4vw,2.5rem);
+  --section:clamp(4.5rem,11vw,8.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--brown);
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+@supports (overflow:clip){body{overflow-x:clip}}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  font-family:"Fraunces",Georgia,serif;font-weight:450;
+  font-variation-settings:"SOFT" 100;
+  letter-spacing:-.02em;line-height:1.08;margin:0;
+}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:1rem;top:1rem;z-index:100;background:var(--brown);color:var(--cream);padding:.6rem 1rem;border-radius:.5rem}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:.4rem}
+
+/* ---------- butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  min-height:3.25rem;padding:0 1.6rem;border-radius:999px;
+  font:600 1rem/1 "Figtree",sans-serif;text-decoration:none;
+  transition:background-color .25s ease,box-shadow .25s ease,border-color .25s ease,transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-deep);box-shadow:0 .6rem 1.4rem -.6rem rgba(15,118,110,.55)}
+.btn-soft{background:transparent;color:var(--brown);border:1.5px solid rgba(58,46,40,.22)}
+.btn-soft:hover{background:rgba(127,168,139,.16);border-color:rgba(58,46,40,.35)}
+.btn-sm{min-height:2.75rem;padding:0 1.1rem;font-size:.95rem}
+
+/* ---------- navigare (sticlă) ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,248,241,.72);
+  -webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px);
+  border-top:1px solid rgba(255,255,255,.85);
+  transition:box-shadow .4s ease;
+}
+.nav.scrolled{box-shadow:0 .5rem 1.6rem -1rem rgba(58,46,40,.35)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav{background:rgba(255,248,241,.97)}
+}
+.nav-in{display:flex;align-items:center;gap:1rem;min-height:4.25rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;min-width:0;margin-right:auto}
+.mark{
+  width:2.4rem;height:2.4rem;flex:none;border-radius:50%;
+  background:var(--peach);display:grid;place-items:center;color:var(--teal-deep);
+}
+.mark svg{width:1.3rem;height:1.3rem}
+.brand-txt{display:flex;flex-direction:column;min-width:0}
+.brand-name{
+  font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 100;
+  font-weight:600;font-size:1.08rem;letter-spacing:-.01em;line-height:1.15;white-space:nowrap;
+}
+.brand-sub{font-size:.75rem;letter-spacing:.03em;color:var(--brown-soft);font-weight:500}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .9rem;border-radius:999px;
+  text-decoration:none;font-weight:600;font-size:.97rem;transition:background-color .2s ease;
+}
+.nav-links a:hover{background:rgba(127,168,139,.18)}
+@media (min-width:800px){.nav-links{display:flex}}
+@media (max-width:360px){.brand-sub{display:none}.mark{display:none}}
+
+/* ---------- prima secțiune ---------- */
+.hero{position:relative;padding-block:clamp(1.75rem,5vw,4.5rem) var(--section)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+.hero-name{display:flex;flex-direction:column;gap:.15rem;margin-bottom:1.1rem}
+.hero-name strong{
+  font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 100;
+  font-weight:600;font-size:clamp(1.2rem,2.4vw,1.45rem);letter-spacing:-.01em;color:var(--teal-deep);
+}
+.hero-name span{font-size:.92rem;letter-spacing:.02em;color:var(--brown-soft)}
+.hero h1{font-size:clamp(2.45rem,6.4vw,4.7rem);font-weight:420;max-width:12ch}
+.lead{margin-top:1.25rem;font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--brown-soft);max-width:34ch}
+.actions{display:flex;flex-direction:column;gap:.7rem;margin-top:1.8rem}
+.phone-note{margin-top:.9rem;font-size:.92rem;color:var(--brown-soft)}
+.phone-note a{font-weight:600;color:var(--brown);text-decoration-color:rgba(58,46,40,.3);text-underline-offset:.2em}
+@media (min-width:520px){.actions{flex-direction:row;flex-wrap:wrap}}
+
+.hero-visual{position:relative;width:min(100%,25rem);margin-inline:auto;padding:1.5rem 1.25rem 1rem}
+.orb{position:absolute;display:block;pointer-events:none}
+.orb i{display:block;width:100%;height:100%;border-radius:50%;animation:breathe 10s ease-in-out infinite alternate;will-change:transform}
+.o1{width:82%;aspect-ratio:1;top:-2%;left:-8%}
+.o1 i{background:var(--peach)}
+.o2{width:52%;aspect-ratio:1;bottom:-3%;right:-9%}
+.o2 i{background:var(--sage);opacity:.5;animation-duration:12s;animation-delay:-4s}
+.o3{width:19%;aspect-ratio:1;top:6%;right:0}
+.o3 i{border:2px solid var(--teal);opacity:.55;animation-duration:8s;animation-delay:-2s}
+.o4{width:7%;aspect-ratio:1;bottom:18%;left:-2%}
+.o4 i{background:var(--sage-deep);opacity:.6;animation-duration:9s;animation-delay:-6s}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.07)}}
+
+.hero-photo{
+  position:relative;margin:0;aspect-ratio:4/5;overflow:hidden;
+  border-radius:999px 999px 2rem 2rem;background:var(--peach-soft);
+  box-shadow:0 2rem 3rem -2rem rgba(58,46,40,.35);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+
+/* intrare */
+.intro{animation:rise .95s var(--ease) both;animation-delay:var(--d,0s)}
+.orb.intro{animation:grow 1.6s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes grow{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:none}}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.1fr .9fr}
+  .hero{min-height:calc(100svh - 4.25rem);display:flex;align-items:center}
+  .hero>.wrap{width:100%}
+  .hero-visual{width:100%;max-width:27rem;padding:2rem 1.5rem 1.5rem}
+}
+
+/* ---------- despre ---------- */
+.about{padding-block:0 var(--section)}
+.about-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.about h2{font-size:clamp(2rem,4.6vw,3.3rem);max-width:14ch}
+.about-text p{margin-top:1.2rem;max-width:58ch;color:var(--brown-soft)}
+.about-text p.first{color:var(--brown);font-size:1.15rem}
+.about-photo{margin:0;aspect-ratio:4/3;border-radius:2rem;overflow:hidden;background:var(--peach-soft)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){.about-grid{grid-template-columns:.95fr 1.05fr}}
+
+.perks{list-style:none;margin:clamp(3.5rem,8vw,5.5rem) 0 0;padding:0;display:grid;gap:2.25rem}
+.perk{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.perk-ic{
+  width:3.25rem;height:3.25rem;border-radius:50%;display:grid;place-items:center;
+  background:rgba(127,168,139,.2);color:var(--sage-deep);
+}
+.perk-ic svg{width:1.5rem;height:1.5rem}
+.perk h3{font-size:1.3rem;font-weight:500;letter-spacing:-.01em}
+.perk p{margin-top:.3rem;color:var(--brown-soft)}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr);gap:2rem}}
+
+/* ---------- servicii ---------- */
+.services{
+  background:var(--peach);border-radius:clamp(1.75rem,4vw,3rem);
+  margin-inline:clamp(.5rem,1.6vw,1.5rem);padding-block:var(--section);
+}
+.svc-grid{display:grid;gap:clamp(2.5rem,6vw,5rem)}
+.services h2{font-size:clamp(2.2rem,5.4vw,3.8rem)}
+.svc-intro{margin-top:1rem;max-width:36ch;color:var(--brown-soft);font-size:1.08rem}
+.svc-photo{margin:2rem 0 0;aspect-ratio:4/3;border-radius:1.75rem;overflow:hidden;background:var(--peach-soft)}
+.svc-photo img{width:100%;height:100%;object-fit:cover}
+.svc-list{list-style:none;margin:0;padding:0}
+.svc{position:relative;padding:1.6rem 0}
+.svc::before,.svc:last-child::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(58,46,40,.22);
+  transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease);
+  transition-delay:calc(var(--i,0) * .12s);
+}
+.svc:last-child::after{top:auto;bottom:0}
+.svc h3{font-size:clamp(1.4rem,2.6vw,1.85rem);font-weight:450}
+.svc p{margin-top:.35rem;color:var(--brown-soft)}
+.svc h3,.svc p{opacity:0;transition:opacity .6s ease;transition-delay:calc(var(--i,0) * .12s + .2s)}
+.svc-list.in .svc::before,.svc-list.in .svc:last-child::after{transform:scaleX(1)}
+.svc-list.in .svc h3,.svc-list.in .svc p{opacity:1}
+.svc-actions{display:flex;flex-direction:column;gap:.7rem;margin-top:2rem}
+@media (min-width:520px){.svc-actions{flex-direction:row;flex-wrap:wrap}}
+@media (min-width:900px){
+  .svc-grid{grid-template-columns:.9fr 1.1fr;align-items:start}
+  .svc-head{position:sticky;top:6rem}
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:baseline;padding:2rem 0}
+  .svc p{margin-top:0}
+}
+
+/* ---------- prima vizită ---------- */
+.visit{padding-block:var(--section)}
+.visit-grid{display:grid;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.visit-photo{margin:0;aspect-ratio:3/2;border-radius:2rem;overflow:hidden;background:var(--peach-soft)}
+.visit-photo img{width:100%;height:100%;object-fit:cover}
+.visit h2{font-size:clamp(1.9rem,4.4vw,3.1rem);max-width:16ch}
+.visit p{margin-top:1.1rem;max-width:44ch;color:var(--brown-soft)}
+.visit .actions{margin-top:1.75rem}
+@media (min-width:900px){.visit-grid{grid-template-columns:1.1fr .9fr}}
+
+/* ---------- contact ---------- */
+.contact{padding-block:0 var(--section)}
+.contact-grid{display:grid;gap:clamp(2.5rem,5vw,4rem)}
+.contact h2{font-size:clamp(2rem,4.8vw,3.4rem);max-width:13ch}
+.contact-intro{margin-top:1rem;color:var(--brown-soft);max-width:40ch}
+.info{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.4rem}
+.info small{display:block;font-size:.8rem;letter-spacing:.06em;color:var(--brown-soft);font-weight:600}
+.info a,.info span{font-size:1.15rem;font-weight:500;text-decoration:none}
+.info a{text-decoration:underline;text-decoration-color:rgba(15,118,110,.35);text-underline-offset:.22em;transition:text-decoration-color .2s}
+.info a:hover{text-decoration-color:var(--teal)}
+.contact .actions{margin-top:2rem}
+.map{
+  position:relative;border-radius:2rem;overflow:hidden;background:var(--peach-soft);
+  min-height:20rem;aspect-ratio:4/3;
+}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.8)}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:.85fr 1.15fr;align-items:center}
+  .map{aspect-ratio:auto;min-height:30rem}
+}
+
+/* ---------- subsol ---------- */
+.foot{background:var(--brown);color:var(--cream);padding-block:3.5rem 2.5rem}
+.foot-grid{display:grid;gap:1.75rem}
+.foot-name{font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 100;font-size:1.5rem;font-weight:500;letter-spacing:-.01em}
+.foot p{color:rgba(255,248,241,.78);font-size:.92rem;letter-spacing:.015em;line-height:1.6}
+.foot a{color:var(--cream);text-underline-offset:.2em}
+.foot-small{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,248,241,.16);display:grid;gap:.4rem}
+.foot-small p{font-size:.82rem;letter-spacing:.03em}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+
+/* ---------- dezvăluiri la derulare (variate) ---------- */
+.js .fade{opacity:0;transition:opacity .6s ease}
+.js .fade.in{opacity:1}
+.js .settle{opacity:0;transform:scale(.965);transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.js .settle.in{opacity:1;transform:none}
+.js .drift{opacity:0;transform:translateX(-1.5rem);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .drift.in{opacity:1;transform:none}
+.js .lift{opacity:0;transform:translateY(.9rem);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(var(--i,0) * .1s)}
+.js .lift.in{opacity:1;transform:none}
+
+/* ---------- preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .orb i{animation:none}
+  .intro,.orb.intro{animation:fadeOnly .2s ease both;animation-delay:0s}
+  @keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+  .js .settle,.js .drift,.js .lift{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .js .fade{transition:opacity .2s ease}
+  .svc::before,.svc:last-child::after{transform:none;transition:none}
+  .svc h3,.svc p{transition:opacity .2s ease;transition-delay:0s}
+  .btn{transition:background-color .2s ease}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--brown-soft:#2a201b}
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--brown)}
+  .btn-soft{border-color:var(--brown)}
+  .btn-primary{background:var(--teal-deep)}
+  .svc::before,.svc:last-child::after{background:var(--brown)}
+  .map{outline:2px solid var(--brown)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#main">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="C.M.I Rusu A. Elena, mergi la început">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M7.2 3.2C4.9 3.2 3 5 3 7.5c0 2.2.8 3.6 1.5 5.2.6 1.5.8 3.4 1.2 5.4.3 1.4.8 2.8 1.8 2.8 1.2 0 1.4-1.9 1.8-3.6.3-1.3.8-2.5 2.7-2.5s2.4 1.2 2.7 2.5c.4 1.7.6 3.6 1.8 3.6 1 0 1.5-1.4 1.8-2.8.4-2 .6-3.9 1.2-5.4.7-1.6 1.5-3 1.5-5.2 0-2.5-1.9-4.3-4.2-4.3-1.9 0-2.6 1-4.8 1s-2.9-1-4.8-1z"/></svg>
+      </span>
+      <span class="brand-txt">
+        <span class="brand-name">C.M.I Rusu A. Elena</span>
+        <span class="brand-sub">Stomatologie, Constanța</span>
+      </span>
+    </a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:+40735391888">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Prima secțiune -->
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-name intro" style="--d:.05s">
+          <strong>C.M.I Rusu A. Elena</strong>
+          <span>Cabinet stomatologic în Constanța</span>
+        </p>
+        <h1 id="titlu" class="intro" style="--d:.2s">Zâmbete sănătoase, aproape de tine</h1>
+        <p class="lead intro" style="--d:.38s">Servicii stomatologice la îndemână, pentru întreaga familie. Ne găsiți pe Strada Adamclisi 2.</p>
+        <div class="actions intro" style="--d:.52s">
+          <a class="btn btn-primary" href="tel:+40735391888">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-soft" href="https://wa.me/40735391888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8L4 20z"/><path d="M9 9.2c.2 1.6 1.9 3.7 3.8 4.3.6.2 1.2-.2 1.5-.7l.3-.5-1.4-.8-.6.6c-.8-.3-1.6-1-1.9-1.8l.6-.6-.8-1.4-.5.3c-.5.3-.9.9-.8 1.5z"/></svg>
+            Întreabă-ne pe WhatsApp
+          </a>
+        </div>
+        <p class="phone-note intro" style="--d:.64s">Telefon: <a href="tel:+40735391888">+40 735 391 888</a></p>
+      </div>
+
+      <div class="hero-visual">
+        <span class="orb o1 intro" style="--d:.1s" aria-hidden="true"><i></i></span>
+        <span class="orb o2 intro" style="--d:.35s" aria-hidden="true"><i></i></span>
+        <span class="orb o3 intro" style="--d:.6s" aria-hidden="true"><i></i></span>
+        <span class="orb o4 intro" style="--d:.75s" aria-hidden="true"><i></i></span>
+        <figure class="hero-photo intro" style="--d:.3s">
+          <img src="img/5.jpg" alt="Medic stomatolog care examinează dinții unei paciente așezate în scaunul dentar" width="800" height="1000" fetchpriority="high">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <figure class="about-photo settle">
+          <img src="img/3.jpg" alt="Scaun stomatologic și instrumente pregătite în cabinet" width="900" height="675" loading="lazy">
+        </figure>
+        <div class="about-text fade">
+          <h2 id="despre-titlu">Stomatologie aproape de casă</h2>
+          <p class="first">C.M.I Rusu A. Elena oferă servicii de stomatologie în Constanța, într-un cabinet prietenos și ușor de găsit.</p>
+          <p>Punem accent pe confortul și sănătatea pacienților noștri. Vă explicăm pe înțeles ce aveți nevoie și suntem aici să vă sprijinim pentru un zâmbet sănătos.</p>
+        </div>
+      </div>
+
+      <ul class="perks">
+        <li class="perk lift" style="--i:0">
+          <span class="perk-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14c.9 1.3 2.1 2 3.5 2s2.6-.7 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01" stroke-width="2.4"/></svg>
+          </span>
+          <div>
+            <h3>Abordare prietenoasă</h3>
+            <p>Un cabinet primitor, aproape de casă.</p>
+          </div>
+        </li>
+        <li class="perk lift" style="--i:1">
+          <span class="perk-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c3 3.6 5.5 6.6 5.5 9.7a5.5 5.5 0 0 1-11 0c0-3.1 2.5-6.1 5.5-9.7z"/><path d="M9.6 13.6a2.6 2.6 0 0 0 2.4 2.4"/></svg>
+          </span>
+          <div>
+            <h3>Igienă strictă</h3>
+            <p>Respectăm cu atenție standardele de curățenie.</p>
+          </div>
+        </li>
+        <li class="perk lift" style="--i:2">
+          <span class="perk-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7.5" r="2.6"/><circle cx="16.5" cy="9" r="2.1"/><path d="M3.5 19.5c0-3 2-5 4.5-5s4.5 2 4.5 5"/><path d="M13 19.5c.2-2.4 1.6-4 3.5-4s3.3 1.6 3.5 4"/></svg>
+          </span>
+          <div>
+            <h3>Pentru toți</h3>
+            <p>Servicii pentru întreaga familie.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Servicii -->
+  <section class="services" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap svc-grid">
+      <div class="svc-head">
+        <h2 id="servicii-titlu" class="fade">Servicii</h2>
+        <p class="svc-intro fade">Tratamentele de care are nevoie un zâmbet sănătos, explicate simplu. Pentru întrebări, sunați-ne.</p>
+        <figure class="svc-photo settle">
+          <img src="img/2.jpg" alt="Medic stomatolog cu instrumente, lângă un pacient în cabinet" width="900" height="675" loading="lazy">
+        </figure>
+      </div>
+      <div>
+        <ul class="svc-list" id="svc-list">
+          <li class="svc" style="--i:0">
+            <h3>Consultație stomatologică</h3>
+            <p>Evaluare atentă și recomandări potrivite pentru dumneavoastră.</p>
+          </li>
+          <li class="svc" style="--i:1">
+            <h3>Tratamente carii dentare</h3>
+            <p>Repararea cu grijă a dinților afectați.</p>
+          </li>
+          <li class="svc" style="--i:2">
+            <h3>Igienizare profesională</h3>
+            <p>Curățare detaliată și detartraj.</p>
+          </li>
+          <li class="svc" style="--i:3">
+            <h3>Extracții dentare</h3>
+            <p>Îndepărtarea atentă a dinților problematici.</p>
+          </li>
+        </ul>
+        <div class="svc-actions fade">
+          <a class="btn btn-primary" href="tel:+40735391888">Sună pentru programare</a>
+          <a class="btn btn-soft" href="https://wa.me/40735391888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener">Întreabă-ne pe WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prima vizită -->
+  <section class="visit" aria-labelledby="vizita-titlu">
+    <div class="wrap visit-grid">
+      <figure class="visit-photo drift">
+        <img src="img/1.jpg" alt="Medic stomatolog cu mănuși, pregătind instrumentele dentare" width="900" height="600" loading="lazy">
+      </figure>
+      <div class="fade">
+        <h2 id="vizita-titlu">Nu știți de unde să începeți? Începeți cu o consultație.</h2>
+        <p>Ne spuneți ce vă supără, vă uitați împreună cu medicul la situația dinților și primiți recomandări clare, pe înțelesul tuturor.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+40735391888">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="fade">
+        <h2 id="contact-titlu">Ne găsiți pe Strada Adamclisi 2</h2>
+        <p class="contact-intro">Sunați-ne pentru o programare sau scrieți-ne pe WhatsApp, iar noi vă răspundem.</p>
+        <ul class="info">
+          <li><small>Adresă</small><span>Strada Adamclisi 2, Constanța</span></li>
+          <li><small>Telefon</small><a href="tel:+40735391888">+40 735 391 888</a></li>
+          <li><small>Hartă</small><a href="https://www.google.com/maps/search/?api=1&amp;query=C.M.I+Rusu+A.+Elena+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a></li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+40735391888">Sună acum</a>
+          <a class="btn btn-soft" href="https://wa.me/40735391888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener">Întreabă-ne pe WhatsApp</a>
+        </div>
+      </div>
+      <div class="map settle">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6228272,44.201353499999996,28.630827200000002,44.2053535&amp;layer=mapnik&amp;marker=44.2033535,28.6268272" title="Harta: C.M.I Rusu A. Elena, Strada Adamclisi 2, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-name">C.M.I Rusu A. Elena</p>
+        <p>Zâmbete sănătoase, aproape de tine.</p>
+      </div>
+      <div>
+        <p>Strada Adamclisi 2<br>Constanța</p>
+      </div>
+      <div>
+        <p><a href="tel:+40735391888">+40 735 391 888</a><br>
+        <a href="https://wa.me/40735391888?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener">Scrie pe WhatsApp</a></p>
+      </div>
+    </div>
+    <div class="foot-small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: kumarsu6745_, lekoh, StockSnap, DarkoStojanovic, jarmoluk</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+
+  // umbră fină sub meniu doar când pagina se derulează
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>8)};
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  // dezvăluiri la derulare
+  var items=document.querySelectorAll('.fade,.settle,.drift,.lift,#svc-list');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('in')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
