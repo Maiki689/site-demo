@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Psy. Cut. Studio | Tunsori și barbă în București</title>
+<meta name="description" content="Psy. Cut. Studio: tunsori moderne și aranjări de barbă pe Splaiul Independenței 2J, Sector 3, București. Programări online.">
+<meta name="theme-color" content="#232323">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Roboto+Slab:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --w:#FFFFFF;
+  --k:#232323;
+  --w-soft:rgba(255,255,255,.74);
+  --k-soft:rgba(35,35,35,.78);
+  --line-w:rgba(255,255,255,.18);
+  --line-k:rgba(35,35,35,.18);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --display:'Cinzel', Georgia, serif;
+  --text:'Roboto Slab', Georgia, serif;
+  --pad:clamp(5rem, 12vw, 10rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;overflow-x:hidden;overflow-x:clip}
+body{
+  margin:0;background:var(--k);color:var(--w);
+  font-family:var(--text);font-weight:400;font-size:1rem;line-height:1.55;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0}
+ul{padding:0;list-style:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(100% - 2.5rem, 82rem);margin-inline:auto}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:.8rem 1.5rem;
+  font:500 1rem/1.2 var(--text);letter-spacing:.01em;text-decoration:none;
+  border:1px solid currentColor;border-radius:0;cursor:pointer;
+  transition:background-color .2s ease,color .2s ease,box-shadow .25s ease,transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.1em;height:1.1em;flex:none}
+.btn-w{background:var(--w);color:var(--k);border-color:var(--w);font-weight:600}
+.btn-w:hover{box-shadow:0 0 0 4px rgba(255,255,255,.16)}
+.btn-o{background:transparent;color:var(--w);border-color:rgba(255,255,255,.55)}
+.btn-o:hover{background:rgba(255,255,255,.08);border-color:var(--w)}
+.btn-k{background:var(--k);color:var(--w);border-color:var(--k);font-weight:600}
+.btn-k:hover{box-shadow:0 0 0 4px rgba(35,35,35,.14)}
+.btn-ko{background:transparent;color:var(--k);border-color:rgba(35,35,35,.55)}
+.btn-ko:hover{background:rgba(35,35,35,.06);border-color:var(--k)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1rem;font-size:.9rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(35,35,35,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 30px -14px rgba(0,0,0,.65)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{
+  font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:.08em;
+  text-decoration:none;text-transform:uppercase;white-space:nowrap;
+}
+.links{display:none}
+@media (min-width:860px){
+  .nav-in{height:4.5rem}
+  .links{display:flex;gap:2.2rem;margin-left:auto;margin-right:1.5rem}
+  .links a{
+    font-size:.88rem;font-weight:500;letter-spacing:.06em;text-decoration:none;
+    color:var(--w-soft);transition:color .2s ease;padding:.6rem 0;
+  }
+  .links a:hover{color:var(--w)}
+}
+
+/* ---------- Fotografii: alb-negru -> culoare ---------- */
+.ph-frame{
+  position:relative;overflow:hidden;aspect-ratio:var(--ar, 3/2);
+  background:#2c2c2c;cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.ph-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-frame .c{transform:scale(1.035);transition:transform .9s var(--ease)}
+.ph-frame .g{filter:grayscale(1) contrast(1.06);transition:opacity .7s var(--ease)}
+.ph-frame.on .g{opacity:0}
+.ph-frame.on .c{transform:scale(1)}
+@media (hover:hover){
+  .ph-frame:hover .g{opacity:0}
+  .ph-frame:hover .c{transform:scale(1)}
+}
+.cap{
+  margin-top:.9rem;font-size:.78rem;letter-spacing:.08em;color:var(--w-soft);
+}
+.s-light .cap{color:var(--k-soft)}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding-top:calc(4rem + clamp(1.75rem, 6vw, 4.5rem))}
+.h-title{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(3rem, 15.5vw, 12rem);line-height:.92;letter-spacing:-.015em;
+}
+.cut{display:grid;position:relative;margin-left:-.04em}
+.half{grid-area:1/1;display:block}
+.half.a{clip-path:inset(0 0 52% 0)}
+.half.b{clip-path:inset(48% 0 0 0)}
+.blade{
+  position:absolute;left:-.04em;right:0;top:50%;height:2px;margin-top:-1px;
+  background:var(--w);transform-origin:left center;transform:scaleX(0);opacity:0;pointer-events:none;
+}
+.l2{display:block;text-align:right}
+.h-grid{margin-top:clamp(1.5rem, 4vw, 3rem);display:grid;gap:1.1rem}
+.h-slogan{
+  font-family:var(--display);font-weight:600;font-size:clamp(1.4rem, 2.8vw, 2.4rem);
+  line-height:1.15;letter-spacing:-.005em;
+}
+.h-desc{color:var(--w-soft);max-width:34rem;font-size:clamp(1rem, 1.3vw, 1.12rem)}
+.h-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
+.h-cta .btn{flex:1 1 15rem}
+.hero-ph{margin-top:clamp(2.5rem, 7vw, 5rem)}
+.hero-ph .ph-frame{--ar:5/4}
+@media (min-width:900px){
+  .h-grid{grid-template-columns:1fr 1fr;column-gap:4rem;align-items:start}
+  .h-cta .btn{flex:0 0 auto}
+  .hero-ph .ph-frame{--ar:21/9}
+}
+
+/* Secvența de intrare: tăietura */
+@keyframes bladeCut{0%{transform:scaleX(0);opacity:1}45%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+@keyframes cutA{from{transform:translateX(-.2em);opacity:0}to{transform:none;opacity:1}}
+@keyframes cutB{from{transform:translateX(.2em);opacity:0}to{transform:none;opacity:1}}
+@keyframes rise{from{transform:translateY(1.25rem);opacity:0}to{transform:none;opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.blade{animation:bladeCut .9s var(--ease) .1s both}
+.half.a{animation:cutA .7s var(--ease) .3s both}
+.half.b{animation:cutB .7s var(--ease) .3s both}
+.l2{animation:rise .6s var(--ease) .6s both}
+.h-grid{animation:rise .6s var(--ease) .78s both}
+.hero-ph{animation:rise .7s var(--ease) .92s both}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js .rv{opacity:0;transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+.js .rv-y{transform:translateY(1.4rem)}
+.js .rv-x{transform:translateX(-2rem)}
+.js .rv-r{transform:translateX(2rem)}
+.js .rv-fade{transform:none}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- Secțiuni ---------- */
+.s-light{background:var(--w);color:var(--k)}
+.s-dark{background:var(--k);color:var(--w)}
+section{position:relative}
+
+/* Despre */
+#despre{padding-top:var(--pad)}
+.about-h{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(2.2rem, 6.4vw, 5.6rem);line-height:1.04;letter-spacing:-.015em;
+  margin-left:-.04em;
+}
+.about-txt{margin-top:2rem;display:grid;gap:1rem}
+.about-txt p{max-width:36rem;color:var(--k-soft);font-size:clamp(1rem,1.3vw,1.12rem)}
+.about-txt p:first-child{color:var(--k);font-weight:500}
+.perks{margin-top:clamp(3rem, 7vw, 5.5rem);display:grid;gap:2rem}
+.perk{border-top:1px solid var(--line-k);padding-top:1.25rem}
+.perk h3{font-family:var(--display);font-weight:700;font-size:1.3rem;line-height:1.15;letter-spacing:.01em}
+.perk p{margin-top:.45rem;color:var(--k-soft)}
+.band{margin-top:clamp(4rem, 10vw, 8rem)}
+.band .ph-frame{--ar:4/3}
+@media (min-width:900px){
+  .about{display:grid;grid-template-columns:repeat(12,1fr);column-gap:2rem}
+  .about-h{grid-column:1 / span 10}
+  .about-txt{grid-column:6 / span 7;margin-top:3rem}
+  .perks{grid-column:1 / -1;grid-template-columns:repeat(3,1fr);column-gap:2rem}
+  .band .ph-frame{--ar:16/7}
+}
+
+/* Servicii */
+#servicii{padding-block:var(--pad) clamp(3rem,7vw,5rem)}
+.mega{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(3.2rem, 15vw, 13rem);line-height:.88;letter-spacing:-.015em;
+  margin-left:-.06em;
+}
+.sv-intro{margin-top:1.5rem;color:var(--w-soft);max-width:30rem}
+.sv-list{margin-top:clamp(2.5rem,6vw,4.5rem)}
+.sv{
+  border-top:1px solid var(--line-w);padding-block:1.5rem;
+  display:grid;gap:.4rem;
+}
+.sv:last-child{border-bottom:1px solid var(--line-w)}
+.sv h3{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(1.6rem, 4.2vw, 3.2rem);line-height:1.08;letter-spacing:-.01em;
+}
+.sv h3 span{display:inline-block;transition:transform .35s var(--ease)}
+.sv p{color:var(--w-soft)}
+@media (hover:hover){.sv:hover h3 span{transform:translateX(.5rem)}}
+.sv-cta{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:.75rem}
+@media (min-width:900px){
+  .sv-head{display:grid;grid-template-columns:auto 1fr;align-items:end;column-gap:4rem}
+  .sv-intro{margin:0 0 1.2rem;justify-self:end}
+  .sv{grid-template-columns:1.25fr 1fr;align-items:baseline;column-gap:3rem;padding-block:2rem}
+}
+
+/* Galerie */
+#galerie{padding-block:clamp(3rem,7vw,5rem) var(--pad)}
+.sec-h{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(2rem, 5vw, 4rem);line-height:1.06;letter-spacing:-.01em;
+}
+.gal-head p{margin-top:1rem;color:var(--w-soft);max-width:32rem}
+.gal-grid{margin-top:clamp(2.5rem,6vw,4.5rem);display:grid;gap:1.5rem}
+.g1 .ph-frame{--ar:4/5}
+.g2 .ph-frame{--ar:3/4}
+.g1{margin-inline:-1.25rem}
+.g1 .cap{padding-inline:1.25rem}
+.g2{width:80%;margin-left:auto}
+@media (min-width:900px){
+  .gal-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:start}
+  .g1{grid-column:1 / span 7;margin-inline:0}
+  .g1 .cap{padding-inline:0}
+  .g2{grid-column:8 / span 5;width:auto;margin-top:9rem}
+}
+
+/* Programare */
+#programare{padding-block:var(--pad)}
+.cta-h{
+  font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(2rem, 8vw, 7.4rem);line-height:.95;letter-spacing:-.015em;
+  margin-left:-.05em;
+}
+.cta-h span{display:block;white-space:nowrap}
+.cta-h span + span{text-align:right}
+.cta-row{margin-top:clamp(2rem,5vw,3.5rem);display:grid;gap:1.5rem}
+.cta-row p{color:var(--k-soft);max-width:30rem;font-size:clamp(1rem,1.3vw,1.12rem)}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btns .btn{flex:1 1 15rem}
+@media (min-width:900px){
+  .cta-row{grid-template-columns:1fr auto;align-items:center;column-gap:4rem}
+  .btns .btn{flex:0 0 auto}
+}
+
+/* Contact */
+#contact{padding-block:var(--pad)}
+.ct{display:grid;gap:3rem}
+.ct dl{margin-top:2rem;display:grid;gap:1.4rem}
+.ct dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--w-soft)}
+.ct dd{margin-top:.3rem;font-size:1.12rem;font-weight:500;line-height:1.4}
+.ct dd a{text-decoration:none;border-bottom:1px solid var(--line-w);transition:border-color .2s ease}
+.ct dd a:hover{border-color:var(--w)}
+.ct-btns{margin-top:2.25rem;display:grid;gap:.75rem}
+.ct-map{position:relative;aspect-ratio:4/3;overflow:hidden;background:#2c2c2c}
+.ct-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+@media (min-width:900px){
+  .ct{grid-template-columns:5fr 7fr;column-gap:4rem;align-items:start}
+  .ct-btns{grid-template-columns:1fr;max-width:22rem}
+  .ct-map{aspect-ratio:auto;height:100%;min-height:30rem}
+}
+
+/* Subsol */
+.foot{padding-block:0 3rem}
+.foot-in{border-top:1px solid var(--line-w);padding-top:2.5rem;display:grid;gap:1.25rem}
+.foot-brand{font-family:var(--display);font-weight:700;font-size:1.3rem;letter-spacing:.08em;text-transform:uppercase}
+.foot small,.foot p.sm{display:block;font-size:.8rem;letter-spacing:.04em;color:var(--w-soft);line-height:1.6}
+@media (min-width:900px){
+  .foot-in{grid-template-columns:1fr auto;align-items:end}
+  .foot-meta{text-align:right}
+}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .blade{display:none}
+  .half.a,.half.b,.l2,.h-grid,.hero-ph{animation:fadeIn .2s ease both}
+  .js .rv{transform:none !important;transition:opacity .2s ease}
+  .ph-frame .c{transform:none !important;transition:none}
+  .ph-frame .g{transition:opacity .2s ease}
+  .sv h3 span{transition:none}
+  .sv:hover h3 span{transform:none}
+  .btn{transition:background-color .2s ease,color .2s ease}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--k);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--w-soft:#FFFFFF;--k-soft:#232323;--line-w:rgba(255,255,255,.7);--line-k:rgba(35,35,35,.7)}
+  .nav{background:var(--k);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--w)}
+  .btn{border-width:2px}
+  .btn-o{border-color:var(--w)}
+  .btn-ko{border-color:var(--k)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in wrap">
+    <a class="brand" href="#top" aria-label="Psy. Cut. Studio, începutul paginii">Psy. Cut. Studio</a>
+    <nav aria-label="Navigare principală">
+      <ul class="links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-w btn-sm" href="tel:0750438008">Sună acum</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Prima secțiune -->
+  <section class="hero s-dark" aria-labelledby="titlu">
+    <div class="wrap">
+      <h1 class="h-title" id="titlu">
+        <span class="sr-only">Psy. Cut. Studio</span>
+        <span class="cut" aria-hidden="true">
+          <span class="half a">Psy. Cut.</span>
+          <span class="half b">Psy. Cut.</span>
+          <span class="blade"></span>
+        </span>
+        <span class="l2" aria-hidden="true">Studio</span>
+      </h1>
+
+      <div class="h-grid">
+        <p class="h-slogan">Unde stilul prinde contur</p>
+        <div>
+          <p class="h-desc">Tunsori moderne și aranjări de barbă, în inima Bucureștiului. Te așteptăm pe Splaiul Independenței 2J, Sector 3.</p>
+          <div class="h-cta">
+            <a class="btn btn-w" href="https://wa.me/40750438008?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns%20sau%20barb%C4%83.">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6z"/></svg>
+              Programează-te pe WhatsApp
+            </a>
+            <a class="btn btn-o" href="tel:0750438008">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2 1.3a11 11 0 0 0 5.2 5.2l1.3-2 4.2 1.6V17a2.5 2.5 0 0 1-2.7 2.5A15 15 0 0 1 2.5 6.2 2.5 2.5 0 0 1 5 3.5z"/></svg>
+              Sună: 0750 438 008
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <figure class="hero-ph">
+      <div class="ph-frame" role="button" tabindex="0" aria-pressed="false" aria-label="Arată fotografia în culoare">
+        <img class="c" src="img/3.jpg" alt="Frizer care aranjează barba unui client, cu mișcări precise" decoding="async">
+        <img class="g" src="img/3.jpg" alt="" aria-hidden="true" decoding="async">
+      </div>
+      <figcaption class="wrap cap">Fotografiile se colorează în mijlocul ecranului. Atinge-le oricând ca să le vezi în culoare.</figcaption>
+    </figure>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre" class="s-light" aria-labelledby="despre-h">
+    <div class="wrap about">
+      <h2 class="about-h rv rv-y" id="despre-h">Tunsori și barbă, cu programare online.</h2>
+      <div class="about-txt rv rv-fade" style="--d:.1s">
+        <p>La Psy. Cut. Studio, tunsoarea și aranjarea bărbii sunt duse la nivelul următor.</p>
+        <p>Te așteptăm pe Splaiul Independenței 2J, Sector 3, București. Îți faci programarea online, vii la ora stabilită și pleci cu un look proaspăt.</p>
+      </div>
+      <ul class="perks">
+        <li class="perk rv rv-y" style="--d:0s">
+          <h3>Pe Splaiul Independenței</h3>
+          <p>La numărul 2J, în Sector 3, București.</p>
+        </li>
+        <li class="perk rv rv-y" style="--d:.08s">
+          <h3>Programări online</h3>
+          <p>Rapid, oricând ai nevoie, fără drumuri în plus.</p>
+        </li>
+        <li class="perk rv rv-y" style="--d:.16s">
+          <h3>Special pentru bărbați</h3>
+          <p>Tunsori și aranjare de barbă, făcute pentru tine.</p>
+        </li>
+      </ul>
+    </div>
+
+    <figure class="band">
+      <div class="ph-frame" role="button" tabindex="0" aria-pressed="false" aria-label="Arată fotografia în culoare">
+        <img class="c" src="img/1.jpg" alt="Frizerie cu scaun de tuns, oglinzi și ustensile pentru păr și barbă" loading="lazy" decoding="async">
+        <img class="g" src="img/1.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      </div>
+    </figure>
+  </section>
+
+  <!-- Servicii -->
+  <section id="servicii" class="s-dark" aria-labelledby="servicii-h">
+    <div class="wrap">
+      <div class="sv-head">
+        <h2 class="mega rv rv-x" id="servicii-h">Servicii</h2>
+        <p class="sv-intro rv rv-fade" style="--d:.12s">Alege ce ai nevoie azi. Pentru detalii și o oră care ți se potrivește, scrie-ne pe WhatsApp sau sună.</p>
+      </div>
+      <ul class="sv-list">
+        <li class="sv rv rv-x" style="--d:0s">
+          <h3><span>Tuns</span></h3>
+          <p>Tunsori moderne pentru bărbați.</p>
+        </li>
+        <li class="sv rv rv-x" style="--d:.07s">
+          <h3><span>Aranjare barbă</span></h3>
+          <p>Contur și stil pentru barbă.</p>
+        </li>
+      </ul>
+      <div class="sv-cta rv rv-fade">
+        <a class="btn btn-w" href="https://wa.me/40750438008?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns%20sau%20barb%C4%83.">Programează-te pe WhatsApp</a>
+        <a class="btn btn-o" href="tel:0750438008">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie" class="s-dark" aria-labelledby="galerie-h">
+    <div class="wrap gal-head">
+      <h2 class="sec-h rv rv-y" id="galerie-h">Stilul, în detalii</h2>
+      <p class="rv rv-fade" style="--d:.1s">Linii curate, contururi precise, un look care te reprezintă.</p>
+    </div>
+    <div class="wrap gal-grid">
+      <figure class="g1 rv rv-x">
+        <div class="ph-frame" role="button" tabindex="0" aria-pressed="false" aria-label="Arată fotografia în culoare">
+          <img class="c" src="img/2.jpg" alt="Frizer la lucru, tunzând un client tânăr în salon" loading="lazy" decoding="async">
+          <img class="g" src="img/2.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="cap">Tuns cu atenție la fiecare detaliu.</figcaption>
+      </figure>
+      <figure class="g2 rv rv-r" style="--d:.1s">
+        <div class="ph-frame" role="button" tabindex="0" aria-pressed="false" aria-label="Arată fotografia în culoare">
+          <img class="c" src="img/4.jpg" alt="Portret al unui bărbat tânăr cu tunsoare modernă și barbă aranjată" loading="lazy" decoding="async">
+          <img class="g" src="img/4.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="cap">Păr și barbă, în același stil.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Programare -->
+  <section id="programare" class="s-light" aria-labelledby="programare-h">
+    <div class="wrap">
+      <h2 class="cta-h rv rv-x" id="programare-h"><span>Programează-te</span><span>online</span></h2>
+      <div class="cta-row">
+        <p class="rv rv-fade" style="--d:.1s">Scrie-ne pe WhatsApp sau sună-ne și stabilim împreună ziua și ora vizitei tale.</p>
+        <div class="btns rv rv-fade" style="--d:.18s">
+          <a class="btn btn-k" href="https://wa.me/40750438008?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns%20sau%20barb%C4%83.">Programează-te pe WhatsApp</a>
+          <a class="btn btn-ko" href="tel:0750438008">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="s-dark" aria-labelledby="contact-h">
+    <div class="wrap ct">
+      <div class="ct-info rv rv-fade">
+        <h2 class="sec-h" id="contact-h">Ne găsești pe Splai</h2>
+        <dl>
+          <div>
+            <dt>Adresă</dt>
+            <dd>Splaiul Independenței 2J,<br>Sector 3, București</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0750438008">0750 438 008</a></dd>
+          </div>
+          <div>
+            <dt>Programări</dt>
+            <dd>Online, pe WhatsApp, sau telefonic</dd>
+          </div>
+        </dl>
+        <div class="ct-btns">
+          <a class="btn btn-w" href="tel:0750438008">Sună acum</a>
+          <a class="btn btn-o" href="https://wa.me/40750438008?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20tuns%20sau%20barb%C4%83.">Programează-te pe WhatsApp</a>
+          <a class="btn btn-o" href="https://www.google.com/maps/search/?api=1&query=Psy.+Cut.+Studio+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="ct-map rv rv-y" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.094048899999997,44.427769,26.1020489,44.431769&layer=mapnik&marker=44.429769,26.0980489" title="Harta: Psy. Cut. Studio, Splaiul Independenței 2J, București" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot s-dark">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-brand">Psy. Cut. Studio</p>
+      <p class="sm">Splaiul Independenței 2J, Sector 3, București</p>
+    </div>
+    <div class="foot-meta">
+      <p class="sm">Model de site (demo)</p>
+      <p class="sm">Fotografii ilustrative de pe Pixabay: vahidkanani, mostafa_meraji, jackmac34, OrnaW</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  var reveals = document.querySelectorAll('.rv');
+  var frames = document.querySelectorAll('.ph-frame');
+
+  if(!('IntersectionObserver' in window)){
+    reveals.forEach(function(el){ el.classList.add('in'); });
+    frames.forEach(function(f){ f.classList.add('on'); });
+    return;
+  }
+
+  /* Dezvăluiri: intră și ies pe același drum */
+  var ro = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); }
+      else if(e.boundingClientRect.top > 0){ e.target.classList.remove('in'); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+  reveals.forEach(function(el){ ro.observe(el); });
+
+  /* Fotografiile capătă culoare în mijlocul ecranului sau la atingere */
+  function update(f){
+    var on = (f.dataset.center === '1') !== (f.dataset.tap === '1');
+    f.classList.toggle('on', on);
+    f.setAttribute('aria-pressed', on ? 'true' : 'false');
+    f.setAttribute('aria-label', on ? 'Arată fotografia în alb-negru' : 'Arată fotografia în culoare');
+  }
+  var co = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      e.target.dataset.center = e.isIntersecting ? '1' : '0';
+      update(e.target);
+    });
+  }, {threshold:0, rootMargin:'-36% 0px -36% 0px'});
+
+  frames.forEach(function(f){
+    f.dataset.center = '0';
+    f.dataset.tap = '0';
+    co.observe(f);
+    function toggle(){
+      f.dataset.tap = f.dataset.tap === '1' ? '0' : '1';
+      update(f);
+    }
+    f.addEventListener('click', toggle);
+    f.addEventListener('keydown', function(ev){
+      if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); toggle(); }
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
