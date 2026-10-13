@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Natasha Nina Marin · Îngrijire dentară în Constanța</title>
+<meta name="description" content="Natasha Nina Marin, Constanța. Consultații și tratamente stomatologice pentru zâmbetul tău. Programări telefonic sau pe WhatsApp.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12324A;
+  --teal:#0f766e;
+  --teal-d:#0b5e58;
+  --turq:#1BA6A6;
+  --mist:#EAF7F7;
+  --white:#FFFFFF;
+  --ink2:#46606f;
+  --line:rgba(18,50,74,.1);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --radius:1.5rem;
+  --shadow:0 1px 2px rgba(18,50,74,.05), 0 1.25rem 2.5rem -1.5rem rgba(18,50,74,.22);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.55;letter-spacing:0;color:var(--navy);
+  background:var(--white);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.025em;line-height:1.08}
+p{margin:0}
+.wrap{width:min(100% - 2.5rem, 72rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--navy);color:#fff;padding:.6rem 1rem;border-radius:.6rem;z-index:100}
+.skip:focus{left:.75rem}
+:focus-visible{outline:3px solid var(--turq);outline-offset:3px;border-radius:.4rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3.25rem;padding:.85rem 1.5rem;border-radius:999px;
+  font:inherit;font-weight:700;font-size:1rem;letter-spacing:0;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease, box-shadow .25s var(--ease), background-color .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.2rem;height:1.2rem;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 .5rem 1.25rem -.6rem rgba(15,118,110,.55)}
+.btn-primary:hover{background:var(--teal-d);box-shadow:0 .75rem 1.6rem -.7rem rgba(15,118,110,.65)}
+.btn-ghost{background:#fff;color:var(--navy);border-color:rgba(18,50,74,.16)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{background:var(--mist)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ---------- Navigare ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 .5rem 1.5rem -1rem rgba(18,50,74,.28)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--navy)}
+.brand svg{width:1.6rem;height:1.6rem;flex:none}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--navy);padding:.5rem 0;transition:color .2s}
+.nav-links a:hover{color:var(--teal)}
+.nav .btn{min-height:2.75rem;padding:.55rem 1.05rem;font-size:.95rem}
+@media (min-width:52rem){
+  .nav-links{display:flex}
+  .brand{font-size:1.05rem}
+}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding:clamp(1.75rem,5vw,4.5rem) 0 clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.45rem,7vw,4.9rem);letter-spacing:-.035em;line-height:1.03;max-width:12ch}
+.pulse{display:block;width:min(100%,34rem);height:auto;margin:1.1rem 0 1.4rem;overflow:visible}
+.pulse path{fill:none;stroke:var(--turq);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.pulse .tooth{stroke:var(--teal);stroke-width:2.8}
+.pulse .dot{fill:var(--turq)}
+.lead{font-size:clamp(1.08rem,1.6vw,1.22rem);line-height:1.55;color:var(--ink2);max-width:34rem}
+.lead strong{color:var(--navy);font-weight:700}
+.hero-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+.hero-addr{display:flex;align-items:center;gap:.5rem;margin-top:1.4rem;font-size:.95rem;color:var(--ink2);letter-spacing:.01em}
+.hero-addr svg{width:1.1rem;height:1.1rem;color:var(--turq);flex:none}
+.hero-photo{position:relative;border-radius:calc(var(--radius) + .25rem);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;background:var(--mist)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:30rem){
+  .hero-actions{flex-direction:row;flex-wrap:wrap}
+}
+@media (min-width:56rem){
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+  .hero-photo{aspect-ratio:4/5}
+}
+
+/* Secvența de intrare */
+.js .hi{opacity:0;transform:translateY(.9rem);animation:hi .8s var(--ease) forwards}
+.js .hi-1{animation-delay:.05s}
+.js .hi-2{animation-delay:1.1s}
+.js .hi-3{animation-delay:1.25s}
+.js .hi-4{animation-delay:1.4s}
+.js .hero-photo{opacity:0;animation:fadeIn 1s .2s var(--ease) forwards}
+.js .hero-photo img{transform:scale(1.05);animation:settle 1.6s .2s var(--ease) forwards}
+.js .pulse .p-a{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.5s .45s cubic-bezier(.45,.05,.25,1) forwards}
+.js .pulse .p-b{stroke-dasharray:1;stroke-dashoffset:1;animation:draw .7s 1.85s ease-out forwards}
+.js .pulse .dot{opacity:0;animation:fadeIn .5s 2.45s ease forwards}
+@keyframes hi{to{opacity:1;transform:none}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes settle{to{transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- Secțiuni ---------- */
+section{scroll-margin-top:4.5rem}
+.sec{padding:clamp(4.5rem,10vw,8rem) 0}
+.sec-mist{background:var(--mist)}
+.h2{font-size:clamp(2rem,4.6vw,3.25rem)}
+.intro{margin-top:1.1rem;color:var(--ink2);max-width:36rem;font-size:1.1rem}
+
+/* Despre */
+.about-grid{display:grid;gap:2.75rem;align-items:center}
+.about-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-text p.body{margin-top:1.25rem;font-size:1.1rem;color:var(--ink2);max-width:36rem}
+.values{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:1.5rem}
+.values li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:start}
+.values .ic{width:3rem;height:3rem;border-radius:1rem;background:#fff;display:grid;place-items:center;box-shadow:0 1px 2px rgba(18,50,74,.06)}
+.values .ic svg{width:1.45rem;height:1.45rem;color:var(--teal)}
+.values h3{font-size:1.1rem;letter-spacing:-.01em;line-height:1.3;margin-top:.15rem}
+.values p{color:var(--ink2);margin-top:.15rem;font-size:1rem}
+@media (min-width:56rem){
+  .about-grid{grid-template-columns:.9fr 1.1fr;gap:5rem}
+  .about-photo{aspect-ratio:4/5}
+}
+
+/* Servicii */
+.svc-head{max-width:40rem}
+.svc{display:grid;gap:1.75rem;align-items:center;margin-top:clamp(3rem,6vw,4.5rem)}
+.svc-img{border-radius:var(--radius);overflow:hidden;aspect-ratio:3/2;box-shadow:var(--shadow);background:var(--mist)}
+.svc-img img{width:100%;height:100%;object-fit:cover}
+.svc h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+.svc p{margin-top:.9rem;color:var(--ink2);max-width:32rem}
+.tlink{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;min-height:2.75rem;
+  font-weight:700;color:var(--teal);text-decoration:none;
+  border-bottom:2px solid rgba(15,118,110,.25);transition:border-color .2s, color .2s;
+}
+.tlink:hover{border-color:var(--teal)}
+.tlink svg{width:1.1rem;height:1.1rem}
+@media (min-width:52rem){
+  .svc{grid-template-columns:1.1fr .9fr;gap:4.5rem}
+  .svc.rev .svc-img{order:2}
+}
+
+/* Contact */
+.contact{background:var(--navy);color:#fff}
+.contact .intro{color:rgba(255,255,255,.78)}
+.contact-grid{display:grid;gap:3rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem;counter-reset:s}
+.steps li{display:grid;grid-template-columns:2.25rem 1fr;gap:1rem;align-items:baseline;color:rgba(255,255,255,.88)}
+.steps li::before{
+  counter-increment:s;content:counter(s);
+  width:2.25rem;height:2.25rem;border-radius:50%;display:grid;place-items:center;
+  border:1.5px solid var(--turq);color:#fff;font-weight:700;font-size:.95rem;transform:translateY(.55rem)
+}
+.steps strong{color:#fff;font-weight:700}
+.phone-big{display:inline-block;margin-top:2.25rem;font-size:clamp(1.9rem,5vw,2.6rem);font-weight:800;letter-spacing:-.02em;text-decoration:none;color:#fff}
+.phone-big:hover{color:#bdeaea}
+.c-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:1.25rem}
+.addr{margin-top:2rem;color:rgba(255,255,255,.82);font-size:1rem}
+.addr a{color:#fff;font-weight:700;text-underline-offset:.2em;display:inline-block;padding:.5rem 0}
+.map{border-radius:var(--radius);overflow:hidden;background:#0d2738;min-height:20rem;aspect-ratio:4/3}
+.map iframe{display:block;width:100%;height:100%;min-height:20rem;border:0}
+@media (min-width:30rem){.c-actions{flex-direction:row;flex-wrap:wrap}}
+@media (min-width:56rem){
+  .contact-grid{grid-template-columns:.95fr 1.05fr;gap:4.5rem;align-items:start}
+  .map{aspect-ratio:auto;height:100%;min-height:28rem}
+}
+
+/* Subsol */
+.foot{padding:2.75rem 0 3rem;font-size:.85rem;letter-spacing:.015em;color:var(--ink2)}
+.foot-in{display:flex;flex-direction:column;gap:1rem}
+.foot .brand{font-size:.95rem}
+.foot p{max-width:46rem}
+.foot a{color:var(--navy);font-weight:600;text-decoration:none}
+@media (min-width:52rem){.foot-in{flex-direction:row;justify-content:space-between;align-items:flex-start}}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js .rv{opacity:0;transition:opacity .6s var(--ease), transform .6s var(--ease)}
+.js .rv[data-r="left"]{transform:translateX(-1.25rem)}
+.js .rv[data-r="zoom"]{transform:scale(.965)}
+.js .rv[data-r="right"]{transform:translateX(1.25rem)}
+.js .rv.on{opacity:1;transform:none}
+.js .values .rv:nth-child(2){transition-delay:.08s}
+.js .values .rv:nth-child(3){transition-delay:.16s}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .hi,.js .hero-photo,.js .pulse .dot{animation:fadeIn .2s ease forwards;transform:none}
+  .js .hero-photo img{animation:none;transform:none}
+  .js .pulse .p-a,.js .pulse .p-b{animation:none;stroke-dashoffset:0}
+  .js .rv,.js .rv[data-r]{transform:none;transition:opacity .2s ease}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--ink2:#1f3a4c;--turq:#0b6f6f}
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--navy)}
+  .btn-ghost{border-color:var(--navy)}
+  .btn-outline-light{border-color:#fff}
+  .contact .intro,.steps li,.addr{color:#fff}
+  .values .ic{border:1.5px solid var(--navy)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#acasa" aria-label="Natasha Nina Marin, începutul paginii">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 5.5c-3.6 0-5.6 3-5.2 7 .4 3.4 1.9 5.3 2.6 8.3.7 3 1.1 6.7 3.4 6.7 2.4 0 2.2-4.6 3.2-7 .5-1.2 1.4-1.8 2.5-1.8s2 .6 2.5 1.8c1 2.4.8 7 3.2 7 2.3 0 2.7-3.7 3.4-6.7.7-3 2.2-4.9 2.6-8.3.4-4-1.6-7-5.2-7-2.6 0-4 1.6-6.5 1.6S12.1 5.5 9.5 5.5Z" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Natasha Nina Marin</span>
+    </a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:0721374139">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- Prima secțiune -->
+  <section class="hero" id="acasa" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titlu" class="hi hi-1">Natasha Nina Marin</h1>
+        <svg class="pulse" viewBox="0 0 600 64" role="img" aria-label="Linie de puls care formează conturul unui dinte">
+          <path class="p-a tooth" pathLength="1" d="M2 40 H150 L160 34 L170 40 H190 L201 12 L214 56 L225 30 L234 40 H272 C266 28 268 12 282 10 C290 9 294 14 300 14 C306 14 310 9 318 10 C332 12 334 28 328 40 C325 50 324 58 319 58 C314 58 313 49 309 45 C305 41 295 41 291 45 C287 49 286 58 281 58 C276 58 275 50 272 40"/>
+          <path class="p-b" pathLength="1" d="M328 40 H430 L437 35 L444 40 H588"/>
+          <circle class="dot" cx="592" cy="40" r="4"/>
+        </svg>
+        <p class="lead hi hi-2"><strong>Îți stăm la dispoziție pentru întrebări, în Constanța.</strong> Ne poți suna sau ne poți scrie pe WhatsApp.</p>
+        <div class="hero-actions hi hi-3">
+          <a class="btn btn-primary" href="tel:0721374139">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/40721374139?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20dentist." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+        <p class="hero-addr hi hi-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Strada George Enescu 26, Constanța
+        </p>
+      </div>
+      <figure class="hero-photo" style="margin:0">
+        <img src="img/1.jpg" alt="Medic stomatolog împreună cu un pacient în timpul unei consultații" width="900" height="1125" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="sec sec-mist" id="despre" aria-labelledby="t-despre">
+    <div class="wrap about-grid">
+      <div class="about-photo rv" data-r="zoom">
+        <img src="img/2.jpg" alt="Cabinet stomatologic pregătit pentru consultație, cu instrumente și scaun pentru pacient" loading="lazy" width="900" height="1125">
+      </div>
+      <div class="about-text">
+        <h2 class="h2 rv" data-r="fade" id="t-despre">Fiecare vizită, cât mai liniștită</h2>
+        <p class="body rv" data-r="fade">Oferim consultații și tratamente personalizate pentru sănătatea orală. Ne dorim ca fiecare vizită să fie cât mai confortabilă pentru tine, iar pentru orice întrebare sau programare îți stăm la dispoziție.</p>
+        <ul class="values">
+          <li class="rv" data-r="left">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-1.5A5.5 5.5 0 0 1 10.5 14h3a5.5 5.5 0 0 1 5.5 5.5V21"/><path d="m9.5 17.5 1.8 1.8 3.2-3.3"/></svg></span>
+            <div><h3>Profesionalism</h3><p>Abordăm fiecare pacient cu atenție.</p></div>
+          </li>
+          <li class="rv" data-r="left">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s-5.5 6-5.5 10a5.5 5.5 0 0 0 11 0c0-4-5.5-10-5.5-10Z"/><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></span>
+            <div><h3>Igienă</h3><p>Respectăm standarde ridicate de curățenie.</p></div>
+          </li>
+          <li class="rv" data-r="left">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0"/><path d="M8.5 10h.01M15.5 10h.01"/></svg></span>
+            <div><h3>Confort</h3><p>Atmosferă liniștită la fiecare consultație.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicii -->
+  <section class="sec" id="servicii" aria-labelledby="t-servicii">
+    <div class="wrap">
+      <div class="svc-head">
+        <h2 class="h2 rv" data-r="fade" id="t-servicii">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="intro rv" data-r="fade">Începem cu o discuție și o consultație, apoi stabilim împreună ce tratament ți se potrivește.</p>
+      </div>
+
+      <article class="svc">
+        <div class="svc-img rv" data-r="zoom">
+          <img src="img/3.jpg" alt="Medic stomatolog examinând dinții unui pacient" loading="lazy" width="900" height="600">
+        </div>
+        <div class="rv" data-r="right">
+          <h3>Consultații</h3>
+          <p>Ne spui ce te deranjează, verificăm cu atenție dinții și gingiile și îți explicăm pe înțeles ce am observat. Pleci știind care sunt pașii următori.</p>
+          <a class="tlink" href="https://wa.me/40721374139?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20dentist." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            Scrie-ne pe WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="svc rev">
+        <div class="svc-img rv" data-r="zoom">
+          <img src="img/5.jpg" alt="Instrumente stomatologice pregătite pentru tratament" loading="lazy" width="900" height="600">
+        </div>
+        <div class="rv" data-r="left">
+          <h3>Tratamente</h3>
+          <p>Tratamentele sunt adaptate nevoilor tale. Înainte de fiecare etapă afli ce urmează să facem, ca să știi mereu la ce să te aștepți.</p>
+          <a class="tlink" href="tel:0721374139">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+            Sună pentru detalii: 0721374139
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="sec contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap">
+      <h2 class="h2 rv" data-r="fade" id="t-contact">Ia legătura cu noi</h2>
+      <p class="intro rv" data-r="fade">Ne găsești pe Strada George Enescu 26, în Constanța. Te ajutăm cu plăcere la telefon sau pe WhatsApp.</p>
+
+      <div class="contact-grid">
+        <div class="rv" data-r="fade">
+          <ol class="steps">
+            <li><span><strong>Sună sau scrie-ne pe WhatsApp</strong> și spune-ne pe scurt ce te aduce la noi.</span></li>
+            <li><span><strong>Îți răspundem cu plăcere</strong> la întrebări.</span></li>
+            <li><span><strong>Vii la cabinet</strong>, pe Strada George Enescu 26.</span></li>
+          </ol>
+
+          <a class="phone-big" href="tel:0721374139" aria-label="Sună la 0721374139">0721374139</a>
+          <div class="c-actions">
+            <a class="btn btn-light" href="tel:0721374139">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+              Sună acum
+            </a>
+            <a class="btn btn-outline-light" href="https://wa.me/40721374139?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20dentist." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+              Scrie pe WhatsApp
+            </a>
+          </div>
+          <p class="addr">Strada George Enescu 26, Constanța<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Natasha+Nina+Marin+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide traseul în Google Maps</a>
+          </p>
+        </div>
+
+        <div class="map rv" data-r="zoom">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6407822,44.1764343,28.648782200000003,44.1804343&layer=mapnik&marker=44.1784343,28.6447822" title="Hartă: Strada George Enescu 26, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="brand" href="#acasa">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9.5 5.5c-3.6 0-5.6 3-5.2 7 .4 3.4 1.9 5.3 2.6 8.3.7 3 1.1 6.7 3.4 6.7 2.4 0 2.2-4.6 3.2-7 .5-1.2 1.4-1.8 2.5-1.8s2 .6 2.5 1.8c1 2.4.8 7 3.2 7 2.3 0 2.7-3.7 3.4-6.7.7-3 2.2-4.9 2.6-8.3.4-4-1.6-7-5.2-7-2.6 0-4 1.6-6.5 1.6S12.1 5.5 9.5 5.5Z" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round"/></svg>
+        <span>Natasha Nina Marin</span>
+      </a>
+      <p style="margin-top:.6rem">Strada George Enescu 26, Constanța · <a href="tel:0721374139">0721374139</a></p>
+    </div>
+    <div>
+      <p>Model de site (demo)</p>
+      <p style="margin-top:.35rem">Fotografii ilustrative de pe Pixabay: oswaldoruiz, lekoh, drshohmelian, DarkoStojanovic, rgerber</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+
+  var nav=document.getElementById('nav');
+  var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>8)};
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  var items=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(function(el){el.classList.add('on')});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}
+    });
+  },{rootMargin:'0px 0px -10% 0px',threshold:.12});
+  items.forEach(function(el){io.observe(el)});
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
