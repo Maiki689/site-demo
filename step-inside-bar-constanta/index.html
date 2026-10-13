@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Step Inside Bar · pub în centrul Constanței</title>
+<meta name="description" content="Step Inside Bar, un pub primitor din zona centrală a Constanței, perfect pentru întâlniri între prieteni. Cafea, bere la draft, cocktailuri și băuturi spirtoase.">
+<meta name="theme-color" content="#151515">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#1D3B2A;
+  --brown:#6B3E1E;
+  --cream:#F3E9D2;
+  --black:#151515;
+  --blue:#38bdf8;
+  --cream-soft:rgba(243,233,210,.78);
+  --line:rgba(243,233,210,.18);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:min(72rem, 100% - 2.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--black);color:var(--cream);
+  font-family:"Lora",Georgia,serif;font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Archivo Black","Arial Black",sans-serif;font-weight:400;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+.wrap{width:var(--wrap);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--blue);color:var(--black);padding:.6rem 1rem;border-radius:.4rem;z-index:100}
+.skip:focus{left:.75rem}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:.3rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.4rem;border-radius:999px;
+  font-family:"Lora",serif;font-weight:600;font-size:1rem;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease, background-color .2s ease, box-shadow .25s ease, border-color .2s ease;
+}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--blue);color:var(--black)}
+.btn-primary:hover{box-shadow:0 0 0 .35rem rgba(56,189,248,.22)}
+.btn-ghost{background:rgba(243,233,210,.08);color:var(--cream);border-color:rgba(243,233,210,.55)}
+.btn-ghost:hover{background:rgba(243,233,210,.16);border-color:var(--cream)}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(21,21,21,.58);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09);
+  transition:box-shadow .3s ease, background-color .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.09), 0 .6rem 1.6rem -.8rem rgba(0,0,0,.7)}
+.nav-in{width:var(--wrap);margin-inline:auto;height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:"Archivo Black",sans-serif;font-size:1.05rem;letter-spacing:-.01em;text-decoration:none;color:#fff;white-space:nowrap}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:#fff;opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav .btn{min-height:2.75rem;padding:0 1.1rem;font-size:.95rem}
+@media (min-width:52rem){.nav-links{display:flex}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;isolation:isolate}
+.hero-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:-2;
+  opacity:0;transform:scale(1.08);animation:heroImg 1.8s var(--ease) .05s forwards;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top, rgba(21,21,21,.97) 0%, rgba(21,21,21,.78) 38%, rgba(21,21,21,.35) 72%, rgba(21,21,21,.45) 100%);
+}
+.hero-in{width:var(--wrap);margin-inline:auto;padding:6.5rem 0 clamp(2.5rem,7vh,5rem)}
+.hero h1{font-size:clamp(3.4rem, 16.5vw, 8.5rem);line-height:.98;letter-spacing:-.03em;color:#fff}
+.line{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+.line>span{display:block;transform:translateY(105%);animation:lineUp .9s var(--ease) forwards;animation-delay:calc(.3s + var(--i) * .12s)}
+.hero-rest{opacity:0;animation:fadeIn .8s ease .95s forwards}
+.slogan{margin-top:1.4rem;font-size:clamp(1.2rem,2.6vw,1.6rem);font-weight:600;line-height:1.3;max-width:30ch;color:#fff}
+.hero-desc{margin-top:.5rem;color:var(--cream-soft);max-width:40ch}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+
+@keyframes heroImg{to{opacity:1;transform:scale(1)}}
+@keyframes lineUp{to{transform:translateY(0)}}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ---------- Secțiuni ---------- */
+section{position:relative}
+.sec{padding:clamp(5rem,13vw,9rem) 0}
+.sec-head{max-width:40rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.sec-head h2,.about h2{font-size:clamp(2.2rem, 6.5vw, 4.25rem)}
+.sec-head p{margin-top:1rem;color:var(--cream-soft);max-width:36em}
+
+/* ---------- Despre + halba ---------- */
+.about{background:var(--green)}
+.about-grid{display:grid;gap:3rem}
+.about-text p{margin-top:1.3rem;max-width:34em;font-size:1.125rem;color:var(--cream)}
+.about-text p.lead{font-size:clamp(1.25rem,2.4vw,1.5rem);line-height:1.4;font-weight:500}
+.perks{list-style:none;margin:3rem 0 0;padding:0;max-width:34em}
+.perks li{padding:1.3rem 0;border-top:1px solid var(--line);display:grid;gap:.3rem}
+.perks li:last-child{border-bottom:1px solid var(--line)}
+.perks h3{font-size:1.2rem;letter-spacing:-.01em}
+.perks p{color:var(--cream-soft)}
+.perks .fact h3{font-size:clamp(1.45rem,3vw,1.8rem)}
+
+.mug-wrap{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.mug{width:min(12rem,58vw);height:auto;overflow:visible}
+.mug .liquid{transition:transform .35s var(--ease);will-change:transform}
+.mug .crown{transform-box:fill-box;transform-origin:50% 100%;transform:translateY(16px) scaleY(.35);opacity:0;transition:transform 1s var(--ease), opacity .6s ease}
+.mug.poured .crown{transform:none;opacity:1}
+.mug-cap{font-size:.875rem;letter-spacing:.02em;color:var(--cream-soft);min-height:1.4em;text-align:center;transition:opacity .3s ease}
+@media (min-width:60rem){
+  .about-grid{grid-template-columns:1.15fr .85fr;gap:4rem;align-items:start}
+  .mug-wrap{position:sticky;top:22vh}
+  .mug{width:min(17rem,100%)}
+}
+
+/* ---------- Băuturi: plăci pictate ---------- */
+.drinks{background:var(--black)}
+.drinks-grid{display:grid;gap:2.5rem}
+.plates{display:grid;gap:1rem;list-style:none;margin:0;padding:0}
+.plate{
+  position:relative;padding:2rem 1.7rem 1.9rem;border-radius:.5rem;background:var(--brown);
+  box-shadow:0 1.4rem 2rem -1.4rem rgba(0,0,0,.8);
+}
+.plate::before{content:"";position:absolute;inset:.55rem;border:2px solid rgba(243,233,210,.28);border-radius:.3rem;pointer-events:none}
+.plate:nth-child(2),.plate:nth-child(3){background:var(--green)}
+.plate h3{font-size:clamp(1.45rem,4.2vw,1.9rem);color:var(--cream)}
+.plate p{margin-top:.5rem;color:var(--cream-soft)}
+.drinks-photo{border-radius:.5rem;overflow:hidden;aspect-ratio:4/3}
+.drinks-photo img{width:100%;height:100%;object-fit:cover}
+.drinks-note{margin-top:1.5rem;font-size:.95rem;color:var(--cream-soft)}
+@media (min-width:40rem){.plates{grid-template-columns:1fr 1fr}}
+@media (min-width:60rem){
+  .drinks-grid{grid-template-columns:7fr 5fr;gap:3rem;align-items:stretch}
+  .plate{padding:2.4rem 2rem 2.3rem;min-height:11.5rem}
+  .drinks-photo{aspect-ratio:auto;height:100%;min-height:24rem}
+}
+/* placă ce se balansează ca o firmă agățată */
+.swing .plate{transform-origin:50% 0;transform:perspective(40rem) rotateX(-22deg);opacity:0;
+  transition:transform .6s var(--ease), opacity .5s ease;transition-delay:calc(var(--i) * .08s)}
+.swing.in .plate{transform:perspective(40rem) rotateX(0);opacity:1}
+
+/* ---------- Galerie ---------- */
+.gallery{background:var(--brown)}
+.gallery .sec-head p{color:rgba(243,233,210,.85)}
+.g-grid{display:grid;gap:.9rem}
+.g-item{margin:0;border-radius:.5rem;overflow:hidden;aspect-ratio:4/3;background:rgba(0,0,0,.25)}
+.g-item img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);opacity:0;transition:transform .9s var(--ease), opacity .6s ease}
+.g-grid.in .g-item img{transform:scale(1);opacity:1}
+.g-grid.in .g-item:nth-child(2) img{transition-delay:.1s}
+.g-grid.in .g-item:nth-child(3) img{transition-delay:.2s}
+@media (min-width:48rem){
+  .g-grid{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
+  .g-item:first-child{grid-row:span 2;aspect-ratio:auto}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--black)}
+.contact-grid{display:grid;gap:2.5rem}
+.contact h2{font-size:clamp(2.2rem,6.5vw,4.25rem)}
+.contact-text p{margin-top:1.2rem;color:var(--cream-soft);max-width:34em}
+.phone{display:inline-block;margin-top:1.8rem;font-family:"Archivo Black",sans-serif;font-size:clamp(1.8rem,6vw,2.6rem);letter-spacing:-.02em;text-decoration:none;color:var(--blue);line-height:1.1}
+.phone:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+.contact .actions{margin-top:1.5rem}
+.where{margin-top:1.8rem;font-weight:600}
+.where a{color:var(--blue);text-underline-offset:.2em}
+.map{border-radius:.5rem;overflow:hidden;aspect-ratio:4/3;background:var(--green)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.75)}
+.rise{opacity:0;transform:translateY(1.2rem);transition:opacity .55s ease, transform .55s var(--ease)}
+.rise.in{opacity:1;transform:none}
+.fade{opacity:0;transition:opacity .7s ease}
+.fade.in{opacity:1}
+@media (min-width:60rem){.contact-grid{grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center}}
+
+/* ---------- Subsol ---------- */
+.footer{background:var(--green);padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:1.5rem}
+.foot-name{font-family:"Archivo Black",sans-serif;font-size:1.5rem;letter-spacing:-.02em}
+.footer p{color:var(--cream-soft);font-size:.9rem;letter-spacing:.02em}
+.footer a{color:var(--cream);text-underline-offset:.2em}
+.foot-small{border-top:1px solid var(--line);padding-top:1.5rem;display:grid;gap:.4rem}
+.foot-small p{font-size:.8rem;letter-spacing:.04em}
+@media (min-width:48rem){.foot-grid{grid-template-columns:1fr auto;align-items:end}.foot-small{grid-column:1 / -1}}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-img,.line>span,.hero-rest{animation:fadeIn .2s ease forwards;transform:none}
+  .hero-img{opacity:0}
+  .line>span{opacity:0}
+  .swing .plate,.swing.in .plate{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .g-item img,.g-grid.in .g-item img{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .rise,.rise.in{transform:none;transition:opacity .2s ease}
+  .fade{transition:opacity .2s ease}
+  .mug .liquid,.mug .crown{transition:none}
+  .btn{transition:background-color .2s ease}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--black);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--cream-soft:var(--cream);--line:rgba(243,233,210,.6)}
+  .nav{background:#000;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--cream)}
+  .hero::after{background:rgba(0,0,0,.82)}
+  .plate::before{border-color:var(--cream)}
+  .btn-ghost{background:#000;border-color:var(--cream)}
+  .btn-primary{border-color:#fff}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <nav class="nav-in" aria-label="Navigare principală">
+    <a class="brand" href="#top">Step Inside Bar</a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#bauturi">Băuturi</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="tel:0725651079">Sună acum</a>
+  </nav>
+</header>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <img class="hero-img" src="img/2.jpg" alt="Prieteni care ciocnesc halbe de bere la bar, seara">
+    <div class="hero-in">
+      <h1 id="titlu" aria-label="Step Inside Bar">
+        <span class="line" aria-hidden="true"><span style="--i:0">Step</span></span>
+        <span class="line" aria-hidden="true"><span style="--i:1">Inside</span></span>
+        <span class="line" aria-hidden="true"><span style="--i:2">Bar</span></span>
+      </h1>
+      <div class="hero-rest">
+        <p class="slogan">Relaxează-te în centrul Constanței.</p>
+        <p class="hero-desc">Un pub primitor, perfect pentru întâlniri între prieteni.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0725651079">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Sună acum
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about sec" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <div class="about-text fade">
+        <h2 id="despre-titlu">Intră și ia loc.</h2>
+        <p class="lead">Step Inside Bar este un pub din zona centrală a Constanței, potrivit pentru oricine vrea o pauză relaxată.</p>
+        <p>Aici te bucuri de băuturi și conversații, într-o atmosferă informală. Vino cu prietenii sau vino singur și găsește-ți locul la bar.</p>
+        <ul class="perks">
+          <li class="fact">
+            <h3>Locație centrală</h3>
+            <p>În zona centrală a Constanței, ușor de ajuns din orice parte a orașului.</p>
+          </li>
+          <li>
+            <h3>Atmosferă relaxată</h3>
+            <p>Bun pentru discuții lungi și întâlniri cu prietenii.</p>
+          </li>
+          <li>
+            <h3>Loc de socializare</h3>
+            <p>Un loc în care te oprești la o conversație, după o zi prin oraș.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mug-wrap" id="mugWrap" aria-hidden="true">
+        <svg class="mug" id="mug" viewBox="0 0 240 300" role="presentation">
+          <defs>
+            <clipPath id="glassIn">
+              <path d="M52 58 H168 L162 256 Q161 264 153 264 H67 Q59 264 58 256 Z"/>
+            </clipPath>
+            <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#D99A3E"/>
+              <stop offset=".55" stop-color="#B06A28"/>
+              <stop offset="1" stop-color="#6B3E1E"/>
+            </linearGradient>
+          </defs>
+          <!-- mânerul -->
+          <path d="M178 92 C226 92 230 102 230 150 C230 200 224 214 174 214" fill="none" stroke="rgba(243,233,210,.55)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M178 116 C206 116 208 124 208 152 C208 184 204 190 176 190" fill="none" stroke="rgba(243,233,210,.35)" stroke-width="4" stroke-linecap="round"/>
+          <!-- sticla -->
+          <path d="M40 50 H180 L172 266 Q171 280 157 280 H63 Q49 280 48 266 Z" fill="rgba(243,233,210,.06)"/>
+          <!-- berea -->
+          <g clip-path="url(#glassIn)">
+            <g class="liquid" id="liquid" style="transform:translateY(222px)">
+              <rect x="40" y="56" width="140" height="215" fill="url(#beer)"/>
+              <g fill="rgba(255,240,210,.35)">
+                <circle cx="76" cy="120" r="2.2"/><circle cx="92" cy="170" r="1.6"/><circle cx="118" cy="98" r="1.8"/>
+                <circle cx="140" cy="150" r="2.4"/><circle cx="104" cy="214" r="1.5"/><circle cx="150" cy="226" r="1.9"/>
+                <circle cx="70" cy="236" r="1.4"/><circle cx="128" cy="190" r="1.3"/>
+              </g>
+              <rect x="40" y="44" width="140" height="16" fill="#F3E9D2"/>
+              <g fill="#F3E9D2">
+                <circle cx="50" cy="46" r="8"/><circle cx="66" cy="44" r="9"/><circle cx="83" cy="46" r="8"/>
+                <circle cx="100" cy="44" r="9"/><circle cx="118" cy="46" r="8"/><circle cx="135" cy="44" r="9"/>
+                <circle cx="152" cy="46" r="8"/><circle cx="168" cy="44" r="9"/>
+              </g>
+            </g>
+          </g>
+          <!-- spuma care urcă o dată -->
+          <g class="crown" fill="#F3E9D2">
+            <circle cx="50" cy="50" r="12"/><circle cx="70" cy="42" r="15"/><circle cx="94" cy="46" r="13"/>
+            <circle cx="116" cy="39" r="16"/><circle cx="140" cy="45" r="14"/><circle cx="162" cy="42" r="15"/>
+            <circle cx="176" cy="52" r="10"/>
+            <rect x="40" y="46" width="140" height="14"/>
+            <path d="M172 52 q6 0 6 10 v10 q0 6 -5 6 q-5 0 -5 -6 v-14 z"/>
+          </g>
+          <!-- conturul și reflexia -->
+          <path d="M40 50 H180 L172 266 Q171 280 157 280 H63 Q49 280 48 266 Z" fill="none" stroke="rgba(243,233,210,.7)" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M62 74 L68 248" stroke="rgba(255,255,255,.22)" stroke-width="5" stroke-linecap="round"/>
+          <path d="M80 74 L83 140" stroke="rgba(255,255,255,.12)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <p class="mug-cap" id="mugCap">Derulează ca să torni.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="drinks sec" id="bauturi" aria-labelledby="bauturi-titlu">
+    <div class="wrap">
+      <div class="sec-head fade">
+        <h2 id="bauturi-titlu">Ce găsești la bar</h2>
+        <p>Un pub din centrul Constanței, pentru o pauză relaxată și pentru întâlniri între prieteni.</p>
+      </div>
+      <div class="drinks-grid">
+        <div>
+          <ul class="plates swing" id="plates">
+            <li class="plate" style="--i:0">
+              <h3>În centrul orașului</h3>
+              <p>În zona centrală a Constanței, ușor de ajuns.</p>
+            </li>
+            <li class="plate" style="--i:1">
+              <h3>Întâlniri între prieteni</h3>
+              <p>Un pub primitor, unde vă strângeți la o masă.</p>
+            </li>
+            <li class="plate" style="--i:2">
+              <h3>O pauză relaxată</h3>
+              <p>Pentru oricine vrea să se oprească din agitația zilei.</p>
+            </li>
+            <li class="plate" style="--i:3">
+              <h3>Băuturi și conversații</h3>
+              <p>Într-o atmosferă informală, fără grabă.</p>
+            </li>
+          </ul>
+          <p class="drinks-note">Pentru orice întrebare, sună-ne la <a href="tel:0725651079">0725 651 079</a>.</p>
+        </div>
+        <figure class="drinks-photo fade" style="margin:0">
+          <img src="img/4.jpg" alt="Halbe de bere cu spumă, ridicate pentru un toast" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery sec" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="sec-head rise">
+        <h2 id="galerie-titlu">Seara, la un pahar</h2>
+        <p>Fotografii ilustrative, ca să-ți faci o idee despre atmosferă.</p>
+      </div>
+      <div class="g-grid" id="gGrid">
+        <figure class="g-item"><img src="img/3.jpg" alt="Oameni care râd și povestesc la mese, într-un bar" loading="lazy"></figure>
+        <figure class="g-item"><img src="img/5.jpg" alt="Bere turnată la halbă, la bar" loading="lazy"></figure>
+        <figure class="g-item"><img src="img/1.jpg" alt="Raft cu sticle de băuturi în spatele barului" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact sec" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-text rise">
+        <h2 id="contact-titlu">Te așteptăm în centrul Constanței</h2>
+        <p>Ai o întrebare? Sună-ne la numărul de mai jos.</p>
+        <a class="phone" href="tel:0725651079">0725 651 079</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0725651079">Sună acum</a>
+        </div>
+        <p class="where">Zona centrală a Constanței. <a href="https://www.google.com/maps/search/?api=1&query=Step+Inside+Bar+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a></p>
+      </div>
+      <div class="map fade">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.648308099999998,44.1734507,28.6563081,44.1774507&layer=mapnik&marker=44.1754507,28.6523081" title="Harta cu locația Step Inside Bar, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">Step Inside Bar 🍻</p>
+      <p>Relaxează-te în centrul Constanței.</p>
+    </div>
+    <p><a href="tel:0725651079">0725 651 079</a></p>
+    <div class="foot-small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: DuyNod, mynorbejarano, StockSnap, SocialButterflyMMG, Altnet</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* umbra navigării la derulare */
+  var nav = document.getElementById('nav');
+  function navShadow(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+
+  /* dezvăluiri la derulare */
+  var els = document.querySelectorAll('.fade, .rise, .swing, .g-grid');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.15, rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* halba care se umple la derulare */
+  var mug = document.getElementById('mug');
+  var liquid = document.getElementById('liquid');
+  var cap = document.getElementById('mugCap');
+  var wrap = document.getElementById('mugWrap');
+  var section = document.getElementById('despre');
+  var desk = window.matchMedia('(min-width: 60rem)');
+  var EMPTY = 222, best = 0, poured = false, ticking = false;
+
+  function setFill(p){
+    liquid.style.transform = 'translateY(' + (EMPTY * (1 - p)).toFixed(1) + 'px)';
+    if (p >= 0.99 && !poured){
+      poured = true;
+      mug.classList.add('poured');
+      cap.textContent = 'Noroc! Te așteptăm la bar.';
+    }
+  }
+
+  function measure(){
+    var vh = window.innerHeight, p;
+    if (desk.matches){
+      var r = section.getBoundingClientRect();
+      p = (vh * 0.6 - r.top) / Math.max(r.height * 0.6, 1);
+    } else {
+      var w = wrap.getBoundingClientRect();
+      p = (vh * 0.95 - w.top) / (vh * 0.55);
+    }
+    p = Math.min(1, Math.max(0, p));
+    if (p > best){ best = p; setFill(best); }
+  }
+
+  function onScroll(){
+    navShadow();
+    if (poured || reduce) return;
+    if (!ticking){
+      ticking = true;
+      requestAnimationFrame(function(){ measure(); ticking = false; });
+    }
+  }
+
+  if (reduce){ best = 1; setFill(1); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  navShadow();
+  if (!reduce) measure();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script><a href="https://wa.me/40725651079?text=Bun%C4%83%21%20A%C8%99%20vrea%20detalii%20despre%20Step%20Inside%20Bar." style="position:fixed;right:16px;bottom:16px;z-index:999;padding:14px 20px;border-radius:999px;background:#38bdf8;color:#fff;font:700 16px system-ui,sans-serif;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3)">💬 WhatsApp</a></body>
+</html>
