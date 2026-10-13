@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toma Ciurea Coafor | Tuns, vopsit și coafuri lângă Parcul Tineretului, București</title>
+<meta name="description" content="Tunsori, vopsit și coafuri moderne în zona Parcului Tineretului, pe strada Piscului. Programări la 0738 834 424 sau pe WhatsApp.">
+<meta name="theme-color" content="#ffffff">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#000000;
+    --red:#D32F2F;
+    --paper:#FFFFFF;
+    --mist:#F4F4F4;
+    --pad:clamp(1.25rem, 5vw, 3rem);
+    --max:90rem;
+    --ease:cubic-bezier(.2,.8,.2,1);
+    --head:4rem;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Lato",system-ui,sans-serif;font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  @supports (overflow:clip){html,body{overflow-x:clip}}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3,p,ul,dl,dd,figure{margin:0;padding:0}
+  ul{list-style:none}
+  [id]{scroll-margin-top:calc(var(--head) + 1rem)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  :focus-visible{outline:3px solid var(--focus, var(--red));outline-offset:3px}
+
+  .wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+  .h2{
+    font-family:"Montserrat",sans-serif;font-weight:800;
+    font-size:clamp(2.2rem, 6vw, 4.5rem);line-height:1.05;letter-spacing:-0.02em;
+  }
+  .lead{font-size:clamp(1.125rem, 2vw, 1.3rem);line-height:1.5;max-width:36rem}
+  .small{font-size:.8125rem;letter-spacing:.03em;line-height:1.6}
+
+  /* ---------- butoane cu umbră plată ---------- */
+  .btn{
+    --sh:var(--red);
+    display:inline-flex;align-items:center;justify-content:center;gap:.65em;
+    min-height:3.25rem;padding:.85rem 1.5rem;
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:1rem;line-height:1.15;letter-spacing:.005em;
+    text-decoration:none;text-align:center;
+    background:var(--ink);color:var(--paper);
+    border:2px solid var(--ink);border-radius:.5rem;
+    box-shadow:.3rem .3rem 0 var(--sh);
+    transition:transform .1s ease, box-shadow .18s ease, background-color .18s ease;
+    -webkit-tap-highlight-color:transparent;cursor:pointer;
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:hover{box-shadow:.45rem .45rem 0 var(--sh)}
+  .btn:active{transform:translate(.15rem,.15rem) scale(.97);box-shadow:.12rem .12rem 0 var(--sh)}
+  .btn--light{background:var(--paper);color:var(--ink);--sh:var(--ink)}
+  .btn--sm{min-height:2.75rem;padding:.55rem 1rem;font-size:.875rem;box-shadow:.2rem .2rem 0 var(--sh)}
+  .btn--sm:hover{box-shadow:.3rem .3rem 0 var(--sh)}
+  .btns{display:flex;flex-wrap:wrap;gap:1rem 1.1rem}
+
+  /* ---------- antet de sticlă ---------- */
+  .top{
+    position:fixed;inset:0 0 auto;z-index:50;
+    background:rgba(255,255,255,.74);
+    -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+    transition:box-shadow .3s ease;
+  }
+  .top.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.9), 0 .6rem 1.6rem -1rem rgba(0,0,0,.35)}
+  .top__bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:var(--head)}
+  .top__brand{display:flex;align-items:center;min-height:2.75rem;text-decoration:none;max-width:52vw}
+  .top__brand img{height:2.4rem;width:auto;max-width:100%;object-fit:contain;object-position:left center}
+  .wordmark{font-family:"Montserrat",sans-serif;font-weight:800;letter-spacing:-0.01em;line-height:1.1}
+  .top__brand .wordmark{font-size:1rem}
+  .top__nav{display:none}
+  .top__nav a{
+    font-family:"Montserrat",sans-serif;font-weight:600;font-size:.9rem;letter-spacing:.01em;
+    text-decoration:none;padding:.7rem .2rem;transition:color .18s ease;
+  }
+  .top__nav a:hover{color:var(--red)}
+  @media (min-width:56rem){
+    .top__nav{display:flex;gap:2rem;margin-left:auto;margin-right:1.5rem}
+  }
+
+  /* ---------- prima secțiune: logo + titlul-afiș ---------- */
+  .hero{padding:calc(var(--head) + clamp(1.75rem, 6vw, 4rem)) 0 clamp(4rem, 10vw, 7rem)}
+  .hero__grid{
+    display:grid;grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"logo" "poster" "text";
+  }
+  .hero__logo{grid-area:logo}
+  .hero__logo img{
+    width:100%;max-width:20rem;height:auto;max-height:9rem;
+    object-fit:contain;object-position:left center;
+  }
+  .hero__logo .wordmark{font-size:clamp(1.6rem,5vw,2.4rem)}
+  .poster{
+    grid-area:poster;min-width:0;
+    margin:clamp(2rem, 7vw, 3rem) 0 clamp(2rem, 6vw, 2.75rem);
+    font-family:"Montserrat",sans-serif;font-weight:800;letter-spacing:-0.035em;color:var(--ink);
+  }
+  .poster .line{display:block;white-space:nowrap;font-size:var(--fs);line-height:.9}
+  .poster .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.12em .05em .14em 0;margin:-.12em 0 -.14em}
+  .poster .wi{display:inline-block}
+  .l1{--fs:13vw}.l2{--fs:16vw}.l3{--fs:11.5vw}.l4{--fs:30vw}
+  .hero__text{grid-area:text;min-width:0}
+  .hero__text .lead{margin-bottom:.6rem}
+  .hero__where{color:#3a3a3a;margin-bottom:2rem}
+  @media (min-width:60rem){
+    .hero{min-height:100svh;display:flex;align-items:center}
+    .hero .wrap{width:100%}
+    .hero__grid{
+      grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(3rem,6vw,6rem);
+      grid-template-areas:"logo poster" "text poster";align-items:end;
+    }
+    .hero__logo{align-self:start}
+    .hero__logo img{max-width:24rem;max-height:13rem}
+    .poster{margin:0}
+    .l1{--fs:6.5vw}.l2{--fs:8vw}.l3{--fs:5.8vw}.l4{--fs:15rem}
+  }
+
+  /* intrarea: cuvintele vin pe rând */
+  .js .hero__logo, .js .hero__text{opacity:0;transition:opacity .45s var(--ease)}
+  .js .hero__text{transition-delay:.75s}
+  .js .poster .wi{transform:translateY(108%);transition:transform .6s var(--ease);transition-delay:var(--d)}
+  .js.ready .hero__logo, .js.ready .hero__text{opacity:1}
+  .js.ready .poster .wi{transform:none}
+
+  /* ---------- despre (bloc negru) ---------- */
+  .about{background:var(--ink);color:var(--paper);padding:clamp(5rem,12vw,9rem) 0}
+  .about__grid{display:grid;gap:clamp(3rem,7vw,6rem);grid-template-columns:minmax(0,1fr)}
+  .about__photo{box-shadow:.75rem .75rem 0 var(--red);margin-right:.75rem}
+  .about__photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .about .h2{margin-bottom:1.5rem;max-width:14ch}
+  .about .lead{color:rgba(255,255,255,.86)}
+  .perks{margin-top:clamp(2.5rem,6vw,3.5rem);display:grid;gap:0}
+  .perks div{padding:1.25rem 0;border-top:1px solid rgba(255,255,255,.28)}
+  .perks dt{font-family:"Montserrat",sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-0.01em;line-height:1.2}
+  .perks dd{color:rgba(255,255,255,.78);margin-top:.3rem}
+  @media (min-width:56rem){
+    .about__grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center}
+    .about__photo{margin-right:0}
+  }
+
+  /* ---------- servicii (alb, rânduri mari) ---------- */
+  .services{padding:clamp(5rem,12vw,9rem) 0}
+  .services__head{display:grid;gap:1.25rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+  .svc{border-bottom:2px solid var(--ink)}
+  .svc li{
+    display:grid;gap:.35rem;grid-template-columns:minmax(0,1fr);
+    padding:clamp(1.4rem,3.5vw,2.25rem) 0;border-top:2px solid var(--ink);
+  }
+  .svc__name{
+    font-family:"Montserrat",sans-serif;font-weight:800;
+    font-size:clamp(2rem, 7vw, 4.75rem);line-height:1.05;letter-spacing:-0.025em;
+    transition:color .2s ease;overflow-wrap:anywhere;
+  }
+  .svc__desc{font-size:1.0625rem;color:#333;max-width:30rem}
+  .svc li:hover .svc__name{color:var(--red)}
+  .services__cta{margin-top:clamp(2.5rem,6vw,3.5rem);display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem 2rem}
+  .services__cta p{max-width:28rem}
+  @media (min-width:48rem){
+    .services__head{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end}
+    .svc li{grid-template-columns:minmax(0,7fr) minmax(0,4fr);align-items:baseline;column-gap:2rem}
+  }
+
+  /* ---------- galerie (bloc negru) ---------- */
+  .gallery{background:var(--ink);color:var(--paper);padding:clamp(4rem,10vw,7rem) 0}
+  .gallery__grid{display:grid;gap:clamp(1rem,2.5vw,1.75rem);grid-template-columns:minmax(0,1fr)}
+  .gallery figure{overflow:hidden}
+  .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .gallery__note{margin-top:1.25rem;color:rgba(255,255,255,.7)}
+  @media (min-width:48rem){
+    .gallery__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+    .gallery img{aspect-ratio:auto;height:clamp(20rem,40vw,36rem)}
+  }
+
+  /* ---------- programări (bloc roșu) ---------- */
+  .book{background:var(--red);color:var(--paper);padding:clamp(5rem,12vw,9rem) 0;--focus:#fff}
+  .book .h2{font-size:clamp(2.6rem, 9vw, 7rem);margin-bottom:1.5rem}
+  .book .lead{margin-bottom:2.25rem}
+  .book .btn{--sh:var(--paper);border-color:var(--ink)}
+  .book .btn--light{--sh:var(--ink);border-color:var(--paper)}
+  .book__phone{
+    display:inline-block;margin-top:2.5rem;
+    font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(1.6rem,5vw,2.6rem);
+    letter-spacing:-0.01em;text-decoration:none;border-bottom:3px solid rgba(255,255,255,.6);
+    transition:border-color .18s ease;
+  }
+  .book__phone:hover{border-color:#fff}
+
+  /* ---------- contact + hartă ---------- */
+  .contact{padding:clamp(5rem,12vw,9rem) 0}
+  .contact__grid{display:grid;gap:clamp(3rem,6vw,5rem);grid-template-columns:minmax(0,1fr)}
+  .contact .h2{margin-bottom:1.25rem;max-width:12ch}
+  .contact .lead{margin-bottom:2rem}
+  .contact__maps{
+    display:inline-flex;align-items:center;min-height:2.75rem;margin-top:1.5rem;
+    font-family:"Montserrat",sans-serif;font-weight:600;font-size:.95rem;
+    text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em;
+    transition:color .18s ease;
+  }
+  .contact__maps:hover{color:var(--red)}
+  .map{border:2px solid var(--ink);box-shadow:.6rem .6rem 0 var(--ink);margin-right:.6rem;background:var(--mist)}
+  .map iframe{display:block;width:100%;aspect-ratio:4/3;border:0}
+  @media (min-width:56rem){
+    .contact__grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center}
+    .map iframe{aspect-ratio:auto;height:clamp(24rem,36vw,32rem)}
+  }
+
+  /* ---------- subsol ---------- */
+  .foot{background:var(--mist);padding:clamp(3.5rem,8vw,5rem) 0 2.5rem}
+  .foot__grid{display:grid;gap:2rem;grid-template-columns:minmax(0,1fr)}
+  .foot__logo img{height:auto;width:100%;max-width:14rem;max-height:6rem;object-fit:contain;object-position:left center}
+  .foot__logo .wordmark{font-size:1.4rem}
+  .foot__info p + p{margin-top:.35rem}
+  .foot__info a{font-weight:700;text-decoration:none;display:inline-flex;align-items:center;min-height:2.75rem}
+  .foot__info a:hover{color:var(--red)}
+  .foot__legal{margin-top:2.5rem;color:#444}
+  @media (min-width:48rem){
+    .foot__grid{grid-template-columns:auto 1fr;align-items:center;column-gap:4rem}
+  }
+
+  /* ---------- dezvăluiri discrete, diferite pe secțiuni ---------- */
+  .js .rv{opacity:0;transition:opacity .55s var(--ease), transform .55s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+  .js .rv[data-rv="left"]{transform:translateX(-1.25rem)}
+  .js .rv[data-rv="lift"]{transform:translateY(.9rem)}
+  .js .rv[data-rv="scale"]{transform:scale(.97)}
+  .js .rv[data-rv="zoom"] img{transform:scale(1.07);transition:transform .6s var(--ease)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rv.in img{transform:none}
+
+  /* ---------- preferințe de accesibilitate ---------- */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js .poster .wi{transform:none;opacity:0;transition:opacity .2s ease}
+    .js.ready .poster .wi{opacity:1}
+    .js .hero__text{transition-delay:0s}
+    .js .hero__logo,.js .hero__text{transition-duration:.2s}
+    .js .rv,.js .rv[data-rv]{transform:none !important;transition:opacity .2s ease;transition-delay:0s}
+    .js .rv[data-rv="zoom"] img{transform:none;transition:none}
+    .btn,.btn:active{transition:none;transform:none}
+  }
+  @media (prefers-reduced-transparency:reduce){
+    .top{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  @media (prefers-contrast:more){
+    .top{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--ink)}
+    .about .lead,.perks dd,.gallery__note{color:#fff}
+    .perks div{border-top-color:#fff}
+    .hero__where,.svc__desc,.foot__legal{color:#000}
+    .btn{border-width:3px}
+  }
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="top" id="antet">
+  <div class="wrap top__bar">
+    <a class="top__brand" href="#top" aria-label="Toma Ciurea Coafor, începutul paginii">
+      <img src="logo.png" alt="Toma Ciurea Coafor" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+      <span class="wordmark" hidden>Toma Ciurea Coafor</span>
+    </a>
+    <nav class="top__nav" aria-label="Navigare principală">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#programari">Programări</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--sm" href="tel:0738834424">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.13.37 2.35.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Bun venit">
+    <div class="wrap hero__grid">
+      <h1 class="hero__logo">
+        <img src="logo.png" alt="Toma Ciurea Coafor" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="wordmark" hidden>Toma Ciurea Coafor</span>
+      </h1>
+
+      <p class="poster">
+        <span class="sr-only">Schimbă-ți look-ul, îndrăznește azi.</span>
+        <span class="line l1" aria-hidden="true"><span class="w"><span class="wi" style="--d:.08s">Schimbă-ți</span></span></span>
+        <span class="line l2" aria-hidden="true"><span class="w"><span class="wi" style="--d:.2s">look-ul,</span></span></span>
+        <span class="line l3" aria-hidden="true"><span class="w"><span class="wi" style="--d:.32s">îndrăznește</span></span></span>
+        <span class="line l4" aria-hidden="true"><span class="w"><span class="wi" style="--d:.44s">azi.</span></span></span>
+      </p>
+
+      <div class="hero__text">
+        <p class="lead">Tunsori, vopsit și coafuri moderne în zona Parcului Tineretului.</p>
+        <p class="hero__where">Strada Piscului, la parter, București</p>
+        <div class="btns">
+          <a class="btn" href="tel:0738834424">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.13.37 2.35.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn--light" href="https://wa.me/40738834424?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Toma%20Ciurea%20Coafor." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34a.45.45 0 0 0-.02-.43c-.06-.12-.56-1.34-.76-1.84s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 2.99.62a2.55 2.55 0 0 0 1.68-1.18c.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+            Programează-te pe WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about__grid">
+      <figure class="about__photo rv" data-rv="left">
+        <img src="img/1.jpg" alt="Coafor tunzând părul unei cliente în salon" loading="lazy" width="1200" height="1500">
+      </figure>
+      <div class="rv" data-rv="lift">
+        <h2 class="h2" id="despre-titlu">Orice idee de look devine realitate.</h2>
+        <p class="lead">Te așteptăm la parter, pe strada Piscului, pentru o tunsoare, o culoare nouă
+          sau o coafură. Programează o vizită și lasă-ne să îți redefinim stilul.</p>
+        <dl class="perks">
+          <div><dt>Look-uri curajoase</dt><dd>Tunsori și culori pentru orice stil.</dd></div>
+          <div><dt>Ușor de ajuns</dt><dd>Pe strada Piscului, aproape de Parcul Tineretului.</dd></div>
+          <div><dt>Atmosferă relaxată</dt><dd>Vii, te așezi și te simți ca acasă.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <div class="services__head">
+        <h2 class="h2 rv" data-rv="lift" id="servicii-titlu">Servicii</h2>
+        <p class="lead rv" data-rv="lift">Spune-ne ce îți dorești, de la o schimbare discretă la un look
+          cu totul nou, și îl facem împreună.</p>
+      </div>
+      <ul class="svc">
+        <li class="rv" data-rv="left" style="--i:0"><h3 class="svc__name">Tuns</h3><p class="svc__desc">Tunsori moderne, îndrăznețe sau clasice.</p></li>
+        <li class="rv" data-rv="left" style="--i:1"><h3 class="svc__name">Vopsit</h3><p class="svc__desc">Culoare nouă, efecte sau împrospătarea culorii pe care o ai.</p></li>
+        <li class="rv" data-rv="left" style="--i:2"><h3 class="svc__name">Coafuri</h3><p class="svc__desc">Coafuri simple, de zi cu zi, sau pentru ocazii.</p></li>
+      </ul>
+      <div class="services__cta rv" data-rv="lift">
+        <p>Nu știi încă ce vrei? Scrie-ne și pornim de la o consultare.</p>
+        <a class="btn" href="https://wa.me/40738834424?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Toma%20Ciurea%20Coafor." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34a.45.45 0 0 0-.02-.43c-.06-.12-.56-1.34-.76-1.84s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 2.99.62a2.55 2.55 0 0 0 1.68-1.18c.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          Programează-te pe WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" aria-labelledby="galerie-titlu">
+    <h2 class="sr-only" id="galerie-titlu">Galerie</h2>
+    <div class="wrap">
+      <div class="gallery__grid">
+        <figure class="rv" data-rv="zoom">
+          <img src="img/2.jpg" alt="Foarfecă de coafor în timpul unei tunsori" loading="lazy" width="1400" height="1050">
+        </figure>
+        <figure class="rv" data-rv="zoom" style="--i:1">
+          <img src="img/3.jpg" alt="Pieptene și foarfecă folosite la tuns, într-un salon" loading="lazy" width="1000" height="1250">
+        </figure>
+      </div>
+      <p class="gallery__note small">Fotografii ilustrative</p>
+    </div>
+  </section>
+
+  <section class="book" id="programari" aria-labelledby="programari-titlu">
+    <div class="wrap">
+      <h2 class="h2 rv" data-rv="scale" id="programari-titlu">Programează-te.</h2>
+      <p class="lead rv" data-rv="scale">Programările se fac telefonic sau pe pagina salonului.
+        Cel mai rapid: ne suni sau ne scrii pe WhatsApp și stabilim împreună ziua și ora.</p>
+      <div class="btns rv" data-rv="scale">
+        <a class="btn btn--light" href="tel:0738834424">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.13.37 2.35.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+          Sună acum
+        </a>
+        <a class="btn" href="https://wa.me/40738834424?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Toma%20Ciurea%20Coafor." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34a.45.45 0 0 0-.02-.43c-.06-.12-.56-1.34-.76-1.84s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 2.99.62a2.55 2.55 0 0 0 1.68-1.18c.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+          Programează-te pe WhatsApp
+        </a>
+      </div>
+      <a class="book__phone rv" data-rv="scale" href="tel:0738834424" aria-label="Sună la 0738 834 424">0738 834 424</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact__grid">
+      <div class="rv" data-rv="lift">
+        <h2 class="h2" id="contact-titlu">Ne găsești pe strada Piscului.</h2>
+        <p class="lead">La parter, în zona Parcului Tineretului, București.</p>
+        <div class="btns">
+          <a class="btn" href="tel:0738834424">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.13.37 2.35.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn--light" href="https://wa.me/40738834424?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Toma%20Ciurea%20Coafor." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8s-.39-.12-.56.12-.64.8-.78.97-.29.18-.54.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34a.45.45 0 0 0-.02-.43c-.06-.12-.56-1.34-.76-1.84s-.4-.42-.56-.43h-.48a.92.92 0 0 0-.66.31 2.8 2.8 0 0 0-.87 2.07 4.85 4.85 0 0 0 1.02 2.58 11.1 11.1 0 0 0 4.25 3.76c1.58.68 2.2.74 2.99.62a2.55 2.55 0 0 0 1.68-1.18c.2-.58.2-1.08.14-1.18-.06-.1-.23-.16-.48-.28z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+        <a class="contact__maps" href="https://www.google.com/maps/search/?api=1&query=Toma+Ciurea+Coafor+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+      <div class="map rv" data-rv="scale" style="--i:1">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1081747,44.408986999999996,26.116174700000002,44.412987&amp;layer=mapnik&amp;marker=44.410987,26.1121747" title="Harta: Toma Ciurea Coafor, strada Piscului, zona Parcului Tineretului" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__logo">
+        <img src="logo.png" alt="Toma Ciurea Coafor" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="wordmark" hidden>Toma Ciurea Coafor</span>
+      </div>
+      <div class="foot__info">
+        <p>Tuns, vopsit și coafuri pe strada Piscului, lângă Parcul Tineretului, București.</p>
+        <p><a href="tel:0738834424">0738 834 424</a></p>
+      </div>
+    </div>
+    <div class="foot__legal small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: xenostral, jackmac34, kaleido-dp</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var poster = document.querySelector('.poster');
+  var lines = poster ? poster.querySelectorAll('.line') : [];
+
+  /* fiecare cuvânt din titlu umple exact lățimea coloanei */
+  function fit(){
+    if(!poster) return;
+    var W = poster.clientWidth;
+    if(!W) return;
+    var rem = parseFloat(getComputedStyle(root).fontSize) || 16;
+    var max = rem * 16;
+    for(var i=0;i<lines.length;i++){
+      var l = lines[i], w = l.firstElementChild;
+      l.style.fontSize = '100px';
+      var m = w.getBoundingClientRect().width;
+      if(m > 0) l.style.fontSize = Math.min(100 * W / m * 0.99, max) + 'px';
+    }
+  }
+
+  var started = false;
+  function start(){
+    if(started) return;
+    started = true;
+    fit();
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ root.classList.add('ready'); }); });
+  }
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ fit(); start(); });
+  }else{
+    window.addEventListener('load', start);
+  }
+  setTimeout(start, 1200);
+
+  var raf = null;
+  window.addEventListener('resize', function(){
+    if(raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(fit);
+  });
+
+  /* umbră fină sub antet doar când pagina e derulată */
+  var top = document.getElementById('antet');
+  function onScroll(){ top.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* dezvăluiri discrete la derulare */
+  var items = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.12});
+    items.forEach(function(el){ io.observe(el); });
+  }else{
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
