@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Pas – haine pentru orice stil, Strada Decebal 24, Constanța</title>
+<meta name="description" content="La Pas, magazin de îmbrăcăminte în Constanța, pe Strada Decebal 24. Tricouri, pantaloni, pulovere, rochii și jachete pentru toată familia.">
+<meta name="theme-color" content="#FFD447">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --y:#FFD447;
+  --r:#be123c;
+  --r-d:#9f1239;
+  --b:#2563EB;
+  --k:#111111;
+  --w:#ffffff;
+  --pale:#FFF6D6;
+  --muted:#4a4a4a;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:72rem;
+  --pad:clamp(1.25rem,5vw,2.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:"Rubik",system-ui,sans-serif;font-size:1.0625rem;line-height:1.55;
+  color:var(--k);background:var(--w);overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Outfit",system-ui,sans-serif;margin:0;letter-spacing:-0.02em;line-height:1.08}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-999px;top:0;background:var(--k);color:#fff;padding:.75rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px;border-radius:.4rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3.4rem;padding:0 1.6rem;border-radius:999px;border:2px solid transparent;
+  font-family:"Outfit",sans-serif;font-weight:600;font-size:1.08rem;letter-spacing:0;
+  text-decoration:none;cursor:pointer;white-space:nowrap;
+  transition:transform .1s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease;
+}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--r);color:#fff}
+.btn-red:hover{background:var(--r-d);box-shadow:0 .5rem 1.2rem rgba(190,18,60,.25)}
+.btn-black{background:var(--k);color:#fff}
+.btn-black:hover{box-shadow:0 .5rem 1.2rem rgba(0,0,0,.2)}
+.btn-white{background:#fff;color:var(--r)}
+.btn-white:hover{box-shadow:0 .5rem 1.2rem rgba(0,0,0,.18)}
+.btn-yellow{background:var(--y);color:var(--k)}
+.btn-yellow:hover{box-shadow:0 .5rem 1.2rem rgba(0,0,0,.18)}
+.btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
+.btn-line:hover{background:rgba(255,255,255,.12)}
+
+/* ---------- Navigare ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.68);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:box-shadow .3s ease,background-color .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 .4rem 1.4rem rgba(0,0,0,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem}
+.logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-family:"Outfit",sans-serif;font-weight:800;font-size:1.45rem;letter-spacing:-0.02em}
+.logo svg{width:1.7rem;height:1.7rem}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-weight:500;font-size:1rem;padding:.6rem 0;border-bottom:2px solid transparent;transition:border-color .2s ease}
+.nav-links a:hover{border-color:var(--r)}
+.nav .btn{min-height:2.85rem;padding:0 1.15rem;font-size:1rem}
+@media (min-width:52rem){.nav-links{display:flex}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{background:var(--y);padding:6.25rem 0 3.5rem;overflow:hidden}
+.hero-grid{display:grid;gap:2.25rem;align-items:center}
+.hero h1{font-size:clamp(4.6rem,21vw,10.5rem);font-weight:800;letter-spacing:-0.04em;line-height:.95}
+.slogan{font-family:"Outfit",sans-serif;font-weight:600;font-size:clamp(1.55rem,5.6vw,2.6rem);letter-spacing:-0.02em;line-height:1.12;margin-top:.6rem}
+.hero-txt{margin-top:1rem;max-width:34rem;font-size:1.1rem;color:#2a2a2a}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.addr{display:flex;align-items:center;gap:.45rem;margin-top:1.25rem;font-size:.95rem;font-weight:500;letter-spacing:.01em}
+.addr svg{width:1.1rem;height:1.1rem;flex:none}
+@media (max-width:30rem){.hero-cta .btn{width:100%}}
+
+.bag-btn{
+  display:block;width:min(84vw,21rem);margin:0 auto;padding:0;border:0;background:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.bag-btn:focus-visible{outline-offset:8px;border-radius:1rem}
+.bag-wrap{transform-origin:50% 96%}
+.bag-svg{width:100%;height:auto;overflow:visible;display:block}
+.bag-hint{text-align:center;font-size:.88rem;letter-spacing:.01em;margin-top:.6rem;color:#3a3a3a}
+.item{transform-box:fill-box;transform-origin:50% 50%}
+
+@media (min-width:56rem){
+  .hero{padding:8rem 0 5rem;min-height:92vh;min-height:92svh;display:flex;align-items:center}
+  .hero .wrap{width:100%}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:3rem}
+  .bag-btn{width:min(100%,26rem)}
+}
+
+/* intrare */
+.js .rise{opacity:0;transform:translateY(.9rem)}
+.js .loaded .rise{opacity:1;transform:none;transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(var(--d,0) * 90ms)}
+.js .bag-svg .item{opacity:0}
+.js .bag-svg.fill .item{animation:drop .55s cubic-bezier(.3,1.25,.5,1) both;animation-delay:calc(var(--i) * .15s + var(--start,.45s))}
+@keyframes drop{
+  0%{opacity:0;transform:translateY(-15rem) rotate(-7deg)}
+  30%{opacity:1}
+  100%{opacity:1;transform:none}
+}
+
+/* ---------- Secțiuni ---------- */
+section{scroll-margin-top:4.5rem}
+.sec{padding:clamp(4.5rem,11vw,8rem) 0}
+.sec-head{max-width:40rem;margin-bottom:clamp(2rem,5vw,3.25rem)}
+.sec-head h2{font-size:clamp(2.2rem,6vw,3.75rem);font-weight:700}
+.sec-head p{margin-top:1rem;font-size:1.1rem;color:var(--muted);max-width:36rem}
+
+/* Produse */
+.shelf{list-style:none;margin:0;padding:0;display:grid;gap:.85rem}
+.tile{
+  display:grid;grid-template-columns:5.75rem 1fr;align-items:center;gap:1.1rem;
+  background:var(--pale);border-radius:1.25rem;padding:1rem 1.25rem 1rem 1rem;
+}
+.tile svg{width:100%;height:auto;aspect-ratio:1;transition:transform .35s var(--ease)}
+.tile:hover svg{transform:rotate(-5deg) translateY(-.2rem)}
+.tile h3{font-size:1.3rem;font-weight:700}
+.tile p{color:var(--muted);margin-top:.2rem;font-size:1rem}
+@media (min-width:40rem){
+  .shelf{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:64rem){
+  .shelf{grid-template-columns:repeat(5,1fr);gap:1rem}
+  .tile{grid-template-columns:1fr;align-content:start;padding:1.5rem 1.25rem 1.6rem;min-height:100%}
+  .tile svg{width:78%;margin:0 auto .75rem}
+}
+.shelf-note{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;
+  margin-top:2.25rem;padding-top:2rem;border-top:2px solid var(--k);
+}
+.shelf-note p{font-family:"Outfit",sans-serif;font-weight:600;font-size:clamp(1.25rem,3.4vw,1.6rem);letter-spacing:-0.01em;line-height:1.2;max-width:30rem}
+@media (max-width:30rem){.shelf-note .btn{width:100%}}
+
+/* Despre */
+.about{background:var(--k);color:#fff}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+.about-photo{margin:0;border-radius:1.5rem;overflow:hidden;aspect-ratio:4/3}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(2.4rem,7vw,4.25rem);font-weight:700}
+.about-txt{margin-top:1.25rem;font-size:1.12rem;color:#e6e6e6;max-width:34rem}
+.perks{list-style:none;margin:2.25rem 0 0;padding:0;display:grid;gap:1.25rem}
+.perks li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+.perks .dot{width:.95rem;height:.95rem;border-radius:50%;background:var(--y);margin-top:.35rem}
+.perks h3{font-size:1.25rem;font-weight:700}
+.perks p{color:#cfcfcf;font-size:1rem}
+@media (min-width:56rem){
+  .about-grid{grid-template-columns:1fr 1fr;gap:4.5rem}
+  .about-photo{aspect-ratio:4/5}
+  .perks{grid-template-columns:repeat(3,1fr)}
+  .perks li{grid-template-columns:1fr;gap:.6rem}
+}
+
+/* Galerie */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(9.5rem,30vw,12rem);gap:.75rem}
+.gallery figure{margin:0;border-radius:1.1rem;overflow:hidden;background:var(--pale)}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.g-big{grid-column:span 2;grid-row:span 2}
+.g-tall{grid-row:span 2}
+.g-note{margin-top:1rem;font-size:.85rem;letter-spacing:.02em;color:var(--muted)}
+@media (min-width:48rem){
+  .gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(10rem,19vw,16rem);gap:1rem}
+  .g-big{grid-column:span 2;grid-row:span 2}
+}
+
+/* Contact */
+.contact{background:var(--r);color:#fff}
+.contact-grid{display:grid;gap:2.5rem;align-items:center}
+.contact h2{font-size:clamp(2.4rem,7vw,4.25rem);font-weight:700}
+.contact-addr{margin-top:1.1rem;font-size:1.2rem;line-height:1.45}
+.phone{display:inline-block;margin-top:1.25rem;font-family:"Outfit",sans-serif;font-weight:700;font-size:clamp(1.6rem,6vw,2.4rem);letter-spacing:-0.01em;text-decoration:none;border-bottom:3px solid var(--y);line-height:1.2;padding-bottom:.1rem}
+.contact-lead{margin-top:1.25rem;color:#ffe4ea;max-width:30rem}
+.contact-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media (max-width:30rem){.contact-cta .btn{width:100%}}
+.map{border-radius:1.5rem;overflow:hidden;background:#fff;aspect-ratio:4/3;min-height:17rem;border:4px solid #fff}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (min-width:56rem){.contact-grid{grid-template-columns:1fr 1.05fr;gap:4rem}}
+
+/* Subsol */
+footer{background:var(--k);color:#d6d6d6;padding:3rem 0 2.5rem;font-size:.92rem;letter-spacing:.015em}
+.foot{display:grid;gap:1.75rem}
+.foot .logo{color:#fff}
+.foot a{color:#fff}
+.foot p+p{margin-top:.35rem}
+.foot-small{color:#a8a8a8;font-size:.82rem;letter-spacing:.03em}
+@media (min-width:48rem){.foot{grid-template-columns:1fr auto;align-items:end}.foot-small{text-align:right}}
+
+/* Dezvăluiri la derulare (variate) */
+.js .rv-pop{opacity:0;transform:scale(.94)}
+.js .rv-side{opacity:0;transform:translateX(-2rem)}
+.js .rv-zoom{opacity:0}
+.js .rv-zoom img{transform:scale(1.07)}
+.js .rv-fade{opacity:0}
+.js .rv-pop,.js .rv-side,.js .rv-zoom,.js .rv-fade,.js .rv-zoom img{
+  transition:opacity .55s var(--ease),transform .6s var(--ease);
+  transition-delay:calc(var(--i,0) * 70ms);
+}
+.js .in.rv-pop,.js .in.rv-side,.js .in.rv-zoom,.js .in.rv-fade{opacity:1;transform:none}
+.js .in.rv-zoom img{transform:none}
+
+/* Preferințe de accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise,.js .rv-pop,.js .rv-side,.js .rv-fade,.js .rv-zoom,.js .rv-zoom img{transform:none!important;transition:opacity .2s ease!important;transition-delay:0s!important}
+  .js .bag-svg.fill .item{animation:fadeonly .2s ease both;animation-delay:0s}
+  .tile:hover svg{transform:none}
+  .btn:active{transform:none}
+}
+@keyframes fadeonly{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--k)}
+  .btn{border-color:var(--k)}
+  .btn-line{border-color:#fff}
+  .tile{border:2px solid var(--k)}
+  .hero-txt,.sec-head p,.tile p,.g-note{color:var(--k)}
+  .about-txt,.perks p{color:#fff}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<!-- Desenele hainelor, folosite în pungă și pe raft -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="g-hanorac" stroke="#111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M-30,-60 L-56,-50 L-74,10 L-70,88 L-50,88 L-48,-10 L-46,80 L46,80 L48,-10 L50,88 L70,88 L74,10 L56,-50 L30,-60 Z" fill="#111"/>
+      <path d="M-32,-58 Q-36,-94 0,-96 Q36,-94 32,-58 Q0,-40 -32,-58 Z" fill="#111"/>
+      <path d="M-18,-62 Q0,-82 18,-62 Q0,-50 -18,-62 Z" fill="#3a3a3a" stroke="none"/>
+      <path d="M-8,-50 V-22 M8,-50 V-22" stroke="#fff" stroke-width="3"/>
+      <path d="M-28,38 H28 L34,62 H-34 Z" fill="none" stroke="#4a4a4a" stroke-width="3"/>
+      <path d="M-48,-8 L-50,84 M48,-8 L50,84" stroke="#4a4a4a" stroke-width="3"/>
+    </g>
+    <g id="g-jacheta" stroke="#111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M-30,-62 L-60,-50 L-78,14 L-74,86 L-54,86 L-50,-8 L-48,82 L48,82 L50,-8 L54,86 L74,86 L78,14 L60,-50 L30,-62 L0,-30 Z" fill="#FFD447"/>
+      <path d="M-30,-62 L-18,-72 L0,-30 L18,-72 L30,-62 L0,-30 Z" fill="#FFD447"/>
+      <path d="M0,-30 V82" fill="none"/>
+      <path d="M-38,32 H-14 M14,32 H38" fill="none"/>
+    </g>
+    <g id="g-rochie" stroke="#111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M-20,-76 L-14,-76 L-10,-60 L10,-60 L14,-76 L20,-76 L24,-34 Q30,-28 26,-20 L64,84 L-64,84 L-26,-20 Q-30,-28 -24,-34 Z" fill="#fff"/>
+      <path d="M-26,-20 H26" fill="none"/>
+      <g fill="#111" stroke="none">
+        <circle cx="-8" cy="-40" r="4"/><circle cx="10" cy="-30" r="4"/>
+        <circle cx="-14" cy="6" r="4.5"/><circle cx="14" cy="16" r="4.5"/>
+        <circle cx="-34" cy="42" r="4.5"/><circle cx="0" cy="44" r="4.5"/>
+        <circle cx="34" cy="50" r="4.5"/><circle cx="-18" cy="70" r="4.5"/><circle cx="20" cy="72" r="4.5"/>
+      </g>
+    </g>
+    <g id="g-pantaloni" stroke="#111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M-42,-72 L42,-72 L50,82 L12,82 L2,-12 L-2,-12 L-12,82 L-50,82 Z" fill="#2563EB"/>
+      <path d="M-43,-56 H43" fill="none"/>
+      <path d="M0,-56 V-22" fill="none"/>
+      <path d="M-42,-56 Q-24,-50 -22,-30 M42,-56 Q24,-50 22,-30" fill="none" stroke-width="3"/>
+    </g>
+    <g id="g-tricou" stroke="#111" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M-28,-62 L-58,-50 L-80,-18 L-58,-4 L-46,-22 L-46,72 L46,72 L46,-22 L58,-4 L80,-18 L58,-50 L28,-62 Q0,-38 -28,-62 Z" fill="#fff"/>
+      <path d="M-46,4 H46 V22 H-46 Z" fill="#FFD447" stroke-width="3"/>
+      <path d="M-28,-62 Q0,-30 28,-62" fill="none"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#acasa" aria-label="La Pas, începutul paginii">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 11 C11 4 21 4 21 11" fill="none" stroke="#111" stroke-width="2.6" stroke-linecap="round"/><path d="M6 11 H26 L27.5 28 H4.5 Z" fill="#be123c" stroke="#111" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      La Pas
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produse">Produse</a></li>
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-red" href="tel:+40734183687">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- Prima secțiune -->
+  <section class="hero" id="acasa" aria-labelledby="titlu">
+    <div class="wrap hero-grid" id="heroGrid">
+      <div>
+        <h1 id="titlu" class="rise" style="--d:0">La Pas</h1>
+        <p class="slogan rise" style="--d:1">Haine pentru orice stil</p>
+        <p class="hero-txt rise" style="--d:2">Descoperă îmbrăcăminte pentru fiecare zi, pentru toată familia. Treci pe la noi sau întreabă-ne direct ce cauți.</p>
+        <div class="hero-cta rise" style="--d:3">
+          <a class="btn btn-red" href="tel:+40734183687">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-black" href="https://wa.me/40734183687?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20detalii%20despre%20haine." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.3.6.6-2.2-.2-.3A7 7 0 0 1 12 5zm-2.6 3.2c-.2 0-.5 0-.7.3-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a5.7 5.7 0 0 1-2.8-2.5c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5z"/></svg>
+            Întreabă pe WhatsApp
+          </a>
+        </div>
+        <p class="addr rise" style="--d:4">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Strada Decebal 24, Constanța
+        </p>
+      </div>
+
+      <div class="rise" style="--d:2">
+        <button class="bag-btn" id="bagBtn" type="button" aria-label="Umple punga din nou cu haine">
+          <div class="bag-wrap" id="bagWrap">
+            <svg class="bag-svg" id="bagSvg" viewBox="0 0 360 430" role="img" aria-label="Pungă La Pas plină cu un hanorac, o jachetă, o rochie, pantaloni și un tricou">
+              <ellipse cx="180" cy="418" rx="150" ry="9" fill="rgba(0,0,0,.13)"/>
+              <path d="M112 156 C106 72 172 72 166 156" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+              <path d="M194 156 C188 72 254 72 248 156" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+              <path d="M58 150 H302 L314 172 H46 Z" fill="#7f0d29" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+
+              <g class="item" style="--i:0"><g transform="translate(182 128) rotate(-2) scale(.95)"><use href="#g-hanorac"/></g></g>
+              <g class="item" style="--i:1"><g transform="translate(120 150) rotate(-12) scale(.9)"><use href="#g-jacheta"/></g></g>
+              <g class="item" style="--i:2"><g transform="translate(258 150) rotate(14) scale(.95)"><use href="#g-rochie"/></g></g>
+              <g class="item" style="--i:3"><g transform="translate(146 172) rotate(-7)"><use href="#g-pantaloni"/></g></g>
+              <g class="item" style="--i:4"><g transform="translate(222 172) rotate(9)"><use href="#g-tricou"/></g></g>
+
+              <path d="M46 172 H314 L328 402 Q329 412 319 412 H41 Q31 412 32 402 Z" fill="#be123c"/>
+              <path d="M46 172 H314 L315.6 196 H44.4 Z" fill="#a50f34"/>
+              <rect x="108" y="252" width="144" height="86" rx="16" fill="#fff"/>
+              <text x="180" y="300" text-anchor="middle" font-family="Outfit, system-ui, sans-serif" font-weight="800" font-size="38" letter-spacing="-1" fill="#111">La Pas</text>
+              <text x="180" y="323" text-anchor="middle" font-family="Rubik, system-ui, sans-serif" font-weight="500" font-size="12.5" letter-spacing="2" fill="#be123c">CONSTANȚA</text>
+              <path d="M46 172 H314 L328 402 Q329 412 319 412 H41 Q31 412 32 402 Z" fill="none" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </button>
+        <p class="bag-hint">Atinge punga și se umple din nou</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section class="sec" id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="t-produse">Ce găsești pe rafturi</h2>
+        <p>Îmbrăcăminte practică și accesibilă, simplă sau modernă, pentru toate vârstele. Mai jos sunt doar câteva exemple de haine pe care le poți căuta. Ca să afli ce avem acum, întreabă-ne.</p>
+      </div>
+      <ul class="shelf">
+        <li class="tile rv-pop" style="--i:0">
+          <svg viewBox="-90 -100 180 200" aria-hidden="true"><use href="#g-tricou"/></svg>
+          <div><h3>Tricouri</h3><p>Exemplu. Întreabă-ne ce avem acum.</p></div>
+        </li>
+        <li class="tile rv-pop" style="--i:1">
+          <svg viewBox="-90 -100 180 200" aria-hidden="true"><use href="#g-pantaloni"/></svg>
+          <div><h3>Pantaloni</h3><p>Exemplu. Întreabă-ne ce avem acum.</p></div>
+        </li>
+        <li class="tile rv-pop" style="--i:2">
+          <svg viewBox="-90 -100 180 200" aria-hidden="true"><use href="#g-hanorac"/></svg>
+          <div><h3>Pulovere și hanorace</h3><p>Exemplu. Întreabă-ne ce avem acum.</p></div>
+        </li>
+        <li class="tile rv-pop" style="--i:3">
+          <svg viewBox="-90 -100 180 200" aria-hidden="true"><use href="#g-rochie"/></svg>
+          <div><h3>Rochii și fuste</h3><p>Exemplu. Întreabă-ne ce avem acum.</p></div>
+        </li>
+        <li class="tile rv-pop" style="--i:4">
+          <svg viewBox="-90 -100 180 200" aria-hidden="true"><use href="#g-jacheta"/></svg>
+          <div><h3>Jachete</h3><p>Exemplu. Întreabă-ne ce avem acum.</p></div>
+        </li>
+      </ul>
+      <div class="shelf-note rv-fade">
+        <p>Cauți o mărime sau o culoare anume? Întreabă-ne înainte să vii.</p>
+        <a class="btn btn-black" href="https://wa.me/40734183687?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20detalii%20despre%20haine." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3zm0 2a7 7 0 1 1-3.6 13l-.3-.2-2.3.6.6-2.2-.2-.3A7 7 0 0 1 12 5z"/></svg>
+          Întreabă pe WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="sec about" id="despre" aria-labelledby="t-despre">
+    <div class="wrap about-grid">
+      <figure class="about-photo rv-side">
+        <img src="img/3.jpg" alt="Interior de magazin de haine, cu rafturi și umerașe (fotografie ilustrativă)" loading="lazy" width="900" height="1125">
+      </figure>
+      <div>
+        <h2 id="t-despre">La un pas de casă</h2>
+        <p class="about-txt">La Pas aduce aproape de tine haine pentru toate vârstele, simple sau moderne. Îți oferim îmbrăcăminte practică și accesibilă pentru orice ocazie. Vino să găsești exact ce ai nevoie.</p>
+        <ul class="perks">
+          <li class="rv-fade" style="--i:0"><span class="dot" aria-hidden="true"></span><div><h3>Pentru toți</h3><p>Găsești haine pentru orice vârstă.</p></div></li>
+          <li class="rv-fade" style="--i:2"><span class="dot" aria-hidden="true"></span><div><h3>Aproape</h3><p>Ușor de ajuns, chiar din cartier.</p></div></li>
+          <li class="rv-fade" style="--i:4"><span class="dot" aria-hidden="true"></span><div><h3>Varietate</h3><p>Alege simplu sau modern.</p></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="sec" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="t-galerie">Printre rafturi și umerașe</h2>
+        <p>Câteva imagini ca să-ți faci o idee despre ce poți găsi.</p>
+      </div>
+      <div class="gallery">
+        <figure class="g-big rv-zoom" style="--i:0"><img src="img/2.jpg" alt="Rafturi cu haine de damă într-un magazin" loading="lazy"></figure>
+        <figure class="g-tall rv-zoom" style="--i:1"><img src="img/5.jpg" alt="Tânără îmbrăcată într-o jachetă din denim, cu rucsac" loading="lazy"></figure>
+        <figure class="rv-zoom" style="--i:2"><img src="img/1.jpg" alt="Jachete și cămăși pe umerașe" loading="lazy"></figure>
+        <figure class="rv-zoom" style="--i:3"><img src="img/4.jpg" alt="Rochii și cămăși pe un stand cu umerașe" loading="lazy"></figure>
+      </div>
+      <p class="g-note">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="sec contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div class="rv-fade">
+        <h2 id="t-contact">Treci pe la noi</h2>
+        <p class="contact-addr">Strada Decebal 24<br>Constanța</p>
+        <a class="phone" href="tel:+40734183687">+40 734 183 687</a>
+        <p class="contact-lead">Sună-ne sau scrie-ne dacă vrei să știi ce avem înainte să vii.</p>
+        <div class="contact-cta">
+          <a class="btn btn-white" href="tel:+40734183687">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-yellow" href="https://wa.me/40734183687?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20detalii%20despre%20haine." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=La+Pas+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map rv-fade" style="--i:2">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.644715599999998,44.1812725,28.6527156,44.1852725&amp;layer=mapnik&amp;marker=44.1832725,28.6487156" title="Harta: La Pas, Strada Decebal 24, Constanța" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="logo" href="#acasa">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M11 11 C11 4 21 4 21 11" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M6 11 H26 L27.5 28 H4.5 Z" fill="#be123c" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        La Pas
+      </a>
+      <p style="margin-top:.9rem">Haine pentru orice stil, Strada Decebal 24, Constanța</p>
+      <p><a href="tel:+40734183687">+40 734 183 687</a></p>
+    </div>
+    <div class="foot-small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Pexels, boutiquegirlish21, hapis, StockSnap</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Umbra barei de navigare doar la derulare
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Secvența de intrare: textul, apoi punga care se umple
+  var grid = document.getElementById('heroGrid');
+  var svg = document.getElementById('bagSvg');
+  var wrap = document.getElementById('bagWrap');
+  var items = svg.querySelectorAll('.item');
+
+  requestAnimationFrame(function(){
+    grid.classList.add('loaded');
+    svg.classList.add('fill');
+  });
+
+  // Punga „tresare” când aterizează fiecare haină
+  items.forEach(function(it){
+    it.addEventListener('animationend', function(){
+      if (reduce || !wrap.animate) return;
+      wrap.animate(
+        [{transform:'scale(1,1)'},{transform:'scale(1.025,.965)'},{transform:'scale(1,1)'}],
+        {duration:240, easing:'cubic-bezier(.2,.8,.2,1)'}
+      );
+    });
+  });
+
+  // Atingi punga: se golește și se umple din nou
+  document.getElementById('bagBtn').addEventListener('click', function(){
+    svg.style.setProperty('--start', '0s');
+    svg.classList.remove('fill');
+    void svg.getBoundingClientRect();
+    svg.classList.add('fill');
+  });
+
+  // Dezvăluiri discrete la derulare
+  var els = document.querySelectorAll('.rv-pop,.rv-side,.rv-zoom,.rv-fade');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -5% 0px'});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
