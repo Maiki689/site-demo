@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axa Europa, piese și anvelope auto, București</title>
+<meta name="description" content="Axa Europa, piese, accesorii și anvelope auto pe Splaiul Unirii 459A, Sectorul 3, București. Sună sau scrie-ne pe WhatsApp.">
+<meta name="theme-color" content="#1E2124">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#1E2124;
+  --graphite-deep:#17191C;
+  --panel:#262B30;
+  --panel-hover:#2D333A;
+  --steel:#9AA3AB;
+  --steel-text:#B7BFC6;
+  --white:#F5F6F7;
+  --accent:#f59e0b;
+  --accent-hover:#fbb23a;
+  --ink:#1E2124;
+  --rule:rgba(154,163,171,.2);
+  --cut:1.25rem;
+  --cut-sm:.75rem;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --f-head:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--graphite);color:var(--white);font-family:var(--f-body);font-size:1rem;line-height:1.5;letter-spacing:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--f-head);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin:0}
+h1{font-size:clamp(3.2rem,11vw,7rem);text-transform:uppercase}
+h2{font-size:clamp(2.2rem,6vw,4.25rem);text-transform:uppercase}
+h3{font-size:1.45rem;font-weight:700;text-transform:uppercase;line-height:1.1;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+.label{font-family:var(--f-mono);font-size:.8rem;letter-spacing:.06em;color:var(--steel);display:flex;align-items:center;gap:.75rem}
+.label::before{content:"";width:2.25rem;height:1px;background:currentColor;flex:none}
+.cut{clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)))}
+
+/* ---------- Botoane ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.5rem;font-family:var(--f-head);font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.04em;text-decoration:none;border:0;border-radius:0;cursor:pointer;clip-path:polygon(0 0,calc(100% - var(--cut-sm)) 0,100% var(--cut-sm),100% 100%,var(--cut-sm) 100%,0 calc(100% - var(--cut-sm)));transition:background-color .2s var(--ease),color .2s var(--ease),box-shadow .25s var(--ease),transform .12s var(--ease);-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn--primary{background:var(--accent);color:var(--ink)}
+.btn--primary:hover{background:var(--accent-hover);box-shadow:0 8px 20px -10px rgba(245,158,11,.7)}
+.btn--ghost{background:rgba(245,246,247,.08);color:var(--white)}
+.btn--ghost:hover{background:rgba(245,246,247,.14)}
+.btn--sm{min-height:2.75rem;padding:.5rem 1.1rem;font-size:1rem}
+
+/* ---------- Antet (sticlă) ---------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(30,33,36,.62);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);box-shadow:inset 0 1px 0 rgba(245,246,247,.08);transition:box-shadow .3s var(--ease)}
+.site-header.is-scrolled{box-shadow:inset 0 1px 0 rgba(245,246,247,.08),0 12px 28px -18px rgba(0,0,0,.8)}
+.header-inner{display:flex;align-items:center;gap:1rem;height:4rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--f-head);font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.03em;color:var(--white);margin-right:auto}
+.brand-mark{display:grid;place-items:center;width:2.25rem;height:2.25rem;background:var(--accent);font-size:1.05rem;clip-path:polygon(0 0,calc(100% - .5rem) 0,100% .5rem,100% 100%,.5rem 100%,0 calc(100% - .5rem))}
+
+.nav{display:none}
+.nav.is-open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:.25rem;padding:.5rem 1.25rem 1.25rem;background:var(--graphite);box-shadow:0 18px 30px -20px rgba(0,0,0,.8)}
+.nav a{display:flex;align-items:center;min-height:3rem;padding:0 .25rem;font-weight:500;font-size:1.05rem;text-decoration:none;color:var(--white)}
+.nav a:hover{color:var(--accent)}
+
+.nav-toggle{width:2.75rem;height:2.75rem;display:grid;place-content:center;gap:.4rem;background:rgba(245,246,247,.08);border:0;cursor:pointer;clip-path:polygon(0 0,calc(100% - .5rem) 0,100% .5rem,100% 100%,.5rem 100%,0 calc(100% - .5rem));-webkit-tap-highlight-color:transparent}
+.nav-toggle span{display:block;width:1.25rem;height:2px;background:var(--white);transition:transform .3s var(--ease)}
+.nav-toggle[aria-expanded="true"] span:first-child{transform:translateY(.26rem) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:last-child{transform:translateY(-.26rem) rotate(-45deg)}
+
+.header-call{display:none}
+@media (min-width:640px){.header-call{display:inline-flex}}
+@media (min-width:820px){
+  .brand{margin-right:0}
+  .nav{display:flex;position:static;flex-direction:row;gap:2rem;padding:0;background:none;box-shadow:none;margin-left:auto;margin-right:.5rem}
+  .nav.is-open{position:static;padding:0;background:none;box-shadow:none;flex-direction:row}
+  .nav a{min-height:auto;font-size:.95rem;transition:color .2s var(--ease)}
+  .nav-toggle{display:none}
+}
+
+/* ---------- Prima secțiune ---------- */
+.hero{position:relative;padding:6.5rem 0 3.5rem;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);background-size:3.5rem 3.5rem;opacity:.25}
+@media (min-width:900px){
+  .hero{min-height:100svh;display:flex;align-items:center;padding:7rem 0 4rem}
+}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+}
+.hero-copy{display:grid;gap:1.25rem;justify-items:start}
+.slogan{font-family:var(--f-head);font-weight:600;font-size:clamp(1.35rem,3.4vw,2rem);line-height:1.2;letter-spacing:0}
+.lead{max-width:34rem;color:var(--steel-text);font-size:1.0625rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
+
+.intro{opacity:0;animation:rise .7s var(--ease) var(--d,0s) forwards}
+@keyframes rise{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* Vitezometru */
+.gauge{position:relative;width:min(78vw,22rem);justify-self:center;margin-top:1.5rem}
+@media (min-width:900px){.gauge{width:min(100%,30rem);margin-top:0}}
+.gauge svg{width:100%;height:auto;overflow:visible}
+.dial-track{fill:none;stroke:var(--steel);stroke-opacity:.22;stroke-width:12}
+.dial-arc{fill:none;stroke:var(--accent);stroke-width:12}
+.tick{stroke:var(--steel);stroke-width:2}
+.tick--major{stroke:var(--white);stroke-width:3}
+.gauge-num{font-family:var(--f-head);font-weight:600;font-size:22px;fill:var(--steel)}
+.needle-line{stroke:var(--white);stroke-width:4;stroke-linecap:round}
+.needle-hub{fill:var(--accent)}
+.gauge-readout{position:absolute;left:50%;top:70%;transform:translate(-50%,-50%);display:grid;justify-items:center;gap:.1rem;pointer-events:none}
+.gauge-value{font-family:var(--f-head);font-weight:800;font-size:clamp(3rem,8vw,4.75rem);line-height:1;font-variant-numeric:tabular-nums}
+.gauge-unit{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;color:var(--steel)}
+
+/* ---------- Secțiuni ---------- */
+.section{padding:clamp(5rem,11vw,8.5rem) 0}
+.section--deep{background:var(--graphite-deep)}
+.section-head{display:grid;gap:1rem;margin-bottom:clamp(2.5rem,6vw,3.75rem)}
+.section-head p{max-width:36rem;color:var(--steel-text)}
+
+.split{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr;gap:5rem}}
+
+.photo{position:relative;margin:0;overflow:hidden;aspect-ratio:4/5;background:var(--panel)}
+.photo img{width:100%;height:100%;object-fit:cover}
+
+.split-copy{display:grid;gap:1.25rem;align-content:start}
+.split-copy p{color:var(--steel-text)}
+
+.facts{list-style:none;padding:0;margin:1rem 0 0;border-top:1px solid var(--rule)}
+.facts li{position:relative;padding:.9rem 0 .9rem 1.75rem;border-bottom:1px solid var(--rule)}
+.facts li::before{content:"";position:absolute;left:.1rem;top:50%;width:.55rem;height:.55rem;background:var(--accent);transform:translateY(-50%) rotate(45deg)}
+
+.perks{list-style:none;padding:0;margin:clamp(3.5rem,8vw,5rem) 0 0;display:grid;gap:1rem}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr)}}
+.perk{background:var(--panel);padding:1.75rem 1.5rem 2rem;display:grid;gap:.5rem;align-content:start}
+.perk-emoji{font-size:1.9rem;line-height:1;margin-bottom:.5rem}
+.perk p{color:var(--steel-text)}
+
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.card{height:100%;background:var(--panel);padding:1.75rem 1.5rem 2rem;display:grid;gap:.6rem;align-content:start;transition:background-color .3s var(--ease)}
+.card:hover{background:var(--panel-hover)}
+.card:hover .card-icon{color:var(--white)}
+.card-icon{width:2.5rem;height:2.5rem;color:var(--accent);margin-bottom:.9rem;transition:color .3s var(--ease)}
+.card p{color:var(--steel-text)}
+.cta-row{margin-top:clamp(2.5rem,6vw,3.5rem)}
+
+.gallery{display:grid;gap:1rem;margin:0;padding:0;grid-template-columns:1fr}
+@media (min-width:640px){.gallery{grid-template-columns:1fr 1fr}}
+.shot{margin:0;overflow:hidden;aspect-ratio:4/3;background:var(--panel)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.shot:hover img{transform:scale(1.03)}
+
+.contact-copy{display:grid;gap:1.5rem;align-content:start}
+.addr{font-style:normal;font-size:1.15rem;line-height:1.4}
+.phone a{font-family:var(--f-head);font-weight:700;font-size:clamp(2rem,6vw,2.75rem);line-height:1.1;text-decoration:none;letter-spacing:.01em;font-variant-numeric:tabular-nums;transition:color .2s var(--ease)}
+.phone a:hover{color:var(--accent)}
+.map{position:relative;height:clamp(19rem,42vw,27rem);overflow:hidden;background:var(--panel)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.6) brightness(.9) contrast(1.05)}
+
+.site-footer{background:var(--graphite-deep);padding:3.5rem 0 2.5rem;color:var(--steel-text);font-size:.9rem}
+.foot{display:grid;gap:1.25rem}
+.brand-name{font-family:var(--f-head);font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.03em;color:var(--white)}
+.foot-meta{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.04em;color:var(--steel);line-height:1.6}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js .rv{opacity:0;transition:opacity .55s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .rv--up{transform:translateY(1.25rem)}
+.js .rv--left{transform:translateX(-1.5rem)}
+.js .rv--right{transform:translateX(1.5rem)}
+.js .rv--scale{transform:scale(.98)}
+.js .rv.is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate și preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .intro{animation-name:fade;animation-duration:.2s;animation-delay:0s}
+  .js .rv{transform:none!important;transition-duration:.2s;transition-delay:0s}
+  .btn:active{transform:none}
+  .card,.nav-toggle span,.shot img{transition-duration:.2s}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--steel:#D0D6DC;--steel-text:#E4E8EC;--rule:rgba(245,246,247,.4)}
+  .site-header{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn--ghost{background:#3A4149}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="top-bar">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Axa Europa, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🚗</span>
+      <span>Axa Europa</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Meniu principal">
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary btn--sm header-call" href="tel:0733724809">Sună acum</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Deschide meniul">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top" aria-labelledby="titlu-principal">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="label intro" style="--d:0s">Splaiul Unirii 459A, Sectorul 3, București</p>
+        <h1 class="intro" id="titlu-principal" style="--d:.08s">Axa Europa</h1>
+        <p class="slogan intro" style="--d:.16s">Tot ce ai nevoie pentru mașina ta</p>
+        <p class="lead intro" style="--d:.24s">Piese și accesorii auto, inclusiv anvelope. Suntem pe Splaiul Unirii, în Sectorul 3, aproape de tine.</p>
+        <div class="actions intro" style="--d:.32s">
+          <a class="btn btn--primary" href="tel:0733724809">Sună acum</a>
+          <a class="btn btn--ghost" href="#produse">Vezi produsele</a>
+        </div>
+      </div>
+
+      <div class="gauge" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <path class="dial-track" d="M74.1 325.9 A178 178 0 1 1 325.9 325.9"/>
+          <path id="dial-arc" class="dial-arc" d="M74.1 325.9 A178 178 0 1 1 325.9 325.9" pathLength="1000" stroke-dasharray="1000 1000" stroke-dashoffset="1000"/>
+          <g id="ticks"></g>
+          <g id="gauge-labels"></g>
+          <g id="needle" transform="rotate(-135 200 200)">
+            <line class="needle-line" x1="200" y1="216" x2="200" y2="62"/>
+            <circle class="needle-hub" cx="200" cy="200" r="9"/>
+          </g>
+        </svg>
+        <div class="gauge-readout">
+          <span class="gauge-value" id="gauge-value">0</span>
+          <span class="gauge-unit">km/h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap split">
+      <figure class="photo cut rv rv--left">
+        <img src="img/1.jpg" alt="Jantă de aliaj cu anvelopă, detaliu de mașină" loading="lazy">
+      </figure>
+      <div class="split-copy rv rv--up" style="--d:.1s">
+        <h2 id="despre-titlu">Despre noi</h2>
+        <p>La Axa Europa găsești piese, accesorii și anvelope auto pentru orice nevoie.</p>
+        <p>Suntem prezenți în Sectorul 3, pe Splaiul Unirii, aproape de tine. Te ajutăm să-ți menții mașina în cea mai bună formă.</p>
+        <ul class="facts">
+          <li>Piese și accesorii auto</li>
+          <li>Anvelope auto</li>
+          <li>Splaiul Unirii, Sectorul 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="perks">
+        <li class="perk cut rv rv--up" style="--d:0s">
+          <span class="perk-emoji" aria-hidden="true">🔩</span>
+          <h3>Vast sortiment</h3>
+          <p>Găsești rapid piesa dorită</p>
+        </li>
+        <li class="perk cut rv rv--up" style="--d:.1s">
+          <span class="perk-emoji" aria-hidden="true">🛞</span>
+          <h3>Anvelope pe stoc</h3>
+          <p>Pregătit pentru orice sezon</p>
+        </li>
+        <li class="perk cut rv rv--up" style="--d:.2s">
+          <span class="perk-emoji" aria-hidden="true">🚦</span>
+          <h3>Aproape de tine</h3>
+          <p>Ușor de ajuns, Sector 3</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="produse" aria-labelledby="produse-titlu">
+    <div class="wrap">
+      <div class="section-head rv rv--up">
+        <h2 id="produse-titlu">Produse</h2>
+        <p>Piese, accesorii și anvelope pentru mașina ta. Spune-ne ce ai nevoie și scrie-ne direct pe WhatsApp.</p>
+      </div>
+
+      <ul class="cards">
+        <li class="rv rv--scale" style="--d:0s">
+          <article class="card cut">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="7.2" stroke-dasharray="2.6 2.1" stroke-width="3.4" stroke-linecap="butt"/>
+              <circle cx="12" cy="12" r="3.2"/>
+            </svg>
+            <h3>Piese auto</h3>
+            <p>Piese auto pentru mașina ta.</p>
+          </article>
+        </li>
+        <li class="rv rv--scale" style="--d:.08s">
+          <article class="card cut">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3l9 9-9 9-9-9 9-9z"/>
+              <circle cx="12" cy="12" r="1.6"/>
+            </svg>
+            <h3>Accesorii auto</h3>
+            <p>Accesorii auto pentru mașina ta.</p>
+          </article>
+        </li>
+        <li class="rv rv--scale" style="--d:.16s">
+          <article class="card cut">
+            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="5.2"/>
+              <circle cx="12" cy="12" r="1.4"/>
+            </svg>
+            <h3>Anvelope auto</h3>
+            <p>Anvelope auto pentru mașina ta.</p>
+          </article>
+        </li>
+        
+      </ul>
+
+      <div class="cta-row rv rv--up">
+        <a class="btn btn--primary" href="https://wa.me/40733724809?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20piesele%20%C8%99i%20accesoriile%20auto." target="_blank" rel="noopener">Cere detalii pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="section-head rv rv--up">
+        <h2 id="galerie-titlu">Galerie</h2>
+        <p>Fotografii ilustrative.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="shot cut rv rv--left" style="--d:0s">
+          <img src="img/2.jpg" alt="Ambreiaj și volantă, piese de transmisie" loading="lazy">
+        </figure>
+        <figure class="shot cut rv rv--right" style="--d:.08s">
+          <img src="img/3.jpg" alt="Mașină pe drum acoperit de zăpadă, anvelope de iarnă" loading="lazy">
+        </figure>
+        <figure class="shot cut rv rv--left" style="--d:.16s">
+          <img src="img/4.jpg" alt="Anvelopă și jantă, verificarea presiunii" loading="lazy">
+        </figure>
+        <figure class="shot cut rv rv--right" style="--d:.24s">
+          <img src="img/5.jpg" alt="Banda de rulare a unei anvelope" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap split">
+      <div class="contact-copy rv rv--up">
+        <h2 id="contact-titlu">Contact</h2>
+        <address class="addr">
+          Splaiul Unirii 459A<br>
+          Sectorul 3, București
+        </address>
+        <p class="phone"><a href="tel:0733724809">0733 724 809</a></p>
+        <div class="actions">
+          <a class="btn btn--primary" href="tel:0733724809">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40733724809?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20piesele%20%C8%99i%20accesoriile%20auto." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Axa+Europa+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map cut rv rv--right" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.144632299999998,44.4004475,26.1526323,44.4044475&amp;layer=mapnik&amp;marker=44.4024475,26.1486323" title="Harta: Axa Europa, Splaiul Unirii 459A, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p class="brand-name">Axa Europa</p>
+    <p>Piese, accesorii și anvelope auto. Splaiul Unirii 459A, Sectorul 3, București.</p>
+    <p class="foot-meta">Model de site (demo)</p>
+    <p class="foot-meta">Fotografii ilustrative de pe Pixabay: AndyG, Mimzy, Mariakray, akiragiulia, Perkons</p>
+    <p class="foot-meta">© <span id="an"></span> Axa Europa</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.getElementById('an').textContent = new Date().getFullYear();
+
+  /* Antet: umbră discretă când pagina se derulează */
+  var bar = document.getElementById('top-bar');
+  var onScroll = function () { bar.classList.toggle('is-scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Meniu mobil */
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('nav');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Deschide meniul');
+    }
+  });
+
+  /* Vitezometru: se ridică la încărcare și se așază */
+  var NS = 'http://www.w3.org/2000/svg';
+  var MAX = 240, PEAK = 184, REST = 128;
+  var ticks = document.getElementById('ticks');
+  var labels = document.getElementById('gauge-labels');
+  var arc = document.getElementById('dial-arc');
+  var needle = document.getElementById('needle');
+  var value = document.getElementById('gauge-value');
+
+  function pt(v, r) {
+    var a = (-135 + v / MAX * 270) * Math.PI / 180;
+    return [200 + r * Math.sin(a), 200 - r * Math.cos(a)];
+  }
+  function mk(name, attrs, parent) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) { n.setAttribute(k, attrs[k]); }
+    parent.appendChild(n);
+    return n;
+  }
+  for (var v = 0; v <= MAX; v += 20) {
+    var major = v % 40 === 0;
+    var a = pt(v, major ? 146 : 152);
+    var b = pt(v, 160);
+    mk('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], 'class': major ? 'tick tick--major' : 'tick' }, ticks);
+    if (major) {
+      var c = pt(v, 126);
+      var t = mk('text', { x: c[0], y: c[1], 'text-anchor': 'middle', 'dominant-baseline': 'central', 'class': 'gauge-num' }, labels);
+      t.textContent = v;
+    }
+  }
+
+  function setV(val) {
+    needle.setAttribute('transform', 'rotate(' + (-135 + val / MAX * 270) + ' 200 200)');
+    arc.setAttribute('stroke-dashoffset', String(1000 * (1 - val / MAX)));
+    value.textContent = Math.round(val);
+  }
+  function tween(from, to, dur, ease, done) {
+    var start = null;
+    function frame(ts) {
+      if (start === null) { start = ts; }
+      var p = Math.min((ts - start) / dur, 1);
+      setV(from + (to - from) * ease(p));
+      if (p < 1) { requestAnimationFrame(frame); }
+      else if (done) { done(); }
+    }
+    requestAnimationFrame(frame);
+  }
+  var easeOut = function (p) { return 1 - Math.pow(1 - p, 3); };
+  var easeInOut = function (p) { return p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
+
+  if (reduce) {
+    setV(REST);
+  } else {
+    setTimeout(function () {
+      tween(0, PEAK, 1300, easeOut, function () {
+        tween(PEAK, REST, 700, easeInOut);
+      });
+    }, 400);
+  }
+
+  /* Dezvăluire la derulare */
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (n) { io.observe(n); });
+  } else {
+    items.forEach(function (n) { n.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
