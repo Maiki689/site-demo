@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6C13A">
+  <meta name="description" content="Eol777 Hostel, Constanța. Camere private și dormitoare comune pe Strada Aviator Vasile Craiu, aproape de plajă. Întreabă despre cazare.">
+  <title>Eol777 Hostel — O vacanță cu dor de mare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #F6C13A;
+      --blue: #3257A5;
+      --red: #F6332A;
+      --white: #FFFFFF;
+      --ink: #233861;
+      --muted: #53617a;
+      --soft: #f4f7fc;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; background: var(--white); color: var(--ink); font-family: "Quicksand", sans-serif; font-weight: 500; line-height: 1.6; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    button { font: inherit; }
+    img { display: block; width: 100%; object-fit: cover; }
+    svg { display: block; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { color: var(--blue); font-weight: 600; letter-spacing: -.02em; }
+    h1, h2 { font-family: "Caveat", cursive; line-height: 1.05; }
+    h1 { font-size: clamp(3.9rem, 7vw, 7.1rem); }
+    h2 { font-size: clamp(3rem, 5vw, 4.6rem); }
+    h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.2; }
+    p { max-width: 65ch; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+    .wrap { width: min(100% - 3rem, 76rem); margin-inline: auto; }
+    .button {
+      display: inline-flex; justify-content: center; align-items: center; gap: .6rem;
+      min-height: 3rem; padding: .85rem 1.35rem; border-radius: .45rem;
+      border: 1px solid transparent; font-weight: 700; text-decoration: none;
+      cursor: pointer; transition: transform .1s ease, background .2s ease, color .2s ease;
+    }
+    .button:active { transform: scale(.97); }
+    .button-blue { background: var(--blue); color: white; }
+    .button-blue:hover { background: #26478d; }
+    .button-light { background: white; color: var(--blue); }
+    .button-light:hover { background: #edf2fc; }
+    .text-link { display: inline-flex; align-items: center; min-height: 2.75rem; text-underline-offset: .3em; font-weight: 700; color: var(--blue); }
+    .skip { position: fixed; z-index: 10; top: .5rem; left: .5rem; padding: .7rem 1rem; background: white; transform: translateY(-160%); }
+    .skip:focus { transform: none; }
+    header {
+      position: sticky; top: 0; z-index: 5; background: rgb(255 255 255 / .9);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid rgb(255 255 255 / .9); transition: box-shadow .2s;
+    }
+    header.scrolled { box-shadow: 0 .3rem 1.5rem rgb(35 56 97 / .07); }
+    .nav { min-height: 5.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { display: flex; align-items: baseline; gap: .65rem; text-decoration: none; color: var(--blue); white-space: nowrap; }
+    .brand strong { font-family: "Caveat", cursive; font-size: 2.5rem; line-height: 1; font-weight: 700; }
+    .brand span { font-size: .85rem; font-weight: 700; }
+    .nav-links { display: flex; gap: 1.8rem; align-items: center; }
+    .nav-links > a:not(.button) { min-height: 2.75rem; display: flex; align-items: center; text-decoration: none; font-size: .9rem; font-weight: 700; }
+    .nav-links > a:not(.button):hover { color: var(--blue); text-decoration: underline; text-underline-offset: .4em; }
+    .hero { padding: 4.5rem 0 5rem; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1.08fr; gap: 4rem; align-items: center; }
+    .place { display: inline-flex; align-items: center; gap: .6rem; color: var(--blue); font-size: .95rem; font-weight: 700; margin-bottom: 1.3rem; }
+    .place svg { width: 1.2rem; height: 1.2rem; }
+    .hero-copy h1 { max-width: 8ch; }
+    .hero-copy > p { margin-top: 1.75rem; font-size: 1.1rem; max-width: 34ch; }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
+    .hero-note { display: block; margin-top: 1.1rem; font-size: .8rem; color: var(--muted); }
+    .postcard-area { min-width: 0; }
+    .postcard-scene { perspective: 1400px; }
+    .postcard {
+      position: relative; width: 100%; aspect-ratio: 1.19;
+      transform-style: preserve-3d; transition: transform .8s var(--ease);
+    }
+    .postcard.is-flipped { transform: rotateY(180deg); }
+    .postcard-face {
+      position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      background: white; padding: 1rem; box-shadow: 0 1rem 2.6rem rgb(35 56 97 / .13);
+      border: 1px solid #e7eaf1;
+    }
+    .postcard-front { display: flex; flex-direction: column; }
+    .postcard-front img { flex: 1; min-height: 0; height: 0; object-position: center; }
+    .postcard-caption { display: flex; justify-content: space-between; align-items: center; gap: .8rem; padding-top: .75rem; }
+    .postcard-caption span { font-family: "Caveat", cursive; font-size: clamp(1.7rem, 3vw, 2.2rem); color: var(--blue); line-height: 1.1; }
+    .postcard-caption small { font-size: .67rem; color: var(--muted); text-align: right; }
+    .stamp { position: absolute; top: 1.7rem; right: 1.7rem; width: 5rem; height: 5rem; color: white; filter: drop-shadow(0 1px 2px rgb(0 0 0 / .35)); }
+    .postcard-back { transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; padding: 2rem; background: #fffdf5; }
+    .postcard-back::after { content: ""; position: absolute; top: 1.5rem; right: 1.5rem; width: 2.5rem; height: 3rem; border: 1px dashed var(--blue); opacity: .45; }
+    .back-title { font-family: "Caveat", cursive; color: var(--blue); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; }
+    .postcard-back p { font-size: .9rem; max-width: 30ch; }
+    .postcard-back .phone { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; text-decoration: none; margin: 1rem 0; color: var(--blue); }
+    .postcard-back .button { align-self: flex-start; }
+    .postcard-back .back-address { margin-top: 1rem; font-size: .8rem; }
+    .postcard-tools { display: flex; justify-content: center; margin-top: 1.2rem; }
+    .flip-button { background: none; color: var(--blue); border: none; display: flex; align-items: center; gap: .6rem; min-height: 2.75rem; cursor: pointer; font-size: .87rem; font-weight: 700; padding: .5rem .8rem; }
+    .flip-button svg { width: 1.25rem; height: 1.25rem; }
+    .flip-button:hover { text-decoration: underline; text-underline-offset: .3em; }
+    .flip-button:active { transform: scale(.97); }
+    .intro { background: var(--yellow); padding: 4rem 0; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1.08fr; gap: 4rem; align-items: start; }
+    .intro h2 { max-width: 12ch; }
+    .intro-copy p { font-size: 1.1rem; }
+    .intro-copy p + p { margin-top: 1.2rem; }
+    .rooms { padding: 6.5rem 0; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 3rem; }
+    .section-heading p { max-width: 30ch; color: var(--muted); }
+    .room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .room { border-top: 2px solid var(--blue); padding-top: 2rem; }
+    .room-icon { width: 3.8rem; height: 3.8rem; color: var(--blue); margin-bottom: 1.5rem; }
+    .room p { margin: 1rem 0 1.2rem; max-width: 38ch; color: var(--muted); }
+    .room .text-link { font-size: .9rem; }
+    .location { background: var(--soft); padding: 5rem 0; }
+    .location-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 4rem; align-items: center; }
+    .location-copy > p { margin: 1.5rem 0; }
+    address { font-style: normal; font-weight: 700; }
+    .map { width: 100%; height: 25rem; border: 0; display: block; background: #e5ebf3; }
+    .map-caption { font-size: .8rem; margin-top: .75rem; color: var(--muted); }
+    .contact { padding: 5.5rem 0; }
+    .contact-grid { display: flex; justify-content: space-between; align-items: center; gap: 3rem; }
+    .contact p { margin-top: 1.2rem; max-width: 40ch; }
+    .contact-actions { display: flex; flex-direction: column; gap: .85rem; align-items: stretch; min-width: 15rem; }
+    .contact-actions .phone-label { text-align: center; font-size: .95rem; }
+    footer { padding: 2rem 0; background: var(--blue); color: white; }
+    .footer-row { display: flex; justify-content: space-between; gap: 2rem; align-items: start; }
+    .footer-brand { font-family: "Caveat", cursive; font-size: 2rem; line-height: 1.1; }
+    footer p { font-size: .75rem; letter-spacing: .015em; opacity: .9; margin-top: .65rem; }
+    .footer-details { text-align: right; max-width: 46ch; }
+    .js .hero-copy, .js .postcard-area { opacity: 0; }
+    .js.ready .hero-copy { animation: hero-copy .7s var(--ease) both; }
+    .js.ready .postcard-area { animation: hero-card .9s .12s var(--ease) both; }
+    @keyframes hero-copy { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    @keyframes hero-card { from { opacity: 0; transform: translateX(20px) rotate(2deg); } to { opacity: 1; transform: none; } }
+    .js .reveal { opacity: 0; transition: opacity .55s var(--ease); }
+    .js .reveal.is-visible { opacity: 1; }
+    .js .room.reveal { transform: translateY(8px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+    .js .room.reveal.is-visible { transform: none; }
+    @media (min-width: 1000px) { .room:nth-child(2) { transition-delay: .1s; } }
+    @media (max-width: 950px) {
+      .hero-grid, .intro-grid, .location-grid { gap: 2.5rem; }
+      .nav-links { gap: 1rem; }
+      .hero { padding-top: 3rem; }
+      .postcard-back { padding: 1.5rem; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 2.5rem, 34rem); }
+      .nav { min-height: 4.6rem; gap: .5rem; }
+      .brand { gap: .35rem; }
+      .brand strong { font-size: 2.1rem; }
+      .brand span { font-size: .7rem; }
+      .nav-links > a:not(.button) { display: none; }
+      .nav-links .button { min-height: 2.75rem; font-size: .8rem; padding: .6rem .85rem; }
+      .hero { padding: 2.3rem 0 3rem; }
+      .hero-grid, .intro-grid, .location-grid, .room-grid { grid-template-columns: 1fr; gap: 2.6rem; }
+      .hero-copy h1 { max-width: 9ch; font-size: clamp(3.75rem, 15vw, 5.6rem); }
+      .place { margin-bottom: .9rem; }
+      .hero-copy > p { margin-top: 1.3rem; font-size: 1rem; }
+      .hero-actions { margin-top: 1.5rem; gap: .8rem; }
+      .hero-actions .button { width: 100%; }
+      .hero-actions .text-link { margin-inline: auto; }
+      .hero-note { margin-top: .65rem; text-align: center; }
+      .postcard-face { padding: .65rem; }
+      .postcard-back { padding: 1.3rem; }
+      .stamp { width: 4rem; height: 4rem; top: 1.2rem; right: 1.2rem; }
+      .postcard-back .phone { margin: .65rem 0; }
+      .postcard-back .button { padding: .65rem .8rem; font-size: .85rem; min-height: 2.75rem; }
+      .back-title { font-size: 2.2rem; margin-bottom: .55rem; }
+      .postcard-back p { font-size: .82rem; }
+      .postcard-back .back-address { margin-top: .65rem; font-size: .75rem; }
+      .intro { padding: 3rem 0; }
+      .intro-grid { gap: 1.6rem; }
+      .intro h2 { max-width: none; }
+      .intro-copy p { font-size: 1rem; }
+      .rooms, .location, .contact { padding: 3.5rem 0; }
+      .section-heading { display: block; margin-bottom: 2rem; }
+      .section-heading p { margin-top: 1rem; }
+      .room-grid { gap: 2.5rem; }
+      .room { padding-top: 1.5rem; }
+      .room-icon { margin-bottom: 1.1rem; }
+      .map { height: 20rem; }
+      .contact-grid { display: block; }
+      .contact-actions { margin-top: 2rem; }
+      .footer-row { display: block; }
+      .footer-details { margin-top: 1.5rem; text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .2s !important; animation-delay: 0s !important; }
+      .js.ready .hero-copy, .js.ready .postcard-area { animation-name: simple-fade; }
+      .js .room.reveal { transform: none; }
+      .postcard { transition: none; }
+      @keyframes simple-fade { from { opacity: 0; } to { opacity: 1; } }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    }
+    @media (prefers-contrast: more) {
+      header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
+      :root { --muted: #233861; }
+      .button { border-color: currentColor; }
+      .postcard-face { border-color: var(--blue); }
+      footer p { opacity: 1; }
+    }
+  </style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <header id="header">
+    <nav class="nav wrap" aria-label="Navigare principală">
+      <a class="brand" href="#" aria-label="Eol777 Hostel, pagina de început"><strong>Eol777</strong><span>Hostel</span></a>
+      <div class="nav-links">
+        <a href="#despre">Despre noi</a>
+        <a href="#camere">Cazare</a>
+        <a href="#locatie">Unde ne găsești</a>
+        <a class="button button-blue" href="tel:0727555556">Sună acum</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="continut">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="place">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Constanța, aproape de plajă
+          </div>
+          <h1 id="hero-title">Lasă bagajul.<br>Ia-ți dorul<br>de mare.</h1>
+          <p>Camere private și dormitoare comune la Eol777. Tu alegi cum stai, vacanța o faci în ritmul tău.</p>
+          <div class="hero-actions">
+            <a class="button button-blue" href="https://wa.me/40727555556?text=Bun%C4%83%21%20A%C8%99%20dori%20detalii%20despre%20cazare%20la%20Eol777%20Hostel.">Întreabă pe WhatsApp</a>
+            <a class="text-link" href="#camere">Vezi opțiunile de cazare</a>
+          </div>
+          <small class="hero-note">Spune-ne când ai vrea să ajungi și câți sunteți.</small>
+        </div>
+
+        <div class="postcard-area">
+          <div class="postcard-scene">
+            <div class="postcard" id="postcard">
+              <div class="postcard-face postcard-front" id="card-front">
+                <img src="img/1.jpg" alt="Cazinoul din Constanța, pe malul Mării Negre" fetchpriority="high" decoding="async">
+                <svg class="stamp" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                  <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="50" cy="50" r="39" stroke="currentColor" stroke-width=".8"/>
+                  <path d="M27 55q6-7 12 0t12 0 12 0 12 0M27 63q6-7 12 0t12 0 12 0 12 0" stroke="currentColor" stroke-width="1.5"/>
+                  <text x="50" y="37" fill="currentColor" font-family="Quicksand, sans-serif" font-size="10" font-weight="700" text-anchor="middle">CONSTANȚA</text>
+                  <text x="50" y="79" fill="currentColor" font-family="Caveat, cursive" font-size="14" text-anchor="middle">dor de mare</text>
+                </svg>
+                <div class="postcard-caption">
+                  <span>Salutări de la mare!</span>
+                  <small>Constanța<br>Fotografie ilustrativă</small>
+                </div>
+              </div>
+              <div class="postcard-face postcard-back" id="card-back" aria-hidden="true" inert>
+                <div class="back-title">Ne vedem la Eol777?</div>
+                <p>Pentru disponibilitate și detalii despre cazare, scrie-ne sau sună-ne.</p>
+                <a class="phone" href="tel:0727555556">0727 555 556</a>
+                <a class="button button-blue" href="https://wa.me/40727555556?text=Bun%C4%83%21%20A%C8%99%20dori%20detalii%20despre%20cazare%20la%20Eol777%20Hostel.">Întreabă pe WhatsApp</a>
+                <p class="back-address">Strada Aviator Vasile Craiu<br>Constanța</p>
+              </div>
+            </div>
+          </div>
+          <div class="postcard-tools" id="postcard-tools" hidden>
+            <button class="flip-button" id="flip-button" type="button" aria-expanded="false" aria-controls="card-back">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M19 7a8 8 0 0 0-13-1L3 9m0-5v5h5M5 17a8 8 0 0 0 13 1l3-3m0 5v-5h-5"/></svg>
+              <span>Întoarce cartea poștală</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="despre" aria-labelledby="despre-title">
+      <div class="wrap intro-grid">
+        <h2 class="reveal" id="despre-title">Un loc de stat.<br>O mare de explorat.</h2>
+        <div class="intro-copy reveal">
+          <p>Eol777 Hostel se află pe Strada Aviator Vasile Craiu, în Constanța, aproape de plajă.</p>
+          <p>Vii cu prietenii sau cu rucsacul în spate? Poți alege între o cameră privată și un dormitor comun. Începe cu locul de dormit. Restul vacanței îl scrii tu.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="rooms" id="camere" aria-labelledby="camere-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <h2 id="camere-title">Cum vrei să stai?</h2>
+          <p>Două opțiuni de cazare.<br>Alege ce se potrivește călătoriei tale.</p>
+        </div>
+        <div class="room-grid">
+          <article class="room reveal">
+            <svg class="room-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 49V22m48 27V34H8m6-1V22h14c5 0 7 3 7 11m0-9h15c4 0 6 3 6 10M8 43h48M8 49v5m48-5v5"/>
+              <path d="M16 28h10"/>
+            </svg>
+            <h3>Camere private</h3>
+            <p>Pentru când vrei liniște și un spațiu doar pentru tine sau pentru cei cu care călătorești.</p>
+            <a class="text-link" href="https://wa.me/40727555556?text=Bun%C4%83%21%20A%C8%99%20dori%20detalii%20despre%20cazare%20la%20Eol777%20Hostel.">Întreabă despre camere</a>
+          </article>
+          <article class="room reveal">
+            <svg class="room-icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 10v45m38-45v45M9 28h38M9 49h38M13 27V17h12c4 0 6 3 6 10m0-7h12v7M13 48V38h12c4 0 6 3 6 10m0-7h12v7M54 24v31m-7-25h7m-7 8h7m-7 8h7"/>
+            </svg>
+            <h3>Dormitoare comune</h3>
+            <p>Pentru călătorii cu rucsacul și cei care preferă să împartă camera cu alți călători.</p>
+            <a class="text-link" href="https://wa.me/40727555556?text=Bun%C4%83%21%20A%C8%99%20dori%20detalii%20despre%20cazare%20la%20Eol777%20Hostel.">Întreabă despre paturi</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="locatie" aria-labelledby="locatie-title">
+      <div class="wrap location-grid">
+        <div class="location-copy reveal">
+          <h2 id="locatie-title">Pune marea<br>în plan.</h2>
+          <p>Ne găsești aproape de plajă. Verifică traseul înainte să pornești și sună-ne dacă ai nevoie de îndrumare.</p>
+          <address>Strada Aviator Vasile Craiu<br>Constanța</address>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Eol777+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+        <div class="reveal">
+          <iframe class="map" title="Localizarea Eol777 Hostel în Constanța" src="https://www.openstreetmap.org/export/embed.html?bbox=28.642560999999997,44.1961187,28.650561,44.200118700000004&amp;layer=mapnik&amp;marker=44.1981187,28.646561" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <p class="map-caption">Eol777 Hostel, Constanța. Hartă OpenStreetMap.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <h2 id="contact-title">Ai deja datele de vacanță?</h2>
+          <p>Spune-ne perioada și câte persoane veniți. Întreabă-ne despre disponibilitate și opțiunile de cazare.</p>
+        </div>
+        <div class="contact-actions reveal">
+          <a class="button button-blue" href="https://wa.me/40727555556?text=Bun%C4%83%21%20A%C8%99%20dori%20detalii%20despre%20cazare%20la%20Eol777%20Hostel.">Întreabă pe WhatsApp</a>
+          <a class="button button-light" href="tel:0727555556">Sună acum</a>
+          <span class="phone-label">0727 555 556</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>
+        <div class="footer-brand">Eol777 Hostel</div>
+        <p>Cazare pentru exploratori și prieteni, în Constanța.</p>
+      </div>
+      <div class="footer-details">
+        <p>Model de site (demo)</p>
+        <p>Fotografii ilustrative de pe Pixabay: AdinaVoicu, innokurnia, Kanenori</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      root.classList.add('js');
+      requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('ready')));
+
+      const header = document.getElementById('header');
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 10);
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      const card = document.getElementById('postcard');
+      const front = document.getElementById('card-front');
+      const back = document.getElementById('card-back');
+      const flip = document.getElementById('flip-button');
+      document.getElementById('postcard-tools').hidden = false;
+      let flipped = false;
+
+      flip.addEventListener('click', () => {
+        flipped = !flipped;
+        card.classList.toggle('is-flipped', flipped);
+        flip.setAttribute('aria-expanded', String(flipped));
+        front.setAttribute('aria-hidden', String(flipped));
+        back.setAttribute('aria-hidden', String(!flipped));
+        front.inert = flipped;
+        back.inert = !flipped;
+        flip.querySelector('span').textContent = flipped
+          ? 'Revezi cartea poștală'
+          : 'Întoarce cartea poștală';
+      });
+
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12 });
+        reveals.forEach(element => observer.observe(element));
+      } else {
+        reveals.forEach(element => element.classList.add('is-visible'));
+      }
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
