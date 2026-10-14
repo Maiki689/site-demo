@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spălătorie și vulcanizare auto, București</title>
+<meta name="description" content="Spălătorie și vulcanizare auto în București. Reparații auto, diagnoză și întreținere. Sunați sau scrieți-ne pe WhatsApp.">
+<meta name="theme-color" content="#050505">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#050505;
+  --ink-2:#0b0c0d;
+  --silver:#C7CCD1;
+  --silver-2:#9aa1a9;
+  --text:#eef1f4;
+  --line:rgba(199,204,209,.16);
+  --accent:#38bdf8;
+  --accent-ink:#04121a;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,5vw,5rem);
+  --max:72rem;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--silver);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+section[id]{scroll-margin-top:4.5rem}
+h1,h2,h3{
+  font-family:Syne,Inter,sans-serif;
+  color:#f3f5f7;
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.06;
+}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.skip{position:absolute;left:1rem;top:-120px;z-index:100;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;border-radius:4px;font-weight:600;text-decoration:none}
+.skip:focus{top:1rem}
+
+.wrap{max-width:var(--max);margin-inline:auto}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.65rem var(--pad);
+  background:rgba(10,11,12,.5);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+  transition:box-shadow .45s var(--ease),background-color .45s var(--ease);
+}
+.nav.is-scrolled{
+  background:rgba(10,11,12,.66);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 12px 30px -12px rgba(0,0,0,.7);
+}
+.brand{
+  display:flex;align-items:center;gap:.55rem;
+  font-family:Syne,sans-serif;font-weight:700;font-size:1rem;letter-spacing:-.01em;
+  color:#fff;text-decoration:none;min-height:44px;
+}
+.brand .mark{font-size:1.2rem;line-height:1}
+.brand-short{display:none}
+.nav-links{display:none;list-style:none;gap:1.75rem}
+.nav-links a{
+  color:#fff;text-decoration:none;font-size:.92rem;font-weight:500;
+  opacity:.88;transition:opacity .3s var(--ease),color .3s var(--ease);
+  padding:.5rem 0;display:inline-block;
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.4rem;border-radius:4px;
+  font:600 .95rem/1.1 Inter,sans-serif;letter-spacing:0;text-decoration:none;
+  cursor:pointer;border:0;
+  transition:background-color .3s var(--ease),box-shadow .3s var(--ease),color .3s var(--ease),transform .1s ease;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.btn-sm{min-height:44px;padding:.6rem 1.05rem;font-size:.88rem}
+@media (hover:hover){
+  .btn-primary:hover{background:#7dd3fc;box-shadow:0 12px 30px -14px rgba(56,189,248,.6)}
+  .btn-ghost:hover{background:rgba(255,255,255,.07)}
+  .nav-links a:hover{opacity:1;color:var(--accent)}
+}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Prima secțiune ---------- */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:100vh;min-height:100svh;
+  display:flex;align-items:flex-end;
+  color:#fff;background:var(--ink);
+}
+.hero-img{
+  position:absolute;inset:0;z-index:-2;
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  animation:heroIn 2.4s var(--ease) both;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(5,5,5,.3) 0%,rgba(5,5,5,.12) 28%,rgba(5,5,5,.72) 68%,#050505 100%);
+}
+.hero-body{
+  width:100%;max-width:var(--max);margin-inline:auto;
+  padding:0 var(--pad) clamp(2.5rem,9vh,6rem);
+}
+.hero h1{
+  font-size:clamp(2.3rem,10.5vw,7rem);
+  line-height:1.04;
+  letter-spacing:-.025em;
+  color:#fff;
+  animation:rise .9s var(--ease) .25s both;
+}
+/* Reflexia de lumină: o singură trecere peste titlu, ca pe o caroserie lustruită */
+.sheen{
+  display:inline-block;max-width:100%;
+  padding-bottom:.06em;
+  background-image:linear-gradient(100deg,#aab1b9 0%,#aab1b9 40%,#f5f7fa 50%,#aab1b9 60%,#aab1b9 100%);
+  background-size:250% 100%;
+  background-repeat:no-repeat;
+  background-position:100% 0;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  animation:sheen 2.8s cubic-bezier(.4,0,.2,1) 1.1s both;
+}
+.slogan{
+  margin-top:1rem;max-width:28rem;
+  font-size:clamp(1.05rem,2.4vw,1.4rem);line-height:1.4;color:#e4e8ec;
+  animation:rise .9s var(--ease) .55s both;
+}
+.hero .actions{margin-top:1.75rem;animation:rise .9s var(--ease) .75s both}
+
+@keyframes heroIn{from{transform:scale(1.08);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes rise{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
+@keyframes sheen{from{background-position:100% 0}to{background-position:0% 0}}
+
+/* ---------- Secțiuni comune ---------- */
+.section{padding:clamp(5.5rem,13vw,10rem) var(--pad)}
+h2{
+  font-size:clamp(2.2rem,6vw,4.5rem);
+  margin-bottom:clamp(1.75rem,4vw,3rem);
+}
+.lead{
+  font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.35;
+  color:var(--text);max-width:32ch;letter-spacing:0;
+}
+.body-copy{margin-top:1.25rem;max-width:58ch;color:var(--silver-2)}
+
+/* Despre */
+.about-grid{display:grid;gap:clamp(3rem,7vw,6rem);align-items:center}
+@media (min-width:900px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-photo{margin:0}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.adv{margin-top:clamp(4rem,9vw,7rem);display:grid;gap:2.5rem}
+@media (min-width:760px){.adv{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.adv-item{padding-top:1.5rem;border-top:1px solid var(--line)}
+.adv-ico{display:block;font-size:1.6rem;line-height:1;margin-bottom:1.1rem}
+.adv-item h3{font-size:1.25rem;letter-spacing:-.01em;margin-bottom:.4rem}
+.adv-item p{color:var(--silver-2)}
+
+/* Fotografie pe toată lățimea */
+.band{position:relative;height:74vh;min-height:360px;max-height:820px;overflow:hidden;margin:0}
+.band img{width:100%;height:100%;object-fit:cover}
+.band::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,#050505 0%,rgba(5,5,5,0) 20%,rgba(5,5,5,0) 80%,#050505 100%);
+}
+
+/* Servicii */
+.services{display:grid}
+@media (min-width:900px){.services{grid-template-columns:1.1fr 1fr;align-items:stretch}}
+.svc-text{padding:clamp(5.5rem,13vw,10rem) var(--pad)}
+.svc-inner{max-width:36rem}
+.svc-photo{margin:0;position:relative;overflow:hidden;min-height:0}
+.svc-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:900px){
+  .svc-photo{min-height:640px}
+  .svc-photo img{position:absolute;inset:0;height:100%;aspect-ratio:auto}
+}
+.svc-list{list-style:none;border-bottom:1px solid var(--line)}
+.svc-list li{
+  padding:1.35rem 0;border-top:1px solid var(--line);
+  font-family:Syne,sans-serif;font-weight:700;
+  font-size:clamp(1.9rem,4.4vw,3.2rem);line-height:1.1;letter-spacing:-.02em;
+  color:#dfe3e7;
+  transition:color .35s var(--ease);
+}
+@media (hover:hover){.svc-list li:hover{color:var(--accent)}}
+
+/* Program, cu fotografie de fundal */
+.visit{
+  position:relative;isolation:isolate;overflow:hidden;color:#fff;
+  padding:clamp(5.5rem,13vw,10rem) var(--pad);
+}
+.visit-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.visit::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(5,5,5,.95) 0%,rgba(5,5,5,.75) 55%,rgba(5,5,5,.55) 100%);
+}
+.visit-inner{max-width:var(--max);margin-inline:auto;display:grid;gap:4rem}
+@media (min-width:900px){.visit-inner{grid-template-columns:1.2fr .8fr;gap:6rem;align-items:start}}
+.visit h2{color:#fff}
+.hours{margin-top:0}
+.hours div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding:1.2rem 0;border-top:1px solid rgba(255,255,255,.2);
+}
+.hours div:last-child{border-bottom:1px solid rgba(255,255,255,.2)}
+.hours dt{color:#fff;font-weight:500;font-size:1.05rem}
+.hours dd{
+  font-family:Syne,sans-serif;font-weight:700;
+  font-size:clamp(1.2rem,3vw,1.6rem);letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;white-space:nowrap;color:#fff;
+}
+.visit h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.6rem;color:#fff}
+.visit p{color:#dfe3e7;max-width:30ch;font-size:1.05rem}
+
+/* Contact */
+.contact{padding:clamp(5.5rem,13vw,10rem) var(--pad) 0}
+.contact-inner{max-width:var(--max);margin-inline:auto}
+.contact .actions{margin-top:2rem}
+.phone-line{margin-top:1.5rem;color:var(--silver-2)}
+.phone-line a{color:#fff;font-weight:600;text-decoration:none;padding:.5rem 0;display:inline-block}
+.map{margin-top:clamp(4rem,8vw,6rem);height:clamp(320px,46vh,460px)}
+.map iframe{
+  width:100%;height:100%;border:0;display:block;
+  filter:grayscale(1) invert(.92) contrast(.9) brightness(.95);
+}
+
+/* Subsol */
+.foot{background:var(--ink-2);padding:3.5rem var(--pad) 3rem;margin-top:clamp(5rem,10vw,8rem)}
+.foot-inner{max-width:var(--max);margin-inline:auto;display:grid;gap:2rem}
+@media (min-width:800px){.foot-inner{grid-template-columns:1.2fr 1fr;align-items:start}}
+.foot-name{font-family:Syne,sans-serif;font-weight:700;color:#fff;font-size:1.1rem;display:flex;gap:.55rem;align-items:center}
+.foot-name span{font-size:1.2rem}
+.foot-place{margin-top:.35rem;color:var(--silver-2);font-size:.95rem}
+.foot-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.foot-nav a{color:var(--silver);text-decoration:none;font-size:.95rem;padding:.6rem 0;display:inline-block;min-height:44px}
+@media (hover:hover){.foot-nav a:hover{color:var(--accent)}}
+.foot-legal{
+  grid-column:1/-1;font-size:.8rem;line-height:1.6;color:var(--silver-2);
+  letter-spacing:.02em;padding-top:1.5rem;
+}
+.foot-legal p + p{margin-top:.35rem}
+
+/* ---------- Mișcarea la derulare ---------- */
+.js .reveal{
+  opacity:0;transform:translate3d(0,28px,0);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .reveal.is-in{opacity:1;transform:none}
+.js .reveal-photo{transform:scale(1.04);transition-duration:.9s}
+.js .reveal-photo.is-in{transform:none}
+.js .reveal-side{transform:translate3d(-24px,0,0)}
+.js .reveal-side.is-in{transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav,.nav.is-scrolled{background:#0a0b0c;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--silver:#e6e9ec;--silver-2:#d5dade;--line:rgba(255,255,255,.45)}
+  .nav{background:#000;box-shadow:inset 0 -1px 0 #fff}
+  .btn-ghost{box-shadow:inset 0 0 0 2px #fff}
+  .hours div,.hours div:last-child{border-color:rgba(255,255,255,.6)}
+  .sheen{background-image:none;color:#fff;-webkit-text-fill-color:#fff;animation:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-delay:0s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+    transition-delay:0s !important;
+  }
+  .hero-img,.hero h1,.slogan,.hero .actions{animation-name:fade !important}
+  .sheen{animation:none !important;background-image:none;color:#fff;-webkit-text-fill-color:#fff}
+  .js .reveal,.js .reveal-photo,.js .reveal-side{transform:none !important;transition-property:opacity !important}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Spălătorie și vulcanizare auto, începutul paginii">
+    <span class="mark" aria-hidden="true">🧽</span>
+    <span class="brand-long">Spălătorie și vulcanizare auto</span>
+    <span class="brand-short">Spălătorie auto</span>
+  </a>
+  <nav aria-label="Navigare principală">
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn-primary btn-sm" href="tel:0725251135">Sună acum</a>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top" aria-labelledby="titlu-principal">
+    <img class="hero-img" src="img/1.jpg" alt="Anvelope și spumă albă de la spălarea unei mașini" fetchpriority="high">
+    <div class="hero-body">
+      <h1 id="titlu-principal"><span class="sheen">Spălătorie și vulcanizare auto</span></h1>
+      <p class="slogan">Mașina ta, îngrijită ca la carte</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:0725251135">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40725251135?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20serviciile%20oferite." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="reveal">
+          <h2 id="t-despre">Despre noi</h2>
+          <p class="lead">Spălătorie și vulcanizare auto în București, cu reparații, diagnoză și întreținere.</p>
+          <p class="body-copy">Suntem aici pentru a vă ajuta să păstrați mașina curată și în siguranță. Oricând aveți nevoie, vă așteptăm cu drag!</p>
+        </div>
+        <figure class="about-photo reveal reveal-photo" style="--d:.1s">
+          <img src="img/3.jpg" alt="Roată și mașină într-un atelier de service" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="adv">
+        <div class="adv-item reveal" style="--d:0s">
+          <span class="adv-ico" aria-hidden="true">⏱️</span>
+          <h3>Șapte zile pe săptămână</h3>
+          <p>Luni–vineri de la 07:30, sâmbătă și duminică de la 08:30</p>
+        </div>
+        <div class="adv-item reveal" style="--d:.12s">
+          <span class="adv-ico" aria-hidden="true">🧼</span>
+          <h3>Diagnoză și reparații</h3>
+          <p>Reparații auto, diagnoză, întreținere</p>
+        </div>
+        <div class="adv-item reveal" style="--d:.24s">
+          <span class="adv-ico" aria-hidden="true">🛞</span>
+          <h3>Servicii complete</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+          <p>Spălătorie și vulcanizare</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <figure class="band reveal reveal-photo" style="margin:0">
+    <img src="img/4.jpg" alt="Spumă și apă curgând de pe caroseria unei mașini" loading="lazy">
+  </figure>
+
+  <section class="services" id="servicii" aria-labelledby="t-servicii">
+    <div class="svc-text">
+      <div class="svc-inner">
+        <h2 id="t-servicii" class="reveal">Servicii</h2>
+        <ul class="svc-list">
+          <li class="reveal reveal-side" style="--d:0s">Reparații auto</li>
+          <li class="reveal reveal-side" style="--d:.1s">Diagnoză</li>
+          <li class="reveal reveal-side" style="--d:.2s">Întreținere</li>
+        </ul>
+      </div>
+    </div>
+    <figure class="svc-photo reveal reveal-photo">
+      <img src="img/2.jpg" alt="Anvelope de iarnă și de vară, în atelierul de vulcanizare" loading="lazy">
+    </figure>
+  </section>
+
+  <section class="visit" id="program" aria-labelledby="t-program">
+    <img class="visit-bg" src="img/5.jpg" alt="" loading="lazy">
+    <div class="visit-inner">
+      <div class="reveal">
+        <h2 id="t-program">Program</h2>
+        <dl class="hours">
+          <div>
+            <dt>Luni – vineri</dt>
+            <dd>07:30 – 19:00</dd>
+          </div>
+          <div>
+            <dt>Sâmbătă, duminică</dt>
+            <dd>08:30 – 19:00</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="reveal" style="--d:.15s">
+        <h3>Întrebări?</h3>
+        <p>Sunați-ne sau scrieți-ne pe WhatsApp pentru detalii despre servicii.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="contact-inner reveal">
+      <h2 id="t-contact">Contact</h2>
+      <p class="lead">Sunați-ne sau scrieți-ne. Suntem în București, pe harta de mai jos.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:0725251135">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40725251135?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20serviciile%20oferite." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Sp%C4%83l%C4%83torie+%C8%99i+vulcanizare+auto+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+      </div>
+      <p class="phone-line">Telefon: <a href="tel:0725251135">0725 251 135</a></p>
+    </div>
+    <div class="map reveal">
+      <iframe title="Harta locației: Spălătorie și vulcanizare auto, București" src="https://www.openstreetmap.org/export/embed.html?bbox=26.101534599999997,44.4677108,26.1095346,44.471710800000004&amp;layer=mapnik&amp;marker=44.4697108,26.1055346" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <p class="foot-name"><span aria-hidden="true">🧽</span> Spălătorie și vulcanizare auto</p>
+      <p class="foot-place">București</p>
+    </div>
+    <nav class="foot-nav" aria-label="Subsol">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:0725251135">Sună acum</a></li>
+      </ul>
+    </nav>
+    <div class="foot-legal">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: HutchRock, Eugen_Tomas, webandi</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
