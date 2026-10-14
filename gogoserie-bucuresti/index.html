@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Gogoșerie, București | Gogoși proaspete în fiecare zi</title>
+<meta name="description" content="Gogoșerie din București: gogoși proaspete, cafea și prăjituri. Sună sau scrie-ne pe WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --crem:#FFF9F2;
+  --roz:#F6E3E1;
+  --menta:#A8D5C2;
+  --maro:#4A2C2A;
+  --maro-moale:#6B4A47;
+  --rosu:#be123c;
+  --serif:"Bodoni Moda",Didot,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--crem);color:var(--maro);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0;max-width:60ch}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-.02em;line-height:1.1}
+section[id]{scroll-margin-top:5rem}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rosu);outline-offset:4px;border-radius:6px}
+
+.wrap{width:min(1120px,calc(100% - 2.5rem));margin-inline:auto}
+@media (min-width:900px){.wrap{width:min(1120px,calc(100% - 4rem))}}
+
+/* ---------- Antet cu sticlă ---------- */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,249,242,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.7);
+  transition:box-shadow .3s var(--ease);
+}
+.antet.is-derulat{box-shadow:0 10px 24px -18px rgba(74,44,42,.45)}
+.antet__bara{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem}
+.logo{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:-.01em;color:var(--maro)}
+.logo svg{width:1.6rem;height:1.6rem;flex:none}
+.nav{display:none;gap:1.75rem}
+.nav a{
+  text-decoration:none;font-weight:500;font-size:.95rem;letter-spacing:.01em;padding:.5rem .15rem;
+  background:linear-gradient(currentColor,currentColor) left bottom/0 1px no-repeat;
+  transition:background-size .3s var(--ease);
+}
+.nav a:hover{background-size:100% 1px}
+.antet__dreapta{display:flex;align-items:center;gap:.5rem}
+.meniu-btn{
+  display:grid;place-items:center;width:2.75rem;height:2.75rem;min-width:2.75rem;
+  border:0;border-radius:50%;background:transparent;color:var(--maro);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;transition:background-color .2s;
+}
+.meniu-btn:hover{background:rgba(74,44,42,.06)}
+.meniu-btn svg{width:1.4rem;height:1.4rem}
+.panou{
+  position:absolute;top:100%;left:0;right:0;
+  background:var(--crem);
+  box-shadow:0 18px 28px -22px rgba(74,44,42,.45);
+  padding:.25rem 1.25rem 1.25rem;
+  display:grid;gap:.1rem;
+}
+.panou[hidden]{display:none !important}
+.panou a{
+  display:flex;align-items:center;min-height:3rem;
+  font-family:var(--serif);font-size:1.4rem;text-decoration:none;
+}
+@media (min-width:760px){
+  .nav{display:flex}
+  .meniu-btn{display:none}
+  .panou{display:none !important}
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  min-height:3rem;padding:.75rem 1.4rem;border-radius:999px;
+  border:1.5px solid transparent;background:var(--rosu);color:#fff;
+  font-family:var(--sans);font-weight:500;font-size:1rem;line-height:1.2;letter-spacing:.01em;
+  text-decoration:none;cursor:pointer;max-width:100%;
+  transition:box-shadow .2s var(--ease),background-color .2s,border-color .2s,transform .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{box-shadow:0 10px 22px -12px rgba(190,18,60,.75)}
+.btn:active{transform:scale(.97)}
+.btn--contur{background:transparent;color:var(--maro);border-color:rgba(74,44,42,.35)}
+.btn--contur:hover{border-color:var(--maro);box-shadow:0 10px 22px -14px rgba(74,44,42,.5)}
+.btn--mic{min-height:2.75rem;padding:.5rem 1.05rem;font-size:.95rem}
+
+/* ---------- Primul ecran ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(3.5rem,8vw,6.5rem)}
+.hero::before{
+  content:"";position:absolute;z-index:0;
+  width:min(130vw,820px);aspect-ratio:1;border-radius:50%;
+  background:var(--roz);right:-34%;top:-12%;
+}
+.bule{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bula{
+  position:absolute;bottom:-8%;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#fff 0 10%,rgba(168,213,194,.35) 50%,rgba(168,213,194,.6) 100%);
+  border:1px solid rgba(255,255,255,.7);opacity:0;
+  animation-name:urca;animation-timing-function:linear;animation-iteration-count:infinite;
+}
+@keyframes urca{
+  0%{transform:translate3d(0,0,0);opacity:0}
+  15%{opacity:.55}
+  85%{opacity:.45}
+  100%{transform:translate3d(12px,-120vh,0);opacity:0}
+}
+.hero__grid{position:relative;z-index:1;display:grid;gap:clamp(2.5rem,5vw,4rem);align-items:center}
+@media (min-width:900px){.hero__grid{grid-template-columns:1.05fr .95fr}}
+.hero__titlu{font-size:clamp(3.4rem,11vw,7.5rem);font-weight:500;letter-spacing:-.02em;line-height:1}
+.hero__slogan{margin-top:1rem;font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);line-height:1.3;color:var(--maro)}
+.hero__descriere{margin-top:.75rem;color:var(--maro-moale)}
+.hero__actiuni{margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.hero__actiuni .btn{flex:1 1 auto}
+@media (min-width:520px){.hero__actiuni .btn{flex:0 0 auto}}
+.hero__cutie{display:flex;flex-direction:column;align-items:center}
+
+/* ---------- Cutia de patiserie (element memorabil) ---------- */
+.cutie{
+  position:relative;isolation:isolate;display:block;
+  width:min(78vw,420px);aspect-ratio:1.08;margin:0 auto;padding:0;
+  border:0;background:none;cursor:pointer;font:inherit;color:inherit;
+  -webkit-tap-highlight-color:transparent;
+}
+.cutie::after{
+  content:"";position:absolute;z-index:-1;left:6%;right:6%;bottom:-5%;height:10%;
+  background:radial-gradient(closest-side,rgba(74,44,42,.28),transparent);
+}
+.cutie__corp{
+  position:absolute;left:5%;right:5%;top:28%;bottom:0;overflow:hidden;
+  border-radius:6px 6px 16px 16px;
+  background:linear-gradient(180deg,#FFFDF9 0%,#FBEFE8 100%);
+  box-shadow:0 30px 44px -28px rgba(74,44,42,.55),inset 0 0 0 1px rgba(74,44,42,.07);
+}
+.cutie__interior{position:absolute;left:0;right:0;top:0;height:58%;background:var(--roz)}
+.cutie__panglica{
+  position:absolute;top:0;bottom:0;left:50%;width:12%;transform:translateX(-50%);
+  background:linear-gradient(90deg,rgba(74,44,42,.07),transparent 30%,transparent 70%,rgba(74,44,42,.07)),var(--menta);
+  z-index:0;
+}
+.cutie__donuts{
+  position:absolute;left:0;right:0;top:12%;z-index:1;
+  display:flex;justify-content:center;gap:6%;
+}
+.donut{
+  position:relative;display:block;flex:0 0 26%;aspect-ratio:1;border-radius:50%;
+  background:#E9B07E;
+  box-shadow:inset 0 -4px 0 rgba(74,44,42,.12),0 8px 12px -8px rgba(74,44,42,.45);
+}
+.donut::before{
+  content:"";position:absolute;inset:6%;border-radius:50%;
+  background:
+    radial-gradient(circle at 22% 30%,#fff 0 2px,transparent 2.6px),
+    radial-gradient(circle at 74% 26%,#fff 0 2px,transparent 2.6px),
+    radial-gradient(circle at 80% 64%,#fff 0 2px,transparent 2.6px),
+    radial-gradient(circle at 30% 74%,#fff 0 2px,transparent 2.6px),
+    radial-gradient(circle at 56% 84%,#fff 0 2px,transparent 2.6px),
+    var(--glasura);
+}
+.donut::after{
+  content:"";position:absolute;left:50%;top:50%;width:26%;height:26%;
+  transform:translate(-50%,-50%);border-radius:50%;background:var(--roz);
+}
+.donut--roz{--glasura:#E8849E}
+.donut--menta{--glasura:#A8D5C2}
+.donut--ciocolata{--glasura:#4A2C2A}
+.cutie__capac{
+  position:absolute;left:0;right:0;top:0;height:31%;z-index:2;overflow:hidden;
+  border-radius:8px 8px 4px 4px;
+  background:linear-gradient(180deg,#FFFDF9,#FDF4EC);
+  box-shadow:0 14px 24px -16px rgba(74,44,42,.55),inset 0 0 0 1px rgba(74,44,42,.07);
+  transform-origin:0% 100%;
+  transition:transform .6s var(--ease),box-shadow .6s var(--ease);
+}
+.cutie__capac .cutie__panglica{width:12%}
+.cutie__marca{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;
+  padding:.3rem .95rem;border-radius:999px;white-space:nowrap;
+  background:var(--crem);box-shadow:0 0 0 1px rgba(74,44,42,.1);
+  font-family:var(--serif);font-size:clamp(.95rem,3.4vw,1.15rem);font-weight:500;letter-spacing:-.01em;
+}
+.cutie.is-deschis .cutie__capac,
+.cutie:focus-visible .cutie__capac{
+  transform:translateY(-20%) rotate(-8deg);
+  box-shadow:0 26px 34px -18px rgba(74,44,42,.55),inset 0 0 0 1px rgba(74,44,42,.07);
+}
+@media (hover:hover){
+  .cutie:hover .cutie__capac{
+    transform:translateY(-20%) rotate(-8deg);
+    box-shadow:0 26px 34px -18px rgba(74,44,42,.55),inset 0 0 0 1px rgba(74,44,42,.07);
+  }
+}
+.cutie__nota{margin-top:1.5rem;font-size:.92rem;color:var(--maro-moale);letter-spacing:.02em;text-align:center}
+
+/* Intrarea din primul ecran (o singură secvență) */
+@keyframes intra{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+.js .hero__text>*{animation:intra .6s var(--ease) both}
+.js .hero__text>*:nth-child(2){animation-delay:.08s}
+.js .hero__text>*:nth-child(3){animation-delay:.16s}
+.js .hero__text>*:nth-child(4){animation-delay:.24s}
+.js .hero__cutie{animation:intra .8s var(--ease) .2s both}
+
+/* ---------- Secțiuni ---------- */
+.sectiune{padding:clamp(4rem,11vw,8rem) 0}
+.titlu{
+  font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.08;letter-spacing:-.02em;
+  margin-bottom:clamp(1.5rem,4vw,2.5rem);
+}
+.fond-roz{background:var(--roz)}
+.fond-menta{background:var(--menta)}
+
+/* Despre */
+.despre__grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.despre__grid{grid-template-columns:1fr 1fr}}
+.despre__foto{margin:0}
+.despre__foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.despre__text p+p{margin-top:1rem}
+.despre__text .btn{margin-top:2rem}
+
+/* Produse */
+.produse{list-style:none;margin:0;padding:0;display:grid;gap:clamp(2.5rem,6vw,3.5rem)}
+@media (min-width:760px){.produse{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.produs{padding-top:1.5rem;border-top:1px solid rgba(74,44,42,.14)}
+.produs__pastila{
+  position:relative;display:block;width:3.25rem;height:3.25rem;border-radius:50%;
+  background:var(--c);margin-bottom:1.25rem;
+}
+.produs__pastila::after{
+  content:"";position:absolute;inset:34%;border-radius:50%;background:var(--crem);
+}
+.produs h3{font-size:clamp(1.5rem,3vw,1.9rem);margin-bottom:.5rem}
+.produs p{color:var(--maro-moale)}
+
+/* Avantaje */
+.avantaje{padding:clamp(3rem,7vw,5rem) 0}
+.avantaje__lista{list-style:none;margin:0 auto;padding:0;display:grid;gap:2rem}
+@media (min-width:760px){.avantaje__lista{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.avantaje__lista li{display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:center}
+.avantaj__emoji{
+  width:3rem;height:3rem;border-radius:50%;background:var(--crem);
+  display:grid;place-items:center;font-size:1.35rem;line-height:1;
+}
+.avantaje h3{font-size:1.35rem;margin-bottom:.15rem}
+.avantaje p{font-size:.98rem}
+
+/* Galerie */
+.galerie{display:grid;gap:clamp(.75rem,2vw,1.25rem);grid-template-columns:1fr;margin:0}
+.galerie figure{margin:0}
+.galerie img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+@media (min-width:720px){
+  .galerie{grid-template-columns:1fr 1fr}
+  .galerie figure:nth-child(2n){margin-top:clamp(2rem,5vw,4rem)}
+}
+
+/* Contact */
+.contact{display:grid;gap:clamp(2.5rem,6vw,4rem)}
+@media (min-width:900px){.contact{grid-template-columns:1fr 1.1fr;align-items:center}}
+.contact__telefon{margin-top:1.5rem}
+.contact__telefon a{
+  font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.4rem);font-weight:500;
+  text-decoration:none;letter-spacing:-.01em;
+}
+.contact__butoane{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.contact__harta iframe{
+  width:100%;height:clamp(300px,40vw,400px);border:0;border-radius:4px;display:block;background:var(--crem);
+}
+
+/* Subsol */
+.subsol{background:var(--maro);color:rgba(255,249,242,.88);padding:2.5rem 0;font-size:.9rem;letter-spacing:.02em}
+.subsol__bara{display:flex;flex-direction:column;gap:.5rem}
+.subsol .logo{color:var(--crem);font-size:1.25rem}
+.subsol p{max-width:none}
+@media (min-width:760px){
+  .subsol__bara{flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+}
+
+/* Revelare la derulare: variate, discrete */
+.js .reveal{opacity:0;transform:translate3d(0,24px,0);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .reveal--stanga{opacity:0;transform:translate3d(-24px,0,0);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .reveal--zoom{opacity:0;transform:scale(.96);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .reveal.este-vizibil{opacity:1;transform:none}
+
+/* Apăsare pe telefon: zone de cel puțin 44px */
+@media (max-width:759px){
+  .nav{display:none}
+}
+
+/* Accesibilitate: transparență, contrast */
+@media (prefers-reduced-transparency: reduce){
+  .antet{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .antet{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none;border-top:1px solid var(--maro)}
+  .btn{background:#9e0f31}
+  .btn--contur{border-color:var(--maro)}
+  .produs{border-top-color:var(--maro)}
+  .cutie__marca{box-shadow:0 0 0 1.5px var(--maro)}
+  .bula{display:none}
+}
+
+/* Mișcare redusă: doar estompări scurte, fără glisări */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .hero__text>*,
+  .js .hero__cutie{animation:estompare .2s linear both;animation-delay:0s !important}
+  .js .reveal,
+  .js .reveal--stanga,
+  .js .reveal--zoom{transform:none;transition:opacity .2s linear}
+  .bule{display:none}
+  .cutie__capac{transition:none}
+  .btn{transition:background-color .2s,box-shadow .2s}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="antet">
+  <div class="wrap antet__bara">
+    <a class="logo" href="#acasa" aria-label="Gogoșerie, înapoi sus">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="#E8849E"/>
+        <circle cx="16" cy="16" r="5.5" fill="#FFF9F2"/>
+        <circle cx="9" cy="10" r="1.1" fill="#fff"/>
+        <circle cx="23" cy="9" r="1.1" fill="#fff"/>
+        <circle cx="25" cy="20" r="1.1" fill="#fff"/>
+        <circle cx="10" cy="22" r="1.1" fill="#fff"/>
+      </svg>
+      <span>Gogoșerie</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigare principală">
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="antet__dreapta">
+      <a class="btn btn--mic" href="tel:0773725157">Sună acum</a>
+      <button class="meniu-btn" type="button" aria-expanded="false" aria-controls="panou" aria-label="Deschide meniul">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="8" x2="20" y2="8"/>
+          <line x1="4" y1="16" x2="20" y2="16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="panou" id="panou" hidden>
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="acasa">
+    <div class="bule" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <h1 class="hero__titlu">Gogoșerie</h1>
+        <p class="hero__slogan">Gogoși, cafea, bună dispoziție</p>
+        <p class="hero__descriere">Descoperă gogoși proaspete și dulci în fiecare zi.</p>
+        <div class="hero__actiuni">
+          <a class="btn" href="tel:0773725157">Sună acum</a>
+          <a class="btn btn--contur" href="https://wa.me/40773725157?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20gogo%C8%99i." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero__cutie">
+        <button class="cutie" type="button" aria-expanded="false" aria-label="Ridică capacul cutiei cu gogoși">
+          <span class="cutie__corp" aria-hidden="true">
+            <span class="cutie__interior"></span>
+            <span class="cutie__panglica"></span>
+            <span class="cutie__donuts">
+              <span class="donut donut--roz"></span>
+              <span class="donut donut--menta"></span>
+              <span class="donut donut--ciocolata"></span>
+            </span>
+          </span>
+          <span class="cutie__capac" aria-hidden="true">
+            <span class="cutie__panglica"></span>
+            <span class="cutie__marca">Gogoșerie</span>
+          </span>
+        </button>
+        <p class="cutie__nota">Atinge cutia ca să vezi ce e înăuntru.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune fond-roz" id="despre">
+    <div class="wrap despre__grid">
+      <figure class="despre__foto reveal">
+        <img src="img/1.jpg" alt="Gogoși și prăjituri expuse într-o vitrină" width="800" height="1000" loading="lazy">
+      </figure>
+      <div class="despre__text reveal reveal--stanga">
+        <h2 class="titlu">Despre Gogoșerie</h2>
+        <p>Gogoșeria noastră din București te așteaptă cu produse de patiserie delicioase, cafea și prăjituri pentru toate gusturile.</p>
+        <p>Îți oferim o pauză dulce sau un mic dejun rapid, într-un spațiu prietenos.</p>
+        <p>Fie că vii cu familia, colegii sau doar pentru răsfăț personal, suntem aici pentru tine.</p>
+        <a class="btn btn--contur" href="#contact">Vezi unde ne găsești</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="produse">
+    <div class="wrap">
+      <h2 class="titlu reveal">Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <ul class="produse">
+        <li class="produs reveal" style="transition-delay:0s">
+          <span class="produs__pastila" style="--c:#E8849E" aria-hidden="true"></span>
+          <h3>Cafea și băuturi</h3>
+          <p>Cafea și băuturi, ca să începi ziua sau să-ți iei o pauză.</p>
+        </li>
+        <li class="produs reveal" style="transition-delay:.08s">
+          <span class="produs__pastila" style="--c:#A8D5C2" aria-hidden="true"></span>
+          <h3>Prăjituri</h3>
+          <p>Prăjituri pentru toate gusturile, de savurat pe loc sau de luat cu tine.</p>
+        </li>
+        <li class="produs reveal" style="transition-delay:.16s">
+          <span class="produs__pastila" style="--c:#4A2C2A" aria-hidden="true"></span>
+          <h3>Produse de patiserie</h3>
+          <p>Gogoși și alte produse de patiserie, proaspete în fiecare zi.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="avantaje fond-menta" aria-label="Ce găsești la noi">
+    <ul class="wrap avantaje__lista">
+      <li class="reveal">
+        <span class="avantaj__emoji" aria-hidden="true">🍩</span>
+        <div>
+          <h3>Gogoși și prăjituri</h3>
+          <p>Dulci, pentru o pauză scurtă</p>
+        </div>
+      </li>
+      <li class="reveal" style="transition-delay:.08s">
+        <span class="avantaj__emoji" aria-hidden="true">☕</span>
+        <div>
+          <h3>Cafea bună</h3>
+          <p>Perfectă pentru orice moment</p>
+        </div>
+      </li>
+      <li class="reveal" style="transition-delay:.16s">
+        <span class="avantaj__emoji" aria-hidden="true">😊</span>
+        <div>
+          <h3>Pentru toată lumea</h3>
+          <p>Vii cu familia, cu colegii sau de unul singur</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="sectiune" id="galerie">
+    <div class="wrap">
+      <h2 class="titlu reveal">Galerie</h2>
+      <div class="galerie">
+        <figure class="reveal--zoom reveal">
+          <img src="img/2.jpg" alt="Gogoși glazurate cu stropi colorați" width="800" height="600" loading="lazy">
+        </figure>
+        <figure class="reveal">
+          <img src="img/3.jpg" alt="Gogoși cu zahăr colorat, aranjate pe o tavă" width="800" height="600" loading="lazy">
+        </figure>
+        <figure class="reveal--zoom reveal">
+          <img src="img/4.jpg" alt="Gogoși și o cană de cafea" width="800" height="600" loading="lazy">
+        </figure>
+        <figure class="reveal">
+          <img src="img/5.jpg" alt="Prăjituri și gogoși cu ciocolată" width="800" height="600" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune fond-roz" id="contact">
+    <div class="wrap contact">
+      <div class="contact__text reveal reveal--stanga">
+        <h2 class="titlu">Contact</h2>
+        <p>Sună sau scrie-ne pe WhatsApp, ca să comanzi sau să ne întrebi orice.</p>
+        <p class="contact__telefon"><a href="tel:0773725157">0773 725 157</a></p>
+        <div class="contact__butoane">
+          <a class="btn" href="tel:0773725157">Sună acum</a>
+          <a class="btn btn--contur" href="https://wa.me/40773725157?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20gogo%C8%99i." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn--contur" href="https://www.google.com/maps/search/?api=1&query=Gogo%C8%99erie+Bucure%C8%99ti" target="_blank" rel="noopener">Vezi pe Google Maps</a>
+        </div>
+      </div>
+      <div class="contact__harta reveal">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1058542,44.399412,26.113854200000002,44.403412&layer=mapnik&marker=44.401412,26.1098542" title="Harta Gogoșerie, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol__bara">
+    <a class="logo" href="#acasa">Gogoșerie</a>
+    <p>Gogoșerie, București</p>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: Pexels, ThorstenF, StockSnap, AJS1</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reducere = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Meniul de pe telefon
+  var btnMeniu = document.querySelector('.meniu-btn');
+  var panou = document.getElementById('panou');
+  if (btnMeniu && panou) {
+    btnMeniu.addEventListener('click', function(){
+      var era = btnMeniu.getAttribute('aria-expanded') === 'true';
+      btnMeniu.setAttribute('aria-expanded', String(!era));
+      btnMeniu.setAttribute('aria-label', era ? 'Deschide meniul' : 'Închide meniul');
+      panou.hidden = era;
+    });
+    panou.addEventListener('click', function(e){
+      if (e.target.closest('a')) {
+        btnMeniu.setAttribute('aria-expanded', 'false');
+        btnMeniu.setAttribute('aria-label', 'Deschide meniul');
+        panou.hidden = true;
+      }
+    });
+  }
+
+  // Umbra antetului când pagina se derulează sub el
+  var antet = document.querySelector('.antet');
+  var derulare = function(){ antet.classList.toggle('is-derulat', window.scrollY > 8); };
+  derulare();
+  window.addEventListener('scroll', derulare, { passive: true });
+
+  // Capacul cutiei se ridică la atingere
+  var cutie = document.querySelector('.cutie');
+  if (cutie) {
+    cutie.addEventListener('click', function(){
+      var deschis = cutie.classList.toggle('is-deschis');
+      cutie.setAttribute('aria-expanded', String(deschis));
+      cutie.setAttribute('aria-label', deschis ? 'Închide capacul cutiei' : 'Ridică capacul cutiei cu gogoși');
+    });
+  }
+
+  // Dezvăluire la derulare
+  var elemente = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(intrari){
+      intrari.forEach(function(intrare){
+        if (intrare.isIntersecting) {
+          intrare.target.classList.add('este-vizibil');
+          obs.unobserve(intrare.target);
+        }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    elemente.forEach(function(el){ obs.observe(el); });
+  } else {
+    elemente.forEach(function(el){ el.classList.add('este-vizibil'); });
+  }
+
+  // Bulele din primul ecran (fără mișcare la reducere)
+  var container = document.querySelector('.bule');
+  if (container && !reducere.matches) {
+    for (var i = 0; i < 12; i++) {
+      var b = document.createElement('span');
+      var d = 14 + (i * 11) % 30;
+      b.className = 'bula';
+      b.style.width = d + 'px';
+      b.style.height = d + 'px';
+      b.style.left = (4 + (i * 29) % 90) + '%';
+      b.style.animationDuration = (12 + (i * 5) % 9) + 's';
+      b.style.animationDelay = (-(i * 1.9)) + 's';
+      container.appendChild(b);
+    }
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
