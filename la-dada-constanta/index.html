@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Dada · Gustări rapide în Constanța</title>
+<meta name="description" content="La Dada, Constanța: preparate calde, gustări și băuturi la un pas distanță. Sună sau scrie pe WhatsApp.">
+<meta name="theme-color" content="#FFD23F">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍔</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --yellow:#FFD23F;
+    --ink:#111111;
+    --red:#be123c;
+    --red-deep:#9f1239;
+    --white:#ffffff;
+    --muted:#3b3b3b;
+    --ease:cubic-bezier(.2,.8,.2,1);
+    --wrap:76rem;
+    --pad:clamp(1.25rem,5vw,3rem);
+    --sec:clamp(5rem,11vw,9rem);
+    --radius:1rem;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+    color:var(--ink);background:var(--white);
+    overflow-x:hidden;
+  }
+  @supports (overflow:clip){body{overflow-x:clip}}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  ::selection{background:var(--ink);color:var(--yellow)}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:.4rem}
+  .about :focus-visible,.foot :focus-visible{outline-color:var(--white)}
+
+  .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+  h1,h2,h3{font-family:"Anton",Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;line-height:1.05;letter-spacing:-0.02em}
+  section{scroll-margin-top:5rem}
+
+  .skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--yellow);padding:.75rem 1rem;border-radius:.6rem;text-decoration:none;font-weight:600}
+  .skip:focus{top:1rem}
+
+  /* ---------- Butoane ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+    min-height:3.25rem;padding:.85rem 1.4rem;border-radius:999px;border:0;
+    font:600 1.02rem/1.1 "Rubik",system-ui,sans-serif;letter-spacing:0;
+    text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;
+    transition:transform .1s ease,box-shadow .2s ease,background-color .2s ease;
+  }
+  .btn svg{width:1.15em;height:1.15em;flex:none}
+  .btn:active{transform:scale(.97)}
+  .btn-ink{background:var(--ink);color:var(--yellow)}
+  .btn-ink:hover{background:#000}
+  .btn-red{background:var(--red);color:var(--white)}
+  .btn-red:hover{background:var(--red-deep)}
+  .btn-white{background:var(--white);color:var(--ink)}
+  @media (hover:hover){
+    .btn:hover{box-shadow:0 .6rem 1.2rem -.65rem rgba(17,17,17,.6)}
+  }
+
+  /* ---------- Navigare ---------- */
+  .nav{
+    position:fixed;top:.5rem;left:.5rem;right:.5rem;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+    padding:.4rem .4rem .4rem 1rem;border-radius:1.1rem;
+    background:rgba(255,255,255,.6);
+    -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+    transition:box-shadow .3s ease;
+  }
+  .nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 .7rem 1.6rem -1rem rgba(17,17,17,.5)}
+  .brand{font-family:"Anton",Impact,sans-serif;font-size:1.55rem;line-height:1;text-transform:uppercase;letter-spacing:.01em;text-decoration:none;color:var(--ink)}
+  .nav-links{display:none;list-style:none;gap:.15rem}
+  .nav-links a{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .9rem;border-radius:.7rem;text-decoration:none;font-weight:600;font-size:.98rem;transition:background-color .2s ease}
+  .nav-links a:hover{background:rgba(17,17,17,.07)}
+  .nav-right{display:flex;align-items:center;gap:.35rem}
+  .nav .btn{min-height:2.75rem;padding:.6rem 1rem;font-size:.95rem}
+  .toggle{
+    position:relative;width:2.75rem;height:2.75rem;border:0;border-radius:.8rem;background:transparent;cursor:pointer;
+    -webkit-tap-highlight-color:transparent;transition:background-color .2s ease,transform .1s ease;
+  }
+  .toggle:active{transform:scale(.95)}
+  .toggle .bar{position:absolute;left:.75rem;right:.75rem;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s var(--ease)}
+  .toggle .bar:nth-child(1){top:calc(50% - 4px)}
+  .toggle .bar:nth-child(2){top:calc(50% + 3px)}
+  .toggle[aria-expanded="true"] .bar:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+  .toggle[aria-expanded="true"] .bar:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+  .panel{
+    position:fixed;top:4.4rem;left:.5rem;right:.5rem;z-index:49;
+    background:var(--white);border-radius:1.1rem;padding:.5rem;
+    box-shadow:0 1.2rem 2.4rem -1.2rem rgba(17,17,17,.45);
+    opacity:0;visibility:hidden;transform:translateY(-.5rem);
+    transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;
+  }
+  .panel.open{opacity:1;visibility:visible;transform:none}
+  .panel a:not(.btn){display:flex;align-items:center;min-height:3.25rem;padding:0 1rem;border-radius:.7rem;text-decoration:none;font-weight:600;font-size:1.15rem}
+  .panel a:not(.btn):active{background:rgba(17,17,17,.06)}
+  .panel .btn{width:100%;margin-top:.4rem}
+  @media (min-width:900px){
+    .nav{top:.9rem;left:max(1rem,calc(50% - 38rem));right:max(1rem,calc(50% - 38rem));padding-left:1.25rem}
+    .nav-links{display:flex}
+    .toggle,.panel{display:none}
+  }
+
+  /* ---------- Prima secțiune ---------- */
+  .hero{background:var(--yellow);position:relative;overflow:hidden;padding:5.75rem 0 clamp(3.5rem,8vw,6rem)}
+  .hero-grid{display:grid;gap:2.25rem}
+  .tag{display:inline-block;background:var(--ink);color:var(--yellow);font-size:.85rem;font-weight:600;letter-spacing:.04em;padding:.38rem .75rem;border-radius:.35rem;transform:rotate(-3deg)}
+  .hero h1{font-size:clamp(4.5rem,25vw,7rem);line-height:.95;letter-spacing:-0.01em;margin-top:.9rem}
+  .slogan{font-weight:700;font-size:clamp(1.3rem,4.6vw,2rem);line-height:1.2;letter-spacing:-0.01em;margin-top:1rem;max-width:20ch}
+  .lead{margin-top:.7rem;max-width:34ch;font-size:1.06rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+  .hero .actions .btn{flex:1 1 100%}
+  @media (min-width:480px){.hero .actions .btn{flex:0 0 auto}}
+  @media (min-width:900px){
+    .hero{min-height:min(100svh,60rem);display:flex;align-items:center;padding-top:7rem}
+    .hero-grid{grid-template-columns:1.05fr 1fr;align-items:center;gap:3rem}
+    .hero h1{font-size:clamp(7rem,14vw,12.5rem);line-height:.92}
+    .hero h1 .l2{display:block}
+  }
+
+  .hero-in{animation:rise .6s var(--ease) both;animation-delay:var(--d,0s)}
+  @keyframes rise{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}
+
+  /* Abțibildurile */
+  .collage{position:relative;width:100%;max-width:34rem;margin-inline:auto;aspect-ratio:1/1}
+  .st{position:absolute;animation:slap .55s var(--ease) both;animation-delay:var(--d,0s)}
+  @keyframes slap{
+    from{opacity:0;transform:scale(1.22) rotate(7deg)}
+    60%{opacity:1}
+    to{opacity:1;transform:none}
+  }
+  .sk{
+    transform:translateY(0) rotate(var(--r)) scale(1);
+    transition:transform .3s var(--ease);
+    filter:drop-shadow(0 .45rem .55rem rgba(17,17,17,.28)) drop-shadow(0 .06rem .06rem rgba(17,17,17,.18));
+    cursor:pointer;touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;
+  }
+  @media (hover:hover){.sk:hover{transform:translateY(-.3rem) rotate(calc(var(--r) - 2deg)) scale(1.01)}}
+  .sk.hop{animation:hop .42s var(--ease)}
+  @keyframes hop{
+    0%{transform:translateY(0) rotate(var(--r)) scale(1)}
+    35%{transform:translateY(-7%) rotate(calc(var(--r) - 3deg)) scale(1.04)}
+    70%{transform:translateY(1%) rotate(calc(var(--r) + 1deg)) scale(.99)}
+    100%{transform:translateY(0) rotate(var(--r)) scale(1)}
+  }
+  .sk-circle{background:var(--white);padding:.55rem;border-radius:50%}
+  .sk-circle img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%}
+  .sk-peel{position:relative}
+  .sk-peel .face{background:var(--white);padding:.5rem;border-radius:1.1rem;clip-path:polygon(0 0,100% 0,100% 80%,80% 100%,0 100%)}
+  .sk-peel .face img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.7rem}
+  .sk-peel .flap{position:absolute;left:80%;top:80%;width:20%;height:20%;background:#ecebe5;clip-path:polygon(100% 0,0 100%,0 0)}
+  .sk-svg svg{display:block;width:100%;height:auto;overflow:visible}
+  .st-burger{left:1%;top:9%;width:58%;z-index:2;--r:-5deg;--d:.32s}
+  .st-fries{right:0;top:0;width:42%;z-index:1;--r:7deg;--d:.44s}
+  .st-drink{right:5%;bottom:3%;width:25%;z-index:3;--r:-8deg;--d:.56s}
+  .st-burst{left:39%;bottom:1%;width:33%;z-index:4;--r:10deg;--d:.68s}
+
+  /* ---------- Meniu ---------- */
+  .menu{padding-block:var(--sec)}
+  .menu-grid{display:grid;gap:2.5rem}
+  .menu-head h2{font-size:clamp(3.2rem,13vw,7rem);line-height:1}
+  .menu-head p{max-width:38ch;margin-top:.75rem;font-size:1.12rem;color:var(--muted)}
+  .menu-photo{overflow:hidden;border-radius:var(--radius)}
+  .menu-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .menu-list{list-style:none}
+  .menu-list li{padding-block:1.5rem;border-top:2px solid var(--ink)}
+  .menu-list li:last-child{border-bottom:2px solid var(--ink)}
+  .menu-list h3{font-size:clamp(2.3rem,8vw,3.6rem);line-height:1}
+  .menu-list p{margin-top:.5rem;max-width:42ch;color:var(--muted)}
+  .menu-cta p{font-weight:600;font-size:1.12rem;max-width:36ch}
+  .menu-cta .actions{margin-top:1rem}
+  @media (min-width:900px){
+    .menu-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;row-gap:3rem}
+    .menu-head{grid-column:1/-1;display:flex;justify-content:space-between;align-items:flex-end;gap:2rem}
+    .menu-head p{margin-top:0;text-align:right}
+    .menu-photo{grid-column:1/6;grid-row:2/4;align-self:start}
+    .menu-photo img{aspect-ratio:4/5}
+    .menu-list{grid-column:7/13}
+    .menu-cta{grid-column:7/13}
+  }
+
+  /* ---------- Despre ---------- */
+  .about{background:var(--red);color:var(--white);padding-block:var(--sec)}
+  .about-grid{display:grid;gap:2.5rem}
+  .about h2{font-size:clamp(2.6rem,8.5vw,5.2rem);max-width:12ch}
+  .about-text p{margin-top:1.25rem;max-width:44ch;font-size:1.15rem;line-height:1.55}
+  .about-photo{overflow:hidden;border-radius:var(--radius)}
+  .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .perks{list-style:none;display:grid;gap:0;margin-top:clamp(3.5rem,8vw,6rem)}
+  .perks li{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:start;padding-block:1.5rem;border-top:2px solid rgba(255,255,255,.35)}
+  .perk-ico{grid-row:span 2;width:3rem;height:3rem;border-radius:50%;background:var(--yellow);color:var(--ink);display:grid;place-items:center}
+  .perk-ico svg{width:1.5rem;height:1.5rem}
+  .perks h3{font-size:1.75rem;color:var(--yellow);letter-spacing:-0.01em;line-height:1.1}
+  .perks p{color:rgba(255,255,255,.92)}
+  @media (min-width:900px){
+    .about-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:center}
+    .about-text{grid-column:1/7}
+    .about-photo{grid-column:8/13}
+    .perks{grid-template-columns:repeat(3,1fr);column-gap:2rem}
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--yellow);padding-block:var(--sec)}
+  .contact-grid{display:grid;gap:2.5rem}
+  .contact h2{font-size:clamp(2.8rem,9.5vw,5.6rem);max-width:11ch}
+  .contact-text > p{margin-top:1rem;max-width:40ch;font-size:1.12rem}
+  .phone-big{display:inline-block;margin-top:1.5rem;font-family:"Anton",Impact,sans-serif;font-size:clamp(2.4rem,10vw,4rem);line-height:1;letter-spacing:.01em;text-decoration:none;transition:color .2s ease}
+  .phone-big:hover{color:var(--red)}
+  .map iframe{display:block;width:100%;aspect-ratio:4/3;border:0;border-radius:var(--radius);background:#f3e7b8}
+  .map-link{display:inline-flex;align-items:center;min-height:2.75rem;margin-top:.5rem;font-weight:600;text-underline-offset:.25em;text-decoration-thickness:2px}
+  .map-link:hover{color:var(--red)}
+  @media (min-width:900px){
+    .contact-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:center}
+    .contact-text{grid-column:1/6}
+    .map{grid-column:7/13}
+  }
+
+  /* ---------- Subsol ---------- */
+  .foot{background:var(--ink);color:rgba(255,255,255,.78);padding-block:3.5rem 2.5rem;font-size:.9rem;letter-spacing:.02em}
+  .foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1.5rem}
+  .foot .brand{color:var(--yellow);font-size:2.6rem}
+  .foot-top p{margin-top:.4rem}
+  .foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+  .foot-links a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none;color:var(--white);font-weight:500}
+  .foot-links a:hover{color:var(--yellow)}
+  .foot-bottom{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;font-size:.82rem;letter-spacing:.03em}
+
+  /* ---------- Dezvăluiri la derulare ---------- */
+  html.js .reveal{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+  html.js .reveal[data-r="left"]{transform:translateX(-1.5rem)}
+  html.js .reveal[data-r="up"]{transform:translateY(1.25rem)}
+  html.js .reveal[data-r="zoom"] img{transform:scale(1.08);transition:transform .6s var(--ease)}
+  html.js .reveal.in{opacity:1;transform:none}
+  html.js .reveal.in img{transform:none}
+
+  /* ---------- Preferințe ---------- */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero-in,.st{animation:fade .2s ease both !important;animation-delay:0s !important}
+    .sk,.sk:hover{transition:none;transform:rotate(var(--r))}
+    .sk.hop{animation:none}
+    html.js .reveal,html.js .reveal[data-r]{transform:none !important;transition:opacity .2s ease}
+    html.js .reveal img{transform:none !important;transition:none}
+    .panel{transform:none;transition:opacity .2s ease,visibility .2s}
+    .toggle .bar{transition:none}
+  }
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-transparency:reduce){
+    .nav{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  @media (prefers-contrast:more){
+    .nav{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none;border:2px solid var(--ink)}
+    .panel{border:2px solid var(--ink)}
+    .menu-head p,.menu-list p{color:var(--ink)}
+    .perks p{color:var(--white)}
+    .btn-white{border:2px solid var(--ink)}
+    .foot{color:var(--white)}
+  }
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header>
+  <nav class="nav" id="nav" aria-label="Navigare principală">
+    <a class="brand" href="#top">La Dada</a>
+    <ul class="nav-links">
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="btn btn-ink" href="tel:0721523232">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        Sună acum
+      </a>
+      <button class="toggle" id="toggle" type="button" aria-expanded="false" aria-controls="panel" aria-label="Deschide navigarea">
+        <span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+  <div class="panel" id="panel">
+    <a href="#meniu">Meniu</a>
+    <a href="#despre">Despre</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-red" href="https://wa.me/40721523232?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva.">Scrie pe WhatsApp</a>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="hero-in" style="--d:0s"><span class="tag">Constanța</span></p>
+        <h1 id="titlu" class="hero-in" style="--d:.08s"><span class="l1">La</span> <span class="l2">Dada</span></h1>
+        <p class="slogan hero-in" style="--d:.18s">Gustări rapide, mereu la îndemână</p>
+        <p class="lead hero-in" style="--d:.24s">Preparate calde, gustări și băuturi la un pas distanță.</p>
+        <div class="actions hero-in" style="--d:.3s">
+          <a class="btn btn-ink" href="tel:0721523232">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-red" href="https://wa.me/40721523232?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4v-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="collage">
+        <div class="st st-burger">
+          <div class="sk sk-circle">
+            <img src="img/1.jpg" alt="Burger cu garnitură, servit ca la street food" width="600" height="600">
+          </div>
+        </div>
+        <div class="st st-fries">
+          <div class="sk sk-peel">
+            <div class="face"><img src="img/2.jpg" alt="Castron cu cartofi prăjiți, aurii" width="500" height="500"></div>
+            <span class="flap" aria-hidden="true"></span>
+          </div>
+        </div>
+        <div class="st st-drink" aria-hidden="true">
+          <div class="sk sk-svg">
+            <svg viewBox="0 0 120 170">
+              <g fill="#fff" stroke="#fff" stroke-width="12" stroke-linejoin="round">
+                <rect x="66" y="4" width="9" height="46" rx="3" transform="rotate(12 70 30)"/>
+                <path d="M30 40 Q60 22 90 40 Z"/>
+                <rect x="22" y="40" width="76" height="14" rx="6"/>
+                <path d="M27 54 H93 L85 156 Q84 162 78 162 H42 Q36 162 35 156 Z"/>
+              </g>
+              <rect x="66" y="4" width="9" height="46" rx="3" transform="rotate(12 70 30)" fill="#111"/>
+              <path d="M30 40 Q60 22 90 40 Z" fill="#111"/>
+              <rect x="22" y="40" width="76" height="14" rx="6" fill="#111"/>
+              <path d="M27 54 H93 L85 156 Q84 162 78 162 H42 Q36 162 35 156 Z" fill="#be123c"/>
+              <path d="M30 92 H90 L87.8 120 H32.2 Z" fill="#FFD23F"/>
+              <text x="60" y="113" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="19" fill="#111">DADA</text>
+              <rect x="38" y="62" width="5" height="24" rx="2.5" fill="#fff" opacity=".3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="st st-burst" aria-hidden="true">
+          <div class="sk sk-svg">
+            <svg viewBox="0 0 200 200">
+              <polygon fill="#be123c" stroke="#fff" stroke-width="10" stroke-linejoin="round"
+                points="194,100 177.3,120.7 181.4,147 156.6,156.6 147,181.4 120.7,177.3 100,194 79.3,177.3 53,181.4 43.4,156.6 18.6,147 22.7,120.7 6,100 22.7,79.3 18.6,53 43.4,43.4 53,18.6 79.3,22.7 100,6 120.7,22.7 147,18.6 156.6,43.4 181.4,53 177.3,79.3"/>
+              <text x="100" y="104" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="56" fill="#fff">CALD</text>
+              <text x="100" y="136" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="24" letter-spacing="1" fill="#FFD23F">ȘI RAPID</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap menu-grid">
+      <header class="menu-head">
+        <h2 id="meniu-titlu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p>Trei feluri de poftă, rezolvate repede. Alegi, comanzi, mănânci.</p>
+      </header>
+
+      <figure class="menu-photo reveal" data-r="zoom">
+        <img src="img/3.jpg" alt="Burger cu carne de vită, cașcaval și salată, cu o mușcătură luată" width="800" height="1000" loading="lazy">
+      </figure>
+
+      <ul class="menu-list">
+        <li class="reveal" data-r="left" style="--d:0s">
+          <h3>Preparate calde</h3>
+          <p>Mâncare caldă și sățioasă, pentru când ți-e foame de-adevăratelea. Bună la prânz, la fel de bună seara.</p>
+        </li>
+        <li class="reveal" data-r="left" style="--d:.08s">
+          <h3>Gustări</h3>
+          <p>Ceva mic și bun, pentru o poftă scurtă între două drumuri.</p>
+        </li>
+        <li class="reveal" data-r="left" style="--d:.16s">
+          <h3>Băuturi</h3>
+          <p>Ceva de băut lângă mâncare, ca pauza să fie completă.</p>
+        </li>
+      </ul>
+
+      <div class="menu-cta">
+        <p>Nu știi ce să alegi? Scrie-ne și îți spunem ce avem azi.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="https://wa.me/40721523232?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4v-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+          <a class="btn btn-ink" href="tel:0721523232">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 id="despre-titlu">Pauza de masă, mai relaxată</h2>
+          <p>La Dada e locul unde iei o masă rapidă sau o gustare bună ori de câte ori ți-e poftă.</p>
+          <p>Ambianța e prietenoasă, mâncarea e gustoasă, iar pauza de masă trece mai ușor. Te așteptăm cu rețete simple, pentru orice poftă.</p>
+        </div>
+        <figure class="about-photo reveal" data-r="zoom">
+          <img src="img/4.jpg" alt="Prietene care mănâncă fast food pe niște trepte, afară" width="800" height="1000" loading="lazy">
+        </figure>
+      </div>
+
+      <ul class="perks">
+        <li class="reveal" data-r="up" style="--d:0s">
+          <span class="perk-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M10 2h4"/></svg>
+          </span>
+          <h3>Rapid și simplu</h3>
+          <p>Comenzi fără timp mare de așteptare.</p>
+        </li>
+        <li class="reveal" data-r="up" style="--d:.08s">
+          <span class="perk-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4M15.5 14.6c2.6-.3 4.8 1.4 5.5 4.4"/></svg>
+          </span>
+          <h3>Pentru toți</h3>
+          <p>Preparate calde, gustări și băuturi.</p>
+        </li>
+        <li class="reveal" data-r="up" style="--d:.16s">
+          <span class="perk-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+          </span>
+          <h3>Ușor de găsit</h3>
+          <p>Ne găsești în Constanța.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-text">
+        <h2 id="contact-titlu">Ți-e poftă? Dă-ne de veste.</h2>
+        <p>Ne poți suna sau ne poți scrie pe WhatsApp. Ne găsești în Constanța.</p>
+        <a class="phone-big" href="tel:0721523232" aria-label="Sună la 0721523232">0721523232</a>
+        <div class="actions">
+          <a class="btn btn-ink" href="tel:0721523232">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-red" href="https://wa.me/40721523232?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-5 4v-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="map reveal" data-r="fade">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.620731499999998,44.2105135,28.6287315,44.2145135&amp;layer=mapnik&amp;marker=44.2125135,28.6247315" title="Harta: La Dada, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=La+Dada+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top">La Dada</a>
+        <p>Gustări rapide în Constanța</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="tel:0721523232">0721523232</a></li>
+        <li><a href="https://wa.me/40721523232?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva.">WhatsApp</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=La+Dada+Constan%C8%9Ba" target="_blank" rel="noopener">Google Maps</a></li>
+      </ul>
+    </div>
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Randgruppe, Pexels, AmbreVEGA, Surprising_Media</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* Umbra barei de sus, doar când pagina se derulează sub ea */
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* Navigarea de pe telefon */
+  var toggle = document.getElementById('toggle');
+  var panel = document.getElementById('panel');
+  function setPanel(open){
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Închide navigarea' : 'Deschide navigarea');
+    panel.classList.toggle('open', open);
+  }
+  toggle.addEventListener('click', function(){
+    setPanel(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setPanel(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && panel.classList.contains('open')) { setPanel(false); toggle.focus(); }
+  });
+  window.addEventListener('resize', function(){ if (window.innerWidth >= 900) setPanel(false); });
+
+  /* Abțibildurile sar puțin la atingere */
+  document.querySelectorAll('.sk').forEach(function(s){
+    s.addEventListener('pointerdown', function(){
+      if (reduce.matches) return;
+      s.classList.remove('hop');
+      void s.offsetWidth;
+      s.classList.add('hop');
+    });
+    s.addEventListener('animationend', function(e){
+      if (e.target === s && e.animationName === 'hop') s.classList.remove('hop');
+    });
+  });
+
+  /* Dezvăluiri la derulare: intră și ies pe același drum */
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) e.target.classList.add('in');
+      else if (e.boundingClientRect.top > 0) e.target.classList.remove('in');
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -8% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
