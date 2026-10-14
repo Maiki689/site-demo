@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poly Caffe, Constanța: întâlniri la o cafea bună</title>
+<meta name="description" content="Poly Caffe, cafenea primitoare din Constanța, cu cafea, băuturi calde, prăjituri și produse de patiserie proaspete. Pe loc sau la pachet.">
+<meta name="theme-color" content="#C8A27A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --kraft:#C8A27A;
+  --kraft-hi:#D4B28E;
+  --flour:#F7F2EA;
+  --crust:#7A4A26;
+  --ink:#1E1A17;
+  --stamp:#b45309;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:72rem;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --space:clamp(5rem,11vw,8.5rem);
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .2 0 0 0 0 .09 0 0 0 .32 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--flour);
+  overflow-x:hidden;
+}
+@supports (overflow-x:clip){body{overflow-x:clip}}
+img{display:block;max-width:100%}
+h1,h2,h3{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--stamp);outline-offset:3px;border-radius:.2rem}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+
+.skip{
+  position:absolute;left:1rem;top:-4rem;z-index:100;
+  background:var(--ink);color:var(--flour);padding:.75rem 1rem;border-radius:.4rem;
+  text-decoration:none;font-weight:600;
+}
+.skip:focus{top:1rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:.75rem 1.35rem;
+  border-radius:.4rem;border:2px solid transparent;
+  font:600 1rem/1.2 "Figtree",system-ui,sans-serif;
+  text-decoration:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .1s ease,background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease;
+}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--ink);color:var(--flour)}
+.btn-dark:hover{background:#352d27;box-shadow:0 .5rem 1.25rem -.6rem rgba(30,26,23,.7)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:rgba(30,26,23,.08)}
+.btn-kraft{background:var(--kraft);color:var(--ink)}
+.btn-kraft:hover{background:var(--kraft-hi);box-shadow:0 .5rem 1.25rem -.6rem rgba(0,0,0,.6)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1rem;font-size:.95rem}
+
+/* ---------- Navigare ---------- */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:50;
+  background:rgba(247,242,234,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  backdrop-filter:blur(18px) saturate(1.15);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s ease;
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav{background:rgba(247,242,234,.96)}
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 .4rem 1.4rem -.9rem rgba(30,26,23,.45)}
+.nav-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.3rem;
+  letter-spacing:-.02em;text-decoration:none;color:var(--ink);
+  min-height:2.75rem;display:inline-flex;align-items:center;
+}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .9rem;
+  font-weight:600;font-size:.95rem;text-decoration:none;color:var(--ink);border-radius:.4rem;
+  transition:background-color .2s ease;
+}
+.nav-links a:hover{background:rgba(30,26,23,.07)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.nav-toggle{
+  width:2.75rem;height:2.75rem;display:inline-grid;place-items:center;
+  background:transparent;border:0;border-radius:.4rem;color:var(--ink);cursor:pointer;
+  transition:transform .1s ease,background-color .2s;
+}
+.nav-toggle:active{transform:scale(.94)}
+.nav-toggle span{display:block;width:1.3rem;height:2px;background:currentColor;position:relative;transition:transform .3s var(--ease),background-color .2s}
+.nav-toggle span::before,.nav-toggle span::after{
+  content:"";position:absolute;left:0;width:100%;height:2px;background:currentColor;
+  transition:transform .3s var(--ease);
+}
+.nav-toggle span::before{transform:translateY(-.4rem)}
+.nav-toggle span::after{transform:translateY(.4rem)}
+.nav.open .nav-toggle span{background:transparent}
+.nav.open .nav-toggle span::before{transform:rotate(45deg)}
+.nav.open .nav-toggle span::after{transform:rotate(-45deg)}
+.nav-panel{
+  position:absolute;left:0;right:0;top:100%;
+  background:var(--flour);
+  box-shadow:0 1rem 2rem -1.2rem rgba(30,26,23,.45);
+  padding:.5rem var(--pad) 1.25rem;
+  opacity:0;visibility:hidden;transform:translateY(-.5rem);
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s .35s;
+}
+.nav.open .nav-panel{opacity:1;visibility:visible;transform:none;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.nav-panel a{
+  display:flex;align-items:center;min-height:3rem;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.4rem;letter-spacing:-.01em;
+  text-decoration:none;
+}
+@media (min-width:760px){
+  .nav-links{display:flex}
+  .nav-toggle,.nav-panel{display:none}
+}
+
+/* ---------- Prima secțiune: punga de hârtie ---------- */
+.hero{
+  position:relative;
+  background:var(--kraft) var(--noise);
+  padding-top:calc(4rem + clamp(1.75rem,6vw,5rem));
+  padding-bottom:clamp(3.5rem,8vw,6.5rem);
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:.5625rem;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='9' viewBox='0 0 16 9'%3E%3Cpath d='M0 9 8 0l8 9z' fill='%23F7F2EA'/%3E%3C/svg%3E") repeat-x left bottom/1rem .5625rem;
+}
+.hero-grid{display:grid;gap:2.75rem}
+.hero-copy{position:relative}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.bag-label{
+  display:inline-flex;align-items:center;margin-top:.5rem;
+  padding:.45rem .85rem;border:1.5px dashed rgba(30,26,23,.6);border-radius:.15rem;
+  font-size:.82rem;font-weight:600;letter-spacing:.05em;
+}
+.stamp{
+  position:relative;flex:none;
+  width:clamp(6.5rem,26vw,10.5rem);aspect-ratio:1;
+  color:var(--stamp);margin-top:-.5rem;margin-right:-.25rem;
+}
+.stamp svg{
+  width:100%;height:100%;display:block;overflow:visible;
+  mix-blend-mode:multiply;transform:rotate(-10deg);
+}
+.stamp::after{
+  content:"";position:absolute;inset:4%;border-radius:50%;
+  border:2px solid var(--stamp);opacity:0;pointer-events:none;
+}
+.hero h1{
+  font-weight:800;
+  font-size:clamp(3rem,13vw,6.5rem);
+  line-height:1;letter-spacing:-.035em;
+  margin-top:.9rem;
+}
+.hero h1 span{display:inline}
+.slogan{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:clamp(1.35rem,3.4vw,1.9rem);line-height:1.15;letter-spacing:-.015em;
+  margin-top:1rem;
+}
+.hero-desc{margin-top:.85rem;max-width:38ch;color:rgba(30,26,23,.88)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero-actions .btn{flex:1 1 auto}
+.hero-photo{
+  --arch:34%;
+  margin:0;overflow:hidden;aspect-ratio:4/3;
+  border-radius:50% 50% .5rem .5rem / var(--arch) var(--arch) .5rem .5rem;
+  background:var(--crust);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:560px){
+  .hero-actions .btn{flex:0 0 auto}
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.15fr .85fr;align-items:end;gap:clamp(3rem,6vw,5.5rem)}
+  .hero h1{font-size:clamp(4.6rem,8.4vw,8rem);line-height:.98;margin-top:1.25rem}
+  .hero h1 span{display:block}
+  .stamp{position:absolute;right:0;top:3.4rem;margin:0;width:clamp(8.5rem,13vw,11rem)}
+  .hero-photo{--arch:26%;aspect-ratio:4/5}
+}
+
+/* Secvența de intrare */
+@keyframes rise{from{opacity:0;transform:translateY(.75rem)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes press{
+  0%{opacity:0;transform:translateY(-1.5rem) scale(1.5) rotate(-26deg);animation-timing-function:cubic-bezier(.6,0,.9,.45)}
+  62%{opacity:1;transform:translateY(0) scale(.93) rotate(-10deg);animation-timing-function:cubic-bezier(.2,.8,.2,1)}
+  100%{opacity:1;transform:scale(1) rotate(-10deg)}
+}
+@keyframes thud{0%,100%{transform:none}35%{transform:translateY(2px)}}
+@keyframes halo{from{opacity:.4;transform:scale(.92)}to{opacity:0;transform:scale(1.35)}}
+.in{animation:rise .55s var(--ease) both;animation-delay:var(--d,0s)}
+.hero-photo img{animation:settle .9s var(--ease) .15s both}
+.stamp svg{animation:press .62s .75s both}
+.stamp::after{animation:halo .6s ease-out 1.14s both}
+.hero-copy{animation:thud .3s ease-out 1.13s both}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js .rv{opacity:0;transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.on{opacity:1;transform:none}
+.js .rv-slide{transform:translateX(-1rem)}
+.js .rv-up{transform:translateY(.75rem)}
+.js .rv-zoom img{transform:scale(1.07);transition:transform 1s var(--ease)}
+.js .rv-zoom.on img{transform:none}
+
+/* ---------- Despre ---------- */
+.about{padding-block:var(--space)}
+.about-grid{display:grid;gap:2.5rem}
+.about-photo{margin:0;overflow:hidden;border-radius:.5rem;aspect-ratio:5/4;background:var(--kraft)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.section-title{font-weight:800;font-size:clamp(2.1rem,5.5vw,3.6rem)}
+.about-text p{margin-top:1.1rem;max-width:36rem}
+.about-text p:first-of-type{margin-top:1.4rem;font-size:1.15rem;font-weight:500}
+.tags{list-style:none;padding:0;margin:clamp(3rem,7vw,5rem) 0 0;display:grid;gap:1rem}
+.tag{
+  position:relative;
+  background:var(--kraft) var(--noise);
+  clip-path:polygon(1.4rem 0,100% 0,100% 100%,1.4rem 100%,0 50%);
+  padding:1.2rem 1.4rem 1.25rem 3.3rem;
+}
+.tag::before{
+  content:"";position:absolute;left:1.45rem;top:50%;width:.8rem;height:.8rem;margin-top:-.4rem;
+  border-radius:50%;background:var(--flour);box-shadow:inset 0 1px 2px rgba(30,26,23,.45);
+}
+.tag h3{font-weight:700;font-size:1.2rem;letter-spacing:-.01em}
+.tag p{margin-top:.2rem;font-size:.97rem;color:rgba(30,26,23,.85)}
+@media (min-width:700px){.tags{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:880px){
+  .about-grid{grid-template-columns:5fr 6fr;align-items:center;gap:clamp(3rem,7vw,6rem)}
+  .about-photo{aspect-ratio:4/5}
+}
+
+/* ---------- Meniu ---------- */
+.menu{background:var(--ink);color:var(--flour);padding-block:var(--space)}
+.menu :focus-visible{outline-color:var(--kraft)}
+.menu-intro{margin-top:.9rem;color:rgba(247,242,234,.78);max-width:40ch}
+.menu-grid{
+  display:grid;gap:2rem;margin-top:clamp(2.25rem,5vw,3.5rem);
+  grid-template-areas:"tabs" "stage" "cta";
+}
+.tabs{grid-area:tabs;display:flex;flex-direction:column;border-top:1px solid rgba(247,242,234,.16)}
+.tab{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  width:100%;min-height:3rem;padding:1.05rem 0;
+  background:none;border:0;border-bottom:1px solid rgba(247,242,234,.16);
+  text-align:left;cursor:pointer;color:rgba(247,242,234,.55);
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:clamp(1.5rem,6.4vw,2.8rem);line-height:1.1;letter-spacing:-.02em;
+  -webkit-tap-highlight-color:transparent;
+  transition:color .25s ease;
+}
+.tab:hover{color:rgba(247,242,234,.82)}
+.tab[aria-selected="true"]{color:var(--flour)}
+.tab .mark{
+  flex:none;width:1.1rem;height:1.1rem;border-radius:50%;
+  border:2px solid var(--kraft);opacity:.45;transform:scale(.65);
+  transition:transform .35s var(--ease),opacity .35s var(--ease),background-color .35s ease;
+}
+.tab[aria-selected="true"] .mark{opacity:1;transform:scale(1);background:var(--kraft)}
+.stage{grid-area:stage;display:grid}
+.panel{
+  grid-area:1/1;opacity:0;visibility:hidden;
+  transition:opacity .5s var(--ease),visibility 0s .5s;
+}
+.panel.is-active{opacity:1;visibility:visible;transition:opacity .5s var(--ease)}
+.panel figure{margin:0;overflow:hidden;border-radius:.5rem;aspect-ratio:4/3;background:#2b2520}
+.panel img{width:100%;height:100%;object-fit:cover;transform:scale(1.05);transition:transform .8s var(--ease)}
+.panel.is-active img{transform:none}
+.panel p{margin-top:1rem;color:rgba(247,242,234,.82);max-width:42ch}
+.menu-cta{grid-area:cta}
+@media (min-width:880px){
+  .menu-grid{
+    grid-template-columns:5fr 7fr;column-gap:clamp(3rem,6vw,5rem);row-gap:2.25rem;
+    grid-template-areas:"tabs stage" "cta stage";align-items:start;
+  }
+  .panel figure{aspect-ratio:5/4}
+}
+
+/* ---------- Contact ---------- */
+.contact{padding-block:var(--space)}
+.contact-grid{display:grid;gap:2.75rem}
+.contact-text p{margin-top:1.1rem;max-width:36ch}
+.phone-big{
+  display:inline-block;margin-top:1.6rem;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  font-size:clamp(2rem,6.5vw,3rem);letter-spacing:-.02em;line-height:1.1;
+  text-decoration:none;color:var(--ink);
+  border-bottom:.2rem solid var(--kraft);padding-bottom:.15rem;
+  transition:border-color .2s ease;
+}
+.phone-big:hover{border-color:var(--crust)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.maps-link{
+  display:inline-flex;align-items:center;gap:.5rem;min-height:2.75rem;margin-top:1rem;
+  font-weight:600;color:var(--crust);text-underline-offset:.25em;text-decoration-thickness:1.5px;
+}
+.maps-link svg{width:1.1em;height:1.1em}
+.map{
+  margin:0;overflow:hidden;border-radius:.5rem;aspect-ratio:4/3;background:var(--kraft);
+}
+.map iframe{display:block;width:100%;height:100%;border:0}
+@media (min-width:880px){
+  .contact-grid{grid-template-columns:5fr 7fr;align-items:center;gap:clamp(3rem,6vw,5rem)}
+}
+
+/* ---------- Subsol ---------- */
+.footer{background:var(--ink);color:rgba(247,242,234,.72);padding-block:3rem 2.5rem}
+.footer :focus-visible{outline-color:var(--kraft)}
+.footer-grid{display:grid;gap:1.75rem}
+.footer .f-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:-.02em;color:var(--flour)}
+.footer .f-city{margin-top:.25rem;font-size:.9rem;letter-spacing:.03em}
+.footer small{display:block;font-size:.82rem;line-height:1.6;letter-spacing:.03em}
+.footer a{color:var(--flour);text-underline-offset:.2em}
+.footer .f-tel{display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600;letter-spacing:.02em}
+@media (min-width:760px){
+  .footer-grid{grid-template-columns:1fr auto;align-items:end}
+  .footer-meta{text-align:right}
+}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  @keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+  .in,.hero-photo img,.stamp svg{animation:fadeOnly .2s ease both;animation-delay:0s}
+  .stamp svg{transform:rotate(-10deg)}
+  .stamp::after,.hero-copy{animation:none}
+  .js .rv,.js .rv-slide,.js .rv-up{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .js .rv-zoom img,.panel img{transform:none;transition:none}
+  .panel,.panel.is-active{transition:opacity .2s ease}
+  .nav-panel,.nav.open .nav-panel{transform:none;transition:opacity .2s ease}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--ink)}
+  .hero-desc,.tag p{color:var(--ink)}
+  .bag-label{border-style:solid;border-color:var(--ink)}
+  .tab{color:rgba(247,242,234,.85)}
+  .menu-intro,.panel p,.footer{color:var(--flour)}
+  .btn-dark,.btn-kraft{border-color:var(--ink)}
+  .menu .btn-kraft{border-color:var(--flour)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-bar">
+    <a class="brand" href="#acasa">Poly Caffe</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-dark btn-sm" href="tel:0722543305">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.33.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+        Sună acum
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Deschide navigarea"><span></span></button>
+    </div>
+  </div>
+  <div class="nav-panel" id="navPanel">
+    <a href="#despre">Despre</a>
+    <a href="#meniu">Meniu</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="acasa" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="hero-top">
+          <span class="bag-label in" style="--d:.05s">Cafenea în Constanța</span>
+          <span class="stamp" aria-hidden="true">
+            <svg viewBox="0 0 200 200" focusable="false">
+              <defs>
+                <path id="arcTop" d="M36 100a64 64 0 0 1 128 0"/>
+                <path id="arcBot" d="M27 100a73 73 0 0 0 146 0"/>
+                <filter id="inkRough" x="-5%" y="-5%" width="110%" height="110%">
+                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3" result="n"/>
+                  <feDisplacementMap in="SourceGraphic" in2="n" scale="3" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="2" seed="8" result="b"/>
+                  <feColorMatrix in="b" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2 0 0 0 1.9" result="m"/>
+                  <feComposite in="d" in2="m" operator="in"/>
+                </filter>
+              </defs>
+              <g filter="url(#inkRough)">
+                <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="5"/>
+                <circle cx="100" cy="100" r="85" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="100" cy="100" r="50" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <text fill="currentColor" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="21" letter-spacing="3">
+                  <textPath href="#arcTop" startOffset="50%" text-anchor="middle">POLY CAFFE</textPath>
+                </text>
+                <text fill="currentColor" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="15" letter-spacing="4">
+                  <textPath href="#arcBot" startOffset="50%" text-anchor="middle">CONSTANȚA</textPath>
+                </text>
+                <g fill="currentColor">
+                  <ellipse cx="32.5" cy="100" rx="4.5" ry="7" transform="rotate(-20 32.5 100)"/>
+                  <ellipse cx="167.5" cy="100" rx="4.5" ry="7" transform="rotate(20 167.5 100)"/>
+                </g>
+                <g fill="currentColor" stroke="currentColor" stroke-linecap="round">
+                  <path d="M79 93h34v9a17 17 0 0 1-34 0z" stroke="none"/>
+                  <path d="M113 96h3.5a6 6 0 0 1 0 12H112" fill="none" stroke-width="3.2"/>
+                  <rect x="73" y="121" width="46" height="3.6" rx="1.8" stroke="none"/>
+                  <path d="M89 86c-3-4 3-6 0-10M100 86c-3-4 3-6 0-10" fill="none" stroke-width="2.6"/>
+                </g>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <h1 id="titlu" class="in" style="--d:.12s"><span>Poly</span> <span>Caffe</span></h1>
+        <p class="slogan in" style="--d:.24s">Întâlniri la o cafea bună</p>
+        <p class="hero-desc in" style="--d:.32s">Cafenea primitoare cu cafea, băuturi calde, prăjituri și produse de patiserie. Stai cu prietenii sau ia-ți cafeaua la pachet.</p>
+        <div class="hero-actions in" style="--d:.4s">
+          <a class="btn btn-dark" href="tel:0722543305">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.33.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40722543305?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20cafea%20sau%20gust%C4%83ri." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path fill="currentColor" d="M9.2 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.3 1.6 2.3 2.1.2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4 0 .4-.1 1-.6 1.4-.5.4-1.4.6-2.6.2a8.7 8.7 0 0 1-4.6-4.3c-.6-1.2-.4-2.2 0-2.8z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/1.jpg" alt="Barista care pregătește cafea la espressor, într-o cafenea" width="1200" height="1500" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <figure class="about-photo rv rv-zoom">
+          <img src="img/2.jpg" alt="Doi prieteni stau de vorbă la o masă de cafenea, cu prăjituri în față" loading="lazy" width="1200" height="1500">
+        </figure>
+        <div class="about-text rv rv-up">
+          <h2 class="section-title" id="despre-titlu">Un loc de răgaz, aproape de casă</h2>
+          <p>La Poly Caffe te bucuri de o pauză plăcută alături de prieteni sau de o cafea bună la pachet.</p>
+          <p>Atmosfera e relaxată, așa că revii oricând ai nevoie de un moment doar al tău. Mereu găsești aici băuturi calde, prăjituri și produse de patiserie proaspete.</p>
+        </div>
+      </div>
+      <ul class="tags" aria-label="De ce să treci pe la noi">
+        <li class="tag rv rv-slide" style="--d:0s">
+          <h3>Ambianță plăcută</h3>
+          <p>Relaxare aproape de casă</p>
+        </li>
+        <li class="tag rv rv-slide" style="--d:.1s">
+          <h3>Produse proaspete</h3>
+          <p>Prăjituri și produse de patiserie proaspete</p>
+        </li>
+        <li class="tag rv rv-slide" style="--d:.2s">
+          <h3>La îndemână</h3>
+          <p>O cafea bună, pe loc sau la pachet</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <div class="rv">
+        <h2 class="section-title" id="meniu-titlu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="menu-intro">Ce găsești la tejghea, pentru o pauză pe loc sau la pachet. Alege și vezi.</p>
+      </div>
+      <div class="menu-grid">
+        <div class="tabs" role="tablist" aria-label="Categorii din meniu">
+          <button class="tab" role="tab" id="tab-cafea" aria-controls="panel-cafea" aria-selected="true" tabindex="0">Cafea și băuturi<span class="mark" aria-hidden="true"></span></button>
+          <button class="tab" role="tab" id="tab-prajituri" aria-controls="panel-prajituri" aria-selected="false" tabindex="-1">Prăjituri<span class="mark" aria-hidden="true"></span></button>
+          <button class="tab" role="tab" id="tab-patiserie" aria-controls="panel-patiserie" aria-selected="false" tabindex="-1">Produse de patiserie<span class="mark" aria-hidden="true"></span></button>
+        </div>
+        <div class="stage">
+          <div class="panel is-active" role="tabpanel" id="panel-cafea" aria-labelledby="tab-cafea">
+            <figure><img src="img/5.jpg" alt="Boabe de cafea prăjită, de aproape" loading="lazy" width="1500" height="1200"></figure>
+            <p>Cafea bună și băuturi calde, de savurat la masă sau de luat cu tine la pachet.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="panel-prajituri" aria-labelledby="tab-prajituri" aria-hidden="true">
+            <figure><img src="img/4.jpg" alt="Vitrină cu gogoși glazurate și prăjituri asortate" loading="lazy" width="1500" height="1200"></figure>
+            <p>Ceva dulce lângă cafea, pentru tine sau de împărțit cu prietenii.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="panel-patiserie" aria-labelledby="tab-patiserie" aria-hidden="true">
+            <figure><img src="img/3.jpg" alt="Ceașcă de cafea alături de produse de patiserie proaspete" loading="lazy" width="1500" height="1200"></figure>
+            <p>Patiserie proaspătă, bună dimineața sau la o pauză scurtă în timpul zilei.</p>
+          </div>
+        </div>
+        <div class="menu-cta">
+          <a class="btn btn-kraft" href="https://wa.me/40722543305?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20cafea%20sau%20gust%C4%83ri." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path fill="currentColor" d="M9.2 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.3 1.6 2.3 2.1.2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4 0 .4-.1 1-.6 1.4-.5.4-1.4.6-2.6.2a8.7 8.7 0 0 1-4.6-4.3c-.6-1.2-.4-2.2 0-2.8z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-text rv rv-up">
+        <h2 class="section-title" id="contact-titlu">Treci pe la noi</h2>
+        <p>Ne găsești în Constanța. Deschide harta ca să vezi drumul, sună-ne sau scrie-ne pe WhatsApp.</p>
+        <a class="phone-big" href="tel:0722543305" aria-label="Sună la 0722 543 305">0722 543 305</a>
+        <div class="contact-actions">
+          <a class="btn btn-dark" href="tel:0722543305">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.33.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-line" href="https://wa.me/40722543305?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20cafea%20sau%20gust%C4%83ri." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path fill="currentColor" d="M9.2 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.7c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.5.8 1.3 1.6 2.3 2.1.2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4 0 .4-.1 1-.6 1.4-.5.4-1.4.6-2.6.2a8.7 8.7 0 0 1-4.6-4.3c-.6-1.2-.4-2.2 0-2.8z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+        <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Poly+Caffe+Constan%C8%9Ba" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Deschide în Google Maps
+        </a>
+      </div>
+      <figure class="map rv">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.620947299999997,44.1945376,28.6289473,44.1985376&amp;layer=mapnik&amp;marker=44.1965376,28.6249473" title="Harta cu locul unde se află Poly Caffe, în Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="f-name">Poly Caffe</p>
+      <p class="f-city">Cafenea în Constanța</p>
+      <a class="f-tel" href="tel:0722543305">0722 543 305</a>
+    </div>
+    <div class="footer-meta">
+      <small>Model de site (demo)</small>
+      <small>Fotografii ilustrative de pe Pixabay: danymena88, StockSnap, congerdesign, Pexels, RoyBuri</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  var toggle = nav.querySelector('.nav-toggle');
+
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  function setOpen(open){
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Închide navigarea' : 'Deschide navigarea');
+  }
+  toggle.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('.nav-panel a').forEach(function(a){
+    a.addEventListener('click', function(){ setOpen(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && nav.classList.contains('open')) { setOpen(false); toggle.focus(); }
+  });
+
+  /* Meniu: categorii */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(i, focus){
+    tabs.forEach(function(t, j){
+      var on = i === j;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panel.classList.toggle('is-active', on);
+      if (on) panel.removeAttribute('aria-hidden'); else panel.setAttribute('aria-hidden','true');
+    });
+    if (focus) tabs[i].focus();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(i); });
+    t.addEventListener('keydown', function(e){
+      var k = e.key, n = tabs.length, next = null;
+      if (k === 'ArrowDown' || k === 'ArrowRight') next = (i + 1) % n;
+      else if (k === 'ArrowUp' || k === 'ArrowLeft') next = (i - 1 + n) % n;
+      else if (k === 'Home') next = 0;
+      else if (k === 'End') next = n - 1;
+      if (next !== null){ e.preventDefault(); select(next, true); }
+    });
+  });
+
+  /* Dezvăluiri la derulare */
+  var items = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){ en.target.classList.add('on'); io.unobserve(en.target); }
+    });
+  }, {threshold: reduce ? 0 : 0.15, rootMargin: '0px 0px -5% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
