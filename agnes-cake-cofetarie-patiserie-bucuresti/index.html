@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>Agnes cake, cofetărie și patiserie în București</title>
+<meta name="description" content="Agnes cake, cofetărie și patiserie în București, pe Strada Izvorul Rece. Prăjituri și produse de patiserie proaspete.">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --flour:#F7F2EA;
+  --kraft:#C8A27A;
+  --crust:#7A4A26;
+  --ink:#1E1A17;
+  --accent:#b45309;
+  --accent-d:#8f3f06;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,4vw,2.5rem);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"Figtree",system-ui,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  color:var(--ink);
+  background:var(--flour);
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+h1,h2,h3{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+}
+p{margin:0}
+a{color:inherit}
+ul{list-style:none;margin:0;padding:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{width:min(1180px,100% - 2*var(--pad));margin-inline:auto}
+.section{padding-block:clamp(4rem,10vw,7.5rem)}
+.section-head{max-width:40rem;margin-bottom:clamp(2.5rem,5vw,3.75rem)}
+h2{font-size:clamp(2.1rem,5.2vw,3.6rem)}
+.sub{margin-top:.9rem;color:rgba(30,26,23,.78);max-width:36ch}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.4rem;border-radius:999px;
+  font-family:"Figtree",sans-serif;font-weight:600;font-size:1rem;line-height:1.2;
+  text-decoration:none;text-align:center;cursor:pointer;
+  border:1.5px solid transparent;
+  transition:background-color .2s ease,color .2s ease,box-shadow .25s ease,transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-d);box-shadow:0 8px 18px -10px rgba(143,63,6,.8)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--flour)}
+.btn-sm{min-height:44px;padding:.55rem 1.05rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.actions .btn{flex:1 1 15rem}
+
+/* Sticky glass header */
+.site-head{
+  position:sticky;top:0;z-index:20;
+  background:rgba(247,242,234,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease);
+}
+.site-head.is-scrolled{
+  box-shadow:0 10px 28px -16px rgba(30,26,23,.35),inset 0 1px 0 rgba(255,255,255,.6);
+}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.logo{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.25rem;
+  letter-spacing:-.01em;text-decoration:none;
+}
+.nav-links{display:none;gap:.25rem}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:44px;padding:.5rem .85rem;
+  border-radius:999px;text-decoration:none;font-weight:600;color:var(--ink);
+  transition:background-color .2s ease;
+}
+.nav-links a:hover{background:rgba(30,26,23,.07)}
+@media (min-width:800px){.nav-links{display:flex}}
+
+/* Hero */
+.hero{padding:clamp(2.5rem,7vw,5rem) 0 clamp(3rem,8vw,6rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr 1fr}}
+.eyebrow{
+  display:inline-block;background:var(--kraft);color:var(--ink);
+  font-weight:600;font-size:.92rem;letter-spacing:.01em;
+  padding:.4rem .85rem;border-radius:4px;
+}
+.hero h1{
+  font-size:clamp(3.2rem,13vw,8.5rem);
+  line-height:1;
+  margin-top:1.1rem;
+}
+.lead{
+  margin-top:1.1rem;
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-weight:500;
+  font-size:clamp(1.25rem,2.4vw,1.5rem);
+  line-height:1.25;
+  letter-spacing:-.01em;
+  max-width:24ch;
+}
+.hero-desc{margin-top:.8rem;max-width:34ch;color:rgba(30,26,23,.8)}
+.hero-text .actions{margin-top:1.75rem}
+.hero-text > *{animation:rise .7s var(--ease) both}
+.hero-text > :nth-child(2){animation-delay:.08s}
+.hero-text > :nth-child(3){animation-delay:.16s}
+.hero-text > :nth-child(4){animation-delay:.22s}
+.hero-text > :nth-child(5){animation-delay:.28s}
+
+.hero-media{position:relative;margin:0}
+.hero-media img{
+  width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;
+}
+@media (min-width:900px){.hero-media img{aspect-ratio:1/1}}
+
+/* Ștampila: elementul memorabil */
+.stamp{
+  position:absolute;
+  width:118px;
+  right:-4px;
+  bottom:-34px;
+  z-index:2;
+  color:var(--accent);
+  mix-blend-mode:multiply;
+  cursor:pointer;
+  animation:stamp-in .8s cubic-bezier(.3,.1,.2,1) .35s both;
+}
+.stamp svg{display:block;width:100%;height:auto;transform:rotate(-9deg)}
+.stamp.again{animation:stamp-in .8s cubic-bezier(.3,.1,.2,1) 0s both}
+@media (min-width:900px){
+  .stamp{width:200px;right:auto;left:-72px;bottom:-40px}
+}
+
+/* Despre */
+.despre{background:var(--kraft)}
+.despre-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.despre-grid{grid-template-columns:1fr 1fr}}
+.despre-fig{margin:0}
+.despre-fig img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+.despre .lead2{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+  font-size:clamp(1.4rem,2.6vw,1.85rem);line-height:1.2;letter-spacing:-.015em;
+  margin-top:1.5rem;max-width:24ch;
+}
+.despre .body-text{margin-top:1.1rem;max-width:58ch}
+
+/* Produse: etichete ca pe pungi */
+.tag-grid{display:grid;gap:1.25rem}
+@media (min-width:560px){.tag-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:960px){.tag-grid{grid-template-columns:repeat(4,1fr)}}
+.tag-item{
+  position:relative;
+  background:var(--kraft);
+  border-radius:6px;
+  padding:2.6rem 1.5rem 1.8rem;
+  text-align:center;
+  transition:opacity .55s var(--ease),transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.tag-item::before{
+  content:"";
+  position:absolute;top:14px;left:50%;
+  width:12px;height:12px;margin-left:-6px;border-radius:50%;
+  background:var(--flour);
+  box-shadow:inset 0 1px 2px rgba(30,26,23,.35);
+}
+.tag-item h3{font-size:1.3rem;font-weight:700}
+.tag-item p{margin-top:.55rem;font-size:.98rem;color:rgba(30,26,23,.88)}
+.tag-item:hover{box-shadow:0 14px 26px -18px rgba(30,26,23,.55)}
+.produse .cta-row{margin-top:2.75rem;display:flex;justify-content:center}
+
+/* Galerie */
+.galerie{background:var(--crust);color:var(--flour)}
+.galerie h2{color:var(--flour)}
+.gal-grid{display:grid;gap:.75rem}
+.gal-grid figure{margin:0;overflow:hidden;border-radius:3px;aspect-ratio:4/3}
+.gal-grid figure:first-child{aspect-ratio:4/5}
+.gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gal-grid figure:hover img{transform:scale(1.03)}
+@media (min-width:760px){
+  .gal-grid{grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;height:600px}
+  .gal-grid figure,.gal-grid figure:first-child{aspect-ratio:auto;height:100%}
+  .gal-grid figure:first-child{grid-row:1 / span 2}
+}
+
+/* Avantaje */
+.avant{background:var(--kraft)}
+.avant-title{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:clamp(2.5rem,5vw,3.75rem)}
+.avant-grid{display:grid;gap:2.5rem}
+@media (min-width:800px){.avant-grid{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.avant-item .ico{
+  display:grid;place-items:center;
+  width:4.25rem;height:4.25rem;border-radius:50%;
+  background:var(--flour);font-size:1.9rem;
+  box-shadow:inset 0 0 0 1px rgba(30,26,23,.08);
+}
+.avant-item h3{font-size:1.35rem;font-weight:700;margin-top:1.25rem}
+.avant-item p{margin-top:.5rem;max-width:30ch}
+
+/* Contact */
+.contact-grid{display:grid;gap:clamp(2.5rem,5vw,4rem)}
+@media (min-width:900px){.contact-grid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.addr{
+  margin-top:1.25rem;
+  font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;font-weight:600;letter-spacing:-.01em;
+}
+.phone-big{
+  display:inline-block;margin-top:1rem;padding:.25rem 0;min-height:44px;
+  font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;
+  color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent);
+}
+.contact-info .actions{margin-top:2rem}
+.map{
+  width:100%;height:320px;border:0;border-radius:3px;display:block;
+}
+@media (min-width:900px){.map{height:420px}}
+
+/* Subsol */
+.site-foot{background:var(--ink);color:rgba(247,242,234,.82);padding:3.5rem 0 2.5rem;font-size:.95rem;letter-spacing:.01em}
+.foot-grid{display:grid;gap:1.5rem}
+@media (min-width:800px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot-name{font-family:"Bricolage Grotesque",sans-serif;font-size:1.5rem;font-weight:700;color:var(--flour);letter-spacing:-.01em}
+.site-foot a{color:var(--flour)}
+.foot-credit{
+  margin-top:2.5rem;padding-top:1.5rem;
+  border-top:1px solid rgba(247,242,234,.16);
+  font-size:.85rem;color:rgba(247,242,234,.7);
+}
+
+/* Dezvăluire la derulare */
+.js [data-reveal]{
+  opacity:0;
+  transform:translate3d(0,18px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+.js [data-reveal="left"]{transform:translate3d(-22px,0,0)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* Animații de bază */
+@keyframes stamp-in{
+  0%{opacity:0;transform:scale(1.6)}
+  35%{opacity:.95;transform:scale(.94)}
+  50%{opacity:1;transform:scale(1.02)}
+  62%{transform:scale(.99)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,14px,0)}
+  to{opacity:1;transform:none}
+}
+@keyframes fade-in{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* Transparență redusă: fundaluri opace */
+@media (prefers-reduced-transparency:reduce){
+  .site-head{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+/* Contrast crescut: margini clare, fundaluri pline */
+@media (prefers-contrast:more){
+  .site-head{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--ink)}
+  .btn-ghost{border-width:2px}
+  .map{border:2px solid var(--ink)}
+  .tag-item{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .stamp{mix-blend-mode:normal}
+}
+/* Mișcare redusă: doar estompări scurte */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-delay:0s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+  }
+  .stamp,.stamp.again,.hero-text > *{animation-name:fade-in !important}
+  .js [data-reveal]{transform:none !important;transition:opacity .2s ease !important}
+  .tag-item:hover{box-shadow:none}
+  .gal-grid img{transition:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="#top">Agnes cake</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#produse">Produse</a>
+      <a href="#despre">Despre</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0727282222">Sună acum</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="titlu-principal">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Cofetărie și patiserie, București</p>
+        <h1 id="titlu-principal">Agnes cake</h1>
+        <p class="lead">Deserturi delicioase, aproape de tine</p>
+        <p class="hero-desc">Bucură-te de prăjituri și produse de patiserie proaspete.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0727282222">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40727282222?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20produse%20de%20cofet%C4%83rie%20sau%20patiserie.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="img/1.jpg" alt="Tort rotund cu fructe de pădure și ciocolată" fetchpriority="high">
+        <div class="stamp" aria-hidden="true" title="Apasă ștampila ca să o reapeși">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <path id="arc-sus" d="M24,100 a76,76 0 0 1 152,0"/>
+              <path id="arc-jos" d="M12,100 a88,88 0 0 0 176,0"/>
+              <filter id="ink-speck" x="0" y="0" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="zgomot"/>
+                <feColorMatrix in="zgomot" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.6 2" result="masca"/>
+                <feComposite in="SourceGraphic" in2="masca" operator="in"/>
+              </filter>
+            </defs>
+            <g filter="url(#ink-speck)" fill="currentColor" stroke="currentColor">
+              <circle cx="100" cy="100" r="96" fill="none" stroke-width="4"/>
+              <circle cx="100" cy="100" r="70" fill="none" stroke-width="1.6"/>
+              <text font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="16" letter-spacing="2.4" stroke="none">
+                <textPath href="#arc-sus" startOffset="50%" text-anchor="middle">AGNES CAKE</textPath>
+              </text>
+              <text font-family="Bricolage Grotesque, sans-serif" font-weight="600" font-size="12.5" letter-spacing="2" stroke="none">
+                <textPath href="#arc-jos" startOffset="50%" text-anchor="middle">COFETĂRIE ȘI PATISERIE</textPath>
+              </text>
+              <text x="100" y="118" text-anchor="middle" font-size="46" stroke="none">🍰</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre section" id="despre" aria-labelledby="t-despre">
+    <div class="wrap despre-grid">
+      <figure class="despre-fig" data-reveal="left">
+        <img src="img/2.jpg" alt="Vitrină cu gogoși, prăjituri și produse de patiserie" loading="lazy">
+      </figure>
+      <div data-reveal>
+        <h2 id="t-despre">Despre noi</h2>
+        <p class="lead2">Produse de cofetărie și patiserie, făcute cu grijă.</p>
+        <p class="body-text">La Agnes cake găsești prăjituri și produse de patiserie făcute cu grijă, pentru orice ocazie sau pur și simplu pentru o clipă dulce. Suntem cofetăria de cartier unde deserturile bune aduc oamenii la un loc.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="produse section" id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="t-produse">Produse</h2>
+        <p class="sub">Câteva dintre lucrurile pe care le găsești la noi.</p>
+      </div>
+      <ul class="tag-grid">
+        <li class="tag-item" data-reveal="scale" data-delay="0">
+          <h3>Prăjituri asortate</h3>
+          <p>Selecție variată de prăjituri zilnic.</p>
+        </li>
+        <li class="tag-item" data-reveal="scale" data-delay="80">
+          <h3>Patiserie dulce</h3>
+          <p>Rulouri, cornulețe și alte bunătăți dulci.</p>
+        </li>
+        <li class="tag-item" data-reveal="scale" data-delay="160">
+          <h3>Patiserie sărată</h3>
+          <p>Gustări sărate proaspăt coapte.</p>
+        </li>
+        <li class="tag-item" data-reveal="scale" data-delay="240">
+          <h3>Pentru orice ocazie</h3>
+          <p>Prăjituri pentru orice ocazie, sau pur și simplu pentru o clipă dulce.</p>
+        </li>
+      </ul>
+      <div class="cta-row" data-reveal>
+        <a class="btn btn-primary" href="https://wa.me/40727282222?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20produse%20de%20cofet%C4%83rie%20sau%20patiserie.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie section" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2 id="t-galerie">Galerie</h2>
+      </div>
+      <div class="gal-grid">
+        <figure data-reveal="fade" data-delay="0">
+          <img src="img/3.jpg" alt="Croissante aurii și produse din aluat foietaj" loading="lazy">
+        </figure>
+        <figure data-reveal="fade" data-delay="120">
+          <img src="img/4.jpg" alt="Cupcakes cu glazură albă și ciocolată" loading="lazy">
+        </figure>
+        <figure data-reveal="fade" data-delay="240">
+          <img src="img/5.jpg" alt="Tort cu lumânări și flori" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="avant section" aria-labelledby="t-avant">
+    <div class="wrap">
+      <h2 class="avant-title" id="t-avant" data-reveal>Pe scurt, la noi</h2>
+      <ul class="avant-grid">
+        <li class="avant-item" data-reveal data-delay="0">
+          <span class="ico" aria-hidden="true">🏡</span>
+          <h3>Aproape de tine</h3>
+          <p>Suntem lângă tine, în cartier.</p>
+        </li>
+        <li class="avant-item" data-reveal data-delay="100">
+          <span class="ico" aria-hidden="true">🥐</span>
+          <h3>Zilnic proaspăt</h3>
+          <p>Produse proaspete, mereu la vitrină.</p>
+        </li>
+        <li class="avant-item" data-reveal data-delay="200">
+          <span class="ico" aria-hidden="true">🤝</span>
+          <h3>Servire prietenoasă</h3>
+          <p>Atmosferă caldă pentru toți clienții.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info" data-reveal>
+        <h2 id="t-contact">Vino pe la noi</h2>
+        <p class="addr">Strada Izvorul Rece, București</p>
+        <a class="phone-big" href="tel:0727282222">0727 282 222</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0727282222">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40727282222?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20produse%20de%20cofet%C4%83rie%20sau%20patiserie.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Agnes+cake+-+cofetarie%2C+patiserie+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div data-reveal="fade" data-delay="120">
+        <iframe class="map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.100119499999998,44.3865343,26.1081195,44.390534300000006&amp;layer=mapnik&amp;marker=44.3885343,26.1041195"
+          title="Harta: Agnes cake, Strada Izvorul Rece, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-name">Agnes cake</p>
+        <p>Cofetărie și patiserie, București</p>
+      </div>
+      <div>
+        <p>Strada Izvorul Rece, București</p>
+        <p><a href="tel:0727282222">0727 282 222</a></p>
+      </div>
+      <div>
+        <p>Model de site (demo)</p>
+      </div>
+    </div>
+    <p class="foot-credit">Fotografii ilustrative de pe Pixabay: PixelPerfectMom, Pexels, blandinejoannic, JillWellington</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var head = document.querySelector('.site-head');
+  var onScroll = function () { head.classList.toggle('is-scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Ștampila se reapasă la click
+  var stamp = document.querySelector('.stamp');
+  stamp.addEventListener('click', function () {
+    stamp.classList.remove('again');
+    void stamp.offsetWidth;
+    stamp.classList.add('again');
+  });
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        var d = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(function () { el.classList.add('in'); }, d);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
