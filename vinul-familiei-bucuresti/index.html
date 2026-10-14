@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vinul Familiei | Vinuri selecte în București</title>
+<meta name="description" content="Vinul Familiei, București. Vinuri selecte pentru orice ocazie: băuturi, cocktailuri și gustări, pentru acasă sau pentru seara cu prietenii.">
+<meta name="theme-color" content="#161212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --negru:#161212;
+  --negru-2:#1e1919;
+  --bordo:#5B1A2A;
+  --piatra:#D8D2C8;
+  --auriu:#A88B5B;
+  --chihlimbar:#f59e0b;
+  --text-moale:rgba(216,210,200,.82);
+  --linie:rgba(216,210,200,.16);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--negru);color:var(--piatra);
+  font-family:Montserrat,system-ui,sans-serif;font-size:1rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+:focus-visible{outline:2px solid var(--chihlimbar);outline-offset:3px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--chihlimbar);color:var(--negru);padding:.6rem 1rem;z-index:100;font-weight:600}
+.skip:focus{left:1rem;top:1rem}
+
+.wrap{max-width:1120px;margin:0 auto;width:100%}
+.sectiune{padding:clamp(5rem,11vw,8.5rem) 1.25rem}
+.sectiune h2{font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:1.25rem}
+.text{max-width:52ch;color:var(--text-moale)}
+.ornament{display:block;position:relative;width:56px;height:1px;margin:.9rem auto;background:var(--auriu)}
+.ornament::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;background:var(--auriu);transform:translate(-50%,-50%) rotate(45deg)}
+
+/* ===== Navigare (sticlă) ===== */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(22,18,18,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(216,210,200,.14);
+  transition:box-shadow .4s var(--ease),background-color .4s;
+}
+.nav.scrolled{background:rgba(22,18,18,.72);box-shadow:0 12px 32px -16px rgba(0,0,0,.7)}
+.nav-in{max-width:1120px;margin:0 auto;padding:.7rem 1.25rem;display:flex;align-items:center;gap:.75rem}
+.logo{
+  font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:1.35rem;letter-spacing:-.01em;
+  text-decoration:none;color:#F3EEE6;margin-right:auto;white-space:nowrap;
+}
+.links{display:none;gap:2rem;margin-left:auto;margin-right:1.5rem}
+.links a{
+  font-size:.85rem;font-weight:500;text-decoration:none;color:#F3EEE6;
+  min-height:44px;display:inline-flex;align-items:center;letter-spacing:.02em;transition:color .3s;
+}
+.links a:hover{color:var(--chihlimbar)}
+.btn-nav{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding:.6rem .95rem;border-radius:2px;background:var(--chihlimbar);color:var(--negru);
+  font-size:.8rem;font-weight:600;text-decoration:none;letter-spacing:.02em;white-space:nowrap;
+  transition:background-color .25s,transform .1s;
+}
+.btn-nav:hover{background:#fbb62e}
+.btn-nav:active{transform:scale(.97)}
+.toggle{
+  width:44px;height:44px;background:none;border:0;padding:0;color:#F3EEE6;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0;
+}
+.toggle span{display:block;width:20px;height:1.5px;background:currentColor;transition:transform .35s var(--ease),opacity .2s}
+.toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobil{
+  display:none;position:absolute;top:100%;left:0;right:0;
+  background:var(--negru);flex-direction:column;padding:.4rem 1.25rem 1rem;
+}
+.mobil.open{display:flex}
+.mobil a{
+  min-height:44px;display:flex;align-items:center;font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.6rem;text-decoration:none;color:var(--piatra);
+}
+.mobil a:hover{color:var(--chihlimbar)}
+
+/* ===== Eroul principal ===== */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:7rem 1.25rem 4rem}
+.hero-in{
+  width:100%;max-width:1120px;margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;gap:2.5rem;text-align:center;
+}
+.hero-text{display:flex;flex-direction:column;align-items:center;gap:1.1rem;max-width:34rem}
+.lead{
+  font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;color:#F3EEE6;
+  font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.2;letter-spacing:-.01em;
+}
+.hero-sub{color:var(--text-moale);font-size:.98rem;max-width:40ch}
+
+/* Eticheta de vin: elementul memorabil */
+.eticheta{
+  position:relative;width:min(70vw,340px);aspect-ratio:3/4;
+  background:var(--bordo);color:var(--piatra);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:2.4rem 1.5rem;
+  box-shadow:0 40px 80px -36px rgba(0,0,0,.85),0 0 140px -20px rgba(245,158,11,.16);
+  animation:intra 1.5s var(--ease) .15s both;
+}
+.eticheta::before,.eticheta::after{content:"";position:absolute;pointer-events:none;border:1px solid var(--auriu)}
+.eticheta::before{inset:12px}
+.eticheta::after{inset:17px;border-color:rgba(168,139,91,.4)}
+.eticheta-oras{
+  font-size:.66rem;font-weight:500;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--auriu);padding-left:.32em;
+}
+.eticheta-nume{font-size:clamp(2.6rem,13vw,4.2rem);font-weight:500;line-height:1;letter-spacing:-.02em;color:var(--piatra)}
+.eticheta-nume span{display:block}
+.eticheta-slogan{font-size:.8rem;line-height:1.45;letter-spacing:.03em;max-width:17ch;color:rgba(216,210,200,.92)}
+
+@keyframes intra{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+.hero-text{animation:intra 1.2s var(--ease) .55s both}
+
+/* ===== Butoane ===== */
+.actiuni{display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:22rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding:.85rem 1.6rem;border-radius:2px;border:1px solid transparent;
+  font-family:Montserrat,system-ui,sans-serif;font-size:.9rem;font-weight:600;line-height:1;letter-spacing:.02em;
+  text-decoration:none;cursor:pointer;text-align:center;
+  transition:background-color .25s,box-shadow .3s,border-color .25s,color .25s,transform .1s;
+}
+.btn:active{transform:scale(.97)}
+.btn-auriu{background:var(--chihlimbar);color:var(--negru)}
+.btn-auriu:hover{background:#fbb62e;box-shadow:0 10px 26px -12px rgba(245,158,11,.6)}
+.btn-contur{border-color:rgba(216,210,200,.45);color:var(--piatra)}
+.btn-contur:hover{border-color:var(--piatra);background:rgba(216,210,200,.06)}
+.btn-sobru{border-color:rgba(22,18,18,.45);color:var(--negru)}
+.btn-sobru:hover{border-color:var(--negru);background:rgba(22,18,18,.06)}
+
+/* ===== Despre ===== */
+.despre{background:var(--negru-2)}
+.despre-in{display:grid;gap:3rem;align-items:center}
+.despre-foto{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--negru)}
+.despre-foto img{width:100%;height:100%;object-fit:cover}
+.despre .text+.text{margin-top:1rem}
+.avant{display:grid;gap:2.25rem;margin-top:3.5rem}
+.avant article{border-top:1px solid rgba(168,139,91,.5);padding-top:1.25rem}
+.avant .emoji{font-size:1.5rem;display:block;margin-bottom:.6rem}
+.avant h3{font-size:1.6rem;margin-bottom:.4rem}
+.avant p{font-size:.92rem;color:var(--text-moale)}
+
+/* ===== Meniu ===== */
+.meniu{background:var(--bordo)}
+.meniu .text{color:rgba(216,210,200,.9)}
+.meniu-lista{list-style:none;padding:0;margin:3rem 0 0}
+.meniu-lista li{
+  display:grid;gap:.6rem;padding:1.8rem 0;
+  border-top:1px solid rgba(216,210,200,.22);
+}
+.meniu-lista li:last-child{border-bottom:1px solid rgba(216,210,200,.22)}
+.meniu-lista h3{font-size:clamp(2rem,5vw,2.8rem);line-height:1.1}
+.meniu-lista p{color:rgba(216,210,200,.88);max-width:44ch}
+.meniu .btn{margin-top:2.5rem}
+
+/* ===== Atmosferă (galerie) ===== */
+.galerie{background:var(--negru)}
+.gal{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:3rem}
+.gal figure{margin:0;overflow:hidden;aspect-ratio:4/3;background:var(--negru-2)}
+.gal figure.big{aspect-ratio:4/5}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gal figure:hover img{transform:scale(1.03)}
+
+/* ===== Contact ===== */
+.contact{background:var(--piatra);color:var(--negru)}
+.contact h2{color:var(--negru)}
+.contact .text{color:rgba(22,18,18,.82)}
+.contact-in{display:grid;gap:3rem;align-items:center}
+.contact .actiuni{margin-top:2rem}
+.contact-tel{margin-top:1.5rem;font-size:.95rem;font-weight:500}
+.harta{overflow:hidden;border-radius:2px}
+.harta iframe{width:100%;height:340px;border:0;display:block;filter:grayscale(.5) contrast(1.02)}
+
+/* ===== Subsol ===== */
+.subsol{background:#0f0c0c;padding:3.5rem 1.25rem 2.5rem;color:rgba(216,210,200,.72);font-size:.85rem}
+.subsol-in{display:flex;flex-direction:column;gap:1.25rem;max-width:1120px;margin:0 auto}
+.logo-f{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.6rem;font-weight:600;color:var(--piatra)}
+.subsol-links{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.subsol-links a{min-height:44px;display:inline-flex;align-items:center;color:var(--piatra);text-decoration:none;transition:color .3s}
+.subsol-links a:hover{color:var(--chihlimbar)}
+.mic{font-size:.75rem;letter-spacing:.02em;line-height:1.6;max-width:60ch}
+
+/* ===== Dezvăluire la derulare ===== */
+.js .r{opacity:0;transform:translate3d(0,24px,0);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .r-l{opacity:0;transform:translate3d(-28px,0,0);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .r-f{opacity:0;transition:opacity .8s ease}
+.js .r-s{opacity:0;transform:scale(.97);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .r.in,.js .r-l.in,.js .r-f.in,.js .r-s.in{opacity:1;transform:none}
+.js .r.d1{transition-delay:.12s}
+.js .r.d2{transition-delay:.24s}
+.js .r-s.d1{transition-delay:.1s}
+.js .r-s.d2{transition-delay:.2s}
+.js .r-f.d1{transition-delay:.15s}
+
+/* ===== Layout pe lățimi mai mari ===== */
+@media (min-width:760px){
+  .avant{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+  .meniu-lista li{grid-template-columns:1fr 1.2fr;align-items:baseline;gap:2rem}
+}
+@media (min-width:820px){
+  .links{display:flex}
+  .toggle{display:none}
+  .mobil{display:none!important}
+}
+@media (min-width:900px){
+  .hero-in{flex-direction:row;justify-content:space-between;text-align:left;gap:4rem}
+  .hero-text{order:-1;align-items:flex-start;text-align:left}
+  .eticheta{width:380px}
+  .actiuni{flex-direction:row;flex-wrap:wrap;max-width:none}
+  .despre-in{grid-template-columns:1fr 1fr;gap:6rem}
+  .gal{grid-template-columns:repeat(3,1fr);grid-auto-rows:260px}
+  .gal figure{aspect-ratio:auto}
+  .gal figure.big{aspect-ratio:auto;grid-column:span 2;grid-row:span 2}
+  .gal figure.wide{grid-column:1/-1}
+  .contact-in{grid-template-columns:1fr 1.1fr;gap:6rem}
+  .contact .actiuni{flex-direction:row;flex-wrap:wrap;max-width:none}
+  .harta iframe{height:440px}
+}
+
+/* ===== Accesibilitate ===== */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.2s!important;animation-iteration-count:1!important;
+    transition-duration:.2s!important;transition-delay:0s!important;
+  }
+  .eticheta,.hero-text{animation-name:fadeOnly!important;animation-delay:0s!important}
+  .js .r,.js .r-l,.js .r-s{transform:none!important}
+  .gal figure:hover img{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav.scrolled{background:var(--negru)}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--negru);border-top:2px solid var(--piatra)}
+  .btn-contur,.btn-sobru{border-width:2px}
+  .btn-contur{border-color:var(--piatra)}
+  .text,.hero-sub,.avant p,.meniu-lista p{color:#F3EEE6}
+  .eticheta::before{border-width:2px}
+  .links a,.mobil a{color:#FFFFFF}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#continut">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#top">Vinul Familiei</a>
+    <nav class="links" aria-label="Secțiuni">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Atmosferă</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn-nav" href="tel:0723395006">Sună acum</a>
+    <button class="toggle" type="button" aria-expanded="false" aria-controls="mobil" aria-label="Deschide navigarea">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobil" id="mobil" aria-label="Secțiuni, pe telefon">
+    <a href="#despre">Despre</a>
+    <a href="#meniu">Meniu</a>
+    <a href="#galerie">Atmosferă</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="continut">
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="hero-in">
+
+      <div class="eticheta">
+        <p class="eticheta-oras">București</p>
+        <span class="ornament" aria-hidden="true"></span>
+        <h1 class="eticheta-nume" id="titlu"><span>Vinul</span><span>Familiei</span></h1>
+        <span class="ornament" aria-hidden="true"></span>
+        <p class="eticheta-slogan">Vinuri selecte pentru orice ocazie</p>
+      </div>
+
+      <div class="hero-text">
+        <p class="lead">Alege vinuri de calitate pentru momente speciale.</p>
+        <p class="hero-sub">Băuturi, cocktailuri și gustări, alese pentru momentele tale speciale. Intră într-un ambient relaxant, dedicat iubitorilor de vin.</p>
+        <div class="actiuni">
+          <a class="btn btn-auriu" href="tel:0723395006">Sună acum</a>
+          <a class="btn btn-contur" href="https://wa.me/40723395006?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20vin." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-contur" href="#meniu">Vezi meniul</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sectiune despre" id="despre" aria-labelledby="t-despre">
+    <div class="wrap despre-in">
+      <figure class="despre-foto r-f">
+        <img src="img/2.jpg" alt="Pahar de vin roșu lângă o sticlă, în lumină caldă" loading="lazy">
+      </figure>
+      <div class="r-l">
+        <h2 id="t-despre">Despre noi</h2>
+        <p class="text">Vinul Familiei pune la dispoziție o gamă variată de băuturi și gustări, potrivite pentru a fi savurate acasă sau în compania prietenilor.</p>
+        <p class="text">Sună-ne sau scrie-ne pentru sfaturi la alegerea vinului. Intră într-un ambient relaxant, dedicat iubitorilor de vin.</p>
+      </div>
+    </div>
+
+    <div class="wrap avant">
+      <article class="r">
+        <span class="emoji" aria-hidden="true">🍇</span>
+        <h3>Selecție variată</h3>
+        <p>Alege din multiple sortimente.</p>
+      </article>
+      <article class="r d1">
+        <span class="emoji" aria-hidden="true">🏷️</span>
+        <h3>Recomandări sincere</h3>
+        <p>Sfaturi prietenoase la alegere.</p>
+      </article>
+      <article class="r d2">
+        <span class="emoji" aria-hidden="true">🎁</span>
+        <h3>Pentru orice ocazie</h3>
+        <p>Vinuri selecte pentru momente speciale.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sectiune meniu" id="meniu" aria-labelledby="t-meniu">
+    <div class="wrap">
+      <h2 id="t-meniu" class="r">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="text r d1">Ce poți alege pentru seara ta. Pentru sortimente și prețuri, sună-ne sau scrie-ne.</p>
+      <ul class="meniu-lista">
+        <li class="r">
+          <h3>Băuturi</h3>
+          <p>Vinuri alese cu grijă, pentru acasă sau pentru seara cu prietenii.</p>
+        </li>
+        <li class="r d1">
+          <h3>Cocktailuri</h3>
+          <p>Băuturi preparate pentru când vrei altceva decât un pahar de vin.</p>
+        </li>
+        <li class="r d2">
+          <h3>Gustări</h3>
+          <p>Ceva bun de mâncat alături de pahar.</p>
+        </li>
+      </ul>
+      <div class="r">
+        <a class="btn btn-contur" href="https://wa.me/40723395006?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20vin." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune galerie" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <h2 id="t-galerie" class="r-f">Atmosferă</h2>
+      <p class="text r-f d1">Imagini ilustrative: pahare, sticle și seri bune.</p>
+      <div class="gal">
+        <figure class="big r">
+          <img src="img/1.jpg" alt="Mână care toarnă vin roșu într-un pahar" loading="lazy">
+        </figure>
+        <figure class="r-s d1">
+          <img src="img/3.jpg" alt="Pahar cu vin alb, lângă o sticlă" loading="lazy">
+        </figure>
+        <figure class="r-s d2">
+          <img src="img/4.jpg" alt="Vin spumant în pahare, la o petrecere" loading="lazy">
+        </figure>
+        <figure class="wide r-l">
+          <img src="img/5.jpg" alt="Sticlă de vin roșu lângă un pahar" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-in">
+      <div class="r-l">
+        <h2 id="t-contact">Contact</h2>
+        <p class="text">Sună-ne, scrie-ne sau deschide harta. Te ajutăm să alegi ce bei în seara asta.</p>
+        <div class="actiuni">
+          <a class="btn btn-auriu" href="tel:0723395006">Sună acum</a>
+          <a class="btn btn-sobru" href="https://wa.me/40723395006?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20vin." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-sobru" href="https://www.google.com/maps/search/?api=1&amp;query=Vinul+Familiei+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+        </div>
+        <p class="contact-tel">Telefon: 0723 395 006</p>
+      </div>
+      <div class="harta r">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.100896199999998,44.4526726,26.1088962,44.456672600000005&amp;layer=mapnik&amp;marker=44.4546726,26.1048962"
+          title="Harta: Vinul Familiei, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="subsol-in">
+    <p class="logo-f"><span aria-hidden="true">🍷</span> Vinul Familiei</p>
+    <p>București</p>
+    <nav class="subsol-links" aria-label="Contact rapid">
+      <a href="tel:0723395006">Sună acum</a>
+      <a href="https://wa.me/40723395006?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20vin." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Vinul+Familiei+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+    </nav>
+    <p class="mic">Model de site (demo)</p>
+    <p class="mic">Fotografii ilustrative de pe Pixabay: JillWellington, WolfBlur, stevepb, NickyPe, Vinotecarium.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var tog = document.querySelector('.toggle');
+  var mob = document.getElementById('mobil');
+  tog.addEventListener('click', function () {
+    var deschis = mob.classList.toggle('open');
+    tog.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+    tog.setAttribute('aria-label', deschis ? 'Închide navigarea' : 'Deschide navigarea');
+  });
+  mob.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mob.classList.remove('open');
+      tog.setAttribute('aria-expanded', 'false');
+      tog.setAttribute('aria-label', 'Deschide navigarea');
+    });
+  });
+
+  var els = document.querySelectorAll('.r, .r-l, .r-f, .r-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
