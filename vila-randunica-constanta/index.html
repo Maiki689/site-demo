@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vila Rândunica — Cazare pe plajă în Mamaia Nord, Constanța</title>
+<meta name="description" content="Vila Rândunica: apartamente spațioase cu două dormitoare și living, direct pe plajă în Mamaia Nord, lângă PlayBeach.">
+<meta name="theme-color" content="#F6F1E7">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F1E7;
+  --paper:#FFFDF8;
+  --sky:#6FA8DC;
+  --sky-pale:#E8EFF5;
+  --terra:#C8664B;
+  --green:#5B7F5A;
+  --sea:#0e7490;
+  --sea-dark:#0a5a70;
+  --ink:#1F3440;
+  --ink-soft:#4A5C66;
+  --line:rgba(31,52,64,.16);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --serif:"DM Serif Display", Georgia, "Times New Roman", serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap:72rem;
+  --gut:clamp(1.25rem, 5vw, 3rem);
+  --nav-h:4.25rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:var(--nav-h)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.02em;line-height:1.08}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--paper);padding:.75rem 1rem;border-radius:.5rem}
+.skip:focus{top:1rem}
+:focus-visible{outline:3px solid var(--sea);outline-offset:3px;border-radius:.25rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6em;
+  min-height:3rem;padding:.8rem 1.4rem;border-radius:999px;
+  font:600 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer;
+  border:1.5px solid transparent;
+  transition:transform .1s ease, background-color .2s ease, box-shadow .2s ease, color .2s ease, border-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn-sea{background:var(--sea);color:#fff}
+.btn-sea:hover{background:var(--sea-dark);box-shadow:0 .5rem 1.25rem -.5rem rgba(14,116,144,.55)}
+.btn-line{background:transparent;color:var(--ink);border-color:rgba(31,52,64,.35)}
+.btn-line:hover{border-color:var(--ink);background:rgba(255,253,248,.7)}
+.btn-sm{min-height:2.75rem;padding:.55rem 1.1rem;font-size:.95rem}
+
+/* ---------- Navigare ---------- */
+.nav{
+  position:fixed;inset:0 0 auto;z-index:50;height:var(--nav-h);
+  background:rgba(246,241,231,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 .5rem 1.5rem -1rem rgba(31,52,64,.35)}
+.nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font-family:var(--serif);font-size:1.3rem;letter-spacing:-.01em;color:var(--ink);min-height:2.75rem}
+.brand svg{width:1.7rem;height:auto;color:var(--sea)}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.nav ul a{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 .9rem;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);border-radius:999px;transition:background-color .2s ease}
+.nav ul a:hover{background:rgba(31,52,64,.07)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+@media (min-width:46rem){.nav ul{display:flex}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding:calc(var(--nav-h) + clamp(1.75rem, 6vw, 4.5rem)) 0 clamp(4.5rem, 10vw, 8rem)}
+.hero-grid{display:grid;gap:clamp(2.75rem, 7vw, 5rem);align-items:center}
+@media (min-width:60rem){.hero-grid{grid-template-columns:1fr 1.05fr}}
+.place{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:500;letter-spacing:.02em;color:var(--ink-soft);margin-bottom:1rem}
+.place svg{width:1rem;height:1rem;color:var(--terra)}
+.hero h1{font-size:clamp(3rem, 8.4vw, 6.4rem);line-height:1.02;letter-spacing:-.025em}
+.hero .lead{font-family:var(--serif);font-size:clamp(1.35rem, 2.6vw, 1.75rem);line-height:1.2;color:var(--sea);margin-top:.9rem;letter-spacing:-.01em}
+.hero .intro{max-width:34rem;margin-top:1.1rem;color:var(--ink-soft)}
+.actions{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+@media (min-width:30rem){.actions{flex-direction:row;flex-wrap:wrap}}
+.note{margin-top:1.1rem;font-size:.9rem;color:var(--ink-soft);letter-spacing:.01em}
+
+/* vederea din prima secțiune */
+.vedere{position:relative;margin:0;padding:.7rem .7rem 0;background:var(--paper);
+  box-shadow:0 2rem 3.5rem -2rem rgba(31,52,64,.45), 0 .2rem .6rem rgba(31,52,64,.06)}
+.vedere img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.vedere figcaption{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.8rem .2rem .9rem}
+.vedere figcaption span:first-child{font-family:var(--serif);font-size:clamp(1.05rem, 2.2vw, 1.3rem);letter-spacing:-.01em}
+.vedere figcaption span:last-child{font-size:.78rem;letter-spacing:.06em;color:var(--ink-soft)}
+.stamp-wrap{position:absolute;top:-1.1rem;right:1.1rem;filter:drop-shadow(0 .35rem .5rem rgba(31,52,64,.22))}
+.stamp{
+  width:4.6rem;padding:5px;background:var(--paper);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, radial-gradient(circle, #0000 2.4px, #000 2.8px) -4px -4px / 8px 8px round;
+          mask:linear-gradient(#000 0 0) content-box, radial-gradient(circle, #0000 2.4px, #000 2.8px) -4px -4px / 8px 8px round;
+}
+.stamp svg{display:block;width:100%;height:auto}
+.postmark{position:absolute;width:6.5rem;pointer-events:none}
+.vedere .postmark{top:.4rem;right:4.4rem}
+.postmark svg{display:block;width:100%;height:auto;transform:rotate(-14deg)}
+
+/* ---------- Locul ---------- */
+.locul{padding:clamp(4.5rem, 11vw, 8.5rem) 0}
+.locul-grid{display:grid;gap:clamp(2.5rem, 6vw, 5rem);align-items:center}
+@media (min-width:56rem){.locul-grid{grid-template-columns:.9fr 1.1fr}}
+.photo-card{margin:0;padding:.65rem .65rem 0;background:var(--paper);box-shadow:0 1.75rem 3rem -2rem rgba(31,52,64,.4)}
+.photo-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.photo-card figcaption{padding:.75rem .2rem .85rem;font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft)}
+h2{font-size:clamp(2.1rem, 5.2vw, 3.6rem)}
+.locul h2{max-width:14ch}
+.body{max-width:36rem;margin-top:1.25rem;color:var(--ink-soft)}
+.perks{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:1.75rem}
+@media (min-width:36rem){.perks{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.perks svg{width:2rem;height:2rem;color:var(--sea);margin-bottom:.7rem}
+.perks h3{font-size:1.3rem;line-height:1.15}
+.perks p{margin-top:.35rem;font-size:.97rem;color:var(--ink-soft)}
+
+/* ---------- Apartamentul ---------- */
+.apart{background:var(--sky-pale);padding:clamp(4.5rem, 11vw, 8.5rem) 0}
+.apart-grid{display:grid;gap:clamp(2rem, 6vw, 5rem)}
+@media (min-width:56rem){.apart-grid{grid-template-columns:.85fr 1.15fr;align-items:start}.apart-head{position:sticky;top:calc(var(--nav-h) + 2rem)}}
+.apart-head p{margin-top:1.1rem;max-width:30rem;color:var(--ink-soft)}
+.apart-head .btn{margin-top:1.75rem}
+.rooms{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.rooms li{display:grid;gap:.35rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+@media (min-width:40rem){.rooms li{grid-template-columns:1.1fr 1fr;gap:2rem;align-items:baseline;padding:1.85rem 0}}
+.rooms h3{font-size:clamp(1.35rem, 2.6vw, 1.7rem);line-height:1.15}
+.rooms p{color:var(--ink-soft)}
+
+/* ---------- Banda foto ---------- */
+.band{position:relative;overflow:hidden;min-height:clamp(26rem, 78vh, 46rem);display:flex;align-items:flex-end;color:#fff;background:var(--ink)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(18,32,40,.78) 0%, rgba(18,32,40,.35) 40%, rgba(18,32,40,0) 70%)}
+.band .wrap{position:relative;z-index:1;width:100%;padding-bottom:clamp(2.5rem, 7vw, 5rem)}
+.band p{font-family:var(--serif);font-size:clamp(1.9rem, 5vw, 3.6rem);line-height:1.1;letter-spacing:-.02em;max-width:18ch;text-shadow:0 .1rem 1rem rgba(0,0,0,.25)}
+
+/* ---------- Contact și vederea care se întoarce ---------- */
+.contact{padding:clamp(4.5rem, 11vw, 8.5rem) 0}
+.contact-head{max-width:40rem;margin-bottom:clamp(2.25rem, 5vw, 3.5rem)}
+.contact-head p{margin-top:1.1rem;color:var(--ink-soft)}
+.contact-grid{display:grid;gap:clamp(2.5rem, 6vw, 4rem);align-items:start}
+@media (min-width:62rem){.contact-grid{grid-template-columns:1.45fr 1fr}}
+
+.flip{perspective:1800px}
+.pc{display:grid;gap:1.25rem}
+.js .pc{gap:0;transform-style:preserve-3d;transition:transform .75s var(--ease)}
+.js .pc.flipped{transform:rotateY(180deg)}
+.face{background:var(--paper);box-shadow:0 2rem 3.5rem -2rem rgba(31,52,64,.45), 0 .2rem .6rem rgba(31,52,64,.06)}
+.js .face{grid-area:1/1;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.js .back{transform:rotateY(180deg)}
+.front{display:flex;flex-direction:column;padding:.75rem;cursor:pointer}
+.front-art{position:relative;flex:1;min-height:17rem;overflow:hidden;background:var(--sky)}
+.front-art svg{position:absolute;inset:0;width:100%;height:100%}
+.front-title{position:relative;padding:clamp(1.25rem, 4vw, 2rem)}
+.front-title small{display:block;font-family:var(--sans);font-size:clamp(.95rem, 2vw, 1.1rem);font-weight:500;letter-spacing:.02em;color:var(--ink)}
+.front-title strong{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem, 6.5vw, 4rem);line-height:1;letter-spacing:-.025em;color:var(--ink);margin-top:.2rem}
+.front-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.75rem .25rem 0;font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft)}
+
+.back{padding:clamp(1.25rem, 3.5vw, 2.25rem);display:grid;gap:1.5rem;
+  background:var(--paper) repeating-linear-gradient(transparent 0 2.4rem, transparent 2.4rem)}
+@media (min-width:40rem){.back{grid-template-columns:1.15fr 1fr;gap:2rem}}
+.msg h3{font-size:clamp(1.6rem, 3.4vw, 2.1rem)}
+.msg p{margin-top:.8rem;color:var(--ink-soft);font-size:1rem}
+.msg .actions{margin-top:1.4rem;flex-direction:column}
+.msg .actions .btn{width:100%}
+.addr{display:flex;flex-direction:column;order:-1}
+@media (min-width:40rem){.addr{order:0;border-left:1px solid var(--line);padding-left:2rem}}
+.addr-top{position:relative;display:flex;justify-content:flex-end;min-height:6.2rem}
+.addr-top .stamp-wrap{position:static}
+.addr-top .postmark{top:.6rem;right:3.6rem}
+.addr dl{margin:1rem 0 0}
+.addr dt{font-size:.75rem;letter-spacing:.06em;color:var(--ink-soft);margin-top:.9rem}
+.addr dd{margin:0;padding:.3rem 0 .45rem;border-bottom:1px solid var(--line);font-size:1.02rem;font-weight:500}
+.addr dd a{text-decoration:none;font-weight:600;color:var(--sea)}
+.addr dd a:hover{text-decoration:underline}
+
+.flip-ctrl{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem;margin-top:1.5rem}
+.flip-ctrl p{font-size:.9rem;color:var(--ink-soft)}
+.flip-ctrl .btn svg{transition:transform .5s var(--ease)}
+.flip-ctrl .btn[aria-pressed="true"] svg{transform:rotate(180deg)}
+.no-js-only{display:none}
+
+.map-card{margin:0;padding:.65rem;background:var(--paper);box-shadow:0 1.75rem 3rem -2rem rgba(31,52,64,.4)}
+.map-card iframe{display:block;width:100%;height:clamp(18rem, 42vw, 24rem);border:0;filter:saturate(.85)}
+.map-card figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem 1rem;padding:.85rem .25rem .3rem}
+.map-card figcaption span{font-size:.95rem;color:var(--ink-soft)}
+.map-card a{display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600;color:var(--sea);text-underline-offset:.2em}
+
+/* ---------- Subsol ---------- */
+footer{background:var(--ink);color:var(--cream);padding:clamp(3.5rem, 8vw, 5rem) 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+@media (min-width:48rem){.foot-grid{grid-template-columns:1.2fr 1fr;align-items:end}}
+footer .brand{color:var(--cream);font-size:1.6rem}
+footer .brand svg{color:var(--sky)}
+.foot-line{margin-top:.6rem;color:rgba(246,241,231,.78);max-width:28rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+@media (min-width:48rem){.foot-links{justify-content:flex-end}}
+.foot-links a{display:inline-flex;align-items:center;min-height:2.75rem;color:var(--cream);text-underline-offset:.25em;font-weight:500}
+.fine{margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid rgba(246,241,231,.16);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;font-size:.8rem;letter-spacing:.04em;color:rgba(246,241,231,.68)}
+
+/* ---------- Mișcare ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(.9rem)}to{opacity:1;transform:none}}
+@keyframes arrive{from{opacity:0;transform:translateY(2.5rem) rotate(-1.5deg)}to{opacity:1;transform:none}}
+@keyframes stampIn{0%{opacity:0;transform:scale(1.45)}70%{opacity:1;transform:scale(.97)}100%{opacity:1;transform:scale(1)}}
+@keyframes inkIn{from{opacity:0;transform:scale(.9)}to{opacity:.88;transform:scale(1)}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy > *{animation:rise .7s var(--ease) both}
+  .hero-copy > :nth-child(1){animation-delay:.05s}
+  .hero-copy > :nth-child(2){animation-delay:.12s}
+  .hero-copy > :nth-child(3){animation-delay:.2s}
+  .hero-copy > :nth-child(4){animation-delay:.28s}
+  .hero-copy > :nth-child(5){animation-delay:.36s}
+  .hero-copy > :nth-child(6){animation-delay:.42s}
+  .hero .vedere{animation:arrive .95s var(--ease) .2s both}
+  .hero .stamp-wrap{animation:stampIn .55s var(--ease) 1s both}
+  .hero .postmark{animation:inkIn .5s var(--ease) 1.35s both}
+
+  .js .rv{transition:opacity .55s var(--ease), transform .55s var(--ease)}
+  .js .rv-fade{opacity:0}
+  .js .rv-side{opacity:0;transform:translateX(1.25rem)}
+  .js .rv-lift{opacity:0;transform:translateY(1rem) scale(.985)}
+  .js .rv.in{opacity:1;transform:none}
+  .js .rooms li.rv{transition-delay:calc(var(--i, 0) * 80ms)}
+  .js .band img{transform:scale(1.07);transition:transform 1.1s var(--ease)}
+  .js .band.in img{transform:scale(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.2s!important;animation-iteration-count:1!important;transition-duration:.2s!important}
+  .hero-copy > *, .hero .vedere, .hero .stamp-wrap{animation:fadeOnly .2s ease both}
+  .hero .postmark{opacity:.88}
+  .js .pc, .js .pc.flipped{transform:none!important}
+  .js .back{transform:none}
+  .js .face{transition:opacity .2s ease}
+  .js .pc.flipped .front, .js .pc:not(.flipped) .back{opacity:0;visibility:hidden}
+  .btn:active{transform:none}
+}
+.postmark{opacity:.88}
+
+/* ---------- Accesibilitate: transparență și contrast ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--ink-soft:#22343e;--line:rgba(31,52,64,.55)}
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--ink)}
+  .btn-line{border-color:var(--ink)}
+  .face,.vedere,.photo-card,.map-card{box-shadow:none;outline:2px solid var(--ink)}
+  .band::after{background:rgba(18,32,40,.7)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="swallow" viewBox="0 0 48 32">
+      <path fill="currentColor" d="M24 2c1.8 0 3 1.6 3 4.6V10c6-.9 13.2.2 20 4-7-.2-13.6 1.2-19 4v4l4.4 9.2L26 24.3 24 25.5l-2-1.2-6.4 6.9L20 22v-4c-5.4-2.8-12-4.2-19-4 6.8-3.8 14-4.9 20-4V6.6C21 3.6 22.2 2 24 2z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.8 1.8 0 0 1-1.9 1.8A16.6 16.6 0 0 1 3.2 5.4 1.8 1.8 0 0 1 5 3.5z"/>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.7c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 19.9zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1c0 1.2.9 2.4 1 2.6.1.2 1.8 2.7 4.3 3.8 1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1l-.6-.3z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Vila Rândunica, începutul paginii">
+      <svg aria-hidden="true"><use href="#swallow"/></svg>
+      Vila Rândunica
+    </a>
+    <div class="nav-right">
+      <nav aria-label="Navigare principală">
+        <ul>
+          <li><a href="#locul">Locul</a></li>
+          <li><a href="#apartamentul">Apartamentul</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-sea btn-sm" href="tel:0724435579">
+        <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+  <!-- Prima secțiune -->
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="place">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Mamaia Nord, Constanța
+        </p>
+        <h1 id="titlu">Vila Rândunica</h1>
+        <p class="lead">Cazare pe plajă în Mamaia Nord</p>
+        <p class="intro">Apartamente spațioase cu vedere la mare, lângă PlayBeach. Două dormitoare și un living, pentru familii sau pentru un grup de prieteni.</p>
+        <div class="actions">
+          <a class="btn btn-sea" href="tel:0724435579"><svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40724435579?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20cazare%20la%20Vila%20R%C3%A2ndunica." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicită detalii pe WhatsApp</a>
+        </div>
+        <p class="note">Rezervările se fac prin agenție.</p>
+      </div>
+
+      <figure class="vedere">
+        <img src="img/1.jpg" alt="Familie care se plimbă pe plajă, la malul mării" width="1200" height="900" fetchpriority="high">
+        <figcaption><span>Salutări din Mamaia Nord</span><span>Constanța</span></figcaption>
+        <div class="stamp-wrap" aria-hidden="true">
+          <div class="stamp">
+            <svg viewBox="0 0 60 72">
+              <rect width="60" height="72" fill="#6FA8DC"/>
+              <rect y="46" width="60" height="26" fill="#0e7490"/>
+              <path d="M0 50c6 0 6-3 12-3s6 3 12 3 6-3 12-3 6 3 12 3 6-3 12-3" fill="none" stroke="#F6F1E7" stroke-width="1.6" opacity=".7"/>
+              <circle cx="44" cy="22" r="8" fill="#C8664B"/>
+              <use href="#swallow" x="10" y="18" width="26" height="17" color="#1F3440"/>
+              <text x="30" y="66" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" font-weight="600" fill="#F6F1E7" letter-spacing=".6">MAMAIA</text>
+            </svg>
+          </div>
+        </div>
+        <div class="postmark" aria-hidden="true">
+          <svg viewBox="0 0 130 80">
+            <defs><path id="pm1" d="M40,40 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/></defs>
+            <g fill="none" stroke="#C8664B" stroke-width="1.6">
+              <circle cx="40" cy="40" r="34"/><circle cx="40" cy="40" r="20"/>
+              <path d="M76 26c9 0 9-5 18-5s9 5 18 5 9-5 16-5M76 40c9 0 9-5 18-5s9 5 18 5 9-5 16-5M76 54c9 0 9-5 18-5s9 5 18 5 9-5 16-5"/>
+            </g>
+            <text font-family="DM Sans, sans-serif" font-size="7.4" font-weight="600" fill="#C8664B" letter-spacing="1.2"><textPath href="#pm1">MAMAIA NORD — CONSTANȚA —</textPath></text>
+            <use href="#swallow" x="30" y="33" width="20" height="14" color="#C8664B"/>
+          </svg>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Locul -->
+  <section class="locul" id="locul" aria-labelledby="t-locul">
+    <div class="wrap locul-grid">
+      <figure class="photo-card rv rv-lift">
+        <img src="img/2.jpg" alt="Tată și copil zâmbind pe nisip, la mare" width="900" height="1125" loading="lazy">
+        <figcaption>Vacanță la mare, cu toată familia</figcaption>
+      </figure>
+      <div>
+        <h2 id="t-locul" class="rv rv-fade">Direct pe plajă, în Mamaia Nord</h2>
+        <p class="body rv rv-fade">Vila Rândunica are apartamente moderne cu două dormitoare și living, gândite pentru familii sau grupuri de prieteni. Ne găsiți direct pe plajă, în Mamaia Nord, lângă PlayBeach. Rezervările se fac prin agenție.</p>
+        <ul class="perks">
+          <li class="rv rv-side" style="--i:0">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 13c3.3 0 3.3-3 6.5-3s3.3 3 6.5 3 3.3-3 6.5-3 3.3 3 6.5 3M3 21c3.3 0 3.3-3 6.5-3s3.3 3 6.5 3 3.3-3 6.5-3 3.3 3 6.5 3"/></svg>
+            <h3>Pe malul mării</h3>
+            <p>Ieșiți din vilă direct pe plajă.</p>
+          </li>
+          <li class="rv rv-side" style="--i:1">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="16" r="5.5"/><path d="M15.5 16H29M24 16v4.5M28 16v3.5"/></g></svg>
+            <h3>Intimitate</h3>
+            <p>Apartamentul e doar pentru voi.</p>
+          </li>
+          <li class="rv rv-side" style="--i:2">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="10" r="4"/><circle cx="22.5" cy="12" r="3.2"/><path d="M3.5 26c.8-5 3.7-7.5 7.5-7.5s6.7 2.5 7.5 7.5M18.5 19.5c1.2-.7 2.5-1 4-1 3.2 0 5.5 2.2 6 6.5"/></g></svg>
+            <h3>Perfect pentru grupuri</h3>
+            <p>Două dormitoare și un living primitor.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apartamentul -->
+  <section class="apart" id="apartamentul" aria-labelledby="t-apart">
+    <div class="wrap apart-grid">
+      <div class="apart-head">
+        <h2 id="t-apart" class="rv rv-fade">Un apartament întreg, doar pentru voi</h2>
+        <p class="rv rv-fade">Două dormitoare, un living spațios și marea la ieșirea din vilă. Spuneți-ne câți sunteți și vă dăm toate detaliile.</p>
+        <a class="btn btn-sea rv rv-fade" href="https://wa.me/40724435579?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20cazare%20la%20Vila%20R%C3%A2ndunica." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicită detalii pe WhatsApp</a>
+      </div>
+      <ul class="rooms">
+        <li class="rv rv-side" style="--i:0">
+          <h3>Apartament cu două dormitoare</h3>
+          <p>Loc de dormit pentru familii sau grupuri de prieteni, fiecare cu camera lui.</p>
+        </li>
+        <li class="rv rv-side" style="--i:1">
+          <h3>Living spațios</h3>
+          <p>Locul unde vă strângeți seara, la povești sau la un joc, după o zi pe plajă.</p>
+        </li>
+        <li class="rv rv-side" style="--i:2">
+          <h3>Acces direct la plajă</h3>
+          <p>Ieșiți din vilă și sunteți pe nisip, la malul mării.</p>
+        </li>
+        <li class="rv rv-side" style="--i:3">
+          <h3>Lângă PlayBeach</h3>
+          <p>Activități și divertisment la doi pași, pentru zilele cu chef de mișcare.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Banda foto -->
+  <section class="band" aria-label="Seara la mare">
+    <img src="img/3.jpg" alt="Mamă și fiică, siluete pe malul mării la apus" width="1600" height="1000" loading="lazy">
+    <div class="wrap">
+      <p>Ziua se încheie pe plajă, la câțiva pași de apartament.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap">
+      <div class="contact-head">
+        <h2 id="t-contact" class="rv rv-fade">Întrebați-ne de vacanța voastră</h2>
+        <p class="rv rv-fade">Sunați sau scrieți-ne pe WhatsApp pentru detalii despre apartamente. Rezervarea se face prin agenție.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="flip">
+            <div class="pc" id="pc">
+              <div class="face front" id="pc-front">
+                <div class="front-art">
+                  <svg viewBox="0 0 600 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                    <rect width="600" height="380" fill="#6FA8DC"/>
+                    <circle cx="470" cy="190" r="58" fill="#C8664B"/>
+                    <rect y="226" width="600" height="154" fill="#0e7490"/>
+                    <g fill="none" stroke="#F6F1E7" stroke-width="2.4" stroke-linecap="round" opacity=".55">
+                      <path d="M40 254c14 0 14-6 28-6s14 6 28 6M330 248c14 0 14-6 28-6s14 6 28 6M180 276c14 0 14-6 28-6s14 6 28 6M450 270c14 0 14-6 28-6s14 6 28 6"/>
+                    </g>
+                    <path d="M0 312c90-22 190-28 300-18s210 6 300-12V380H0z" fill="#F6F1E7"/>
+                    <g stroke="#5B7F5A" stroke-width="3" stroke-linecap="round" fill="none">
+                      <path d="M70 340c-2-14-8-24-16-32M78 340c0-16 4-28 12-38M86 342c4-12 10-20 20-26"/>
+                      <path d="M520 334c-2-12-8-22-15-28M528 334c1-15 5-26 12-34M536 336c4-10 10-17 18-22"/>
+                    </g>
+                    <use href="#swallow" x="300" y="70" width="64" height="43" color="#1F3440"/>
+                    <use href="#swallow" x="390" y="40" width="38" height="25" color="#1F3440"/>
+                    <use href="#swallow" x="250" y="132" width="30" height="20" color="#1F3440"/>
+                  </svg>
+                  <p class="front-title"><small>Salutări din</small><strong>Mamaia Nord</strong></p>
+                </div>
+                <div class="front-foot"><span>Vila Rândunica</span><span>Atinge ca să întorci</span></div>
+              </div>
+
+              <div class="face back" id="pc-back">
+                <div class="msg">
+                  <h3>Bună ziua!</h3>
+                  <p>Ne găsiți direct pe plajă, în Mamaia Nord, lângă PlayBeach. Spuneți-ne câți sunteți și când ați vrea să veniți, iar noi vă răspundem cu detaliile despre apartament.</p>
+                  <div class="actions">
+                    <a class="btn btn-sea" href="tel:0724435579"><svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum</a>
+                    <a class="btn btn-line" href="https://wa.me/40724435579?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20cazare%20la%20Vila%20R%C3%A2ndunica." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicită detalii pe WhatsApp</a>
+                  </div>
+                </div>
+                <div class="addr">
+                  <div class="addr-top" aria-hidden="true">
+                    <div class="postmark">
+                      <svg viewBox="0 0 130 80">
+                        <defs><path id="pm2" d="M40,40 m-27,0 a27,27 0 1,1 54,0 a27,27 0 1,1 -54,0"/></defs>
+                        <g fill="none" stroke="#C8664B" stroke-width="1.6">
+                          <circle cx="40" cy="40" r="34"/><circle cx="40" cy="40" r="20"/>
+                          <path d="M76 26c9 0 9-5 18-5s9 5 18 5 9-5 16-5M76 40c9 0 9-5 18-5s9 5 18 5 9-5 16-5M76 54c9 0 9-5 18-5s9 5 18 5 9-5 16-5"/>
+                        </g>
+                        <text font-family="DM Sans, sans-serif" font-size="7.4" font-weight="600" fill="#C8664B" letter-spacing="1.2"><textPath href="#pm2">MAMAIA NORD — CONSTANȚA —</textPath></text>
+                        <use href="#swallow" x="30" y="33" width="20" height="14" color="#C8664B"/>
+                      </svg>
+                    </div>
+                    <div class="stamp-wrap">
+                      <div class="stamp">
+                        <svg viewBox="0 0 60 72">
+                          <rect width="60" height="72" fill="#5B7F5A"/>
+                          <rect y="46" width="60" height="26" fill="#0e7490"/>
+                          <circle cx="44" cy="22" r="8" fill="#F6F1E7" opacity=".9"/>
+                          <use href="#swallow" x="10" y="18" width="26" height="17" color="#F6F1E7"/>
+                          <text x="30" y="66" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="7" font-weight="600" fill="#F6F1E7" letter-spacing=".6">MAMAIA</text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <dl>
+                    <dt>Către</dt>
+                    <dd>Vila Rândunica</dd>
+                    <dt>Unde</dt>
+                    <dd>Mamaia Nord, lângă PlayBeach, Constanța</dd>
+                    <dt>Telefon</dt>
+                    <dd><a href="tel:0724435579">0724 435 579</a></dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-ctrl">
+            <button class="btn btn-line" type="button" id="flip-btn" aria-controls="pc" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5"/></svg>
+              <span>Întoarce vederea</span>
+            </button>
+            <p>Pe spatele vederii găsiți telefonul și WhatsApp.</p>
+          </div>
+        </div>
+
+        <figure class="map-card rv rv-lift">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.616356099999997,44.2614807,28.6243561,44.265480700000005&layer=mapnik&marker=44.2634807,28.6203561" title="Harta: Vila Rândunica, Mamaia Nord" loading="lazy"></iframe>
+          <figcaption>
+            <span>Mamaia Nord, lângă PlayBeach</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Vila+R%C3%A2ndunica+Constan%C8%9Ba" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#swallow"/></svg>Vila Rândunica</a>
+        <p class="foot-line">Apartamente cu două dormitoare și living, direct pe plajă în Mamaia Nord, lângă PlayBeach.</p>
+      </div>
+      <div class="foot-links">
+        <a href="tel:0724435579">0724 435 579</a>
+        <a href="https://wa.me/40724435579?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20cazare%20la%20Vila%20R%C3%A2ndunica." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Vila+R%C3%A2ndunica+Constan%C8%9Ba" target="_blank" rel="noopener">Hartă</a>
+      </div>
+    </div>
+    <div class="fine">
+      <span>Model de site (demo)</span>
+      <span>Fotografii ilustrative de pe Pixabay: chillla70, jump1987, VaniaMargaridaSl</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  /* umbră fină sub bara de navigare doar la derulare */
+  var nav = document.getElementById('nav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* dezvăluiri discrete la derulare */
+  var items = document.querySelectorAll('.rv, .band');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* vederea care se întoarce */
+  var pc = document.getElementById('pc');
+  var front = document.getElementById('pc-front');
+  var back = document.getElementById('pc-back');
+  var btn = document.getElementById('flip-btn');
+  var label = btn.querySelector('span');
+  var touched = false;
+
+  function setFlip(on){
+    pc.classList.toggle('flipped', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    label.textContent = on ? 'Vezi fața vederii' : 'Întoarce vederea';
+    front.setAttribute('aria-hidden', on ? 'true' : 'false');
+    back.setAttribute('aria-hidden', on ? 'false' : 'true');
+    if ('inert' in front){ front.inert = on; back.inert = !on; }
+  }
+  setFlip(false);
+
+  btn.addEventListener('click', function(){
+    touched = true;
+    setFlip(!pc.classList.contains('flipped'));
+  });
+  front.addEventListener('click', function(){
+    touched = true;
+    setFlip(true);
+  });
+
+  /* o singură întoarcere automată, când vederea ajunge în ecran */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window){
+    var once = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          once.disconnect();
+          setTimeout(function(){ if (!touched) setFlip(true); }, 900);
+        }
+      });
+    }, {threshold:.65});
+    once.observe(pc);
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
