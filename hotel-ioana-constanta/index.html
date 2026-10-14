@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F1E7">
+  <meta name="description" content="Hotel Ioana, Constanța. Ia legătura cu noi pentru detalii despre cazare și disponibilitate. Bulevardul I. C. Brătianu 28.">
+  <title>Hotel Ioana — O oprire în Constanța</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f6f1e7;
+      --white: #fffdf8;
+      --ink: #243b4d;
+      --muted: #58666c;
+      --blue: #1d4ed8;
+      --sky: #6fa8dc;
+      --pale-blue: #e7eff4;
+      --clay: #c8664b;
+      --green: #5b7f5a;
+      --line: #d8d9d2;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    svg { display: block; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { font-weight: 400; }
+    h1, h2 { font-family: var(--serif); letter-spacing: -.025em; line-height: 1.08; }
+    h1 { font-size: clamp(2.85rem, 5.5vw, 5.6rem); }
+    h2 { font-size: clamp(2.3rem, 4vw, 3.9rem); }
+    p { max-width: 65ch; }
+    ::selection { background: #c3d9ed; color: var(--ink); }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 5px; }
+    .container { width: min(100% - 3rem, 76rem); margin-inline: auto; }
+    .skip-link { position: fixed; top: -6rem; left: 1rem; z-index: 100; padding: .8rem 1rem; background: var(--ink); color: white; }
+    .skip-link:focus { top: 1rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
+      min-height: 3.2rem; padding: .85rem 1.4rem; border: 1px solid transparent;
+      border-radius: .25rem; font-weight: 600; font-size: .95rem;
+      background: var(--blue); color: #fff; cursor: pointer;
+      transition: transform .1s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .button:hover { background: #1943b8; box-shadow: 0 .25rem 1rem #1d4ed815; }
+    .button:active, .flip-button:active { transform: scale(.97); }
+    .button.secondary { background: transparent; border-color: #9caab3; color: var(--ink); }
+    .button.secondary:hover { background: #243b4d08; }
+    .button svg { width: 1.1rem; height: 1.1rem; flex: none; }
+    .text-link { display: inline-flex; min-height: 2.75rem; align-items: center; font-weight: 600; text-decoration: underline; text-underline-offset: .3rem; text-decoration-color: #6fa8dc; }
+    .text-link:hover { color: var(--blue); }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: #f6f1e7e8; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      border-top: 1px solid #ffffffa6;
+      transition: box-shadow .2s;
+    }
+    .site-header.scrolled { box-shadow: 0 .3rem 1.5rem #243b4d09; }
+    .nav { min-height: 5.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { display: flex; flex-direction: column; flex: none; }
+    .brand-name { font-family: var(--serif); font-size: 1.75rem; letter-spacing: -.03em; line-height: 1.1; }
+    .brand-place { font-size: .72rem; color: var(--muted); letter-spacing: .06em; margin-top: .25rem; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; font-size: .9rem; }
+    .nav-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+    .nav-links a:hover { color: var(--blue); }
+    .header-call { min-height: 2.8rem; padding: .6rem 1rem; }
+
+    .hero { padding: 4.5rem 0 4rem; }
+    .hero-layout { display: grid; grid-template-columns: .95fr 1.12fr; align-items: center; gap: 4rem; }
+    .hero-place { display: flex; align-items: center; gap: .65rem; color: var(--muted); font-size: .9rem; margin-bottom: 1.8rem; }
+    .hero-place svg { width: 1rem; height: 1rem; color: var(--green); }
+    .hero h1 { max-width: 9ch; }
+    .hero-copy > p { color: var(--muted); font-size: 1.08rem; max-width: 32ch; margin-top: 1.65rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .7rem 1.5rem; margin-top: 2rem; }
+    .hero-note { display: block; font-size: .78rem; color: var(--muted); margin-top: 1rem; }
+
+    .postcard-area { min-width: 0; }
+    .postcard { perspective: 1600px; }
+    .postcard-inner { position: relative; aspect-ratio: 1.12; transform-style: preserve-3d; transition: transform .85s var(--ease); }
+    .postcard.is-flipped .postcard-inner { transform: rotateY(180deg); }
+    .postcard-face {
+      position: absolute; inset: 0; padding: 1rem; background: var(--white);
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      box-shadow: 0 1.2rem 3rem #243b4d12, 0 .1rem .3rem #243b4d0b;
+    }
+    .postcard-front { display: flex; flex-direction: column; }
+    .postcard-photo { flex: 1; position: relative; min-height: 0; overflow: hidden; }
+    .postcard-photo img { height: 100%; }
+    .postcard-caption { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem .25rem .1rem; }
+    .postcard-caption span:first-child { font-family: var(--serif); font-size: 1.65rem; letter-spacing: -.02em; }
+    .postcard-caption span:last-child { font-size: .72rem; color: var(--muted); }
+    .stamp {
+      position: absolute; right: 1rem; top: 1rem; width: 6.5rem; height: 6.5rem;
+      background: #fffdf8ed; color: var(--ink); padding: .3rem;
+      clip-path: polygon(0 5%,5% 5%,5% 0,95% 0,95% 5%,100% 5%,100% 95%,95% 95%,95% 100%,5% 100%,5% 95%,0 95%);
+    }
+    .stamp svg { width: 100%; height: 100%; }
+    .postcard-back { transform: rotateY(180deg); padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .back-heading { font-family: var(--serif); font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.15; max-width: 15ch; }
+    .back-body { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.5rem 0; }
+    .back-message { color: var(--muted); font-size: .9rem; padding-right: 1rem; border-right: 1px solid var(--line); }
+    .back-address { font-style: normal; font-size: .9rem; }
+    .back-address strong { display: block; margin-bottom: .5rem; color: var(--ink); }
+    .back-phone { display: inline-flex; min-height: 2.75rem; align-items: center; color: var(--blue); font-weight: 600; }
+    .back-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .back-footer > span { font-size: .75rem; color: var(--muted); }
+    .back-footer .button { font-size: .8rem; padding-inline: 1rem; }
+    .postcard-controls { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 1rem; }
+    .illustration-note { color: var(--muted); font-size: .72rem; }
+    .flip-button { display: inline-flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .4rem 0 .4rem .5rem; border: 0; color: var(--ink); background: none; font-size: .82rem; font-weight: 600; cursor: pointer; transition: transform .1s; }
+    .flip-button:hover { color: var(--blue); }
+    .flip-button svg { width: 1.15rem; height: 1.15rem; }
+    .hero-bottom { margin-top: 4rem; display: flex; justify-content: space-between; gap: 2rem; color: var(--muted); font-size: .85rem; }
+    .hero-bottom .location { display: flex; gap: .8rem; align-items: center; }
+    .hero-bottom .location svg { width: 1.1rem; height: 1.1rem; color: var(--green); }
+    .hero-bottom a { text-decoration: underline; text-underline-offset: .3rem; }
+
+    .about { background: var(--pale-blue); padding: 6rem 0; }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .about-picture { position: relative; }
+    .about-picture img { aspect-ratio: 1.05; }
+    .about-picture figcaption { font-size: .74rem; color: var(--muted); margin-top: .75rem; }
+    .about-copy h2 { max-width: 12ch; }
+    .about-copy > p { color: var(--muted); margin-top: 1.7rem; font-size: 1.02rem; max-width: 42ch; }
+    .about-copy .text-link { margin-top: 1.4rem; }
+    .about-footnote { margin-top: 2rem; display: flex; gap: .85rem; align-items: flex-start; font-size: .82rem; color: var(--muted); max-width: 37ch; }
+    .about-footnote svg { width: 1.3rem; height: 1.3rem; flex: none; color: var(--green); }
+
+    .services { padding: 6.5rem 0; }
+    .section-heading { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 3rem; margin-bottom: 3rem; }
+    .section-heading > p { max-width: 43ch; color: var(--muted); justify-self: end; }
+    .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .service { border-top: 1px solid #c9cec9; padding-top: 1.8rem; display: grid; grid-template-columns: 2.7rem 1fr; gap: 1.3rem; }
+    .service-icon { color: var(--green); width: 2.3rem; height: 2.3rem; margin-top: .25rem; }
+    .service h3 { font-family: var(--serif); font-size: 1.85rem; line-height: 1.15; letter-spacing: -.02em; }
+    .service p { color: var(--muted); margin-top: .85rem; max-width: 41ch; font-size: .96rem; }
+    .service .text-link { font-size: .86rem; margin-top: .8rem; }
+
+    .gallery { padding-bottom: 6.5rem; }
+    .gallery-header { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+    .gallery-header h2 { font-size: clamp(2.1rem, 3.5vw, 3.4rem); }
+    .gallery-header p { max-width: 33ch; font-size: .85rem; color: var(--muted); }
+    .gallery-grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 1.25rem; align-items: start; }
+    .gallery-grid figure:nth-child(2) { margin-top: 3rem; }
+    .gallery-grid figure:nth-child(3) { margin-top: 1.5rem; }
+    .gallery-grid img { aspect-ratio: .9; }
+    .gallery-grid figure:first-child img { aspect-ratio: 1.03; }
+    .gallery-grid figcaption { display: flex; justify-content: space-between; gap: .7rem; margin-top: .75rem; font-size: .77rem; color: var(--muted); }
+    .gallery-grid figcaption span:last-child { font-size: .7rem; }
+
+    .contact { background: var(--pale-blue); padding: 6rem 0; }
+    .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 5rem; align-items: start; }
+    .contact h2 { max-width: 10ch; }
+    .contact-intro { margin-top: 1.4rem; color: var(--muted); max-width: 37ch; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+    .contact-details { margin-top: 2.5rem; display: grid; gap: 1.2rem; }
+    .contact-details dt { font-size: .8rem; color: var(--muted); }
+    .contact-details dd { margin: .25rem 0 0; font-size: 1rem; }
+    .contact-details dd a { display: inline-flex; min-height: 2.75rem; align-items: center; font-size: 1.4rem; font-weight: 500; letter-spacing: -.02em; }
+    .contact-details address { font-style: normal; }
+    .map { width: 100%; height: 25rem; border: 0; background: #d8e2e5; display: block; }
+    .map-caption { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: .8rem; font-size: .8rem; color: var(--muted); }
+    .map-caption .text-link { font-size: .82rem; color: var(--ink); }
+
+    footer { padding: 3rem 0 2rem; }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+    .footer-main p { font-size: .85rem; color: var(--muted); }
+    .footer-bottom { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1.3rem; display: flex; justify-content: space-between; gap: 2rem; font-size: .7rem; color: var(--muted); letter-spacing: .015em; }
+    .footer-bottom p:last-child { max-width: 65ch; text-align: right; }
+
+    @keyframes hero-in {
+      from { opacity: 0; transform: translateY(1rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes postcard-in {
+      from { opacity: 0; transform: translateY(1.5rem) rotateY(-8deg); }
+      to { opacity: 1; transform: translateY(0) rotateY(0); }
+    }
+    .hero-copy { animation: hero-in .85s var(--ease) both; }
+    .postcard-area { animation: postcard-in 1s .12s var(--ease) both; }
+    .hero-bottom { animation: hero-in .7s .25s var(--ease) both; }
+    .js .reveal { opacity: 0; transition: opacity .6s var(--ease); }
+    .js .reveal.visible { opacity: 1; }
+    .js .picture-reveal { opacity: 0; transform: scale(.98); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    .js .picture-reveal.visible { opacity: 1; transform: scale(1); }
+
+    @media (min-width: 1450px) { .hero { padding-block: 5.5rem; } }
+    @media (max-width: 1000px) {
+      .hero-layout { gap: 2rem; grid-template-columns: .9fr 1fr; }
+      .nav-links { gap: 1.3rem; }
+      .about-layout { gap: 3rem; }
+      .contact-layout { gap: 3rem; }
+      .postcard-back { padding: 1.3rem; }
+      .back-body { gap: 1rem; margin-block: 1rem; }
+      .back-message, .back-address { font-size: .8rem; }
+      .back-footer > span { display: none; }
+      .postcard-caption span:first-child { font-size: 1.35rem; }
+      .postcard-caption span:last-child { font-size: .65rem; }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 2.5rem, 36rem); }
+      .nav { min-height: 4.5rem; gap: 1rem; }
+      .brand-name { font-size: 1.5rem; }
+      .brand-place { font-size: .65rem; }
+      .nav-links { display: none; }
+      .header-call { font-size: .8rem; min-height: 2.75rem; padding: .6rem .85rem; }
+      .hero { padding: 2.25rem 0 2.5rem; }
+      .hero-layout { grid-template-columns: 1fr; gap: 2.25rem; }
+      .hero-place { margin-bottom: 1rem; font-size: .8rem; }
+      .hero h1 { max-width: 11ch; font-size: clamp(2.85rem, 10.5vw, 4.5rem); }
+      .hero-copy > p { margin-top: 1.15rem; font-size: 1rem; max-width: 33ch; }
+      .hero-actions { margin-top: 1.4rem; gap: .6rem 1rem; }
+      .hero-actions .button { font-size: .86rem; padding-inline: 1.15rem; }
+      .hero-actions .text-link { font-size: .85rem; }
+      .hero-note { font-size: .72rem; margin-top: .65rem; }
+      .postcard-inner { aspect-ratio: 1.1; }
+      .postcard-face { padding: .7rem; }
+      .postcard-caption { padding: .7rem .1rem .1rem; }
+      .postcard-caption span:first-child { font-size: 1.4rem; }
+      .stamp { width: 5rem; height: 5rem; top: .65rem; right: .65rem; }
+      .postcard-back { padding: 1.25rem; }
+      .back-heading { font-size: 1.9rem; }
+      .back-body { margin-block: .8rem; }
+      .back-message, .back-address { font-size: .8rem; }
+      .back-message { padding-right: .5rem; }
+      .back-phone { font-size: .8rem; }
+      .back-footer .button { min-height: 2.75rem; font-size: .78rem; }
+      .postcard-controls { gap: .4rem; margin-top: .6rem; }
+      .illustration-note { font-size: .65rem; }
+      .flip-button { font-size: .75rem; }
+      .hero-bottom { margin-top: 2rem; font-size: .76rem; flex-direction: column; gap: .25rem; }
+      .hero-bottom > a { align-self: flex-start; min-height: 2.75rem; display: flex; align-items: center; margin-left: 1.9rem; }
+      .about, .contact { padding: 3.5rem 0; }
+      .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .about-copy { grid-row: 1; }
+      .about-copy h2 { max-width: 14ch; }
+      .about-copy > p { font-size: .96rem; margin-top: 1.3rem; }
+      .about-footnote { margin-top: 1.2rem; }
+      .about-picture img { aspect-ratio: 1.2; }
+      .services { padding: 3.5rem 0; }
+      .section-heading { grid-template-columns: 1fr; gap: 1.1rem; margin-bottom: 2rem; }
+      .section-heading > p { justify-self: start; font-size: .95rem; }
+      .service-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      .service { padding-top: 1.4rem; gap: 1rem; grid-template-columns: 2.2rem 1fr; }
+      .service-icon { width: 2rem; height: 2rem; }
+      .service h3 { font-size: 1.7rem; }
+      .service p { font-size: .92rem; }
+      .gallery { padding-bottom: 3.5rem; }
+      .gallery-header { display: block; margin-bottom: 1.5rem; }
+      .gallery-header p { margin-top: 1rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 1.25rem .8rem; }
+      .gallery-grid figure:first-child { grid-column: 1 / -1; }
+      .gallery-grid figure:first-child img { aspect-ratio: 1.4; }
+      .gallery-grid figure:nth-child(2), .gallery-grid figure:nth-child(3) { margin-top: 0; }
+      .gallery-grid img { aspect-ratio: .85; }
+      .gallery-grid figcaption { display: block; font-size: .72rem; }
+      .gallery-grid figcaption span { display: block; }
+      .gallery-grid figcaption span:last-child { margin-top: .2rem; font-size: .65rem; }
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact h2 { max-width: 13ch; }
+      .contact-actions { gap: .65rem; margin-top: 1.5rem; }
+      .contact-actions .button { font-size: .82rem; padding-inline: 1rem; }
+      .contact-details { margin-top: 1.8rem; gap: .9rem; }
+      .map { height: 20rem; }
+      .map-caption { gap: .6rem; font-size: .7rem; }
+      .map-caption .text-link { font-size: .75rem; }
+      footer { padding: 2rem 0 1.5rem; }
+      .footer-main { align-items: flex-start; gap: 1rem; }
+      .footer-main p { max-width: 18ch; font-size: .75rem; text-align: right; }
+      .footer-bottom { flex-direction: column; gap: .7rem; margin-top: 1.5rem; }
+      .footer-bottom p:last-child { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; }
+      .hero-copy, .postcard-area, .hero-bottom { opacity: 1; transform: none; }
+      .js .reveal, .js .picture-reveal { transform: none; transition: opacity .2s; }
+      .postcard-inner { transition: none; }
+      .postcard.is-flipped .postcard-inner { transform: none; }
+      .postcard-back { transform: none; }
+      .postcard:not(.is-flipped) .postcard-back { display: none; }
+      .postcard.is-flipped .postcard-front { display: none; }
+      .button, .flip-button { transition: none; }
+      .button:active, .flip-button:active { transform: none; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .site-header { background: var(--paper); backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .stamp { background: var(--white); }
+    }
+    @media (prefers-contrast: more) {
+      :root { --muted: #354551; --line: #52616a; }
+      .site-header { background: var(--paper); backdrop-filter: none; -webkit-backdrop-filter: none; }
+      .button.secondary { border-color: var(--ink); }
+      .postcard-face { outline: 1px solid var(--ink); }
+      .service { border-color: var(--ink); }
+      .stamp { background: var(--white); }
+    }
+  </style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+  <a class="skip-link" href="#continut">Mergi la conținut</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#acasa" aria-label="Hotel Ioana, prima secțiune">
+        <span class="brand-name">Hotel Ioana</span>
+        <span class="brand-place">Constanța</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigare principală">
+        <a href="#despre">Despre noi</a>
+        <a href="#cazare">Cazare</a>
+        <a href="#galerie">În imagini</a>
+        <a href="#contact">Unde ne găsești</a>
+      </nav>
+      <a class="button header-call" href="tel:0733730810">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m8 3 3 5-3 3c1.3 2.6 2.4 3.7 5 5l3-3 5 3c0 3-2 5-5 5C9 21 3 15 3 8c0-3 2-5 5-5Z" stroke-linejoin="round"/></svg>
+        Sună acum
+      </a>
+    </div>
+  </header>
+
+  <main id="continut">
+    <section class="hero" id="acasa" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="hero-place">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.3"/></svg>
+              O oprire în Constanța
+            </div>
+            <h1 id="hero-title">Bun venit.<br>Lasă bagajele.<br>Bucură-te de oraș.</h1>
+            <p>Hotel Ioana. Confort pentru turiști și călători, într-un oraș de descoperit în ritmul tău.</p>
+            <div class="hero-actions">
+              <a class="button" href="https://wa.me/40733730810?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Hotel%20Ioana." target="_blank" rel="noopener noreferrer">Scrie pe WhatsApp</a>
+              <a class="text-link" href="#cazare">Despre cazare</a>
+            </div>
+            <span class="hero-note">Scrie-ne pentru disponibilitate și detalii.</span>
+          </div>
+
+          <div class="postcard-area">
+            <div class="postcard" id="postcard">
+              <div class="postcard-inner">
+                <div class="postcard-face postcard-front" id="postcard-front">
+                  <div class="postcard-photo">
+                    <img src="img/1.jpg" alt="Interior de dormitor cu pat și mobilier, fotografie ilustrativă de stoc" fetchpriority="high">
+                    <div class="stamp" aria-hidden="true">
+                      <svg viewBox="0 0 100 100" fill="none">
+                        <rect x="7" y="7" width="86" height="86" stroke="#6FA8DC"/>
+                        <path d="M20 59c7-9 14-9 21 0s14 9 21 0 14-9 20 0M20 68c7-9 14-9 21 0s14 9 21 0 14-9 20 0" stroke="#6FA8DC" stroke-width="1.5"/>
+                        <circle cx="51" cy="33" r="10" stroke="#C8664B" stroke-width="1.5"/>
+                        <text x="50" y="84" text-anchor="middle" fill="#243B4D" font-family="sans-serif" font-size="8" letter-spacing=".5">CONSTANȚA</text>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="postcard-caption">
+                    <span>Salutări din Constanța</span>
+                    <span>Hotel Ioana</span>
+                  </div>
+                </div>
+                <div class="postcard-face postcard-back" id="postcard-back" aria-hidden="true" inert>
+                  <p class="back-heading">Următoarea oprire?<br>Ne auzim aici.</p>
+                  <div class="back-body">
+                    <p class="back-message">Spune-ne când vii și pentru câte persoane cauți cazare. Îți răspundem cu detaliile de care ai nevoie.</p>
+                    <address class="back-address">
+                      <strong>Hotel Ioana</strong>
+                      Bulevardul I. C. Brătianu 28<br>
+                      Constanța
+                      <a class="back-phone" href="tel:0733730810">0733 730 810</a>
+                    </address>
+                  </div>
+                  <div class="back-footer">
+                    <span>Cu drag, din Constanța.</span>
+                    <a class="button" href="https://wa.me/40733730810?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Hotel%20Ioana." target="_blank" rel="noopener noreferrer">Scrie pe WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="postcard-controls">
+              <span class="illustration-note">Fotografie ilustrativă</span>
+              <button class="flip-button" id="flip-button" type="button" aria-controls="postcard-back" aria-expanded="false" hidden>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 8a8 8 0 0 0-14-2L3 9m0-6v6h6M4 16a8 8 0 0 0 14 2l3-3m0 6v-6h-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Întoarce cartea poștală</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="hero-bottom">
+          <span class="location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 21V6l8-3 8 3v15M2 21h20M9 21v-6h6v6M8 8h1m6 0h1M8 11h1m6 0h1"/></svg>
+            Bulevardul I. C. Brătianu 28, Constanța
+          </span>
+          <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Ioana+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="despre" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <figure class="about-picture picture-reveal">
+          <img src="img/5.jpg" alt="Pat cu lenjerie și perne într-o cameră de hotel, imagine ilustrativă" loading="lazy" decoding="async">
+          <figcaption>O imagine a confortului. Fotografie de stoc, ilustrativă.</figcaption>
+        </figure>
+        <div class="about-copy reveal">
+          <h2 id="about-title">Un loc de unde începe șederea ta.</h2>
+          <p>Fie că vii să descoperi Constanța sau doar faci o oprire în călătorie, alegerea cazării începe cu o conversație simplă.</p>
+          <p>La Hotel Ioana, ne bucurăm să îți fim gazdă. Spune-ne ce planuri ai și întreabă-ne despre camerele disponibile pentru perioada ta.</p>
+          <a class="text-link" href="tel:0733730810">Vorbește cu noi</a>
+          <div class="about-footnote">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="6" width="12" height="14" rx="2"/><path d="M9 6V3h6v3M9 10v6m6-6v6M8 20v2m8-2v2"/></svg>
+            <span>Ai nevoie de spațiu pentru bagaje? Întreabă-ne despre opțiuni înainte de sosire.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="cazare" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2 id="services-title">O ședere pe măsura<br>planurilor tale.</h2>
+          <p>Camere și cazare pentru călătoria ta. Confirmăm împreună disponibilitatea, tariful și detaliile înainte de rezervare.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service reveal">
+            <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 32V13m30 19V20H5m0 8h30M10 20v-5h10v5m3 0v-5h8v5M5 13V8h30v12"/></svg>
+            <div>
+              <h3>Camere</h3>
+              <p>Călătorești singur, în doi sau cu familia? Spune-ne pentru câte persoane cauți o cameră și discutăm opțiunile disponibile.</p>
+              <a class="text-link" href="https://wa.me/40733730810?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Hotel%20Ioana." target="_blank" rel="noopener noreferrer">Întreabă despre camere</a>
+            </div>
+          </article>
+          <article class="service reveal">
+            <svg class="service-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="7" y="9" width="26" height="25" rx="2"/><path d="M7 17h26M14 5v8m12-8v8m-12 9h4m4 0h4m-12 6h4m4 0h4"/></svg>
+            <div>
+              <h3>Cazare</h3>
+              <p>Trimite-ne perioada în care vrei să vii. Îți comunicăm disponibilitatea și informațiile necesare pentru organizarea șederii.</p>
+              <a class="text-link" href="tel:0733730810">Sună pentru disponibilitate</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="galerie" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="gallery-header reveal">
+          <h2 id="gallery-title">Cu gândul la odihnă.</h2>
+          <p>Imagini de inspirație pentru o ședere. Fotografiile sunt ilustrative, nu prezintă camerele Hotelului Ioana.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="picture-reveal">
+            <img src="img/2.jpg" alt="Interior de cameră de hotel cu pat, fotografie de stoc" loading="lazy" decoding="async">
+            <figcaption><span>O pauză de la drum</span><span>Imagine ilustrativă</span></figcaption>
+          </figure>
+          <figure class="picture-reveal">
+            <img src="img/3.jpg" alt="Dormitor cu pat și canapea, fotografie ilustrativă" loading="lazy" decoding="async">
+            <figcaption><span>Timp pentru odihnă</span><span>Imagine ilustrativă</span></figcaption>
+          </figure>
+          <figure class="picture-reveal">
+            <img src="img/4.jpg" alt="Cameră cu pat dublu și decor interior, fotografie de stoc" loading="lazy" decoding="async">
+            <figcaption><span>Gândul la o nouă zi</span><span>Imagine ilustrativă</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="reveal">
+          <h2 id="contact-title">Ne vedem în Constanța.</h2>
+          <p class="contact-intro">Ai ales perioada? Sună-ne sau scrie-ne pe WhatsApp pentru detalii despre cazare.</p>
+          <div class="contact-actions">
+            <a class="button" href="https://wa.me/40733730810?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Hotel%20Ioana." target="_blank" rel="noopener noreferrer">Scrie pe WhatsApp</a>
+            <a class="button secondary" href="tel:0733730810">Sună acum</a>
+          </div>
+          <dl class="contact-details">
+            <div>
+              <dt>Telefon</dt>
+              <dd><a href="tel:0733730810">0733 730 810</a></dd>
+            </div>
+            <div>
+              <dt>Adresă</dt>
+              <dd><address>Bulevardul I. C. Brătianu 28<br>Constanța</address></dd>
+            </div>
+          </dl>
+        </div>
+        <div class="reveal">
+          <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=28.623798599999997,44.170162,28.6317986,44.174162&amp;layer=mapnik&amp;marker=44.172162,28.6277986" title="Hartă cu localizarea Hotelului Ioana în Constanța" loading="lazy"></iframe>
+          <div class="map-caption">
+            <span>Hotel Ioana, Constanța</span>
+            <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Hotel+Ioana+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <a class="brand" href="#acasa">
+          <span class="brand-name">Hotel Ioana</span>
+          <span class="brand-place">Constanța</span>
+        </a>
+        <p>Confort pentru turiști<br>și călători.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>Model de site (demo)</p>
+        <p>Fotografii ilustrative de pe Pixabay: peterweideman, burakyamanlica, tianya1223, ManuelaJaeger, Pexels</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      document.documentElement.classList.add('js');
+
+      const card = document.getElementById('postcard');
+      const front = document.getElementById('postcard-front');
+      const back = document.getElementById('postcard-back');
+      const flip = document.getElementById('flip-button');
+      flip.hidden = false;
+
+      flip.addEventListener('click', () => {
+        const isFlipped = card.classList.toggle('is-flipped');
+        flip.setAttribute('aria-expanded', String(isFlipped));
+        front.setAttribute('aria-hidden', String(isFlipped));
+        back.setAttribute('aria-hidden', String(!isFlipped));
+        front.inert = isFlipped;
+        back.inert = !isFlipped;
+        flip.querySelector('span').textContent = isFlipped
+          ? 'Vezi fața cărții poștale'
+          : 'Întoarce cartea poștală';
+      });
+
+      const elements = document.querySelectorAll('.reveal, .picture-reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08 });
+        elements.forEach(element => observer.observe(element));
+      } else {
+        elements.forEach(element => element.classList.add('visible'));
+      }
+
+      const header = document.querySelector('.site-header');
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 12);
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
