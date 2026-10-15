@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bistro 47, București</title>
+<meta name="description" content="Bistro 47, Strada Alunișului 47, București. Preparate românești și internaționale, deschis în fiecare zi, între 08:00 și 24:00.">
+<meta name="theme-color" content="#F3EDE2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13.5' fill='none' stroke='%23be123c' stroke-width='2.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --crem:#F3EDE2;
+  --crem-2:#EDE5D5;
+  --negru:#1B1B1B;
+  --lemn:#7B5B3A;
+  --rosu:#be123c;
+  --rosu-inchis:#a10f32;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--crem);color:var(--negru);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:0}
+h1{font-size:clamp(3.25rem,10vw,6.5rem);line-height:1}
+h2{font-size:clamp(2.25rem,6vw,4rem)}
+h3{font-size:1.6rem;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--rosu);outline-offset:3px}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+.section{padding:clamp(4.5rem,10vw,8rem) 0}
+.section-alt{background:var(--crem-2)}
+
+.skip{position:absolute;left:-9999px;top:1rem;z-index:100;background:var(--negru);color:var(--crem);padding:.6rem 1rem;text-decoration:none}
+.skip:focus{left:1rem}
+
+/* ——— Bară de navigare: sticlă ——— */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(243,237,226,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.65);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.site-header.is-scrolled{box-shadow:0 10px 30px -14px rgba(27,27,27,.22)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--serif);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;color:var(--negru)}
+.brand svg{width:2rem;height:2rem;flex:none}
+.bar-right{display:flex;align-items:center;gap:.5rem}
+
+.nav{
+  position:absolute;top:100%;left:0;right:0;
+  display:flex;flex-direction:column;
+  background:var(--crem);
+  padding:.5rem clamp(1.25rem,5vw,3rem) 1.25rem;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
+}
+.nav.is-open{opacity:1;visibility:visible;transform:none}
+.nav a{display:block;padding:.85rem 0;font-size:1.1rem;font-weight:600;text-decoration:none;color:var(--negru);transition:color .25s}
+.nav a:hover{color:var(--rosu)}
+
+.nav-toggle{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  width:2.75rem;height:2.75rem;padding:0;background:none;border:0;cursor:pointer;border-radius:2px;
+}
+.nav-toggle span{display:block;width:1.25rem;height:1.5px;background:var(--negru);margin:.2rem 0;transition:background-color .25s}
+.nav-toggle:hover span{background:var(--rosu)}
+
+@media (min-width:820px){
+  .nav{position:static;flex-direction:row;align-items:center;gap:2rem;padding:0;background:none;opacity:1;visibility:visible;transform:none;flex:1;justify-content:center}
+  .nav a{padding:.5rem 0;font-size:1rem}
+  .nav-toggle{display:none}
+}
+
+/* ——— Butoane: răspund imediat ——— */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.8rem 1.5rem;
+  font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1;letter-spacing:.01em;
+  text-decoration:none;border:1px solid transparent;border-radius:2px;cursor:pointer;
+  transition:background-color .25s,color .25s,border-color .25s,box-shadow .3s var(--ease),transform .1s ease-out;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--rosu);color:#fff}
+.btn-primary:hover{background:var(--rosu-inchis);box-shadow:0 10px 22px -12px rgba(190,18,60,.7)}
+.btn-line{background:transparent;color:var(--negru);border-color:var(--negru)}
+.btn-line:hover{background:rgba(27,27,27,.05);box-shadow:0 8px 18px -14px rgba(27,27,27,.5)}
+.btn-sm{min-height:2.75rem;padding:.6rem 1.05rem;font-size:.95rem}
+.btn-text{
+  display:inline-flex;align-items:center;min-height:3rem;padding:0 .25rem;
+  color:var(--lemn);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.35em;
+  transition:color .25s;
+}
+.btn-text:hover{color:var(--rosu)}
+.btn-text:active{transform:scale(.97)}
+
+/* ——— Motivul de ie (SVG desenat din cod) ——— */
+.ie{width:min(100%,24rem);margin:1.5rem 0 2.25rem;color:var(--rosu)}
+.ie svg{display:block;width:100%;height:auto;overflow:visible}
+.ie path{fill:none;stroke:currentColor;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.ie .ie-main{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease) .2s}
+.ie .ie-x{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.2s linear 1.5s}
+.ie.is-in .ie-main,.ie.is-in .ie-x{stroke-dashoffset:0}
+
+/* ——— Dezvăluiri la derulare: trei feluri, discrete ——— */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+.js .rv.is-in{opacity:1;transform:none}
+.js .rv-l{opacity:0;transform:translateX(-18px);transition:opacity .5s var(--ease) var(--d,0s),transform .5s var(--ease) var(--d,0s)}
+.js .rv-l.is-in{opacity:1;transform:none}
+.js .rv-img{opacity:0;transform:scale(1.035);transition:opacity .8s var(--ease) var(--d,0s),transform 1.2s var(--ease) var(--d,0s)}
+.js .rv-img.is-in{opacity:1;transform:none}
+
+/* ——— Primul ecran ——— */
+.hero{padding:calc(4.25rem + clamp(2.5rem,7vw,5rem)) 0 clamp(4.5rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.slogan{margin-top:1.25rem;font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;color:var(--lemn)}
+.lead{margin-top:1.25rem;font-size:1.125rem;max-width:34ch}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;margin-top:2rem}
+.facts{display:grid;gap:1.1rem;margin:2.5rem 0 0;padding:0}
+.facts div{display:grid;gap:.15rem}
+.facts dt{font-size:.875rem;font-weight:600;letter-spacing:.03em;color:var(--lemn)}
+.facts dd{margin:0}
+.hero-fig{margin:0;position:relative;overflow:hidden;aspect-ratio:4/3}
+.hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr 1fr}
+  .hero-fig{aspect-ratio:4/5}
+}
+
+/* ——— Despre ——— */
+.about-grid{display:grid;gap:clamp(3rem,7vw,6rem);align-items:center}
+.about-fig{margin:0;position:relative;overflow:hidden;aspect-ratio:4/5}
+.about-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-lead{margin-top:.25rem;font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.25;letter-spacing:-.01em}
+.about-text p+p{margin-top:1.1rem}
+.about-text p:not(.about-lead){max-width:60ch;color:rgba(27,27,27,.85)}
+
+.perks{list-style:none;margin:4.5rem 0 0;padding:0;display:grid;gap:2.25rem}
+.perk{display:flex;gap:1.1rem;align-items:flex-start}
+.perk-emo{flex:none;width:3.25rem;height:3.25rem;border-radius:50%;background:var(--crem);display:grid;place-items:center;font-size:1.5rem;line-height:1}
+.perk h3{font-size:1.3rem}
+.perk p{margin-top:.25rem;color:rgba(27,27,27,.8)}
+
+@media (min-width:900px){
+  .about-grid{grid-template-columns:5fr 6fr}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+  .perk{flex-direction:column;gap:1rem}
+}
+
+/* ——— Meniu ——— */
+.intro{margin-top:1.25rem;max-width:44ch;color:rgba(27,27,27,.85)}
+.menu{list-style:none;margin:3rem 0 0;padding:0;display:grid}
+.menu li{padding:1.6rem 0;border-top:1px solid rgba(123,91,58,.3)}
+.menu li:last-child{border-bottom:1px solid rgba(123,91,58,.3)}
+.menu h3{display:flex;align-items:center;gap:.75rem}
+.menu h3::before{content:"";flex:none;width:.5rem;height:.5rem;background:var(--rosu);transform:rotate(45deg)}
+.menu p{margin:.4rem 0 0 1.25rem;color:rgba(27,27,27,.8)}
+.menu-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.5rem}
+
+@media (min-width:760px){
+  .menu{grid-template-columns:1fr 1fr;column-gap:clamp(3rem,6vw,5rem)}
+  .menu li:nth-child(2){border-bottom:1px solid rgba(123,91,58,.3)}
+  .menu li:nth-child(5){border-bottom:1px solid rgba(123,91,58,.3)}
+}
+
+/* ——— Galerie ——— */
+.gallery{display:grid;gap:.75rem;margin-top:3rem;grid-template-columns:1fr}
+.g-item{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3}
+.g-item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.g-item:hover img{transform:scale(1.03)}
+
+@media (min-width:760px){
+  .gallery{grid-template-columns:1.5fr 1fr;grid-auto-rows:clamp(12rem,26vw,20rem);gap:1.25rem}
+  .g-item{aspect-ratio:auto}
+  .g1{grid-row:span 2}
+}
+
+/* ——— Contact ——— */
+.contact-grid{display:grid;gap:3.5rem;align-items:start}
+.contact-actions{display:grid;gap:.75rem;margin-top:2.25rem;justify-items:start}
+.contact-actions .btn{width:100%}
+.contact-actions .btn-text{width:auto}
+.map{position:relative;overflow:hidden;min-height:18rem}
+.map iframe{display:block;width:100%;height:clamp(18rem,44vw,26rem);border:0}
+
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.15fr;gap:clamp(3rem,7vw,6rem)}
+  .contact-actions{grid-template-columns:auto auto;justify-items:start;align-items:center;column-gap:1rem;row-gap:.75rem}
+  .contact-actions .btn{width:auto}
+  .contact-actions .btn-text{grid-column:span 2}
+}
+
+/* ——— Subsol ——— */
+.site-footer{background:var(--negru);color:rgba(243,237,226,.92);padding:clamp(3.5rem,7vw,5rem) 0 2.5rem}
+.foot-grid{display:grid;gap:2.25rem}
+.foot-name{font-family:var(--serif);font-weight:700;font-size:2rem;letter-spacing:-.02em;color:var(--crem);line-height:1}
+.foot-grid p+p{margin-top:.4rem}
+.foot-grid a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+.foot-grid a:hover{color:#fff}
+.foot-bottom{display:grid;gap:.5rem;margin-top:3.5rem;padding-top:1.75rem;border-top:1px solid rgba(243,237,226,.14);font-size:.875rem;letter-spacing:.02em;color:rgba(243,237,226,.7)}
+@media (min-width:820px){
+  .foot-grid{grid-template-columns:1.2fr 1fr 1fr}
+}
+
+/* ——— Accesibilitate: transparență, contrast, mișcare redusă ——— */
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-header{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none;border-top-color:var(--negru)}
+  .btn-line{border-width:2px}
+  .btn-text,.facts dt,.hero .slogan{color:#4a3520}
+  .about-text p:not(.about-lead),.intro,.menu p,.perk p{color:var(--negru)}
+  .menu li,.menu li:last-child{border-color:var(--negru)}
+  .nav{background:var(--crem);border-top:2px solid var(--negru)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important;transition-delay:0s !important;animation:none !important}
+  .js .rv,.js .rv-l,.js .rv-img{transform:none !important}
+  .ie path{stroke-dashoffset:0 !important;transition:none !important}
+  .g-item:hover img{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="16" r="14.5" fill="none" stroke="#be123c" stroke-width="1.4"/>
+        <circle cx="16" cy="16" r="9.5" fill="none" stroke="#7B5B3A" stroke-width="1"/>
+        <path d="M16 11.5l4.5 4.5-4.5 4.5-4.5-4.5z" fill="#be123c"/>
+      </svg>
+      <span>Bistro 47</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="bar-right">
+      <a class="btn btn-primary btn-sm" href="tel:0721793453">Sună acum</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Deschide navigarea">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" class="rv">Bistro 47</h1>
+        <div class="ie"></div>
+        <p class="slogan rv" style="--d:.2s">Gusturi pentru fiecare zi</p>
+        <p class="lead rv" style="--d:.28s">Bucură-te de preparate românești și internaționale.</p>
+        <div class="actions rv" style="--d:.36s">
+          <a class="btn btn-primary" href="tel:0721793453">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40721793453?text=Bun%C4%83%20ziua%21%20M%C4%83%20intereseaz%C4%83%20meniul%20dumneavoastr%C4%83.">Scrie-ne pe WhatsApp</a>
+          <a class="btn-text" href="#meniu">Vezi meniul</a>
+        </div>
+        <dl class="facts rv" style="--d:.44s">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Strada Alunișului 47, București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Deschis în fiecare zi, între 08:00 și 24:00</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="hero-fig rv-img" style="--d:.1s">
+        <img src="img/3.jpg" alt="Bucătar gătind în bucătăria restaurantului">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <figure class="about-fig rv-img">
+        <img src="img/5.jpg" alt="Masă pusă cu lumânări și vin, pentru o cină liniștită" loading="lazy">
+      </figure>
+      <div class="about-text">
+        <h2 id="despre-titlu" class="rv">Despre Bistro 47</h2>
+        <div class="ie"></div>
+        <p class="about-lead rv" style="--d:.1s">Preparate din bucătăria românească și internațională.</p>
+        <p class="rv" style="--d:.18s">Bistro 47 te invită într-o atmosferă relaxată, cu preparate din bucătăria românească și internațională. Fie că îți dorești un prânz sățios sau o cină în familie, aici găsești mereu ceva potrivit gustului tău.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="perks">
+        <li class="perk rv" style="--d:0s">
+          <span class="perk-emo" aria-hidden="true">🥗</span>
+          <div>
+            <h3>Două bucătării</h3>
+            <p>Preparate din bucătăria românească și din cea internațională</p>
+          </div>
+        </li>
+        <li class="perk rv" style="--d:.12s">
+          <span class="perk-emo" aria-hidden="true">🏡</span>
+          <div>
+            <h3>Atmosferă primitoare</h3>
+            <p>Un cadru relaxat, pentru prânz sau cină în familie</p>
+          </div>
+        </li>
+        <li class="perk rv" style="--d:.24s">
+          <span class="perk-emo" aria-hidden="true">👩‍🍳</span>
+          <div>
+            <h3>Preparate proaspete</h3>
+            <p>Mâncare gătită pe loc</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <h2 id="meniu-titlu" class="rv">Meniu</h2>
+      <div class="ie"></div>
+      <p class="intro rv" style="--d:.1s">Bucătăria românească și cea internațională, pentru un prânz sățios sau o cină în familie.</p>
+
+      <ul class="menu">
+        <li class="rv-l" style="--d:0s">
+          <h3>Bucătărie românească</h3>
+          <p>Preparate din bucătăria românească</p>
+        </li>
+        <li class="rv-l" style="--d:.06s">
+          <h3>Bucătărie internațională</h3>
+          <p>Preparate din bucătăria internațională</p>
+        </li>
+        <li class="rv-l" style="--d:.12s">
+          <h3>Prânz sățios</h3>
+          <p>Pentru o masă de prânz</p>
+        </li>
+        <li class="rv-l" style="--d:.18s">
+          <h3>Cină în familie</h3>
+          <p>Pentru o seară în familie, într-o atmosferă relaxată</p>
+        </li>
+        <li class="rv-l" style="--d:.24s">
+          <h3>Preparate proaspete</h3>
+          <p>Mâncare gătită pe loc</p>
+        </li>
+      </ul>
+
+      <div class="menu-actions rv">
+        <a class="btn btn-primary" href="tel:0721793453">Sună acum</a>
+        <a class="btn btn-line" href="https://wa.me/40721793453?text=Bun%C4%83%20ziua%21%20M%C4%83%20intereseaz%C4%83%20meniul%20dumneavoastr%C4%83.">Scrie-ne pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu" class="rv">Din bucătărie și din sală</h2>
+      <div class="ie"></div>
+
+      <div class="gallery">
+        <figure class="g-item g1 rv-img" style="--d:0s">
+          <img src="img/1.jpg" alt="Lasagna servită pe masă" loading="lazy">
+        </figure>
+        <figure class="g-item rv-img" style="--d:.1s">
+          <img src="img/4.jpg" alt="Interior de restaurant cu mese și scaune de lemn" loading="lazy">
+        </figure>
+        <figure class="g-item rv-img" style="--d:.2s">
+          <img src="img/2.jpg" alt="Masă pusă cu pahare și farfurii" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-titlu" class="rv">Vino la masă</h2>
+        <div class="ie"></div>
+
+        <dl class="facts rv" style="--d:.1s">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Strada Alunișului 47, București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Deschis în fiecare zi, între 08:00 și 24:00</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd>0721 793 453</dd>
+          </div>
+        </dl>
+
+        <div class="contact-actions rv" style="--d:.18s">
+          <a class="btn btn-primary" href="tel:0721793453">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40721793453?text=Bun%C4%83%20ziua%21%20M%C4%83%20intereseaz%C4%83%20meniul%20dumneavoastr%C4%83.">Scrie-ne pe WhatsApp</a>
+          <a class="btn-text" href="mailto:bistro47bucuresti@gmail.com">Trimite un e-mail</a>
+          <a class="btn-text" href="https://www.google.com/maps/search/?api=1&query=Bistro+47+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map rv" style="--d:.25s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.102680399999997,44.394571299999996,26.1106804,44.3985713&layer=mapnik&marker=44.3965713,26.1066804"
+          title="Harta: Bistro 47, Strada Alunișului 47, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">Bistro 47</p>
+      <p>Gusturi pentru fiecare zi</p>
+    </div>
+    <div>
+      <p>Strada Alunișului 47, București</p>
+      <p><a href="tel:0721793453">0721 793 453</a></p>
+      <p><a href="mailto:bistro47bucuresti@gmail.com">bistro47bucuresti@gmail.com</a></p>
+    </div>
+    <div>
+      <p>Deschis în fiecare zi, între 08:00 și 24:00</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: Foodart, neshom, Pexels, kaboompics, Timbigger</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Motivul de ie: rânduri de romburi și cruciulițe, desenate din cod */
+  var N = 20;
+  document.querySelectorAll('.ie').forEach(function (el) {
+    var main = 'M0 12', xs = '';
+    for (var i = 0; i < N; i++) {
+      var cx = 12 + i * 24;
+      main += ' L' + (cx - 8) + ' 12 L' + cx + ' 4 L' + (cx + 8) + ' 12 L' + cx + ' 20 L' + (cx - 8) + ' 12';
+      if (i < N - 1) {
+        var gx = cx + 12;
+        xs += 'M' + (gx - 4) + ' 8L' + (gx + 4) + ' 16M' + (gx + 4) + ' 8L' + (gx - 4) + ' 16';
+      }
+    }
+    main += ' L480 12';
+    el.innerHTML =
+      '<svg viewBox="0 0 480 24" aria-hidden="true" focusable="false">' +
+      '<path class="ie-main" pathLength="1" d="' + main + '"/>' +
+      '<path class="ie-x" pathLength="1" d="' + xs + '"/>' +
+      '</svg>';
+  });
+
+  /* Dezvăluiri la derulare */
+  var targets = document.querySelectorAll('.rv, .rv-l, .rv-img, .ie');
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (t) { t.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (t) { io.observe(t); });
+  }
+
+  /* Bara de navigare: umbră doar când pagina e derulată */
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Meniul de pe telefon */
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('nav');
+  function setNav(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide navigarea' : 'Deschide navigarea');
+  }
+  toggle.addEventListener('click', function () {
+    setNav(!nav.classList.contains('is-open'));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setNav(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setNav(false);
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
