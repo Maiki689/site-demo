@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFD447">
+  <meta name="description" content="La Bazar, magazinul tău practic din cartier. Ne găsești pe Aleea Heracleea 3, în Constanța. Sună sau întreabă pe WhatsApp.">
+  <title>La Bazar — Aproape de tine, în Constanța</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow: #ffd447;
+      --blue: #2563eb;
+      --ink: #171b24;
+      --muted: #555c68;
+      --white: #fff;
+      --space: clamp(4rem, 8vw, 7.5rem);
+      --ease: cubic-bezier(.2,.8,.2,1);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: "Rubik", sans-serif; line-height: 1.6; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button, input { font: inherit; }
+    a { color: inherit; }
+    button { cursor: pointer; }
+    img { display: block; width: 100%; object-fit: cover; }
+    svg { display: block; }
+    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3 { font-family: "Outfit", sans-serif; letter-spacing: -.025em; }
+    h1 { font-size: clamp(3rem, 5.8vw, 5.8rem); font-weight: 600; line-height: 1.04; }
+    h2 { font-size: clamp(2.25rem, 4.3vw, 4.2rem); font-weight: 600; line-height: 1.08; }
+    h3 { font-size: clamp(1.5rem, 2.4vw, 2.15rem); font-weight: 500; line-height: 1.18; }
+    p { max-width:  sixty; }
+    :focus-visible { outline: .2rem solid var(--blue); outline-offset: .3rem; }
+    .wrap { width: min(100% - 3rem, 78rem); margin-inline: auto; }
+    .skip { position: fixed; z-index: 30; left: 1rem; top: 1rem; padding: .8rem 1rem; background: white; transform: translateY(-200%); }
+    .skip:focus { transform: none; }
+    .header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.88); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-top: 1px solid rgba(255,255,255,.8); transition: box-shadow .2s; }
+    .header.scrolled { box-shadow: 0 .3rem 1.5rem rgba(23,27,36,.07); }
+    .nav { min-height: 5.25rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; font: 700 1.8rem/1 "Outfit",sans-serif; letter-spacing: -.04em; white-space: nowrap; }
+    .brand svg { width: 1.7rem; height: 2rem; color: var(--blue); }
+    .nav-links { display: flex; gap: 2rem; margin-left: auto; }
+    .nav-links a { text-decoration: none; font-size: .9rem; font-weight: 500; padding-block: .7rem; }
+    .nav-links a:hover { color: var(--blue); }
+    .button { min-height: 3.25rem; display: inline-flex; align-items: center; justify-content: center; gap: .65rem; padding: .85rem 1.5rem; border-radius: .5rem; border: 0; text-decoration: none; font-size: .95rem; font-weight: 500; line-height: 1.3; transition: transform .1s, background-color .2s, box-shadow .2s; }
+    .button svg { width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+    .button:active, .replay:active { transform: scale(.97); }
+    .button-blue { background: var(--blue); color: white; }
+    .button-blue:hover { background: #194fcb; box-shadow: 0 .3rem 1rem rgba(37,99,235,.16); }
+    .button-white { background: white; color: var(--ink); }
+    .button-white:hover { background: #f0f4ff; }
+    .header .button { min-height: 2.8rem; padding: .7rem 1.15rem; }
+    .hero { background: var(--yellow); }
+    .hero-layout { min-height: 42rem; display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 2rem; padding-block: 4.5rem 4rem; }
+    .hero-copy { position: relative; z-index: 2; }
+    .location { display: flex; align-items: center; gap: .5rem; font-size: .95rem; margin-bottom: 1.6rem; }
+    .location svg { width: 1.1rem; height: 1.1rem; }
+    .hero h1 { max-width: 10.5ch; }
+    .hero-intro { max-width: 29rem; font-size: 1.08rem; margin-top: 1.7rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.5rem; margin-top: 2rem; }
+    .text-link { font-weight: 500; font-size: .95rem; text-decoration-thickness: 1px; text-underline-offset: .3rem; display: inline-flex; align-items: center; min-height: 2.8rem; }
+    .hero-art { width: 100%; max-width: 32rem; margin: auto; position: relative; }
+    .bag-scene { width: 100%; height: auto; overflow: visible; }
+    .bag-item { opacity: 0; transform: translateY(-90px); }
+    .hero-art.play .bag-item { animation: drop .7s var(--ease) both; }
+    .hero-art.play .item-one { animation-delay: .45s; }
+    .hero-art.play .item-two { animation-delay: .8s; }
+    .hero-art.play .item-three { animation-delay: 1.15s; }
+    .hero-art.play .bag-body { animation: settle .55s var(--ease) 1.45s both; transform-origin: 260px 415px; }
+    .replay { display: flex; align-items: center; gap: .45rem; margin: -.5rem auto 0; border: 0; background: transparent; padding: .7rem; min-height: 2.75rem; font-size: .8rem; color: var(--ink); transition: transform .1s; text-decoration: underline; text-underline-offset: .25rem; }
+    .replay svg { width: 1rem; height: 1rem; }
+    .hero-enter { animation: intro .65s var(--ease) both; }
+    .hero-intro.hero-enter { animation-delay: .1s; }
+    .hero-actions.hero-enter { animation-delay: .2s; }
+    @keyframes intro { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+    @keyframes drop { 0% { opacity: 0; transform: translateY(-90px); } 35% { opacity: 1; } 82% { transform: translateY(4px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes settle { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025,.985); } }
+    .hero-foot { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; border-top: 1px solid rgba(23,27,36,.17); font-size: .85rem; }
+    .section { padding-block: var(--space); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 7rem); align-items: center; }
+    .photo { margin: 0; }
+    .photo img { aspect-ratio: 1.15; border-radius: .35rem; }
+    figcaption { margin-top: .65rem; color: var(--muted); font-size: .75rem; letter-spacing: .01em; }
+    .about-copy h2 { max-width: 12ch; margin-bottom: 1.7rem; }
+    .about-copy p { color: var(--muted); max-width: 34rem; margin-bottom: 1rem; }
+    .about-copy .text-link { color: var(--blue); margin-top: .6rem; }
+    .advantages { display: grid; grid-template-columns: repeat(3,1fr); gap: 3rem; margin-top: 4.5rem; }
+    .advantage { display: grid; grid-template-columns: 2.7rem 1fr; gap: 1rem; align-items: start; }
+    .advantage svg { width: 2.5rem; height: 2.5rem; color: var(--blue); }
+    .advantage h3 { font-size: 1.35rem; margin-bottom: .35rem; }
+    .advantage p { color: var(--muted); font-size: .95rem; }
+    .products { background: var(--blue); color: white; }
+    .products-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3.5rem; align-items: end; }
+    .products-top h2 { max-width: 11ch; }
+    .products-top p { max-width: 29rem; color: #edf2ff; }
+    .products-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+    .product-row { padding-block: 1.5rem; border-top: 1px solid rgba(255,255,255,.32); }
+    .product-row:first-child { padding-top: 1.25rem; }
+    .product-row h3 { margin-bottom: .5rem; }
+    .product-row p { color: #edf2ff; max-width: 33rem; font-size: .95rem; }
+    .products .button { margin-top: 1.3rem; }
+    .products .photo img { aspect-ratio: .98; }
+    .products figcaption { color: #e0e9ff; }
+    .contact { background: #f5f7fb; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+    .contact h2 { max-width: 11ch; margin-bottom: 2rem; }
+    address { font-style: normal; font-size: 1.15rem; line-height: 1.6; }
+    .contact-actions { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; margin-top: 1.7rem; }
+    .phone { font: 500 clamp(1.7rem, 3vw, 2.2rem)/1.2 "Outfit",sans-serif; display: inline-block; text-decoration: none; margin-top: 1.5rem; letter-spacing: -.02em; }
+    .phone:hover { color: var(--blue); }
+    .contact-note { color: var(--muted); font-size: .9rem; margin-top: 1.6rem; max-width: 25rem; }
+    .map { width: 100%; height: 27rem; border: 0; display: block; border-radius: .35rem; background: #e4e9ed; }
+    .map-caption { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: .8rem; }
+    .map-caption p { font-size: .85rem; color: var(--muted); }
+    .map-caption a { font-size: .85rem; font-weight: 500; text-underline-offset: .25rem; min-height: 2.75rem; display: inline-flex; align-items: center; }
+    footer { padding-block: 2.5rem; }
+    .footer-top { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+    .footer-top p { font-size: .85rem; color: var(--muted); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 2rem; margin-top: 1.8rem; font-size: .72rem; color: var(--muted); letter-spacing: .01em; }
+    .footer-bottom p { max-width: 42rem; }
+    .js .reveal { opacity: 0; transition: opacity .55s var(--ease); }
+    .js .reveal.photo { transform: translateX(-1rem); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+    .js .reveal.product-row { transform: translateX(.7rem); transition: opacity .45s var(--ease), transform .45s var(--ease); }
+    .js .reveal.visible { opacity: 1; transform: none; }
+    @media (min-width: 1500px) { .hero-layout { min-height: 46rem; } }
+    @media (max-width: 900px) {
+      .nav-links { gap: 1.2rem; }
+      .hero-layout { min-height: auto; gap: 0; }
+      .hero-art { min-width: 0; }
+      .about-grid { gap: 2.5rem; }
+      .advantages { gap: 1.5rem; }
+      .advantage { grid-template-columns: 1fr; gap: .8rem; }
+      .products-grid { gap: 2.5rem; }
+      .contact-grid { gap: 2.5rem; }
+    }
+    @media (max-width: 650px) {
+      .wrap { width: calc(100% - 2.5rem); }
+      .nav { min-height: 4.5rem; gap: 1rem; }
+      .brand { font-size: 1.55rem; }
+      .brand svg { width: 1.45rem; }
+      .nav-links { display: none; }
+      .header .button { font-size: .85rem; padding-inline: .85rem; }
+      .hero-layout { grid-template-columns: 1fr; padding-block: 2.5rem 1.5rem; }
+      .location { margin-bottom: 1.25rem; font-size: .85rem; }
+      .hero h1 { font-size: clamp(3.1rem, 12.5vw, 4.7rem); max-width: 11ch; }
+      .hero-intro { font-size: 1rem; margin-top: 1.3rem; max-width: 28ch; }
+      .hero-actions { margin-top: 1.5rem; gap: .5rem 1rem; }
+      .hero-actions .button { padding-inline: 1.15rem; }
+      .hero-art { max-width: 23rem; margin-top: .5rem; }
+      .hero-foot { font-size: .75rem; padding-block: 1rem; }
+      .about-grid, .products-top, .products-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-copy { grid-row: 1; }
+      .about-copy h2 { max-width: 14ch; }
+      .photo img { aspect-ratio: 1.2; }
+      .advantages { grid-template-columns: 1fr; margin-top: 2.5rem; gap: 1.6rem; }
+      .advantage { grid-template-columns: 2.7rem 1fr; gap: 1rem; }
+      .products-top { margin-bottom: 2rem; gap: 1.3rem; }
+      .products-top h2 { max-width: 14ch; }
+      .products .photo img { aspect-ratio: 1.4; }
+      .contact h2 { max-width: 13ch; margin-bottom: 1.5rem; }
+      .map { height: 21rem; }
+      .map-caption { align-items: flex-start; flex-direction: column; gap: 0; }
+      .footer-top, .footer-bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-bottom { margin-top: 1.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .2s !important; animation-delay: 0s !important; transition-duration: .2s !important; }
+      .hero-enter { animation: none; }
+      .hero-art .bag-item, .hero-art.play .bag-item { animation: none; opacity: 1; transform: none; }
+      .hero-art.play .bag-body { animation: none; }
+      .js .reveal, .js .reveal.photo, .js .reveal.product-row { transform: none; }
+      .replay { display: none; }
+      .button:active { transform: none; }
+    }
+    @media (prefers-reduced-transparency: reduce) {
+      .header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    }
+    @media (prefers-contrast: more) {
+      .header { background: white; backdrop-filter: none; -webkit-backdrop-filter: none; }
+      :root { --muted: #303744; }
+      .button { border: 2px solid currentColor; }
+      .product-row { border-color: white; }
+      .hero-foot { border-color: var(--ink); }
+    }
+  </style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <header class="header">
+    <nav class="wrap nav" aria-label="Navigare principală">
+      <a class="brand" href="#continut" aria-label="La Bazar, începutul paginii">
+        <svg viewBox="0 0 28 34" fill="none" aria-hidden="true"><path d="M3 11h22l2 21H1l2-21Z" fill="currentColor"/><path d="M9 13V7a5 5 0 0 1 10 0v6" stroke="currentColor" stroke-width="2.5"/><path d="M9 20c2 5 8 5 10 0" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        La Bazar
+      </a>
+      <div class="nav-links">
+        <a href="#despre">Despre noi</a>
+        <a href="#produse">Produse</a>
+        <a href="#contact">Unde ne găsești</a>
+      </div>
+      <a class="button button-blue" href="tel:0758466589">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 3 3 5-2 2c1.3 3 3 4.7 6 6l2-2 5 3-1 4C11 22 2 13 3 4l4-1Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        Sună acum
+      </a>
+    </nav>
+  </header>
+
+  <main id="continut">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-layout">
+        <div class="hero-copy">
+          <p class="location hero-enter">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+            Magazinul tău din Constanța
+          </p>
+          <h1 id="hero-title" class="hero-enter">Totul la îndemână, aproape de tine.</h1>
+          <p class="hero-intro hero-enter">La Bazar, cumpărăturile încep aproape de casă. Ne găsești pe Aleea Heracleea 3.</p>
+          <div class="hero-actions hero-enter">
+            <a class="button button-blue" href="tel:0758466589">Sună acum</a>
+            <a class="text-link" href="#produse">Vezi produsele</a>
+          </div>
+        </div>
+        <div class="hero-art" id="shopping-bag">
+          <svg class="bag-scene" viewBox="0 0 520 480" role="img" aria-labelledby="bag-title bag-desc">
+            <title id="bag-title">O pungă de cumpărături La Bazar</title>
+            <desc id="bag-desc">Ilustrație cu produse care intră într-o pungă albastră. Produsele sunt simbolice.</desc>
+            <ellipse cx="264" cy="439" rx="153" ry="13" fill="#171b24" opacity=".09"/>
+            <path d="M138 214h249l-25 36H162Z" fill="#1644a4"/>
+            <g class="bag-item item-one">
+              <g transform="rotate(-13 180 190)">
+                <path d="M145 102h64v145h-64Z" fill="#fff"/>
+                <path d="m145 102 13-23h39l12 23Z" fill="#edf2ff"/>
+                <path d="M158 79v23h51" fill="none" stroke="#171b24" stroke-width="2"/>
+                <path d="M155 148h44v49h-44Z" fill="#FFD447"/>
+                <path d="M164 167h26m-26 9h20" stroke="#171b24" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </g>
+            <g class="bag-item item-two">
+              <g transform="rotate(12 334 180)">
+                <path d="M314 111V83h35v28c0 15 22 22 22 43v98h-79v-98c0-21 22-28 22-43Z" fill="#fff"/>
+                <rect x="312" y="73" width="39" height="18" rx="4" fill="#171b24"/>
+                <path d="M292 162h79v56h-79Z" fill="#FFD447"/>
+                <circle cx="332" cy="189" r="14" fill="#2563eb"/>
+                <path d="m325 189 5 5 9-11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </g>
+            <g class="bag-item item-three">
+              <g transform="rotate(4 261 166)">
+                <path d="M231 133c-8-13-4-40 11-50 8-21 34-24 47-8 18 9 22 32 13 49l-20 128h-59l8-119Z" fill="#f4ad22"/>
+                <path d="m250 101 19 9m-27 13 22 10m-27 15 23 10" stroke="#9f650a" stroke-width="4" stroke-linecap="round"/>
+                <path d="m222 190 66 7-6 55h-59Z" fill="#fff"/>
+              </g>
+            </g>
+            <g class="bag-body">
+              <path d="M136 214h250l20 202c-80 17-175 17-268 0l-2-202Z" fill="#2563eb"/>
+              <path d="m386 214 20 202-31 7-9-197Z" fill="#1c53cd"/>
+              <path d="M207 247v-49c0-62 92-62 92 0v49" fill="none" stroke="#171b24" stroke-width="13" stroke-linecap="round"/>
+              <path d="M209 246v-48c0-61 88-61 88 0v48" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+              <text x="264" y="338" text-anchor="middle" fill="#fff" font-family="Outfit, sans-serif" font-size="47" font-weight="600" letter-spacing="-2">La Bazar</text>
+              <path d="M237 365c12 14 39 14 52 0" stroke="#FFD447" stroke-width="6" stroke-linecap="round" fill="none"/>
+            </g>
+          </svg>
+          <button class="replay" id="replay" type="button" aria-label="Repetă animația pungii de cumpărături">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 8M5 3v6h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Umple din nou punga
+          </button>
+        </div>
+      </div>
+      <div class="wrap hero-foot">
+        <span>Aleea Heracleea 3, Constanța</span>
+        <a href="#contact">Hai să ne găsești</a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="despre" aria-labelledby="about-title">
+      <div class="about-grid">
+        <figure class="photo reveal">
+          <img src="img/4.jpg" alt="Rafturi cu produse într-un magazin alimentar, fotografie ilustrativă" width="900" height="780" loading="lazy">
+          <figcaption>O imagine din lumea cumpărăturilor. Fotografie ilustrativă.</figcaption>
+        </figure>
+        <div class="about-copy reveal">
+          <h2 id="about-title">Cumpărături simple, aproape de casă.</h2>
+          <p>La Bazar se află pe Aleea Heracleea 3, în Constanța. Un loc pentru lucrurile de care ai nevoie zi de zi și pentru noutățile pe care vrei să le descoperi.</p>
+          <p>Cauți ceva anume? Spune-ne ce ai pe listă și întreabă-ne ce este disponibil înainte să pornești la drum.</p>
+          <a class="text-link" href="https://wa.me/40758466589?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii.">Scrie-ne ce cauți</a>
+        </div>
+      </div>
+      <div class="advantages">
+        <div class="advantage reveal">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M30 17c0 8-10 17-10 17S10 25 10 17a10 10 0 1 1 20 0Z" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="17" r="3.5" stroke="currentColor" stroke-width="2"/></svg>
+          <div><h3>Lângă tine</h3><p>Pe Aleea Heracleea 3, în Constanța.</p></div>
+        </div>
+        <div class="advantage reveal">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M5 17h30l-4 16H9L5 17Zm7 0 6-10m10 10L22 7M16 23v5m8-5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><h3>Ce ai pe listă?</h3><p>Întreabă-ne despre produsele pe care le cauți.</p></div>
+        </div>
+        <div class="advantage reveal">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M33 19a13 13 0 0 1-13 13h-7l-7 4 2-10a13 13 0 1 1 25-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 20h.1m6-.1h.1m6-.1h.1" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <div><h3>Hai să vorbim</h3><p>Un telefon sau un mesaj pe WhatsApp.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="produse" aria-labelledby="products-title">
+      <div class="wrap">
+        <div class="products-top">
+          <h2 id="products-title" class="reveal">Ce cauți astăzi?</h2>
+          <p class="reveal">Produse, noutăți și ajutor la alegere. Mai jos, câteva repere generale; pentru oferta disponibilă, întreabă-ne direct.</p>
+        </div>
+        <div class="products-grid">
+          <div>
+            <article class="product-row reveal">
+              <h3>Produse de zi cu zi</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+              <p>Ai o listă de cumpărături? Spune-ne ce îți trebuie și întreabă dacă găsești la noi.</p>
+            </article>
+            <article class="product-row reveal">
+              <h3>Noutăți de descoperit</h3>
+              <p>Pentru ce a apărut nou în magazin, cel mai simplu este să ne întrebi.</p>
+            </article>
+            <article class="product-row reveal">
+              <h3>Ajutor la alegere</h3>
+              <p>Nu știi ce să alegi? Povestește-ne ce cauți și discutăm despre opțiuni.</p>
+            </article>
+            <a class="button button-white" href="https://wa.me/40758466589?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii.">Întreabă despre un produs</a>
+          </div>
+          <figure class="photo reveal">
+            <img src="img/1.jpg" alt="Scenă de cumpărături, fotografie de stoc ilustrativă" width="800" height="820" loading="lazy">
+            <figcaption>Fotografie ilustrativă, nu o imagine a magazinului La Bazar.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <h2 id="contact-title">Ne găsești în Constanța.</h2>
+          <address>Aleea Heracleea 3<br>Constanța</address>
+          <a class="phone" href="tel:0758466589">0758 466 589</a>
+          <div class="contact-actions">
+            <a class="button button-blue" href="tel:0758466589">Sună acum</a>
+            <a class="text-link" href="https://wa.me/40758466589?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii.">Întreabă pe WhatsApp</a>
+          </div>
+          <p class="contact-note">Pentru programul de astăzi sau disponibilitatea unui produs, sună-ne înainte de vizită.</p>
+        </div>
+        <div class="reveal">
+          <iframe class="map" title="Hartă cu localizarea La Bazar, Aleea Heracleea 3, Constanța" src="https://www.openstreetmap.org/export/embed.html?bbox=28.6237775,44.2022895,28.631777500000002,44.206289500000004&layer=mapnik&marker=44.2042895,28.6277775" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-caption">
+            <p>Aleea Heracleea 3, Constanța</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=La+Bazar+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#continut">La Bazar</a>
+      <p>Totul la îndemână, aproape de tine.</p>
+    </div>
+    <div class="footer-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Alexas_Fotos, wal_172619, Pexels, ccipeggy, kasjanf</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      document.documentElement.classList.add('js');
+      const header = document.querySelector('.header');
+      const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 12);
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      const bag = document.getElementById('shopping-bag');
+      const replay = document.getElementById('replay');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let timer;
+      const playBag = () => {
+        clearTimeout(timer);
+        bag.classList.remove('play');
+        if (reducedMotion.matches) return;
+        void bag.offsetWidth;
+        bag.classList.add('play');
+        replay.disabled = true;
+        timer = setTimeout(() => { replay.disabled = false; }, 2100);
+      };
+      replay.addEventListener('click', playBag);
+      playBag();
+
+      const elements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .12 });
+        elements.forEach(element => observer.observe(element));
+      } else {
+        elements.forEach(element => element.classList.add('visible'));
+      }
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
