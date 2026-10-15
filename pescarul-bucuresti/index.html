@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pescarul, restaurant pescăresc în București</title>
+<meta name="description" content="Pescarul, preparate pescărești românești în București, pe Bulevardul Nicolae Bălcescu 9A. Șalău „Bonne Femme”, ciorbă de pește, saramură.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F3EDE2;
+  --cream-2:#ECE4D4;
+  --ink:#1B1B1B;
+  --ink-soft:#4A4640;
+  --teal:#0f766e;
+  --teal-deep:#0b5c56;
+  --wood:#7B5B3A;
+  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans:"Karla", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1120px;
+  --gutter:clamp(1.25rem,5vw,2.5rem);
+  --section:clamp(4.5rem,10vw,8rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+[id]{scroll-margin-top:4.5rem}
+p{margin:0}
+
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+section{padding-block:var(--section)}
+
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:600;
+  margin:0;
+  line-height:1.1;
+  letter-spacing:-.02em;
+  text-wrap:balance;
+}
+h1{font-size:clamp(3.4rem,13vw,8rem);line-height:1.02}
+h2{font-size:clamp(2.2rem,6vw,4.5rem)}
+h3{font-size:1.6rem}
+
+.lead{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,2.6vw,2rem);
+  line-height:1.3;
+  font-weight:500;
+  letter-spacing:-.01em;
+}
+.small{font-size:.875rem;letter-spacing:.02em;color:var(--ink-soft)}
+.kicker{font-size:1rem;color:var(--wood);letter-spacing:.02em}
+
+.skip{
+  position:absolute;left:1rem;top:.5rem;z-index:100;
+  background:var(--ink);color:#fff;padding:.6rem 1rem;border-radius:4px;
+  transform:translateY(-200%);transition:transform .2s var(--ease);
+}
+.skip:focus{transform:none}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:4rem;
+  background:rgba(243,237,226,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 10px 30px -16px rgba(27,27,27,.28);
+}
+.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.5rem;
+  text-decoration:none;
+  font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:-.01em;
+  color:var(--ink);
+}
+.brand-emoji{font-size:1.2rem;line-height:1}
+.nav-links{display:none;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{
+  text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);
+  display:inline-flex;align-items:center;min-height:44px;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--teal)}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  min-height:44px;padding:.8rem 1.35rem;border-radius:4px;
+  font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.01em;
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  transition:background-color .2s, box-shadow .2s, border-color .2s, color .2s, transform .1s;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{
+  background:var(--teal);color:#fff;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 8px 20px -12px rgba(15,118,110,.8);
+}
+.btn-primary:hover{background:var(--teal-deep);box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 10px 24px -12px rgba(11,92,86,.9)}
+.btn-ghost{background:transparent;color:var(--teal-deep);border-color:rgba(15,118,110,.45)}
+.btn-ghost:hover{background:rgba(15,118,110,.07);border-color:var(--teal)}
+.btn-sm{min-height:44px;padding:.6rem 1.05rem;font-size:.95rem}
+.btn:focus-visible,.nav-links a:focus-visible,.text-link:focus-visible,.foot a:focus-visible{
+  outline:2px solid var(--teal);outline-offset:3px;
+}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.actions .btn{flex:1 1 auto}
+.text-link{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--teal-deep);font-weight:700;text-underline-offset:4px;
+}
+.text-link:hover{color:var(--teal)}
+
+/* ---------- Ie cusut (elementul memorabil) ---------- */
+.ie-rule{width:100%;margin-top:.9rem}
+.ie-rule svg{display:block;width:100%;height:auto;overflow:visible}
+.ie-rule line{stroke:var(--teal);stroke-width:2.2;fill:none}
+.ie-rule polygon{fill:var(--teal)}
+.ie-rule .ie-needle{fill:var(--teal);transition:opacity .15s}
+.head{max-width:34rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.head h2{margin-bottom:.2rem}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:calc(4rem + clamp(2rem,6vw,5rem));padding-bottom:var(--section)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero-text > * + *{margin-top:1.25rem}
+.hero-text .ie-rule{margin-top:.9rem;margin-bottom:0}
+.hero-text .lead{margin-top:1.25rem}
+.hero-photo{
+  margin:0;position:relative;overflow:hidden;border-radius:6px;
+  aspect-ratio:4/3;background:var(--cream-2);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+.intro{animation:rise .8s var(--ease) var(--d,0s) both}
+.hero-photo{animation:settle 1.2s var(--ease) .2s both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.02fr .98fr;gap:4.5rem}
+  .hero-photo{aspect-ratio:4/5;max-height:640px}
+}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:3rem}
+.about-text .lead{margin-bottom:1.5rem}
+.about-text p + p{margin-top:1.1rem}
+.about-photo{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:var(--cream-2)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+  .about-photo{aspect-ratio:4/5}
+}
+
+.perks{list-style:none;margin:clamp(3.5rem,8vw,6rem) 0 0;padding:0;display:grid;gap:2.2rem}
+.perk{display:grid;gap:.8rem;align-content:start}
+.perk-icon{
+  width:3.25rem;height:3.25rem;border-radius:50%;
+  display:grid;place-items:center;font-size:1.5rem;line-height:1;
+  background:rgba(15,118,110,.09);
+}
+.perk p{color:var(--ink-soft)}
+@media (min-width:760px){
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+}
+
+/* ---------- Meniu ---------- */
+.menu{background:var(--cream-2)}
+.menu-grid{display:grid;gap:3rem}
+.menu-intro{margin-bottom:1.5rem}
+.dishes{list-style:none;margin:0;padding:0;border-bottom:1px solid rgba(123,91,58,.28)}
+.dish{padding:1.6rem 0;border-top:1px solid rgba(123,91,58,.28)}
+.dish h3{display:flex;align-items:center;gap:.75rem}
+.dish h3::before{
+  content:"";flex:none;width:.4em;height:.4em;
+  background:var(--teal);transform:rotate(45deg);
+}
+.dish:first-child h3{font-size:clamp(2rem,4.2vw,2.5rem)}
+.dish p{margin-top:.45rem;padding-left:1.15rem;color:var(--ink-soft)}
+.menu-photo{margin:0;border-radius:6px;overflow:hidden;aspect-ratio:4/3;background:var(--cream)}
+.menu-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .menu-grid{grid-template-columns:1.1fr .9fr;gap:5.5rem;align-items:start}
+  .menu-photo{aspect-ratio:4/5}
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+.facts{margin:2rem 0 0;display:grid;gap:1.25rem}
+.facts div{display:grid;gap:.2rem}
+.facts dt{font-size:.875rem;letter-spacing:.02em;color:var(--wood)}
+.facts dd{margin:0;font-size:1.0625rem}
+.facts dd a{color:var(--ink);text-underline-offset:3px;overflow-wrap:anywhere}
+.facts dd a:hover{color:var(--teal)}
+.contact-note{margin-top:1.75rem}
+.map{
+  border-radius:6px;overflow:hidden;background:var(--cream-2);
+  aspect-ratio:4/3;
+}
+.map iframe{display:block;width:100%;height:100%;border:0}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:.9fr 1.1fr;gap:4.5rem;align-items:start}
+  .map{aspect-ratio:auto;height:100%;min-height:440px}
+}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ink);color:#D9D2C3;padding-block:3.5rem}
+.foot-grid{display:grid;gap:2rem}
+.foot .brand{color:var(--cream)}
+.foot p + p{margin-top:.5rem}
+.foot a{color:var(--cream);text-underline-offset:3px}
+@media (min-width:760px){
+  .foot-grid{grid-template-columns:1fr 1fr;align-items:end}
+  .foot-grid > div:last-child{text-align:right}
+}
+
+/* ---------- Apariții la derulare ---------- */
+@media (min-width:760px){
+  .nav-links{display:flex}
+}
+.js .rv{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .55s var(--ease) var(--d,0s), transform .55s var(--ease) var(--d,0s);
+}
+.js .rv-l{
+  opacity:0;transform:translate3d(-18px,0,0);
+  transition:opacity .55s var(--ease) var(--d,0s), transform .55s var(--ease) var(--d,0s);
+}
+.js .rv-s{
+  opacity:0;transform:scale(.97);
+  transition:opacity .6s var(--ease) var(--d,0s), transform .6s var(--ease) var(--d,0s);
+}
+.js .rv.in,.js .rv-l.in,.js .rv-s.in{opacity:1;transform:none}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .intro,.hero-photo{animation:fade .2s ease both !important;animation-delay:0s !important}
+  .js .rv,.js .rv-l,.js .rv-s{
+    transform:none !important;
+    transition:opacity .2s ease !important;
+  }
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--ink:#000;--ink-soft:#1B1B1B;--teal:#0a5f58;--teal-deep:#063f3b}
+  .nav{background:var(--cream);box-shadow:inset 0 -2px 0 var(--ink)}
+  .btn-ghost{border-color:var(--ink)}
+  .dishes,.dish{border-color:var(--ink)}
+  .ie-rule line{stroke-width:2.8}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Pescarul, înapoi sus">
+      <span class="brand-emoji" aria-hidden="true">🐟</span>Pescarul
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:+40722196448">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="kicker intro" style="--d:.05s">Restaurant pescăresc în București</p>
+        <h1 class="intro" style="--d:.12s">Pescarul</h1>
+        <div class="ie-rule intro" style="--d:.18s" data-rule></div>
+        <p class="lead intro" style="--d:.22s">Pasiune pentru savoarea pescărească</p>
+        <p class="intro" style="--d:.28s">Preparate pescărești românești, gătite cu pasiune.</p>
+        <div class="actions intro" style="--d:.34s">
+          <a class="btn btn-primary" href="tel:+40722196448">Sună acum</a>
+          <a class="btn btn-ghost" href="#meniu">Vezi meniul</a>
+        </div>
+        <p class="small intro" style="--d:.4s">Telefon: <a href="tel:+40722196448">0722 196 448</a></p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/1.jpg" alt="Pește gătit, servit cu salată și legume pe farfurie" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="despre">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <div class="head">
+          <h2 class="rv">Despre noi</h2>
+          <div class="ie-rule" data-rule></div>
+        </div>
+        <p class="lead rv">Aici găsiți șalău „Bonne Femme” și preparate românești cu specific pescăresc.</p>
+        <p class="rv" style="--d:.08s">Pescarul oferă preparate românești cu specific pescăresc, într-o ambianță caldă. Vă bucurați de gustul autentic al peștelui gătit atent, inclusiv șalăul „Bonne Femme”.</p>
+        <p class="rv" style="--d:.14s">Locația ideală pentru iubitorii de bucătărie tradițională pe bază de pește.</p>
+      </div>
+      <figure class="about-photo rv-s" style="--d:.1s">
+        <img src="img/2.jpg" alt="Pește servit cu salată, la masă" loading="lazy">
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <ul class="perks">
+        <li class="perk rv" style="--d:0s">
+          <span class="perk-icon" aria-hidden="true">🎣</span>
+          <h3>Preparat autentic</h3>
+          <p>Rețete tradiționale românești</p>
+        </li>
+        <li class="perk rv" style="--d:.1s">
+          <span class="perk-icon" aria-hidden="true">🍽️</span>
+          <h3>Gust proaspăt</h3>
+          <p>Pește gătit cu atenție</p>
+        </li>
+        <li class="perk rv" style="--d:.2s">
+          <span class="perk-icon" aria-hidden="true">🤗</span>
+          <h3>Atmosferă primitoare</h3>
+          <p>Locație ideală pentru prieteni</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu">
+    <div class="wrap menu-grid">
+      <div>
+        <div class="head">
+          <h2 class="rv">Meniu</h2>
+          <div class="ie-rule" data-rule></div>
+        </div>
+        <p class="menu-intro rv">Preparate pescărești, gătite după rețete românești. Pentru prețuri și detalii, scrieți-ne.</p>
+
+        <ul class="dishes">
+          <li class="dish rv-l" style="--d:0s">
+            <h3>Șalău Bonne Femme</h3>
+            <p>Preparat pescăresc emblematic, cu sos alb</p>
+          </li>
+        </ul>
+
+        <div class="actions rv">
+          <a class="btn btn-primary" href="https://wa.me/40722196448?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20pesc%C4%83resc." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="menu-photo rv-s">
+        <img src="img/3.jpg" alt="Pește proaspăt, la piața de pește" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="head">
+          <h2 class="rv">Contact</h2>
+          <div class="ie-rule" data-rule></div>
+        </div>
+        <p class="lead rv">Pe Bulevardul Nicolae Bălcescu, în București.</p>
+
+        <div class="actions rv">
+          <a class="btn btn-primary" href="tel:+40722196448">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40722196448?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20pesc%C4%83resc." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+        </div>
+
+        <dl class="facts rv">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Bulevardul Nicolae Bălcescu 9A, București</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:+40722196448">0722 196 448</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:restaurantpescarul@yahoo.com">restaurantpescarul@yahoo.com</a></dd>
+          </div>
+        </dl>
+
+        <p class="contact-note rv">
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Pescarul+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </p>
+        <p class="small rv" style="margin-top:.5rem">Pentru program, sunați-ne.</p>
+      </div>
+
+      <div class="map rv-s" style="--d:.1s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0970628,44.4353078,26.105062800000002,44.4393078&amp;layer=mapnik&amp;marker=44.4373078,26.1010628"
+          title="Harta: Pescarul, Bulevardul Nicolae Bălcescu 9A, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="brand"><span class="brand-emoji" aria-hidden="true">🐟</span>Pescarul</p>
+      <p>Bulevardul Nicolae Bălcescu 9A, București</p>
+    </div>
+    <div class="small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: cattalin, u_aitkr8xo, Squirrel_photos</p>
+      <p>© <span id="yr"></span> Pescarul</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.documentElement.classList.add('js');
+
+  /* ----- Ie cusut: se coase pe măsură ce derulezi ----- */
+  var rules = Array.prototype.slice.call(document.querySelectorAll('.ie-rule[data-rule], .hero-text .ie-rule'));
+  function ieSVG(i) {
+    var dia = '';
+    for (var k = 0; k < 10; k++) {
+      var x = 30 + 60 * k;
+      dia += '<polygon points="' + x + ',5 ' + (x + 5) + ',10 ' + x + ',15 ' + (x - 5) + ',10"/>';
+    }
+    return '<svg viewBox="0 0 600 20" focusable="false" aria-hidden="true">' +
+      '<defs><clipPath id="ie-clip-' + i + '"><rect x="0" y="0" width="0" height="20"/></clipPath></defs>' +
+      '<g clip-path="url(#ie-clip-' + i + ')">' +
+        '<line x1="0" y1="10" x2="600" y2="10" stroke-dasharray="6 6"/>' +
+        '<g>' + dia + '</g>' +
+      '</g>' +
+      '<circle class="ie-needle" cx="0" cy="10" r="2.6" style="opacity:0"/>' +
+      '</svg>';
+  }
+  rules.forEach(function (el, i) { el.innerHTML = ieSVG(i); });
+  var clips = rules.map(function (el) { return el.querySelector('clipPath rect'); });
+  var needles = rules.map(function (el) { return el.querySelector('.ie-needle'); });
+
+  function paintRules() {
+    var vh = window.innerHeight;
+    rules.forEach(function (el, i) {
+      var p = 1;
+      if (!reduce) {
+        var top = el.getBoundingClientRect().top;
+        p = (vh * 0.92 - top) / (vh * 0.4);
+        p = Math.max(0, Math.min(1, p));
+      }
+      var x = p * 600;
+      clips[i].setAttribute('width', x.toFixed(1));
+      needles[i].setAttribute('cx', x.toFixed(1));
+      needles[i].style.opacity = (!reduce && p > 0 && p < 1) ? 1 : 0;
+    });
+  }
+
+  /* ----- Navigare: umbră la derulare ----- */
+  var nav = document.getElementById('nav');
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    paintRules();
+  }
+  function request() {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(frame);
+    }
+  }
+  window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request);
+  frame();
+
+  /* ----- Apariții la derulare ----- */
+  var items = document.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ----- An în subsol ----- */
+  var yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
