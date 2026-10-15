@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TSH Discount, București | Aproape de tine</title>
+<meta name="description" content="TSH Discount din București. Sună-ne sau scrie-ne pe WhatsApp pentru informații despre produsele disponibile.">
+<meta name="theme-color" content="#EFE6D8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..900&family=Fraunces:opsz,wght@9..144,300..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nisip:#EFE6D8;
+  --nisip-deschis:#E4D6C0;
+  --teracota:#B5583A;
+  --masline:#6B7046;
+  --maro:#3B2B22;
+  --maro-text:#5A4A40;
+  --verde:#16a34a;
+  --verde-inchis:#15803d;
+  --verde-text:#1c130d;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  font-family:Figtree,system-ui,-apple-system,sans-serif;
+  font-size:1.0625rem;line-height:1.5;color:var(--maro);
+  background:var(--nisip);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teracota);outline-offset:3px;border-radius:6px}
+
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--maro);color:var(--nisip);padding:.6rem 1rem;border-radius:999px;text-decoration:none}
+.skip:focus{top:1rem}
+
+h1,h2,h3{
+  font-family:Fraunces,Georgia,serif;font-weight:600;
+  letter-spacing:-.02em;line-height:1.08;font-optical-sizing:auto;text-wrap:balance;
+}
+h1{font-size:clamp(2.6rem,12.5vw,5.75rem);line-height:1.02}
+h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+h3{font-size:1.3rem;line-height:1.2;letter-spacing:-.01em}
+p{max-width:36rem}
+.lead{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.4;letter-spacing:-.01em}
+.mic{font-size:.875rem;letter-spacing:.01em;color:var(--maro-text)}
+
+.wrap{width:100%;max-width:74rem;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+section{padding-block:clamp(4.5rem,11vw,8.5rem)}
+
+/* ---------- Antet din sticlă ---------- */
+.top{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(239,230,216,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
+  transition:box-shadow .3s var(--ease);
+}
+.top.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 12px 30px -18px rgba(59,43,34,.5)}
+.top-in{display:flex;align-items:center;justify-content:space-between;height:4rem;gap:1rem}
+.brand{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.2rem;letter-spacing:-.02em}
+.brand .em{font-size:1.3rem;line-height:1}
+.nav{display:flex;align-items:center;gap:clamp(.5rem,2vw,2rem)}
+.nav-link{position:relative;padding:.5rem 0;font-size:.95rem;font-weight:500;text-decoration:none}
+.nav-link::after{
+  content:"";position:absolute;left:0;right:0;bottom:.15rem;height:2px;border-radius:2px;
+  background:var(--verde);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);
+}
+.nav-link:hover::after{transform:scaleX(1)}
+.menu-btn{
+  display:none;width:44px;height:44px;border:0;border-radius:999px;background:transparent;
+  color:var(--maro);cursor:pointer;align-items:center;justify-content:center;transition:background-color .25s var(--ease);
+}
+.menu-btn:hover{background:rgba(59,43,34,.08)}
+.burger{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;box-shadow:0 -6px 0 currentColor,0 6px 0 currentColor}
+.panel{
+  position:absolute;top:100%;left:0;right:0;background:var(--nisip);
+  padding:.25rem clamp(1.25rem,5vw,3rem) 1.25rem;box-shadow:0 22px 30px -24px rgba(59,43,34,.55);
+}
+.panel[hidden]{display:none}
+.panel a{display:flex;align-items:center;min-height:48px;font-family:Fraunces,Georgia,serif;font-size:1.35rem;text-decoration:none}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding:.75rem 1.35rem;border-radius:999px;border:0;cursor:pointer;
+  font:600 1rem/1.2 Figtree,system-ui,sans-serif;text-decoration:none;white-space:nowrap;
+  transition:transform .1s ease,background-color .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn-mare{background:var(--verde);color:var(--verde-text);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+.btn-mare:hover{background:var(--verde-inchis);color:#fff;box-shadow:0 8px 18px -10px rgba(21,128,61,.8)}
+.btn-contur{background:transparent;color:var(--maro);box-shadow:inset 0 0 0 1.5px var(--maro)}
+.btn-contur:hover{background:var(--maro);color:var(--nisip)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding-block:7rem 4rem}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.l1{display:block}
+.l2{display:block;padding-left:clamp(1.25rem,6vw,5rem)}
+.slogan{margin-top:1.25rem;font-family:Fraunces,Georgia,serif;font-size:clamp(1.5rem,2.6vw,1.75rem);font-weight:500;letter-spacing:-.01em;color:var(--teracota)}
+.hero .lead{margin-top:1rem}
+.hero .mic{margin-top:1.5rem}
+.hero-foto{margin:0}
+.hero-foto img{
+  width:100%;height:clamp(18rem,70svh,38rem);object-fit:cover;
+  border-radius:50% 50% 1.5rem 1.5rem / 34% 34% 1.5rem 1.5rem;
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr}
+  .hero-foto{margin-top:4rem}
+}
+
+/* ---------- Despre ---------- */
+.despre-in{max-width:44rem}
+.despre-in .lead{margin-top:1.5rem}
+.despre-in p.corp{margin-top:1.25rem;max-width:34rem}
+@media (min-width:900px){
+  .despre-in{margin-left:auto;margin-right:clamp(0rem,8vw,8rem)}
+}
+
+/* ---------- Produse ---------- */
+.produse-cap{max-width:40rem}
+.produse-cap p{margin-top:1rem;color:var(--maro-text)}
+.avantaje{list-style:none;display:grid;gap:3rem;margin-top:clamp(3rem,7vw,5rem)}
+.av-em{
+  display:grid;place-items:center;width:4.25rem;height:4.25rem;font-size:1.9rem;
+  border-radius:50% 46% 54% 50% / 50% 54% 46% 50%;background:var(--nisip-deschis);
+}
+.av h3{margin-top:1.25rem}
+.av p{margin-top:.4rem;color:var(--maro-text)}
+@media (min-width:800px){
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:2rem;align-items:start}
+  .avantaje li:nth-child(2){margin-top:5rem}
+  .avantaje li:nth-child(3){margin-top:2.25rem}
+}
+
+/* ---------- Galerie ---------- */
+.galerie-sec{background:var(--nisip-deschis)}
+.galerie{display:grid;gap:1rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.g{position:relative;overflow:hidden;border-radius:1.25rem;margin:0;aspect-ratio:4/3}
+.g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.g:hover img{transform:scale(1.03)}
+.g1{aspect-ratio:4/5}
+.g4{aspect-ratio:16/10}
+.galerie-sec .mic{margin-top:1rem}
+@media (min-width:800px){
+  .galerie{
+    grid-template-columns:1.25fr 1fr;
+    grid-template-rows:clamp(14rem,28vw,22rem) clamp(14rem,28vw,22rem) clamp(13rem,22vw,18rem);
+  }
+  .g{aspect-ratio:auto}
+  .g1{grid-row:1 / span 2;aspect-ratio:auto}
+  .g2{grid-column:2;grid-row:1}
+  .g3{grid-column:2;grid-row:2}
+  .g4{grid-column:1 / -1;grid-row:3}
+}
+
+/* ---------- Harta desenată ---------- */
+.harta{background:var(--maro);color:var(--nisip)}
+.harta h2{color:var(--nisip)}
+.harta-cap{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem}
+.harta-cap p{margin-top:1rem;color:var(--nisip-deschis)}
+.desen{margin-top:clamp(2.5rem,6vw,4.5rem)}
+.desen svg{width:100%;height:auto}
+.desen text{font-family:Figtree,system-ui,sans-serif;font-weight:700;font-size:24px;fill:var(--nisip)}
+html.js .traseu{stroke-dasharray:1 1;stroke-dashoffset:1}
+html.js .desen.in .traseu{
+  stroke-dashoffset:0;
+  transition:stroke-dashoffset 2.8s cubic-bezier(.5,.05,.25,1) .35s;
+}
+html.js .desen .tu,html.js .desen .pin{opacity:0;transition:opacity .6s var(--ease)}
+html.js .desen.in .tu{opacity:1;transition-delay:.15s}
+html.js .desen.in .pin{opacity:1;transition-delay:2.9s}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem;align-items:center}
+.numar{
+  display:inline-flex;align-items:center;min-height:44px;margin-top:1.5rem;
+  font-family:Fraunces,Georgia,serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;
+  letter-spacing:-.02em;text-decoration:none;color:var(--maro);
+}
+.numar:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+.program{margin-top:2.5rem}
+.program p{margin-top:.5rem;color:var(--maro-text)}
+.mapa{position:relative;height:clamp(20rem,46vw,30rem);border-radius:1.25rem;overflow:hidden}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem}
+}
+
+/* ---------- Subsol ---------- */
+.subsol{background:var(--nisip-deschis);padding-block:3rem}
+.subsol-in{display:grid;gap:2rem}
+.subsol-brand{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.2rem;letter-spacing:-.02em}
+.subsol-brand span{margin-right:.35rem}
+.subsol-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.subsol-nav a{text-decoration:none;font-size:.95rem;padding:.25rem 0}
+.subsol-nav a:hover{text-decoration:underline;text-underline-offset:.2em}
+.credit{font-size:.85rem;color:var(--maro-text);letter-spacing:.01em}
+.credit p+p{margin-top:.5rem}
+@media (min-width:800px){
+  .subsol-in{grid-template-columns:1fr 1fr 1.2fr;align-items:start}
+}
+
+/* ---------- Revelare la derulare ---------- */
+html.js .rv{opacity:0;transform:translate3d(0,22px,0);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js .rv-l{opacity:0;transform:translate3d(-28px,0,0);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+html.js .rv-s{opacity:0;transform:scale(.96);transition:opacity .5s var(--ease),transform .6s var(--ease)}
+html.js .rv.in,html.js .rv-l.in,html.js .rv-s.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}
+.d2{transition-delay:.2s}
+.d3{transition-delay:.3s}
+
+/* ---------- Intrarea din prima secțiune ---------- */
+@keyframes intra{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+.anim{animation:intra .9s var(--ease) both;animation-delay:calc(var(--i,0) * 110ms + 120ms)}
+
+/* ---------- Meniu pe telefon ---------- */
+@media (max-width:820px){
+  .nav-link{display:none}
+  .menu-btn{display:inline-flex}
+  .brand{font-size:1.1rem}
+}
+@media (min-width:821px){
+  .panel{display:none!important}
+}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .top{background:var(--nisip);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .panel{background:var(--nisip)}
+}
+@media (prefers-contrast:more){
+  .top{background:var(--nisip);box-shadow:inset 0 -2px 0 var(--maro)}
+  .btn-contur{box-shadow:inset 0 0 0 2px var(--maro)}
+  .btn-mare{box-shadow:inset 0 0 0 2px var(--verde-text)}
+  .nav-link,.subsol-nav a{text-decoration:underline}
+  .credit,.mic,.av p,.program p,.harta-cap p{color:var(--maro)}
+  .harta .harta-cap p{color:var(--nisip)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .rv,html.js .rv-l,html.js .rv-s{transform:none;transition:opacity .2s ease}
+  .anim{animation:estompare .2s ease both!important;animation-delay:0s!important}
+  .d1,.d2,.d3{transition-delay:0s}
+  html.js .desen.in .traseu{transition:none}
+  html.js .desen .tu,html.js .desen .pin{transition:opacity .2s ease}
+  html.js .desen.in .tu,html.js .desen.in .pin{transition-delay:0s}
+  .g:hover img{transform:none}
+  .btn:active{transform:none;opacity:.9}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#main">Sari la conținut</a>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#sus"><span class="em" aria-hidden="true">🍏</span>TSH Discount</a>
+    <div class="nav">
+      <a class="nav-link" href="#despre">Despre</a>
+      <a class="nav-link" href="#produse">Produse</a>
+      <a class="nav-link" href="#harta">Cum ajungi</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="btn btn-mare" href="tel:0774060821">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu" aria-label="Deschide meniul">
+        <span class="burger" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+  <div class="panel" id="meniu" hidden>
+    <a href="#despre">Despre</a>
+    <a href="#produse">Produse</a>
+    <a href="#harta">Cum ajungi</a>
+    <a href="#contact">Contact</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="sus" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" class="anim" style="--i:0"><span class="l1">TSH</span><span class="l2">Discount</span></h1>
+        <p class="slogan anim" style="--i:1">Proaspăt din piață, zilnic</p>
+        <p class="lead anim" style="--i:2">Un magazin din București, aproape de tine. Sună-ne sau scrie-ne și îți spunem ce produse avem.</p>
+        <div class="actions anim" style="--i:3">
+          <a class="btn btn-mare" href="tel:0774060821">Sună acum</a>
+          <a class="btn btn-contur" href="https://wa.me/40774060821?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20produsele%20disponibile.">Scrie pe WhatsApp</a>
+        </div>
+        <p class="mic anim" style="--i:4">Deschis luni–vineri, 08:00–16:00, și sâmbătă, 08:00–14:00.</p>
+      </div>
+      <figure class="hero-foto anim" style="--i:5">
+        <img src="img/3.jpg" alt="Fotografie de stoc cu legume și fructe" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="despre-in">
+        <h2 id="t-despre" class="rv-l">Despre TSH Discount</h2>
+        <p class="lead rv d1">Ai nevoie de ceva pentru masa de azi? Scrie-ne sau sună-ne și afli ce produse avem.</p>
+        <p class="corp rv d2">TSH Discount e un magazin din București. Dacă ai nevoie de ceva anume, scrie-ne pe WhatsApp și îți spunem ce avem.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <div class="produse-cap">
+        <h2 id="t-produse" class="rv">Produse</h2>
+        <p class="rv d1">Întreabă-ne ce produse avem acum. Scrie-ne pe WhatsApp sau sună-ne.</p>
+      </div>
+      <ul class="avantaje">
+        <li class="av rv">
+          <span class="av-em" aria-hidden="true">🥕</span>
+          <h3>Produse proaspete</h3>
+          <p>Fructe și legume de sezon</p>
+        </li>
+        <li class="av rv d1">
+          <span class="av-em" aria-hidden="true">🏪</span>
+          <h3>Aproape de tine</h3>
+          <p>Ideal pentru cumpărături rapide</p>
+        </li>
+        <li class="av rv d2">
+          <span class="av-em" aria-hidden="true">🕗</span>
+          <h3>Program clar</h3>
+          <p>Luni–vineri 08:00–16:00, sâmbătă 08:00–14:00</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galerie" class="galerie-sec" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <h2 id="t-galerie" class="rv">Câteva imagini</h2>
+      <div class="galerie">
+        <figure class="g g1 rv-s">
+          <img src="img/4.jpg" alt="Mere roșii, lucioase și coapte" loading="lazy" decoding="async">
+        </figure>
+        <figure class="g g2 rv-s d1">
+          <img src="img/2.jpg" alt="Banane galbene, puse în rând" loading="lazy" decoding="async">
+        </figure>
+        <figure class="g g3 rv-s d2">
+          <img src="img/5.jpg" alt="Ardei gras roșii, portocalii și galbeni" loading="lazy" decoding="async">
+        </figure>
+        <figure class="g g4 rv-s">
+          <img src="img/1.jpg" alt="Raft cu fructe și legume, fotografie de stoc" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <p class="mic">Fotografii de stoc, nu din magazinul nostru.</p>
+    </div>
+  </section>
+
+  <section id="harta" class="harta" aria-labelledby="t-harta">
+    <div class="wrap">
+      <div class="harta-cap">
+        <div>
+          <h2 id="t-harta" class="rv">Cum ajungi</h2>
+          <p class="rv d1">Deschide harta în telefon și pornește navigarea. Ajungi la noi fără să cauți.</p>
+        </div>
+        <a class="btn btn-mare rv d2" href="https://www.google.com/maps/search/?api=1&amp;query=TSH+Discount+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+
+      <figure class="desen rv" id="desen">
+        <svg viewBox="0 0 800 500" role="img" aria-labelledby="dt dd">
+          <title id="dt">Harta desenată de mână, cu drumul până la TSH Discount</title>
+          <desc id="dd">Linia verde pornește de la punctul Tu și ajunge la pinul TSH Discount.</desc>
+          <defs>
+            <filter id="mana" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="zgomot"/>
+              <feDisplacementMap in="SourceGraphic" in2="zgomot" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            <path id="s-a" d="M-10,250 C160,232 262,268 400,255 S640,238 810,262"/>
+            <path id="s-b" d="M318,520 C300,430 336,340 320,250 S300,80 332,-10"/>
+            <path id="s-c" d="M604,520 C596,420 624,330 612,250 S600,110 642,-10"/>
+            <path id="s-d" d="M-10,402 C200,392 420,412 810,380"/>
+          </defs>
+
+          <g filter="url(#mana)">
+            <g fill="#4D3C31">
+              <path d="M28,44 Q140,30 262,46 Q270,130 258,204 Q150,220 36,212 Q26,130 28,44 Z"/>
+              <path d="M378,40 Q500,30 596,52 Q604,120 592,206 Q480,222 376,206 Q390,120 378,40 Z"/>
+              <path d="M650,40 Q720,30 800,44 L800,210 Q720,220 652,206 Q660,120 650,40 Z"/>
+              <path d="M40,292 Q180,280 290,300 Q300,340 282,366 Q160,374 40,362 Q30,330 40,292 Z"/>
+              <path d="M352,300 Q430,290 522,300 Q540,340 526,366 Q440,374 352,362 Q342,330 352,300 Z"/>
+              <path d="M652,300 Q740,292 800,300 L800,378 Q720,384 652,370 Q642,332 652,300 Z"/>
+              <path d="M30,440 Q160,428 280,446 Q290,490 270,500 L30,500 Z"/>
+              <path d="M360,440 Q480,430 586,448 L586,500 L360,500 Z"/>
+              <path d="M700,440 Q760,432 800,444 L800,500 L690,500 Z"/>
+            </g>
+            <path d="M70,80 Q120,70 170,86 Q184,126 160,160 Q110,168 80,146 Q62,110 70,80 Z" fill="#6B7046"/>
+            <g fill="#8A8C5E">
+              <circle cx="100" cy="112" r="6"/>
+              <circle cx="136" cy="126" r="5"/>
+              <circle cx="116" cy="144" r="4"/>
+            </g>
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <g stroke="#6A5548" stroke-width="26">
+                <use href="#s-a"/>
+                <use href="#s-b"/>
+                <use href="#s-c"/>
+                <use href="#s-d"/>
+              </g>
+              <g stroke="#8C7565" stroke-width="2" stroke-dasharray="10 12" opacity=".7">
+                <use href="#s-a"/>
+                <use href="#s-b"/>
+                <use href="#s-c"/>
+                <use href="#s-d"/>
+              </g>
+            </g>
+          </g>
+
+          <path class="traseu" pathLength="1" d="M118,398 C200,396 262,404 318,404 C322,360 318,300 320,252 C420,250 520,252 612,250 C614,234 612,214 612,186" fill="none" stroke="#16a34a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <g class="tu">
+            <circle cx="118" cy="398" r="10" fill="#EFE6D8" stroke="#3B2B22" stroke-width="4"/>
+            <text x="118" y="366" text-anchor="middle">Tu</text>
+          </g>
+
+          <g class="pin">
+            <path d="M612,186 C600,170 590,156 590,142 A22,22 0 1 1 634,142 C634,156 624,170 612,186 Z" fill="#B5583A" stroke="#EFE6D8" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="612" cy="142" r="8" fill="#EFE6D8"/>
+            <text x="574" y="150" text-anchor="end">TSH Discount</text>
+          </g>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="t-contact" class="rv">Sună-ne sau scrie-ne</h2>
+        <a class="numar rv d1" href="tel:0774060821">0774 060 821</a>
+        <div class="actions rv d2">
+          <a class="btn btn-mare" href="tel:0774060821">Sună acum</a>
+          <a class="btn btn-contur" href="https://wa.me/40774060821?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20produsele%20disponibile.">Cere informații pe WhatsApp</a>
+        </div>
+        <div class="program rv d3">
+          <h3>Program de funcționare</h3>
+          <p>Suntem deschiși luni–vineri între 08:00–16:00 și sâmbătă 08:00–14:00.</p>
+        </div>
+      </div>
+      <div class="mapa rv-l">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.152676999999997,44.4318081,26.160677,44.4358081&amp;layer=mapnik&amp;marker=44.4338081,26.156677" title="Harta: TSH Discount, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-in">
+    <div>
+      <p class="subsol-brand"><span aria-hidden="true">🍏</span>TSH Discount</p>
+      <p class="mic">Magazin din București.</p>
+    </div>
+    <nav class="subsol-nav" aria-label="Subsol">
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#harta">Cum ajungi</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="credit">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: ElasticComputeFarm, StockSnap, AS_Photography, ulleo, KaiPilger</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  /* Antetul capătă o umbră fină doar când pagina se derulează sub el */
+  var top = document.getElementById('top');
+  function onScroll() { top.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Meniu pe telefon */
+  var btn = document.querySelector('.menu-btn');
+  var panel = document.getElementById('meniu');
+  function setMenu(open) {
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+    panel.hidden = !open;
+  }
+  btn.addEventListener('click', function () { setMenu(panel.hidden); });
+  panel.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  /* Revelare la derulare; harta își desenează traseul când intră în cadru */
+  var items = document.querySelectorAll('.rv, .rv-l, .rv-s, .desen');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
