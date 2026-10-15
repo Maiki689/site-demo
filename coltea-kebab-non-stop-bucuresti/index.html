@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Colțea Kebab Non Stop, în București. Shaorma de pui mare, deschis non-stop în fiecare zi. Sună, scrie pe WhatsApp sau comandă pe Glovo.">
+<meta name="theme-color" content="#FFD23F">
+<title>Colțea Kebab Non Stop, București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --yellow:#FFD23F;
+  --ink:#111111;
+  --red:#E63946;
+  --white:#FFFFFF;
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --text:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(4rem,10vw,7rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{
+  font-family:var(--text);font-size:1rem;line-height:1.5;letter-spacing:0;
+  color:var(--ink);background:var(--white);overflow-x:hidden;padding-bottom:5rem
+}
+@media (min-width:760px){body{padding-bottom:0}}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+svg{display:block}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--yellow);color:var(--ink);padding:.6rem 1rem;z-index:100;font-weight:700}
+.skip:focus{left:1rem;top:1rem}
+.wrap{width:min(100% - 2.5rem,70rem);margin-inline:auto}
+section{padding:var(--pad) 0;position:relative}
+
+/* Tipografie */
+.h2{
+  font-family:var(--display);font-weight:400;font-size:clamp(2.6rem,8vw,5rem);
+  line-height:1;letter-spacing:-.02em;text-transform:uppercase
+}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:34rem;margin-top:1.25rem}
+
+/* Navigare, sticlă */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.65rem 1.25rem;color:#fff;
+  background:rgba(17,17,17,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.22);
+  transition:box-shadow .3s var(--ease)
+}
+.nav.is-scrolled{box-shadow:0 10px 30px -10px rgba(0,0,0,.45)}
+.brand{
+  display:flex;align-items:center;gap:.45rem;text-decoration:none;
+  font-family:var(--display);font-size:1.35rem;line-height:1;text-transform:uppercase;
+  color:var(--yellow);letter-spacing:.01em
+}
+.nav-links{display:none;gap:1.5rem;font-size:.95rem;font-weight:500}
+.nav-links a{text-decoration:none;color:rgba(255,255,255,.94);letter-spacing:.01em}
+.nav-links a:hover{color:var(--yellow)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.75rem 1.35rem;
+  border:2px solid var(--ink);border-radius:.7rem;
+  font-family:var(--text);font-weight:700;font-size:1rem;line-height:1.2;
+  text-decoration:none;cursor:pointer;background:var(--white);color:var(--ink);
+  transition:transform .1s ease,box-shadow .2s var(--ease),background-color .2s ease;
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation
+}
+.btn:hover{box-shadow:3px 3px 0 var(--ink)}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--ink);color:var(--yellow)}
+.btn-dark:hover{box-shadow:3px 3px 0 var(--red)}
+.btn-yellow{background:var(--yellow)}
+.btn-white{background:var(--white)}
+.btn-ghost{background:transparent}
+.btn-sm{min-height:44px;padding:.55rem 1rem;font-size:.92rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+/* Prima secțiune */
+.hero{background:var(--yellow);padding:6.5rem 0 3rem;overflow:hidden}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero-title{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(3rem,13vw,5.6rem);line-height:.92;letter-spacing:-.02em;text-transform:uppercase
+}
+.hero-title span{display:block}
+.slogan{font-size:clamp(1.15rem,3.4vw,1.5rem);font-weight:700;line-height:1.3;margin-top:1rem}
+.hero-sub{margin-top:.4rem;max-width:30rem}
+.hero-collage{position:relative;height:320px;margin-top:1rem}
+
+/* Abțibilduri (stickers) */
+.sticker{
+  position:absolute;rotate:var(--r,0deg);cursor:pointer;
+  user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;
+  touch-action:manipulation
+}
+.photo{
+  left:12%;top:0;width:62%;aspect-ratio:1;padding:.55rem;border-radius:50%;
+  background:var(--white);box-shadow:6px 7px 0 var(--ink)
+}
+.photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.nonstop{
+  right:3%;top:2%;width:27%;aspect-ratio:1;border-radius:50%;
+  background:var(--red);color:var(--white);border:4px solid var(--white);
+  box-shadow:5px 5px 0 var(--ink);display:grid;place-items:center;text-align:center;
+  font-family:var(--display);font-size:clamp(1rem,4vw,1.7rem);line-height:.95;
+  text-transform:uppercase;letter-spacing:.02em
+}
+.die{
+  filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff)
+         drop-shadow(0 -3px 0 #fff) drop-shadow(5px 6px 0 var(--ink))
+}
+.tomato{left:0;bottom:6%;width:25%}
+.fries{right:4%;bottom:0;width:30%}
+.tomato svg,.fries svg{width:100%;height:auto}
+
+/* Despre */
+.despre{background:var(--white)}
+.despre strong{font-weight:800}
+.perks{list-style:none;display:grid;gap:2rem;margin-top:3rem}
+.perk{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+.perk-ico{
+  width:4.6rem;height:4.6rem;border-radius:50%;background:var(--yellow);
+  border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);
+  display:grid;place-items:center;font-size:1.8rem;line-height:1;rotate:var(--r,0deg);
+  cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:manipulation
+}
+.perk h3{font-size:1.1rem;font-weight:800;line-height:1.25}
+.perk p{color:#333;margin-top:.2rem}
+@media (min-width:760px){
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+  .perk{grid-template-columns:1fr;gap:1.1rem}
+}
+
+/* Meniu */
+.meniu{background:var(--ink);color:var(--white)}
+.meniu .h2{color:var(--yellow)}
+.meniu .lead{color:rgba(255,255,255,.84)}
+.labels{list-style:none;display:grid;gap:2.25rem 1.5rem;margin-top:3rem}
+@media (min-width:700px){.labels{grid-template-columns:1fr 1fr}}
+.label{
+  position:relative;background:var(--white);color:var(--ink);
+  padding:2.1rem 1.5rem 1.6rem;border-radius:.4rem;rotate:var(--r,0deg);
+  box-shadow:6px 6px 0 var(--yellow);cursor:pointer;
+  transition:box-shadow .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;touch-action:manipulation
+}
+.label::before{
+  content:"";position:absolute;top:.85rem;left:50%;translate:-50% 0;
+  width:.7rem;height:.7rem;border-radius:50%;background:var(--ink)
+}
+.label:hover{box-shadow:9px 9px 0 var(--red)}
+.label-ico{position:absolute;right:1.1rem;top:1rem;font-size:2.1rem;line-height:1}
+.label h3{
+  font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,4vw,1.9rem);
+  line-height:1.02;letter-spacing:-.01em;text-transform:uppercase;padding-right:3rem
+}
+.label p{margin-top:.6rem;color:#333}
+
+/* Galerie */
+.galerie{background:var(--white)}
+.gal{list-style:none;display:grid;gap:2.75rem;margin-top:3rem}
+.gal figure{
+  position:relative;background:var(--white);padding:.7rem .7rem .8rem;
+  box-shadow:6px 6px 0 var(--ink)
+}
+.gal figure::before{
+  content:"";position:absolute;top:-.8rem;left:50%;width:5.5rem;height:1.5rem;
+  translate:-50% 0;rotate:-4deg;background:rgba(255,210,63,.92)
+}
+.gal img{width:100%;height:280px;object-fit:cover}
+.gal li:nth-child(1) figure{rotate:-1.5deg}
+.gal li:nth-child(2) figure{rotate:1.2deg;box-shadow:6px 6px 0 var(--red)}
+.gal li:nth-child(3) figure{rotate:-.8deg}
+.gal-note{font-size:.85rem;letter-spacing:.02em;color:#444;margin-top:2rem}
+@media (min-width:760px){
+  .gal{grid-template-columns:repeat(12,1fr);gap:2.25rem}
+  .gal li:nth-child(1){grid-column:1/8;grid-row:1/3}
+  .gal li:nth-child(2){grid-column:8/13;grid-row:1}
+  .gal li:nth-child(3){grid-column:8/13;grid-row:2}
+  .gal li:nth-child(1) img{height:520px}
+  .gal img{height:240px}
+}
+
+/* Livrare */
+.livrare{background:var(--red);color:var(--ink)}
+.livrare .h2{color:var(--ink)}
+.livrare .lead{font-weight:500}
+.pill{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:1.75rem;
+  padding:.55rem 1.1rem;background:var(--yellow);border:2px solid var(--ink);
+  border-radius:999px;font-weight:700;rotate:-3deg;box-shadow:4px 4px 0 var(--ink)
+}
+
+/* Contact */
+.contact{background:var(--yellow)}
+.contact-grid{display:grid;gap:2.5rem}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.1fr;align-items:center;gap:4rem}
+}
+.info{margin-top:1.75rem;font-weight:500}
+.info a{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.map{
+  width:100%;height:320px;overflow:hidden;background:var(--white);
+  border:3px solid var(--ink);border-radius:1rem;box-shadow:6px 6px 0 var(--ink)
+}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* Subsol */
+.foot{background:var(--ink);color:var(--white);padding:3rem 0 3.5rem}
+.foot-name{
+  font-family:var(--display);font-size:clamp(2rem,6vw,3rem);line-height:1;
+  text-transform:uppercase;color:var(--yellow);margin-bottom:1rem
+}
+.foot p{font-size:.9rem;letter-spacing:.02em;color:rgba(255,255,255,.82);margin-top:.35rem}
+
+/* Bara de jos, pe telefon */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:45;display:flex;gap:.5rem;
+  padding:.6rem .6rem calc(.6rem + env(safe-area-inset-bottom));background:var(--ink)
+}
+.bar .btn{flex:1;min-height:48px;padding:.6rem .5rem;font-size:.92rem}
+@media (min-width:760px){.bar{display:none}}
+
+/* Dezvăluire la derulare, variată */
+.js .rv{
+  opacity:0;transform:translateY(28px);
+  transition:opacity .5s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)
+}
+.js .rv.rv-left{transform:translateX(-28px)}
+.js .rv.rv-pop{transform:scale(.94)}
+.js .rv.is-in{opacity:1;transform:none}
+
+/* Mișcare: intrarea din prima secțiune și săriturile la atingere */
+@media (prefers-reduced-motion: no-preference){
+  .hero.intro .sticker{animation:drop .6s var(--ease) var(--d,0s) backwards}
+  .sticker.hop,[data-hop].hop{animation:hop .5s var(--ease)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .rv{transform:none!important;transition:opacity .2s linear!important}
+  .hero.intro .sticker{animation:fade .2s linear backwards}
+}
+@keyframes drop{from{opacity:0;transform:translateY(-36px) scale(.8)}}
+@keyframes hop{
+  30%{transform:translateY(-16px) scale(1.05)}
+  55%{transform:translateY(0) scale(.97)}
+  75%{transform:translateY(-4px)}
+}
+@keyframes fade{from{opacity:0}}
+
+/* Accesibilitate: transparență și contrast */
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--ink);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .bar{background:var(--ink)}
+}
+@media (prefers-contrast: more){
+  .btn{border-width:3px}
+  .label{outline:2px solid var(--ink)}
+  .nav{border-top-color:#fff}
+  .map{border-width:4px}
+  .nonstop{border-width:5px}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Colțea Kebab Non Stop, înapoi sus"><span aria-hidden="true">🌯</span>Colțea Kebab</a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#meniu">Meniu</a>
+    <a href="#despre">Despre</a>
+    <a href="#livrare">Livrare</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-yellow btn-sm" href="tel:0722231322">Sună acum</a>
+</header>
+
+<main id="main">
+
+  <section class="hero intro" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-title"><span>Colțea Kebab</span><span>Non Stop</span></h1>
+        <p class="slogan">Shaorma mare, oricând vrei</p>
+        <p class="hero-sub">Shaorma de pui mare, deschis non-stop în București.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="tel:0722231322">Sună acum</a>
+          <a class="btn btn-ghost" href="#meniu">Vezi meniul</a>
+        </div>
+      </div>
+
+      <div class="hero-collage">
+        <figure class="sticker photo" data-hop style="--r:-5deg;--d:.05s">
+          <img src="img/1.jpg" alt="Shaorma de pui mare în lipie, fotografie ilustrativă">
+        </figure>
+        <div class="sticker nonstop" data-hop style="--r:9deg;--d:.25s">Non<br>stop</div>
+        <div class="sticker tomato die" data-hop style="--r:14deg;--d:.35s" aria-hidden="true">
+          <svg viewBox="0 0 120 120" focusable="false">
+            <circle cx="60" cy="60" r="56" fill="#E63946"/>
+            <circle cx="60" cy="60" r="44" fill="#F2606B"/>
+            <g fill="#FFF3CC">
+              <ellipse cx="60" cy="34" rx="6" ry="10"/>
+              <ellipse cx="60" cy="34" rx="6" ry="10" transform="rotate(60 60 60)"/>
+              <ellipse cx="60" cy="34" rx="6" ry="10" transform="rotate(120 60 60)"/>
+              <ellipse cx="60" cy="34" rx="6" ry="10" transform="rotate(180 60 60)"/>
+              <ellipse cx="60" cy="34" rx="6" ry="10" transform="rotate(240 60 60)"/>
+              <ellipse cx="60" cy="34" rx="6" ry="10" transform="rotate(300 60 60)"/>
+            </g>
+            <path d="M26 44 Q32 28 48 24" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+          </svg>
+        </div>
+        <div class="sticker fries die" data-hop style="--r:-6deg;--d:.45s" aria-hidden="true">
+          <svg viewBox="0 0 140 130" focusable="false">
+            <g fill="#FFD23F" stroke="#111" stroke-width="3" stroke-linejoin="round">
+              <rect x="30" y="16" width="13" height="50" rx="6" transform="rotate(-14 36 41)"/>
+              <rect x="50" y="6" width="13" height="58" rx="6"/>
+              <rect x="70" y="8" width="13" height="56" rx="6" transform="rotate(8 76 36)"/>
+              <rect x="90" y="18" width="13" height="48" rx="6" transform="rotate(18 96 42)"/>
+            </g>
+            <path d="M22 58 H118 L106 124 H34 Z" fill="#E63946" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+            <rect x="46" y="76" width="48" height="24" rx="4" fill="#fff" stroke="#111" stroke-width="3"/>
+            <text x="70" y="92" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="11" fill="#111">CARTOFI</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre" id="despre">
+    <div class="wrap">
+      <h2 class="h2 rv">Shaorma de pui mare, la orice oră</h2>
+      <p class="lead rv" style="--d:.08s">Colțea Kebab este locul tău preferat pentru <strong>shaorma de pui mare</strong>, la orice oră din zi sau noapte. Te așteptăm nonstop în București cu gusturi savuroase și porții generoase.</p>
+      <ul class="perks">
+        <li class="perk rv rv-pop" style="--d:.05s">
+          <span class="perk-ico" data-hop style="--r:-6deg" aria-hidden="true">⏰</span>
+          <div><h3>Deschis mereu</h3><p>Poți veni la orice oră.</p></div>
+        </li>
+        <li class="perk rv rv-pop" style="--d:.15s">
+          <span class="perk-ico" data-hop style="--r:5deg" aria-hidden="true">🌯</span>
+          <div><h3>Shaorma de pui mare</h3><p>Carne de pui, cartofi, legume, sosuri.</p></div>
+        </li>
+        <li class="perk rv rv-pop" style="--d:.25s">
+          <span class="perk-ico" data-hop style="--r:-3deg" aria-hidden="true">🛵</span>
+          <div><h3>Livrare prin Glovo</h3><p>Comandă shaorma de pui mare pe Glovo.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="meniu" id="meniu">
+    <div class="wrap">
+      <h2 class="h2 rv">Meniu</h2>
+      <p class="lead rv" style="--d:.08s">Shaorma de pui mare, cu carne de pui, cartofi, legume și sosuri.</p>
+      <ul class="labels">
+        <li class="rv" style="--d:0s">
+          <article class="label" data-hop style="--r:-1.5deg">
+            <span class="label-ico" aria-hidden="true">🌯</span>
+            <h3>Shaorma de pui mare</h3>
+            <p>Carne de pui, cartofi, legume, sosuri.</p>
+          </article>
+        </li>
+        
+      </ul>
+      <div class="actions rv" style="--d:.1s">
+        <a class="btn btn-yellow" href="https://wa.me/40722231322?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma%20de%20pui%20mare." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        <a class="btn btn-white" href="tel:0722231322">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie" id="galerie">
+    <div class="wrap">
+      <h2 class="h2 rv">Poftă de shaorma</h2>
+      <ul class="gal">
+        <li class="rv rv-left">
+          <figure><img src="img/1.jpg" alt="Shaorma de pui mare învelită în lipie, fotografie ilustrativă"></figure>
+        </li>
+        <li class="rv rv-pop" style="--d:.1s">
+          <figure><img src="img/2.jpg" alt="Sandviș cu carne, legume și sos, fotografie ilustrativă"></figure>
+        </li>
+        <li class="rv" style="--d:.2s">
+          <figure><img src="img/3.jpg" alt="Carne cu cartofi prăjiți, fotografie ilustrativă"></figure>
+        </li>
+      </ul>
+      <p class="gal-note">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <section class="livrare" id="livrare">
+    <div class="wrap">
+      <h2 class="h2 rv">Livrare prin Glovo</h2>
+      <p class="lead rv" style="--d:.08s">Comandă shaorma de pui mare pe Glovo, direct la tine acasă.</p>
+      <span class="pill rv" style="--d:.16s">Shaorma de pui mare, pe Glovo</span>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <h2 class="h2">Comandă acum</h2>
+        <p class="lead">Deschis non-stop, în fiecare zi, în București.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="tel:0722231322">Sună acum</a>
+          <a class="btn btn-white" href="https://wa.me/40722231322?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma%20de%20pui%20mare." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Col%C8%9Bea+Kebab+Non+Stop+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+        <p class="info">Telefon: <a href="tel:0722231322">0722 231 322</a></p>
+      </div>
+      <div class="map rv rv-pop" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.099569,44.431359799999996,26.107569,44.4353598&amp;layer=mapnik&amp;marker=44.4333598,26.103569" title="Harta: Colțea Kebab Non Stop, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-name">Colțea Kebab Non Stop</p>
+    <p>București</p>
+    <p>Deschis non-stop, în fiecare zi.</p>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: MurrrPhoto, angelorosa, Pexels</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Contact rapid">
+  <a class="btn btn-yellow" href="tel:0722231322">Sună acum</a>
+  <a class="btn btn-white" href="https://wa.me/40722231322?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma%20de%20pui%20mare." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+</nav>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Intrarea din prima secțiune se termină după câteva secunde
+  var hero = document.querySelector('.hero.intro');
+  if (hero) {
+    setTimeout(function () { hero.classList.remove('intro'); }, 1800);
+  }
+
+  // Săritura la atingere
+  document.addEventListener('pointerdown', function (e) {
+    var el = e.target.closest('[data-hop]');
+    if (!el) return;
+    el.classList.remove('hop');
+    void el.offsetWidth;
+    el.classList.add('hop');
+  });
+  document.addEventListener('animationend', function (e) {
+    if (e.animationName === 'hop') e.target.classList.remove('hop');
+  });
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
