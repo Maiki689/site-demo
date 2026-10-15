@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sibelle – Preparate libaneze în București</title>
+<meta name="description" content="Sibelle, preparate libaneze servite cu gust în București. Strada Gheorghe Țițeica 158.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1F4E79;
+  --white:#FAFAF7;
+  --ocher:#D9A441;
+  --olive:#7A8450;
+  --accent:#b45309;
+  --accent-dark:#97440a;
+  --ink:#1C2A36;
+  --sand:#F3EDE1;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;margin:0}
+h1{
+  font-size:clamp(3.4rem,15vw,8.5rem);
+  line-height:1;
+  letter-spacing:-.02em;
+  color:var(--blue);
+}
+h2{
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  line-height:1.08;
+  letter-spacing:-.02em;
+  color:var(--blue);
+  margin-bottom:1.25rem;
+}
+h3{font-size:1.5rem;line-height:1.15;letter-spacing:-.01em}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.despre :focus-visible,.site-footer :focus-visible{outline-color:#fff}
+
+.skip{position:absolute;left:-999px;top:0;z-index:100;background:#fff;color:var(--blue);padding:.6rem 1rem;border-radius:999px}
+.skip:focus{left:1rem;top:1rem}
+
+.wrap{width:min(calc(100% - 2.5rem),1120px);margin-inline:auto}
+.sec{padding:clamp(5rem,11vw,8.5rem) 0}
+.grid-2{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){.grid-2{grid-template-columns:1fr 1fr;gap:6rem}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.75rem 1.4rem;border-radius:999px;
+  font:600 1rem/1.2 "DM Sans",sans-serif;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease,background-color .2s ease,box-shadow .25s ease,color .2s ease,border-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);box-shadow:0 12px 24px -14px rgba(180,83,9,.8)}
+.btn-ghost{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-ghost:hover{background:rgba(31,78,121,.07)}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Antet din sticlă */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(250,250,247,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.7);
+  transition:box-shadow .3s ease;
+}
+.site-header.is-scrolled{box-shadow:0 10px 28px -18px rgba(28,42,54,.4)}
+.bar{height:68px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-family:"DM Serif Display",Georgia,serif;font-size:1.5rem;letter-spacing:-.01em;
+  color:var(--blue);
+}
+.brand-mark{
+  width:2.25rem;height:2.25rem;border-radius:50%;background:#fff;
+  display:grid;place-items:center;font-size:1.1rem;
+  box-shadow:0 0 0 1px rgba(31,78,121,.14);
+}
+.nav-links{display:none;gap:2rem}
+.nav-links a{
+  text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);
+  opacity:.82;transition:opacity .2s ease,color .2s ease;
+}
+.nav-links a:hover{opacity:1;color:var(--blue)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* Prima secțiune */
+.hero{
+  position:relative;
+  min-height:100svh;
+  padding:7.5rem 0 9rem;
+  display:flex;align-items:center;
+}
+.hero-grid{position:relative;z-index:1;display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:5rem}
+}
+.slogan{
+  font-family:"DM Serif Display",Georgia,serif;
+  font-size:clamp(1.5rem,3.2vw,2.1rem);
+  line-height:1.2;
+  letter-spacing:-.01em;
+  margin-top:1.1rem;
+  max-width:22ch;
+}
+.hero-desc{margin-top:1rem;font-size:1.1rem;color:rgba(28,42,54,.8);max-width:40ch}
+.hero-actions{margin-top:2rem}
+.hero-open{margin-top:1.25rem;font-size:.92rem;letter-spacing:.02em;color:rgba(28,42,54,.72)}
+.hero-media{
+  margin:0;
+  width:min(100%,480px);
+  justify-self:center;
+  aspect-ratio:4/5;
+  border-radius:50% 50% 24px 24px / 38% 38% 24px 24px;
+  overflow:hidden;
+}
+@media (min-width:900px){.hero-media{justify-self:end;width:100%}}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+
+/* Valurile: singurul element memorabil */
+.waves{
+  position:absolute;left:0;right:0;bottom:0;z-index:0;
+  height:clamp(64px,11vw,120px);
+  overflow:hidden;pointer-events:none;
+}
+.wave{position:absolute;inset:0}
+.wave svg{
+  position:absolute;left:0;bottom:0;
+  width:200%;height:100%;display:block;
+}
+.wave-back svg{animation:drift 38s linear infinite}
+.wave-front svg{animation:drift 28s linear infinite}
+.wave-back path{fill:var(--ocher);opacity:.55}
+.wave-front path{fill:var(--blue)}
+@keyframes drift{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-25%,0,0)}
+}
+
+/* Intrare în prima secțiune */
+.in{animation:rise .8s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-media{animation:arch 1s .2s var(--ease) both}
+@keyframes arch{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* Despre */
+.despre{background:var(--blue);color:#fff}
+.despre h2{color:#fff}
+.despre-text p{color:rgba(255,255,255,.9);font-size:1.08rem;max-width:58ch}
+.facts{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:.75rem}
+.facts li{display:flex;gap:.75rem;align-items:flex-start;font-weight:500}
+.facts li::before{
+  content:"";flex:none;width:.5rem;height:.5rem;border-radius:50%;
+  background:var(--ocher);margin-top:.55em;
+}
+.perks{
+  display:grid;gap:2rem;margin-top:3rem;padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,.18);
+}
+@media (min-width:640px){.perks{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.perk-ico{display:block;font-size:1.9rem;line-height:1;margin-bottom:.9rem}
+.perk h3{font-family:"DM Sans",sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:0;margin-bottom:.35rem}
+.perk p{font-size:.95rem;color:rgba(255,255,255,.82)}
+.despre-media{margin:0}
+.despre-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+
+/* Meniu, cu farfurie */
+.plate{
+  margin:0;position:relative;isolation:isolate;
+  width:min(100%,440px);justify-self:center;
+}
+.plate::before{
+  content:"";position:absolute;inset:-5%;z-index:-1;border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 0 1px rgba(31,78,121,.14),0 40px 60px -40px rgba(31,78,121,.5);
+}
+.plate img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%}
+.menu-list{list-style:none;padding:0;margin:2rem 0 2.5rem}
+.menu-list li{
+  position:relative;display:grid;gap:.25rem;padding:1.25rem 0 1.25rem 1.25rem;
+  border-bottom:1px solid rgba(31,78,121,.14);
+}
+.menu-list li:first-child{border-top:1px solid rgba(31,78,121,.14)}
+.menu-list li::before{
+  content:"";position:absolute;left:0;top:50%;
+  width:.45rem;height:.45rem;margin-top:-.2rem;border-radius:50%;background:var(--olive);
+}
+.menu-list h3{color:var(--blue)}
+.menu-list p{color:rgba(28,42,54,.78)}
+
+/* Livrare */
+.livrare{background:var(--sand)}
+.livrare-media{margin:0}
+.livrare-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:28px}
+.livrare p{font-size:1.12rem;max-width:44ch;margin-bottom:2rem}
+
+/* Contact */
+.contact-grid{align-items:start}
+.info dl{margin:0 0 2.25rem;display:grid;gap:1.4rem}
+.info dt{font-size:.88rem;letter-spacing:.02em;color:rgba(28,42,54,.65);margin-bottom:.2rem}
+.info dd{margin:0;font-size:1.15rem;line-height:1.45}
+.info a{color:var(--blue);text-underline-offset:3px}
+.map iframe{
+  width:100%;height:clamp(300px,40vw,400px);border:0;display:block;border-radius:28px;
+}
+
+/* Subsol */
+.site-footer{background:var(--blue);color:rgba(255,255,255,.84);padding:4rem 0 2.5rem;font-size:.95rem}
+.foot-grid{display:grid;gap:2rem}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.site-footer a{color:#fff;text-underline-offset:3px}
+.foot-brand{font-family:"DM Serif Display",Georgia,serif;font-size:1.7rem;color:#fff;letter-spacing:-.01em;margin-bottom:.4rem}
+.foot-links{display:grid;gap:.6rem;align-content:start}
+.foot-links a{text-decoration:none;width:max-content}
+.foot-links a:hover{text-decoration:underline}
+.foot-credit{
+  margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.16);
+  font-size:.85rem;letter-spacing:.02em;line-height:1.6;color:rgba(255,255,255,.72);
+}
+
+/* Derulare: dezvăluiri discrete, fiecare cu drumul lui */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .rl{opacity:0;transform:translateX(-32px);transition:opacity .55s ease,transform .6s var(--ease)}
+.js .rs{opacity:0;transform:scale(.97);transition:opacity .6s ease,transform .6s var(--ease)}
+.js .rv.on,.js .rl.on,.js .rs.on{opacity:1;transform:none}
+.js .menu-list li.rv:nth-child(2){transition-delay:.08s}
+.js .menu-list li.rv:nth-child(3){transition-delay:.16s}
+.js .menu-list li.rv:nth-child(4){transition-delay:.24s}
+.js .menu-list li.rv:nth-child(5){transition-delay:.32s}
+.js .perk.rv:nth-child(2){transition-delay:.1s}
+.js .perk.rv:nth-child(3){transition-delay:.2s}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .wave svg{animation:none}
+  .in,.hero-media{animation:fade .2s ease both !important;animation-delay:0s !important}
+  .js .rv,.js .rl,.js .rs{
+    transform:none !important;
+    transition:opacity .2s ease !important;
+    transition-delay:0s !important;
+  }
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  body{color:#000}
+  .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 0 0 2px var(--ink)}
+  .btn{border-width:2px}
+  .nav-links a{opacity:1}
+  .hero-desc,.hero-open,.perk p,.menu-list p,.despre-text p{color:#000}
+  .despre-text p,.perk p{color:#fff}
+  .plate::before{box-shadow:0 0 0 2px var(--ink)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#despre">Mergi la conținut</a>
+
+<header class="site-header" id="header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Sibelle, pagina de start">
+      <span class="brand-mark" aria-hidden="true">🍢</span>
+      <span>Sibelle</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#livrare">Livrare</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:+40728178191">Sună acum</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="titlu-principal">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu-principal" class="in" style="--d:.1s">Sibelle</h1>
+        <p class="slogan in" style="--d:.25s">Arome autentice, savoare libaneză</p>
+        <p class="hero-desc in" style="--d:.35s">Preparate libaneze servite cu gust în București.</p>
+        <div class="hero-actions actions in" style="--d:.45s">
+          <a class="btn btn-primary" href="tel:+40728178191">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40728178191?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20preparate%20libaneze." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        </div>
+        <p class="hero-open in" style="--d:.55s">Deschis marți – duminică, 12:00 – 00:00. Luni închis.</p>
+      </div>
+      <figure class="hero-media">
+        <img src="img/3.jpg" width="800" height="1000" fetchpriority="high" alt="Platou libanez cu frigărui de pui, salată proaspătă și pâine">
+      </figure>
+    </div>
+
+    <div class="waves" aria-hidden="true">
+      <div class="wave wave-back">
+        <svg viewBox="0 0 2880 200" preserveAspectRatio="none">
+          <path d="M0 40 Q180 0 360 40 T720 40 T1080 40 T1440 40 T1800 40 T2160 40 T2520 40 T2880 40 V200 H0 Z"/>
+        </svg>
+      </div>
+      <div class="wave wave-front">
+        <svg viewBox="0 0 2880 200" preserveAspectRatio="none">
+          <path d="M0 70 Q180 30 360 70 T720 70 T1080 70 T1440 70 T1800 70 T2160 70 T2520 70 T2880 70 V200 H0 Z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" class="despre sec" aria-labelledby="titlu-despre">
+    <div class="wrap grid-2">
+      <div class="despre-text">
+        <h2 id="titlu-despre" class="rv">Despre Sibelle</h2>
+        <p class="rv">La Sibelle, descoperi bogăția gusturilor libaneze, de la hommos fin până la frigărui delicioase. Atmosfera caldă și preparatele pline de aromă te poartă spre Orient din inima Bucureștiului. Fiecare masă înseamnă o experiență autentică.</p>
+        <ul class="facts rv">
+          <li>Preparate libaneze, inclusiv hommos și frigărui</li>
+          <li>Livrare direct la tine acasă</li>
+        </ul>
+      </div>
+      <figure class="despre-media rs">
+        <img src="img/2.jpg" width="800" height="1000" loading="lazy" alt="Frigărui și preparate din bucătăria orientală, așezate pe masă, din priviri de sus">
+      </figure>
+    </div>
+
+    <div class="wrap perks">
+      <div class="perk rv">
+        <span class="perk-ico" aria-hidden="true">🌿</span>
+        <h3>Rețete autentice</h3>
+        <p>Ingrediente și gusturi orientale</p>
+      </div>
+      <div class="perk rv">
+        <span class="perk-ico" aria-hidden="true">🥗</span>
+        <h3>Opțiuni variate</h3>
+        <p>Arome pentru toate gusturile</p>
+      </div>
+      <div class="perk rv">
+        <span class="perk-ico" aria-hidden="true">🤗</span>
+        <h3>Ambianță prietenoasă</h3>
+        <p>Perfect pentru relaxare</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="meniu" class="sec" aria-labelledby="titlu-meniu">
+    <div class="wrap grid-2">
+      <figure class="plate rs">
+        <img src="img/4.jpg" width="1000" height="1000" loading="lazy" alt="Platou mediteranean cu hommos și alte gustări, servit pe masă">
+      </figure>
+      <div>
+        <h2 id="titlu-meniu" class="rv">Meniu</h2>
+        <p class="rv">Câteva dintre preparatele pe care le găsești la Sibelle.</p>
+        <ul class="menu-list">
+          <li class="rv">
+            <h3>Hommos</h3>
+            <p>Pastă cremoasă de năut cu tahini</p>
+          </li>
+          <li class="rv">
+            <h3>Frigărui de pui</h3>
+            <p>Bucăți fragede pe bețișor</p>
+          </li>
+        </ul>
+        <div class="actions rv">
+          <a class="btn btn-primary" href="https://wa.me/40728178191?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20preparate%20libaneze." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+40728178191">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="livrare" class="livrare sec" aria-labelledby="titlu-livrare">
+    <div class="wrap grid-2">
+      <figure class="livrare-media rl">
+        <img src="img/5.jpg" width="1200" height="900" loading="lazy" alt="Preparate mediteraneene aranjate pe farfurii, gata de servit">
+      </figure>
+      <div>
+        <h2 id="titlu-livrare" class="rv">Livrare</h2>
+        <p class="rv">Comandă preparatele preferate libaneze direct la tine acasă.</p>
+        <div class="actions rv">
+          <a class="btn btn-primary" href="https://wa.me/40728178191?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20preparate%20libaneze." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+40728178191">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec" aria-labelledby="titlu-contact">
+    <div class="wrap">
+      <h2 id="titlu-contact" class="rv">Vino la Sibelle</h2>
+      <div class="grid-2 contact-grid">
+        <div class="info">
+          <dl>
+            <div class="rv">
+              <dt>Adresă</dt>
+              <dd>Strada Gheorghe Țițeica 158, București</dd>
+            </div>
+            <div class="rv">
+              <dt>Program</dt>
+              <dd>Marți – duminică, 12:00 – 00:00<br>Luni închis</dd>
+            </div>
+            <div class="rv">
+              <dt>Telefon</dt>
+              <dd><a href="tel:+40728178191">+40 728 178 191</a></dd>
+            </div>
+          </dl>
+          <div class="actions rv">
+            <a class="btn btn-primary" href="tel:+40728178191">Sună acum</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Sibelle+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </div>
+        </div>
+        <div class="map rs">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=26.1080799,44.466959499999994,26.116079900000003,44.4709595&amp;layer=mapnik&amp;marker=44.4689595,26.1120799"
+            title="Harta: Sibelle, Strada Gheorghe Țițeica 158, București"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">Sibelle</p>
+        <p>Preparate libaneze servite cu gust în București.</p>
+        <p>Strada Gheorghe Țițeica 158, București</p>
+      </div>
+      <nav class="foot-links" aria-label="Subsol">
+        <a href="#despre">Despre</a>
+        <a href="#meniu">Meniu</a>
+        <a href="#livrare">Livrare</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="foot-links">
+        <a href="tel:+40728178191">Sună acum</a>
+        <a href="https://wa.me/40728178191?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20preparate%20libaneze." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+      </div>
+    </div>
+    <div class="foot-credit">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Surprising_Media, timokefoto, neildodhia, djpresc16, aladdinshouston</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var header = document.getElementById('header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var els = document.querySelectorAll('.rv, .rl, .rs');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('on');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('on'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
