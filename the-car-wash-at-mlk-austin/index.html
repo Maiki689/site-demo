@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="jarvis-v1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081a2d">
+  <title>The Car Wash At MLK | Self-Service & Touchless Car Wash in Austin</title>
+  <meta name="description" content="Your ride, spotless on MLK. Self-service wash jets and a touchless automatic bay in Austin, right across from Whataburger.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;650&family=Outfit:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#081a2d;--navy:#0b2545;--surface:#102b45;--blue:#1e88e5;--accent:#38bdf8;--pale:#d6ecff;--white:#fff;--muted:#acc0d3;--line:rgba(214,236,255,.16);--heading:"Outfit",sans-serif;--body:"Inter",sans-serif;--ease:cubic-bezier(.2,.8,.2,1)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:6rem}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:var(--body);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+    body.modal-open{overflow:hidden}
+    button,a,input{-webkit-tap-highlight-color:transparent}
+    button,a{touch-action:manipulation}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    button{cursor:pointer}
+    svg{display:block}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+    ::selection{color:var(--bg);background:var(--accent)}
+    h1,h2,h3,p{margin:0}
+    h1,h2,h3{font-family:var(--heading);font-weight:500;letter-spacing:-.035em;line-height:1.08}
+    h2{font-size:clamp(2.5rem,5.1vw,4.65rem)}
+    h3{font-size:clamp(1.5rem,2.5vw,2.2rem)}
+    p{max-width:65ch}
+    .wrap{width:min(100% - 7rem,82rem);margin-inline:auto}
+    .section{padding-block:7.5rem}
+    .muted{color:var(--muted)}
+    .small{font-size:.8rem;letter-spacing:.025em}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;min-height:3.35rem;padding:.85rem 1.4rem;border:1px solid transparent;border-radius:.6rem;background:var(--accent);color:#05213a;font-size:.9rem;font-weight:650;line-height:1.35;transition:transform .15s var(--ease),opacity .2s;white-space:normal}
+    .btn svg{width:1.15rem;height:1.15rem;flex:none}
+    .btn:hover{opacity:.88}
+    .btn:active{transform:scale(.97)!important}
+    .btn-secondary{background:transparent;border-color:rgba(214,236,255,.35);color:white}
+    .text-link{display:inline-flex;gap:.65rem;align-items:center;min-height:2.75rem;font-weight:500;font-size:.9rem}
+    .text-link svg{width:1rem;height:1rem}
+    .text-link:hover{text-decoration:underline;text-underline-offset:.3em}
+    .skip{position:fixed;top:.8rem;left:1rem;background:white;color:var(--navy);padding:.6rem 1rem;z-index:100;transform:translateY(-200%)}
+    .skip:focus{transform:translateY(0)}
+    .header{position:fixed;inset:0 0 auto;z-index:40;background:rgba(8,26,45,.76);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(255,255,255,.09)}
+    .header.scrolled{background:rgba(8,26,45,.94);box-shadow:0 .4rem 2rem rgba(0,0,0,.13)}
+    .nav{height:5.4rem;display:flex;align-items:center;gap:2.4rem}
+    .brand{display:flex;align-items:center;gap:.8rem;flex-shrink:0;font-family:var(--heading);font-size:1.05rem;font-weight:550;line-height:1.12;letter-spacing:-.015em}
+    .brand-mark{height:2.4rem;width:2.4rem;color:var(--accent)}
+    .nav-links{display:flex;gap:2rem;margin-left:auto;align-items:center}
+    .nav-links a{font-size:.85rem;color:var(--pale);padding:.75rem 0}
+    .nav-links a:hover{color:var(--accent)}
+    .nav .btn{min-height:2.8rem;padding:.65rem 1.15rem;font-size:.8rem}
+    .menu-toggle{display:none;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;border:1px solid var(--line);color:white;background:transparent;border-radius:.4rem}
+    .menu-toggle svg{height:1.25rem;width:1.25rem}
+    .hero{position:relative;min-height: min(58rem,100svh);min-height:max(48rem,100svh);overflow:hidden;display:flex;align-items:center;padding:9rem 0 8rem}
+    .hero-content{position:relative;z-index:2;pointer-events:none}
+    .hero-content a{pointer-events:auto}
+    .location-note{display:flex;gap:.55rem;align-items:center;font-size:.85rem;color:var(--muted);margin-bottom:1.8rem}
+    .location-note svg{width:1rem;height:1rem;color:var(--accent)}
+    h1{font-size:clamp(4rem,7.5vw,7.4rem);max-width:8ch;line-height:.99;letter-spacing:-.055em}
+    .title-line{display:block}
+    .hero-tagline{font-family:var(--heading);font-size:clamp(1.35rem,2.1vw,1.8rem);margin-top:1.65rem;letter-spacing:-.02em}
+    .hero-summary{max-width:29ch;color:var(--muted);font-size:.95rem;margin-top:.65rem}
+    .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+    .hero-visual{position:absolute;right:-3%;top:9%;width:65%;height:81%;z-index:1}
+    .hero-visual canvas{display:block;width:100%;height:100%;position:absolute;inset:0;opacity:0;transition:opacity .5s}
+    .hero-visual.ready canvas{opacity:1}
+    .scene-fallback{position:absolute;inset:0;width:100%;height:100%;transition:opacity .4s}
+    .hero-visual.ready .scene-fallback{opacity:0}
+    .scene-caption{position:absolute;right:5%;bottom:9%;color:var(--muted);font-size:.68rem;letter-spacing:.04em;z-index:2}
+    .hero-bottom{position:absolute;bottom:2rem;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.8rem;z-index:2}
+    .hero-bottom .find-note{display:flex;align-items:center;gap:.65rem}
+    .status-dot{width:.45rem;height:.45rem;border-radius:50%;background:var(--accent);flex:none}
+    .hero-bottom a{display:flex;align-items:center;gap:.65rem;min-height:2.75rem;color:var(--pale)}
+    .hero-bottom svg{width:1.1rem;height:1.1rem}
+    .about{background:var(--pale);color:var(--navy)}
+    .about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:7.5%;align-items:center}
+    .photo-frame{position:relative;overflow:hidden;border-radius:1rem 1rem 5rem 1rem;aspect-ratio:4/4.6;background:var(--navy)}
+    .photo-frame img{height:112%;position:absolute;top:-6%;object-position:50% 50%}
+    .photo-caption{display:flex;justify-content:space-between;gap:1rem;margin-top:1rem;font-size:.72rem;color:#405d77;letter-spacing:.025em}
+    .about-copy{padding-top:3rem}
+    .about-copy h2{max-width:10ch}
+    .about-copy p{margin-top:1.75rem;color:#3b5670;font-size:1.02rem}
+    .about-location{margin-top:2.5rem;display:flex;gap:1rem;align-items:center;font-size:.9rem;font-weight:500}
+    .about-location svg{height:2.6rem;width:2.6rem;padding:.6rem;background:white;border-radius:50%;color:var(--blue);flex:none}
+    .water-drop{position:absolute;z-index:2;background:rgba(214,236,255,.1);border:1px solid rgba(255,255,255,.65);border-radius:55% 45% 52% 48%;box-shadow:inset 2px 2px 3px rgba(255,255,255,.6),inset -3px -4px 5px rgba(7,32,58,.45),2px 6px 8px rgba(0,0,0,.2);backdrop-filter:blur(1px);pointer-events:none}
+    .drop-a{width:1.6rem;height:2.2rem;left:18%;top:20%;transform:rotate(-12deg)}
+    .drop-b{width:1rem;height:1.4rem;left:67%;top:9%}
+    .drop-c{width:.65rem;height:.8rem;left:78%;top:54%}
+    .drop-d{width:2rem;height:2.6rem;left:42%;top:63%;transform:rotate(12deg)}
+    .section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:3rem;margin-bottom:3rem}
+    .section-heading p{max-width:29ch;color:var(--muted);font-size:.95rem}
+    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+    .service-card{position:relative;padding:2.6rem;background:var(--surface);border-radius:1rem;overflow:hidden;min-height:27rem;display:flex;flex-direction:column;isolation:isolate}
+    .service-card:after{content:"";position:absolute;inset:0;border:1px solid rgba(56,189,248,.5);border-radius:inherit;opacity:0;pointer-events:none;transition:opacity .25s}
+    .service-card:hover:after{opacity:1}
+    .service-card:nth-child(2){background:#113655}
+    .service-illustration{height:12rem;margin:-.5rem 0 2rem;display:grid;place-items:center}
+    .service-illustration svg{width:100%;height:100%;max-width:23rem;transition:transform .45s var(--ease)}
+    .service-card:hover .service-illustration svg{transform:translateY(-.35rem)}
+    .service-card h3{margin-bottom:.8rem;font-size:clamp(1.6rem,2.6vw,2.25rem)}
+    .service-card p{color:var(--muted);font-size:.95rem;max-width:38ch}
+    .service-foot{margin-top:auto;padding-top:2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-size:.75rem;color:var(--pale)}
+    .service-foot span:last-child{width:1.6rem;height:1.6rem;border:1px solid rgba(56,189,248,.4);border-radius:50%;display:grid;place-items:center;color:var(--accent)}
+    .service-foot svg{width:.85rem;height:.85rem}
+    .why{padding:5.5rem 0;background:var(--navy)}
+    .why-grid{display:grid;grid-template-columns:1.05fr repeat(3,1fr);gap:2.5rem}
+    .why h2{font-size:clamp(2.1rem,3.5vw,3rem);max-width:9ch}
+    .benefit>svg{width:1.8rem;height:1.8rem;color:var(--accent);margin-bottom:1.6rem}
+    .benefit h3{font-size:1.35rem;margin-bottom:.75rem}
+    .benefit p{font-size:.88rem;color:var(--muted);max-width:25ch}
+    .gallery .section-heading{align-items:center}
+    .gallery-note{font-size:.75rem!important;max-width:28ch!important}
+    .gallery-grid{display:grid;grid-template-columns:1.45fr 1fr 1fr;gap:1.25rem;align-items:start}
+    .gallery-item{margin:0;min-width:0}
+    .gallery-item:nth-child(2){margin-top:4rem}
+    .gallery-item:nth-child(3){margin-top:8rem}
+    .gallery-trigger{display:block;width:100%;aspect-ratio:3/4;border:0;padding:0;background:var(--surface);border-radius:.75rem;overflow:hidden;position:relative}
+    .gallery-item:first-child .gallery-trigger{aspect-ratio:4/4.5;border-radius:3rem .75rem .75rem .75rem}
+    .gallery-trigger img{transition:transform .6s var(--ease),opacity .5s}
+    .gallery-trigger:hover img{transform:scale(1.035);opacity:.85}
+    .zoom-icon{position:absolute;bottom:1rem;right:1rem;width:2.6rem;height:2.6rem;background:var(--bg);color:white;border-radius:50%;display:grid;place-items:center}
+    .zoom-icon svg{width:1rem;height:1rem}
+    .gallery-item figcaption{margin-top:.9rem;color:var(--muted);font-size:.78rem}
+    .visit{background:var(--pale);color:var(--navy);overflow:hidden}
+    .visit-grid{display:grid;grid-template-columns:.85fr 1.3fr;gap:6%;align-items:center}
+    .visit-copy h2{max-width:10ch}
+    .visit-copy>p{color:#3b5670;margin-top:1.5rem;max-width:32ch}
+    .visit-copy .btn{margin-top:2rem;background:var(--navy);color:white}
+    .hours-note{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(11,37,69,.18);max-width:28rem}
+    .hours-note h3{font-size:1.1rem;margin-bottom:.5rem;letter-spacing:-.01em}
+    .hours-note p{font-size:.85rem;color:#3b5670}
+    .hours-note a{text-decoration:underline;text-underline-offset:.2em}
+    .map-shell{border-radius:1.25rem;overflow:hidden;background:white;box-shadow:0 1rem 3rem rgba(11,37,69,.07)}
+    .map-shell iframe{border:0;width:100%;height:28rem;display:block;filter:saturate(.65)}
+    .map-caption{padding:1.1rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-size:.78rem;color:#3b5670}
+    .map-caption strong{color:var(--navy);font-weight:600}
+    .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:9%}
+    .faq-heading p{margin-top:1.4rem;max-width:25ch;color:var(--muted);font-size:.95rem}
+    .faq-list details{border-bottom:1px solid var(--line)}
+    .faq-list details:first-child{border-top:1px solid var(--line)}
+    .faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.6rem 0;font-size:1.05rem;font-weight:500;line-height:1.45}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary:after{content:"+";color:var(--accent);font-size:1.5rem;line-height:1;flex:none;transition:transform .2s}
+    .faq-list details[open] summary:after{transform:rotate(45deg)}
+    .faq-list details p{color:var(--muted);font-size:.93rem;padding:0 2rem 1.65rem 0;max-width:62ch}
+    .contact{padding:5.5rem 0 6rem;background:var(--accent);color:var(--navy)}
+    .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:end}
+    .contact h2{font-size:clamp(3rem,6.4vw,6rem)}
+    .contact p{margin-top:1.4rem;max-width:38ch;color:#123d5b}
+    .contact-actions{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:flex-end}
+    .contact .btn{background:var(--navy);color:white}
+    .contact .btn-secondary{background:transparent;color:var(--navy);border-color:rgba(11,37,69,.45)}
+    .email-address{display:block;margin-top:1.25rem;font-size:.85rem;text-align:right;overflow-wrap:anywhere}
+    .footer{padding:3.5rem 0 1.5rem}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;padding-bottom:3rem}
+    .footer-top p{color:var(--muted);font-size:.85rem;max-width:26ch}
+    .footer-nav{display:flex;gap:1.7rem;flex-wrap:wrap;font-size:.85rem}
+    .footer-nav a{min-height:2.75rem;display:flex;align-items:center}
+    .footer-bottom{border-top:1px solid var(--line);padding-top:1.4rem;display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.69rem;letter-spacing:.02em}
+    .lightbox{width:min(70rem,calc(100% - 2rem));max-height:calc(100svh - 2rem);padding:0;border:1px solid var(--line);border-radius:1rem;background:var(--bg);color:white;overflow:auto}
+    .lightbox::backdrop{background:rgba(3,12,23,.92)}
+    .lightbox img{width:100%;height:auto;max-height:78svh;object-fit:contain;background:#061321}
+    .lightbox-bar{padding:.8rem 1.2rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+    .lightbox-bar p{font-size:.85rem;color:var(--pale)}
+    .lightbox-close{background:var(--surface);color:white;border:1px solid var(--line);min-height:2.75rem;min-width:2.75rem;border-radius:50%;display:grid;place-items:center}
+    .lightbox-close svg{width:1.2rem;height:1.2rem}
+    .load-line{position:fixed;top:0;left:0;width:100%;height:2px;transform-origin:left;background:var(--accent);z-index:60;animation:load .75s var(--ease) both;pointer-events:none}
+    @keyframes load{0%{transform:scaleX(0);opacity:1}75%{transform:scaleX(1);opacity:1}100%{transform:scaleX(1);opacity:0}}
+    @media(min-width:1600px){.hero-visual{right:0;width:61%}}
+    @media(max-width:1100px){
+      .wrap{width:calc(100% - 4rem)}.nav{gap:1.5rem}.nav-links{gap:1.3rem}
+      .hero{min-height:48rem}h1{font-size:clamp(4rem,8.5vw,6rem)}
+      .hero-visual{right:-10%;width:70%}.scene-caption{right:18%}
+      .section{padding-block:6rem}.about-grid{gap:6%}.about-copy{padding-top:1rem}
+      .why-grid{grid-template-columns:repeat(3,1fr);gap:2rem}.why-grid>h2{grid-column:1/-1;max-width:none;margin-bottom:1rem}
+      .service-card{padding:2rem}.contact-grid{gap:2rem}.contact-actions{flex-direction:column;align-items:stretch}.email-address{text-align:left}
+    }
+    @media(max-width:760px){
+      html{scroll-padding-top:5.5rem}.wrap{width:calc(100% - 2.5rem)}.section{padding-block:4.5rem}
+      .nav{height:4.5rem;gap:.65rem}.brand{font-size:.9rem;gap:.55rem}.brand-mark{width:2rem;height:2rem}
+      .nav>.btn{margin-left:auto;padding:.65rem .8rem;font-size:.75rem;min-height:2.75rem}
+      .menu-toggle{display:flex;flex:none}.nav-links{display:none;position:absolute;top:4.5rem;left:0;right:0;background:var(--bg);padding:1rem 1.25rem 1.5rem;box-shadow:0 1rem 1rem rgba(0,0,0,.12)}
+      .nav-links.open{display:flex;flex-direction:column;gap:0;align-items:stretch}.nav-links a{padding:.8rem;font-size:1rem}
+      .hero{min-height:0;display:block;padding:7rem 0 0}
+      .hero-content{pointer-events:auto}.location-note{margin-bottom:1.2rem;font-size:.78rem}
+      h1{font-size:clamp(3.7rem,13vw,5.5rem);max-width:none;letter-spacing:-.045em}
+      .title-line{display:inline}.title-line:last-child{display:block}
+      .hero-tagline{font-size:1.35rem;margin-top:1.3rem}
+      .hero-summary{max-width:32ch;font-size:.88rem}
+      .hero-actions{margin-top:1.5rem;gap:.65rem}.hero-actions .btn{padding:.85rem 1.1rem;font-size:.83rem}
+      .hero-visual{position:relative;right:auto;top:auto;width:110%;height:22rem;margin:-1rem -5% -1rem;pointer-events:none}
+      .scene-caption{right:9%;bottom:7%;font-size:.6rem}
+      .hero-bottom{position:relative;bottom:auto;padding-block:1rem 1.5rem;font-size:.72rem}
+      .hero-bottom>a{display:none}.hero-bottom .find-note{gap:.5rem}
+      h2{font-size:clamp(2.6rem,9.5vw,3.7rem)}
+      .about-grid{grid-template-columns:1fr;gap:2.7rem}.about-copy{padding:0;grid-row:1}.about-copy h2{max-width:13ch}.about-copy p{font-size:.95rem;margin-top:1.4rem}.about-location{margin-top:1.5rem;font-size:.85rem}
+      .photo-frame{aspect-ratio:4/3.7;border-radius:.75rem .75rem 3.5rem .75rem}
+      .photo-caption{font-size:.65rem}
+      .section-heading{display:block;margin-bottom:2.2rem}.section-heading p{margin-top:1.25rem;max-width:35ch}
+      .service-grid{grid-template-columns:1fr;gap:1rem}.service-card{padding:1.7rem;min-height:25rem}.service-illustration{height:11rem}
+      .service-card h3{font-size:1.9rem}.service-card p{font-size:.9rem}
+      .why{padding-block:4rem}.why-grid{grid-template-columns:1fr;gap:2rem}.why-grid>h2{font-size:2.6rem;max-width:13ch;margin:0 0 .5rem}
+      .benefit{display:grid;grid-template-columns:2rem 1fr;column-gap:1.2rem;align-items:start}.benefit>svg{grid-row:1/3;margin:.1rem 0 0}.benefit h3{font-size:1.35rem}.benefit p{max-width:35ch}
+      .gallery-grid{grid-template-columns:1fr 1fr;gap:1.5rem .8rem}.gallery-item:first-child{grid-column:1/-1}.gallery-item:first-child .gallery-trigger{aspect-ratio:4/3;border-radius:2rem .6rem .6rem .6rem}.gallery-item:nth-child(2),.gallery-item:nth-child(3){margin:0}.gallery-item:nth-child(3){margin-top:1.7rem}.gallery-trigger{aspect-ratio:3/4}.gallery-item figcaption{font-size:.68rem}.zoom-icon{height:2.2rem;width:2.2rem;right:.6rem;bottom:.6rem}
+      .gallery-note{max-width:38ch!important}
+      .visit-grid{grid-template-columns:1fr;gap:2.5rem}.visit-copy h2{max-width:12ch}.visit-copy>p{max-width:36ch}.map-shell iframe{height:22rem}.map-caption{padding:1rem;font-size:.7rem}.hours-note{margin-top:2rem}
+      .faq-grid{grid-template-columns:1fr;gap:2.4rem}.faq-heading p{max-width:36ch}.faq-list summary{font-size:.98rem;padding:1.35rem 0}.faq-list details p{font-size:.87rem}
+      .contact{padding-block:4rem}.contact-grid{grid-template-columns:1fr;gap:2rem}.contact h2{font-size:clamp(3rem,11vw,4.5rem)}.contact p{font-size:.95rem}.contact-actions{flex-direction:row;justify-content:flex-start}.email-address{font-size:.8rem}
+      .footer{padding-top:2.5rem}.footer-top{flex-wrap:wrap;gap:2rem;padding-bottom:2rem}.footer-top>p{max-width:18ch;margin-left:auto;font-size:.75rem}.footer-nav{width:100%;gap:1.5rem;font-size:.8rem}.footer-bottom{flex-direction:column;font-size:.65rem;gap:.65rem}
+    }
+    @media(max-width:360px){.wrap{width:calc(100% - 2rem)}.brand{font-size:.8rem}.brand-mark{width:1.75rem}.nav>.btn{padding:.6rem}.hero-actions .btn{padding:.8rem}h1{font-size:3.5rem}.hero-tagline{font-size:1.2rem}}
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.15s!important;transition-duration:.15s!important}
+      .load-line{display:none}.service-card:hover .service-illustration svg,.gallery-trigger:hover img{transform:none}
+    }
+    @media(prefers-reduced-transparency:reduce){
+      .header,.header.scrolled{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}.water-drop{backdrop-filter:none;background:#9cd5ef}.lightbox::backdrop{background:#061321}
+    }
+    @media(prefers-contrast:more){
+      :root{--muted:#d6ecff;--line:#6585a0}.header{background:var(--bg);backdrop-filter:none}.btn{border:2px solid currentColor}.service-card{border:1px solid #6585a0}.about-copy p,.visit-copy>p,.hours-note p,.photo-caption,.map-caption{color:#0b2545}
+    }
+  </style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <div class="load-line" aria-hidden="true"></div>
+  <header class="header" id="header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="The Car Wash At MLK home">
+        <svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 30V10a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v20M13 12h14M15 16v3m5-3v5m5-5v3" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="m12 27 2-5h12l2 5v6H12v-6Z" stroke="currentColor" stroke-width="2"/><path d="M12 28h16M15 32v3m10-3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>The Car Wash<br>At MLK</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">The washes</a>
+        <a href="#visit">Find us</a>
+        <a href="#faq">FAQs</a>
+      </div>
+      <a class="btn magnetic" href="mailto:thecarwashatmlk@gmail.com">Email us</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <p class="location-note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>MLK, Austin</p>
+        <h1 id="hero-title"><span class="title-line">The Car</span> <span class="title-line">Wash</span> <span class="title-line">At MLK</span></h1>
+        <p class="hero-tagline">Your ride, spotless on MLK.</p>
+        <p class="hero-summary">Self-service jets and a touchless wash.<br>Your clean, your way.</p>
+        <div class="hero-actions">
+          <a class="btn magnetic" href="https://www.google.com/maps/search/?api=1&amp;query=The+Car+Wash+At+MLK+Austin" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4L21 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m10 14 5-5" stroke="currentColor" stroke-width="1.7"/></svg>Get directions
+          </a>
+          <a class="btn btn-secondary" href="#services">Explore the washes</a>
+        </div>
+      </div>
+      <div class="hero-visual" id="wash-scene" role="img" aria-label="Stylized three-dimensional car inside a blue touchless wash arch">
+        <svg class="scene-fallback" viewBox="0 0 800 700" fill="none" aria-hidden="true">
+          <ellipse cx="426" cy="552" rx="265" ry="44" fill="#061321"/>
+          <path d="m178 485 260-108 237 125-255 121-242-138Z" fill="#143553" stroke="#214763" stroke-width="2"/>
+          <path d="M253 438V177l220-64 148 77v284" stroke="#173b5a" stroke-width="26" stroke-linejoin="round"/>
+          <path d="M252 432V178l221-62 147 76v274" stroke="#38bdf8" stroke-width="5" stroke-linejoin="round"/>
+          <path d="m473 116 1 270" stroke="#275b7c" stroke-width="18"/>
+          <path d="m289 203 166-48 128 67" stroke="#d6ecff" stroke-width="4"/>
+          <path d="m312 225-1 79m42-90v64m49-78-1 82m117-69v69m38-50v76" stroke="#38bdf8" stroke-opacity=".45" stroke-width="2" stroke-dasharray="4 13"/>
+          <ellipse cx="305" cy="473" rx="30" ry="43" transform="rotate(-15 305 473)" fill="#050e19"/><ellipse cx="525" cy="499" rx="30" ry="43" transform="rotate(-15 525 499)" fill="#050e19"/>
+          <ellipse cx="527" cy="498" rx="17" ry="28" transform="rotate(-15 527 498)" fill="#62879c"/>
+          <path d="m249 402 43-67 153-48 115 64 43 97-89 65-244-69-21-42Z" fill="#a7c9df"/>
+          <path d="m292 335 48-67 116-31 83 48 21 66-113 40-155-56Z" fill="#d6ecff"/>
+          <path d="m348 276 105-28 66 39-93 32-78-43Z" fill="#14334c"/>
+          <path d="m340 283-34 48 118 46-5-47-79-47Z" fill="#102b45"/>
+          <path d="m433 330 94-31 19 47-108 37-5-53Z" fill="#0b2545"/>
+          <path d="m250 402 164 62 188-18-88 67-244-69-20-42Z" fill="#79a4bf"/>
+          <path d="m252 394 161 55 148-49-114-15-155-56-40 65Z" fill="#c4e1f4"/>
+          <path d="m267 410 42 15m171 41 36-13" stroke="white" stroke-width="7" stroke-linecap="round"/>
+          <path d="m322 443 105 33" stroke="#123149" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="643" cy="311" r="20" stroke="#69cfff" stroke-opacity=".6" stroke-width="2"/><path d="M633 302a12 12 0 0 1 14-3" stroke="#d6ecff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="204" cy="335" r="10" stroke="#69cfff" stroke-opacity=".5"/><circle cx="575" cy="145" r="8" stroke="#69cfff" stroke-opacity=".6"/>
+        </svg>
+        <span class="scene-caption">A little illustration. A fresh perspective.</span>
+      </div>
+      <div class="hero-bottom wrap">
+        <span class="find-note"><span class="status-dot" aria-hidden="true"></span>On MLK, right across from Whataburger.</span>
+        <a href="#about">Take a look around <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v16m-6-6 6 6 6-6" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal-photo">
+          <div class="photo-frame" id="water-photo">
+            <img src="img/1.jpg" alt="High-pressure water rinsing foam from a car wheel" loading="lazy" width="900" height="1100">
+            <span class="water-drop drop-a" aria-hidden="true"></span><span class="water-drop drop-b" aria-hidden="true"></span><span class="water-drop drop-c" aria-hidden="true"></span><span class="water-drop drop-d" aria-hidden="true"></span>
+          </div>
+          <div class="photo-caption"><span>A fresh start for your ride.</span><span>Illustrative photography</span></div>
+        </div>
+        <div class="about-copy reveal-copy">
+          <h2 id="about-title">Less road grime.<br>More shine.</h2>
+          <p>A clean car doesn’t need to be complicated. At The Car Wash At MLK, choose our self-service wash jets or let the fully touchless automatic bay do the work.</p>
+          <p>Find us on MLK in Austin, right across from Whataburger. A practical stop for whatever the road leaves behind.</p>
+          <div class="about-location">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>On your route.<br>Right here on MLK.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-heading reveal-copy">
+          <h2 id="services-title">Two ways to wash.<br>One fresh ride.</h2>
+          <p>Take the controls, or take the touchless option. Pick the wash that works for you.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-illustration" aria-hidden="true">
+              <svg viewBox="0 0 360 180" fill="none">
+                <path d="M54 160c-34-8-39-41-14-53 30-15 61 18 84-6" stroke="#315773" stroke-width="8" stroke-linecap="round"/>
+                <path d="m100 92 25-28 37 14-18 31-44-17Z" fill="#93b8d1"/><path d="m126 71 12-17 35 15-9 17" stroke="#d6ecff" stroke-width="7" stroke-linejoin="round"/><path d="m145 78 67-48" stroke="#aacbdf" stroke-width="7" stroke-linecap="round"/><path d="m208 33 18-12" stroke="#38bdf8" stroke-width="10" stroke-linecap="round"/>
+                <path d="m239 20 76 9m-82 0 77 29m-84-20 62 49" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 8" stroke-linecap="round"/>
+                <circle cx="276" cy="124" r="33" stroke="#214562" stroke-width="14"/><circle cx="276" cy="124" r="22" stroke="#aacbdf" stroke-width="3"/><path d="M276 104v40m-20-20h40m-34-14 28 28m0-28-28 28" stroke="#aacbdf" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Self-Service Car Wash</h3>
+            <p>Wash your car with high-pressure jets. Put the attention exactly where your ride needs it.</p>
+            <div class="service-foot"><span>You’re in control.</span><span><svg viewBox="0 0 16 16" fill="none"><path d="m4 8 3 3 5-6" stroke="currentColor" stroke-width="1.5"/></svg></span></div>
+          </article>
+          <article class="service-card">
+            <div class="service-illustration" aria-hidden="true">
+              <svg viewBox="0 0 360 180" fill="none">
+                <path d="M73 157V28a9 9 0 0 1 9-9h196a9 9 0 0 1 9 9v129" stroke="#6389a5" stroke-width="12" stroke-linecap="round"/><path d="M84 151V33h192v118" stroke="#38bdf8" stroke-width="3"/>
+                <path d="M127 44v30m35-30v23m36-23v23m35-23v30" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 7" stroke-linecap="round"/>
+                <path d="m111 119 15-33h108l15 33v31H111v-31Z" fill="#bcd9ed"/><path d="m134 93-10 24h112l-10-24h-92Z" fill="#102b45"/><path d="M111 124h138" stroke="#86abc6" stroke-width="3"/><path d="M119 132h20m82 0h20" stroke="white" stroke-width="5" stroke-linecap="round"/><path d="M153 140h54" stroke="#315773" stroke-width="4" stroke-linecap="round"/><path d="M120 152v7m120-7v7" stroke="#081a2d" stroke-width="12" stroke-linecap="round"/>
+                <path d="M62 163h237" stroke="#315773" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>Touchless Automatic Wash</h3>
+            <p>Hands-free, contactless exterior cleaning. Let the automatic bay take care of the wash.</p>
+            <div class="service-foot"><span>The hands-free option.</span><span><svg viewBox="0 0 16 16" fill="none"><path d="m4 8 3 3 5-6" stroke="currentColor" stroke-width="1.5"/></svg></span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-title">
+      <div class="wrap why-grid">
+        <h2 id="why-title">A simple stop.<br>A cleaner car.</h2>
+        <article class="benefit">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M7 25V9m9 16V7m9 18V9M3 14h8m1 6h8m1-7h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="14" r="3" fill="#0b2545" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="20" r="3" fill="#0b2545" stroke="currentColor" stroke-width="1.6"/><circle cx="25" cy="13" r="3" fill="#0b2545" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3>Your choice</h3><p>Hands-on with the jets or hands-free in the automatic bay.</p>
+        </article>
+        <article class="benefit">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="17" r="11" stroke="currentColor" stroke-width="1.6"/><path d="M16 10v7l4 3M12 3h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <h3>Quick stop</h3><p>A practical way to work a fresh wash into your day.</p>
+        </article>
+        <article class="benefit">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 3 26 7v8c0 7-10 14-10 14S6 22 6 15V7l10-4Z" stroke="currentColor" stroke-width="1.6"/><path d="m11 16 3.5 3.5 6.5-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3>No contact</h3><p>A fully touchless automatic option for your exterior clean.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-heading reveal-copy">
+          <h2 id="gallery-title">The good kind<br>of rinse and repeat.</h2>
+          <p class="gallery-note">A closer look at the wash.<br>Illustrative images, not photos of our location.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <button class="gallery-trigger" data-image="img/1.jpg" data-caption="Water, foam, and a fresh start." aria-label="Enlarge photo of a car wheel being rinsed">
+              <img src="img/1.jpg" alt="Water and foam rinsing off a car tire and rim" loading="lazy" width="900" height="1000">
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5" stroke="currentColor" stroke-width="1.7"/></svg></span>
+            </button>
+            <figcaption>Water, foam, and a fresh start.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-trigger" data-image="img/2.jpg" data-caption="A closer clean." aria-label="Enlarge photo of high-pressure wheel cleaning">
+              <img src="img/2.jpg" alt="High-pressure lance cleaning foam from a vehicle wheel" loading="lazy" width="700" height="950">
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5" stroke="currentColor" stroke-width="1.7"/></svg></span>
+            </button>
+            <figcaption>A closer clean.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <button class="gallery-trigger" data-image="img/3.jpg" data-caption="Leave the road grime behind." aria-label="Enlarge photo of a vehicle being cleaned">
+              <img src="img/3.jpg" alt="A person using a pressure washer to clean a vehicle" loading="lazy" width="700" height="950">
+              <span class="zoom-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 4H4v5m11-5h5v5M4 15v5h5m11-5v5h-5" stroke="currentColor" stroke-width="1.7"/></svg></span>
+            </button>
+            <figcaption>Leave the road grime behind.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap visit-grid">
+        <div class="visit-copy reveal-copy">
+          <h2 id="visit-title">Right here<br>on MLK.</h2>
+          <p>We’re on MLK in Austin, right across from Whataburger. Bring your ride. Choose your wash.</p>
+          <a class="btn magnetic" href="https://www.google.com/maps/search/?api=1&amp;query=The+Car+Wash+At+MLK+Austin" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4L21 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m10 14 5-5" stroke="currentColor" stroke-width="1.7"/></svg>Open in Google Maps
+          </a>
+          <div class="hours-note"><h3>Planning your visit?</h3><p>For current hours and wash details, <a href="mailto:thecarwashatmlk@gmail.com">email us before you stop by</a>.</p></div>
+        </div>
+        <div class="map-shell reveal-photo">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-97.7066686,30.2804259,-97.69866859999999,30.2844259&amp;layer=mapnik&amp;marker=30.2824259,-97.7026686" title="Map showing The Car Wash At MLK in Austin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-caption"><strong>The Car Wash At MLK</strong><span>Austin, Texas</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <div class="faq-heading reveal-copy"><h2 id="faq-title">Before you<br>pull in.</h2><p>A few things to know about choosing your wash.</p></div>
+        <div class="faq-list">
+          <details><summary>What’s the difference between the washes?</summary><p>With self-service, you use the high-pressure wash jets yourself. The touchless automatic bay cleans your vehicle’s exterior without brushes making contact with it.</p></details>
+          <details><summary>Which wash should I choose?</summary><p>Choose self-service if you want control over where you spray. Choose the touchless automatic wash if you prefer a hands-free exterior clean. Always follow the instructions posted at the bay.</p></details>
+          <details><summary>Where can I find you?</summary><p>We’re on MLK in Austin, right across from Whataburger. Use the Google Maps link on this page for directions.</p></details>
+          <details><summary>Will the automatic bay fit my vehicle?</summary><p>Check the clearance limits and instructions posted at the bay before entering, especially if you have a roof rack or other accessories. If you’re unsure, email us before your visit.</p></details>
+          <details><summary>How can I check hours, pricing, or payment options?</summary><p>Email thecarwashatmlk@gmail.com for current details before heading over. Follow the pricing and payment instructions displayed at the wash.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div><h2 id="contact-title">Next stop.<br>A fresh ride.</h2><p>Find your way to MLK, or send us a question before you head over.</p></div>
+        <div>
+          <div class="contact-actions">
+            <a class="btn magnetic" href="https://www.google.com/maps/search/?api=1&amp;query=The+Car+Wash+At+MLK+Austin" target="_blank" rel="noopener noreferrer">Get directions</a>
+            <a class="btn btn-secondary magnetic" href="mailto:thecarwashatmlk@gmail.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Email us</a>
+          </div>
+          <a class="email-address" href="mailto:thecarwashatmlk@gmail.com">thecarwashatmlk@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a href="#home" class="brand"><svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M8 30V10a3 3 0 0 1 3-3h18a3 3 0 0 1 3 3v20M13 12h14M15 16v3m5-3v5m5-5v3" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/><path d="m12 27 2-5h12l2 5v6H12v-6Z" stroke="currentColor" stroke-width="2"/><path d="M12 28h16M15 32v3m10-3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>The Car Wash<br>At MLK</span></a>
+        <p>Self-service and touchless.<br>On MLK in Austin.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="#services">The washes</a><a href="#visit">Location</a><a href="#faq">FAQs</a><a href="#contact">Contact</a></nav>
+      </div>
+      <div class="footer-bottom"><span>Demo website</span><span>Illustrative photographs from Pixabay: HutchRock, DariuszSankowski.</span><span>Austin, Texas</span></div>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Enlarged wash photograph">
+    <img id="lightbox-image" alt="">
+    <div class="lightbox-bar"><p id="lightbox-caption"></p><button class="lightbox-close" aria-label="Close enlarged photo"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    (() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const mobile = window.matchMedia('(max-width: 760px)');
+      const header = document.getElementById('header');
+      const menu = document.querySelector('.menu-toggle');
+      const links = document.getElementById('nav-links');
+      function closeMenu(){
+        links.classList.remove('open');
+        menu.setAttribute('aria-expanded','false');
+        menu.setAttribute('aria-label','Open menu');
+      }
+      menu.addEventListener('click', () => {
+        const isOpen = menu.getAttribute('aria-expanded') !== 'true';
+        links.classList.toggle('open',isOpen);
+        menu.setAttribute('aria-expanded',String(isOpen));
+        menu.setAttribute('aria-label',isOpen ? 'Close menu' : 'Open menu');
+      });
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click',closeMenu));
+      document.addEventListener('keydown',e => { if(e.key === 'Escape') closeMenu(); });
+      document.addEventListener('click',e => { if(!header.contains(e.target)) closeMenu(); });
+      window.addEventListener('scroll',() => header.classList.toggle('scrolled',window.scrollY > 24),{passive:true});
+      header.classList.toggle('scrolled',window.scrollY > 24);
+
+      const dialog = document.querySelector('.lightbox');
+      let lastPhoto;
+      document.querySelectorAll('.gallery-trigger').forEach(button => {
+        button.addEventListener('click',() => {
+          lastPhoto = button;
+          const image = document.getElementById('lightbox-image');
+          image.src = button.dataset.image;
+          image.alt = button.querySelector('img').alt;
+          document.getElementById('lightbox-caption').textContent = button.dataset.caption;
+          if(typeof dialog.showModal === 'function'){
+            dialog.showModal();
+            document.body.classList.add('modal-open');
+            document.querySelector('.lightbox-close').focus();
+          } else { window.open(button.dataset.image,'_blank','noopener'); }
+        });
+      });
+      document.querySelector('.lightbox-close').addEventListener('click',() => dialog.close());
+      dialog.addEventListener('click',e => {if(e.target === dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+      dialog.addEventListener('close',() => { document.body.classList.remove('modal-open'); if(lastPhoto)lastPhoto.focus(); });
+
+      document.querySelectorAll('.faq-list details').forEach(detail => {
+        detail.addEventListener('toggle',() => {
+          if(detail.open && window.gsap) gsap.fromTo(detail.querySelector('p'),{opacity:0},{opacity:1,duration:.2});
+        });
+      });
+
+      if(window.gsap && window.ScrollTrigger){
+        gsap.registerPlugin(ScrollTrigger);
+        const mm = gsap.matchMedia();
+        mm.add('(prefers-reduced-motion: no-preference)',() => {
+          gsap.timeline({defaults:{ease:'power3.out'}})
+            .from('.hero .location-note',{opacity:0,duration:.45},.05)
+            .from('.title-line',{y:28,opacity:0,stagger:.08,duration:.65},.08)
+            .from('.hero-tagline,.hero-summary,.hero-actions',{opacity:0,y:12,stagger:.07,duration:.5},.28)
+            .from('.hero-visual',{opacity:0,duration:.75},.08);
+          gsap.utils.toArray('.reveal-copy').forEach(el => gsap.from(el,{opacity:0,duration:.6,scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
+          gsap.utils.toArray('.reveal-photo').forEach(el => gsap.from(el,{scale:.97,opacity:0,duration:.6,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
+          gsap.from('.benefit',{opacity:0,stagger:.13,duration:.5,scrollTrigger:{trigger:'.why',start:'top 82%',once:true}});
+          gsap.utils.toArray('.gallery-item').forEach((el,i) => gsap.from(el,{opacity:0,y:i===1?18:0,scale:i===1?1:.97,duration:.6,scrollTrigger:{trigger:el,start:'top 90%',once:true}}));
+          gsap.utils.toArray('.water-drop').forEach((el,i) => gsap.to(el,{y:38+i*17,ease:'none',scrollTrigger:{trigger:'#water-photo',start:'top bottom',end:'bottom top',scrub:1}}));
+        });
+        mm.add('(min-width: 1000px) and (prefers-reduced-motion: no-preference)',() => {
+          gsap.to('.photo-frame img',{yPercent:7,ease:'none',scrollTrigger:{trigger:'.about',start:'top bottom',end:'bottom top',scrub:1}});
+          const serviceTimeline = gsap.timeline({scrollTrigger:{trigger:'.services',start:'top 86px',end:'+=240',pin:true,scrub:.7,anticipatePin:1}});
+          serviceTimeline.fromTo('.service-card:nth-child(2)',{y:28},{y:0,ease:'none'},0);
+          serviceTimeline.fromTo('.service-card:nth-child(1) .service-illustration',{opacity:.7},{opacity:1,ease:'none'},0);
+          document.querySelectorAll('.magnetic').forEach(button => {
+            const move = e => {const r = button.getBoundingClientRect();gsap.to(button,{x:(e.clientX-r.left-r.width/2)*.08,y:(e.clientY-r.top-r.height/2)*.1,duration:.25});};
+            const reset = () => gsap.to(button,{x:0,y:0,duration:.3});
+            button.addEventListener('pointermove',move);
+            button.addEventListener('pointerleave',reset);
+            button.addEventListener('blur',reset);
+          });
+        });
+      }
+
+      // A lightweight wash-bay sculpture, built entirely from geometry.
+      const mount = document.getElementById('wash-scene');
+      const weakDevice = (navigator.deviceMemory && navigator.deviceMemory <= 2) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
+      if(!window.THREE || weakDevice) return;
+      let renderer;
+      try {
+        const T = THREE;
+        renderer = new T.WebGLRenderer({alpha:true,antialias:!mobile.matches,powerPreference:'low-power'});
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio,mobile.matches?1.3:1.75));
+        renderer.setClearColor(0x081a2d,0);
+        renderer.outputEncoding = T.sRGBEncoding;
+        renderer.toneMapping = T.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.2;
+        renderer.shadowMap.enabled = !mobile.matches;
+        renderer.shadowMap.type = T.PCFSoftShadowMap;
+        mount.insertBefore(renderer.domElement,mount.firstChild);
+        renderer.domElement.setAttribute('aria-hidden','true');
+
+        const scene = new T.Scene();
+        const camera = new T.PerspectiveCamera(35,1,.1,100);
+        camera.position.set(8.5,6.6,11);
+        camera.lookAt(0,1.5,0);
+        const rig = new T.Group();
+        scene.add(rig);
+        scene.add(new T.HemisphereLight(0xd6ecff,0x163451,1.25));
+        const key = new T.DirectionalLight(0xffffff,3);
+        key.position.set(-4,9,6);
+        key.castShadow = !mobile.matches;
+        key.shadow.mapSize.set(1024,1024);
+        Object.assign(key.shadow.camera,{left:-7,right:7,top:7,bottom:-7,near:.5,far:30});
+        key.shadow.bias = -.001;
+        scene.add(key);
+        const rim = new T.DirectionalLight(0x38bdf8,2.6);
+        rim.position.set(5,5,-4);
+        scene.add(rim);
+        const fill = new T.PointLight(0x84d7ff,1.2,15);
+        fill.position.set(-2,3,2);scene.add(fill);
+        const mat = (color,metalness=.0,roughness=.4) => new T.MeshStandardMaterial({color,metalness,roughness});
+        const paint = mat(0xc4e1f4,.65,.24);
+        const darkMetal = mat(0x1d435e,.75,.28);
+        const rubber = mat(0x08121e,.05,.85);
+        const wheelMat = mat(0x91b3ca,.9,.2);
+        const glass = mat(0x102a41,.65,.12);
+        const glow = new T.MeshStandardMaterial({color:0x9be3ff,emissive:0x38bdf8,emissiveIntensity:2,roughness:.2});
+        const headlight = new T.MeshStandardMaterial({color:0xffffff,emissive:0xd6ecff,emissiveIntensity:2});
+        function box(w,h,d,material,x,y,z,parent=rig){
+          const m=new T.Mesh(new T.BoxGeometry(w,h,d),material);
+          m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
+        }
+        function rounded(w,h,d,r,material,x,y,z,parent=rig){
+          const s=new T.Shape(),a=-w/2,b=-h/2;
+          s.moveTo(a+r,b);s.lineTo(a+w-r,b);s.quadraticCurveTo(a+w,b,a+w,b+r);
+          s.lineTo(a+w,b+h-r);s.quadraticCurveTo(a+w,b+h,a+w-r,b+h);
+          s.lineTo(a+r,b+h);s.quadraticCurveTo(a,b+h,a,b+h-r);
+          s.lineTo(a,b+r);s.quadraticCurveTo(a,b,a+r,b);
+          const g=new T.ExtrudeGeometry(s,{depth:d,bevelEnabled:true,bevelSegments:3,steps:1,bevelSize:.055,bevelThickness:.055,curveSegments:7});
+          g.translate(0,0,-d/2);
+          const m=new T.Mesh(g,material);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
+        }
+        rounded(5.4,.18,6.6,.24,mat(0x112d46,.5,.42),0,.03,0);
+        box(4.85,.015,.025,mat(0x41617a,.4),0,.155,2.8);
+        box(.025,.015,5.7,mat(0x41617a,.4),-2.45,.155,0);
+        box(.025,.015,5.7,mat(0x41617a,.4),2.45,.155,0);
+        // The wash arch, with inset water-blue light.
+        [-2,2].forEach(x=>{
+          rounded(.28,4.15,.4,.06,darkMetal,x,2.2,-1.48);
+          box(.055,3.82,.025,glow,x,2.2,-1.255);
+          rounded(.58,.16,.78,.08,darkMetal,x,.23,-1.48);
+        });
+        rounded(4.28,.35,.42,.1,darkMetal,0,4.27,-1.48);
+        box(3.92,.055,.025,glow,0,4.22,-1.255);
+        box(3.6,.06,.16,wheelMat,0,4.05,-1.48);
+        for(let i=0;i<7;i++){
+          const nozzle=new T.Mesh(new T.CylinderGeometry(.045,.06,.11,8),wheelMat);
+          nozzle.position.set(-1.5+i*.5,3.98,-1.48);rig.add(nozzle);
+        }
+        const car=new T.Group();car.position.set(0,0,.5);rig.add(car);
+        rounded(2.12,.52,4.1,.19,paint,0,.9,0,car);
+        rounded(2.05,.2,3.95,.07,darkMetal,0,.63,0,car);
+        rounded(1.98,.15,1.08,.1,paint,0,1.22,1.34,car);
+        // Tapered cabin geometry gives the silhouette a proper windshield.
+        const v=[
+          -.94,1.13,-1.36, .94,1.13,-1.36, .94,1.13,1.01, -.94,1.13,1.01,
+          -.76,1.94,-.93, .76,1.94,-.93, .76,1.94,.42, -.76,1.94,.42
+        ];
+        const geometry=new T.BufferGeometry();
+        geometry.setAttribute('position',new T.Float32BufferAttribute(v,3));
+        geometry.setIndex([0,2,1,0,3,2,4,5,6,4,6,7,3,7,6,3,6,2,0,1,5,0,5,4,0,4,7,0,7,3,1,2,6,1,6,5]);
+        geometry.computeVertexNormals();
+        const cabin=new T.Mesh(geometry,glass);cabin.castShadow=true;car.add(cabin);
+        rounded(1.58,.075,1.4,.1,paint,0,1.96,-.25,car);
+        [-1,1].forEach(side=>{
+          box(.055,.63,.095,paint,side*.855,1.54,-.35,car);
+          rounded(.23,.12,.32,.055,paint,side*1.1,1.37,.61,car);
+          box(.02,.035,.2,wheelMat,side*1.087,1.1,-.5,car);
+          [-1.25,1.29].forEach(z=>{
+            const tire=new T.Mesh(new T.CylinderGeometry(.46,.46,.27, mobile.matches?20:32),rubber);
+            tire.rotation.z=Math.PI/2;tire.position.set(side*1.04,.61,z);tire.castShadow=true;car.add(tire);
+            const wheel=new T.Mesh(new T.CylinderGeometry(.29,.29,.285,20),wheelMat);
+            wheel.rotation.z=Math.PI/2;wheel.position.copy(tire.position);car.add(wheel);
+            const hub=new T.Mesh(new T.CylinderGeometry(.12,.12,.3,16),darkMetal);
+            hub.rotation.z=Math.PI/2;hub.position.copy(tire.position);car.add(hub);
+            for(let j=0;j<5;j++){
+              const spoke=box(.018,.46,.045,paint,side*1.19,.61,z,car);
+              spoke.rotation.x=j*Math.PI/5;
+            }
+          });
+          rounded(.52,.1,.035,.035,headlight,side*.71,.99,2.1,car);
+          box(.38,.075,.03,new T.MeshStandardMaterial({color:0xcc5263,emissive:0x771b28,emissiveIntensity:.4}),side*.75,.98,-2.09,car);
+        });
+        rounded(.92,.19,.035,.05,rubber,0,.76,2.11,car);
+        for(let i=0;i<4;i++)box(.72,.012,.01,wheelMat,0,.71+i*.035,2.135,car);
+
+        // Sparse water beads and bubbles, not a continuously moving backdrop.
+        const beadMat=new T.MeshPhysicalMaterial({color:0x92dcff,metalness:.08,roughness:.08,transparent:true,opacity:.55,clearcoat:1});
+        const beads=[];
+        const beadPositions=[[-2.45,3.1,.2,.16],[2.55,2.55,1.1,.23],[1.5,4.7,-1,.12],[-1.3,3.35,-1.45,.06],[.6,3.7,-1.45,.045],[1.3,2.9,-1.48,.05],[-2.5,1.6,1.9,.08]];
+        beadPositions.forEach(([x,y,z,r])=>{
+          const bead=new T.Mesh(new T.SphereGeometry(r,16,12),beadMat);bead.position.set(x,y,z);rig.add(bead);beads.push(bead);
+          if(r>.1){
+            const shine=new T.Mesh(new T.SphereGeometry(r*.16,8,6),headlight);
+            shine.position.set(x-r*.28,y+r*.4,z+r*.77);rig.add(shine);
+          }
+        });
+
+        let targetX=0,targetY=0,scrollTilt=0,currentX=0,currentY=0,frame=0,visible=true;
+        function resize(){
+          const w=mount.clientWidth,h=mount.clientHeight;
+          if(!w||!h)return;
+          renderer.setSize(w,h,false);camera.aspect=w/h;
+          camera.fov=mobile.matches?39:35;camera.updateProjectionMatrix();
+          draw();
+        }
+        function draw(){
+          frame=0;
+          if(!visible || document.hidden)return;
+          currentX+=(targetX-currentX)*.08;currentY+=(targetY-currentY)*.08;
+          rig.rotation.y=currentX;rig.rotation.x=currentY+scrollTilt;
+          renderer.render(scene,camera);
+          if(Math.abs(targetX-currentX)>.0005||Math.abs(targetY-currentY)>.0005)frame=requestAnimationFrame(draw);
+        }
+        function requestDraw(){if(!frame&&visible)frame=requestAnimationFrame(draw);}
+        function pointerMove(e){
+          if(reduced.matches||mobile.matches)return;
+          const r=mount.getBoundingClientRect();
+          targetX=((e.clientX-r.left)/r.width-.5)*.2;
+          targetY=((e.clientY-r.top)/r.height-.5)*.07;
+          requestDraw();
+        }
+        document.querySelector('.hero').addEventListener('pointermove',pointerMove);
+        document.querySelector('.hero').addEventListener('pointerleave',()=>{targetX=targetY=0;requestDraw();});
+        window.addEventListener('scroll',()=>{
+          if(reduced.matches||mobile.matches)return;
+          scrollTilt=Math.min(window.scrollY/window.innerHeight,1)*.065;
+          requestDraw();
+        },{passive:true});
+        if('ResizeObserver' in window)new ResizeObserver(resize).observe(mount);
+        else window.addEventListener('resize',resize);
+        if('IntersectionObserver' in window)new IntersectionObserver(entries=>{
+          visible=entries[0].isIntersecting;
+          if(visible)requestDraw();else if(frame){cancelAnimationFrame(frame);frame=0;}
+        },{rootMargin:'80px'}).observe(mount);
+        document.addEventListener('visibilitychange',()=>{if(!document.hidden)requestDraw();});
+        renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();mount.classList.remove('ready');visible=false;if(frame)cancelAnimationFrame(frame);});
+        reduced.addEventListener('change',()=>{targetX=targetY=currentX=currentY=scrollTilt=0;requestDraw();});
+        resize();
+        renderer.render(scene,camera);
+        mount.classList.add('ready');
+      } catch(error){
+        mount.classList.remove('ready');
+        if(renderer){renderer.dispose();renderer.domElement.remove();}
+      }
+    })();
+  </script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
