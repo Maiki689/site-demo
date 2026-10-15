@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klauss Coffee Shop, cafenea în București</title>
+<meta name="description" content="Klauss Coffee Shop, cafenea în București: cafea și ciocolată caldă, într-un loc prietenos. Deschis zilnic, între 07:00 și 21:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --milk:#EADFD3;
+  --accent:#b45309;
+  --accent-deep:#944208;
+  --ink-2:#6E5E55;
+  --line:rgba(59,42,32,.12);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:min(1120px, calc(100% - 2.5rem));
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  font-size:1rem;line-height:1.5;color:var(--espresso);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+p{max-width:62ch}
+.wrap{width:var(--wrap);margin-inline:auto}
+h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+section[id]{scroll-margin-top:72px}
+.section{padding-block:clamp(4.5rem,10vw,8.5rem)}
+.h2{font-size:clamp(2rem,5vw,3.25rem)}
+.small{font-size:.8rem;letter-spacing:.02em}
+
+/* ---------- Navigație (sticlă) ---------- */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:64px;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:saturate(1.4) blur(18px);
+  backdrop-filter:saturate(1.4) blur(18px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 10px 24px -14px rgba(59,42,32,.28);
+}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.05rem;
+  letter-spacing:-.01em;color:var(--espresso);
+}
+.brand svg{width:28px;height:28px;flex:none}
+.nav-links{display:none;gap:2rem;list-style:none}
+.nav-links a{
+  text-decoration:none;font-size:.9rem;font-weight:500;
+  transition:color .2s var(--ease);
+}
+.nav-links a:hover{color:var(--accent)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 1.25rem;border-radius:999px;
+  font:500 .95rem/1 Inter,system-ui,sans-serif;letter-spacing:0;
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  transition:background-color .2s var(--ease),box-shadow .2s var(--ease),transform .1s linear,color .2s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{box-shadow:0 8px 20px -10px rgba(59,42,32,.5)}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep)}
+.btn-soft{background:var(--milk);color:var(--espresso)}
+.btn-soft:hover{background:#e2d4c6}
+.btn-line{border-color:var(--espresso);color:var(--espresso);background:transparent}
+.btn-line:hover{background:#fff}
+.nav .btn{min-height:44px;padding:0 1.1rem;font-size:.9rem}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- Primul ecran ---------- */
+.hero{
+  min-height:auto;display:grid;align-items:center;
+  padding:6.5rem 0 4rem;
+}
+.hero .wrap{display:grid;gap:2.5rem;align-items:center}
+.hero-kicker{color:var(--ink-2);font-size:.95rem;letter-spacing:.02em;margin-bottom:1.1rem}
+.hero h1{
+  font-size:clamp(2.6rem,7.4vw,5.6rem);
+  letter-spacing:-.025em;line-height:1.02;text-wrap:balance;
+}
+.hero-slogan{
+  margin-top:1.25rem;font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:500;letter-spacing:-.01em;
+}
+.hero-lead{margin-top:.6rem;color:var(--ink-2);font-size:1.02rem}
+.actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-art{justify-self:center;width:min(74vw,340px)}
+.hero-art svg{width:100%;height:auto}
+
+.rise{animation:rise .7s var(--ease) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.33s}.d5{animation-delay:.42s}
+.fade-in{animation:fadeIn .9s .2s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Ceașca văzută de sus: inima se desenează */
+.cup-heart{
+  stroke-dasharray:100;stroke-dashoffset:100;fill-opacity:0;
+  animation:draw 1.2s .6s var(--ease) forwards, fillIn .6s 1.7s ease forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fillIn{to{fill-opacity:1}}
+
+@media (min-width:900px){
+  .hero{min-height:100svh}
+  .hero .wrap{grid-template-columns:1.05fr .95fr;gap:4rem}
+  .hero-art{width:min(100%,480px)}
+}
+
+/* ---------- Despre ---------- */
+.about .wrap{display:grid;gap:3rem;align-items:center}
+.about figure{overflow:hidden;border-radius:4px;aspect-ratio:4/5}
+.about img{width:100%;height:100%;object-fit:cover}
+.lead{
+  font-family:"Space Grotesk",sans-serif;font-weight:500;
+  font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;letter-spacing:-.015em;
+  margin-bottom:1.25rem;
+}
+.about h2{margin-bottom:1rem}
+.about .body{color:var(--ink-2);font-size:1.05rem}
+@media (min-width:900px){
+  .about .wrap{grid-template-columns:5fr 6fr;gap:6rem}
+}
+
+/* ---------- Avantaje (fundal espresso) ---------- */
+.perks{background:var(--espresso);color:var(--milk)}
+.perks h2{color:#fff;max-width:18ch}
+.perks-grid{display:grid;gap:2.75rem;margin-top:3.5rem}
+.perk .icon{width:28px;height:28px;fill:none;stroke:var(--milk);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.perk h3{color:#fff;font-size:1.3rem;margin:1.5rem 0 .5rem}
+.perk p{color:rgba(234,223,211,.84)}
+@media (min-width:760px){
+  .perks-grid{grid-template-columns:repeat(3,1fr);gap:3rem}
+}
+
+/* ---------- Meniu ---------- */
+.menu-head{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;
+  gap:1.5rem;margin-bottom:3rem;
+}
+.menu-head p{color:var(--ink-2);margin-top:.75rem}
+.menu-grid{display:grid;gap:0}
+.menu-item{padding:1.75rem 0;border-top:1px solid var(--line)}
+.menu-item h3{font-size:1.4rem}
+.menu-item p{color:var(--ink-2);margin-top:.4rem}
+@media (min-width:760px){
+  .menu-grid{grid-template-columns:1fr 1fr;column-gap:5rem}
+}
+
+/* ---------- Galerie ---------- */
+.gallery .wrap{display:grid;gap:1rem}
+.gallery figure{overflow:hidden;border-radius:4px;aspect-ratio:4/5}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery-head{margin-bottom:2.5rem}
+@media (min-width:760px){
+  .gallery .wrap{grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+  .gallery figure:nth-child(2){margin-top:5rem}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--milk)}
+.contact .wrap{display:grid;gap:3rem}
+.contact h2{margin-bottom:1rem}
+.contact .lead-text{color:var(--ink-2);font-size:1.05rem}
+.info{margin-top:2.25rem}
+.info-item{padding-block:1.1rem;border-top:1px solid rgba(59,42,32,.16)}
+.info-item:last-child{border-bottom:1px solid rgba(59,42,32,.16)}
+.info-item dt{font-size:.8rem;letter-spacing:.02em;color:var(--ink-2)}
+.info-item dd{font-family:"Space Grotesk",sans-serif;font-size:1.2rem;font-weight:500;margin-top:.2rem;letter-spacing:-.01em}
+.contact-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.map{border-radius:4px;overflow:hidden;aspect-ratio:4/3;background:#f3ece5}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (min-width:520px){
+  .contact-actions{flex-direction:row;flex-wrap:wrap}
+}
+@media (min-width:900px){
+  .contact .wrap{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
+}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--espresso);color:var(--milk);padding-block:3.5rem 2.5rem;font-size:.9rem}
+.footer-grid{display:grid;gap:2rem}
+.footer-name{font-family:"Space Grotesk",sans-serif;font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:-.01em}
+.footer-grid p{color:rgba(234,223,211,.84)}
+.footer-grid a{text-decoration:none}
+.footer-grid a:hover{color:#fff}
+.footer-note{margin-top:2.75rem;color:rgba(234,223,211,.8);font-size:.8rem;letter-spacing:.01em}
+@media (min-width:760px){
+  .footer-grid{grid-template-columns:1.2fr 1fr 1fr}
+}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js .reveal{
+  opacity:0;transform:translateY(14px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:calc(var(--d,0) * 90ms);
+}
+.js .reveal-left{
+  opacity:0;transform:translateX(-16px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+.js .reveal-fade{
+  opacity:0;transition:opacity .6s ease;
+  transition-delay:calc(var(--d,0) * 90ms);
+}
+.js .reveal-scale{opacity:0;transition:opacity .6s ease}
+.js .reveal-scale img{transform:scale(1.06);transition:transform .9s var(--ease)}
+.js .reveal.is-in,.js .reveal-left.is-in,.js .reveal-fade.is-in,.js .reveal-scale.is-in{opacity:1;transform:none}
+.js .reveal-scale.is-in img{transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-header{background:#fff;box-shadow:inset 0 -1px 0 var(--espresso)}
+  .site-header.is-scrolled{box-shadow:inset 0 -1px 0 var(--espresso)}
+  :root{--line:rgba(59,42,32,.45)}
+  .btn-soft{border-color:var(--espresso)}
+  .info-item,.info-item:last-child{border-color:var(--espresso)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-delay:0s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+    transition-delay:0s !important;
+  }
+  .rise{animation-name:fadeIn}
+  .js .reveal,.js .reveal-left{transform:none}
+  .js .reveal-scale img{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Klauss Coffee Shop, înapoi sus">
+      <svg viewBox="0 0 28 28" aria-hidden="true">
+        <circle cx="14" cy="14" r="13" fill="#EADFD3"/>
+        <circle cx="14" cy="14" r="9" fill="#3B2A20"/>
+        <path d="M14 19.4c-3-2-4.6-3.6-4.6-5.6 0-1.4 1-2.3 2.2-2.3.9 0 1.6.5 2.4 1.4.8-.9 1.5-1.4 2.4-1.4 1.2 0 2.2.9 2.2 2.3 0 2-1.6 3.6-4.6 5.6z" fill="#F7F1EA"/>
+      </svg>
+      <span>Klauss</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">În cafenea</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:0721469735">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Primul ecran -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-text">
+        <p class="hero-kicker rise d1">Cafenea în București</p>
+        <h1 class="rise d2">Klauss Coffee Shop</h1>
+        <p class="hero-slogan rise d3">Cafea bună, momente plăcute</p>
+        <p class="hero-lead rise d4">O cafenea primitoare cu cafea și ciocolată caldă.</p>
+        <div class="actions rise d5">
+          <a class="btn btn-primary" href="tel:0721469735">Sună acum</a>
+          <a class="btn btn-soft" href="https://wa.me/40721469735?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20meniu." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="hero-art fade-in">
+        <svg viewBox="0 0 420 420" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată din spumă de lapte">
+          <defs>
+            <radialGradient id="crema" cx="50%" cy="45%" r="60%">
+              <stop offset="0" stop-color="#6B4A35"/>
+              <stop offset="1" stop-color="#3B2A20"/>
+            </radialGradient>
+          </defs>
+          <!-- farfurioara -->
+          <circle cx="200" cy="210" r="182" fill="#EADFD3"/>
+          <circle cx="200" cy="210" r="150" fill="none" stroke="#3B2A20" stroke-opacity=".07"/>
+          <!-- toarta, văzută de sus -->
+          <rect x="326" y="196" width="56" height="28" rx="14" fill="#FFFFFF"/>
+          <!-- ceașca -->
+          <circle cx="200" cy="210" r="146" fill="#FFFFFF" stroke="#3B2A20" stroke-opacity=".06"/>
+          <!-- cafeaua -->
+          <circle cx="200" cy="210" r="124" fill="url(#crema)"/>
+          <!-- inima de latte art -->
+          <path class="cup-heart" pathLength="100"
+                d="M200 300C145 258 110 224 110 186C110 152 136 130 166 130C184 130 195 140 200 152C205 140 216 130 234 130C264 130 290 152 290 186C290 224 255 258 200 300Z"
+                fill="#F7F1EA" stroke="#F7F1EA" stroke-width="6" stroke-linejoin="round"/>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section about" id="despre">
+    <div class="wrap">
+      <figure class="reveal-scale">
+        <img src="img/1.jpg" alt="Femeie care lucrează pe laptop la o masă, lângă o ceașcă de cafea" loading="lazy">
+      </figure>
+      <div>
+        <h2 class="h2 reveal-left">Despre Klauss</h2>
+        <p class="lead reveal">Cafea și ciocolată caldă.</p>
+        <p class="body reveal" style="--d:1">La Klauss Coffee Shop te poți relaxa cu o cafea sau o ciocolată caldă, într-un loc prietenos. Ne bucurăm să primim atât studenți, cât și turiști sau persoane care lucrează pe laptop. Atmosfera caldă te invită să revii oricând dorești.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantaje -->
+  <section class="section perks" id="avantaje">
+    <div class="wrap">
+      <h2 class="h2 reveal-fade">Un loc bun pentru pauză sau lucru</h2>
+      <div class="perks-grid">
+        <article class="perk reveal" style="--d:0">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.5 3.5h11v9h-11z"/>
+            <path d="M6.5 12.5h11M8.5 12.5v8M15.5 12.5v8"/>
+          </svg>
+          <h3>Atmosferă relaxată</h3>
+          <p>Perfectă pentru studiu sau pauză</p>
+        </article>
+        <article class="perk reveal" style="--d:1">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2.8 9.2a13 13 0 0 1 18.4 0"/>
+            <path d="M5.9 12.6a8.5 8.5 0 0 1 12.2 0"/>
+            <path d="M9.1 16a4 4 0 0 1 5.8 0"/>
+            <circle cx="12" cy="19.5" r="1.1" fill="#EADFD3" stroke="none"/>
+          </svg>
+          <h3>Wi-Fi gratis</h3>
+          <p>Lucrezi online fără griji</p>
+        </article>
+        <article class="perk reveal" style="--d:2">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 7v5l3 2"/>
+          </svg>
+          <h3>Program lung</h3>
+          <p>Deschis zilnic, de dimineață până seara</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="section" id="meniu">
+    <div class="wrap">
+      <div class="menu-head">
+        <div>
+          <h2 class="h2 reveal">Meniu</h2>
+          <p class="reveal" style="--d:1">Cafea preparată proaspăt și ciocolată caldă.</p>
+        </div>
+        <a class="btn btn-soft reveal-fade" href="https://wa.me/40721469735?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20meniu." target="_blank" rel="noopener">Trimite un mesaj pe WhatsApp</a>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-item reveal" style="--d:0">
+          <h3>Cafea simplă</h3>
+          <p>Preparată proaspăt, aromată și intensă</p>
+        </article>
+        
+        <article class="menu-item reveal" style="--d:3">
+          <h3>Ciocolată caldă</h3>
+          <p>Gustoasă și cremoasă, pentru pauze dulci</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section gallery" id="galerie">
+    <div class="wrap">
+      <figure class="reveal-scale">
+        <img src="img/2.jpg" alt="Espresso și laptop pe o masă de lemn, cu un carnet deschis" loading="lazy">
+      </figure>
+      <figure class="reveal-scale">
+        <img src="img/3.jpg" alt="Ceașcă de cafea pe o masă de lemn, văzută din apropiere" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2 class="h2 reveal-left">Vino pe la noi</h2>
+        <p class="lead-text reveal">Ne găsești în București, pe hartă. Sună-ne sau scrie-ne dacă ai o întrebare.</p>
+
+        <dl class="info">
+          <div class="info-item reveal" style="--d:0">
+            <dt>Program</dt>
+            <dd>Deschis în fiecare zi, între 07:00 și 21:00</dd>
+          </div>
+          <div class="info-item reveal" style="--d:1">
+            <dt>Oraș</dt>
+            <dd>București</dd>
+          </div>
+          <div class="info-item reveal" style="--d:2">
+            <dt>Telefon</dt>
+            <dd>0721 469 735</dd>
+          </div>
+        </dl>
+
+        <div class="contact-actions reveal-fade">
+          <a class="btn btn-primary" href="tel:0721469735">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40721469735?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20meniu." target="_blank" rel="noopener">Trimite un mesaj pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Klauss+Coffee+Shop+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+        </div>
+      </div>
+
+      <div class="map reveal-fade">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0962571,44.438324599999994,26.1042571,44.4423246&amp;layer=mapnik&amp;marker=44.4403246,26.1002571"
+          title="Harta cu locația Klauss Coffee Shop, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-name">Klauss Coffee Shop</p>
+        <p>Cafea bună, momente plăcute.</p>
+      </div>
+      <div>
+        <p>Cafenea în București</p>
+        <p>Deschis zilnic, între 07:00 și 21:00</p>
+      </div>
+      <div>
+        <p><a href="tel:0721469735">Sună acum: 0721 469 735</a></p>
+        <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Klauss+Coffee+Shop+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a></p>
+      </div>
+    </div>
+    <p class="footer-note">Model de site (demo). Fotografii ilustrative de pe Pixabay: Pexels, Engin_Akyurt</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.getElementById('header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal, .reveal-left, .reveal-fade, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
