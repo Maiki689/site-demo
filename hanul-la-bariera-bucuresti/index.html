@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="description" content="Exploră savoarea mesei într-o atmosferă primitoare. Hanul La Bariera, Șoseaua Pavel Dimitrievici Kiseleff 28-30, București.">
+<title>Hanul La Bariera, București</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍲%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aur:#C9A44C;
+  --alb:#FFFFFF;
+  --negru:#23201C;
+  --maro:#5B523A;
+  --tinta:#F8F4EA;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --titlu:'Cinzel',Georgia,serif;
+  --text:'Spectral',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+body{margin:0;background:var(--alb);color:var(--negru);font:400 1.0625rem/1.55 var(--text);letter-spacing:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+@media(min-width:768px){body{font-size:1.1875rem}}
+img{max-width:100%;display:block}
+p{margin:0}
+a{color:var(--maro);text-underline-offset:.2em}
+h1,h2,h3{margin:0;font-family:var(--titlu);font-weight:600;letter-spacing:-.01em;line-height:1.1}
+h3{font-size:1.15rem;letter-spacing:.02em}
+:focus-visible{outline:2px solid var(--maro);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+@media(min-width:768px){.wrap{padding:0 2rem}}
+
+/* Bara de navigare: sticla */
+.bara{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.7);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.9);transition:box-shadow .4s var(--ease),background-color .4s var(--ease)}
+.bara.este-derulat{box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 12px 28px -18px rgba(35,32,28,.45)}
+.bara .wrap{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.bara nav{display:flex;align-items:center;gap:.75rem}
+.bara nav a{display:inline-flex;align-items:center;min-height:44px;padding:.5rem .35rem;color:var(--negru);font-weight:600;font-size:.98rem;text-decoration:none;transition:color .25s}
+.bara nav a:hover{color:var(--maro)}
+
+/* Butoane */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.8rem 1.6rem;border-radius:2px;font-family:var(--titlu);font-weight:600;font-size:.95rem;letter-spacing:.05em;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background-color .25s,box-shadow .25s,color .25s,transform .1s}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-principal{background:var(--aur);color:var(--negru)}
+.btn-principal:hover{background:#d6b15e;box-shadow:0 10px 22px -14px rgba(35,32,28,.6)}
+.btn-secundar{background:transparent;color:var(--negru);box-shadow:inset 0 0 0 1.5px var(--maro)}
+.btn-secundar:hover{background:rgba(91,82,58,.07)}
+.btn-mic{min-height:44px;padding:.5rem 1rem;font-size:.85rem}
+.intunecat .btn-secundar{color:#F4EFE3;box-shadow:inset 0 0 0 1.5px var(--aur)}
+.intunecat .btn-secundar:hover{background:rgba(201,164,76,.12)}
+
+/* Primul ecran */
+.hero{padding:6rem 0 4.5rem;text-align:center}
+@media(min-width:768px){.hero{padding:9rem 0 7rem}}
+.logo{width:clamp(170px,46vw,300px);height:auto;margin:0 auto}
+.slogan{margin-top:1.5rem;font-family:var(--titlu);font-weight:500;font-size:clamp(1.25rem,4.2vw,1.9rem);line-height:1.2;letter-spacing:-.01em;color:var(--maro)}
+.lead{max-width:34ch;margin:.9rem auto 0;color:#3d372b}
+.actiuni{display:flex;flex-direction:column;align-items:center;gap:.75rem;margin-top:2.25rem}
+.actiuni .btn{width:100%;max-width:300px}
+@media(min-width:560px){.actiuni{flex-direction:row;justify-content:center}.actiuni .btn{width:auto;max-width:none}}
+
+.intra{opacity:0;animation:intra .9s var(--ease) var(--d,0s) forwards}
+.logo.intra{animation-name:logoIn}
+@keyframes intra{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes logoIn{from{opacity:0;transform:scale(.96) translate3d(0,10px,0)}to{opacity:1;transform:none}}
+
+/* Secțiuni */
+.sectiune{padding:5rem 0;scroll-margin-top:4rem}
+@media(min-width:768px){.sectiune{padding:8rem 0}}
+.tinta{background:var(--tinta)}
+.intunecat{background:var(--negru);color:#F4EFE3}
+.intunecat p{color:rgba(244,239,227,.86)}
+h2{font-size:clamp(2rem,5.5vw,3.1rem);letter-spacing:-.01em}
+.titlu{margin-bottom:2.75rem}
+.ie{display:block;width:min(240px,62%);height:auto;margin-top:1.1rem;color:var(--aur);overflow:visible}
+
+/* Despre */
+.despre{display:grid;gap:3rem;align-items:center}
+@media(min-width:900px){.despre{grid-template-columns:1fr 1.1fr;gap:6rem}}
+.despre p+p{margin-top:1.1rem}
+.foto{margin:0;overflow:hidden;aspect-ratio:4/5;background:#e9e2d0;border-radius:2px}
+.foto img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.4s var(--ease)}
+.foto.is-in img{transform:none}
+
+/* Meniu */
+.foto-lat{margin:0 0 3rem;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:#2f2b25}
+.foto-lat img{width:100%;height:100%;object-fit:cover}
+@media(min-width:768px){.foto-lat{aspect-ratio:21/8;margin-bottom:4.5rem}}
+.lista{list-style:none;margin:0;padding:0;display:grid;gap:1.6rem}
+@media(min-width:720px){.lista{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.lista li{display:flex;align-items:center;gap:.8rem;color:var(--aur)}
+.lista h3{font-size:clamp(1.3rem,3vw,1.6rem);font-weight:500;color:#F4EFE3}
+.lista svg{width:9px;height:9px;flex:none;color:var(--aur)}
+.meniu-jos{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;margin-top:3.5rem}
+@media(min-width:720px){.meniu-jos{flex-direction:row;align-items:center;justify-content:space-between}}
+
+/* Avantaje */
+.avantaje{display:grid;gap:2.5rem}
+@media(min-width:800px){.avantaje{grid-template-columns:repeat(3,1fr);gap:3rem}}
+.semn{width:4rem;height:4rem;margin-bottom:1.25rem;border-radius:50%;display:grid;place-items:center;background:#fff;font-size:1.6rem;box-shadow:inset 0 0 0 1px var(--aur)}
+.avantaj h3{margin-bottom:.5rem}
+.avantaj p{color:#4a4538}
+
+/* Contact */
+.contact{display:grid;gap:3.5rem}
+@media(min-width:900px){.contact{grid-template-columns:1fr 1.15fr;gap:5rem;align-items:start}}
+.info{margin:0}
+.info>div{margin-bottom:1.75rem}
+.info dt h3{font-size:1.02rem;color:var(--maro);font-weight:600}
+.info dd{margin:.35rem 0 0}
+.info a{color:var(--negru);font-weight:500}
+.harta-wrap{margin:0;border-radius:2px;overflow:hidden;background:#e9e2d0}
+.harta{width:100%;height:300px;border:0;display:block}
+@media(min-width:900px){.harta{height:440px}}
+.actiuni-contact{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.actiuni-contact .btn{flex:1 1 100%}
+@media(min-width:520px){.actiuni-contact .btn{flex:0 1 auto}}
+
+/* Subsol */
+.subsol{padding:4.5rem 0 3rem;background:var(--negru);color:#D9D1BD;font-size:.95rem}
+.subsol-grid{display:grid;gap:1.4rem;justify-items:start}
+.logo-subsol{width:clamp(130px,30vw,170px);height:auto}
+.subsol a{color:#F4EFE3}
+.subsol .mic{font-size:.85rem;color:#B9B09A;letter-spacing:.02em;max-width:60ch}
+
+/* Apariții la derulare: variate, discrete */
+[data-reveal]{opacity:0;transform:translate3d(0,24px,0);transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+[data-reveal="left"]{transform:translate3d(-28px,0,0)}
+[data-reveal="right"]{transform:translate3d(28px,0,0)}
+[data-reveal="zoom"]{transform:scale(.97)}
+[data-reveal="fade"]{transform:none;transition-duration:.6s}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* Motivul de ie, cusut la derulare */
+.ie .linie{stroke-dasharray:1 1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s var(--ease)}
+.ie .punct{opacity:0;transform:translate3d(0,3px,0);transition:opacity .5s var(--ease) calc(var(--i,0)*45ms + 250ms),transform .5s var(--ease) calc(var(--i,0)*45ms + 250ms)}
+.ie.is-in .linie{stroke-dashoffset:0}
+.ie.is-in .punct{opacity:1;transform:none}
+
+/* Fină: sticlă și contrast */
+@media (prefers-reduced-transparency: reduce){
+  .bara{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .bara{background:#fff;box-shadow:0 1px 0 var(--negru)}
+  .btn-secundar{box-shadow:inset 0 0 0 2px var(--negru)}
+  .intunecat .btn-secundar{box-shadow:inset 0 0 0 2px #fff}
+  .intunecat p{color:#fff}
+  .info a,.lista h3{font-weight:600}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s!important;transition-delay:0s!important;animation-duration:.2s!important;animation-delay:0s!important}
+  .intra,.logo.intra{animation-name:estompare}
+  [data-reveal]{transform:none!important}
+  .ie .punct{transform:none!important}
+  .foto img{transform:none!important}
+}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="sus">
+
+<!-- Dacă logo.png NU conține și numele afacerii, scoate clasa sr-only din h1 și afișează numele scris lângă logo. -->
+<header class="bara" id="bara">
+  <div class="wrap">
+    <nav aria-label="Navigare principală">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-principal btn-mic" href="tel:0737055055">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="titlu-principal">
+    <div class="wrap">
+      <h1 id="titlu-principal" class="sr-only">Hanul La Bariera, București</h1>
+      <img class="logo intra" src="logo.png" alt="Hanul La Bariera" style="--d:0s">
+      <p class="slogan intra" style="--d:.15s">Bucură-te de gustul autentic</p>
+      <p class="lead intra" style="--d:.3s">Exploră savoarea mesei într-o atmosferă primitoare.</p>
+      <div class="actiuni intra" style="--d:.45s">
+        <a class="btn btn-principal" href="tel:0737055055">Sună acum</a>
+        <a class="btn btn-secundar" href="https://wa.me/40737055055?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Hanul%20La%20Bariera.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="despre" aria-labelledby="t-despre">
+    <div class="wrap despre">
+      <figure class="foto" data-reveal="left" style="margin:0">
+        <img src="img/1.jpg" alt="Familie așezată la masă pe terasa unui restaurant tradițional" loading="lazy">
+      </figure>
+      <div data-reveal="up" style="--d:.12s">
+        <h2 id="t-despre">Despre han</h2>
+        <svg class="ie" data-ie aria-hidden="true"></svg>
+        <div style="margin-top:2rem">
+          <p>Hanul La Bariera te invită la relaxare și bucurii culinare, alături de familie sau prieteni.</p>
+          <p>Mesele generoase și atmosfera caldă creează locul ideal pentru pauzele de peste zi.</p>
+          <p>Descoperă un colț de liniște în agitația orașului.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune intunecat" id="meniu" aria-labelledby="t-meniu">
+    <div class="wrap">
+      <div class="titlu" data-reveal="up">
+        <h2 id="t-meniu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <svg class="ie" data-ie aria-hidden="true"></svg>
+      </div>
+
+      <figure class="foto-lat" data-reveal="zoom" style="margin:0 0 3rem">
+        <img src="img/2.jpg" alt="Preparate tradiționale românești și dulciuri, așezate pe masă" loading="lazy">
+      </figure>
+
+      <ul class="lista" data-reveal="fade">
+        <li><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0 L10 5 L5 10 L0 5Z" fill="currentColor"/></svg><h3>Preparate calde</h3></li>
+        <li><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0 L10 5 L5 10 L0 5Z" fill="currentColor"/></svg><h3>Gustări</h3></li>
+        <li><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M5 0 L10 5 L5 10 L0 5Z" fill="currentColor"/></svg><h3>Băuturi</h3></li>
+      </ul>
+
+      <div class="meniu-jos" data-reveal="up">
+        <p>Vrei să afli ce se servește azi? Sună-ne și te ajutăm să alegi.</p>
+        <a class="btn btn-principal" href="tel:0737055055">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune tinta" aria-labelledby="t-avantaje">
+    <div class="wrap">
+      <div class="titlu" data-reveal="up">
+        <h2 id="t-avantaje">Ce găsești aici</h2>
+        <svg class="ie" data-ie aria-hidden="true"></svg>
+      </div>
+      <div class="avantaje">
+        <article class="avantaj" data-reveal="up" style="--d:0s">
+          <div class="semn" aria-hidden="true">🏡</div>
+          <h3>Loc primitor</h3>
+          <p>Ambianță liniștită și relaxantă</p>
+        </article>
+        <article class="avantaj" data-reveal="up" style="--d:.12s">
+          <div class="semn" aria-hidden="true">🍽️</div>
+          <h3>Meniu variat</h3>
+          <p>Preparatele satisfac orice gust</p>
+        </article>
+        <article class="avantaj" data-reveal="up" style="--d:.24s">
+          <div class="semn" aria-hidden="true">🕙</div>
+          <h3>Program zilnic</h3>
+          <p>Deschis în fiecare zi, 10–23</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="contact" aria-labelledby="t-contact">
+    <div class="wrap">
+      <div class="titlu" data-reveal="up">
+        <h2 id="t-contact">Vino pe la noi</h2>
+        <svg class="ie" data-ie aria-hidden="true"></svg>
+      </div>
+
+      <div class="contact">
+        <div data-reveal="left">
+          <dl class="info">
+            <div>
+              <dt><h3>Adresă</h3></dt>
+              <dd><p>Șoseaua Pavel Dimitrievici Kiseleff 28-30, București</p></dd>
+            </div>
+            <div>
+              <dt><h3>Program de funcționare</h3></dt>
+              <dd><p>Deschis zilnic între 10:00 și 23:00</p></dd>
+            </div>
+            <div>
+              <dt><h3>Telefon</h3></dt>
+              <dd><p><a href="tel:0737055055">0737 055 055</a></p></dd>
+            </div>
+          </dl>
+
+          <div class="actiuni-contact">
+            <a class="btn btn-principal" href="tel:0737055055">Sună acum</a>
+            <a class="btn btn-secundar" href="https://wa.me/40737055055?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20rezervare%20la%20Hanul%20La%20Bariera.">Scrie pe WhatsApp</a>
+            <a class="btn btn-secundar" href="mailto:contact@hanul-la-bariera.ro">Trimite un email</a>
+            <a class="btn btn-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Hanul+La+Bariera+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+            <a class="btn btn-secundar" href="https://www.facebook.com/HanulLaBariera" target="_blank" rel="noopener">Vezi pagina de Facebook</a>
+          </div>
+        </div>
+
+        <figure class="harta-wrap" data-reveal="right" style="--d:.1s;margin:0">
+          <iframe class="harta" title="Harta: Hanul La Bariera, Șoseaua Pavel Dimitrievici Kiseleff 28-30" src="https://www.openstreetmap.org/export/embed.html?bbox=26.073262999999997,44.4702969,26.081263,44.474296900000006&amp;layer=mapnik&amp;marker=44.4722969,26.077263" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-grid">
+    <img class="logo-subsol" src="logo.png" alt="Hanul La Bariera">
+    <p>Șoseaua Pavel Dimitrievici Kiseleff 28-30, București</p>
+    <p><a href="tel:0737055055">0737 055 055</a></p>
+    <p>Deschis zilnic între 10:00 și 23:00</p>
+    <p><a href="https://www.facebook.com/HanulLaBariera" target="_blank" rel="noopener">Facebook</a></p>
+    <p class="mic">Model de site (demo)</p>
+    <p class="mic">Fotografii ilustrative de pe Pixabay: Surprising_Media, MolnarSzabolcsErdely</p>
+    <p><a href="#sus">Înapoi sus</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function el(tag, attrs) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  // Motivul de ie: linie cusută cu puncte și un romb în centru
+  function coase(svg) {
+    var W = 320, Y = 12, i = 0;
+    svg.setAttribute('viewBox', '0 0 320 24');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    svg.appendChild(el('path', {
+      class: 'linie', d: 'M4 ' + Y + ' H' + (W - 4), pathLength: '1',
+      fill: 'none', stroke: 'currentColor', 'stroke-width': '1.2', 'stroke-linecap': 'round'
+    }));
+
+    for (var x = 14; x <= W - 14; x += 9) {
+      if (x > 136 && x < 184) continue;
+      var p = el('path', {
+        class: 'punct', d: 'M' + (x - 2.5) + ' ' + (Y + 3) + ' L' + (x + 2.5) + ' ' + (Y - 3),
+        fill: 'none', stroke: 'currentColor', 'stroke-width': '1.4', 'stroke-linecap': 'round'
+      });
+      p.style.setProperty('--i', i++);
+      svg.appendChild(p);
+    }
+
+    var romb = el('path', { class: 'punct', d: 'M160 3 L169 12 L160 21 L151 12 Z', fill: 'currentColor' });
+    romb.style.setProperty('--i', i++);
+    svg.appendChild(romb);
+
+    [140, 180].forEach(function (cx) {
+      var c = el('circle', { class: 'punct', cx: cx, cy: Y, r: '1.6', fill: 'currentColor' });
+      c.style.setProperty('--i', i++);
+      svg.appendChild(c);
+    });
+
+    [4, W - 4].forEach(function (cx) {
+      svg.appendChild(el('circle', { class: 'punct', cx: cx, cy: Y, r: '1.8', fill: 'currentColor' }));
+    });
+  }
+
+  document.querySelectorAll('svg[data-ie]').forEach(coase);
+
+  var targets = document.querySelectorAll('[data-reveal], .ie');
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (t) { t.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (t) { io.observe(t); });
+  }
+
+  // Bara de navigare: umbră doar când pagina se derulează sub ea
+  var bara = document.getElementById('bara');
+  function onScroll() {
+    bara.classList.toggle('este-derulat', window.scrollY > 24);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
