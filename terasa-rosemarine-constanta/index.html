@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terasa Rosemarine, Constanța – relaxare și gust la malul mării</title>
+<meta name="description" content="Terasa Rosemarine din Constanța: preparate calde, gustări și băuturi răcoritoare, cu briza mării la masa ta. Scrie-ne pe WhatsApp sau sună-ne.">
+<meta name="theme-color" content="#FAFAF7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --blue:#1F4E79;
+  --blue-deep:#173B5C;
+  --white:#FAFAF7;
+  --mist:#EEF2F4;
+  --ochre:#D9A441;
+  --olive:#7A8450;
+  --red:#b91c1c;
+  --red-dark:#991b1b;
+  --ink:#1c2a37;
+  --muted:#4d5b69;
+  --line:rgba(31,78,121,.16);
+  --serif:"DM Serif Display", Georgia, "Times New Roman", serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem, 5vw, 3rem);
+  --max:72rem;
+  --section:clamp(5rem, 12vw, 9rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--white);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--serif);font-weight:400;color:var(--blue);letter-spacing:-.02em;line-height:1.05}
+h2{font-size:clamp(2.2rem, 5.5vw, 3.75rem)}
+.wrap{width:min(100% - 2*var(--pad), var(--max));margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:.4rem}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.4rem;border-radius:999px;border:1.5px solid transparent;
+  font:600 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer;
+  transition:background-color .2s ease, box-shadow .2s ease, color .2s ease, transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark);box-shadow:0 .6rem 1.4rem -.8rem rgba(185,28,28,.7)}
+.btn-line{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn-line:hover{background:rgba(31,78,121,.07)}
+.btn-sm{min-height:2.75rem;padding:0 1.1rem;font-size:.9375rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Navigare */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(250,250,247,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.9);
+  transition:box-shadow .3s ease;
+  animation:fadeIn .6s ease both;
+}
+.nav.scrolled{box-shadow:0 .5rem 1.75rem -1rem rgba(23,59,92,.35)}
+.nav-inner{height:4rem;display:flex;align-items:center;gap:.75rem}
+.brand{display:flex;align-items:center;gap:.45rem;text-decoration:none;color:var(--blue);margin-right:auto;min-height:2.75rem}
+.brand-mark{width:1.5rem;height:1.5rem;color:var(--olive)}
+.brand span{font-family:var(--serif);font-size:1.3rem;letter-spacing:-.01em;line-height:1}
+.brand .pre{display:none}
+.nav-links{list-style:none;margin:0;padding:0}
+.nav-links a{
+  display:flex;align-items:center;min-height:2.75rem;padding:0 .9rem;
+  text-decoration:none;font-weight:600;font-size:.98rem;color:var(--blue-deep);border-radius:999px;
+  transition:background-color .2s ease;
+}
+.nav-links a:hover{background:rgba(31,78,121,.08)}
+.nav-toggle{
+  width:2.75rem;height:2.75rem;border:0;border-radius:50%;background:transparent;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  -webkit-tap-highlight-color:transparent;transition:background-color .2s ease, transform .1s ease;
+}
+.nav-toggle:active{transform:scale(.94)}
+.nav-toggle .bar{display:block;width:1.25rem;height:2px;border-radius:2px;background:var(--blue-deep);transition:transform .3s var(--ease)}
+.nav-toggle[aria-expanded="true"] .bar:first-child{transform:translateY(3px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .bar:last-child{transform:translateY(-3px) rotate(-45deg)}
+
+@media (max-width:859px){
+  .nav-links{
+    position:absolute;top:calc(100% + .5rem);left:var(--pad);right:var(--pad);
+    background:var(--white);border-radius:1.25rem;padding:.5rem;
+    box-shadow:0 1.25rem 2.5rem -1.25rem rgba(23,59,92,.45), 0 0 0 1px rgba(31,78,121,.06);
+    opacity:0;transform:translateY(-.5rem);visibility:hidden;pointer-events:none;
+    transition:opacity .3s var(--ease), transform .3s var(--ease), visibility 0s linear .3s;
+  }
+  .nav-links.open{opacity:1;transform:none;visibility:visible;pointer-events:auto;transition:opacity .3s var(--ease), transform .3s var(--ease)}
+  .nav-links a{min-height:3.25rem;font-size:1.1rem;padding:0 1rem;border-radius:.9rem}
+}
+@media (min-width:860px){
+  .nav-inner{height:4.5rem}
+  .nav-toggle{display:none}
+  .nav-links{display:flex;gap:.15rem;margin-right:.5rem}
+  .brand .pre{display:inline}
+}
+
+/* Prima secțiune */
+.hero{background:var(--white);padding-top:calc(4rem + clamp(1.75rem, 5vw, 4.5rem))}
+.hero-grid{display:grid;gap:clamp(2.5rem, 6vw, 4rem);align-items:center}
+.hero h1{font-size:clamp(3rem, 7.6vw, 6.25rem);line-height:1.02}
+.hero h1 span{display:block}
+.lead{margin-top:1.25rem;font-size:clamp(1.2rem, 2.2vw, 1.45rem);line-height:1.4;color:var(--blue-deep);font-weight:500;max-width:30rem}
+.hero-desc{margin-top:.75rem;color:var(--muted);max-width:32rem}
+.hero .actions{margin-top:1.75rem}
+.hero-arch{position:relative;margin:0;width:100%;height:min(112vw, 34rem)}
+.hero-arch::before{
+  content:"";position:absolute;inset:-.75rem -.75rem 0 -.75rem;
+  border:1px solid rgba(31,78,121,.3);border-bottom:0;border-radius:100vmax 100vmax 0 0;
+  pointer-events:none;animation:fadeIn 1s ease .9s both;
+}
+.arch-clip{position:absolute;inset:0;border-radius:100vmax 100vmax 0 0;overflow:hidden;isolation:isolate;background:#e7ebee}
+.arch-clip img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero-arch{animation:rise .9s var(--ease) .15s both}
+.hero-arch .arch-clip img{animation:settle 1.6s var(--ease) .15s both}
+.intro{animation:rise .8s var(--ease) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.28s}.d3{animation-delay:.38s}.d4{animation-delay:.5s}
+@media (max-width:519px){.hero .actions .btn{width:100%}}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:4rem}
+  .hero-arch{height:clamp(28rem, 72vh, 42rem);max-width:30rem;justify-self:end}
+}
+
+/* Valurile – elementul memorabil */
+.waves{position:relative;height:clamp(3.75rem, 8vw, 7rem);overflow:hidden;margin-top:clamp(3rem, 7vw, 5rem);margin-bottom:-1px}
+.wave{position:absolute;left:0;bottom:0;width:200%;display:block;will-change:transform}
+.w1{height:100%;fill:rgba(31,78,121,.16);animation:drift 80s linear infinite reverse;animation-delay:-20s}
+.w2{height:78%;fill:rgba(31,78,121,.38);animation:drift 58s linear infinite;animation-delay:-35s}
+.w3{height:56%;fill:var(--blue);animation:drift 44s linear infinite}
+
+/* Despre – marea */
+.sea{background:var(--blue);color:#fff;padding:clamp(3rem, 8vw, 6rem) 0 var(--section)}
+.sea :focus-visible{outline-color:var(--ochre)}
+.sea h2{color:#fff;max-width:14ch}
+.sea-grid{display:grid;gap:clamp(2.5rem, 6vw, 5rem)}
+.sea-text p{margin-top:1.25rem;color:rgba(255,255,255,.86);max-width:34rem;font-size:1.0625rem}
+.sea-text p.calm{font-family:var(--serif);font-size:clamp(1.35rem, 2.6vw, 1.7rem);line-height:1.3;color:#fff;letter-spacing:-.01em}
+.perks{list-style:none;margin:0;padding:0}
+.perks li{display:grid;grid-template-columns:2.75rem 1fr;gap:1rem;padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.18)}
+.perks li:last-child{border-bottom:1px solid rgba(255,255,255,.18)}
+.perks svg{width:2rem;height:2rem;color:var(--ochre);margin-top:.1rem}
+.perks h3{font:600 1.15rem/1.3 var(--sans);color:#fff}
+.perks p{margin-top:.25rem;color:rgba(255,255,255,.82)}
+@media (min-width:900px){.sea-grid{grid-template-columns:1.05fr .95fr;align-items:start}.perks{margin-top:.5rem}}
+
+/* Meniu */
+.menu{padding:var(--section) 0;background:var(--white)}
+.menu-grid{display:grid;gap:clamp(2.5rem, 6vw, 5rem)}
+.menu-intro{margin-top:1rem;color:var(--muted);max-width:30rem}
+.plate-wrap{position:relative;width:min(78vw, 22rem);margin:2.5rem auto 0}
+.plate{
+  position:relative;aspect-ratio:1;border-radius:50%;background:#fff;padding:7%;
+  box-shadow:0 2rem 3.5rem -2rem rgba(23,59,92,.45), 0 0 0 1px rgba(31,78,121,.07);
+}
+.plate::after{content:"";position:absolute;inset:4.5%;border-radius:50%;border:1px solid rgba(31,78,121,.1);pointer-events:none}
+.plate-food{width:100%;height:100%;border-radius:50%;overflow:hidden;isolation:isolate}
+.plate-food img{width:100%;height:100%;object-fit:cover;transform:rotate(var(--rot, 0deg)) scale(1.02);will-change:transform}
+.garnish{position:absolute;width:38%;height:38%;left:-6%;bottom:-5%;color:var(--olive);transform:rotate(-8deg);pointer-events:none}
+.menu-list ul{list-style:none;margin:0;padding:0}
+.menu-list li{padding:clamp(1.5rem, 3vw, 2.25rem) 0;border-top:1px solid var(--line)}
+.menu-list li:last-child{border-bottom:1px solid var(--line)}
+.menu-list h3{font-family:var(--serif);font-weight:400;color:var(--blue);font-size:clamp(1.85rem, 4vw, 2.6rem);letter-spacing:-.02em;line-height:1.1}
+.menu-list h3::first-letter{text-transform:uppercase}
+.menu-list p{margin-top:.5rem;color:var(--muted);max-width:30rem}
+.menu-note{margin-top:2rem}
+.menu-note p{color:var(--ink);font-weight:500;max-width:30rem}
+.menu-note .actions{margin-top:1.1rem}
+@media (min-width:900px){
+  .menu-grid{grid-template-columns:.9fr 1.1fr;align-items:start}
+  .menu-side{position:sticky;top:7rem}
+  .plate-wrap{margin:3rem 0 0;width:min(100%, 22rem)}
+}
+
+/* Galerie */
+.gallery{background:var(--mist);padding:var(--section) 0}
+.gallery-head{display:grid;gap:1rem;margin-bottom:clamp(2.5rem, 5vw, 3.5rem)}
+.gallery-head p{color:var(--muted);max-width:26rem}
+.arcade{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.9rem, 2.5vw, 2rem)}
+.arch{margin:0;position:relative;aspect-ratio:3/4;border-radius:100vmax 100vmax 0 0;overflow:hidden;isolation:isolate;background:#dfe5e9}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch.a1{grid-column:1 / -1;aspect-ratio:1/1.05}
+@media (min-width:760px){
+  .gallery-head{grid-template-columns:1fr auto;align-items:end}
+  .arcade{grid-template-columns:repeat(3, 1fr)}
+  .arch.a1{grid-column:auto;aspect-ratio:3/4}
+}
+
+/* Contact */
+.contact{padding:var(--section) 0;background:var(--white)}
+.contact-grid{display:grid;gap:clamp(2.5rem, 6vw, 5rem);align-items:center}
+.contact-text > p{margin-top:1.1rem;color:var(--muted);max-width:30rem}
+.contact .actions{margin-top:1.75rem}
+.details{margin:2.25rem 0 0;display:grid;gap:1.1rem}
+.details div{display:grid;gap:.15rem}
+.details dt{font-size:.85rem;font-weight:600;letter-spacing:.03em;color:var(--olive)}
+.details dd{margin:0;font-size:1.125rem;font-weight:500;color:var(--blue-deep)}
+.details a{text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;min-height:2.75rem;border-bottom:1px solid transparent;transition:border-color .2s ease, color .2s ease}
+.details a:hover{color:var(--red);border-bottom-color:currentColor}
+.details a svg{width:1.1rem;height:1.1rem;flex:none}
+.map-arch{position:relative;height:clamp(22rem, 60vw, 32rem);border-radius:100vmax 100vmax 1.25rem 1.25rem;overflow:hidden;isolation:isolate;transform:translateZ(0);background:#e3e8ec;box-shadow:0 2rem 3rem -2.25rem rgba(23,59,92,.45)}
+.map-arch iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:519px){.contact .actions .btn{width:100%}}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1fr}.map-arch{max-width:30rem;width:100%;justify-self:end}}
+
+/* Subsol */
+.footer{background:var(--blue-deep);color:rgba(255,255,255,.86);padding:clamp(3.5rem, 8vw, 5rem) 0 2.5rem}
+.footer :focus-visible{outline-color:var(--ochre)}
+.footer-top{display:grid;gap:2rem}
+.footer .brand{color:#fff;margin:0}
+.footer .brand-mark{color:var(--ochre);width:1.75rem;height:1.75rem}
+.footer .brand span{font-size:1.6rem}
+.footer-tag{margin-top:.6rem;color:rgba(255,255,255,.75)}
+.footer-links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.footer-links a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none;font-weight:500;color:#fff;border-bottom:1px solid rgba(255,255,255,.25);transition:border-color .2s ease}
+.footer-links a:hover{border-bottom-color:var(--ochre)}
+.footer-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:.4rem;font-size:.8125rem;letter-spacing:.02em;color:rgba(255,255,255,.66)}
+@media (min-width:760px){.footer-top{grid-template-columns:1fr auto;align-items:end}}
+
+/* Mișcare */
+@keyframes rise{from{opacity:0;transform:translateY(1.2rem)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(1.1)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.js [data-reveal]{opacity:0;transition:opacity .55s var(--ease), transform .55s var(--ease);transition-delay:var(--d, 0s)}
+.js [data-reveal="slide"]{transform:translateX(-1.5rem)}
+.js [data-reveal="lift"]{transform:translateY(1rem)}
+.js [data-reveal="turn"]{transform:rotate(-14deg) scale(.96)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal="zoom"] img{transform:scale(1.08);transition:transform .6s var(--ease);transition-delay:var(--d, 0s)}
+.js [data-reveal].is-visible{opacity:1;transform:none}
+.js [data-reveal="zoom"].is-visible img{transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .wave{animation:none!important}
+  .intro,.hero-arch,.hero-arch .arch-clip img,.hero-arch::before,.nav{animation:fadeIn .2s linear both!important}
+  .js [data-reveal],.js [data-reveal] img{transform:none!important;transition:opacity .2s linear!important}
+  .plate-food img{transform:none!important}
+  .nav-links,.nav-toggle .bar{transition:opacity .2s linear!important}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--muted:#24323f;--line:rgba(31,78,121,.5)}
+  .nav{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--blue)}
+  .btn-red{border-color:#5f0f0f}
+  .sea-text p,.perks p{color:#fff}
+  .perks li{border-color:rgba(255,255,255,.6)!important}
+  .footer,.footer-bottom{color:#fff}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="sprig" viewBox="0 0 100 100">
+    <path d="M18 88C35 62 55 38 84 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    <g fill="currentColor">
+      <ellipse cx="21.4" cy="74.2" rx="9" ry="2.2" transform="rotate(-80 21.4 74.2)"/>
+      <ellipse cx="30.6" cy="81.8" rx="9" ry="2.2" transform="rotate(-20 30.6 81.8)"/>
+      <ellipse cx="28.4" cy="64.2" rx="9" ry="2.2" transform="rotate(-80 28.4 64.2)"/>
+      <ellipse cx="37.6" cy="71.8" rx="9" ry="2.2" transform="rotate(-20 37.6 71.8)"/>
+      <ellipse cx="36.4" cy="54.2" rx="9" ry="2.2" transform="rotate(-80 36.4 54.2)"/>
+      <ellipse cx="45.6" cy="61.8" rx="9" ry="2.2" transform="rotate(-20 45.6 61.8)"/>
+      <ellipse cx="44.4" cy="44.7" rx="9" ry="2.2" transform="rotate(-80 44.4 44.7)"/>
+      <ellipse cx="53.6" cy="52.3" rx="9" ry="2.2" transform="rotate(-20 53.6 52.3)"/>
+      <ellipse cx="53.4" cy="35.7" rx="8.5" ry="2.1" transform="rotate(-80 53.4 35.7)"/>
+      <ellipse cx="62.6" cy="43.3" rx="8.5" ry="2.1" transform="rotate(-20 62.6 43.3)"/>
+      <ellipse cx="62.4" cy="27.2" rx="8" ry="2" transform="rotate(-80 62.4 27.2)"/>
+      <ellipse cx="71.6" cy="34.8" rx="8" ry="2" transform="rotate(-20 71.6 34.8)"/>
+      <ellipse cx="71.4" cy="18.7" rx="7" ry="1.9" transform="rotate(-80 71.4 18.7)"/>
+      <ellipse cx="80.6" cy="26.3" rx="7" ry="1.9" transform="rotate(-20 80.6 26.3)"/>
+      <ellipse cx="86" cy="12.5" rx="6.5" ry="1.9" transform="rotate(-50 86 12.5)"/>
+    </g>
+  </symbol>
+  <symbol id="wave" viewBox="0 0 2880 100" preserveAspectRatio="none">
+    <path d="M0 50C120 20 240 20 360 50S600 80 720 50S960 20 1080 50S1320 80 1440 50S1680 20 1800 50S2040 80 2160 50S2400 20 2520 50S2760 80 2880 50V100H0Z"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path d="M5 3.5h3.2l1.8 4.7-2.4 1.5a11.5 11.5 0 0 0 6.7 6.7l1.5-2.4 4.7 1.8v3.2a2 2 0 0 1-2 2A17 17 0 0 1 3 5.5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24">
+    <path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.4a8.4 8.4 0 1 1 15.4-4.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M9 9.5c.3 2.4 2.2 4.4 4.8 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  </symbol>
+</svg>
+
+<nav class="nav" id="nav" aria-label="Navigare principală">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Terasa Rosemarine, începutul paginii">
+      <svg class="brand-mark" aria-hidden="true"><use href="#sprig"/></svg>
+      <span><span class="pre">Terasa </span>Rosemarine</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-red btn-sm" href="tel:0724282531">Sună acum</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Deschide meniul de navigare">
+      <span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 class="intro d1"><span>Terasa</span> <span>Rosemarine</span></h1>
+      <p class="lead intro d2">Relaxare și gust la malul mării, în Constanța.</p>
+      <p class="hero-desc intro d3">Te așteptăm să te relaxezi pe terasa noastră, cu preparate bune și briza mării la fiecare masă.</p>
+      <div class="actions intro d4">
+        <a class="btn btn-red" href="https://wa.me/40724282531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">
+          <svg aria-hidden="true"><use href="#i-chat"/></svg>Scrie pe WhatsApp
+        </a>
+        <a class="btn btn-line" href="tel:0724282531">
+          <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+        </a>
+      </div>
+    </div>
+    <figure class="hero-arch">
+      <div class="arch-clip">
+        <img src="img/2.jpg" alt="Prietene la masă pe o terasă însorită, împărțind o pizza" fetchpriority="high" width="900" height="1200">
+      </div>
+    </figure>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg class="wave w1"><use href="#wave" width="100%" height="100%"/></svg>
+    <svg class="wave w2"><use href="#wave" width="100%" height="100%"/></svg>
+    <svg class="wave w3"><use href="#wave" width="100%" height="100%"/></svg>
+  </div>
+</header>
+
+<main>
+  <section class="sea" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap sea-grid">
+      <div class="sea-text" data-reveal="fade">
+        <h2 id="despre-titlu">Briza mării, chiar la masa ta</h2>
+        <p>La Rosemarine ne bucurăm să-ți oferim o atmosferă plăcută și preparate care îți răsfață gusturile. Fie că vii pentru un prânz liniștit sau doar pentru o băutură răcoritoare, aici găsești mereu un loc potrivit pentru tine.</p>
+        <p class="calm">Ia o pauză și lasă-te în briza care vine dinspre larg.</p>
+      </div>
+      <ul class="perks">
+        <li data-reveal="slide" style="--d:.05s">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 9c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2M2 15c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"/></svg>
+          <div><h3>Aproape de mare</h3><p>Te relaxezi pe terasă, cu briza mării în jur.</p></div>
+        </li>
+        <li data-reveal="slide" style="--d:.15s">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="14" cy="12" r="7"/><circle cx="14" cy="12" r="3.8"/><path d="M3 3.5v4.5a1.5 1.5 0 0 0 3 0V3.5M4.5 9.5v11"/></svg>
+          <div><h3>Atmosferă relaxată</h3><p>Perfectă pentru mese lungi cu prietenii.</p></div>
+        </li>
+        <li data-reveal="slide" style="--d:.25s">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+          <div><h3>Gustări rapide</h3><p>Pentru o pauză scurtă, la o gustare.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap menu-grid">
+      <div class="menu-side">
+        <h2 id="meniu-titlu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="menu-intro">Vii pentru o masă pe îndelete, pentru o gustare pe fugă sau doar pentru ceva rece de băut? Ai de unde alege.</p>
+        <div class="plate-wrap" data-reveal="turn">
+          <div class="plate">
+            <div class="plate-food">
+              <img src="img/5.jpg" alt="Pizza cu salam și roșii proaspete, pe un platou de lemn, văzută de sus" loading="lazy" width="800" height="800">
+            </div>
+          </div>
+          <svg class="garnish" aria-hidden="true"><use href="#sprig"/></svg>
+        </div>
+      </div>
+      <div class="menu-list">
+        <ul>
+          <li data-reveal="lift" style="--d:0s">
+            <h3>Preparate calde</h3>
+            <p>Pentru un prânz liniștit sau o masă cu prietenii.</p>
+          </li>
+          <li data-reveal="lift" style="--d:.08s">
+            <h3>Gustări</h3>
+            <p>Când vrei doar o pauză scurtă și ceva bun de împărțit cu cei de la masă.</p>
+          </li>
+          <li data-reveal="lift" style="--d:.16s">
+            <h3>Băuturi</h3>
+            <p>O băutură răcoritoare, savurată în tihnă pe terasă.</p>
+          </li>
+        </ul>
+        <div class="menu-note" data-reveal="fade">
+          <p>Ce avem azi în meniu îți spunem cu drag la telefon sau pe WhatsApp.</p>
+          <div class="actions">
+            <a class="btn btn-red" href="https://wa.me/40724282531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-chat"/></svg>Scrie pe WhatsApp
+            </a>
+            <a class="btn btn-line" href="tel:0724282531">
+              <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="gallery-head">
+        <h2 id="galerie-titlu">Pofta vine la masă</h2>
+        <p>Câteva imagini care să-ți deschidă pofta. Fotografiile sunt ilustrative.</p>
+      </div>
+      <div class="arcade">
+        <figure class="arch a1" data-reveal="zoom" style="--d:0s">
+          <img src="img/1.jpg" alt="Pizza vegetariană cu legume și brânză, tăiată felii" loading="lazy" width="900" height="1200">
+        </figure>
+        <figure class="arch a2" data-reveal="zoom" style="--d:.1s">
+          <img src="img/4.jpg" alt="Pizza proaspăt scoasă din cuptor, gata de servit" loading="lazy" width="900" height="1200">
+        </figure>
+        <figure class="arch a3" data-reveal="zoom" style="--d:.2s">
+          <img src="img/3.jpg" alt="Pizza pregătită în bucătărie, cu roșii și ingrediente proaspete" loading="lazy" width="900" height="1200">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-text" data-reveal="fade">
+        <h2 id="contact-titlu">Te așteptăm pe terasă</h2>
+        <p>Sună-ne sau scrie-ne pe WhatsApp pentru orice întrebare. Ne găsești în Constanța, aproape de mare.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="https://wa.me/40724282531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">
+            <svg aria-hidden="true"><use href="#i-chat"/></svg>Scrie pe WhatsApp
+          </a>
+          <a class="btn btn-line" href="tel:0724282531">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>Sună acum
+          </a>
+        </div>
+        <dl class="details">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0724282531"><svg aria-hidden="true"><use href="#i-phone"/></svg>0724 282 531</a></dd>
+          </div>
+          <div>
+            <dt>Unde ne găsești</dt>
+            <dd><a href="https://www.google.com/maps/search/?api=1&query=Terasa+Rosemarine+Constan%C8%9Ba" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Deschide în Google Maps</a></dd>
+          </div>
+        </dl>
+      </div>
+      <div class="map-arch" data-reveal="scale">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=28.6305077,44.2193708,28.6385077,44.223370800000005&layer=mapnik&marker=44.2213708,28.6345077" title="Harta: Terasa Rosemarine, Constanța" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a class="brand" href="#top" aria-label="Terasa Rosemarine, înapoi sus">
+          <svg class="brand-mark" aria-hidden="true"><use href="#sprig"/></svg>
+          <span>Terasa Rosemarine</span>
+        </a>
+        <p class="footer-tag">Relaxare și gust la malul mării, în Constanța.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="tel:0724282531">Sună acum</a></li>
+        <li><a href="https://wa.me/40724282531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Terasa+Rosemarine+Constan%C8%9Ba" target="_blank" rel="noopener">Vezi pe hartă</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: zuzi99, Icsilviu, MatteoPhotoPro2020, px_steven_be, guvo59</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  var toggle = nav.querySelector('.nav-toggle');
+  var links = document.getElementById('nav-links');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function onScrollNav(){ nav.classList.toggle('scrolled', window.scrollY > 8); }
+  onScrollNav();
+
+  function setMenu(open){
+    links.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Închide meniul de navigare' : 'Deschide meniul de navigare');
+  }
+  toggle.addEventListener('click', function(){ setMenu(!links.classList.contains('open')); });
+  links.addEventListener('click', function(e){ if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+  document.addEventListener('click', function(e){
+    if (links.classList.contains('open') && !nav.contains(e.target)) setMenu(false);
+  });
+
+  /* Dezvăluiri la derulare */
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('is-visible'); io.unobserve(en.target); }
+      });
+    }, {threshold:.18, rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* Farfuria se rotește ușor odată cu derularea */
+  var plateImg = document.querySelector('.plate-food img');
+  var plate = document.querySelector('.plate');
+  var ticking = false;
+  function updatePlate(){
+    ticking = false;
+    if (!plateImg || reduce.matches) return;
+    var r = plate.getBoundingClientRect();
+    var vh = window.innerHeight;
+    if (r.bottom < 0 || r.top > vh) return;
+    var p = (vh - r.top) / (vh + r.height);
+    p = Math.max(0, Math.min(1, p));
+    plateImg.style.setProperty('--rot', (p * 36 - 18).toFixed(2) + 'deg');
+  }
+  window.addEventListener('scroll', function(){
+    onScrollNav();
+    if (!ticking){ ticking = true; requestAnimationFrame(updatePlate); }
+  }, {passive:true});
+  updatePlate();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
