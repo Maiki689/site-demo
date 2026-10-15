@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toka: Plăcintă albaneză cu spanac în București</title>
+<meta name="description" content="Plăcintă albaneză cu spanac, pregătită după rețetă tradițională în București. Sună, scrie pe WhatsApp sau comandă prin Glovo.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --alb:#FFFFFF;
+  --crem:#FBF7EC;
+  --maro:#2F2215;
+  --maro-moale:#5B4C3E;
+  --verde:#3D6127;
+  --verde-inchis:#335420;
+  --auriu:#D4AF37;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --zgomot:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--alb);color:var(--maro);
+  font-family:"Josefin Sans",system-ui,sans-serif;
+  font-size:1.125rem;line-height:1.5;letter-spacing:0;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+figure{margin:0}
+p{margin:0}
+ul{margin:0;padding:0}
+section[id]{scroll-margin-top:4.5rem}
+:focus-visible{outline:3px solid var(--auriu);outline-offset:3px}
+
+h1,h2,h3{font-family:"Montserrat",system-ui,sans-serif;font-weight:800;color:var(--maro);text-wrap:balance}
+
+.wrap{width:min(1180px,calc(100% - 2.5rem));margin-inline:auto}
+
+/* Antet cu sticlă */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:0 12px 24px -20px rgba(47,34,21,.5)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.nav-logo img{
+  width:2.75rem;height:2.75rem;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 1px var(--auriu);
+}
+.nav-links{display:none;list-style:none;gap:1.75rem;font-weight:600}
+.nav-links a{text-decoration:none;position:relative;padding:.5rem 0;color:var(--maro)}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--verde);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
+}
+.nav-links a:hover::after{transform:scaleX(1)}
+@media (min-width:860px){.nav-links{display:flex}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.8rem 1.4rem;border-radius:.625rem;
+  font-family:"Montserrat",sans-serif;font-weight:700;font-size:.95rem;line-height:1.2;letter-spacing:.01em;
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  transition:background-color .2s,color .2s,box-shadow .2s,border-color .2s,transform .1s;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-verde{background:var(--verde);color:#fff}
+.btn-verde:hover{background:var(--verde-inchis);box-shadow:0 8px 18px -12px rgba(51,84,32,.8)}
+.btn-contur{background:transparent;color:var(--maro);border-color:rgba(47,34,21,.35)}
+.btn-contur:hover{background:rgba(47,34,21,.05);border-color:var(--maro)}
+.btn-mic{min-height:44px;padding:.6rem 1rem;font-size:.9rem}
+
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+.actiuni .btn{flex:1 1 13rem}
+
+/* Prima secțiune */
+.hero{position:relative;overflow:hidden;padding-block:clamp(2rem,6vw,5rem) clamp(3.5rem,8vw,6rem)}
+.hero::before{
+  content:"";position:absolute;inset:0;background-image:var(--zgomot);
+  opacity:.05;pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1fr 1fr}}
+.hero-logo{
+  width:clamp(7rem,30vw,11rem);aspect-ratio:1;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 .4rem #fff,0 0 0 calc(.4rem + 1.5px) var(--auriu),0 24px 40px -26px rgba(47,34,21,.6);
+  margin-bottom:1.75rem;
+}
+.hero h1{
+  font-size:clamp(4rem,15vw,8rem);line-height:1;letter-spacing:-.02em;
+  text-transform:uppercase;margin:0;
+}
+.slogan{
+  font-family:"Montserrat",sans-serif;font-weight:700;color:var(--verde);
+  font-size:clamp(1.2rem,3.2vw,1.6rem);line-height:1.2;letter-spacing:-.01em;
+  margin:.9rem 0 .75rem;
+}
+.lead{color:var(--maro-moale);font-size:clamp(1.125rem,2vw,1.3rem);max-width:34ch;margin-bottom:1.75rem}
+.hero-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:.375rem}
+@media (min-width:900px){.hero-foto img{aspect-ratio:4/5}}
+
+@keyframes intra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.intra{animation:intra .6s var(--ease) both;animation-delay:var(--d,0s)}
+
+/* Secțiuni */
+.sectiune{padding-block:clamp(4rem,10vw,7.5rem)}
+.sectiune--tinta{background:var(--crem)}
+.titlu{font-size:clamp(2.1rem,5.6vw,3.5rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 1.25rem}
+.text{color:var(--maro-moale);max-width:36rem}
+.centru{text-align:center}
+.centru.titlu{margin-inline:auto}
+
+/* Despre */
+.despre-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.despre-grid{grid-template-columns:1.05fr .95fr}}
+.despre-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:.375rem}
+.fapte{list-style:none;margin-top:2rem;border-top:1px solid rgba(47,34,21,.12)}
+.fapte li{
+  display:flex;align-items:center;gap:.75rem;
+  padding:1rem 0;border-bottom:1px solid rgba(47,34,21,.12);
+  font-weight:700;font-size:1.15rem;
+}
+.fapte li::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--auriu);flex:none}
+
+.avantaje{display:grid;gap:2.5rem;margin-top:clamp(3rem,7vw,5rem)}
+@media (min-width:760px){.avantaje{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.avantaj-icon{
+  width:3.5rem;height:3.5rem;border-radius:50%;display:grid;place-items:center;
+  font-size:1.5rem;background:#fff;box-shadow:0 0 0 1px var(--auriu);margin-bottom:1rem;
+}
+.avantaj h3{font-size:1.15rem;letter-spacing:-.01em;margin-bottom:.35rem}
+.avantaj p{color:var(--maro-moale)}
+
+/* Foaia de meniu */
+.sheet{
+  position:relative;max-width:40rem;margin-inline:auto;
+  background:#fff;padding:clamp(1.75rem,5vw,3.5rem);
+  border-top:4px double var(--maro);border-radius:.25rem;
+  box-shadow:0 1px 0 rgba(47,34,21,.06),0 32px 50px -32px rgba(47,34,21,.4);
+  overflow:hidden;
+}
+.sheet::before{
+  content:"";position:absolute;inset:0;background-image:var(--zgomot);
+  opacity:.04;pointer-events:none;
+}
+.sheet > *{position:relative}
+.sheet-cap{text-align:center;color:var(--maro-moale);font-weight:600;letter-spacing:.04em;margin-bottom:2rem}
+.linie{display:flex;align-items:flex-end;gap:.6rem}
+.linie-nume{
+  font-size:clamp(1.25rem,3.6vw,1.6rem);line-height:1.2;letter-spacing:-.01em;margin:0;
+}
+.punct{
+  flex:1 1 1.5rem;min-width:1rem;height:0;
+  border-bottom:2px dotted var(--auriu);
+  margin-bottom:.45em;transform-origin:left;
+}
+.js .sheet .punct{transform:scaleX(0);transition:transform .8s var(--ease) .35s}
+.js .sheet.on .punct{transform:scaleX(1)}
+.linie-desc{margin-top:.4rem;color:var(--maro-moale)}
+.nota{
+  margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid rgba(47,34,21,.12);
+  font-weight:700;
+}
+.sheet .actiuni{margin-top:1.5rem}
+.sheet-jos{margin-top:2rem;text-align:center;font-size:.95rem;color:var(--maro-moale)}
+
+/* Galerie */
+.galerie-cap{margin-bottom:2.5rem}
+.larg img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:.375rem}
+@media (min-width:900px){.larg img{aspect-ratio:21/9}}
+
+/* Contact */
+.contact-grid{display:grid;gap:2.5rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:.9fr 1.1fr;align-items:center;gap:4rem}}
+.tel-mare{margin:1.5rem 0 .75rem}
+.tel-mare a{
+  font-family:"Montserrat",sans-serif;font-weight:800;color:var(--verde);
+  font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.01em;text-decoration:none;
+}
+.tel-mare a:hover{text-decoration:underline;text-underline-offset:.2em}
+.mail{margin-top:1rem}
+.mail a{font-weight:600;color:var(--maro);text-underline-offset:.2em}
+.contact-grid .actiuni{margin-top:1.75rem}
+.harta{min-height:320px;border-radius:.375rem;overflow:hidden;background:#EFEAE0}
+.harta iframe{display:block;width:100%;height:100%;min-height:320px;border:0}
+
+/* Subsol */
+.subsol{background:var(--maro);color:#F3EDE2;padding-block:3.5rem 2rem}
+.subsol-in{display:grid;gap:2rem;align-items:center}
+@media (min-width:760px){.subsol-in{grid-template-columns:auto 1fr;gap:3rem}}
+.subsol-logo{
+  width:5.5rem;height:5.5rem;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 1px var(--auriu);
+}
+.subsol-text{font-size:1.05rem;color:#E6DDCD}
+.subsol-text p + p{margin-top:.35rem}
+.subsol-text a{color:#fff;text-underline-offset:.2em}
+.subsol-jos{
+  margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.14);
+  display:grid;gap:.4rem;font-size:.9rem;color:#CFC5B5;letter-spacing:.02em;
+}
+
+/* Apariții la derulare */
+.js .rv{opacity:0;transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.rv-sus{transform:translateY(24px)}
+.rv-st{transform:translateX(-24px)}
+.rv-dr{transform:translateX(24px)}
+.rv-mic{transform:scale(.97)}
+.rv.on{opacity:1;transform:none}
+
+/* Mișcare redusă */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .intra{animation:fadein .2s ease both;animation-delay:0s}
+  .js .rv{transition:opacity .2s ease!important;transition-delay:0s!important}
+  .rv-sus,.rv-st,.rv-dr,.rv-mic{transform:none!important}
+  .js .sheet .punct{transform:none!important;transition:none!important}
+  .btn,.nav-links a::after{transition-duration:.1s!important}
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+
+/* Transparență redusă */
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* Contrast mare */
+@media (prefers-contrast: more){
+  .nav{background:#fff;border-bottom:2px solid var(--maro)}
+  .btn-contur{border-color:var(--maro);border-width:2px}
+  .sheet{border:2px solid var(--maro);border-top-width:4px}
+  .punct{border-bottom-color:var(--maro)}
+  .fapte li,.nota{border-color:var(--maro)}
+  .avantaj-icon{box-shadow:0 0 0 2px var(--maro)}
+  .text,.lead,.avantaj p,.sheet-jos,.linie-desc{color:var(--maro)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="nav-logo"><img src="logo.jpg" alt="Toka" width="44" height="44"></a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#produse">Produse</a></li>
+      <li><a href="#galerie">Din bucătărie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-verde btn-mic" href="tel:0734144414">Sună acum</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="titlu-principal">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <img class="hero-logo intra" style="--d:0s" src="logo.jpg" alt="Logo Toka" width="176" height="176">
+        <h1 id="titlu-principal" class="intra" style="--d:.08s">Toka</h1>
+        <p class="slogan intra" style="--d:.16s">Plăcintă albaneză autentică în București</p>
+        <p class="lead intra" style="--d:.22s">Gustă plăcinta albaneză tradițională cu spanac.</p>
+        <div class="actiuni intra" style="--d:.28s">
+          <a class="btn btn-verde" href="tel:0734144414">Sună acum</a>
+          <a class="btn btn-contur" href="https://wa.me/40734144414?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20pl%C4%83cint%C4%83%20albanez%C4%83%20cu%20spanac." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+      <figure class="hero-foto intra" style="--d:.2s">
+        <img src="img/1.jpg" alt="Făină, ouă și aluat pe masa de lucru, pentru plăcintă" fetchpriority="high" width="1200" height="900">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sectiune" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="despre-grid">
+        <div class="rv rv-st">
+          <h2 class="titlu" id="t-despre">Despre Toka</h2>
+          <p class="text">Toka aduce în București autenticitatea plăcintei albaneze cu spanac, pregătită după rețetă tradițională. Ne dedicăm să oferim clienților o experiență cu adevărat savuroasă, inspirată din gustul autentic balcanic.</p>
+          <ul class="fapte">
+            <li>Plăcintă albaneză tradițională cu spanac</li>
+            <li>Livrare prin Glovo</li>
+          </ul>
+        </div>
+        <figure class="despre-foto rv rv-dr" style="--d:.1s">
+          <img src="img/2.jpg" alt="Aluat întins cu sucitorul, pentru plăcintă" loading="lazy" width="1200" height="1500">
+        </figure>
+      </div>
+
+      <div class="avantaje">
+        <article class="avantaj rv rv-sus" style="--d:0s">
+          <div class="avantaj-icon" aria-hidden="true">🌿</div>
+          <h3>Ingrediente alese</h3>
+          <p>Folosim doar ingrediente proaspete</p>
+        </article>
+        <article class="avantaj rv rv-sus" style="--d:.1s">
+          <div class="avantaj-icon" aria-hidden="true">🇦🇱</div>
+          <h3>Autentic albanez</h3>
+          <p>Rețetă păstrată din tradiție</p>
+        </article>
+        <article class="avantaj rv rv-sus" style="--d:.2s">
+          <div class="avantaj-icon" aria-hidden="true">📦</div>
+          <h3>Livrare prin Glovo</h3>
+          <p>Poți comanda prin Glovo</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune--tinta" id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <h2 class="titlu centru rv rv-sus" id="t-produse">Produse</h2>
+      <article class="sheet rv rv-mic" aria-label="Produsele Toka">
+        <p class="sheet-cap">Toka, București</p>
+        <div class="linie">
+          <h3 class="linie-nume">Plăcintă albaneză cu spanac</h3>
+          <span class="punct" aria-hidden="true"></span>
+        </div>
+        <p class="linie-desc">Rețetă tradițională, gust autentic, proaspăt preparată.</p>
+        <p class="nota">Livrare prin Glovo</p>
+        <div class="actiuni">
+          <a class="btn btn-verde" href="https://wa.me/40734144414?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20pl%C4%83cint%C4%83%20albanez%C4%83%20cu%20spanac." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-contur" href="tel:0734144414">Sună acum</a>
+        </div>
+        <p class="sheet-jos">Calea Călărașilor 78, București</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sectiune" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="galerie-cap rv rv-sus">
+        <h2 class="titlu" id="t-galerie">Din bucătărie</h2>
+      </div>
+      <figure class="larg rv rv-sus">
+        <img src="img/3.jpg" alt="Ierburi și legume verzi, proaspete" loading="lazy" width="1600" height="900">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune--tinta" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div class="rv rv-st">
+        <h2 class="titlu" id="t-contact">Contact</h2>
+        <p class="text">Calea Călărașilor 78, București</p>
+        <p class="tel-mare"><a href="tel:0734144414">0734144414</a></p>
+        <p class="mail"><a href="mailto:tokabalkanfood@gmail.com">tokabalkanfood@gmail.com</a></p>
+        <div class="actiuni">
+          <a class="btn btn-verde" href="tel:0734144414">Sună acum</a>
+          <a class="btn btn-contur" href="https://wa.me/40734144414?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20pl%C4%83cint%C4%83%20albanez%C4%83%20cu%20spanac." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-contur" href="mailto:tokabalkanfood@gmail.com">Scrie un email</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Toka+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta rv rv-dr" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1126971,44.4311423,26.1206971,44.4351423&amp;layer=mapnik&amp;marker=44.4331423,26.1166971" title="Harta: Toka, Calea Călărașilor 78, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <div class="subsol-in">
+      <img class="subsol-logo" src="logo.jpg" alt="Logo Toka" width="88" height="88" loading="lazy">
+      <div class="subsol-text">
+        <p>Plăcintă albaneză autentică în București</p>
+        <p>Calea Călărașilor 78, București</p>
+        <p><a href="tel:0734144414">0734144414</a> · <a href="mailto:tokabalkanfood@gmail.com">tokabalkanfood@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="subsol-jos">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Marinasea, JillWellington, Kost9n4</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var els = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('on'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('on');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
