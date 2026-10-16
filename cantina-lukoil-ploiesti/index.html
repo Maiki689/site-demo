@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F3EDE2">
+<title>Cantina Lukoil, Ploiești | Mâncare românească la porție</title>
+<meta name="description" content="Cantina Lukoil din Ploiești: mâncare românească la porție, cu livrare prin Wolt.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --in:#F3EDE2;
+  --linen:#E9DFCB;
+  --negru:#1B1B1B;
+  --lemn:#7B5B3A;
+  --lemn-ink:#644a2e;
+  --accent:#b45309;
+  --accent-ink:#92400e;
+  --line:rgba(123,91,58,.28);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Karla,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--in);color:var(--negru);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+figure{margin:0}
+h1,h2,h3{
+  font-family:var(--serif);font-weight:600;color:var(--negru);
+  letter-spacing:-.02em;line-height:1.08;margin:0;
+}
+h1{font-size:clamp(2.6rem,9.5vw,5.6rem)}
+h2{font-size:clamp(2.1rem,5.2vw,3.5rem)}
+h3{font-size:1.5rem;line-height:1.15;letter-spacing:-.01em}
+
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,2.5rem)}
+section{padding-block:clamp(4.5rem,11vw,8rem);scroll-margin-top:4rem}
+.lead{font-size:1.2rem;line-height:1.55;color:var(--negru)}
+.muted{color:var(--lemn-ink)}
+
+/* ---------- Header (sticlă) ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,237,226,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 24px -18px rgba(27,27,27,.45);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.55rem;white-space:nowrap;
+  font-family:var(--serif);font-weight:700;font-size:1.25rem;letter-spacing:-.01em;
+  color:var(--negru);text-decoration:none;
+}
+.brand-mark{font-size:1.4rem;line-height:1}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:2rem}
+.nav-links a{
+  font-weight:600;font-size:.95rem;color:var(--negru);text-decoration:none;
+  padding:.5rem 0;transition:color .2s;
+}
+.nav-links a:hover{color:var(--accent-ink)}
+@media (min-width:800px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.75rem 1.35rem;border-radius:3px;
+  font:600 1rem/1.2 var(--sans);letter-spacing:.005em;text-decoration:none;
+  border:1px solid transparent;cursor:pointer;
+  transition:background-color .2s,color .2s,box-shadow .25s,transform .1s;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-sm{min-height:44px;padding:.55rem 1.05rem;font-size:.95rem}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-ink);box-shadow:0 10px 20px -14px rgba(146,64,14,.8)}
+.btn-line{background:transparent;color:var(--negru);border-color:var(--negru)}
+.btn-line:hover{background:var(--negru);color:var(--in)}
+.btn:focus-visible,.nav-links a:focus-visible,.brand:focus-visible,.foot-link:focus-visible{
+  outline:2px solid var(--accent-ink);outline-offset:3px;
+}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Motivul de ie (cusătura) ---------- */
+.ie{width:min(100%,22rem);margin-top:1.25rem}
+.ie svg{display:block;width:100%;height:auto;overflow:visible}
+.ie .thread{fill:none;stroke:var(--accent);stroke-width:1;opacity:.55}
+.ie .st path{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ie .st{
+  opacity:0;transform:scale(.3) rotate(-35deg);
+  transform-box:fill-box;transform-origin:center;
+  transition:opacity .35s var(--ease),transform .5s var(--ease);
+}
+.ie .st.on{opacity:1;transform:none}
+
+/* ---------- Mișcare ---------- */
+@keyframes rise{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.intro{animation:rise .7s var(--ease) both;animation-delay:var(--d,0s)}
+.reveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+.reveal-left{opacity:0;transform:translate3d(-18px,0,0);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:var(--d,0s)}
+.reveal-img{opacity:0;transform:scale(1.035);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.reveal.in,.reveal-left.in,.reveal-img.in{opacity:1;transform:none}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:clamp(2rem,6vw,4.5rem);padding-bottom:clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem)}
+.hero-text .ie{margin-top:1.1rem}
+.slogan{
+  font-family:var(--serif);font-weight:500;font-size:clamp(1.4rem,3vw,1.85rem);
+  line-height:1.2;color:var(--lemn-ink);margin-top:1.25rem;
+}
+.hero-desc{margin-top:1.1rem;max-width:34rem;font-size:1.125rem}
+.hero-actions{margin-top:2rem}
+.hero-photo{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--linen)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;align-items:center}
+  .hero-photo{aspect-ratio:4/5}
+}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem)}
+.about-text p + p{margin-top:1rem}
+.about-text .lead + p{color:var(--lemn-ink)}
+.about-photo{overflow:hidden;aspect-ratio:4/3;background:var(--linen)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.perks{
+  list-style:none;margin:clamp(3rem,7vw,5rem) 0 0;padding:0;
+  display:grid;gap:2.25rem;
+}
+.perk{border-top:1px solid var(--line);padding-top:1.5rem}
+.perk-emoji{display:block;font-size:1.75rem;line-height:1}
+.perk h3{margin-top:.9rem}
+.perk p{margin-top:.4rem;color:var(--lemn-ink)}
+@media (min-width:700px){
+  .about-grid{grid-template-columns:1fr 1fr;align-items:center}
+  .about-photo{aspect-ratio:4/5}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+}
+
+/* ---------- Meniu ---------- */
+.menu-intro{margin-top:1.25rem;max-width:34rem;color:var(--lemn-ink)}
+.menu{list-style:none;margin:clamp(2.5rem,6vw,3.5rem) 0 0;padding:0;display:grid}
+.menu li{border-top:1px solid var(--line);padding:1.4rem 0}
+.menu h3{font-size:1.6rem}
+.menu p{margin-top:.35rem;color:var(--lemn-ink)}
+.menu-featured h3{color:var(--accent-ink)}
+.menu-cta{margin-top:2.5rem}
+@media (min-width:760px){
+  .menu{grid-template-columns:1fr 1fr;column-gap:clamp(3rem,7vw,5rem)}
+  .menu-featured{grid-column:1 / -1;border-top-color:var(--accent);padding-top:1.75rem}
+}
+
+/* ---------- Livrare ---------- */
+.band{background:var(--linen)}
+.band-inner{max-width:44rem}
+.band-lead{
+  margin-top:1.5rem;font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.3;color:var(--negru);
+}
+.band-note{margin-top:1.75rem;color:var(--lemn-ink)}
+.band-note a{color:var(--accent-ink);font-weight:600;text-underline-offset:3px}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+.contact-text .lead{margin-top:1.25rem;color:var(--lemn-ink);font-size:1.1rem}
+.contact-text .btn-row{margin-top:2rem}
+.contact-phone{margin-top:1.5rem;color:var(--lemn-ink)}
+.contact-phone a{color:var(--negru);font-weight:600}
+.map{display:block;width:100%;height:20rem;border:0;background:var(--linen)}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:.9fr 1.1fr;align-items:center;gap:4rem}
+  .map{height:26rem}
+}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--negru);color:var(--in);padding-block:3.5rem 2.5rem}
+.site-footer .brand{color:var(--in)}
+.foot-grid{display:grid;gap:2rem}
+.foot-small{font-size:.875rem;letter-spacing:.02em;color:rgba(243,237,226,.8)}
+.foot-small p + p{margin-top:.5rem}
+.foot-link{color:var(--in);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.foot-link:hover{text-decoration:underline;text-underline-offset:4px}
+@media (min-width:760px){
+  .foot-grid{grid-template-columns:1.2fr 1fr 1fr;align-items:end}
+}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .intro{animation:fade .2s linear both !important;animation-delay:0s !important}
+  .reveal,.reveal-left,.reveal-img{transform:none !important;transition:opacity .2s linear !important;transition-delay:0s !important}
+  .ie .st{transform:none !important;transition:opacity .2s linear !important}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:var(--in);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-header{background:var(--in);box-shadow:inset 0 -1px 0 var(--negru)}
+  .btn-primary{background:var(--accent-ink)}
+  .btn-line{border-width:2px}
+  .menu li,.perk{border-top-color:var(--lemn)}
+  .ie .thread{opacity:1}
+  .slogan,.band-lead{color:var(--negru)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Principal">
+    <a class="brand" href="#top" aria-label="Cantina Lukoil, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🍲</span>
+      <span>Cantina Lukoil</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#livrare">Livrare</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary btn-sm" href="tel:0799873060">Sună acum</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 class="intro" style="--d:.05s">Cantina Lukoil</h1>
+        <div class="ie" data-ie></div>
+        <p class="slogan intro" style="--d:.2s">Prânz gustos, la porție</p>
+        <p class="hero-desc intro" style="--d:.32s">Mâncare românească la porție, cu livrare prin Wolt.</p>
+        <div class="hero-actions btn-row intro" style="--d:.42s">
+          <a class="btn btn-primary" href="tel:0799873060">Sună acum</a>
+          <a class="btn btn-line" href="#meniu">Vezi meniul</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img class="reveal-img" src="img/1.jpg" alt="Bufet de cantină cu preparate calde pentru prânz" width="1200" height="1500" style="--d:.25s">
+      </figure>
+    </div>
+  </section>
+
+  <section id="despre">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="reveal">Despre cantină</h2>
+          <div class="ie reveal" data-ie></div>
+          <p class="lead reveal" style="--d:.1s;margin-top:2rem">Cantina Lukoil oferă preparate calde, la porție.</p>
+          <p class="reveal" style="--d:.2s">Comandă prin Wolt și bucură-te de meniul zilei: ciorbă, fel principal cu garnitură, salată și chiflă de casă.</p>
+        </div>
+        <figure class="about-photo">
+          <img class="reveal-img" src="img/2.jpg" alt="Cartofi proaspeți din bucătăria cantinei" loading="lazy" width="1200" height="1500">
+        </figure>
+      </div>
+
+      <ul class="perks">
+        <li class="perk reveal" style="--d:0s">
+          <span class="perk-emoji" aria-hidden="true">⏱️</span>
+          <h3>Rapid și ușor</h3>
+          <p>Comanzi simplu prin Wolt</p>
+        </li>
+        <li class="perk reveal" style="--d:.12s">
+          <span class="perk-emoji" aria-hidden="true">🥔</span>
+          <h3>Mâncare tradițională</h3>
+          <p>Gusturi românești, servite calde</p>
+        </li>
+        <li class="perk reveal" style="--d:.24s">
+          <span class="perk-emoji" aria-hidden="true">💰</span>
+          <h3>Mâncare la porție</h3>
+          <p>Ciorbă, fel principal, salată și chiflă</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="meniu" style="padding-top:0">
+    <div class="wrap">
+      <h2 class="reveal">Meniu</h2>
+      <div class="ie reveal" data-ie></div>
+      <p class="menu-intro reveal" style="--d:.1s">Preparate românești, servite calde, la porție.</p>
+
+      <ul class="menu">
+        <li class="reveal-left" style="--d:0s">
+          <h3>Ciorbă</h3>
+          <p>Ciorbă proaspătă, servită cald</p>
+        </li>
+        <li class="reveal-left" style="--d:.08s">
+          <h3>Fel principal cu garnitură</h3>
+          <p>Preparat cald cu garnitură</p>
+        </li>
+        <li class="reveal-left" style="--d:.16s">
+          <h3>Salată la porție</h3>
+          <p>Salată proaspătă, inclusă la meniu</p>
+        </li>
+        <li class="reveal-left" style="--d:.24s">
+          <h3>Chiflă de casă</h3>
+          <p>Chiflă moale, proaspătă</p>
+        </li>
+        <li class="menu-featured reveal-left" style="--d:.32s">
+          <h3>Meniu complet al zilei</h3>
+          <p>Ciorbă, fel principal, salată, chiflă</p>
+        </li>
+      </ul>
+
+      <div class="menu-cta btn-row reveal" style="--d:.1s">
+        <a class="btn btn-primary" href="https://wa.me/40799873060?text=Bun%C4%83%20ziua%21%20Doresc%20mai%20multe%20detalii%20despre%20meniul%20zilei." target="_blank" rel="noopener">Solicită informații pe WhatsApp</a>
+        <a class="btn btn-line" href="tel:0799873060">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="livrare" class="band">
+    <div class="wrap band-inner">
+      <h2 class="reveal">Livrare prin Wolt</h2>
+      <div class="ie reveal" data-ie></div>
+      <p class="band-lead reveal" style="--d:.1s">Poți comanda rapid meniul nostru direct prin aplicația Wolt, cu livrare la birou sau acasă.</p>
+      <p class="band-note reveal" style="--d:.2s">Preferi să comanzi pe telefon? <a href="tel:0799873060">Sună-ne la 0799 873 060</a>.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-text">
+        <h2 class="reveal">Contact</h2>
+        <div class="ie reveal" data-ie></div>
+        <p class="lead reveal" style="--d:.1s">Sună, scrie pe WhatsApp sau deschide harta. Suntem în Ploiești.</p>
+        <div class="btn-row reveal" style="--d:.2s">
+          <a class="btn btn-primary" href="tel:0799873060">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40799873060?text=Bun%C4%83%20ziua%21%20Doresc%20mai%20multe%20detalii%20despre%20meniul%20zilei." target="_blank" rel="noopener">Solicită informații pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Cantina+Lukoil+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+        <p class="contact-phone reveal" style="--d:.28s">Telefon: <a href="tel:0799873060">0799 873 060</a></p>
+      </div>
+      <iframe class="map reveal" style="--d:.15s"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=26.0683273,44.9404294,26.076327300000003,44.944429400000004&amp;layer=mapnik&amp;marker=44.9424294,26.0723273"
+        title="Harta: Cantina Lukoil, Ploiești"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🍲</span>Cantina Lukoil</a>
+      <p class="foot-small" style="margin-top:.75rem">Ploiești</p>
+    </div>
+    <div class="foot-small">
+      <a class="foot-link" href="tel:0799873060">Telefon 0799 873 060</a>
+    </div>
+    <div class="foot-small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Mirko_Fabian, congerdesign</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var header = document.querySelector('.site-header');
+  var NS = 'http://www.w3.org/2000/svg';
+  var W = 352, H = 24, STEP = 11;
+
+  // Construiește motivul de ie: o ață subțire și cusături în cruce, cu un romb din loc în loc
+  function buildIe(el) {
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+
+    var thread = document.createElementNS(NS, 'path');
+    thread.setAttribute('d', 'M0 12 H' + W);
+    thread.setAttribute('class', 'thread');
+    thread.setAttribute('pathLength', '1');
+    thread.setAttribute('stroke-dasharray', '1');
+    thread.setAttribute('stroke-dashoffset', '1');
+    svg.appendChild(thread);
+
+    var items = [];
+    var i = 0;
+    for (var x = 5.5; x < W; x += STEP, i++) {
+      var g = document.createElementNS(NS, 'g');
+      g.setAttribute('class', 'st');
+      var p = document.createElementNS(NS, 'path');
+      if (i % 4 === 2) {
+        p.setAttribute('d', 'M' + x + ' 4 L' + (x + 5) + ' 12 L' + x + ' 20 L' + (x - 5) + ' 12 Z');
+      } else {
+        p.setAttribute('d', 'M' + (x - 3.5) + ' 8.5 L' + (x + 3.5) + ' 15.5 M' + (x + 3.5) + ' 8.5 L' + (x - 3.5) + ' 15.5');
+      }
+      g.appendChild(p);
+      svg.appendChild(g);
+      items.push(g);
+    }
+    el.appendChild(svg);
+    return { el: el, thread: thread, items: items, last: -1 };
+  }
+
+  var borders = Array.prototype.map.call(document.querySelectorAll('[data-ie]'), buildIe);
+
+  // Cusătura crește pe măsură ce derulezi
+  function stitch() {
+    var vh = window.innerHeight;
+    for (var b = 0; b < borders.length; b++) {
+      var bd = borders[b];
+      var p = 1;
+      if (!reduce) {
+        var top = bd.el.getBoundingClientRect().top;
+        p = (vh * 0.9 - top) / (vh * 0.45);
+        p = Math.min(1, Math.max(0, p));
+      }
+      bd.thread.setAttribute('stroke-dashoffset', String(1 - p));
+      var n = Math.round(p * bd.items.length);
+      if (n !== bd.last) {
+        for (var k = 0; k < bd.items.length; k++) {
+          bd.items[k].classList.toggle('on', k < n);
+        }
+        bd.last = n;
+      }
+    }
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+      stitch();
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  stitch();
+
+  // Dezvăluirea elementelor la derulare
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-img').forEach(function (el) {
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-img').forEach(function (el) {
+      el.classList.add('in');
+    });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
