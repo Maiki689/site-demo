@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gea Vet Solution, consultații veterinare în Ploiești</title>
+<meta name="description" content="Consultații veterinare pentru animale de companie, pe strada Bănești, vizavi de Mega Image, în Ploiești. Programează-te pe WhatsApp sau sună.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..600,0..100&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#FFF8F1;
+  --piersica:#F7D9C4;
+  --piersica-2:#FBEADF;
+  --salvie:#7FA88B;
+  --salvie-2:#DCE8DE;
+  --maro:#3A2E28;
+  --maro-2:#6B5A50;
+  --teal:#0f766e;
+  --teal-dk:#0b5f58;
+  --linie:rgba(58,46,40,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--creme);color:var(--maro);
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{
+  font-family:"Fraunces",Georgia,"Times New Roman",serif;
+  font-weight:500;line-height:1.08;letter-spacing:-0.02em;margin:0;
+  font-variation-settings:"SOFT" 100,"opsz" 144;
+}
+h1{font-size:clamp(2.7rem,9vw,5.4rem)}
+h2{font-size:clamp(2rem,4.6vw,3.25rem)}
+h3{font-size:1.35rem;font-weight:600;letter-spacing:-0.01em;line-height:1.2}
+.lead{font-size:clamp(1.15rem,2.2vw,1.35rem);line-height:1.45;color:var(--maro-2)}
+.muted{color:var(--maro-2)}
+.small{font-size:.92rem;letter-spacing:.02em}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--pad)}
+section{padding-block:clamp(4.5rem,10vw,8rem);scroll-margin-top:4.5rem}
+.head{max-width:36rem;margin-bottom:clamp(2.25rem,5vw,3.5rem)}
+.head > * + *{margin-top:1rem}
+
+/* butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.85rem 1.5rem;border-radius:999px;
+  font:600 1rem/1.2 "Figtree",system-ui,sans-serif;letter-spacing:.01em;
+  text-decoration:none;border:0;cursor:pointer;
+  transition:background-color .2s ease,box-shadow .25s ease,color .2s ease,transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-dk);box-shadow:0 10px 24px -14px rgba(15,118,110,.8)}
+.btn-ghost{background:transparent;color:var(--maro);box-shadow:inset 0 0 0 1.5px rgba(58,46,40,.28)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--maro);background:rgba(255,255,255,.35)}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+
+/* bara de navigare, translucidă */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,248,241,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  backdrop-filter:blur(18px) saturate(1.15);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 12px 30px -20px rgba(58,46,40,.45)}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  min-height:4.25rem;max-width:1180px;margin-inline:auto;padding-inline:var(--pad);
+}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:600;text-decoration:none;font-size:1rem;letter-spacing:.005em;color:var(--maro)}
+.brand-mark{
+  width:2.2rem;height:2.2rem;border-radius:50% 46% 54% 48%;
+  background:var(--piersica);display:grid;place-items:center;font-size:1.05rem;
+}
+.nav-links{display:none;gap:2rem;font-size:.95rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--maro);padding:.5rem 0;transition:color .2s ease}
+.nav-links a:hover{color:var(--teal)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* ecranul de deschidere */
+.hero{padding-top:calc(4.25rem + clamp(2rem,6vh,3.5rem));padding-bottom:clamp(3rem,8vw,6rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,3.5rem);align-items:center}
+.hero-text > * + *{margin-top:1.1rem}
+.hero h1{margin-top:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem !important}
+.hero-meta{color:var(--maro-2);font-size:.95rem;letter-spacing:.02em;margin-top:1.5rem !important}
+.hero-visual{position:relative;isolation:isolate;overflow:hidden;padding:4% 4% 8%}
+.photo{position:relative;overflow:hidden;aspect-ratio:5/4;border-radius:44% 56% 48% 52% / 40% 46% 54% 60%;background:var(--piersica-2)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.orb{position:absolute;border-radius:50%;z-index:-1;pointer-events:none;will-change:transform}
+.orb-a{width:74%;aspect-ratio:1;background:var(--piersica);top:-4%;right:-6%;animation:breathe 12s ease-in-out infinite}
+.orb-b{width:44%;aspect-ratio:1;background:var(--salvie);opacity:.5;bottom:-2%;left:-2%;animation:breathe 15s ease-in-out -4s infinite}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+@keyframes rise{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(.97) translate3d(0,10px,0)}to{opacity:1;transform:none}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+.intro{animation:rise .9s var(--ease) both;animation-delay:var(--d,0s)}
+.intro-photo{animation:settle 1.2s var(--ease) .12s both}
+@media (min-width:900px){
+  .hero{min-height:100svh;display:flex;align-items:center;padding-top:6rem}
+  .hero .wrap{width:100%}
+  .hero-grid{grid-template-columns:1fr 1fr;gap:5rem}
+  .photo{aspect-ratio:4/5}
+  .hero-visual{padding:6% 6% 10%}
+}
+
+/* despre */
+.despre{background:var(--creme)}
+.despre-grid{display:grid;gap:3.5rem}
+.despre-photo .photo{aspect-ratio:4/5;border-radius:50% 50% 28px 28px / 36% 36% 28px 28px}
+.despre-text .lead{margin-top:1.5rem}
+.perks{display:grid;gap:1.75rem;margin-top:2.75rem}
+.perk{display:grid;grid-template-columns:3.25rem 1fr;gap:1rem;align-items:start}
+.perk + .perk{padding-top:1.75rem;border-top:1px solid var(--linie)}
+.perk-ico{
+  width:3.25rem;height:3.25rem;border-radius:50% 44% 56% 48%;
+  background:var(--piersica);display:grid;place-items:center;font-size:1.35rem;
+}
+.perk:nth-child(2) .perk-ico{background:var(--salvie-2)}
+.perk:nth-child(3) .perk-ico{background:var(--piersica-2)}
+.perk h3{font-size:1.15rem;margin-bottom:.25rem}
+.perk p{color:var(--maro-2)}
+@media (min-width:900px){
+  .despre-grid{grid-template-columns:.9fr 1.1fr;gap:6rem;align-items:center}
+}
+
+/* servicii */
+.servicii{background:var(--piersica-2)}
+.svc-grid{display:grid;gap:3.5rem}
+.svc-photo .photo{aspect-ratio:4/3;border-radius:28px 80px 28px 80px}
+.svc-list{list-style:none;margin:0;padding:0}
+.svc-list li{padding:1.6rem 0;border-top:1px solid var(--linie)}
+.svc-list li:last-child{border-bottom:1px solid var(--linie)}
+.svc-list h3{display:flex;align-items:center;gap:.7rem;font-size:1.4rem}
+.svc-list h3::before{
+  content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--salvie);flex:none;
+}
+.svc-list p{color:var(--maro-2);margin-top:.35rem;padding-left:1.3rem}
+@media (min-width:900px){
+  .svc-grid{grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+  .svc-photo .photo{aspect-ratio:4/5}
+}
+
+/* bandă cu fotografie */
+.band{padding-block:clamp(1rem,3vw,2rem)}
+.band .photo{aspect-ratio:4/3;border-radius:2rem}
+@media (min-width:900px){.band .photo{aspect-ratio:21/8;border-radius:3rem}}
+
+/* programări */
+.programari{background:var(--piersica)}
+.prog-grid{display:grid;gap:3.5rem;align-items:center}
+.prog-photo .photo{aspect-ratio:4/3;border-radius:50% 46% 40% 60% / 46% 52% 48% 54%}
+.prog-text > * + *{margin-top:1.1rem}
+.prog-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem !important}
+@media (min-width:900px){
+  .prog-grid{grid-template-columns:1fr 1fr;gap:6rem}
+  .prog-photo .photo{aspect-ratio:4/5}
+}
+
+/* contact */
+.contact{background:var(--creme)}
+.contact-grid{display:grid;gap:3.5rem}
+.addr{font-size:1.15rem;line-height:1.45}
+.addr strong{font-weight:600}
+.phone-big{
+  display:inline-block;margin-top:1.25rem;font-family:"Fraunces",Georgia,serif;
+  font-size:clamp(1.9rem,4.5vw,2.6rem);letter-spacing:-0.01em;font-weight:500;
+  text-decoration:none;color:var(--maro);
+  font-variation-settings:"SOFT" 100,"opsz" 96;
+}
+.phone-big:hover{color:var(--teal)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.map{height:340px;border-radius:2rem;overflow:hidden;background:var(--piersica-2);box-shadow:inset 0 0 0 1px var(--linie)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:.85fr 1.15fr;gap:5rem;align-items:center}
+  .map{height:460px}
+}
+
+/* subsol */
+.footer{background:var(--maro);color:var(--creme);padding-block:clamp(3rem,7vw,4.5rem) 2rem}
+.foot-grid{display:grid;gap:2rem}
+.foot-brand{display:flex;align-items:center;gap:.6rem;font-family:"Fraunces",Georgia,serif;font-size:1.5rem;font-weight:500;letter-spacing:-0.01em;font-variation-settings:"SOFT" 100}
+.foot-brand .brand-mark{background:var(--salvie)}
+.foot-text{color:rgba(255,248,241,.78);margin-top:.75rem;max-width:26rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-size:1rem}
+.foot-links a{color:var(--piersica);text-decoration:none;padding:.5rem 0;min-height:44px;display:inline-flex;align-items:center}
+.foot-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.foot-bottom{
+  margin-top:2.75rem;padding-top:1.5rem;border-top:1px solid rgba(255,248,241,.16);
+  display:grid;gap:.5rem;color:rgba(255,248,241,.7);font-size:.9rem;letter-spacing:.02em;
+}
+@media (min-width:900px){
+  .foot-grid{grid-template-columns:1.2fr 1fr;align-items:start}
+  .foot-links{justify-content:flex-end}
+}
+
+/* tranziții la derulare, variate și discrete */
+.js [data-reveal]{
+  opacity:0;transform:translate3d(0,24px,0);
+  transition:opacity .55s var(--ease),transform .6s var(--ease);
+}
+.js [data-reveal="left"]{transform:translate3d(-24px,0,0)}
+.js [data-reveal="right"]{transform:translate3d(24px,0,0)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal="fade"]{transform:none;transition-duration:.6s}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js [data-reveal].d1{transition-delay:.08s}
+.js [data-reveal].d2{transition-delay:.16s}
+.js [data-reveal].d3{transition-delay:.24s}
+
+/* prefers-reduced-motion: doar estompări scurte, fără glisări și fără respirație */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .orb{animation:none}
+  .intro,.intro-photo{animation:fadeOnly .2s ease both;animation-delay:0s}
+  .js [data-reveal],
+  .js [data-reveal="left"],
+  .js [data-reveal="right"],
+  .js [data-reveal="scale"]{transform:none;transition:opacity .2s ease}
+  .btn:active{transform:none;opacity:.9}
+  .nav{transition:none}
+}
+
+/* prefers-reduced-transparency: fundaluri opace, fără blur */
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--creme);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* prefers-contrast: more, fundaluri pline și margini clare */
+@media (prefers-contrast: more){
+  :root{--linie:rgba(58,46,40,.55);--maro-2:#3A2E28}
+  .nav{background:var(--creme);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--maro)}
+  .btn-primary{background:#0a5a53}
+  .orb{display:none}
+  .lead,.muted,.perk p,.svc-list p{color:var(--maro)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="sus">
+  <div class="nav-in">
+    <a class="brand" href="#sus" aria-label="Gea Vet Solution, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🐾</span>
+      <span>Gea Vet Solution</span>
+    </a>
+    <nav class="nav-links" aria-label="Secțiuni">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#programari">Programări</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0758246524">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" class="intro" style="--d:.05s">Gea Vet Solution</h1>
+        <p class="lead intro" style="--d:.16s">Îngrijire atentă pentru companionul tău.</p>
+        <p class="intro" style="--d:.24s">Consultații veterinare pentru animale de companie.</p>
+        <div class="hero-actions intro" style="--d:.32s">
+          <a class="btn btn-primary" href="https://wa.me/40758246524?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20pentru%20consulta%C8%9Bie%20veterinar%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:0758246524">Sună acum</a>
+        </div>
+        <p class="hero-meta intro" style="--d:.4s">Strada Bănești, vizavi de Mega Image, Ploiești</p>
+      </div>
+
+      <div class="hero-visual intro-photo">
+        <span class="orb orb-a" aria-hidden="true"></span>
+        <span class="orb orb-b" aria-hidden="true"></span>
+        <div class="photo">
+          <img src="img/5.jpg" alt="Un câine maro, liniștit, primind grijă într-un cabinet veterinar" loading="eager" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="t-despre">
+    <div class="wrap despre-grid">
+      <div class="despre-photo" data-reveal="left">
+        <div class="photo">
+          <img src="img/1.jpg" alt="Examinarea urechii unui câine de către medic veterinar" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="despre-text">
+        <div data-reveal="up">
+          <h2 id="t-despre">Despre noi</h2>
+          <p class="lead">Suntem alături de tine și de prietenul tău necuvântător, cu consultații veterinare sigure și grijulii.</p>
+          <p class="muted" style="margin-top:1.25rem">Oferim sprijin și răspunsuri pentru orice problemă de sănătate a animalului tău. Venim cu profesionalism și atenție pe strada Bănești, vizavi de Mega Image.</p>
+        </div>
+
+        <div class="perks">
+          <div class="perk" data-reveal="up">
+            <span class="perk-ico" aria-hidden="true">👩‍⚕️</span>
+            <div>
+              <h3>Personal atent</h3>
+              <p>Susținere grijulie pentru animale</p>
+            </div>
+          </div>
+          <div class="perk" data-reveal="up" style="--d:0">
+            <span class="perk-ico" aria-hidden="true">📍</span>
+            <div>
+              <h3>Locație accesibilă</h3>
+              <p>Strada Bănești, vizavi de Mega Image</p>
+            </div>
+          </div>
+          <div class="perk" data-reveal="up">
+            <span class="perk-ico" aria-hidden="true">📅</span>
+            <div>
+              <h3>Programări</h3>
+              <p>Scrie pe WhatsApp sau sună pentru o programare</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicii" id="servicii" aria-labelledby="t-servicii">
+    <div class="wrap svc-grid">
+      <div class="svc-photo" data-reveal="scale">
+        <div class="photo">
+          <img src="img/2.jpg" alt="Măsurarea tensiunii unui câine în timpul unei consultații veterinare" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div>
+        <div class="head" data-reveal="up">
+          <h2 id="t-servicii">Servicii</h2>
+          <p class="muted">Consultații veterinare pentru animale de companie.</p>
+        </div>
+
+        <ul class="svc-list">
+          <li data-reveal="up">
+            <h3>Consultații veterinare</h3>
+            <p>Pentru animale de companie</p>
+          </li>
+          <li data-reveal="up">
+            <h3>Programări flexibile</h3>
+            <p>Consult la oră potrivită pentru tine</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="false">
+    <div class="wrap" data-reveal="fade">
+      <div class="photo">
+        <img src="img/3.jpg" alt="Un cățeluș într-un cabinet veterinar luminos" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+
+  <section class="programari" id="programari" aria-labelledby="t-prog">
+    <div class="wrap prog-grid">
+      <div class="prog-photo" data-reveal="left">
+        <div class="photo">
+          <img src="img/4.jpg" alt="Un cățeluș în timp ce i se ascultă inima cu stetoscopul" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <div class="prog-text">
+        <div data-reveal="up">
+          <h2 id="t-prog">Programări</h2>
+          <p class="lead">Te rugăm să faci o programare înainte de vizită.</p>
+          <p>Scrie-ne pe WhatsApp sau sună-ne ca să stabilești o programare.</p>
+        </div>
+        <div class="prog-actions" data-reveal="up" style="--d:0">
+          <a class="btn btn-primary" href="https://wa.me/40758246524?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20pentru%20consulta%C8%9Bie%20veterinar%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:0758246524">Sună acum</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div data-reveal="up">
+          <h2 id="t-contact">Contact</h2>
+          <p class="addr" style="margin-top:1.5rem">
+            <strong>Strada Bănești, vizavi de Mega Image</strong><br>
+            Ploiești
+          </p>
+          <p class="muted" style="margin-top:1rem">Pentru program și detalii, sună sau scrie-ne pe WhatsApp.</p>
+        </div>
+        <a class="phone-big" href="tel:0758246524" data-reveal="up" style="--d:0">0758 246 524</a>
+        <div class="contact-actions" data-reveal="up">
+          <a class="btn btn-primary" href="https://wa.me/40758246524?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20pentru%20consulta%C8%9Bie%20veterinar%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Gea+Vet+Solution+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal="right">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0020633,44.9469788,26.010063300000002,44.9509788&amp;layer=mapnik&amp;marker=44.9489788,26.0060633"
+          title="Harta: Gea Vet Solution, strada Bănești, Ploiești"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">
+          <span class="brand-mark" aria-hidden="true">🐾</span>
+          Gea Vet Solution
+        </p>
+        <p class="foot-text">Consultații veterinare pentru animale de companie, în Ploiești.</p>
+      </div>
+      <nav class="foot-links" aria-label="Link-uri rapide">
+        <a href="tel:0758246524">Sună acum</a>
+        <a href="https://wa.me/40758246524?text=Bun%C4%83%20ziua%21%20Doresc%20s%C4%83%20fac%20o%20programare%20pentru%20consulta%C8%9Bie%20veterinar%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Gea+Vet+Solution+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: mirkosajkov, jaminriverside, 12019</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var nav = document.querySelector('.nav');
+  var onScroll = function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
