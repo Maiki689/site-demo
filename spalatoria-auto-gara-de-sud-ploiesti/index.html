@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spălătoria Auto-Gara de Sud, Ploiești</title>
+<meta name="description" content="Spălătorie auto la Gara de Sud, Ploiești. Mașina ta, mereu curată.">
+<meta name="theme-color" content="#0B2545">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --navy: #0B2545;
+  --navy-deep: #071D37;
+  --navy-soft: #123459;
+  --footer: #041426;
+  --blue: #1E88E5;
+  --sky: #38bdf8;
+  --sky-hover: #5ccbf9;
+  --mist: #D6ECFF;
+  --white: #FFFFFF;
+  --text-muted: #A9C8E4;
+  --line: rgba(214, 236, 255, .14);
+  --radius: 20px;
+  --radius-lg: 28px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--white);
+  background: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, iframe { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: Outfit, Inter, sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0;
+}
+
+p { margin: 0; text-wrap: pretty; }
+
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: .6rem 1rem;
+  background: var(--sky);
+  color: var(--navy);
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrap { width: min(100% - 2.5rem, 72rem); margin-inline: auto; }
+@media (min-width: 900px) { .wrap { width: min(100% - 6rem, 72rem); } }
+
+section { padding-block: clamp(4.5rem, 11vw, 8rem); }
+.section-alt { background: var(--navy-deep); }
+
+.h2 {
+  font-size: clamp(2rem, 4.8vw, 3.25rem);
+  line-height: 1.08;
+  margin-bottom: clamp(2rem, 5vw, 3.25rem);
+  text-wrap: balance;
+}
+
+.h3 {
+  font-size: 1.1rem;
+  margin: 2rem 0 .75rem;
+}
+
+/* ---------- Navigare: sticlă ---------- */
+.nav {
+  position: fixed;
+  z-index: 50;
+  top: .75rem;
+  left: 0;
+  right: 0;
+  width: min(100% - 1.5rem, 72rem);
+  margin-inline: auto;
+  border-radius: 18px;
+  background: rgba(11, 37, 69, .55);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12);
+  transition: box-shadow .4s var(--ease), background-color .4s var(--ease);
+}
+.nav.is-scrolled {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 14px 32px -18px rgba(0, 0, 0, .6);
+  background: rgba(11, 37, 69, .72);
+}
+.nav-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  min-height: 3.5rem;
+  padding: .4rem .4rem .4rem 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  color: var(--white);
+  min-height: 44px;
+}
+.nav-links { display: none; gap: .25rem; }
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 .85rem;
+  border-radius: 12px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: .95rem;
+  text-decoration: none;
+  opacity: .88;
+  transition: opacity .25s var(--ease), background-color .25s var(--ease);
+}
+.nav-links a:hover { opacity: 1; background: rgba(214, 236, 255, .08); }
+@media (min-width: 760px) { .nav-links { display: flex; } }
+
+/* ---------- Butoane ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .75rem 1.4rem;
+  border-radius: 14px;
+  border: 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform .1s ease-out,
+    background-color .25s var(--ease),
+    box-shadow .35s var(--ease),
+    color .25s var(--ease);
+}
+.btn:active { transform: scale(.97); }
+.btn-sm { min-height: 44px; padding: .5rem 1.1rem; font-size: .95rem; }
+.btn-primary { background: var(--sky); color: var(--navy); }
+.btn-primary:hover {
+  background: var(--sky-hover);
+  box-shadow: 0 10px 26px -12px rgba(56, 189, 248, .7);
+}
+.btn-ghost { background: transparent; color: var(--white); box-shadow: inset 0 0 0 1px rgba(214, 236, 255, .35); }
+.btn-ghost:hover { background: rgba(214, 236, 255, .08); box-shadow: inset 0 0 0 1px rgba(214, 236, 255, .6); }
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--sky);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+}
+.link:hover { color: var(--sky-hover); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 7.5rem 0 4.5rem;
+}
+@media (min-width: 900px) { .hero { padding: 9rem 0 6rem; } }
+
+.hero-bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.bubble {
+  position: absolute;
+  bottom: -10%;
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, rgba(255, 255, 255, .35), rgba(56, 189, 248, .08) 55%, transparent 70%);
+  box-shadow: inset 0 0 0 1px rgba(214, 236, 255, .18);
+  opacity: 0;
+  animation: rise var(--d) linear var(--delay) infinite;
+  will-change: transform, opacity;
+}
+@keyframes rise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  15%  { opacity: .8; }
+  85%  { opacity: .5; }
+  100% { transform: translate3d(var(--sway), -120vh, 0); opacity: 0; }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2.75rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 4.5rem; }
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.75rem);
+  line-height: 1.05;
+  margin-bottom: 1.25rem;
+  text-wrap: balance;
+}
+.lead {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: -.01em;
+  color: var(--mist);
+  margin-bottom: .5rem;
+}
+.hero-desc {
+  color: var(--text-muted);
+  max-width: 40ch;
+  margin-bottom: 2rem;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+@media (min-width: 520px) {
+  .actions { flex-direction: row; flex-wrap: wrap; }
+}
+.hero-addr {
+  margin-top: 1.5rem;
+  font-size: .95rem;
+  color: var(--text-muted);
+  letter-spacing: .01em;
+}
+
+.hero-photo {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+@media (min-width: 900px) {
+  .hero-photo { aspect-ratio: 4 / 5; max-height: 78vh; }
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Picăturile care alunecă pe fotografie (elementul memorabil) */
+.drops {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.drop {
+  position: absolute;
+  top: -2%;
+  left: var(--x);
+  width: var(--w);
+  height: calc(var(--w) * 1.4);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(214, 236, 255, .35));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .3),
+    0 4px 12px -4px rgba(0, 0, 0, .35);
+  opacity: 0;
+  animation: slide var(--d) cubic-bezier(.45, 0, .55, 1) var(--delay) infinite;
+  will-change: transform, opacity;
+}
+.drop::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 2px;
+  height: calc(var(--w) * 3);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background: linear-gradient(to top, rgba(255, 255, 255, .45), transparent);
+}
+@keyframes slide {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  10%  { opacity: .9; }
+  60%  { opacity: .8; }
+  100% { transform: translate3d(var(--drift), var(--fall), 0); opacity: 0; }
+}
+
+/* Intrarea din hero: o singură secvență */
+.intro {
+  animation: intro .7s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 110ms + 120ms);
+}
+.intro-photo {
+  animation-name: introPhoto;
+  animation-duration: .9s;
+  animation-delay: calc(var(--i, 0) * 110ms + 160ms);
+}
+@keyframes intro {
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes introPhoto {
+  from { opacity: 0; transform: translate3d(0, 28px, 0) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Despre ---------- */
+.lead-2 {
+  font-family: Outfit, sans-serif;
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+  line-height: 1.25;
+  letter-spacing: -.015em;
+  max-width: 34ch;
+  text-wrap: balance;
+}
+.prose {
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin-top: 1.5rem;
+}
+
+.adv-grid {
+  list-style: none;
+  margin: clamp(3rem, 7vw, 4.5rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 2.5rem;
+}
+@media (min-width: 820px) {
+  .adv-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+}
+.adv {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.adv-emoji {
+  display: block;
+  font-size: 1.75rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.adv h3 {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+}
+.adv p { color: var(--text-muted); }
+
+/* ---------- Servicii ---------- */
+.services {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.service {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+.service::before {
+  content: "";
+  flex: none;
+  width: .6rem;
+  height: .8rem;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: var(--sky);
+}
+.service h3 {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  transition: transform .45s var(--ease), color .3s var(--ease);
+}
+.service:hover h3 {
+  transform: translate3d(8px, 0, 0);
+  color: var(--sky);
+}
+.services-foot {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.services-foot p { color: var(--text-muted); }
+
+/* ---------- Galerie ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(.75rem, 2vw, 1.25rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 760px) {
+  .gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+}
+.gallery figure {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy-soft);
+}
+.gallery figure:first-child {
+  grid-column: 1 / -1;
+}
+@media (min-width: 760px) {
+  .gallery figure:first-child { aspect-ratio: 16 / 7; }
+  .gallery figure:nth-child(n + 2) { grid-column: span 6; }
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .8s var(--ease);
+}
+.gallery figure:hover img { transform: scale(1.03); }
+
+/* ---------- Program și contact ---------- */
+.contact-grid {
+  display: grid;
+  gap: 3rem;
+}
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 4.5rem;
+    align-items: start;
+  }
+}
+.contact-info p { color: var(--text-muted); }
+.contact-info .big { color: var(--white); font-size: 1.15rem; }
+
+.program {
+  width: 100%;
+  border-collapse: collapse;
+}
+.program th,
+.program td {
+  padding: .95rem 0;
+  text-align: left;
+  font-weight: 400;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.program th { color: var(--text-muted); }
+.program td {
+  text-align: right;
+  color: var(--mist);
+  font-variant-numeric: tabular-nums;
+}
+.program tr:first-child th,
+.program tr:first-child td { border-top: 1px solid var(--line); }
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.map {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--navy-deep);
+}
+@media (min-width: 900px) { .map { height: 460px; } }
+.map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---------- Subsol ---------- */
+.footer {
+  background: var(--footer);
+  padding: 3.5rem 0 2.5rem;
+  color: var(--text-muted);
+  font-size: .95rem;
+}
+.footer-in {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: space-between;
+}
+@media (min-width: 760px) {
+  .footer-in { flex-direction: row; align-items: flex-start; }
+}
+.footer-brand {
+  font-family: Outfit, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: .5rem;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem 1.5rem;
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--white);
+  text-decoration: none;
+  opacity: .9;
+}
+.footer-links a:hover { opacity: 1; color: var(--sky); }
+.footer-credits {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(214, 236, 255, .1);
+  display: grid;
+  gap: .35rem;
+  font-size: .85rem;
+}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js .reveal {
+  opacity: 0;
+  transition:
+    opacity .55s var(--ease),
+    transform .55s var(--ease);
+  transition-delay: var(--delay, 0ms);
+}
+.js .reveal[data-reveal="up"]    { transform: translate3d(0, 24px, 0); }
+.js .reveal[data-reveal="left"]  { transform: translate3d(-28px, 0, 0); }
+.js .reveal[data-reveal="scale"] { transform: scale(.97); }
+.js .reveal[data-reveal="fade"]  { transform: none; transition-duration: .6s; }
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+/* ---------- Accesibilitate și preferințe ---------- */
+@media (prefers-reduced-transparency: reduce) {
+  .nav,
+  .nav.is-scrolled {
+    background: var(--navy);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .nav,
+  .nav.is-scrolled {
+    background: var(--navy);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .6);
+  }
+  .btn-ghost { box-shadow: inset 0 0 0 2px var(--white); }
+  .btn-primary { background: #7fd8ff; }
+  .adv, .service, .program th, .program td, .services, .footer-credits {
+    border-color: rgba(255, 255, 255, .45);
+  }
+  .adv, .service, .program th, .program td, .services { border-color: rgba(255, 255, 255, .45); }
+  .hero-desc, .prose, .adv p, .service, .footer, .hero-addr, .program th { color: #E4F2FF; }
+  .map { outline: 2px solid var(--white); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal {
+    transform: none !important;
+    transition: opacity .2s linear !important;
+    transition-delay: 0s !important;
+  }
+  .intro,
+  .intro-photo {
+    animation: fadein .2s linear both;
+    animation-delay: 0s;
+  }
+  .drops,
+  .hero-bubbles { display: none; }
+  .gallery figure:hover img,
+  .gallery img { transition: none; transform: none; }
+  .service h3,
+  .btn { transition-duration: .15s; }
+  .service:hover h3 { transform: none; }
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top"><span aria-hidden="true">🧼</span> Auto-Gara de Sud</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0761200200">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bubbles" aria-hidden="true"></div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <h1 id="hero-title" class="intro" style="--i:0">Spălătoria Auto-Gara de Sud</h1>
+        <p class="lead intro" style="--i:1">Mașina ta, mereu curată.</p>
+        <p class="hero-desc intro" style="--i:2">Spălătorie auto la Gara de Sud, Ploiești.</p>
+        <div class="actions intro" style="--i:3">
+          <a class="btn btn-primary" href="tel:0761200200">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40761200200?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile%20la%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+        </div>
+        <p class="hero-addr intro" style="--i:4">Strada Depoului 7, Ploiești</p>
+      </div>
+
+      <div class="hero-photo intro intro-photo" style="--i:2">
+        <img src="img/1.jpg" alt="Mașină roșie în curs de spălare, acoperită cu spumă" fetchpriority="high">
+        <div class="drops" aria-hidden="true">
+          <span class="drop" style="--x:14%; --w:9px;  --d:7.5s; --delay:-1s;   --fall:340px; --drift:6px;"></span>
+          <span class="drop" style="--x:42%; --w:13px; --d:9s;   --delay:-4.5s; --fall:380px; --drift:-10px;"></span>
+          <span class="drop" style="--x:67%; --w:8px;  --d:6.5s; --delay:-2.5s; --fall:300px; --drift:4px;"></span>
+          <span class="drop" style="--x:85%; --w:11px; --d:8.5s; --delay:-6s;   --fall:360px; --drift:-6px;"></span>
+          <span class="drop" style="--x:28%; --w:7px;  --d:7s;   --delay:-.5s;  --fall:320px; --drift:8px;"></span>
+          <span class="drop" style="--x:56%; --w:10px; --d:10s;  --delay:-7.5s; --fall:400px; --drift:-4px;"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" aria-labelledby="despre-title">
+    <div class="wrap">
+      <h2 class="h2" id="despre-title" data-reveal="up">Despre noi</h2>
+      <p class="lead-2" data-reveal="up">Spălătoria noastră oferă servicii esențiale pentru autovehicule, rapid și eficient.</p>
+      <p class="prose" data-reveal="up" style="--delay:80ms">Te așteptăm cu soluții curate pentru orice tip de mașină. Avem grijă ca fiecare client să plece mulțumit.</p>
+
+      <ul class="adv-grid">
+        <li class="adv" data-reveal="fade" style="--delay:0ms">
+          <span class="adv-emoji" aria-hidden="true">⏱️</span>
+          <h3>Rapid și eficient</h3>
+          <p>Economisești timp, fără programare.</p>
+        </li>
+        <li class="adv" data-reveal="fade" style="--delay:120ms">
+          <span class="adv-emoji" aria-hidden="true">🚗</span>
+          <h3>Acces facil</h3>
+          <p>Lângă Gara de Sud, aproape de tine.</p>
+        </li>
+        <li class="adv" data-reveal="fade" style="--delay:240ms">
+          <span class="adv-emoji" aria-hidden="true">💧</span>
+          <h3>Servicii esențiale</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+          <p>Tot ce ai nevoie pentru mașină.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-alt" id="servicii" aria-labelledby="servicii-title">
+    <div class="wrap">
+      <h2 class="h2" id="servicii-title" data-reveal="up">Servicii</h2>
+
+      <ul class="services">
+        <li class="service" data-reveal="left" style="--delay:0ms"><h3>Reparații auto</h3></li>
+        <li class="service" data-reveal="left" style="--delay:100ms"><h3>Diagnoză</h3></li>
+        <li class="service" data-reveal="left" style="--delay:200ms"><h3>Întreținere</h3></li>
+      </ul>
+
+      <div class="services-foot" data-reveal="up">
+        <p>Detaliile și prețurile le afli direct de la noi, pe WhatsApp sau la telefon.</p>
+        <a class="btn btn-primary" href="https://wa.me/40761200200?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile%20la%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 class="h2" id="galerie-title" data-reveal="up">Galerie</h2>
+
+      <ul class="gallery" style="padding:0">
+        <li data-reveal="scale" style="list-style:none">
+          <figure style="margin:0">
+            <img src="img/2.jpg" alt="Spumă activă pe caroseria unei mașini" loading="lazy" decoding="async">
+          </figure>
+        </li>
+        <li data-reveal="scale" style="--delay:80ms; list-style:none">
+          <figure style="margin:0">
+            <img src="img/3.jpg" alt="Mașină albastră spălată cu burete și apă" loading="lazy" decoding="async">
+          </figure>
+        </li>
+        <li data-reveal="scale" style="--delay:160ms; list-style:none">
+          <figure style="margin:0">
+            <img src="img/4.jpg" alt="Jet de apă și perii la spălarea unei mașini" loading="lazy" decoding="async">
+          </figure>
+        </li>
+        <li data-reveal="scale" style="--delay:240ms; list-style:none">
+          <figure style="margin:0">
+            <img src="img/5.jpg" alt="Curățarea unei jante și a anvelopelor" loading="lazy" decoding="async">
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-alt" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="contact-info" data-reveal="up">
+        <h2 class="h2" id="contact-title">Program și contact</h2>
+
+        <h3 class="h3" style="margin-top:0">Adresă</h3>
+        <p class="big">Strada Depoului 7, Ploiești</p>
+        <p>Lângă Gara de Sud.</p>
+
+        <h3 class="h3">Program</h3>
+        <table class="program">
+          <caption class="sr-only">Program de funcționare</caption>
+          <tbody>
+            <tr><th scope="row">Luni – vineri</th><td>08:30 – 19:30</td></tr>
+            <tr><th scope="row">Sâmbătă</th><td>08:00 – 19:30</td></tr>
+            <tr><th scope="row">Duminică</th><td>08:30 – 17:30</td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="h3">Telefon</h3>
+        <p class="big"><a class="link" href="tel:0761200200" style="font-size:1.15rem;color:var(--white);text-decoration:none">0761 200 200</a></p>
+
+        <div class="actions" style="margin-top:1.75rem">
+          <a class="btn btn-primary" href="tel:0761200200">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40761200200?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile%20la%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+        </div>
+        <div class="link-row">
+          <a class="link" href="mailto:zane_marian@yahoo.com">Trimite un email</a>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=SPALATORIA+AUTO-GARA+DE+SUD+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal="scale" style="--delay:120ms">
+        <iframe
+          title="Harta spălătoriei auto de la Gara de Sud, Ploiești"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0215382,44.9226502,26.0295382,44.926650200000005&amp;layer=mapnik&amp;marker=44.9246502,26.0255382"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-in">
+    <div>
+      <p class="footer-brand"><span aria-hidden="true">🧼</span> Spălătoria Auto-Gara de Sud</p>
+      <p>Mașina ta, mereu curată.</p>
+      <p>Strada Depoului 7, Ploiești</p>
+    </div>
+    <div class="footer-links">
+      <a href="tel:0761200200">Sună acum</a>
+      <a href="https://wa.me/40761200200?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile%20la%20sp%C4%83l%C4%83torie." target="_blank" rel="noopener">WhatsApp</a>
+      <a href="mailto:zane_marian@yahoo.com">Email</a>
+    </div>
+  </div>
+  <div class="wrap footer-credits">
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: JLMedia, paulbr75, sasint, webandi</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Bara de navigare capătă umbră când pagina se derulează sub ea */
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Dezvăluire la derulare */
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* Bule în hero (animația cerută pentru acest site) */
+  var box = document.querySelector('.hero-bubbles');
+  if (box && !reduce) {
+    for (var i = 0; i < 14; i++) {
+      var b = document.createElement('span');
+      var size = 6 + Math.random() * 22;
+      b.className = 'bubble';
+      b.style.setProperty('--s', size.toFixed(1) + 'px');
+      b.style.setProperty('--x', (Math.random() * 100).toFixed(1) + '%');
+      b.style.setProperty('--d', (7 + Math.random() * 7).toFixed(1) + 's');
+      b.style.setProperty('--delay', (-Math.random() * 12).toFixed(1) + 's');
+      b.style.setProperty('--sway', ((Math.random() * 2 - 1) * 24).toFixed(0) + 'px');
+      box.appendChild(b);
+    }
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
