@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ROOM 26, cafenea în Ploiești</title>
+<meta name="description" content="ROOM 26, un loc cald în Ploiești pentru iubitorii de cafea. Cafea, prăjituri și produse de patiserie pe Bulevardul Independenței 26.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --accent:#b45309;
+  --accent-dark:#963f05;
+  --muted:#6e5b4f;
+  --line:#E4D8CA;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-display:'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-text:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-text);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--espresso);
+  background:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+section[id]{scroll-margin-top:4.5rem}
+
+h1,h2,h3{
+  font-family:var(--font-display);
+  margin:0;
+  letter-spacing:-0.02em;
+  line-height:1.1;
+  font-weight:600;
+}
+h1{font-size:clamp(3.6rem,15vw,8rem);font-weight:700;line-height:1}
+h2{font-size:clamp(2.2rem,6vw,4rem);line-height:1.05}
+h3{font-size:clamp(1.25rem,2.4vw,1.5rem)}
+p{margin:0}
+
+.wrap{width:min(1160px,calc(100% - 2.5rem));margin-inline:auto}
+.section{padding-block:clamp(4.5rem,11vw,8.5rem)}
+.section-head{margin-bottom:clamp(2.5rem,6vw,4rem)}
+.lead{font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.35;letter-spacing:-0.01em;font-weight:500}
+.muted{color:var(--muted)}
+.text-link{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--espresso);font-weight:600;text-decoration:underline;
+  text-decoration-color:var(--accent);text-underline-offset:.3em;text-decoration-thickness:1.5px;
+  transition:color .2s var(--ease);
+}
+.text-link:hover{color:var(--accent)}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.8rem 1.35rem;border-radius:12px;
+  font:600 .95rem/1 var(--font-text);letter-spacing:.005em;
+  text-decoration:none;border:1px solid transparent;
+  transition:background-color .2s var(--ease),box-shadow .25s var(--ease),border-color .2s var(--ease),color .2s var(--ease);
+  -webkit-tap-highlight-color:transparent;cursor:pointer;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-dark);box-shadow:0 8px 20px -10px rgba(180,83,9,.7)}
+.btn-ghost{color:var(--espresso);border-color:rgba(59,42,32,.28);background:transparent}
+.btn-ghost:hover{border-color:var(--espresso);background:rgba(59,42,32,.04)}
+.btn-sm{padding:.6rem 1rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* Bara de navigare (sticlă) */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.7);
+  transition:box-shadow .3s var(--ease),background-color .3s var(--ease);
+}
+.nav.is-scrolled{
+  box-shadow:0 1px 0 rgba(59,42,32,.06),0 10px 30px -18px rgba(59,42,32,.35);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.logo{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font:700 1.1rem/1 var(--font-display);letter-spacing:-0.01em;
+  color:var(--espresso);text-decoration:none;min-height:44px;
+}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:2rem}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-weight:500;font-size:.95rem;text-decoration:none;color:var(--espresso);
+  transition:color .2s var(--ease);
+}
+.nav-links a:hover{color:var(--accent)}
+
+/* Primul ecran */
+.hero{
+  padding-top:7rem;
+  padding-bottom:clamp(3rem,8vw,6rem);
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;align-items:center;
+}
+.hero-inner{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center;width:100%}
+.hero .city{font-size:.95rem;color:var(--muted);margin:0 0 .75rem;letter-spacing:.02em}
+.hero h1{margin-bottom:1.25rem}
+.hero .lead{margin:0 0 .75rem;max-width:26ch}
+.hero .desc{color:var(--muted);margin:0 0 2rem;max-width:44ch}
+.cup-wrap{justify-self:center;width:min(78vw,360px)}
+.cup-svg{display:block;width:100%;height:auto;animation:fadeOnly .9s .2s var(--ease) both}
+
+/* Inima de latte art */
+.heart{
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  fill-opacity:0;
+  animation:heartDraw 1.6s cubic-bezier(.45,0,.2,1) .8s forwards,heartFill .8s ease 2.2s forwards;
+}
+@keyframes heartDraw{to{stroke-dashoffset:0}}
+@keyframes heartFill{to{fill-opacity:1}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+.intro{animation:rise .7s var(--ease) both;animation-delay:var(--d,0s)}
+
+/* Despre */
+.about{display:grid;gap:3rem;align-items:center}
+.about-text p + p{margin-top:1.1rem}
+.about-text p{max-width:52ch;color:var(--espresso)}
+.about-text .lead{max-width:30ch;margin-bottom:1.75rem}
+.photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:6px;background:var(--lapte)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Avantaje */
+.perks-section{background:var(--lapte)}
+.perks{display:grid;gap:2.75rem;list-style:none;margin:0;padding:0}
+.perk .emoji{display:block;font-size:2.1rem;line-height:1;margin-bottom:1.25rem}
+.perk h3{margin-bottom:.5rem}
+.perk p{color:var(--espresso);opacity:.82;max-width:30ch}
+
+/* Meniu */
+.menu-grid{display:grid;gap:3rem;align-items:start}
+.menu-intro .lead{margin-bottom:1rem;max-width:24ch}
+.menu-intro p.note{color:var(--muted);max-width:40ch;margin-bottom:2rem}
+.menu-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.menu-list li{
+  padding:1.6rem 0;border-bottom:1px solid var(--line);
+  font:600 clamp(1.45rem,3.6vw,2.3rem)/1.15 var(--font-display);
+  letter-spacing:-0.015em;
+}
+
+/* Galerie */
+.gallery{display:grid;gap:clamp(.75rem,2vw,1.25rem);grid-template-columns:1fr}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:6px;background:var(--lapte)}
+.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gallery .wide{aspect-ratio:4/3}
+.gallery .tall{aspect-ratio:4/5}
+.gallery-note{margin-top:1.25rem;color:var(--muted);font-size:.875rem;letter-spacing:.02em}
+
+/* Contact */
+.contact-grid{display:grid;gap:3rem;align-items:start}
+.contact-phone{
+  display:inline-block;margin:1.25rem 0 1.75rem;
+  font:600 clamp(1.8rem,5vw,2.75rem)/1.1 var(--font-display);
+  letter-spacing:-0.02em;color:var(--espresso);text-decoration:none;
+  transition:color .2s var(--ease);
+}
+.contact-phone:hover{color:var(--accent)}
+.contact-grid .text-link{margin-top:1.5rem}
+.map{
+  position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;
+  border-radius:6px;background:var(--lapte);
+}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+
+/* Subsol */
+.site-footer{background:var(--espresso);color:var(--lapte);padding-block:3.5rem 2.5rem}
+.footer-grid{display:grid;gap:2rem}
+.footer-name{font:700 1.5rem/1 var(--font-display);letter-spacing:-0.01em;color:#fff;margin-bottom:.75rem}
+.footer-small{font-size:.8125rem;letter-spacing:.02em;color:#C9BBAD;line-height:1.6}
+.footer-small + .footer-small{margin-top:.4rem}
+.footer-top{color:var(--lapte);font-weight:500;font-size:.875rem;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.footer-top:hover{color:#fff}
+
+/* Dezvăluire la derulare */
+.reveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.reveal.is-in{opacity:1;transform:none}
+.reveal-photo{opacity:0;transform:scale(1.03);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal-photo.is-in{opacity:1;transform:none}
+.reveal-fade{opacity:0;transition:opacity .5s ease;transition-delay:var(--d,0s)}
+.reveal-fade.is-in{opacity:1}
+
+/* Desktop */
+@media (min-width:640px){
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery .full{grid-column:1 / -1}
+  .gallery .full.wide{aspect-ratio:4/3}
+  .gallery .full.ultra{aspect-ratio:21/9}
+  .gallery .tall{aspect-ratio:4/5}
+}
+@media (min-width:760px){
+  .nav-links{display:flex}
+  .perks{grid-template-columns:repeat(3,1fr);gap:3rem}
+}
+@media (min-width:900px){
+  .hero-inner{grid-template-columns:1.05fr .95fr;gap:4rem}
+  .cup-wrap{justify-self:end;width:min(100%,460px)}
+  .about{grid-template-columns:1fr 1fr;gap:6rem}
+  .menu-grid{grid-template-columns:.8fr 1.2fr;gap:6rem}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:6rem}
+  .footer-grid{grid-template-columns:1.2fr 1fr;align-items:end}
+  .footer-grid > div:last-child{justify-self:end;text-align:right}
+  .gallery .full.wide{aspect-ratio:16/9}
+}
+
+/* Accesibilitate: mișcare redusă */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-delay:0s !important;
+    transition-duration:.2s !important;
+    scroll-behavior:auto !important;
+  }
+  .intro,.cup-svg{animation-name:fadeOnly !important}
+  .reveal,.reveal-photo{transform:none !important}
+  .heart{animation:none !important;stroke-dashoffset:0;fill-opacity:1}
+}
+
+/* Transparență redusă: fundaluri opace */
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* Contrast mai mare */
+@media (prefers-contrast: more){
+  .nav{background:#FFFFFF;border-top:0}
+  .btn-ghost{border:2px solid var(--espresso)}
+  .muted,.hero .city,.hero .desc,.perk p{color:var(--espresso);opacity:1}
+  .menu-list{border-top:2px solid var(--espresso)}
+  .menu-list li{border-bottom:2px solid var(--espresso)}
+  .footer-small{color:#FFFFFF}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top"><span aria-hidden="true">☕</span>ROOM 26</a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-accent btn-sm" href="tel:+40734819084">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Primul ecran -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="city intro" style="--d:.05s">Cafenea în Ploiești</p>
+        <h1 id="hero-title" class="intro" style="--d:.12s">ROOM 26</h1>
+        <p class="lead intro" style="--d:.22s">Un loc cald pentru iubitorii de cafea.</p>
+        <p class="desc intro" style="--d:.3s">Savurează o cafea bună și deserturi proaspete într-un ambient plăcut.</p>
+        <div class="actions intro" style="--d:.38s">
+          <a class="btn btn-accent" href="tel:+40734819084">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40734819084?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20dumneavoastr%C4%83." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="cup-wrap">
+        <svg class="cup-svg" viewBox="0 0 400 400" role="img" aria-labelledby="cup-title">
+          <title id="cup-title">Ceașcă de cafea văzută de sus, cu o inimă desenată în spumă</title>
+          <defs>
+            <radialGradient id="espresso-grad" cx="50%" cy="42%" r="62%">
+              <stop offset="0" stop-color="#55402f"/>
+              <stop offset="1" stop-color="#3B2A20"/>
+            </radialGradient>
+          </defs>
+          <!-- farfurioara -->
+          <circle cx="200" cy="200" r="186" fill="#EADFD3"/>
+          <!-- umbra ceștii -->
+          <ellipse cx="200" cy="212" rx="146" ry="146" fill="#3B2A20" opacity=".12"/>
+          <!-- toarta -->
+          <path d="M330 170 C382 166 386 232 330 230" fill="none" stroke="#D6C3B1" stroke-width="24" stroke-linecap="round"/>
+          <path d="M330 170 C382 166 386 232 330 230" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+          <!-- corpul ceștii văzut de sus -->
+          <circle cx="200" cy="200" r="140" fill="#FFFFFF" stroke="#D6C3B1" stroke-width="2"/>
+          <circle cx="200" cy="200" r="127" fill="none" stroke="#F3ECE5" stroke-width="4"/>
+          <!-- cafeaua -->
+          <circle cx="200" cy="200" r="118" fill="url(#espresso-grad)"/>
+          <!-- inima de latte art -->
+          <path class="heart" pathLength="1"
+            d="M200 254 C158 222 138 198 138 172 C138 152 153 139 171 139 C185 139 195 147 200 158 C205 147 215 139 229 139 C247 139 262 152 262 172 C262 198 242 222 200 254 Z"
+            fill="#EADFD3" stroke="#EADFD3" stroke-width="5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section" id="despre" aria-labelledby="despre-title">
+    <div class="wrap about">
+      <div class="about-text reveal">
+        <h2 id="despre-title" class="section-head" style="margin-bottom:1.75rem">Despre ROOM 26</h2>
+        <p class="lead">Un spațiu primitor, cu cafea bună și decor relaxant.</p>
+        <p>ROOM 26 este un spațiu primitor unde te poți bucura de cafea, prăjituri și produse de patiserie delicioase.</p>
+        <p>Te așteptăm cu băuturi calde și un decor relaxant. Este locul potrivit pentru o pauză dulce sau o întâlnire cu prietenii.</p>
+      </div>
+      <div class="photo reveal-photo">
+        <img src="img/5.jpg" alt="Cafea proaspăt turnată, cu boabe de cafea și spumă în jur">
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantaje -->
+  <section class="section perks-section" aria-labelledby="avantaje-title">
+    <div class="wrap">
+      <h2 id="avantaje-title" class="section-head reveal">Ce găsești aici</h2>
+      <ul class="perks">
+        <li class="perk reveal" style="transition-delay:0s">
+          <span class="emoji" aria-hidden="true">🥐</span>
+          <h3>Gustări proaspete</h3>
+          <p>Produse făcute cu grijă zilnic.</p>
+        </li>
+        <li class="perk reveal" style="transition-delay:.1s">
+          <span class="emoji" aria-hidden="true">🛋️</span>
+          <h3>Atmosferă relaxantă</h3>
+          <p>Spațiu cald și primitor.</p>
+        </li>
+        <li class="perk reveal" style="transition-delay:.2s">
+          <span class="emoji" aria-hidden="true">🎶</span>
+          <h3>Pauze plăcute</h3>
+          <p>Perfect pentru întâlniri relaxante.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="section" id="meniu" aria-labelledby="meniu-title">
+    <div class="wrap menu-grid">
+      <div class="menu-intro reveal">
+        <h2 id="meniu-title" style="margin-bottom:1.25rem">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="note">Prețurile și lista completă le aflați de la noi. Scrieți-ne și vă răspundem cât de repede putem.</p>
+        <a class="btn btn-accent" href="https://wa.me/40734819084?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20dumneavoastr%C4%83." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+      </div>
+      <ul class="menu-list">
+        <li class="reveal-fade" style="--d:0s">Cafea și băuturi</li>
+        <li class="reveal-fade" style="--d:.08s">Prăjituri</li>
+        <li class="reveal-fade" style="--d:.16s">Produse de patiserie</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section" id="galerie" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 id="galerie-title" class="section-head reveal">Galerie</h2>
+      <div class="gallery">
+        <figure class="full wide reveal-photo">
+          <img src="img/2.jpg" alt="Cafenea cu tejghea, mese și scaune, pregătită pentru clienți">
+        </figure>
+        <figure class="tall reveal-photo">
+          <img src="img/1.jpg" alt="Cafea, prăjituri și vafe servite pe masă">
+        </figure>
+        <figure class="tall reveal-photo">
+          <img src="img/3.jpg" alt="Vafe cu înghețată și prăjituri cu cremă pe o masă">
+        </figure>
+        <figure class="full ultra reveal-photo">
+          <img src="img/4.jpg" alt="Micul dejun cu vafe, miere, fructe de pădure și lapte">
+        </figure>
+      </div>
+      <p class="gallery-note">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <h2 id="contact-title">Vino pe la noi</h2>
+        <p class="lead" style="margin-top:1.5rem">Bulevardul Independenței 26, Ploiești</p>
+        <a class="contact-phone" href="tel:+40734819084">+40 734 819 084</a>
+        <div class="actions">
+          <a class="btn btn-accent" href="tel:+40734819084">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40734819084?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20dumneavoastr%C4%83." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        </div>
+        <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=ROOM+26+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+      <div class="map reveal-photo">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0224801,44.931795099999995,26.030480100000002,44.9357951&amp;layer=mapnik&amp;marker=44.9337951,26.0264801"
+          title="Harta: ROOM 26, Bulevardul Independenței 26, Ploiești"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name">ROOM 26</p>
+      <p class="footer-small">Bulevardul Independenței 26, Ploiești</p>
+      <p class="footer-small">Cafea, prăjituri și produse de patiserie.</p>
+    </div>
+    <div>
+      <p class="footer-small">Model de site (demo)</p>
+      <p class="footer-small">Fotografii ilustrative de pe Pixabay: congerdesign, StockSnap</p>
+      <a class="footer-top" href="#top">Înapoi sus</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('.reveal, .reveal-photo, .reveal-fade');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!('IntersectionObserver' in window) || reduce) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
