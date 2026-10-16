@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malizi Com | Supermarket în Ploiești</title>
+<meta name="description" content="Malizi Com, supermarket local pe Strada Mircea cel Bătrân din Ploiești. Produse diverse și cumpărături de zi cu zi.">
+<meta name="theme-color" content="#FFD447">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#FFD447;
+  --teal:#0f766e;
+  --teal-deep:#0b5c56;
+  --teal-tint:#e3f1ef;
+  --ink:#141414;
+  --paper:#ffffff;
+  --mist:#f3f8f7;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --head:"Outfit",system-ui,sans-serif;
+  --body:"Rubik",system-ui,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--body);
+  font-size:1rem;
+  line-height:1.5;
+  color:var(--ink);
+  background:var(--paper);
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+a{color:inherit}
+ul{margin:0;padding:0}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:1.25rem}
+.section{padding-block:clamp(4rem,10vw,7.5rem);scroll-margin-top:4rem}
+.section-title{font-size:clamp(2rem,5.2vw,3.4rem);font-weight:700;max-width:16ch}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.5rem;border-radius:999px;
+  font-family:var(--head);font-weight:700;font-size:1.05rem;letter-spacing:-.005em;
+  text-decoration:none;text-align:center;border:2px solid transparent;cursor:pointer;
+  transition:background-color .2s,color .2s,box-shadow .25s,transform .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-xl{min-height:56px;padding:1rem 1.8rem;font-size:1.12rem}
+.btn-small{min-height:44px;padding:.5rem 1.1rem;font-size:.95rem}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-deep);box-shadow:0 8px 20px -10px rgba(15,118,110,.85)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{box-shadow:0 8px 20px -10px rgba(0,0,0,.7)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:rgba(0,0,0,.06)}
+.btn-white{background:#fff;color:var(--teal)}
+.btn-white:hover{background:#eaf6f4}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-yellow:hover{background:#ffdc6e;box-shadow:0 8px 20px -10px rgba(0,0,0,.5)}
+
+/* ---------- Navigare (sticlă) ---------- */
+.site-nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s var(--ease);
+}
+.site-nav.is-scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--head);font-weight:800;font-size:1.2rem;letter-spacing:-.01em;
+  text-decoration:none;color:var(--ink);
+}
+.brand-mark{font-size:1.4rem;line-height:1}
+.nav-end{display:flex;align-items:center;gap:.5rem}
+.nav-menu{display:none}
+.nav-menu a{
+  display:flex;align-items:center;min-height:48px;padding:0 1rem;border-radius:999px;
+  font-family:var(--head);font-weight:600;font-size:1.05rem;text-decoration:none;
+  transition:background-color .2s;
+}
+.nav-menu a:hover{background:rgba(0,0,0,.06)}
+.nav-toggle{
+  width:44px;height:44px;border:0;border-radius:999px;background:transparent;cursor:pointer;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0;
+}
+.nav-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s var(--ease),opacity .2s}
+.site-nav.is-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.site-nav.is-open .nav-toggle span:nth-child(2){transform:translateY(-7px) rotate(-45deg)}
+.site-nav.is-open .nav-menu{
+  display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+  background:#fff;padding:.5rem 1.25rem 1.25rem;box-shadow:0 20px 30px -20px rgba(0,0,0,.35);
+}
+
+/* ---------- Primul ecran ---------- */
+.hero{
+  background:var(--yellow);
+  padding-top:calc(4rem + clamp(2.5rem,8vw,5rem));
+  padding-bottom:clamp(3.5rem,8vw,6rem);
+}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero-title{
+  font-size:clamp(3rem,14vw,6rem);
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:1.02;
+}
+.hero-slogan{
+  margin-top:.6rem;
+  font-family:var(--head);font-weight:600;
+  font-size:clamp(1.25rem,3.4vw,1.7rem);
+  letter-spacing:-.01em;line-height:1.2;
+}
+.hero-desc{margin-top:.75rem;max-width:34ch;font-size:1.05rem}
+.hero-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.hero-actions .btn{width:100%}
+.hero-addr{margin-top:1.5rem;font-size:.95rem;font-weight:500}
+
+/* Sacul de cumpărături: elementul memorabil */
+.bag{
+  appearance:none;position:relative;display:block;
+  margin:0 auto;padding:0;border:0;background:none;cursor:pointer;
+  width:min(68vw,320px);aspect-ratio:4/5;
+  -webkit-tap-highlight-color:transparent;
+}
+.bag:focus-visible{outline-offset:8px;border-radius:12px}
+.bag-handle{position:absolute;left:24%;top:0;width:52%;height:34%;overflow:visible}
+.bag-handle path{fill:none;stroke:var(--ink);stroke-width:9;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.bag-body{
+  position:absolute;left:0;right:0;top:30%;bottom:0;z-index:1;
+  background:var(--teal);
+  border-radius:12px 12px 28px 28px;
+  overflow:hidden;
+  transform-origin:50% 100%;
+  animation:bag-settle .55s cubic-bezier(.3,1.3,.5,1) 2.3s both;
+}
+.bag-label{
+  position:absolute;top:12%;left:50%;z-index:2;
+  transform:translateX(-50%);
+  padding:.45rem .9rem;border-radius:6px;
+  background:var(--yellow);color:var(--ink);
+  font-family:var(--head);font-weight:800;font-size:clamp(.95rem,3.4vw,1.2rem);
+  letter-spacing:-.01em;white-space:nowrap;
+}
+.bag-item{
+  position:absolute;left:var(--x);bottom:var(--b);
+  font-size:clamp(1.9rem,9vw,2.6rem);line-height:1;
+  animation:drop .8s cubic-bezier(.25,1.2,.4,1) var(--d) both;
+}
+@keyframes drop{
+  from{opacity:0;transform:translateY(-300px) rotate(var(--r))}
+  to{opacity:1;transform:translateY(0) rotate(0)}
+}
+@keyframes bag-settle{
+  0%{transform:scale(1,1)}
+  40%{transform:scale(1.035,.965)}
+  100%{transform:scale(1,1)}
+}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:1.5rem}
+.about-lead{font-family:var(--head);font-weight:600;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.3;letter-spacing:-.01em;max-width:34ch}
+.about-text{margin-top:1rem;max-width:60ch;font-size:1.05rem;line-height:1.6}
+.about-note{margin-top:1.25rem;font-size:1rem}
+.about-note a{font-weight:600;color:var(--teal);text-decoration-thickness:2px;text-underline-offset:3px}
+.perks{display:grid;gap:1rem;margin-top:3.5rem}
+.perk{
+  padding:2rem 1.75rem;min-height:14rem;
+  display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+}
+.perk-emoji{font-size:2.4rem;line-height:1}
+.perk h3{font-size:1.5rem;font-weight:700;margin-bottom:.4rem}
+.perk p{font-size:1rem;max-width:26ch}
+.perk-1{background:var(--teal);color:#fff}
+.perk-2{background:var(--yellow);color:var(--ink)}
+.perk-3{background:var(--teal-tint);color:var(--ink)}
+
+/* ---------- Produse ---------- */
+.products{background:var(--mist)}
+.products-grid{display:grid;gap:2.5rem;align-items:stretch}
+.products-photo{margin:0;overflow:hidden;min-height:340px;aspect-ratio:4/3}
+.products-photo img{width:100%;height:100%;object-fit:cover}
+.service-list{list-style:none;display:grid;gap:.75rem;margin-top:2.5rem}
+.service{display:flex;gap:1.1rem;align-items:flex-start;padding:1.4rem 1.5rem;background:#fff}
+.service-emoji{font-size:2rem;line-height:1;flex:none}
+.service h3{font-size:1.3rem;font-weight:700;margin-bottom:.35rem}
+.service p{max-width:44ch}
+.service-2{background:var(--yellow)}
+.service-3{background:var(--teal);color:#fff}
+
+/* ---------- Galerie ---------- */
+.gallery-head{display:grid;gap:1rem;margin-bottom:2.5rem}
+.gallery-head p{max-width:50ch;color:#3d4745}
+.gallery-grid{display:grid;gap:.75rem}
+.g{margin:0;overflow:hidden;aspect-ratio:4/3;background:var(--mist)}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.g:hover img{transform:scale(1.03)}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--teal);color:#fff}
+.contact-grid{display:grid;gap:3rem;align-items:center}
+.contact .section-title{color:#fff}
+.contact-info p{max-width:44ch;margin-top:1rem;font-size:1.05rem}
+.contact-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.contact-actions .btn{width:100%}
+.contact .btn:focus-visible{outline-color:#fff}
+.contact-phone{margin-top:1.5rem;font-size:1.1rem}
+.contact-phone a{font-family:var(--head);font-weight:700;font-size:1.4rem;text-decoration:none;letter-spacing:-.01em}
+.contact-phone a:hover{text-decoration:underline;text-underline-offset:4px}
+.map-wrap{background:#fff;padding:.5rem}
+.map-wrap iframe{display:block;width:100%;height:340px;border:0}
+.map-link{
+  display:inline-flex;align-items:center;min-height:44px;margin-top:.25rem;padding:0 .5rem;
+  font-weight:600;color:var(--teal);text-decoration-thickness:2px;text-underline-offset:4px;
+}
+.map-link:hover{text-decoration:underline}
+
+/* ---------- Subsol ---------- */
+.footer{background:var(--ink);color:#e9ecea;padding-block:3.5rem 2.5rem}
+.footer-inner{display:grid;gap:1.5rem}
+.footer .brand{color:#fff}
+.footer-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.footer-links a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;font-weight:500}
+.footer-links a:hover{color:var(--yellow)}
+.footer-credit{font-size:.85rem;letter-spacing:.02em;color:#b9c2c0;max-width:70ch}
+
+/* ---------- Mișcare la derulare ---------- */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .5s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-s{opacity:0;transform:scale(.97);transition:opacity .45s var(--ease),transform .5s var(--ease);transition-delay:var(--d,0s)}
+.js .is-in{opacity:1;transform:none}
+
+/* ---------- Pe telefon și tabletă ---------- */
+@media (min-width:520px){
+  .hero-actions{flex-direction:row;flex-wrap:wrap}
+  .hero-actions .btn{width:auto}
+  .contact-actions{flex-direction:row;flex-wrap:wrap}
+  .contact-actions .btn{width:auto}
+}
+@media (min-width:760px){
+  .perks{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .gallery-head{grid-template-columns:1fr 1fr;align-items:end}
+  .footer-inner{grid-template-columns:1fr 1fr;align-items:start}
+  .footer-links{grid-column:1/-1}
+}
+@media (min-width:860px){
+  .nav-toggle{display:none}
+  .nav-menu{display:flex;gap:.25rem}
+  .site-nav.is-open .nav-menu{position:static;background:none;padding:0;box-shadow:none;flex-direction:row}
+  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:3rem}
+  .bag{width:min(100%,380px);margin:0 0 0 auto}
+  .about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:start}
+  .products-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:4rem}
+  .products-photo{min-height:100%;aspect-ratio:auto}
+  .gallery-grid{grid-template-columns:1.6fr 1fr;grid-template-rows:300px 300px}
+  .g-big{grid-row:1/3}
+  .g{aspect-ratio:auto}
+  .contact-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4.5rem}
+  .map-wrap iframe{height:400px}
+}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .site-nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--ink)}
+  .btn{border-color:currentColor}
+  .perk,.service{outline:2px solid var(--ink);outline-offset:-2px}
+  .contact .perk{outline:none}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .bag-body{animation:none}
+  .bag-item{animation:fade .2s ease both;animation-delay:calc(var(--d) * .3)}
+  .js .reveal,.js .reveal-l,.js .reveal-s{transform:none!important;transition:opacity .2s ease}
+  .g:hover img{transform:none}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🛒</span>Malizi Com</a>
+    <nav class="nav-menu" id="menu" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-end">
+      <a class="btn btn-small btn-primary" href="tel:0721224952">Sună acum</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-title">Malizi Com</h1>
+        <p class="hero-slogan">Cumpărături de zi cu zi</p>
+        <p class="hero-desc">Un supermarket local pentru cumpărături de zi cu zi.</p>
+        <div class="hero-actions">
+          <a class="btn btn-ink btn-xl" href="tel:0721224952">Sună acum</a>
+          <a class="btn btn-line btn-xl" href="https://wa.me/40721224952?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20magazin." target="_blank" rel="noopener noreferrer">Cere informații pe WhatsApp</a>
+        </div>
+        <p class="hero-addr">Strada Mircea cel Bătrân, Ploiești</p>
+      </div>
+
+      <button class="bag" id="bag" type="button" aria-label="Umple din nou punga cu produse">
+        <svg class="bag-handle" viewBox="0 0 200 120" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <path d="M52 120 V56 C52 20 74 6 100 6 C126 6 148 20 148 56 V120"/>
+        </svg>
+        <span class="bag-body" aria-hidden="true">
+          <span class="bag-label">Malizi Com</span>
+          <span class="bag-item" style="--x:5%;--b:3%;--d:.15s;--r:-35deg">🍎</span>
+          <span class="bag-item" style="--x:28%;--b:3%;--d:.37s;--r:25deg">🥖</span>
+          <span class="bag-item" style="--x:51%;--b:3%;--d:.59s;--r:-20deg">🥛</span>
+          <span class="bag-item" style="--x:74%;--b:3%;--d:.81s;--r:30deg">🥕</span>
+          <span class="bag-item" style="--x:16%;--b:18%;--d:1.03s;--r:-15deg">🍌</span>
+          <span class="bag-item" style="--x:39%;--b:18%;--d:1.25s;--r:20deg">🧀</span>
+          <span class="bag-item" style="--x:62%;--b:18%;--d:1.47s;--r:-25deg">🥚</span>
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <section class="section about" id="despre">
+    <div class="wrap about-grid">
+      <h2 class="section-title reveal">Suntem aproape de tine</h2>
+      <div class="reveal" style="--d:.1s">
+        <p class="about-lead">Suntem aproape de tine, cu produse diverse.</p>
+        <p class="about-text">Descoperă un loc prietenos pentru cumpărături rapide. Te așteptăm oricând ai nevoie.</p>
+        <p class="about-note">Pentru întrebări, sună-ne la <a href="tel:0721224952">0721224952</a>.</p>
+      </div>
+    </div>
+
+    <div class="wrap perks">
+      <article class="perk perk-1 reveal" style="--d:0s">
+        <span class="perk-emoji" aria-hidden="true">🏠</span>
+        <div>
+          <h3>Aproape de tine</h3>
+          <p>Pe Strada Mircea cel Bătrân.</p>
+        </div>
+      </article>
+      <article class="perk perk-2 reveal" style="--d:.12s">
+        <span class="perk-emoji" aria-hidden="true">🤝</span>
+        <div>
+          <h3>Atmosferă prietenoasă</h3>
+          <p>Un loc prietenos pentru cumpărături rapide.</p>
+        </div>
+      </article>
+      <article class="perk perk-3 reveal" style="--d:.24s">
+        <span class="perk-emoji" aria-hidden="true">🛍️</span>
+        <div>
+          <h3>Diversitate</h3>
+          <p>Produse diverse, pentru zi cu zi.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section products" id="produse">
+    <div class="wrap products-grid">
+      <figure class="products-photo reveal-s">
+        <img src="img/2.jpg" alt="Banane galbene expuse în supermarket, lângă alte fructe">
+      </figure>
+      <div>
+        <h2 class="section-title reveal">Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <ul class="service-list">
+          <li class="service service-1 reveal-l" style="--d:0s">
+            <span class="service-emoji" aria-hidden="true">🥦</span>
+            <div>
+              <h3>Alimente și de toate</h3>
+              <p>Produse diverse, pentru cumpărăturile de zi cu zi.</p>
+            </div>
+          </li>
+          <li class="service service-2 reveal-l" style="--d:.1s">
+            <span class="service-emoji" aria-hidden="true">🆕</span>
+            <div>
+              <h3>Noutăți</h3>
+              <p>Produse noi care ajung pe raft. Treci pe la noi și vezi ce s-a adăugat.</p>
+            </div>
+          </li>
+          <li class="service service-3 reveal-l" style="--d:.2s">
+            <span class="service-emoji" aria-hidden="true">🙋</span>
+            <div>
+              <h3>Consiliere la alegere</h3>
+              <p>Întrebi, noi îți spunem. Te ajutăm să alegi ce ți se potrivește.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="galerie">
+    <div class="wrap">
+      <div class="gallery-head reveal">
+        <h2 class="section-title">În magazin</h2>
+        <p>Imagini ilustrative, ca să vezi cum arată un supermarket de cartier.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g g-big reveal-s">
+          <img src="img/1.jpg" alt="Raft cu legume și fructe proaspete" loading="lazy">
+        </figure>
+        <figure class="g reveal-s" style="--d:.1s">
+          <img src="img/3.jpg" alt="Rafturi cu sticle și doze de băuturi răcoritoare" loading="lazy">
+        </figure>
+        <figure class="g reveal-s" style="--d:.2s">
+          <img src="img/5.jpg" alt="Clienți cu coș de cumpărături într-un supermarket" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info reveal-l">
+        <h2 class="section-title">Ne găsești pe Strada Mircea cel Bătrân</h2>
+        <p>Ploiești. Sună sau scrie-ne dacă ai o întrebare înainte să vii.</p>
+        <div class="contact-actions">
+          <a class="btn btn-white btn-xl" href="tel:0721224952">Sună acum</a>
+          <a class="btn btn-yellow btn-xl" href="https://wa.me/40721224952?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20magazin." target="_blank" rel="noopener noreferrer">Cere informații pe WhatsApp</a>
+        </div>
+        <p class="contact-phone">Telefon: <a href="tel:0721224952">0721 224 952</a></p>
+        
+      </div>
+
+      <div class="map-wrap reveal-s" style="--d:.1s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0496372,44.9299343,26.057637200000002,44.933934300000004&layer=mapnik&marker=44.9319343,26.0536372"
+          title="Harta: Malizi Com, Strada Mircea cel Bătrân, Ploiești"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Malizi+Com+Ploie%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="brand"><span class="brand-mark" aria-hidden="true">🛒</span>Malizi Com</p>
+    <p>Cumpărături de zi cu zi, în Ploiești.</p>
+    <nav class="footer-links" aria-label="Subsol">
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:0721224952">Sună acum</a>
+    </nav>
+    <p class="footer-credit">Model de site (demo)</p>
+    <p class="footer-credit">Fotografii ilustrative de pe Pixabay: ElasticComputeFarm, StockSnap, igorovsyannykov, Alexas_Fotos, Sunriseforever</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  /* Meniu pe telefon */
+  var nav = document.getElementById('nav');
+  var toggle = nav.querySelector('.nav-toggle');
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  });
+  nav.querySelectorAll('.nav-menu a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Deschide meniul');
+    });
+  });
+
+  /* Umbră fină la navigare doar când pagina se derulează */
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Dezvăluiri la derulare */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* Apăsarea pe pungă o umple din nou */
+  var bag = document.getElementById('bag');
+  bag.addEventListener('click', function () {
+    var parts = bag.querySelectorAll('.bag-item, .bag-body');
+    parts.forEach(function (el) { el.style.animation = 'none'; });
+    void bag.offsetWidth;
+    parts.forEach(function (el) { el.style.animation = ''; });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
