@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7MinCarwash 2 Ploiești | Reparații, diagnoză și întreținere auto</title>
+<meta name="description" content="7MinCarwash 2 din Ploiești, Strada Tribunei 6. Servicii rapide pentru autoturismul tău: reparații, diagnoză și întreținere.">
+<meta name="theme-color" content="#1E2124">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graphite:#1E2124;
+  --graphite-2:#262A2E;
+  --graphite-3:#30353B;
+  --deep:#17191C;
+  --steel:#9AA3AB;
+  --white:#F5F6F7;
+  --accent:#38bdf8;
+  --accent-soft:#7dd3fc;
+  --accent-ink:#0B1A21;
+  --line:rgba(154,163,171,.22);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --cut:14px;
+  --cond:"Barlow Condensed",system-ui,sans-serif;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--graphite);color:var(--white);
+  font-family:var(--sans);font-size:1rem;line-height:1.5;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+section{scroll-margin-top:4.5rem}
+
+.wrap{width:min(100% - 2.5rem,1180px);margin-inline:auto}
+.sec{padding:clamp(4.5rem,11vw,8rem) 0;position:relative}
+.sec-alt{background:var(--graphite-2)}
+.sec-head{margin-bottom:clamp(2.5rem,6vw,4rem)}
+
+.title{
+  font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;letter-spacing:-.02em;margin:0 0 1.25rem;
+}
+.lead{color:var(--steel);font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:38ch}
+.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;color:var(--steel)}
+.cut{clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.8rem 1.4rem;
+  font-family:var(--cond);font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.02em;
+  text-decoration:none;border:0;cursor:pointer;background:transparent;
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  transition:background-color .2s var(--ease),color .2s var(--ease),box-shadow .2s var(--ease),transform .1s linear;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-soft);box-shadow:0 8px 22px -10px rgba(56,189,248,.7)}
+.btn-ghost{color:var(--white);box-shadow:inset 0 0 0 1.5px rgba(154,163,171,.55)}
+.btn-ghost:hover{color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.btn-sm{min-height:44px;padding:.5rem 1rem;font-size:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.actions .btn{flex:1 1 14rem}
+
+/* Antet cu sticlă */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(30,33,36,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(245,246,247,.10);
+  transition:box-shadow .3s var(--ease);
+}
+.site-header.scrolled{box-shadow:0 12px 32px -16px rgba(0,0,0,.75)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.brand{
+  display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-family:var(--cond);font-weight:800;font-size:1.2rem;text-transform:uppercase;letter-spacing:-.01em;
+}
+.brand-mark{
+  display:grid;place-items:center;width:36px;height:36px;font-size:1.1rem;line-height:1;
+  background:var(--accent);
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+}
+.nav{display:none}
+.nav a{display:block;padding:.85rem 0;text-decoration:none;font-weight:600;color:var(--white);font-size:1rem}
+.nav a:hover{color:var(--accent)}
+.nav.open{
+  display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+  padding:0 1.25rem 1rem;background:var(--graphite-2);box-shadow:0 24px 40px -24px #000;
+}
+.bar-actions{display:flex;align-items:center;gap:.5rem}
+.bar-actions .s{display:none}
+.menu-btn{
+  display:grid;gap:5px;place-content:center;width:44px;height:44px;padding:0;
+  background:transparent;border:0;cursor:pointer;
+}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--white);transition:transform .25s var(--ease)}
+.menu-btn[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+
+@media (max-width:419px){
+  .bar-actions .l{display:none}
+  .bar-actions .s{display:inline}
+}
+@media (min-width:860px){
+  .menu-btn{display:none}
+  .nav{display:flex;gap:2.25rem;position:static;background:none;box-shadow:none;padding:0}
+  .nav a{padding:0;font-size:.95rem}
+}
+
+/* Primul ecran */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;padding:6.5rem 0 3.5rem;overflow:hidden;
+}
+.guide-v{position:absolute;top:0;bottom:0;width:1px;background:rgba(154,163,171,.10);pointer-events:none}
+.guide-v.l{left:max(1.25rem,calc((100% - 1180px) / 2))}
+.guide-v.r{right:max(1.25rem,calc((100% - 1180px) / 2))}
+.hero-grid{display:grid;gap:2.5rem;align-items:center;position:relative;z-index:1;width:100%}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+}
+.hero-title{
+  font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  font-size:clamp(2.6rem,8vw,5.2rem);line-height:1;letter-spacing:-.02em;margin:0;
+}
+.slogan{
+  font-family:var(--cond);font-weight:600;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.15;
+  margin:1rem 0 .5rem;
+}
+.hero .lead{margin-bottom:2rem}
+.hero .addr{margin-top:1.5rem}
+
+/* Vitezometru */
+.gauge-wrap{--size:min(84vw,440px);position:relative;width:var(--size);aspect-ratio:1;justify-self:center}
+@media (min-width:900px){
+  .gauge-wrap{--size:min(40vw,480px);justify-self:end}
+}
+.bubbles{position:absolute;inset:0;overflow:hidden;border-radius:50%;pointer-events:none;z-index:0}
+.bub{
+  position:absolute;bottom:-14px;border-radius:50%;
+  border:1px solid rgba(56,189,248,.5);
+  background:radial-gradient(circle at 32% 30%,rgba(245,246,247,.35),rgba(56,189,248,.05) 60%,transparent 72%);
+  opacity:0;animation:bub linear infinite;
+}
+@keyframes bub{
+  0%{transform:translate3d(0,0,0);opacity:0}
+  12%{opacity:.85}
+  80%{opacity:.45}
+  100%{transform:translate3d(12px,calc(var(--size) * -1),0);opacity:0}
+}
+.gauge{position:relative;z-index:1;width:100%;height:100%;display:block;overflow:visible}
+.face{fill:rgba(30,33,36,.78)}
+.track{fill:none;stroke:#3A4046;stroke-width:9}
+.arc-hot{fill:none;stroke:var(--accent);stroke-width:9}
+.tick{stroke:var(--steel);stroke-width:2}
+.tick.major{stroke:var(--white);stroke-width:3.5}
+.scale{font-family:var(--cond);font-weight:700;font-size:15px;fill:var(--steel)}
+.gauge-name{font-family:var(--cond);font-weight:800;font-size:56px;fill:var(--white)}
+.gauge-sub{font-family:var(--mono);font-size:12px;letter-spacing:.12em;fill:var(--steel)}
+.needle{transform-box:view-box;transform-origin:200px 200px;transform:rotate(-135deg);transition:transform 1.9s cubic-bezier(.22,.9,.25,1.04) .25s}
+.needle line{stroke:var(--white);stroke-width:4;stroke-linecap:round}
+.gauge.run .needle{transform:rotate(75deg)}
+.hub{fill:var(--accent)}
+
+/* Despre */
+.split{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr;gap:5rem}}
+.body{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--white);max-width:44ch}
+.body + .body{margin-top:1rem}
+.fiche{margin:2.5rem 0 0;border-top:1px solid var(--line)}
+.fiche div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.95rem 0;border-bottom:1px solid var(--line)}
+.fiche dt{font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;color:var(--steel)}
+.fiche dd{margin:0;font-weight:600;text-align:right}
+.fiche a{text-decoration:none}
+.fiche a:hover{color:var(--accent)}
+.photo{margin:0;background:var(--graphite-3)}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (max-width:899px){.photo img{aspect-ratio:4/3}}
+
+/* Servicii */
+.svc-grid{list-style:none;margin:0 0 3rem;padding:0;display:grid;gap:1rem}
+@media (min-width:800px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.panel{position:relative;background:var(--graphite);padding:2.25rem 1.75rem 2.5rem;height:100%}
+.panel::before{
+  content:"";position:absolute;left:0;top:0;width:56px;height:3px;background:var(--accent);
+  transition:width .5s var(--ease);
+}
+.panel:hover::before{width:100%}
+.panel-ico{width:44px;height:44px;color:var(--accent);margin-bottom:1.5rem}
+.panel h3{
+  font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:1.7rem;line-height:1.1;margin:0 0 .75rem;
+}
+.panel p{color:var(--steel)}
+
+/* Avantaje */
+.adv-grid{list-style:none;margin:0;padding:0;display:grid}
+@media (min-width:800px){.adv-grid{grid-template-columns:repeat(3,1fr)}}
+.adv{padding:2rem 0 2.25rem;border-top:1px solid var(--line)}
+@media (min-width:800px){
+  .adv{padding:2.25rem 2rem 0 0}
+  .adv + .adv{padding-left:2rem;border-left:1px solid var(--line)}
+}
+.adv-ico{display:block;font-size:2rem;line-height:1;margin-bottom:1.25rem}
+.adv h3{
+  font-family:var(--cond);font-weight:700;text-transform:uppercase;font-size:1.6rem;line-height:1.1;margin:0 0 .4rem;
+}
+.adv p{color:var(--steel)}
+
+/* Galerie */
+.gal{display:grid;gap:1rem}
+@media (min-width:800px){.gal{grid-template-columns:1.6fr 1fr;align-items:end}}
+.gal figure{margin:0;background:var(--graphite-3)}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:800px){
+  .gal-a img{aspect-ratio:16/11}
+  .gal-b img{aspect-ratio:4/5}
+}
+.gal figcaption{padding:.75rem 0 0}
+
+/* Contact */
+.contact-grid{display:grid;gap:3rem;align-items:start}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem}}
+.cdata{margin:0 0 2.5rem;display:grid;gap:1.6rem}
+.cdata dt{font-family:var(--mono);font-size:.8rem;letter-spacing:.04em;color:var(--steel);margin-bottom:.3rem}
+.cdata dd{margin:0;font-size:1.1rem}
+.big{
+  font-family:var(--cond);font-weight:800;font-size:clamp(2.2rem,6vw,3rem);line-height:1.05;
+  letter-spacing:-.01em;color:var(--accent);text-decoration:none;
+}
+.big:hover{color:var(--accent-soft)}
+.map{position:relative;background:var(--graphite-3)}
+.map iframe{
+  display:block;width:100%;height:clamp(300px,42vw,420px);border:0;
+  filter:invert(.9) hue-rotate(180deg) grayscale(.35);
+}
+
+/* Subsol */
+.foot{background:var(--deep);padding:3rem 0 2.5rem}
+.foot-in{display:grid;gap:1.5rem;align-items:end}
+@media (min-width:800px){.foot-in{grid-template-columns:1.2fr 1fr auto}}
+.foot .brand{font-size:1.1rem}
+.foot .mono{margin-top:.35rem}
+.credit{font-size:.9rem;color:var(--steel)}
+.foot a.up{font-weight:600;text-decoration:none;color:var(--white)}
+.foot a.up:hover{color:var(--accent)}
+
+/* Mișcare la derulare */
+.rv{
+  opacity:0;transform:translate3d(0,24px,0);
+  transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s);
+}
+.rv[data-reveal="left"]{transform:translate3d(-28px,0,0)}
+.rv[data-reveal="right"]{transform:translate3d(28px,0,0)}
+.rv[data-reveal="fade"]{transform:none}
+.rv.in{opacity:1;transform:none}
+
+/* Intrarea din primul ecran */
+@keyframes rise{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes dial{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.intro{animation:rise .7s var(--ease) both;animation-delay:calc(var(--i,0) * .1s + .05s)}
+.gauge-wrap{animation:dial .9s var(--ease) .15s both}
+
+/* Accesibilitate și preferințe */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .intro,.gauge-wrap{animation:fadein .2s ease both!important}
+  .rv{transform:none!important;transition:opacity .2s ease!important}
+  .needle{transition:none!important}
+  .bubbles{display:none}
+  .panel::before{transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--steel:#C9D0D6;--line:rgba(201,208,214,.5)}
+  .site-header{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--white)}
+  .panel,.gal figure,.photo,.map{background:#111315}
+}
+
+@media (max-width:360px){
+  .brand-name{font-size:1rem}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="7MinCarwash 2, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🧽</span>
+      <span class="brand-name">7MinCarwash 2</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Meniu principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="btn btn-primary btn-sm" href="tel:0723564774">
+        <span class="l">Sună acum</span><span class="s">Sună</span>
+      </a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Deschide meniul">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <span class="guide-v l" aria-hidden="true"></span>
+    <span class="guide-v r" aria-hidden="true"></span>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 class="hero-title intro" id="hero-title" style="--i:0">7MinCarwash 2</h1>
+        <p class="slogan intro" style="--i:1">Mașina ta, mereu curată</p>
+        <p class="lead intro" style="--i:2">La 7MinCarwash ai servicii rapide pentru autoturismul tău.</p>
+        <div class="actions intro" style="--i:3">
+          <a class="btn btn-primary" href="tel:0723564774">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723564774?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile.">Cere detalii pe WhatsApp</a>
+        </div>
+        <p class="addr mono intro" style="--i:4">Strada Tribunei 6, Ploiești</p>
+      </div>
+
+      <div class="gauge-wrap">
+        <div class="bubbles" id="bubbles" aria-hidden="true"></div>
+        <svg class="gauge" id="gauge" viewBox="0 0 400 400" role="img" aria-label="Vitezometru decorativ. Acul urcă la încărcarea paginii.">
+          <circle class="face" cx="200" cy="200" r="190"/>
+          <circle class="track" cx="200" cy="200" r="172" stroke-dasharray="810.5 270.2" transform="rotate(135 200 200)"/>
+          <circle class="arc-hot" cx="200" cy="200" r="172" stroke-dasharray="180.1 900.6" transform="rotate(-15 200 200)"/>
+          <g id="ticks"></g>
+          <g id="labels"></g>
+          <text class="gauge-name" x="200" y="300" text-anchor="middle">7MIN</text>
+          <text class="gauge-sub" x="200" y="332" text-anchor="middle">CARWASH 2</text>
+          <g class="needle" id="needle"><line x1="200" y1="200" x2="200" y2="62"/></g>
+          <circle class="hub" cx="200" cy="200" r="11"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" class="sec" aria-labelledby="despre-title">
+    <div class="wrap split">
+      <div>
+        <h2 class="title rv" id="despre-title" data-reveal="up">Despre noi</h2>
+        <p class="body rv" data-reveal="up" style="--d:.08s">7MinCarwash 2 îți oferă servicii esențiale, practice și accesibile pentru mașina ta. Suntem aici pentru a te ajuta să menții autoturismul în stare bună, exact atunci când ai nevoie. Te așteptăm pentru reparații, diagnoză sau întreținere.</p>
+        <dl class="fiche rv" data-reveal="up" style="--d:.16s">
+          <div><dt>Oraș</dt><dd>Ploiești</dd></div>
+          <div><dt>Adresă</dt><dd>Strada Tribunei 6</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:0723564774">0723 564 774</a></dd></div>
+        </dl>
+      </div>
+      <figure class="photo cut rv" data-reveal="left" style="--d:.1s">
+        <img src="img/1.jpg" alt="Mașină gri spălată cu burete și spumă de șampon" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="servicii" class="sec sec-alt" aria-labelledby="servicii-title">
+    <div class="wrap">
+      <header class="sec-head">
+        <h2 class="title rv" id="servicii-title" data-reveal="up">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="lead rv" data-reveal="up" style="--d:.08s">Lucrări pentru mașina ta, explicate pe înțelesul tău, înainte să începem.</p>
+      </header>
+
+      <ul class="svc-grid">
+        <li class="panel cut rv" data-reveal="left" style="--d:0s">
+          <svg class="panel-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.3-.6-.6-2.3z"/></svg>
+          <h3>Reparații auto</h3>
+          <p>Rezolvăm defecțiunea și îți spunem clar ce s-a schimbat și de ce.</p>
+        </li>
+        <li class="panel cut rv" data-reveal="up" style="--d:.1s">
+          <svg class="panel-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+          <h3>Diagnoză</h3>
+          <p>Verificăm ce nu merge bine, înainte să cheltuiești bani pe piese.</p>
+        </li>
+        <li class="panel cut rv" data-reveal="right" style="--d:.2s">
+          <svg class="panel-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Întreținere</h3>
+          <p>Verificări și lucrări periodice, ca mașina să rămână în stare bună.</p>
+        </li>
+      </ul>
+
+      <div class="actions rv" data-reveal="fade">
+        <a class="btn btn-primary" href="tel:0723564774">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40723564774?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile.">Cere detalii pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="avantaje" class="sec" aria-labelledby="avantaje-title">
+    <div class="wrap">
+      <h2 class="title rv" id="avantaje-title" data-reveal="up">Avantaje</h2>
+      <ul class="adv-grid">
+        <li class="adv rv" data-reveal="fade" style="--d:0s">
+          <span class="adv-ico" aria-hidden="true">⏱️</span>
+          <h3>Rapid și practic</h3>
+          <p>Fără timp pierdut la coadă</p>
+        </li>
+        <li class="adv rv" data-reveal="fade" style="--d:.08s">
+          <span class="adv-ico" aria-hidden="true">🌃</span>
+          <h3>La îndemână</h3>
+          <p>Ușor de găsit în oraș</p>
+        </li>
+        <li class="adv rv" data-reveal="fade" style="--d:.16s">
+          <span class="adv-ico" aria-hidden="true">💧</span>
+          <h3>Servicii variate</h3>
+          <p>Te ajutăm exact cât ai nevoie</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galerie" class="sec sec-alt" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 class="title rv" id="galerie-title" data-reveal="up">Galerie</h2>
+      <div class="gal">
+        <figure class="gal-a cut rv" data-reveal="up">
+          <img src="img/3.jpg" alt="Mașină roșie cu faruri și cromă lustruită" loading="lazy">
+          <figcaption class="mono">Fotografie ilustrativă</figcaption>
+        </figure>
+        <figure class="gal-b cut rv" data-reveal="up" style="--d:.12s">
+          <img src="img/2.jpg" alt="Spumă de șampon pe caroserie, în timpul spălării" loading="lazy">
+          <figcaption class="mono">Fotografie ilustrativă</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="sec" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="title rv" id="contact-title" data-reveal="up">Contact</h2>
+        <dl class="cdata rv" data-reveal="up" style="--d:.08s">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a class="big" href="tel:0723564774">0723 564 774</a></dd>
+          </div>
+          <div>
+            <dt>Adresă</dt>
+            <dd>Strada Tribunei 6, Ploiești<br><span class="mono">44.9277 N, 26.0103 E</span></dd>
+          </div>
+        </dl>
+        <div class="actions rv" data-reveal="up" style="--d:.16s">
+          <a class="btn btn-primary" href="tel:0723564774">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723564774?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20disponibile.">Cere detalii pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=7MinCarwash+2+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map cut rv" data-reveal="right" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0062891,44.9256989,26.014289100000003,44.929698900000005&amp;layer=mapnik&amp;marker=44.9276989,26.0102891" title="Harta: 7MinCarwash 2, Strada Tribunei 6, Ploiești" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="brand"><span class="brand-mark" aria-hidden="true">🧽</span><span>7MinCarwash 2</span></p>
+      <p class="mono">Ploiești, Strada Tribunei 6</p>
+    </div>
+    <div>
+      <p class="mono">Model de site (demo)</p>
+      <p class="credit">Fotografii ilustrative de pe Pixabay: VintageBlue, stux, Tama66</p>
+    </div>
+    <a class="up" href="#top">Înapoi sus</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var d = document;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS = 'http://www.w3.org/2000/svg';
+  var C = 200;
+
+  /* Anul în subsol */
+  var yr = d.getElementById('year');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* Scara vitezometrului: 0–180, de la -135° la 135° */
+  var ticks = d.getElementById('ticks');
+  var labels = d.getElementById('labels');
+  for (var v = 0; v <= 180; v += 5) {
+    var a = (-135 + v * 1.5 - 90) * Math.PI / 180;
+    var major = v % 20 === 0;
+    var r1 = major ? 144 : 152;
+    var r2 = 160;
+    var line = d.createElementNS(NS, 'line');
+    line.setAttribute('x1', C + r1 * Math.cos(a));
+    line.setAttribute('y1', C + r1 * Math.sin(a));
+    line.setAttribute('x2', C + r2 * Math.cos(a));
+    line.setAttribute('y2', C + r2 * Math.sin(a));
+    line.setAttribute('class', major ? 'tick major' : 'tick');
+    ticks.appendChild(line);
+    if (major) {
+      var t = d.createElementNS(NS, 'text');
+      t.setAttribute('x', C + 118 * Math.cos(a));
+      t.setAttribute('y', C + 118 * Math.sin(a));
+      t.setAttribute('text-anchor', 'middle');
+      t.setAttribute('dominant-baseline', 'middle');
+      t.setAttribute('class', 'scale');
+      t.textContent = v;
+      labels.appendChild(t);
+    }
+  }
+
+  /* Acul urcă la încărcare */
+  var gauge = d.getElementById('gauge');
+  if (reduce) {
+    gauge.classList.add('run');
+  } else {
+    setTimeout(function () { gauge.classList.add('run'); }, 350);
+  }
+
+  /* Bule în zona vitezometrului */
+  var bw = d.getElementById('bubbles');
+  if (bw && !reduce) {
+    for (var i = 0; i < 10; i++) {
+      var s = d.createElement('span');
+      s.className = 'bub';
+      var size = 8 + Math.round(Math.random() * 16);
+      s.style.left = (6 + Math.random() * 86) + '%';
+      s.style.width = size + 'px';
+      s.style.height = size + 'px';
+      s.style.animationDuration = (5 + Math.random() * 5).toFixed(2) + 's';
+      s.style.animationDelay = (-Math.random() * 8).toFixed(2) + 's';
+      bw.appendChild(s);
+    }
+  }
+
+  /* Dezvăluire la derulare */
+  var items = d.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Meniu pe telefon */
+  var btn = d.getElementById('menu-btn');
+  var nav = d.getElementById('nav');
+  btn.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Deschide meniul');
+    });
+  });
+
+  /* Umbră la antet după derulare */
+  var header = d.getElementById('top');
+  var onScroll = function () {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
