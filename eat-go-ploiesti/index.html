@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eat&amp;Go, Ploiești. O masă gustoasă, rapid și practic</title>
+<meta name="description" content="Eat&amp;Go din Ploiești: preparate calde, gustări și băuturi pentru o pauză rapidă sau o masă relaxată cu prietenii.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --y:#FFD23F;
+  --k:#111111;
+  --r:#E63946;
+  --w:#ffffff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;font-family:Rubik,system-ui,sans-serif;font-size:1rem;line-height:1.5;
+  color:var(--k);background:var(--w);overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3{margin:0;font-family:Anton,Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;position:relative}
+.sec{position:relative;padding:clamp(4.5rem,11vw,8rem) 1.25rem;overflow:hidden}
+.h2{font-size:clamp(2.8rem,11vw,6rem);line-height:.95}
+.body{font-size:1.05rem;max-width:52ch;margin-top:1rem}
+.lead{font-size:1.05rem;max-width:40ch;margin-top:1rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.top{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.5rem 1rem;min-height:3.5rem;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  border-top:1px solid rgba(255,255,255,.75);
+  transition:box-shadow .4s var(--ease);
+}
+.top.scrolled{box-shadow:0 10px 26px -14px rgba(0,0,0,.4)}
+.logo{
+  display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;
+  font-family:Anton,Impact,sans-serif;font-size:1.45rem;text-transform:uppercase;
+  letter-spacing:-.01em;color:var(--k);line-height:1;
+}
+.nav{display:none;gap:1.6rem}
+.nav a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-weight:600;text-decoration:none;color:var(--k);transition:color .25s;
+}
+.nav a:hover{color:var(--r)}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:.8rem 1.4rem;border-radius:999px;
+  font-family:Rubik,sans-serif;font-weight:700;font-size:1.05rem;line-height:1.2;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  transition:transform .1s linear,box-shadow .25s var(--ease),background-color .25s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn:hover{box-shadow:0 10px 22px -12px rgba(0,0,0,.5)}
+.btn-red{background:var(--r);color:#fff}
+.btn-k{background:var(--k);color:var(--y)}
+.btn-y{background:var(--y);color:var(--k)}
+.btn-line{background:transparent;color:var(--k);border-color:var(--k)}
+.btn-mini{min-height:44px;padding:.5rem 1.1rem;font-size:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;background:var(--y);overflow:hidden;
+  padding:4.75rem 1.25rem 3rem;display:grid;gap:2.25rem;align-items:center;
+  min-height:80svh;
+}
+.brand{
+  font-size:clamp(5rem,26vw,13rem);line-height:.86;letter-spacing:-.025em;
+  text-transform:uppercase;color:var(--k);margin-left:-.03em;
+}
+.slogan{
+  margin-top:1.1rem;font-weight:800;font-size:clamp(1.3rem,3.6vw,1.9rem);
+  line-height:1.2;letter-spacing:0;
+}
+.hero .lead{font-weight:500;color:#2a2a2a}
+.hero-media{position:relative;justify-self:center;width:min(78vw,380px);aspect-ratio:1}
+.plate{
+  position:absolute;inset:0;border-radius:50%;background:#fff;padding:.9rem;
+  box-shadow:0 34px 50px -24px rgba(0,0,0,.55);
+  animation:plateIn .8s var(--ease) both .1s;
+}
+.ph{width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.08);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ph img{transition:transform .6s var(--ease)}
+
+/* ---------- Abțibilduri (produse lipite pe pagină) ---------- */
+.stk{
+  position:absolute;width:var(--s,24%);aspect-ratio:1;z-index:3;
+  rotate:var(--a,0deg);
+  animation:stkIn .6s var(--ease) both;animation-delay:var(--d,0s);
+}
+.stk-in{display:block;width:100%;height:100%;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.stk-in svg{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 8px 10px rgba(0,0,0,.28))}
+.hop{animation:hop .55s var(--ease)}
+
+/* ---------- Secțiuni ---------- */
+.split{display:grid;gap:2.75rem;align-items:center}
+.about-img{aspect-ratio:4/5;background:#fff;padding:.6rem .6rem 1.2rem;rotate:-1.5deg;box-shadow:0 22px 40px -26px rgba(0,0,0,.55)}
+.about-img img{height:calc(100% - 0px);object-fit:cover}
+.perks{list-style:none;padding:0;margin:2.25rem 0 0;display:grid;gap:1.25rem}
+.perk{display:flex;align-items:center;gap:1rem}
+.perk-ico{
+  flex:0 0 3.4rem;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--y);
+  display:grid;place-items:center;font-size:1.5rem;box-shadow:0 6px 14px -8px rgba(0,0,0,.5);
+}
+.perk h3{font-size:1.55rem;letter-spacing:0;text-transform:uppercase}
+.perk p{font-size:.98rem;color:#3a3a3a;margin-top:.15rem}
+
+/* Meniu (negru) */
+.menu{background:var(--k);color:#fff}
+.menu .h2{color:var(--y)}
+.menu .lead{color:#d6d6d6}
+.dishes{list-style:none;padding:0;margin:2.75rem 0 0;display:grid;gap:2.5rem}
+.dish h3{font-size:clamp(2.6rem,10vw,5.2rem);color:#fff;transition:color .35s var(--ease)}
+.dish:hover h3{color:var(--y)}
+.dish p{color:#d6d6d6;max-width:36ch;margin-top:.5rem;font-size:1.05rem}
+.menu .actions{margin-top:3rem}
+
+/* Galerie (galben) */
+.gal{background:var(--y)}
+.collage{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.75rem;align-items:start}
+.collage figure{margin:0;background:#fff;padding:.55rem .55rem 1rem;box-shadow:0 18px 36px -24px rgba(0,0,0,.55)}
+.collage figure img{height:auto;aspect-ratio:4/5}
+.g1{grid-column:1/-1}
+.g1 img{aspect-ratio:4/3 !important}
+.g2{rotate:1.5deg}
+.g3{rotate:-2deg}
+.note{font-size:.9rem;margin-top:1.5rem;color:#2a2a2a}
+
+/* Contact (alb) */
+.contact .split{gap:2.5rem}
+.phone{
+  display:inline-block;margin-top:1.75rem;font-family:Anton,Impact,sans-serif;
+  font-size:clamp(2.4rem,9vw,4.2rem);line-height:1;letter-spacing:.01em;color:var(--k);text-decoration:none;
+}
+.map{aspect-ratio:4/3;min-height:280px;background:#eee;box-shadow:0 22px 40px -28px rgba(0,0,0,.5)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* Subsol */
+.foot{background:var(--k);color:#fff;padding:3rem 1.25rem 2.5rem}
+.foot-brand{font-family:Anton,Impact,sans-serif;font-size:clamp(2.4rem,8vw,3.4rem);line-height:1;text-transform:uppercase;color:var(--y)}
+.foot p{letter-spacing:.01em;color:#e6e6e6;font-size:.95rem}
+.foot .credit{margin-top:1.25rem;font-size:.85rem;color:#b9b9b9;max-width:60ch}
+
+/* ---------- Mișcare ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rv-l{opacity:0;transform:translateX(-32px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.rv-s{opacity:0;transform:scale(.94);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.in,.rv-l.in,.rv-s.in{opacity:1;transform:none}
+.dish.rv-l:nth-child(2){transition-delay:.1s}
+.dish.rv-l:nth-child(3){transition-delay:.2s}
+.perk.rv:nth-child(2){transition-delay:.08s}
+.perk.rv:nth-child(3){transition-delay:.16s}
+
+@keyframes plateIn{from{opacity:0;scale:.8;rotate:-8deg}to{opacity:1;scale:1;rotate:0deg}}
+@keyframes stkIn{from{opacity:0;scale:.4}to{opacity:1;scale:1}}
+@keyframes hop{
+  0%{transform:translateY(0) scale(1)}
+  30%{transform:translateY(-22px) scale(1.06) rotate(-6deg)}
+  55%{transform:translateY(0) scale(1.03,.96)}
+  75%{transform:translateY(-6px) scale(1)}
+  100%{transform:translateY(0) scale(1)}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* ---------- Pe calculator ---------- */
+@media (min-width:720px){
+  .nav{display:flex}
+  .top{padding:.5rem 2.5rem}
+}
+@media (min-width:900px){
+  .hero{
+    grid-template-columns:1.1fr .9fr;padding:7.5rem 3rem 4.5rem;gap:3rem;
+  }
+  .brand{font-size:clamp(7rem,15vw,13.5rem)}
+  .hero-media{width:min(36vw,500px);justify-self:end}
+  .split{grid-template-columns:1fr 1fr;gap:5.5rem}
+  .split.rev > :first-child{order:2}
+  .collage{grid-template-columns:repeat(12,1fr);gap:1.75rem}
+  .g1{grid-column:1/8;grid-row:1}
+  .g2{grid-column:8/13;grid-row:1;margin-top:5rem}
+  .g3{grid-column:3/8;grid-row:2;margin-top:-1rem}
+  .collage figure img{aspect-ratio:4/5}
+  .g1 img{aspect-ratio:4/3 !important}
+  .dishes{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .dish{border-top:0}
+}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .top{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .top{background:#fff;border-top:0;box-shadow:0 2px 0 var(--k)}
+  .btn{border:2px solid var(--k)}
+  .btn-red{background:#B3121F;color:#fff}
+  .plate{box-shadow:0 0 0 2px var(--k)}
+  .collage figure{outline:2px solid var(--k)}
+  .foot p,.foot .credit{color:#fff}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.2s !important;animation-delay:0s !important;
+    animation-iteration-count:1 !important;transition-duration:.2s !important;
+    scroll-behavior:auto !important;
+  }
+  .rv,.rv-l,.rv-s{transform:none !important}
+  .hop{animation:none !important}
+  .plate,.stk{animation-name:fade !important}
+  .ph img{transition:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<!-- Definițiile abțibilduri-produse (folosite cu <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="s-tomato" viewBox="0 0 100 100">
+      <g stroke="#fff" stroke-width="7" paint-order="stroke" stroke-linejoin="round">
+        <circle cx="50" cy="56" r="34" fill="#E63946"/>
+        <path d="M50 36 L36 28 L46 34 L44 22 L50 32 L56 22 L54 34 L64 28 Z" fill="#3A7D44"/>
+      </g>
+      <ellipse cx="36" cy="46" rx="6" ry="10" fill="#fff" opacity=".4" transform="rotate(25 36 46)"/>
+    </symbol>
+    <symbol id="s-cheese" viewBox="0 0 100 100">
+      <path d="M8 36 L92 36 L92 44 Q92 48 88 49 L50 84 L12 49 Q8 48 8 44 Z" fill="#FFD23F" stroke="#fff" stroke-width="7" stroke-linejoin="round" paint-order="stroke"/>
+      <circle cx="34" cy="50" r="5" fill="#E0A800"/>
+      <circle cx="62" cy="54" r="4" fill="#E0A800"/>
+      <circle cx="50" cy="44" r="3.5" fill="#E0A800"/>
+    </symbol>
+    <symbol id="s-leaf" viewBox="0 0 100 100">
+      <path d="M50 12 C66 12 74 22 76 32 C88 36 94 50 88 64 C82 78 66 88 50 88 C34 88 18 78 12 64 C6 50 12 36 24 32 C26 22 34 12 50 12 Z" fill="#5BAA4A" stroke="#fff" stroke-width="7" paint-order="stroke"/>
+      <path d="M50 88 L50 34 M50 56 L36 44 M50 56 L64 44 M50 72 L38 62 M50 72 L62 62" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="logo" href="#top" aria-label="Eat&amp;Go, sus pe pagină"><span aria-hidden="true">🍽️</span>Eat&amp;Go</a>
+  <nav class="nav" aria-label="Navigare principală">
+    <a href="#meniu">Meniu</a>
+    <a href="#despre">Despre</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="btn btn-red btn-mini" href="tel:0724257423">Sună acum</a>
+</header>
+
+<main id="top">
+
+  <!-- 1. Hero -->
+  <section class="hero" aria-labelledby="titlu">
+    <div class="hero-txt">
+      <h1 class="brand" id="titlu">Eat&amp;Go</h1>
+      <p class="slogan">Bucură-te de o masă gustoasă</p>
+      <p class="lead">Te așteptăm în Ploiești la o masă savuroasă, rapid și practic.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:0724257423">Sună acum</a>
+        <a class="btn btn-k" href="https://wa.me/40724257423?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="plate">
+        <div class="ph" data-hop>
+          <img src="img/4.jpg" alt="Burger cu carne, salată și chiflă, servit la Eat&amp;Go">
+        </div>
+      </div>
+      <span class="stk" style="top:-6%;left:-8%;--s:26%;--a:-14deg;--d:.35s" aria-hidden="true">
+        <span class="stk-in" data-hop><svg viewBox="0 0 100 100"><use href="#s-tomato"/></svg></span>
+      </span>
+      <span class="stk" style="bottom:-2%;right:-6%;--s:30%;--a:10deg;--d:.55s" aria-hidden="true">
+        <span class="stk-in" data-hop><svg viewBox="0 0 100 100"><use href="#s-cheese"/></svg></span>
+      </span>
+    </div>
+  </section>
+
+  <!-- 2. Despre -->
+  <section class="sec" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap split">
+      <div class="about-img rv-l">
+        <img src="img/2.jpg" alt="Familie care mănâncă împreună pe o terasă">
+      </div>
+      <div class="rv">
+        <h2 class="h2" id="despre-titlu">Despre Eat&amp;Go</h2>
+        <p class="body">Eat&amp;Go este locul potrivit pentru o masă relaxată cu prietenii sau o pauză rapidă la prânz.</p>
+        <p class="body">Oferim preparate calde, gustări și băuturi pentru clienții grăbiți sau dornici de o experiență informală.</p>
+        <p class="body">Un loc informal, pentru o masă relaxată sau o pauză scurtă.</p>
+        <ul class="perks">
+          <li class="perk rv">
+            <span class="perk-ico" aria-hidden="true">⏱️</span>
+            <div><h3>Rapid</h3><p>Potrivit pentru o pauză rapidă</p></div>
+          </li>
+          <li class="perk rv">
+            <span class="perk-ico" aria-hidden="true">👥</span>
+            <div><h3>Pentru toți</h3><p>Preparate calde, gustări și băuturi</p></div>
+          </li>
+          <li class="perk rv">
+            <span class="perk-ico" aria-hidden="true">🎉</span>
+            <div><h3>Ambianță plăcută</h3><p>Loc perfect pentru pauze</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Meniu -->
+  <section class="sec menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <h2 class="h2 rv" id="meniu-titlu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="lead rv">Ce găsești la noi, de la o masă caldă până la ceva rapid de luat pe drum.</p>
+      <ul class="dishes">
+        <li class="dish rv-l">
+          <h3>Preparate calde</h3>
+          <p>Pentru o masă sătulă, când ai chef de ceva cald.</p>
+        </li>
+        <li class="dish rv-l">
+          <h3>Gustări</h3>
+          <p>Ceva mic, de luat pe drum sau alături de o băutură.</p>
+        </li>
+        <li class="dish rv-l">
+          <h3>Băuturi</h3>
+          <p>Ceva rece sau cald, ca să completezi masa.</p>
+        </li>
+      </ul>
+      <div class="actions rv">
+        <a class="btn btn-red" href="tel:0724257423">Sună acum</a>
+        <a class="btn btn-y" href="https://wa.me/40724257423?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+    <span class="stk" style="top:2.5rem;right:1rem;--s:clamp(80px,16vw,150px);--a:12deg;--d:.3s" aria-hidden="true">
+      <span class="stk-in" data-hop><svg viewBox="0 0 100 100"><use href="#s-leaf"/></svg></span>
+    </span>
+  </section>
+
+  <!-- 4. Galerie -->
+  <section class="sec gal" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 class="h2 rv" id="galerie-titlu">Ca să îți fie poftă</h2>
+      <div class="collage">
+        <figure class="g1 rv-s">
+          <img src="img/1.jpg" alt="Tânără care mănâncă pe o terasă urbană" loading="lazy">
+        </figure>
+        <figure class="g2 rv">
+          <img src="img/3.jpg" alt="Burgeri, sandvișuri și gustări" loading="lazy">
+        </figure>
+        <figure class="g3 rv">
+          <img src="img/5.jpg" alt="Sandviș cu pui la grătar" loading="lazy">
+        </figure>
+      </div>
+      <p class="note">Fotografii ilustrative.</p>
+    </div>
+    <span class="stk" style="top:1.5rem;right:.5rem;--s:clamp(70px,12vw,120px);--a:-10deg;--d:.2s" aria-hidden="true">
+      <span class="stk-in" data-hop><svg viewBox="0 0 100 100"><use href="#s-tomato"/></svg></span>
+    </span>
+  </section>
+
+  <!-- 5. Contact -->
+  <section class="sec contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap split">
+      <div class="rv">
+        <h2 class="h2" id="contact-titlu">Contact</h2>
+        <p class="lead">Sună, scrie pe WhatsApp sau vino direct la noi în Ploiești.</p>
+        <a class="phone" href="tel:0724257423">0724 257 423</a>
+        <div class="actions">
+          <a class="btn btn-red" href="tel:0724257423">Sună acum</a>
+          <a class="btn btn-k" href="https://wa.me/40724257423?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Eat%26Go+Ploie%C8%99ti" target="_blank" rel="noopener">Vezi harta în Google Maps</a>
+        </div>
+      </div>
+      <div class="map rv-s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0001116,44.9482783,26.008111600000003,44.9522783&amp;layer=mapnik&amp;marker=44.9502783,26.0041116" title="Harta locației Eat&amp;Go din Ploiești" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-brand">Eat&amp;Go</p>
+    <p>Eat&amp;Go, Ploiești. <a href="tel:0724257423">0724 257 423</a></p>
+    <p class="credit">Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: Surprising_Media, 7creator, takedahrs, SylwesterL</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Dezvăluire la derulare, cu tranziții diferite pe elemente
+  var reveals = document.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Bara de navigare primește umbră doar când pagina se derulează sub ea
+  var bar = document.querySelector('.top');
+  function onScroll() { bar.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Abțibilduri și fotografii care sar la atingere
+  document.querySelectorAll('[data-hop]').forEach(function (el) {
+    el.addEventListener('pointerdown', function () {
+      if (reduce) return;
+      el.classList.remove('hop');
+      void el.offsetWidth;
+      el.classList.add('hop');
+    });
+    el.addEventListener('animationend', function (e) {
+      if (e.animationName === 'hop') el.classList.remove('hop');
+    });
+  });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
