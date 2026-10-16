@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMI Dr. Popescu Raluca Ioana | Cabinet stomatologic în Ploiești</title>
+<meta name="description" content="Cabinet stomatologic în Ploiești, pe Strada Branciog 3. Servicii stomatologice pentru întreaga familie. Programări la 0721 661 330.">
+<meta name="theme-color" content="#FFF8F1">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --peach:#F7D9C4;
+  --peach-soft:#FBEADD;
+  --sage:#7FA88B;
+  --sage-soft:#DCE8DF;
+  --cream:#FFF8F1;
+  --ink:#3A2E28;
+  --ink-2:#5f5048;
+  --teal:#0f766e;
+  --teal-dark:#0b5d57;
+  --line:rgba(58,46,40,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:72rem;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --section:clamp(5rem,12vw,9rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:"Figtree",system-ui,sans-serif;font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  font-family:"Fraunces",Georgia,serif;font-variation-settings:"SOFT" 100;
+  font-weight:540;letter-spacing:-0.02em;line-height:1.08;margin:0;color:var(--ink);
+  text-wrap:balance;
+}
+h2{font-size:clamp(2.1rem,5vw,3.5rem)}
+h3{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.12}
+p{margin:0;max-width:38em}
+.wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:var(--pad)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:.4rem}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--cream);padding:.75rem 1rem;border-radius:.6rem;text-decoration:none}
+.skip:focus{top:1rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3.25rem;padding:.85rem 1.5rem;border-radius:999px;border:0;
+  font:600 1rem/1.2 "Figtree",sans-serif;text-decoration:none;cursor:pointer;
+  transition:transform .1s ease,box-shadow .25s var(--ease),background-color .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.15rem;height:1.15rem;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--teal);color:#fff;box-shadow:0 .5rem 1.4rem -.8rem rgba(15,118,110,.7)}
+.btn-main:hover{background:var(--teal-dark);box-shadow:0 .8rem 1.8rem -.8rem rgba(15,118,110,.75)}
+.btn-soft{background:var(--peach);color:var(--ink)}
+.btn-soft:hover{box-shadow:0 .6rem 1.4rem -.9rem rgba(58,46,40,.45)}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(58,46,40,.35)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-sm{min-height:2.75rem;padding:.6rem 1.15rem;font-size:.95rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,248,241,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+  transition:box-shadow .35s var(--ease);
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.85),0 .6rem 1.6rem -1.2rem rgba(58,46,40,.35)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:700;font-size:1.02rem;min-height:44px}
+.brand-mark{width:2.25rem;height:2.25rem;border-radius:50%;background:var(--sage-soft);display:grid;place-items:center;flex:none}
+.brand-mark svg{width:1.3rem;height:1.3rem}
+.links{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;text-decoration:none;font-weight:600;font-size:.98rem;border-radius:999px;transition:background-color .25s var(--ease)}
+.links a:hover{background:rgba(58,46,40,.06)}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.menu-btn{
+  display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;border-radius:50%;
+  border:0;background:rgba(58,46,40,.07);color:var(--ink);cursor:pointer;transition:transform .1s ease;
+}
+.menu-btn:active{transform:scale(.97)}
+.menu-btn span{position:relative;width:1.1rem;height:2px;background:currentColor;border-radius:2px;transition:transform .35s var(--ease),opacity .2s}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:100%;height:2px;background:currentColor;border-radius:2px;transition:transform .35s var(--ease)}
+.menu-btn span::before{transform:translateY(-6px)}
+.menu-btn span::after{transform:translateY(6px)}
+.menu-btn[aria-expanded="true"] span{background:transparent}
+.menu-btn[aria-expanded="true"] span::before{transform:rotate(45deg)}
+.menu-btn[aria-expanded="true"] span::after{transform:rotate(-45deg)}
+.menu-panel{
+  position:absolute;left:var(--pad);right:var(--pad);top:calc(100% + .5rem);
+  background:var(--cream);border-radius:1.5rem;padding:.75rem;
+  box-shadow:0 1.5rem 3rem -1.5rem rgba(58,46,40,.4);
+  opacity:0;transform:translateY(-.5rem);visibility:hidden;
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s linear .35s;
+}
+.menu-panel.open{opacity:1;transform:none;visibility:visible;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.menu-panel ul{list-style:none;margin:0;padding:0}
+.menu-panel a{display:flex;align-items:center;min-height:3.1rem;padding:0 1rem;border-radius:1rem;text-decoration:none;font-weight:600;font-size:1.1rem}
+.menu-panel a:hover{background:var(--peach-soft)}
+@media (min-width:56rem){
+  .links{display:flex}
+  .menu-btn,.menu-panel{display:none}
+}
+
+/* ---------- Prima secțiune ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(6.5rem,12vw,9rem) 0 var(--section)}
+.hero-grid{display:grid;gap:clamp(3rem,6vw,4.5rem);align-items:center}
+.hero-kicker{font-weight:600;color:var(--teal);font-size:1rem;letter-spacing:.01em;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.3rem,6vw + .4rem,4.75rem);line-height:1.04;font-weight:560}
+.hero h1 .pre{font-weight:400}
+.hero-lead{margin-top:1.4rem;font-size:clamp(1.12rem,1.6vw,1.3rem);line-height:1.5;color:var(--ink-2);max-width:30em}
+.hero-lead strong{color:var(--ink);font-weight:600}
+.hero-cta{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.today{
+  display:inline-flex;align-items:center;gap:.6rem;margin-top:1.5rem;min-height:44px;
+  font-size:.95rem;font-weight:500;color:var(--ink-2);text-decoration:none;
+}
+.today:hover{color:var(--ink)}
+.today .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--sage);flex:none}
+.today.open .dot{background:var(--teal);box-shadow:0 0 0 .3rem rgba(15,118,110,.15)}
+@media (min-width:30rem){.hero-cta{flex-direction:row;flex-wrap:wrap}}
+@media (min-width:56rem){
+  .hero-grid{grid-template-columns:1.08fr .92fr}
+}
+
+.hero-media{position:relative;width:min(84%,29rem);margin-inline:auto;aspect-ratio:4/5}
+.hero-photo{
+  position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;
+  border-radius:999px 999px 2.5rem 2.5rem;
+  box-shadow:0 2rem 4rem -2.5rem rgba(58,46,40,.55);
+}
+.blobs{position:absolute;inset:0;z-index:0}
+.blob{position:absolute;border-radius:50%;will-change:transform}
+.b1{width:86%;aspect-ratio:1;background:var(--peach);top:-9%;right:-22%;animation:breathe 10s ease-in-out infinite alternate}
+.b2{width:64%;aspect-ratio:1;background:var(--sage-soft);bottom:-8%;left:-20%;animation:breathe2 13s ease-in-out infinite alternate}
+.b3{width:17%;aspect-ratio:1;background:var(--sage);top:16%;left:-9%;animation:breathe 8s ease-in-out infinite alternate-reverse}
+.b4{width:9%;aspect-ratio:1;background:var(--peach);bottom:12%;right:-8%;animation:breathe2 11s ease-in-out infinite alternate-reverse}
+@keyframes breathe{from{transform:scale(1)}to{transform:scale(1.07)}}
+@keyframes breathe2{from{transform:translate(0,0) scale(1)}to{transform:translate(3%,-2%) scale(1.05)}}
+
+/* intrarea din prima secțiune */
+.intro{opacity:0;animation:introUp .9s var(--ease) forwards;animation-delay:calc(var(--i,0) * 110ms + 120ms)}
+.intro-photo{opacity:0;animation:introPhoto 1.2s var(--ease) .35s forwards}
+.intro-blobs{opacity:0;animation:introFade 1.8s var(--ease) .6s forwards}
+@keyframes introUp{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}
+@keyframes introPhoto{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes introFade{from{opacity:0}to{opacity:1}}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js .rv{opacity:0;transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.scale{transform:scale(.96)}
+.js .rv.left{transform:translateX(-1.5rem)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- Despre ---------- */
+.about{padding:0 0 var(--section)}
+.about-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.about-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2rem 2rem 2rem 9rem}
+.about-text h2{max-width:13em}
+.about-text p{margin-top:1.4rem;color:var(--ink-2);font-size:1.1rem}
+.perks{list-style:none;margin:clamp(3.5rem,8vw,5.5rem) 0 0;padding:0;display:grid;gap:2.25rem}
+.perk{display:grid;grid-template-columns:auto 1fr;gap:1.1rem;align-items:start}
+.perk-ico{width:3.25rem;height:3.25rem;border-radius:50%;background:var(--peach-soft);display:grid;place-items:center}
+.perk-ico svg{width:1.45rem;height:1.45rem;stroke:var(--teal)}
+.perk h3{font-family:"Figtree",sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:0;line-height:1.3}
+.perk p{margin-top:.3rem;color:var(--ink-2)}
+@media (min-width:48rem){
+  .about-grid{grid-template-columns:.9fr 1.1fr}
+  .about-photo{aspect-ratio:4/5}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+}
+
+/* ---------- Servicii (piersică, margine moale) ---------- */
+.services{
+  background:var(--peach);
+  border-radius:50% 50% 0 0 / clamp(1.75rem,5vw,4.5rem) clamp(1.75rem,5vw,4.5rem) 0 0;
+  padding:var(--section) 0 clamp(4rem,9vw,7rem);
+}
+.services-grid{display:grid;gap:clamp(2.5rem,6vw,5rem)}
+.services-head p{margin-top:1.2rem;color:var(--ink-2);font-size:1.1rem;max-width:28em}
+.services-head .btn{margin-top:2rem}
+.service-list{list-style:none;margin:0;padding:0}
+.service{display:grid;grid-template-columns:auto 1fr;gap:1.25rem;padding:2rem 0;border-top:1px solid rgba(58,46,40,.18)}
+.service:last-child{border-bottom:1px solid rgba(58,46,40,.18)}
+.service-ico{width:3.5rem;height:3.5rem;border-radius:50%;background:var(--cream);display:grid;place-items:center}
+.service-ico svg{width:1.6rem;height:1.6rem;stroke:var(--teal)}
+.service p{margin-top:.6rem;color:var(--ink-2)}
+@media (min-width:56rem){
+  .services-grid{grid-template-columns:.85fr 1.15fr;align-items:start}
+  .services-head{position:sticky;top:7rem}
+}
+
+.gallery{display:grid;gap:1rem;margin-top:clamp(4rem,9vw,6.5rem)}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.5rem}
+.gallery-note{margin-top:1rem;font-size:.82rem;letter-spacing:.02em;color:var(--ink-2)}
+@media (min-width:48rem){
+  .gallery{grid-template-columns:1.35fr 1fr;gap:1.25rem}
+  .gallery img{aspect-ratio:auto;height:clamp(18rem,34vw,27rem)}
+}
+
+/* ---------- Program ---------- */
+.hours{padding:var(--section) 0}
+.hours-head{display:grid;gap:1.2rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.hours-head p{color:var(--ink-2);font-size:1.1rem}
+.status{font-weight:600;color:var(--ink);font-size:1.1rem}
+.status.open{color:var(--teal)}
+@media (min-width:56rem){.hours-head{grid-template-columns:1fr 1fr;align-items:end}}
+
+.week{list-style:none;margin:0;padding:0}
+.axis{position:relative;height:1.5rem;font-size:.78rem;letter-spacing:.04em;color:var(--ink-2);margin-bottom:.4rem}
+.axis span{position:absolute;top:0;transform:translateX(-50%)}
+.axis span:first-child{transform:none}
+.axis span:last-child{transform:translateX(-100%)}
+.day{display:grid;gap:.6rem;padding:1.15rem 0;border-top:1px solid var(--line)}
+.day:last-child{border-bottom:1px solid var(--line)}
+.day-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.day-name{font-family:"Fraunces",serif;font-variation-settings:"SOFT" 100;font-size:1.35rem;font-weight:520;letter-spacing:-0.01em}
+.day-hours{font-variant-numeric:tabular-nums;font-weight:500;color:var(--ink-2)}
+.tag{display:none;margin-left:.6rem;padding:.15rem .6rem;border-radius:999px;background:var(--teal);color:#fff;font:600 .75rem/1.4 "Figtree",sans-serif;letter-spacing:.03em;vertical-align:middle}
+.day.is-today .tag{display:inline-block}
+.day.is-today .day-hours{color:var(--ink);font-weight:600}
+.track{position:relative;height:.75rem;border-radius:999px;background:rgba(58,46,40,.07)}
+.bar{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--sage);transform-origin:left center}
+.bar.am{left:0;width:36.364%}
+.bar.pm{left:45.455%;width:54.545%}
+.day.is-today .bar{background:var(--teal)}
+.js .bar{transform:scaleX(0);transition:transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .week.in .bar{transform:scaleX(1)}
+.axis-wrap{display:grid}
+@media (min-width:48rem){
+  .day{grid-template-columns:15rem 1fr;align-items:center;gap:2rem}
+  .axis-wrap{grid-template-columns:15rem 1fr;gap:2rem}
+  .axis{grid-column:2}
+}
+
+/* ---------- Contact ---------- */
+.contact{padding:0 0 var(--section)}
+.contact-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:stretch}
+.contact-info p{color:var(--ink-2);font-size:1.1rem;margin-top:1rem}
+.phone-big{
+  display:inline-block;margin-top:2rem;font-family:"Fraunces",serif;font-variation-settings:"SOFT" 100;
+  font-size:clamp(2rem,5vw,3rem);font-weight:520;letter-spacing:-0.02em;line-height:1.1;text-decoration:none;
+  font-variant-numeric:tabular-nums;color:var(--teal);
+}
+.phone-big:hover{color:var(--teal-dark)}
+.contact-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+@media (min-width:30rem){.contact-actions{flex-direction:row;flex-wrap:wrap}}
+.mini-hours{margin:2.5rem 0 0;display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.5rem;font-size:1rem}
+.mini-hours dt{font-weight:600}
+.mini-hours dd{margin:0;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.map{border-radius:2rem;overflow:hidden;background:var(--sage-soft);min-height:20rem;aspect-ratio:4/3}
+.map iframe{display:block;width:100%;height:100%;border:0}
+@media (min-width:56rem){
+  .contact-grid{grid-template-columns:1fr 1.15fr}
+  .map{aspect-ratio:auto;min-height:28rem}
+}
+
+/* ---------- Subsol ---------- */
+.footer{background:var(--ink);color:var(--cream);padding:clamp(3.5rem,8vw,5rem) 0 2.5rem}
+.footer-grid{display:grid;gap:2rem}
+.footer-name{font-family:"Fraunces",serif;font-variation-settings:"SOFT" 100;font-size:1.6rem;font-weight:520;letter-spacing:-0.01em;line-height:1.2}
+.footer p,.footer li{color:rgba(255,248,241,.82);font-size:.95rem}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.footer a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.footer a:hover{text-decoration:underline;text-underline-offset:.2em}
+.footer-small{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,248,241,.16);display:grid;gap:.5rem;font-size:.8rem;letter-spacing:.03em}
+.footer-small p{font-size:.8rem;color:rgba(255,248,241,.7);max-width:none}
+@media (min-width:48rem){.footer-grid{grid-template-columns:1.4fr 1fr 1fr}}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .blob{animation:none !important}
+  .intro,.intro-photo,.intro-blobs{animation:introFade .2s ease forwards !important;animation-delay:0s !important}
+  .js .rv,.js .rv.scale,.js .rv.left{transform:none !important;transition:opacity .2s ease !important;transition-delay:0s !important}
+  .js .bar{transform:none !important;transition:none !important}
+  .menu-panel,.menu-panel.open{transform:none !important;transition:opacity .2s ease,visibility 0s !important}
+  .btn,.menu-btn span,.menu-btn span::before,.menu-btn span::after{transition-duration:.2s}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--ink-2:#3A2E28;--line:rgba(58,46,40,.5)}
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 2px 0 var(--ink)}
+  .btn-soft,.btn-line{box-shadow:inset 0 0 0 2px var(--ink)}
+  .btn-main{background:var(--teal-dark)}
+  .track{background:rgba(58,46,40,.18)}
+  .bar{background:#4d7a5a}
+  .service,.service:last-child{border-color:var(--ink)}
+  .footer p,.footer li,.footer-small p{color:var(--cream)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="CMI Dr. Popescu Raluca Ioana, începutul paginii">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0f766e" stroke-width="1.7" stroke-linejoin="round"><path d="M7 3.2c-2.5 0-4 2-4 4.4 0 2 .8 3.4 1.4 5 .7 2 .9 4.5 1.6 6.8.4 1.3 1.9 1.4 2.3.1L9.6 15c.4-1.3 1.2-2 2.4-2s2 .7 2.4 2l1.3 4.5c.4 1.3 1.9 1.2 2.3-.1.7-2.3.9-4.8 1.6-6.8.6-1.6 1.4-3 1.4-5 0-2.4-1.5-4.4-4-4.4-2 0-3 1-5 1s-3-1-5-1z"/></svg>
+      </span>
+      <span>Dr. Popescu</span>
+    </a>
+    <nav aria-label="Navigare principală">
+      <ul class="links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-main btn-sm" href="tel:0721661330">Sună acum</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel" aria-label="Deschide meniul"><span></span></button>
+    </div>
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-kicker intro" style="--i:0">Cabinet stomatologic în Ploiești</p>
+        <h1 id="titlu" class="intro" style="--i:1"><span class="pre">CMI</span> Dr. Popescu Raluca Ioana</h1>
+        <p class="hero-lead intro" style="--i:2">Zâmbetul tău contează pentru noi. Avem grijă de dinții întregii familii, pe <strong>Strada Branciog 3</strong>.</p>
+        <div class="hero-cta intro" style="--i:3">
+          <a class="btn btn-main" href="tel:0721661330">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-soft" href="https://wa.me/40721661330?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20consulta%C8%9Bie." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 8.5 19z"/></svg>
+            Programează-te pe WhatsApp
+          </a>
+        </div>
+        <a class="today intro" style="--i:4" href="#program" id="todayLink"><span class="dot" aria-hidden="true"></span><span id="todayText">Vezi programul cabinetului</span></a>
+      </div>
+
+      <div class="hero-media">
+        <div class="blobs intro-blobs" aria-hidden="true">
+          <span class="blob b1"></span>
+          <span class="blob b2"></span>
+          <span class="blob b3"></span>
+          <span class="blob b4"></span>
+        </div>
+        <img class="hero-photo intro-photo" src="img/5.jpg" alt="Medic stomatolog care examinează o pacientă așezată în scaunul stomatologic" width="900" height="1125" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="about-grid">
+        <img class="about-photo rv scale" src="img/1.jpg" alt="Medic stomatolog vorbind cu un pacient în cabinet" loading="lazy" width="900" height="1125">
+        <div class="about-text">
+          <h2 id="despre-titlu" class="rv">Aproape de casă, cu răbdare la fiecare vizită</h2>
+          <p class="rv" style="--d:.08s">Suntem un cabinet stomatologic din Ploiești, dedicat sănătății orale a pacienților noștri. Oferim servicii generale de stomatologie într-un mediu prietenos.</p>
+          <p class="rv" style="--d:.16s">Punem accent pe atenție și confort la fiecare vizită: îți explicăm ce facem, pe înțeles, și lucrăm în ritmul tău.</p>
+        </div>
+      </div>
+
+      <ul class="perks">
+        <li class="perk rv" style="--d:0s">
+          <span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg></span>
+          <div>
+            <h3>Program flexibil</h3>
+            <p>Ore de dimineață în unele zile și de după-amiază în altele, ca să găsești momentul potrivit.</p>
+          </div>
+        </li>
+        <li class="perk rv" style="--d:.1s">
+          <span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="2.6"/><circle cx="16.5" cy="9" r="2"/><path d="M3.5 19c0-3 2-5 4.5-5s4.5 2 4.5 5M13 19c0-2.4 1.5-4 3.5-4s3.5 1.6 3.5 4"/></svg></span>
+          <div>
+            <h3>Pentru familie</h3>
+            <p>Grijă pentru orice vârstă, de la cei mici până la bunici.</p>
+          </div>
+        </li>
+        <li class="perk rv" style="--d:.2s">
+          <span class="perk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c.6 4 2.5 5.9 6.5 6.5-4 .6-5.9 2.5-6.5 6.5-.6-4-2.5-5.9-6.5-6.5 4-.6 5.9-2.5 6.5-6.5zM18.5 16v4M16.5 18h4"/></svg></span>
+          <div>
+            <h3>Atmosferă plăcută</h3>
+            <p>Vizite fără grabă și fără stres, într-un loc în care te simți bine primit.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <div class="services-grid">
+        <div class="services-head">
+          <h2 id="servicii-titlu">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+          <p>Stomatologie generală pentru toată familia. Dacă nu știi exact de ce ai nevoie, începe cu o consultație.</p>
+          <a class="btn btn-main" href="tel:0721661330">Sună pentru programare</a>
+        </div>
+        <ul class="service-list">
+          <li class="service rv left">
+            <span class="service-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span>
+            <div>
+              <h3>Consultații</h3>
+              <p>Ne uităm atent la dinți și gingii, îți spunem pe înțeles ce vedem și stabilim împreună pașii următori.</p>
+            </div>
+          </li>
+          <li class="service rv left" style="--d:.12s">
+            <span class="service-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linejoin="round"><path d="M7 3.2c-2.5 0-4 2-4 4.4 0 2 .8 3.4 1.4 5 .7 2 .9 4.5 1.6 6.8.4 1.3 1.9 1.4 2.3.1L9.6 15c.4-1.3 1.2-2 2.4-2s2 .7 2.4 2l1.3 4.5c.4 1.3 1.9 1.2 2.3-.1.7-2.3.9-4.8 1.6-6.8.6-1.6 1.4-3 1.4-5 0-2.4-1.5-4.4-4-4.4-2 0-3 1-5 1s-3-1-5-1z"/></svg></span>
+            <div>
+              <h3>Tratamente</h3>
+              <p>Tratamente stomatologice generale, explicate dinainte și făcute cu grijă pentru confortul tău. Sună-ne și îți spunem dacă tratamentul de care ai nevoie se face la noi.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="gallery" role="group" aria-label="Imagini ilustrative">
+        <figure class="rv scale">
+          <img src="img/3.jpg" alt="Scaun stomatologic și instrumente într-un cabinet luminos" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="rv scale" style="--d:.12s">
+          <img src="img/4.jpg" alt="Medic stomatolog lucrând la îngrijirea dinților unui pacient" loading="lazy" width="900" height="900">
+        </figure>
+      </div>
+      <p class="gallery-note">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <section class="hours" id="program" aria-labelledby="program-titlu">
+    <div class="wrap">
+      <div class="hours-head">
+        <div>
+          <h2 id="program-titlu">Program</h2>
+        </div>
+        <div>
+          <p>Dimineața în unele zile, după-amiaza în altele. Alege ziua care ți se potrivește și sună-ne pentru programare.</p>
+          <p class="status" id="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="axis-wrap" aria-hidden="true">
+        <div class="axis"><span style="left:0">08</span><span style="left:36.364%">12</span><span style="left:45.455%">13</span><span style="left:100%">19</span></div>
+      </div>
+      <ol class="week rv" id="week" style="opacity:1">
+        <li class="day" data-day="1">
+          <div class="day-head"><span class="day-name">Luni<span class="tag">azi</span></span><span class="day-hours">08:00 – 12:00</span></div>
+          <div class="track" aria-hidden="true"><span class="bar am" style="--d:0s"></span></div>
+        </li>
+        <li class="day" data-day="2">
+          <div class="day-head"><span class="day-name">Marți<span class="tag">azi</span></span><span class="day-hours">13:00 – 19:00</span></div>
+          <div class="track" aria-hidden="true"><span class="bar pm" style="--d:.08s"></span></div>
+        </li>
+        <li class="day" data-day="3">
+          <div class="day-head"><span class="day-name">Miercuri<span class="tag">azi</span></span><span class="day-hours">13:00 – 19:00</span></div>
+          <div class="track" aria-hidden="true"><span class="bar pm" style="--d:.16s"></span></div>
+        </li>
+        <li class="day" data-day="4">
+          <div class="day-head"><span class="day-name">Joi<span class="tag">azi</span></span><span class="day-hours">08:00 – 12:00</span></div>
+          <div class="track" aria-hidden="true"><span class="bar am" style="--d:.24s"></span></div>
+        </li>
+        <li class="day" data-day="5">
+          <div class="day-head"><span class="day-name">Vineri<span class="tag">azi</span></span><span class="day-hours">08:00 – 12:00</span></div>
+          <div class="track" aria-hidden="true"><span class="bar am" style="--d:.32s"></span></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <h2 id="contact-titlu">Te așteptăm pe Strada Branciog 3</h2>
+        <p>Strada Branciog 3, Ploiești. Pentru o programare, sună-ne sau scrie-ne pe WhatsApp.</p>
+        <a class="phone-big" href="tel:0721661330" aria-label="Sună la 0721 661 330">0721 661 330</a>
+        <div class="contact-actions">
+          <a class="btn btn-main" href="tel:0721661330">Sună acum</a>
+          <a class="btn btn-soft" href="https://wa.me/40721661330?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20consulta%C8%9Bie." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=CMI+Dr.+Popescu+Raluca+Ioana+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+        <dl class="mini-hours">
+          <dt>Luni, joi, vineri</dt><dd>08:00 – 12:00</dd>
+          <dt>Marți, miercuri</dt><dd>13:00 – 19:00</dd>
+        </dl>
+      </div>
+      <div class="map rv">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=25.991869299999998,44.9410096,25.9998693,44.945009600000006&layer=mapnik&marker=44.9430096,25.9958693" title="Harta: CMI Dr. Popescu Raluca Ioana, Strada Branciog 3, Ploiești" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-name">CMI Dr. Popescu Raluca Ioana</p>
+        <p style="margin-top:.6rem">Servicii stomatologice pentru întreaga familie, în Ploiești.</p>
+      </div>
+      <ul>
+        <li>Strada Branciog 3, Ploiești</li>
+        <li><a href="tel:0721661330">0721 661 330</a></li>
+        <li><a href="https://wa.me/40721661330?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20consulta%C8%9Bie." target="_blank" rel="noopener">Scrie pe WhatsApp</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=CMI+Dr.+Popescu+Raluca+Ioana+Ploie%C8%99ti" target="_blank" rel="noopener">Vezi pe Google Maps</a></li>
+      </ul>
+      <ul>
+        <li>Luni, joi, vineri: 08:00 – 12:00</li>
+        <li>Marți, miercuri: 13:00 – 19:00</li>
+      </ul>
+    </div>
+    <div class="footer-small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: oswaldoruiz, DarkoStojanovic, StockSnap, drshohmelian, jarmoluk</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // umbra barei de navigare la derulare
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8);}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // meniul de pe telefon
+  var btn=document.getElementById('menuBtn'),panel=document.getElementById('menuPanel');
+  function setMenu(open){
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.setAttribute('aria-label',open?'Închide meniul':'Deschide meniul');
+    panel.classList.toggle('open',open);
+  }
+  btn.addEventListener('click',function(){setMenu(btn.getAttribute('aria-expanded')!=='true');});
+  panel.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setMenu(false);}});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target))setMenu(false);});
+
+  // dezvăluiri la derulare (intră și ies pe același drum)
+  var week=document.getElementById('week');
+  week.style.opacity='';
+  week.classList.remove('rv');
+  var targets=[].slice.call(document.querySelectorAll('.rv'));
+  targets.push(week);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){en.target.classList.toggle('in',en.isIntersecting);});
+    },{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    targets.forEach(function(t){io.observe(t);});
+  }else{
+    targets.forEach(function(t){t.classList.add('in');});
+  }
+
+  // programul de azi
+  var sched={1:[8,12],2:[13,19],3:[13,19],4:[8,12],5:[8,12]};
+  var names=['duminică','luni','marți','miercuri','joi','vineri','sâmbătă'];
+  function pad(h){return (h<10?'0':'')+h+':00';}
+  function update(){
+    var now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+    var today=sched[d],status=document.getElementById('status'),
+        tl=document.getElementById('todayLink'),tt=document.getElementById('todayText');
+    [].forEach.call(document.querySelectorAll('.day'),function(li){
+      li.classList.toggle('is-today',+li.getAttribute('data-day')===d);
+    });
+    var open=false,msg='';
+    if(today&&h>=today[0]&&h<today[1]){
+      open=true;msg='Acum suntem deschiși, până la '+pad(today[1])+'.';
+    }else if(today&&h<today[0]){
+      msg='Azi deschidem la '+pad(today[0])+'.';
+    }else{
+      for(var i=1;i<=7;i++){
+        var nd=(d+i)%7;
+        if(sched[nd]){
+          msg='Acum e închis. Revenim '+(i===1?'mâine, '+names[nd]:names[nd])+', la '+pad(sched[nd][0])+'.';
+          break;
+        }
+      }
+    }
+    status.textContent=msg;status.classList.toggle('open',open);
+    tl.classList.toggle('open',open);
+    tt.textContent=today?('Azi, '+names[d]+': '+pad(today[0])+' – '+pad(today[1])+(open?' (deschis acum)':'')):'Azi nu avem program. Vezi zilele cu program';
+  }
+  update();setInterval(update,60000);
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
