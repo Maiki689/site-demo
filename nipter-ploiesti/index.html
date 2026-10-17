@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nipter, feronerie în Ploiești</title>
+<meta name="description" content="Nipter, magazin local de feronerie în Ploiești. Produse esențiale pentru casă și proiecte mici.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Rubik:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0f766e;
+  --teal-dk:#0b5b55;
+  --teal-lt:#d7eeeb;
+  --yellow:#FFD447;
+  --ink:#15181c;
+  --white:#ffffff;
+  --muted:#4b5559;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:Rubik,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;margin:0}
+h1,h2{letter-spacing:-.02em;line-height:1.08}
+section{padding:clamp(4rem,9vw,7rem) 0;scroll-margin-top:4rem}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1120px,calc(100% - 2.5rem));margin-inline:auto}
+.muted{color:var(--muted)}
+.skip{position:absolute;left:-999px;top:auto}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:#fff;padding:.6rem 1rem;border-radius:999px}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;height:4rem;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  border-top:1px solid rgba(255,255,255,.85);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.scrolled{box-shadow:0 10px 30px -18px rgba(21,24,28,.35)}
+.nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  font:700 1.25rem/1 Outfit,sans-serif;text-decoration:none;color:var(--ink);
+  display:inline-flex;align-items:center;gap:.5rem;letter-spacing:-.01em;
+}
+.menu{display:none;list-style:none;margin:0;padding:0;gap:2rem}
+.menu a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--ink);padding:.5rem 0}
+.menu a:hover{color:var(--teal)}
+@media (min-width:760px){.menu{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:56px;padding:0 1.6rem;border-radius:999px;
+  font:600 1.0625rem/1 Outfit,sans-serif;letter-spacing:0;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .1s linear,background-color .25s var(--ease),color .25s var(--ease),box-shadow .25s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn-sm{min-height:44px;padding:0 1.1rem;font-size:.95rem}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-dk);box-shadow:0 10px 24px -14px rgba(11,91,85,.8)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{box-shadow:0 10px 24px -14px rgba(21,24,28,.7)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+
+/* ---------- Primul ecran ---------- */
+.hero{padding:calc(4rem + 2.5rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.pill{
+  display:inline-flex;align-items:center;padding:.5rem .95rem;border-radius:999px;
+  background:var(--yellow);color:var(--ink);font:600 .92rem/1 Outfit,sans-serif;letter-spacing:.01em;
+}
+.hero h1{
+  margin-top:.9rem;font-size:clamp(3.4rem,13vw,7.5rem);font-weight:800;
+  letter-spacing:-.02em;line-height:1;color:var(--ink);
+}
+.slogan{font:600 clamp(1.4rem,3.6vw,2.1rem)/1.15 Outfit,sans-serif;margin-top:.9rem}
+.lead{color:var(--muted);font-size:clamp(1.05rem,2vw,1.2rem);max-width:30em;margin-top:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.actions .btn{flex:1 1 auto}
+@media (min-width:560px){.actions .btn{flex:0 0 auto}}
+
+.bag-col{display:grid;justify-items:center;gap:1rem}
+.bag{
+  position:relative;display:block;width:min(100%,340px);aspect-ratio:1/1;
+  background:none;border:0;padding:0;margin:0;cursor:pointer;border-radius:42px;
+  -webkit-tap-highlight-color:transparent;
+}
+@media (min-width:900px){.bag{width:min(100%,460px)}}
+.bag::before{
+  content:"";position:absolute;inset:0;border-radius:42px;background:var(--yellow);
+  transition:background-color .3s var(--ease);
+}
+.bag:hover::before{background:#ffdb70}
+.bag svg{position:relative;z-index:1;width:100%;height:100%;overflow:visible}
+.hint{font-size:.92rem;color:var(--muted);text-align:center}
+
+/* Animația pungii: o singură secvență, la intrare și la apăsare */
+@keyframes drop{
+  from{opacity:0;transform:translateY(-300px)}
+  to{opacity:1;transform:none}
+}
+@keyframes fadeIt{from{opacity:0}to{opacity:1}}
+.anim .it{animation:drop .7s var(--ease) var(--d,0s) both}
+
+/* ---------- Despre (teal) ---------- */
+.about{background:var(--teal);color:#fff}
+.about h2{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:700;max-width:12em}
+.about-text{font-size:clamp(1.05rem,1.8vw,1.2rem);max-width:36em;margin-top:1.25rem;opacity:.95}
+.perks{list-style:none;padding:0;margin:3rem 0 0;display:grid;gap:1rem}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr)}}
+.perk{border-radius:28px;padding:1.75rem;display:grid;gap:1rem;align-content:start}
+.perk h3{font:700 1.4rem/1.2 Outfit,sans-serif}
+.perk p{opacity:.9}
+.perk-ico{
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  font-size:1.6rem;background:var(--yellow);line-height:1;
+}
+.p1{background:var(--yellow);color:var(--ink)}
+.p1 .perk-ico{background:#fff}
+.p2{background:#fff;color:var(--ink)}
+.p3{background:var(--ink);color:#fff}
+
+/* ---------- Produse ---------- */
+.products{background:#fff}
+.sec-head{display:grid;gap:.9rem;margin-bottom:2.75rem}
+.sec-head h2,.gallery h2,.contact h2{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:700}
+.bento{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:760px){.bento{grid-template-columns:1.25fr 1fr}.b1{grid-row:span 2}}
+.blk{
+  border-radius:32px;padding:clamp(1.5rem,4vw,2.5rem);min-height:200px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:.75rem;
+}
+.blk h3{font:700 clamp(1.5rem,3vw,2.1rem)/1.12 Outfit,sans-serif;letter-spacing:-.01em}
+.blk p{max-width:28em}
+.b1{background:var(--yellow);color:var(--ink);min-height:300px}
+.b2{background:var(--teal);color:#fff}
+.b3{background:var(--ink);color:#fff}
+
+/* ---------- Galerie ---------- */
+.gallery{background:var(--teal-lt)}
+.gallery h2{margin-bottom:2.5rem}
+.gal{display:grid;gap:1rem;grid-template-columns:1fr 1fr}
+.gal figure{margin:0;overflow:hidden;border-radius:28px;background:#fff}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.g1{grid-column:1/-1;aspect-ratio:16/10}
+.g2,.g3{aspect-ratio:1/1}
+@media (min-width:760px){
+  .gal{grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;height:620px}
+  .g1{grid-column:auto;grid-row:1/3;aspect-ratio:auto}
+  .g2,.g3{aspect-ratio:auto}
+}
+
+/* ---------- Contact (galben) ---------- */
+.contact{background:var(--yellow)}
+.contact-grid{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr}}
+.contact .lead{color:var(--ink);opacity:.85}
+.big-phone{font:700 clamp(2rem,6vw,2.8rem)/1 Outfit,sans-serif;letter-spacing:-.02em;margin-top:1.75rem}
+.big-phone a{text-decoration:none}
+.big-phone a:hover{text-decoration:underline;text-underline-offset:6px}
+.map{border-radius:32px;overflow:hidden;min-height:340px;height:100%;background:#fff}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ink);color:#fff;padding:3rem 0 2.5rem}
+.foot-in{display:grid;gap:.6rem}
+.foot p{opacity:.82}
+.foot .brand{color:#fff;opacity:1}
+.foot .small{font-size:.9rem;letter-spacing:.01em}
+.foot a{color:#fff;font-weight:500;width:max-content;padding:.5rem 0}
+
+/* ---------- Dezvăluire la derulare (variate, discrete) ---------- */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .rv-l{opacity:0;transform:translateX(-32px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .rv-s{opacity:0;transform:scale(.96);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .in{opacity:1;transform:none}
+.js .bento .blk:nth-child(2){transition-delay:.08s}
+.js .bento .blk:nth-child(3){transition-delay:.16s}
+.js .gal figure:nth-child(2){transition-delay:.1s}
+.js .gal figure:nth-child(3){transition-delay:.2s}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .rv,.js .rv-l,.js .rv-s{transform:none;transition:opacity .2s linear}
+  .anim .it{animation:fadeIt .2s linear both;transform:none}
+  .js .bento .blk,.js .gal figure{transition-delay:0s}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:2px solid var(--ink)}
+  .lead,.muted,.hint,.about-text{color:var(--ink)}
+  .about{color:#fff}
+  .btn-line{border-width:2px}
+  .perk p,.blk p{opacity:1}
+}
+
+@media (max-width:359px){
+  .brand{font-size:1.1rem}
+  .btn-sm{padding:0 .85rem}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span aria-hidden="true">🔩</span> Nipter</a>
+    <nav aria-label="Meniu principal">
+      <ul class="menu">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-teal btn-sm" href="tel:0731221999">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <!-- Primul ecran -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="pill">Feronerie în Ploiești</p>
+        <h1>Nipter</h1>
+        <p class="slogan">Tot ce ai nevoie la îndemână</p>
+        <p class="lead">Magazin local cu produse esențiale de feronerie.</p>
+        <div class="actions">
+          <a class="btn btn-teal" href="tel:0731221999">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40731221999?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse.">Întreabă pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="bag-col">
+        <button class="bag" id="bag" type="button" aria-label="Pungă de cumpărături cu produse. Apasă ca să o umpli din nou.">
+          <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+            <!-- mânerele, în spatele produselor -->
+            <path d="M150 196 C146 110 254 110 250 196" fill="none" stroke="#15181c" stroke-width="13" stroke-linecap="round"/>
+
+            <!-- produsele, care cad în pungă -->
+            <g transform="translate(118 178) rotate(-8)">
+              <g class="it" style="--d:.25s">
+                <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11" fill="#ffffff" stroke="#15181c" stroke-width="3" stroke-linejoin="round"/>
+                <circle r="8" fill="#d7eeeb" stroke="#15181c" stroke-width="3"/>
+              </g>
+            </g>
+            <g transform="translate(170 160) rotate(-16)">
+              <g class="it" style="--d:.4s">
+                <rect x="-2.5" y="-44" width="5" height="78" fill="#15181c"/>
+                <rect x="-10" y="-50" width="20" height="9" rx="3" fill="#15181c"/>
+              </g>
+            </g>
+            <g transform="translate(212 150) rotate(6)">
+              <g class="it" style="--d:.55s">
+                <rect x="-3" y="-16" width="6" height="58" fill="#d7eeeb" stroke="#15181c" stroke-width="2"/>
+                <rect x="-12" y="-54" width="24" height="40" rx="12" fill="#15181c"/>
+              </g>
+            </g>
+            <g transform="translate(256 168) rotate(22)">
+              <g class="it" style="--d:.7s">
+                <rect x="-7" y="-36" width="14" height="66" rx="7" fill="#FFD447" stroke="#15181c" stroke-width="3"/>
+                <circle cy="-42" r="15" fill="#FFD447" stroke="#15181c" stroke-width="3"/>
+                <circle cy="-42" r="6" fill="#d7eeeb" stroke="#15181c" stroke-width="3"/>
+              </g>
+            </g>
+
+            <!-- corpul pungii -->
+            <rect x="100" y="190" width="200" height="180" rx="26" fill="#0f766e" stroke="#15181c" stroke-width="3"/>
+            <rect x="101.5" y="190" width="197" height="16" rx="8" fill="#0b5b55"/>
+            <text x="200" y="284" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="30" fill="#ffffff">Nipter</text>
+          </svg>
+        </button>
+        <p class="hint">Apasă pe pungă ca s-o umpli din nou.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre">
+    <div class="wrap">
+      <h2 class="rv">Un magazin de cartier</h2>
+      <p class="about-text rv">Suntem un magazin de cartier unde găsești produse de bază pentru casă și proiecte mici. Oferim consultanță la alegerea materialelor potrivite pentru nevoile tale. Te așteptăm cu soluții practice pentru fiecare idee.</p>
+
+      <ul class="perks">
+        <li class="perk p1 rv-s">
+          <span class="perk-ico" aria-hidden="true">🤝</span>
+          <h3>Aproape de tine</h3>
+          <p>Găsești rapid ce cauți</p>
+        </li>
+        <li class="perk p2 rv-s">
+          <span class="perk-ico" aria-hidden="true">💡</span>
+          <h3>Recomandări bune</h3>
+          <p>Sfaturi prietenoase și clare</p>
+        </li>
+        <li class="perk p3 rv-s">
+          <span class="perk-ico" aria-hidden="true">🔧</span>
+          <h3>Varietate practică</h3>
+          <p>Tot ce trebuie pentru casă</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section class="products" id="produse">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="lead">Pentru casă și proiecte mici, de la lucrurile cele mai simple.</p>
+      </div>
+
+      <div class="bento">
+        <article class="blk b1 rv-s">
+          <h3>Produse de bază</h3>
+          <p>Șuruburi, cuie, dibluri, scule de mână și articole de bază pentru casă și proiecte mici.</p>
+        </article>
+        <article class="blk b2 rv-s">
+          <h3>Noutăți</h3>
+          <p>Ce e nou pe rafturi, ca să nu rămâi în urmă cu proiectul tău.</p>
+        </article>
+        <article class="blk b3 rv-s">
+          <h3>Consiliere la alegere</h3>
+          <p>Spune-ne ce vrei să faci și te ajutăm să alegi materialul potrivit.</p>
+        </article>
+      </div>
+
+      <div class="actions rv">
+        <a class="btn btn-ink" href="tel:0731221999">Sună acum</a>
+        <a class="btn btn-line" href="https://wa.me/40731221999?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse.">Întreabă pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="gallery" id="galerie">
+    <div class="wrap">
+      <h2 class="rv">Scule și materiale de bază</h2>
+      <div class="gal">
+        <figure class="g1 rv-l">
+          <img src="img/1.jpg" alt="Cheie fixă și scule metalice pe un banc de lucru" loading="lazy">
+        </figure>
+        <figure class="g2 rv-l">
+          <img src="img/2.jpg" alt="Cheie inelară și șuruburi din oțel inoxidabil" loading="lazy">
+        </figure>
+        <figure class="g3 rv-l">
+          <img src="img/3.jpg" alt="Lemn și scule pentru lucrări de amenajare" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="rv">Treci pe la noi sau sună-ne</h2>
+        <p class="lead rv">Suntem în Ploiești. Dacă vrei să verifici că ai găsit ce îți trebuie, întreabă-ne înainte să vii.</p>
+        <p class="big-phone rv"><a href="tel:0731221999">0731 221 999</a></p>
+        <div class="actions rv">
+          <a class="btn btn-ink" href="tel:0731221999">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40731221999?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse.">Întreabă pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Nipter+Ploie%C8%99ti">Vezi harta</a>
+        </div>
+      </div>
+      <div class="map rv-s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0798673,44.9687086,26.087867300000003,44.972708600000004&amp;layer=mapnik&amp;marker=44.9707086,26.0838673" title="Harta: Nipter, Ploiești" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="brand"><span aria-hidden="true">🔩</span> Nipter</p>
+    <p>Nipter, Ploiești. Feronerie de cartier.</p>
+    <p class="small">Model de site (demo)</p>
+    <p class="small">Fotografii ilustrative de pe Pixabay: -ontiveros-, analogicus, photonia</p>
+    <a href="#top">Înapoi sus</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  // Umbră pe bara de navigare doar când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare
+  var reveals = document.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Punga: se umple la încărcare și din nou la apăsare
+  var bag = document.getElementById('bag');
+  function fillBag() {
+    bag.classList.remove('anim');
+    void bag.offsetWidth; // repornește animația
+    bag.classList.add('anim');
+  }
+  fillBag();
+  bag.addEventListener('click', fillBag);
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
