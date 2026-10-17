@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+<title>Pensiunea la Gina · Ploiești</title>
+<meta name="description" content="Pensiunea la Gina din Ploiești. Pensiune liniștită pentru odihnă sau vizite în oraș. Strada Intrarea Gaterului 1.">
+<meta name="theme-color" content="#F6F1E7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A1%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F1E7;
+  --paper:#FFFCF5;
+  --paper-2:#FBF8F1;
+  --ink:#2A2622;
+  --ink-2:#5C554C;
+  --sky:#6FA8DC;
+  --sky-tint:#E6EFF8;
+  --sage:#5B7F5A;
+  --sage-tint:#E3EBDF;
+  --rose:#BE123C;
+  --rose-deep:#A10F33;
+  --line:rgba(42,38,34,.14);
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0}
+h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:clamp(1.5rem,3vw,2.25rem)}
+h3{font-size:1.5rem;line-height:1.15;letter-spacing:-.01em}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.container{max-width:1120px;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:900px){.container{padding-inline:2.5rem}}
+.section{padding-block:clamp(4.5rem,10vw,7.5rem)}
+.section--paper{background:var(--paper-2)}
+.section--sky{background:var(--sky-tint)}
+
+/* ---------- Buton ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:44px;padding:.7rem 1.25rem;border-radius:4px;
+  font:500 1rem/1.2 var(--sans);text-decoration:none;text-align:center;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:background-color .2s ease,box-shadow .25s ease,border-color .2s ease,color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn--rose{background:var(--rose);color:#fff;box-shadow:0 8px 20px -12px rgba(190,18,60,.8)}
+.btn--rose:hover{background:var(--rose-deep);box-shadow:0 10px 24px -12px rgba(190,18,60,.9)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:rgba(42,38,34,.35)}
+.btn--ghost:hover{background:rgba(42,38,34,.05);border-color:var(--ink)}
+.btn--sm{min-height:44px;padding:.55rem .9rem;font-size:.92rem;width:100%}
+.btn--nav{padding:.5rem .85rem;font-size:.92rem;min-height:44px;white-space:nowrap}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.text-link{display:inline-flex;align-items:center;min-height:44px;font-weight:500;color:var(--ink);text-underline-offset:4px;text-decoration-thickness:1px}
+.text-link:hover{text-decoration:underline}
+
+/* ---------- Antet din sticlă ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(246,241,231,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s ease;
+}
+.site-header.is-scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 30px -20px rgba(42,38,34,.45)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:.75rem;height:4rem;max-width:1120px;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:900px){.nav{padding-inline:2.5rem}}
+.brand{font-family:var(--serif);font-size:1rem;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+@media (min-width:480px){.brand{font-size:1.15rem}}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:.25rem}
+.nav-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;text-decoration:none;font-weight:500;color:var(--ink);border-radius:4px;transition:background-color .2s ease}
+.nav-links a:hover{background:rgba(42,38,34,.06)}
+.nav-actions{display:flex;align-items:center;gap:.25rem}
+.menu-toggle{
+  min-height:44px;min-width:44px;padding:0 .6rem;background:none;border:0;border-radius:4px;cursor:pointer;
+  font:500 .95rem/1 var(--sans);color:var(--ink);
+}
+.menu-toggle:hover{background:rgba(42,38,34,.06)}
+.menu{
+  position:absolute;top:100%;left:0;right:0;
+  background:var(--cream);padding:.5rem 1.25rem 1.25rem;
+  box-shadow:0 24px 40px -28px rgba(42,38,34,.5);
+}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu a{display:flex;align-items:center;min-height:44px;font-size:1.05rem;text-decoration:none;font-weight:500}
+.menu .btn{margin-top:.75rem;width:100%}
+@media (min-width:900px){
+  .nav-links{display:flex}
+  .menu-toggle{display:none}
+  .menu{display:none!important}
+}
+
+/* ---------- Primul ecran ---------- */
+.hero{padding-top:calc(4rem + clamp(2.5rem,7vw,4.5rem));padding-bottom:clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.75rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero-text .lead{font-size:clamp(1.15rem,2.4vw,1.4rem);line-height:1.35;margin-top:1.25rem}
+.hero-text .desc{margin-top:.6rem;color:var(--ink-2);max-width:34ch}
+.hero-address{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.5rem;min-height:44px;color:var(--ink-2);text-decoration:none;text-underline-offset:4px}
+.hero-address:hover{text-decoration:underline}
+
+/* ---------- Cartea poștală ---------- */
+.postcard-wrap{width:100%;max-width:480px;justify-self:center}
+.postcard{margin:0;perspective:1600px;width:100%}
+.postcard-inner{
+  position:relative;display:grid;transform-style:preserve-3d;
+  transition:transform .8s var(--ease);
+}
+.postcard.is-flipped .postcard-inner{transform:rotateY(180deg)}
+.postcard-face{
+  grid-area:1/1;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+}
+.postcard-face--back{transform:rotateY(180deg)}
+.paper{
+  height:100%;background:var(--paper);border-radius:4px;
+  box-shadow:0 1px 2px rgba(42,38,34,.12),0 26px 50px -30px rgba(42,38,34,.5);
+}
+.paper--front{padding:.75rem .75rem .25rem}
+.photo{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:2px;background:var(--sky-tint)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stamp{
+  position:absolute;top:.75rem;right:.75rem;width:4.6rem;
+  padding:.3rem;background:#fff;box-shadow:0 2px 8px -3px rgba(0,0,0,.35);
+}
+.stamp-inner{
+  aspect-ratio:3/4;background:var(--sky);color:var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;
+  outline:1.5px solid rgba(255,255,255,.9);outline-offset:-5px;
+  font-size:.66rem;letter-spacing:.06em;line-height:1;
+}
+.stamp-emoji{font-size:1.5rem;line-height:1}
+.caption{
+  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.2rem .75rem;
+  padding:.8rem .35rem .85rem;
+}
+.caption span:first-child{font-family:var(--serif);font-size:1.1rem;letter-spacing:-.01em}
+.caption span:last-child{font-size:.82rem;color:var(--ink-2);letter-spacing:.02em}
+
+.paper--back{
+  position:relative;display:grid;grid-template-columns:1fr 1px 1fr;gap:1.25rem;align-items:center;
+  padding:1.5rem 1.4rem;
+}
+.back-divider{background:rgba(42,38,34,.2);align-self:stretch}
+.back-greet{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.45rem);line-height:1.2;letter-spacing:-.01em;margin-bottom:1.1rem}
+.writing{display:block;height:1.9rem;border-bottom:1px solid rgba(111,168,220,.9)}
+.back-name{font-family:var(--serif);font-size:1.25rem;line-height:1.2;letter-spacing:-.01em;margin-bottom:.5rem}
+.back-address{font-size:.95rem;line-height:1.45}
+.back-address .back-phone{display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:none}
+.back-address .back-phone:hover{text-decoration:underline}
+.back-links{display:grid;gap:.5rem;margin-top:.75rem}
+
+@media (max-width:639px){
+  .paper--back{grid-template-columns:1fr;gap:1rem;padding:1.25rem 1.1rem}
+  .back-divider{display:none}
+  .writing--extra{display:none}
+  .back-greet{margin-bottom:.75rem}
+}
+
+.flip-btn{margin:1.25rem auto 0;display:flex}
+
+/* ---------- Despre ---------- */
+.about-lead{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.2;letter-spacing:-.01em;max-width:24ch}
+.about-body{margin-top:1.5rem;max-width:58ch;color:var(--ink-2)}
+.perks{list-style:none;margin:clamp(3rem,6vw,4.5rem) 0 0;padding:0;display:grid;gap:2.25rem}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.perk-icon{
+  width:3.25rem;height:3.25rem;border-radius:50%;background:var(--sage-tint);
+  display:grid;place-items:center;font-size:1.5rem;margin-bottom:1.1rem;
+}
+.perk h3{margin-bottom:.4rem}
+.perk p{color:var(--ink-2);max-width:28ch}
+
+/* ---------- Servicii ---------- */
+.services{list-style:none;margin:0;padding:0;display:grid;gap:2.5rem}
+@media (min-width:760px){.services{grid-template-columns:1fr 1fr;gap:3.5rem}}
+.service{border-top:1px solid var(--line);padding-top:1.75rem}
+.service h3{font-size:clamp(1.7rem,3vw,2.1rem);margin-bottom:.75rem}
+.service p{color:var(--ink-2);max-width:40ch}
+.service .text-link{margin-top:1rem;padding-inline:0}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:640px){.gallery{grid-template-columns:1fr 1fr;gap:1.5rem}}
+.gallery figure{margin:0;overflow:hidden;border-radius:4px;background:var(--sky-tint)}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .9s var(--ease)}
+@media (hover:hover){.gallery figure:hover img{transform:scale(1.03)}}
+.gallery-note{margin-top:1.25rem;font-size:.85rem;color:var(--ink-2);letter-spacing:.02em}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:2.75rem;align-items:center}
+@media (min-width:900px){.contact-grid{grid-template-columns:.9fr 1.1fr;gap:4.5rem}}
+.contact-address{font-size:1.1rem;color:var(--ink-2);margin-bottom:1.25rem}
+.contact-phone a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.01em;text-decoration:none;
+}
+.contact-phone a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.map{aspect-ratio:4/3;border-radius:4px;overflow:hidden;background:var(--sky-tint)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (max-width:899px){.map{aspect-ratio:1/1}}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--ink);color:#E9E2D3;padding:3.5rem 0 2.5rem;font-size:.95rem}
+.footer-inner{display:grid;gap:1.25rem}
+.footer-name{font-family:var(--serif);font-size:1.5rem;letter-spacing:-.01em}
+.footer-meta{color:#D6CEBE}
+.footer-demo{letter-spacing:.02em}
+.credit{font-size:.85rem;color:#BDB5A6;letter-spacing:.02em}
+.site-footer a{color:#fff;text-underline-offset:4px}
+.site-footer .back-top{display:inline-flex;align-items:center;min-height:44px;width:max-content}
+
+/* ---------- Mișcare la intrare și la derulare ---------- */
+.js .hero-text > *{opacity:0;transform:translateY(16px)}
+.js .postcard-wrap{opacity:0;transform:translateY(20px)}
+.is-loaded .hero-text > *,
+.is-loaded .postcard-wrap{
+  opacity:1;transform:none;
+  transition:opacity .7s var(--ease),transform .7s var(--ease);
+}
+.is-loaded .hero-text > *:nth-child(1){transition-delay:.05s}
+.is-loaded .hero-text > *:nth-child(2){transition-delay:.12s}
+.is-loaded .hero-text > *:nth-child(3){transition-delay:.19s}
+.is-loaded .hero-text > *:nth-child(4){transition-delay:.26s}
+.is-loaded .hero-text > *:nth-child(5){transition-delay:.33s}
+.is-loaded .hero-text > *:nth-child(6){transition-delay:.4s}
+.is-loaded .postcard-wrap{transition-delay:.3s}
+
+.js [data-reveal]{opacity:0;transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js [data-reveal="rise"]{transform:translateY(24px)}
+.js [data-reveal="slide"]{transform:translateX(-24px)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* ---------- Sticlă: contrast și transparență ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-header{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn--ghost{border-color:var(--ink);border-width:2px}
+  .paper{box-shadow:0 0 0 1px var(--ink)}
+  .perk-icon{box-shadow:inset 0 0 0 1.5px var(--ink)}
+  .service{border-top-color:var(--ink)}
+}
+
+/* ---------- Mișcare redusă ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .btn:active{transform:none}
+  .js [data-reveal],
+  .js .hero-text > *,
+  .js .postcard-wrap,
+  .is-loaded .hero-text > *,
+  .is-loaded .postcard-wrap{
+    transform:none!important;
+    transition:opacity .2s linear!important;
+    transition-delay:0s!important;
+  }
+  .postcard-inner{transform:none!important;transition:none!important}
+  .postcard-face{transition:opacity .2s linear}
+  .postcard-face--back{transform:none;opacity:0}
+  .postcard.is-flipped .postcard-face--front{opacity:0}
+  .postcard.is-flipped .postcard-face--back{opacity:1}
+  .gallery img,.gallery figure:hover img{transition:none;transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="site-header" id="antet">
+  <nav class="nav" aria-label="Navigare principală">
+    <a class="brand" href="#top">Pensiunea la Gina</a>
+
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn--ghost btn--nav" href="tel:0722670683">Sună acum</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobil">Meniu</button>
+    </div>
+  </nav>
+
+  <div class="menu" id="menu-mobil" hidden>
+    <ul>
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn--rose" href="https://wa.me/40722670683?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20camer%C4%83%20la%20pensiunea%20la%20Gina." target="_blank" rel="noopener">Rezervă pe WhatsApp</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Primul ecran: numele, contactul și cartea poștală -->
+  <section class="hero" aria-labelledby="titlu-principal">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu-principal">Pensiunea la Gina</h1>
+        <p class="lead">Locul tău primitor din Ploiești</p>
+        <p class="desc">Pensiune liniștită pentru odihnă sau vizite în oraș.</p>
+
+        <div class="actions">
+          <a class="btn btn--rose" href="https://wa.me/40722670683?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20camer%C4%83%20la%20pensiunea%20la%20Gina." target="_blank" rel="noopener">Rezervă pe WhatsApp</a>
+          <a class="btn btn--ghost" href="tel:0722670683">Sună acum</a>
+        </div>
+
+        <a class="hero-address" href="https://www.google.com/maps/search/?api=1&amp;query=Pensiunea+la+Gina+Ploie%C8%99ti" target="_blank" rel="noopener">Strada Intrarea Gaterului 1, Ploiești</a>
+      </div>
+
+      <div class="postcard-wrap">
+        <figure class="postcard" id="carte">
+          <div class="postcard-inner">
+
+            <div class="postcard-face postcard-face--front">
+              <div class="paper paper--front">
+                <div class="photo">
+                  <img src="img/1.jpg" alt="Cameră cu pat, mobilier și decor de interior" width="1200" height="900">
+                  <div class="stamp" aria-hidden="true">
+                    <div class="stamp-inner">
+                      <span class="stamp-emoji">🏡</span>
+                      <span>Ploiești</span>
+                    </div>
+                  </div>
+                </div>
+                <figcaption class="caption">
+                  <span>Salutări din Ploiești</span>
+                  <span>Pensiunea la Gina</span>
+                </figcaption>
+              </div>
+            </div>
+
+            <div class="postcard-face postcard-face--back" aria-hidden="true" inert>
+              <div class="paper paper--back">
+                <div class="back-msg">
+                  <p class="back-greet">Te așteptăm cu drag în Ploiești.</p>
+                  <span class="writing"></span>
+                  <span class="writing"></span>
+                  <span class="writing writing--extra"></span>
+                </div>
+                <div class="back-divider" aria-hidden="true"></div>
+                <div class="back-address">
+                  <p class="back-name">Pensiunea la Gina</p>
+                  <p>Strada Intrarea Gaterului 1<br>Ploiești</p>
+                  <a class="back-phone" href="tel:0722670683">0722 670 683</a>
+                  <div class="back-links">
+                    <a class="btn btn--rose btn--sm" href="https://wa.me/40722670683?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20camer%C4%83%20la%20pensiunea%20la%20Gina." target="_blank" rel="noopener">Rezervă pe WhatsApp</a>
+                    <a class="btn btn--ghost btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Pensiunea+la+Gina+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </figure>
+
+        <button class="btn btn--ghost flip-btn" type="button" id="buton-intoarce" aria-controls="carte">Întoarce cartea ca să vezi adresa</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre" class="section section--paper" aria-labelledby="titlu-despre" data-reveal="rise">
+    <div class="container">
+      <h2 id="titlu-despre">Despre pensiune</h2>
+      <p class="about-lead">La pensiunea la Gina găsești o atmosferă relaxată și o gazdă mereu atentă la nevoile oaspeților.</p>
+      <p class="about-body">Este o alegere potrivită atât pentru cei aflați în tranzit, cât și pentru turiști sau delegați veniți în Ploiești. Aici te poți bucura de liniște și confort într-un cadru familiar.</p>
+
+      <ul class="perks">
+        <li class="perk">
+          <span class="perk-icon" aria-hidden="true">🛏️</span>
+          <h3>Camere confortabile</h3>
+          <p>Atmosferă plăcută pentru liniștea ta.</p>
+        </li>
+        <li class="perk">
+          <span class="perk-icon" aria-hidden="true">🚗</span>
+          <h3>Acces facil</h3>
+          <p>Ideală pentru drumuri sau vizite scurte.</p>
+        </li>
+        <li class="perk">
+          <span class="perk-icon" aria-hidden="true">🤗</span>
+          <h3>Primire caldă</h3>
+          <p>Gazdă grijulie, întotdeauna aici.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Servicii -->
+  <section id="servicii" class="section" aria-labelledby="titlu-servicii" data-reveal="slide">
+    <div class="container">
+      <h2 id="titlu-servicii">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <ul class="services">
+        <li class="service">
+          <h3>Camere</h3>
+          <p>Camere pentru odihnă, într-un cadru familiar și liniștit.</p>
+          <a class="text-link" href="tel:0722670683">Sună pentru tarife</a>
+        </li>
+        <li class="service">
+          <h3>Cazare</h3>
+          <p>Cazare pentru o noapte sau mai multe, în tranzit ori în vizită în Ploiești.</p>
+          <a class="text-link" href="tel:0722670683">Sună pentru disponibilitate</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie" class="section section--sky" aria-labelledby="titlu-galerie" data-reveal="scale">
+    <div class="container">
+      <h2 id="titlu-galerie">Galerie</h2>
+      <div class="gallery">
+        <figure>
+          <img src="img/2.jpg" alt="Dormitor cu pat cu baldachin și comodă" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure>
+          <img src="img/3.jpg" alt="Cameră cu măsuță de toaletă și scaun din răchită" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure>
+          <img src="img/4.jpg" alt="Pat cu pilotă și pernă, lenjerie de pat" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure>
+          <img src="img/5.jpg" alt="Living cu canapea și covor" loading="lazy" width="1200" height="900">
+        </figure>
+      </div>
+      <p class="gallery-note">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section--paper" aria-labelledby="titlu-contact" data-reveal="fade">
+    <div class="container contact-grid">
+      <div>
+        <h2 id="titlu-contact">Vino pe la noi</h2>
+        <p class="contact-address">Strada Intrarea Gaterului 1, Ploiești</p>
+        <p class="contact-phone"><a href="tel:0722670683">0722 670 683</a></p>
+
+        <div class="actions">
+          <a class="btn btn--rose" href="https://wa.me/40722670683?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20camer%C4%83%20la%20pensiunea%20la%20Gina." target="_blank" rel="noopener">Rezervă pe WhatsApp</a>
+          <a class="btn btn--ghost" href="tel:0722670683">Sună acum</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Pensiunea+la+Gina+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=25.998553299999998,44.9042968,26.0065533,44.9082968&amp;layer=mapnik&amp;marker=44.9062968,26.0025533"
+          title="Harta: Pensiunea la Gina, Strada Intrarea Gaterului 1, Ploiești"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-name">Pensiunea la Gina</p>
+    <p class="footer-meta">Strada Intrarea Gaterului 1, Ploiești</p>
+    <p class="footer-demo">Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: peterweideman, JamesDeMers, ClickerHappy</p>
+    <a class="back-top" href="#top">Înapoi sus</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.getElementById('antet');
+  var toggle = document.querySelector('.menu-toggle');
+  var menu = document.getElementById('menu-mobil');
+  var card = document.getElementById('carte');
+  var flip = document.getElementById('buton-intoarce');
+  var front = card.querySelector('.postcard-face--front');
+  var back = card.querySelector('.postcard-face--back');
+
+  /* Umbră la derulare */
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Meniu pe telefon */
+  function closeMenu() {
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = 'Meniu';
+  }
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    if (open) {
+      closeMenu();
+    } else {
+      menu.hidden = false;
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.textContent = 'Închide';
+    }
+  });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !menu.hidden) closeMenu();
+  });
+  var desktop = window.matchMedia('(min-width: 900px)');
+  desktop.addEventListener('change', function (e) { if (e.matches) closeMenu(); });
+
+  /* Cartea poștală: se întoarce și arată adresa pe spate */
+  flip.addEventListener('click', function () {
+    var on = card.classList.toggle('is-flipped');
+    front.inert = on;
+    front.setAttribute('aria-hidden', String(on));
+    back.inert = !on;
+    back.setAttribute('aria-hidden', String(!on));
+    flip.textContent = on ? 'Vezi fotografia din față' : 'Întoarce cartea ca să vezi adresa';
+  });
+
+  /* Intrarea din primul ecran */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      document.body.classList.add('is-loaded');
+    });
+  });
+
+  /* Dezvăluire la derulare */
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
