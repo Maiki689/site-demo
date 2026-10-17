@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ro" class="no-js">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autoservire Regina Nopții, Ploiești | Mâncare românească la autoservire</title>
+<meta name="description" content="Autoservire Regina Nopții, în subsolul Winmarkt Omnia din Ploiești. Mâncare românească, la autoservire. Comenzi și prin Wolt.">
+<meta name="theme-color" content="#1B2635">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2635;
+  --gold:#D4AF37;
+  --white:#FFFFFF;
+  --red:#E94223;
+  --ink:#1B2635;
+  --muted:#4F5B6B;
+  --paper:#F4F6F8;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{
+  margin:0;
+  font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit}
+h1,h2,h3{font-weight:700}
+h1,h2{font-family:"Dancing Script",cursive;letter-spacing:-.02em;line-height:1.05}
+
+.skip{position:absolute;left:-999px;top:0;z-index:100;background:var(--navy);color:#fff;padding:.6rem 1rem;border-radius:8px}
+.skip:focus{left:1rem;top:1rem}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:8px}
+
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(1.25rem,4vw,2.5rem)}
+
+.section{padding:clamp(4.5rem,10vw,7.5rem) 0}
+.section h2{font-size:clamp(2.6rem,6vw,3.8rem)}
+.sec-head{margin-bottom:clamp(2.25rem,5vw,3.5rem)}
+.lead{font-size:clamp(1.1rem,2vw,1.25rem);line-height:1.55;max-width:44ch;color:var(--ink)}
+
+/* Cusătură (motivul memorabil) */
+.stitch{display:block;width:min(100%,300px);height:auto;margin-top:.75rem;overflow:visible}
+.stitch .thread{fill:none;stroke:var(--gold);stroke-width:1.2;stroke-dasharray:4 3;opacity:0;transition:opacity .9s ease .1s}
+.stitch .x{opacity:0;transform:translateY(6px) scale(.5);transform-box:fill-box;transform-origin:center;
+  transition:opacity .45s ease,transform .6s var(--ease);
+  transition-delay:calc(var(--i,0) * 70ms + 200ms)}
+.stitch .x path{fill:none;stroke:var(--red);stroke-width:2.2;stroke-linecap:round}
+.stitch-wrap.in .stitch .thread{opacity:1}
+.stitch-wrap.in .stitch .x{opacity:1;transform:none}
+
+/* Glisare la derulare (variante) */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-l{opacity:0;transform:translateX(-14px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-s{opacity:0;transform:scale(.97);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in,.js .reveal-l.in,.js .reveal-s.in{opacity:1;transform:none}
+
+/* Intrarea din prima secțiune */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.enter{opacity:0;animation:rise .75s var(--ease) both;animation-delay:var(--d,0s)}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.35rem;border-radius:999px;
+  font:600 .95rem/1.2 Montserrat,system-ui,sans-serif;
+  text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .12s ease,box-shadow .3s ease,background-color .3s ease,color .3s ease,border-color .3s ease;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{box-shadow:0 10px 24px -12px rgba(27,38,53,.7)}
+.btn-line{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{box-shadow:0 10px 24px -12px rgba(0,0,0,.6)}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.875rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Navigare cu sticlă */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.9);
+  transition:box-shadow .4s ease,background-color .4s ease;
+}
+.nav.scrolled{box-shadow:0 10px 30px -18px rgba(27,38,53,.45)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.25rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--navy);text-decoration:none;font-weight:700;font-size:.95rem;min-height:44px}
+.brand img{width:2.6rem;height:2.6rem;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1.25rem}
+.nav-links{display:flex;align-items:center;gap:1.75rem}
+.nav-links a{color:var(--navy);text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.01em;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a:hover{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:6px}
+
+/* Hero */
+.hero{padding:clamp(6.5rem,12vw,8rem) 0 clamp(4rem,8vw,6rem);background:var(--white)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.5rem,6vw,4rem);align-items:center}
+.logo{
+  width:clamp(6.5rem,20vw,9rem);aspect-ratio:1;border-radius:50%;object-fit:cover;
+  border:4px solid #fff;
+  box-shadow:0 0 0 2px var(--gold),0 20px 40px -20px rgba(27,38,53,.55);
+  margin-bottom:1.5rem;
+}
+.hero h1{font-size:clamp(3rem,8.5vw,5.2rem)}
+.slogan{font-size:clamp(1.05rem,2.4vw,1.3rem);font-weight:500;margin-top:.9rem}
+.desc{color:var(--muted);margin-top:.4rem;margin-bottom:2rem}
+.plate{
+  width:min(100%,380px);margin-inline:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;
+  box-shadow:0 0 0 12px #fff,0 0 0 13px var(--gold),0 40px 70px -40px rgba(27,38,53,.6);
+}
+
+/* Despre */
+.about-sec{background:var(--paper)}
+.about{max-width:44rem}
+.about p+p{margin-top:1.1rem}
+.about p:not(.lead){color:var(--muted)}
+
+/* Meniu (fundal întunecat) */
+.menu-sec{background:var(--navy);color:#fff}
+.menu-sec h2{color:#fff}
+.menu-sec :focus-visible{outline-color:var(--gold)}
+.menu-head{display:flex;align-items:center;gap:1rem}
+.badge{
+  flex:none;width:3.25rem;height:3.25rem;border-radius:50%;
+  display:grid;place-items:center;font-size:1.5rem;
+  border:1.5px solid var(--gold);
+}
+.menu-list{display:grid;grid-template-columns:minmax(0,1fr);margin-bottom:3rem}
+.menu-list li{padding:1.5rem 0;border-bottom:1px dotted rgba(212,175,55,.6)}
+.menu-list h3{font-size:1.1rem;font-weight:600;margin-bottom:.3rem}
+.menu-list p{color:#C9D0DA;font-size:.95rem}
+.menu-sec .btn{margin-top:.5rem}
+
+/* Avantaje */
+.perks{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem}
+.perk{display:flex;gap:1.1rem;align-items:flex-start}
+.perk-ico{
+  flex:none;width:3.4rem;height:3.4rem;border-radius:50%;
+  display:grid;place-items:center;font-size:1.5rem;
+  border:1.5px solid var(--gold);background:#fff;
+}
+.perk h3{font-size:1.05rem;margin:.15rem 0 .3rem}
+.perk p{color:var(--muted)}
+
+/* Galerie */
+.gallery-sec{background:var(--paper)}
+.gallery{display:grid;grid-template-columns:minmax(0,1fr);gap:.75rem}
+.gallery figure{margin:0;overflow:hidden;border-radius:12px}
+.gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.5rem,6vw,4rem)}
+.contact h3{font-size:1.05rem;margin-bottom:.5rem}
+.contact .addr{color:var(--muted);margin-bottom:1.25rem;max-width:40ch}
+.phone{
+  display:inline-flex;align-items:center;min-height:44px;margin-bottom:1.75rem;
+  font-size:1.5rem;font-weight:700;color:var(--navy);text-decoration:none;
+}
+.map{position:relative;width:100%;aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#e6e9ee}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* Subsol */
+.foot{background:var(--navy);color:#C9D0DA;padding:3.5rem 0 2.5rem;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;align-items:center}
+.foot .logo{width:6rem;margin:0;border-color:var(--navy)}
+.foot strong{display:block;color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:.35rem}
+.foot p{max-width:46ch;line-height:1.6}
+.foot a{color:#fff;text-underline-offset:4px}
+.foot .small{font-size:.8rem;letter-spacing:.02em;margin-top:1.25rem;opacity:.85}
+
+/* Telefon */
+@media (min-width:480px){
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gallery .g1{grid-column:1 / -1}
+}
+@media (max-width:519px){
+  .actions .btn{flex:1 1 100%}
+}
+@media (max-width:719px){
+  .nav-links a:not(.keep){display:none}
+  .nav-links{gap:1rem}
+}
+@media (max-width:479px){
+  .brand span{display:none}
+}
+
+/* Tabletă și calculator */
+@media (min-width:720px){
+  .menu-list{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:4rem}
+  .perks{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+  .perk{flex-direction:column;gap:1rem}
+  .gallery{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));height:min(560px,70vh)}
+  .gallery .g1{grid-column:auto;grid-row:1 / span 2}
+  .gallery figure{height:100%}
+  .gallery img{height:100%;aspect-ratio:auto}
+  .foot-grid{grid-template-columns:auto minmax(0,1fr)}
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}
+  .plate{width:100%;max-width:480px;justify-self:end;margin:0}
+  .contact-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center}
+}
+
+/* Prefer: fundal opac */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+/* Prefer: contrast mare */
+@media (prefers-contrast:more){
+  :root{--muted:#2E3947}
+  .nav{background:#fff;border-bottom:2px solid var(--navy)}
+  .btn{border-color:currentColor}
+  .btn-navy{border-color:var(--navy)}
+  .menu-list li{border-bottom-color:var(--gold)}
+  .gallery figure{outline:1px solid var(--navy)}
+}
+/* Prefer: mișcare redusă */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .enter{animation-name:fade;animation-duration:.2s;animation-delay:0s}
+  .js .reveal,.js .reveal-l,.js .reveal-s{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .stitch .thread,.stitch .x{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .btn,.nav{transition-duration:.2s}
+  .btn:active{transition-duration:.1s}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#despre">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="img/logo.jpg" alt="" width="42" height="42">
+      <span>Regina Nopții</span>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#despre">Despre</a>
+        <a class="keep" href="#meniu">Meniu</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#adresa">Adresă</a>
+      </nav>
+      <a class="btn btn-navy btn-sm" href="tel:0723365208">Sună acum</a>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <img class="logo enter" style="--d:.05s" src="img/logo.jpg" alt="Logo Autoservire Regina Nopții" width="144" height="144">
+      <h1 class="enter" style="--d:.15s">Autoservire Regina Nopții</h1>
+      <p class="slogan enter" style="--d:.25s">Mâncare românească, la autoservire</p>
+      <p class="desc enter" style="--d:.32s">Mâncare gătită în subsolul Winmarkt Omnia.</p>
+      <div class="actions enter" style="--d:.4s">
+        <a class="btn btn-navy" href="tel:0723365208">Sună acum</a>
+        <a class="btn btn-line" href="https://wa.me/40723365208?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20zilei.">Întreabă pe WhatsApp</a>
+      </div>
+    </div>
+    <img class="plate enter" style="--d:.2s" src="img/4.jpg" alt="Bufet cu preparate calde, ilustrativ" width="1200" height="1200">
+  </div>
+</section>
+
+<section class="section about-sec" id="despre">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Despre noi</h2>
+      <div class="stitch-wrap" data-stitch aria-hidden="true"></div>
+    </div>
+    <div class="about">
+      <p class="lead reveal">Ne găsești la subsolul Winmarkt Omnia, pe bulevardul Republicii, în Ploiești.</p>
+      <p class="reveal" style="--d:.1s">Autoservire Regina Nopții te așteaptă în complexul comercial Winmarkt Omnia, la subsol, cu preparate calde. Descoperă gustul autentic al mâncării românești, servit întrun mod relaxat. Poți comanda și pentru acasă prin Wolt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section menu-sec" id="meniu">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="menu-head">
+        <span class="badge" aria-hidden="true">🍲</span>
+        <h2>Meniu</h2>
+      </div>
+      <div class="stitch-wrap" data-stitch aria-hidden="true"></div>
+    </div>
+    <ul class="menu-list">
+      <li class="reveal-l" style="--d:0s">
+        <h3>Preparate calde</h3>
+        <p>Mâncare românească, la autoservire</p>
+      </li>
+      <li class="reveal-l" style="--d:.06s">
+        <h3>Autoservire</h3>
+        <p>Te servești singur, cu ce alegi</p>
+      </li>
+      <li class="reveal-l" style="--d:.12s">
+        <h3>Feluri principale</h3>
+        <p>Diverse preparate românești la alegere</p>
+      </li>
+      <li class="reveal-l" style="--d:.18s">
+        <h3>Comenzi pentru acasă</h3>
+        <p>Poți comanda prin Wolt</p>
+      </li>
+      <li class="reveal-l" style="--d:.24s">
+        <h3>Unde ne găsești</h3>
+        <p>La subsolul Winmarkt Omnia, bulevardul Republicii, Ploiești</p>
+      </li>
+    </ul>
+    <a class="btn btn-light reveal" href="https://wa.me/40723365208?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20zilei.">Întreabă pe WhatsApp</a>
+  </div>
+</section>
+
+<section class="section" id="avantaje">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Simplu, ca acasă</h2>
+      <div class="stitch-wrap" data-stitch aria-hidden="true"></div>
+    </div>
+    <ul class="perks">
+      <li class="perk reveal" style="--d:0s">
+        <span class="perk-ico" aria-hidden="true">⏱️</span>
+        <div>
+          <h3>Alegi ce îți place</h3>
+          <p>Te servești singur, la autoservire</p>
+        </div>
+      </li>
+      <li class="perk reveal" style="--d:.1s">
+        <span class="perk-ico" aria-hidden="true">📍</span>
+        <div>
+          <h3>Central</h3>
+          <p>La subsol, Winmarkt Omnia Ploiești</p>
+        </div>
+      </li>
+      <li class="perk reveal" style="--d:.2s">
+        <span class="perk-ico" aria-hidden="true">🚚</span>
+        <div>
+          <h3>Livrare ușoară</h3>
+          <p>Poți comanda prin Wolt</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section gallery-sec" id="galerie">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Fotografii</h2>
+      <div class="stitch-wrap" data-stitch aria-hidden="true"></div>
+    </div>
+    <div class="gallery">
+      <figure class="g1 reveal-s">
+        <img src="img/5.jpg" alt="Preparate așezate pe bufet, ilustrativ" loading="lazy" width="1200" height="900">
+      </figure>
+      <figure class="g2 reveal-s" style="--d:.1s">
+        <img src="img/1.jpg" alt="Bar cu salate, ilustrativ" loading="lazy" width="1200" height="900">
+      </figure>
+      <figure class="g3 reveal-s" style="--d:.2s">
+        <img src="img/3.jpg" alt="Bufet cu cartofi prăjiți și nuggets, ilustrativ" loading="lazy" width="1200" height="900">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section contact" id="adresa">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:2rem">
+        <h2>Vino pe la noi</h2>
+        <div class="stitch-wrap" data-stitch aria-hidden="true"></div>
+      </div>
+      <h3>Adresă</h3>
+      <p class="addr">Ne găsești la subsolul Winmarkt Omnia, bulevardul Republicii, Ploiești.</p>
+      <a class="phone" href="tel:0723365208">0723 365 208</a>
+      <div class="actions">
+        <a class="btn btn-navy" href="tel:0723365208">Sună acum</a>
+        <a class="btn btn-line" href="https://wa.me/40723365208?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20zilei.">Întreabă pe WhatsApp</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Autoservire+Regina+Nop%C8%9Bii+Ploie%C8%99ti">Deschide în Google Maps</a>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0181467,44.9389725,26.0261467,44.9429725&amp;layer=mapnik&amp;marker=44.9409725,26.0221467" title="Harta: Autoservire Regina Nopții, Ploiești" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <img class="logo" src="img/logo.jpg" alt="Logo Autoservire Regina Nopții" width="96" height="96">
+    <div>
+      <strong>Autoservire Regina Nopții</strong>
+      <p>Mâncare românească, la autoservire, în subsolul Winmarkt Omnia, bulevardul Republicii, Ploiești.</p>
+      <p style="margin-top:.5rem"><a href="tel:0723365208">0723 365 208</a></p>
+      <p class="small">Model de site (demo)</p>
+      <p class="small">Fotografii ilustrative de pe Pixabay: HNBS, allybally4b, Engin_Akyurt, Counselling, ranjatm</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+
+  /* Motivul de ie: cusătură care se coase singură la derulare */
+  var NS = 'http://www.w3.org/2000/svg';
+  document.querySelectorAll('[data-stitch]').forEach(function (host) {
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('viewBox', '0 0 320 20');
+    svg.setAttribute('class', 'stitch');
+    svg.setAttribute('focusable', 'false');
+
+    var thread = document.createElementNS(NS, 'path');
+    thread.setAttribute('d', 'M2 10H318');
+    thread.setAttribute('class', 'thread');
+    svg.appendChild(thread);
+
+    for (var i = 0; i < 13; i++) {
+      var x = 8 + i * 24.5;
+      var g = document.createElementNS(NS, 'g');
+      g.setAttribute('class', 'x');
+      g.style.setProperty('--i', i);
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', 'M' + (x - 5) + ' 5L' + (x + 5) + ' 15M' + (x + 5) + ' 5L' + (x - 5) + ' 15');
+      g.appendChild(p);
+      svg.appendChild(g);
+    }
+    host.appendChild(svg);
+  });
+
+  /* Dezvăluire la derulare */
+  var items = document.querySelectorAll('.reveal, .reveal-l, .reveal-s, [data-stitch]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Bara de navigare capătă umbră când pagina se derulează */
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
