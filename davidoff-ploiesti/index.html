@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davidoff – Țigări la Mercur, Ploiești</title>
+<meta name="description" content="Țigări Davidoff la parterul Mercur Shopping Center, Ploiești. Deschis luni–sâmbătă, între 9:00 și 21:00.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚬%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F1012;
+  --paper:#F6F6F4;
+  --white:#FFFFFF;
+  --band:#ECEDEF;
+  --gray:#8B8F98;
+  --muted:#5C6068;
+  --accent:#B45309;
+  --accent-deep:#923F06;
+  --line:rgba(15,16,18,.10);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --head:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--body);
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--paper);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3,p,dl,dd,ul{margin:0}
+ul{padding:0;list-style:none}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+.muted{color:var(--muted)}
+
+.h2{
+  font-family:var(--head);
+  font-weight:600;
+  font-size:clamp(2rem,4.6vw,3.25rem);
+  letter-spacing:-.02em;
+  line-height:1.1;
+  margin-bottom:1.25rem;
+}
+
+/* Butoane */
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.4rem;border-radius:999px;
+  font-family:var(--body);font-size:1rem;font-weight:600;line-height:1;
+  text-decoration:none;border:0;cursor:pointer;
+  transition:background-color .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease),transform .1s linear;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--accent);color:#fff;box-shadow:0 12px 24px -16px rgba(180,83,9,.9)}
+.btn--primary:hover{background:var(--accent-deep);box-shadow:0 14px 28px -16px rgba(146,63,6,.9)}
+.btn--ghost{color:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(15,16,18,.22)}
+.btn--ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink);background:rgba(15,16,18,.04)}
+
+/* Navigare, sticlă */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(246,246,244,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  backdrop-filter:blur(18px) saturate(150%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{box-shadow:0 10px 28px -20px rgba(15,16,18,.35),inset 0 1px 0 rgba(255,255,255,.7)}
+.nav__in{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  font-family:var(--head);font-weight:600;font-size:1.25rem;letter-spacing:-.01em;
+  text-decoration:none;color:var(--ink);
+}
+.nav__links{display:flex;gap:2rem;font-size:.95rem;font-weight:500}
+.nav__links a{text-decoration:none;color:var(--ink);opacity:.8;transition:opacity .2s}
+.nav__links a:hover{opacity:1}
+.nav .btn{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+@media (max-width:719px){.nav__links{display:none}}
+
+/* Prima secțiune: ecran împărțit cu lumină caldă */
+.hero{
+  position:relative;
+  min-height:100vh;min-height:100svh;
+  display:grid;grid-template-columns:1fr;
+  isolation:isolate;overflow:hidden;
+  background:var(--paper);
+}
+.hero__text{
+  position:relative;z-index:3;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:6.5rem var(--pad) 3.5rem;
+}
+.hero__place{
+  font-size:.95rem;color:var(--muted);letter-spacing:.01em;margin-bottom:1.25rem;
+}
+.hero h1{
+  font-family:var(--head);font-weight:700;
+  font-size:clamp(3.5rem,11vw,8.5rem);
+  letter-spacing:-.02em;line-height:1;
+}
+.hero__slogan{
+  font-family:var(--head);font-weight:500;
+  font-size:clamp(1.35rem,2.6vw,2rem);
+  letter-spacing:-.01em;line-height:1.2;
+  margin-top:1rem;
+}
+.hero__lead{margin-top:1.5rem;max-width:34ch;color:var(--muted)}
+.hero .btns{margin-top:2rem}
+
+.hero__media{
+  position:relative;z-index:1;
+  min-height:320px;aspect-ratio:4/3;
+  overflow:hidden;
+}
+.hero__media img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  animation:settle 1.6s var(--ease) both;
+}
+.hero__light{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(circle 380px at var(--x,70%) var(--y,40%),
+    rgba(255,176,80,.34) 0%,
+    rgba(255,190,110,.12) 42%,
+    transparent 72%);
+}
+
+@media (min-width:900px){
+  .hero{grid-template-columns:1fr 1fr}
+  .hero__text{padding:7rem clamp(2.5rem,6vw,6rem) 5rem}
+  .hero__media{aspect-ratio:auto;min-height:0}
+}
+
+/* Intrarea din prima secțiune */
+.intro{
+  animation:rise .8s var(--ease) both;
+  animation-delay:calc(var(--i,0) * 90ms);
+}
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,16px,0)}
+  to{opacity:1;transform:none}
+}
+@keyframes settle{
+  from{opacity:0;transform:scale(1.06)}
+  to{opacity:1;transform:none}
+}
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* Secțiuni */
+.section{padding:clamp(4.5rem,11vw,8.5rem) 0}
+.section--white{background:var(--white)}
+.section--band{background:var(--band)}
+
+.split{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr}}
+
+.photo{
+  width:100%;height:auto;aspect-ratio:4/3;
+  object-fit:cover;border-radius:6px;
+}
+@media (min-width:900px){.photo{aspect-ratio:4/5}}
+
+.perks{margin-top:2.5rem}
+.perks li{
+  display:grid;grid-template-columns:2.75rem 1fr;gap:1rem;
+  padding:1.25rem 0;border-top:1px solid var(--line);
+}
+.perks li:last-child{border-bottom:1px solid var(--line)}
+.perks .ico{font-size:1.5rem;line-height:1.2}
+.perks h3{
+  font-family:var(--head);font-weight:600;font-size:1.1rem;letter-spacing:-.01em;
+}
+.perks p{color:var(--muted);font-size:1rem}
+
+.product{display:grid;gap:1.5rem;justify-items:start;max-width:44rem}
+.product .ico-big{font-size:2.75rem;line-height:1}
+.product h3{
+  font-family:var(--head);font-weight:600;
+  font-size:clamp(2.2rem,5.5vw,3.75rem);
+  letter-spacing:-.02em;line-height:1.05;
+}
+.product p{font-size:1.125rem;color:var(--muted);max-width:40ch}
+
+.info{display:grid;gap:1.75rem}
+.info dt{font-size:.875rem;color:var(--muted);letter-spacing:.02em;margin-bottom:.25rem}
+.info dd{font-size:1.125rem}
+.info .tel{
+  font-family:var(--head);font-size:clamp(1.75rem,4vw,2.5rem);font-weight:600;
+  letter-spacing:-.01em;text-decoration:none;
+  transition:color .2s;
+}
+.info .tel:hover{color:var(--accent)}
+
+.map{
+  display:block;width:100%;
+  height:clamp(300px,40vw,400px);
+  border:0;border-radius:6px;background:var(--band);
+}
+
+/* Subsol */
+.foot{
+  background:var(--ink);color:rgba(255,255,255,.72);
+  padding:3.5rem 0 2.5rem;font-size:.9rem;letter-spacing:.01em;
+}
+.foot__top{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:flex-start;
+}
+.foot .brand{color:#fff;font-size:1.5rem}
+.foot__links{display:flex;flex-wrap:wrap;gap:1.5rem}
+.foot a{text-decoration:none;color:inherit;transition:color .2s}
+.foot a:hover{color:#fff}
+.foot__legal{
+  margin-top:2.5rem;padding-top:1.5rem;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+  display:grid;gap:.5rem;
+}
+
+/* Dezvăluire la derulare, variată */
+.js .rv{
+  opacity:0;transform:translate3d(0,24px,0);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .rv-l{transform:translate3d(-28px,0,0)}
+.js .rv-s{transform:scale(.97)}
+.js .rv.in{opacity:1;transform:none}
+
+/* Mișcare redusă */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .intro{animation:fade .2s linear both;animation-delay:0s}
+  .hero__media img{animation:fade .2s linear both}
+  .js .rv,.js .rv-l,.js .rv-s{
+    transform:none!important;
+    transition:opacity .2s linear!important;
+    transition-delay:0s!important;
+  }
+  .btn,.btn:active{transition-duration:.1s}
+}
+
+/* Transparență redusă: fundaluri opace, fără blur */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* Contrast mai mare: fundaluri pline, margini clare */
+@media (prefers-contrast:more){
+  :root{--muted:#3D4149;--line:rgba(15,16,18,.55)}
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn--ghost{box-shadow:inset 0 0 0 2px var(--ink)}
+  .perks li{border-color:var(--ink)}
+  .foot{color:#fff}
+}
+
+/* Telefon: zone de apăsat de cel puțin 44px */
+@media (max-width:600px){
+  .btn{min-height:48px}
+  .btns .btn{flex:1 1 100%}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top">Davidoff</a>
+    <nav aria-label="Meniu principal">
+      <ul class="nav__links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary" href="tel:0725763040">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="hero__text">
+      <p class="hero__place intro" style="--i:0">Ploiești, parterul Mercur Shopping Center</p>
+      <h1 id="titlu" class="intro" style="--i:1">Davidoff</h1>
+      <p class="hero__slogan intro" style="--i:2">Țigări Davidoff la Mercur</p>
+      <p class="hero__lead intro" style="--i:3">Parterul Mercur Shopping Center, Piața Victoriei nr. 1. Deschis luni–sâmbătă, între 9:00 și 21:00.</p>
+      <div class="btns intro" style="--i:4">
+        <a class="btn btn--primary" href="tel:0725763040">Sună acum</a>
+        <a class="btn btn--ghost" href="https://wa.me/40725763040?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20%C8%9Big%C4%83rile%20Davidoff.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero__media">
+      <img src="img/2.jpg" alt="Trabucuri și tutun, fotografie ilustrativă" fetchpriority="high">
+    </div>
+    <div class="hero__light" aria-hidden="true"></div>
+  </section>
+
+  <section class="section section--white" id="despre" aria-labelledby="t-despre">
+    <div class="wrap split">
+      <div class="rv-l">
+        <h2 class="h2" id="t-despre">Despre Davidoff în Ploiești</h2>
+        <p>Davidoff oferă țigări premium, direct la parterul centrului comercial Mercur.</p>
+        <p class="muted" style="margin-top:1rem">Suntem alegerea rapidă și accesibilă pentru iubitorii brandului Davidoff din Ploiești. Vă așteptăm în inima orașului.</p>
+        <ul class="perks">
+          <li>
+            <span class="ico" aria-hidden="true">🏙️</span>
+            <div>
+              <h3>Ultracentral</h3>
+              <p>La parterul Mercur Shopping Center.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">⏰</span>
+            <div>
+              <h3>Program lung</h3>
+              <p>Deschis de la 9 la 21, luni–sâmbătă.</p>
+            </div>
+          </li>
+          <li>
+            <span class="ico" aria-hidden="true">🚶</span>
+            <div>
+              <h3>Acces rapid</h3>
+              <p>Cumpărături facile și rapide.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="rv">
+        <img class="photo" src="img/3.jpg" alt="Țigări și trabucuri, fotografie ilustrativă" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--band" id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <h2 class="h2 rv" id="t-produse">Produse</h2>
+      <div class="product rv-s" style="--d:.1s">
+        <span class="ico-big" aria-hidden="true">🚬</span>
+        <h3>Țigări Davidoff</h3>
+        <p>Țigări Davidoff în diverse sortimente. Scrie-ne și îți spunem ce găsești la noi.</p>
+        <div class="btns">
+          <a class="btn btn--primary" href="https://wa.me/40725763040?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20%C8%9Big%C4%83rile%20Davidoff.">Cere informații pe WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--white" id="contact" aria-labelledby="t-contact">
+    <div class="wrap split">
+      <div class="rv-l">
+        <h2 class="h2" id="t-contact">Ne găsești la Mercur</h2>
+        <dl class="info">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Parterul Mercur Shopping Center, Piața Victoriei nr. 1, Ploiești</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Luni–sâmbătă, între 9:00 și 21:00</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a class="tel" href="tel:0725763040">0725 763 040</a></dd>
+          </div>
+        </dl>
+        <div class="btns" style="margin-top:2rem">
+          <a class="btn btn--primary" href="tel:0725763040">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40725763040?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20%C8%9Big%C4%83rile%20Davidoff.">Scrie pe WhatsApp</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query=Davidoff+Ploie%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="rv">
+        <iframe class="map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0204487,44.9391306,26.028448700000002,44.9431306&layer=mapnik&marker=44.9411306,26.0244487"
+          title="Harta: Davidoff, Mercur Shopping Center, Ploiești"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <p class="brand">Davidoff</p>
+        <p style="margin-top:.5rem">Țigări Davidoff la Mercur, Ploiești</p>
+      </div>
+      <ul class="foot__links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot__legal">
+      <p>Vânzare doar persoanelor peste 18 ani. Fumatul dăunează grav sănătății.</p>
+      <p>Fotografii ilustrative de pe Pixabay: osmnblqn, jackmac34, Paeparadox</p>
+      <p>Model de site (demo)</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Bara de navigare: umbră doar când pagina se derulează sub ea */
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Dezvăluire la derulare */
+  var items = document.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Lumina caldă din prima secțiune: urmărește mouse-ul sau degetul */
+  var hero = document.querySelector('.hero');
+  var tx, ty, cx, cy, raf = 0;
+
+  var r0 = hero.getBoundingClientRect();
+  tx = cx = r0.width * 0.7;
+  ty = cy = r0.height * 0.4;
+
+  function frame() {
+    var k = reduce ? 1 : 0.12;
+    cx += (tx - cx) * k;
+    cy += (ty - cy) * k;
+    hero.style.setProperty('--x', cx.toFixed(1) + 'px');
+    hero.style.setProperty('--y', cy.toFixed(1) + 'px');
+    if (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) {
+      raf = requestAnimationFrame(frame);
+    } else {
+      raf = 0;
+    }
+  }
+
+  function aim(e) {
+    var r = hero.getBoundingClientRect();
+    tx = e.clientX - r.left;
+    ty = e.clientY - r.top;
+    if (!raf) raf = requestAnimationFrame(frame);
+  }
+
+  hero.addEventListener('pointermove', aim);
+  hero.addEventListener('pointerdown', aim);
+  frame();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
