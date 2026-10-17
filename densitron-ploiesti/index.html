@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Densitron, Ploiești | Sunet clar pentru pasiunea ta</title>
+<meta name="description" content="Densitron, Ploiești. Sunet clar pentru pasiunea ta. Sună sau scrie-ne pentru detalii despre produse.">
+<meta name="theme-color" content="#FAF8F5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF8F5;
+  --paper-2:#F2EEE8;
+  --ink:#161616;
+  --ink-2:#4a4743;
+  --muted:#5f5b55;
+  --accent:#0e7490;
+  --accent-deep:#0b5f78;
+  --accent-soft:#7cc4d8;
+  --rule:rgba(22,22,22,.16);
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,4vw,3rem);
+  --sec:clamp(5rem,11vw,9.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-weight:400}
+address{font-style:normal}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{max-width:1280px;margin-inline:auto;padding-inline:var(--pad)}
+.sec{padding-block:var(--sec)}
+.g{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2rem,4vw,3rem) 1.5rem}
+@media (min-width:900px){
+  .g{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem}
+}
+
+.h2{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,6vw,4.75rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  text-wrap:balance;
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:.75rem 1.4rem;
+  border:1px solid transparent;
+  border-radius:2px;
+  font:inherit;
+  font-weight:500;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background-color .2s ease,color .2s ease,box-shadow .25s ease,border-color .2s ease,transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 8px 20px -10px rgba(14,116,144,.7)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-sm{min-height:44px;padding:.5rem 1rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  background:rgba(250,248,245,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.75),0 14px 30px -20px rgba(22,22,22,.35);
+}
+.nav-in{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  height:4.25rem;
+  max-width:1280px;
+  margin-inline:auto;
+  padding-inline:var(--pad);
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  min-height:44px;
+  font-family:var(--serif);
+  font-size:1.6rem;
+  line-height:1;
+  text-decoration:none;
+  color:var(--ink);
+}
+.brand .em{font-size:1rem;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.nav-actions{display:flex;align-items:center;gap:.25rem}
+.nav-toggle{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:0 .8rem;
+  border:0;
+  border-radius:2px;
+  background:transparent;
+  font:inherit;
+  font-weight:500;
+  color:var(--ink);
+  cursor:pointer;
+}
+.menu{display:none;list-style:none;margin:0;padding:0}
+.menu a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:0 .25rem;
+  font-weight:500;
+  text-decoration:none;
+  color:var(--ink);
+  transition:color .2s ease;
+}
+.menu a:hover{color:var(--accent)}
+.menu.open{
+  display:flex;
+  flex-direction:column;
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  padding:.25rem var(--pad) 1.25rem;
+  background:var(--paper);
+  box-shadow:0 22px 30px -22px rgba(22,22,22,.35);
+}
+@media (min-width:820px){
+  .menu{display:flex;gap:2.25rem}
+  .menu.open{position:static;padding:0;background:none;box-shadow:none;flex-direction:row}
+  .nav-toggle{display:none}
+}
+
+/* ---------- Primul ecran ---------- */
+.hero{padding-top:calc(4.25rem + 2.25rem);padding-bottom:var(--sec)}
+@media (min-width:900px){
+  .hero{padding-top:calc(4.25rem + 5vw)}
+}
+.hero-grid{align-items:end}
+.hero-copy{grid-column:1/-1;align-self:center}
+.hero-fig{grid-column:1/-1}
+@media (min-width:900px){
+  .hero-copy{grid-column:1/span 7}
+  .hero-fig{grid-column:8/span 5}
+}
+.place{
+  margin-bottom:1rem;
+  font-size:.95rem;
+  letter-spacing:.02em;
+  color:var(--muted);
+}
+.name{
+  font-family:var(--serif);
+  font-size:clamp(3.5rem,20vw,9.5rem);
+  line-height:.95;
+  letter-spacing:-.02em;
+  margin:0 0 1.25rem;
+}
+.lede{
+  font-size:clamp(1.25rem,2.2vw,1.5rem);
+  line-height:1.3;
+  letter-spacing:-.01em;
+  max-width:24ch;
+  margin-bottom:1rem;
+}
+.desc{
+  max-width:44ch;
+  color:var(--ink-2);
+  margin-bottom:2rem;
+}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Fotografii ---------- */
+.fig{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+  background:var(--paper-2);
+  aspect-ratio:4/5;
+}
+.fig img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* ---------- Despre ---------- */
+.about-h{grid-column:1/-1}
+.about-b{grid-column:1/-1}
+@media (min-width:900px){
+  .about-h{grid-column:1/span 5}
+  .about-b{grid-column:7/span 6;padding-top:.5rem}
+}
+.lead{
+  font-size:clamp(1.4rem,2.6vw,2rem);
+  font-weight:300;
+  line-height:1.28;
+  letter-spacing:-.01em;
+  margin-bottom:1.5rem;
+}
+.about-b p + p{margin-top:1rem;color:var(--ink-2);max-width:52ch}
+
+/* ---------- Citat ---------- */
+.quote-sec{background:var(--ink);color:var(--paper)}
+.quote{margin:0;grid-column:1/-1}
+@media (min-width:900px){
+  .quote{grid-column:2/span 10}
+}
+.quote blockquote{margin:0}
+.qt{
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,6.4vw,5.75rem);
+  line-height:1.06;
+  letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.qmark{color:var(--accent-soft);margin-left:-.42em}
+.quote figcaption{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  margin-top:2.25rem;
+  font-size:.95rem;
+  letter-spacing:.02em;
+  color:#bdb8b0;
+}
+.quote figcaption::before{
+  content:"";
+  width:2.5rem;
+  height:2px;
+  background:var(--accent-soft);
+}
+
+/* ---------- Produse ---------- */
+.prod-fig{grid-column:1/-1}
+.prod-copy{grid-column:1/-1}
+@media (min-width:900px){
+  .prod-fig{grid-column:1/span 6}
+  .prod-copy{grid-column:8/span 5;align-self:center}
+}
+.prod-copy .h2{margin-bottom:1.25rem}
+.prod-copy .intro{color:var(--ink-2);max-width:42ch;margin-bottom:2rem}
+.items{list-style:none;margin:0 0 1.5rem;padding:0;border-bottom:1px solid var(--rule)}
+.items li{
+  padding:.95rem 0;
+  border-top:1px solid var(--rule);
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,2.6vw,1.9rem);
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+.note{color:var(--muted);font-size:.95rem;margin-bottom:2rem}
+
+/* ---------- Avantaje ---------- */
+.adv-sec{background:var(--paper-2)}
+.adv-head{grid-column:1/-1;margin-bottom:clamp(1rem,3vw,2rem)}
+.adv{
+  grid-column:1/-1;
+  border-top:1px solid var(--ink);
+  padding-top:1.5rem;
+}
+@media (min-width:900px){
+  .adv{grid-column:span 4}
+}
+.adv-em{
+  display:block;
+  font-size:1.75rem;
+  line-height:1;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+}
+.adv h3{
+  font-family:var(--serif);
+  font-size:clamp(1.9rem,3vw,2.25rem);
+  line-height:1.1;
+  letter-spacing:-.015em;
+  margin:1.25rem 0 .6rem;
+}
+.adv p{color:var(--ink-2);max-width:30ch}
+
+/* ---------- Galerie ---------- */
+.gal-main{grid-column:1/-1}
+.gal-side{grid-column:1/-1;display:grid;gap:clamp(1rem,2vw,1.5rem)}
+.gal-side .fig{aspect-ratio:4/3}
+@media (min-width:900px){
+  .gal-main{grid-column:1/span 7}
+  .gal-side{grid-column:8/span 5}
+  .gal-side .fig{aspect-ratio:1/1}
+}
+
+/* ---------- Contact ---------- */
+.contact-info{grid-column:1/-1}
+.contact-map{grid-column:1/-1}
+@media (min-width:900px){
+  .contact-info{grid-column:1/span 5;align-self:center}
+  .contact-map{grid-column:7/span 6}
+}
+.contact-info .h2{margin-bottom:2rem}
+.addr{font-size:1.125rem;margin-bottom:1.5rem;color:var(--ink-2)}
+.addr strong{color:var(--ink);font-weight:500}
+.phone{
+  display:inline-block;
+  font-family:var(--serif);
+  font-size:clamp(2.2rem,5vw,3rem);
+  line-height:1.1;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  color:var(--accent);
+  margin-bottom:2rem;
+  min-height:44px;
+}
+.phone:hover{color:var(--accent-deep)}
+.map{
+  position:relative;
+  width:100%;
+  min-height:340px;
+  height:100%;
+  background:var(--paper-2);
+  overflow:hidden;
+}
+@media (min-width:900px){
+  .map{min-height:460px}
+}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ink);color:var(--paper);padding-block:4.5rem 2.5rem}
+.foot-top{display:grid;gap:2.5rem}
+@media (min-width:900px){
+  .foot-top{grid-template-columns:2fr 1fr 1fr;align-items:end}
+}
+.foot-name{
+  font-family:var(--serif);
+  font-size:clamp(3rem,9vw,6.5rem);
+  line-height:.95;
+  letter-spacing:-.02em;
+}
+.foot-name .em{font-size:.5em;vertical-align:.6em;margin-left:.2rem;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.foot-slogan{color:#bdb8b0;margin-top:1rem}
+.foot-col{color:#d9d5ce}
+.foot-col a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:#d9d5ce}
+.foot-col a:hover{color:var(--accent-soft)}
+.foot-col p{margin-bottom:.5rem}
+.foot-bottom{
+  display:grid;
+  gap:.75rem;
+  margin-top:3.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(250,248,245,.14);
+  font-size:.875rem;
+  letter-spacing:.01em;
+  color:#a8a39b;
+}
+@media (min-width:900px){
+  .foot-bottom{grid-template-columns:1fr 1fr}
+  .foot-bottom p:last-child{text-align:right}
+}
+
+/* ---------- Mișcare ---------- */
+.js .rv{
+  opacity:0;
+  transform:translate3d(0,18px,0);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .rv.is-in{opacity:1;transform:none}
+
+.js .mask{overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.js .mask > span{
+  display:inline-block;
+  transform:translate3d(0,105%,0);
+  transition:transform .7s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .mask.is-in > span{transform:none}
+
+.js .fig img{
+  transform:translate3d(0,6%,0) scale(1.05);
+  transition:transform .9s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .fig.is-in img{transform:none}
+
+/* Secvența de intrare din primul ecran */
+.hero .name.mask > span{--d:.12s}
+.hero .place{--d:0s}
+.hero .lede{--d:.32s}
+.hero .desc{--d:.4s}
+.hero .actions{--d:.48s}
+.hero .hero-fig.fig img{--d:.22s}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .rv,
+  .js .mask > span,
+  .js .fig img{
+    transform:none !important;
+    transition:opacity .2s ease !important;
+    transition-delay:0s !important;
+  }
+  .js .rv{opacity:0}
+  .js .rv.is-in{opacity:1}
+  .js .mask > span{opacity:0}
+  .js .mask.is-in > span{opacity:1}
+  .btn:active{transform:none}
+  .nav{transition:none}
+}
+
+/* Sticla nu se suprapune cu alt fundal translucid; panoul mobil e opac */
+@media (prefers-reduced-transparency: reduce){
+  .nav{
+    background:var(--paper);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast: more){
+  .nav{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 0 0 2px var(--ink)}
+  .menu.open{box-shadow:0 0 0 2px var(--ink)}
+  .items li,.items{border-color:var(--ink)}
+  .adv{border-top-width:2px}
+  .btn-primary{background:var(--accent-deep)}
+  .btn-ghost{border-width:2px}
+  .desc,.about-b p + p,.adv p,.note,.intro,.place{color:var(--ink)}
+  .quote figcaption{color:#fff}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Densitron, înapoi sus"><span class="em" aria-hidden="true">🎵</span>Densitron</a>
+    <div class="nav-actions">
+      <nav aria-label="Principal">
+        <ul class="menu" id="menu">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#produse">Produse</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="tel:+40728350699">Sună acum</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Meniu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Primul ecran -->
+  <section class="hero" aria-labelledby="titlu-principal">
+    <div class="wrap g hero-grid">
+      <div class="hero-copy">
+        <p class="place rv">Ploiești, Strada Vasile Lupu 25</p>
+        <h1 class="name mask" id="titlu-principal"><span>Densitron</span></h1>
+        <p class="lede rv">Sunet clar pentru pasiunea ta.</p>
+        <p class="desc rv">Sună sau scrie-ne pentru detalii despre produse și disponibilitate.</p>
+        <div class="actions rv">
+          <a class="btn btn-primary" href="tel:+40728350699">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40728350699?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produsele%20Densitron." target="_blank" rel="noopener">Cere detalii pe WhatsApp</a>
+        </div>
+      </div>
+      <figure class="fig hero-fig">
+        <img src="img/4.jpg" alt="Pick-up cu braț și ac pe un disc de vinil">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="sec" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap g">
+      <h2 class="h2 about-h mask" id="titlu-despre"><span>Despre Densitron</span></h2>
+      <div class="about-b rv" style="--d:.1s">
+        <p class="lead">Densitron, din Ploiești, pentru cei care iubesc sunetul.</p>
+        <p>Fie că asculți vinil, lucrezi cu un mixer sau cauți boxe pentru o cameră, spune-ne ce ai în minte.</p>
+        <p>Explicăm simplu ce face fiecare echipament, ca alegerea să fie a ta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citatul din revistă -->
+  <section class="sec quote-sec" aria-label="Citat">
+    <div class="wrap g">
+      <figure class="quote rv">
+        <blockquote>
+          <p class="qt"><span class="qmark" aria-hidden="true">“</span>Sunet clar pentru pasiunea ta.</p>
+        </blockquote>
+        <figcaption>Densitron, Ploiești</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section class="sec" id="produse" aria-labelledby="titlu-produse">
+    <div class="wrap g">
+      <figure class="fig prod-fig">
+        <img src="img/3.jpg" alt="Boxă rotundă galbenă cu woofer mare" loading="lazy">
+      </figure>
+      <div class="prod-copy">
+        <h2 class="h2 mask" id="titlu-produse"><span>Produse</span></h2>
+        <p class="intro rv" style="--d:.1s">Pentru disponibilitate și detalii despre produsele noastre, sună sau scrie-ne.</p>
+        
+        <p class="note rv" style="--d:.2s">Nu găsești ce cauți? Întreabă-ne, poate avem altceva potrivit.</p>
+        <div class="actions rv" style="--d:.25s">
+          <a class="btn btn-primary" href="tel:+40728350699">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40728350699?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produsele%20Densitron." target="_blank" rel="noopener">Cere detalii pe WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantaje -->
+  <section class="sec adv-sec" aria-labelledby="titlu-avantaje">
+    <div class="wrap g">
+      <h2 class="h2 adv-head mask" id="titlu-avantaje"><span>Cu ce te ajutăm</span></h2>
+      <article class="adv rv" style="--d:0s">
+        <span class="adv-em" aria-hidden="true">🔊</span>
+        <h3>Calitate sunet</h3>
+        <p>Sunet clar, pentru pasiunea ta.</p>
+      </article>
+      <article class="adv rv" style="--d:.1s">
+        <span class="adv-em" aria-hidden="true">🎶</span>
+        <h3>Varietate modele</h3>
+        <p>Opțiuni pentru toate nevoile.</p>
+      </article>
+      <article class="adv rv" style="--d:.2s">
+        <span class="adv-em" aria-hidden="true">🛠️</span>
+        <h3>Contact direct</h3>
+        <p>Sună sau scrie-ne pe WhatsApp pentru detalii.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="sec" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap g">
+      <h2 class="h2 mask" style="grid-column:1/-1" id="titlu-galerie"><span>Galerie</span></h2>
+      <figure class="fig gal-main">
+        <img src="img/1.jpg" alt="Boxă neagră cu membrană și detalii aramii" loading="lazy">
+      </figure>
+      <div class="gal-side">
+        <figure class="fig">
+          <img src="img/2.jpg" alt="Mixer pentru DJ cu butoane și potențiometre" loading="lazy">
+        </figure>
+        <figure class="fig">
+          <img src="img/5.jpg" alt="Disc de vinil pe un pick-up" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="sec" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap g">
+      <div class="contact-info rv">
+        <h2 class="h2" id="titlu-contact">Contact</h2>
+        <address class="addr" style="margin-top:2rem">
+          <strong>Densitron</strong><br>
+          Strada Vasile Lupu 25<br>
+          Ploiești
+        </address>
+        <a class="phone" href="tel:+40728350699">+40 728 350 699</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+40728350699">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40728350699?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produsele%20Densitron." target="_blank" rel="noopener">Cere detalii pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Densitron+Ploie%C8%99ti" target="_blank" rel="noopener">Deschide harta în Google Maps</a>
+        </div>
+      </div>
+      <div class="map contact-map rv" style="--d:.1s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0118154,44.9390802,26.019815400000002,44.943080200000004&amp;layer=mapnik&amp;marker=44.9410802,26.0158154"
+          title="Harta cu locația Densitron, Strada Vasile Lupu 25, Ploiești"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="foot-name">Densitron<span class="em" aria-hidden="true">🎵</span></p>
+        <p class="foot-slogan">Sunet clar pentru pasiunea ta.</p>
+      </div>
+      <div class="foot-col">
+        <p>Strada Vasile Lupu 25</p>
+        <p>Ploiești</p>
+        <a href="tel:+40728350699">+40 728 350 699</a>
+      </div>
+      <nav class="foot-col" aria-label="Subsol">
+        <a href="#despre">Despre</a>
+        <a href="#produse">Produse</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Jabbacake, ThorstenF, Republica, andreas160578, moritz320</p>
+      <p>© <span id="year">2025</span> Densitron</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('menu');
+
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  toggle.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.textContent = open ? 'Închide' : 'Meniu';
+  });
+
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Meniu';
+    }
+  });
+
+  var targets = document.querySelectorAll('.rv, .mask, .fig');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  } else {
+    targets.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
