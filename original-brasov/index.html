@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Original – Haine în Brașov</title>
+<meta name="description" content="Original, magazin de haine în Brașov. Descoperă selecții pentru toate stilurile și te consiliem cu drag pentru orice alegere.">
+<meta name="theme-color" content="#F5EFE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Jost:wght@300..600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --cream:#F5EFE6;
+  --ink:#141414;
+  --sand:#D8C3A5;
+  --teal:#0d9488;
+  --muted:#5a554d;
+  --serif:'Bodoni Moda','Bodoni 72',Didot,'Times New Roman',serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,4vw,3rem);
+  --max:72rem;
+  --sec:clamp(5rem,11vw,8.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+ul,dl,dd{margin:0;padding:0}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+
+.wrap{width:calc(100% - 2*var(--pad));max-width:var(--max);margin-inline:auto}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--cream);padding:.6rem 1rem;text-decoration:none;transition:top .2s}
+.skip:focus{top:1rem}
+
+/* ---------- Navigare: sticlă ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(245,239,230,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.55);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.nav.is-scrolled{box-shadow:0 12px 30px -20px rgba(20,20,20,.4)}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:4.25rem}
+.brand{font-family:var(--serif);font-size:1.55rem;letter-spacing:-.02em;text-decoration:none;line-height:1}
+.nav__links{display:flex;gap:2rem}
+.nav__links a{font-size:.95rem;font-weight:500;letter-spacing:.02em;text-decoration:none;position:relative;padding:.5rem 0}
+.nav__links a::after{content:'';position:absolute;left:0;right:0;bottom:.2rem;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.nav__links a:hover::after{transform:scaleX(1)}
+@media (max-width:719px){.nav__links{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.8rem 1.5rem;border-radius:2px;
+  font:500 1rem/1 var(--sans);letter-spacing:.01em;text-decoration:none;text-align:center;
+  border:1px solid transparent;cursor:pointer;
+  transition:background-color .25s,color .25s,box-shadow .25s,border-color .25s;
+}
+.btn:active{transform:scale(.97);transition:transform .1s}
+.btn--sm{min-height:2.75rem;padding:.6rem 1.1rem;font-size:.95rem}
+.btn--teal{background:var(--teal);color:var(--ink)}
+.btn--teal:hover{box-shadow:0 10px 22px -12px rgba(13,148,136,.9)}
+.btn--line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn--line:hover{background:var(--ink);color:var(--cream)}
+.btn--cream{border-color:var(--cream);color:var(--cream);background:transparent}
+.btn--cream:hover{background:var(--cream);color:var(--ink)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;min-height:100svh;padding:7.5rem 0 4rem;display:flex;align-items:center}
+.hero__grid{display:grid;gap:2.75rem;align-items:center}
+.hero__kicker{font-size:.95rem;color:var(--muted);margin-bottom:1rem}
+.hero h1{font-size:clamp(3.5rem,9vw,7.5rem);line-height:1;margin-bottom:.75rem}
+.hero__slogan{font-family:var(--serif);font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.01em;line-height:1.2;margin-bottom:1rem}
+.hero__desc{color:var(--muted);max-width:30ch;margin-bottom:2rem}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero__photo{position:relative;overflow:hidden;aspect-ratio:4/3;margin:0;background:var(--sand)}
+.hero__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (min-width:860px){
+  .hero__grid{grid-template-columns:1fr 1fr;gap:4.5rem}
+  .hero__photo{aspect-ratio:4/5;max-height:80vh}
+}
+
+/* ---------- Secțiuni ---------- */
+.about,.shop,.gallery,.contact{padding:var(--sec) 0}
+h2{font-size:clamp(2.2rem,5.4vw,3.75rem);margin-bottom:1.5rem}
+
+.about__grid{display:grid;gap:3rem}
+.lead{font-family:var(--serif);font-size:clamp(1.35rem,2.6vw,1.9rem);line-height:1.3;letter-spacing:-.01em;max-width:24ch}
+.about__body p{color:var(--ink);max-width:60ch;margin-bottom:1.1rem}
+.avant{margin-top:2.75rem}
+.avant li{padding:1.4rem 0;border-top:1px solid rgba(20,20,20,.14)}
+.avant li:last-child{border-bottom:1px solid rgba(20,20,20,.14)}
+.avant h3{font-size:1.4rem;margin-bottom:.35rem}
+.avant p{color:var(--muted)}
+@media (min-width:860px){
+  .about__grid{grid-template-columns:5fr 6fr;gap:6rem;align-items:start}
+}
+
+/* ---------- Produse: vitrina cu etichete ---------- */
+.shop{background:var(--ink);color:var(--cream);overflow:hidden}
+.shop h2{color:var(--cream)}
+.shop__head p{color:rgba(245,239,230,.78);max-width:52ch}
+.hint{margin-top:.75rem;font-size:.95rem;color:rgba(245,239,230,.6)!important}
+
+.rack{position:relative;margin-top:clamp(3rem,7vw,5rem);display:grid;gap:1.5rem;grid-template-columns:1fr}
+.rack::before{content:none}
+
+.hang{
+  --len:2.25rem;
+  --sx:1.6rem;
+  position:relative;
+  margin-top:var(--len);
+  transform-origin:var(--sx) calc(-1 * var(--len));
+  cursor:pointer;
+  outline-offset:6px;
+}
+/* sfoara */
+.hang::before{
+  content:'';position:absolute;left:var(--sx);
+  top:calc(-1 * var(--len));
+  height:calc(var(--len) + 1.25rem);width:1px;
+  background:rgba(245,239,230,.85);
+}
+/* bara de agatat, pe mobil: fiecare eticheta are a ei */
+.hang::after{
+  content:'';position:absolute;left:0;right:0;
+  top:calc(-1 * var(--len));height:2px;background:var(--cream);
+}
+.hang.is-swaying{animation:sway 1.1s cubic-bezier(.3,.6,.4,1)}
+@keyframes sway{
+  0%{transform:rotate(0)}
+  20%{transform:rotate(5deg)}
+  40%{transform:rotate(-4deg)}
+  60%{transform:rotate(2.5deg)}
+  80%{transform:rotate(-1deg)}
+  100%{transform:rotate(0)}
+}
+
+.tag{
+  position:relative;display:block;min-height:15rem;
+  padding:3.25rem 1.5rem 1.75rem;color:var(--ink);
+  filter:drop-shadow(0 14px 18px rgba(0,0,0,.35));
+  transition:transform .35s var(--ease);
+}
+.hang:hover .tag{transform:translateY(-3px)}
+.tag__bg{position:absolute;inset:0;width:100%;height:100%}
+.tag__bg path{fill:var(--sand)}
+.tag__hole{
+  position:absolute;top:1.25rem;left:calc(var(--sx) - .4rem);
+  width:.8rem;height:.8rem;border-radius:50%;
+  background:var(--ink);box-shadow:inset 0 1px 2px rgba(0,0,0,.6);
+}
+.tag h3{font-size:1.65rem;margin-bottom:.6rem;position:relative}
+.tag p{font-size:.98rem;color:#2b2823;line-height:1.5;position:relative;max-width:26ch}
+
+.shop__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:clamp(3rem,7vw,5rem)}
+
+@media (min-width:820px){
+  .rack{grid-template-columns:repeat(3,1fr);gap:2.5rem;--len:3.25rem}
+  .rack::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--cream);
+  }
+  .hang{--len:3.25rem}
+  .hang::after{content:none}
+}
+
+/* ---------- Galerie ---------- */
+.gallery__head p{color:var(--muted);max-width:52ch;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.gallery__grid{display:grid;gap:1rem;grid-template-columns:1fr}
+.gallery figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
+.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.gallery figure:hover img{transform:scale(1.03)}
+@media (min-width:860px){
+  .gallery__grid{grid-template-columns:1.25fr 1fr;gap:1.25rem}
+  .gallery .g1{grid-row:span 2;aspect-ratio:auto;min-height:38rem}
+  .gallery .g2,.gallery .g3{aspect-ratio:4/3}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--sand)}
+.contact__grid{display:grid;gap:3rem}
+.contact p.intro-txt{max-width:44ch;margin-bottom:2rem}
+.contact__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.75rem}
+.info{display:grid;gap:0}
+.info div{padding:1.1rem 0;border-top:1px solid rgba(20,20,20,.18)}
+.info div:last-child{border-bottom:1px solid rgba(20,20,20,.18)}
+.info dt{font-size:.9rem;letter-spacing:.03em;color:#3b3731;margin-bottom:.25rem}
+.info dd{font-family:var(--serif);font-size:1.3rem;letter-spacing:-.01em;line-height:1.3}
+.info dd a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .25s}
+.info dd a:hover{border-color:var(--ink)}
+.map{margin-top:0;overflow:hidden;border-radius:2px;background:var(--cream)}
+.map iframe{display:block;width:100%;height:22rem;border:0}
+@media (min-width:860px){
+  .contact__grid{grid-template-columns:1fr 1.15fr;gap:6rem;align-items:start}
+}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ink);color:var(--cream);padding:4.5rem 0 3rem}
+.foot__grid{display:grid;gap:2.5rem}
+.foot__brand{font-family:var(--serif);font-size:2rem;letter-spacing:-.02em;line-height:1;margin-bottom:.6rem}
+.foot__small{font-size:.92rem;letter-spacing:.02em;color:rgba(245,239,230,.72);line-height:1.6}
+.foot__small p+p{margin-top:.5rem}
+.foot nav ul{display:flex;flex-wrap:wrap;gap:.6rem 1.75rem}
+.foot nav a{font-size:.95rem;letter-spacing:.02em;text-decoration:none;color:var(--cream);padding:.4rem 0;display:inline-block}
+.foot nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot a.plain{color:var(--cream)}
+@media (min-width:860px){
+  .foot__grid{grid-template-columns:1.2fr 1fr 1.2fr;align-items:start;gap:3rem}
+}
+
+/* ---------- Mișcare: intrare hero (singura secvență) ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes unveil{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+.intro{animation:rise .9s var(--ease) both;animation-delay:calc(var(--i,0) * .12s + .1s)}
+.hero__photo img{animation:unveil 1.4s var(--ease) .35s both}
+
+/* ---------- Mișcare: dezvăluiri la derulare (variate) ---------- */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .rv-l{opacity:0;transform:translateX(-24px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .rv-s{opacity:0;transition:opacity .7s ease}
+.js .rv.in,.js .rv-l.in,.js .rv-s.in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--cream);box-shadow:0 1px 0 var(--ink)}
+  .btn--line,.btn--cream{border-width:2px}
+  .avant li,.info div{border-color:var(--ink)}
+  .muted,.hero__desc,.gallery__head p{color:var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .intro,.hero__photo img{animation-name:fadeOnly;animation-duration:.2s;animation-delay:0s}
+  .js .rv,.js .rv-l{transform:none;transition:opacity .2s linear}
+  .js .rv-s{transition:opacity .2s linear}
+  .hang.is-swaying{animation:none}
+  .hang:hover .tag,.gallery img{transform:none!important;transition:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="Original, înapoi sus">Original</a>
+    <nav aria-label="Principal">
+      <ul class="nav__links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--teal btn--sm" href="tel:0763370771">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <!-- Prima secțiune -->
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="hero__kicker intro" style="--i:0">Magazin de haine în Brașov</p>
+        <h1 class="intro" style="--i:1">Original</h1>
+        <p class="hero__slogan intro" style="--i:2">Moda pentru fiecare zi</p>
+        <p class="hero__desc intro" style="--i:3">Descoperă selecții de haine pentru toate stilurile.</p>
+        <div class="hero__actions intro" style="--i:4">
+          <a class="btn btn--teal" href="tel:0763370771">Sună acum</a>
+          <a class="btn btn--line" href="https://wa.me/40763370771?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+      <figure class="hero__photo">
+        <img src="img/4.jpg" alt="Umerașe cu jachete și cămăși într-un magazin de haine" width="1200" height="1500">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre">
+    <div class="wrap about__grid">
+      <div>
+        <h2 class="rv">Despre Original</h2>
+        <p class="lead rv">Original aduce articole vestimentare pentru toate gusturile.</p>
+      </div>
+      <div class="about__body">
+        <p class="rv">Îți oferim mereu ceva nou de explorat în Brașov.</p>
+        <p class="rv">Te consiliem cu drag pentru orice alegere.</p>
+        <ul class="avant">
+          <li class="rv-l">
+            <h3>Gama variată</h3>
+            <p>Selecție diversă pentru toate preferințele</p>
+          </li>
+          <li class="rv-l">
+            <h3>Echipa prietenoasă</h3>
+            <p>Sfaturi utile și primire caldă</p>
+          </li>
+          <li class="rv-l">
+            <h3>În Brașov</h3>
+            <p>Vezi harta din secțiunea Contact.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produse: vitrina cu etichete -->
+  <section class="shop" id="produse">
+    <div class="wrap">
+      <div class="shop__head">
+        <h2 class="rv">Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="rv">Haine pentru toate stilurile, aranjate ca într-o vitrină bine făcută.</p>
+        <p class="hint rv">Atinge o etichetă ca să se legene.</p>
+      </div>
+
+      <ul class="rack rv" aria-label="Produse, noutăți și consiliere">
+        <li class="hang" tabindex="0">
+          <article class="tag">
+            <svg class="tag__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M14 0H100V100H0V14Z"/></svg>
+            <span class="tag__hole" aria-hidden="true"></span>
+            <h3>Produse</h3>
+            <p>Articole vestimentare pentru toate gusturile, de la piese de zi cu zi la alegeri speciale.</p>
+          </article>
+        </li>
+        <li class="hang" tabindex="0">
+          <article class="tag">
+            <svg class="tag__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M14 0H100V100H0V14Z"/></svg>
+            <span class="tag__hole" aria-hidden="true"></span>
+            <h3>Noutăți</h3>
+            <p>Ceva nou de explorat, mereu, în magazinul nostru.</p>
+          </article>
+        </li>
+        <li class="hang" tabindex="0">
+          <article class="tag">
+            <svg class="tag__bg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M14 0H100V100H0V14Z"/></svg>
+            <span class="tag__hole" aria-hidden="true"></span>
+            <h3>Consiliere la alegere</h3>
+            <p>Te consiliem cu drag, până găsești ce ți se potrivește.</p>
+          </article>
+        </li>
+      </ul>
+
+      <div class="shop__actions rv">
+        <a class="btn btn--teal" href="tel:0763370771">Sună acum</a>
+        <a class="btn btn--cream" href="https://wa.me/40763370771?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="gallery" id="galerie">
+    <div class="wrap">
+      <div class="gallery__head">
+        <h2 class="rv">Inspirație</h2>
+        <p class="rv">Imagini ilustrative, ca să vezi cum arată hainele pe umeraș și în raft.</p>
+      </div>
+      <div class="gallery__grid">
+        <figure class="g1 rv-s">
+          <img src="img/5.jpg" alt="Cămăși și haine așezate pe umerașe, în culori calme" loading="lazy" width="1200" height="1500">
+        </figure>
+        <figure class="g2 rv-s">
+          <img src="img/2.jpg" alt="Rafturi cu haine de damă într-un magazin de modă" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="g3 rv-s">
+          <img src="img/3.jpg" alt="Interiorul unui magazin boutique cu haine expuse" loading="lazy" width="1200" height="900">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap contact__grid">
+      <div>
+        <h2 class="rv">Vino pe la noi</h2>
+        <p class="intro-txt rv">Sună, scrie pe WhatsApp sau treci direct pe la magazin. Te ajutăm cu drag să alegi.</p>
+        <div class="contact__actions rv">
+          <a class="btn btn--teal" href="tel:0763370771">Sună acum</a>
+          <a class="btn btn--line" href="https://wa.me/40763370771?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse.">Scrie pe WhatsApp</a>
+          <a class="btn btn--line" href="https://www.google.com/maps/search/?api=1&amp;query=Original+Bra%C8%99ov" target="_blank" rel="noopener">Deschide harta</a>
+        </div>
+        <dl class="info rv">
+          <div>
+            <dt>Program</dt>
+            <dd>Luni–vineri, 09:30 – 17:30</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0763370771">0763 370 771</a></dd>
+          </div>
+          <div>
+            <dt>Locație</dt>
+            <dd>Brașov. Vezi harta de mai jos.</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="map rv">
+        <iframe
+          title="Harta magazinului Original din Brașov"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=25.601380799999998,45.6469476,25.6093808,45.6509476&amp;layer=mapnik&amp;marker=45.6489476,25.6053808"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <p class="foot__brand">Original</p>
+      <p class="foot__small">Moda pentru fiecare zi, în Brașov.</p>
+    </div>
+    <nav aria-label="Subsol">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="foot__small">
+      <p><a class="plain" href="tel:0763370771">0763 370 771</a></p>
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: jarmoluk, Pexels, boutiquegirlish21, markusspiske</p>
+      <p>© <span id="y"></span> Original, Brașov</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var d = document;
+
+  // Anul din subsol
+  var y = d.getElementById('y');
+  if (y) y.textContent = new Date().getFullYear();
+
+  // Bara de navigare: umbră doar când pagina se derulează sub ea
+  var nav = d.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluiri la derulare
+  var targets = d.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  } else {
+    targets.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Etichetele se leagănă la atingere sau la Enter
+  d.querySelectorAll('.hang').forEach(function (h) {
+    var swing = function () {
+      if (!h.classList.contains('is-swaying')) h.classList.add('is-swaying');
+    };
+    h.addEventListener('pointerdown', swing);
+    h.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        swing();
+      }
+    });
+    h.addEventListener('animationend', function () {
+      h.classList.remove('is-swaying');
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
