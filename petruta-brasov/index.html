@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Buchete, aranjamente florale și flori la bucată în Brașov. Sună sau scrie pe WhatsApp.">
+<meta name="theme-color" content="#FBF9F4">
+<title>Petruța – Flori în Brașov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --alb:#FBF9F4;
+  --alb-curat:#FFFFFF;
+  --kraft:#CDB08A;
+  --kraft-moale:#EFE5D5;
+  --ink:#1A1A1A;
+  --ink-2:#4A4540;
+  --lila:#B59BC9;
+  --lila-moale:#E4D9EE;
+  --rosu:#be123c;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sticla:rgba(251,249,244,.68);
+  --pad:clamp(1.25rem,5vw,3rem);
+  --max:74rem;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  font-family:var(--sans);font-size:1rem;line-height:1.5;letter-spacing:0;
+  color:var(--ink);background:var(--alb);
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+ul,dl{list-style:none}
+:focus-visible{outline:2px solid var(--rosu);outline-offset:3px;border-radius:4px}
+
+section{padding:clamp(4.5rem,12vw,8.5rem) var(--pad)}
+.wrap{max-width:var(--max);margin-inline:auto}
+
+h1,h2,h3{font-weight:400;letter-spacing:-.02em;line-height:1.05}
+h2{font-family:var(--serif);font-size:clamp(2.2rem,5.4vw,3.9rem)}
+h3{font-family:var(--serif);font-size:clamp(1.55rem,2.6vw,1.95rem);line-height:1.15;letter-spacing:-.01em}
+.lead{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.55;max-width:36rem;color:var(--ink-2)}
+.sec-head{max-width:40rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.sec-head .lead{margin-top:1rem}
+p{max-width:36rem}
+
+.split{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:860px){.split{grid-template-columns:1fr 1fr}}
+
+/* Sticlă: bara de navigare */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:var(--sticla);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.75);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.scrolled{box-shadow:0 1px 0 rgba(26,26,26,.05),0 14px 30px -18px rgba(26,26,26,.28)}
+.nav-in{
+  max-width:var(--max);margin-inline:auto;height:4rem;padding:0 var(--pad);
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+}
+.brand{
+  font-family:var(--serif);font-size:1.6rem;line-height:1;text-decoration:none;
+  display:inline-flex;align-items:center;gap:.45rem;letter-spacing:-.01em;
+}
+.nav ul{display:flex;gap:1.75rem}
+.nav a:not(.btn){text-decoration:none;font-size:.9375rem;font-weight:500;letter-spacing:.005em}
+.nav a:not(.btn):hover{color:var(--rosu)}
+@media (max-width:759px){.nav ul{display:none}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:2.75rem;padding:.7rem 1.35rem;border-radius:999px;
+  font:500 1rem/1.1 var(--sans);text-decoration:none;border:0;cursor:pointer;
+  transition:box-shadow .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-rosu{background:var(--rosu);color:#fff}
+.btn-rosu:hover{box-shadow:0 10px 22px -12px rgba(190,18,60,.75)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{box-shadow:0 10px 22px -12px rgba(26,26,26,.7)}
+.btn-contur{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-contur:hover{background:rgba(26,26,26,.05)}
+.btn-mic{padding:.5rem 1.05rem;font-size:.9375rem}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Hero */
+.hero{padding-top:calc(4rem + clamp(3rem,8vw,6rem));padding-bottom:clamp(3rem,7vw,5rem)}
+.hero-in{max-width:var(--max);margin-inline:auto;display:grid;gap:clamp(2.5rem,6vw,3rem);align-items:center}
+@media (min-width:960px){.hero-in{grid-template-columns:1.1fr .9fr;gap:4rem}}
+.hero h1{font-size:clamp(4.2rem,17vw,9.5rem);margin-left:-.04em}
+.slogan{font-family:var(--serif);font-size:clamp(1.75rem,4vw,2.6rem);line-height:1.15;letter-spacing:-.01em;margin-top:.75rem}
+.hero .lead{margin-top:1rem}
+.hero .actiuni{margin-top:1.75rem}
+.strada{margin-top:1.5rem;font-size:.9375rem;color:var(--ink-2);letter-spacing:.01em}
+
+.buchet-wrap{position:relative;width:min(78vw,20rem);aspect-ratio:400/480;margin-inline:auto}
+@media (min-width:960px){.buchet-wrap{width:min(100%,30rem);justify-self:end}}
+.buchet-wrap::before{
+  content:"";position:absolute;left:12%;right:12%;top:20%;bottom:6%;
+  border-radius:50%;background:var(--kraft-moale);
+}
+.floral{position:relative;width:100%;height:100%;overflow:visible}
+
+/* Buchetul care se deschide */
+.floral .p{transform:rotate(var(--a,0deg)) scale(1);fill:var(--c)}
+@media (prefers-reduced-motion:no-preference){
+  .floral .p{transition:transform 1.1s var(--ease) var(--t,0s)}
+  .js .floral:not(.open) .p{transform:rotate(calc(var(--a,0deg) * .2)) scale(.3)}
+}
+
+/* Intrări */
+@keyframes rise{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .7s var(--ease) both;animation-delay:var(--d,0s)}
+  .js [data-reveal]{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+  .js [data-reveal="up"]{transform:translate3d(0,24px,0)}
+  .js [data-reveal="left"]{transform:translate3d(-28px,0,0)}
+  .js [data-reveal="right"]{transform:translate3d(28px,0,0)}
+  .js [data-reveal="zoom"]{transform:scale(.96)}
+  .js [data-reveal].in{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .rise{animation:fade .2s both}
+}
+
+/* Fotografii decupate */
+.foto{margin:0;overflow:hidden;background:var(--kraft-moale)}
+.foto img{width:100%;height:100%;object-fit:cover}
+.forma-arc{border-radius:50% 50% .9rem .9rem / 38% 38% .9rem .9rem}
+.forma-cerc{border-radius:50%}
+.forma-petala{border-radius:0 50% 0 50%}
+.forma-colt{border-radius:.6rem}
+
+/* Despre */
+.despre-foto{aspect-ratio:4/5;max-width:34rem;width:100%;justify-self:center}
+.despre-text p+p{margin-top:1rem}
+.despre-text .btn{margin-top:2rem}
+
+/* Servicii */
+.servicii{background:var(--kraft)}
+.servicii-lista{border-top:1px solid rgba(26,26,26,.22)}
+.servicii-lista li{
+  display:grid;gap:.75rem;padding:clamp(1.75rem,4vw,2.75rem) 0;
+  border-bottom:1px solid rgba(26,26,26,.22);
+}
+.servicii-lista p{color:var(--ink)}
+@media (min-width:760px){
+  .servicii-lista li{grid-template-columns:1fr 1fr;align-items:baseline;gap:3rem}
+}
+.servicii-lista h3{font-size:clamp(2.1rem,4.6vw,3.3rem)}
+.servicii .actiuni{margin-top:3rem}
+
+/* Galerie / colaj */
+.colaj{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:clamp(.75rem,2vw,1.5rem);align-items:start;
+}
+.colaj .foto{width:100%}
+.c-1{grid-column:1/8;grid-row:1;aspect-ratio:4/5}
+.c-2{grid-column:9/13;grid-row:1;aspect-ratio:1/1;margin-top:clamp(3rem,8vw,6rem)}
+.c-3{grid-column:1/5;grid-row:2;aspect-ratio:3/4}
+.c-4{grid-column:6/13;grid-row:2;aspect-ratio:4/3;margin-top:clamp(2rem,5vw,4rem)}
+@media (max-width:759px){
+  .colaj{grid-template-columns:1fr 1fr}
+  .c-1,.c-4{grid-column:1/-1;grid-row:auto}
+  .c-2{grid-column:auto;grid-row:auto;margin-top:0}
+  .c-3{grid-column:auto;grid-row:auto;margin-top:2.5rem}
+  .c-4{margin-top:2.5rem}
+}
+
+/* Avantaje */
+.avantaje{background:var(--lila-moale)}
+.av-lista{display:grid;gap:clamp(2.5rem,5vw,3.5rem)}
+@media (min-width:760px){.av-lista{grid-template-columns:repeat(3,1fr);gap:3rem}}
+.av-emoji{display:block;font-size:2.25rem;line-height:1;margin-bottom:1.25rem}
+.av-lista h3{margin-bottom:.5rem}
+.av-lista p{color:var(--ink-2)}
+.av-lista h2{margin-bottom:clamp(2.5rem,6vw,4rem);max-width:40rem}
+
+/* Program */
+.orar{margin-top:2rem;border-top:1px solid rgba(26,26,26,.15)}
+.orar div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1.1rem 0;border-bottom:1px solid rgba(26,26,26,.15)}
+.orar dt{font-weight:500}
+.orar dd{font-variant-numeric:tabular-nums;font-size:1.0625rem}
+.livrare p{margin-top:1.25rem}
+
+/* Contact */
+.contact{background:var(--kraft-moale)}
+.contact address{font-style:normal;font-size:1.125rem;line-height:1.5;margin-top:1.5rem}
+.contact .tel{margin-top:.5rem;font-size:1.125rem}
+.contact .tel a{font-weight:500;text-decoration:none;border-bottom:1px solid currentColor}
+.contact .actiuni{margin-top:2rem}
+.harta{position:relative;min-height:20rem;border-radius:1.25rem;overflow:hidden;background:var(--alb)}
+.harta iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media (min-width:860px){.harta{min-height:26rem}}
+
+/* Subsol */
+.pied{background:var(--ink);color:var(--alb);padding:clamp(3.5rem,8vw,5rem) var(--pad) 2.5rem}
+.pied-in{max-width:var(--max);margin-inline:auto;display:grid;gap:1.25rem}
+.pied .brand{color:var(--alb);font-size:2rem}
+.pied p{max-width:none}
+.pied a{text-decoration:none}
+.pied .mic{font-size:.8125rem;color:rgba(251,249,244,.72);letter-spacing:.01em}
+.pied-linii{display:grid;gap:.4rem;margin-top:1rem;padding-top:1.5rem;border-top:1px solid rgba(251,249,244,.14)}
+
+/* Accesibilitate */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--alb-curat);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--alb-curat);border-top:2px solid var(--ink)}
+  .btn-contur{box-shadow:inset 0 0 0 2px var(--ink)}
+  .servicii-lista li,.orar div{border-bottom-width:2px}
+  .pied .mic{color:var(--alb)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#acasa" class="brand"><span aria-hidden="true">💐</span>Petruța</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-rosu btn-mic" href="tel:0741629023">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+<!-- Primul ecran -->
+<section class="hero" id="acasa">
+  <div class="hero-in">
+    <div class="hero-text">
+      <h1 class="rise" style="--d:.05s">Petruța</h1>
+      <p class="slogan rise" style="--d:.15s">Flori pentru orice ocazie specială</p>
+      <p class="lead rise" style="--d:.25s">Descoperă buchete și aranjamente florale creative.</p>
+      <div class="actiuni rise" style="--d:.35s">
+        <a class="btn btn-rosu" href="tel:0741629023">Sună acum</a>
+        <a class="btn btn-ink" href="https://wa.me/40741629023?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20flori.">Scrie pe WhatsApp</a>
+      </div>
+      <p class="strada rise" style="--d:.45s">Strada Toamnei 3, Brașov</p>
+    </div>
+
+    <div class="buchet-wrap rise" style="--d:.2s">
+      <svg class="floral" id="buchet" viewBox="0 0 400 480" role="img" aria-labelledby="buchet-titlu">
+        <title id="buchet-titlu">Un buchet de flori care se deschide, floare cu floare</title>
+        <defs>
+          <ellipse id="pt" cy="-26" rx="15" ry="26"/>
+        </defs>
+
+        <!-- frunze -->
+        <g fill="#B39468" opacity=".9">
+          <ellipse cx="112" cy="268" rx="9" ry="34" transform="rotate(-30 112 268)"/>
+          <ellipse cx="290" cy="262" rx="9" ry="34" transform="rotate(32 290 262)"/>
+        </g>
+
+        <!-- tulpini -->
+        <g fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+          <path d="M200 158 C200 210 200 260 200 312"/>
+          <path d="M124 190 C130 240 176 280 198 312"/>
+          <path d="M278 184 C270 236 226 280 204 312"/>
+          <path d="M150 262 C164 282 186 298 198 312"/>
+          <path d="M252 266 C238 286 218 300 204 312"/>
+        </g>
+
+        <!-- floarea 1 (centru) -->
+        <g transform="translate(200 132)">
+          <g class="p" style="--a:0deg;--c:#B59BC9;--t:.30s"><use href="#pt"/></g>
+          <g class="p" style="--a:60deg;--c:#CBB8DC;--t:.35s"><use href="#pt"/></g>
+          <g class="p" style="--a:120deg;--c:#B59BC9;--t:.40s"><use href="#pt"/></g>
+          <g class="p" style="--a:180deg;--c:#CBB8DC;--t:.45s"><use href="#pt"/></g>
+          <g class="p" style="--a:240deg;--c:#B59BC9;--t:.50s"><use href="#pt"/></g>
+          <g class="p" style="--a:300deg;--c:#CBB8DC;--t:.55s"><use href="#pt"/></g>
+          <circle r="7" fill="#be123c"/>
+        </g>
+
+        <!-- floarea 2 (dreapta sus) -->
+        <g transform="translate(278 184) scale(.8)">
+          <g class="p" style="--a:0deg;--c:#CBB8DC;--t:.70s"><use href="#pt"/></g>
+          <g class="p" style="--a:60deg;--c:#B59BC9;--t:.75s"><use href="#pt"/></g>
+          <g class="p" style="--a:120deg;--c:#CBB8DC;--t:.80s"><use href="#pt"/></g>
+          <g class="p" style="--a:180deg;--c:#B59BC9;--t:.85s"><use href="#pt"/></g>
+          <g class="p" style="--a:240deg;--c:#CBB8DC;--t:.90s"><use href="#pt"/></g>
+          <g class="p" style="--a:300deg;--c:#B59BC9;--t:.95s"><use href="#pt"/></g>
+          <circle r="7" fill="#be123c"/>
+        </g>
+
+        <!-- floarea 3 (stânga) -->
+        <g transform="translate(124 190) scale(.78)">
+          <g class="p" style="--a:0deg;--c:#B59BC9;--t:1.10s"><use href="#pt"/></g>
+          <g class="p" style="--a:60deg;--c:#CBB8DC;--t:1.15s"><use href="#pt"/></g>
+          <g class="p" style="--a:120deg;--c:#B59BC9;--t:1.20s"><use href="#pt"/></g>
+          <g class="p" style="--a:180deg;--c:#CBB8DC;--t:1.25s"><use href="#pt"/></g>
+          <g class="p" style="--a:240deg;--c:#B59BC9;--t:1.30s"><use href="#pt"/></g>
+          <g class="p" style="--a:300deg;--c:#CBB8DC;--t:1.35s"><use href="#pt"/></g>
+          <circle r="7" fill="#be123c"/>
+        </g>
+
+        <!-- floarea 4 (dreapta jos) -->
+        <g transform="translate(252 266) scale(.66)">
+          <g class="p" style="--a:0deg;--c:#CBB8DC;--t:1.50s"><use href="#pt"/></g>
+          <g class="p" style="--a:60deg;--c:#B59BC9;--t:1.55s"><use href="#pt"/></g>
+          <g class="p" style="--a:120deg;--c:#CBB8DC;--t:1.60s"><use href="#pt"/></g>
+          <g class="p" style="--a:180deg;--c:#B59BC9;--t:1.65s"><use href="#pt"/></g>
+          <g class="p" style="--a:240deg;--c:#CBB8DC;--t:1.70s"><use href="#pt"/></g>
+          <g class="p" style="--a:300deg;--c:#B59BC9;--t:1.75s"><use href="#pt"/></g>
+          <circle r="7" fill="#be123c"/>
+        </g>
+
+        <!-- floarea 5 (jos, stânga) -->
+        <g transform="translate(150 262) scale(.66)">
+          <g class="p" style="--a:0deg;--c:#B59BC9;--t:1.90s"><use href="#pt"/></g>
+          <g class="p" style="--a:60deg;--c:#CBB8DC;--t:1.95s"><use href="#pt"/></g>
+          <g class="p" style="--a:120deg;--c:#B59BC9;--t:2.00s"><use href="#pt"/></g>
+          <g class="p" style="--a:180deg;--c:#CBB8DC;--t:2.05s"><use href="#pt"/></g>
+          <g class="p" style="--a:240deg;--c:#B59BC9;--t:2.10s"><use href="#pt"/></g>
+          <g class="p" style="--a:300deg;--c:#CBB8DC;--t:2.15s"><use href="#pt"/></g>
+          <circle r="7" fill="#be123c"/>
+        </g>
+
+        <!-- împachetare -->
+        <path d="M166 300 L234 300 L262 466 L138 466 Z" fill="#CDB08A"/>
+        <path d="M200 300 L200 466" stroke="#B39468" stroke-width="1.2" opacity=".7"/>
+        <rect x="154" y="368" width="92" height="13" fill="#be123c"/>
+        <path d="M200 381 C188 398 178 414 170 438 M200 381 C212 398 222 414 232 436" fill="none" stroke="#be123c" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Despre -->
+<section id="despre">
+  <div class="split wrap">
+    <figure class="foto forma-arc despre-foto" data-reveal="left">
+      <img src="img/2.jpg" alt="Buchete și flori pe o masă de lemn, într-un spațiu de lucru" loading="lazy">
+    </figure>
+    <div class="despre-text" data-reveal="right">
+      <h2>Flori pentru momentele care contează</h2>
+      <p class="lead" style="margin-top:1.5rem">La Petruța găsești flori care aduc un plus de frumusețe oricărui moment important. Oferim buchete, aranjamente și flori la bucată, potrivite pentru orice eveniment sau cadou.</p>
+      <p class="lead">Atmosfera este caldă și mereu primitoare.</p>
+      <div class="actiuni">
+        <a class="btn btn-ink" href="https://wa.me/40741629023?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20flori.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Servicii -->
+<section class="servicii" id="servicii">
+  <div class="wrap">
+    <header class="sec-head" data-reveal="up">
+      <h2>Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="lead">Ce poți comanda de la Petruța.</p>
+    </header>
+    <ul class="servicii-lista">
+      <li data-reveal="up" style="--d:0s">
+        <h3>Buchete</h3>
+        <p>Pentru zile de naștere, aniversări, mulțumiri sau doar ca să spui „mă gândesc la tine”.</p>
+      </li>
+      <li data-reveal="up" style="--d:.08s">
+        <h3>Aranjamente florale</h3>
+        <p>Compoziții pentru masă, pentru o sărbătoare sau pentru casa ta.</p>
+      </li>
+      <li data-reveal="up" style="--d:.16s">
+        <h3>Flori la bucată</h3>
+        <p>Alegi florile una câte una, ca să pleci cu exact ce îți place.</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- Galerie -->
+<section id="galerie">
+  <div class="wrap">
+    <header class="sec-head" data-reveal="up">
+      <h2>Inspirație pentru buchetul tău</h2>
+      <p class="lead">Câteva idei de flori și aranjamente. Spune-ne ce ocazie ai, iar noi alegem florile potrivite.</p>
+    </header>
+    <div class="colaj">
+      <figure class="foto forma-arc c-1" data-reveal="zoom">
+        <img src="img/4.jpg" alt="Buchet elegant cu crini, garoafe și trandafiri, legat cu panglică în dungi" loading="lazy">
+      </figure>
+      <figure class="foto forma-cerc c-2" data-reveal="up" style="--d:.1s">
+        <img src="img/3.jpg" alt="Buchet multicolor de flori de primăvară" loading="lazy">
+      </figure>
+      <figure class="foto forma-petala c-3" data-reveal="up" style="--d:.05s">
+        <img src="img/5.jpg" alt="Flori roz într-un buchet" loading="lazy">
+      </figure>
+      <figure class="foto forma-colt c-4" data-reveal="zoom" style="--d:.1s">
+        <img src="img/1.jpg" alt="Detaliu de atelier, cu hârtie și flori" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Avantaje -->
+<section class="avantaje" aria-labelledby="av-titlu">
+  <div class="wrap">
+    <h2 id="av-titlu" data-reveal="up">Ce primești la noi</h2>
+    <ul class="av-lista">
+      <li data-reveal="up" style="--d:0s">
+        <span class="av-emoji" aria-hidden="true">🎉</span>
+        <h3>Selecție variată</h3>
+        <p>Flori proaspete pentru orice moment</p>
+      </li>
+      <li data-reveal="up" style="--d:.08s">
+        <span class="av-emoji" aria-hidden="true">🎁</span>
+        <h3>Flori pentru cadou</h3>
+        <p>Potrivite pentru orice eveniment sau cadou</p>
+      </li>
+      <li data-reveal="up" style="--d:.16s">
+        <span class="av-emoji" aria-hidden="true">🕗</span>
+        <h3>Deschis în fiecare zi</h3>
+        <p>Luni–sâmbătă până la 21:00, duminica până la 20:00</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Program și livrare -->
+<section id="program">
+  <div class="split wrap">
+    <div data-reveal="left">
+      <h2>Program</h2>
+      <dl class="orar">
+        <div><dt>Luni – sâmbătă</dt><dd>08:30 – 21:00</dd></div>
+        <div><dt>Duminică</dt><dd>08:30 – 20:00</dd></div>
+      </dl>
+    </div>
+    <div class="livrare" data-reveal="right">
+      <h2>Vino la noi</h2>
+      <p class="lead">Strada Toamnei 3, Brașov. Te așteptăm cu flori proaspete.</p>
+      <div class="actiuni" style="margin-top:2rem">
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Petru%C8%9Ba+Bra%C8%99ov" target="_blank" rel="noopener">Deschide harta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="split wrap">
+    <div data-reveal="left">
+      <h2>Sună-ne sau scrie-ne</h2>
+      <p class="lead" style="margin-top:1rem">Spune-ne ce ocazie ai, iar noi te ajutăm să alegi florile potrivite.</p>
+      <address>Strada Toamnei 3<br>Brașov</address>
+      <p class="tel">Telefon: <a href="tel:0741629023">0741 629 023</a></p>
+      <div class="actiuni">
+        <a class="btn btn-rosu" href="tel:0741629023">Sună acum</a>
+        <a class="btn btn-ink" href="https://wa.me/40741629023?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20flori.">Scrie pe WhatsApp</a>
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Petru%C8%9Ba+Bra%C8%99ov" target="_blank" rel="noopener">Deschide harta</a>
+      </div>
+    </div>
+    <div class="harta" data-reveal="right">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=25.6112276,45.651744799999996,25.619227600000002,45.6557448&amp;layer=mapnik&amp;marker=45.6537448,25.6152276" title="Harta: Petruța, Strada Toamnei 3, Brașov" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pied">
+  <div class="pied-in">
+    <p class="brand"><span aria-hidden="true">💐</span>Petruța</p>
+    <p>Flori pentru orice ocazie specială<br>Strada Toamnei 3, Brașov</p>
+    <p><a href="tel:0741629023">0741 629 023</a></p>
+    <div class="pied-linii">
+      <p class="mic">Model de site (demo)</p>
+      <p class="mic">Fotografii ilustrative de pe Pixabay: rawpixel, 5598375, Van3ssa_, jackmac34</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  html.classList.add('js');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Buchetul se deschide floare cu floare, o singură dată, la încărcare
+  var buchet = document.getElementById('buchet');
+  var deschide = function () { if (buchet) buchet.classList.add('open'); };
+  if (reduce) {
+    deschide();
+  } else {
+    setTimeout(deschide, 400);
+  }
+
+  // Dezvăluiri la derulare
+  var elemente = [].slice.call(document.querySelectorAll('[data-reveal]'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var observator = new IntersectionObserver(function (intrari) {
+      intrari.forEach(function (intrare) {
+        if (intrare.isIntersecting) {
+          intrare.target.classList.add('in');
+          observator.unobserve(intrare.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    elemente.forEach(function (el) { observator.observe(el); });
+  } else {
+    elemente.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Bara de navigare capătă umbră când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  var laDerulare = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', laDerulare, { passive: true });
+  laDerulare();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
