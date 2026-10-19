@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expo Cafe, Iași | Cafea și Red Velvet milkshake</title>
+<meta name="description" content="Expo Cafe, Aleea Grigore Ghica Vodă, Iași. Cafea și Red Velvet milkshake. Deschis zilnic, între 08:00 și 23:00.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%233B2A20'/%3E%3Cpath d='M50 80C30 66 20 54 20 40C20 30 27 24 35 24C42 24 47 28 50 34C53 28 58 24 65 24C73 24 80 30 80 40C80 54 70 66 50 80Z' fill='%23EADFD3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --accent:#b45309;
+  --accent-deep:#963f07;
+  --ink-soft:rgba(59,42,32,.74);
+  --line:rgba(59,42,32,.16);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-head:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--espresso);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-head);font-weight:600;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{
+  width:100%;
+  max-width:1120px;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,5vw,3rem);
+}
+.skip{
+  position:absolute;left:1rem;top:-6rem;z-index:100;
+  background:var(--white);color:var(--espresso);
+  padding:.6rem 1rem;border-radius:999px;text-decoration:none;font-weight:500;
+}
+.skip:focus{top:1rem}
+
+.section{padding-block:clamp(4.5rem,10vw,8rem)}
+.section--sand{background:var(--lapte)}
+.section-title{font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-.02em;line-height:1.1}
+.section-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.muted{color:var(--ink-soft)}
+
+/* Sticla: bara de navigare */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.site-nav.is-scrolled{
+  background:rgba(255,255,255,.84);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 30px -18px rgba(59,42,32,.35);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-head);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
+  text-decoration:none;
+}
+.brand svg{width:28px;height:28px;flex:none}
+.nav-links{display:none;gap:2rem}
+@media(min-width:760px){.nav-links{display:flex}}
+.nav-links a{
+  text-decoration:none;font-weight:500;font-size:.95rem;
+  padding-block:.5rem;transition:color .2s ease;
+}
+.nav-links a:hover{color:var(--accent-deep)}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.5rem;border-radius:999px;
+  font-family:var(--font-body);font-size:.975rem;font-weight:500;line-height:1.2;
+  text-decoration:none;border:0;cursor:pointer;
+  transition:background-color .2s ease,box-shadow .25s ease,color .2s ease,transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#FFFFFF}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 10px 22px -12px rgba(150,63,7,.7)}
+.btn-ghost{color:var(--espresso);box-shadow:inset 0 0 0 1.5px var(--espresso)}
+.btn-ghost:hover{background:rgba(59,42,32,.06)}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.9rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+
+/* Hero */
+.hero{
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:clamp(7.5rem,16vh,9rem);
+  padding-bottom:clamp(3.5rem,8vw,6rem);
+}
+@media(min-width:880px){.hero{min-height:100svh}}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}}
+.hero h1{
+  font-size:clamp(3.2rem,12vw,6.5rem);
+  letter-spacing:-.02em;line-height:1.05;
+}
+.lead{
+  margin-top:1.25rem;max-width:30ch;
+  font-size:clamp(1.1rem,2.2vw,1.35rem);line-height:1.45;
+}
+.hours{
+  margin-top:2.5rem;display:grid;gap:.25rem;
+  font-size:.95rem;color:var(--ink-soft);
+}
+.hero-cup{margin:0;width:min(84vw,380px);justify-self:center}
+@media(min-width:880px){.hero-cup{width:100%;max-width:520px;justify-self:end}}
+.hero-cup svg{width:100%;height:auto}
+
+/* Miscare de intrare (prima sectiune) */
+.intro{animation:rise .6s var(--ease) var(--d,0s) both}
+.d1{--d:.05s}.d2{--d:.15s}.d3{--d:.25s}.d4{--d:.35s}
+@keyframes rise{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Elementul memorabil: ceasca de sus, cu inima din latte art */
+.cup-body{animation:fadeIn .9s ease .05s both}
+.cup-heart{
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  fill-opacity:0;
+  animation:pour 1.3s cubic-bezier(.45,0,.2,1) .6s forwards,settle .7s ease 1.9s forwards;
+}
+@keyframes pour{to{stroke-dashoffset:0}}
+@keyframes settle{to{fill-opacity:1}}
+
+/* Despre */
+.split{display:grid;gap:3.5rem;align-items:center}
+@media(min-width:880px){.split{grid-template-columns:1fr 1fr;gap:6rem}}
+.body-lead{
+  margin-top:1.5rem;max-width:60ch;
+  color:var(--ink-soft);font-size:1.0625rem;line-height:1.6;
+}
+.perks{display:grid;gap:1.5rem;margin-top:3rem}
+.perks li{display:grid;gap:.25rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+.perks h3{font-size:1.125rem}
+.perks p{color:var(--ink-soft)}
+.photo{
+  margin:0;overflow:hidden;border-radius:6px;
+  aspect-ratio:4/5;background:var(--lapte);
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+
+/* Meniu */
+.menu-grid{display:grid;gap:3rem}
+@media(min-width:880px){.menu-grid{grid-template-columns:.8fr 1.2fr;gap:6rem;align-items:start}}
+.menu-note{margin-top:1.25rem;color:var(--ink-soft);max-width:36ch}
+.menu-grid .actions{margin-top:2rem}
+.menu-list{border-top:1px solid rgba(59,42,32,.2)}
+.menu-list li{
+  padding:2rem 0;border-bottom:1px solid rgba(59,42,32,.2);
+  display:grid;gap:.5rem;
+}
+.menu-list h3{
+  display:flex;align-items:center;gap:.8rem;
+  font-size:clamp(1.5rem,3vw,2rem);font-weight:500;
+  letter-spacing:-.015em;line-height:1.15;
+}
+.menu-list h3::before{
+  content:"";width:.5rem;height:.5rem;border-radius:50%;
+  background:var(--accent);flex:none;
+}
+.menu-list p{color:var(--ink-soft);max-width:44ch;padding-left:1.3rem}
+
+/* Galerie */
+.gallery{display:grid;gap:.75rem;grid-template-columns:1fr 1fr}
+@media(min-width:880px){
+  .gallery{grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:start}
+  .gallery figure:nth-child(even){margin-top:3.5rem}
+}
+.gallery figure{
+  margin:0;overflow:hidden;border-radius:6px;
+  aspect-ratio:3/4;background:var(--lapte);
+}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+@media(hover:hover){.gallery figure:hover img{transform:scale(1.03)}}
+
+/* Contact */
+.contact-grid{display:grid;gap:3rem}
+@media(min-width:880px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}}
+.big-line{
+  margin-top:1.5rem;
+  font-family:var(--font-head);font-size:clamp(1.4rem,3vw,1.85rem);
+  font-weight:500;letter-spacing:-.01em;line-height:1.25;
+}
+.contact-meta{display:grid;gap:.5rem;margin-top:1.5rem;color:var(--ink-soft)}
+.contact-meta a{
+  color:var(--espresso);font-weight:500;text-decoration:none;
+  border-bottom:1px solid rgba(59,42,32,.3);
+}
+.map iframe{
+  width:100%;height:320px;border:0;border-radius:6px;display:block;
+}
+@media(max-width:879px){.map iframe{height:280px}}
+
+/* Subsol */
+.site-foot{
+  background:var(--espresso);color:rgba(234,223,211,.86);
+  padding:3.5rem 0 4.5rem;font-size:.875rem;letter-spacing:.01em;
+}
+.foot-grid{display:grid;gap:.5rem}
+.foot-name{
+  font-family:var(--font-head);font-size:1.25rem;font-weight:600;
+  color:var(--white);letter-spacing:-.01em;
+}
+.credit{margin-top:1.5rem;max-width:60ch;font-size:.8125rem;opacity:.8}
+
+/* Revelare la derulare: variate si discrete */
+.js .rv{
+  opacity:0;transform:translate3d(0,22px,0);
+  transition:opacity .5s var(--ease) var(--d,0s),transform .5s var(--ease) var(--d,0s);
+}
+.js .rv-left{transform:translate3d(-22px,0,0)}
+.js .rv-scale{transform:scale(.98)}
+.js .rv-fade{transform:none}
+.js .is-in{opacity:1;transform:none}
+
+/* Preferinte de accesibilitate */
+@media (prefers-reduced-transparency: reduce){
+  .site-nav{background:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--ink-soft:var(--espresso);--line:rgba(59,42,32,.55)}
+  .site-nav{background:#FFFFFF}
+  .btn-primary{background:#8F3F06}
+  .btn-primary:hover{background:#6F3004}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--espresso)}
+  .menu-list,.menu-list li{border-color:var(--espresso)}
+  .perks li{border-color:var(--espresso)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .intro{animation:fadeIn .2s both !important}
+  .cup-body{animation:fadeIn .2s both !important}
+  .cup-heart{animation:none !important;stroke-dashoffset:0;fill-opacity:1}
+  .js .rv,.js .rv-left,.js .rv-scale,.js .rv-fade{
+    transform:none !important;
+    transition:opacity .2s ease !important;
+  }
+  .gallery img{transition:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="site-nav">
+  <div class="nav-inner wrap">
+    <a class="brand" href="#top" aria-label="Expo Cafe, înapoi sus">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="50" fill="#3B2A20"/>
+        <path d="M50 80C30 66 20 54 20 40C20 30 27 24 35 24C42 24 47 28 50 34C53 28 58 24 65 24C73 24 80 30 80 40C80 54 70 66 50 80Z" fill="#EADFD3"/>
+      </svg>
+      Expo Cafe
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0746662322">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" class="intro d1">Expo Cafe</h1>
+        <p class="lead intro d2">Descoperă gustul cafelei și al milkshake-ului Red Velvet.</p>
+        <div class="actions intro d3">
+          <a class="btn btn-primary" href="tel:0746662322">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40746662322?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniu." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <div class="hours intro d4">
+          <p>Deschis zilnic, între 08:00 și 23:00</p>
+          <p>Aleea Grigore Ghica Vodă, Iași</p>
+        </div>
+      </div>
+
+      <figure class="hero-cup intro d2">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spuma de lapte">
+          <circle cx="200" cy="200" r="192" fill="#EADFD3"/>
+          <circle cx="200" cy="200" r="168" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2"/>
+          <g class="cup-body">
+            <circle cx="200" cy="200" r="142" fill="#FFFFFF"/>
+            <circle cx="200" cy="200" r="126" fill="#3B2A20"/>
+            <circle cx="200" cy="200" r="116" fill="none" stroke="#EADFD3" stroke-opacity=".12" stroke-width="6"/>
+          </g>
+          <path class="cup-heart" pathLength="1"
+                d="M200 276C146 236 118 206 118 172C118 142 140 120 166 120C182 120 194 129 200 142C206 129 218 120 234 120C260 120 282 142 282 172C282 206 254 236 200 276Z"
+                fill="#EADFD3" stroke="#EADFD3" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap split">
+      <div>
+        <h2 id="despre-titlu" class="section-title rv">Despre noi</h2>
+        <p class="body-lead rv" style="--d:.08s">Expo Cafe este locul unde iubitorii de cafea și de băuturi dulci găsesc o atmosferă plăcută. Ori de câte ori vrei o pauză aromată sau un milkshake savuros, te așteptăm la Expo Cafe. Suntem pe aleea Grigore Ghica Vodă, în Iași.</p>
+        <ul class="perks">
+          <li class="rv-left" style="--d:.12s">
+            <h3>Atmosferă relaxată</h3>
+            <p>Loc pentru întâlniri casual.</p>
+          </li>
+          <li class="rv-left" style="--d:.2s">
+            <h3>Cafea de calitate</h3>
+            <p>Gust autentic, mereu proaspăt.</p>
+          </li>
+          <li class="rv-left" style="--d:.28s">
+            <h3>Băuturi dulci</h3>
+            <p>Milkshake savuros Red Velvet.</p>
+          </li>
+        </ul>
+      </div>
+      <figure class="photo rv-scale">
+        <img src="img/3.jpg" alt="Tânără citind o carte la o masă de cafenea, cu o băutură alături." loading="lazy" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--sand" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap menu-grid">
+      <div class="rv">
+        <h2 id="meniu-titlu" class="section-title">Meniu</h2>
+        <p class="menu-note">Pentru prețuri și detalii, scrie-ne sau sună-ne.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0746662322">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40746662322?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniu." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+      <ul class="menu-list">
+        <li class="rv" style="--d:.05s">
+          <h3>Cafea</h3>
+          <p>O cafea cu gust intens, servită mereu proaspăt.</p>
+        </li>
+        <li class="rv" style="--d:.15s">
+          <h3>Milkshake Red Velvet</h3>
+          <p>Băutură dulce și cremoasă, cu aromă specială.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu" class="section-title section-head rv">Atmosfera</h2>
+      <div class="gallery">
+        <figure class="rv" style="--d:0s">
+          <img src="img/2.jpg" alt="Barista pregătind o cafea espresso" loading="lazy" decoding="async">
+        </figure>
+        <figure class="rv" style="--d:.08s">
+          <img src="img/4.jpg" alt="Două persoane savurând băuturi la o masă de cafenea" loading="lazy" decoding="async">
+        </figure>
+        <figure class="rv" style="--d:.16s">
+          <img src="img/1.jpg" alt="Cappuccino servit într-o ceașcă albă" loading="lazy" decoding="async">
+        </figure>
+        <figure class="rv" style="--d:.24s">
+          <img src="img/5.jpg" alt="Boabe de cafea prăjite" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sand" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <h2 id="contact-titlu" class="section-title">Vino pe la noi</h2>
+        <p class="big-line">Aleea Grigore Ghica Vodă, Iași</p>
+        <div class="contact-meta">
+          <p>Deschis zilnic, între 08:00 și 23:00</p>
+          <p>Telefon: <a href="tel:0746662322">0746662322</a></p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0746662322">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40746662322?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniu." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=expo+cafe+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map rv-fade" style="--d:.1s">
+        <iframe
+          title="Harta locației Expo Cafe, Aleea Grigore Ghica Vodă, Iași"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.557636199999997,47.185936399999996,27.5656362,47.1899364&amp;layer=mapnik&amp;marker=47.1879364,27.5616362"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <p class="foot-name">Expo Cafe</p>
+    <p>Aleea Grigore Ghica Vodă, Iași</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: grafmex, 13027327, hoahoa111, Cloud1902, thetimehiker.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.querySelector('.site-nav');
+  var onScroll = function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('.rv, .rv-left, .rv-scale, .rv-fade');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
