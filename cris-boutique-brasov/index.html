@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#be123c">
+<title>Cris Boutique, Brașov | Cadouri care aduc bucurie</title>
+<meta name="description" content="Cadouri inspirate, produse handmade, dulciuri și băuturi speciale în Brașov. Sună sau scrie-ne pe WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#be123c;
+    --red-d:#9f1239;
+    --yellow:#FFD447;
+    --blue:#2563EB;
+    --ink:#111111;
+    --paper:#ffffff;
+    --ease:cubic-bezier(.2,.8,.2,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:'Rubik',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-size:1.0625rem;
+    line-height:1.5;
+    color:var(--ink);
+    background:var(--paper);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%}
+  section{position:relative;scroll-margin-top:4rem}
+  h1,h2,h3{
+    font-family:'Outfit',system-ui,sans-serif;
+    letter-spacing:-0.02em;
+    line-height:1.08;
+    margin:0;
+    font-weight:700;
+  }
+  p{margin:0}
+  .wrap{width:min(1120px,calc(100% - 2.5rem));margin-inline:auto}
+  .h2{font-size:clamp(2rem,5.5vw,3.4rem)}
+
+  .skip{
+    position:absolute;left:1rem;top:-4rem;z-index:100;
+    background:#fff;color:var(--ink);padding:.6rem 1rem;border-radius:999px;font-weight:600;
+  }
+  .skip:focus{top:1rem}
+
+  a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+  /* Butoane */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    min-height:56px;padding:.9rem 1.6rem;border-radius:999px;border:0;cursor:pointer;
+    font-family:'Outfit',system-ui,sans-serif;font-weight:600;font-size:1.05rem;line-height:1.2;
+    letter-spacing:-0.005em;text-decoration:none;text-align:center;
+    transition:transform .1s ease,background-color .2s ease,box-shadow .2s ease,color .2s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+  .btn-red{background:var(--red);color:#fff;box-shadow:0 8px 20px -12px rgba(190,18,60,.85)}
+  .btn-red:hover{background:var(--red-d);box-shadow:0 10px 24px -12px rgba(190,18,60,.95)}
+  .btn-ink{background:var(--ink);color:#fff}
+  .btn-ink:hover{background:#2b2b2b}
+  .btn-white{background:#fff;color:var(--red)}
+  .btn-white:hover{background:#fbe9ee}
+  .btn-yellow{background:var(--yellow);color:var(--ink)}
+  .btn-yellow:hover{background:#ffe07a}
+  .btn-line{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #fff}
+  .btn-line:hover{background:rgba(255,255,255,.12)}
+  .contact :focus-visible{outline-color:#fff}
+
+  /* Bară de navigare: sticlă */
+  .site-header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    background:rgba(255,255,255,.7);
+    -webkit-backdrop-filter:blur(18px) saturate(1.3);
+    backdrop-filter:blur(18px) saturate(1.3);
+    border-top:1px solid rgba(255,255,255,.7);
+    transition:box-shadow .3s ease;
+  }
+  .site-header.is-scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+  .nav{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .brand{
+    display:inline-flex;align-items:center;gap:.5rem;min-height:44px;
+    font-family:'Outfit',system-ui,sans-serif;font-weight:800;font-size:1.15rem;
+    letter-spacing:-0.01em;color:var(--ink);text-decoration:none;
+  }
+  .brand-ico{font-size:1.4rem;line-height:1}
+  .nav-links{display:none;list-style:none;margin:0;padding:0;gap:1.75rem}
+  @media (min-width:720px){.nav-links{display:flex}}
+  .nav-links a{
+    display:inline-flex;align-items:center;min-height:44px;
+    color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem;
+  }
+  .nav-links a:hover{color:var(--red);text-decoration:underline;text-underline-offset:4px}
+
+  /* Primul ecran */
+  .hero{background:var(--yellow);padding:6.5rem 0 4rem;overflow:hidden}
+  @media (min-width:900px){.hero{padding:9rem 0 7rem}}
+  .hero-grid{display:grid;gap:2.5rem;align-items:center}
+  @media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}}
+  .hero h1{
+    font-size:clamp(2.6rem,8.4vw,5.75rem);
+    font-weight:800;line-height:1;letter-spacing:-0.025em;
+    text-wrap:balance;
+  }
+  .slogan{
+    font-family:'Outfit',system-ui,sans-serif;font-weight:600;
+    font-size:clamp(1.3rem,3.2vw,1.85rem);line-height:1.2;letter-spacing:-0.01em;
+    margin:1.1rem 0 .6rem;
+  }
+  .desc{margin:0 0 2rem;max-width:32ch}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+  @media (max-width:519px){.hero-actions .btn{flex-basis:100%}}
+  .phone-line{margin-top:1rem;font-size:.95rem}
+  .phone-line a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+  /* Geanta de cumpărături, elementul memorabil */
+  .bag-stage{
+    position:relative;
+    width:min(70vw,300px);
+    aspect-ratio:5/6;
+    margin:1.5rem auto 0;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  @media (min-width:900px){
+    .bag-stage{width:min(100%,400px);margin:0 0 0 auto}
+  }
+  .bag-handle{
+    position:absolute;left:24%;top:2%;width:52%;height:26%;
+    overflow:visible;z-index:0;
+  }
+  .bag-handle path{
+    fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;
+    vector-effect:non-scaling-stroke;
+  }
+  .bag-back{
+    position:absolute;left:8%;right:8%;top:20%;bottom:2%;
+    background:#8f0f2e;border-radius:16px 16px 8px 8px;z-index:1;
+  }
+  .prod{
+    position:absolute;left:var(--x);top:var(--y);width:var(--w);
+    aspect-ratio:1;height:auto;z-index:2;overflow:visible;display:block;
+    filter:drop-shadow(0 6px 8px rgba(0,0,0,.22));
+  }
+  .p-mug{--x:12%;--y:14%;--w:30%;--r:-6deg;--d:.12s}
+  .p-truffle{--x:58%;--y:8%;--w:27%;--r:10deg;--d:.36s}
+  .p-gift{--x:18%;--y:36%;--w:34%;--r:-4deg;--d:.22s}
+  .p-candy{--x:55%;--y:42%;--w:28%;--r:8deg;--d:.5s}
+  .bag-front{
+    position:absolute;left:8%;right:8%;top:56%;bottom:0;z-index:3;
+    background:var(--red);border-radius:6px 6px 26px 26px;
+    box-shadow:inset 0 2px 0 rgba(255,255,255,.18);
+    display:grid;place-items:center;color:#fff;
+    font-family:'Outfit',system-ui,sans-serif;font-weight:800;
+    font-size:clamp(1.3rem,4vw,1.75rem);letter-spacing:-0.01em;
+  }
+
+  @keyframes drop{
+    0%{opacity:0;transform:translate3d(0,-70%,0) rotate(calc(var(--r) - 20deg))}
+    35%{opacity:1}
+    100%{opacity:1;transform:translate3d(0,0,0) rotate(var(--r))}
+  }
+  @keyframes fadein{from{opacity:0}to{opacity:1}}
+  .bag.play .prod{
+    animation:drop .85s cubic-bezier(.2,.8,.2,1) both;
+    animation-delay:var(--d);
+  }
+  .js .bag:not(.play) .prod{opacity:0}
+
+  /* Despre */
+  .about{background:#fff;padding:6rem 0}
+  .about-grid{display:grid;gap:2.5rem;align-items:center}
+  @media (min-width:860px){.about-grid{grid-template-columns:1fr 1fr;gap:5rem}}
+  .about-photo{margin:0;border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:#f2f2f2}
+  .about-photo img{width:100%;height:100%;object-fit:cover}
+  .about-text h2{margin-bottom:1.5rem}
+  .about-text p{max-width:60ch;margin-bottom:1rem}
+
+  /* Produse */
+  .products{background:var(--ink);color:#fff;padding:6rem 0}
+  .products .head p{color:rgba(255,255,255,.8);max-width:46ch;margin-top:1rem}
+  .pgrid{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:3rem}
+  @media (min-width:620px){.pgrid{grid-template-columns:1fr 1fr}}
+  @media (min-width:960px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+  .pblock{
+    border-radius:24px;padding:1.75rem;min-height:250px;
+    display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+    transition:translate .35s var(--ease),box-shadow .35s ease;
+  }
+  .pblock > svg{width:84px;height:84px;display:block}
+  .pblock h3{font-size:1.35rem;margin-bottom:.4rem}
+  .pblock p{font-size:.98rem}
+  .pb-y{background:var(--yellow);color:var(--ink)}
+  .pb-b{background:var(--blue);color:#fff}
+  .pb-r{background:var(--red);color:#fff}
+  .pb-w{background:#fff;color:var(--ink)}
+  @media (hover:hover){
+    .pblock:hover{translate:0 -4px;box-shadow:0 18px 30px -20px rgba(0,0,0,.6)}
+  }
+
+  /* Galerie */
+  .gallery{background:#fff;padding:6rem 0}
+  .gallery h2{margin-bottom:2.5rem}
+  .ggrid{
+    display:grid;gap:.75rem;
+    grid-template-columns:1fr 1fr;grid-auto-rows:160px;
+  }
+  .ggrid figure{margin:0;border-radius:20px;overflow:hidden;background:#f2f2f2}
+  .ggrid img{width:100%;height:100%;object-fit:cover}
+  .g1{grid-column:span 2;grid-row:span 2}
+  .g4{grid-column:span 2}
+  @media (min-width:860px){
+    .ggrid{grid-template-columns:repeat(6,1fr);grid-auto-rows:220px}
+    .g1{grid-column:span 4;grid-row:span 2}
+    .g2,.g3{grid-column:span 2;grid-row:span 1}
+    .g4{grid-column:span 6;grid-row:span 1}
+  }
+
+  /* Avantaje */
+  .perks{background:var(--blue);color:#fff;padding:6rem 0}
+  .perks-grid{display:grid;gap:2.5rem;margin-top:3rem}
+  @media (min-width:860px){.perks-grid{grid-template-columns:repeat(3,1fr);gap:3rem}}
+  .perk-ico{
+    width:4.5rem;height:4.5rem;border-radius:50%;background:var(--yellow);
+    display:grid;place-items:center;font-size:2rem;margin-bottom:1.25rem;
+  }
+  .perk h3{font-size:1.5rem;margin-bottom:.4rem}
+  .perk p{color:rgba(255,255,255,.92)}
+
+  /* Contact */
+  .contact{background:var(--red);color:#fff;padding:6rem 0}
+  .contact-grid{display:grid;gap:3rem;align-items:center}
+  @media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem}}
+  .contact-text h2{margin-bottom:1.25rem}
+  .contact-text > p{color:rgba(255,255,255,.92);max-width:44ch}
+  .contact-actions{display:grid;gap:.75rem;margin-top:2rem;max-width:420px}
+  .contact-actions .btn{width:100%}
+  .contact-phone{margin-top:1.25rem;color:rgba(255,255,255,.92)}
+  .contact-phone a{color:#fff;font-weight:600;text-underline-offset:3px}
+  .map{
+    border-radius:20px;overflow:hidden;background:#fff;
+    aspect-ratio:4/3;min-height:280px;
+  }
+  .map iframe{width:100%;height:100%;border:0;display:block}
+  @media (min-width:900px){.map{aspect-ratio:auto;height:440px}}
+
+  /* Subsol */
+  .site-footer{background:var(--ink);color:#fff;padding:3.5rem 0 2.5rem;font-size:.92rem}
+  .foot-grid{display:grid;gap:2rem}
+  @media (min-width:760px){.foot-grid{grid-template-columns:1fr auto;align-items:start}}
+  .foot-brand{
+    font-family:'Outfit',system-ui,sans-serif;font-weight:800;font-size:1.4rem;
+    letter-spacing:-0.01em;margin-bottom:.5rem;
+  }
+  .foot-muted{color:rgba(255,255,255,.72);letter-spacing:.02em;margin-top:.35rem}
+  .foot-links{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem;list-style:none;margin:0;padding:0}
+  .foot-links a{color:#fff;text-decoration:none;opacity:.88;display:inline-flex;min-height:44px;align-items:center}
+  .foot-links a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+  .credits{
+    margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.72);font-size:.82rem;letter-spacing:.02em;line-height:1.6;
+  }
+
+  /* Apariții la derulare */
+  .js [data-reveal]{
+    opacity:0;
+    transform:translate3d(0,18px,0);
+    transition:opacity .55s var(--ease),transform .55s var(--ease);
+    transition-delay:var(--delay,0s);
+  }
+  .js [data-reveal="left"]{transform:translate3d(-18px,0,0)}
+  .js [data-reveal="pop"]{transform:scale(.97)}
+  .js [data-reveal="fade"]{transform:none}
+  .js [data-reveal].in{opacity:1;transform:none}
+
+  /* Accesibilitate */
+  @media (prefers-reduced-transparency:reduce){
+    .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  @media (prefers-contrast:more){
+    .site-header{background:#fff;border-top:0;border-bottom:2px solid var(--ink)}
+    .btn{box-shadow:none;border:2px solid currentColor}
+    .pblock{border:2px solid #fff}
+    .bag-back,.bag-front{outline:2px solid var(--ink)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js [data-reveal]{transform:none;transition:opacity .2s ease}
+    .js [data-reveal].in{transform:none}
+    .bag.play .prod{animation:fadein .2s ease both;animation-delay:0s}
+    .pblock{transition:box-shadow .2s ease}
+    .pblock:hover{translate:none}
+    .btn{transition:background-color .2s ease,color .2s ease}
+  }
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-gift" viewBox="0 0 100 100">
+      <rect x="14" y="40" width="72" height="50" rx="6" fill="#2563EB"/>
+      <rect x="8" y="27" width="84" height="18" rx="5" fill="#1d4ed8"/>
+      <rect x="44" y="27" width="12" height="63" fill="#ffffff"/>
+      <path d="M50 27C42 8 22 8 26 22C28 30 44 30 50 27Z" fill="#ffffff"/>
+      <path d="M50 27C58 8 78 8 74 22C72 30 56 30 50 27Z" fill="#ffffff"/>
+    </symbol>
+    <symbol id="i-mug" viewBox="0 0 100 100">
+      <path d="M72 38C86 38 86 62 72 62" fill="none" stroke="#ffffff" stroke-width="7"/>
+      <rect x="16" y="26" width="58" height="60" rx="9" fill="#ffffff"/>
+      <rect x="16" y="50" width="58" height="10" fill="#FFD447"/>
+    </symbol>
+    <symbol id="i-truffle" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="34" fill="#111111"/>
+      <circle cx="36" cy="38" r="8" fill="#ffffff" opacity=".18"/>
+      <g fill="#FFD447">
+        <circle cx="58" cy="34" r="3.5"/>
+        <circle cx="70" cy="50" r="3.5"/>
+        <circle cx="52" cy="62" r="3.5"/>
+        <circle cx="34" cy="60" r="3.5"/>
+        <circle cx="62" cy="74" r="3.5"/>
+      </g>
+    </symbol>
+    <symbol id="i-candy" viewBox="0 0 100 100">
+      <path d="M4 38L28 50L4 62Z M96 38L72 50L96 62Z" fill="#ffffff"/>
+      <ellipse cx="50" cy="50" rx="30" ry="22" fill="#FFD447"/>
+      <path d="M36 30Q50 50 36 70M64 30Q50 50 64 70" fill="none" stroke="#be123c" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-bottle" viewBox="0 0 100 100">
+      <rect x="42" y="6" width="16" height="14" rx="3" fill="#111111"/>
+      <rect x="30" y="18" width="40" height="78" rx="12" fill="#2563EB"/>
+      <rect x="30" y="48" width="40" height="22" fill="#FFD447"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-ico" aria-hidden="true">🎁</span>Cris Boutique</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-red btn-sm" href="tel:0728958381">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu">Cris Boutique</h1>
+        <p class="slogan">Cadouri care aduc bucurie</p>
+        <p class="desc">Descoperă cadouri, produse handmade și dulciuri alese.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="tel:0728958381">Sună acum</a>
+          <a class="btn btn-ink" href="https://wa.me/40728958381?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20produsele%20disponibile%20la%20Cris%20Boutique.">Întreabă pe WhatsApp</a>
+        </div>
+        <p class="phone-line">Telefon: <a href="tel:0728958381">0728 958 381</a></p>
+      </div>
+
+      <div class="bag-stage" id="geanta" aria-hidden="true">
+        <svg class="bag-handle" viewBox="0 0 100 60" preserveAspectRatio="none">
+          <path d="M28 62V26C28 4 72 4 72 26V62"/>
+        </svg>
+        <div class="bag-back"></div>
+        <svg class="prod p-mug" viewBox="0 0 100 100"><use href="#i-mug"/></svg>
+        <svg class="prod p-truffle" viewBox="0 0 100 100"><use href="#i-truffle"/></svg>
+        <svg class="prod p-gift" viewBox="0 0 100 100"><use href="#i-gift"/></svg>
+        <svg class="prod p-candy" viewBox="0 0 100 100"><use href="#i-candy"/></svg>
+        <div class="bag-front"><span>Cris</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-t">
+    <div class="wrap about-grid">
+      <figure class="about-photo" data-reveal="left">
+        <img src="img/1.jpg" alt="Cumpărătoare care alege un cadou pe rafturile unui magazin" loading="lazy">
+      </figure>
+      <div class="about-text" data-reveal style="--delay:.1s">
+        <h2 id="despre-t" class="h2">Despre Cris Boutique</h2>
+        <p>La Cris Boutique găsești cadouri inspirate, produse handmade cu suflet și o selecție de dulciuri și băuturi speciale.</p>
+        <p>Pentru orice ocazie, te ajutăm să alegi ceva pe gustul celor dragi. Te așteptăm să descoperi surprize pentru fiecare moment important.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="produse" aria-labelledby="produse-t">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <h2 id="produse-t" class="h2">Produse</h2>
+        <p>Alege ceva frumos din vitrină sau cere-ne sfatul. Te ajutăm să găsești cadoul potrivit.</p>
+      </div>
+      <div class="pgrid" data-reveal="pop">
+        <article class="pblock pb-y">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#i-gift"/></svg>
+          <div>
+            <h3>Cadouri pentru orice ocazie</h3>
+            <p>Obiecte inspirate pentru cei dragi</p>
+          </div>
+        </article>
+        <article class="pblock pb-b">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#i-mug"/></svg>
+          <div>
+            <h3>Produse handmade</h3>
+            <p>Articole lucrate manual</p>
+          </div>
+        </article>
+        <article class="pblock pb-r">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#i-truffle"/></svg>
+          <div>
+            <h3>Dulciuri deosebite</h3>
+            <p>Dulciuri alese, pentru cadou</p>
+          </div>
+        </article>
+        <article class="pblock pb-w">
+          <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#i-bottle"/></svg>
+          <div>
+            <h3>Băuturi</h3>
+            <p>Băuturi pentru a completa cadoul</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie" aria-labelledby="galerie-t">
+    <div class="wrap">
+      <h2 id="galerie-t" class="h2">Inspirație pentru cadou</h2>
+      <div class="ggrid" data-reveal="fade">
+        <figure class="g1"><img src="img/2.jpg" alt="Cadouri cu fundă, pentru sărbători" loading="lazy"></figure>
+        <figure class="g2"><img src="img/3.jpg" alt="Trufe de ciocolată" loading="lazy"></figure>
+        <figure class="g3"><img src="img/4.jpg" alt="Coșuri țesute, cu motive tradiționale" loading="lazy"></figure>
+        <figure class="g4"><img src="img/5.jpg" alt="Bomboane și ciocolată fină" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="perks" id="avantaje" aria-labelledby="av-t">
+    <div class="wrap">
+      <h2 id="av-t" class="h2">Ce te așteaptă la noi</h2>
+      <div class="perks-grid">
+        <div class="perk" data-reveal style="--delay:0s">
+          <span class="perk-ico" aria-hidden="true">🎨</span>
+          <h3>Originalitate</h3>
+          <p>Fiecare cadou e aparte</p>
+        </div>
+        <div class="perk" data-reveal style="--delay:.1s">
+          <span class="perk-ico" aria-hidden="true">👐</span>
+          <h3>Primire caldă</h3>
+          <p>Te ajutăm să alegi ceva pe gustul celor dragi</p>
+        </div>
+        <div class="perk" data-reveal style="--delay:.2s">
+          <span class="perk-ico" aria-hidden="true">🍬</span>
+          <h3>Răsfăț dulce</h3>
+          <p>Selecție atentă de delicii</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-t">
+    <div class="wrap contact-grid">
+      <div class="contact-text" data-reveal="left">
+        <h2 id="contact-t" class="h2">Hai să alegem împreună</h2>
+        <p>Ne găsești în Brașov. Spune-ne cine primește cadoul și pentru ce ocazie, iar noi te ajutăm să alegi.</p>
+        <div class="contact-actions">
+          <a class="btn btn-white" href="tel:0728958381">Sună acum</a>
+          <a class="btn btn-yellow" href="https://wa.me/40728958381?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20produsele%20disponibile%20la%20Cris%20Boutique.">Întreabă pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Cris+Boutique+Bra%C8%99ov">Deschide în Google Maps</a>
+        </div>
+        <p class="contact-phone">Telefon: <a href="tel:0728958381">0728 958 381</a></p>
+      </div>
+      <div class="map" data-reveal="pop" style="--delay:.1s">
+        <iframe
+          title="Harta zonei Cris Boutique, Brașov"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=25.5802426,45.6358879,25.5882426,45.639887900000005&amp;layer=mapnik&amp;marker=45.6378879,25.5842426"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand"><span aria-hidden="true">🎁</span> Cris Boutique</p>
+      <p class="foot-muted">Brașov</p>
+      <p class="foot-muted">Cadouri care aduc bucurie</p>
+      <p class="foot-muted">Model de site (demo)</p>
+    </div>
+    <nav aria-label="Subsol">
+      <ul class="foot-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap">
+    <p class="credits">Fotografii ilustrative de pe Pixabay: kasjanf, yvettefang0604, ChiemSeherin, jhenning, NoName_13</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var doc = document.documentElement;
+  doc.classList.add('js');
+
+  var bag = document.getElementById('geanta');
+  function fillBag() {
+    bag.classList.remove('play');
+    void bag.offsetWidth;
+    bag.classList.add('play');
+  }
+  bag.addEventListener('click', fillBag);
+
+  if ('IntersectionObserver' in window) {
+    var bagObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          fillBag();
+          bagObserver.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    bagObserver.observe(bag);
+  } else {
+    bag.classList.add('play');
+  }
+
+  var revealItems = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          revealObserver.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revealItems.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealItems.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
