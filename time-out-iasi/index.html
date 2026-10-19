@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time OUT, cafenea în Iași</title>
+<meta name="description" content="Cafea, cocktailuri și gustări într-un spațiu relaxant, în inima Iașului. Time OUT, locul tău de pauză.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --muted:#5c5c5c;
+  --soft:#f5f5f4;
+  --line:#e6e6e6;
+  --accent:#b45309;
+  --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --text:'EB Garamond', Georgia, 'Times New Roman', serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1200px;
+  --gutter:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--text);font-size:1.125rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p{margin:0}
+ul{margin:0;padding:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:1rem;top:1rem;z-index:100;background:#fff;color:#000;padding:.5rem 1rem;border:1px solid #000}
+
+/* Logo */
+.logo-fallback{font-family:var(--display);font-size:1.6rem;font-weight:500;letter-spacing:-.01em;line-height:1}
+
+/* Navigare */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{box-shadow:0 1px 0 rgba(0,0,0,.05),0 12px 30px -20px rgba(0,0,0,.35)}
+.nav-inner{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-brand{display:inline-flex;text-decoration:none}
+.nav-brand img{height:2.25rem;width:auto;max-width:none}
+.nav-links{display:none;list-style:none;gap:2rem}
+.nav-links a{text-decoration:none;font-weight:500;font-size:1.05rem;padding:.5rem 0;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.7rem 1.5rem;
+  border:1px solid var(--ink);border-radius:999px;
+  background:var(--ink);color:var(--paper);
+  font-family:var(--text);font-size:1.0625rem;font-weight:500;line-height:1.2;
+  text-decoration:none;cursor:pointer;
+  transition:background-color .2s,color .2s,box-shadow .25s var(--ease),transform .1s linear;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{box-shadow:0 8px 20px -12px rgba(0,0,0,.6)}
+.btn:active{transform:scale(.97)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper);box-shadow:none}
+.btn--light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn--light:hover{background:transparent;color:var(--paper);box-shadow:none}
+.btn--sm{min-height:2.75rem;padding:.5rem 1.1rem;font-size:1rem}
+.btn-row{display:flex;flex-wrap:wrap;gap:.75rem}
+@media (max-width:479px){.btn-row .btn{flex:1 1 100%}}
+
+/* Intrare (o singură secvență, în prima secțiune) */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes draw{to{stroke-dashoffset:0}}
+.rise{animation:rise .7s var(--ease) var(--d,0s) both}
+.fade{animation:fadein .9s ease var(--d,0s) both}
+
+/* Hero */
+.hero{padding-top:calc(4rem + clamp(3rem,9vw,6rem));padding-bottom:clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(3rem,7vw,5rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+h1{margin:0 0 clamp(1.5rem,4vw,2.5rem);line-height:0}
+.hero-logo{
+  width:auto;height:auto;
+  max-width:min(72vw,340px);
+  max-height:clamp(6rem,18vh,9rem);
+}
+.hero-slogan{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.1;letter-spacing:-.015em;
+  max-width:18ch;margin-bottom:1rem;
+}
+.hero-desc{color:var(--muted);font-size:1.1875rem;max-width:40ch;margin-bottom:2rem}
+.cup{margin:0 auto;width:min(78vw,400px)}
+@media (min-width:900px){.cup{margin-right:0;justify-self:end}}
+.cup svg{width:100%;height:auto;display:block;overflow:visible}
+.heart{
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw 1.5s cubic-bezier(.45,0,.2,1) .9s forwards;
+}
+
+/* Revelare la derulare */
+.reveal{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.reveal.rs{transform:scale(1.035)}
+.reveal.rl{transform:translateX(-16px)}
+.reveal.in{opacity:1;transform:none}
+
+/* Secțiuni */
+.section{padding-block:clamp(4.5rem,11vw,8rem)}
+h2{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;letter-spacing:-.02em;
+  margin-bottom:clamp(2rem,4vw,3.5rem);
+}
+
+/* Despre */
+.about{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.about{grid-template-columns:.95fr 1.05fr}}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.lead{
+  font-family:var(--display);font-size:clamp(1.6rem,3.2vw,2.3rem);
+  line-height:1.15;letter-spacing:-.01em;margin-bottom:1.5rem;
+}
+.about p{max-width:52ch;color:#2b2b2b;margin-bottom:1.2rem}
+.perks{
+  list-style:none;margin-top:2.75rem;padding-top:2rem;
+  border-top:1px solid var(--line);display:grid;gap:1.75rem;
+}
+@media (min-width:640px){.perks{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.perk-icon{display:block;font-size:1.5rem;line-height:1;margin-bottom:.75rem}
+.perk h3{font-family:var(--display);font-weight:500;font-size:1.45rem;line-height:1.15;margin-bottom:.3rem}
+.perk p{color:var(--muted);font-size:1.0625rem;margin:0}
+
+/* Meniu */
+.menu{background:#000;color:#fff}
+.menu h2{color:#fff}
+.menu-grid{display:grid;gap:clamp(2.5rem,6vw,5rem)}
+@media (min-width:900px){
+  .menu-grid{grid-template-columns:.8fr 1.2fr;align-items:start}
+  .menu-intro{position:sticky;top:7rem}
+}
+.menu-intro p{color:rgba(255,255,255,.72);max-width:36ch;margin-bottom:2rem}
+.menu-list{list-style:none;border-bottom:1px solid rgba(255,255,255,.14)}
+.menu-list li{display:grid;gap:.35rem;padding:1.6rem 0;border-top:1px solid rgba(255,255,255,.14)}
+@media (min-width:640px){
+  .menu-list li{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:baseline;gap:2rem}
+}
+.menu-name{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.1;letter-spacing:-.01em;
+}
+.menu-desc{color:rgba(255,255,255,.72);margin:0}
+
+/* Galerie */
+.gallery{display:grid;gap:.75rem}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:auto;object-fit:cover}
+.g-wide img{aspect-ratio:4/3}
+.g-pair{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.g-pair img{aspect-ratio:4/5}
+@media (min-width:900px){
+  .g-wide img{aspect-ratio:16/9}
+  .g-last img{aspect-ratio:21/8}
+}
+.g-last img{aspect-ratio:4/3}
+
+/* Contact */
+.contact{display:grid;gap:clamp(2.5rem,6vw,5rem)}
+@media (min-width:900px){.contact{grid-template-columns:1fr 1.1fr;align-items:start}}
+.contact h2{margin-bottom:1.5rem}
+.contact-phone{
+  font-family:var(--display);font-size:clamp(2.2rem,5vw,3.4rem);
+  line-height:1;letter-spacing:-.01em;margin-bottom:1.75rem;
+}
+.contact-phone a{text-decoration:none;transition:color .2s}
+.contact-phone a:hover{color:var(--accent)}
+.contact-lines{list-style:none;margin-top:2rem;display:grid;gap:.9rem;font-size:1.1rem}
+.contact-lines a{text-underline-offset:.2em;text-decoration-thickness:1px;transition:color .2s}
+.contact-lines a:hover{color:var(--accent)}
+.map{width:100%;height:clamp(300px,42vw,420px);border:0;display:block;filter:grayscale(1) contrast(1.05)}
+
+/* Subsol */
+.footer{background:var(--soft);padding-block:clamp(3.5rem,8vw,5rem)}
+.footer-grid{display:grid;gap:2rem;align-items:end}
+@media (min-width:760px){.footer-grid{grid-template-columns:1fr auto}}
+.footer-logo{width:auto;height:auto;max-width:200px;max-height:4.5rem}
+.footer-meta p{margin-bottom:.4rem;font-size:1.0625rem}
+.footer-meta small{display:block;color:var(--muted);font-size:.9375rem;letter-spacing:.02em;line-height:1.6;margin-top:1rem;max-width:60ch}
+.footer-links{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.25rem}
+.footer-links a{text-decoration:none;color:var(--muted);font-size:1rem;padding:.4rem 0;transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+
+/* Preferințe de accesibilitate */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:#fff;border-bottom:1px solid #000}
+  .btn{border-width:2px}
+  .btn--ghost{border-color:#000}
+  .btn--light{border-color:#fff}
+  .menu-list li{border-color:rgba(255,255,255,.5)}
+  .perks{border-top-color:#000}
+  .footer{background:#fff;border-top:1px solid #000}
+  .menu-desc,.menu-intro p{color:#fff}
+  .hero-desc,.footer-meta small,.perk p{color:#000}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.fade{animation:fadein .2s both !important}
+  .heart{animation:none !important;stroke-dashoffset:0}
+  .reveal{transform:none !important;transition:opacity .2s !important;transition-delay:0s !important}
+  .btn,.nav,.nav-links a,.contact-phone a,.contact-lines a,.footer-links a{transition-duration:.2s}
+  .btn:active{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="#top" aria-label="Time OUT, înapoi sus">
+      <img class="logo" src="logo.png" alt="Time OUT">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#atmosfera">Atmosfera</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn--sm" href="tel:0740133133">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="titlu"><img class="logo hero-logo rise" src="logo.png" alt="Time OUT"></h1>
+        <p class="hero-slogan rise" style="--d:.15s">Locul tău de pauză în Iași</p>
+        <p class="hero-desc rise" style="--d:.25s">Cafea, cocktailuri și gustări într-un spațiu relaxant.</p>
+        <div class="btn-row rise" style="--d:.35s">
+          <a class="btn" href="tel:0740133133">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40740133133?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniu%20%C8%99i%20program." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="cup fade" style="--d:.4s">
+        <svg viewBox="0 0 240 240" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spumă">
+          <circle cx="120" cy="120" r="116" fill="#fff" stroke="#e6e6e6"/>
+          <circle cx="120" cy="120" r="104" fill="none" stroke="#000" stroke-opacity=".06"/>
+          <path d="M186 113H214Q230 113 230 120Q230 127 214 127H186Z" fill="#fff" stroke="#000" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="120" cy="120" r="84" fill="#fff" stroke="#000" stroke-width="1.2"/>
+          <circle cx="120" cy="120" r="74" fill="#000"/>
+          <circle cx="120" cy="120" r="66" fill="none" stroke="#b45309" stroke-width="1.2"/>
+          <path class="heart" pathLength="1" transform="translate(120 120) scale(.82) translate(-100 -100)" d="M100 150C60 120 45 100 45 80C45 60 60 50 75 50C88 50 96 58 100 66C104 58 112 50 125 50C140 50 155 60 155 80C155 100 140 120 100 150Z" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about">
+      <figure class="about-photo reveal rs">
+        <img src="img/1.jpg" alt="Oameni relaxându-se la o masă, într-o cafenea cu lumină caldă" loading="lazy">
+      </figure>
+      <div class="reveal" style="--d:.1s">
+        <h2 id="despre-titlu">Despre noi</h2>
+        <p class="lead">Cocktailuri, mic-dejun, pizza și burgeri.</p>
+        <p>Time OUT este cafeneaua perfectă pentru momente de relaxare sau întâlniri între prieteni, aflată în inima Iașului.</p>
+        <p>Îți oferim o atmosferă caldă, cu băuturi savuroase și mâncare gustoasă. Fie pentru mic-dejun, o pauză la prânz sau o seară de socializare, aici ești mereu binevenit.</p>
+        <ul class="perks">
+          <li class="perk reveal" style="--d:.05s">
+            <span class="perk-icon" aria-hidden="true">📍</span>
+            <h3>Loc central</h3>
+            <p>Ușor de găsit în Iași</p>
+          </li>
+          <li class="perk reveal" style="--d:.15s">
+            <span class="perk-icon" aria-hidden="true">🛋️</span>
+            <h3>Atmosferă relaxată</h3>
+            <p>Perfect pentru pauze lungi</p>
+          </li>
+          <li class="perk reveal" style="--d:.25s">
+            <span class="perk-icon" aria-hidden="true">👫</span>
+            <h3>Prietenos</h3>
+            <p>Ideal pentru ieșiri cu prietenii</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap menu-grid">
+      <div class="menu-intro reveal">
+        <h2 id="meniu-titlu">Meniu</h2>
+        <p>Pentru prețuri și lista completă, scrie-ne pe WhatsApp.</p>
+        <a class="btn btn--light" href="https://wa.me/40740133133?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniu%20%C8%99i%20program." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+      <ul class="menu-list">
+        <li class="reveal rl" style="--d:0s">
+          <h3 class="menu-name">Cafea</h3>
+          <p class="menu-desc">Pentru o pauză scurtă sau una lungă.</p>
+        </li>
+        <li class="reveal rl" style="--d:.05s">
+          <h3 class="menu-name">Cocktailuri</h3>
+          <p class="menu-desc">Băuturi colorate, cu sau fără alcool.</p>
+        </li>
+        <li class="reveal rl" style="--d:.1s">
+          <h3 class="menu-name">Mic-dejun</h3>
+          <p class="menu-desc">Opțiuni rapide pentru începutul zilei.</p>
+        </li>
+        <li class="reveal rl" style="--d:.15s">
+          <h3 class="menu-name">Pizza</h3>
+          <p class="menu-desc">Pizza face parte din meniul nostru.</p>
+        </li>
+        <li class="reveal rl" style="--d:.2s">
+          <h3 class="menu-name">Burgeri</h3>
+          <p class="menu-desc">Burgerii fac parte din meniul nostru.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="atmosfera" aria-labelledby="atmosfera-titlu">
+    <div class="wrap">
+      <h2 id="atmosfera-titlu">Atmosfera</h2>
+      <div class="gallery">
+        <figure class="g-wide reveal rs">
+          <img src="img/2.jpg" alt="Pahare de cocktail ridicate la un bar" loading="lazy">
+        </figure>
+        <div class="g-pair">
+          <figure class="reveal rs" style="--d:.05s">
+            <img src="img/3.jpg" alt="Femeie zâmbind la masă, cu o băutură" loading="lazy">
+          </figure>
+          <figure class="reveal rs" style="--d:.15s">
+            <img src="img/4.jpg" alt="Cocktailuri și sticle pe un bar" loading="lazy">
+          </figure>
+        </div>
+        <figure class="g-last reveal rs">
+          <img src="img/5.jpg" alt="Cuplu la o cafea" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact">
+      <div class="reveal">
+        <h2 id="contact-titlu">Vino pe la noi</h2>
+        <p class="contact-phone"><a href="tel:0740133133">0740 133 133</a></p>
+        <div class="btn-row">
+          <a class="btn" href="tel:0740133133">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40740133133?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniu%20%C8%99i%20program." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <ul class="contact-lines">
+          <li>Iași, în inima orașului</li>
+          <li><a href="mailto:timeoutiasi@gmail.com">timeoutiasi@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Time+OUT+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a></li>
+        </ul>
+      </div>
+      <div class="reveal rs" style="--d:.1s">
+        <iframe class="map"
+          title="Harta: Time OUT, Iași"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.571241099999998,47.169732599999996,27.5792411,47.1737326&amp;layer=mapnik&amp;marker=47.1717326,27.5752411"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img class="logo footer-logo" src="logo.png" alt="Time OUT">
+      <ul class="footer-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#atmosfera">Atmosfera</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#top">Înapoi sus</a></li>
+      </ul>
+    </div>
+    <div class="footer-meta">
+      <p>Time OUT, Iași</p>
+      <p>Model de site (demo)</p>
+      <small>Fotografii ilustrative de pe Pixabay: StockSnap, OurWhiskyFoundation, Concord90, Cloud1902.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Dacă logo.png nu se încarcă, apare numele scris în text.
+  document.querySelectorAll('img.logo').forEach(function (img) {
+    function fallback() {
+      var s = document.createElement('span');
+      s.className = (img.className || '').replace(/\blogo\b/, '').trim() + ' logo logo-fallback';
+      s.textContent = 'Time OUT';
+      img.replaceWith(s);
+    }
+    if (img.complete && img.naturalWidth === 0) {
+      fallback();
+    } else {
+      img.addEventListener('error', fallback, { once: true });
+    }
+  });
+
+  // Bara de navigare primește o umbră fină când pagina se derulează sub ea.
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare.
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
