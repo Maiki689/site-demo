@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Makeover • Barber & Beauty, Brașov</title>
+<meta name="description" content="Tunsori și îngrijire cu stil pentru păr și barbă, în Coresi, Brașov. Strada Zaharia Stancu 8H.">
+<meta name="theme-color" content="#0f1411">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💈%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1411;
+  --surface:#151d17;
+  --deep:#0a0e0b;
+  --ink:#ffffff;
+  --ink-2:#cfd3c4;
+  --muted:#9ea48c;
+  --sage:#7C8364;
+  --sage-2:#a9b08f;
+  --line:rgba(124,131,100,.36);
+  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --text:"Merriweather", Georgia, serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:min(1120px, 100% - 2.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink-2);
+  font-family:var(--text);
+  font-weight:300;
+  font-size:1.0625rem;
+  line-height:1.6;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{
+  font-family:var(--serif);
+  color:var(--ink);
+  font-weight:500;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+}
+h2{font-size:clamp(2.2rem,5.4vw,3.6rem)}
+h3{font-size:clamp(1.5rem,3vw,2rem);line-height:1.1}
+.wrap{width:var(--wrap);margin-inline:auto}
+.skip{
+  position:absolute;left:1rem;top:-100px;z-index:100;
+  background:var(--sage);color:#0f1411;padding:.6rem 1rem;text-decoration:none;
+}
+.skip:focus{top:1rem}
+
+/* ---------- Nav (sticlă) ---------- */
+.site-nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(15,20,17,.5);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-top:1px solid rgba(255,255,255,.12);
+  transition:background-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.site-nav.scrolled{
+  background:rgba(15,20,17,.74);
+  box-shadow:0 12px 30px -16px rgba(0,0,0,.7);
+}
+.nav-inner{
+  width:var(--wrap);margin-inline:auto;min-height:68px;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.nav-brand{display:block;line-height:0}
+.nav-brand img{height:36px;width:auto}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.nav-links{
+  position:absolute;top:100%;left:0;right:0;
+  display:none;flex-direction:column;
+  background:rgba(15,20,17,.95);
+  padding:.25rem 0 1rem;
+}
+.nav-links.open{display:flex}
+.nav-links a{
+  display:flex;align-items:center;min-height:48px;padding:0 1.25rem;
+  color:var(--ink);text-decoration:none;
+  font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;font-weight:400;
+}
+.menu-btn{
+  width:44px;height:44px;border:0;background:transparent;cursor:pointer;
+  display:grid;place-content:center;gap:6px;padding:0;
+}
+.menu-btn span{
+  display:block;width:20px;height:1px;background:var(--ink);
+  transition:transform .4s var(--ease), opacity .3s;
+}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.9rem 1.6rem;
+  border:1px solid var(--sage);border-radius:2px;
+  background:transparent;color:var(--ink);
+  font:400 .8rem/1 var(--text);
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:background-color .35s var(--ease), box-shadow .35s var(--ease), transform .12s ease;
+}
+.btn:hover{background:rgba(124,131,100,.18)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.btn-primary{background:var(--sage);color:#0f1411;border-color:var(--sage)}
+.btn-primary:hover{background:#8d936f;box-shadow:0 8px 22px -10px rgba(124,131,100,.7)}
+.btn-small{min-height:44px;padding:.7rem 1.05rem;letter-spacing:.1em}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  padding:7rem 1.25rem 4.5rem;
+}
+.emblem{
+  position:relative;
+  width:clamp(250px,72vw,400px);aspect-ratio:1;
+  display:grid;place-items:center;
+  margin-bottom:2.25rem;
+}
+.emblem-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ring-o,.ring-i{
+  fill:none;stroke:var(--sage);
+  stroke-dasharray:1;stroke-dashoffset:1;
+}
+.ring-o{stroke-width:1.1;animation:draw 2.6s cubic-bezier(.4,0,.2,1) .2s forwards}
+.ring-i{stroke-width:.6;opacity:.75;animation:draw 2.6s cubic-bezier(.4,0,.2,1) .7s forwards}
+.ticks line{stroke:var(--sage);stroke-width:.7;opacity:0;animation:fade 1.2s ease 2.3s forwards}
+.hero-logo{margin:0;width:60%;position:relative}
+.hero-logo img{
+  width:100%;height:auto;margin-inline:auto;
+  opacity:0;animation:logoIn 1.4s var(--ease) .9s forwards;
+}
+.hero-slogan{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.15;letter-spacing:-.01em;
+  color:var(--ink);max-width:22ch;
+  animation:fadeUp .9s var(--ease) 2s both;
+}
+.hero-desc{
+  margin-top:.9rem;max-width:36ch;color:var(--ink-2);
+  animation:fadeUp .9s var(--ease) 2.25s both;
+}
+.hero-actions{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:2rem;
+  animation:fadeUp .9s var(--ease) 2.5s both;
+}
+.hero-meta{
+  margin-top:2.5rem;font-size:.8125rem;line-height:1.8;letter-spacing:.06em;
+  color:var(--muted);
+  animation:fadeUp .9s var(--ease) 2.75s both;
+}
+
+/* ---------- Secțiuni ---------- */
+section{padding:clamp(5rem,12vw,8.5rem) 0}
+.section-head{max-width:40rem;margin:0 auto clamp(2.5rem,6vw,4rem);text-align:center}
+.section-head p{margin-top:1.25rem;color:var(--ink-2)}
+.rule{
+  display:block;width:56px;height:1px;background:var(--sage);
+  margin:1.5rem auto 0;transform-origin:center;
+}
+.js .rule{transform:scaleX(0)}
+.js .rule.in{transform:scaleX(1);transition:transform 1s var(--ease)}
+
+/* Despre */
+.about{background:var(--surface)}
+.about-grid{display:grid;gap:3rem;align-items:center}
+.about h2{margin-bottom:1.5rem}
+.about-text p + p{margin-top:1rem}
+.facts{margin:2.5rem 0 0;display:grid;gap:0}
+.facts > div{padding:1.25rem 0;border-top:1px solid var(--line)}
+.facts > div:last-child{border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--ink);line-height:1.2;letter-spacing:-.01em}
+.facts dd{margin:.25rem 0 0;color:var(--ink-2)}
+.about-photo{margin:0;position:relative;overflow:hidden;aspect-ratio:4/5}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+
+/* Servicii */
+.services{list-style:none;margin:0;padding:0;max-width:960px;margin-inline:auto}
+.service{
+  display:grid;gap:.5rem;align-items:baseline;
+  padding:2rem 0;border-top:1px solid var(--line);
+}
+.service:last-child{border-bottom:1px solid var(--line)}
+.service p{color:var(--ink-2)}
+.services-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin-top:3rem}
+
+/* Galerie */
+.gallery{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;
+}
+.gallery figure{margin:0;position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+@media (hover:hover){
+  .gallery figure:hover img{transform:scale(1.03)}
+}
+
+/* Contact */
+.contact{background:var(--surface)}
+.contact-grid{display:grid;gap:2.5rem;max-width:960px;margin:0 auto}
+.contact-info h3{margin-bottom:.75rem}
+.contact-info p{color:var(--ink-2)}
+.contact-info .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hours{margin:0}
+.hours > div{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.hours > div:last-child{border-bottom:1px solid var(--line)}
+.hours dt{color:var(--ink)}
+.hours dd{margin:0;color:var(--ink-2);text-align:right}
+.map{margin-top:clamp(3rem,7vw,5rem);height:360px;overflow:hidden;background:var(--deep)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.85) brightness(.85) contrast(1.05)}
+
+/* Subsol */
+.site-footer{background:var(--deep);padding:4.5rem 0 2.5rem;text-align:center}
+.footer-logo{display:inline-block;width:clamp(130px,18vw,180px);margin-inline:auto}
+.footer-logo img{width:100%;height:auto}
+.footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.75rem;margin:2.25rem 0 0;padding:0;list-style:none}
+.footer-links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  color:var(--ink-2);text-decoration:none;font-size:.8125rem;letter-spacing:.08em;
+}
+.footer-links a:hover{color:var(--ink)}
+.footer-credit{margin-top:2.5rem;font-size:.75rem;line-height:1.8;letter-spacing:.04em;color:var(--muted)}
+
+/* ---------- Dezvăluire la derulare (tranziții variate) ---------- */
+.reveal,.reveal-l,.reveal-fade{transition:opacity .6s var(--ease), transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal{opacity:0;transform:translateY(18px)}
+.js .reveal-l{opacity:0;transform:translateX(-18px)}
+.js .reveal-fade{opacity:0;transition-duration:.9s}
+.js .reveal.in,.js .reveal-l.in{opacity:1;transform:none}
+.js .reveal-fade.in{opacity:1}
+
+/* ---------- Keyframes ---------- */
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes logoIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+
+/* ---------- Desktop ---------- */
+@media (min-width:640px){
+  .hero-actions .btn{min-width:200px}
+}
+@media (min-width:880px){
+  .nav-brand img{height:42px}
+  .menu-btn{display:none}
+  .nav-links{
+    position:static;display:flex;flex-direction:row;gap:2.25rem;
+    background:none;padding:0;
+  }
+  .nav-links a{min-height:0;padding:0;color:var(--ink-2)}
+  .nav-links a:hover{color:var(--ink)}
+  @media (hover:hover){
+    .nav-links a{position:relative}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;
+      background:var(--sage-2);transform:scaleX(0);transform-origin:left;
+      transition:transform .45s var(--ease);
+    }
+    .nav-links a:hover::after{transform:scaleX(1)}
+  }
+  .about-grid{grid-template-columns:1fr 1fr;gap:5rem}
+  .service{grid-template-columns:1fr 1fr;gap:1rem 3rem}
+  .gallery{grid-template-columns:1fr 1fr;gap:16px}
+  .gallery figure{aspect-ratio:4/3}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .map{height:420px}
+}
+
+/* ---------- Accesibilitate ---------- */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .site-nav{background:rgba(15,20,17,.96)}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-nav{background:#0f1411;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav-links{background:#0f1411}
+}
+@media (prefers-contrast: more){
+  :root{--line:rgba(169,176,143,.9);--muted:#d6dac9;--ink-2:#f2f2ea}
+  .site-nav{background:#0f1411;border-top:1px solid #ffffff}
+  .nav-links{background:#0f1411}
+  .btn{border-width:2px}
+  .facts > div,.service,.hours > div{border-color:var(--line)}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-delay:0s !important;
+    transition-duration:.2s !important;
+    scroll-behavior:auto !important;
+  }
+  .ring-o,.ring-i{stroke-dashoffset:0 !important;animation:none !important}
+  .ticks line{opacity:1 !important;animation:none !important}
+  .reveal,.reveal-l,.reveal-fade,.hero *,.gallery img{transform:none !important}
+  .js .rule{transform:none !important}
+  .btn:active{transform:none !important}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="site-nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top" aria-label="The Makeover, începutul paginii">
+      <img src="logo.png" alt="The Makeover • Barber & Beauty" height="42">
+    </a>
+
+    <nav class="nav-links" id="menu" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Vizită</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-small" href="tel:+40729404086">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top">
+    <div class="emblem">
+      <svg class="emblem-ring" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <circle class="ring-o" cx="100" cy="100" r="96" pathLength="1"/>
+        <circle class="ring-i" cx="100" cy="100" r="84" pathLength="1"/>
+        <g class="ticks" id="ticks"></g>
+      </svg>
+      <h1 class="hero-logo">
+        <img src="logo.png" alt="The Makeover • Barber & Beauty" width="600" height="600">
+      </h1>
+    </div>
+
+    <p class="hero-slogan">Tunsori și îngrijire cu stil</p>
+    <p class="hero-desc">Tuns, spălat și aranjat pentru păr și barbă.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tel:+40729404086">Sună acum</a>
+      <a class="btn" href="https://wa.me/40729404086?text=Bun%C4%83%20ziua%21%20Doresc%20mai%20multe%20detalii%20despre%20servicii." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+    </div>
+
+    <p class="hero-meta">
+      Luni–sâmbătă, 10:00–18:00<br>
+      Coresi, Brașov
+    </p>
+  </section>
+
+  <section class="about" id="despre">
+    <div class="wrap about-grid">
+      <div class="about-text reveal">
+        <h2>Despre noi</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <div style="margin-top:2rem">
+          <p>The Makeover • Barber &amp; Beauty din Coresi, Brașov, este locul unde ai parte de tunsori moderne și îngrijire atentă pentru păr și barbă.</p>
+          <p>Oferim servicii urbane pentru cei care apreciază un look îngrijit.</p>
+          <p>Te așteptăm într-un spațiu prietenos, la doar câțiva pași de zona centrală.</p>
+        </div>
+        <dl class="facts">
+          <div class="reveal" style="--d:.05s">
+            <dt>Stil actual</dt>
+            <dd>Tunsori moderne, personalizate</dd>
+          </div>
+          <div class="reveal" style="--d:.15s">
+            <dt>Confort urban</dt>
+            <dd>Spațiu îngrijit și primitor</dd>
+          </div>
+          <div class="reveal" style="--d:.25s">
+            <dt>Program flexibil</dt>
+            <dd>Deschis de luni până sâmbătă</dd>
+          </div>
+        </dl>
+      </div>
+
+      <figure class="about-photo reveal-fade" style="--d:.1s">
+        <img src="img/3.jpg" alt="Coafor lucrând la păr, fotografie ilustrativă" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="servicii">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <h2>Servicii</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>Tunsori și îngrijire pentru păr și barbă, adaptate fiecărui tip de păr.</p>
+      </header>
+
+      <ul class="services">
+        <li class="service reveal-l">
+          <h3>Tuns bărbați</h3>
+          <p>Tuns profesional pentru orice stil</p>
+        </li>
+                <li class="service reveal-l" style="--d:.1s">
+          <h3>Spălat și aranjat</h3>
+          <p>Spălat și aranjat pentru păr</p>
+        </li>
+        <li class="service reveal-l" style="--d:.15s">
+          <h3>Tuns și aranjat barbă</h3>
+          <p>Îngrijirea completă a bărbii</p>
+        </li>
+      </ul>
+
+      <div class="services-cta reveal">
+        <a class="btn btn-primary" href="tel:+40729404086">Sună acum</a>
+        <a class="btn" href="https://wa.me/40729404086?text=Bun%C4%83%20ziua%21%20Doresc%20mai%20multe%20detalii%20despre%20servicii." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" style="padding-top:0">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <h2>Galerie</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </header>
+
+      <div class="gallery">
+        <figure class="reveal-fade" style="--d:0s">
+          <img src="img/1.jpg" alt="Frizer tunzând părul unui client, fotografie ilustrativă" loading="lazy">
+        </figure>
+        <figure class="reveal-fade" style="--d:.1s">
+          <img src="img/2.jpg" alt="Frizer lucrând la o tunsoare bărbătească, fotografie ilustrativă" loading="lazy">
+        </figure>
+        <figure class="reveal-fade" style="--d:.2s">
+          <img src="img/4.jpg" alt="Tunsoare și aranjare cu mașina, fotografie ilustrativă" loading="lazy">
+        </figure>
+        <figure class="reveal-fade" style="--d:.3s">
+          <img src="img/5.jpg" alt="Detaliu de lucru într-un salon de bărbați, fotografie ilustrativă" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h2>Vino la noi</h2>
+          <span class="rule" aria-hidden="true" style="margin-left:0"></span>
+          <p style="margin-top:1.75rem">Strada Zaharia Stancu 8H, Coresi, Brașov.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:+40729404086">Sună acum</a>
+            <a class="btn" href="https://wa.me/40729404086?text=Bun%C4%83%20ziua%21%20Doresc%20mai%20multe%20detalii%20despre%20servicii." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Makeover+%E2%80%A2+Barber+%26+Beauty+Bra%C8%99ov" target="_blank" rel="noopener">Vezi pe Google Maps</a>
+          </div>
+        </div>
+
+        <dl class="hours reveal" style="--d:.1s">
+          <div>
+            <dt>Luni–sâmbătă</dt>
+            <dd>10:00–18:00</dd>
+          </div>
+          <div>
+            <dt>Duminică</dt>
+            <dd>Închis</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="map reveal-fade">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=25.6133968,45.666449,25.621396800000003,45.670449000000005&amp;layer=mapnik&amp;marker=45.668449,25.6173968"
+          title="Harta: The Makeover, Strada Zaharia Stancu 8H, Brașov"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="footer-logo" href="#top" aria-label="Sus, la începutul paginii">
+      <img src="logo.png" alt="The Makeover • Barber & Beauty" loading="lazy">
+    </a>
+
+    <ul class="footer-links">
+      <li><a href="tel:+40729404086">+40 729 404 086</a></li>
+      <li><a href="https://wa.me/40729404086?text=Bun%C4%83%20ziua%21%20Doresc%20mai%20multe%20detalii%20despre%20servicii." target="_blank" rel="noopener">WhatsApp</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Makeover+%E2%80%A2+Barber+%26+Beauty+Bra%C8%99ov" target="_blank" rel="noopener">Strada Zaharia Stancu 8H, Brașov</a></li>
+    </ul>
+
+    <p class="footer-credit">
+      Model de site (demo)<br>
+      Fotografii ilustrative de pe Pixabay: mostafa_meraji
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  // Ticks ale emblemei, desenate din cod
+  var ticks = document.getElementById('ticks');
+  if (ticks) {
+    var NS = 'http://www.w3.org/2000/svg';
+    for (var i = 0; i < 72; i++) {
+      var a = i * 5 * Math.PI / 180;
+      var major = i % 6 === 0;
+      var r1 = major ? 85 : 89;
+      var r2 = 94;
+      var line = document.createElementNS(NS, 'line');
+      line.setAttribute('x1', (100 + r1 * Math.cos(a)).toFixed(2));
+      line.setAttribute('y1', (100 + r1 * Math.sin(a)).toFixed(2));
+      line.setAttribute('x2', (100 + r2 * Math.cos(a)).toFixed(2));
+      line.setAttribute('y2', (100 + r2 * Math.sin(a)).toFixed(2));
+      ticks.appendChild(line);
+    }
+  }
+
+  // Meniu mobil
+  var nav = document.getElementById('nav');
+  var toggle = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', function () {
+    var open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  });
+
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      menu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Deschide meniul');
+    }
+  });
+
+  // Umbră la navigare doar când pagina se derulează sub ea
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Dezvăluiri la derulare
+  var items = document.querySelectorAll('.reveal, .reveal-l, .reveal-fade, .rule');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
