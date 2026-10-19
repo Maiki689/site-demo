@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Copac coffee, Bulevardul Carol I din Iași, vizavi de Palatul Universitar. Cafea la pachet, cafea de savurat pe loc, gustări și ceaiuri.">
+<meta name="theme-color" content="#F7F2EA">
+<title>Copac coffee — cafea în Copou, Iași</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --kraft:#C8A27A;
+  --flour:#F7F2EA;
+  --crust:#7A4A26;
+  --ink:#1E1A17;
+  --accent:#B45309;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --text:"Figtree",system-ui,sans-serif;
+  --pad:clamp(3.5rem,10vw,8rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;background:var(--flour);color:var(--ink);
+  font-family:var(--text);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img,svg,iframe{display:block;max-width:100%}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em;line-height:1.08;margin:0;font-weight:700;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+ul{margin:0;padding:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+::selection{background:var(--kraft);color:var(--ink)}
+section{scroll-margin-top:4.5rem}
+.wrap{width:min(100% - 2.5rem,74rem);margin-inline:auto}
+
+.skip{position:absolute;left:1rem;top:-6rem;background:var(--ink);color:var(--flour);padding:.6rem 1rem;border-radius:4px;z-index:20;text-decoration:none}
+.skip:focus{top:1rem}
+
+/* ---------- Antet (sticlă) ---------- */
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(247,242,234,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 10px 24px -18px rgba(30,26,23,.45);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.logo{font-family:var(--display);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;text-decoration:none;color:var(--ink)}
+.nav-links{display:none;list-style:none;gap:2rem}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:2.75rem;
+  text-decoration:none;font-weight:600;font-size:.95rem;color:var(--ink);
+}
+.nav-links a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.35em}
+@media (min-width:52rem){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.75rem 1.4rem;border-radius:4px;
+  font:600 1rem/1.2 var(--text);text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease,background-color .2s ease,color .2s ease,box-shadow .25s ease,border-color .2s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--crust);color:var(--flour)}
+.btn-primary:hover{background:var(--ink);box-shadow:0 8px 20px -12px rgba(30,26,23,.7)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--flour)}
+.btn-light{background:var(--flour);color:var(--ink)}
+.btn-light:hover{background:var(--kraft)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.text-link{
+  display:inline-flex;align-items:center;min-height:2.75rem;margin-top:.5rem;
+  font-weight:600;color:var(--ink);text-decoration-thickness:1.5px;text-underline-offset:.3em;
+}
+
+/* ---------- Primul ecran ---------- */
+.hero{padding:clamp(1.5rem,4vw,3rem) 0 var(--pad)}
+.hero-grid{display:grid;gap:1.5rem;align-items:center}
+.stamp-wrap{order:-1;justify-self:end;width:min(8.5rem,34vw)}
+.hero-title{font-size:clamp(3rem,9vw,7.5rem);font-weight:800;line-height:1.02;letter-spacing:-.02em}
+.hero-title span{display:block}
+.hero-slogan{
+  margin-top:1rem;font-family:var(--display);font-weight:600;
+  font-size:clamp(1.35rem,3vw,1.9rem);line-height:1.2;letter-spacing:-.01em;color:var(--crust);
+}
+.hero-desc{margin-top:.75rem;max-width:30rem}
+.stamp{width:100%}
+.stamp svg{width:100%;height:auto}
+.stamp.run{animation:press .8s cubic-bezier(.3,.7,.2,1) both}
+@keyframes press{
+  0%{opacity:0;transform:scale(1.35) rotate(-7deg)}
+  45%{opacity:1;transform:scale(.94) rotate(0deg)}
+  65%{opacity:1;transform:scale(1.015)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+@media (min-width:52rem){
+  .hero-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:3rem}
+  .stamp-wrap{order:0;justify-self:center;width:min(26rem,100%)}
+}
+
+/* ---------- Despre (kraft) ---------- */
+.despre{background:var(--kraft);padding:var(--pad) 0}
+.despre-grid{display:grid;gap:3rem;align-items:center}
+.despre-grid .shot{aspect-ratio:4/3}
+.despre h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.fact{
+  margin-top:1rem;font-family:var(--display);font-weight:700;
+  font-size:clamp(1.5rem,3.6vw,2.3rem);line-height:1.12;letter-spacing:-.02em;
+}
+.despre .body{max-width:34rem;margin-top:1.25rem}
+.avantaje{list-style:none;margin-top:2.5rem;display:grid;gap:1.5rem}
+.avantaje li{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:1rem;align-items:start}
+.badge{
+  width:3.25rem;height:3.25rem;border-radius:50%;background:var(--flour);
+  display:grid;place-items:center;font-size:1.45rem;
+}
+.avantaje h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em;line-height:1.2}
+.avantaje p{margin-top:.2rem;font-size:.975rem}
+@media (min-width:40rem){
+  .avantaje{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .avantaje li{grid-template-columns:1fr}
+  .badge{margin-bottom:.75rem}
+}
+@media (min-width:52rem){
+  .despre-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:5rem}
+  .despre-grid .shot{aspect-ratio:4/5}
+}
+
+/* ---------- Meniu (crust) ---------- */
+.meniu{background:var(--crust);color:var(--flour);padding:var(--pad) 0}
+.meniu h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.meniu .lead{margin-top:1rem;max-width:32rem;opacity:.9}
+.menu-list{list-style:none;margin-top:3.5rem;display:grid}
+.menu-list li{padding:1.75rem 0;border-top:1px solid rgba(247,242,234,.26)}
+.menu-list h3{font-size:clamp(1.4rem,2.6vw,1.8rem);font-weight:700;line-height:1.15}
+.menu-list p{margin-top:.4rem;max-width:28rem;opacity:.88}
+.meniu .actions{margin-top:2.5rem}
+@media (min-width:48rem){
+  .menu-list{grid-template-columns:1fr 1fr;column-gap:4rem}
+}
+
+/* ---------- Galerie ---------- */
+.galerie{padding:var(--pad) 0}
+.galerie h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.note{margin-top:.75rem;font-size:.9rem;letter-spacing:.02em;opacity:.75}
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:2.5rem}
+.shot{position:relative;margin:0;overflow:hidden;border-radius:2px;background:var(--kraft);aspect-ratio:4/5}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal-grid .g1{grid-column:1/-1;aspect-ratio:4/3}
+@media (min-width:52rem){
+  .gal-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(12rem,20vw,17rem)}
+  .shot{aspect-ratio:auto}
+  .gal-grid .g1{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .gal-grid .g4{grid-column:span 2;aspect-ratio:auto}
+}
+
+/* ---------- Vizită ---------- */
+.vizita{padding:var(--pad) 0}
+.vizita h2{font-size:clamp(2.2rem,5vw,3.4rem)}
+.addr{margin-top:1.25rem;font-size:1.15rem;font-weight:500;line-height:1.5}
+.label{
+  margin-top:2rem;padding:1.5rem 1.6rem;border-radius:3px;
+  background:var(--kraft);border:1.5px dashed rgba(30,26,23,.5);
+}
+.hours{display:grid;gap:.9rem}
+.hours div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.hours dt{font-weight:600}
+.hours dd{margin:0;font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em}
+.phone{margin-top:1.5rem;font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.01em}
+.vizita .actions{margin-top:1.75rem}
+.vizita-grid{display:grid;gap:3rem}
+.map{position:relative;min-height:20rem;border-radius:3px;overflow:hidden;background:var(--kraft)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:sepia(.18) saturate(.9)}
+@media (min-width:52rem){
+  .vizita-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:5rem;align-items:stretch}
+}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--ink);color:var(--flour);padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:1.1rem}
+.foot-name{font-family:var(--display);font-weight:800;font-size:1.6rem;letter-spacing:-.02em}
+.site-footer p{opacity:.85}
+.credit{max-width:46rem;font-size:.85rem;letter-spacing:.02em;opacity:.7!important}
+
+/* ---------- Dezvăluiri la derulare ---------- */
+.js .reveal{
+  opacity:0;
+  transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s);
+}
+.js .reveal.r-up{transform:translate3d(0,24px,0)}
+.js .reveal.r-left{transform:translate3d(-18px,0,0)}
+.js .reveal.r-scale{transform:scale(1.04)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .stamp.run{animation:fade-in .2s both}
+  .btn:active{transform:none}
+  .js .reveal{transform:none!important;transition:opacity .2s linear!important;transition-delay:0s!important}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-header{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 -2px 0 var(--ink)}
+  .btn-primary{background:var(--ink)}
+  .btn-ghost{border-width:2px}
+  .menu-list li{border-top-color:var(--flour)}
+  .meniu p,.menu-list p,.note,.site-footer p{opacity:1}
+  .label{border-color:var(--ink)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="site-header" id="antet">
+  <div class="wrap nav">
+    <a class="logo" href="#sus">Copac coffee</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#vizita">Vizită</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0743535662">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="sus" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-title" id="titlu"><span>Copac</span><span>coffee</span></h1>
+        <p class="hero-slogan">O cafea bună în Copou</p>
+        <p class="hero-desc">Cafea și gustări de zi cu zi, vizavi de Palatul Universitar.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0743535662">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40743535662?text=Bun%C4%83%21%20Am%20o%20%C3%AEntrebare%20despre%20cafenea.">Scrie-ne pe WhatsApp</a>
+        </div>
+        <a class="text-link" href="#meniu">Vezi meniul</a>
+      </div>
+
+      <div class="stamp-wrap">
+        <div class="stamp run" aria-hidden="true">
+          <svg viewBox="0 0 300 300" focusable="false">
+            <defs>
+              <path id="anel" d="M150 150m-112 0a112 112 0 1 1 224 0a112 112 0 1 1-224 0"/>
+              <filter id="tus" x="-5%" y="-5%" width="110%" height="110%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7" result="zg"/>
+                <feDisplacementMap in="SourceGraphic" in2="zg" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+              </filter>
+            </defs>
+            <g fill="none" stroke="#B45309" filter="url(#tus)">
+              <circle cx="150" cy="150" r="144" stroke-width="6"/>
+              <circle cx="150" cy="150" r="80" stroke-width="2.5"/>
+            </g>
+            <text font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="25" fill="#B45309" filter="url(#tus)" textLength="688" lengthAdjust="spacing">
+              <textPath href="#anel">COPAC COFFEE * IAȘI * COPOU * </textPath>
+            </text>
+            <text x="150" y="172" text-anchor="middle" font-size="58">☕</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap despre-grid">
+      <figure class="shot reveal r-scale">
+        <img src="img/2.jpg" alt="Barista toarnă cafea într-o ceașcă" loading="lazy">
+      </figure>
+      <div class="reveal r-up" style="--d:.1s">
+        <h2 id="despre-titlu">Despre noi</h2>
+        <p class="fact">Copou, vizavi de Palatul Universitar.</p>
+        <p class="body">Copac coffee te întâmpină cu arome calde, aproape de inima Copoului. Locul perfect pentru o pauză plăcută sau cafea la pachet.</p>
+        <p class="body">Suntem ușor de găsit, aproape de studenți și trecători.</p>
+        <ul class="avantaje">
+          <li class="reveal r-left" style="--d:.1s">
+            <span class="badge" aria-hidden="true">📚</span>
+            <div><h3>Lângă universitate</h3><p>Loc bun pentru studenți</p></div>
+          </li>
+          <li class="reveal r-left" style="--d:.2s">
+            <span class="badge" aria-hidden="true">🚶</span>
+            <div><h3>Rapid</h3><p>Ușor pentru cei în grabă</p></div>
+          </li>
+          <li class="reveal r-left" style="--d:.3s">
+            <span class="badge" aria-hidden="true">🌳</span>
+            <div><h3>Atmosferă caldă</h3><p>Primitor pentru toți</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="meniu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <h2 id="meniu-titlu">Meniu</h2>
+      <p class="lead">Ce găsești la noi, pe loc sau la pachet.</p>
+      <ul class="menu-list">
+        <li class="reveal r-left" style="--d:0s">
+          <h3>Cafea la pachet</h3>
+          <p>Espresso, cappuccino sau latte pentru drum</p>
+        </li>
+        <li class="reveal r-left" style="--d:.08s">
+          <h3>Cafea de savurat pe loc</h3>
+          <p>O pauză caldă și aromată la noi</p>
+        </li>
+        
+      </ul>
+      <div class="actions">
+        <a class="btn btn-light" href="https://wa.me/40743535662?text=Bun%C4%83%21%20Am%20o%20%C3%AEntrebare%20despre%20cafenea.">Scrie-ne pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu">Galerie</h2>
+      <p class="note">Fotografii ilustrative.</p>
+      <div class="gal-grid">
+        <figure class="shot g1 reveal r-scale" style="--d:0s">
+          <img src="img/3.jpg" alt="Cappuccino cu spumă de lapte într-o ceașcă" loading="lazy">
+        </figure>
+        <figure class="shot g2 reveal r-scale" style="--d:.08s">
+          <img src="img/4.jpg" alt="Boabe de cafea pe o masă de lemn" loading="lazy">
+        </figure>
+        <figure class="shot g3 reveal r-scale" style="--d:.16s">
+          <img src="img/5.jpg" alt="Mâini care toarnă lapte într-o cană de cafea" loading="lazy">
+        </figure>
+        <figure class="shot g4 reveal r-scale" style="--d:.24s">
+          <img src="img/1.jpg" alt="Ceașcă de espresso pe masă" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="vizita" id="vizita" aria-labelledby="vizita-titlu">
+    <div class="wrap vizita-grid">
+      <div class="reveal r-up">
+        <h2 id="vizita-titlu">Vino pe Bulevardul Carol I</h2>
+        <p class="addr">Bulevardul Carol I, Iași<br>Copou, vizavi de Palatul Universitar</p>
+        <div class="label">
+          <dl class="hours">
+            <div><dt>Luni – vineri</dt><dd>07:30 – 17:30</dd></div>
+            <div><dt>Sâmbătă – duminică</dt><dd>10:00 – 18:00</dd></div>
+          </dl>
+        </div>
+        <p class="phone">0743 535 662</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0743535662">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40743535662?text=Bun%C4%83%21%20Am%20o%20%C3%AEntrebare%20despre%20cafenea.">Scrie-ne pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Copac+coffee+Ia%C8%99i">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map reveal r-scale" style="--d:.1s">
+        <iframe title="Harta: Copac coffee, Bulevardul Carol I, Iași" src="https://www.openstreetmap.org/export/embed.html?bbox=27.568371,47.1728892,27.576371,47.176889200000005&amp;layer=mapnik&amp;marker=47.1748892,27.572371" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <p class="foot-name">Copac coffee</p>
+    <p>Bulevardul Carol I, Iași.</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: 13758299, 20926038, 13027327, StockSnap, Pexels</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Ștampila se reapasă la click
+  var stamp = document.querySelector('.stamp');
+  if (stamp) {
+    stamp.style.cursor = 'pointer';
+    stamp.addEventListener('click', function () {
+      stamp.classList.remove('run');
+      void stamp.offsetWidth;
+      stamp.classList.add('run');
+    });
+  }
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
