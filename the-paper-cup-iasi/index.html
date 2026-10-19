@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ro" class="no-js">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Paper Cup, cafenea în Iași</title>
+<meta name="description" content="The Paper Cup, cafenea în Iași: cafea, ceai, fresh-uri și smoothie-uri. Sună sau scrie-ne pe WhatsApp.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E☕%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --milk:#EADFD3;
+  --accent:#b45309;
+  --accent-hover:#963f07;
+  --ink-soft:rgba(59,42,32,.8);
+  --line:rgba(59,42,32,.16);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-head:"Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--espresso);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+h1,h2,h3{
+  font-family:var(--font-head);
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+}
+h1{font-size:clamp(3rem,12.5vw,7.25rem);line-height:1.04}
+h2{font-size:clamp(2.1rem,5.2vw,3.5rem)}
+h3{font-size:clamp(1.25rem,2vw,1.5rem)}
+p{margin:0}
+a{color:inherit}
+ul{margin:0;padding:0}
+section{padding-block:clamp(5rem,11vw,8.5rem)}
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- Navigare (sticlă) ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:saturate(160%) blur(18px);
+  backdrop-filter:saturate(160%) blur(18px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+  transition:box-shadow .3s ease;
+}
+.site-header.is-scrolled{box-shadow:0 1px 14px rgba(59,42,32,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.6rem;
+  text-decoration:none;
+  font-family:var(--font-head);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
+}
+.brand svg{width:1.6rem;height:1.6rem;flex:none}
+.nav-main{display:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{
+  text-decoration:none;font-weight:500;font-size:.95rem;padding:.5rem 0;
+  transition:color .25s ease;
+}
+.nav-links a:hover{color:var(--accent)}
+@media (min-width:760px){.nav-main{display:block}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.8rem 1.5rem;
+  border:1.5px solid transparent;border-radius:999px;
+  font:500 1rem/1.1 var(--font-body);letter-spacing:0;
+  text-decoration:none;cursor:pointer;
+  transition:transform .1s ease,background-color .25s ease,color .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover);box-shadow:0 8px 18px -10px rgba(180,83,9,.7)}
+.btn-ghost{border-color:var(--espresso);color:var(--espresso);background:transparent}
+.btn-ghost:hover{background:var(--espresso);color:#fff}
+.btn-sm{min-height:2.75rem;padding:.6rem 1.1rem;font-size:.95rem}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:clamp(2.5rem,7vw,5.5rem) clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.city{font-size:.95rem;font-weight:500;color:var(--ink-soft);margin-bottom:1rem}
+.slogan{
+  margin-top:1.25rem;
+  font-family:var(--font-head);font-weight:500;
+  font-size:clamp(1.3rem,3vw,1.75rem);letter-spacing:-.01em;line-height:1.2;
+}
+.lead{margin-top:.75rem;max-width:34ch;font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-soft)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.cup-wrap{justify-self:center;width:min(70vw,24rem)}
+@media (min-width:900px){.cup-wrap{width:28rem}}
+.cup{width:100%;height:auto;overflow:visible}
+
+/* Ceașca văzută de sus, cu inima de latte art */
+.cup .heart{
+  fill:var(--milk);fill-opacity:1;
+  stroke:var(--milk);stroke-width:2.2;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:0;
+}
+.js .cup .heart{stroke-dashoffset:1;fill-opacity:0}
+.js .is-ready .cup .heart{
+  animation:draw-heart 1.5s var(--ease) .45s forwards;
+}
+@keyframes draw-heart{
+  0%{stroke-dashoffset:1;fill-opacity:0}
+  65%{stroke-dashoffset:0;fill-opacity:0}
+  100%{stroke-dashoffset:0;fill-opacity:1}
+}
+
+/* Intrarea din prima secțiune */
+.js .hero-in{
+  opacity:0;transform:translate3d(0,14px,0);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .is-ready .hero-in{opacity:1;transform:none}
+.js .cup-wrap{opacity:0;transition:opacity .9s ease .2s}
+.js .is-ready .cup-wrap{opacity:1}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:2rem}
+@media (min-width:900px){.about-grid{grid-template-columns:.8fr 1.2fr;gap:6rem;align-items:start}}
+.about-text p{font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.55;max-width:40ch}
+.about-text p + p{margin-top:1.1rem;color:var(--ink-soft);font-size:1.05rem;max-width:58ch}
+.perks{
+  display:grid;gap:2.5rem;
+  margin-top:clamp(3.5rem,7vw,5rem);
+}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.perk-emoji{display:block;font-size:1.75rem;line-height:1;margin-bottom:1.1rem}
+.perk h3{margin-bottom:.45rem}
+.perk p{color:var(--ink-soft)}
+
+/* ---------- Meniu ---------- */
+.menu{background:var(--milk)}
+.menu-intro{margin-top:1rem;color:var(--ink-soft);font-size:1.1rem}
+.menu-list{
+  list-style:none;
+  margin-top:clamp(2.5rem,5vw,3.5rem);
+  border-top:1px solid var(--line);
+}
+.menu-list li{
+  display:grid;gap:.35rem;
+  padding:1.6rem 0;
+  border-bottom:1px solid var(--line);
+}
+@media (min-width:760px){
+  .menu-list li{grid-template-columns:1fr 1.3fr;align-items:baseline;gap:2rem;padding:2rem 0}
+}
+.menu-list h3{font-size:clamp(1.6rem,3.6vw,2.4rem);transition:color .25s ease}
+.menu-list li:hover h3{color:var(--accent)}
+.menu-list p{color:var(--ink-soft);font-size:1.05rem}
+.menu-cta{margin-top:2.5rem}
+
+/* ---------- Galerie ---------- */
+.gallery{
+  display:grid;grid-template-columns:1fr 1fr;gap:.75rem;
+  margin-top:clamp(2.5rem,5vw,3.5rem);
+}
+.gallery figure{
+  margin:0;overflow:hidden;border-radius:6px;
+  background:var(--milk);aspect-ratio:1/1;
+}
+.gallery figure:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gallery figure:hover img{transform:scale(1.03)}
+@media (min-width:900px){
+  .gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(12rem,22vw,16rem)}
+  .gallery figure,.gallery figure:first-child{aspect-ratio:auto;height:100%}
+  .gallery figure:first-child{grid-column:span 2;grid-row:span 2}
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:center}}
+.contact-lead{margin-top:1rem;font-size:1.1rem;color:var(--ink-soft);max-width:36ch}
+.details{
+  display:grid;gap:1.4rem;margin-top:2.25rem;
+}
+.details dt{font-size:.9rem;color:var(--ink-soft);letter-spacing:.01em}
+.details dd{margin:.2rem 0 0;font-family:var(--font-head);font-size:1.25rem;letter-spacing:-.01em}
+.details a{text-decoration:none;transition:color .25s ease}
+.details a:hover{color:var(--accent)}
+.map{
+  border-radius:6px;overflow:hidden;background:var(--milk);
+}
+.map iframe{display:block;width:100%;height:22rem;border:0}
+.map-link{
+  display:inline-block;margin-top:1rem;
+  min-height:2.75rem;line-height:2.75rem;
+  font-weight:500;text-decoration:underline;text-underline-offset:4px;
+  transition:color .25s ease;
+}
+.map-link:hover{color:var(--accent)}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--espresso);color:var(--milk);padding-block:3.5rem 2.5rem}
+.site-footer :focus-visible{outline-color:var(--milk)}
+.foot-top{display:grid;gap:2rem}
+@media (min-width:760px){.foot-top{grid-template-columns:1fr auto;align-items:center}}
+.foot-brand{font-family:var(--font-head);font-weight:600;font-size:1.5rem;letter-spacing:-.02em;color:#fff}
+.foot-note{margin-top:.4rem;color:rgba(234,223,211,.82);font-size:.95rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:.5rem 1.75rem}
+.foot-links a{
+  display:inline-flex;align-items:center;min-height:2.75rem;
+  color:var(--milk);text-decoration:underline;text-underline-offset:4px;
+  transition:color .25s ease;
+}
+.foot-links a:hover{color:#fff}
+.foot-bottom{
+  margin-top:3rem;padding-top:1.5rem;
+  border-top:1px solid rgba(234,223,211,.16);
+  display:grid;gap:.5rem;
+  font-size:.85rem;letter-spacing:.02em;color:rgba(234,223,211,.78);
+}
+
+/* ---------- Mișcarea la derulare ---------- */
+.js [data-reveal]{
+  opacity:0;transform:translate3d(0,16px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js [data-reveal="left"]{transform:translate3d(-12px,0,0)}
+.js [data-reveal="fade"]{transform:none;transition-duration:.5s}
+.js [data-reveal="scale"]{transform:scale(.98)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-header{background:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--espresso)}
+  .btn-ghost{border-width:2px}
+  .menu-list,.menu-list li{border-color:var(--espresso)}
+  .nav-links a{text-decoration:underline;text-underline-offset:4px}
+  .lead,.perk p,.menu-list p,.menu-intro,.contact-lead,.about-text p + p{color:var(--espresso)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .hero-in,
+  .js [data-reveal]{
+    transform:none !important;
+    transition:opacity .2s linear !important;
+    transition-delay:0s !important;
+  }
+  .js .cup-wrap{transition:opacity .2s linear}
+  .js .cup .heart,
+  .js .is-ready .cup .heart{animation:none !important;stroke-dashoffset:0;fill-opacity:1}
+  .gallery img,.btn,.nav-links a,.menu-list h3{transition:none}
+  .btn:active{transform:none}
+  .gallery figure:hover img{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="The Paper Cup, începutul paginii">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" fill="#FFFFFF" stroke="#D8C8B8" stroke-width=".8"/>
+        <circle cx="12" cy="12" r="8" fill="#3B2A20"/>
+        <path d="M12 17.5C8.5 15 7.5 13.5 7.5 11.9 7.5 10.5 8.6 9.5 9.9 9.5 10.7 9.5 11.4 10 12 10.7 12.6 10 13.3 9.5 14.1 9.5 15.4 9.5 16.5 10.5 16.5 11.9 16.5 13.5 15.5 15 12 17.5Z" fill="#EADFD3"/>
+      </svg>
+      <span>The Paper Cup</span>
+    </a>
+    <nav class="nav-main" aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Atmosfera</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0745469554">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Prima secțiune -->
+  <section class="hero" id="acasa">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="city hero-in" style="--d:.02s">Cafenea în Iași</p>
+        <h1 class="hero-in" style="--d:.06s">The Paper Cup</h1>
+        <p class="slogan hero-in" style="--d:.14s">Gustă bucuria fiecărei cești.</p>
+        <p class="lead hero-in" style="--d:.2s">Locul ideal pentru cafea, ceai și sucuri naturale.</p>
+        <div class="cta-row hero-in" style="--d:.28s">
+          <a class="btn btn-primary" href="tel:0745469554">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40745469554?text=Bun%C4%83%21%20A%C8%99%20vrea%20s%C4%83%20aflu%20mai%20multe%20despre%20b%C4%83uturi%20%C8%99i%20program." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="cup-wrap">
+        <svg class="cup" viewBox="0 0 200 200" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spumă de lapte">
+          <circle cx="100" cy="100" r="98" fill="#EADFD3"/>
+          <rect x="164" y="91" width="26" height="18" rx="9" fill="#FFFFFF" stroke="#D8C8B8" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="74" fill="#FFFFFF" stroke="#D8C8B8" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="62" fill="#3B2A20"/>
+          <circle cx="100" cy="100" r="54" fill="none" stroke="#EADFD3" stroke-opacity=".12" stroke-width="1"/>
+          <path class="heart" pathLength="1" d="M100 150C64 122 52 104 52 84 52 66 65 56 80 56 90 56 97 62 100 70 103 62 110 56 120 56 135 56 148 66 148 84 148 104 136 122 100 150Z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre">
+    <div class="wrap">
+      <div class="about-grid">
+        <h2 data-reveal="left">Despre noi</h2>
+        <div class="about-text" data-reveal="fade" style="--d:.1s">
+          <p>The Paper Cup e o cafenea caldă și primitoare, unde te bucuri de băuturi proaspete.</p>
+          <p>Oferim cafea aromată, ceaiuri fine, fresh-uri și smoothie-uri. Fie că vii să studiezi sau doar să povestești, atmosfera te invită să rămâi.</p>
+        </div>
+      </div>
+
+      <div class="perks">
+        <div class="perk" data-reveal="up" style="--d:0s">
+          <span class="perk-emoji" aria-hidden="true">🛋️</span>
+          <h3>Ambianță caldă</h3>
+          <p>Spațiu relaxant și prietenos.</p>
+        </div>
+        <div class="perk" data-reveal="up" style="--d:.1s">
+          <span class="perk-emoji" aria-hidden="true">📚</span>
+          <h3>Ideal pentru studiu</h3>
+          <p>Perfect pentru studenți și lucru.</p>
+        </div>
+        <div class="perk" data-reveal="up" style="--d:.2s">
+          <span class="perk-emoji" aria-hidden="true">🍹</span>
+          <h3>Băuturi naturale</h3>
+          <p>Doar ingrediente proaspete.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="menu" id="meniu">
+    <div class="wrap">
+      <h2 data-reveal="up">Meniu</h2>
+      <p class="menu-intro" data-reveal="up" style="--d:.08s">Cafea, ceai, fresh-uri și smoothie-uri.</p>
+
+      <ul class="menu-list">
+        <li data-reveal="left" style="--d:0s">
+          <h3>Cafea</h3>
+          <p>Cafea aromată.</p>
+        </li>
+        <li data-reveal="left" style="--d:.06s">
+          <h3>Ceai</h3>
+          <p>Ceaiuri fine.</p>
+        </li>
+        <li data-reveal="left" style="--d:.12s">
+          <h3>Fresh-uri</h3>
+          <p>Băuturi răcoritoare, la pahar.</p>
+        </li>
+        <li data-reveal="left" style="--d:.18s">
+          <h3>Smoothie-uri</h3>
+          <p>Smoothie-uri, alături de cafea și ceai.</p>
+        </li>
+      </ul>
+
+      <div class="menu-cta" data-reveal="fade">
+        <a class="btn btn-ghost" href="https://wa.me/40745469554?text=Bun%C4%83%21%20A%C8%99%20vrea%20s%C4%83%20aflu%20mai%20multe%20despre%20b%C4%83uturi%20%C8%99i%20program." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie">
+    <div class="wrap">
+      <h2 data-reveal="up">Atmosfera</h2>
+
+      <div class="gallery">
+        <figure data-reveal="scale">
+          <img src="img/4.jpg" alt="Barista care toarnă espresso pentru o cafea preparată la bar" loading="lazy">
+        </figure>
+        <figure data-reveal="scale" style="--d:.06s">
+          <img src="img/1.jpg" alt="Cappuccino servit într-o ceașcă albă, pe un fund de farfurie" loading="lazy">
+        </figure>
+        <figure data-reveal="scale" style="--d:.1s">
+          <img src="img/2.jpg" alt="Tânără citind o carte, cu o băutură în față, într-o cafenea" loading="lazy">
+        </figure>
+        <figure data-reveal="scale" style="--d:.14s">
+          <img src="img/3.jpg" alt="Cafele variate, latte și espresso, pregătite pentru servire" loading="lazy">
+        </figure>
+        <figure data-reveal="scale" style="--d:.18s">
+          <img src="img/5.jpg" alt="Latte într-o cană, alături de un caiet și un pix, pe masă" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div data-reveal="up">
+        <h2>Vino pe la noi</h2>
+        <p class="contact-lead">Ești în Iași? Sună sau scrie-ne ca să afli mai multe despre băuturi și program.</p>
+
+        <div class="cta-row" style="margin-top:1.75rem">
+          <a class="btn btn-primary" href="tel:0745469554">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40745469554?text=Bun%C4%83%21%20A%C8%99%20vrea%20s%C4%83%20aflu%20mai%20multe%20despre%20b%C4%83uturi%20%C8%99i%20program." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:thepapercup15@gmail.com">Trimite un email</a>
+        </div>
+
+        <dl class="details">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0745469554">0745469554</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:thepapercup15@gmail.com">thepapercup15@gmail.com</a></dd>
+          </div>
+          <div>
+            <dt>Oraș</dt>
+            <dd>Iași</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div data-reveal="fade" style="--d:.1s">
+        <div class="map">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.566557,47.1708225,27.574557000000002,47.174822500000005&amp;layer=mapnik&amp;marker=47.1728225,27.570557" title="Harta pe care se află The Paper Cup, în Iași" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=The+Paper+Cup+Ia%C8%99i" target="_blank" rel="noopener">Deschide harta în Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="foot-brand">The Paper Cup</p>
+        <p class="foot-note">Cafenea în Iași. Cafea, ceai, fresh-uri și smoothie-uri.</p>
+      </div>
+      <nav aria-label="Contact rapid">
+        <ul class="foot-links">
+          <li><a href="tel:0745469554">Sună acum</a></li>
+          <li><a href="https://wa.me/40745469554?text=Bun%C4%83%21%20A%C8%99%20vrea%20s%C4%83%20aflu%20mai%20multe%20despre%20b%C4%83uturi%20%C8%99i%20program." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a></li>
+          <li><a href="mailto:thepapercup15@gmail.com">Trimite un email</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Paper+Cup+Ia%C8%99i" target="_blank" rel="noopener">Deschide harta</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: grafmex, hoahoa111, 13027327, 20926038, DanielTwal</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  var hero = document.querySelector('.hero');
+
+  // Umbră fină pe bara de sus doar când pagina se derulează sub ea
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Intrarea din prima secțiune (după un cadru, ca tranziția să pornească)
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      hero.classList.add('is-ready');
+    });
+  });
+
+  // Dezvăluirea la derulare, o singură dată pentru fiecare element
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
