@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabu Coffee, Iași: cafea la orice oră</title>
+<meta name="description" content="Tabu Coffee din Iași. Băuturi aromate pe bază de cafea, deschis nonstop, în fiecare zi.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --milk:#EADFD3;
+  --accent:#b45309;
+  --accent-deep:#963f06;
+  --ink:#3B2A20;
+  --ink-soft:rgba(59,42,32,.76);
+  --line:rgba(59,42,32,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-head:"Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.55;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+p{max-width:65ch}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.wrap{width:min(1180px, calc(100% - 2.5rem));margin-inline:auto}
+
+/* ---------- Header (sticlă) ---------- */
+.site-head{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  border-top:1px solid rgba(255,255,255,.9);
+  transition:box-shadow .4s var(--ease), background-color .4s var(--ease);
+}
+.site-head.is-scrolled{
+  box-shadow:0 10px 26px -18px rgba(59,42,32,.35);
+}
+.head-in{
+  height:4.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.brand{
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:1.125rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  color:var(--espresso);
+}
+.nav{display:flex;align-items:center;gap:1.5rem}
+.nav a:not(.btn){
+  font-size:.9375rem;
+  font-weight:500;
+  letter-spacing:.005em;
+  text-decoration:none;
+  color:var(--ink);
+  opacity:.8;
+  transition:opacity .25s var(--ease), color .25s var(--ease);
+}
+.nav a:not(.btn):hover{opacity:1;color:var(--accent)}
+.nav a.opt{display:none}
+@media (min-width:640px){
+  .nav a.opt{display:inline}
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:3rem;
+  padding:.8rem 1.5rem;
+  border-radius:999px;
+  border:1.5px solid transparent;
+  font-family:var(--font-body);
+  font-size:1rem;
+  font-weight:600;
+  line-height:1.2;
+  text-decoration:none;
+  white-space:nowrap;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:background-color .25s var(--ease), box-shadow .3s var(--ease), border-color .25s var(--ease), color .25s var(--ease), transform .1s linear;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 10px 22px -14px rgba(150,63,6,.75)}
+.btn-ghost{background:transparent;color:var(--espresso);border-color:rgba(59,42,32,.24)}
+.btn-ghost:hover{border-color:var(--espresso);background:rgba(59,42,32,.04)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1.1rem;font-size:.9375rem}
+.btn-block{width:100%}
+
+.text-link{
+  color:var(--espresso);
+  font-weight:600;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:.3em;
+  transition:color .25s var(--ease);
+}
+.text-link:hover{color:var(--accent)}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:6.5rem 0 4rem;
+}
+.hero-in{display:grid;gap:2.75rem;align-items:center}
+h1{
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(3rem, 9vw, 6rem);
+  line-height:1;
+  letter-spacing:-.03em;
+  color:var(--espresso);
+}
+.lead{
+  margin-top:1.5rem;
+  font-family:var(--font-head);
+  font-size:clamp(1.375rem, 3.2vw, 1.875rem);
+  line-height:1.2;
+  letter-spacing:-.01em;
+  font-weight:500;
+  max-width:22ch;
+}
+.hero-desc{
+  margin-top:1rem;
+  color:var(--ink-soft);
+  font-size:1.0625rem;
+  max-width:44ch;
+}
+.actions{
+  margin-top:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+}
+.hero-meta{
+  margin-top:2rem;
+  display:flex;
+  flex-direction:column;
+  gap:.2rem;
+  font-size:.9375rem;
+  color:var(--ink-soft);
+  letter-spacing:.01em;
+}
+
+/* Ceașca văzută de sus (elementul memorabil) */
+.cup-fig{
+  width:min(78vw, 380px);
+  justify-self:center;
+}
+.cup{width:100%;height:auto}
+.heart{
+  transform-box:fill-box;
+  transform-origin:center;
+}
+
+@media (min-width:900px){
+  .hero{
+    min-height:100svh;
+    display:flex;
+    align-items:center;
+    padding:6rem 0;
+  }
+  .hero-in{grid-template-columns:1fr 1fr;gap:4rem}
+  .cup-fig{width:min(100%, 520px);justify-self:end}
+}
+
+/* ---------- Secțiuni ---------- */
+.section{padding:clamp(5rem, 11vw, 8.5rem) 0}
+.section-milk{background:var(--milk)}
+.sec-title{
+  font-family:var(--font-head);
+  font-weight:600;
+  font-size:clamp(2.1rem, 5vw, 3.5rem);
+  line-height:1.05;
+  letter-spacing:-.025em;
+  color:var(--espresso);
+}
+.sec-sub{margin-top:1rem;color:var(--ink-soft);max-width:48ch}
+.body-text{margin-top:1.25rem;color:var(--ink-soft);max-width:58ch}
+
+.rule{height:1px;background:var(--line);width:100%}
+
+/* Despre */
+.about-grid{display:grid;gap:3rem}
+.lead-big{
+  margin-top:1.25rem;
+  font-family:var(--font-head);
+  font-size:clamp(1.5rem, 3vw, 2.1rem);
+  line-height:1.2;
+  letter-spacing:-.015em;
+  font-weight:500;
+  max-width:24ch;
+}
+.facts{
+  list-style:none;
+  margin-top:2.5rem;
+}
+.fact{
+  padding:1.25rem 0;
+  border-bottom:1px solid var(--line);
+}
+.fact h3{
+  font-family:var(--font-head);
+  font-size:1.125rem;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+.fact p{margin-top:.2rem;color:var(--ink-soft)}
+.photo{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:var(--milk);
+}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+  .about-photo .photo{aspect-ratio:4/5}
+}
+
+/* Meniu */
+.menu-grid{display:grid;gap:3rem}
+.menu-list{list-style:none;margin-top:0}
+.menu-item{
+  position:relative;
+  padding:1.6rem 0;
+  border-bottom:1px solid var(--line);
+  display:grid;
+  gap:.35rem;
+}
+.menu-item::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:100%;
+  height:1px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.menu-item:hover::after{transform:scaleX(1)}
+.menu-item h3{
+  font-family:var(--font-head);
+  font-size:clamp(1.375rem, 3vw, 1.75rem);
+  font-weight:500;
+  letter-spacing:-.015em;
+  line-height:1.15;
+}
+.menu-item p{color:var(--ink-soft)}
+.menu-note{margin-top:1.5rem;color:var(--ink-soft);max-width:44ch}
+.menu-actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
+@media (min-width:900px){
+  .menu-grid{grid-template-columns:.8fr 1.2fr;gap:6rem;align-items:start}
+  .menu-grid .menu-left{position:sticky;top:7rem}
+}
+
+/* Galerie */
+.gallery{
+  margin-top:3.5rem;
+  display:grid;
+  gap:1rem;
+  grid-template-columns:1fr;
+}
+.gallery .photo{aspect-ratio:4/3}
+@media (min-width:700px){
+  .gallery{grid-template-columns:1fr 1fr;gap:1.25rem}
+}
+
+/* Contact */
+.contact-grid{display:grid;gap:3rem}
+.open-big{
+  margin-top:1rem;
+  font-family:var(--font-head);
+  font-size:clamp(1.75rem, 4vw, 2.5rem);
+  line-height:1.1;
+  letter-spacing:-.02em;
+  font-weight:600;
+  color:var(--espresso);
+  max-width:20ch;
+}
+.contact-info p.line{margin-top:1rem;color:var(--ink-soft)}
+.contact-info p.line strong{color:var(--ink);font-weight:600}
+.contact-buttons{margin-top:2rem;display:grid;gap:.75rem}
+.map{
+  position:relative;
+  height:clamp(300px, 42vw, 440px);
+  background:var(--white);
+}
+.map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:center}
+  .contact-buttons{grid-template-columns:auto auto auto;justify-content:start}
+  .contact-buttons .btn{width:auto}
+}
+
+/* Subsol */
+.site-foot{
+  background:var(--espresso);
+  color:rgba(255,255,255,.78);
+  padding:3.5rem 0 2.5rem;
+  font-size:.9375rem;
+  letter-spacing:.01em;
+}
+.foot-in{display:grid;gap:2rem}
+.foot-name{
+  font-family:var(--font-head);
+  font-size:1.25rem;
+  font-weight:600;
+  color:#fff;
+  letter-spacing:-.01em;
+}
+.foot-in a{color:#fff}
+.foot-in p{margin-top:.25rem}
+.credit{
+  margin-top:2.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.14);
+  font-size:.8125rem;
+  line-height:1.6;
+  color:rgba(255,255,255,.66);
+}
+@media (min-width:700px){
+  .foot-in{grid-template-columns:1fr auto;align-items:end}
+  .foot-in .foot-right{text-align:right}
+}
+
+/* ---------- Mișcare (doar transform și opacity) ---------- */
+.js .cup-fig{
+  opacity:0;
+  transform:scale(.97);
+  transition:opacity .9s var(--ease), transform 1.2s var(--ease);
+}
+.js .cup-fig.is-ready{opacity:1;transform:none}
+.js .heart{
+  opacity:0;
+  transform:scale(.86);
+  transition:opacity 1s var(--ease) .6s, transform 1.4s var(--ease) .6s;
+}
+.js .cup-fig.is-ready .heart{opacity:1;transform:none}
+
+.js .reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .55s var(--ease) var(--d,0s), transform .55s var(--ease) var(--d,0s);
+}
+.js .reveal.in{opacity:1;transform:none}
+
+.js .reveal-x{
+  opacity:0;
+  transform:translateX(-14px);
+  transition:opacity .5s var(--ease) var(--d,0s), transform .5s var(--ease) var(--d,0s);
+}
+.js .reveal-x.in{opacity:1;transform:none}
+
+.js .photo{
+  opacity:0;
+  transform:scale(1.03);
+  transition:opacity .7s var(--ease) var(--d,0s), transform 1s var(--ease) var(--d,0s);
+}
+.js .photo.in{opacity:1;transform:none}
+
+.js .rule{
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .8s var(--ease);
+}
+.js .rule.in{transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important;animation:none !important}
+  .js .cup-fig,
+  .js .cup-fig .heart,
+  .js .reveal,
+  .js .reveal-x,
+  .js .photo,
+  .js .rule{transform:none !important}
+  .js .cup-fig .heart{transform:none !important}
+  .btn:active{transform:none}
+}
+
+@media (prefers-reduced-transparency: reduce){
+  .site-head{
+    background:#FFFFFF;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+
+@media (prefers-contrast: more){
+  :root{
+    --ink-soft:var(--ink);
+    --line:rgba(59,42,32,.55);
+  }
+  .site-head{
+    background:#FFFFFF;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+    border-top:0;
+    border-bottom:1px solid var(--espresso);
+  }
+  .btn-ghost{border-color:var(--espresso);border-width:2px}
+  .btn-primary{background:#8a3a04}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-head" id="cap">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">Tabu Coffee</a>
+    <nav class="nav" aria-label="Navigare principală">
+      <a href="#meniu">Meniu</a>
+      <a class="opt" href="#despre">Despre</a>
+      <a class="opt" href="#galerie">Galerie</a>
+      <a class="opt" href="#contact">Contact</a>
+      <a class="btn btn-primary btn-sm" href="tel:0757331133">Sună acum</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Prima secțiune: numele, butoanele și ceașca de sus -->
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-in">
+      <div class="hero-text">
+        <h1 id="titlu">Tabu Coffee</h1>
+        <p class="lead">Bucură-te de cafea, la orice oră.</p>
+        <p class="hero-desc">Băuturi aromate pe bază de cafea pentru fiecare moment.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0757331133">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40757331133?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20de%20cafea.">Scrie pe WhatsApp</a>
+        </div>
+        <p class="hero-meta">
+          <span>Deschis nonstop, în fiecare zi</span>
+          <span>Iași</span>
+        </p>
+      </div>
+
+      <figure class="cup-fig" id="ceasca">
+        <svg class="cup" viewBox="0 0 400 400" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spuma de lapte">
+          <defs>
+            <radialGradient id="crema" cx="50%" cy="46%" r="62%">
+              <stop offset="0" stop-color="#5A4132"/>
+              <stop offset=".72" stop-color="#3B2A20"/>
+              <stop offset="1" stop-color="#2E2119"/>
+            </radialGradient>
+          </defs>
+          <!-- farfuria -->
+          <circle cx="200" cy="200" r="196" fill="#EADFD3"/>
+          <!-- marginea cănii, porțelan alb -->
+          <circle cx="200" cy="200" r="150" fill="#FFFFFF"/>
+          <!-- cafeaua -->
+          <circle cx="200" cy="200" r="134" fill="url(#crema)"/>
+          <!-- inima de latte art -->
+          <path class="heart" fill="#EADFD3" d="M200 262C150 225 128 196 128 170C128 146 146 130 168 130C182 130 194 138 200 150C206 138 218 130 232 130C254 130 272 146 272 170C272 196 250 225 200 262Z"/>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section" id="despre" aria-labelledby="t-despre">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <h2 class="sec-title reveal" id="t-despre">Despre Tabu Coffee</h2>
+        <p class="lead-big reveal" style="--d:.08s">Cafea proaspătă și aromată, la orice oră din zi sau noapte.</p>
+        <p class="body-text reveal" style="--d:.14s">La Tabu Coffee găsești mereu o cafea proaspătă și aromată, potrivită oricărei ore din zi sau noapte.</p>
+        <p class="body-text reveal" style="--d:.18s">Atmosfera este relaxată, perfectă pentru discuții sau momente liniștite.</p>
+        <p class="body-text reveal" style="--d:.22s">Descoperă o gamă variată de băuturi pe bază de cafea, pregătite cu grijă.</p>
+
+        <div class="rule" aria-hidden="true" style="margin-top:2.5rem"></div>
+        <ul class="facts">
+          <li class="fact reveal-x" style="--d:.05s">
+            <h3>Deschis nonstop</h3>
+            <p>Te servim la orice oră</p>
+          </li>
+          <li class="fact reveal-x" style="--d:.15s">
+            <h3>Atmosferă relaxată</h3>
+            <p>Perfect pentru pauze și socializare</p>
+          </li>
+          <li class="fact reveal-x" style="--d:.25s">
+            <h3>Cafea aromată</h3>
+            <p>Mereu proaspăt pregătită</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="about-photo">
+        <figure class="photo">
+          <img src="img/4.jpg" alt="Tânără citind într-o cafenea, cu o băutură pe masă" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="section section-milk" id="meniu" aria-labelledby="t-meniu">
+    <div class="wrap menu-grid">
+      <div class="menu-left">
+        <h2 class="sec-title reveal" id="t-meniu">Meniu</h2>
+        <p class="sec-sub reveal" style="--d:.08s">Câteva băuturi clasice, pe bază de cafea, pentru fiecare moment.</p>
+        <p class="menu-note reveal" style="--d:.14s">Prețurile și variantele le afli la telefon sau pe WhatsApp.</p>
+        <div class="menu-actions reveal" style="--d:.2s">
+          <a class="btn btn-primary btn-sm" href="tel:0757331133">Sună acum</a>
+          <a class="btn btn-ghost btn-sm" href="https://wa.me/40757331133?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20de%20cafea.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="rule" aria-hidden="true"></div>
+        <ul class="menu-list">
+          <li class="menu-item reveal-x" style="--d:.02s">
+            <h3>Espresso</h3>
+            <p>O doză intensă de energie și aromă</p>
+          </li>
+          <li class="menu-item reveal-x" style="--d:.10s">
+            <h3>Cappuccino</h3>
+            <p>Cafea cremoasă, spumă fină de lapte</p>
+          </li>
+          <li class="menu-item reveal-x" style="--d:.18s">
+            <h3>Caffè Latte</h3>
+            <p>Delicat, lapte cald și cafea intensă</p>
+          </li>
+          <li class="menu-item reveal-x" style="--d:.26s">
+            <h3>Americano</h3>
+            <p>Cafea lungă, gust echilibrat și reconfortant</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <h2 class="sec-title reveal" id="t-galerie">Galerie</h2>
+      <p class="sec-sub reveal" style="--d:.08s">Cafea, aromă și momente liniștite.</p>
+
+      <div class="gallery">
+        <figure class="photo" style="--d:0s">
+          <img src="img/3.jpg" alt="Barista turnând cafea într-o ceașcă" loading="lazy">
+        </figure>
+        <figure class="photo" style="--d:.1s">
+          <img src="img/5.jpg" alt="Boabe de cafea și o ceașcă pe o masă de lemn" loading="lazy">
+        </figure>
+        <figure class="photo" style="--d:.1s">
+          <img src="img/2.jpg" alt="Băuturi pe bază de cafea: espresso, cappuccino și latte" loading="lazy">
+        </figure>
+        <figure class="photo" style="--d:.2s">
+          <img src="img/1.jpg" alt="Cappuccino într-o ceașcă, pe un blat" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section-milk" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <h2 class="sec-title reveal" id="t-contact">Vino oricând</h2>
+        <p class="open-big reveal" style="--d:.08s">Deschis nonstop, în fiecare zi.</p>
+        <p class="line reveal" style="--d:.14s">Iași. Locul exact îl găsești pe hartă.</p>
+        <p class="line reveal" style="--d:.18s"><strong>Telefon:</strong> <a class="text-link" href="tel:0757331133">0757 331 133</a></p>
+
+        <div class="contact-buttons reveal" style="--d:.24s">
+          <a class="btn btn-primary" href="tel:0757331133">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40757331133?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20de%20cafea.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Tabu+Coffee+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map reveal" style="--d:.1s">
+        <iframe
+          title="Harta: Tabu Coffee, Iași"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.5776786,47.166899,27.5856786,47.170899000000006&amp;layer=mapnik&amp;marker=47.168899,27.5816786"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <p class="foot-name">Tabu Coffee</p>
+        <p>Băuturi aromate pe bază de cafea, în Iași.</p>
+        <p>Deschis nonstop, în fiecare zi.</p>
+      </div>
+      <div class="foot-right">
+        <p><a href="tel:0757331133">0757 331 133</a></p>
+        <p>Model de site (demo)</p>
+      </div>
+    </div>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: grafmex, 13027327, 20926038, hoahoa111, cocoparisienne</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var head = document.getElementById('cap');
+  var onScroll = function () {
+    head.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Secvența de intrare din prima secțiune: ceașca apare, apoi se așază inima
+  requestAnimationFrame(function () {
+    var cup = document.getElementById('ceasca');
+    if (cup) cup.classList.add('is-ready');
+  });
+
+  // Dezvăluirea la derulare
+  var items = document.querySelectorAll('.reveal, .reveal-x, .photo, .rule');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
