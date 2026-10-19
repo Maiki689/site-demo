@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7am Coffee To Go | Cafea espresso de luat pe drum, Iași</title>
+<meta name="description" content="7am Coffee To Go: espresso de luat pe drum, în Copou și pe strada Sfântul Lazăr, în Iași.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%233B2A20'/%3E%3Cpath d='M32 45c-9-6-13-11-13-17 0-5 4-8 8-8 2.5 0 4 1.3 5 3 1-1.7 2.5-3 5-3 4 0 8 3 8 8 0 6-4 11-13 17z' fill='%23EADFD3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --milk:#EADFD3;
+  --accent:#B45309;
+  --accent-hover:#963F06;
+  --ink-soft:rgba(59,42,32,.8);
+  --line:rgba(59,42,32,.16);
+  --f-head:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --gutter:clamp(1.25rem,4vw,2.5rem);
+  --section:clamp(5rem,11vw,8.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--f-text);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--espresso);
+  background:var(--white);
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+ul,dl,dd{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section[id],footer[id]{scroll-margin-top:5rem}
+
+h1,h2,h3{
+  font-family:var(--f-head);
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.1;
+  margin:0;
+}
+h1{font-size:clamp(2.6rem,9vw,5.5rem);line-height:1.05}
+h2{font-size:clamp(2rem,4.6vw,3.25rem)}
+h3{font-size:1.3rem;letter-spacing:-.01em;line-height:1.2}
+
+.container{max-width:72rem;margin-inline:auto;padding-inline:var(--gutter)}
+.prose{max-width:36rem;color:var(--ink-soft)}
+.prose p+p{margin-top:1rem}
+
+/* Botoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.75rem 1.5rem;
+  border-radius:999px;border:1.5px solid transparent;
+  font:600 1rem/1 var(--f-text);
+  text-decoration:none;cursor:pointer;
+  transition:background-color .2s ease,color .2s ease,box-shadow .2s ease,transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#FFFFFF}
+.btn-primary:hover{background:var(--accent-hover);box-shadow:0 8px 18px -10px rgba(180,83,9,.7)}
+.btn-ghost{background:transparent;color:var(--espresso);border-color:var(--espresso)}
+.btn-ghost:hover{background:rgba(59,42,32,.06)}
+.btn-small{min-height:2.75rem;padding:.6rem 1.2rem;font-size:.9375rem}
+
+/* Bara de navigare - sticlă */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.9);
+  transition:box-shadow .3s ease;
+}
+.site-header.is-scrolled{box-shadow:0 12px 28px -20px rgba(59,42,32,.45)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{
+  font-family:var(--f-head);font-weight:600;font-size:1.0625rem;
+  letter-spacing:-.01em;text-decoration:none;color:var(--espresso);
+}
+.nav-links{display:none;gap:2rem}
+.nav-links a{
+  position:relative;text-decoration:none;font-weight:500;font-size:.9375rem;
+  letter-spacing:.01em;color:var(--espresso);padding:.5rem 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:.2rem;height:1px;
+  background:currentColor;transform:scaleX(0);transform-origin:left;
+  transition:transform .3s var(--ease);
+}
+.nav-links a:hover::after{transform:scaleX(1)}
+@media (min-width:640px){.nav-links{display:flex}}
+
+/* Prima secțiune */
+.hero{padding:6.5rem 0 4.5rem}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+.hero-text{animation:rise .7s var(--ease) .1s both}
+.hero-text .slogan{
+  font-family:var(--f-head);font-weight:500;letter-spacing:-.01em;
+  font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:1.3;margin-top:1.5rem;
+}
+.hero-text .lead{margin-top:.75rem;color:var(--ink-soft);max-width:30rem}
+.actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+@media (min-width:520px){.actions{flex-direction:row;flex-wrap:wrap}}
+
+.hero-cup{margin:0;width:min(74vw,20rem);justify-self:center}
+.cup{width:100%;height:auto;display:block;overflow:visible}
+.heart-line{
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw 1.6s var(--ease) .6s forwards;
+}
+.heart-fill{opacity:0;animation:fadein .9s ease 2.1s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadein{to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+@media (min-width:900px){
+  .hero{padding:9rem 0 var(--section)}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:4rem}
+  .hero-cup{width:min(100%,30rem);justify-self:end}
+}
+
+/* Secțiuni */
+.section{padding:var(--section) 0}
+.section--milk{background:var(--milk)}
+
+/* Despre */
+.about-grid,.menu-grid,.loc-grid{display:grid;gap:3rem}
+.about-text h2,.adv-head h2,.menu-text h2,.loc-head h2{margin-bottom:1.5rem}
+.facts{
+  margin-top:2.25rem;border-top:1px solid var(--line);
+}
+.facts div{
+  display:grid;gap:.25rem;padding:1.1rem 0;border-bottom:1px solid var(--line);
+}
+.facts dt{font-size:.875rem;letter-spacing:.02em;color:var(--ink-soft)}
+.facts dd{font-weight:500}
+
+.photo{
+  position:relative;margin:0;overflow:hidden;
+  aspect-ratio:4/5;background:var(--espresso);
+}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:6rem}
+  .about-grid .photo{order:2}
+}
+
+/* Avantaje */
+.adv-grid{display:grid;gap:2.75rem}
+.adv{display:grid;align-content:start}
+.adv::before{content:"";display:block;width:2.5rem;height:2px;background:var(--accent);margin-bottom:1.5rem}
+.adv p{margin-top:.6rem;color:var(--ink-soft);max-width:22rem}
+@media (min-width:768px){
+  .adv-grid{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+}
+
+/* Meniu */
+.menu-list{margin-top:2.5rem;border-top:1px solid var(--line);list-style:none;padding:0}
+.menu-list li{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.menu-list h3{font-size:1.35rem}
+.menu-list p{margin-top:.4rem;color:var(--ink-soft)}
+.menu-text .intro{margin-top:1.25rem;color:var(--ink-soft);max-width:30rem}
+.menu-photo{aspect-ratio:4/5}
+@media (min-width:900px){
+  .menu-grid{grid-template-columns:1.1fr .9fr;gap:6rem;align-items:start}
+  .menu-photo{position:sticky;top:7rem}
+}
+
+/* Locații */
+.loc-list{display:grid;gap:2rem;margin-top:2.5rem}
+.loc h3{font-size:1.25rem}
+.loc p{margin-top:.3rem;color:var(--ink-soft)}
+.loc-note{margin-top:2rem;color:var(--ink-soft);max-width:30rem}
+.map-wrap{
+  position:relative;height:clamp(18rem,44vw,26rem);
+  border:1px solid var(--line);background:var(--milk);
+}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media (min-width:900px){
+  .loc-grid{grid-template-columns:1fr 1.35fr;gap:5rem;align-items:start}
+}
+
+/* Subsol */
+.site-footer{background:var(--espresso);color:var(--milk);padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+.foot-brand{font-family:var(--f-head);font-weight:600;font-size:1.25rem;letter-spacing:-.01em;color:#FFFFFF}
+.foot-small{font-size:.875rem;letter-spacing:.02em;line-height:1.6;color:var(--milk)}
+.foot-small+.foot-small{margin-top:.5rem}
+.foot-links{display:flex;flex-wrap:wrap;gap:1rem 1.75rem}
+.foot-links a{color:#FFFFFF;text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px}
+@media (min-width:720px){
+  .foot-grid{grid-template-columns:1fr auto;align-items:end}
+}
+
+/* Mișcare la derulare - variate și discrete */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-left{opacity:0;transform:translateX(-12px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-scale{opacity:0;transform:scale(1.03);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-fade{opacity:0;transition:opacity .6s ease;transition-delay:var(--d,0s)}
+.js .reveal.is-in,.js .reveal-left.is-in,.js .reveal-scale.is-in,.js .reveal-fade.is-in{opacity:1;transform:none}
+
+/* Accesibilitate: transparență redusă */
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* Accesibilitate: contrast crescut */
+@media (prefers-contrast:more){
+  :root{--ink-soft:var(--espresso);--line:rgba(59,42,32,.6)}
+  .site-header{background:var(--white);border-bottom:1px solid var(--espresso);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-ghost{border-width:2px}
+  .facts div,.menu-list li{border-bottom-width:1.5px}
+}
+
+/* Accesibilitate: mișcare redusă */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.2s!important}
+  .hero-text{animation:fadein .2s ease both}
+  .heart-line{stroke-dashoffset:0}
+  .heart-fill{opacity:1}
+  .js .reveal,.js .reveal-left,.js .reveal-scale{transform:none;transition:opacity .2s ease}
+  .js .reveal-fade{transition:opacity .2s ease}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="cap">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">7am Coffee To Go</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#locatii">Locații</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="tel:0774689270">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>7am Coffee To Go</h1>
+        <p class="slogan">Cafeaua dimineții, mereu pe fugă</p>
+        <p class="lead">Cafea espresso de luat pe drum, în două locuri centrale din Iași.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0774689270">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40774689270?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20cafeaua%20dumneavoastr%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="hero-cup">
+        <svg class="cup" viewBox="0 0 400 400" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spumă de lapte">
+          <defs>
+            <radialGradient id="crema" cx="48%" cy="40%" r="62%">
+              <stop offset="0" stop-color="#6E5140"/>
+              <stop offset=".55" stop-color="#4A3428"/>
+              <stop offset="1" stop-color="#3B2A20"/>
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="200" r="192" fill="#EADFD3"/>
+          <circle cx="200" cy="200" r="158" fill="none" stroke="#3B2A20" stroke-opacity=".08" stroke-width="2"/>
+          <rect x="326" y="186" width="58" height="28" rx="14" fill="#FFFFFF"/>
+          <circle cx="200" cy="200" r="150" fill="#FFFFFF"/>
+          <circle cx="200" cy="200" r="134" fill="url(#crema)"/>
+          <ellipse cx="160" cy="146" rx="46" ry="12" fill="#FFFFFF" opacity=".07" transform="rotate(-24 160 146)"/>
+          <g class="heart">
+            <path class="heart-fill" fill="#EADFD3" transform="translate(200 200) scale(.72) translate(-200 -188)" d="M200 290C120 230 95 190 95 150C95 110 125 85 160 85C180 85 195 97 200 115C205 97 220 85 240 85C275 85 305 110 305 150C305 190 280 230 200 290Z"/>
+            <path class="heart-line" pathLength="1" fill="none" stroke="#EADFD3" stroke-width="5.5" stroke-linejoin="round" transform="translate(200 200) scale(.72) translate(-200 -188)" d="M200 290C120 230 95 190 95 150C95 110 125 85 160 85C180 85 195 97 200 115C205 97 220 85 240 85C275 85 305 110 305 150C305 190 280 230 200 290Z"/>
+          </g>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--milk" id="despre">
+    <div class="container about-grid">
+      <div class="about-text reveal">
+        <h2>Pe drumul tău spre zi</h2>
+        <div class="prose">
+          <p>7am Coffee To Go este cafeneaua ta de dimineață, mereu la îndemână în Copou și pe strada Sfântul Lazăr.</p>
+          <p>Te așteptăm cu espresso aromat, perfect pentru începutul zilei. Ideal pentru studenți și cei în drum spre serviciu.</p>
+        </div>
+        <dl class="facts">
+          <div>
+            <dt>Băutura</dt>
+            <dd>Espresso, de luat pe drum</dd>
+          </div>
+          <div>
+            <dt>Locații</dt>
+            <dd>Copou și strada Sfântul Lazăr, Iași</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="photo reveal-scale">
+        <img src="img/1.jpg" alt="Espresso proaspăt preparat, lângă mașina de cafea" loading="lazy" width="800" height="1000">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="avantaje">
+    <div class="container">
+      <div class="adv-head reveal">
+        <h2>Repede, aproape și bună</h2>
+      </div>
+      <div class="adv-grid" style="margin-top:3.5rem">
+        <article class="adv reveal-left" style="--d:.05s">
+          <h3>Rapid și simplu</h3>
+          <p>Ia cafeaua fără să aștepți mult.</p>
+        </article>
+        <article class="adv reveal-left" style="--d:.15s">
+          <h3>Două locații</h3>
+          <p>Ușor de găsit în Copou și pe strada Sfântul Lazăr.</p>
+        </article>
+        <article class="adv reveal-left" style="--d:.25s">
+          <h3>Cafea de calitate</h3>
+          <p>Espresso aromat, proaspăt preparat.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--milk" id="meniu">
+    <div class="container menu-grid">
+      <div class="menu-text reveal">
+        <h2>Meniu</h2>
+        <p class="intro">Băuturi simple, pregătite repede, pentru drumul de dimineață.</p>
+        <ul class="menu-list">
+          <li class="reveal-fade" style="--d:.05s">
+            <h3>Espresso to go</h3>
+            <p>Cafea intensă de savurat pe drum</p>
+          </li>
+          <li class="reveal-fade" style="--d:.12s">
+            <h3>Espresso dublu</h3>
+            <p>Porție dublă de espresso</p>
+          </li>
+          <li class="reveal-fade" style="--d:.19s">
+            <h3>Espresso cu lapte</h3>
+            <p>Varianta cu lapte a espresso-ului</p>
+          </li>
+          <li class="reveal-fade" style="--d:.26s">
+            <h3>Apă plată</h3>
+            <p>Pentru o pauză scurtă, pe drum</p>
+          </li>
+        </ul>
+      </div>
+      <figure class="photo menu-photo reveal-scale">
+        <img src="img/2.jpg" alt="Boabe de cafea lângă o ceașcă de cafea neagră" loading="lazy" width="800" height="1000">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="locatii">
+    <div class="container loc-grid">
+      <div class="loc-head reveal">
+        <h2>Ne găsești în două locuri</h2>
+        <div class="loc-list">
+          <div class="loc">
+            <h3>Copou</h3>
+            <p>Iași</p>
+          </div>
+          <div class="loc">
+            <h3>Strada Sfântul Lazăr</h3>
+            <p>Iași</p>
+          </div>
+        </div>
+        <p class="loc-note">Telefon: 0774689270. Locul exact îl vezi pe hartă sau în Google Maps.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0774689270">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40774689270?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20cafeaua%20dumneavoastr%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=7am+Coffee+To+Go+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map-wrap reveal-fade" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.571101799999997,47.1692628,27.5791018,47.1732628&amp;layer=mapnik&amp;marker=47.1712628,27.5751018" title="Harta cu locația 7am Coffee To Go în Iași" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="subsol">
+  <div class="container foot-grid">
+    <div>
+      <p class="foot-brand">7am Coffee To Go</p>
+      <p class="foot-small">Cafea espresso de luat pe drum, în Iași.</p>
+      <p class="foot-small">Model de site (demo)</p>
+      <p class="foot-small">Fotografii ilustrative de pe Pixabay: Couleur, PublicDomainPictures, danramirez</p>
+    </div>
+    <nav class="foot-links" aria-label="Subsol">
+      <a href="tel:0774689270">Sună acum</a>
+      <a href="https://wa.me/40774689270?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20cafeaua%20dumneavoastr%C4%83." target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=7am+Coffee+To+Go+Ia%C8%99i" target="_blank" rel="noopener">Google Maps</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale, .reveal-fade');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
