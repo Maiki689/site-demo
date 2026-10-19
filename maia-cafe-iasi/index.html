@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAIA Cafe, Iași: cafea bună și prăjituri</title>
+<meta name="description" content="MAIA Cafe din Iași: cafea bună, prăjituri și voie bună. Sună-ne sau scrie-ne pe WhatsApp.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --milk:#EADFD3;
+  --accent:#b45309;
+  --accent-ink:#8f4106;
+  --muted:#6B5B50;
+  --line:rgba(59,42,32,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1200px;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --sec:clamp(4.5rem,11vw,8.5rem);
+  --display:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--white);color:var(--espresso);
+  font:400 1rem/1.5 var(--text);letter-spacing:0;
+  overflow-x:clip;-webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{margin:0}
+ul{margin:0;padding:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.section{padding:var(--sec) 0}
+.section--milk{background:var(--milk)}
+.h2{font-size:clamp(2rem,4.6vw,3.25rem);margin-bottom:1.25rem}
+.lead{font-size:clamp(1.125rem,1.6vw,1.3rem);line-height:1.4;font-weight:500;letter-spacing:-.005em}
+.muted{color:var(--muted)}
+.small{font-size:.8125rem;letter-spacing:.02em}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.5rem;border-radius:999px;
+  font:500 1rem/1.1 var(--text);text-decoration:none;
+  border:1px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:background-color .2s ease,color .2s ease,box-shadow .2s ease,transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--accent);color:#fff}
+.btn--primary:hover{background:var(--accent-ink);box-shadow:0 8px 20px -12px rgba(143,65,6,.7)}
+.btn--ghost{background:transparent;border-color:var(--espresso);color:var(--espresso)}
+.btn--ghost:hover{background:var(--espresso);color:#fff}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+
+/* Navigare, sticlă */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+  transition:box-shadow .3s ease;
+}
+.nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 12px 30px -20px rgba(59,42,32,.45)}
+.nav__in{height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font:600 1.125rem/1 var(--display);letter-spacing:-.01em;text-decoration:none;color:var(--espresso)}
+.nav__links{display:none;gap:2rem;align-items:center}
+.nav__links a{font-size:.9375rem;font-weight:500;text-decoration:none;color:var(--espresso);transition:color .2s ease}
+.nav__links a:hover{color:var(--accent)}
+.nav .btn{min-height:44px;padding:.6rem 1.1rem}
+@media (min-width:760px){.nav__links{display:flex}}
+
+/* Hero */
+.hero{padding:calc(64px + clamp(2.5rem,7vw,5rem)) 0 var(--sec);background:var(--white)}
+.hero__grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:1024px){.hero__grid{grid-template-columns:1.05fr .95fr}}
+.hero__name{font-size:clamp(3.2rem,7.6vw,6rem);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.hero__lead{margin-top:1.25rem}
+.hero__desc{margin-top:.75rem;color:var(--muted);max-width:36ch;font-size:1.0625rem}
+.hero__cup{width:min(78vw,340px);margin-inline:auto}
+@media (min-width:1024px){.hero__cup{width:min(100%,480px);margin-inline:0 0}}
+.cup-svg{width:100%;height:auto;animation:cupIn .9s .15s var(--ease) both}
+.enter{animation:rise .7s var(--ease) both}
+.e1{animation-delay:.05s}.e2{animation-delay:.14s}.e3{animation-delay:.22s}.e4{animation-delay:.3s}
+
+.latte-line{
+  fill:none;stroke:var(--milk);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:100;stroke-dashoffset:100;
+  animation:draw 1.2s .8s cubic-bezier(.4,0,.2,1) forwards;
+}
+.latte-fill{fill:var(--milk);opacity:0;animation:fadeIn .5s 1.9s var(--ease) forwards}
+@keyframes rise{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+@keyframes cupIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+
+/* Despre */
+.split{display:grid;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.photo{margin:0;overflow:hidden;border-radius:6px;aspect-ratio:4/3;background:var(--milk)}
+.photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .split{grid-template-columns:1fr 1fr}
+  .photo{aspect-ratio:4/5}
+  .split--flip>.photo{order:-1}
+}
+.prose p+p{margin-top:1rem}
+.prose{color:var(--espresso);font-size:1.0625rem;max-width:58ch}
+
+/* Avantaje */
+.perks{list-style:none;margin-top:clamp(2.5rem,5vw,4rem);display:grid;gap:clamp(2rem,4vw,3rem)}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr)}}
+.perk{padding-top:1.75rem;border-top:1px solid var(--line)}
+.perk__icon{
+  display:grid;place-items:center;width:3.25rem;height:3.25rem;border-radius:50%;
+  background:var(--white);font-size:1.5rem;margin-bottom:1.25rem;
+}
+.perk h3{font-size:1.25rem;margin-bottom:.4rem}
+.perk p{color:var(--espresso)}
+
+/* Meniu */
+.menu{list-style:none;margin:2rem 0 2.5rem}
+.menu li{padding:1.5rem 0;border-top:1px solid var(--line)}
+.menu li:last-child{border-bottom:1px solid var(--line)}
+.menu h3{font-size:1.5rem;margin-bottom:.35rem}
+.menu p{color:var(--muted)}
+
+/* Galerie */
+.gallery{display:grid;gap:1rem;margin-top:clamp(2.5rem,5vw,4rem)}
+.g{margin:0;overflow:hidden;border-radius:6px;aspect-ratio:4/3;background:var(--milk)}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.g:hover img{transform:scale(1.02)}
+@media (min-width:760px){
+  .gallery{grid-template-columns:1.3fr 1fr;grid-auto-rows:clamp(14rem,28vw,21rem)}
+  .g{aspect-ratio:auto}
+  .g--big{grid-row:span 2}
+}
+
+/* Contact */
+.contact{display:grid;gap:2.5rem}
+@media (min-width:900px){.contact{grid-template-columns:1fr 1fr;align-items:end}}
+.facts{margin-top:1.75rem;display:grid;gap:.9rem}
+.facts div{display:flex;gap:1rem;align-items:baseline;border-top:1px solid var(--line);padding-top:.9rem}
+.facts dt{min-width:5.5rem;color:var(--muted);font-size:.9375rem}
+.facts dd{margin:0;font-weight:500}
+.facts a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.map iframe{display:block;width:100%;height:clamp(280px,40vw,420px);border:0;border-radius:6px;margin-top:clamp(3rem,6vw,4.5rem)}
+
+/* Subsol */
+.footer{background:var(--espresso);color:var(--milk);padding:3.5rem 0 2.5rem}
+.footer__grid{display:grid;gap:2rem}
+@media (min-width:760px){.footer__grid{grid-template-columns:1fr 1fr 1fr}}
+.footer .brand{color:#fff;font-size:1.25rem}
+.footer__nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.footer__nav a{text-decoration:none;color:#fff;padding:.4rem 0;min-height:44px;display:inline-flex;align-items:center}
+.footer__nav a:hover{color:var(--accent)}
+.footer__credits{color:rgba(234,223,211,.82)}
+.footer__credits p+p{margin-top:.6rem}
+
+/* Revelare la derulare: scurt, cu aceeași curbă */
+.js .reveal,.js .reveal-x{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:calc(var(--i,0) * 90ms);
+}
+.js .reveal-x{transform:translate3d(-24px,0,0)}
+.js .reveal-f{opacity:0;transition:opacity .5s ease}
+.js .is-in{opacity:1;transform:none}
+
+/* Prefer. utilizatorului */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .enter,.cup-svg{animation:none!important;opacity:1}
+  .latte-line{animation:none!important;stroke-dashoffset:0}
+  .latte-fill{animation:none!important;opacity:1}
+  .js .reveal,.js .reveal-x{transform:none!important;transition:opacity .2s ease!important;transition-delay:0s!important}
+  .g img,.btn{transition-duration:.2s!important}
+  .g:hover img{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:#FFFFFF;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--line:rgba(59,42,32,.55);--muted:#3B2A20;--accent:#8f4106;--accent-ink:#6b3104}
+  .nav{background:#FFFFFF;box-shadow:0 0 0 1px var(--espresso);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn--ghost{border-width:2px}
+}
+@media (max-width:559px){
+  .actions{display:grid;grid-template-columns:1fr}
+  .actions .btn{width:100%}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#top" aria-label="MAIA Cafe, înapoi sus">MAIA Cafe</a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary" href="tel:0740339906">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="titlu-hero">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <h1 class="hero__name enter e1" id="titlu-hero">MAIA Cafe</h1>
+        <p class="hero__lead enter e2">Un loc cald pentru cafea bună.</p>
+        <p class="hero__desc enter e3">Răsfăț cu cafea, prăjituri și voie bună, în Iași.</p>
+        <div class="actions enter e4">
+          <a class="btn btn--primary" href="tel:0740339906">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40740339906?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20Maia%20Cafe.">Scrie-ne pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero__cup">
+        <svg class="cup-svg" viewBox="0 0 400 400" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spumă de lapte">
+          <circle cx="200" cy="200" r="186" fill="#EADFD3"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#D9CABB" stroke-width="2"/>
+          <rect x="316" y="184" width="54" height="32" rx="16" fill="#FFFFFF" stroke="#E2D8CD" stroke-width="2"/>
+          <rect x="338" y="196" width="18" height="8" rx="4" fill="#EADFD3"/>
+          <circle cx="200" cy="200" r="128" fill="#FFFFFF" stroke="#E2D8CD" stroke-width="2"/>
+          <circle cx="200" cy="200" r="112" fill="#3B2A20"/>
+          <circle cx="200" cy="200" r="100" fill="none" stroke="#4D3A2D" stroke-width="3"/>
+          <path class="latte-line" pathLength="100" d="M200 262C150 226 134 200 146 176C156 156 184 152 200 178C216 152 244 156 254 176C266 200 250 226 200 262Z"/>
+          <path class="latte-fill" d="M200 262C150 226 134 200 146 176C156 156 184 152 200 178C216 152 244 156 254 176C266 200 250 226 200 262Z"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap split split--flip">
+      <figure class="photo reveal-x">
+        <img src="img/3.jpg" alt="Barista turnând cafea la bar">
+      </figure>
+      <div class="reveal">
+        <h2 class="h2" id="titlu-despre">Despre MAIA</h2>
+        <div class="prose">
+          <p>MAIA Cafe este locul unde timpul petrecut cu o cafea bună și un desert delicios capătă un farmec aparte.</p>
+          <p>Atmosfera caldă și prietenoasă te invită la relaxare, fie că vii singur sau cu prietenii.</p>
+          <p>Descoperă gusturi autentice într-un cadru plăcut.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantaje -->
+  <section class="section section--milk" aria-labelledby="titlu-avantaje">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="titlu-avantaje">Ce găsești la noi</h2>
+      <ul class="perks">
+        <li class="perk reveal" style="--i:0">
+          <span class="perk__icon" aria-hidden="true">🛋️</span>
+          <h3>Atmosferă plăcută</h3>
+          <p>Un loc unde poți sta la o cafea, singur sau cu prietenii.</p>
+        </li>
+        <li class="perk reveal" style="--i:1">
+          <span class="perk__icon" aria-hidden="true">🌿</span>
+          <h3>Gust autentic</h3>
+          <p>Gusturi autentice, într-un cadru plăcut.</p>
+        </li>
+        <li class="perk reveal" style="--i:2">
+          <span class="perk__icon" aria-hidden="true">📍</span>
+          <h3>Te așteptăm în Iași</h3>
+          <p>Scrie-ne sau sună-ne pentru a afla cum ajungi.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="section" id="meniu" aria-labelledby="titlu-meniu">
+    <div class="wrap split">
+      <div class="reveal">
+        <h2 class="h2" id="titlu-meniu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <ul class="menu">
+          <li>
+            <h3>Cafea și băuturi</h3>
+            <p>Espresso, cappuccino, cafea cu lapte și alte băuturi calde.</p>
+          </li>
+          <li>
+            <h3>Prăjituri</h3>
+            <p>Prăjituri pentru o pauză dulce, alese să meargă bine cu cafeaua.</p>
+          </li>
+          <li>
+            <h3>Produse de patiserie</h3>
+            <p>Produse de patiserie, pentru dimineață sau pentru după-amiază.</p>
+          </li>
+        </ul>
+        <a class="btn btn--primary" href="https://wa.me/40740339906?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20Maia%20Cafe.">Scrie-ne pe WhatsApp</a>
+      </div>
+      <figure class="photo reveal-x">
+        <img src="img/2.jpg" alt="Macarons colorate, așezate pe o farfurie">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="titlu-galerie">Din cafenea</h2>
+      <div class="gallery">
+        <figure class="g g--big reveal-x">
+          <img src="img/1.jpg" alt="Cappuccino într-o ceașcă, văzut de sus">
+        </figure>
+        <figure class="g reveal" style="--i:1">
+          <img src="img/4.jpg" alt="Cafea cu lapte și zahăr, lângă boabe de cafea">
+        </figure>
+        <figure class="g reveal" style="--i:2">
+          <img src="img/5.jpg" alt="Cafea proaspăt măcinată">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section--milk" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="reveal">
+          <h2 class="h2" id="titlu-contact">Vino pe la noi</h2>
+          <p class="lead">Ești în Iași? Sună-ne sau scrie-ne, iar noi te ajutăm să ajungi.</p>
+          <dl class="facts">
+            <div><dt>Oraș</dt><dd>Iași</dd></div>
+            <div><dt>Telefon</dt><dd><a href="tel:0740339906">0740 339 906</a></dd></div>
+          </dl>
+          <div class="actions">
+            <a class="btn btn--primary" href="tel:0740339906">Sună acum</a>
+            <a class="btn btn--ghost" href="https://wa.me/40740339906?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20Maia%20Cafe.">Scrie-ne pe WhatsApp</a>
+            <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=MAIA+Cafe+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="map reveal-f">
+        <iframe title="Harta MAIA Cafe, Iași"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.5768836,47.165718899999995,27.5848836,47.1697189&amp;layer=mapnik&amp;marker=47.1677189,27.5808836"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <p class="brand">MAIA Cafe</p>
+      <p style="margin-top:.6rem">Un loc cald pentru cafea bună, în Iași.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Subsol">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer__credits small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: grafmex, Pexels, 20926038, shixugang, eliasfalla</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Umbra navigării apare doar când pagina se derulează
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Dezvăluire la derulare
+  var els = document.querySelectorAll('.reveal, .reveal-x, .reveal-f');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
