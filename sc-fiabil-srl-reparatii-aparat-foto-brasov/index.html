@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SC Fiabil SRL · Reparații aparat foto, Brașov</title>
+<meta name="description" content="Service local pentru aparate foto, în Brașov. Verificăm aparatul întâi, apoi îți spunem ce se poate repara.">
+<meta name="theme-color" content="#FAF8F5">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F5;
+  --ink:#161616;
+  --accent:#b45309;
+  --muted:#5f5c58;
+  --line:rgba(22,22,22,.14);
+  --serif:'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --sans:'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1240px;
+  --gutter:clamp(1.25rem,4vw,3rem);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+ul{list-style:none}
+section[id]{scroll-margin-top:72px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:-.02em;
+  line-height:1.05;
+}
+h1{font-size:clamp(3.1rem,13.5vw,11rem)}
+h2{font-size:clamp(2.4rem,6vw,4.75rem)}
+h3{font-size:1.9rem;line-height:1.1;letter-spacing:-.01em}
+p{max-width:36em}
+.muted{color:var(--muted)}
+.small{font-size:.8125rem;letter-spacing:.02em;color:var(--muted)}
+
+.skip{position:absolute;left:-999px;top:0;z-index:100}
+.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--bg);padding:.6rem 1rem;border-radius:999px}
+
+/* ---------- Navigare (sticlă) ---------- */
+.top{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(250,248,245,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  border-top:1px solid rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.top.scrolled{box-shadow:0 10px 30px -18px rgba(22,22,22,.35)}
+.top-in{height:60px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.5rem;
+  min-height:44px;text-decoration:none;
+  font-weight:600;font-size:1rem;letter-spacing:-.01em;
+}
+.nav{display:flex;align-items:center;gap:1.75rem;font-weight:500;font-size:.9375rem}
+.nav .lnk{display:none;min-height:44px;align-items:center;text-decoration:none}
+.nav .lnk:hover{color:var(--accent)}
+@media (min-width:640px){.nav .lnk{display:inline-flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.35rem;
+  border:1px solid var(--ink);border-radius:999px;
+  background:var(--ink);color:var(--bg);
+  font:inherit;font-size:1rem;font-weight:500;letter-spacing:0;
+  text-decoration:none;white-space:nowrap;cursor:pointer;
+  transition:transform .1s ease, box-shadow .3s var(--ease), background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+}
+.btn:hover{box-shadow:0 8px 20px -12px rgba(22,22,22,.55)}
+.btn:active{transform:scale(.97)}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-accent:hover{box-shadow:0 8px 20px -12px rgba(180,83,9,.75)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:rgba(22,22,22,.28)}
+.btn-ghost:hover{border-color:var(--ink);box-shadow:none;background:rgba(22,22,22,.04)}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.9375rem}
+
+/* ---------- Dezvăluiri cu mască ---------- */
+.line{display:block;overflow:hidden;padding:.12em 0;margin:-.12em 0}
+.line>span{display:inline-block}
+.js .rv .line>span{transform:translateY(105%);transition:transform 1s var(--ease)}
+.js .rv.in .line>span{transform:none}
+.js .rv.fade{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .6s var(--ease) var(--d,0s), transform .6s var(--ease) var(--d,0s);
+}
+.js .rv.fade.in{opacity:1;transform:none}
+.pic img{transition:transform 1.4s var(--ease)}
+.js .rv.pic:not(.in) img{transform:scale(1.08)}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding-top:calc(60px + clamp(2.5rem,8vw,5.5rem));
+  padding-bottom:clamp(4rem,9vw,7rem);
+}
+.hero-grid{display:grid;gap:clamp(1.5rem,4vw,2.5rem)}
+.hero-text{display:grid;gap:1.1rem;align-content:end}
+.lead{font-size:clamp(1.2rem,2.2vw,1.5rem);line-height:1.35;letter-spacing:-.005em;max-width:20em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
+.hero-fig{aspect-ratio:4/5;overflow:hidden;background:#e9e4da}
+.hero-fig img{width:100%;height:100%;object-fit:cover}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:repeat(12,1fr);align-items:end}
+  .hero h1{grid-column:1/-1}
+  .hero-text{grid-column:1/5;grid-row:2;padding-bottom:.5rem}
+  .hero-fig{grid-column:6/13;grid-row:2;aspect-ratio:6/5}
+}
+
+/* ---------- Secțiuni generale ---------- */
+.sec{padding-block:clamp(5rem,12vw,9.5rem)}
+.split{display:grid;gap:clamp(2.5rem,5vw,4rem)}
+@media (min-width:900px){
+  .split{grid-template-columns:repeat(12,1fr);align-items:start}
+  .split>h2{grid-column:1/6}
+  .split>.perks{grid-column:7/13;grid-row:1}
+  .split>.svc{grid-column:7/13;grid-row:1 / span 2}
+  .split>.intro{grid-column:1/5;grid-row:2}
+}
+
+/* Despre */
+.about-text{display:grid;gap:1.25rem}
+.about-lead{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.35rem);line-height:1.15;letter-spacing:-.01em;max-width:18em}
+.about-fig{aspect-ratio:4/5;overflow:hidden;background:#ebe6dd}
+.about-fig img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .about>h2{grid-column:1/-1}
+  .about-fig{grid-column:1/6;grid-row:2}
+  .about-text{grid-column:7/12;grid-row:2;align-self:end}
+}
+
+/* Citat (elementul memorabil) */
+.quote{
+  background:var(--ink);color:var(--bg);
+  padding-block:clamp(6rem,16vw,12rem);
+  overflow:hidden;
+}
+.quote-mark{
+  display:block;
+  font-family:var(--serif);
+  font-size:clamp(7rem,24vw,18rem);
+  line-height:.8;
+  height:.42em;
+  color:var(--accent);
+  user-select:none;
+}
+.quote-inner{padding-left:0}
+.quote blockquote{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,8vw,7.25rem);
+  line-height:1.02;
+  letter-spacing:-.025em;
+  max-width:18ch;
+}
+.quote figcaption{
+  margin-top:2.5rem;
+  font-size:.9375rem;
+  letter-spacing:.02em;
+  color:rgba(250,248,245,.74);
+}
+@media (min-width:900px){
+  .quote-inner{padding-left:14%}
+}
+
+/* Avantaje */
+.perks{border-bottom:1px solid var(--line)}
+.perk{
+  display:grid;grid-template-columns:2.25rem 1fr;gap:1.25rem;
+  padding-block:1.75rem;border-top:1px solid var(--line);
+}
+.perk-ico{font-size:1.5rem;line-height:1.2}
+.perk h3{margin-bottom:.35rem}
+.perk p{color:var(--muted)}
+
+/* Servicii */
+.intro{color:var(--muted);font-size:1.0625rem}
+.svc{border-bottom:1px solid var(--line)}
+.svc li{padding-block:1.75rem;border-top:1px solid var(--line)}
+.svc h3{margin-bottom:.35rem}
+.svc p{color:var(--muted)}
+
+/* Fotografie lată */
+.wide{
+  aspect-ratio:4/3;overflow:hidden;background:#e9e4da;
+  margin-inline:auto;max-width:var(--wrap);
+}
+.wide img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){.wide{aspect-ratio:21/8}}
+.wide-wrap{padding-inline:var(--gutter);max-width:calc(var(--wrap) + 2 * var(--gutter));margin-inline:auto}
+
+/* Contact */
+.contact{display:grid;gap:clamp(2.5rem,5vw,4rem)}
+.phone{
+  display:inline-block;
+  font-family:var(--serif);
+  font-size:clamp(2.6rem,8vw,5.5rem);
+  line-height:1;letter-spacing:-.02em;
+  text-decoration:none;
+  margin-block:1.5rem 2rem;
+  min-height:44px;
+}
+.phone:hover{color:var(--accent)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.contact-main p{color:var(--muted)}
+.map{aspect-ratio:4/3;min-height:320px;overflow:hidden;background:#e9e4da}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (min-width:900px){
+  .contact{grid-template-columns:repeat(12,1fr);align-items:start}
+  .contact-main{grid-column:1/6}
+  .map{grid-column:7/13;aspect-ratio:auto;height:480px}
+}
+
+/* Subsol */
+.foot{border-top:1px solid var(--line);padding-block:clamp(3rem,7vw,5rem) 2.5rem}
+.foot-in{display:grid;gap:2rem}
+.foot-name{font-family:var(--serif);font-size:clamp(2rem,4vw,2.75rem);line-height:1.05;letter-spacing:-.02em}
+.foot-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.foot-nav a{min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:.2em}
+.foot-nav a:hover{color:var(--accent)}
+.foot-credit{display:grid;gap:.5rem}
+
+/* ---------- Mișcare redusă ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv .line>span{transform:none;opacity:0;transition:opacity .2s ease}
+  .js .rv.in .line>span{opacity:1}
+  .js .rv.fade{transform:none;transition:opacity .2s ease}
+  .js .rv.pic img{transform:none;transition:none}
+  .pic img{transition:none}
+  .hero-fig img{transition:none}
+}
+
+/* ---------- Transparență și contrast ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .top{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--muted:#2e2c2a;--line:rgba(22,22,22,.45)}
+  .top{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none;border-top:1px solid var(--ink)}
+  .btn{border-width:2px}
+  .btn-ghost{border-color:var(--ink)}
+  .quote figcaption{color:var(--bg)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top"><span aria-hidden="true">📷</span> Fiabil SRL</a>
+    <nav class="nav" aria-label="Principal">
+      <a class="lnk" href="#despre">Despre</a>
+      <a class="lnk" href="#servicii">Servicii</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn btn-accent btn-sm" href="tel:0745564384">Sună acum</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <h1 class="rv" id="titlu"><span class="line"><span>Fiabil SRL</span></span></h1>
+
+      <div class="hero-text">
+        <p class="lead rv fade" style="--d:.2s">Reparații aparat foto, în Brașov.</p>
+        <p class="muted rv fade" style="--d:.3s">Service local. Verificăm aparatul întâi, apoi îți spunem clar ce se poate repara.</p>
+        <div class="hero-actions rv fade" style="--d:.4s">
+          <a class="btn btn-accent" href="tel:0745564384">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40745564384?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20de%20repara%C8%9Bii%20aparate%20foto.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="hero-fig rv pic" style="--d:.1s">
+        <img src="img/1.jpg" alt="Aparat foto vintage, văzut de aproape" width="1200" height="1500" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec about wrap" id="despre" aria-labelledby="despre-titlu">
+    <div class="split">
+      <h2 class="rv" id="despre-titlu"><span class="line"><span>Despre Fiabil</span></span></h2>
+
+      <div class="about-text">
+        <p class="about-lead rv fade">Service local pentru aparate foto, în Brașov.</p>
+        <p class="muted rv fade" style="--d:.1s">Ai un aparat care nu mai funcționează cum trebuie? Îl verificăm întâi și îți spunem sincer ce se poate face.</p>
+        <p class="muted rv fade" style="--d:.2s">Lucrăm cu echipamente dedicate, pentru reparații precise.</p>
+      </div>
+
+      <figure class="about-fig rv pic">
+        <img src="img/2.jpg" alt="Aparat foto reflex cu obiectiv" width="1200" height="1500" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="quote" aria-label="Citat">
+    <div class="wrap">
+      <div class="quote-inner">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <figure>
+          <blockquote class="rv"><span class="line"><span>Aparatul tău merită<br>o a doua șansă</span></span></blockquote>
+          <figcaption class="rv fade" style="--d:.3s">Fiabil SRL, reparații aparat foto, Brașov</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" aria-labelledby="avantaje-titlu">
+    <div class="split">
+      <h2 class="rv" id="avantaje-titlu"><span class="line"><span>Ce găsești la noi</span></span></h2>
+
+      <ul class="perks">
+        <li class="perk rv fade" style="--d:0s">
+          <span class="perk-ico" aria-hidden="true">⚡️</span>
+          <div>
+            <h3>Diagnoză rapidă</h3>
+            <p>Evaluare inițială eficientă</p>
+          </div>
+        </li>
+        <li class="perk rv fade" style="--d:.1s">
+          <span class="perk-ico" aria-hidden="true">🔧</span>
+          <div>
+            <h3>Reparații precise</h3>
+            <p>Folosim echipamente dedicate</p>
+          </div>
+        </li>
+        <li class="perk rv fade" style="--d:.2s">
+          <span class="perk-ico" aria-hidden="true">🤝</span>
+          <div>
+            <h3>Consultanță dedicată</h3>
+            <p>Suport tehnic pentru clienți</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="split">
+      <h2 class="rv" id="servicii-titlu"><span class="line"><span>Servicii</span></span></h2>
+
+      <p class="intro rv fade" style="--d:.1s">Exemple generale de probleme pe care le putem verifica. Spune-ne ce s-a întâmplat cu aparatul.</p>
+
+      <ul class="svc">
+        <li class="rv fade" style="--d:0s">
+          <h3>Verificare generală</h3>
+          <p>Pornire, declanșare, afișaj și setări: vedem ce funcționează și ce nu.</p>
+        </li>
+        <li class="rv fade" style="--d:.08s">
+          <h3>Obiective</h3>
+          <p>Focalizare care nu mai prinde, zoom care se blochează, zgomote la mișcare.</p>
+        </li>
+        <li class="rv fade" style="--d:.16s">
+          <h3>Baterie și alimentare</h3>
+          <p>Bateria nu mai ține, aparatul nu pornește sau se oprește singur.</p>
+        </li>
+        <li class="rv fade" style="--d:.24s">
+          <h3>Curățare și reglaje</h3>
+          <p>Praf pe senzor sau în obiectiv, setări care nu mai corespund.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wide-wrap">
+    <figure class="wide rv pic">
+      <img src="img/3.jpg" alt="Aparat foto, fotografie ilustrativă" width="1920" height="1080" loading="lazy">
+    </figure>
+  </div>
+
+  <section class="sec wrap contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="contact-main">
+      <h2 class="rv" id="contact-titlu"><span class="line"><span>Contact</span></span></h2>
+      <p class="rv fade" style="--d:.1s">Sună-ne sau scrie-ne. Spune-ne ce aparat ai și ce problemă are.</p>
+
+      <a class="phone rv fade" style="--d:.15s" href="tel:0745564384">0745 564 384</a>
+
+      <div class="actions rv fade" style="--d:.25s">
+        <a class="btn btn-accent" href="tel:0745564384">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40745564384?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20de%20repara%C8%9Bii%20aparate%20foto.">Solicită o verificare</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=SC+Fiabil+SRL+repara%C8%9Bii+aparat+foto+Bra%C8%99ov">Vezi pe Google Maps</a>
+      </div>
+    </div>
+
+    <figure class="map rv fade" style="--d:.2s">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=25.587865899999997,45.641112199999995,25.5958659,45.6451122&layer=mapnik&marker=45.6431122,25.5918659"
+        title="Harta zonei unde se află SC Fiabil SRL, Brașov"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </figure>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p class="foot-name">SC Fiabil SRL</p>
+    <p class="muted">Reparații aparat foto, în Brașov.</p>
+    <nav class="foot-nav" aria-label="Subsol">
+      <a href="tel:0745564384">Sună acum</a>
+      <a href="https://wa.me/40745564384?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20serviciile%20de%20repara%C8%9Bii%20aparate%20foto.">WhatsApp</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=SC+Fiabil+SRL+repara%C8%9Bii+aparat+foto+Bra%C8%99ov">Google Maps</a>
+    </nav>
+    <div class="foot-credit small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: DariuszSankowski, Joshua_Willson, Foto-Ostfriesland</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.getElementById('top');
+
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.rv');
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
