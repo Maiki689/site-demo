@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FFF6E5">
+<meta name="description" content="Jolly Cafe, cafenea caldă lângă pasajul Octav Băncilă din Iași. Cafea, loc de relaxare pentru familie și rezervări pentru petreceri.">
+<title>Jolly Cafe, cafenea în Iași</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vanilie:#FFF6E5;
+  --hartie:#FFFBF3;
+  --vanilie-d:#F6E6C8;
+  --ciocolata:#5C3A2E;
+  --ciocolata-m:#6B4638;
+  --caramel:#B45309;
+  --caramel-i:#9A4507;
+  --capsuna:#F28B9B;
+  --capsuna-t:#FCE3E8;
+  --fistic:#B5D99C;
+  --fistic-t:#EAF4DC;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --nav-h:4rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--vanilie);
+  color:var(--ciocolata);
+  font-family:Lora,Georgia,serif;
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+}
+img{display:block;max-width:100%}
+p{margin:0}
+a{color:inherit}
+h1,h2,h3{
+  font-family:Outfit,system-ui,sans-serif;
+  line-height:1.08;
+  letter-spacing:-0.02em;
+  margin:0;
+  font-weight:700;
+}
+h2{font-size:clamp(1.9rem,4.6vw,3.1rem)}
+h3{font-size:1.3rem;font-weight:600;letter-spacing:-0.01em}
+section{padding:clamp(4.5rem,10vw,7rem) 0;scroll-margin-top:var(--nav-h)}
+:focus-visible{outline:3px solid var(--caramel);outline-offset:3px;border-radius:8px}
+
+.wrap{width:min(72rem,calc(100% - 2.5rem));margin-inline:auto}
+
+.skip{
+  position:absolute;left:1rem;top:-4rem;z-index:100;
+  background:var(--ciocolata);color:var(--vanilie);
+  padding:.6rem 1rem;border-radius:999px;text-decoration:none;
+}
+.skip:focus{top:1rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,246,229,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 28px -20px rgba(92,58,46,.45);
+}
+.nav-in{
+  height:var(--nav-h);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.brand{
+  display:flex;align-items:center;gap:.6rem;
+  text-decoration:none;
+  font-family:Outfit,sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-0.01em;
+  color:var(--ciocolata);
+}
+.brand-mark{
+  width:2.25rem;height:2.25rem;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--fistic);font-size:1.15rem;
+}
+.nav-links{
+  display:flex;gap:1.75rem;list-style:none;margin:0;padding:0;
+  font-family:Outfit,sans-serif;font-weight:500;font-size:.95rem;
+}
+.nav-links a{text-decoration:none;padding:.5rem .1rem;transition:color .25s}
+.nav-links a:hover{color:var(--caramel)}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.menu-btn{
+  display:none;width:44px;height:44px;border:0;border-radius:50%;
+  background:transparent;color:var(--ciocolata);cursor:pointer;
+  align-items:center;justify-content:center;
+  transition:background-color .25s;
+}
+.menu-btn:hover{background:rgba(92,58,46,.08)}
+.menu-btn:active{transform:scale(.97)}
+.mpanel{
+  position:absolute;top:100%;left:0;right:0;
+  display:flex;flex-direction:column;
+  background:var(--hartie);
+  padding:.25rem 1.25rem 1.25rem;
+  box-shadow:0 22px 30px -26px rgba(92,58,46,.5);
+}
+.mpanel[hidden]{display:none}
+.mpanel a{
+  padding:.85rem 0;text-decoration:none;
+  font-family:Outfit,sans-serif;font-size:1.2rem;font-weight:600;
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.4rem;border-radius:999px;
+  font-family:Outfit,sans-serif;font-weight:600;font-size:1rem;letter-spacing:0;
+  text-decoration:none;border:0;cursor:pointer;
+  transition:transform .1s linear,box-shadow .25s var(--ease),background-color .25s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--caramel);color:#fff;box-shadow:0 10px 22px -14px rgba(180,83,9,.8)}
+.btn-main:hover{background:var(--caramel-i);box-shadow:0 14px 26px -14px rgba(180,83,9,.9)}
+.btn-soft{background:var(--hartie);color:var(--ciocolata);box-shadow:inset 0 0 0 1.5px rgba(92,58,46,.2)}
+.btn-soft:hover{background:#fff;box-shadow:inset 0 0 0 1.5px rgba(92,58,46,.4)}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:calc(var(--nav-h) + 2.5rem) 0 clamp(3.5rem,8vw,6rem);
+}
+.hero-grid{display:grid;gap:1.5rem}
+.hero h1{
+  font-size:clamp(3.2rem,11vw,7.25rem);
+  letter-spacing:-0.025em;
+  line-height:1.02;
+}
+.slogan{
+  margin-top:.5rem;
+  font-family:Outfit,sans-serif;font-weight:500;
+  font-size:clamp(1.25rem,2.6vw,1.6rem);
+}
+.hero-desc{margin-top:1.1rem;max-width:30rem;font-size:1.15rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hero-prog{margin-top:1.4rem;font-size:.95rem;color:var(--ciocolata-m)}
+
+.cake-wrap{width:min(80%,22rem);margin:1.5rem auto 0}
+.cake{width:100%;height:auto;display:block;overflow:visible}
+
+/* Tortul: straturi care se construiesc una câte una */
+.cake .l{
+  transform-box:fill-box;transform-origin:50% 100%;
+  animation:grow .6s var(--ease) both;
+  animation-delay:var(--d,0s);
+}
+.cake .dr{
+  transform-box:fill-box;transform-origin:50% 0;
+  animation:grow .5s var(--ease) both;
+  animation-delay:var(--d,0s);
+}
+.cake .sp{
+  transform-box:fill-box;transform-origin:50% 50%;
+  animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;
+  animation-delay:var(--d,0s);
+}
+.cake .fd{animation:fade .6s ease both}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+  .cake-wrap{width:min(100%,30rem);margin:0 auto}
+}
+
+/* ---------- Despre ---------- */
+.about{background:var(--hartie)}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+.about-text p{margin-top:1.1rem;max-width:34rem}
+.about-text h2+p{margin-top:1.5rem}
+.about-photo{
+  margin:0;border-radius:2.5rem;overflow:hidden;
+  aspect-ratio:4/3;background:var(--vanilie-d);
+}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.perks{
+  list-style:none;padding:0;margin:clamp(3.5rem,8vw,5.5rem) 0 0;
+  display:grid;gap:2.5rem;
+}
+.perk-ico{
+  display:grid;place-items:center;
+  width:3.5rem;height:3.5rem;border-radius:50%;
+  font-size:1.6rem;background:var(--fistic-t);
+}
+.perk:nth-child(2) .perk-ico{background:var(--capsuna-t)}
+.perk:nth-child(3) .perk-ico{background:var(--vanilie-d)}
+.perk h3{margin-top:1rem}
+.perk p{margin-top:.4rem}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:5rem}
+  .about-photo{aspect-ratio:4/5}
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+}
+
+/* ---------- Meniu ---------- */
+.menu-sec{background:var(--capsuna-t)}
+.sec-head{max-width:36rem;margin-bottom:clamp(2.25rem,5vw,3.5rem)}
+.sec-head p{margin-top:1rem;font-size:1.1rem}
+.menu-grid{
+  list-style:none;padding:0;margin:0;
+  display:grid;gap:1rem;
+}
+.item{
+  background:var(--hartie);
+  padding:1.75rem 1.75rem 2rem;
+  border-radius:1.75rem 2.25rem 1.5rem 2.5rem;
+}
+.item:nth-child(2n){border-radius:2.5rem 1.5rem 2.25rem 1.75rem}
+.item h3{display:flex;align-items:center;gap:.7rem}
+.item p{margin-top:.5rem}
+.dot{
+  width:.9rem;height:.9rem;flex:none;
+  border-radius:50% 40% 55% 45%;
+  background:var(--c);
+  transition:transform .3s var(--ease);
+}
+.item:hover .dot{transform:scale(1.25)}
+.menu-cta{margin-top:2.5rem}
+@media (min-width:700px){
+  .menu-grid{grid-template-columns:repeat(2,1fr);gap:1.25rem}
+}
+
+/* ---------- Galerie ---------- */
+.gallery{
+  display:grid;gap:.85rem;
+  grid-template-columns:repeat(2,1fr);
+  margin:0;
+}
+.gallery figure{
+  margin:0;position:relative;overflow:hidden;
+  border-radius:2rem;background:var(--vanilie-d);
+}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery .g1{grid-column:span 2;height:300px}
+.gallery .g2{grid-column:span 2;height:200px}
+.gallery .g3,.gallery .g4{height:170px}
+.note{margin-top:1rem;font-size:.9rem;color:var(--ciocolata-m)}
+@media (min-width:700px){
+  .gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:.9rem}
+  .gallery .g1{grid-column:1/3;grid-row:1/3;height:auto}
+  .gallery .g2{grid-column:3/5;grid-row:1;height:auto}
+  .gallery .g3{grid-column:3;grid-row:2;height:auto}
+  .gallery .g4{grid-column:4;grid-row:2;height:auto}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--fistic-t)}
+.contact-grid{display:grid;gap:2.5rem;align-items:center}
+.contact h2+p{margin-top:1rem;max-width:30rem}
+.info{margin:2rem 0 2.25rem;display:grid;gap:1.1rem}
+.info div{display:grid;gap:.2rem}
+.info dt{font-size:.9rem;letter-spacing:.02em;color:var(--ciocolata-m)}
+.info dd{margin:0;font-family:Outfit,sans-serif;font-size:1.2rem;font-weight:600;letter-spacing:-0.01em}
+.info a{text-decoration:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.map{
+  height:100%;min-height:20rem;border-radius:2.25rem;overflow:hidden;
+  background:var(--hartie);
+}
+.map iframe{width:100%;height:100%;min-height:20rem;border:0;display:block}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem}
+}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ciocolata);color:#F6E6C8;padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+.foot-brand{font-family:Outfit,sans-serif;font-size:1.6rem;font-weight:700;color:var(--vanilie);letter-spacing:-0.01em}
+.foot-brand+p{margin-top:.35rem}
+.foot-meta{font-size:.9rem;line-height:1.6;letter-spacing:.01em;color:#E8D5B7}
+.foot-meta p+p{margin-top:.5rem}
+.foot a{color:var(--vanilie);text-underline-offset:3px}
+@media (min-width:800px){
+  .foot-grid{grid-template-columns:1fr 1.2fr;align-items:end}
+}
+
+/* ---------- Revelare la derulare ---------- */
+.js .rv,.js .rl,.js .rs{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--rd,0s);
+}
+.js .rv{transform:translate3d(0,18px,0)}
+.js .rl{transform:translate3d(-22px,0,0)}
+.js .rs{transform:scale(.97)}
+.js .rv.in,.js .rl.in,.js .rs.in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .cake .l,.cake .dr,.cake .sp{
+    animation:fade .2s both !important;
+    animation-delay:0s !important;
+  }
+  .cake .fd{animation:fade .2s both}
+  .js .rv,.js .rl,.js .rs{
+    transform:none !important;
+    transition:opacity .2s linear !important;
+    transition-delay:0s !important;
+  }
+  .dot{transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--vanilie);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .nav{background:var(--vanilie);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 -2px 0 var(--ciocolata)}
+  .btn-soft{box-shadow:inset 0 0 0 2px var(--ciocolata)}
+  .item,.about,.mpanel{box-shadow:inset 0 0 0 2px var(--ciocolata)}
+  .hero-prog,.info dt,.note{color:var(--ciocolata)}
+  .nav-links a{font-weight:600}
+}
+@media (max-width:759px){
+  .nav-links{display:none}
+  .menu-btn{display:inline-flex}
+  .brand{font-size:1.1rem}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Jolly Cafe, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">☕</span>
+      Jolly Cafe
+    </a>
+
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <a class="btn btn-main btn-sm" href="tel:0757933816">Sună acum</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mpanel" aria-label="Deschide lista secțiunilor">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M4 8h16M4 16h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mpanel" id="mpanel" hidden>
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Prima secțiune: numele, butoanele și tortul care se construiește -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1>Jolly Cafe</h1>
+        <p class="slogan">Un loc prietenos pentru toți</p>
+        <p class="hero-desc">Cafenea caldă lângă pasajul Octav Băncilă.</p>
+        <div class="hero-cta">
+          <a class="btn btn-main" href="tel:0757933816">Sună acum</a>
+          <a class="btn btn-soft" href="https://wa.me/40757933816?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Jolly%20Cafe.">Scrie pe WhatsApp</a>
+        </div>
+        <p class="hero-prog">Program: de luni până sâmbătă, între 9:00 și 19:00</p>
+      </div>
+
+      <div class="cake-wrap" aria-hidden="true">
+        <svg class="cake" viewBox="0 0 400 400" focusable="false">
+          <circle cx="200" cy="200" r="184" fill="#EAF4DC"/>
+          <ellipse class="fd" cx="200" cy="352" rx="176" ry="24" fill="#EFDDBF"/>
+
+          <!-- Strat de jos: fistic -->
+          <rect class="l" style="--d:.1s" x="62" y="262" width="276" height="88" rx="34" fill="#B5D99C"/>
+          <!-- Strat din mijloc: căpșună -->
+          <rect class="l" style="--d:.3s" x="108" y="168" width="184" height="88" rx="32" fill="#F28B9B"/>
+          <!-- Cremă între straturile de jos -->
+          <rect class="l" style="--d:.5s" x="62" y="248" width="276" height="22" rx="11" fill="#FFFDF8"/>
+          <!-- Strat de sus: ciocolată -->
+          <rect class="l" style="--d:.65s" x="131" y="84" width="138" height="86" rx="30" fill="#5C3A2E"/>
+          <!-- Cremă între straturile de sus -->
+          <rect class="l" style="--d:.85s" x="108" y="154" width="184" height="22" rx="11" fill="#FFFDF8"/>
+
+          <!-- Glazură cu picuri -->
+          <rect class="dr" style="--d:1.05s" x="124" y="74" width="152" height="24" rx="12" fill="#FFFDF8"/>
+          <rect class="dr" style="--d:1.2s" x="138" y="92" width="14" height="22" rx="7" fill="#FFFDF8"/>
+          <rect class="dr" style="--d:1.24s" x="170" y="92" width="14" height="32" rx="7" fill="#FFFDF8"/>
+          <rect class="dr" style="--d:1.28s" x="203" y="92" width="14" height="16" rx="7" fill="#FFFDF8"/>
+          <rect class="dr" style="--d:1.22s" x="238" y="92" width="14" height="26" rx="7" fill="#FFFDF8"/>
+
+          <!-- Drajeuri -->
+          <circle class="sp" style="--d:1.36s" cx="152" cy="86" r="3.2" fill="#B5D99C"/>
+          <circle class="sp" style="--d:1.4s" cx="178" cy="84" r="3.2" fill="#F28B9B"/>
+          <circle class="sp" style="--d:1.44s" cx="204" cy="88" r="3.2" fill="#5C3A2E"/>
+          <circle class="sp" style="--d:1.48s" cx="230" cy="84" r="3.2" fill="#F28B9B"/>
+          <circle class="sp" style="--d:1.42s" cx="256" cy="88" r="3.2" fill="#B5D99C"/>
+
+          <!-- Căpșuna de sus -->
+          <g class="sp" style="--d:1.55s">
+            <circle cx="200" cy="58" r="15" fill="#F28B9B"/>
+            <path d="M200 44 C204 32 214 28 224 30 C221 40 212 46 200 44 Z" fill="#B5D99C"/>
+            <circle cx="194" cy="52" r="3.2" fill="#FFFDF8" opacity=".7"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <h2 class="rv">Un loc liniștit, pentru o cafea și timp cu cei dragi</h2>
+        <p class="rv" style="--rd:.08s">La Jolly Cafe, poți savura o cafea aromată într-un ambient relaxat, potrivit pentru toată familia.</p>
+        <p class="rv" style="--rd:.16s">Suntem locul ideal pentru o pauză liniștită sau pentru a petrece timp cu cei dragi. Organizăm și rezervări pentru petreceri, într-o atmosferă prietenoasă.</p>
+      </div>
+      <figure class="about-photo rs">
+        <img src="img/4.jpg" alt="Boabe de cafea și o ceașcă pe o masă de lemn" loading="lazy" decoding="async">
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <ul class="perks">
+        <li class="perk rs">
+          <span class="perk-ico" aria-hidden="true">👨‍👩‍👧‍👦</span>
+          <h3>Atmosferă familială</h3>
+          <p>Perfect pentru părinți și copii</p>
+        </li>
+        <li class="perk rs" style="--rd:.1s">
+          <span class="perk-ico" aria-hidden="true">🥳</span>
+          <h3>Spațiu petreceri</h3>
+          <p>Ideal pentru evenimente mici</p>
+        </li>
+        <li class="perk rs" style="--rd:.2s">
+          <span class="perk-ico" aria-hidden="true">☀️</span>
+          <h3>Lângă pasaj</h3>
+          <p>Locație centrală în Iași</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="menu-sec" id="meniu">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Meniu</h2>
+        <p>Cafea proaspătă, un loc confortabil pentru părinți și copii și rezervări pentru petreceri. Pentru prețuri și detalii, sunați-ne sau scrieți pe WhatsApp.</p>
+      </div>
+
+      <ul class="menu-grid">
+        <li class="item rs">
+          <h3><span class="dot" style="--c:#B45309" aria-hidden="true"></span>Cafea proaspătă</h3>
+          <p>Cafea savuroasă, preparată pe loc</p>
+        </li>
+        <li class="item rs" style="--rd:.08s">
+          <h3><span class="dot" style="--c:#F28B9B" aria-hidden="true"></span>Loc de relaxare</h3>
+          <p>Spațiu confortabil pentru părinți și copii</p>
+        </li>
+        <li class="item rs" style="--rd:.16s">
+          <h3><span class="dot" style="--c:#B5D99C" aria-hidden="true"></span>Rezervări petreceri</h3>
+          <p>Petreceri într-un cadru plăcut</p>
+        </li>
+        
+      </ul>
+
+      <div class="menu-cta rv">
+        <a class="btn btn-main" href="tel:0757933816">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <h2>Atmosferă caldă, pentru toată familia</h2>
+        <p>Un colț liniștit pentru o cafea, cu copiii sau cu prietenii.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="g1 rl">
+          <img src="img/5.jpg" alt="Interiorul cafenelei, cu mese și scaune" loading="lazy" decoding="async">
+        </figure>
+        <figure class="g2 rs" style="--rd:.08s">
+          <img src="img/2.jpg" alt="Prieteni la o masă afară, la cafenea" loading="lazy" decoding="async">
+        </figure>
+        <figure class="g3 rl" style="--rd:.1s">
+          <img src="img/3.jpg" alt="Un cuplu la masă, la cafenea" loading="lazy" decoding="async">
+        </figure>
+        <figure class="g4 rs" style="--rd:.16s">
+          <img src="img/1.jpg" alt="Femeie care fotografiază cu telefonul, la masă" loading="lazy" decoding="async">
+        </figure>
+      </div>
+      <p class="note rv">Fotografii ilustrative.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <h2>Treci pe la noi, lângă pasaj</h2>
+        <p>Sună sau scrie-ne, ca să rezervi o masă ori o petrecere.</p>
+
+        <dl class="info">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0757933816">0757933816</a></dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>De luni până sâmbătă, între 9:00 și 19:00</dd>
+          </div>
+          <div>
+            <dt>Unde ne găsești</dt>
+            <dd>Lângă pasajul Octav Băncilă, Iași</dd>
+          </div>
+        </dl>
+
+        <div class="cta-row">
+          <a class="btn btn-main" href="tel:0757933816">Sună acum</a>
+          <a class="btn btn-soft" href="https://wa.me/40757933816?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Jolly%20Cafe.">Scrie pe WhatsApp</a>
+          <a class="btn btn-soft" href="https://www.google.com/maps/search/?api=1&amp;query=Jolly+Cafe+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map rv" style="--rd:.1s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.558332399999998,47.1688671,27.5663324,47.172867100000005&amp;layer=mapnik&amp;marker=47.1708671,27.5623324"
+          title="Harta: Jolly Cafe, Iași"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">Jolly Cafe</p>
+      <p>Un loc prietenos pentru toți, în Iași.</p>
+      <p><a href="#top">Înapoi sus</a></p>
+    </div>
+    <div class="foot-meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Pexels, Surprising_Media, StockSnap, karishea, tianya1223</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Umbra navigării apare doar când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Meniul mobil
+  var btn = document.getElementById('menuBtn');
+  var panel = document.getElementById('mpanel');
+  btn.addEventListener('click', function () {
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
+  });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      btn.setAttribute('aria-expanded', 'false');
+      panel.hidden = true;
+    });
+  });
+
+  // Dezvăluire la derulare
+  var els = document.querySelectorAll('.rv, .rl, .rs');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
