@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mika, flori în Brașov</title>
+<meta name="description" content="Mika, flori și buchete pentru orice ocazie, pe Bulevardul Griviței din Brașov. Sună sau scrie pe WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kraft:#CDB08A;
+  --ink:#1A1A1A;
+  --lila:#B59BC9;
+  --alb:#FFFDF8;
+  --rose:#be123c;
+  --rose-dark:#a10e32;
+  --muted:#3a3a3a;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--alb);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:400}
+section{padding:clamp(4.5rem,11vw,8.5rem) 0}
+
+.wrap{width:min(calc(100% - 2.5rem),72rem);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0}
+.skip:focus{left:1rem;top:1rem;z-index:20;background:var(--ink);color:var(--alb);padding:.5rem 1rem;border-radius:.5rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.site-nav{
+  position:fixed;inset:0 0 auto 0;z-index:10;
+  background:rgba(255,253,248,.55);
+  backdrop-filter:blur(18px) saturate(1.15);
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  border-top:1px solid rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease), background-color .4s var(--ease);
+}
+.site-nav.scrolled{box-shadow:0 12px 28px -20px rgba(26,26,26,.45)}
+.nav-in{height:4.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--serif);font-size:1.7rem;letter-spacing:-.02em;text-decoration:none;line-height:1}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:2.25rem;font-weight:500;font-size:.95rem}
+.nav-links a{text-decoration:none;text-underline-offset:.3em}
+.nav-links a:hover{text-decoration:underline}
+@media (min-width:720px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:0 1.4rem;border-radius:999px;
+  font:500 1rem/1 var(--sans);letter-spacing:0;text-decoration:none;
+  transition:background-color .2s ease, box-shadow .25s ease, color .2s ease;
+  -webkit-tap-highlight-color:transparent;white-space:nowrap;
+}
+.btn:active{transform:scale(.97);transition:transform .1s ease}
+.btn-sm{min-height:2.75rem;padding:0 1.1rem;font-size:.95rem}
+.btn-primary{background:var(--rose);color:#fff;box-shadow:0 8px 20px -12px rgba(190,18,60,.9)}
+.btn-primary:hover{background:var(--rose-dark);box-shadow:0 12px 24px -12px rgba(190,18,60,.95)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ghost:hover{background:rgba(26,26,26,.07)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+
+/* ---------- Primul ecran ---------- */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  background:var(--kraft);
+  padding:6.5rem 0 3.5rem;
+  display:flex;align-items:center;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  opacity:.22;mix-blend-mode:multiply;
+}
+.hero-grid{display:grid;gap:1.5rem;align-items:center}
+@media (min-width:900px){
+  .hero{min-height:92vh}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(6.5rem,34vw,16rem);
+  line-height:1;letter-spacing:-.02em;
+  margin-left:-.04em;
+}
+.slogan{
+  font-family:var(--serif);
+  font-size:clamp(1.9rem,4.6vw,3.1rem);
+  line-height:1.08;letter-spacing:-.02em;
+  margin-top:1rem;max-width:16ch;
+}
+.desc{margin-top:1rem;font-size:1.05rem;max-width:36ch}
+.where{margin-top:.4rem;font-size:.9rem;letter-spacing:.01em;color:var(--muted)}
+.hero .actions{margin-top:1.75rem}
+
+.bouquet{
+  display:block;width:min(78vw,340px);height:auto;
+  margin:2.5rem auto 0;overflow:visible;
+}
+@media (min-width:900px){
+  .bouquet{width:min(100%,500px);margin:0 0 0 auto}
+}
+
+/* Buchetul care se deschide floare cu floare */
+.bouquet .p{
+  transform-box:view-box;
+  transform-origin:200px 200px;
+  transform:rotate(var(--a)) scale(.5);
+}
+.bouquet.is-open .p{
+  animation:bloom 1.05s var(--ease) both;
+  animation-delay:calc(var(--i) * 70ms);
+}
+@keyframes bloom{
+  from{transform:rotate(var(--a)) scale(.5)}
+  to{transform:rotate(var(--a)) scale(1)}
+}
+html:not(.js) .bouquet .p{transform:rotate(var(--a)) scale(1)}
+
+/* ---------- Titluri și text ---------- */
+h2{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,6vw,4.25rem);
+  line-height:1.05;letter-spacing:-.02em;
+  max-width:14ch;
+}
+.lead{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,3.2vw,2.3rem);
+  line-height:1.2;letter-spacing:-.01em;
+  max-width:24ch;
+}
+.body-text{margin-top:1.25rem;max-width:60ch;color:var(--muted)}
+
+/* ---------- Despre ---------- */
+.despre{background:var(--alb)}
+.split{display:grid;gap:2.25rem}
+@media (min-width:900px){
+  .split{grid-template-columns:.85fr 1.15fr;gap:6rem;align-items:start}
+}
+.perks{
+  display:grid;gap:2.25rem;
+  margin-top:clamp(3.5rem,7vw,5.5rem);
+  padding-top:clamp(2rem,4vw,3rem);
+  border-top:1px solid rgba(26,26,26,.12);
+}
+@media (min-width:720px){.perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.perk{display:flex;flex-direction:column;gap:.9rem}
+.perk-ico{
+  width:3.25rem;height:3.25rem;border-radius:50%;
+  background:var(--lila);
+  display:grid;place-items:center;font-size:1.5rem;line-height:1;
+}
+.perk h3{font-family:var(--serif);font-size:1.7rem;line-height:1.1;letter-spacing:-.01em}
+.perk p{color:var(--muted);max-width:30ch}
+
+/* ---------- Produse (secțiune neagră) ---------- */
+.produse{background:var(--ink);color:var(--alb)}
+.produse h2{color:var(--alb)}
+.intro{margin-top:1.25rem;color:#d9d3c9;max-width:50ch}
+.tiles{display:grid;gap:1rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+@media (min-width:720px){.tiles{grid-template-columns:1fr 1fr;gap:1.25rem}}
+.tile{
+  min-height:13.5rem;padding:clamp(1.6rem,4vw,2.4rem);
+  display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+}
+.tile h3{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,2.4rem);line-height:1.05;letter-spacing:-.02em}
+.tile p{max-width:28ch;font-size:1rem}
+.t1{background:var(--lila);color:var(--ink);border-radius:2.5rem 2.5rem 2.5rem .5rem}
+.t2{background:var(--kraft);color:var(--ink);border-radius:.5rem 2.5rem 2.5rem 2.5rem}
+.t3{background:var(--rose);color:#fff;border-radius:2.5rem .5rem 2.5rem 2.5rem}
+.t4{background:var(--alb);color:var(--ink);border-radius:2.5rem 2.5rem .5rem 2.5rem}
+.prod-cta{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.produse .btn-ghost{color:var(--alb);box-shadow:inset 0 0 0 1.5px var(--alb)}
+.produse .btn-ghost:hover{background:rgba(255,253,248,.1)}
+
+/* ---------- Galerie (colaj) ---------- */
+.galerie{background:var(--alb)}
+.galerie h2{margin-bottom:clamp(2.5rem,6vw,4rem)}
+.collage{display:grid;gap:1.25rem;align-items:start}
+.collage figure{margin:0;overflow:hidden;background:var(--kraft)}
+.collage img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.collage figure:hover img{transform:scale(1.02)}
+.collage figure{position:relative}
+.c1{aspect-ratio:4/5;width:88%;border-radius:999px 999px 1.5rem 1.5rem}
+.c2{aspect-ratio:4/3;width:100%;border-radius:1.5rem}
+.c3{aspect-ratio:1;width:62%;justify-self:end;border-radius:50%}
+.c4{aspect-ratio:3/4;width:72%;justify-self:start;border-radius:1.5rem 1.5rem 999px 999px}
+.c5{aspect-ratio:16/10;width:100%;border-radius:1.5rem}
+@media (min-width:900px){
+  .collage{grid-template-columns:repeat(12,1fr);gap:1.75rem}
+  .c1,.c2,.c3,.c4,.c5{width:auto;justify-self:stretch}
+  .c1{grid-column:1 / span 5}
+  .c2{grid-column:7 / span 6;margin-top:7rem}
+  .c3{grid-column:2 / span 4;border-radius:50%}
+  .c4{grid-column:8 / span 4}
+  .c5{grid-column:3 / span 8;aspect-ratio:16/8}
+}
+
+/* ---------- Contact (lila) ---------- */
+.contact{background:var(--lila);color:var(--ink)}
+.contact h2{max-width:12ch}
+.contact .body-text{color:var(--ink)}
+.addr{margin-top:1.5rem;font-style:normal;font-size:1.1rem;line-height:1.5}
+.contact .actions{margin-top:2rem}
+.map{
+  border-radius:1.75rem;overflow:hidden;aspect-ratio:4/3;
+  background:var(--alb);
+}
+.map iframe{width:100%;height:100%;border:0;display:block}
+@media (min-width:900px){.map{aspect-ratio:auto;min-height:440px}}
+
+/* ---------- Subsol ---------- */
+.site-foot{background:var(--ink);color:#d8d2c8;padding:3.5rem 0 2.25rem;font-size:.95rem;letter-spacing:.01em}
+.foot-grid{display:grid;gap:2rem}
+@media (min-width:720px){.foot-grid{grid-template-columns:1fr 1fr 1.3fr;gap:3rem}}
+.foot-grid p+p{margin-top:.5rem}
+.foot-brand{font-family:var(--serif);font-size:1.7rem;color:var(--alb);letter-spacing:-.01em;line-height:1}
+.site-foot a{color:var(--alb);text-underline-offset:.25em}
+.credit{font-size:.85rem;color:#b7b0a4;max-width:42ch}
+.demo{margin-top:.75rem;font-size:.85rem;color:#b7b0a4}
+
+/* ---------- Apariții la derulare (variate, discrete) ---------- */
+html.js .rv,html.js .rv-l,html.js .rv-r,html.js .rv-z{
+  opacity:0;
+  transition:opacity .55s var(--ease), transform .55s var(--ease);
+  transition-delay:var(--d,0ms);
+}
+html.js .rv{transform:translateY(22px)}
+html.js .rv-l{transform:translateX(-26px)}
+html.js .rv-r{transform:translateX(26px)}
+html.js .rv-z{transform:scale(.97)}
+html.js .in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important;animation-duration:.2s !important}
+  .bouquet.is-open .p{animation:none;transform:rotate(var(--a)) scale(1)}
+  .bouquet{animation:fadeIn .2s ease both}
+  html.js .rv,html.js .rv-l,html.js .rv-r,html.js .rv-z{transform:none !important;transition:opacity .2s ease}
+  .collage figure:hover img{transform:none}
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .site-nav{background:var(--alb);backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-nav{background:var(--alb);border-top:2px solid var(--ink)}
+  .btn-primary{background:#8f0d2c}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--ink)}
+  .tile{outline:2px solid transparent}
+  .produse .btn-ghost{box-shadow:inset 0 0 0 2px var(--alb)}
+  .credit,.demo,.where{color:var(--ink)}
+  .site-foot .credit,.site-foot .demo{color:#e8e2d8}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="site-nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Mika, înapoi la început">Mika <span aria-hidden="true">💐</span></a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0744440838">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Primul ecran -->
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu">Mika</h1>
+        <p class="slogan">Alege o floare pentru fiecare zi</p>
+        <p class="desc">Flori și buchete pentru orice ocazie.</p>
+        <p class="where">Bloc 13, Bulevardul Griviței 50C, Brașov</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0744440838">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40744440838?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20buchete%20ave%C8%9Bi%20disponibile.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <svg class="bouquet" id="bouquet" viewBox="0 0 400 480" role="img" aria-label="Un buchet de flori care se deschide floare cu floare">
+        <!-- tulpini -->
+        <path d="M200 214 C194 290 206 380 198 470" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+        <path d="M200 214 C212 300 188 390 204 470" fill="none" stroke="#1A1A1A" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- frunze -->
+        <path d="M198 318 C166 296 134 262 128 222 C164 236 192 268 198 318 Z" fill="none" stroke="#1A1A1A" stroke-width="1.6"/>
+        <path d="M202 326 C236 304 266 274 274 236 C240 252 214 282 202 326 Z" fill="none" stroke="#1A1A1A" stroke-width="1.6"/>
+
+        <!-- petale exterioare (lila) -->
+        <g fill="#B59BC9">
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:0deg;--i:0"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:45deg;--i:1"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:90deg;--i:2"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:135deg;--i:3"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:180deg;--i:4"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:225deg;--i:5"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:270deg;--i:6"/>
+          <ellipse class="p" cx="200" cy="146" rx="34" ry="60" style="--a:315deg;--i:7"/>
+        </g>
+
+        <!-- petale interioare (trandafiriu) -->
+        <g fill="#be123c">
+          <ellipse class="p" cx="200" cy="172" rx="22" ry="34" style="--a:30deg;--i:1.5"/>
+          <ellipse class="p" cx="200" cy="172" rx="22" ry="34" style="--a:90deg;--i:2.5"/>
+          <ellipse class="p" cx="200" cy="172" rx="22" ry="34" style="--a:150deg;--i:3.5"/>
+          <ellipse class="p" cx="200" cy="172" rx="22" ry="34" style="--a:210deg;--i:4.5"/>
+          <ellipse class="p" cx="200" cy="172" rx="22" ry="34" style="--a:270deg;--i:5.5"/>
+          <ellipse class="p" cx="200" cy="172" rx="22" ry="34" style="--a:330deg;--i:6.5"/>
+        </g>
+
+        <!-- miezul -->
+        <circle cx="200" cy="200" r="14" fill="#1A1A1A"/>
+        <circle cx="200" cy="200" r="4" fill="#CDB08A"/>
+
+        <!-- hârtia de ambalaj -->
+        <path d="M148 336 Q200 350 252 336 L288 470 Q200 488 112 470 Z" fill="#FFFDF8" stroke="#1A1A1A" stroke-width="1.6"/>
+        <!-- panglica și fundița -->
+        <path d="M140 346 Q200 358 260 346" fill="none" stroke="#be123c" stroke-width="6" stroke-linecap="round"/>
+        <path d="M200 352 C184 330 160 334 170 352 C178 366 194 360 200 352 Z" fill="#be123c"/>
+        <path d="M200 352 C216 330 240 334 230 352 C222 366 206 360 200 352 Z" fill="#be123c"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre" class="despre" aria-labelledby="despre-titlu">
+    <div class="wrap split">
+      <h2 id="despre-titlu" class="rv">Flori și buchete pe Bulevardul Griviței</h2>
+      <div>
+        <p class="lead rv-r">Mika vă întâmpină cu flori proaspete într-un spațiu primitor.</p>
+        <p class="body-text rv" style="--d:120ms">Găsiți mereu buchete și aranjamente florale gata pregătite pentru a oferi bucurie celor dragi. Suntem la Bloc 13, pe Bulevardul Griviței 50C, în Brașov.</p>
+      </div>
+    </div>
+
+    <div class="wrap perks">
+      <div class="perk rv" style="--d:0ms">
+        <div class="perk-ico" aria-hidden="true">🌼</div>
+        <h3>Aproape de tine</h3>
+        <p>Situat pe Bulevardul Griviței</p>
+      </div>
+      <div class="perk rv" style="--d:100ms">
+        <div class="perk-ico" aria-hidden="true">🌷</div>
+        <h3>Flori proaspete</h3>
+        <p>Flori, buchete și aranjamente florale</p>
+      </div>
+      <div class="perk rv" style="--d:200ms">
+        <div class="perk-ico" aria-hidden="true">🎁</div>
+        <h3>Cadouri ușoare</h3>
+        <p>Buchete pentru orice gust și buget</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section id="produse" class="produse" aria-labelledby="produse-titlu">
+    <div class="wrap">
+      <h2 id="produse-titlu" class="rv">Produse</h2>
+      <p class="intro rv" style="--d:80ms">Alege după gust, ocazie și buget.</p>
+
+      <div class="tiles">
+        <article class="tile t1 rv-l" style="--d:0ms">
+          <h3>Flori la fir</h3>
+          <p>Alege din mai multe tipuri de flori</p>
+        </article>
+        <article class="tile t2 rv-r" style="--d:60ms">
+          <h3>Buchete gata pregătite</h3>
+          <p>Buchete pentru orice gust și buget</p>
+        </article>
+        <article class="tile t3 rv-l" style="--d:120ms">
+          <h3>Aranjamente florale</h3>
+          <p>Aranjamente simple sau elegante</p>
+        </article>
+        <article class="tile t4 rv-r" style="--d:180ms">
+          <h3>Buchete pentru cadou</h3>
+          <p>Surprinde pe cineva drag</p>
+        </article>
+      </div>
+
+      <div class="prod-cta rv">
+        <a class="btn btn-primary" href="https://wa.me/40744440838?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20buchete%20ave%C8%9Bi%20disponibile.">Cere informații pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie" class="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu" class="rv">Privește mai de aproape</h2>
+      <div class="collage">
+        <figure class="c1 rv-z">
+          <img src="img/1.jpg" alt="Mâini care pregătesc flori pe hârtie" loading="lazy">
+        </figure>
+        <figure class="c2 rv" style="--d:80ms">
+          <img src="img/2.jpg" alt="Masă de lemn cu flori și aranjamente florale" loading="lazy">
+        </figure>
+        <figure class="c3 rv-z" style="--d:60ms">
+          <img src="img/3.jpg" alt="Flori roz într-un buchet" loading="lazy">
+        </figure>
+        <figure class="c4 rv" style="--d:120ms">
+          <img src="img/4.jpg" alt="Aranjament cu floarea-soarelui într-o vază" loading="lazy">
+        </figure>
+        <figure class="c5 rv" style="--d:60ms">
+          <img src="img/5.jpg" alt="Buchet de trandafiri roz pentru o ocazie specială" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact" aria-labelledby="contact-titlu">
+    <div class="wrap split">
+      <div>
+        <h2 id="contact-titlu" class="rv">Treci pe la noi</h2>
+        <p class="body-text rv" style="--d:80ms">Suntem la Bloc 13, pe Bulevardul Griviței 50C, în Brașov. Ne poți suna sau scrie oricând.</p>
+        <address class="addr rv" style="--d:140ms">
+          Bloc 13, Bulevardul Griviței 50C, Brașov<br>
+          Telefon: <a href="tel:0744440838">0744 440 838</a>
+        </address>
+        <div class="actions rv" style="--d:200ms">
+          <a class="btn btn-primary" href="tel:0744440838">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40744440838?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20buchete%20ave%C8%9Bi%20disponibile.">Cere informații pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Mika+Bra%C8%99ov">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map rv-r" style="--d:100ms">
+        <iframe
+          title="Harta: Mika, Bulevardul Griviței, Brașov"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=25.5943184,45.6550471,25.6023184,45.6590471&amp;layer=mapnik&amp;marker=45.6570471,25.5983184"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">Mika <span aria-hidden="true">💐</span></p>
+      <p>Flori și buchete pentru orice ocazie.</p>
+    </div>
+    <div>
+      <p>Bloc 13, Bulevardul Griviței 50C, Brașov</p>
+      <p><a href="tel:0744440838">0744 440 838</a></p>
+      <p><a href="#top">Înapoi sus</a></p>
+    </div>
+    <div>
+      <p class="credit">Fotografii ilustrative de pe Pixabay: rawpixel, jackmac34, Michelle-Maria, LVER</p>
+      <p class="demo">Model de site (demo)</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  var nav = document.querySelector('.site-nav');
+  var bouquet = document.getElementById('bouquet');
+
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var targets = document.querySelectorAll('.rv, .rv-l, .rv-r, .rv-z');
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('in'); });
+    bouquet.classList.add('is-open');
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+  targets.forEach(function (el) { io.observe(el); });
+
+  var bio = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
+      bouquet.classList.add('is-open');
+      bio.disconnect();
+    }
+  }, { threshold: 0.25 });
+  bio.observe(bouquet);
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
