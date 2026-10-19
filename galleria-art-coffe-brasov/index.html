@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Galleria Art &amp; Coffe, cafenea în Brașov</title>
+<meta name="description" content="Galleria Art &amp; Coffe, o cafenea în Brașov unde te bucuri de cafea, prăjituri și produse de patiserie într-un cadru creativ și relaxant.">
+<meta name="theme-color" content="#4A3A24">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --brown:#4A3A24;
+  --cream:#E9DFCA;
+  --cream-2:#F3EEE3;
+  --accent:#b45309;
+  --accent-deep:#8f3f07;
+  --line:rgba(74,58,36,.18);
+  --serif:"Merriweather",Georgia,"Times New Roman",serif;
+  --sans:"Roboto",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sans);font-size:1rem;line-height:1.5;letter-spacing:0;color:var(--brown);background:var(--cream);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:0}
+p{margin:0}
+figure{margin:0}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:-1px;padding:0;border:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Secțiuni */
+.section{padding:clamp(5rem,11vw,9rem) 0}
+.section-alt{background:var(--cream-2)}
+.section h2{font-size:clamp(2.1rem,5.2vw,3.5rem);margin-bottom:clamp(2rem,4vw,3rem)}
+.lead{font-size:clamp(1.02rem,1.5vw,1.15rem);max-width:36rem;margin-top:1.25rem;line-height:1.6}
+
+/* Butoane */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:.8rem 1.5rem;border:0;border-radius:999px;font:500 1rem/1 var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:background-color .25s ease,box-shadow .25s ease,color .25s ease,transform .1s ease;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 8px 20px -10px rgba(143,63,7,.8)}
+.btn-ghost{color:var(--cream);box-shadow:inset 0 0 0 1px rgba(233,223,202,.55)}
+.btn-ghost:hover{background:rgba(233,223,202,.1)}
+.btn-dark{background:var(--brown);color:var(--cream)}
+.btn-dark:hover{background:#352817;box-shadow:0 8px 20px -10px rgba(53,40,23,.8)}
+.btn-line{color:var(--brown);box-shadow:inset 0 0 0 1px var(--brown)}
+.btn-line:hover{background:rgba(74,58,36,.07)}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+.text-link{display:inline-flex;align-items:center;min-height:44px;color:var(--cream);font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+.text-link:hover{text-decoration-thickness:2px}
+
+/* Navigare cu sticlă */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(74,58,36,.72);-webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);box-shadow:inset 0 1px 0 rgba(233,223,202,.12);transition:box-shadow .3s ease}
+.site-nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(233,223,202,.12),0 10px 30px -18px rgba(20,14,6,.6)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.02rem;letter-spacing:-.01em;color:var(--cream);text-decoration:none;white-space:nowrap}
+.nav-links{display:none;gap:2rem}
+.nav-links a{color:var(--cream);font-weight:500;font-size:.95rem;letter-spacing:.01em;text-decoration:none;padding:.5rem 0;opacity:.92;transition:opacity .2s ease}
+.nav-links a:hover{opacity:1;text-decoration:underline;text-underline-offset:.35em}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.nav-toggle{width:44px;height:44px;background:none;border:0;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nav-toggle span{display:block;width:22px;height:2px;border-radius:2px;background:var(--cream);transition:transform .3s var(--ease),opacity .2s ease}
+.nav-open .nav-toggle span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+.nav-open .nav-toggle span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+.nav-panel{display:none;padding:0 0 1.25rem}
+.nav-panel nav{display:flex;flex-direction:column}
+.nav-panel a{display:flex;align-items:center;min-height:44px;padding:.7rem 0;color:var(--cream);font-size:1.1rem;font-weight:500;text-decoration:none}
+.nav-open .nav-panel{display:block}
+@media (max-width:479px){.nav-cta{display:none}}
+@media (min-width:768px){
+  .nav-links{display:flex}
+  .nav-toggle{display:none}
+  .nav-panel{display:none!important}
+}
+
+/* Primul ecran */
+.hero{position:relative;display:flex;align-items:center;min-height:100vh;min-height:100svh;padding:6rem 0 3rem;background:var(--brown);color:var(--cream)}
+.hero-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(1.5rem,4vw,2rem)}
+.logo-frame{flex:none;width:clamp(200px,60vw,340px);aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 .6rem rgba(233,223,202,.06),0 0 0 .65rem rgba(233,223,202,.3)}
+.logo-frame img{width:100%;height:100%;object-fit:cover}
+.hero-text{display:flex;flex-direction:column;align-items:center;gap:1rem}
+.hero-slogan{font-family:var(--serif);font-weight:400;font-size:clamp(1.15rem,2.6vw,1.6rem);line-height:1.35;letter-spacing:-.01em;max-width:24ch}
+.hero-desc{font-size:1.05rem;color:rgba(233,223,202,.92);max-width:34ch}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:.5rem}
+.intro{animation:rise .8s var(--ease) both}
+.intro-2{animation-delay:.12s}
+.intro-3{animation-delay:.24s}
+.logo-frame{animation:logoIn 1s var(--ease) both}
+@keyframes logoIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+@media (min-width:880px){
+  .hero-inner{flex-direction:row;text-align:left;justify-content:center;gap:clamp(4rem,8vw,7rem)}
+  .hero-text{align-items:flex-start}
+  .actions{justify-content:flex-start}
+  .logo-frame{width:min(36vw,400px)}
+}
+
+/* Despre + elementul memorabil */
+.about{display:grid;gap:clamp(3rem,7vw,5rem);align-items:center}
+@media (min-width:880px){.about{grid-template-columns:1fr 1fr}}
+.cup{width:min(100%,26rem);justify-self:center}
+.cup svg{display:block;width:100%;height:auto}
+.heart{stroke-dasharray:1;stroke-dashoffset:0;fill-opacity:1;transition:stroke-dashoffset 1.8s var(--ease) .2s,fill-opacity .9s ease 1.5s}
+.about-text h2{margin-bottom:1.5rem}
+.about-text p{font-size:1.06rem;line-height:1.6;max-width:36rem}
+.about-text p+p{margin-top:1rem}
+.adv{display:grid;gap:2.5rem;margin-top:clamp(4rem,9vw,6.5rem)}
+@media (min-width:768px){.adv{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.adv-icon{display:block;font-size:1.6rem;line-height:1}
+.adv h3{font-size:1.2rem;line-height:1.25;margin:1rem 0 .4rem}
+.adv p{color:rgba(74,58,36,.88)}
+
+/* Meniu */
+.menu{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.menu li{display:flex;align-items:baseline;justify-content:space-between;padding:clamp(1.25rem,3vw,1.75rem) 0;border-bottom:1px solid var(--line)}
+.menu-name{font-family:var(--serif);font-weight:700;font-size:clamp(1.35rem,3.6vw,2.25rem);letter-spacing:-.02em;line-height:1.15}
+.menu-foot{margin-top:2.5rem;display:flex;flex-direction:column;align-items:flex-start;gap:1rem}
+.menu-foot p{color:rgba(74,58,36,.88)}
+
+/* Galerie */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.gallery figure{overflow:hidden;border-radius:.5rem;background:var(--cream-2)}
+.gallery figure:first-child{grid-column:1/-1}
+.gallery img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;transition:transform .8s var(--ease)}
+.gallery figure:first-child img{aspect-ratio:4/3}
+.gallery figure:hover img{transform:scale(1.03)}
+@media (min-width:880px){
+  .gallery{grid-template-columns:1.6fr 1fr 1fr;grid-auto-rows:clamp(13rem,26vw,19rem)}
+  .gallery figure:first-child{grid-column:auto;grid-row:span 2}
+  .gallery img,.gallery figure:first-child img{height:100%;aspect-ratio:auto}
+}
+
+/* Contact */
+.contact{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:start}
+@media (min-width:880px){.contact{grid-template-columns:1fr 1.2fr}}
+.contact-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem;max-width:22rem}
+.contact-actions .btn{width:100%}
+@media (min-width:480px){
+  .contact-actions{flex-direction:row;flex-wrap:wrap;max-width:none}
+  .contact-actions .btn{width:auto}
+}
+.contact-note{margin-top:1.25rem;font-size:.95rem;color:rgba(74,58,36,.85)}
+.map{display:block;width:100%;height:clamp(260px,40vw,380px);border:0;border-radius:.5rem;filter:sepia(.22) saturate(.85)}
+
+/* Subsol */
+.site-footer{background:var(--brown);color:var(--cream);padding:clamp(3.5rem,7vw,5rem) 0 2rem}
+.foot-grid{display:flex;flex-direction:column;align-items:center;gap:2rem;text-align:center}
+.foot-logo{width:9rem;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 0 0 .4rem rgba(233,223,202,.06),0 0 0 .45rem rgba(233,223,202,.28)}
+.foot-logo img{width:100%;height:100%;object-fit:cover}
+.foot-info{display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.foot-info p{color:rgba(233,223,202,.9)}
+.foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem 1.5rem;margin-top:.75rem}
+.foot-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--cream);font-size:.95rem;letter-spacing:.02em;text-decoration:none}
+.foot-nav a:hover{text-decoration:underline;text-underline-offset:.35em}
+.foot-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(233,223,202,.15);display:flex;flex-direction:column;gap:.5rem;text-align:center;font-size:.8rem;letter-spacing:.02em;color:rgba(233,223,202,.8)}
+@media (min-width:880px){
+  .foot-grid{flex-direction:row;justify-content:space-between;text-align:left}
+  .foot-info{align-items:flex-start}
+  .foot-nav{justify-content:flex-start}
+}
+@media (min-width:720px){
+  .foot-bottom{flex-direction:row;justify-content:space-between;text-align:left}
+}
+
+/* Dezvăluire la derulare: fiecare tip are drumul lui */
+.reveal,.reveal-left,.reveal-scale{transition:opacity .55s var(--ease),transform .55s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal-left{opacity:0;transform:translateX(-16px)}
+.js .reveal-scale{opacity:0;transform:scale(.97)}
+.js .reveal.is-in,.js .reveal-left.is-in,.js .reveal-scale.is-in{opacity:1;transform:none}
+.js .cup:not(.is-in) .heart{stroke-dashoffset:1;fill-opacity:0}
+
+/* Accesibilitate și preferințe */
+.hero :focus-visible,.site-nav :focus-visible,.site-footer :focus-visible{outline-color:var(--cream)}
+@media (prefers-reduced-transparency:reduce){
+  .site-nav{background:var(--brown);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-nav{background:var(--brown)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--cream)}
+  .btn-line{box-shadow:inset 0 0 0 2px var(--brown)}
+  .menu,.menu li{border-color:var(--brown)}
+  .hero-desc,.adv p,.menu-foot p,.contact-note{color:var(--brown)}
+  .hero-desc{color:var(--cream)}
+  .logo-frame,.foot-logo{box-shadow:0 0 0 .5rem var(--cream)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.2s!important;
+    animation-iteration-count:1!important;
+    transition-duration:.2s!important;
+    transition-delay:0s!important;
+    scroll-behavior:auto!important
+  }
+  .intro,.logo-frame{animation-name:fadeOnly!important;animation-delay:0s!important}
+  .js .reveal,.js .reveal-left,.js .reveal-scale{transform:none}
+  .gallery figure:hover img{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Galleria Art &amp; Coffe</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm nav-cta" href="tel:0742800100">Sună acum</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Deschide meniul">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap nav-panel" id="nav-panel">
+    <nav aria-label="Mobil">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:0742800100">Sună acum</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-inner">
+    <div class="logo-frame">
+      <img src="logo.jpg" alt="Logo Galleria Art &amp; Coffe" width="600" height="600">
+    </div>
+    <div class="hero-text">
+      <h1 id="hero-title" class="visually-hidden">Galleria Art &amp; Coffe, cafenea în Brașov</h1>
+      <p class="hero-slogan intro intro-2">Cafea și gusturi, între artă</p>
+      <p class="hero-desc intro intro-2">O cafenea unde te bucuri de momente plăcute.</p>
+      <div class="actions intro intro-3">
+        <a class="btn btn-primary" href="tel:0742800100">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40742800100?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniu." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+      <a class="text-link intro intro-3" href="#meniu">Vezi meniul</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="despre" aria-labelledby="despre-title">
+  <div class="wrap">
+    <div class="about">
+      <figure class="cup reveal-scale">
+        <svg viewBox="0 0 400 400" role="img" aria-labelledby="cup-title">
+          <title id="cup-title">Ceașcă de cafea văzută de sus, cu o inimă desenată în spumă</title>
+          <defs>
+            <radialGradient id="saucerG" cx="50%" cy="45%" r="60%">
+              <stop offset="0" stop-color="#E9DFCA"/>
+              <stop offset="1" stop-color="#CDBB9B"/>
+            </radialGradient>
+            <radialGradient id="cremaG" cx="50%" cy="45%" r="60%">
+              <stop offset="0" stop-color="#6E5030"/>
+              <stop offset=".75" stop-color="#4A3A24"/>
+              <stop offset="1" stop-color="#37291A"/>
+            </radialGradient>
+          </defs>
+          <circle cx="200" cy="200" r="192" fill="url(#saucerG)"/>
+          <circle cx="200" cy="200" r="150" fill="#FBF8F2"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="rgba(74,58,36,.08)" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="124" fill="url(#cremaG)"/>
+          <ellipse cx="168" cy="164" rx="44" ry="16" fill="#fff" opacity=".06" transform="rotate(-25 168 164)"/>
+          <g transform="translate(130 136) scale(1.4)">
+            <path class="heart" pathLength="1" d="M50 88 C20 65 5 45 5 28 C5 13 17 3 32 3 C41 3 47 8 50 15 C53 8 59 3 68 3 C83 3 95 13 95 28 C95 45 80 65 50 88 Z" fill="#E9DFCA" stroke="#E9DFCA" stroke-width="2.2" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </figure>
+
+      <div class="about-text reveal">
+        <h2 id="despre-title">Despre noi</h2>
+        <p>Galleria Art &amp; Coffe îmbină atmosfera primitoare a unei cafenele cu bucuria gustului autentic.</p>
+        <p>Aici poți savura băuturi calde și deserturi într-un cadru creativ și relaxant.</p>
+        <p>Fie că vii singur sau cu prietenii, te așteptăm pentru o pauză plăcută.</p>
+      </div>
+    </div>
+
+    <div class="adv">
+      <div class="adv-item reveal" style="--d:0s">
+        <span class="adv-icon" aria-hidden="true">🎨</span>
+        <h3>Ambianță artistică</h3>
+        <p>Te inspiră și te relaxează</p>
+      </div>
+      <div class="adv-item reveal" style="--d:.1s">
+        <span class="adv-icon" aria-hidden="true">🍰</span>
+        <h3>Deserturi proaspete</h3>
+        <p>Alese pentru gusturi rafinate</p>
+      </div>
+      <div class="adv-item reveal" style="--d:.2s">
+        <span class="adv-icon" aria-hidden="true">📷</span>
+        <h3>Loc Instagramabil</h3>
+        <p>Perfect pentru momente speciale</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="meniu" aria-labelledby="meniu-title">
+  <div class="wrap">
+    <h2 id="meniu-title">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+    <p class="lead reveal">Băuturi calde, prăjituri și produse de patiserie.</p>
+    <ul class="menu">
+      <li class="reveal-left" style="--d:0s"><span class="menu-name">Cafea și băuturi</span></li>
+      <li class="reveal-left" style="--d:.08s"><span class="menu-name">Prăjituri</span></li>
+      <li class="reveal-left" style="--d:.16s"><span class="menu-name">Produse de patiserie</span></li>
+    </ul>
+    <div class="menu-foot reveal">
+      <p>Vrei să știi ce găsești exact? Întreabă-ne pe WhatsApp.</p>
+      <a class="btn btn-dark" href="https://wa.me/40742800100?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniu." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="galerie" aria-labelledby="galerie-title">
+  <div class="wrap">
+    <h2 id="galerie-title">Galerie</h2>
+    <div class="gallery">
+      <figure class="reveal-scale" style="--d:0s">
+        <img src="img/1.jpg" alt="Cappuccino servit cu farfurioară, văzut din față" width="1200" height="900" loading="lazy">
+      </figure>
+      <figure class="reveal-scale" style="--d:.06s">
+        <img src="img/2.jpg" alt="Cappuccino și cafea pe o masă" width="800" height="800" loading="lazy">
+      </figure>
+      <figure class="reveal-scale" style="--d:.12s">
+        <img src="img/3.jpg" alt="Ceașcă de cafea cu aromă intensă" width="800" height="800" loading="lazy">
+      </figure>
+      <figure class="reveal-scale" style="--d:.18s">
+        <img src="img/4.jpg" alt="Latte art cu inimă în spumă, de aproape" width="800" height="800" loading="lazy">
+      </figure>
+      <figure class="reveal-scale" style="--d:.24s">
+        <img src="img/5.jpg" alt="Cafea de dimineață într-o ceașcă" width="800" height="800" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact">
+    <div class="contact-text reveal">
+      <h2 id="contact-title">Vino pe la noi</h2>
+      <p class="lead">Ne găsești în Brașov. Sună-ne sau scrie-ne ca să afli programul.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="tel:0742800100">Sună acum</a>
+        <a class="btn btn-dark" href="https://wa.me/40742800100?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniu." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Galleria+Art+%26+Coffe+Bra%C8%99ov" target="_blank" rel="noopener">Vezi pe Google Maps</a>
+      </div>
+      <p class="contact-note">Telefon: 0742 800 100</p>
+    </div>
+
+    <div class="reveal" style="--d:.1s">
+      <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=25.5911281,45.6444919,25.5991281,45.6484919&amp;layer=mapnik&amp;marker=45.6464919,25.5951281" title="Harta: Galleria Art &amp; Coffe, Brașov" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div class="foot-logo">
+      <img src="logo.jpg" alt="Logo Galleria Art &amp; Coffe" width="300" height="300" loading="lazy">
+    </div>
+    <div class="foot-info">
+      <p>☕️ Cafenea în Brașov</p>
+      <nav class="foot-nav" aria-label="Subsol">
+        <a href="#despre">Despre</a>
+        <a href="#meniu">Meniu</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: grafmex, Pexels, 8618939, BayzidIslam</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-nav');
+  var toggle = document.querySelector('.nav-toggle');
+  var panel = document.getElementById('nav-panel');
+
+  function setOpen(open) {
+    header.classList.toggle('nav-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!header.classList.contains('nav-open'));
+  });
+
+  panel.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768) setOpen(false);
+  });
+
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale, .cup');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!('IntersectionObserver' in window) || reduce) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
