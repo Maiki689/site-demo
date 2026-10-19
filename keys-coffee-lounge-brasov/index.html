@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keys Coffee Lounge | Cafenea în Brașov</title>
+<meta name="description" content="Keys Coffee Lounge, Paul Richter 4, Brașov. Cafea, prosecco și pizza delicioasă. Un loc primitor pentru cafele și momente relaxante.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E☕%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --white:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --accent:#b45309;
+  --accent-deep:#97430a;
+  --ink-soft:rgba(59,42,32,.78);
+  --line:rgba(59,42,32,.14);
+  --radius:6px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-display:'Space Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-text:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --pad:clamp(1.25rem,5vw,3rem);
+  --header-h:4rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--white);color:var(--espresso);
+  font-family:var(--font-text);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:0}
+p{margin:0}
+ul{list-style:none;margin:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.skip{position:absolute;left:-9999px;top:auto;z-index:100;background:var(--white);color:var(--espresso);padding:.75rem 1rem;border-radius:var(--radius)}
+.skip:focus{left:1rem;top:1rem}
+
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:clamp(4.5rem,11vw,8rem)}
+.section-title{font-size:clamp(2rem,5vw,3.25rem);margin-bottom:clamp(2rem,4vw,3.25rem)}
+
+/* Bara de navigare: sticlă */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.scrolled{box-shadow:0 10px 30px -18px rgba(59,42,32,.35)}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-family:var(--font-display);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
+}
+.brand svg{width:1.6rem;height:1.6rem;flex:none}
+.nav-links{display:none;gap:2rem;align-items:center}
+.nav-links a{
+  text-decoration:none;font-weight:500;font-size:.95rem;padding-block:.5rem;
+  transition:color .25s var(--ease);
+}
+.nav-links a:hover{color:var(--accent)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.8rem 1.4rem;border-radius:var(--radius);
+  border:1.5px solid transparent;font:600 .975rem/1.1 var(--font-text);letter-spacing:0;
+  text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .15s var(--ease),background-color .25s var(--ease),color .25s var(--ease),box-shadow .3s var(--ease),border-color .25s var(--ease);
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--accent);color:var(--white)}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 10px 22px -12px rgba(151,67,10,.7)}
+.btn-ghost{background:transparent;color:var(--espresso);border-color:var(--espresso)}
+.btn-ghost:hover{background:var(--espresso);color:var(--white)}
+.nav-cta{min-height:44px;padding:.6rem 1rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.actions .btn{flex:1 1 auto}
+@media (min-width:560px){.actions .btn{flex:0 1 auto}}
+
+/* Hero */
+.hero{padding-top:calc(var(--header-h) + clamp(2rem,6vw,4rem));padding-bottom:clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero h1{font-size:clamp(2.6rem,8vw,5.25rem);letter-spacing:-.02em;line-height:1.04}
+.lead{
+  margin-top:1.25rem;font-family:var(--font-display);font-weight:500;
+  font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.25;letter-spacing:-.01em;
+}
+.desc{margin-top:.9rem;color:var(--ink-soft);max-width:36ch}
+.meta{margin-top:1.75rem;font-size:.95rem;color:var(--ink-soft)}
+
+/* Ceașca de sus, cu inima de latte art */
+.cup{
+  display:block;width:min(100%,420px);margin-inline:auto;padding:0;border:0;
+  background:none;border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.cup svg{width:100%;height:auto}
+.cup:focus-visible{outline-offset:8px;border-radius:50%}
+.cup .heart-line{fill:none;stroke:var(--lapte);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.cup .heart-fill{fill:var(--lapte)}
+.js .cup .heart-line{stroke-dasharray:1;stroke-dashoffset:1}
+.js .cup .heart-fill{opacity:0}
+.js .cup.play .heart-line{animation:draw 1.3s cubic-bezier(.5,0,.2,1) .2s forwards}
+.js .cup.play .heart-fill{animation:fadeIn .6s ease 1.15s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+
+/* Despre */
+.split{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:880px){.split{grid-template-columns:1fr 1fr}}
+.photo{margin:0;overflow:hidden;border-radius:var(--radius);aspect-ratio:4/3}
+@media (min-width:880px){.photo{aspect-ratio:4/5}}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about p{margin-top:1.5rem;color:var(--ink-soft);max-width:52ch}
+.perks{margin-top:2.5rem}
+.perk{padding-block:1.25rem;border-top:1px solid var(--line)}
+.perk:last-child{border-bottom:1px solid var(--line)}
+.perk h3{font-size:1.15rem}
+.perk p{margin-top:.3rem;color:var(--ink-soft)}
+
+/* Meniu */
+.section-menu{background:var(--lapte)}
+.menu-intro{max-width:52ch;color:var(--ink-soft);margin:-1.25rem 0 2rem}
+.dishes{display:grid;grid-template-columns:1fr}
+@media (min-width:760px){.dishes{grid-template-columns:1fr 1fr;column-gap:clamp(2rem,6vw,5rem)}}
+.dish{padding-block:1.75rem;border-top:1px solid rgba(59,42,32,.2)}
+.dish h3{font-size:clamp(1.3rem,2.6vw,1.6rem)}
+.dish p{margin-top:.45rem;color:var(--ink-soft)}
+.menu-cta{margin-top:2.75rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.menu-cta p{color:var(--ink-soft)}
+
+/* Galerie */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+@media (min-width:760px){.gallery{grid-template-columns:repeat(4,1fr);gap:1.25rem}}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius)}
+
+/* Contact */
+.contact-grid{display:grid;gap:clamp(2.5rem,6vw,4rem)}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;align-items:start}}
+.contact-info h3{font-size:1.15rem;margin:2.25rem 0 .5rem}
+.contact-info h3:first-child{margin-top:0}
+.addr{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:500;letter-spacing:-.01em;line-height:1.2}
+.tel-line{margin-top:.6rem}
+.tel-line a{font-weight:600;text-decoration:none;transition:color .25s var(--ease)}
+.tel-line a:hover{color:var(--accent)}
+.status{margin-top:.25rem;font-weight:500}
+.hours{margin-top:.75rem;border-top:1px solid var(--line)}
+.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.hours li.is-today{color:var(--accent);font-weight:600}
+.map{
+  width:100%;height:clamp(300px,40vw,460px);border:0;display:block;
+  border-radius:var(--radius);background:var(--lapte);
+}
+
+/* Subsol */
+.site-footer{background:var(--espresso);color:var(--lapte);padding-block:3.5rem 2.5rem;font-size:.9rem;letter-spacing:.01em}
+.footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1.5rem 3rem}
+.footer-name{font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--white);letter-spacing:-.01em}
+.footer-top p{margin-top:.35rem}
+.footer-links{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.footer-links a{color:var(--white);text-decoration:none;padding-block:.5rem;transition:text-decoration-color .25s}
+.footer-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.credit{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(234,223,211,.16);line-height:1.6;color:rgba(234,223,211,.82)}
+.credit a{color:var(--white)}
+
+/* Dezvăluire la derulare: tranziții discrete, variate */
+.js .reveal{opacity:0;transform:translate3d(0,18px,0);transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+.js .reveal-left{opacity:0;transform:translate3d(-24px,0,0);transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+.js .reveal-fade{opacity:0;transition:opacity .5s ease var(--d,0s)}
+.js .is-in{opacity:1;transform:none}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .btn:active{transform:none}
+  .js .reveal,.js .reveal-left,.js .reveal-fade{transform:none;transition:opacity .2s linear}
+  .js .cup .heart-line{stroke-dasharray:none;stroke-dashoffset:0}
+  .js .cup .heart-fill{opacity:1}
+  .js .cup.play .heart-line,.js .cup.play .heart-fill{animation:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-header{background:var(--white);box-shadow:0 1px 0 var(--espresso)}
+  .btn-primary{background:#8c3a04}
+  .btn-ghost{border-width:2px}
+  .dish,.perk,.hours li{border-color:var(--espresso)}
+  .nav-links a,.footer-links a{text-decoration:underline;text-underline-offset:4px}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Sari la conținut</a>
+
+<header class="site-header" id="top-bar">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Keys Coffee Lounge, înapoi sus">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="11" fill="#3B2A20"/>
+        <path d="M12 18.2c-4.6-3.1-6.2-5-6.2-7.4 0-1.8 1.3-3 3-3 1.3 0 2.4.7 3.2 1.9.8-1.2 1.9-1.9 3.2-1.9 1.7 0 3 1.2 3 3 0 2.4-1.6 4.3-6.2 7.4z" fill="#EADFD3"/>
+      </svg>
+      <span>Keys Coffee Lounge</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="tel:+40730118333">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="hero-title">Keys Coffee Lounge</h1>
+        <p class="lead">Cafea, prosecco și pizza delicioasă</p>
+        <p class="desc">Un loc primitor pentru cafele și momente relaxante.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+40730118333">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40730118333?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20Keys%20Coffee%20Lounge.">Scrie pe WhatsApp</a>
+        </div>
+        <p class="meta">Paul Richter 4, Brașov</p>
+      </div>
+
+      <button class="cup" id="cup" type="button" aria-label="Desenează din nou inima de latte art">
+        <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+          <!-- farfuria -->
+          <circle cx="200" cy="200" r="190" fill="#EADFD3"/>
+          <!-- toarta, văzută de sus -->
+          <rect x="330" y="186" width="50" height="28" rx="14" fill="#FFFFFF"/>
+          <rect x="350" y="196" width="18" height="8" rx="4" fill="#EADFD3"/>
+          <!-- marginea ceștii -->
+          <circle cx="200" cy="200" r="148" fill="#FFFFFF"/>
+          <!-- cafeaua -->
+          <circle cx="200" cy="200" r="126" fill="#3B2A20"/>
+          <circle cx="200" cy="200" r="112" fill="none" stroke="#EADFD3" stroke-opacity=".12" stroke-width="1.5"/>
+          <!-- inima de latte art -->
+          <g transform="translate(0 12)">
+            <path class="heart-fill" d="M200 265C130 215 110 180 110 150C110 118 135 100 160 100C180 100 194 112 200 126C206 112 220 100 240 100C265 100 290 118 290 150C290 180 270 215 200 265Z"/>
+            <path class="heart-line" pathLength="1" d="M200 265C130 215 110 180 110 150C110 118 135 100 160 100C180 100 194 112 200 126C206 112 220 100 240 100C265 100 290 118 290 150C290 180 270 215 200 265Z"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-title">
+    <div class="wrap split">
+      <figure class="photo reveal-fade">
+        <img src="img/2.jpg" alt="Oameni la o masă, cu cafea și desert" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <h2 class="section-title reveal" id="despre-title">Despre noi</h2>
+        <div class="about reveal" style="--d:.08s">
+          <p>Keys Coffee Lounge este refugiul perfect pentru o pauză de cafea sau o pizza savuroasă. Atmosfera este prietenoasă și relaxată, perfectă pentru a petrece timp cu prietenii sau a descoperi un colț liniștit în Brașov. Te așteptăm să te bucuri de gusturi clasice și combinații delicioase.</p>
+        </div>
+        <ul class="perks">
+          <li class="perk reveal-left" style="--d:.05s">
+            <h3>Ambient artistic</h3>
+            <p>Decor plăcut și inspirațional</p>
+          </li>
+          <li class="perk reveal-left" style="--d:.12s">
+            <h3>Atmosferă relaxată</h3>
+            <p>Potrivit pentru prieteni și vizitatori</p>
+          </li>
+          <li class="perk reveal-left" style="--d:.19s">
+            <h3>Central</h3>
+            <p>Aproape de inima orașului</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-menu" id="meniu" aria-labelledby="meniu-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="meniu-title">Meniu</h2>
+      <p class="menu-intro reveal">Cafea, prosecco și pizza, pentru o pauză scurtă sau o seară cu prietenii.</p>
+      <ul class="dishes">
+        <li class="dish reveal" style="--d:0s">
+          <h3>Cafea la ceașcă</h3>
+          <p>Cafea proaspătă, perfectă pentru orice moment</p>
+        </li>
+        <li class="dish reveal" style="--d:.07s">
+          <h3>Prosecco răcoritor</h3>
+          <p>Un pahar de prosecco spumant și elegant</p>
+        </li>
+        <li class="dish reveal" style="--d:.04s">
+          <h3>Pizza gustoasă</h3>
+          <p>Pizza fierbinte, pe gustul tuturor</p>
+        </li>
+        <li class="dish reveal" style="--d:.11s">
+          <h3>Cafea to-go</h3>
+          <p>Cafea aromată, pentru plimbare</p>
+        </li>
+      </ul>
+      <div class="menu-cta reveal-fade">
+        <p>Vrei să afli mai multe despre meniu?</p>
+        <a class="btn btn-ghost" href="https://wa.me/40730118333?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20Keys%20Coffee%20Lounge.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="galerie-title">Galerie</h2>
+      <div class="gallery">
+        <figure class="reveal-fade" style="--d:0s">
+          <img src="img/1.jpg" alt="Cappuccino pe o masă de lemn" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal-fade" style="--d:.06s">
+          <img src="img/4.jpg" alt="Ceașcă de cafea lângă boabe, pe o masă de lemn" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal-fade" style="--d:.12s">
+          <img src="img/5.jpg" alt="Boabe de cafea lângă o ceașcă" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal-fade" style="--d:.18s">
+          <img src="img/3.jpg" alt="Cafea măcinată, cu aromă proaspătă" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 class="section-title reveal" id="contact-title">Vino pe la noi</h2>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Adresă</h3>
+          <p class="addr">Paul Richter 4, Brașov</p>
+          <p class="tel-line">Telefon: <a href="tel:+40730118333">+40 730 118 333</a></p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:+40730118333">Sună acum</a>
+            <a class="btn btn-ghost" href="https://wa.me/40730118333?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20meniul%20Keys%20Coffee%20Lounge.">Scrie pe WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keys+Coffee+Lounge+Bra%C8%99ov" target="_blank" rel="noopener">Deschide în Google Maps</a>
+            <a class="btn btn-ghost" href="https://www.facebook.com/Keyscoffeeloungebrasov" target="_blank" rel="noopener">Deschide pagina de Facebook</a>
+          </div>
+
+          <h3>Program</h3>
+          <p class="status" id="status" aria-live="polite">Programul de mai jos.</p>
+          <ul class="hours">
+            <li data-days="1 2 3 4"><span>Luni–joi</span><span>08:00–19:00</span></li>
+            <li data-days="5"><span>Vineri</span><span>08:00–22:00</span></li>
+            <li data-days="6"><span>Sâmbătă</span><span>09:00–22:00</span></li>
+            <li data-days="0"><span>Duminică</span><span>09:00–19:00</span></li>
+          </ul>
+        </div>
+
+        <div class="reveal-fade" style="--d:.1s">
+          <iframe class="map" title="Harta: Keys Coffee Lounge, Paul Richter 4, Brașov"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=25.5827846,45.6384304,25.590784600000003,45.6424304&amp;layer=mapnik&amp;marker=45.6404304,25.5867846"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="footer-name">Keys Coffee Lounge</p>
+        <p>Paul Richter 4, Brașov</p>
+      </div>
+      <nav aria-label="Subsol">
+        <ul class="footer-links">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#meniu">Meniu</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.facebook.com/Keyscoffeeloungebrasov" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="credit">
+      © <span id="year">2025</span> Keys Coffee Lounge. Model de site (demo).<br>
+      Credit fotografii: Fotografii ilustrative de pe Pixabay: Pexels, freestocks-photos, eliasfalla, cocoparisienne, PublicDomainPictures.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Bara de navigare: umbră doar când pagina se derulează sub ea
+  var header = document.getElementById('top-bar');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Ceașca: inima se desenează la încărcare și la fiecare apăsare
+  var cup = document.getElementById('cup');
+  var drawHeart = function () {
+    cup.classList.remove('play');
+    void cup.getBoundingClientRect();
+    requestAnimationFrame(function () { cup.classList.add('play'); });
+  };
+  drawHeart();
+  cup.addEventListener('click', drawHeart);
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('.reveal, .reveal-left, .reveal-fade');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // Programul: ziua de azi și starea acum
+  var hours = { 0: [9, 19], 1: [8, 19], 2: [8, 19], 3: [8, 19], 4: [8, 19], 5: [8, 22], 6: [9, 22] };
+  var now = new Date();
+  var day = now.getDay();
+  var mins = now.getHours() * 60 + now.getMinutes();
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+
+  document.querySelectorAll('.hours li').forEach(function (li) {
+    var days = li.getAttribute('data-days').split(' ').map(Number);
+    if (days.indexOf(day) > -1) li.classList.add('is-today');
+  });
+
+  var today = hours[day];
+  var status = document.getElementById('status');
+  if (status) {
+    if (mins >= today[0] * 60 && mins < today[1] * 60) {
+      status.textContent = 'Deschis acum, până la ' + pad(today[1]) + ':00.';
+    } else if (mins < today[0] * 60) {
+      status.textContent = 'Închis acum. Deschidem azi la ' + pad(today[0]) + ':00.';
+    } else {
+      var next = hours[(day + 1) % 7];
+      status.textContent = 'Închis acum. Deschidem mâine la ' + pad(next[0]) + ':00.';
+    }
+  }
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = now.getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
