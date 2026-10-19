@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elephant, Iași | Curățenie, întreținere și îngrijire auto</title>
+<meta name="description" content="Elephant din Iași, pe Strada Tătărași. Curățenie, întreținere și îngrijire pentru orice mașină.">
+<meta name="theme-color" content="#0B2545">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2545;
+  --navy-deep:#071A33;
+  --navy-2:#0E2F57;
+  --footer:#04111F;
+  --accent:#38bdf8;
+  --accent-hover:#7dd3fc;
+  --blue:#1E88E5;
+  --mist:#D6ECFF;
+  --white:#FFFFFF;
+  --muted:rgba(214,236,255,.8);
+  --line:rgba(214,236,255,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --display:'Outfit',var(--sans);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--navy);
+  color:var(--mist);
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:var(--display);color:var(--white);text-wrap:balance;margin:0}
+h2.h2{font-size:clamp(2rem,4.5vw,3.25rem);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:.5rem}
+
+.skip{position:absolute;left:-999px;top:1rem;z-index:100;background:var(--accent);color:var(--navy-deep);padding:.6rem 1rem;border-radius:.75rem;font-weight:600;text-decoration:none}
+.skip:focus{left:1rem}
+
+.container{width:100%;max-width:72rem;margin-inline:auto;padding-inline:1.25rem}
+
+/* Bara de navigare: sticlă */
+.nav{
+  position:fixed;
+  top:.75rem;
+  left:0;
+  right:0;
+  margin-inline:auto;
+  width:min(72rem,calc(100% - 1.5rem));
+  z-index:50;
+  border-radius:1.25rem;
+  background:rgba(11,37,69,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14);
+  transition:box-shadow .5s var(--ease),background-color .5s var(--ease);
+}
+.nav.is-scrolled{
+  background:rgba(7,26,51,.7);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 10px 30px rgba(0,0,0,.28);
+}
+.nav__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  height:3.5rem;
+  padding:0 .5rem 0 .875rem;
+}
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  font-family:var(--display);
+  font-weight:600;
+  font-size:1.1rem;
+  letter-spacing:-.01em;
+  color:var(--white);
+  text-decoration:none;
+}
+.logo__mark{
+  width:2.1rem;
+  height:2.1rem;
+  display:grid;
+  place-items:center;
+  border-radius:.65rem;
+  background:rgba(56,189,248,.16);
+  font-size:1.1rem;
+}
+.nav__links{display:none;gap:1.75rem;margin-left:2rem;margin-right:auto}
+.nav__links a{
+  color:rgba(255,255,255,.9);
+  font-size:.95rem;
+  font-weight:500;
+  text-decoration:none;
+  transition:color .25s var(--ease);
+}
+.nav__links a:hover{color:var(--accent)}
+@media (min-width:720px){.nav__links{display:flex}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  min-height:2.75rem;
+  padding:.7rem 1.25rem;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-family:var(--sans);
+  font-size:.95rem;
+  font-weight:600;
+  letter-spacing:0;
+  text-decoration:none;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:background-color .25s var(--ease),box-shadow .3s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .12s ease-out;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn--sm{padding:.5rem 1rem;font-size:.9rem}
+.btn--primary{background:var(--accent);color:#05213F;box-shadow:0 6px 20px rgba(56,189,248,.22)}
+.btn--primary:hover{background:var(--accent-hover);box-shadow:0 10px 28px rgba(56,189,248,.34)}
+.btn--ghost{background:rgba(255,255,255,.08);color:var(--white);border-color:rgba(255,255,255,.24)}
+.btn--ghost:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.36)}
+
+/* Primul ecran */
+.hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+  background:var(--navy-deep);
+  color:var(--white);
+}
+.hero__img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 40%;
+}
+.hero__shade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(7,26,51,.35) 0%,rgba(7,26,51,.12) 32%,rgba(11,37,69,.82) 72%,#0B2545 100%);
+}
+/* Picăturile de apă: elementul memorabil */
+.drops{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.drop{
+  position:absolute;
+  top:0;
+  left:var(--x);
+  width:var(--s);
+  height:calc(var(--s) * 1.35);
+  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+  background:radial-gradient(circle at 34% 28%,rgba(255,255,255,.95) 0 8%,rgba(214,236,255,.55) 22%,rgba(30,136,229,.28) 60%,rgba(255,255,255,.08) 100%);
+  box-shadow:inset 0 -.15rem .3rem rgba(255,255,255,.35),0 .2rem .6rem rgba(0,0,0,.18);
+  opacity:0;
+  will-change:transform,opacity;
+  animation:fall var(--d) cubic-bezier(.5,0,.9,.5) var(--delay) infinite;
+}
+.drop::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:100%;
+  width:calc(var(--s) * .22);
+  height:calc(var(--s) * 2.6);
+  transform:translateX(-50%);
+  border-radius:999px;
+  background:linear-gradient(to top,rgba(214,236,255,.5),rgba(214,236,255,0));
+}
+@keyframes fall{
+  0%{transform:translate3d(0,-8vh,0);opacity:0}
+  8%{opacity:.95}
+  30%{transform:translate3d(var(--sway),30vh,0)}
+  70%{transform:translate3d(calc(var(--sway) * -.4),72vh,0)}
+  92%{opacity:.85}
+  100%{transform:translate3d(0,108vh,0);opacity:0}
+}
+
+.hero__content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:72rem;
+  margin-inline:auto;
+  padding:0 1.25rem clamp(2.5rem,8vh,5rem);
+}
+.hero__place{color:var(--accent);font-size:.9rem;font-weight:500;letter-spacing:.02em;margin-bottom:.75rem}
+.hero__title{
+  font-size:clamp(3.5rem,17vw,10rem);
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:.98;
+  color:var(--white);
+}
+.hero__lead{
+  margin-top:1rem;
+  font-family:var(--display);
+  font-size:clamp(1.25rem,3.4vw,1.75rem);
+  font-weight:500;
+  line-height:1.2;
+  color:var(--white);
+  max-width:28ch;
+}
+.hero__desc{margin-top:.5rem;color:var(--mist);max-width:48ch}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero__actions .btn{flex:1 1 100%}
+@media (min-width:520px){.hero__actions .btn{flex:0 0 auto}}
+
+.hero__content > *{
+  animation:rise .9s var(--ease) both;
+  animation-delay:calc(var(--i,0) * .12s + .1s);
+}
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,18px,0)}
+  to{opacity:1;transform:none}
+}
+
+/* Secțiuni */
+.section{padding-block:clamp(4.5rem,11vw,8.5rem);scroll-margin-top:5rem}
+.section--deep{background:var(--navy-deep)}
+.section__head{margin-bottom:clamp(2.5rem,6vw,4rem);max-width:40rem}
+.section__lede{margin-top:1rem;color:var(--muted);font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:60ch}
+
+/* Despre */
+.about{display:grid;gap:2.5rem}
+@media (min-width:900px){.about{grid-template-columns:5fr 7fr;gap:5rem;align-items:start}}
+.about__text{display:grid;gap:1.25rem}
+.about__text p{font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.55;color:var(--mist);max-width:44ch}
+
+.features{display:grid;gap:2.5rem;margin-top:clamp(3.5rem,7vw,5.5rem)}
+@media (min-width:800px){.features{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.feature{display:flex;flex-direction:column;gap:.85rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.feature__icon{
+  width:3rem;
+  height:3rem;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(56,189,248,.12);
+  font-size:1.4rem;
+}
+.feature h3{font-size:1.25rem;font-weight:600;letter-spacing:-.01em}
+.feature p{color:var(--muted)}
+
+/* Servicii */
+.services{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.service{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem 2rem;
+  padding:clamp(1.5rem,3.5vw,2.25rem) 0;
+  border-bottom:1px solid var(--line);
+}
+.service h3{
+  font-size:clamp(1.5rem,3.4vw,2.25rem);
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.1;
+  transition:color .3s var(--ease);
+}
+.service:hover h3{color:var(--accent)}
+.service p{margin-top:.45rem;color:var(--muted);max-width:46ch}
+.service .btn{flex-shrink:0}
+
+/* Galerie */
+.gallery{display:grid;gap:1rem}
+@media (min-width:760px){
+  .gallery{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+  .gallery__item:first-child{grid-column:1/-1;aspect-ratio:21/9}
+}
+.gallery__item{
+  margin:0;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  border-radius:1.5rem;
+  background:var(--navy-2);
+}
+.gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+@media (hover:hover){.gallery__item:hover img{transform:scale(1.03)}}
+
+/* Contact */
+.contact{display:grid;gap:3rem}
+@media (min-width:900px){.contact{grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}}
+.contact__list{margin:2.25rem 0 0}
+.contact__list > div{padding-block:1.25rem;border-top:1px solid var(--line)}
+.contact__list dt{font-size:.875rem;color:var(--muted);letter-spacing:.02em}
+.contact__list dd{margin:.3rem 0 0;font-family:var(--display);font-size:clamp(1.4rem,3vw,1.9rem);font-weight:600;color:var(--white);line-height:1.2}
+.contact__list dd a{text-decoration:none;transition:color .25s var(--ease)}
+.contact__list dd a:hover{color:var(--accent)}
+.contact__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.map{
+  width:100%;
+  height:100%;
+  min-height:320px;
+  aspect-ratio:4/3;
+  border:0;
+  border-radius:1.5rem;
+  background:var(--navy-2);
+  filter:invert(.92) hue-rotate(180deg) saturate(.8) brightness(.95);
+}
+
+/* Subsol */
+.footer{background:var(--footer);color:var(--muted);font-size:.9rem;letter-spacing:.01em;padding:3.5rem 0 2.5rem}
+.footer__grid{display:grid;gap:1.5rem}
+@media (min-width:700px){.footer__grid{grid-template-columns:1fr 1fr;align-items:end}}
+.footer__name{font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--white);margin-bottom:.25rem}
+.footer__meta{display:grid;gap:.4rem}
+@media (min-width:700px){.footer__meta{justify-items:end;text-align:right}}
+.footer p{margin:0}
+
+/* Apariția la derulare: variate, discrete */
+[data-reveal]{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .6s var(--ease);
+  transition-delay:var(--delay,0s);
+}
+[data-reveal="up"]{transform:translate3d(0,24px,0)}
+[data-reveal="left"]{transform:translate3d(-24px,0,0)}
+[data-reveal="right"]{transform:translate3d(24px,0,0)}
+[data-reveal="scale"]{transform:scale(.97)}
+[data-reveal="fade"]{transform:none}
+[data-reveal].is-in{opacity:1;transform:none}
+
+/* Accesibilitate și preferințe */
+@media (prefers-reduced-transparency:reduce){
+  .nav,.nav.is-scrolled{
+    background:var(--navy);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast:more){
+  :root{--line:rgba(214,236,255,.55);--muted:var(--mist)}
+  .nav{background:var(--navy-deep);box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+  .btn--ghost{border-color:var(--white)}
+  .hero__shade{background:linear-gradient(180deg,rgba(7,26,51,.5),rgba(11,37,69,.95) 70%,#0B2545)}
+  .drop{opacity:.9 !important}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+  }
+  .hero__content > *{animation:fade .2s both !important;animation-delay:0s !important}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  [data-reveal],[data-reveal].is-in{transform:none !important}
+  .drop{
+    animation:none !important;
+    transform:none !important;
+    opacity:.6;
+    top:var(--y);
+  }
+  .btn:active{transform:none}
+  .gallery__item img{transition:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="#top" aria-label="Elephant, înapoi sus">
+      <span class="logo__mark" aria-hidden="true">🧽</span>
+      <span>Elephant</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="tel:0753895840">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <img class="hero__img" src="img/2.jpg" alt="Mașină roșie acoperită cu spumă de șampon" fetchpriority="high">
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="drops" id="drops" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__place" style="--i:0">Iași, Strada Tătărași</p>
+      <h1 id="titlu" class="hero__title" style="--i:1">Elephant</h1>
+      <p class="hero__lead" style="--i:2">Mașina ta, mereu impecabilă</p>
+      <p class="hero__desc" style="--i:3">Curățenie, întreținere și îngrijire pentru orice mașină.</p>
+      <div class="hero__actions" style="--i:4">
+        <a class="btn btn--primary" href="tel:0753895840">Sună acum</a>
+        <a class="btn btn--ghost" href="https://wa.me/40753895840?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sp%C4%83lare%20auto." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="t-despre">
+    <div class="container">
+      <div class="about">
+        <div data-reveal="left">
+          <h2 id="t-despre" class="h2">Despre Elephant</h2>
+        </div>
+        <div class="about__text" data-reveal="up" style="--delay:.08s">
+          <p>Oferim servicii generale pentru autoturismul tău, cu accent pe curățenie și întreținere. Echipa noastră se ocupă cu grijă de fiecare detaliu.</p>
+          <p>La Elephant, mașina ta primește mereu atenția cuvenită. Ne găsești pe Strada Tătărași, în Iași.</p>
+        </div>
+      </div>
+
+      <div class="features">
+        <article class="feature" data-reveal="up">
+          <span class="feature__icon" aria-hidden="true">🚗</span>
+          <h3>Rapid și practic</h3>
+          <p>Servicii eficiente pentru șoferii grăbiți</p>
+        </article>
+        <article class="feature" data-reveal="up" style="--delay:.1s">
+          <span class="feature__icon" aria-hidden="true">✨</span>
+          <h3>Atenție la detalii</h3>
+          <p>Curățenie temeinică de fiecare dată</p>
+        </article>
+        <article class="feature" data-reveal="up" style="--delay:.2s">
+          <span class="feature__icon" aria-hidden="true">📍</span>
+          <h3>Acces ușor</h3>
+          <p>Locație convenabilă în oraș</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="servicii" aria-labelledby="t-servicii">
+    <div class="container">
+      <div class="section__head" data-reveal="up">
+        <h2 id="t-servicii" class="h2">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="section__lede">Pentru autoturismul tău, de la curățenie la întreținere. Scrie-ne ce are nevoie mașina și îți spunem ce putem face.</p>
+      </div>
+
+      <ul class="services">
+        <li class="service" data-reveal="up">
+          <div>
+            <h3>Reparații auto</h3>
+            <p>Intervenții pentru defecțiunile mașinii tale.</p>
+          </div>
+          <a class="btn btn--ghost" href="https://wa.me/40753895840?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20informa%C8%9Bie%20despre%20repara%C8%9Bii%20auto." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </li>
+        <li class="service" data-reveal="up" style="--delay:.06s">
+          <div>
+            <h3>Diagnoză</h3>
+            <p>Aflăm ce nu merge, înainte să începem lucrul.</p>
+          </div>
+          <a class="btn btn--ghost" href="https://wa.me/40753895840?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20pentru%20diagnoz%C4%83." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </li>
+        <li class="service" data-reveal="up" style="--delay:.12s">
+          <div>
+            <h3>Întreținere</h3>
+            <p>Verificări și îngrijire periodică, ca mașina să rămână în stare bună.</p>
+          </div>
+          <a class="btn btn--ghost" href="https://wa.me/40753895840?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20o%20programare%20pentru%20%C3%AEntre%C8%9Binere." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="t-galerie">
+    <div class="container">
+      <div class="section__head" data-reveal="up">
+        <h2 id="t-galerie" class="h2">Galerie</h2>
+        <p class="section__lede">Imagini ilustrative: spălare, curățare și îngrijirea mașinii.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="gallery__item" data-reveal="fade">
+          <img src="img/1.jpg" alt="Spălare auto cu burete și săpun" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery__item" data-reveal="scale" style="--delay:.05s">
+          <img src="img/3.jpg" alt="Curățare cu apă sub presiune" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery__item" data-reveal="scale" style="--delay:.12s">
+          <img src="img/4.jpg" alt="Îngrijirea și lustruirea caroseriei" loading="lazy" decoding="async">
+        </figure>
+        <figure class="gallery__item" data-reveal="scale" style="--delay:.19s">
+          <img src="img/5.jpg" alt="Curățarea jantelor și a roților" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="contact" aria-labelledby="t-contact">
+    <div class="container contact">
+      <div data-reveal="left">
+        <h2 id="t-contact" class="h2">Contact</h2>
+        <p class="section__lede">Sună, scrie pe WhatsApp sau deschide harta și vezi unde ne găsești.</p>
+
+        <dl class="contact__list">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0753895840">0753 895 840</a></dd>
+          </div>
+          <div>
+            <dt>Adresă</dt>
+            <dd>Strada Tătărași, Iași</dd>
+          </div>
+        </dl>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="tel:0753895840">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40753895840?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sp%C4%83lare%20auto." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Elephant+Ia%C8%99i" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div data-reveal="scale" style="--delay:.1s">
+        <iframe
+          class="map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.5946404,47.160373799999995,27.602640400000002,47.1643738&amp;layer=mapnik&amp;marker=47.1623738,27.5986404"
+          title="Harta: Elephant, Strada Tătărași, Iași"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <p class="footer__name">Elephant</p>
+      <p>Strada Tătărași, Iași</p>
+    </div>
+    <div class="footer__meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: VintageBlue, JLMedia, DariuszSankowski, peeonelove, webandi</p>
+      <p>© <span id="an"></span> Elephant</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Picăturile de apă de pe fotografia principală
+  var box = document.getElementById('drops');
+  if (box) {
+    var count = window.innerWidth < 720 ? 9 : 16;
+    var frag = document.createDocumentFragment();
+    var r = function (n) { return Math.random() * n; };
+    for (var i = 0; i < count; i++) {
+      var d = document.createElement('span');
+      d.className = 'drop';
+      d.style.setProperty('--x', (4 + r(92)).toFixed(1) + '%');
+      d.style.setProperty('--s', (0.6 + r(0.6)).toFixed(2) + 'rem');
+      d.style.setProperty('--d', (7 + r(7)).toFixed(1) + 's');
+      d.style.setProperty('--delay', (-r(14)).toFixed(1) + 's');
+      d.style.setProperty('--sway', (r(0.8) - 0.4).toFixed(2) + 'rem');
+      d.style.setProperty('--y', (8 + r(60)).toFixed(0) + '%');
+      frag.appendChild(d);
+    }
+    box.appendChild(frag);
+  }
+
+  // Bara de navigare capătă umbră doar când pagina se derulează
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Apariția secțiunilor la derulare
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // Anul din subsol
+  var an = document.getElementById('an');
+  if (an) an.textContent = new Date().getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
