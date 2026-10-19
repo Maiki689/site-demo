@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Țărănească, Brașov | Preparate calde și gustări</title>
+<meta name="description" content="Casa Țărănească din Brașov, Strada Zizinului 1. Preparate calde, gustări și băuturi, servite rapid.">
+<meta name="theme-color" content="#60392C">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Roboto+Slab:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brown:#60392C;
+  --gold:#C9A44C;
+  --red:#B32426;
+  --cream:#FFF5DC;
+  --paper:#FFF5DC;
+  --muted:rgba(96,57,44,.8);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --ie-thread:#C9A44C;
+  --ie-x:#B32426;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:'Roboto Slab',Georgia,serif;
+  font-weight:400;
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  color:var(--brown);
+  background:var(--paper);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:inherit}
+section[id]{scroll-margin-top:72px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+/* Antet — sticlă */
+.site-head{
+  position:fixed;inset-inline:0;top:0;z-index:50;
+  background:rgba(255,245,220,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease);
+}
+.site-head.is-scrolled{box-shadow:0 10px 24px -20px rgba(96,57,44,.55),inset 0 1px 0 rgba(255,255,255,.6)}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:.75rem;height:64px}
+.brand{display:inline-flex;border-radius:50%;text-decoration:none}
+.brand img{
+  width:44px;height:44px;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--gold);
+}
+.site-nav{display:flex;align-items:center;gap:.9rem}
+.site-nav a.lnk{
+  font-weight:500;font-size:.95rem;letter-spacing:.01em;text-decoration:none;
+  min-height:44px;display:inline-flex;align-items:center;padding:0 .2rem;
+}
+.site-nav a.lnk:hover{color:var(--red)}
+@media (min-width:900px){.site-nav{gap:1.75rem}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.85rem 1.5rem;border-radius:6px;
+  font:inherit;font-weight:500;font-size:1rem;line-height:1.2;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease,background-color .25s var(--ease),box-shadow .25s var(--ease),color .25s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn-red{background:var(--red);color:var(--cream)}
+.btn-red:hover{background:#961d1f;box-shadow:0 10px 20px -12px rgba(179,36,38,.8)}
+.btn-line{border-color:var(--brown);color:var(--brown);background:transparent}
+.btn-line:hover{background:rgba(96,57,44,.07)}
+.btn-sm{min-height:44px;padding:.5rem 1rem;font-size:.95rem}
+
+/* Prima secțiune */
+.hero{padding:calc(64px + 2.25rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero-grid{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hero-text{text-align:center}
+.logo-big{
+  width:clamp(140px,40vw,200px);aspect-ratio:1;margin-inline:auto;
+  border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 5px var(--paper),0 0 0 6px var(--gold);
+}
+.hero h1{
+  margin:1.6rem 0 .9rem;
+  font-size:clamp(2rem,5.6vw,3.4rem);
+  font-weight:500;letter-spacing:-.02em;line-height:1.08;
+}
+.hero .lead{
+  font-size:clamp(1.05rem,2vw,1.2rem);color:var(--muted);
+  max-width:30ch;margin-inline:auto;
+}
+.actions{display:flex;flex-direction:column;align-items:center;gap:.75rem;margin-top:1.75rem}
+.actions .btn{width:min(100%,20rem)}
+.hero-addr{margin-top:1.1rem;font-size:.95rem;color:var(--muted)}
+.hero-photo{
+  margin:0;aspect-ratio:4/3;overflow:hidden;
+  border-radius:50% 50% 14px 14px / 16% 16% 14px 14px;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr 1fr}
+  .hero-text{text-align:left}
+  .logo-big{margin-inline:0}
+  .hero .lead{margin-inline:0}
+  .actions{flex-direction:row;justify-content:flex-start}
+  .actions .btn{width:auto}
+  .hero-addr{text-align:left}
+  .hero-photo{aspect-ratio:4/5;border-radius:50% 50% 16px 16px / 22% 22% 16px 16px}
+}
+
+/* Secțiuni și titluri */
+.sec{padding:clamp(4.5rem,11vw,8rem) 0}
+.title{
+  font-family:'Dancing Script',cursive;font-weight:700;
+  font-size:clamp(2.8rem,7vw,4.2rem);line-height:1.1;letter-spacing:0;
+  text-align:center;margin-bottom:.25rem;
+}
+/* Motivul de ie, cusut la derulare */
+.ie{
+  display:block;width:min(260px,64vw);height:auto;aspect-ratio:400/16;
+  margin:0 auto 2.75rem;overflow:visible;
+}
+.ie-thread{stroke:var(--ie-thread);stroke-width:1.2;transform-box:view-box;transform-origin:0 50%}
+.ie-x line{stroke:var(--ie-x);stroke-width:1.7;stroke-linecap:round}
+.ie-x{opacity:0}
+.ie-rose{fill:var(--gold);opacity:0}
+
+/* Despre */
+.about{max-width:44rem;margin:0 auto;text-align:center}
+.about .big{font-size:clamp(1.2rem,2.4vw,1.45rem);font-weight:300;line-height:1.5}
+.about .more{margin-top:1rem;color:var(--muted)}
+.perks{list-style:none;padding:0;margin:3.5rem auto 0;max-width:60rem;display:grid;gap:2rem}
+.perk{display:grid;grid-template-columns:3.5rem 1fr;gap:1rem;align-items:center}
+.perk-ico{
+  width:3.5rem;height:3.5rem;border-radius:50%;background:#F3DFB0;
+  display:grid;place-items:center;font-size:1.5rem;line-height:1;
+}
+.perk h3{font-size:1.15rem;font-weight:500;line-height:1.3}
+.perk p{color:var(--muted);font-size:.98rem}
+@media (min-width:800px){
+  .perks{grid-template-columns:repeat(3,1fr);gap:2.5rem;text-align:center}
+  .perk{grid-template-columns:1fr;justify-items:center}
+  .perk-ico{margin-bottom:1rem}
+}
+
+/* Meniu — secțiune întunecată */
+.dark{background:var(--brown);color:var(--cream);--ie-thread:#C9A44C;--ie-x:#FFF5DC}
+.dark .title{color:var(--cream)}
+.dark .btn-line{border-color:var(--cream);color:var(--cream)}
+.dark .btn-line:hover{background:rgba(255,245,220,.1)}
+.menu{
+  list-style:none;padding:0;margin:0 auto;max-width:60rem;
+  display:grid;gap:2.5rem;
+}
+.menu li{padding-top:1.5rem;border-top:1px solid rgba(201,164,76,.5)}
+.menu h3{
+  font-weight:300;font-size:clamp(1.6rem,3.6vw,2.1rem);
+  line-height:1.1;letter-spacing:-.01em;
+}
+@media (min-width:800px){.menu{grid-template-columns:repeat(3,1fr);gap:3rem}}
+.menu-note{text-align:center;margin:3rem auto 2rem;color:rgba(255,245,220,.86);max-width:34rem}
+.menu-cta{display:flex;justify-content:center}
+
+/* Contact */
+.contact-info{text-align:center;display:grid;gap:.5rem;justify-items:center}
+.contact-info address{font-style:normal;font-size:1.25rem;line-height:1.4}
+.contact-info .num{font-size:1.1rem;color:var(--muted);letter-spacing:.02em}
+.contact .actions{margin-top:2rem}
+.map{margin:3rem auto 0;max-width:56rem}
+.map iframe{width:100%;height:280px;border:0;border-radius:8px;display:block;background:#EFE3C6}
+@media (min-width:900px){.map iframe{height:340px}}
+
+/* Subsol */
+.foot{background:var(--brown);color:var(--cream);padding:3.5rem 0 2.5rem;text-align:center}
+.foot .logo-foot{
+  width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 1.25rem;
+  box-shadow:0 0 0 3px var(--brown),0 0 0 4px var(--gold);
+}
+.foot address{font-style:normal;font-size:1rem;line-height:1.6}
+.foot a{text-underline-offset:3px}
+.foot .small{margin-top:1.5rem;font-size:.85rem;letter-spacing:.02em;color:rgba(255,245,220,.82);line-height:1.6}
+
+/* Dezvăluire la derulare */
+.js [data-reveal]{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+.js [data-reveal="fade"]{transform:none;transition:opacity .6s ease}
+.js [data-reveal="left"]{transform:translate3d(-22px,0,0)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* Intrarea din prima secțiune */
+@keyframes rise{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.js .hero-in{animation:rise .6s var(--ease) both}
+.js .hero-in.d1{animation-delay:.08s}
+.js .hero-in.d2{animation-delay:.16s}
+.js .hero-in.d3{animation-delay:.24s}
+
+@media (max-width:479px){
+  .nav-d{display:none}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js [data-reveal],
+  .js [data-reveal].is-in{transform:none !important;transition:opacity .2s linear !important}
+  .js .hero-in{animation:fadeIn .2s linear both !important}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-head{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--muted:var(--brown)}
+  .dark{--muted:var(--cream)}
+  .btn-line{border-width:2px}
+  .site-head{border-bottom:2px solid var(--brown)}
+  .site-head.is-scrolled{box-shadow:none}
+  .menu li{border-top:2px solid var(--gold)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-head" id="antet">
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="Casa Țărănească, mergi sus">
+      <img src="logo.jpg" alt="" width="44" height="44">
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      <a class="lnk nav-d" href="#despre">Despre</a>
+      <a class="lnk" href="#meniu">Meniu</a>
+      <a class="lnk" href="#contact">Contact</a>
+      <a class="btn btn-red btn-sm" href="tel:0773731449">Sună acum</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top" aria-labelledby="titlu">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <img class="logo-big hero-in" src="logo.jpg" alt="Logo Casa Țărănească, Brașov" width="200" height="200">
+      <h1 id="titlu" class="hero-in d1">
+        <span class="sr-only">Casa Țărănească. </span>Gust tradițional, servire rapidă
+      </h1>
+      <p class="lead hero-in d2">Servim preparate calde și gustări delicioase.</p>
+      <div class="actions hero-in d3">
+        <a class="btn btn-red" href="tel:0773731449">Sună acum</a>
+        <a class="btn btn-line" href="https://wa.me/40773731449?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniu.">Scrie pe WhatsApp</a>
+      </div>
+      <p class="hero-addr hero-in d3">Strada Zizinului 1, Brașov</p>
+    </div>
+    <figure class="hero-photo hero-in d2">
+      <img src="img/3.jpg" alt="Mâncare tradițională românească, servită proaspăt" width="800" height="1000">
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="despre" aria-labelledby="t-despre">
+  <div class="wrap">
+    <h2 class="title" id="t-despre" data-reveal="fade">Despre noi</h2>
+    <svg class="ie" viewBox="0 0 400 16" aria-hidden="true" focusable="false"></svg>
+    <div class="about">
+      <p class="big" data-reveal="left">Casa Țărănească oferă o varietate de preparate calde, gustări și băuturi.</p>
+      <p class="more" data-reveal>Ne dorim să aducem gustul autentic aproape de tine, rapid și accesibil. Te așteptăm să te bucuri de mâncare gustoasă într-un cadru primitor.</p>
+    </div>
+    <ul class="perks">
+      <li class="perk" data-reveal="scale" style="transition-delay:0s">
+        <span class="perk-ico" aria-hidden="true">🍲</span>
+        <div><h3>Gust tradițional</h3><p>Preparate calde și gustări delicioase</p></div>
+      </li>
+      <li class="perk" data-reveal="scale" style="transition-delay:.1s">
+        <span class="perk-ico" aria-hidden="true">🍴</span>
+        <div><h3>Varietate</h3><p>Preparate calde, gustări și băuturi</p></div>
+      </li>
+      <li class="perk" data-reveal="scale" style="transition-delay:.2s">
+        <span class="perk-ico" aria-hidden="true">🏡</span>
+        <div><h3>Cadru primitor</h3><p>Te așteptăm să te bucuri de mâncare gustoasă</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec dark" id="meniu" aria-labelledby="t-meniu">
+  <div class="wrap">
+    <h2 class="title" id="t-meniu" data-reveal="fade">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+    <svg class="ie" viewBox="0 0 400 16" aria-hidden="true" focusable="false"></svg>
+    <ul class="menu">
+      <li data-reveal="scale" style="transition-delay:0s"><h3>Preparate calde</h3></li>
+      <li data-reveal="scale" style="transition-delay:.1s"><h3>Gustări</h3></li>
+      <li data-reveal="scale" style="transition-delay:.2s"><h3>Băuturi</h3></li>
+    </ul>
+    <p class="menu-note" data-reveal="fade">Spune-ne ce ai poftă și îți răspundem repede.</p>
+    <div class="menu-cta" data-reveal>
+      <a class="btn btn-red" href="https://wa.me/40773731449?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniu.">Scrie pe WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" aria-labelledby="t-contact">
+  <div class="wrap contact">
+    <h2 class="title" id="t-contact" data-reveal="fade">Vino pe la noi</h2>
+    <svg class="ie" viewBox="0 0 400 16" aria-hidden="true" focusable="false"></svg>
+    <div class="contact-info" data-reveal>
+      <address>Strada Zizinului 1<br>Brașov</address>
+      <p class="num">0773 731 449</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:0773731449">Sună acum</a>
+        <a class="btn btn-line" href="https://wa.me/40773731449?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniu.">Scrie pe WhatsApp</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+%C8%9A%C4%83r%C4%83neasc%C4%83+Bra%C8%99ov">Deschide în Google Maps</a>
+      </div>
+    </div>
+    <div class="map" data-reveal="fade">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=25.612220599999997,45.6497161,25.6202206,45.653716100000004&amp;layer=mapnik&amp;marker=45.6517161,25.6162206"
+        title="Harta: Casa Țărănească, Strada Zizinului 1, Brașov"
+        loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img class="logo-foot" src="logo.jpg" alt="Logo Casa Țărănească" width="80" height="80" loading="lazy">
+    <address>Casa Țărănească<br>Strada Zizinului 1, Brașov<br><a href="tel:0773731449">0773 731 449</a></address>
+    <p class="small">Model de site (demo)</p>
+    <p class="small">Fotografii ilustrative de pe Pixabay: RitaE, ReinhardThrainer, MolnarSzabolcsErdely, alexbadulescu</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NS = 'http://www.w3.org/2000/svg';
+  var N = 22;
+  var head = document.getElementById('antet');
+
+  function clamp(v) { return Math.min(1, Math.max(0, v)); }
+
+  function mkLine(x1, y1, x2, y2) {
+    var l = document.createElementNS(NS, 'line');
+    l.setAttribute('x1', x1); l.setAttribute('y1', y1);
+    l.setAttribute('x2', x2); l.setAttribute('y2', y2);
+    return l;
+  }
+
+  // Motivul de ie: un fir și cruciulițe, care se coase pe măsură ce pagina se derulează
+  var marks = [];
+  document.querySelectorAll('svg.ie').forEach(function (svg) {
+    var thread = document.createElementNS(NS, 'line');
+    thread.setAttribute('x1', '0'); thread.setAttribute('x2', '400');
+    thread.setAttribute('y1', '8'); thread.setAttribute('y2', '8');
+    thread.setAttribute('class', 'ie-thread');
+    svg.appendChild(thread);
+
+    var stitches = [];
+    for (var i = 0; i < N; i++) {
+      var x = 8 + i * (384 / (N - 1));
+      var g = document.createElementNS(NS, 'g');
+      g.setAttribute('class', 'ie-x');
+      g.appendChild(mkLine(x - 3.5, 4.5, x + 3.5, 11.5));
+      g.appendChild(mkLine(x + 3.5, 4.5, x - 3.5, 11.5));
+      g.f = i / (N - 1);
+      svg.appendChild(g);
+      stitches.push(g);
+    }
+
+    var rose = document.createElementNS(NS, 'path');
+    rose.setAttribute('d', 'M200 1.5 L206.5 8 L200 14.5 L193.5 8 Z');
+    rose.setAttribute('class', 'ie-rose');
+    svg.appendChild(rose);
+
+    marks.push({ svg: svg, thread: thread, stitches: stitches, rose: rose });
+  });
+
+  function paint() {
+    var vh = window.innerHeight;
+    marks.forEach(function (m) {
+      var r = m.svg.getBoundingClientRect();
+      var p = reduce ? 1 : clamp((vh * 0.9 - r.top) / (vh * 0.45));
+      m.thread.style.transform = 'scaleX(' + p + ')';
+      m.stitches.forEach(function (s) {
+        s.style.opacity = reduce ? 1 : clamp((p - s.f * 0.92) / 0.08);
+      });
+      m.rose.style.opacity = reduce ? 1 : clamp((p - 0.92) / 0.08);
+    });
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      ticking = false;
+      paint();
+      head.classList.toggle('is-scrolled', window.scrollY > 8);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', paint);
+  paint();
+  head.classList.toggle('is-scrolled', window.scrollY > 8);
+
+  // Dezvăluire la derulare
+  var reveals = document.querySelectorAll('[data-reveal]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/github\.io$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
