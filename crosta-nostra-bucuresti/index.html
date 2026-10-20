@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crosta Nostra, pizza la tavă și panini în București</title>
+<meta name="description" content="Crosta Nostra din București: pizza la tavă și panini calde, mereu proaspete. Livrare prin Glovo. Luni până vineri, 08:00 – 19:00.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --accent:#be123c;
+  --line:rgba(0,0,0,.14);
+  --muted:rgba(0,0,0,.68);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-text:'Roboto',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;max-width:100%;overflow-x:hidden}
+body{
+  margin:0;
+  font-family:var(--font-text);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--ink);
+  background:var(--paper);
+  overflow-x:hidden;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-display);margin:0;letter-spacing:-0.02em;line-height:1.05}
+p{margin:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.wrap{width:min(calc(100% - 2.5rem),72rem);margin-inline:auto}
+.section{padding-block:clamp(5rem,11vw,8.5rem);scroll-margin-top:4rem}
+.section--light{background:#fff;color:#000}
+.section--dark{background:#000;color:#fff}
+.section--dark p{color:rgba(255,255,255,.76)}
+
+/* ---------- Intro (doar la prima secțiune) ---------- */
+@keyframes intro{
+  from{opacity:0;transform:translate3d(0,24px,0)}
+  to{opacity:1;transform:none}
+}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.intro{animation:intro .9s var(--ease) both;animation-delay:var(--d,0s)}
+
+/* ---------- Dezvăluire la derulare (variante) ---------- */
+.js [data-reveal]{
+  opacity:0;
+  transform:translate3d(0,24px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js [data-reveal="left"]{transform:translate3d(-28px,0,0)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* ---------- Antet de sticlă ---------- */
+.site-header{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.is-scrolled{
+  box-shadow:0 10px 26px -14px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.7);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+  min-height:4.5rem;
+  padding-block:.5rem;
+}
+.brand{display:inline-flex;align-items:center;text-decoration:none;min-height:44px}
+.logo{height:3.25rem;width:auto}
+.brand-fallback{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.5rem;
+  text-transform:uppercase;
+  letter-spacing:-0.01em;
+}
+.nav{display:flex;gap:2rem}
+.nav a{
+  position:relative;
+  font-size:.95rem;
+  font-weight:500;
+  letter-spacing:.01em;
+  text-decoration:none;
+  padding:.5rem 0;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:2px;
+  background:currentColor;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1)}
+@media (max-width:760px){.nav{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:3rem;
+  padding:.75rem 1.5rem;
+  border:0;
+  border-radius:2px;
+  font:500 .95rem/1.1 var(--font-text);
+  letter-spacing:.02em;
+  text-decoration:none;
+  text-align:center;
+  cursor:pointer;
+  transition:background-color .25s var(--ease),color .25s var(--ease),box-shadow .3s var(--ease),transform .1s linear;
+}
+.btn:hover{box-shadow:0 8px 20px -10px rgba(0,0,0,.45)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.btn--accent{background:var(--accent);color:#fff}
+.btn--accent:hover{background:#a10f33}
+.btn--dark{background:#000;color:#fff}
+.btn--dark:hover{background:#1c1c1c}
+.btn--light{background:#fff;color:#000}
+.btn--light:hover{background:#f2f2f2}
+.btn--ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.btn--ghost:hover{background:rgba(0,0,0,.06);box-shadow:inset 0 0 0 1.5px currentColor}
+.on-dark .btn--ghost:hover{background:rgba(255,255,255,.1)}
+.btn--sm{min-height:2.75rem;padding:.6rem 1.1rem}
+
+/* ---------- Primul capitol (hero) ---------- */
+.hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  min-height:100vh;
+  min-height:100svh;
+  color:#fff;
+}
+.hero .bg{
+  position:absolute;
+  inset:0;
+  z-index:-3;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform-origin:50% 50%;
+  will-change:transform;
+}
+.hero .shade{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.12) 34%,rgba(0,0,0,.22) 55%,rgba(0,0,0,.9) 100%);
+}
+.hero-content{
+  width:min(calc(100% - 2.5rem),72rem);
+  margin-inline:auto;
+  padding-block:9.5rem 3.5rem;
+}
+.hero-title{
+  font-size:clamp(2.7rem,9.5vw,6.5rem);
+  font-weight:700;
+  text-transform:uppercase;
+  line-height:.98;
+  letter-spacing:-0.02em;
+}
+.hero-title span{display:block}
+.hero-lead{
+  margin-top:1.5rem;
+  max-width:34ch;
+  font-size:clamp(1.05rem,2vw,1.25rem);
+  color:rgba(255,255,255,.9);
+}
+.facts{
+  list-style:none;
+  padding:0;
+  margin:1.5rem 0 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem 1.75rem;
+  font-size:.92rem;
+  font-weight:500;
+  letter-spacing:.02em;
+  color:rgba(255,255,255,.92);
+}
+.hero-actions{
+  margin-top:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+}
+
+/* Bule: un strat mic, în colțul din dreapta, fără să acopere textul */
+.bubbles{
+  position:absolute;
+  right:4%;
+  bottom:0;
+  width:min(34%,20rem);
+  height:100%;
+  z-index:-1;
+  overflow:hidden;
+  pointer-events:none;
+}
+.bubbles span{
+  position:absolute;
+  bottom:-24px;
+  left:var(--x);
+  width:var(--s);
+  height:var(--s);
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.45);
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.34),rgba(255,255,255,.04) 60%);
+  opacity:0;
+  animation:rise var(--dur) linear var(--wait) infinite;
+}
+@keyframes rise{
+  0%{transform:translate3d(0,0,0);opacity:0}
+  12%{opacity:.75}
+  88%{opacity:.4}
+  100%{transform:translate3d(0,-115vh,0);opacity:0}
+}
+
+/* ---------- Capitole cu fotografie pe tot ecranul ---------- */
+.chapter{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  min-height:88vh;
+  min-height:88svh;
+  padding-block:clamp(6rem,14vw,10rem);
+  color:#fff;
+}
+.chapter__media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.chapter__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform-origin:50% 50%;
+  will-change:transform;
+}
+.chapter__media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.78) 100%);
+}
+.chapter__body{max-width:36rem}
+.chapter h2{
+  font-size:clamp(2.2rem,6vw,4.25rem);
+  font-weight:600;
+  text-transform:uppercase;
+}
+.chapter p{
+  margin-top:1.5rem;
+  max-width:44ch;
+  font-size:1.125rem;
+  color:rgba(255,255,255,.9);
+}
+
+/* ---------- Secțiuni obișnuite ---------- */
+.section-head{position:relative;display:grid;gap:1.25rem;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.section-head h2{
+  font-size:clamp(2.2rem,6vw,4.25rem);
+  font-weight:600;
+  text-transform:uppercase;
+}
+.section-head p{max-width:44ch;color:var(--muted)}
+.plate{
+  position:absolute;
+  right:0;
+  top:-.5rem;
+  width:clamp(4.5rem,12vw,8.5rem);
+  height:auto;
+  color:#000;
+}
+
+.menu-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .menu-list{grid-template-columns:1fr 1fr;column-gap:4rem}
+}
+.menu-item{padding:1.75rem 0;border-top:1px solid var(--line)}
+.menu-item h3{
+  font-size:clamp(1.6rem,4vw,2.25rem);
+  font-weight:500;
+  text-transform:uppercase;
+}
+.menu-item p{margin-top:.5rem;color:var(--muted)}
+.section-foot{margin-top:3rem}
+
+.grid-3{display:grid;gap:3rem;grid-template-columns:1fr}
+@media (min-width:860px){
+  .grid-3{grid-template-columns:repeat(3,1fr);gap:3.5rem}
+}
+.adv svg{
+  width:3rem;
+  height:3rem;
+  fill:none;
+  stroke:#fff;
+  stroke-width:1.4;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.adv h3{margin-top:1.5rem;font-size:1.9rem;font-weight:500;text-transform:uppercase}
+.adv p{margin-top:.5rem;color:rgba(255,255,255,.76)}
+
+.gallery{display:grid;gap:1rem;grid-template-columns:1fr}
+.gallery figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3}
+.gallery figure img{width:100%;height:100%;object-fit:cover}
+.gallery .g-main{aspect-ratio:4/5}
+@media (min-width:860px){
+  .gallery{
+    grid-template-columns:1.3fr 1fr;
+    grid-template-rows:1fr 1fr;
+    height:min(78vh,640px);
+  }
+  .gallery figure{aspect-ratio:auto;height:100%}
+  .gallery .g-main{grid-row:span 2}
+}
+
+.split{display:grid;gap:4rem;grid-template-columns:1fr}
+@media (min-width:860px){
+  .split{grid-template-columns:1fr 1fr;gap:6rem}
+}
+.split h2{
+  font-size:clamp(2.2rem,6vw,4.25rem);
+  font-weight:600;
+  text-transform:uppercase;
+  margin-bottom:3rem;
+}
+.split h3{font-size:clamp(1.6rem,3.5vw,2.25rem);font-weight:500;text-transform:uppercase}
+.split p{margin-top:1rem;max-width:40ch;color:rgba(255,255,255,.76)}
+.time{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:clamp(3rem,9vw,6rem);
+  line-height:1;
+  letter-spacing:-0.02em;
+  color:#fff;
+  margin-top:1rem;
+}
+
+.contact{display:grid;gap:3rem;grid-template-columns:1fr}
+@media (min-width:860px){
+  .contact{grid-template-columns:1fr 1.1fr;align-items:center;gap:5rem}
+}
+.contact h2{
+  font-size:clamp(2.2rem,6vw,4.25rem);
+  font-weight:600;
+  text-transform:uppercase;
+}
+.contact > div > p{margin-top:1.25rem;color:var(--muted);max-width:40ch}
+.phone a{
+  display:inline-block;
+  margin-top:1.5rem;
+  padding:.25rem 0;
+  font-family:var(--font-display);
+  font-size:clamp(2rem,6vw,3.25rem);
+  font-weight:500;
+  letter-spacing:-0.01em;
+  text-decoration:none;
+  color:#000;
+  transition:color .25s var(--ease);
+}
+.phone a:hover{color:var(--accent)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.map{position:relative;width:100%;height:min(60vh,420px);min-height:300px}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:#fff;color:#000;padding-block:4rem 3rem}
+.footer-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:760px){
+  .footer-grid{grid-template-columns:auto 1fr auto}
+}
+.logo--footer{height:4.5rem}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.footer-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  color:rgba(0,0,0,.8);
+  text-decoration:none;
+  font-size:.95rem;
+}
+.footer-nav a:hover{color:var(--accent)}
+.footer-meta{
+  margin-top:2.5rem;
+  max-width:70ch;
+  font-size:.8125rem;
+  line-height:1.6;
+  letter-spacing:.02em;
+  color:rgba(0,0,0,.66);
+}
+
+/* ---------- Responsiv ---------- */
+@media (max-width:480px){
+  .logo{height:2.75rem}
+  .header-inner{min-height:4rem}
+  .hero-content{padding-top:8.5rem}
+  .bubbles{width:30%}
+}
+
+/* ---------- Transparență redusă ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* ---------- Contrast mai mare ---------- */
+@media (prefers-contrast:more){
+  .site-header{background:#fff;box-shadow:inset 0 -2px 0 #000}
+  .btn--ghost{box-shadow:inset 0 0 0 2px currentColor}
+  .menu-item{border-top-color:#000}
+  .chapter__media::after{background:rgba(0,0,0,.85)}
+  .hero .shade{background:rgba(0,0,0,.7)}
+  .section--dark p,.chapter p,.hero-lead{color:#fff}
+  .map iframe{filter:grayscale(1) contrast(1.2)}
+}
+
+/* ---------- Mișcare redusă ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.2s !important;
+  }
+  .intro{animation-name:fade-in !important}
+  .bubbles{display:none}
+  .js [data-reveal]{transform:none !important}
+  .hero .bg,.chapter__media img{transform:none !important}
+}
+
+/* ---------- Apăsare și focus ---------- */
+@media (hover:none){
+  .btn:hover{box-shadow:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="sus">
+  <div class="wrap header-inner">
+    <a class="brand" href="#sus" aria-label="Crosta Nostra, sus pe pagină">
+      <img class="logo" src="logo.png" alt="Crosta Nostra" decoding="async">
+      <span class="brand-fallback" hidden>Crosta Nostra</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#program">Program</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--accent btn--sm" href="tel:0778766741">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. Primul capitol -->
+  <section class="hero chapter" id="acasa" aria-labelledby="titlu-principal">
+    <img class="bg" src="img/1.jpg" alt="Pizza proaspătă, așezată pe masă" data-zoom>
+    <div class="shade" aria-hidden="true"></div>
+    <div class="bubbles" aria-hidden="true">
+      <span style="--x:8%;--s:12px;--dur:9s;--wait:-1s"></span>
+      <span style="--x:22%;--s:20px;--dur:12s;--wait:-5s"></span>
+      <span style="--x:38%;--s:9px;--dur:8s;--wait:-3s"></span>
+      <span style="--x:52%;--s:26px;--dur:14s;--wait:-8s"></span>
+      <span style="--x:64%;--s:14px;--dur:10s;--wait:-2s"></span>
+      <span style="--x:76%;--s:18px;--dur:11s;--wait:-6s"></span>
+      <span style="--x:88%;--s:10px;--dur:9s;--wait:-4s"></span>
+      <span style="--x:30%;--s:16px;--dur:13s;--wait:-9s"></span>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title" id="titlu-principal">
+        <span class="intro" style="--d:.1s">Gustă pizza</span>
+        <span class="intro" style="--d:.22s">și panini</span>
+        <span class="intro" style="--d:.34s">autentice</span>
+      </h1>
+      <p class="hero-lead intro" style="--d:.5s">Pizza la tavă și panini calde, mereu proaspete.</p>
+      <ul class="facts intro" style="--d:.6s">
+        <li>Livrare prin Glovo</li>
+        <li>Luni până vineri, 08:00 – 19:00</li>
+      </ul>
+      <div class="hero-actions intro" style="--d:.72s">
+        <a class="btn btn--accent" href="tel:0778766741">Sună acum</a>
+        <a class="btn btn--light" href="#meniu">Vezi meniul</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Despre, fotografie pe tot ecranul -->
+  <section class="chapter" id="despre" aria-labelledby="titlu-despre">
+    <div class="chapter__media">
+      <img src="img/2.jpg" alt="Pizza scoasă din cuptor, într-un local cu atmosferă caldă" loading="lazy" data-zoom>
+    </div>
+    <div class="wrap">
+      <div class="chapter__body" data-reveal>
+        <h2 id="titlu-despre">Savoarea Italiei în inima Bucureștiului</h2>
+        <p>Crosta Nostra aduce savoarea Italiei în inima Bucureștiului. Găsești la noi pizza la tavă și panini pentru toate gusturile. Îți propunem o pauză rapidă și gustoasă pentru prânz sau între orele aglomerate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Meniu -->
+  <section class="section section--light" id="meniu" aria-labelledby="titlu-meniu">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <svg class="plate" viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="60" cy="60" r="40" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+          <circle cx="60" cy="60" r="24" fill="none" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+          <path d="M8 40v40M4 40v14a4 4 0 0 0 8 0V40" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+          <path d="M112 40c4 6 4 18 0 24v16" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+        </svg>
+        <h2 id="titlu-meniu">Meniu</h2>
+        <p>Pentru o pauză rapidă și gustoasă, la prânz sau între orele aglomerate.</p>
+      </header>
+
+      <ul class="menu-list">
+        <li class="menu-item" data-reveal>
+          <h3>Pizza la tavă</h3>
+          <p>Feliile perfecte pentru prânz sau gustare</p>
+        </li>
+        <li class="menu-item" data-reveal style="--d:.08s">
+          <h3>Panini cald</h3>
+          <p>Sandvișuri proaspete cu ingrediente savuroase</p>
+        </li>
+      </ul>
+
+      <div class="section-foot" data-reveal>
+        <a class="btn btn--dark" href="https://wa.me/40778766741?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20meniul%20Crosta%20Nostra." target="_blank" rel="noopener">Cere detalii pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Avantaje -->
+  <section class="section section--dark on-dark" aria-labelledby="titlu-avantaje">
+    <div class="wrap">
+      <h2 class="sr-only" id="titlu-avantaje">Avantaje</h2>
+      <div class="grid-3">
+        <article class="adv" data-reveal>
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="27" r="16"/>
+            <path d="M24 17v10l6 4M20 5h8"/>
+          </svg>
+          <h3>Rapid</h3>
+          <p>Pauză rapidă pentru prânz sau între orele aglomerate</p>
+        </article>
+        <article class="adv" data-reveal style="--d:.1s">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="26" r="17"/>
+            <circle cx="24" cy="26" r="9"/>
+            <path d="M19 4q-2 3 0 6M24 4q-2 3 0 6M29 4q-2 3 0 6"/>
+          </svg>
+          <h3>Proaspăt</h3>
+          <p>Pizza la tavă și panini calde, mereu proaspete</p>
+        </article>
+        <article class="adv" data-reveal style="--d:.2s">
+          <svg viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M24 44s13-12.5 13-23a13 13 0 1 0-26 0c0 10.5 13 23 13 23z"/>
+            <circle cx="24" cy="21" r="4.5"/>
+          </svg>
+          <h3>Accesibil</h3>
+          <p>Comandă și cu livrare prin Glovo</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Galerie -->
+  <section class="section section--light" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <h2 id="titlu-galerie">Din bucătărie</h2>
+      </header>
+      <div class="gallery">
+        <figure class="g-main" data-reveal="scale">
+          <img src="img/3.jpg" alt="Felie de pizza cu brânză topită" loading="lazy">
+        </figure>
+        <figure data-reveal="scale" style="--d:.1s">
+          <img src="img/4.jpg" alt="Pizza pregătită pentru servire" loading="lazy">
+        </figure>
+        <figure data-reveal="scale" style="--d:.2s">
+          <img src="img/5.jpg" alt="Felie de pizza pe un bol cu mâncare" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Livrare și program -->
+  <section class="section section--dark on-dark" id="program" aria-labelledby="titlu-program">
+    <div class="wrap split">
+      <div data-reveal>
+        <h2 id="titlu-program">Livrare și program</h2>
+        <h3>Livrare prin Glovo</h3>
+        <p>Poți comanda pizza sau panini cu livrare, direct prin aplicația Glovo.</p>
+      </div>
+      <div data-reveal style="--d:.12s">
+        <h3>Program</h3>
+        <p class="time" aria-label="Între 08:00 și 19:00">08:00 – 19:00</p>
+        <p>Deschis de luni până vineri între 08:00 și 19:00. În weekend suntem închiși.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Contact -->
+  <section class="section section--light" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap contact">
+      <div data-reveal>
+        <h2 id="titlu-contact">Contact</h2>
+        <p>Sună sau scrie-ne pe WhatsApp.</p>
+        <p class="phone"><a href="tel:0778766741">0778 766 741</a></p>
+        <div class="contact-actions">
+          <a class="btn btn--accent" href="tel:0778766741">Sună acum</a>
+          <a class="btn btn--dark" href="https://wa.me/40778766741?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20meniul%20Crosta%20Nostra." target="_blank" rel="noopener">Cere detalii pe WhatsApp</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Crosta+Nostra+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map" data-reveal="scale" style="--d:.12s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.084345,44.463234,26.092345,44.467234000000005&amp;layer=mapnik&amp;marker=44.465234,26.088345"
+          title="Harta locației Crosta Nostra din București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img class="logo logo--footer" src="logo.png" alt="Crosta Nostra">
+      <span class="brand-fallback" hidden>Crosta Nostra</span>
+    </div>
+    <nav class="footer-nav" aria-label="Subsol">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#program">Program</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--accent btn--sm" href="tel:0778766741">Sună acum</a>
+  </div>
+  <div class="wrap">
+    <p class="footer-meta">
+      Crosta Nostra, București. Model de site (demo).<br>
+      Fotografii ilustrative de pe Pixabay: igorovsyannykov, px_steven_be, Mimsoft, Daria-Yakovleva, NinaLesley
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Logo: dacă fișierul lipsește, apare numele scris */
+  document.querySelectorAll('.logo').forEach(function (img) {
+    var fail = function () {
+      img.hidden = true;
+      var fb = img.nextElementSibling;
+      if (fb && fb.classList.contains('brand-fallback')) fb.hidden = false;
+    };
+    img.addEventListener('error', fail);
+    if (img.complete && img.naturalWidth === 0) fail();
+  });
+
+  /* Antet: umbră discretă când pagina se derulează */
+  var header = document.querySelector('.site-header');
+
+  /* Dezvăluire la derulare */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* Fotografiile se apropie lent la derulare */
+  var zooms = Array.prototype.slice.call(document.querySelectorAll('[data-zoom]'));
+  var ticking = false;
+
+  function paintZoom() {
+    ticking = false;
+    var vh = window.innerHeight;
+    zooms.forEach(function (img) {
+      var chapter = img.closest('.chapter') || img.parentElement;
+      var r = chapter.getBoundingClientRect();
+      var p = (vh - r.top) / (vh + r.height);
+      p = Math.min(1, Math.max(0, p));
+      img.style.transform = 'scale(' + (1.04 + p * 0.12).toFixed(4) + ')';
+    });
+  }
+
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+    if (!reduce && !ticking) {
+      ticking = true;
+      window.requestAnimationFrame(paintZoom);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('load', onScroll);
+  onScroll();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
