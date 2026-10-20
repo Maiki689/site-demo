@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimarket La Colțu Vesel, București</title>
+<meta name="description" content="Magazin de cartier cu produse diverse pentru toți. Minimarket La Colțu Vesel, București.">
+<meta name="theme-color" content="#FFD447">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --yellow:#FFD447;
+  --rose:#be123c;
+  --rose-deep:#9b0f30;
+  --blue:#2563EB;
+  --ink:#111111;
+  --paper:#ffffff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:Rubik,system-ui,-apple-system,sans-serif;
+  font-size:1rem;line-height:1.5;letter-spacing:0;
+  color:var(--ink);background:var(--paper);
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3,.btn,.brand{font-family:Outfit,system-ui,sans-serif}
+h1,h2{letter-spacing:-.02em;line-height:1.08}
+h1{font-size:clamp(2.4rem,8vw,5.2rem);font-weight:800}
+h2{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:800}
+h3{font-size:clamp(1.3rem,2.4vw,1.6rem);font-weight:700;line-height:1.15;letter-spacing:-.01em}
+p{max-width:38rem}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:1.25rem}
+.section{padding-block:clamp(4rem,10vw,7.5rem)}
+.sec-head{display:flex;flex-direction:column;gap:.9rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.sec-head p{font-size:1.1rem}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:.6rem 1rem;z-index:100;border-radius:10px}
+.skip:focus{left:8px}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:56px;padding:.85rem 1.6rem;border-radius:999px;
+  font-family:Outfit,system-ui,sans-serif;font-weight:700;font-size:1.05rem;
+  text-decoration:none;border:2px solid transparent;cursor:pointer;
+  transition:background-color .2s var(--ease),color .2s var(--ease),box-shadow .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--rose-deep);box-shadow:0 10px 24px -10px rgba(190,18,60,.75)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{box-shadow:0 10px 24px -12px rgba(0,0,0,.6)}
+.btn-line{background:#fff;color:var(--ink)}
+.btn-line:hover{box-shadow:0 10px 24px -14px rgba(0,0,0,.4)}
+.btn-outline{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.95rem}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* Navigare cu sticlă */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.scrolled{box-shadow:0 8px 24px -14px rgba(0,0,0,.35)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:1.05rem;text-decoration:none;letter-spacing:-.01em}
+.brand-mark{width:36px;height:36px;border-radius:11px;background:var(--rose);display:grid;place-items:center;font-size:1.05rem;flex:none}
+.nav-links{display:flex;gap:1.6rem;list-style:none;font-weight:500;font-size:.95rem}
+.nav-links a{text-decoration:none;padding:.4rem 0;transition:color .2s}
+.nav-links a:hover{color:var(--rose)}
+@media (max-width:760px){.nav-links{display:none}.brand{font-size:1rem}}
+
+/* Hero */
+.hero{background:var(--yellow);overflow:hidden}
+.hero-grid{
+  display:grid;gap:2.25rem;align-items:center;
+  padding-top:clamp(2rem,6vw,4.5rem);padding-bottom:clamp(3rem,7vw,5rem);
+}
+.hero h1 span{display:block}
+.lead{font-family:Outfit,system-ui,sans-serif;font-size:clamp(1.3rem,3vw,1.75rem);font-weight:600;letter-spacing:-.01em;margin-top:1.1rem;line-height:1.2}
+.desc{margin-top:.5rem;font-size:1.05rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.status{display:flex;align-items:center;gap:.6rem;font-size:.95rem;font-weight:500;margin-top:1.25rem;max-width:none}
+.status .dot{width:10px;height:10px;border-radius:50%;background:currentColor;flex:none}
+.status:not(.is-open) .dot{background:transparent;border:2px solid currentColor}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;min-height:calc(100vh - 64px);gap:3rem}
+}
+
+/* Punga – elementul memorabil */
+.bag-btn{
+  all:unset;display:block;width:min(100%,400px);margin-inline:auto;
+  cursor:pointer;border-radius:24px;
+}
+.bag-btn:focus-visible{outline:3px solid var(--blue);outline-offset:8px}
+.bag{width:100%;height:auto;overflow:visible}
+.bag .pi{will-change:transform,opacity}
+.bag.play .pi{animation:drop .7s var(--ease) both;animation-delay:calc(var(--i) * 110ms + 200ms)}
+@keyframes drop{
+  from{opacity:0;transform:translateY(-120px) rotate(-8deg)}
+  to{opacity:1;transform:translateY(0) rotate(0)}
+}
+
+/* Produse */
+.tiles{display:grid;gap:1rem;grid-template-columns:1fr}
+@media (min-width:760px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{
+  border-radius:24px;padding:clamp(1.5rem,3vw,2.25rem);min-height:240px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem;
+}
+.tile p{margin-top:.6rem;font-size:1rem}
+.tile-y{background:var(--yellow);color:var(--ink)}
+.tile-b{background:var(--blue);color:#fff}
+.tile-r{background:var(--rose);color:#fff}
+.tile-b p,.tile-r p{color:rgba(255,255,255,.92)}
+.strip{display:grid;gap:1rem;grid-template-columns:1fr;margin-top:1rem}
+@media (min-width:760px){.strip{grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.25rem}}
+.ph{border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:#eee}
+.ph img{width:100%;height:100%;object-fit:cover}
+
+/* Despre */
+.about{display:grid;gap:2.5rem;align-items:center}
+.about p{font-size:1.1rem;line-height:1.6;margin-top:1.25rem}
+.about-photo{border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:#eee}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .about{grid-template-columns:1fr 1fr;gap:5rem}
+  .about-photo{aspect-ratio:4/5}
+}
+
+/* Pe scurt – negru */
+.scurt{background:var(--ink);color:#fff}
+.adv{list-style:none;display:grid;gap:2.75rem}
+@media (min-width:760px){.adv{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.adv-ico{width:72px;height:72px;border-radius:22px;background:var(--yellow);display:grid;place-items:center;font-size:2rem;margin-bottom:1.25rem}
+.adv p{color:rgba(255,255,255,.8);margin-top:.5rem}
+
+/* Program – roșu */
+.program{background:var(--rose);color:#fff}
+.program .sec-head p{color:rgba(255,255,255,.92)}
+.hours{list-style:none;display:grid;gap:.75rem;max-width:36rem}
+.hours li{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:1.25rem 1.5rem;border-radius:18px;background:rgba(255,255,255,.14);
+  font-size:1.05rem;
+}
+.hours b{font-family:Outfit,system-ui,sans-serif;font-weight:700;font-size:1.25rem;white-space:nowrap}
+.hours li.is-today{background:var(--yellow);color:var(--ink)}
+.program .status{margin-top:0}
+
+/* Contact */
+.contact-grid{display:grid;gap:2.5rem;align-items:start}
+.contact-grid p{font-size:1.1rem;margin-top:1.1rem}
+.contact-btns{display:grid;gap:.75rem;margin-top:2rem;max-width:24rem}
+.contact-btns .btn{width:100%}
+.map{border-radius:24px;overflow:hidden;min-height:340px;background:#f1f1f1}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.2fr;gap:4.5rem}}
+
+/* Subsol */
+.foot{background:var(--ink);color:#fff;padding-block:3rem;font-size:.95rem}
+.foot-in{display:grid;gap:1.5rem}
+.foot-brand{font-family:Outfit,system-ui,sans-serif;font-weight:700;font-size:1.15rem}
+.foot a{color:#fff}
+.foot p{max-width:none;color:rgba(255,255,255,.78);letter-spacing:.01em}
+.credit{font-size:.85rem}
+@media (min-width:760px){.foot-in{grid-template-columns:1fr 1fr 1.2fr;align-items:start}}
+
+/* Mișcare la derulare – tranziții diferite pe secțiuni */
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s var(--ease),transform .55s var(--ease),box-shadow .3s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .reveal-x{opacity:0;transform:translateX(-28px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js .reveal-r{opacity:0;transform:translateX(28px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js .reveal-x.in,html.js .reveal-r.in{opacity:1;transform:none}
+html.js .reveal-f{opacity:0;transition:opacity .6s ease}
+html.js .reveal-f.in{opacity:1}
+.tile:hover{box-shadow:0 18px 40px -22px rgba(0,0,0,.4)}
+
+/* Accesibilitate */
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .nav{background:#fff;box-shadow:inset 0 -2px 0 var(--ink)}
+  .btn-line{border-color:var(--ink)}
+  .tile{outline:2px solid var(--ink);outline-offset:-2px}
+  .btn-rose{background:var(--rose-deep)}
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .bag.play .pi{animation:fadein .2s both;animation-delay:0s}
+  html.js .reveal,html.js .reveal-x,html.js .reveal-r,html.js .reveal-f{
+    transform:none !important;transition:opacity .2s linear !important;
+  }
+  .btn,.tile,.nav{transition-duration:.2s !important}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Minimarket La Colțu Vesel, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🛒</span>
+      <span>La Colțu Vesel</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#program">Program</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-rose btn-sm" href="tel:0767077677">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1><span>Minimarket</span><span>La Colțu Vesel</span></h1>
+        <p class="lead">Tot ce ai nevoie, aproape!</p>
+        <p class="desc">Magazin de cartier cu produse diverse pentru toți.</p>
+        <div class="hero-actions">
+          <a class="btn btn-rose" href="tel:0767077677">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40767077677?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20produsele%20disponibile." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </div>
+        <p class="status" id="hero-status"><span class="dot" aria-hidden="true"></span><span class="txt">Program: vezi mai jos</span></p>
+      </div>
+
+      <button class="bag-btn" id="bag-btn" type="button" aria-label="Umple din nou punga cu produse">
+        <svg class="bag" id="bag" viewBox="0 0 320 370" aria-hidden="true" focusable="false">
+          <!-- umbra -->
+          <ellipse cx="160" cy="352" rx="112" ry="9" fill="#111" opacity=".12"/>
+          <!-- mânerul -->
+          <path d="M108 120V66q0-42 52-42t52 42v54" fill="none" stroke="#111" stroke-width="11" stroke-linecap="round"/>
+          <!-- corpul pungii -->
+          <path d="M58 122H262l20 214q1 12-12 12H50q-13 0-12-12Z" fill="#be123c"/>
+
+          <!-- produse care cad în pungă -->
+          <g transform="translate(118 96)"><g class="pi" style="--i:0">
+            <circle r="22" fill="#5bd17a"/>
+            <path d="M0-22q2-10 8-14" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+            <path d="M4-30q10-14 24-8q-10 10-24 8Z" fill="#1f7a3a"/>
+          </g></g>
+
+          <g transform="translate(168 92)"><g class="pi" style="--i:1">
+            <rect x="-14" y="-26" width="28" height="64" rx="9" fill="#fff"/>
+            <rect x="-6" y="-38" width="12" height="14" rx="3" fill="#111"/>
+            <rect x="-14" y="4" width="28" height="14" fill="#2563EB"/>
+          </g></g>
+
+          <g transform="translate(216 100)"><g class="pi" style="--i:2">
+            <rect x="-20" y="-30" width="40" height="60" rx="3" fill="#2563EB"/>
+            <path d="M-20-30L0-46L20-30Z" fill="#1e4fc9"/>
+            <rect x="-13" y="-12" width="26" height="14" rx="2" fill="#fff"/>
+          </g></g>
+
+          <g transform="translate(144 66)"><g class="pi" style="--i:3">
+            <ellipse rx="32" ry="19" fill="#e9a548"/>
+            <path d="M-12-6q6-4 12 0M4-2q6-4 12 0" fill="none" stroke="#c97c22" stroke-width="3" stroke-linecap="round"/>
+          </g></g>
+
+          <g transform="translate(200 62)"><g class="pi" style="--i:4">
+            <circle r="18" fill="#ff9f1c"/>
+          </g></g>
+
+          <g transform="translate(84 104)"><g class="pi" style="--i:5">
+            <ellipse rx="23" ry="15" fill="#ffe45c" transform="rotate(-18)"/>
+          </g></g>
+
+          <!-- fața pungii: zâmbetul -->
+          <g fill="#fff"><circle cx="128" cy="204" r="8"/><circle cx="192" cy="204" r="8"/></g>
+          <path d="M122 232q38 40 76 0" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+
+          <!-- buza pungii, peste baza produselor -->
+          <path d="M48 118h224q4 0 4 5v8q0 4-4 4H48q-4 0-4-4v-8q0-5 4-5Z" fill="#9b0f30"/>
+        </svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section class="section produse" id="produse">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Ce găsești la noi</h2>
+        <p>Produse pentru nevoile zilnice, aranjate ca să le găsești repede.</p>
+      </div>
+
+      <div class="tiles">
+        <article class="tile tile-y reveal-x">
+          <h3>Produse</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+          <p>Alimente și articole pentru nevoile de zi cu zi, toate într-un singur loc.</p>
+        </article>
+        <article class="tile tile-b reveal">
+          <h3>Noutăți</h3>
+          <p>Produse noi, pe care le găsești când treci pe la noi.</p>
+        </article>
+        <article class="tile tile-r reveal-r">
+          <h3>Consiliere la alegere</h3>
+          <p>Nu știi ce să alegi? Întreabă-ne, te ajutăm cu drag.</p>
+        </article>
+      </div>
+
+      <div class="strip">
+        <figure class="ph reveal-f">
+          <img src="img/2.jpg" alt="Mere și fructe proaspete, pe tejghea" loading="lazy">
+        </figure>
+        <figure class="ph reveal-f">
+          <img src="img/3.jpg" alt="Prune proaspete, la vânzare" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section despre" id="despre">
+    <div class="wrap about">
+      <div class="about-text reveal-x">
+        <h2>Despre noi</h2>
+        <p>Suntem un minimarket de cartier care pune la dispoziție o gamă variată de produse pentru nevoile zilnice. Ne dorim ca fiecare vizită să fie rapidă și simplă. La noi găsești mereu produse proaspete într-un loc prietenos.</p>
+      </div>
+      <figure class="about-photo reveal-f">
+        <img src="img/1.jpg" alt="Legume și fructe proaspete, expuse la vânzare" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Pe scurt -->
+  <section class="section scurt" id="pe-scurt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Pe scurt</h2>
+      </div>
+      <ul class="adv">
+        <li class="reveal" style="transition-delay:0ms">
+          <span class="adv-ico" aria-hidden="true">🏠</span>
+          <h3>În apropiere</h3>
+          <p>Ne găsești în București, pe hartă</p>
+        </li>
+        <li class="reveal" style="transition-delay:120ms">
+          <span class="adv-ico" aria-hidden="true">🕒</span>
+          <h3>Program extins</h3>
+          <p>Deschis devreme și până seara</p>
+        </li>
+        <li class="reveal" style="transition-delay:240ms">
+          <span class="adv-ico" aria-hidden="true">🤝</span>
+          <h3>Atmosferă prietenoasă</h3>
+          <p>Suntem mereu la dispoziție</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Program -->
+  <section class="section program" id="program">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Program</h2>
+        <p>Deschis în fiecare zi, cu program mai lung în timpul săptămânii.</p>
+        <p class="status" id="prog-status"><span class="dot" aria-hidden="true"></span><span class="txt">Se verifică programul…</span></p>
+      </div>
+      <ul class="hours">
+        <li data-day="wk" class="reveal-x">
+          <span>Luni – vineri</span>
+          <b>07:00 – 23:00</b>
+        </li>
+        <li data-day="we" class="reveal-x">
+          <span>Sâmbătă, duminică</span>
+          <b>09:00 – 21:00</b>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal-x">
+        <h2>Vino pe la noi</h2>
+        <p>Ne găsești în București. Harta te duce direct la noi.</p>
+        <div class="contact-btns">
+          <a class="btn btn-rose" href="tel:0767077677">Sună acum</a>
+          <a class="btn btn-outline" href="https://wa.me/40767077677?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20produsele%20disponibile." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Minimarket+La+Col%C8%9Bu+Vesel+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map reveal-f">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1056015,44.385038099999996,26.1136015,44.3890381&amp;layer=mapnik&amp;marker=44.3870381,26.1096015" title="Harta: Minimarket La Colțu Vesel, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-brand">🛒 La Colțu Vesel</p>
+      <p>Minimarket La Colțu Vesel, București</p>
+    </div>
+    <div>
+      <p><a href="tel:0767077677">0767 077 677</a></p>
+      <p>Model de site (demo)</p>
+    </div>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: AS_Photography, Pexels, JillWellington</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Bara de navigare: umbră doar când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Program: starea acum și ziua de azi (ora României)
+  function bucNow() {
+    try {
+      return new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Bucharest' }));
+    } catch (e) {
+      return new Date();
+    }
+  }
+  function hoursFor(day) {
+    var weekday = day >= 1 && day <= 5;
+    return weekday
+      ? { open: 7 * 60, close: 23 * 60, openLabel: '07:00', closeLabel: '23:00' }
+      : { open: 9 * 60, close: 21 * 60, openLabel: '09:00', closeLabel: '21:00' };
+  }
+  function setStatus(el, msg, isOpen) {
+    if (!el) return;
+    el.classList.toggle('is-open', isOpen);
+    el.querySelector('.txt').textContent = msg;
+  }
+  function updateHours() {
+    var n = bucNow();
+    var day = n.getDay();
+    var mins = n.getHours() * 60 + n.getMinutes();
+    var h = hoursFor(day);
+    var isOpen = mins >= h.open && mins < h.close;
+    var msg;
+    if (isOpen) {
+      msg = 'Deschis acum, până la ' + h.closeLabel;
+    } else if (mins < h.open) {
+      msg = 'Închis acum. Deschidem azi la ' + h.openLabel;
+    } else {
+      msg = 'Închis acum. Deschidem mâine la ' + hoursFor((day + 1) % 7).openLabel;
+    }
+    setStatus(document.getElementById('hero-status'), msg, isOpen);
+    setStatus(document.getElementById('prog-status'), msg, isOpen);
+
+    var todayKey = (day >= 1 && day <= 5) ? 'wk' : 'we';
+    document.querySelectorAll('.hours li[data-day]').forEach(function (li) {
+      li.classList.toggle('is-today', li.getAttribute('data-day') === todayKey);
+    });
+  }
+  updateHours();
+  setInterval(updateHours, 60000);
+
+  // Punga: se umple la încărcare și din nou la fiecare apăsare
+  var bag = document.getElementById('bag');
+  var bagBtn = document.getElementById('bag-btn');
+  function playBag() {
+    bag.classList.remove('play');
+    void bag.getBoundingClientRect();
+    bag.classList.add('play');
+  }
+  playBag();
+  bagBtn.addEventListener('click', playBag);
+
+  // Dezvăluirea la derulare
+  var els = document.querySelectorAll('.reveal, .reveal-x, .reveal-r, .reveal-f');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
