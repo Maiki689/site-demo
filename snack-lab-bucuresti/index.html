@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F7F2EA">
+<title>Snack Lab, cafenea în București</title>
+<meta name="description" content="Snack Lab: cafea, prăjituri și produse de patiserie. Un loc cald pentru o pauză relaxantă, în București.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kraft:#C8A27A;
+  --flour:#F7F2EA;
+  --crust:#7A4A26;
+  --ink:#1E1A17;
+  --accent:#b45309;
+  --accent-deep:#923d06;
+  --display:"Bricolage Grotesque", system-ui, sans-serif;
+  --text:"Figtree", system-ui, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --gutter:clamp(1.25rem, 4vw, 3rem);
+  --section:clamp(4.5rem, 10vw, 8rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:5rem; -webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--flour);
+  color:var(--ink);
+  font-family:var(--text);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.06;margin:0}
+p{margin:0;max-width:62ch}
+ul{margin:0;padding:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+.wrap{width:min(100% - 2*var(--gutter), 72rem);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:var(--flour);padding:.6rem 1rem;border-radius:6px;text-decoration:none;transition:top .2s}
+.skip:focus{top:1rem}
+
+/* Navigare: sticlă */
+.site-nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,242,234,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
+  transition:box-shadow .3s var(--ease);
+}
+.site-nav.is-scrolled{box-shadow:0 8px 22px -14px rgba(30,26,23,.4), inset 0 1px 0 rgba(255,255,255,.55)}
+.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{font-family:var(--display);font-weight:700;font-size:1.2rem;letter-spacing:-.01em;text-decoration:none}
+.nav-links{display:none;list-style:none;gap:1.75rem}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:.01em;padding:.5rem 0}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:1px}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.8rem 1.3rem;
+  border:1.5px solid transparent;border-radius:6px;
+  font-family:var(--text);font-weight:600;font-size:1rem;line-height:1.2;
+  text-decoration:none;cursor:pointer;
+  transition:background-color .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease), transform .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn--sm{min-height:44px;padding:.6rem 1rem;font-size:.95rem}
+.btn--primary{background:var(--accent);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.12)}
+.btn--primary:hover{background:var(--accent-deep);box-shadow:0 8px 16px -10px rgba(146,61,6,.75)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:currentColor}
+.btn--ghost:hover{background:rgba(30,26,23,.08)}
+.btn--light{background:var(--flour);color:var(--ink)}
+.btn--light:hover{background:#fff;box-shadow:0 8px 16px -10px rgba(0,0,0,.6)}
+.btn--ghost-light{background:transparent;color:var(--flour);border-color:rgba(247,242,234,.6)}
+.btn--ghost-light:hover{background:rgba(247,242,234,.1)}
+
+/* Primul ecran */
+.hero{background:var(--kraft);color:var(--ink);padding:clamp(2.5rem,7vw,6rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero__inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  column-gap:1.25rem;row-gap:1.25rem;
+  align-items:center;
+}
+.hero__text{display:contents}
+.hero h1{
+  grid-column:1/-1;grid-row:1;
+  font-size:clamp(3.4rem, 14vw, 9.5rem);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  overflow-wrap:break-word;
+}
+.hero__slogan{
+  grid-column:1;grid-row:2;
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(1.4rem, 3.2vw, 2rem);
+  line-height:1.15;letter-spacing:-.015em;
+  max-width:16ch;
+}
+.hero__desc{grid-column:1;grid-row:3;max-width:34ch}
+.hero__actions{grid-column:1/-1;grid-row:4;display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
+.hero__stamp{
+  grid-column:2;grid-row:2 / span 2;
+  width:clamp(7.25rem, 26vw, 15rem);
+  justify-self:end;
+  color:var(--accent);
+  mix-blend-mode:multiply;
+  transform:rotate(-6deg);
+  animation:press .9s cubic-bezier(.55,0,.3,1) .15s both;
+}
+.stamp{width:100%;height:auto;overflow:visible}
+.stamp text{font-family:var(--display);font-weight:700;font-size:21px}
+
+/* Despre */
+.about{background:var(--flour);padding:var(--section) 0}
+.about__grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.about h2{font-size:clamp(2.2rem, 6vw, 4.5rem);max-width:14ch}
+.about .lead{font-size:clamp(1.15rem, 2vw, 1.35rem);line-height:1.5;margin-top:1.25rem;max-width:40ch}
+.about__text p + p{margin-top:1rem}
+
+.photo{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3;background:var(--kraft)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.tags{list-style:none;display:grid;gap:1rem;margin-top:clamp(3.5rem,7vw,5.5rem)}
+.tag{
+  position:relative;
+  background:var(--kraft);color:var(--ink);
+  padding:2.75rem 1.5rem 2rem;
+  clip-path:polygon(0 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%);
+}
+.tag::before{
+  content:"";position:absolute;top:.95rem;left:1.5rem;
+  width:.75rem;height:.75rem;border-radius:50%;
+  background:var(--flour);
+}
+.tag__emoji{display:block;font-size:1.5rem;line-height:1;margin-bottom:.7rem}
+.tag h3{font-size:1.35rem;margin-bottom:.4rem}
+.tag p{font-size:1rem;max-width:none}
+
+/* Meniu */
+.menu{background:var(--ink);color:var(--flour);padding:var(--section) 0}
+.menu__head{display:grid;gap:1.25rem;margin-bottom:clamp(2.5rem,6vw,4.5rem)}
+.menu h2{font-size:clamp(2.6rem, 7vw, 5.5rem)}
+.menu__intro{color:var(--kraft);font-size:1.1rem;max-width:44ch}
+.menu__list{list-style:none;border-top:1px solid rgba(247,242,234,.16)}
+.menu__item{
+  display:grid;gap:.5rem;
+  padding:clamp(1.5rem,3.5vw,2.5rem) 0;
+  border-bottom:1px solid rgba(247,242,234,.16);
+}
+.menu__name{
+  font-size:clamp(1.8rem, 4.5vw, 3.25rem);
+  line-height:1.05;
+  transition:color .3s var(--ease);
+}
+.menu__item:hover .menu__name{color:var(--kraft)}
+.menu__desc{color:var(--kraft);max-width:40ch}
+.menu__cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:clamp(2.5rem,6vw,4rem)}
+
+/* Galerie */
+.gallery-sec{background:var(--flour);padding:var(--section) 0}
+.gallery-sec h2{font-size:clamp(2.2rem, 6vw, 4.5rem);margin-bottom:clamp(2.5rem,6vw,4rem)}
+.gallery{display:grid;gap:clamp(.75rem,2vw,1.25rem);grid-template-columns:1fr}
+.gallery .wide{grid-column:1/-1;aspect-ratio:21/9}
+
+/* Contact */
+.contact{background:var(--kraft);color:var(--ink);padding:var(--section) 0}
+.contact__grid{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+.contact h2{font-size:clamp(2.4rem, 6vw, 4.75rem)}
+.contact__text{margin-top:1.25rem;max-width:40ch}
+.contact__phone{margin-top:1.75rem}
+.contact__phone a{
+  font-family:var(--display);font-weight:700;font-size:clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing:-.01em;text-decoration:none;
+}
+.contact__phone a:hover{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:2px}
+.contact__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.map{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--flour)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* Subsol */
+.site-foot{background:var(--ink);color:var(--flour);padding:clamp(3rem,6vw,4.5rem) 0 2.5rem;font-size:.9rem}
+.foot-grid{display:grid;gap:2rem;align-items:end}
+.foot-brand{font-family:var(--display);font-weight:700;font-size:clamp(2rem, 5vw, 3rem);letter-spacing:-.02em;line-height:1}
+.foot-meta{color:rgba(247,242,234,.72);letter-spacing:.02em;margin-top:.75rem}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.foot-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--flour);text-underline-offset:.25em}
+.foot-note{
+  margin-top:2.5rem;padding-top:1.5rem;
+  border-top:1px solid rgba(247,242,234,.14);
+  color:rgba(247,242,234,.72);
+  display:grid;gap:.4rem;letter-spacing:.02em;
+}
+
+/* Mișcare: intrare la derulare (doar transform și opacity) */
+.js [data-reveal]{
+  opacity:0;
+  transition:opacity .55s var(--ease), transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js [data-reveal="up"]{transform:translateY(20px)}
+.js [data-reveal="left"]{transform:translateX(-20px)}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js .photo img{transform:scale(1.07);transition:transform 1.1s var(--ease)}
+.js .photo.is-in img{transform:none}
+
+@keyframes press{
+  0%{opacity:0;transform:rotate(-16deg) scale(1.4)}
+  35%{opacity:1;transform:rotate(-6deg) scale(.93)}
+  50%{opacity:1;transform:rotate(-6deg) scale(1.015)}
+  65%,100%{opacity:1;transform:rotate(-6deg) scale(1)}
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Telefon mai larg */
+@media (min-width:640px){
+  .gallery{grid-template-columns:1fr 1fr}
+}
+@media (min-width:760px){
+  .nav-links{display:flex}
+  .hero__inner{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:clamp(2rem,5vw,5rem)}
+  .hero h1{grid-column:1;grid-row:1;font-size:clamp(5rem, 11vw, 10rem)}
+  .hero__slogan{grid-column:1;grid-row:2}
+  .hero__desc{grid-column:1;grid-row:3}
+  .hero__actions{grid-column:1;grid-row:4}
+  .hero__stamp{grid-column:2;grid-row:1 / span 4;width:clamp(14rem, 22vw, 20rem);align-self:center}
+  .about__grid{grid-template-columns:1fr 1fr}
+  .about__grid .photo{aspect-ratio:5/6}
+  .tags{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+  .menu__head{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:3rem}
+  .menu__head .menu__intro{justify-self:end}
+  .menu__item{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:baseline;gap:3rem}
+  .gallery .wide{aspect-ratio:21/9}
+  .foot-grid{grid-template-columns:1fr auto}
+}
+@media (min-width:900px){
+  .contact__grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .map{aspect-ratio:5/4}
+}
+
+/* Preferințe de accesibilitate */
+@media (prefers-reduced-transparency: reduce){
+  .site-nav{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-nav{background:var(--flour);box-shadow:0 2px 0 var(--ink)}
+  .btn--ghost,.btn--ghost-light{border-width:2px}
+  .menu__item,.menu__list{border-color:rgba(247,242,234,.45)}
+  .foot-note{border-color:rgba(247,242,234,.5)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero__stamp{animation:fadeIn .2s ease both}
+  .js [data-reveal]{transform:none !important;transition:opacity .2s ease}
+  .js .photo img{transform:none;transition:none}
+  .btn:active{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Snack Lab</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="tel:0729800275">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero__inner">
+      <div class="hero__text">
+        <h1 id="hero-title">Snack Lab</h1>
+        <p class="hero__slogan">Gustări și cafea aproape de tine</p>
+        <p class="hero__desc">Un loc cald pentru o pauză relaxantă.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="tel:0729800275">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40729800275?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva%20de%20la%20Snack%20Lab.">Scrie pe WhatsApp</a>
+          <a class="btn btn--ghost" href="#meniu">Vezi meniul</a>
+        </div>
+      </div>
+
+      <div class="hero__stamp" aria-hidden="true">
+        <svg class="stamp" viewBox="0 0 200 200" focusable="false">
+          <defs>
+            <path id="arcTop" d="M 30 100 A 70 70 0 0 1 170 100"/>
+            <path id="arcBottom" d="M 15 100 A 85 85 0 0 0 185 100"/>
+            <filter id="inkRough" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="3" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2"/>
+            </filter>
+          </defs>
+          <g filter="url(#inkRough)" fill="currentColor" stroke="currentColor">
+            <circle cx="100" cy="100" r="96" fill="none" stroke-width="5"/>
+            <circle cx="100" cy="100" r="89" fill="none" stroke-width="1.6"/>
+            <text><textPath href="#arcTop" startOffset="50%" text-anchor="middle" letter-spacing="4" stroke="none">SNACK LAB</textPath></text>
+            <text><textPath href="#arcBottom" startOffset="50%" text-anchor="middle" letter-spacing="4" stroke="none">BUCUREȘTI</textPath></text>
+            <path d="M 78 92 H 122 V 112 Q 122 130 104 130 H 96 Q 78 130 78 112 Z" stroke="none"/>
+            <path d="M 122 98 H 129 Q 136 98 136 106 Q 136 115 128 115 H 122" fill="none" stroke-width="4"/>
+            <rect x="70" y="132" width="60" height="5" rx="2.5" stroke="none"/>
+            <path d="M 92 80 Q 88 74 92 68 M 104 80 Q 100 74 104 68" fill="none" stroke-width="3" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-title">
+    <div class="wrap">
+      <div class="about__grid">
+        <div class="about__text" data-reveal="up">
+          <h2 id="despre-title">Despre Snack Lab</h2>
+          <p class="lead">Snack Lab este o cafenea unde găsești preparate gustoase și o atmosferă primitoare.</p>
+          <div class="about__text">
+            <p>Te așteptăm să descoperi o selecție variată de cafea, prăjituri și produse de patiserie.</p>
+            <p>Ia-ți o pauză rapidă sau savurează băutura preferată împreună cu o gustare proaspătă.</p>
+          </div>
+        </div>
+        <figure class="photo" data-reveal="up" style="--d:.1s">
+          <img src="img/2.jpg" alt="Tejgheaua unei cafenele, cu meniu, vitrină și mese" width="1200" height="900" loading="lazy">
+        </figure>
+      </div>
+
+      <ul class="tags">
+        <li class="tag" data-reveal="left">
+          <span class="tag__emoji" aria-hidden="true">🏠</span>
+          <h3>Aproape de tine</h3>
+          <p>Ne găsești în București, pe hartă</p>
+        </li>
+        <li class="tag" data-reveal="left" style="--d:.1s">
+          <span class="tag__emoji" aria-hidden="true">🍪</span>
+          <h3>Gustări proaspete</h3>
+          <p>Prăjituri și produse de patiserie</p>
+        </li>
+        <li class="tag" data-reveal="left" style="--d:.2s">
+          <span class="tag__emoji" aria-hidden="true">🤗</span>
+          <h3>Atmosferă relaxantă</h3>
+          <p>Ideal pentru o pauză liniștită</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-title">
+    <div class="wrap">
+      <div class="menu__head" data-reveal="up">
+        <h2 id="meniu-title">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="menu__intro">Cafea, prăjituri și produse de patiserie, pentru o pauză rapidă sau una mai lungă.</p>
+      </div>
+
+      <ul class="menu__list">
+        <li class="menu__item" data-reveal="up">
+          <h3 class="menu__name">Cafea și băuturi</h3>
+          <p class="menu__desc">Cafea și băuturi calde sau reci, pentru o pauză rapidă sau una mai lungă.</p>
+        </li>
+        <li class="menu__item" data-reveal="up">
+          <h3 class="menu__name">Prăjituri</h3>
+          <p class="menu__desc">Prăjituri pentru o pauză dulce, la masă sau de luat cu tine.</p>
+        </li>
+        <li class="menu__item" data-reveal="up">
+          <h3 class="menu__name">Produse de patiserie</h3>
+          <p class="menu__desc">Gustări proaspete, de luat rapid sau de savurat cu cafeaua.</p>
+        </li>
+      </ul>
+
+      <div class="menu__cta" data-reveal="up">
+        <a class="btn btn--light" href="https://wa.me/40729800275?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva%20de%20la%20Snack%20Lab.">Scrie pe WhatsApp</a>
+        <a class="btn btn--ghost-light" href="tel:0729800275">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-sec" id="galerie" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 id="galerie-title" data-reveal="up">Pe tejghea</h2>
+      <div class="gallery">
+        <figure class="photo wide" data-reveal="up">
+          <img src="img/1.jpg" alt="Prăjituri, deserturi și dulciuri expuse" width="1200" height="800" loading="lazy">
+        </figure>
+        <figure class="photo" data-reveal="up" style="--d:.05s">
+          <img src="img/3.jpg" alt="Pâine și produse de panificație proaspete" width="1200" height="900" loading="lazy">
+        </figure>
+        <figure class="photo" data-reveal="up" style="--d:.12s">
+          <img src="img/4.jpg" alt="Croissante și produse de patiserie, aranjate" width="1200" height="900" loading="lazy">
+        </figure>
+        <figure class="photo wide" data-reveal="up" style="--d:.1s">
+          <img src="img/5.jpg" alt="Felie de tort cu ciocolată" width="1200" height="800" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact__grid">
+      <div data-reveal="up">
+        <h2 id="contact-title">Vino pe la noi</h2>
+        <p class="contact__text">Ne găsești în București. Sună-ne sau scrie-ne pe WhatsApp, te așteptăm la o cafea și o gustare.</p>
+        <p class="contact__phone"><a href="tel:0729800275">0729 800 275</a></p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" href="tel:0729800275">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40729800275?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva%20de%20la%20Snack%20Lab.">Scrie pe WhatsApp</a>
+          <a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Snack+Lab+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map" data-reveal="left" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.122923399999998,44.4314539,26.1309234,44.435453900000006&amp;layer=mapnik&amp;marker=44.4334539,26.1269234" title="Harta: Snack Lab, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">Snack Lab</p>
+        <p class="foot-meta">Cafenea în București</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="tel:0729800275">0729 800 275</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Snack+Lab+Bucure%C8%99ti">Harta pe Google Maps</a></li>
+      </ul>
+    </div>
+    <div class="foot-note">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Pexels, StockSnap, Daria-Yakovleva</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var nav = document.querySelector('.site-nav');
+  var ticking = false;
+
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('[data-reveal]');
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
