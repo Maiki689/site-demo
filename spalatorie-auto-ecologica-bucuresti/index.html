@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spălătorie auto ecologică în București</title>
+<meta name="description" content="Spălătorie auto ecologică în București, rapid și eficient.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0F1A;
+  --bg-2:#0E1624;
+  --bg-foot:#070B13;
+  --text:#F1F3F5;
+  --muted:#A3B1C2;
+  --accent:#38bdf8;
+  --blue:#0B4F9C;
+  --green:#2E9E5B;
+  --line:rgba(241,243,245,.12);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--sans);
+  font-size:1rem;line-height:1.5;letter-spacing:0;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{width:min(calc(100% - 2.5rem),72rem);margin-inline:auto}
+section{padding:clamp(4.5rem,10vw,8rem) 0}
+.alt{background:var(--bg-2)}
+
+h1,h2,h3{font-weight:600;letter-spacing:-0.02em;line-height:1.1}
+h2{font-size:clamp(1.9rem,4.6vw,3rem);margin-bottom:1.25rem}
+h3{font-size:1.2rem;letter-spacing:-0.01em;margin-bottom:.35rem}
+p{max-width:60ch}
+.muted{color:var(--muted)}
+.mono{font-family:var(--mono);font-size:.8125rem;letter-spacing:.04em}
+
+/* ---------- Header (sticlă) ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(10,15,26,.6);
+  backdrop-filter:blur(18px) saturate(1.3);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+  transition:box-shadow .3s var(--ease);
+}
+.site-header.scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 30px -15px rgba(0,0,0,.7);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:64px}
+.brand{
+  text-decoration:none;font-weight:600;font-size:.95rem;letter-spacing:-0.005em;
+  display:inline-flex;align-items:center;gap:.45rem;min-height:44px;
+}
+.nav-links{display:none;gap:1.5rem}
+.nav-links a{
+  text-decoration:none;font-weight:500;font-size:.9rem;
+  min-height:44px;display:inline-flex;align-items:center;transition:color .2s;
+}
+.nav-links a:hover{color:var(--accent)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.4rem;border-radius:10px;
+  font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1;
+  text-decoration:none;border:1px solid transparent;cursor:pointer;
+  transition:background-color .2s,box-shadow .2s,border-color .2s,color .2s,transform .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#04121E}
+.btn-primary:hover{background:#5fcdfb;box-shadow:0 8px 22px -10px rgba(56,189,248,.7)}
+.btn-ghost{border-color:rgba(241,243,245,.28);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm{min-height:44px;padding:.6rem 1rem;font-size:.9rem}
+
+/* ---------- Prima secțiune (tipografie) ---------- */
+.hero{padding-top:clamp(3.5rem,12vh,7.5rem);padding-bottom:clamp(4rem,9vw,7rem)}
+.hero h1{font-size:clamp(2.4rem,8vw,5.5rem);max-width:12ch}
+.slogan{
+  margin-top:1.5rem;font-size:clamp(1.15rem,2.4vw,1.45rem);
+  font-weight:500;letter-spacing:-0.01em;
+}
+.lead{margin-top:.75rem;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+.phone{margin-top:1.75rem;color:var(--muted)}
+
+/* ---------- Despre ---------- */
+.about{display:grid;gap:3rem}
+@media (min-width:900px){
+  .about{grid-template-columns:5fr 7fr;gap:6rem;align-items:start}
+}
+.about-photo{margin-top:3rem;border-radius:8px;overflow:hidden;aspect-ratio:16/9}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about p.body{color:var(--muted);font-size:1.075rem}
+
+/* ---------- Ce primești: lista de verificare ---------- */
+.verify{display:grid;gap:3rem;align-items:start}
+@media (min-width:900px){
+  .verify{grid-template-columns:5fr 7fr;gap:6rem}
+}
+.verify .lead-small{color:var(--muted);margin-top:.5rem}
+.checklist{list-style:none;border-top:1px solid var(--line)}
+.check-item{
+  display:grid;grid-template-columns:2rem 1fr;gap:1.1rem;
+  padding:1.5rem 0;border-bottom:1px solid var(--line);
+}
+.box{
+  width:2rem;height:2rem;border-radius:8px;
+  border:1.5px solid rgba(241,243,245,.3);
+  display:grid;place-items:center;
+  transition:background-color .35s var(--ease),border-color .35s var(--ease);
+}
+.box svg{
+  width:1rem;height:1rem;fill:none;stroke:#fff;stroke-width:3;
+  stroke-linecap:round;stroke-linejoin:round;
+  opacity:0;transform:scale(.5);
+  transition:opacity .3s var(--ease),transform .4s var(--ease);
+}
+.check-item.done .box{background:var(--green);border-color:var(--green)}
+.check-item.done .box svg{opacity:1;transform:scale(1)}
+.check-item p{color:var(--muted);margin:0}
+.progress-wrap{margin-top:2rem}
+.progress-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:1rem;margin-bottom:.75rem;color:var(--muted);
+}
+.progress{height:6px;border-radius:99px;background:rgba(241,243,245,.08);overflow:hidden}
+.progress-bar{
+  display:block;height:100%;transform:scaleX(0);transform-origin:0 50%;
+  transition:transform .8s var(--ease);
+}
+.progress-bar.full{transform:scaleX(1)}
+.progress-bar i{
+  display:block;width:200%;height:100%;
+  background:linear-gradient(90deg,
+    #0B4F9C 0%,#38bdf8 12.5%,#2E9E5B 25%,#38bdf8 37.5%,
+    #0B4F9C 50%,#38bdf8 62.5%,#2E9E5B 75%,#38bdf8 87.5%,#0B4F9C 100%);
+  animation:flow 6s linear infinite;
+}
+@keyframes flow{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ---------- Servicii ---------- */
+.svc-list{list-style:none;border-top:1px solid var(--line)}
+.svc{padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.svc p{color:var(--muted)}
+@media (min-width:760px){
+  .svc{display:grid;grid-template-columns:1fr 1.4fr;gap:2rem;align-items:baseline}
+  .svc h3{margin:0}
+}
+.note{margin-top:1.5rem;color:var(--muted)}
+
+/* ---------- Pași ---------- */
+.steps{list-style:none;display:grid;gap:2.25rem}
+@media (min-width:900px){
+  .steps{grid-template-columns:repeat(4,1fr);gap:2rem}
+}
+.step{border-top:1px solid var(--line);padding-top:1.25rem}
+.num{color:var(--accent);display:block;margin-bottom:1rem}
+.step p{color:var(--muted)}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;gap:.75rem}
+.gallery figure{
+  margin:0;overflow:hidden;border-radius:8px;
+  aspect-ratio:4/3;background:var(--bg-2);
+}
+.gallery img{width:100%;height:100%;object-fit:cover}
+@media (hover:hover){
+  .gallery figure img{transition:transform .6s var(--ease)}
+  .gallery figure:hover img{transform:scale(1.03)}
+}
+@media (min-width:760px){
+  .gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:14rem}
+  .gallery figure{aspect-ratio:auto}
+  .g-big{grid-column:span 2;grid-row:span 2}
+  .g-wide{grid-column:1 / -1}
+}
+
+/* ---------- Contact ---------- */
+.contact{display:grid;gap:2.5rem}
+@media (min-width:900px){
+  .contact{grid-template-columns:5fr 7fr;align-items:start;gap:5rem}
+}
+.contact-actions{display:grid;gap:.75rem;margin-top:2rem;max-width:22rem}
+.contact-actions .btn{width:100%}
+.map-link{
+  display:inline-flex;align-items:center;min-height:44px;
+  margin-top:1rem;color:var(--accent);font-weight:500;text-decoration:none;
+}
+.map-link:hover{text-decoration:underline;text-underline-offset:4px}
+.map{
+  width:100%;height:320px;border:0;border-radius:8px;display:block;
+  filter:grayscale(.3) brightness(.85) contrast(1.05);
+}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--bg-foot);padding:3rem 0 4rem}
+.site-footer .wrap{display:grid;gap:.75rem}
+.site-footer p{color:var(--muted);font-size:.9rem}
+.site-footer .credit{font-size:.8125rem}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.r,.r-l,.r-s{
+  opacity:0;
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.r{transform:translateY(18px)}
+.r-l{transform:translateX(-18px)}
+.r-s{transform:scale(.98)}
+.r.in,.r-l.in,.r-s.in{opacity:1;transform:none}
+
+/* ---------- Mișcare redusă ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .r,.r-l,.r-s{
+    transform:none!important;
+    transition:opacity .2s linear!important;
+    transition-delay:0s!important;
+  }
+  .progress-bar{transition:none}
+  .progress-bar i{animation:none}
+  .box,.box svg{transition:opacity .2s linear,background-color .2s linear!important}
+  .box svg{transform:none!important}
+  .btn:active{transform:none}
+  .gallery figure img{transition:none!important;transform:none!important}
+}
+
+/* ---------- Transparență redusă ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:var(--bg);backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+
+/* ---------- Contrast crescut ---------- */
+@media (prefers-contrast: more){
+  :root{--muted:#D5DDE7;--line:rgba(241,243,245,.4)}
+  .site-header{background:var(--bg)}
+  .btn-ghost{border-color:var(--text)}
+  .box{border-color:var(--text)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top"><span aria-hidden="true">🚗</span> Spălătorie auto ecologică</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#verificare">Ce primești</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0761294713">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-label="Introducere">
+    <div class="wrap">
+      <h1 class="r">Spălătorie auto ecologică</h1>
+      <p class="slogan r" style="--d:.08s">Curățenie auto prietenoasă cu natura</p>
+      <p class="lead r" style="--d:.14s">Rapid și eficient, în București, cu produse ecologice.</p>
+      <div class="actions r" style="--d:.2s">
+        <a class="btn btn-primary" href="tel:0761294713">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40761294713?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sp%C4%83lare%20auto." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+      <p class="phone mono r" style="--d:.26s">0761 294 713</p>
+    </div>
+  </section>
+
+  <section id="despre" class="alt">
+    <div class="wrap about">
+      <div class="r-l">
+        <h2>Despre noi</h2>
+      </div>
+      <div class="r" style="--d:.1s">
+        <p class="body">Suntem o spălătorie auto cu soluții ecologice, gândită pentru mașina ta și pentru mediu. Respectăm standarde moderne de curățenie și folosim produse sigure. La noi, autoturismul tău va arăta impecabil fără griji.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <figure class="about-photo r-s">
+        <img src="img/4.jpg" alt="Spălare auto cu spumă, pe o stradă din oraș" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="verificare">
+    <div class="wrap verify">
+      <div class="r-l">
+        <h2>Ce primești la fiecare spălare</h2>
+        <p class="lead-small">Patru lucruri pe care le urmărim la fiecare mașină.</p>
+        <div class="progress-wrap">
+          <div class="progress-head">
+            <span class="mono" id="count">0 din 4 bifate</span>
+          </div>
+          <div class="progress" aria-hidden="true">
+            <span class="progress-bar" id="progress"><i></i></span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="checklist" id="checklist">
+        <li class="check-item">
+          <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div>
+            <h3>Produse ecologice</h3>
+            <p>Folosim produse ecologice, sigure pentru mașină și mediu.</p>
+          </div>
+        </li>
+        <li class="check-item">
+          <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div>
+            <h3>Servicii rapide</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+            <p>Eficiente, fără așteptare lungă.</p>
+          </div>
+        </li>
+        <li class="check-item">
+          <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div>
+            <h3>Exterior strălucitor</h3>
+            <p>Mașina iese curată și lucioasă pe din afară.</p>
+          </div>
+        </li>
+        <li class="check-item">
+          <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+          <div>
+            <h3>Interior curat</h3>
+            <p>Interiorul este curățat la fel de atent.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="servicii" class="alt">
+    <div class="wrap">
+      <h2 class="r">Servicii</h2>
+      <ul class="svc-list">
+        <li class="svc r">
+          <h3>Reparații auto</h3>
+        </li>
+        <li class="svc r" style="--d:.06s">
+          <h3>Diagnoză</h3>
+        </li>
+        <li class="svc r" style="--d:.12s">
+          <h3>Întreținere</h3>
+        </li>
+      </ul>
+      <p class="note r">Prețurile le stabilim la telefon, în funcție de mașina ta.</p>
+    </div>
+  </section>
+
+  <section id="pasi">
+    <div class="wrap">
+      <h2 class="r">Cum decurge o vizită</h2>
+      <ol class="steps">
+        <li class="step r">
+          <span class="num mono">01</span>
+          <h3>Ne suni sau ne scrii</h3>
+          <p>Spune-ne ce vrei să facem mașinii tale.</p>
+        </li>
+        <li class="step r" style="--d:.08s">
+          <span class="num mono">02</span>
+          <h3>Stabilim ora</h3>
+          <p>Alegem împreună momentul care ți se potrivește.</p>
+        </li>
+        <li class="step r" style="--d:.16s">
+          <span class="num mono">03</span>
+          <h3>Lucrăm cu produse ecologice</h3>
+          <p>Spălăm exteriorul și interiorul mașinii.</p>
+        </li>
+        <li class="step r" style="--d:.24s">
+          <span class="num mono">04</span>
+          <h3>Ieși cu mașina curată</h3>
+          <p>Verifici împreună cu noi rezultatul.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="galerie" class="alt">
+    <div class="wrap">
+      <h2 class="r">Galerie</h2>
+      <div class="gallery">
+        <figure class="g-big r">
+          <img src="img/2.jpg" alt="Spumă de șampon pe o mașină roșie, în timpul spălării" loading="lazy">
+        </figure>
+        <figure class="r" style="--d:.08s">
+          <img src="img/1.jpg" alt="Mașină spălată cu burete și spumă" loading="lazy">
+        </figure>
+        <figure class="r" style="--d:.16s">
+          <img src="img/3.jpg" alt="Spălare cu jet de apă și abur, de către un angajat" loading="lazy">
+        </figure>
+        <figure class="g-wide r" style="--d:.1s">
+          <img src="img/5.jpg" alt="Curățarea unei jante și a anvelopei" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div class="r-l">
+        <h2>Contact</h2>
+        <p class="muted">Sună sau scrie-ne și stabilim împreună o programare.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:0761294713">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40761294713?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20programez%20o%20sp%C4%83lare%20auto." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Sp%C4%83l%C4%83torie+auto+ecologic%C4%83+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+      <div class="r" style="--d:.1s">
+        <iframe class="map" title="Harta spălătoriei auto ecologice din București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.068341399999998,44.400555399999995,26.0763414,44.4045554&amp;layer=mapnik&amp;marker=44.4025554,26.0723414"
+          loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>🚗 Spălătorie auto ecologică, București</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: VintageBlue, JLMedia, DariuszSankowski, sasint, webandi.</p>
+    <p class="credit">© <span id="an">2025</span></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Bara de navigare: umbră când pagina se derulează sub ea
+  var header = document.querySelector('.site-header');
+  var onScroll = function () {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare
+  var reveals = document.querySelectorAll('.r, .r-l, .r-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Lista de verificare: se bifează singură la derulare
+  var list = document.getElementById('checklist');
+  var items = list.querySelectorAll('.check-item');
+  var count = document.getElementById('count');
+  var bar = document.getElementById('progress');
+  var total = items.length;
+
+  function finish(idx) {
+    items[idx].classList.add('done');
+    count.textContent = (idx + 1) + ' din ' + total + ' bifate';
+    if (idx === total - 1) bar.classList.add('full');
+  }
+
+  function runChecklist() {
+    if (reduced) {
+      for (var i = 0; i < total; i++) finish(i);
+      return;
+    }
+    for (var j = 0; j < total; j++) {
+      (function (idx) {
+        setTimeout(function () { finish(idx); }, 380 * (idx + 1));
+      })(j);
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    var lio = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        runChecklist();
+        lio.disconnect();
+      }
+    }, { threshold: 0.35 });
+    lio.observe(list);
+  } else {
+    runChecklist();
+  }
+
+  // Anul din subsol
+  document.getElementById('an').textContent = new Date().getFullYear();
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
