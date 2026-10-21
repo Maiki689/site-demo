@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tartelicious | Tarte și bunătăți în centrul Bucureștiului</title>
+<meta name="description" content="Tarte dulci și sărate, quiche-uri și brownie, mereu proaspete. Strada Ion Brezoianu 35, București.">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --flour:#F7F2EA;
+  --kraft:#C8A27A;
+  --crust:#7A4A26;
+  --ink:#1E1A17;
+  --accent:#b45309;
+  --accent-deep:#9a4608;
+  --ink-soft:rgba(30,26,23,.74);
+  --line:rgba(30,26,23,.14);
+  --r:6px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --head:"Bricolage Grotesque", system-ui, sans-serif;
+  --body:"Figtree", system-ui, sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--flour);
+  color:var(--ink);
+  font:400 1.0625rem/1.5 var(--body);
+  letter-spacing:0;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--crust);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:.5rem;background:var(--ink);color:var(--flour);padding:.6rem 1rem;border-radius:var(--r);z-index:100}
+.skip:focus{left:.75rem}
+
+.wrap{width:min(100% - 2.5rem, 1160px);margin-inline:auto}
+
+/* ---------- Antet cu sticlă ---------- */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(247,242,234,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease), background-color .4s var(--ease);
+}
+.site-header.is-scrolled{
+  box-shadow:0 1px 0 rgba(30,26,23,.06), 0 10px 26px -16px rgba(30,26,23,.35);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand{
+  font:700 1.2rem/1 var(--head);letter-spacing:-.02em;text-decoration:none;color:var(--ink);
+}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:2rem}
+@media (min-width:760px){.nav-links{display:flex}}
+.nav-links a{
+  font-weight:500;text-decoration:none;padding:.4rem 0;
+  background-image:linear-gradient(currentColor,currentColor);
+  background-size:0 1px;background-position:0 100%;background-repeat:no-repeat;
+  transition:background-size .35s var(--ease);
+}
+.nav-links a:hover{background-size:100% 1px}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.8rem 1.35rem;border-radius:var(--r);
+  font:600 1rem/1.1 var(--body);text-decoration:none;text-align:center;
+  -webkit-tap-highlight-color:transparent;cursor:pointer;
+  transition:background-color .2s, color .2s, box-shadow .25s var(--ease);
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.btn-primary:hover{background:var(--accent-deep);box-shadow:0 8px 18px -10px rgba(154,70,8,.8)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ghost:hover{background:rgba(30,26,23,.05)}
+.btn-sm{min-height:2.75rem;padding:.6rem 1rem;font-size:.95rem}
+
+/* ---------- Hero ---------- */
+.hero{padding:calc(4.25rem + 2.25rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.35fr 1fr;gap:4rem;min-height:calc(100svh - 10rem)}
+}
+.hero-stamp{order:-1}
+@media (min-width:900px){.hero-stamp{order:0;justify-self:center}}
+
+.hero-text{animation:rise .6s var(--ease) .35s both}
+.hero h1{
+  font:700 clamp(2.75rem,9vw,5.8rem)/1.02 var(--head);
+  letter-spacing:-.02em;hyphens:none;
+}
+.lead{
+  margin-top:1rem;font:600 clamp(1.25rem,2.6vw,1.6rem)/1.25 var(--head);
+  letter-spacing:-.01em;max-width:24ch;
+}
+.desc{margin-top:.9rem;color:var(--ink-soft);max-width:36ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero-actions .btn{flex:1 1 11rem}
+@media (min-width:520px){.hero-actions .btn{flex:0 0 auto}}
+.hero-addr{margin-top:1.5rem;font-size:.95rem;color:var(--crust);font-weight:500}
+
+/* Ștampila: memorabilul, se apasă o singură dată la încărcare */
+.stamp{
+  width:9.5rem;color:var(--accent);
+  transform:rotate(-4deg);
+  transform-origin:50% 50%;
+  animation:press .8s var(--ease) .15s both;
+}
+@media (min-width:900px){.stamp{width:min(18rem,26vw)}}
+.stamp svg{display:block;width:100%;height:auto;overflow:visible;mix-blend-mode:multiply}
+
+@keyframes press{
+  0%  {opacity:0;transform:rotate(-14deg) scale(1.45)}
+  45% {opacity:1;transform:rotate(-3deg) scale(.93)}
+  70% {opacity:1;transform:rotate(-4.5deg) scale(1.02)}
+  100%{opacity:1;transform:rotate(-4deg) scale(1)}
+}
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,14px,0)}
+  to{opacity:1;transform:none}
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+
+/* ---------- Secțiuni ---------- */
+.section{padding:clamp(4.5rem,10vw,7.5rem) 0}
+h2{
+  font:700 clamp(2.1rem,5vw,3.5rem)/1.05 var(--head);
+  letter-spacing:-.02em;
+}
+.intro{margin-top:1rem;color:var(--ink-soft);max-width:52ch}
+.section-head{margin-bottom:2.5rem}
+
+/* Galerie */
+.gallery{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:9rem;gap:.75rem;
+}
+.gallery figure{
+  margin:0;position:relative;overflow:hidden;
+  border-radius:var(--r);background:var(--kraft);
+}
+.gallery img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.gallery .big{grid-column:1/-1;grid-row:span 2}
+@media (hover:hover){.gallery figure:hover img{transform:scale(1.03)}}
+@media (min-width:900px){
+  .gallery{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:15rem;gap:1rem}
+  .gallery .big{grid-column:span 2;grid-row:span 2}
+}
+
+/* Produse: listă ca la meniul scris de mână */
+.menu{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.menu li{
+  display:grid;gap:.4rem 2rem;padding:1.5rem 0;
+  border-bottom:1px solid var(--line);
+}
+.menu h3{
+  font:650 clamp(1.5rem,3vw,2.1rem)/1.1 var(--head);letter-spacing:-.02em;
+}
+.menu p{color:var(--ink-soft);max-width:40ch}
+@media (min-width:760px){
+  .menu li{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:baseline;padding:1.9rem 0}
+}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+.actions .btn{flex:1 1 11rem}
+@media (min-width:520px){.actions .btn{flex:0 0 auto}}
+
+/* Despre */
+.about-grid{display:grid;gap:3.5rem}
+@media (min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:6rem;align-items:start}}
+.about-text{margin-top:1.5rem;color:var(--ink-soft);max-width:52ch}
+.about-text + .about-text{margin-top:1rem}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.facts li{
+  display:flex;gap:.9rem;align-items:flex-start;
+  font:600 clamp(1.1rem,2vw,1.35rem)/1.35 var(--head);letter-spacing:-.01em;
+}
+.facts li::before{
+  content:"";flex:0 0 .55rem;height:.55rem;margin-top:.55em;
+  background:var(--accent);border-radius:50%;
+}
+.perks{display:grid;gap:1.6rem;margin-top:3rem}
+.perk{display:grid;grid-template-columns:2.5rem minmax(0,1fr);gap:1rem;align-items:start}
+.perk svg{width:2.5rem;height:2.5rem;color:var(--crust)}
+.perk h3{font:650 1.15rem/1.3 var(--head);letter-spacing:-.01em}
+.perk p{color:var(--ink-soft);margin-top:.2rem}
+
+/* Program: bandă de kraft, eticheta de pungă */
+.band{background:var(--kraft);color:var(--ink);padding:clamp(4.5rem,10vw,7.5rem) 0}
+.band-grid{display:grid;gap:3.5rem;align-items:center}
+@media (min-width:900px){.band-grid{grid-template-columns:1fr 1fr;gap:6rem}}
+.band p.addr{margin-top:1.25rem;font-weight:500;max-width:36ch}
+.tag{
+  position:relative;margin:0;max-width:26rem;width:100%;
+  background:var(--flour);border-radius:10px;
+  padding:3rem 2rem 2rem;
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.tag::before{
+  content:"";position:absolute;top:1.1rem;left:50%;
+  width:.9rem;height:.9rem;margin-left:-.45rem;border-radius:50%;
+  background:var(--kraft);box-shadow:inset 0 1px 2px rgba(0,0,0,.28);
+}
+.tag div{padding:1.25rem 0;border-top:1px dashed rgba(30,26,23,.35)}
+.tag div:first-child{border-top:0;padding-top:0}
+.tag div:last-child{padding-bottom:0}
+.tag dt{font:500 1rem/1.3 var(--body);letter-spacing:.01em;color:var(--crust)}
+.tag dd{margin:.2rem 0 0;font:700 clamp(1.7rem,4vw,2.3rem)/1.1 var(--head);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+
+/* Contact */
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}}
+.contact-addr{margin-top:1.5rem;font:600 clamp(1.25rem,2.4vw,1.5rem)/1.3 var(--head);letter-spacing:-.01em}
+.contact-phone{margin-top:.5rem;color:var(--ink-soft)}
+.contact-phone a{color:var(--ink);font-weight:600;text-decoration:none;
+  background-image:linear-gradient(currentColor,currentColor);background-size:100% 1px;background-position:0 100%;background-repeat:no-repeat}
+.contact-actions{display:grid;gap:.75rem;margin-top:2rem;max-width:24rem}
+.map{
+  width:100%;height:20rem;border:0;border-radius:var(--r);
+  filter:sepia(.12) saturate(.9);
+  background:var(--kraft);
+}
+@media (min-width:900px){.map{height:26rem}}
+
+/* Subsol */
+.site-footer{background:var(--ink);color:var(--flour);padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+@media (min-width:760px){.foot-grid{grid-template-columns:1fr 1fr;align-items:end}}
+.foot-brand{font:700 clamp(1.6rem,3vw,2.2rem)/1 var(--head);letter-spacing:-.02em}
+.foot-text{margin-top:.6rem;color:rgba(247,242,234,.8);font-size:.95rem;letter-spacing:.01em}
+.foot-text a{color:var(--flour)}
+.foot-small{color:rgba(247,242,234,.66);font-size:.85rem;letter-spacing:.02em;line-height:1.6}
+.foot-small + .foot-small{margin-top:.4rem}
+.foot-meta{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(247,242,234,.14)}
+@media (min-width:760px){.foot-meta{text-align:right}}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js [data-reveal]{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .55s var(--ease) var(--d,0ms), transform .55s var(--ease) var(--d,0ms);
+}
+.js [data-reveal="left"]{transform:translate3d(-24px,0,0)}
+.js [data-reveal="fade"]{transform:scale(.985)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .stamp{animation:fadein .2s both;transform:rotate(-4deg)}
+  .hero-text{animation:fadein .2s both}
+  .js [data-reveal],
+  .js [data-reveal="left"],
+  .js [data-reveal="fade"]{transform:none;transition:opacity .2s linear}
+  .gallery img{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-header{background:var(--flour);box-shadow:inset 0 -1px 0 var(--ink)}
+  :root{--line:rgba(30,26,23,.45);--ink-soft:var(--ink)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--ink)}
+  .tag{box-shadow:0 0 0 2px var(--ink)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<a class="skip" href="#continut">Treci la conținut</a>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Tartelicious</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#din-cuptor">Din cuptor</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0732816704">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <!-- Prima secțiune: titlu, ștampila și contactul -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1>Tartelicious</h1>
+        <p class="lead">Tarte și bunătăți în centrul orașului</p>
+        <p class="desc">Tarte dulci și sărate, quiche-uri și brownie, mereu proaspete.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:0732816704">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40732816704?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produsele%20disponibile.">Întreabă pe WhatsApp</a>
+        </div>
+        <p class="hero-addr">Strada Ion Brezoianu 35, București</p>
+      </div>
+
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 200 200" focusable="false">
+          <defs>
+            <path id="inel" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/>
+          </defs>
+          <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="5"/>
+          <circle cx="100" cy="100" r="62" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <text fill="currentColor" font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="17">
+            <textPath href="#inel" textLength="458" lengthAdjust="spacing">TARTELICIOUS ★ BUCUREȘTI ★ </textPath>
+          </text>
+          <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <g fill="currentColor">
+            <circle cx="93" cy="93" r="4"/>
+            <circle cx="108" cy="96" r="4"/>
+            <circle cx="98" cy="108" r="4"/>
+            <circle cx="110" cy="110" r="3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section" id="din-cuptor">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-reveal="up">Din cuptor</h2>
+      </div>
+      <div class="gallery">
+        <figure class="big" data-reveal="fade">
+          <img src="img/1.jpg" alt="Tartă cu zmeură proaspătă și cremă de frișcă" loading="lazy" decoding="async">
+        </figure>
+        <figure data-reveal="fade" style="--d:80ms">
+          <img src="img/2.jpg" alt="Plăcintă cu mere, făcută în casă" loading="lazy" decoding="async">
+        </figure>
+        <figure data-reveal="fade" style="--d:160ms">
+          <img src="img/3.jpg" alt="Prăjituri cupcake cu fructe de pădure" loading="lazy" decoding="async">
+        </figure>
+        <figure data-reveal="fade" style="--d:80ms">
+          <img src="img/4.jpg" alt="Tartă cu cremă, în stil portughez" loading="lazy" decoding="async">
+        </figure>
+        <figure data-reveal="fade" style="--d:160ms">
+          <img src="img/5.jpg" alt="Prăjitură cu afine" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section class="section" id="produse">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-reveal="up">Produse</h2>
+        <p class="intro" data-reveal="up" style="--d:80ms">Zilnic găsești tarte dulci și sărate, quiche-uri cremoase și brownie tentante.</p>
+      </div>
+
+      <ul class="menu">
+        <li data-reveal="up">
+          <h3>Tartă dulce</h3>
+          <p>Fructe sau ciocolată, pentru pofticioși</p>
+        </li>
+        <li data-reveal="up" style="--d:60ms">
+          <h3>Tartă sărată</h3>
+          <p>Cu legume și aluat fraged, gustoasă mereu</p>
+        </li>
+        <li data-reveal="up" style="--d:120ms">
+          <h3>Quiche</h3>
+          <p>Umplutură cremoasă, coaptă pe loc</p>
+        </li>
+        <li data-reveal="up" style="--d:180ms">
+          <h3>Brownie</h3>
+          <p>Ciocolată densă, savurată la o cafea</p>
+        </li>
+      </ul>
+
+      <div class="actions" data-reveal="up">
+        <a class="btn btn-primary" href="https://wa.me/40732816704?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produsele%20disponibile.">Întreabă pe WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:0732816704">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section" id="despre">
+    <div class="wrap about-grid">
+      <div>
+        <h2 data-reveal="left">Despre Tartelicious</h2>
+        <p class="about-text" data-reveal="left" style="--d:80ms">La Tartelicious găsești zilnic tarte dulci și sărate, quiche-uri cremoase și brownie tentante.</p>
+        <p class="about-text" data-reveal="left" style="--d:140ms">Suntem în inima Bucureștiului, într-o atmosferă caldă și prietenoasă. Trecătorii se opresc pentru o gustare savuroasă sau un desert delicios.</p>
+      </div>
+
+      <div>
+        <ul class="facts" data-reveal="up">
+          <li>Tarte dulci și sărate, quiche-uri și brownie.</li>
+          <li>Suntem în centrul Bucureștiului, pe strada Ion Brezoianu 35.</li>
+        </ul>
+
+        <div class="perks">
+          <div class="perk" data-reveal="up">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="16" rx="2"/>
+              <path d="M3 10h18M8 4v6M16 4v6"/>
+            </svg>
+            <div>
+              <h3>Proaspăt zilnic</h3>
+              <p>Mereu scoase din cuptor</p>
+            </div>
+          </div>
+          <div class="perk" data-reveal="up" style="--d:80ms">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12h18a9 9 0 0 1-18 0z"/>
+              <path d="M8 8c1-1 2 1 3 0s2 1 3 0"/>
+            </svg>
+            <div>
+              <h3>Diversitate</h3>
+              <p>Tarte dulci și sărate</p>
+            </div>
+          </div>
+          <div class="perk" data-reveal="up" style="--d:160ms">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/>
+              <circle cx="12" cy="10" r="2.2"/>
+            </svg>
+            <div>
+              <h3>Central</h3>
+              <p>Ușor de ajuns în oraș</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program: bandă de kraft cu eticheta -->
+  <section class="band" id="program">
+    <div class="wrap band-grid">
+      <div data-reveal="left">
+        <h2>Program</h2>
+        <p class="addr">Strada Ion Brezoianu 35, București. Ne găsești în centrul orașului.</p>
+      </div>
+      <dl class="tag" data-reveal="up" style="--d:100ms">
+        <div>
+          <dt>Luni – Vineri</dt>
+          <dd>11:00 – 19:00</dd>
+        </div>
+        <div>
+          <dt>Sâmbătă</dt>
+          <dd>11:00 – 14:30</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 data-reveal="up">Ne găsești pe Ion Brezoianu</h2>
+        <p class="contact-addr" data-reveal="up" style="--d:60ms">Strada Ion Brezoianu 35, București</p>
+        <p class="contact-phone" data-reveal="up" style="--d:100ms">Telefon <a href="tel:0732816704">0732 816 704</a></p>
+
+        <div class="contact-actions" data-reveal="up" style="--d:140ms">
+          <a class="btn btn-primary" href="tel:0732816704">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40732816704?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20produsele%20disponibile.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:tarteliciouss@gmail.com">Scrie un email</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Tartelicious+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <iframe
+        class="map"
+        data-reveal="fade"
+        style="--d:120ms"
+        title="Harta: Tartelicious, strada Ion Brezoianu 35, București"
+        loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=26.090224499999998,44.434795199999996,26.0982245,44.4387952&amp;layer=mapnik&amp;marker=44.4367952,26.0942245">
+      </iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand">Tartelicious</p>
+        <p class="foot-text">Tarte și bunătăți în centrul orașului</p>
+        <p class="foot-text">Strada Ion Brezoianu 35, București · <a href="tel:0732816704">0732 816 704</a></p>
+      </div>
+    </div>
+    <div class="foot-meta">
+      <p class="foot-small">Model de site (demo)</p>
+      <p class="foot-small">Fotografii ilustrative de pe Pixabay: Pexels, Einladung_zum_Essen, cegoh, MiVargof</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('[data-reveal]');
+
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
