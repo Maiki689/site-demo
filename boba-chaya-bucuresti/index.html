@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Boba chaya, bubble tea în București, strada Tache Ionescu 8B. Ceai cu perle, gust surprinzător.">
+<title>Boba chaya, bubble tea în București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --vanilie:#FFF6E5;
+  --capsuna:#F28B9B;
+  --fistic:#B5D99C;
+  --ciocolata:#5C3A2E;
+  --accent:#be123c;
+  --accent-dark:#9f0f31;
+  --fistic-soft:#EAF4DC;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Lora',Georgia,serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--ciocolata);
+  background:var(--vanilie);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Outfit',system-ui,sans-serif;color:var(--ciocolata)}
+h1{font-size:clamp(2.6rem,11vw,6.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+h2{font-size:clamp(2rem,5vw,3.25rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+h3{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+p{max-width:60ch}
+a{color:inherit}
+section{scroll-margin-top:4.5rem}
+img,svg{display:block;max-width:100%}
+
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:1.25rem}
+.section{padding-block:clamp(4.5rem,10vw,7.5rem)}
+.section.tint{background:var(--fistic-soft)}
+.section-head{margin-bottom:0}
+
+/* Navigare, sticlă */
+.site-header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,246,229,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.7);
+  transition:box-shadow .3s var(--ease);
+}
+.site-header.scrolled{box-shadow:0 12px 30px -20px rgba(92,58,46,.45)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.01em;
+  text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;color:var(--ciocolata);
+  min-height:44px;
+}
+.site-header nav{display:none}
+.site-header nav a{
+  font-family:'Outfit',sans-serif;font-weight:600;text-decoration:none;color:var(--ciocolata);
+  padding:.5rem 0;min-height:44px;display:inline-flex;align-items:center;
+  background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 100%/0 2px;
+  transition:background-size .3s var(--ease),color .2s;
+}
+.site-header nav a:hover{color:var(--accent);background-size:100% 2px}
+@media (min-width:760px){
+  .site-header nav{display:flex;gap:2.25rem}
+}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:.85rem 1.6rem;border-radius:999px;
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:1rem;letter-spacing:0;
+  text-decoration:none;border:0;cursor:pointer;
+  transition:background-color .2s,box-shadow .25s,color .2s,transform .1s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 24px -14px rgba(190,18,60,.85)}
+.btn-primary:hover{background:var(--accent-dark);box-shadow:0 14px 28px -14px rgba(190,18,60,.95)}
+.btn-ghost{background:rgba(92,58,46,.09);color:var(--ciocolata)}
+.btn-ghost:hover{background:rgba(92,58,46,.15)}
+.btn-small{min-height:44px;padding:.6rem 1.1rem;font-size:.95rem}
+.text-link{
+  font-family:'Outfit',sans-serif;font-weight:600;color:var(--accent);
+  min-height:44px;display:inline-flex;align-items:center;
+  text-underline-offset:4px;text-decoration:underline;text-decoration-thickness:1.5px;
+}
+.text-link:hover{color:var(--accent-dark)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--capsuna);outline-offset:3px}
+
+/* Prima secțiune */
+.hero{position:relative;overflow:hidden;padding-block:2rem 3.5rem}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.slogan{
+  font-family:'Outfit',sans-serif;font-weight:500;color:var(--accent);
+  font-size:clamp(1.2rem,3vw,1.5rem);letter-spacing:-.01em;margin-top:1rem;
+}
+.lead{margin-top:.75rem;font-size:1.125rem;max-width:34ch}
+.actions{display:flex;flex-direction:column;gap:.75rem;margin-top:2rem}
+.hero .actions{margin-top:2rem}
+
+.hero-art{position:relative;width:min(100%,380px);aspect-ratio:4/5;margin-inline:auto}
+.blob{
+  position:absolute;inset:8% 4% 4% 4%;background:var(--fistic);
+  border-radius:58% 42% 52% 48% / 46% 56% 44% 54%;
+}
+.blob-2{position:absolute;left:0;top:14%;width:26%;aspect-ratio:1;border-radius:50%;background:var(--capsuna)}
+.cup{position:absolute;inset:0;width:100%;height:100%;overflow:visible;z-index:1}
+.cup .outline{pointer-events:none}
+.bubble{
+  position:absolute;z-index:2;bottom:10%;left:var(--x);width:var(--s);aspect-ratio:1;border-radius:50%;
+  border:2px solid rgba(92,58,46,.28);background:rgba(255,246,229,.55);
+  opacity:0;animation:rise var(--t) ease-in var(--dl) infinite;pointer-events:none;
+}
+.bubble.b-red{border-color:rgba(190,18,60,.45);background:rgba(242,139,155,.35)}
+@keyframes rise{
+  0%{transform:translateY(0) scale(.6);opacity:0}
+  15%{opacity:.9}
+  100%{transform:translateY(-320px) scale(1);opacity:0}
+}
+
+/* Stratificare: paharul se construiește strat cu strat */
+.layer{transform-box:fill-box;transform-origin:50% 100%}
+@keyframes stack{
+  from{transform:scaleY(0)}
+  60%{transform:scaleY(1.06)}
+  to{transform:scaleY(1)}
+}
+@keyframes drop{
+  from{opacity:0;transform:translateY(-22px)}
+  to{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .cup .layer{animation:stack .7s cubic-bezier(.34,1.25,.5,1) both;animation-delay:var(--d)}
+  .cup .lid,.cup .straw{animation:drop .6s var(--ease) both;animation-delay:var(--d)}
+}
+
+/* Despre */
+.split{display:grid;gap:3.5rem}
+.body{margin-top:1.25rem;font-size:1.0625rem}
+.perks{list-style:none;display:grid;gap:1.75rem;margin-top:0}
+.perk{display:flex;align-items:center;gap:1.1rem}
+.perk .ico{
+  flex:0 0 64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;
+}
+.perk:nth-child(1) .ico{background:var(--fistic)}
+.perk:nth-child(2) .ico{background:#FBD3DA}
+.perk:nth-child(3) .ico{background:#F4DDB8}
+.perk p{font-size:1rem;margin-top:.15rem}
+
+/* Meniu */
+.menu{list-style:none;display:grid;gap:2.5rem 3rem;margin-top:3rem}
+.menu-item{display:flex;align-items:center;gap:1.25rem}
+.swatch{
+  flex:0 0 72px;height:72px;border-radius:50%;overflow:hidden;
+  box-shadow:inset 0 0 0 2px rgba(92,58,46,.1);
+  transition:transform .35s var(--ease);
+}
+.menu-item:hover .swatch{transform:rotate(-8deg)}
+.s1{background:linear-gradient(180deg,#FFF6E5 0 38%,#5C3A2E 38% 100%)}
+.s2{background:linear-gradient(180deg,#FFF6E5 0 40%,#E6C9A0 40% 74%,#5C3A2E 74% 100%)}
+.s3{background:linear-gradient(180deg,#F28B9B 0 46%,#FFF6E5 46% 66%,#F28B9B 66% 100%)}
+.s4{background:linear-gradient(180deg,#B5D99C 0 50%,#FFF6E5 50% 62%,#5C3A2E 62% 100%)}
+.menu-item p{font-size:1rem;margin-top:.2rem}
+.menu-cta{margin-top:3.25rem}
+
+/* Unde ne găsești */
+.contact-grid{display:grid;gap:3rem}
+.address{
+  font-family:'Outfit',sans-serif;font-weight:600;font-size:clamp(1.5rem,3.5vw,2.1rem);
+  line-height:1.2;letter-spacing:-.01em;margin-top:1.5rem;
+}
+.address span{font-weight:400;display:block;opacity:.8}
+.hours{margin-top:1.75rem;font-size:1.0625rem}
+.hours strong{
+  display:block;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.5rem;
+  color:var(--accent);letter-spacing:-.01em;margin-top:.25rem;
+}
+.phone{margin-top:1.5rem;font-size:1.0625rem}
+.phone a{font-family:'Outfit',sans-serif;font-weight:600;font-size:1.2rem;color:var(--ciocolata);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.phone a:hover{color:var(--accent)}
+.contact-grid .actions{margin-top:2rem}
+.map iframe{
+  width:100%;height:300px;border:0;border-radius:32px;display:block;background:var(--fistic-soft);
+}
+
+/* Subsol */
+.site-footer{
+  background:var(--ciocolata);color:var(--vanilie);
+  padding:3.5rem 0 2.75rem;border-radius:48px 48px 0 0;
+}
+.foot{display:flex;flex-direction:column;gap:.4rem}
+.foot .brand{color:var(--vanilie)}
+.foot p{letter-spacing:.02em;font-size:.95rem}
+.foot .demo{margin-top:1.25rem;font-size:.85rem;opacity:.85}
+
+/* Dezvăluire la derulare */
+html.js .reveal{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:calc(var(--i,0) * 90ms);
+}
+html.js .reveal[data-fx="up"]{transform:translateY(26px)}
+html.js .reveal[data-fx="left"]{transform:translateX(-26px)}
+html.js .reveal[data-fx="scale"]{transform:scale(.94)}
+html.js .reveal[data-fx="fade"]{transform:none}
+html.js .reveal.in{opacity:1;transform:none}
+
+/* Ecrane mai largi */
+@media (min-width:760px){
+  .perks{gap:2rem}
+  .menu{grid-template-columns:1fr 1fr}
+  .map iframe{height:380px}
+}
+@media (min-width:900px){
+  .hero{min-height:calc(100vh - 4rem);display:flex;align-items:center;padding-block:4rem}
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+  .hero-art{width:100%;max-width:420px;justify-self:end}
+  .split{grid-template-columns:1fr 1fr;align-items:start;gap:5rem}
+  .contact-grid{grid-template-columns:1fr 1.1fr;align-items:center;gap:4.5rem}
+  .map iframe{height:440px}
+}
+@media (min-width:520px){
+  .actions{flex-direction:row;flex-wrap:wrap}
+}
+
+/* Mișcare redusă */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .bubble{display:none}
+  .cup .layer,.cup .lid,.cup .straw{animation:none!important}
+  html.js .reveal{transform:none!important;transition:opacity .2s linear!important}
+  .btn,.swatch{transition:background-color .2s,box-shadow .2s,color .2s!important}
+  .btn:active{transform:none}
+}
+
+/* Transparență redusă */
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--vanilie);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* Contrast crescut */
+@media (prefers-contrast:more){
+  .site-header{background:var(--vanilie);border-top:0;border-bottom:2px solid var(--ciocolata)}
+  .site-header nav a,.brand{color:#000}
+  .btn-ghost{border:2px solid var(--ciocolata);background:var(--vanilie)}
+  .btn-primary{background:var(--accent-dark)}
+  .section.tint{background:#E2F0D0}
+  .blob{background:#9ccb7d}
+  .bubble{border-width:3px;border-color:var(--ciocolata)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span aria-hidden="true">🧋</span>Boba chaya</a>
+    <nav aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="tel:0752122322">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="titlu">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1 id="titlu">Boba chaya</h1>
+      <p class="slogan">Ceai cu perle, gust surprinzător</p>
+      <p class="lead">Descoperă bucuria unui bubble tea bine făcut.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:0752122322">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40752122322?text=Bun%C4%83%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20vostru." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="blob" aria-hidden="true"></div>
+      <div class="blob-2" aria-hidden="true"></div>
+
+      <svg class="cup" viewBox="0 -40 320 440" role="img" aria-labelledby="cupTitlu">
+        <title id="cupTitlu">Pahar cu bubble tea, desenat din straturi colorate</title>
+        <defs>
+          <clipPath id="cupClip">
+            <path d="M30 40H290L262 370Q259 392 236 392H84Q61 392 58 370Z"/>
+          </clipPath>
+        </defs>
+        <g clip-path="url(#cupClip)">
+          <g class="layer" style="--d:.2s">
+            <rect x="0" y="300" width="320" height="100" fill="#5C3A2E"/>
+            <g id="pearls"></g>
+          </g>
+          <g class="layer" style="--d:.75s">
+            <rect x="0" y="232" width="320" height="70" fill="#B5D99C"/>
+          </g>
+          <g class="layer" style="--d:1.3s">
+            <rect x="0" y="150" width="320" height="84" fill="#F28B9B"/>
+          </g>
+          <g class="layer" style="--d:1.85s">
+            <path d="M0 70Q30 52 60 70T120 70T180 70T240 70T300 70T360 70V160H0Z" fill="#FFF6E5"/>
+            <rect x="92" y="92" width="10" height="4" rx="2" fill="#be123c" transform="rotate(-20 97 94)"/>
+            <rect x="150" y="80" width="10" height="4" rx="2" fill="#F28B9B" transform="rotate(14 155 82)"/>
+            <rect x="200" y="98" width="10" height="4" rx="2" fill="#be123c" transform="rotate(-8 205 100)"/>
+            <rect x="244" y="86" width="10" height="4" rx="2" fill="#B5D99C" transform="rotate(22 249 88)"/>
+            <rect x="124" y="106" width="10" height="4" rx="2" fill="#B5D99C" transform="rotate(-12 129 108)"/>
+          </g>
+          <rect x="56" y="90" width="10" height="250" rx="5" fill="#fff" opacity=".45"/>
+        </g>
+        <path d="M30 40H290L262 370Q259 392 236 392H84Q61 392 58 370Z" fill="none" stroke="#5C3A2E" stroke-opacity=".25" stroke-width="3" stroke-linejoin="round" class="outline"/>
+        <g class="lid" style="--d:2.3s">
+          <rect x="18" y="22" width="284" height="26" rx="13" fill="#be123c"/>
+        </g>
+        <g class="straw" style="--d:2.6s">
+          <rect x="196" y="-28" width="20" height="130" rx="10" fill="#be123c" transform="rotate(10 206 60)"/>
+          <rect x="202" y="-18" width="5" height="110" rx="2.5" fill="#fff" opacity=".45" transform="rotate(10 206 60)"/>
+        </g>
+      </svg>
+
+      <span class="bubble" aria-hidden="true" style="--x:8%;--s:14px;--dl:3s;--t:5.2s"></span>
+      <span class="bubble b-red" aria-hidden="true" style="--x:20%;--s:9px;--dl:3.8s;--t:4.6s"></span>
+      <span class="bubble" aria-hidden="true" style="--x:76%;--s:18px;--dl:3.3s;--t:6s"></span>
+      <span class="bubble b-red" aria-hidden="true" style="--x:88%;--s:10px;--dl:4.4s;--t:4.9s"></span>
+      <span class="bubble" aria-hidden="true" style="--x:64%;--s:8px;--dl:5s;--t:5.5s"></span>
+      <span class="bubble b-red" aria-hidden="true" style="--x:34%;--s:12px;--dl:4.2s;--t:6.4s"></span>
+    </div>
+  </div>
+</section>
+
+<section id="despre" class="section" aria-labelledby="despre-titlu">
+  <div class="wrap split">
+    <div class="reveal" data-fx="left">
+      <h2 id="despre-titlu">Despre noi</h2>
+      <p class="body">Boba chaya este locul unde te bucuri de bubble tea autentic într-o atmosferă colorată.</p>
+      <p class="body">Suntem pe strada Tache Ionescu 8B, în inima Bucureștiului.</p>
+      <p class="body">Alege-ți băutura preferată și relaxează-te între prieteni.</p>
+    </div>
+
+    <ul class="perks">
+      <li class="perk reveal" data-fx="scale" style="--i:0">
+        <span class="ico" aria-hidden="true">✨</span>
+        <div>
+          <h3>Atmosferă relaxată</h3>
+          <p>Ideal pentru pauze cu prietenii</p>
+        </div>
+      </li>
+      <li class="perk reveal" data-fx="scale" style="--i:1">
+        <span class="ico" aria-hidden="true">🌱</span>
+        <div>
+          <h3>Ingrediente proaspete</h3>
+          <p>Băuturi delicioase, zilnic pregătite</p>
+        </div>
+      </li>
+      <li class="perk reveal" data-fx="scale" style="--i:2">
+        <span class="ico" aria-hidden="true">🏙️</span>
+        <div>
+          <h3>Central</h3>
+          <p>Ușor de găsit în București</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="meniu" class="section tint" aria-labelledby="meniu-titlu">
+  <div class="wrap">
+    <h2 id="meniu-titlu" class="section-head reveal" data-fx="up">Meniu</h2>
+
+    <ul class="menu">
+      <li class="menu-item reveal" data-fx="up" style="--i:0">
+        <span class="swatch s1" aria-hidden="true"></span>
+        <div>
+          <h3>Bubble tea clasic</h3>
+          <p>Ceai cu perle de tapioca, rece sau cald</p>
+        </div>
+      </li>
+      <li class="menu-item reveal" data-fx="up" style="--i:1">
+        <span class="swatch s2" aria-hidden="true"></span>
+        <div>
+          <h3>Ceai cu lapte</h3>
+          <p>Ceai tradițional, cu lapte și perle</p>
+        </div>
+      </li>
+      <li class="menu-item reveal" data-fx="up" style="--i:2">
+        <span class="swatch s3" aria-hidden="true"></span>
+        <div>
+          <h3>Ceai de fructe</h3>
+          <p>Băutură răcoritoare cu fructe și perle</p>
+        </div>
+      </li>
+      <li class="menu-item reveal" data-fx="up" style="--i:3">
+        <span class="swatch s4" aria-hidden="true"></span>
+        <div>
+          <h3>Ceai verde infuzat</h3>
+          <p>Ceai ușor, cu perle de tapioca</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="menu-cta reveal" data-fx="fade">
+      <a class="btn btn-primary" href="https://wa.me/40752122322?text=Bun%C4%83%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20vostru." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section" aria-labelledby="contact-titlu">
+  <div class="wrap contact-grid">
+    <div class="reveal" data-fx="up">
+      <h2 id="contact-titlu">Unde ne găsești</h2>
+      <p class="address">Strada Tache Ionescu 8B<span>București</span></p>
+      <p class="hours">Deschis de luni până vineri, între orele <strong>08:00 și 17:00</strong></p>
+      <p class="phone">Telefon: <a href="tel:0752122322">0752 122 322</a></p>
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:0752122322">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40752122322?text=Bun%C4%83%21%20A%C8%99%20dori%20s%C4%83%20aflu%20mai%20multe%20despre%20meniul%20vostru." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+      <p style="margin-top:1.25rem">
+        <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Boba+chaya+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </p>
+    </div>
+
+    <div class="map reveal" data-fx="fade">
+      <iframe
+        title="Harta: Boba chaya, strada Tache Ionescu 8B, București"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=26.0934186,44.442203899999996,26.101418600000002,44.4462039&amp;layer=mapnik&amp;marker=44.4442039,26.0974186"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p class="brand"><span aria-hidden="true">🧋</span>Boba chaya</p>
+    <p>Ceai cu perle, gust surprinzător</p>
+    <p>Strada Tache Ionescu 8B, București</p>
+    <p class="demo">Model de site (demo)</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Perlele din pahar
+  var g = document.getElementById('pearls');
+  if (g) {
+    var ns = 'http://www.w3.org/2000/svg';
+    for (var r = 0; r < 4; r++) {
+      for (var c = 0; c < 7; c++) {
+        var cx = 62 + c * 30 + (r % 2) * 15;
+        var cy = 318 + r * 20;
+        if (cx > 262) continue;
+        var p = document.createElementNS(ns, 'circle');
+        p.setAttribute('cx', cx);
+        p.setAttribute('cy', cy);
+        p.setAttribute('r', 9);
+        p.setAttribute('fill', '#2E1A12');
+        g.appendChild(p);
+        var h = document.createElementNS(ns, 'circle');
+        h.setAttribute('cx', cx - 3);
+        h.setAttribute('cy', cy - 3);
+        h.setAttribute('r', 2.6);
+        h.setAttribute('fill', '#9C7B6C');
+        h.setAttribute('opacity', '.85');
+        g.appendChild(h);
+      }
+    }
+  }
+
+  // Umbra subtilă a barei de navigare, doar când pagina se derulează
+  var header = document.querySelector('.site-header');
+  var onScroll = function () {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
