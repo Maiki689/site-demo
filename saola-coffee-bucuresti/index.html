@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saola Coffee, cafea de specialitate în București</title>
+<meta name="description" content="Saola Coffee, cafenea în București, pe Calea Plevnei 7. Cafea de specialitate, gust autentic.">
+<meta name="theme-color" content="#F7F2EA">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kraft:#C8A27A;
+  --flour:#F7F2EA;
+  --crust:#7A4A26;
+  --ink:#1E1A17;
+  --accent:#b45309;
+  --accent-deep:#9a4507;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;background:var(--flour);color:var(--ink);
+  font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;overflow-x:clip;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,sans-serif;letter-spacing:-.02em;line-height:1.05;font-weight:700;margin:0}
+p{margin:0}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+section[id]{scroll-margin-top:4rem}
+
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+
+/* ---------- Navigare: sticlă ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(247,242,234,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 10px 28px -18px rgba(30,26,23,.45)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:3.5rem}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.nav-links{display:flex;align-items:center;gap:1.1rem;font-size:.92rem;font-weight:600}
+.nav-links a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px;color:var(--ink)}
+.nav-links a:not(.btn){position:relative}
+.nav-call{display:none !important}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.75rem 1.3rem;border-radius:4px;
+  font:600 1rem/1.2 Figtree,sans-serif;letter-spacing:0;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .1s ease,background-color .2s ease,box-shadow .25s ease,color .2s ease,border-color .2s ease;
+}
+.btn:hover{box-shadow:0 8px 18px -10px rgba(30,26,23,.55)}
+.btn:active{transform:scale(.97)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-deep)}
+.btn-flour{background:var(--flour);color:var(--ink)}
+.btn-flour:hover{background:#fff}
+.btn-line{background:transparent;color:inherit;border-color:currentColor}
+.btn-line:hover{background:rgba(247,242,234,.08)}
+.btn-small{min-height:44px;padding:.5rem 1rem;font-size:.9rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Prima secțiune ---------- */
+.hero{padding:7.25rem 0 4.5rem}
+.hero-grid{position:relative;display:grid;gap:2rem;align-items:center}
+.tag{
+  position:relative;display:inline-block;justify-self:start;
+  background:var(--kraft);color:var(--ink);
+  padding:.4rem 1rem .4rem 1.75rem;border-radius:3px;
+  font-size:.82rem;font-weight:600;letter-spacing:.03em;
+}
+.tag::before{
+  content:"";position:absolute;left:.6rem;top:50%;translate:0 -50%;
+  width:.5rem;height:.5rem;border-radius:50%;background:var(--flour);
+}
+.hero h1{
+  font-size:clamp(3rem,13.5vw,8rem);letter-spacing:-.02em;line-height:1.05;
+  margin:1.25rem 0 .9rem;
+}
+.slogan{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+  font-size:clamp(1.15rem,3vw,1.6rem);letter-spacing:-.01em;line-height:1.2;
+}
+.lead{max-width:34ch;margin:.9rem 0 1.75rem;color:rgba(30,26,23,.82)}
+
+.stamp{
+  position:absolute;top:0;right:0;width:8.5rem;color:var(--accent);
+  mix-blend-mode:multiply;pointer-events:none;
+  transform:rotate(-6deg);
+  animation:press .7s var(--ease) .2s both;
+}
+.stamp svg{display:block;width:100%;height:auto;overflow:visible}
+.stamp .ink{filter:url(#ink)}
+@keyframes press{
+  0%{opacity:0;transform:rotate(-6deg) scale(1.45)}
+  45%{opacity:1;transform:rotate(-6deg) scale(.94)}
+  70%{opacity:1;transform:rotate(-6deg) scale(1.02)}
+  100%{opacity:1;transform:rotate(-6deg) scale(1)}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* ---------- Secțiuni generale ---------- */
+.section{padding:clamp(4.5rem,10vw,8rem) 0}
+.h2{font-size:clamp(2.2rem,6vw,4rem);max-width:16ch}
+
+/* ---------- Despre (kraft) ---------- */
+.despre{background:var(--kraft);color:var(--ink)}
+.split{display:grid;gap:2.5rem}
+.lead-text{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:500;
+  font-size:clamp(1.25rem,2.4vw,1.5rem);letter-spacing:-.01em;line-height:1.3;margin-bottom:1.25rem;
+}
+.despre p.body{max-width:58ch;color:rgba(30,26,23,.86)}
+.avants{display:grid;gap:1rem;margin-top:3.5rem}
+.avant{
+  position:relative;background:var(--flour);
+  padding:2.75rem 1.5rem 1.75rem;border-radius:4px;
+}
+.avant::before{
+  content:"";position:absolute;top:1.1rem;left:50%;translate:-50% 0;
+  width:.7rem;height:.7rem;border-radius:50%;background:var(--kraft);
+}
+.avant .emo{display:block;font-size:1.6rem;line-height:1;margin-bottom:.8rem}
+.avant h3{font-size:1.2rem;margin-bottom:.35rem}
+.avant p{font-size:.98rem;color:rgba(30,26,23,.82)}
+
+/* ---------- Meniu (coajă) ---------- */
+.meniu{background:var(--crust);color:var(--flour)}
+.meniu .h2{color:var(--flour)}
+.head-row{display:grid;gap:1rem;margin-bottom:3rem}
+.head-row p{color:rgba(247,242,234,.86);max-width:40ch}
+.menu{list-style:none;padding:0;margin:0;display:grid}
+.menu li{border-top:1px solid rgba(247,242,234,.28);padding:1.6rem 0 1.9rem}
+.menu h3{font-size:clamp(1.5rem,3vw,1.9rem);margin-bottom:.4rem}
+.menu p{color:rgba(247,242,234,.88)}
+.meniu .actions{margin-top:2.75rem}
+
+/* ---------- Galerie (făină) ---------- */
+.galerie{background:var(--flour)}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:3rem}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:4px;aspect-ratio:4/5;background:var(--kraft)}
+.gal figure:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.gal img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gal figure:hover img{transform:scale(1.02)}
+
+/* ---------- Contact (negru) ---------- */
+.contact{background:var(--ink);color:var(--flour)}
+.contact .h2{color:var(--flour)}
+.contact-grid{display:grid;gap:3rem}
+.contact .lead-c{color:rgba(247,242,234,.86);max-width:44ch;margin-top:1.1rem}
+.phone{
+  display:inline-flex;align-items:center;min-height:44px;margin:1.5rem 0 1.5rem;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:clamp(1.75rem,4vw,2.4rem);letter-spacing:-.02em;color:var(--flour);text-decoration:none;
+}
+.addr{color:rgba(247,242,234,.86)}
+.contact .actions{margin-top:1.5rem}
+.hours-title{font-size:1.1rem;margin:2.75rem 0 .5rem}
+.hours{list-style:none;padding:0;margin:0}
+.hours li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-top:1px solid rgba(247,242,234,.16);color:rgba(247,242,234,.9)}
+.hours li:last-child{border-bottom:1px solid rgba(247,242,234,.16)}
+.hours li.today{color:var(--flour);font-weight:700}
+.hours li.today span:first-child::before{
+  content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;
+  background:var(--kraft);margin-right:.6rem;vertical-align:middle;
+}
+.status{margin-top:.9rem;color:var(--kraft);font-weight:600;min-height:1.5em}
+.map-col{min-height:340px}
+.map{display:block;width:100%;height:340px;border:0;border-radius:4px;background:var(--crust)}
+
+/* ---------- Subsol ---------- */
+.footer{background:var(--flour);color:var(--ink);padding:3rem 0 2.5rem;font-size:.92rem}
+.footer-grid{display:grid;gap:1.25rem}
+.footer .brand{font-size:1.15rem}
+.footer p{color:rgba(30,26,23,.82)}
+.credit{font-size:.8rem;letter-spacing:.02em;color:rgba(30,26,23,.72);max-width:72ch}
+
+/* ---------- Mișcare la derulare ---------- */
+.js [data-rv]{
+  opacity:0;transform:translate3d(0,24px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:calc(var(--i,0) * 90ms);
+}
+.js [data-rv="l"]{transform:translate3d(-24px,0,0)}
+.js [data-rv="s"]{transform:scale(.97)}
+.js [data-rv="f"]{transform:none}
+.js [data-rv].in{opacity:1;transform:none}
+
+/* ---------- Responsive ---------- */
+@media (min-width:640px){
+  .nav-call{display:inline-flex !important}
+}
+@media (max-width:639px){
+  .hide-sm{display:none !important}
+}
+@media (min-width:760px){
+  .avants{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+  .gal{grid-template-columns:repeat(6,1fr);grid-auto-rows:11vw;gap:.9rem}
+  .gal figure:first-child{grid-column:span 4;grid-row:span 4;aspect-ratio:auto}
+  .gal figure:nth-child(2),.gal figure:nth-child(3){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .gal figure:nth-child(4),.gal figure:nth-child(5){grid-column:span 3;grid-row:span 2;aspect-ratio:auto}
+}
+@media (min-width:860px){
+  .hero{min-height:100svh;display:flex;align-items:center;padding:6rem 0 5rem}
+  .hero-grid{grid-template-columns:1.25fr .75fr;gap:4rem}
+  .stamp{position:relative;top:auto;right:auto;width:min(100%,25rem);justify-self:center;animation-name:press}
+  .split{grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:start}
+  .head-row{grid-template-columns:1fr 1fr;align-items:end}
+  .menu{grid-template-columns:1fr 1fr;column-gap:4rem}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:5rem;align-items:stretch}
+  .map-col{min-height:460px}
+  .map{height:100%;min-height:460px}
+  .footer-grid{grid-template-columns:1fr auto;align-items:end}
+  .nav-links{gap:1.6rem}
+}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--flour);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 -2px 0 var(--ink)}
+  .btn-line{border-width:2px}
+  .tag,.avant{outline:1.5px solid var(--ink)}
+  .menu li,.hours li{border-color:currentColor}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .stamp{animation:fade .2s linear both;transform:rotate(-6deg)}
+  .js [data-rv]{transform:none !important;transition:opacity .2s linear !important;transition-delay:0s !important}
+  .btn:active{transform:none}
+  .gal figure:hover img{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Saola Coffee</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a class="hide-sm" href="#despre">Despre</a>
+      <a href="#meniu">Meniu</a>
+      <a class="hide-sm" href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-accent btn-small nav-call" href="tel:0756286765">Sună acum</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Prima secțiune -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <span class="tag">Cafenea din București</span>
+
+      <div>
+        <h1>Saola<br>Coffee</h1>
+        <p class="slogan">Cafea de specialitate, gust autentic</p>
+        <p class="lead">Savurează o cafea de specialitate într-un loc prietenos.</p>
+        <div class="actions">
+          <a class="btn btn-accent" href="tel:0756286765">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40756286765?text=Bun%C4%83%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20cafea%20de%20la%20Saola%20Coffee." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 400 400" role="presentation" focusable="false">
+          <defs>
+            <path id="ring" d="M50,200 a150,150 0 1,1 300,0 a150,150 0 1,1 -300,0"/>
+          </defs>
+          <g class="ink" fill="none" stroke="currentColor">
+            <circle cx="200" cy="200" r="194" stroke-width="7"/>
+            <circle cx="200" cy="200" r="126" stroke-width="2.5"/>
+          </g>
+          <g class="ink" fill="currentColor">
+            <text font-family="Bricolage Grotesque, sans-serif" font-weight="700" font-size="34">
+              <textPath href="#ring" textLength="920" lengthAdjust="spacing">SAOLA COFFEE ✶ BUCUREȘTI ✶ CALEA PLEVNEI 7 ✶</textPath>
+            </text>
+            <text x="200" y="232" text-anchor="middle" font-size="92">☕</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="despre section" id="despre">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <h2 class="h2" data-rv>O cafea bună, un loc cald.</h2>
+        </div>
+        <div>
+          <p class="lead-text" data-rv="f" style="--i:1">Saola Coffee este locul unde cafeaua de specialitate se întâlnește cu atmosfera caldă și urbană din București.</p>
+          <p class="body" data-rv="f" style="--i:2">Fie că iei cafeaua cu tine sau vrei să te relaxezi, te așteptăm cu drag. Descoperă gustul autentic al cafelei noastre.</p>
+        </div>
+      </div>
+
+      <div class="avants">
+        <article class="avant" data-rv style="--i:0">
+          <span class="emo" aria-hidden="true">🌱</span>
+          <h3>Cafea proaspătă</h3>
+          <p>Boabe de specialitate, mereu aromate</p>
+        </article>
+        <article class="avant" data-rv style="--i:1">
+          <span class="emo" aria-hidden="true">💬</span>
+          <h3>Loc prietenos</h3>
+          <p>Echipa noastră te întâmpină cu zâmbet</p>
+        </article>
+        <article class="avant" data-rv style="--i:2">
+          <span class="emo" aria-hidden="true">📍</span>
+          <h3>Central</h3>
+          <p>Pe Calea Plevnei 7, în București</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="meniu section" id="meniu">
+    <div class="wrap">
+      <div class="head-row">
+        <h2 class="h2" data-rv>Meniu</h2>
+        <p data-rv="f" style="--i:1">Băuturile de bază, făcute cu boabe de specialitate.</p>
+      </div>
+
+      <ul class="menu">
+        <li data-rv="l" style="--i:0">
+          <h3>Espresso</h3>
+          <p>Bază pentru toate băuturile, intens și aromat</p>
+        </li>
+        <li data-rv="l" style="--i:1">
+          <h3>Cappuccino</h3>
+          <p>Cafea cremoasă cu lapte spumat</p>
+        </li>
+        <li data-rv="l" style="--i:2">
+          <h3>Latte</h3>
+          <p>Echilibru perfect între lapte și cafea</p>
+        </li>
+        <li data-rv="l" style="--i:3">
+          <h3>Cafea la pachet</h3>
+          <p>Cafeaua preferată, gata de drum</p>
+        </li>
+      </ul>
+
+      <div class="actions" data-rv="f">
+        <a class="btn btn-flour" href="https://wa.me/40756286765?text=Bun%C4%83%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20cafea%20de%20la%20Saola%20Coffee." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="galerie section" id="galerie">
+    <div class="wrap">
+      <div class="head-row" style="margin-bottom:0">
+        <h2 class="h2" data-rv>Atmosfera</h2>
+        <p data-rv="f" style="--i:1;color:rgba(30,26,23,.84)">Imagini ilustrative: cafea, boabe prăjite și oameni la masă.</p>
+      </div>
+
+      <div class="gal">
+        <figure data-rv="s" style="--i:0">
+          <img src="img/1.jpg" alt="Cappuccino servit pe farfurioară" loading="lazy">
+        </figure>
+        <figure data-rv="s" style="--i:1">
+          <img src="img/2.jpg" alt="Cafea espresso și lapte spumat" loading="lazy">
+        </figure>
+        <figure data-rv="s" style="--i:2">
+          <img src="img/3.jpg" alt="Client citind cu o cafea într-o cafenea" loading="lazy">
+        </figure>
+        <figure data-rv="s" style="--i:3">
+          <img src="img/4.jpg" alt="Boabe de cafea prăjite" loading="lazy">
+        </figure>
+        <figure data-rv="s" style="--i:4">
+          <img src="img/5.jpg" alt="Doi clienți savurând cafea într-o cafenea" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="h2" data-rv>Vino pe Calea Plevnei.</h2>
+        <p class="lead-c" data-rv="f" style="--i:1">Te așteptăm cu drag, cu cafeaua pregătită.</p>
+
+        <p class="addr" style="margin-top:2rem" data-rv="f" style="--i:2">Calea Plevnei 7, București</p>
+        <a class="phone" href="tel:0756286765" data-rv="f" style="--i:2">0756 286 765</a>
+
+        <div class="actions">
+          <a class="btn btn-accent" href="tel:0756286765">Sună acum</a>
+          <a class="btn btn-line" href="https://wa.me/40756286765?text=Bun%C4%83%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20cafea%20de%20la%20Saola%20Coffee." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-line" href="mailto:saolacontact@gmail.com">Trimite un email</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Saola+Coffee+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+
+        <h3 class="hours-title">Program</h3>
+        <ul class="hours" aria-label="Program de funcționare">
+          <li data-days="1 2 3 4 5"><span>Luni – Vineri</span><span>07:00 – 20:00</span></li>
+          <li data-days="6"><span>Sâmbătă</span><span>07:30 – 20:00</span></li>
+          <li data-days="0"><span>Duminică</span><span>09:00 – 20:00</span></li>
+        </ul>
+        <p class="status" id="status" aria-live="polite"></p>
+      </div>
+
+      <div class="map-col">
+        <iframe class="map"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.084301,44.432297899999995,26.092301000000003,44.4362979&amp;layer=mapnik&amp;marker=44.4342979,26.088301"
+          title="Harta: Saola Coffee, Calea Plevnei 7, București"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand" style="display:block;margin-bottom:.4rem">Saola Coffee</p>
+      <p>Calea Plevnei 7, București</p>
+      <p>Model de site (demo)</p>
+    </div>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: grafmex, 13027327, hoahoa111, thetimehiker, Cloud1902</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Bara de navigare: umbră doar când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare
+  var els = document.querySelectorAll('[data-rv]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Program: ziua curentă și starea locului, ora României
+  var H = { 0: [540, 1200], 1: [420, 1200], 2: [420, 1200], 3: [420, 1200], 4: [420, 1200], 5: [420, 1200], 6: [450, 1200] };
+  var fmt = function (m) {
+    return String(Math.floor(m / 60)).padStart(2, '0') + ':' + String(m % 60).padStart(2, '0');
+  };
+  var now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Bucharest' }));
+  var day = now.getDay();
+  var mins = now.getHours() * 60 + now.getMinutes();
+
+  document.querySelectorAll('.hours li').forEach(function (li) {
+    var days = li.getAttribute('data-days').split(' ').map(Number);
+    if (days.indexOf(day) !== -1) li.classList.add('today');
+  });
+
+  var o = H[day][0], c = H[day][1], msg;
+  if (mins >= o && mins < c) {
+    msg = 'Deschis acum. Închidem la ' + fmt(c) + '.';
+  } else if (mins < o) {
+    msg = 'Închis acum. Deschidem azi la ' + fmt(o) + '.';
+  } else {
+    var nd = (day + 1) % 7;
+    msg = 'Închis acum. Deschidem mâine la ' + fmt(H[nd][0]) + '.';
+  }
+  document.getElementById('status').textContent = msg;
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
