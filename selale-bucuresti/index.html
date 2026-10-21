@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Selale: ciorbă și falafel în București</title>
+<meta name="description" content="Ciorbă și falafel, în București. Selale, pentru masa de prânz.">
+<meta name="theme-color" content="#FFD23F">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --galben:#FFD23F;
+  --negru:#111111;
+  --rosu:#be123c;
+  --alb:#ffffff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:Rubik,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--negru);
+  background:var(--alb);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{
+  font-family:Anton,Impact,"Arial Narrow",sans-serif;
+  font-weight:400;
+  text-transform:uppercase;
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin:0;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+section{position:relative;padding:clamp(4.5rem,10vw,7.5rem) 0;overflow:hidden}
+.h2{font-size:clamp(3rem,9vw,6.5rem)}
+.dark{background:var(--negru);color:#fff}
+.menu{background:var(--rosu);color:#fff}
+.contact{background:var(--galben);color:var(--negru)}
+:focus-visible{outline:3px solid var(--rosu);outline-offset:3px}
+.dark :focus-visible,.menu :focus-visible{outline-color:var(--galben)}
+
+/* Navigare, sticlă */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.8rem var(--pad);
+  background:rgba(17,17,17,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.4);
+  backdrop-filter:blur(18px) saturate(1.4);
+  color:#fff;
+  border-top:1px solid rgba(255,255,255,.18);
+  transition:box-shadow .3s ease;
+}
+.nav.scrolled{box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.brand{
+  display:flex;align-items:center;gap:.5rem;
+  font-family:Anton,Impact,sans-serif;text-transform:uppercase;
+  font-size:1.35rem;letter-spacing:.02em;text-decoration:none;color:#fff;
+}
+.nav-links{display:flex;gap:1.6rem}
+.nav-links a{
+  text-decoration:none;color:#fff;font-weight:500;font-size:.95rem;
+  letter-spacing:.01em;padding:.4rem 0;
+}
+.nav-links a:hover{color:var(--galben)}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:52px;padding:.85rem 1.5rem;border-radius:999px;
+  font:600 1rem/1 Rubik,sans-serif;letter-spacing:.01em;text-decoration:none;
+  border:2px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:transform .1s ease,box-shadow .25s var(--ease),background-color .25s ease,color .25s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.92rem}
+.btn-red{background:var(--rosu);color:#fff}
+.btn-red:hover{box-shadow:0 10px 22px rgba(190,18,60,.35)}
+.btn-black{background:var(--negru);color:var(--galben)}
+.btn-black:hover{box-shadow:0 10px 22px rgba(0,0,0,.28)}
+.btn-white{background:#fff;color:var(--rosu)}
+.btn-white:hover{box-shadow:0 10px 22px rgba(0,0,0,.25)}
+.btn-line{background:transparent;border-color:currentColor;color:var(--negru)}
+.btn-line:hover{background:rgba(0,0,0,.07)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Prima secțiune: afiș */
+.hero{
+  min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;
+  padding:6.5rem 0 3.5rem;
+  background-color:var(--galben);
+  background-image:radial-gradient(rgba(17,17,17,.09) 1.2px,transparent 1.7px);
+  background-size:18px 18px;
+}
+.hero-grid{
+  display:grid;gap:1.5rem;
+  grid-template-columns:1fr;
+  grid-template-areas:"title" "sticker" "text";
+}
+.hero-title{
+  grid-area:title;
+  font-size:clamp(4.4rem,24vw,17rem);
+  line-height:.9;
+  color:var(--negru);
+  white-space:nowrap;
+  margin-left:-.03em;
+}
+.hero-title span{display:inline-block;animation:rise .9s var(--ease) both}
+.hero-sticker{
+  grid-area:sticker;
+  position:relative;z-index:2;
+  justify-self:end;
+  width:min(64vw,320px);
+  margin-top:-2.5rem;
+  animation:stickerIn .9s .25s var(--ease) both;
+}
+.splash{
+  position:absolute;z-index:0;
+  width:130%;left:-15%;top:-12%;
+  fill:var(--rosu);
+  pointer-events:none;
+}
+.hero-sticker .sticker{z-index:1}
+.hero-text{grid-area:text}
+.hero-slogan{
+  font-weight:700;font-size:clamp(1.35rem,4.5vw,1.9rem);
+  line-height:1.2;letter-spacing:-.01em;margin-bottom:.5rem;
+}
+.hero-desc{font-size:1.05rem;max-width:36ch;margin-bottom:1.75rem}
+
+/* Stickere: produsele lipite pe pagină */
+.fig{position:relative}
+.fig::before{
+  content:"";position:absolute;inset:-9%;border-radius:50%;
+  border:1.5px solid currentColor;opacity:.25;pointer-events:none;
+}
+.sticker{
+  position:relative;aspect-ratio:1;border-radius:50%;
+  background:#fff;padding:clamp(6px,1.4vw,10px);
+  box-shadow:0 16px 30px rgba(0,0,0,.28);
+  transform:rotate(var(--r,0deg));
+  cursor:pointer;touch-action:manipulation;
+  -webkit-user-select:none;user-select:none;
+}
+.sticker img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.sticker.is-jump{animation:jump .55s var(--ease)}
+.emoji-sticker{
+  display:grid;place-items:center;padding:0;
+  font-size:clamp(5rem,14vw,7rem);line-height:1;
+  width:clamp(180px,30vw,240px);
+}
+
+/* Etichete rotite */
+.tag{
+  position:absolute;z-index:3;
+  display:inline-block;white-space:nowrap;
+  background:var(--negru);color:var(--galben);
+  font-family:Anton,Impact,sans-serif;text-transform:uppercase;
+  font-size:1.05rem;letter-spacing:.02em;line-height:1;
+  padding:.5rem .85rem;
+  transform:rotate(var(--r,-6deg));
+  box-shadow:0 8px 16px rgba(0,0,0,.22);
+}
+.hero-sticker .tag{left:-12%;bottom:6%}
+
+/* Avantaje: etichete albe pe negru */
+.lbls{display:grid;gap:1.5rem;margin-top:3rem}
+.lbl{
+  background:#fff;color:var(--negru);
+  padding:1.6rem 1.5rem 1.75rem;
+  transform:rotate(var(--r,0deg));
+  box-shadow:0 16px 28px rgba(0,0,0,.4);
+}
+.lbl-e{display:block;font-size:2.6rem;line-height:1;margin-bottom:.6rem}
+.lbl h3{font-size:2.2rem;margin-bottom:.3rem}
+.lbl p{font-size:1.05rem}
+
+/* Despre */
+.split{display:grid;gap:3rem;align-items:center}
+.split-text h2{margin-bottom:1.5rem}
+.split-text p{max-width:58ch;margin-bottom:1rem;font-size:1.08rem}
+.split-photo{position:relative;margin:0}
+.split-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.split-photo .tag{left:-4%;bottom:9%}
+
+/* Meniu */
+.menu .h2{margin-bottom:1rem}
+.dish{display:grid;gap:2rem;align-items:center;margin-top:clamp(3.5rem,8vw,5.5rem)}
+.dish .fig{width:min(72vw,320px);justify-self:center}
+.dish h3{font-size:clamp(2.8rem,8vw,5rem);margin-bottom:.5rem}
+.dish p{font-size:1.1rem;max-width:30ch;opacity:.95}
+.menu-cta{margin-top:clamp(3.5rem,8vw,5rem);display:flex;flex-direction:column;align-items:flex-start;gap:1.25rem}
+.menu-cta p{font-size:1.1rem;opacity:.95}
+
+/* Contact */
+.contact-top{display:grid;gap:3rem;align-items:center}
+.contact h2{margin-bottom:1.25rem}
+.lead{font-size:1.15rem;max-width:40ch;margin-bottom:1.5rem}
+.phone{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:700;margin-bottom:1.5rem;line-height:1.2}
+.phone a{text-decoration:none;border-bottom:3px solid var(--negru)}
+.fig-emoji{justify-self:center}
+.map{margin-top:clamp(3rem,7vw,4.5rem);border:4px solid var(--negru);background:#fff}
+.map iframe{display:block;width:100%;height:clamp(280px,42vw,420px);border:0}
+.map-cap{margin-top:.75rem;font-size:.95rem;opacity:.85}
+
+/* Subsol */
+.foot{padding:2.5rem 0 3rem}
+.foot-in{display:grid;gap:.6rem;font-size:.95rem;color:rgba(255,255,255,.8);letter-spacing:.01em}
+.foot-brand{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:1.4rem;color:var(--galben);letter-spacing:.02em}
+.credit{font-size:.85rem}
+
+/* Dezvăluire la derulare */
+.js .rv{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .rv[data-reveal="up"]{transform:translateY(28px)}
+.js .rv[data-reveal="left"]{transform:translateX(-28px)}
+.js .rv[data-reveal="pop"]{transform:scale(.94)}
+.js .rv[data-reveal="fade"]{transform:none}
+.js .rv.is-in{opacity:1;transform:none}
+
+/* Animații */
+@keyframes rise{from{opacity:0;transform:translateY(55%)}to{opacity:1;transform:none}}
+@keyframes stickerIn{
+  from{opacity:0;transform:translateY(24px) scale(.82) rotate(-20deg)}
+  to{opacity:1;transform:none}
+}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+@keyframes jump{
+  0%{transform:rotate(var(--r,0deg)) translateY(0)}
+  30%{transform:rotate(var(--r,0deg)) translateY(-18px) scale(1.04)}
+  55%{transform:rotate(var(--r,0deg)) translateY(0) scale(.98)}
+  75%{transform:rotate(var(--r,0deg)) translateY(-5px)}
+  100%{transform:rotate(var(--r,0deg)) translateY(0)}
+}
+
+/* Tablet și desktop */
+@media (min-width:640px){
+  .lbls{grid-template-columns:repeat(3,1fr)}
+  .lbl{padding:2rem 1.75rem 2.25rem}
+}
+@media (min-width:900px){
+  .nav-links{display:flex}
+  .hero-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-areas:"title title" "text sticker";
+    align-items:center;
+    gap:2rem 4rem;
+  }
+  .hero-title{font-size:clamp(8rem,19vw,18rem)}
+  .hero-sticker{width:min(34vw,470px);margin-top:0;justify-self:center}
+  .hero-sticker .tag{left:-6%;bottom:4%}
+  .lbls .lbl-w:nth-child(2){margin-top:3.5rem}
+  .split{grid-template-columns:1fr 1fr;gap:5rem}
+  .split-photo{max-width:500px;justify-self:end;width:100%}
+  .dish{grid-template-columns:1fr 1fr;gap:5rem}
+  .dish.flip .fig{order:2}
+  .contact-top{grid-template-columns:1.2fr 1fr;gap:4rem}
+}
+@media (max-width:639px){
+  .nav-links{display:none}
+}
+
+/* Mișcare redusă: doar estompări scurte */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero-title span,.hero-sticker{animation:fadeOnly .2s ease both}
+  .sticker.is-jump{animation:none}
+  .js .rv{transform:none!important;transition:opacity .2s ease!important;transition-delay:0s!important}
+  .btn:active{transform:none;opacity:.9}
+}
+/* Transparență redusă: fundaluri pline */
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:#111;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+/* Contrast mai mare: margini clare, fundaluri pline */
+@media (prefers-contrast: more){
+  .nav{background:#000}
+  .lbl{outline:3px solid #000}
+  .btn-line{border-width:3px}
+  .map{border-width:5px}
+  .tag{outline:2px solid #000}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><span aria-hidden="true">🥣</span> Selale</a>
+  <nav aria-label="Principal">
+    <div class="nav-links">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+  <a class="btn btn-red btn-sm" href="tel:0755899762">Sună acum</a>
+</header>
+
+<main>
+
+<section class="hero" id="prima">
+  <div class="wrap hero-grid">
+    <h1 class="hero-title"><span>Selale</span></h1>
+
+    <div class="hero-sticker">
+      <svg class="splash" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <path d="M100,6 C124,6 132,26 150,28 C170,30 190,40 192,64 C194,84 180,96 184,116 C188,138 198,150 186,168 C174,186 150,184 134,190 C116,196 104,184 86,190 C64,196 40,190 26,176 C12,162 8,140 14,120 C20,100 6,86 10,64 C14,40 36,34 50,24 C64,14 76,6 100,6 Z"/>
+      </svg>
+      <div class="sticker" data-jump style="--r:-4deg">
+        <img src="img/2.jpg" alt="Falafel cu tahini, servit în farfurie (fotografie ilustrativă)">
+      </div>
+      <span class="tag" style="--r:-7deg">Falafel crocant</span>
+    </div>
+
+    <div class="hero-text">
+      <p class="hero-slogan">Gust rapid, prânz savuros.</p>
+      <p class="hero-desc">Ciorbă și falafel, în București.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:0755899762">Sună acum</a>
+        <a class="btn btn-black" href="https://wa.me/40755899762?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20meniul%20Selale." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="avantaje">
+  <div class="wrap">
+    <h2 class="h2 rv" data-reveal="up">Prânzul e gata repede</h2>
+    <div class="lbls">
+      <div class="rv lbl-w" data-reveal="up" style="--d:0s">
+        <article class="lbl" style="--r:-3deg">
+          <span class="lbl-e" aria-hidden="true">⏱️</span>
+          <h3>Rapid</h3>
+          <p>Prânz gata imediat.</p>
+        </article>
+      </div>
+      <div class="rv lbl-w" data-reveal="up" style="--d:.12s">
+        <article class="lbl" style="--r:2deg">
+          <span class="lbl-e" aria-hidden="true">🍲</span>
+          <h3>Proaspăt</h3>
+          <p>Preparat zilnic.</p>
+        </article>
+      </div>
+      <div class="rv lbl-w" data-reveal="up" style="--d:.24s">
+        <article class="lbl" style="--r:-1.5deg">
+          <span class="lbl-e" aria-hidden="true">🥙</span>
+          <h3>Sățios</h3>
+          <p>Ideal pentru masa de prânz.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="despre">
+  <div class="wrap split">
+    <div class="split-text rv" data-reveal="left">
+      <h2 class="h2">Mâncare bună, mereu la îndemână</h2>
+      <p>La Selale te așteptăm cu ciorbă și falafel proaspăt, perfecte pentru o pauză de masă rapidă.</p>
+      <p>Gustă un prânz simplu, plin de savoare, preparat zilnic.</p>
+      <p>Un loc de cartier, pentru pauza de prânz.</p>
+    </div>
+    <figure class="split-photo rv" data-reveal="fade" style="--d:.1s">
+      <img src="img/5.jpg" alt="Ingrediente și pregătirea unei supe în bucătărie (fotografie ilustrativă)" loading="lazy">
+      <span class="tag" style="--r:5deg">Preparat zilnic</span>
+    </figure>
+  </div>
+</section>
+
+<section class="menu" id="meniu">
+  <div class="wrap">
+    <h2 class="h2 rv" data-reveal="up">Meniu</h2>
+
+    <article class="dish rv" data-reveal="pop">
+      <div class="fig" style="color:#fff">
+        <div class="sticker" data-jump style="--r:-5deg">
+          <img src="img/4.jpg" alt="Supă caldă într-un castron (fotografie ilustrativă)" loading="lazy">
+        </div>
+      </div>
+      <div class="dish-text">
+        <h3>Ciorbă</h3>
+        <p>Ciorbă caldă.</p>
+      </div>
+    </article>
+
+    <article class="dish flip rv" data-reveal="pop">
+      <div class="fig" style="color:#fff">
+        <div class="sticker" data-jump style="--r:4deg">
+          <img src="img/1.jpg" alt="Falafel crocant (fotografie ilustrativă)" loading="lazy">
+        </div>
+      </div>
+      <div class="dish-text">
+        <h3>Falafel</h3>
+        <p>Falafel crocant.</p>
+      </div>
+    </article>
+
+    <div class="menu-cta rv" data-reveal="up">
+      <p>Pentru prețuri și detalii, sună sau scrie-ne.</p>
+      <div class="actions">
+        <a class="btn btn-white" href="https://wa.me/40755899762?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20meniul%20Selale." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        <a class="btn btn-black" href="tel:0755899762">Sună acum</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-top">
+      <div class="rv" data-reveal="left">
+        <h2 class="h2">Te așteptăm la Selale</h2>
+        <p class="lead">Ciorbă și falafel, în București.</p>
+        <p class="phone"><a href="tel:0755899762">0755 899 762</a></p>
+        <div class="actions">
+          <a class="btn btn-red" href="tel:0755899762">Sună acum</a>
+          <a class="btn btn-black" href="https://wa.me/40755899762?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20meniul%20Selale." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Selale+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+        </div>
+      </div>
+      <div class="fig fig-emoji rv" data-reveal="pop" style="--d:.1s">
+        <div class="sticker emoji-sticker" data-jump style="--r:-8deg" aria-hidden="true">🥣</div>
+      </div>
+    </div>
+
+    <div class="map rv" data-reveal="up">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0912093,44.4269137,26.099209300000002,44.430913700000005&amp;layer=mapnik&amp;marker=44.4289137,26.0952093" title="Harta zonei Selale, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <p class="map-cap">Locația Selale, în București.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot dark">
+  <div class="wrap foot-in">
+    <p class="foot-brand"><span aria-hidden="true">🥣</span> Selale, București</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: luckyhand2010, mirsa, petrovhey, RitaE.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  document.querySelectorAll('[data-jump]').forEach(function (el) {
+    el.addEventListener('pointerdown', function () {
+      el.classList.remove('is-jump');
+      void el.offsetWidth;
+      el.classList.add('is-jump');
+    });
+    el.addEventListener('animationend', function () {
+      el.classList.remove('is-jump');
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
