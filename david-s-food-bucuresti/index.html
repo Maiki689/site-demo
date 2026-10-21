@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David's Food | Pizza rapidă la pasajul Lujerului, București</title>
+<meta name="description" content="David's Food, pizza rapidă la pasajul Lujerului, în complexul comercial SIR, București.">
+<meta name="theme-color" content="#FFD23F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%95%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --yellow:#FFD23F;
+  --black:#111111;
+  --red:#E63946;
+  --white:#FFFFFF;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Rubik",system-ui,-apple-system,sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--black);
+  background:var(--white);
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+h1,h2,h3{
+  font-family:"Anton",Impact,sans-serif;
+  font-weight:400;
+  text-transform:uppercase;
+  line-height:1.05;
+  margin:0;
+}
+p{margin:0}
+.wrap{max-width:1180px;margin-inline:auto;width:calc(100% - 2.5rem)}
+.section{padding:clamp(4.5rem,10vw,8rem) 0}
+
+/* ---------- Cap de pagină ---------- */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(17,17,17,.72);
+  color:#fff;
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.14);
+  transition:box-shadow .3s ease;
+}
+.site-header.is-scrolled{box-shadow:0 10px 30px -14px rgba(0,0,0,.6)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.brand{
+  display:flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff;
+  font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:1.25rem;letter-spacing:.01em;
+}
+.brand-mark{
+  width:38px;height:38px;border-radius:50%;background:var(--yellow);
+  display:grid;place-items:center;font-size:1.2rem;line-height:1;flex-shrink:0;
+}
+.site-header nav ul{display:none;list-style:none;margin:0;padding:0;gap:1.5rem}
+.site-header nav a{
+  color:#fff;text-decoration:none;font-weight:500;font-size:.95rem;
+  min-height:44px;display:inline-flex;align-items:center;
+}
+.site-header nav a:hover{color:var(--yellow)}
+@media(min-width:720px){
+  .site-header nav ul{display:flex}
+}
+
+/* ---------- Botoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.75rem 1.4rem;border-radius:999px;
+  font:700 1rem/1.1 "Rubik",sans-serif;text-decoration:none;
+  border:2px solid transparent;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .1s ease-out,box-shadow .25s ease,background-color .25s ease,color .25s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-sm{min-height:40px;padding:.5rem 1rem;font-size:.92rem}
+.btn-dark{background:var(--black);color:var(--yellow)}
+.btn-dark:hover{box-shadow:0 8px 18px -8px rgba(0,0,0,.55)}
+.btn-light{background:var(--white);color:var(--black)}
+.btn-light:hover{box-shadow:0 8px 18px -8px rgba(0,0,0,.35)}
+.btn-yellow{background:var(--yellow);color:var(--black)}
+.btn-yellow:hover{box-shadow:0 8px 18px -8px rgba(255,210,63,.5)}
+.btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+
+/* ---------- Primul ecran ---------- */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;
+  background:var(--yellow);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:7rem 0 6rem;overflow:hidden;
+}
+.hero .wrap{position:relative;z-index:1}
+.hero-title{font-size:clamp(4.2rem,22vw,16rem);line-height:1;letter-spacing:-.02em}
+.hero-title .line{display:block}
+.hero-title .intro{display:inline-block}
+.slogan{
+  font-weight:700;font-size:clamp(1.25rem,3.6vw,2rem);line-height:1.25;
+  margin-top:1.5rem;max-width:24ch;
+}
+.hero-desc{font-size:1.05rem;max-width:44ch;margin-top:.6rem}
+.tag{
+  display:inline-block;margin-top:1.5rem;
+  background:var(--black);color:var(--yellow);
+  font-weight:700;font-size:.95rem;line-height:1.2;
+  padding:.55rem .9rem;border-radius:4px;transform:rotate(-3deg);
+}
+.drip{
+  position:absolute;left:0;right:0;bottom:0;z-index:0;
+  width:100%;height:clamp(24px,4vw,44px);
+}
+
+/* ---------- Despre ---------- */
+.about{background:var(--white)}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:900px){
+  .about-grid{grid-template-columns:1.1fr 1fr;gap:5rem}
+}
+.about-photo{margin:0}
+.about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.about h2{font-size:clamp(2.6rem,7vw,5.2rem);letter-spacing:-.02em;margin-bottom:1.5rem}
+.about p.lead{max-width:52ch;font-size:1.05rem;margin-bottom:1rem}
+.facts{margin:2rem 0 0;display:grid;gap:1.25rem}
+.facts div{border-top:3px solid var(--black);padding-top:.8rem}
+.facts dt{font-size:.9rem;color:#555;letter-spacing:.02em}
+.facts dd{margin:.25rem 0 0;font-weight:700;font-size:1.25rem;line-height:1.3}
+
+/* ---------- Meniu (stickere) ---------- */
+.menu{background:var(--black);color:#fff}
+.section-head{margin-bottom:3.5rem;max-width:40rem}
+.section-head h2{font-size:clamp(3rem,10vw,7.5rem);letter-spacing:-.02em}
+.section-head p{margin-top:1rem;font-size:1.1rem;color:#dcdcdc}
+.stickers{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:3rem 1.75rem;
+}
+@media(min-width:640px){.stickers{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.stickers{grid-template-columns:repeat(4,1fr);gap:3rem 1.5rem}}
+.stickers li:nth-child(1) .sticker{--r:-3deg}
+.stickers li:nth-child(2) .sticker{--r:2deg}
+.stickers li:nth-child(3) .sticker{--r:-1.5deg}
+.stickers li:nth-child(4) .sticker{--r:3deg}
+.sticker{
+  position:relative;
+  background:var(--white);color:var(--black);
+  border-radius:20px;
+  padding:1.6rem 1.25rem 1.7rem;
+  text-align:center;
+  transform:rotate(var(--r,0deg));
+  box-shadow:0 22px 30px -16px rgba(0,0,0,.7);
+  transition:box-shadow .3s ease;
+  cursor:pointer;
+  -webkit-user-select:none;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.sticker:hover{box-shadow:0 30px 36px -18px rgba(0,0,0,.85)}
+.sticker svg{width:100%;max-width:170px;height:auto;margin:0 auto .9rem}
+.sticker h3{font-size:1.6rem;line-height:1.1}
+.sticker p{margin-top:.55rem;font-size:.95rem;color:#3b3b3b}
+.sticker.hop{animation:hop .55s var(--ease)}
+@keyframes hop{
+  0%{transform:translateY(0) rotate(var(--r,0deg))}
+  30%{transform:translateY(-18px) rotate(calc(var(--r,0deg) - 3deg))}
+  55%{transform:translateY(0) rotate(calc(var(--r,0deg) + 2deg))}
+  75%{transform:translateY(-5px) rotate(var(--r,0deg))}
+  100%{transform:translateY(0) rotate(var(--r,0deg))}
+}
+.menu .actions{margin-top:4rem}
+
+/* ---------- Galerie ---------- */
+.gallery{background:var(--yellow)}
+.gallery h2{font-size:clamp(2.6rem,7vw,5.2rem);letter-spacing:-.02em;margin-bottom:2.5rem}
+.gal-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+@media(min-width:720px){.gal-grid{grid-template-columns:1fr 1fr;gap:1.5rem}}
+.gal-grid figure{margin:0}
+.gal-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+
+/* ---------- Avantaje ---------- */
+.perks{background:var(--white)}
+.perks h2{font-size:clamp(2.6rem,7vw,5.2rem);letter-spacing:-.02em;margin-bottom:3rem;max-width:14ch}
+.perks-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:2.5rem}
+@media(min-width:800px){.perks-list{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.perk{border-top:4px solid var(--black);padding-top:1.5rem}
+.perk-emoji{
+  width:64px;height:64px;border-radius:50%;background:var(--yellow);
+  display:grid;place-items:center;font-size:2rem;line-height:1;margin-bottom:1.25rem;
+}
+.perk h3{font-size:1.7rem}
+.perk p{margin-top:.5rem;color:#333}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--yellow)}
+.contact h2{font-size:clamp(2.6rem,7vw,5.2rem);letter-spacing:-.02em;margin-bottom:2.5rem}
+.contact-info{display:grid;grid-template-columns:1fr;gap:1.5rem;margin-bottom:0}
+@media(min-width:800px){.contact-info{grid-template-columns:1fr 1fr}}
+.contact-info div{border-top:3px solid var(--black);padding-top:.8rem}
+.contact-info dt{font-size:.9rem;color:#2b2b2b;letter-spacing:.02em}
+.contact-info dd{margin:.25rem 0 0;font-weight:700;font-size:1.3rem;line-height:1.3}
+.contact-info a{text-decoration-thickness:2px;text-underline-offset:4px}
+.contact .actions{margin-top:2.5rem}
+.map{margin:3rem 0 0}
+.map iframe{
+  display:block;width:100%;height:clamp(280px,40vw,400px);
+  border:3px solid var(--black);border-radius:6px;
+}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--black);color:#fff;padding:3.5rem 0 2.5rem;font-size:.9rem}
+.foot-grid{display:grid;gap:1.25rem}
+@media(min-width:800px){.foot-grid{grid-template-columns:1fr 1fr;align-items:end}}
+.foot-brand{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:1.6rem;color:var(--yellow);line-height:1.1}
+.site-footer p{color:#cfcfcf;letter-spacing:.02em}
+.site-footer .credit{font-size:.82rem;max-width:60ch}
+
+/* ---------- Intrare și dezvăluire la derulare ---------- */
+.js .intro{animation:rise .9s var(--ease) var(--d,0s) both}
+@keyframes rise{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:none}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+.js .reveal{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .r-up{transform:translateY(28px)}
+.js .r-left{transform:translateX(-28px)}
+.js .r-right{transform:translateX(28px)}
+.js .r-zoom{transform:scale(.96)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important}
+  .js .reveal{transform:none !important;transition-property:opacity !important}
+  .js .intro,
+  .js .hero-title .intro{animation-name:fade !important;animation-duration:.2s !important;animation-delay:0s !important}
+  .sticker.hop{animation:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:#111;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-header{background:#000;border-top:2px solid #fff}
+  .btn{border-color:currentColor}
+  .btn-dark,.btn-yellow,.btn-light{border-color:#000}
+  .btn-light{border-color:#fff}
+  .sticker{outline:2px solid #000}
+  .facts div,.contact-info div,.perk{border-top-width:4px}
+  .map iframe{border-width:4px}
+}
+@media (max-width:380px){
+  .brand span:last-child{font-size:1.05rem}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-header" id="sus">
+  <div class="wrap header-inner">
+    <a class="brand" href="#sus" aria-label="David's Food, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🍕</span>
+      <span>David's Food</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#poze">Poze</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-yellow btn-sm" href="tel:0763257048">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap">
+      <h1 class="hero-title" id="titlu">
+        <span class="line"><span class="intro" style="--d:.05s">David's</span></span>
+        <span class="line"><span class="intro" style="--d:.16s">Food</span></span>
+      </h1>
+      <p class="slogan intro" style="--d:.3s">Pizza rapidă la pasajul Lujerului</p>
+      <p class="hero-desc intro" style="--d:.38s">Pizza mereu proaspătă în complexul SIR.</p>
+      <p class="intro" style="--d:.44s"><span class="tag">Pizza caldă, chiar la noi</span></p>
+      <div class="actions intro" style="--d:.5s">
+        <a class="btn btn-dark" href="tel:0763257048">Sună acum</a>
+        <a class="btn btn-light" href="https://wa.me/40763257048?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20pizza." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+      </div>
+    </div>
+    <svg class="drip" viewBox="0 0 1440 44" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 14 C120 0 240 28 360 14 S600 0 720 14 S960 28 1080 14 S1320 0 1440 14 V44 H0Z" fill="#E63946"/>
+    </svg>
+  </section>
+
+  <section class="section about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <figure class="about-photo reveal r-left">
+        <img src="img/1.jpg" alt="Pizza cu brânză, văzută de sus, pe masă" loading="lazy" width="1200" height="1500">
+      </figure>
+      <div class="reveal r-up" style="--d:.1s">
+        <h2 id="despre-titlu">Pizza caldă, în trecere</h2>
+        <p class="lead">David's Food pregătește pizza gustoasă pentru cei aflați în trecere prin pasajul Lujerului.</p>
+        <p class="lead">Ne găsești în complexul comercial SIR, ideal pentru o masă rapidă când ești prin zonă. Alege o pizza caldă chiar la noi, în locație.</p>
+        <dl class="facts">
+          <div>
+            <dt>Ce facem</dt>
+            <dd>Pizza</dd>
+          </div>
+          <div>
+            <dt>Unde ne găsești</dt>
+            <dd>Complexul Comercial SIR, Pasajul Lujerului</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <header class="section-head reveal r-up">
+        <h2 id="meniu-titlu">Meniu</h2>
+        <p>Felie, pizza întreagă sau la pachet, plus ceva rece de băut.</p>
+      </header>
+
+      <ul class="stickers">
+        <li class="reveal r-zoom" style="--d:0s">
+          <article class="sticker" style="--r:-3deg">
+            <svg viewBox="0 0 160 130" aria-hidden="true" focusable="false">
+              <path d="M12 22 Q80 6 148 22 L82 122 Q80 126 78 122 Z" fill="#FFD23F"/>
+              <path d="M12 22 Q80 6 148 22 L142 36 Q80 20 18 36 Z" fill="#B86B1E"/>
+              <circle cx="50" cy="50" r="7" fill="#E63946"/>
+              <circle cx="116" cy="46" r="6" fill="#E63946"/>
+              <circle cx="62" cy="58" r="9" fill="#E63946"/>
+              <circle cx="100" cy="64" r="9" fill="#E63946"/>
+              <circle cx="80" cy="92" r="8" fill="#E63946"/>
+              <circle cx="90" cy="78" r="3" fill="#111111"/>
+            </svg>
+            <h3>Felie de pizza</h3>
+            <p>Porție rapidă pentru o pauză scurtă</p>
+          </article>
+        </li>
+        <li class="reveal r-zoom" style="--d:.08s">
+          <article class="sticker" style="--r:2deg">
+            <svg viewBox="0 0 160 130" aria-hidden="true" focusable="false">
+              <circle cx="80" cy="65" r="60" fill="#B86B1E"/>
+              <circle cx="80" cy="65" r="50" fill="#FFD23F"/>
+              <circle cx="106" cy="65" r="9" fill="#E63946"/>
+              <circle cx="93" cy="87" r="9" fill="#E63946"/>
+              <circle cx="67" cy="87" r="9" fill="#E63946"/>
+              <circle cx="54" cy="65" r="9" fill="#E63946"/>
+              <circle cx="67" cy="43" r="9" fill="#E63946"/>
+              <circle cx="93" cy="43" r="9" fill="#E63946"/>
+              <circle cx="80" cy="65" r="9" fill="#E63946"/>
+              <circle cx="80" cy="30" r="3" fill="#111111"/>
+              <circle cx="120" cy="88" r="3" fill="#111111"/>
+            </svg>
+            <h3>Pizza întreagă</h3>
+            <p>Ideală de împărțit cu prietenii</p>
+          </article>
+        </li>
+        <li class="reveal r-zoom" style="--d:.16s">
+          <article class="sticker" style="--r:-1.5deg">
+            <svg viewBox="0 0 160 130" aria-hidden="true" focusable="false">
+              <path d="M60 36 Q80 12 100 36" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+              <polygon points="22,54 138,54 128,36 32,36" fill="#111111"/>
+              <rect x="28" y="54" width="104" height="60" rx="4" fill="#E63946"/>
+              <circle cx="80" cy="84" r="17" fill="#FFD23F"/>
+              <text x="80" y="90" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="16" fill="#111111">DF</text>
+            </svg>
+            <h3>Pizza la pachet</h3>
+            <p>Ia pizza cu tine oriunde mergi</p>
+          </article>
+        </li>
+        <li class="reveal r-zoom" style="--d:.24s">
+          <article class="sticker" style="--r:3deg">
+            <svg viewBox="0 0 160 130" aria-hidden="true" focusable="false">
+              <rect x="56" y="16" width="48" height="104" rx="8" fill="#E63946"/>
+              <rect x="56" y="16" width="48" height="10" rx="4" fill="#cfd8dc"/>
+              <rect x="56" y="50" width="48" height="30" fill="#FFD23F"/>
+              <rect x="56" y="96" width="48" height="6" fill="#111111"/>
+              <rect x="64" y="34" width="6" height="74" rx="3" fill="#ffffff" opacity=".35"/>
+            </svg>
+            <h3>Băuturi răcoritoare</h3>
+            <p>Perfecte alături de pizza</p>
+          </article>
+        </li>
+      </ul>
+
+      <div class="actions reveal r-up">
+        <a class="btn btn-yellow" href="https://wa.me/40763257048?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20pizza." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:0763257048">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="poze" aria-labelledby="poze-titlu">
+    <div class="wrap">
+      <h2 id="poze-titlu">Pizza, de aproape</h2>
+      <div class="gal-grid">
+        <figure class="reveal r-left" style="--d:0s">
+          <img src="img/2.jpg" alt="Pizza vegană cu ciuperci, pe masă" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="reveal r-right" style="--d:.1s">
+          <img src="img/3.jpg" alt="Pizza cu mozzarella și roșii, de aproape" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="reveal r-up" style="--d:0s">
+          <img src="img/4.jpg" alt="Pizza rumenă, văzută din față" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="reveal r-zoom" style="--d:.1s">
+          <img src="img/5.jpg" alt="Felii de pizza, văzute de aproape" loading="lazy" width="1200" height="900">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section perks" aria-labelledby="avantaje-titlu">
+    <div class="wrap">
+      <h2 id="avantaje-titlu">Pentru o masă rapidă</h2>
+      <ul class="perks-list">
+        <li class="perk reveal r-up" style="--d:0s">
+          <div class="perk-emoji" aria-hidden="true">⏱️</div>
+          <h3>Servire rapidă</h3>
+          <p>Gata imediat după comandă</p>
+        </li>
+        <li class="perk reveal r-up" style="--d:.1s">
+          <div class="perk-emoji" aria-hidden="true">📍</div>
+          <h3>Locație accesibilă</h3>
+          <p>Ușor de găsit în pasaj</p>
+        </li>
+        <li class="perk reveal r-up" style="--d:.2s">
+          <div class="perk-emoji" aria-hidden="true">🍽️</div>
+          <h3>Mănânci pe loc</h3>
+          <p>Locuri pentru masă rapidă</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap">
+      <h2 id="contact-titlu" class="reveal r-up">Vino pe la noi</h2>
+      <div class="contact-info">
+        <div class="reveal r-left" style="--d:0s">
+          <dt>Telefon</dt>
+          <dd><a href="tel:0763257048">0763 257 048</a></dd>
+        </div>
+        <div class="reveal r-right" style="--d:.1s">
+          <dt>Adresă</dt>
+          <dd>Șoseaua Virtuții 1, București<br>Complexul Comercial SIR, Pasajul Lujerului</dd>
+        </div>
+      </div>
+      <div class="actions reveal r-up" style="--d:.1s">
+        <a class="btn btn-dark" href="tel:0763257048">Sună acum</a>
+        <a class="btn btn-light" href="https://wa.me/40763257048?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20pizza." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=David%27s+Food+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+      </div>
+      <figure class="map reveal r-zoom" style="--d:.1s">
+        <iframe
+          title="Harta locației David's Food, Șoseaua Virtuții 1, București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.030621999999997,44.4341315,26.038622,44.438131500000004&amp;layer=mapnik&amp;marker=44.4361315,26.034622"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">David's Food</p>
+      <p>Pizza rapidă la pasajul Lujerului, București</p>
+    </div>
+    <div>
+      <p>Model de site (demo)</p>
+      <p class="credit">Fotografii ilustrative de pe Pixabay: igorovsyannykov, planet_fox, mynorbejarano, lubarkerg, joshuemd</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  document.querySelectorAll('.sticker').forEach(function (s) {
+    s.addEventListener('click', function () {
+      s.classList.remove('hop');
+      void s.offsetWidth;
+      s.classList.add('hop');
+    });
+    s.addEventListener('animationend', function () {
+      s.classList.remove('hop');
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
