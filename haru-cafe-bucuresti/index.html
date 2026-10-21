@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haru Cafe, cafenea în București</title>
+<meta name="description" content="Haru Cafe, Bulevardul Schitu Măgureanu 7, București. Cafea, prăjituri și un loc primitor pentru toți.">
+<meta name="theme-color" content="#FFF6E5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vanilla:#FFF6E5;
+  --white-warm:#FFFBF2;
+  --strawberry:#F28B9B;
+  --strawberry-soft:#FCE3E7;
+  --pistachio:#B5D99C;
+  --pistachio-soft:#EAF4DC;
+  --pistachio-ink:#5F8A3A;
+  --choc:#5C3A2E;
+  --sponge:#F3D9A4;
+  --amber:#b45309;
+  --amber-deep:#953f06;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1120px;
+  --gutter:clamp(1.25rem,5vw,3rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--vanilla);
+  color:var(--choc);
+  font-family:Lora,Georgia,serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{
+  font-family:Outfit,system-ui,sans-serif;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+  font-weight:600;
+}
+p{margin:0}
+ul{margin:0;padding:0}
+figure{margin:0}
+dl{margin:0}
+section[id]{scroll-margin-top:5.5rem}
+
+.wrap{width:min(100% - 2*var(--gutter),var(--wrap));margin-inline:auto}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:1rem;z-index:100;background:var(--choc);color:var(--vanilla);padding:.6rem 1rem;border-radius:999px}
+.skip:focus{left:1rem}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;
+  z-index:50;
+  top:.75rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(100% - 1.5rem,1040px);
+  border-radius:999px;
+  background:rgba(255,246,229,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease),border-radius .4s var(--ease);
+}
+.nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 12px 32px -14px rgba(92,58,46,.4)}
+.nav.is-open{border-radius:28px}
+.nav-bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  min-height:3.5rem;
+  padding:.4rem .4rem .4rem 1rem;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  text-decoration:none;
+  font-family:Outfit,sans-serif;
+  font-weight:700;
+  font-size:1.1rem;
+  letter-spacing:-.01em;
+  color:var(--choc);
+}
+.logo-mark{
+  width:2.3rem;
+  height:2.3rem;
+  border-radius:50% 42% 55% 45%;
+  background:var(--strawberry-soft);
+  display:grid;
+  place-items:center;
+  font-size:1.1rem;
+}
+.nav-links{display:none;list-style:none;gap:.2rem}
+.nav-links a{
+  display:inline-flex;
+  align-items:center;
+  min-height:2.75rem;
+  padding:.4rem .9rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-family:Outfit,sans-serif;
+  font-weight:500;
+  font-size:.98rem;
+  transition:background-color .25s var(--ease);
+}
+.nav-links a:hover{background:rgba(92,58,46,.08)}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.menu-btn{
+  display:grid;
+  place-items:center;
+  width:2.75rem;
+  height:2.75rem;
+  border:0;
+  border-radius:50%;
+  background:rgba(92,58,46,.08);
+  color:var(--choc);
+  cursor:pointer;
+  transition:transform .1s;
+}
+.menu-btn:active{transform:scale(.97)}
+.burger{display:flex;flex-direction:column;gap:5px;align-items:center}
+.burger span{
+  display:block;
+  width:1.1rem;
+  height:2px;
+  border-radius:2px;
+  background:currentColor;
+  transition:transform .35s var(--ease),opacity .2s;
+}
+.nav.is-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.is-open .burger span:nth-child(2){opacity:0}
+.nav.is-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-panel{
+  display:none;
+  flex-direction:column;
+  gap:.2rem;
+  padding:0 .5rem .6rem;
+}
+.nav.is-open .nav-panel{display:flex;animation:panelIn .4s var(--ease)}
+.nav-panel a{
+  display:flex;
+  align-items:center;
+  min-height:3rem;
+  padding:.6rem 1rem;
+  border-radius:18px;
+  text-decoration:none;
+  font-family:Outfit,sans-serif;
+  font-size:1.1rem;
+  font-weight:500;
+}
+.nav-panel a:hover{background:rgba(92,58,46,.07)}
+@keyframes panelIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+@media (min-width:820px){
+  .nav-links{display:flex}
+  .menu-btn{display:none}
+  .nav-panel{display:none!important}
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  min-height:3rem;
+  padding:.75rem 1.4rem;
+  border:0;
+  border-radius:999px;
+  font-family:Outfit,sans-serif;
+  font-weight:600;
+  font-size:1rem;
+  line-height:1.2;
+  text-decoration:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:background-color .25s var(--ease),box-shadow .3s var(--ease),color .25s var(--ease),transform .1s;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--amber);color:#fff}
+.btn-primary:hover{background:var(--amber-deep);box-shadow:0 10px 22px -12px rgba(149,63,6,.8)}
+.btn-ghost{background:var(--white-warm);color:var(--choc);box-shadow:inset 0 0 0 1.5px rgba(92,58,46,.22)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--choc)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1.05rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:7rem 0 clamp(4rem,10vw,6rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4rem);align-items:center}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr}
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.45rem .95rem;
+  border-radius:999px;
+  background:var(--pistachio-soft);
+  font-family:Outfit,sans-serif;
+  font-size:.92rem;
+  font-weight:500;
+  letter-spacing:.01em;
+}
+.pill::before{
+  content:"";
+  width:.5rem;
+  height:.5rem;
+  border-radius:50%;
+  background:var(--pistachio-ink);
+}
+.hero h1{
+  margin-top:1.1rem;
+  font-size:clamp(3.4rem,14vw,7rem);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.lead{
+  margin-top:.9rem;
+  font-family:Outfit,sans-serif;
+  font-size:clamp(1.35rem,3.6vw,1.9rem);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+.desc{margin-top:.75rem;max-width:34ch;font-size:1.125rem}
+.hero .actions{margin-top:2rem}
+
+.cake-wrap{
+  position:relative;
+  width:min(100%,400px);
+  margin-inline:auto;
+}
+.cake-wrap::before{
+  content:"";
+  position:absolute;
+  inset:6% 4% 2%;
+  background:var(--strawberry-soft);
+  border-radius:58% 42% 46% 54%/52% 46% 54% 48%;
+}
+.cake{position:relative;width:100%;height:auto;overflow:visible}
+.layer{
+  opacity:0;
+  animation:layerIn .7s var(--ease) both;
+  animation-delay:calc(.2s + var(--i) * .16s);
+}
+.berry{
+  opacity:0;
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:pop .6s cubic-bezier(.34,1.56,.64,1) both;
+  animation-delay:calc(.2s + var(--i) * .16s);
+}
+@keyframes layerIn{
+  from{opacity:0;transform:translateY(-28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes pop{
+  from{opacity:0;transform:scale(.3)}
+  to{opacity:1;transform:scale(1)}
+}
+
+/* ---------- Secțiuni ---------- */
+.section{padding:clamp(4.5rem,11vw,8rem) 0}
+h2{font-size:clamp(2.1rem,5.2vw,3.4rem);font-weight:600}
+.section-head{max-width:40rem}
+.section-head p{margin-top:.8rem;font-size:1.1rem}
+.section-head small{display:block;margin-top:.6rem;font-size:.92rem;opacity:.85}
+
+/* Despre */
+.about-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:center}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr}
+}
+.about-photo{
+  overflow:hidden;
+  border-radius:48px 60px 48px 72px;
+}
+.about-photo img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+}
+.about-text h2{margin-bottom:1.25rem}
+.about-text .body{max-width:58ch}
+.perks{list-style:none;display:grid;gap:.75rem;margin-top:2.25rem}
+.perks li{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:.9rem 1.3rem .9rem .9rem;
+  border-radius:999px;
+}
+.perks li:nth-child(1){background:var(--pistachio-soft)}
+.perks li:nth-child(2){background:var(--strawberry-soft)}
+.perks li:nth-child(3){background:#F6E7CC}
+.perk-ico{
+  flex:0 0 3.2rem;
+  width:3.2rem;
+  height:3.2rem;
+  border-radius:50%;
+  background:var(--white-warm);
+  display:grid;
+  place-items:center;
+  font-size:1.4rem;
+}
+.perks h3{font-size:1.1rem;font-weight:600}
+.perks p{font-size:.98rem;line-height:1.4}
+
+/* Meniu */
+.menu{background:var(--strawberry-soft)}
+.menu-grid{display:grid;gap:1rem;margin-top:2.75rem}
+@media (min-width:860px){
+  .menu-grid{grid-template-columns:repeat(3,1fr);gap:1.25rem;align-items:stretch}
+}
+.menu-item{
+  display:flex;
+  flex-direction:column;
+  gap:.85rem;
+  padding:clamp(1.5rem,3vw,2.1rem);
+  background:var(--white-warm);
+  transition-delay:var(--d,0s);
+}
+.menu-item:nth-child(1){border-radius:56px 22px 56px 22px}
+.menu-item:nth-child(2){border-radius:22px 56px 22px 56px}
+.menu-item:nth-child(3){border-radius:48px 48px 48px 14px}
+.menu-ico{
+  width:3.6rem;
+  height:3.6rem;
+  display:grid;
+  place-items:center;
+  font-size:1.6rem;
+  border-radius:50% 40% 55% 45%;
+}
+.menu-item:nth-child(1) .menu-ico{background:var(--strawberry-soft)}
+.menu-item:nth-child(2) .menu-ico{background:var(--pistachio)}
+.menu-item:nth-child(3) .menu-ico{background:var(--sponge)}
+.menu-item h3{font-size:1.5rem;margin-top:.5rem}
+.menu-item p{font-size:1rem;max-width:30ch}
+.menu-cta{margin-top:2.75rem}
+
+/* Galerie */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.75rem;
+  margin-top:2.75rem;
+}
+.gallery figure{
+  overflow:hidden;
+  border-radius:36px;
+  background:var(--sponge);
+}
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.gallery figure:hover img{transform:scale(1.03)}
+.gallery figure:nth-child(1){grid-column:1/-1}
+.gallery figure:nth-child(1) img{aspect-ratio:4/3}
+.gallery figure:nth-child(n+2) img{aspect-ratio:1/1}
+@media (min-width:820px){
+  .gallery{
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:clamp(190px,22vw,290px);
+  }
+  .gallery figure:nth-child(1){grid-column:1/3;grid-row:1/3}
+  .gallery figure:nth-child(2){grid-column:3;grid-row:1}
+  .gallery figure:nth-child(3){grid-column:4;grid-row:1}
+  .gallery figure:nth-child(4){grid-column:3/5;grid-row:2}
+  .gallery figure:nth-child(n) img{aspect-ratio:auto}
+}
+
+/* Vizită */
+.visit{background:var(--pistachio-soft)}
+.visit-grid{display:grid;gap:clamp(2.5rem,6vw,4rem)}
+@media (min-width:900px){
+  .visit-grid{grid-template-columns:1fr 1.1fr;align-items:stretch}
+}
+.visit-info h2{margin-bottom:2rem}
+.info-block{margin-bottom:1.75rem}
+.info-block h3{
+  font-size:.95rem;
+  font-weight:500;
+  letter-spacing:.02em;
+  opacity:.8;
+  margin-bottom:.4rem;
+}
+.info-block p{font-family:Outfit,sans-serif;font-size:1.3rem;font-weight:500;line-height:1.3}
+.info-block a{text-underline-offset:.2em}
+.hours{display:grid;gap:.45rem}
+.hours div{display:flex;justify-content:space-between;gap:1rem;max-width:22rem;font-size:1.05rem;padding-bottom:.45rem}
+.hours dt{font-family:Outfit,sans-serif;font-weight:500}
+.hours dd{margin:0;font-weight:600}
+.visit .actions{margin-top:2.25rem}
+.map{
+  overflow:hidden;
+  border-radius:40px;
+  min-height:340px;
+  background:var(--white-warm);
+}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* Subsol */
+.site-footer{background:var(--choc);color:#F7E9D4;padding:clamp(3.5rem,8vw,5rem) 0 2.25rem}
+.site-footer a{color:var(--vanilla);text-underline-offset:.2em}
+.foot-grid{display:grid;gap:2.5rem}
+@media (min-width:760px){
+  .foot-grid{grid-template-columns:1.2fr 1fr;align-items:start}
+}
+.foot-name{
+  font-family:Outfit,sans-serif;
+  font-size:clamp(2rem,5vw,2.75rem);
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.05;
+  color:var(--vanilla);
+}
+.foot-text{margin-top:.75rem;max-width:30ch;opacity:.9}
+.foot-links{display:grid;gap:.4rem;font-family:Outfit,sans-serif;font-size:1.05rem}
+.foot-links a{display:inline-flex;min-height:2.75rem;align-items:center}
+.foot-bottom{
+  margin-top:3rem;
+  font-size:.88rem;
+  letter-spacing:.02em;
+  opacity:.82;
+  line-height:1.6;
+}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js [data-reveal]{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js [data-reveal="up"]{transform:translateY(18px)}
+.js [data-reveal="left"]{transform:translateX(-18px)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* ---------- Adaptări ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--vanilla);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:var(--vanilla);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 0 0 2px var(--choc)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--choc)}
+  .menu-item,.perks li{box-shadow:0 0 0 2px var(--choc)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .layer{animation-name:fadeOnly;animation-duration:.2s;animation-delay:0s}
+  .berry{animation-name:fadeOnly;animation-duration:.2s;animation-delay:0s}
+  .nav.is-open .nav-panel{animation-name:fadeOnly;animation-duration:.2s}
+  .js [data-reveal]{transform:none!important;transition-duration:.2s}
+  .gallery figure:hover img{transform:none}
+  .btn:active{transform:none}
+}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="top">
+  <div class="nav-bar">
+    <a class="logo" href="#top">
+      <span class="logo-mark" aria-hidden="true">☕</span>
+      <span>Haru Cafe</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#galerie">Imagini</a></li>
+      <li><a href="#vizita">Vizită</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="tel:0764642343">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Deschide meniul">
+        <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="nav-panel" id="nav-panel" aria-label="Meniu mobil">
+    <a href="#despre">Despre</a>
+    <a href="#meniu">Meniu</a>
+    <a href="#galerie">Imagini</a>
+    <a href="#vizita">Vizită</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="titlu-hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="pill">Deschis luni – sâmbătă, 07:00 – 17:00</p>
+        <h1 id="titlu-hero">Haru Cafe</h1>
+        <p class="lead">Un loc primitor pentru toți</p>
+        <p class="desc">Oprește-te pentru cafea și momente dulci.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0764642343">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40764642343?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Haru%20Cafe.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="cake-wrap">
+        <svg class="cake" viewBox="40 96 320 290" aria-hidden="true" focusable="false">
+          <ellipse class="layer" style="--i:0" cx="200" cy="356" rx="168" ry="18" fill="#F2E2C6"/>
+          <rect class="layer" style="--i:1" x="80" y="302" width="240" height="50" rx="16" fill="#F3D9A4"/>
+          <rect class="layer" style="--i:2" x="74" y="276" width="252" height="26" rx="13" fill="#F28B9B"/>
+          <rect class="layer" style="--i:3" x="84" y="234" width="232" height="42" rx="14" fill="#F3D9A4"/>
+          <rect class="layer" style="--i:4" x="76" y="208" width="248" height="26" rx="13" fill="#B5D99C"/>
+          <rect class="layer" style="--i:5" x="88" y="170" width="224" height="38" rx="14" fill="#F3D9A4"/>
+          <g class="layer" style="--i:6">
+            <rect x="82" y="142" width="236" height="34" rx="16" fill="#5C3A2E"/>
+            <ellipse cx="110" cy="174" rx="10" ry="15" fill="#5C3A2E"/>
+            <ellipse cx="176" cy="177" rx="9" ry="17" fill="#5C3A2E"/>
+            <ellipse cx="252" cy="173" rx="11" ry="13" fill="#5C3A2E"/>
+            <ellipse cx="298" cy="176" rx="8" ry="11" fill="#5C3A2E"/>
+          </g>
+          <g class="layer" style="--i:7">
+            <rect x="104" y="152" width="14" height="5" rx="2.5" fill="#FFF6E5" transform="rotate(-18 111 154)"/>
+            <rect x="140" y="160" width="14" height="5" rx="2.5" fill="#B5D99C" transform="rotate(22 147 162)"/>
+            <rect x="178" y="150" width="14" height="5" rx="2.5" fill="#FFF6E5" transform="rotate(-8 185 152)"/>
+            <rect x="216" y="160" width="14" height="5" rx="2.5" fill="#F28B9B" transform="rotate(16 223 162)"/>
+            <rect x="256" y="152" width="14" height="5" rx="2.5" fill="#B5D99C" transform="rotate(-24 263 154)"/>
+            <rect x="286" y="160" width="14" height="5" rx="2.5" fill="#FFF6E5" transform="rotate(12 293 162)"/>
+          </g>
+          <g class="berry" style="--i:8">
+            <circle cx="152" cy="134" r="14" fill="#F28B9B"/>
+            <circle cx="147" cy="129" r="3.5" fill="#FFF6E5" opacity=".85"/>
+          </g>
+          <g class="berry" style="--i:9">
+            <circle cx="200" cy="126" r="16" fill="#F28B9B"/>
+            <circle cx="193" cy="119" r="4" fill="#FFF6E5" opacity=".85"/>
+          </g>
+          <g class="berry" style="--i:10">
+            <circle cx="248" cy="134" r="14" fill="#F28B9B"/>
+            <circle cx="243" cy="129" r="3.5" fill="#FFF6E5" opacity=".85"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre" class="section about" aria-labelledby="t-despre">
+    <div class="wrap about-grid">
+      <figure class="about-photo" data-reveal="scale">
+        <img src="img/4.jpg" alt="Cafea cu desen de latte pe o masă de lemn" loading="lazy">
+      </figure>
+      <div class="about-text" data-reveal="left" style="--d:.1s">
+        <h2 id="t-despre">Despre Haru Cafe</h2>
+        <p class="body">Haru Cafe este spațiul perfect pentru o pauză gustoasă, unde te poți bucura de cafea și prăjituri alese. Atmosfera relaxată îți oferă ocazia să te deconectezi sau să te întâlnești cu prietenii. Descoperă un colț cald în inima orașului.</p>
+        <ul class="perks">
+          <li>
+            <span class="perk-ico" aria-hidden="true">🪑</span>
+            <div>
+              <h3>Pauză la cafea</h3>
+              <p>Oprește-te pentru cafea și momente dulci.</p>
+            </div>
+          </li>
+          <li>
+            <span class="perk-ico" aria-hidden="true">🍰</span>
+            <div>
+              <h3>Prăjituri alese</h3>
+              <p>Ceva dulce pentru pauza ta.</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section id="meniu" class="section menu" aria-labelledby="t-meniu">
+    <div class="wrap">
+      <div class="section-head" data-reveal="up">
+        <h2 id="t-meniu">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p>Cafea, prăjituri și produse de patiserie, pentru pauza ta.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-item" data-reveal="up" style="--d:0s">
+          <span class="menu-ico" aria-hidden="true">☕</span>
+          <h3>Cafea și băuturi</h3>
+          <p>Pentru o pauză scurtă sau o discuție lungă.</p>
+        </article>
+        <article class="menu-item" data-reveal="up" style="--d:.1s">
+          <span class="menu-ico" aria-hidden="true">🍰</span>
+          <h3>Prăjituri</h3>
+          <p>Ceva dulce pentru pofta de după-amiază.</p>
+        </article>
+        <article class="menu-item" data-reveal="up" style="--d:.2s">
+          <span class="menu-ico" aria-hidden="true">🥐</span>
+          <h3>Produse de patiserie</h3>
+          <p>Gustări pentru când ți-e foame între două cafele.</p>
+        </article>
+      </div>
+      <div class="menu-cta" data-reveal="fade">
+        <a class="btn btn-ghost" href="tel:0764642343">Sună și întreabă ce e disponibil</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie" class="section" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="section-head" data-reveal="fade">
+        <h2 id="t-galerie">Cafea în imagini</h2>
+        <small>Imagini de stoc, cu rol ilustrativ.</small>
+      </div>
+      <div class="gallery">
+        <figure data-reveal="fade" style="--d:0s">
+          <img src="img/1.jpg" alt="Cappuccino servit într-o ceașcă, pe un blat" loading="lazy">
+        </figure>
+        <figure data-reveal="fade" style="--d:.08s">
+          <img src="img/2.jpg" alt="Cappuccino lângă un pahar, pe masă" loading="lazy">
+        </figure>
+        <figure data-reveal="fade" style="--d:.16s">
+          <img src="img/3.jpg" alt="Cafea caldă într-o cană" loading="lazy">
+        </figure>
+        <figure data-reveal="fade" style="--d:.24s">
+          <img src="img/5.jpg" alt="Caiet deschis lângă o ceașcă de cafea" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vizită -->
+  <section id="vizita" class="section visit" aria-labelledby="t-vizita">
+    <div class="wrap visit-grid">
+      <div class="visit-info" data-reveal="left">
+        <h2 id="t-vizita">Vino pe la noi</h2>
+
+        <div class="info-block">
+          <h3>Adresă</h3>
+          <p>Bulevardul Schitu Măgureanu 7<br>București</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Program</h3>
+          <dl class="hours">
+            <div><dt>Luni – sâmbătă</dt><dd>07:00 – 17:00</dd></div>
+            <div><dt>Duminica</dt><dd>Închis</dd></div>
+          </dl>
+        </div>
+
+        <div class="info-block">
+          <h3>Telefon</h3>
+          <p><a href="tel:0764642343">0764 642 343</a></p>
+        </div>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0764642343">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40764642343?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Haru%20Cafe.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Haru+Cafe+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide harta</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal="scale" style="--d:.1s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0853421,44.4329926,26.0933421,44.4369926&amp;layer=mapnik&amp;marker=44.4349926,26.0893421"
+          title="Harta: Haru Cafe, Bulevardul Schitu Măgureanu 7, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-name">Haru Cafe</p>
+        <p class="foot-text">Un loc primitor pentru toți. Bulevardul Schitu Măgureanu 7, București.</p>
+      </div>
+      <nav class="foot-links" aria-label="Contact">
+        <a href="tel:0764642343">Sună: 0764 642 343</a>
+        <a href="https://wa.me/40764642343?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20rezerv%20o%20mas%C4%83%20la%20Haru%20Cafe.">Scrie pe WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Haru+Cafe+Bucure%C8%99ti" target="_blank" rel="noopener">Vezi pe harta</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Imagini de stoc de pe Pixabay: grafmex, Pexels, Engin_Akyurt</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var nav = document.querySelector('.nav');
+  var toggle = document.querySelector('.menu-btn');
+  var panelLinks = document.querySelectorAll('#nav-panel a');
+
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('is-open'));
+  });
+  panelLinks.forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+
+  var onScroll = function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('[data-reveal]');
+
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
