@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centru veterinar, București | Îngrijire atentă pentru animale</title>
+<meta name="description" content="Centru veterinar în București, Strada Toporași 31. Consultații și tratamente generale pentru câini, pisici și alte animale de companie.">
+<meta name="theme-color" content="#FFF8F1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF8F1;
+  --peach:#F7D9C4;
+  --peach-soft:#FBEBDD;
+  --sage:#7FA88B;
+  --sage-soft:#E4EEE6;
+  --brown:#3A2E28;
+  --brown-2:#6B5A50;
+  --teal:#0f766e;
+  --teal-dark:#0c5e58;
+  --line:rgba(58,46,40,.12);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--brown);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{
+  font-family:var(--serif);
+  font-variation-settings:"SOFT" 100;
+  font-weight:500;
+  letter-spacing:-.02em;
+  line-height:1.1;
+  margin:0;
+}
+h1{font-size:clamp(2.75rem,8vw,5.5rem);line-height:1.05;font-weight:500}
+h2{font-size:clamp(2rem,5vw,3.25rem)}
+h3{font-size:1.35rem;font-weight:600;letter-spacing:-.01em;font-family:var(--serif)}
+
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+.section{padding-block:clamp(4.5rem,11vw,8rem)}
+.lead{font-size:1.125rem;color:var(--brown);max-width:58ch}
+.muted{color:var(--brown-2)}
+
+/* ---------- Navigare (sticlă) ---------- */
+.site-header{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  background:rgba(255,248,241,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.is-scrolled{box-shadow:0 10px 28px -20px rgba(58,46,40,.35)}
+.header-inner{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--serif);font-weight:600;font-size:1.1rem;letter-spacing:-.01em;color:var(--brown)}
+.brand-mark{
+  display:grid;place-items:center;
+  width:2.25rem;height:2.25rem;border-radius:50%;
+  background:var(--peach);font-size:1.05rem;flex-shrink:0;
+}
+.nav-links{display:none;gap:2rem}
+.nav-links a{text-decoration:none;font-weight:500;color:var(--brown);transition:color .3s var(--ease)}
+.nav-links a:hover{color:var(--teal)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.5rem;
+  border-radius:999px;border:0;
+  font-family:var(--sans);font-size:1rem;font-weight:600;
+  text-decoration:none;text-align:center;
+  cursor:pointer;
+  transition:background-color .3s var(--ease), box-shadow .3s var(--ease), color .3s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 8px 20px -14px rgba(15,118,110,.9)}
+.btn-primary:hover{background:var(--teal-dark);box-shadow:0 12px 24px -14px rgba(15,118,110,.9)}
+.btn-ghost{background:transparent;color:var(--brown);box-shadow:inset 0 0 0 1.5px rgba(58,46,40,.22)}
+.btn-ghost:hover{background:rgba(58,46,40,.04);box-shadow:inset 0 0 0 1.5px rgba(58,46,40,.4)}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.95rem}
+.btn-block{width:100%}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding-top:calc(4rem + clamp(2.5rem,7vw,4.5rem));
+  padding-bottom:clamp(4rem,9vw,6.5rem);
+}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr 1.05fr;gap:5rem}
+}
+.slogan{
+  font-family:var(--serif);
+  font-variation-settings:"SOFT" 100;
+  font-size:clamp(1.25rem,2.6vw,1.6rem);
+  font-weight:400;
+  letter-spacing:-.01em;
+  line-height:1.25;
+  margin:1.25rem 0 .75rem;
+}
+.hero-desc{color:var(--brown-2);font-size:1.125rem;max-width:34ch;margin-bottom:2rem}
+.hero-actions{display:grid;gap:.75rem}
+@media (min-width:520px){.hero-actions{grid-auto-flow:column;justify-content:start}}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;
+  margin-top:2.25rem;font-size:.95rem;color:var(--brown-2);
+}
+.hero-visual{position:relative;width:100%;max-width:34rem;margin-left:auto}
+.blobs{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  animation:fadeIn 1.6s ease .3s both;
+}
+.blob{position:absolute;display:block;border-radius:50%;will-change:transform}
+.blob-a{width:68%;aspect-ratio:1;background:var(--peach);top:-5%;left:-5%;animation:breathe 12s ease-in-out infinite alternate}
+.blob-b{width:44%;aspect-ratio:1;background:var(--sage);opacity:.5;right:-3%;bottom:-3%;animation:breathe 14s ease-in-out -5s infinite alternate}
+.hero-photo{
+  position:relative;z-index:2;
+  width:100%;aspect-ratio:4/5;object-fit:cover;
+  border-radius:52% 48% 44% 56% / 46% 40% 60% 54%;
+  animation:photoIn 1.2s var(--ease) .1s both;
+}
+.rise{animation:rise .9s var(--ease) var(--d,0s) both}
+
+@keyframes rise{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes photoIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes breathe{
+  from{transform:scale(1) translate3d(0,0,0)}
+  to{transform:scale(1.06) translate3d(1%,-1.5%,0)}
+}
+
+/* ---------- Dezvăluire la derulare ---------- */
+[data-reveal]{
+  transition:opacity .6s var(--ease), transform .6s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js [data-reveal]:not(.is-in){opacity:0}
+.js [data-reveal="up"]:not(.is-in){transform:translate3d(0,24px,0)}
+.js [data-reveal="left"]:not(.is-in){transform:translate3d(-28px,0,0)}
+.js [data-reveal="right"]:not(.is-in){transform:translate3d(28px,0,0)}
+.js [data-reveal="scale"]:not(.is-in){transform:scale(.97)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1.05fr 1fr;gap:5rem}
+}
+.about-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2rem}
+.about-text{display:grid;gap:1.5rem}
+@media (min-width:900px){.about-photo{aspect-ratio:5/4}}
+
+/* ---------- Avantaje ---------- */
+.perks-section{background:var(--peach)}
+.perks-section h2{margin-bottom:3rem}
+.perks{display:grid;gap:2.5rem}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr);gap:2rem}}
+.perk{display:grid;gap:.6rem;align-content:start}
+.perk-icon{
+  display:grid;place-items:center;
+  width:4rem;height:4rem;border-radius:50%;
+  background:var(--cream);font-size:1.7rem;margin-bottom:.9rem;
+}
+.perk p{color:var(--brown-2);max-width:28ch}
+
+/* ---------- Servicii ---------- */
+.services-grid{display:grid;gap:3.5rem;align-items:center}
+@media (min-width:900px){
+  .services-grid{grid-template-columns:1fr .9fr;gap:5rem}
+}
+.services-grid h2{margin-bottom:2rem}
+.services{list-style:none;margin:0;padding:0}
+.service{
+  padding-block:2rem;
+  border-top:1px solid var(--line);
+  display:grid;gap:.75rem;justify-items:start;
+}
+.service:last-child{border-bottom:1px solid var(--line)}
+.service p{color:var(--brown-2);max-width:48ch}
+.service-photo{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+  border-radius:999px 999px 2rem 2rem;
+}
+@media (min-width:900px){.service-photo{aspect-ratio:4/5}}
+.note{margin-top:1.75rem;font-size:.95rem;color:var(--brown-2)}
+
+/* ---------- Program ---------- */
+.program{background:var(--sage-soft)}
+.program-grid{display:grid;gap:2.5rem;align-items:end}
+@media (min-width:900px){.program-grid{grid-template-columns:1fr 1fr;gap:4rem}}
+.program h2{margin-bottom:1.25rem}
+.program .lead{margin-bottom:2rem}
+.hours-days{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:clamp(1.5rem,3vw,2rem);font-weight:500;margin-bottom:.25rem}
+.time{
+  font-family:var(--serif);font-variation-settings:"SOFT" 100;
+  font-weight:400;
+  font-size:clamp(2.5rem,7vw,4.5rem);
+  line-height:1;letter-spacing:-.03em;
+  margin-bottom:2rem;
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:start}}
+.contact-grid h2{margin-bottom:2rem}
+.contact-row{
+  padding-block:1.75rem;
+  border-top:1px solid var(--line);
+  display:grid;gap:.4rem;justify-items:start;
+}
+.contact-row:last-child{border-bottom:1px solid var(--line)}
+.contact-label{font-size:.95rem;font-weight:600;color:var(--brown-2);letter-spacing:.01em}
+.contact-value{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:1.5rem;letter-spacing:-.01em;margin-bottom:.75rem}
+.contact-row .btn{margin-top:.5rem}
+.map{overflow:hidden;border-radius:1.75rem;background:var(--peach-soft)}
+.map iframe{display:block;width:100%;height:340px;border:0}
+@media (min-width:900px){.map iframe{height:420px}}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--brown);color:var(--cream);padding-block:3.5rem 2.5rem}
+.footer-grid{display:grid;gap:2rem}
+@media (min-width:760px){.footer-grid{grid-template-columns:1fr auto;align-items:end}}
+.footer-grid .brand{color:var(--cream);margin-bottom:.75rem}
+.footer-grid p{color:rgba(255,248,241,.8);font-size:.95rem;letter-spacing:.01em}
+.footer-grid a{color:var(--peach)}
+.footer-note{display:grid;gap:.35rem;text-align:left}
+@media (min-width:760px){.footer-note{text-align:right}}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  .blob{animation:none}
+  .blobs{animation:none}
+  .rise,.hero-photo{animation:fadeIn .2s ease both}
+  .rise{animation-delay:0s}
+  [data-reveal]{transition:opacity .2s ease !important;transition-delay:0s !important}
+  .js [data-reveal="up"]:not(.is-in),
+  .js [data-reveal="left"]:not(.is-in),
+  .js [data-reveal="right"]:not(.is-in),
+  .js [data-reveal="scale"]:not(.is-in){transform:none}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .site-header{background:var(--cream);box-shadow:inset 0 -2px 0 var(--brown)}
+  .site-header.is-scrolled{box-shadow:inset 0 -2px 0 var(--brown)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--brown)}
+  .service,.contact-row,.service:last-child,.contact-row:last-child{border-color:var(--brown)}
+  .nav-links a{text-decoration:underline}
+  .hero-desc,.muted,.service p,.perk p,.contact-label{color:var(--brown)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">🐾</span>
+      <span>Centru veterinar</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#program">Program</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0722582639">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" class="rise" style="--d:.1s">Centru veterinar</h1>
+        <p class="slogan rise" style="--d:.2s">Îngrijire atentă pentru animale</p>
+        <p class="hero-desc rise" style="--d:.3s">Suntem aici pentru sănătatea animalului tău.</p>
+        <div class="hero-actions rise" style="--d:.4s">
+          <a class="btn btn-primary" href="tel:0722582639">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40722582639?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20pentru%20o%20consulta%C8%9Bie%20veterinar%C4%83." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </div>
+        <p class="hero-meta rise" style="--d:.5s">
+          <span>Strada Toporași 31, București</span>
+          <span>Luni – vineri, 8:00 – 18:00</span>
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="blobs" aria-hidden="true">
+          <span class="blob blob-a"></span>
+          <span class="blob blob-b"></span>
+        </div>
+        <img class="hero-photo" src="img/1.jpg" width="800" height="1000" fetchpriority="high"
+             alt="Veterinar care examinează un câine, în fața stăpânului">
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" class="section" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <img class="about-photo" data-reveal="left" src="img/2.jpg" width="1000" height="750" loading="lazy"
+           alt="Câine examinat de medicul veterinar, cu aparatură de control al inimii">
+      <div class="about-text" data-reveal="right" style="--d:.1s">
+        <h2 id="despre-titlu">Despre centrul nostru</h2>
+        <p class="lead">La centrul nostru veterinar, fiecare animal primește atenție și respect. Oferim consultații și tratamente generale pentru câini, pisici și alte animale de companie. Ne dorim să vă fim alături la orice pas pentru prietenii patrupezi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section perks-section" aria-labelledby="oferim-titlu">
+    <div class="wrap">
+      <h2 id="oferim-titlu" data-reveal="up">Ce vă oferim</h2>
+      <div class="perks">
+        <article class="perk" data-reveal="up" style="--d:.05s">
+          <span class="perk-icon" aria-hidden="true">👩‍⚕️</span>
+          <h3>Personal dedicat</h3>
+          <p>Abordare prietenoasă pentru animale</p>
+        </article>
+        <article class="perk" data-reveal="up" style="--d:.15s">
+          <span class="perk-icon" aria-hidden="true">🏠</span>
+          <h3>Aproape de tine</h3>
+          <p>Locație accesibilă în cartier</p>
+        </article>
+        <article class="perk" data-reveal="up" style="--d:.25s">
+          <span class="perk-icon" aria-hidden="true">🔎</span>
+          <h3>Consult clar</h3>
+          <p>Explicații pe înțelesul stăpânilor</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicii" class="section" aria-labelledby="servicii-titlu">
+    <div class="wrap services-grid">
+      <div>
+        <h2 id="servicii-titlu" data-reveal="up">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <ul class="services">
+          <li class="service" data-reveal="up">
+            <h3>Consultații</h3>
+            <p>Examinarea animalului, discuția despre starea lui și despre pașii care urmează. Totul explicat pe înțelesul stăpânilor.</p>
+            <a class="btn btn-ghost btn-sm" href="tel:0722582639">Sună pentru consultație</a>
+          </li>
+          <li class="service" data-reveal="up" style="--d:.1s">
+            <h3>Tratamente</h3>
+            <p>Tratamente generale pentru câini, pisici și alte animale de companie, cu lămuririle necesare înainte de fiecare pas.</p>
+            <a class="btn btn-ghost btn-sm" href="tel:0722582639">Sună pentru tratament</a>
+          </li>
+        </ul>
+        <p class="note" data-reveal="fade">Pentru prețuri și detalii, sunați-ne sau scrieți-ne.</p>
+      </div>
+      <img class="service-photo" data-reveal="scale" src="img/3.jpg" width="800" height="1000" loading="lazy"
+           alt="Cățeluș examinat cu stetoscopul">
+    </div>
+  </section>
+
+  <section id="program" class="section program" aria-labelledby="program-titlu">
+    <div class="wrap program-grid">
+      <div data-reveal="up">
+        <h2 id="program-titlu">Program</h2>
+        <p class="lead">Deschis de luni până vineri, între 8:00 și 18:00.</p>
+      </div>
+      <div class="hours" data-reveal="up" style="--d:.1s">
+        <p class="hours-days">Luni – vineri</p>
+        <p class="time">8:00 – 18:00</p>
+        <a class="btn btn-primary" href="tel:0722582639">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-titlu" data-reveal="up">Contact</h2>
+
+        <div class="contact-row" data-reveal="up">
+          <h3 class="contact-label">Telefon</h3>
+          <p class="contact-value">0722 582 639</p>
+          <a class="btn btn-primary" href="tel:0722582639">Sună acum</a>
+        </div>
+
+        <div class="contact-row" data-reveal="up" style="--d:.05s">
+          <h3 class="contact-label">Adresă</h3>
+          <p class="contact-value">Strada Toporași 31, București</p>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Centru+veterinar+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+
+        <div class="contact-row" data-reveal="up" style="--d:.1s">
+          <h3 class="contact-label">WhatsApp</h3>
+          <p class="muted">Scrieți-ne despre animalul dumneavoastră.</p>
+          <a class="btn btn-ghost" href="https://wa.me/40722582639?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20pentru%20o%20consulta%C8%9Bie%20veterinar%C4%83." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal="fade" style="--d:.1s">
+        <iframe
+          title="Harta: Centru veterinar, Strada Toporași 31, București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0824614,44.3888749,26.090461400000002,44.3928749&amp;layer=mapnik&amp;marker=44.3908749,26.0864614"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="brand"><span class="brand-mark" aria-hidden="true">🐾</span><span>Centru veterinar</span></p>
+      <p>Strada Toporași 31, București</p>
+      <p><a href="tel:0722582639">0722 582 639</a></p>
+    </div>
+    <div class="footer-note">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: 12019, mirkosajkov</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // Umbră discretă pe bara de navigare când pagina se derulează
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
