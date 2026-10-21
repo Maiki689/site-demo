@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vivian Florar – Flori cu stil în Grădina Icoanei, București</title>
+<meta name="description" content="Buchete, aranjamente florale, flori tăiate și plante în zona Grădina Icoanei, București.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%92%90%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --green:#1F3A2C;
+  --green-2:#2C4F3D;
+  --green-3:#5C7F67;
+  --ivory:#F4EFE6;
+  --ivory-2:#EAE3D5;
+  --accent:#be123c;
+  --accent-d:#9f0f32;
+  --muted:#4F6357;
+  --line:rgba(31,58,44,.16);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Manrope', system-ui, -apple-system, sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--green);
+  background:var(--ivory);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p,figure{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{width:min(1140px,calc(100% - 88px));margin-inline:auto;position:relative}
+.section{padding:clamp(5.5rem,11vw,9rem) 0}
+h2{font-size:clamp(2.3rem,5vw,3.9rem);max-width:20ch}
+.body{font-size:1.05rem;color:var(--muted);max-width:52ch}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(244,239,230,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .5s var(--ease), background-color .5s var(--ease);
+}
+.nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 10px 30px -18px rgba(31,58,44,.45)}
+.nav-in{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:-.01em;color:var(--green);text-decoration:none}
+.navlinks{display:flex;gap:2rem}
+.navlinks a{font-size:.9rem;font-weight:600;color:var(--green);text-decoration:none;padding:.5rem 0;letter-spacing:.01em;transition:color .3s var(--ease)}
+.navlinks a:hover{color:var(--accent)}
+@media (max-width:759px){.navlinks{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.6rem;border-radius:999px;
+  font:600 .95rem/1 var(--sans);text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
+  transition:background-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease), transform .1s linear;
+}
+.btn:active{transform:scale(.97)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:var(--accent-d);box-shadow:0 8px 20px -10px rgba(190,18,60,.7)}
+.btn-line{border-color:var(--green);color:var(--green);background:transparent}
+.btn-line:hover{background:rgba(31,58,44,.06)}
+.btn-light{background:var(--ivory);color:var(--green)}
+.btn-light:hover{background:#fff;box-shadow:0 8px 20px -10px rgba(0,0,0,.45)}
+.btn-line-light{border-color:rgba(244,239,230,.6);color:var(--ivory);background:transparent}
+.btn-line-light:hover{background:rgba(244,239,230,.1)}
+.btn-sm{min-height:44px;padding:.6rem 1.2rem;font-size:.875rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Ramura (memorabilul) ---------- */
+.page{position:relative}
+.branch{position:absolute;top:0;left:6px;z-index:0;pointer-events:none}
+@media (min-width:1360px){.branch{left:calc(50% - 650px)}}
+.branch svg{display:block;overflow:visible}
+#stem{fill:none;stroke:var(--green)}
+.leaf{fill:var(--green-2)}
+.leaf-b{fill:var(--green-3)}
+main{position:relative;z-index:1}
+
+/* ---------- Hero ---------- */
+.hero{padding:8.5rem 0 clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.02fr .98fr;gap:5rem}}
+.hero-kicker{font-size:.9rem;font-weight:600;letter-spacing:.04em;color:var(--muted);margin-bottom:1.2rem}
+.hero h1{font-size:clamp(3.4rem,10vw,8.5rem);line-height:1.02;letter-spacing:-.025em;margin-bottom:1.2rem}
+.slogan{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;letter-spacing:-.01em;margin-bottom:1.1rem}
+.lead{color:var(--muted);max-width:34ch;font-size:1.05rem;margin-bottom:2.2rem}
+.hero-photo{
+  aspect-ratio:4/5;overflow:hidden;
+  border-radius:50% 50% 0 0 / 36% 36% 0 0;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-in{animation:rise .9s var(--ease) var(--d,0s) both}
+.hero-photo{animation:settle 1.4s var(--ease) .15s both}
+@keyframes rise{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ---------- Aranjare pe secțiuni ---------- */
+.frame{overflow:hidden;aspect-ratio:4/5}
+.frame img{width:100%;height:100%;object-fit:cover}
+.split{display:grid;gap:3rem;align-items:center}
+.facts{list-style:none;padding:0;margin:2.2rem 0 2rem;max-width:44ch}
+.facts li{padding:1rem 0;border-top:1px solid var(--line);font-size:1.05rem}
+.facts li:last-child{border-bottom:1px solid var(--line)}
+@media (min-width:900px){
+  .split{grid-template-columns:5fr 6fr;gap:6rem}
+  .split.rev{grid-template-columns:6fr 5fr}
+}
+
+/* Fâșia verde cu avantaje */
+.band{background:var(--green);color:var(--ivory)}
+.band h2{color:var(--ivory)}
+.adv{display:grid;gap:3rem;list-style:none;padding:0;margin:clamp(2.5rem,5vw,4rem) 0 0}
+@media (min-width:800px){.adv{grid-template-columns:repeat(3,1fr);gap:3rem}}
+.adv .ico{font-size:2rem;line-height:1;display:block;margin-bottom:1.2rem}
+.adv h3{font-size:clamp(1.6rem,2.4vw,2rem);color:var(--ivory);margin-bottom:.5rem}
+.adv p{color:rgba(244,239,230,.84);max-width:28ch}
+
+/* Produse */
+.prod-list{list-style:none;padding:0;margin:0}
+.prod-list li{padding:clamp(1.4rem,3vw,2rem) 0;border-top:1px solid var(--line)}
+.prod-list li:last-child{border-bottom:1px solid var(--line)}
+.prod-list h3{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:.4rem;transition:color .3s var(--ease)}
+.prod-list li:hover h3{color:var(--accent)}
+.prod-list p{color:var(--muted)}
+
+/* Galerie */
+.gal{display:grid;gap:2rem;margin-top:clamp(2.5rem,5vw,4rem)}
+@media (min-width:800px){
+  .gal{grid-template-columns:7fr 5fr;gap:3rem;align-items:start}
+  .gal figure:nth-child(2){margin-top:9rem}
+}
+
+/* Contact */
+.contact{display:grid;gap:3rem}
+@media (min-width:900px){.contact{grid-template-columns:5fr 7fr;gap:5rem;align-items:start}}
+.addr{font-size:1.15rem;margin:1.6rem 0 .4rem}
+.phone{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--serif);font-size:clamp(2rem,4vw,2.6rem);font-weight:500;letter-spacing:-.01em;
+  color:var(--green);text-decoration:none;transition:color .3s var(--ease);
+}
+.phone:hover{color:var(--accent)}
+.map{width:100%;height:clamp(320px,46vw,460px);border:0;display:block;background:var(--ivory-2)}
+
+/* Subsol */
+.foot{background:var(--green);color:var(--ivory);padding:4rem 0 3rem;font-size:.95rem}
+.foot-grid{display:grid;gap:2.5rem}
+@media (min-width:800px){.foot-grid{grid-template-columns:1fr auto}}
+.foot .brand{color:var(--ivory);font-size:1.8rem;display:block;margin-bottom:.6rem}
+.foot a{color:var(--ivory);display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.foot a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot :focus-visible{outline-color:var(--ivory)}
+.foot-links{display:flex;flex-direction:column}
+.credits{
+  margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(244,239,230,.18);
+  font-size:.8rem;letter-spacing:.02em;color:rgba(244,239,230,.75);display:grid;gap:.4rem;
+}
+.band :focus-visible{outline-color:var(--ivory)}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js .rv{
+  opacity:0;transform:translate3d(0,22px,0);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .rv.rv-side{transform:translate3d(-18px,0,0)}
+.js .rv.rv-fade{transform:none;transition:opacity .9s ease var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-img{opacity:0;transition:opacity .9s ease var(--d,0s)}
+.js .rv-img img{transform:scale(1.06);transition:transform 1.6s var(--ease) var(--d,0s)}
+.js .rv-img.in{opacity:1}
+.js .rv-img.in img{transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero-in,.hero-photo{animation:fadeIn .2s both;animation-delay:0s}
+  .js .rv,.js .rv.rv-side,.js .rv.rv-fade,.js .rv-img,.js .rv-img img{
+    transform:none!important;transition:opacity .2s ease!important;transition-delay:0s!important;
+  }
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--ivory);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav{background:var(--ivory)}
+}
+@media (prefers-contrast: more){
+  :root{--muted:#1F3A2C;--line:rgba(31,58,44,.6)}
+  .nav{background:var(--ivory);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:inset 0 -2px 0 var(--green)}
+  .btn-line{border-width:2px}
+  .facts li,.prod-list li{border-color:rgba(31,58,44,.6)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">Vivian Florar</a>
+    <nav aria-label="Principal">
+      <div class="navlinks">
+        <a href="#despre">Despre</a>
+        <a href="#produse">Produse</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <a class="btn btn-accent btn-sm" href="tel:0722676783">Sună acum</a>
+  </div>
+</header>
+
+<div class="page" id="page">
+  <div class="branch" aria-hidden="true">
+    <svg id="branch" xmlns="http://www.w3.org/2000/svg" focusable="false">
+      <path id="stem"/>
+      <g id="leaves"></g>
+      <g id="bud"><ellipse cx="0" cy="-7" rx="4.2" ry="7" fill="#be123c"/><path d="M-4.5 -0.5Q0 3 4.5 -0.5Q0 1.5 -4.5 -0.5Z" fill="#1F3A2C"/></g>
+    </svg>
+  </div>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker hero-in" style="--d:.05s">Florărie în București</p>
+          <h1 class="hero-in" style="--d:.15s">Vivian Florar</h1>
+          <p class="slogan hero-in" style="--d:.25s">Flori cu stil în Grădina Icoanei</p>
+          <p class="lead hero-in" style="--d:.35s">Buchete și aranjamente florale pentru ocazii speciale.</p>
+          <div class="actions hero-in" style="--d:.45s">
+            <a class="btn btn-accent" href="tel:0722676783">Sună acum</a>
+            <a class="btn btn-line" href="https://wa.me/40722676783?text=Bun%C4%83%21%20A%C8%99%20vrea%20detalii%20despre%20flori%20sau%20buchete." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+          </div>
+        </div>
+        <figure class="hero-photo">
+          <img src="img/4.jpg" alt="Buchet de flori roz, aranjat elegant">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="despre">
+      <div class="wrap split">
+        <div class="rv">
+          <h2>Mai mult decât flori</h2>
+          <ul class="facts">
+            <li>Buchete, flori tăiate, plante și aranjamente florale.</li>
+            <li>Suntem în zona Grădina Icoanei din București.</li>
+          </ul>
+          <p class="body">La Vivian Florar găsești flori tăiate, plante și aranjamente, atent alese pentru tine. O atmosferă rafinată pentru fiecare client.</p>
+        </div>
+        <figure class="frame rv-img">
+          <img src="img/1.jpg" alt="Masă aranjată cu flori, lumânări și pahare de cristal" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section band" id="avantaje">
+      <div class="wrap">
+        <h2 class="rv">Ce găsești la noi</h2>
+        <ul class="adv">
+          <li class="rv rv-fade" style="--d:0s">
+            <span class="ico" aria-hidden="true">🌷</span>
+            <h3>Selecție variată</h3>
+            <p>Găsești flori diverse în fiecare zi</p>
+          </li>
+          <li class="rv rv-fade" style="--d:.3s">
+            <span class="ico" aria-hidden="true">🌳</span>
+            <h3>Lângă parc</h3>
+            <p>Suntem aproape de Grădina Icoanei</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="produse">
+      <div class="wrap split rev">
+        <div class="rv">
+          <h2>Produse</h2>
+          <p class="body" style="margin:1.2rem 0 2.4rem">Buchete, aranjamente, flori tăiate și plante. Spune-ne ocazia, iar noi te ajutăm să alegi.</p>
+          <ul class="prod-list">
+            <li class="rv rv-side" style="--d:0s">
+              <h3>Buchete de flori</h3>
+              <p>Buchete elegante pentru orice ocazie</p>
+            </li>
+            <li class="rv rv-side" style="--d:.08s">
+              <h3>Aranjamente florale</h3>
+              <p>Compoziții creative pentru evenimente sau acasă</p>
+            </li>
+            <li class="rv rv-side" style="--d:.16s">
+              <h3>Flori tăiate</h3>
+              <p>Selecție variată de flori proaspete</p>
+            </li>
+                      </ul>
+          <div class="actions" style="margin-top:2.5rem">
+            <a class="btn btn-accent" href="https://wa.me/40722676783?text=Bun%C4%83%21%20A%C8%99%20vrea%20detalii%20despre%20flori%20sau%20buchete." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+            <a class="btn btn-line" href="tel:0722676783">Sună acum</a>
+          </div>
+        </div>
+        <figure class="frame rv-img">
+          <img src="img/5.jpg" alt="Buchet mare de floarea-soarelui într-o vază colorată" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="galerie">
+      <div class="wrap">
+        <h2 class="rv">Idei pentru ocazii speciale</h2>
+        <div class="gal">
+          <figure class="frame rv-img">
+            <img src="img/2.jpg" alt="Buchet de flori într-un cadru de grădină" loading="lazy">
+          </figure>
+          <figure class="frame rv-img" style="--d:.2s">
+            <img src="img/3.jpg" alt="Buchet colorat de flori de primăvară" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap contact">
+        <div class="rv">
+          <h2>Ne găsești lângă Grădina Icoanei</h2>
+          <p class="addr">Strada Jean Louis Calderon 58, București</p>
+          <a class="phone" href="tel:0722676783">0722 676 783</a>
+          <div class="actions" style="margin-top:2rem">
+            <a class="btn btn-accent" href="tel:0722676783">Sună acum</a>
+            <a class="btn btn-line" href="https://wa.me/40722676783?text=Bun%C4%83%21%20A%C8%99%20vrea%20detalii%20despre%20flori%20sau%20buchete." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+            <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Vivian+Florar+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </div>
+        </div>
+        <div class="rv rv-fade" style="--d:.1s">
+          <iframe class="map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=26.100578199999998,44.439186799999995,26.1085782,44.4431868&amp;layer=mapnik&amp;marker=44.4411868,26.1045782"
+            title="Harta: Vivian Florar, Strada Jean Louis Calderon 58, București"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="brand">Vivian Florar</p>
+        <p>Strada Jean Louis Calderon 58, București</p>
+        <p><a href="tel:0722676783">0722 676 783</a></p>
+      </div>
+      <nav class="foot-links" aria-label="Subsol">
+        <a href="#despre">Despre</a>
+        <a href="#produse">Produse</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="credits">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: lubovlisitsa, StockSnap, 5598375, jackmac34, Michelle-Maria.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var nav = document.getElementById('nav');
+  var page = document.getElementById('page');
+  var svg = document.getElementById('branch');
+  var stem = document.getElementById('stem');
+  var leavesG = document.getElementById('leaves');
+  var bud = document.getElementById('bud');
+  var NS = 'http://www.w3.org/2000/svg';
+
+  var geo, H = 1, len = 1, bx = 0, by = 0, leaves = [];
+  var target = 0, cur = 0, raf = 0;
+
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+  function xAt(y) { return geo.cx + geo.A * Math.sin(y / 83); }
+
+  function build() {
+    geo = window.innerWidth < 1360
+      ? { W: 34, cx: 14, A: 5, L: 18, sw: 1.3, gap: 190 }
+      : { W: 84, cx: 42, A: 14, L: 34, sw: 1.7, gap: 230 };
+
+    H = Math.max(1, page.offsetHeight);
+    svg.setAttribute('width', geo.W);
+    svg.setAttribute('height', H);
+    svg.setAttribute('viewBox', '0 0 ' + geo.W + ' ' + H);
+
+    var d = '';
+    for (var y = 0; y <= H; y += 6) {
+      d += (y ? 'L' : 'M') + xAt(y).toFixed(2) + ' ' + y;
+    }
+    d += 'L' + xAt(H).toFixed(2) + ' ' + H;
+    stem.setAttribute('d', d);
+    stem.setAttribute('stroke-width', geo.sw);
+    len = stem.getTotalLength();
+    stem.style.strokeDasharray = len;
+
+    leavesG.textContent = '';
+    leaves = [];
+    var L = geo.L, w = L * 0.26;
+    var shape = 'M0 0C' + (L * .3) + ' ' + (-w) + ' ' + (L * .72) + ' ' + (-w * .95) + ' ' + L + ' 0C' +
+                (L * .72) + ' ' + (w * .95) + ' ' + (L * .3) + ' ' + w + ' 0 0Z';
+    var i = 0;
+    for (var ly = 150; ly < H - 80; ly += geo.gap, i++) {
+      var g = document.createElementNS(NS, 'g');
+      var a = i % 2 ? 218 : -38;
+      g.setAttribute('transform', 'translate(' + xAt(ly).toFixed(2) + ' ' + ly + ') rotate(' + a + ')');
+      var p = document.createElementNS(NS, 'path');
+      p.setAttribute('d', shape);
+      p.setAttribute('class', i % 3 === 1 ? 'leaf leaf-b' : 'leaf');
+      p.setAttribute('transform', 'scale(0)');
+      g.appendChild(p);
+      leavesG.appendChild(g);
+      leaves.push({ el: p, y: ly });
+    }
+
+    bx = xAt(H - 2);
+    by = H - 2;
+    render(cur);
+  }
+
+  function render(p) {
+    stem.style.strokeDashoffset = (len * (1 - p)).toFixed(2);
+    var reach = p * H;
+    for (var k = 0; k < leaves.length; k++) {
+      var s = clamp((reach - leaves[k].y) / 80, 0, 1);
+      leaves[k].el.setAttribute('transform', 'scale(' + s.toFixed(3) + ')');
+    }
+    var bs = clamp((reach - (H - 40)) / 40, 0, 1);
+    bud.setAttribute('transform', 'translate(' + bx.toFixed(2) + ' ' + by + ') scale(' + bs.toFixed(3) + ')');
+  }
+
+  function computeTarget() {
+    if (reduce.matches) return 1;
+    var top = page.getBoundingClientRect().top + window.scrollY;
+    return clamp((window.scrollY + window.innerHeight * 0.6 - top) / H, 0, 1);
+  }
+
+  function loop() {
+    cur += (target - cur) * 0.12;
+    if (Math.abs(target - cur) < 0.0008) cur = target;
+    render(cur);
+    raf = cur !== target ? requestAnimationFrame(loop) : 0;
+  }
+
+  function kick() {
+    target = computeTarget();
+    if (!raf) raf = requestAnimationFrame(loop);
+  }
+
+  build();
+  target = cur = computeTarget();
+  render(cur);
+
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(function () { build(); kick(); }).observe(page);
+  }
+
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    kick();
+  }, { passive: true });
+
+  window.addEventListener('resize', function () { build(); kick(); });
+
+  nav.classList.toggle('is-scrolled', window.scrollY > 8);
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.rv, .rv-img').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.rv, .rv-img').forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
