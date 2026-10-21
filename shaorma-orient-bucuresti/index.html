@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Shaorma și kebab preparate proaspăt, la orice oră. Shaorma Orient, Bulevardul Ion Mihalache, București.">
+<meta name="theme-color" content="#FFD23F">
+<title>Shaorma Orient, București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Rubik:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --y:#FFD23F;
+  --k:#111111;
+  --r:#E63946;
+  --w:#FFFFFF;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:'Rubik',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:1rem;line-height:1.5;color:var(--k);background:var(--w);
+  overflow-x:clip;
+}
+img,svg,iframe{display:block;max-width:100%}
+a{color:inherit}
+ul,ol,dl{list-style:none}
+figure{margin:0}
+p{max-width:65ch}
+:focus-visible{outline:3px solid var(--k);outline-offset:3px}
+.nav :focus-visible,.produse :focus-visible,.foot :focus-visible{outline-color:var(--y)}
+
+h1,h2,h3{
+  font-family:'Anton',Impact,'Arial Narrow',sans-serif;
+  font-weight:400;text-transform:uppercase;
+  line-height:1.02;letter-spacing:-.02em;
+}
+
+.wrap{width:min(100% - 2.5rem,1180px);margin-inline:auto}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;color:#fff;
+  background:rgba(17,17,17,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.18);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.scrolled{box-shadow:0 10px 24px -14px rgba(0,0,0,.6)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:'Anton',Impact,sans-serif;font-size:1.3rem;
+  text-transform:uppercase;letter-spacing:.01em;color:#fff;text-decoration:none;
+}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{color:#fff;font-weight:500;text-decoration:none;font-size:.95rem;letter-spacing:.01em;padding:.5rem 0}
+.nav-links a:hover{color:var(--y)}
+@media (max-width:719px){.nav-links{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.75rem 1.5rem;
+  border:3px solid var(--k);border-radius:4px;
+  font-family:'Rubik',sans-serif;font-size:1.0625rem;font-weight:700;line-height:1.1;
+  text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .1s ease,box-shadow .2s var(--ease),background-color .2s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--k);color:var(--y)}
+.btn-dark:hover{box-shadow:0 4px 0 var(--r)}
+.btn-red{background:var(--r);color:var(--k)}
+.btn-red:hover{box-shadow:0 4px 0 var(--k)}
+.btn-white{background:#fff;color:var(--k)}
+.btn-white:hover{box-shadow:0 4px 0 var(--k)}
+.btn-yellow{background:var(--y);color:var(--k);border-color:var(--y)}
+.btn-yellow:hover{box-shadow:0 4px 0 var(--r)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.actions .btn{flex:1 1 15rem}
+
+/* ---------- Primul ecran ---------- */
+.hero{position:relative;background:var(--y);padding:1.5rem 0 3.5rem;overflow:hidden}
+.hero-grid{display:grid;gap:2.25rem;align-items:center}
+.hero h1{
+  font-size:clamp(3.4rem,13.5vw,8.5rem);
+  line-height:1;letter-spacing:-.02em;color:var(--k);
+}
+.hero h1 span{display:block}
+.slogan{margin-top:1.1rem;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:700;line-height:1.3}
+.desc{margin-top:.5rem;font-size:1.0625rem;max-width:34ch}
+.hero .actions{margin-top:1.5rem}
+
+.plate-wrap{
+  position:relative;width:100%;max-width:440px;aspect-ratio:1;
+  justify-self:center;isolation:isolate;
+  animation:plateIn .9s var(--ease) .2s both;
+}
+.plate-wrap::before{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:var(--k);transform:translate(14px,16px);
+}
+.plate{
+  position:absolute;inset:0;border-radius:50%;
+  background:#fff;border:3px solid var(--k);padding:6%;
+}
+.plate img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.stamp{
+  position:absolute;top:2%;left:-4%;z-index:2;
+  width:clamp(5.5rem,24%,7.5rem);aspect-ratio:1;border-radius:50%;
+  background:var(--r);color:var(--k);border:3px solid var(--k);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  transform:rotate(-12deg);
+  animation:stampIn .5s cubic-bezier(.3,1.4,.5,1) .8s both;
+}
+.stamp b{font-family:'Anton',Impact,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(1rem,2.6vw,1.45rem);line-height:1}
+.stamp small{font-size:.7rem;font-weight:700;line-height:1.2;margin-top:.2rem}
+
+.rise{animation:rise .7s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes plateIn{from{opacity:0;transform:scale(.9) rotate(-8deg)}to{opacity:1;transform:none}}
+@keyframes stampIn{from{opacity:0;transform:rotate(-40deg) scale(.5)}to{opacity:1;transform:rotate(-12deg) scale(1)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+@media (min-width:900px){
+  .hero{padding:5rem 0 6rem}
+  .hero-grid{grid-template-columns:1.2fr .8fr;gap:3.5rem}
+}
+
+/* ---------- Avantaje (etichete) ---------- */
+.tags-sec{background:#fff;padding:clamp(3rem,7vw,5rem) 0}
+.tags{display:grid;gap:1.25rem}
+@media (min-width:820px){.tags{grid-template-columns:repeat(3,1fr);gap:1.75rem}}
+.tag{
+  display:flex;gap:1rem;align-items:flex-start;height:100%;
+  padding:1.4rem 1.5rem;border-radius:6px;
+  background:var(--k);color:#fff;
+  transform:rotate(var(--r,0deg));
+}
+.tag--red{background:var(--r);color:var(--k)}
+.tag--yellow{background:var(--y);color:var(--k)}
+.tag .em{font-size:2.25rem;line-height:1}
+.tag h3{font-size:1.6rem;line-height:1.05;margin-bottom:.3rem}
+.tag p{font-size:1rem;line-height:1.45}
+
+/* ---------- Produse (abțibilduri) ---------- */
+.produse{position:relative;background:var(--k);color:#fff;padding:clamp(4rem,9vw,7rem) 0;overflow:hidden}
+.produse h2{font-size:clamp(3.2rem,11vw,7rem);color:#fff}
+.sec-head{position:relative;z-index:1}
+.sec-head p{margin-top:.75rem;font-size:1.0625rem;color:#f0f0f0}
+.stickers{
+  position:relative;z-index:1;display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(1rem,3vw,2rem);margin-top:3rem;
+}
+@media (min-width:960px){.stickers{grid-template-columns:repeat(4,1fr)}}
+.stickers li{min-width:0}
+.tilt{height:100%;transform:rotate(var(--r,0deg))}
+.sticker{
+  position:relative;height:100%;padding:1.1rem .9rem 1.4rem;
+  background:var(--fill);color:var(--ink);
+  border:6px solid #fff;border-radius:var(--blob);
+  text-align:center;cursor:pointer;user-select:none;-webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  transition:box-shadow .25s var(--ease);
+}
+.sticker:hover{box-shadow:0 6px 0 rgba(255,210,63,.45)}
+.sticker svg{width:100%;max-width:9.5rem;height:auto;margin:0 auto .75rem}
+.sticker h3{font-size:clamp(1.25rem,2.8vw,1.65rem);line-height:1.02}
+.sticker p{margin-top:.45rem;font-size:.95rem;line-height:1.4}
+.sticker.hop{animation:hop .55s var(--ease)}
+@keyframes hop{
+  0%{transform:translateY(0)}
+  30%{transform:translateY(-16px)}
+  55%{transform:translateY(-3px)}
+  75%{transform:translateY(-8px)}
+  100%{transform:translateY(0)}
+}
+.deco{position:absolute;z-index:0;width:clamp(64px,11vw,120px);height:auto;pointer-events:none}
+.deco-tomato{top:2.5rem;right:-1.25rem;transform:rotate(14deg)}
+.deco-onion{bottom:2rem;left:-1.5rem;transform:rotate(-8deg)}
+
+/* ---------- Despre ---------- */
+.despre{background:var(--r);color:var(--k);padding:clamp(4rem,9vw,7rem) 0}
+.despre-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){.despre-grid{grid-template-columns:1fr 1fr;gap:4rem}}
+.despre h2{font-size:clamp(3rem,9vw,6rem)}
+.statement{
+  margin-top:1.25rem;font-family:'Anton',Impact,sans-serif;text-transform:uppercase;
+  font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.1;letter-spacing:-.01em;
+}
+.despre .lead{margin-top:1.5rem;font-size:1.125rem;font-weight:500}
+.despre .body{margin-top:.9rem;font-size:1.0625rem}
+.collage{
+  display:grid;grid-template-columns:1fr 1fr;
+  grid-template-areas:"a b" "a c";
+  grid-template-rows:minmax(180px,1fr) minmax(160px,1fr);
+  gap:.75rem;height:clamp(420px,58vw,560px);
+}
+.collage figure{position:relative;overflow:hidden}
+.collage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.c1{grid-area:a}.c2{grid-area:b}.c3{grid-area:c}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--y);padding:clamp(4rem,9vw,7rem) 0}
+.contact-grid{display:grid;gap:2.5rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}}
+.contact h2{font-size:clamp(3rem,9vw,6rem)}
+.info{margin-top:1.5rem;display:grid;gap:1rem}
+.info dt{font-weight:700}
+.info dd{font-size:1.125rem}
+.info a{font-weight:700}
+.map{position:relative;height:clamp(300px,42vw,420px);border:3px solid var(--k);background:#fff}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--k);color:#f2f2f2;padding:2.5rem 0 3rem;font-size:.9rem;letter-spacing:.01em}
+.foot-brand{font-family:'Anton',Impact,sans-serif;font-size:1.4rem;text-transform:uppercase;color:#fff;letter-spacing:.01em}
+.foot p{margin-top:.35rem}
+.foot .credit{margin-top:1rem;color:#bdbdbd;font-size:.8rem}
+
+/* ---------- Revelare la derulare ---------- */
+.js .reveal{
+  opacity:0;
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .r-up{transform:translateY(28px)}
+.js .r-left{transform:translateX(-28px)}
+.js .r-right{transform:translateX(28px)}
+.js .r-pop{transform:scale(.92)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rise,.plate-wrap,.stamp{animation:fadeIn .2s ease both !important;animation-delay:0s !important}
+  .js .reveal,.js .r-up,.js .r-left,.js .r-right,.js .r-pop{
+    transform:none !important;transition:opacity .2s ease !important;transition-delay:0s !important;
+  }
+  .sticker.hop{animation:none}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--k);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .nav{background:var(--k);border-top:0;border-bottom:2px solid #fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav-links a{text-decoration:underline}
+  .btn{border-width:3px}
+  .sticker{border-width:8px}
+  .tag{outline:2px solid var(--k);outline-offset:-2px}
+  .map{border-width:4px}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="sus">
+  <div class="wrap nav-in">
+    <a class="brand" href="#sus" aria-label="Shaorma Orient, sus pe pagină"><span aria-hidden="true">🌯</span> Shaorma Orient</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-yellow btn-sm" href="tel:0752029688">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu" class="rise" style="--d:.05s"><span>Shaorma</span><span>Orient</span></h1>
+        <p class="slogan rise" style="--d:.15s">Gust autentic, rapid și delicios</p>
+        <p class="desc rise" style="--d:.22s">Shaorma și kebab preparate proaspăt, la orice oră.</p>
+        <div class="actions rise" style="--d:.3s">
+          <a class="btn btn-dark" href="tel:0752029688">Sună acum</a>
+          <a class="btn btn-red" href="https://wa.me/40752029688?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="plate-wrap">
+        <div class="plate">
+          <img src="img/4.jpg" alt="Shaorma cu carne și legume, servită caldă" width="800" height="800">
+        </div>
+        <div class="stamp" aria-hidden="true">
+          <b>Non-stop</b>
+          <small>zi și noapte</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tags-sec" aria-label="Ce primești la noi">
+    <div class="wrap">
+      <ul class="tags">
+        <li class="reveal r-up">
+          <article class="tag" style="--r:-1.5deg">
+            <span class="em" aria-hidden="true">⏰</span>
+            <div>
+              <h3>Non-stop</h3>
+              <p>Deschis zi și noapte, mereu aici.</p>
+            </div>
+          </article>
+        </li>
+        <li class="reveal r-up" style="--d:.1s">
+          <article class="tag tag--red" style="--r:1deg">
+            <span class="em" aria-hidden="true">⚡</span>
+            <div>
+              <h3>Rapid</h3>
+              <p>Servit cu promptitudine.</p>
+            </div>
+          </article>
+        </li>
+        <li class="reveal r-up" style="--d:.2s">
+          <article class="tag tag--yellow" style="--r:-1deg">
+            <span class="em" aria-hidden="true">🍗</span>
+            <div>
+              <h3>Ingrediente gustoase</h3>
+              <p>Pui sau vită proaspăt preparate.</p>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="produse" id="produse" aria-labelledby="h-produse">
+    <svg class="deco deco-tomato" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <circle cx="50" cy="50" r="46" fill="#E63946" stroke="#111" stroke-width="4"/>
+      <circle cx="50" cy="50" r="34" fill="#fff"/>
+      <g fill="#E63946">
+        <circle cx="50" cy="28" r="5"/><circle cx="71" cy="41" r="5"/><circle cx="71" cy="63" r="5"/>
+        <circle cx="50" cy="75" r="5"/><circle cx="29" cy="63" r="5"/><circle cx="29" cy="41" r="5"/>
+      </g>
+      <circle cx="50" cy="50" r="7" fill="#FFD23F" stroke="#111" stroke-width="3"/>
+    </svg>
+    <svg class="deco deco-onion" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <circle cx="50" cy="50" r="46" fill="#FFD23F" stroke="#111" stroke-width="4"/>
+      <circle cx="50" cy="50" r="26" fill="#fff" stroke="#111" stroke-width="4"/>
+    </svg>
+
+    <div class="wrap">
+      <div class="sec-head reveal r-up">
+        <h2 id="h-produse">Produse</h2>
+        <p>Preparate proaspăt, la orice oră.</p>
+      </div>
+
+      <ul class="stickers">
+        <li class="reveal r-pop">
+          <div class="tilt" style="--r:-3deg">
+            <div class="sticker" style="--fill:#FFD23F;--ink:#111;--blob:42% 58% 55% 45% / 48% 42% 58% 52%">
+              <svg viewBox="0 0 160 110" aria-hidden="true" focusable="false">
+                <rect x="10" y="30" width="140" height="50" rx="25" fill="#fff" stroke="#111" stroke-width="4"/>
+                <path d="M46 32 L34 78 M80 32 L68 78 M114 32 L102 78" stroke="#E63946" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="60" cy="56" r="10" fill="#FFD23F" stroke="#111" stroke-width="3"/>
+                <circle cx="96" cy="52" r="9" fill="#FFD23F" stroke="#111" stroke-width="3"/>
+                <circle cx="126" cy="64" r="7" fill="#FFD23F" stroke="#111" stroke-width="3"/>
+              </svg>
+              <h3>Shaorma cu pui</h3>
+              <p>Pui rotisat cu legume și sos.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="reveal r-pop" style="--d:.08s">
+          <div class="tilt" style="--r:2.5deg">
+            <div class="sticker" style="--fill:#E63946;--ink:#111;--blob:58% 42% 46% 54% / 40% 56% 44% 60%">
+              <svg viewBox="0 0 160 110" aria-hidden="true" focusable="false">
+                <rect x="10" y="30" width="140" height="50" rx="25" fill="#fff" stroke="#111" stroke-width="4"/>
+                <path d="M46 32 L34 78 M80 32 L68 78 M114 32 L102 78" stroke="#E63946" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="60" cy="56" r="10" fill="#111"/>
+                <circle cx="96" cy="52" r="9" fill="#111"/>
+                <circle cx="126" cy="64" r="7" fill="#111"/>
+              </svg>
+              <h3>Shaorma cu vită</h3>
+              <p>Vită fragedă, legume, sos la alegere.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="reveal r-pop" style="--d:.16s">
+          <div class="tilt" style="--r:-2deg">
+            <div class="sticker" style="--fill:#fff;--ink:#111;--blob:50% 50% 40% 60% / 56% 44% 56% 44%">
+              <svg viewBox="0 0 160 110" aria-hidden="true" focusable="false">
+                <ellipse cx="80" cy="56" rx="66" ry="42" fill="#fff" stroke="#111" stroke-width="4"/>
+                <rect x="44" y="40" width="26" height="20" rx="8" fill="#FFD23F" stroke="#111" stroke-width="3" transform="rotate(-14 57 50)"/>
+                <rect x="80" y="48" width="26" height="20" rx="8" fill="#FFD23F" stroke="#111" stroke-width="3" transform="rotate(10 93 58)"/>
+                <circle cx="112" cy="36" r="8" fill="#E63946" stroke="#111" stroke-width="3"/>
+              </svg>
+              <h3>Kebab cu pui</h3>
+              <p>Pui, salată proaspătă, lipie.</p>
+            </div>
+          </div>
+        </li>
+
+        <li class="reveal r-pop" style="--d:.24s">
+          <div class="tilt" style="--r:3deg">
+            <div class="sticker" style="--fill:#FFD23F;--ink:#111;--blob:46% 54% 58% 42% / 52% 48% 52% 48%">
+              <svg viewBox="0 0 160 110" aria-hidden="true" focusable="false">
+                <ellipse cx="80" cy="56" rx="66" ry="42" fill="#fff" stroke="#111" stroke-width="4"/>
+                <rect x="44" y="40" width="26" height="20" rx="6" fill="#111" transform="rotate(-14 57 50)"/>
+                <rect x="80" y="48" width="26" height="20" rx="6" fill="#111" transform="rotate(10 93 58)"/>
+                <circle cx="112" cy="40" r="8" fill="#E63946" stroke="#111" stroke-width="3"/>
+                <circle cx="50" cy="72" r="7" fill="#E63946" stroke="#111" stroke-width="3"/>
+              </svg>
+              <h3>Kebab cu vită</h3>
+              <p>Vită, legume, lipie caldă.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="h-despre">
+    <div class="wrap despre-grid">
+      <div class="reveal r-left">
+        <h2 id="h-despre">Despre noi</h2>
+        <p class="statement">Shaorma cu pui sau vită, kebab.</p>
+        <p class="lead">La Shaorma Orient găsești shaorma cu pui sau vită, dar și kebab, mereu rapid și savuros.</p>
+        <p class="body">Suntem mereu deschiși, pentru orice poftă pe timpul zilei sau nopții. Vino să te bucuri de o gustare autentică, servită cu promptitudine.</p>
+      </div>
+
+      <div class="collage reveal r-right" style="--d:.1s">
+        <figure class="c1">
+          <img src="img/2.jpg" alt="Kebab cu legume și sos, servit într-o lipie" loading="lazy">
+        </figure>
+        <figure class="c2">
+          <img src="img/1.jpg" alt="Shaorma înfășurată în lipie, gata de servit" loading="lazy">
+        </figure>
+        <figure class="c3">
+          <img src="img/3.jpg" alt="Mâncare fast food cu carne și cartofi prăjiți, pe masă" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap contact-grid">
+      <div class="reveal r-left">
+        <h2 id="h-contact">Contact</h2>
+        <dl class="info">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Bulevardul Ion Mihalache, București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Deschis non-stop, în fiecare zi</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0752029688">0752 029 688</a></dd>
+          </div>
+        </dl>
+        <div class="actions">
+          <a class="btn btn-dark" href="tel:0752029688">Sună acum</a>
+          <a class="btn btn-red" href="https://wa.me/40752029688?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma.">Scrie pe WhatsApp</a>
+          <a class="btn btn-white" href="https://www.google.com/maps/search/?api=1&amp;query=Shaorma+Orient+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map reveal r-right" style="--d:.1s">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.073753099999998,44.456377599999996,26.0817531,44.4603776&amp;layer=mapnik&amp;marker=44.4583776,26.0777531"
+          title="Harta: Shaorma Orient, Bulevardul Ion Mihalache, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-brand"><span aria-hidden="true">🌯</span> Shaorma Orient</p>
+    <p>Bulevardul Ion Mihalache, București</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: MurrrPhoto, angelorosa, Pexels, PaulIstoan</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Revelare la derulare
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // Umbră discretă sub navigare când pagina se derulează
+  var nav = document.querySelector('.nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Abțibildurile sar scurt la atingere
+  document.querySelectorAll('.sticker').forEach(function (s) {
+    s.addEventListener('pointerdown', function () {
+      if (reduce) return;
+      s.classList.remove('hop');
+      void s.offsetWidth;
+      s.classList.add('hop');
+    });
+    s.addEventListener('animationend', function () {
+      s.classList.remove('hop');
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
