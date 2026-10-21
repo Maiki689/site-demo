@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Alma București, cazare cu parcare inclusă</title>
+<meta name="description" content="Hotel Alma, în București. Cazare în camere de hotel, parcare inclusă și odihnă plăcută.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --crem:#F6F1E7;
+  --crem-2:#EFE7D6;
+  --paper:#FFFDF8;
+  --cer:#6FA8DC;
+  --teracota:#C8664B;
+  --verde:#5B7F5A;
+  --teal:#0f766e;
+  --teal-d:#0b5c56;
+  --ink:#1E2A2D;
+  --ink-2:#4F5B5E;
+  --line:rgba(30,42,45,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;background:var(--crem);color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;font-size:1.0625rem;line-height:1.5;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;margin:0;line-height:1.08;letter-spacing:-0.02em}
+p{margin:0}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.section{padding:clamp(4.5rem,10vw,7.5rem) 0}
+.section-alt{background:var(--crem-2)}
+.split{display:grid;gap:2.5rem}
+.body-p{color:var(--ink-2);margin-top:1.1rem;max-width:60ch}
+.small{font-size:.9rem;letter-spacing:.02em}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(246,241,231,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.6);
+  transition:box-shadow .4s ease,background-color .4s ease;
+}
+.nav.is-scrolled{box-shadow:0 10px 26px -20px rgba(30,42,45,.45)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:64px}
+.logo{font-family:'DM Serif Display',serif;font-size:1.35rem;text-decoration:none;letter-spacing:-0.01em}
+.nav-links{display:none;gap:1.75rem}
+.nav-links a{font-weight:600;text-decoration:none;color:var(--ink);font-size:.95rem;padding:.5rem 0;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a:hover{color:var(--teal)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  min-height:48px;padding:.75rem 1.4rem;border-radius:999px;
+  font:inherit;font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;
+  transition:background-color .2s ease,box-shadow .2s ease,color .2s ease,border-color .2s ease,transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 8px 18px -12px rgba(15,118,110,.8)}
+.btn-primary:hover{background:var(--teal-d);box-shadow:0 10px 22px -12px rgba(15,118,110,.9)}
+.btn-ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn-ghost:hover{background:rgba(15,118,110,.07)}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+.flip-btn{
+  min-height:44px;padding:.5rem 1rem;border-radius:999px;cursor:pointer;
+  border:1.5px solid var(--ink-2);background:transparent;color:var(--ink);
+  font:inherit;font-weight:600;font-size:.95rem;
+  transition:background-color .2s ease,transform .1s ease;
+}
+.flip-btn:hover{background:rgba(30,42,45,.06)}
+.flip-btn:active{transform:scale(.97)}
+
+.text-link{color:var(--teal);font-weight:600;text-underline-offset:.25em;text-decoration-thickness:1px}
+
+/* ---------- Ștampila și vederea ---------- */
+.postcard{
+  position:relative;margin:0;background:var(--paper);
+  padding:.6rem .6rem 2.4rem;border-radius:3px;
+  box-shadow:0 1px 2px rgba(30,42,45,.08),0 20px 40px -26px rgba(30,42,45,.5);
+}
+.postcard img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1px}
+.postcard figcaption{
+  position:absolute;left:.9rem;bottom:.75rem;
+  font-size:.9rem;letter-spacing:.02em;color:var(--ink-2);
+}
+.stamp{
+  position:absolute;top:1rem;right:1rem;z-index:2;
+  width:4.25rem;height:5.25rem;display:grid;place-content:center;gap:.15rem;
+  text-align:center;background:var(--cer);color:var(--ink);
+  border:4px dotted var(--paper);box-shadow:0 2px 8px rgba(30,42,45,.18);
+  font-family:'DM Serif Display',serif;font-size:1rem;line-height:1;
+}
+.stamp-ico{font-size:1.5rem;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",sans-serif}
+.stamp--green{background:var(--verde);color:var(--paper)}
+
+/* ---------- Hero ---------- */
+.hero{padding:calc(64px + clamp(2.5rem,7vw,5rem)) 0 clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.75rem,6vw,5.5rem);align-items:center}
+h1{font-size:clamp(3rem,11vw,6.75rem);line-height:1.02}
+.slogan{font-family:'DM Serif Display',serif;font-size:clamp(1.35rem,3vw,1.75rem);line-height:1.25;margin-top:.9rem}
+.lead{margin-top:1rem;color:var(--ink-2);max-width:36ch}
+.facts{list-style:none;padding:0;margin:1.5rem 0 0;display:flex;flex-wrap:wrap;gap:.6rem 1.25rem}
+.facts li{display:flex;align-items:center;gap:.5rem;font-weight:500}
+.facts svg{width:18px;height:18px;flex:none;color:var(--verde)}
+.hero .actions{margin-top:2rem}
+.hero-photo{justify-self:stretch}
+.hero-photo img{aspect-ratio:4/3}
+.postmark{
+  position:absolute;left:-1rem;bottom:3.4rem;width:6.5rem;height:auto;
+  color:var(--teracota);opacity:.92;pointer-events:none;
+}
+@media (max-width:520px){
+  .hero .actions .btn{width:100%}
+  .stamp{width:3.6rem;height:4.5rem;top:.75rem;right:.75rem}
+  .stamp-ico{font-size:1.2rem}
+  .postmark{width:5.25rem;left:-.5rem}
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr 1fr}
+  .hero-photo img{aspect-ratio:4/5}
+  .split{grid-template-columns:5fr 7fr;gap:6rem;align-items:start}
+}
+
+/* ---------- Despre ---------- */
+.lead-big{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.6vw,1.85rem);line-height:1.3;letter-spacing:-0.01em}
+.adv{list-style:none;padding:0;margin:clamp(3.5rem,7vw,5rem) 0 0;display:grid;gap:2.5rem}
+.adv-ico{display:block;font-size:2rem;line-height:1;margin-bottom:1rem}
+.adv h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:0;line-height:1.3;margin-bottom:.35rem}
+.adv p{color:var(--ink-2)}
+@media (min-width:760px){.adv{grid-template-columns:repeat(3,1fr);gap:3rem}}
+
+/* ---------- Servicii ---------- */
+.svc-list{list-style:none;padding:0;margin:clamp(2.5rem,5vw,3.5rem) 0 0;border-top:1px solid var(--line)}
+.svc{padding:1.75rem 0;border-bottom:1px solid var(--line);display:grid;gap:.4rem}
+.svc h3{font-size:clamp(1.4rem,3vw,1.75rem)}
+.svc p{color:var(--ink-2)}
+.note{margin-top:2rem;color:var(--ink-2)}
+@media (min-width:760px){
+  .svc{grid-template-columns:1fr 1fr;gap:3rem;align-items:baseline}
+}
+
+/* ---------- Bandă: parcare ---------- */
+.band{background:var(--cer);color:var(--ink);padding:clamp(4rem,8vw,6rem) 0}
+.band h2{font-size:clamp(2.1rem,5vw,3.5rem)}
+.band p{margin-top:1rem;max-width:44ch;font-size:1.1rem}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;gap:2.5rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.gallery .stamp{width:3.5rem;height:4.4rem;top:.9rem;right:.9rem}
+.gallery .stamp-ico{font-size:1.2rem}
+@media (min-width:760px){
+  .gallery{grid-template-columns:1fr 1fr;gap:3rem}
+  .gallery figure:nth-child(2){margin-top:5rem}
+}
+
+/* ---------- Contact: cartea poștală ---------- */
+.contact-grid{display:grid;gap:3rem;align-items:center}
+.flip-wrap{width:100%;max-width:540px;justify-self:center}
+.flip{perspective:1600px}
+.flip-inner{display:grid;transform-style:preserve-3d;transition:transform .75s var(--ease)}
+.flip.is-flipped .flip-inner{transform:rotateY(180deg)}
+.face{
+  grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:var(--paper);border-radius:4px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(30,42,45,.08),0 22px 40px -28px rgba(30,42,45,.5);
+}
+.face-back{transform:rotateY(180deg);position:relative;padding:clamp(1.5rem,4vw,2.25rem)}
+.card-art{display:block;width:100%;height:auto}
+.front-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1.1rem 1.25rem 1.25rem}
+.front-name{font-family:'DM Serif Display',serif;font-size:1.5rem;line-height:1.1}
+.front-city{color:var(--ink-2);font-size:.95rem;letter-spacing:.02em}
+.back-greet{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,4vw,1.9rem);line-height:1.15;padding-right:5rem}
+.back-text{color:var(--ink-2);margin-top:.6rem;max-width:34ch}
+.back-lines{margin-top:1.25rem;display:grid;gap:.9rem}
+.back-lines span{display:block;height:1px;background:rgba(30,42,45,.18)}
+.back-list{list-style:none;padding:0;margin:1.25rem 0 0;display:grid;gap:.1rem}
+.back-list li{display:flex;flex-wrap:wrap;align-items:center;gap:0 .75rem}
+.back-list .k{color:var(--ink-2);font-size:.95rem;min-width:4.25rem}
+.back-list a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-weight:600;font-size:1.05rem;text-decoration:none;color:var(--ink);
+  text-underline-offset:.25em;
+}
+.back-list a:hover{color:var(--teal);text-decoration:underline}
+.back-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.back-actions .btn{flex:1 1 auto}
+.back-foot{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between}
+.face-back .stamp{top:1rem;right:1rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.05fr;gap:6rem}}
+
+/* ---------- Locație ---------- */
+.map-card{padding:.6rem .6rem 2.4rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.map-card iframe{display:block;width:100%;height:clamp(300px,45vw,400px);border:0;border-radius:1px}
+.map-card .btn{margin-top:0}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--ink);color:var(--crem);padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+.foot-logo{font-family:'DM Serif Display',serif;font-size:1.6rem;line-height:1.1;margin-bottom:.35rem}
+.foot-links{display:flex;flex-direction:column}
+.foot-links a{color:var(--crem);text-decoration:none;min-height:44px;display:inline-flex;align-items:center;letter-spacing:.01em}
+.foot-links a:hover{text-decoration:underline;text-underline-offset:.25em}
+.foot-small{color:rgba(246,241,231,.74);font-size:.9rem;letter-spacing:.01em;display:grid;gap:.5rem}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.1fr 1fr 1.4fr;gap:3rem}}
+
+/* ---------- Mișcare ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.intro{animation:rise .7s var(--ease) both}
+.i1{animation-delay:.05s}
+.i2{animation-delay:.12s}
+.i3{animation-delay:.19s}
+.i4{animation-delay:.25s}
+.i5{animation-delay:.31s}
+.i6{animation-delay:.22s}
+
+.js [data-reveal]{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s);
+}
+.js [data-reveal="left"]{transform:translateX(-18px)}
+.js [data-reveal="right"]{transform:translateX(18px)}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* Fără JavaScript: cartea rămâne cu ambele fețe la vedere */
+html:not(.js) .flip-inner{display:grid;gap:1.25rem;transform:none}
+html:not(.js) .face{grid-area:auto;backface-visibility:visible;transform:none}
+html:not(.js) [data-flip-btn]{display:none}
+
+/* Contrast crescut */
+@media (prefers-contrast:more){
+  :root{--ink-2:#2a3437;--line:rgba(30,42,45,.45)}
+  .btn-ghost{border-width:2px}
+  .postcard,.face{outline:1px solid var(--ink)}
+  .nav{background:var(--crem)}
+  .flip-btn{border-width:2px}
+}
+/* Fără transparență */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+/* Mișcare redusă: doar estompări scurte */
+@media (prefers-reduced-motion:reduce){
+  .intro{animation:fadein .2s ease both !important}
+  .js [data-reveal]{transform:none !important;transition:opacity .2s ease !important;transition-delay:0s !important}
+  .flip-inner{transition:none !important}
+  .flip.is-flipped .flip-inner{transform:none !important}
+  .face-back{transform:none;opacity:0;pointer-events:none;transition:opacity .2s ease}
+  .face-front{transition:opacity .2s ease}
+  .flip.is-flipped .face-front{opacity:0;pointer-events:none}
+  .flip.is-flipped .face-back{opacity:1;pointer-events:auto}
+  .btn,.flip-btn{transition:background-color .2s ease,color .2s ease}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">Hotel Alma</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#locatie">Locație</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0723329401">Sună acum</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="titlu-hotel">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu-hotel" class="intro i1">Hotel Alma</h1>
+        <p class="slogan intro i2">Odihnă plăcută în București</p>
+        <p class="lead intro i3">Hotel cochet, cazare cu parcare inclusă.</p>
+        <ul class="facts intro i4">
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l3.8 3.7L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Cazare în camere de hotel
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l3.8 3.7L16 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Parcare inclusă
+          </li>
+        </ul>
+        <div class="actions intro i5">
+          <a class="btn btn-primary" href="tel:0723329401">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723329401?text=Bun%C4%83%20ziua%21%20Doresc%20informa%C8%9Bii%20despre%20camerele%20disponibile%20la%20Hotel%20Alma." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="postcard hero-photo intro i6">
+        <img src="img/2.jpg" alt="Intrarea în hotelul Alma">
+        <div class="stamp" aria-hidden="true">
+          <span class="stamp-ico">🛏️</span>
+          <span>Alma</span>
+        </div>
+        <svg class="postmark" viewBox="0 0 160 120" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+            <circle cx="104" cy="60" r="42"/>
+            <circle cx="104" cy="60" r="35" stroke-width=".8"/>
+            <path d="M2 46 q10 -6 20 0 t20 0 t20 0"/>
+            <path d="M2 60 q10 -6 20 0 t20 0 t20 0"/>
+            <path d="M2 74 q10 -6 20 0 t20 0 t20 0"/>
+          </g>
+          <text x="104" y="66" text-anchor="middle" font-family="DM Serif Display, serif" font-size="15" fill="currentColor" transform="rotate(-10 104 60)">București</text>
+        </svg>
+        <figcaption>Bine ați venit</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="despre" class="section" aria-labelledby="titlu-despre">
+    <div class="wrap split">
+      <div>
+        <h2 id="titlu-despre" data-reveal>Despre Hotel Alma</h2>
+      </div>
+      <div>
+        <p class="lead-big" data-reveal>Aici găsești cazare în camere de hotel și parcare inclusă.</p>
+        <p class="body-p" data-reveal style="--d:.08s">Hotel Alma este locul potrivit pentru cei care caută confort și liniște. Vei beneficia de camere curate și de parcare comodă, ideal pentru o ședere relaxantă în București.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="adv">
+        <li data-reveal style="--d:0s">
+          <span class="adv-ico" aria-hidden="true">🚗</span>
+          <h3>Parcare inclusă</h3>
+          <p>Fără griji pentru mașina ta.</p>
+        </li>
+        <li data-reveal style="--d:.08s">
+          <span class="adv-ico" aria-hidden="true">🛏️</span>
+          <h3>Cazare în camere de hotel</h3>
+          <p>Odihnă plăcută în București.</p>
+        </li>
+        <li data-reveal style="--d:.16s">
+          <span class="adv-ico" aria-hidden="true">📍</span>
+          <h3>Pe hartă</h3>
+          <p>Hotelul se află în București. Vezi harta de mai jos.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="servicii" class="section section-alt" aria-labelledby="titlu-servicii">
+    <div class="wrap">
+      <h2 id="titlu-servicii" data-reveal>Servicii</h2>
+
+      <ul class="svc-list">
+        <li class="svc" data-reveal="fade">
+          <h3>Cazare în camere de hotel</h3>
+          <p>Odihnă plăcută în București. Pentru disponibilitate, sună-ne.</p>
+        </li>
+        <li class="svc" data-reveal="fade">
+          <h3>Parcare inclusă</h3>
+          <p>Parcarea este inclusă în cazarea la Hotel Alma.</p>
+        </li>
+      </ul>
+
+      <p class="note" data-reveal>Prețurile și disponibilitatea le aflați la telefon.</p>
+      <div class="actions" style="margin-top:1.5rem" data-reveal>
+        <a class="btn btn-primary" href="tel:0723329401">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40723329401?text=Bun%C4%83%20ziua%21%20Doresc%20informa%C8%9Bii%20despre%20camerele%20disponibile%20la%20Hotel%20Alma." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="titlu-parcare">
+    <div class="wrap">
+      <h2 id="titlu-parcare" data-reveal>Parcarea la hotel</h2>
+      <p data-reveal style="--d:.08s">Parcarea este inclusă în cazarea la Hotel Alma.</p>
+    </div>
+  </section>
+
+  <section id="galerie" class="section" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <h2 id="titlu-galerie" data-reveal>Vederi din hotel</h2>
+      <div class="gallery">
+        <figure class="postcard" data-reveal="left">
+          <img src="img/3.jpg" alt="Holul hotelului, amenajat cu mobilier confortabil" loading="lazy">
+          <div class="stamp" aria-hidden="true"><span class="stamp-ico">🛏️</span><span>Alma</span></div>
+          <figcaption>Holul</figcaption>
+        </figure>
+        <figure class="postcard" data-reveal="right" style="--d:.1s">
+          <img src="img/4.jpg" alt="Recepția hotelului, unde sunt primiți oaspeții" loading="lazy">
+          <div class="stamp stamp--green" aria-hidden="true"><span class="stamp-ico">🛏️</span><span>Alma</span></div>
+          <figcaption>Recepția</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt" aria-labelledby="titlu-contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="titlu-contact" data-reveal>Sună sau scrie-ne</h2>
+        <p class="body-p" data-reveal style="--d:.08s">Întoarce cartea ca să vezi cum ne poți contacta.</p>
+      </div>
+
+      <div class="flip-wrap" data-reveal style="--d:.12s">
+        <div class="flip" data-flip>
+          <div class="flip-inner">
+
+            <div class="face face-front">
+              <svg class="card-art" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustrație: hotel printre dealuri verzi, sub cer senin">
+                <rect width="600" height="400" fill="#6FA8DC"/>
+                <circle cx="452" cy="112" r="44" fill="#F6F1E7" opacity=".92"/>
+                <path d="M0 250 Q150 186 300 246 T600 226 V400 H0Z" fill="#5B7F5A"/>
+                <path d="M0 322 Q200 270 380 320 T600 306 V400 H0Z" fill="#47694A"/>
+                <g transform="translate(232 150)">
+                  <path d="M-10 44 L46 4 L102 44Z" fill="#C8664B"/>
+                  <rect x="0" y="44" width="92" height="96" fill="#F6F1E7"/>
+                  <rect x="14" y="62" width="16" height="20" fill="#6FA8DC"/>
+                  <rect x="60" y="62" width="16" height="20" fill="#6FA8DC"/>
+                  <rect x="37" y="96" width="18" height="44" fill="#5B7F5A"/>
+                </g>
+              </svg>
+              <div class="front-bar">
+                <div>
+                  <p class="front-name">Hotel Alma</p>
+                  <p class="front-city">București</p>
+                </div>
+                <button class="flip-btn" type="button" data-flip-btn>Întoarce cartea</button>
+              </div>
+            </div>
+
+            <div class="face face-back">
+              <div class="stamp stamp--green" aria-hidden="true"><span class="stamp-ico">🛏️</span><span>Alma</span></div>
+              <p class="back-greet">Dragă oaspete,</p>
+              <p class="back-text">Scrie-ne sau sună-ne. Răspundem cu plăcere la întrebările tale.</p>
+              <div class="back-lines" aria-hidden="true"><span></span><span></span></div>
+
+              <ul class="back-list">
+                <li><span class="k">Telefon</span><a href="tel:0723329401">0723-329-401</a></li>
+                <li><span class="k">Email</span><a href="mailto:office@alma-hotel.ro">office@alma-hotel.ro</a></li>
+              </ul>
+
+              <div class="back-actions">
+                <a class="btn btn-primary" href="tel:0723329401">Sună acum</a>
+                <a class="btn btn-ghost" href="https://wa.me/40723329401?text=Bun%C4%83%20ziua%21%20Doresc%20informa%C8%9Bii%20despre%20camerele%20disponibile%20la%20Hotel%20Alma." target="_blank" rel="noopener">Solicită detalii pe WhatsApp</a>
+              </div>
+              <div class="back-foot">
+                <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Alma+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+                <button class="flip-btn" type="button" data-flip-btn>Pune cartea la loc</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="locatie" class="section" aria-labelledby="titlu-locatie">
+    <div class="wrap">
+      <div class="split">
+        <h2 id="titlu-locatie" data-reveal>Unde ne găsiți</h2>
+        <div>
+          <p class="body-p" data-reveal>Căutați Hotel Alma pe hartă, în București. Pentru indicații, sună-ne înainte de sosire.</p>
+          <div style="margin-top:1.5rem" data-reveal>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Alma+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <figure class="postcard map-card" data-reveal="fade">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.091498599999998,44.387726699999995,26.0994986,44.3917267&amp;layer=mapnik&amp;marker=44.3897267,26.0954986" title="Harta: Hotel Alma, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <figcaption>Hotel Alma, București</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-logo">Hotel Alma</p>
+      <p>Odihnă plăcută în București</p>
+    </div>
+    <div class="foot-links">
+      <a href="tel:0723329401">0723-329-401</a>
+      <a href="mailto:office@alma-hotel.ro">office@alma-hotel.ro</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Alma+Bucure%C8%99ti" target="_blank" rel="noopener">Vezi harta</a>
+    </div>
+    <div class="foot-small">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: JSell, davidlee770924, GregoryButler, Rodrigo_SalomonHC</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Bara de navigare capătă umbră doar când pagina se derulează
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  // Cartea poștală: se întoarce și arată contactul pe spate
+  var flip = document.querySelector('[data-flip]');
+  if (flip) {
+    var front = flip.querySelector('.face-front');
+    var back = flip.querySelector('.face-back');
+
+    function setFlip(on) {
+      flip.classList.toggle('is-flipped', on);
+      back.inert = !on;
+      front.inert = on;
+      var target = on ? back : front;
+      var btn = target.querySelector('[data-flip-btn]');
+      if (btn) btn.focus({ preventScroll: true });
+    }
+
+    back.inert = true;
+
+    flip.querySelectorAll('[data-flip-btn]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        setFlip(!flip.classList.contains('is-flipped'));
+      });
+    });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
