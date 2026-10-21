@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piu-Piu Prod, măcelărie în București</title>
+<meta name="description" content="Piu-Piu Prod, măcelărie locală în București. Prospețime aproape de tine.">
+<meta name="theme-color" content="#F3EDE2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --cream:#F3EDE2;
+  --paper:#E9E0CE;
+  --ink:#1B1B1B;
+  --wood:#7B5B3A;
+  --accent:#b45309;
+  --accent-dk:#963f06;
+  --serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans:"Karla", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:70rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.02em;margin:0}
+p{margin:0}
+section[id]{scroll-margin-top:4.5rem}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- Navigare (sticlă) ---------- */
+.site-nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(243,237,226,.78);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55);
+  transition:box-shadow .4s var(--ease);
+}
+.site-nav.scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 24px -16px rgba(27,27,27,.35);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:var(--serif);font-weight:700;font-size:1.5rem;letter-spacing:-.01em;
+  text-decoration:none;color:var(--ink);
+}
+.brand span{font-size:1.1rem}
+.nav-links{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}
+.nav-links a{
+  display:inline-block;padding:.5rem 0;
+  font-size:.95rem;font-weight:500;text-decoration:none;
+  transition:color .25s;
+}
+.nav-links a:hover{color:var(--accent)}
+@media (max-width:719px){.nav-links{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.8rem 1.5rem;
+  border:1.5px solid transparent;border-radius:3px;
+  font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1.2;
+  text-decoration:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:background-color .25s,color .25s,box-shadow .25s,transform .1s linear;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dk);box-shadow:0 8px 20px -10px rgba(150,63,6,.75)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--cream)}
+.nav-inner .btn{min-height:44px;padding:.55rem 1.1rem;font-size:.95rem}
+
+/* ---------- Hero ---------- */
+.hero{padding:clamp(2rem,6vw,4.5rem) 0 clamp(3.5rem,8vw,6.5rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1fr 1fr;gap:5rem}
+}
+.hero h1{font-size:clamp(2.9rem,10vw,6rem);letter-spacing:-.025em;line-height:1.02}
+.slogan{
+  margin-top:1.1rem;
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.6rem,4.2vw,2.1rem);line-height:1.2;letter-spacing:-.01em;
+}
+.desc{margin-top:.6rem;color:var(--wood);font-size:1.05rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+.actions.spaced{margin-top:2.75rem}
+@media (max-width:519px){
+  .actions .btn{flex:1 1 100%}
+}
+.hero-photo{
+  position:relative;margin:0;overflow:hidden;
+  aspect-ratio:4/3;
+}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .hero-photo{aspect-ratio:4/5;max-height:40rem;width:100%}
+}
+
+/* ---------- Secțiuni ---------- */
+.section{padding:clamp(4.5rem,10vw,8rem) 0}
+.section-tint{background:var(--paper)}
+.head{max-width:40rem;margin-bottom:clamp(2.5rem,5vw,3.75rem)}
+.head h2,.about-text h2,.contact-head h2{font-size:clamp(2.3rem,5.4vw,3.6rem)}
+.head p{margin-top:1.1rem;color:var(--wood);font-size:1.1rem;max-width:36rem}
+
+/* Motivul de ie cusut (bordură la titluri) */
+.stitch{display:block;width:min(100%,22rem);margin-top:1.4rem}
+.stitch-svg{display:block;width:100%;height:auto;overflow:visible}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:6rem}
+}
+.about-photo{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .about-photo{aspect-ratio:4/5}
+}
+.about-text p{font-size:1.1rem;max-width:34rem}
+.about-text p + p{margin-top:1rem}
+.about-text .stitch{margin-bottom:2rem}
+
+.perks{
+  list-style:none;margin:clamp(3.5rem,7vw,5.5rem) 0 0;padding:0;
+  display:grid;gap:2.5rem;
+}
+@media (min-width:720px){
+  .perks{grid-template-columns:repeat(3,1fr);gap:3rem}
+}
+.perk{display:flex;flex-direction:column;gap:.85rem}
+.medal{
+  width:3.5rem;height:3.5rem;border-radius:50%;
+  background:var(--paper);
+  display:grid;place-items:center;font-size:1.45rem;line-height:1;
+}
+.section-tint .medal{background:var(--cream)}
+.perk h3{font-size:1.65rem}
+.perk p{color:var(--wood)}
+
+/* ---------- Produse ---------- */
+.menu{list-style:none;margin:0;padding:0;max-width:44rem}
+.menu li{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:clamp(1.25rem,3vw,1.75rem) 0;
+  border-top:1px solid rgba(27,27,27,.14);
+}
+.menu li:last-child{border-bottom:1px solid rgba(27,27,27,.14)}
+.menu .name{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.015em;
+}
+.dia{width:.9rem;height:auto;flex:none}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;gap:1rem}
+.gallery figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3}
+.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (min-width:720px){
+  .gallery{grid-template-columns:1.4fr 1fr;grid-auto-rows:17rem;gap:1.25rem}
+  .gallery figure{aspect-ratio:auto}
+  .gallery figure:first-child{grid-row:span 2}
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.15fr;gap:5rem;align-items:start}
+}
+.contact-lead{
+  margin-top:0;
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.5rem,3.4vw,1.9rem);line-height:1.25;letter-spacing:-.01em;
+}
+.contact-note{margin-top:1rem;color:var(--wood);max-width:30rem}
+.contact-actions{display:grid;gap:.75rem;margin-top:2.25rem;max-width:24rem}
+.contact-actions .btn{width:100%}
+.map{position:relative;margin:0;height:20rem;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media (min-width:900px){
+  .map{height:30rem}
+}
+
+/* ---------- Subsol ---------- */
+.site-foot{background:var(--ink);color:var(--cream);padding:clamp(3.5rem,7vw,5rem) 0 2.5rem}
+.foot-grid{display:grid;gap:2.5rem}
+@media (min-width:800px){
+  .foot-grid{grid-template-columns:1.1fr 1fr 1.4fr;gap:3rem}
+}
+.site-foot .brand{color:var(--cream);font-size:1.9rem}
+.site-foot p{color:rgba(243,237,226,.82);font-size:.95rem;letter-spacing:.01em}
+.site-foot p + p{margin-top:.5rem}
+.site-foot .links a{
+  display:block;padding:.35rem 0;color:rgba(243,237,226,.85);
+  font-size:.95rem;text-decoration:none;letter-spacing:.01em;
+}
+.site-foot .links a:hover{color:var(--cream);text-decoration:underline}
+.credit{font-size:.85rem !important;color:rgba(243,237,226,.7) !important;line-height:1.55}
+.credit strong{font-weight:600;color:rgba(243,237,226,.92)}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js [data-reveal]{will-change:auto}
+.js [data-reveal="rise"]{
+  opacity:0;transform:translate3d(0,1.4rem,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+.js [data-reveal="fade"]{
+  opacity:0;
+  transition:opacity .5s ease;
+}
+.js [data-reveal="settle"]{
+  opacity:0;transform:scale(1.04);
+  transition:opacity .6s var(--ease),transform .75s var(--ease);
+}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* Secvența de intrare din prima secțiune */
+.hero [data-reveal="rise"]:nth-child(1){transition-delay:.05s}
+.hero .desc{transition-delay:.22s}
+.hero .actions{transition-delay:.3s}
+.hero-photo{transition-delay:.12s}
+
+/* Ritm în liste și avantaje */
+.menu li:nth-child(2){transition-delay:.08s}
+.menu li:nth-child(3){transition-delay:.16s}
+.perks .perk:nth-child(2){transition-delay:.1s}
+.perks .perk:nth-child(3){transition-delay:.2s}
+.gallery figure:nth-child(2){transition-delay:.1s}
+.gallery figure:nth-child(3){transition-delay:.2s}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js [data-reveal]{
+    transform:none !important;
+    transition:opacity .2s linear !important;
+    transition-delay:0s !important;
+  }
+  .js [data-reveal].in{transform:none !important}
+  .site-nav,.btn{transition-duration:.2s}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-nav{
+    background:var(--cream);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast: more){
+  body{color:#000}
+  .site-nav{background:var(--cream);box-shadow:0 2px 0 var(--ink)}
+  .btn-primary{background:var(--accent-dk)}
+  .btn-ghost{border-width:2px}
+  .menu li,.menu li:last-child{border-color:var(--ink)}
+  .site-foot p,.site-foot .links a{color:var(--cream)}
+  .credit{color:var(--cream) !important}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span aria-hidden="true">🥩</span>Piu-Piu Prod</a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre noi</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:0723654393">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="titlu" data-reveal="rise">Piu-Piu Prod</h1>
+        <p class="slogan" data-reveal="rise">Prospețime aproape de tine</p>
+        <p class="desc" data-reveal="rise">Măcelărie locală cu produse gustoase.</p>
+        <div class="actions" data-reveal="rise">
+          <a class="btn btn-primary" href="tel:0723654393">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723654393?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20produse%20ave%C8%9Bi%20disponibile.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+      <figure class="hero-photo" data-reveal="settle">
+        <img src="img/1.jpg" alt="Carne proaspătă și cârnați, pregătiți pentru masa de zi cu zi" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <figure class="about-photo" data-reveal="settle">
+        <img src="img/2.jpg" alt="Frigărui și carne la grătar" loading="lazy">
+      </figure>
+      <div class="about-text" data-reveal="rise">
+        <h2 id="despre-titlu">Despre noi</h2>
+        <div class="stitch" data-stitch></div>
+        <p>Suntem o măcelărie locală din București, cu produse gustoase.</p>
+        <p>Oferim o selecție potrivită pentru masa de zi cu zi. Ne bucurăm oricând să te ajutăm cu alegeri proaspete.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="perks">
+        <li class="perk" data-reveal="fade">
+          <span class="medal" aria-hidden="true">🛒</span>
+          <h3>Aproape</h3>
+          <p>La doar câțiva pași</p>
+        </li>
+        <li class="perk" data-reveal="fade">
+          <span class="medal" aria-hidden="true">🍽️</span>
+          <h3>Produse proaspete</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+          <p>Selectate zilnic pentru tine</p>
+        </li>
+        <li class="perk" data-reveal="fade">
+          <span class="medal" aria-hidden="true">👋</span>
+          <h3>Te ajutăm să alegi</h3>
+          <p>Ne bucurăm oricând să te ajutăm cu alegeri proaspete.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="produse" aria-labelledby="produse-titlu">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="produse-titlu">Produse</h2>
+        <div class="stitch" data-stitch></div>
+        <p>Preparate calde, gustări și băuturi, alese pentru masa de zi cu zi.</p>
+      </div>
+
+      <ul class="menu">
+        <li data-reveal="rise">
+          <span class="name">Preparate calde</span>
+          <svg class="dia" viewBox="0 0 16 22" aria-hidden="true" focusable="false"><path d="M8 1L15 11L8 21L1 11Z" fill="none" stroke="#b45309" stroke-width="1.5"/><circle cx="8" cy="11" r="1.6" fill="#b45309"/></svg>
+        </li>
+        <li data-reveal="rise">
+          <span class="name">Gustări</span>
+          <svg class="dia" viewBox="0 0 16 22" aria-hidden="true" focusable="false"><path d="M8 1L15 11L8 21L1 11Z" fill="none" stroke="#b45309" stroke-width="1.5"/><circle cx="8" cy="11" r="1.6" fill="#b45309"/></svg>
+        </li>
+        <li data-reveal="rise">
+          <span class="name">Băuturi</span>
+          <svg class="dia" viewBox="0 0 16 22" aria-hidden="true" focusable="false"><path d="M8 1L15 11L8 21L1 11Z" fill="none" stroke="#b45309" stroke-width="1.5"/><circle cx="8" cy="11" r="1.6" fill="#b45309"/></svg>
+        </li>
+      </ul>
+
+      <div class="actions spaced">
+        <a class="btn btn-primary" href="https://wa.me/40723654393?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20produse%20ave%C8%9Bi%20disponibile.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="galerie-titlu">Galerie</h2>
+        <div class="stitch" data-stitch></div>
+        <p>Câteva imagini, ca să vezi ce te așteaptă.</p>
+      </div>
+
+      <div class="gallery">
+        <figure data-reveal="settle">
+          <img src="img/3.jpg" alt="Cârnați și hot dog, pe masă" loading="lazy">
+        </figure>
+        <figure data-reveal="settle">
+          <img src="img/4.jpg" alt="Șuncă de porc, feliată" loading="lazy">
+        </figure>
+        <figure data-reveal="settle">
+          <img src="img/5.jpg" alt="Hot dog cu cârnat proaspăt" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="head contact-head">
+          <h2 id="contact-titlu">Contact</h2>
+          <div class="stitch" data-stitch></div>
+        </div>
+        <p class="contact-lead" data-reveal="rise">Sună-ne, scrie-ne sau găsește-ne pe hartă.</p>
+        <p class="contact-note" data-reveal="rise">Dacă vrei să știi ce avem disponibil, întreabă-ne direct. Programul îl afli la telefon.</p>
+
+        <div class="contact-actions" data-reveal="rise">
+          <a class="btn btn-primary" href="tel:0723654393">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723654393?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20produse%20ave%C8%9Bi%20disponibile.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:piupiuprod@gmail.com">Scrie un email</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Piu-Piu+Prod+Bucure%C8%99ti">Vezi pe Google Maps</a>
+        </div>
+      </div>
+
+      <figure class="map" data-reveal="settle">
+        <iframe title="Harta: Piu-Piu Prod, București" src="https://www.openstreetmap.org/export/embed.html?bbox=26.0983527,44.3818163,26.106352700000002,44.3858163&amp;layer=mapnik&amp;marker=44.3838163,26.1023527" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="brand"><span aria-hidden="true">🥩</span>Piu-Piu Prod</p>
+      <p>Măcelărie locală, în București.</p>
+    </div>
+    <nav class="links" aria-label="Contact rapid">
+      <a href="tel:0723654393">0723 654 393</a>
+      <a href="https://wa.me/40723654393?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20ce%20produse%20ave%C8%9Bi%20disponibile.">WhatsApp</a>
+      <a href="mailto:piupiuprod@gmail.com">piupiuprod@gmail.com</a>
+    </nav>
+    <div class="credit">
+      <p><strong>Model de site (demo)</strong></p>
+      <p>Fotografii ilustrative de pe Pixabay: FERMOSERGIO, WLO57, congerdesign, ntrief, skdatastream.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ACC = '#b45309';
+
+  /* Motivul de ie cusut: un rând de împunsături cu romburi, care se „coase” la derulare */
+  function stitchSVG(id) {
+    return '<svg class="stitch-svg" viewBox="0 0 480 28" aria-hidden="true" focusable="false">' +
+      '<defs>' +
+        '<pattern id="' + id + '-p" width="40" height="28" patternUnits="userSpaceOnUse">' +
+          '<path d="M0 14H40" fill="none" stroke="' + ACC + '" stroke-width="1.6" stroke-dasharray="4 4"/>' +
+          '<path d="M20 4L28 14L20 24L12 14Z" fill="none" stroke="' + ACC + '" stroke-width="1.6" stroke-linejoin="round"/>' +
+          '<circle cx="20" cy="14" r="1.8" fill="' + ACC + '"/>' +
+        '</pattern>' +
+        '<clipPath id="' + id + '-c"><rect class="st-rect" x="0" y="0" width="0" height="28"/></clipPath>' +
+      '</defs>' +
+      '<rect x="0" y="0" width="480" height="28" fill="url(#' + id + '-p)" clip-path="url(#' + id + '-c)"/>' +
+      '<circle class="st-needle" cx="0" cy="14" r="3.2" fill="' + ACC + '" opacity="0"/>' +
+    '</svg>';
+  }
+
+  var stitches = [].slice.call(document.querySelectorAll('[data-stitch]'));
+  stitches.forEach(function (el, i) {
+    el.innerHTML = stitchSVG('st' + i);
+    el._rect = el.querySelector('.st-rect');
+    el._needle = el.querySelector('.st-needle');
+  });
+
+  var ticking = false;
+  function paintStitches() {
+    ticking = false;
+    var vh = window.innerHeight || 1;
+    stitches.forEach(function (el) {
+      var p = 1;
+      if (!reduce) {
+        var top = el.getBoundingClientRect().top;
+        p = (vh * 0.9 - top) / (vh * 0.5);
+        p = Math.max(0, Math.min(1, p));
+      }
+      var x = (p * 480).toFixed(1);
+      el._rect.setAttribute('width', x);
+      el._needle.setAttribute('cx', x);
+      el._needle.setAttribute('opacity', (p > 0.001 && p < 0.999) ? '1' : '0');
+    });
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(paintStitches);
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  paintStitches();
+
+  /* Bara de navigare: umbră fină doar când pagina se derulează sub ea */
+  var nav = document.getElementById('nav');
+  function navState() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', navState, { passive: true });
+  navState();
+
+  /* Dezvăluire la derulare */
+  var items = [].slice.call(document.querySelectorAll('[data-reveal]'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
