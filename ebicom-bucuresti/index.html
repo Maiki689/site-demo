@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ebicom | Totul pentru casa ta, București</title>
+<meta name="description" content="Ebicom, magazin hardware de cartier în București. Produse pentru casă, grădină și proiecte. Sunați sau scrieți-ne pe WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --navy:#233682;
+  --navy-ink:#141d3d;
+  --orange:#F58025;
+  --ink-on-orange:#142052;
+  --white:#ffffff;
+  --tint:#eef2fb;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+body{
+  font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--navy-ink);
+  background:var(--white);
+  line-height:1.5;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{max-width:60ch}
+section{padding-block:clamp(4rem,10vw,7rem)}
+
+:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto}
+
+h1,h2,h3{font-family:"Montserrat",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(2rem,5vw,3.25rem)}
+h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em;line-height:1.25}
+
+.section-head{margin-bottom:0}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:3rem;padding:.9rem 1.6rem;border-radius:999px;
+  font:inherit;font-weight:700;font-size:1rem;letter-spacing:0;line-height:1.2;
+  text-decoration:none;text-align:center;
+  transition:transform .1s linear,box-shadow .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{box-shadow:0 .6rem 1.4rem -.6rem rgba(35,54,130,.7)}
+.btn-orange{background:var(--orange);color:var(--ink-on-orange)}
+.btn-orange:hover{box-shadow:0 .6rem 1.4rem -.6rem rgba(245,128,37,.8)}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-white:hover{box-shadow:0 .6rem 1.4rem -.6rem rgba(20,29,61,.45)}
+.btn-ghost{background:transparent;color:var(--ink-on-orange);box-shadow:inset 0 0 0 2px var(--ink-on-orange)}
+.btn-ghost:hover{background:rgba(20,32,82,.08)}
+.btn-sm{min-height:2.75rem;padding:.5rem 1.1rem;font-size:.95rem}
+
+/* Antet din sticlă */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.9);
+  transition:box-shadow .3s var(--ease);
+}
+.site-header.is-scrolled{box-shadow:0 .6rem 1.6rem -1rem rgba(20,29,61,.3)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem}
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brand-logo{height:2.75rem;width:auto;max-width:9rem;object-fit:contain}
+.nav{display:none;gap:1.75rem;font-weight:700;font-size:.95rem}
+.nav a{text-decoration:none;color:#0c1433;padding-block:.5rem;transition:color .2s}
+.nav a:hover{color:var(--navy)}
+
+/* Prima secțiune */
+.hero{padding-block:clamp(2rem,6vw,4rem) clamp(3.5rem,8vw,6rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero-logo{width:min(70vw,22rem);max-height:9rem;height:auto;object-fit:contain;object-position:left center}
+.slogan{
+  font-family:"Dancing Script",cursive;font-weight:700;
+  font-size:clamp(2.1rem,7vw,3.25rem);line-height:1.1;
+  color:var(--navy);margin-top:.75rem;
+}
+.lead{font-size:1.0625rem;margin-top:1rem;color:#2a3566;max-width:36ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+.hero-visual{
+  position:relative;
+  background:var(--orange);
+  border-radius:2rem;
+  display:grid;place-items:center;
+  padding:clamp(2.5rem,7vw,3.5rem) 1rem clamp(1.5rem,4vw,2.5rem);
+  min-height:19rem;
+}
+.bag-svg{
+  width:min(78%,19rem);height:auto;overflow:visible;
+  transform-origin:50% 100%;
+}
+.bag-item{animation:drop .95s ease-out both;animation-delay:var(--d,0s)}
+@keyframes drop{
+  0%{opacity:0;transform:translateY(-120px)}
+  25%{opacity:1}
+  68%{transform:translateY(10px)}
+  84%{transform:translateY(-4px)}
+  100%{transform:translateY(0)}
+}
+.bag-svg{animation:bump .5s ease-out 2.25s both}
+@keyframes bump{
+  0%{transform:scale(1)}
+  40%{transform:scale(1.035,.97)}
+  100%{transform:scale(1)}
+}
+
+/* Despre */
+.despre{background:var(--navy);color:#fff}
+.despre h2{color:#fff}
+.despre-text{margin-top:1.25rem;font-size:1.125rem;color:rgba(255,255,255,.92);max-width:52ch}
+.adv{display:grid;gap:2.25rem;margin-top:3rem}
+.adv article{max-width:30ch}
+.adv-emoji{display:block;font-size:2rem;line-height:1;margin-bottom:1rem}
+.adv h3{color:#fff}
+.adv p{margin-top:.5rem;font-size:.95rem;color:rgba(255,255,255,.86)}
+
+/* Produse */
+.tiles{display:grid;gap:1rem;margin-top:2.5rem}
+.tile{
+  border-radius:1.5rem;padding:2rem 1.75rem;min-height:14rem;
+  display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;
+}
+.tile h3{font-size:1.5rem}
+.tile p{font-size:.95rem;margin-top:.6rem}
+.tile--navy{background:var(--navy);color:#fff}
+.tile--orange{background:var(--orange);color:var(--ink-on-orange)}
+.tile--tint{background:var(--tint);color:var(--navy-ink)}
+.produse-action{margin-top:2rem}
+
+.gallery{display:grid;gap:1rem;margin-top:3rem}
+.gallery figure{
+  position:relative;margin:0;border-radius:1.5rem;overflow:hidden;
+  aspect-ratio:4/3;background:var(--tint);
+}
+.gallery img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* Contact */
+.contacts{background:var(--orange);color:var(--ink-on-orange)}
+.contacts h2{color:var(--ink-on-orange)}
+.contacts-text{margin-top:1.25rem;font-size:1.0625rem;max-width:52ch}
+.contacts-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.map{
+  margin-top:2.5rem;border-radius:1.5rem;overflow:hidden;
+  height:clamp(16rem,40vw,22rem);background:#fff;
+}
+.map iframe{display:block;width:100%;height:100%;border:0}
+.map-note{margin-top:.75rem;font-size:.9rem}
+
+/* Subsol */
+.site-footer{background:var(--tint);padding-block:3.5rem;font-size:.9rem}
+.footer-grid{display:grid;gap:1.75rem}
+.footer-logo{height:5rem;width:auto;max-width:14rem;object-fit:contain;object-position:left center}
+.footer-slogan{font-family:"Dancing Script",cursive;font-weight:700;font-size:1.9rem;color:var(--navy);line-height:1.1}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-weight:600}
+.footer-nav a{text-decoration:none;padding-block:.4rem;color:var(--navy-ink)}
+.footer-nav a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+.small{letter-spacing:.02em;color:#3a4678;font-size:.85rem}
+
+/* Intrări la derulare: variate și discrete */
+.js [data-reveal]{
+  opacity:0;
+  transform:translate3d(0,24px,0);
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js [data-reveal="left"]{transform:translate3d(-28px,0,0)}
+.js [data-reveal="right"]{transform:translate3d(28px,0,0)}
+.js [data-reveal="pop"]{transform:scale(.96)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+
+/* Textul din prima secțiune intră o singură dată */
+.js .hero-copy>*{animation:rise .6s var(--ease) both}
+.js .hero-copy>*:nth-child(1){animation-delay:.05s}
+.js .hero-copy>*:nth-child(2){animation-delay:.15s}
+.js .hero-copy>*:nth-child(3){animation-delay:.25s}
+.js .hero-copy>*:nth-child(4){animation-delay:.35s}
+@keyframes rise{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+
+/* Breakpoints */
+@media (min-width:640px){
+  .nav{display:flex}
+  .adv{grid-template-columns:repeat(3,1fr)}
+  .gallery{grid-template-columns:1fr 1fr}
+}
+@media (min-width:800px){
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .gallery{grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto}
+  .gallery figure:first-child{grid-row:1 / span 2;aspect-ratio:auto;min-height:26rem}
+  .gallery figure{aspect-ratio:auto;min-height:12.5rem}
+  .footer-grid{grid-template-columns:auto 1fr;align-items:center}
+}
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+  .hero-visual{min-height:26rem}
+  .bag-svg{width:min(80%,21rem)}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion: reduce){
+  .js .hero-copy>*{animation-name:fadeOnly;animation-duration:.2s;animation-delay:0s}
+  .bag-item{animation-name:fadeOnly;animation-duration:.2s;animation-delay:0s}
+  .bag-svg{animation:none}
+  .js [data-reveal]{transform:none;transition:opacity .2s linear;transition-delay:0s}
+  .btn{transition-duration:.2s}
+  html{scroll-behavior:auto}
+}
+@media (prefers-reduced-transparency: reduce){
+  .site-header{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-header{background:#fff;border-bottom:2px solid var(--navy-ink)}
+  .btn{box-shadow:inset 0 0 0 2px currentColor}
+  .btn-navy{box-shadow:none}
+  .tile{box-shadow:inset 0 0 0 2px var(--navy-ink)}
+  .tile--navy,.tile--orange{box-shadow:none}
+  .map{box-shadow:inset 0 0 0 2px var(--navy-ink)}
+  .despre{background:var(--navy)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand" aria-label="Ebicom, înapoi sus">
+      <img src="logo.png" alt="Ebicom" class="brand-logo">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#produse">Produse</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-navy btn-sm" href="tel:0722588275">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title">
+          <img src="logo.png" alt="Ebicom" class="hero-logo">
+        </h1>
+        <p class="slogan">Totul pentru casa ta</p>
+        <p class="lead">Produse hardware pentru casă, grădină și proiecte.</p>
+        <div class="hero-actions">
+          <a class="btn btn-navy" href="tel:0722588275">Sună acum</a>
+          <a class="btn btn-orange" href="https://wa.me/40722588275?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20stoc%20sau%20produse." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <svg class="bag-svg" viewBox="0 0 300 340" role="img" aria-label="O pungă de cumpărături care se umple cu scule și produse pentru casă">
+          <!-- Mâner -->
+          <path d="M92 120 C92 22 208 22 208 120" fill="none" stroke="#233682" stroke-width="13" stroke-linecap="round"/>
+
+          <!-- Corpul pungii -->
+          <path d="M52 110 H248 L262 330 Q262 336 256 336 H44 Q38 336 38 330 Z" fill="#233682"/>
+
+          <!-- Produse, cad în pungă pe rând -->
+          <g transform="translate(92,190) rotate(-18)">
+            <g class="bag-item" style="--d:.5s">
+              <rect x="-26" y="-30" width="52" height="20" rx="4" fill="#F58025"/>
+              <rect x="-4" y="-12" width="8" height="66" rx="4" fill="#ffffff"/>
+            </g>
+          </g>
+
+          <g transform="translate(196,186) rotate(22)">
+            <g class="bag-item" style="--d:.75s">
+              <rect x="-7" y="-34" width="14" height="76" rx="7" fill="#ffffff"/>
+              <circle cx="0" cy="-40" r="16" fill="#ffffff"/>
+              <circle cx="0" cy="-40" r="7" fill="#233682"/>
+            </g>
+          </g>
+
+          <g transform="translate(150,242)">
+            <g class="bag-item" style="--d:1s">
+              <rect x="-42" y="-24" width="84" height="48" rx="6" fill="#F58025"/>
+              <rect x="-42" y="-6" width="84" height="10" fill="#ffffff"/>
+            </g>
+          </g>
+
+          <g transform="translate(72,262)">
+            <g class="bag-item" style="--d:1.25s">
+              <path d="M-16 -28 Q0 -46 16 -28" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+              <rect x="-24" y="-28" width="48" height="56" rx="6" fill="#ffffff"/>
+              <rect x="-24" y="-4" width="48" height="12" fill="#F58025"/>
+            </g>
+          </g>
+
+          <g transform="translate(224,258)">
+            <g class="bag-item" style="--d:1.5s">
+              <circle r="18" fill="#F58025"/>
+              <rect x="-9" y="16" width="18" height="14" rx="3" fill="#ffffff"/>
+            </g>
+          </g>
+
+          <g transform="translate(140,150) rotate(62)">
+            <g class="bag-item" style="--d:1.75s">
+              <rect x="-9" y="-34" width="18" height="34" rx="9" fill="#F58025"/>
+              <rect x="-3" y="0" width="6" height="72" rx="2" fill="#ffffff"/>
+            </g>
+          </g>
+
+          <!-- Fața pungii, peste produse -->
+          <path d="M38 250 Q150 276 262 250 V330 Q262 336 256 336 H44 Q38 336 38 330 Z" fill="#1c2c6b"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" class="despre" aria-labelledby="despre-title">
+    <div class="wrap">
+      <h2 id="despre-title" data-reveal>Despre noi</h2>
+      <p class="despre-text" data-reveal style="--d:.08s">Suntem un magazin hardware local care vă pune la dispoziție o gamă variată de articole pentru întreținerea și renovarea locuinței. Găsiți la noi tot ce aveți nevoie pentru proiectele gospodărești, fie ele mari sau mici. Întotdeauna la dispoziție cu produse utile și consiliere prietenoasă.</p>
+
+      <div class="adv">
+        <article data-reveal="left" style="--d:.05s">
+          <span class="adv-emoji" aria-hidden="true">🛠️</span>
+          <h3>Varietate mare</h3>
+          <p>Soluții pentru diverse proiecte</p>
+        </article>
+        <article data-reveal="pop" style="--d:.15s">
+          <span class="adv-emoji" aria-hidden="true">🤝</span>
+          <h3>Aproape de tine</h3>
+          <p>Ușor de contactat, la telefon sau pe WhatsApp</p>
+        </article>
+        <article data-reveal="right" style="--d:.25s">
+          <span class="adv-emoji" aria-hidden="true">💡</span>
+          <h3>Sfaturi utile</h3>
+          <p>Informații practice pentru alegerea produselor</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="produse" aria-labelledby="produse-title">
+    <div class="wrap">
+      <h2 id="produse-title" data-reveal>Ce găsiți la noi</h2>
+
+      <div class="tiles">
+        <article class="tile tile--navy" data-reveal="left" style="--d:.05s">
+          <div>
+            <h3>Produse</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+            <p>Scule, materiale și accesorii pentru întreținerea și renovarea locuinței.</p>
+          </div>
+        </article>
+        <article class="tile tile--orange" data-reveal="pop" style="--d:.15s">
+          <div>
+            <h3>Noutăți</h3>
+            <p>Articole noi din magazin. Întrebați-ne despre ele și vă spunem ce avem.</p>
+          </div>
+        </article>
+        <article class="tile tile--tint" data-reveal="right" style="--d:.25s">
+          <div>
+            <h3>Consiliere la alegere</h3>
+            <p>Vă ajutăm să alegeți produsul potrivit pentru proiectul dumneavoastră, mic sau mare.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="gallery">
+        <figure data-reveal style="--d:.05s">
+          <img src="img/1.jpg" alt="Clești și unelte de mână pe o masă de lucru" loading="lazy">
+        </figure>
+        <figure data-reveal="pop" style="--d:.15s">
+          <img src="img/2.jpg" alt="Lemn, unelte și un pistol de bătut cuie într-un atelier" loading="lazy">
+        </figure>
+        <figure data-reveal="pop" style="--d:.25s">
+          <img src="img/3.jpg" alt="Cheie fixă metalică printre scule de atelier" loading="lazy">
+        </figure>
+      </div>
+
+      <div class="produse-action" data-reveal>
+        <a class="btn btn-navy" href="https://wa.me/40722588275?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20stoc%20sau%20produse." target="_blank" rel="noopener">Întreabă despre un produs</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contacts" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title" data-reveal>Veniți pe la noi sau sunați-ne</h2>
+      <p class="contacts-text" data-reveal style="--d:.08s">Disponibilitatea produselor o aflați la telefon sau pe WhatsApp.</p>
+
+      <div class="contacts-actions" data-reveal style="--d:.15s">
+        <a class="btn btn-white" href="tel:0722588275">Sună acum</a>
+        <a class="btn btn-white" href="https://wa.me/40722588275?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20stoc%20sau%20produse." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Ebicom+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+
+      <div class="map" data-reveal="pop" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.071188,44.404194,26.079188000000002,44.408194&amp;layer=mapnik&amp;marker=44.406194,26.075188" title="Harta zonei Ebicom, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <p class="map-note" data-reveal style="--d:.15s">Pe hartă vedeți zona în care suntem, în București.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="logo.png" alt="Ebicom" class="footer-logo">
+      <p class="footer-slogan" style="margin-top:.75rem">Totul pentru casa ta</p>
+    </div>
+    <div>
+      <nav aria-label="Subsol">
+        <ul class="footer-nav" style="list-style:none">
+          <li><a href="#produse">Produse</a></li>
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="tel:0722588275">0722 588 275</a></li>
+        </ul>
+      </nav>
+      <p class="small" style="margin-top:1rem">Model de site (demo)</p>
+      <p class="small" style="margin-top:.35rem">Fotografii ilustrative de pe Pixabay: Peggy_Marco, photonia, -ontiveros-</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  var onScroll = function () {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var items = document.querySelectorAll('[data-reveal]');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
