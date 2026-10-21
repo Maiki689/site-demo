@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>4Men | Tunsori bărbătești și aranjat barbă, București</title>
+<meta name="description" content="4Men: tuns bărbătesc și aranjat barbă în zona Lujerului, București. Programează-te pe WhatsApp sau sună acum.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --black:#000;
+  --ink:#EFEBE3;
+  --muted:#A9A397;
+  --gold:#C9A44C;
+  --gold-hi:#E2C277;
+  --line:rgba(201,164,76,.3);
+  --surface:#0a0a0a;
+  --header:72px;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--black);color:var(--ink);
+  font-family:Roboto,system-ui,sans-serif;font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:600;margin:0;line-height:1.1;letter-spacing:-.01em}
+p{margin:0}
+section{scroll-margin-top:var(--header)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.container{width:min(100% - 2.5rem,1120px);margin-inline:auto}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:#000;padding:.6rem 1rem;z-index:100;text-decoration:none}
+.skip-link:focus{left:1rem;top:1rem}
+.hairline{display:block;width:3rem;height:1px;background:var(--gold);margin-inline:auto}
+
+/* Antet cu sticlă */
+.site-header{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header);
+  background:rgba(0,0,0,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(120%);
+  backdrop-filter:blur(18px) saturate(120%);
+  border-top:1px solid rgba(255,255,255,.08);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.site-header.scrolled{box-shadow:0 12px 32px -12px rgba(0,0,0,.9)}
+.bar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;text-decoration:none;min-height:44px}
+.brand img{height:40px;width:auto}
+.brand-fallback{display:none;font-family:Cinzel,serif;font-weight:700;font-size:1.25rem;letter-spacing:.08em;color:var(--gold)}
+[data-logo].no-logo img{display:none}
+[data-logo].no-logo .brand-fallback{display:inline}
+
+.nav-desk{display:none;gap:2rem}
+.nav-desk a,.menu-links a{color:#fff;text-decoration:none;font-size:.9375rem;font-weight:500;letter-spacing:.02em}
+.nav-desk a{position:relative;padding:.5rem 0}
+.nav-desk a::after{
+  content:"";position:absolute;left:0;right:0;bottom:.1rem;height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
+}
+.nav-desk a:hover::after,.nav-desk a:focus-visible::after{transform:scaleX(1)}
+
+.bar-actions{display:flex;align-items:center;gap:.4rem}
+.menu-btn{
+  min-height:44px;min-width:44px;background:none;color:#fff;cursor:pointer;
+  border:1px solid rgba(255,255,255,.24);border-radius:2px;padding:0 .85rem;
+  font:500 .9375rem/1 Roboto,sans-serif;transition:border-color .3s var(--ease),color .3s;
+}
+.menu-btn:hover{border-color:var(--gold);color:var(--gold-hi)}
+
+.menu-panel{
+  position:absolute;top:100%;left:0;right:0;padding:.5rem 1.25rem 1.5rem;
+  background:rgba(0,0,0,.94);
+  opacity:0;transform:translateY(-8px);visibility:hidden;
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s;
+}
+.site-header.open .menu-panel{opacity:1;transform:none;visibility:visible}
+.menu-links{display:flex;flex-direction:column}
+.menu-links a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid rgba(255,255,255,.06)}
+.menu-panel .btn{width:100%;margin-top:1rem}
+
+@media (min-width:860px){
+  .brand img{height:48px}
+  .nav-desk{display:flex}
+  .menu-btn,.menu-panel{display:none}
+}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.75rem 1.5rem;border-radius:2px;border:1px solid transparent;
+  font:500 1rem/1 Roboto,sans-serif;letter-spacing:.01em;text-decoration:none;cursor:pointer;
+  transition:background-color .3s var(--ease),color .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--gold);color:#000;font-weight:700}
+.btn-primary:hover{background:var(--gold-hi);box-shadow:0 10px 30px -12px rgba(201,164,76,.6)}
+.btn-ghost{border-color:var(--gold);color:var(--gold-hi);background:transparent}
+.btn-ghost:hover{background:rgba(201,164,76,.1);color:#f3dda0}
+.btn-small{min-height:44px;padding:.6rem 1rem;font-size:.9375rem}
+
+/* Prima secțiune */
+.hero{padding:calc(var(--header) + 2.5rem) 0 clamp(4rem,9vw,7rem)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center;justify-items:center;text-align:center}
+.hero-text{display:flex;flex-direction:column;align-items:center;gap:1.25rem;max-width:34rem}
+.hero-logo{margin:0}
+.hero-logo img{width:clamp(180px,58vw,320px);height:auto;margin-inline:auto}
+.slogan{font-family:Cinzel,serif;font-size:clamp(1.05rem,2.6vw,1.35rem);font-weight:500;letter-spacing:.14em;color:var(--gold)}
+.lead{font-size:clamp(1.0625rem,2.2vw,1.2rem);line-height:1.55;font-weight:300}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:.5rem}
+
+.hero-text>*{animation:hero-in .9s var(--ease) both}
+.hero-text>*:nth-child(2){animation-delay:.12s}
+.hero-text>*:nth-child(3){animation-delay:.22s}
+.hero-text>*:nth-child(4){animation-delay:.32s}
+@keyframes hero-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade-only{from{opacity:0}to{opacity:1}}
+
+/* Oglinda de seară: ramă ovală, lumina care se aprinde încet */
+.mirror{margin:0;width:min(100%,320px)}
+.mirror-frame{
+  position:relative;aspect-ratio:4/5;border-radius:50%;padding:.55rem;
+  background:linear-gradient(160deg,#E2C277 0%,#8a6a2b 30%,#C9A44C 52%,#5b4519 78%,#C9A44C 100%);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.9),0 0 0 1px rgba(201,164,76,.25);
+}
+.mirror-glass{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;isolation:isolate;background:#050505;box-shadow:inset 0 0 40px rgba(0,0,0,.8)}
+.mirror-glass img{width:100%;height:100%;object-fit:cover;object-position:center 30%;animation:drift-in 3.2s var(--ease) both}
+.mirror-glass::before{content:"";position:absolute;inset:0;z-index:1;background:#000;animation:shade-out 2.8s ease .2s both}
+.mirror-glass::after{
+  content:"";position:absolute;inset:0;z-index:2;
+  background:radial-gradient(ellipse at 50% 28%,rgba(226,194,119,.34),rgba(201,164,76,.08) 55%,transparent 72%);
+  animation:light-on 2.8s ease .2s both;
+}
+@keyframes shade-out{from{opacity:.85}to{opacity:0}}
+@keyframes light-on{from{opacity:0}to{opacity:1}}
+@keyframes drift-in{from{transform:scale(1.07)}to{transform:scale(1)}}
+
+@media (min-width:860px){
+  .hero-grid{grid-template-columns:1.05fr .95fr;text-align:left;justify-items:stretch;min-height:min(88vh,780px)}
+  .hero-text{align-items:flex-start;text-align:left}
+  .hero-logo img{width:clamp(260px,26vw,380px);margin-inline:0}
+  .actions{justify-content:flex-start}
+  .mirror{width:100%;max-width:440px;justify-self:center}
+}
+
+/* Secțiuni */
+.section{padding:clamp(4.5rem,11vw,8.5rem) 0}
+.section.alt{background:var(--surface)}
+.section-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.section-head h2,.about-body h2,.contact-info h2{font-size:clamp(2rem,5vw,3.2rem)}
+
+.about-body{max-width:40rem;margin-inline:auto;display:grid;gap:1.25rem;text-align:center;justify-items:center}
+.lead-about{font-family:Cinzel,serif;font-size:clamp(1.2rem,3vw,1.6rem);line-height:1.3;color:var(--ink)}
+.about-body p.muted{color:var(--muted)}
+
+/* Servicii */
+.services{list-style:none;margin:0 auto;padding:0;max-width:52rem}
+.services li{display:grid;gap:.4rem;padding:1.5rem 0;border-top:1px solid var(--line)}
+.services li:last-child{border-bottom:1px solid var(--line)}
+.services h3{font-size:1.2rem}
+.services p{color:var(--muted)}
+@media (min-width:640px){
+  .services li{grid-template-columns:1fr 1.2fr;align-items:baseline;gap:2rem}
+}
+.services-cta{margin-top:3rem;display:flex;justify-content:center}
+
+/* Avantaje */
+.pillars{list-style:none;margin:0 auto;padding:0;display:grid;gap:2.75rem;max-width:64rem}
+.pillars li{display:grid;justify-items:center;text-align:center;gap:.75rem}
+.pillars svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.pillars h3{font-size:1.15rem}
+.pillars p{color:var(--muted)}
+@media (min-width:760px){
+  .pillars{grid-template-columns:repeat(3,1fr);gap:2rem}
+}
+
+/* Galerie */
+.gallery{display:grid;gap:.75rem;grid-template-columns:1fr}
+.gallery figure{margin:0;position:relative;overflow:hidden;aspect-ratio:4/3;background:#111}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+@media (hover:hover){
+  .gallery figure:hover img{transform:scale(1.03)}
+}
+@media (min-width:760px){
+  .gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(180px,22vw,260px)}
+  .gallery figure{aspect-ratio:auto}
+  .gallery figure:nth-child(1){grid-column:1/3;grid-row:1/3}
+  .gallery figure:nth-child(4){grid-column:1/4}
+}
+
+/* Contact */
+.contact-grid{display:grid;gap:2.5rem}
+.contact-note{color:var(--muted);margin-top:.75rem;max-width:30rem}
+.info-list{margin-top:2rem}
+.info-item{display:grid;gap:.3rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.info-item:last-child{border-bottom:1px solid var(--line)}
+.info-label{font-size:.8125rem;font-weight:500;letter-spacing:.12em;color:var(--gold)}
+.info-value{font-size:1.15rem;color:var(--ink);text-decoration:none}
+.info-link:hover{color:var(--gold-hi)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.map-wrap{position:relative;min-height:340px;border:1px solid var(--line);overflow:hidden}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.9) invert(.92) contrast(.95)}
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:1fr 1.2fr;align-items:stretch}
+}
+
+/* Subsol */
+.site-footer{background:var(--surface);padding:4rem 0 3rem}
+.footer-grid{display:grid;gap:2rem;justify-items:center;text-align:center}
+.footer-brand img{height:84px}
+.footer-meta{display:grid;gap:.5rem;color:var(--muted);font-size:.9375rem}
+.footer-meta a{color:var(--ink);text-decoration:none}
+.footer-meta a:hover{color:var(--gold-hi)}
+.credits{font-size:.8125rem;color:#8c8679;letter-spacing:.02em;margin-top:.5rem}
+.demo{font-size:.8125rem;color:#8c8679;letter-spacing:.04em}
+@media (min-width:860px){
+  .footer-grid{grid-template-columns:auto 1fr auto;text-align:left;align-items:center}
+}
+
+/* Mișcare la derulare: variate și discrete */
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal-x{opacity:0;transform:translateX(-18px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal-x.in{opacity:1;transform:none}
+.js .reveal-fade{opacity:0;transition:opacity .6s ease;transition-delay:var(--d,0s)}
+.js .reveal-fade.in{opacity:1}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.2s !important;animation-delay:0s !important;animation-iteration-count:1 !important;transition-duration:.2s !important}
+  .hero-text>*{animation:fade-only .2s ease both}
+  .mirror-glass img{animation:none}
+  .mirror-glass::before{animation:none;opacity:0}
+  .mirror-glass::after{animation:none;opacity:1}
+  .js .reveal,.js .reveal-x{transform:none}
+  .gallery figure:hover img{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:#000;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .menu-panel{background:#000}
+}
+@media (prefers-contrast:more){
+  :root{--muted:#D8D2C4;--line:#C9A44C}
+  .site-header{background:#000;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .menu-panel{background:#000}
+  .btn-ghost,.menu-btn{border-width:2px}
+  .map-wrap{border-width:2px}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Mergi la conținut</a>
+
+<header class="site-header" id="antet">
+  <div class="container bar">
+    <a class="brand" href="#top" data-logo aria-label="4Men, înapoi la început">
+      <img src="logo.png" alt="4Men" onerror="this.closest('[data-logo]').classList.add('no-logo')">
+      <span class="brand-fallback">4Men</span>
+    </a>
+
+    <nav class="nav-desk" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="bar-actions">
+      <a class="btn btn-ghost btn-small" href="tel:0728029916">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu-mobil">Meniu</button>
+    </div>
+  </div>
+
+  <div class="menu-panel" id="meniu-mobil">
+    <nav class="menu-links" aria-label="Meniu mobil">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="https://wa.me/40728029916?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20programez%20la%20tuns%20%C8%99i/sau%20aranjat%20barb%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="titlu-principal">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-logo" id="titlu-principal" data-logo>
+          <img src="logo.png" alt="4Men, tunsori bărbătești și aranjat barbă în București" onerror="this.closest('[data-logo]').classList.add('no-logo')">
+          <span class="brand-fallback">4Men</span>
+        </h1>
+        <p class="slogan">Tunsori moderne, stil masculin</p>
+        <p class="lead">Tuns bărbătesc și aranjat barbă, în zona Lujerului.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/40728029916?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20programez%20la%20tuns%20%C8%99i/sau%20aranjat%20barb%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:0728029916">Sună acum</a>
+        </div>
+      </div>
+
+      <figure class="mirror">
+        <div class="mirror-frame">
+          <div class="mirror-glass">
+            <img src="img/4.jpg" alt="Frizer care tunde părul unui client, într-un salon pentru bărbați">
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="titlu-despre">
+    <div class="container">
+      <div class="about-body">
+        <span class="hairline" aria-hidden="true"></span>
+        <h2 id="titlu-despre">Despre noi</h2>
+        <p class="lead-about reveal">La 4Men te așteptăm pentru tunsori bărbătești și aranjat de barbă, chiar în inima zonei Lujerului.</p>
+        <p class="muted reveal" style="--d:.1s">Oferim servicii simple, într-un spațiu gândit special pentru bărbați.</p>
+        <p class="muted reveal" style="--d:.2s">Vino pentru o experiență de îngrijire pe placul tău.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicii" aria-labelledby="titlu-servicii">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="titlu-servicii">Servicii</h2>
+      </div>
+      <ul class="services">
+        <li class="reveal-fade" style="--d:0s">
+          <h3>Tuns bărbătesc</h3>
+          <p>Tunsori moderne și clasice pentru bărbați</p>
+        </li>
+        <li class="reveal-fade" style="--d:.08s">
+          <h3>Aranjat barbă</h3>
+          <p>Barba tunsă, conturată și îngrijită</p>
+        </li>
+        <li class="reveal-fade" style="--d:.16s">
+          <h3>Tuns + aranjat barbă</h3>
+          <p>Schimbare completă de look</p>
+        </li>
+        <li class="reveal-fade" style="--d:.24s">
+          <h3>Întreținere păr</h3>
+          <p>Igienă și finisare pentru păr scurt</p>
+        </li>
+      </ul>
+      <div class="services-cta reveal">
+        <a class="btn btn-primary" href="https://wa.me/40728029916?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20programez%20la%20tuns%20%C8%99i/sau%20aranjat%20barb%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" aria-labelledby="titlu-avantaje">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="titlu-avantaje">Ce găsești la 4Men</h2>
+      </div>
+      <ul class="pillars">
+        <li class="reveal" style="--d:0s">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/>
+            <path d="M8.1 8.1 20 19.5M8.1 15.9 20 4.5"/>
+          </svg>
+          <h3>Tipuri variate</h3>
+          <p>Alegere între modern și clasic</p>
+        </li>
+        <li class="reveal" style="--d:.1s">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
+          </svg>
+          <h3>Pentru bărbați</h3>
+          <p>Atmosferă relaxată, doar băieți</p>
+        </li>
+        <li class="reveal" style="--d:.2s">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s-6-5.3-6-11a6 6 0 1 1 12 0c0 5.7-6 11-6 11z"/>
+            <circle cx="12" cy="10" r="2.2"/>
+          </svg>
+          <h3>Zona Lujerului</h3>
+          <p>Ușor de găsit în București</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 id="titlu-galerie">Galerie</h2>
+      </div>
+      <div class="gallery">
+        <figure class="reveal-fade" style="--d:0s">
+          <img src="img/2.jpg" alt="Tuns cu mașina electrică, în salon" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal-fade" style="--d:.08s">
+          <img src="img/3.jpg" alt="Interiorul unui salon de bărbați, cu scaune de frizerie" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal-fade" style="--d:.16s">
+          <img src="img/5.jpg" alt="Aranjat de barbă cu foarfeca, pentru un look îngrijit" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal-fade" style="--d:.24s">
+          <img src="img/1.jpg" alt="Atmosferă de frizerie, cu clienți și frizeri la lucru" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="titlu-contact">
+    <div class="container contact-grid">
+      <div class="contact-info reveal-x">
+        <h2 id="titlu-contact">Contact</h2>
+        <p class="contact-note">Pentru programări și informații, sună sau scrie-ne pe WhatsApp.</p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Adresă</span>
+            <p class="info-value">Bulevardul Iuliu Maniu 57, București</p>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Telefon</span>
+            <a class="info-value info-link" href="tel:0728029916">0728 029 916</a>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://wa.me/40728029916?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20programez%20la%20tuns%20%C8%99i/sau%20aranjat%20barb%C4%83." target="_blank" rel="noopener">Programează-te pe WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:0728029916">Sună acum</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=4Men+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map-wrap reveal-fade" style="--d:.15s">
+        <iframe
+          title="Harta: 4Men, Bulevardul Iuliu Maniu 57, București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0259695,44.431888099999995,26.0339695,44.4358881&amp;layer=mapnik&amp;marker=44.4338881,26.0299695"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <a class="brand footer-brand" href="#top" data-logo aria-label="4Men, înapoi sus">
+      <img src="logo.png" alt="4Men" onerror="this.closest('[data-logo]').classList.add('no-logo')">
+      <span class="brand-fallback">4Men</span>
+    </a>
+    <div class="footer-meta">
+      <p>Bulevardul Iuliu Maniu 57, București</p>
+      <p><a href="tel:0728029916">0728 029 916</a></p>
+      <p class="credits">Fotografii ilustrative de pe Pixabay: mostafa_meraji, shameersrk</p>
+    </div>
+    <p class="demo">Model de site (demo)</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  var btn = document.querySelector('.menu-btn');
+
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  function setOpen(open) {
+    header.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Închide' : 'Meniu';
+  }
+  btn.addEventListener('click', function () {
+    setOpen(!header.classList.contains('open'));
+  });
+  document.querySelectorAll('.menu-panel a').forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+
+  var targets = document.querySelectorAll('.reveal, .reveal-x, .reveal-fade');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  } else {
+    targets.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
