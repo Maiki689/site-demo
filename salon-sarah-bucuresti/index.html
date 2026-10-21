@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salon SARAH, București: coafură, manichiură, machiaj</title>
+<meta name="description" content="Salon SARAH din București: coafură, manichiură, pedichiură și machiaj. Programează-te pe WhatsApp sau sună.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E💇‍♀️%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#19171A;
+  --gold:#C9A44C;
+  --gold-hi:#D4AF37;
+  --gold-ink:#7A5F22;
+  --paper:#FFFFFF;
+  --text-dark:rgba(25,23,26,.8);
+  --text-light:rgba(255,255,255,.8);
+  --line-dark:rgba(201,164,76,.45);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:Lora,Georgia,serif;
+  font-size:1.0625rem;
+  line-height:1.6;
+  letter-spacing:0;
+  color:var(--text-dark);
+  background:var(--paper);
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--ink);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+h1,h2,h3{font-family:Cinzel,Georgia,serif;font-weight:500}
+.title{
+  font-size:clamp(1.7rem,4.6vw,2.75rem);
+  line-height:1.12;
+  letter-spacing:-.01em;
+  color:var(--ink);
+  margin:0 0 1.25rem;
+}
+.title.center{text-align:center}
+.sec--dark .title{color:#fff}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:1.25rem}
+.sec{padding:clamp(4.5rem,11vw,8rem) 0}
+.sec--dark{background:var(--ink);color:var(--text-light)}
+.sec--dark p{color:var(--text-light)}
+
+.rule{display:block;width:56px;height:1px;background:var(--gold);margin:0 0 1.75rem;transform-origin:left center}
+.rl{transform:scaleX(0);transition:transform .8s var(--ease)}
+.rl.is-in{transform:scaleX(1)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.rv.is-in{opacity:1;transform:none}
+.rf{opacity:0;transition:opacity .9s ease}
+.rf.is-in{opacity:1}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.5rem;
+  font-family:Lora,Georgia,serif;font-weight:600;font-size:.98rem;letter-spacing:.01em;
+  text-decoration:none;text-align:center;
+  border:1px solid var(--gold);border-radius:2px;
+  cursor:pointer;
+  transition:background-color .25s ease,color .25s ease,box-shadow .25s ease,transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn--gold{background:var(--gold);color:var(--ink)}
+.btn--gold:hover{background:var(--gold-hi);box-shadow:0 6px 18px -8px rgba(201,164,76,.8)}
+.btn--ghost{background:transparent;color:#fff}
+.btn--ghost:hover{background:rgba(201,164,76,.14)}
+.btn--line{background:transparent;color:var(--ink)}
+.btn--line:hover{background:rgba(201,164,76,.1)}
+.btn--small{min-height:44px;padding:.5rem 1rem;font-size:.9rem}
+
+/* Antet cu sticlă */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(25,23,26,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-top:1px solid rgba(255,255,255,.14);
+  transition:box-shadow .3s ease;
+}
+.site-header.is-scrolled{box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+.bar{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  height:64px;max-width:1120px;margin-inline:auto;padding-inline:1.25rem;
+}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand-text{font-family:Cinzel,Georgia,serif;font-weight:500;letter-spacing:.08em;color:#fff;font-size:1.1rem}
+.bar__actions{display:flex;align-items:center;gap:.5rem}
+.menu-btn{
+  min-height:44px;min-width:44px;padding:.4rem .9rem;
+  background:transparent;color:#fff;
+  border:1px solid rgba(201,164,76,.6);border-radius:2px;
+  font-family:Lora,Georgia,serif;font-size:.9rem;cursor:pointer;
+  transition:transform .1s ease,background-color .25s ease;
+}
+.menu-btn:active{transform:scale(.97)}
+.menu-btn:hover{background:rgba(201,164,76,.12)}
+.nav{
+  display:none;
+  position:absolute;top:100%;left:0;right:0;
+  background:var(--ink);
+  border-top:1px solid rgba(201,164,76,.35);
+}
+.nav.is-open{display:block}
+.nav ul{list-style:none;margin:0;padding:.5rem 1.25rem 1.25rem;display:grid}
+.nav a{
+  display:flex;align-items:center;min-height:48px;
+  color:#fff;text-decoration:none;
+  font-family:Cinzel,Georgia,serif;letter-spacing:.08em;font-size:.95rem;
+}
+
+/* Prima secțiune */
+.hero{background:var(--ink);color:#fff;padding:2.5rem 0 4.5rem}
+.hero__inner{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:2rem;max-width:1120px;margin-inline:auto;padding-inline:1.25rem;
+}
+.hero__text{display:flex;flex-direction:column;align-items:center;gap:1.1rem}
+.hero__logo{margin:0}
+.hero__logo img{
+  height:clamp(110px,24vh,210px);width:auto;max-width:82vw;
+  margin-inline:auto;object-fit:contain;
+}
+.hero__logo .brand-text{font-size:clamp(2rem,8vw,3.5rem)}
+.hero__slogan{
+  font-family:Cinzel,Georgia,serif;font-size:clamp(1.15rem,3vw,1.5rem);
+  letter-spacing:.08em;color:var(--gold);margin:0;line-height:1.3;
+}
+.hero__desc{margin:0;color:var(--text-light);max-width:34ch}
+.hero__actions{display:flex;flex-direction:column;gap:.75rem;width:100%;max-width:320px;margin-top:.4rem}
+
+.intro > *{animation:intro .9s var(--ease) both}
+.intro .hero__logo{animation-delay:.1s}
+.intro .hero__slogan{animation-delay:.25s}
+.intro .hero__desc{animation-delay:.35s}
+.intro .hero__actions{animation-delay:.45s}
+@keyframes intro{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* Oglinda ovală: lumina se aprinde încet */
+.mirror{
+  margin:0;
+  width:min(74vw,340px);aspect-ratio:3/4;
+  border-radius:50%;
+  border:1px solid var(--gold);
+  padding:12px;
+  box-shadow:0 0 0 1px rgba(201,164,76,.2),0 30px 60px -24px rgba(0,0,0,.7);
+  animation:fade 1.2s ease .2s both;
+}
+.mirror__glass{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.mirror__glass img{width:100%;height:100%;object-fit:cover}
+.mirror__veil{position:absolute;inset:0;background:var(--ink);animation:veil 2.6s var(--ease) .3s forwards}
+.mirror__glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 40%,rgba(212,175,55,.3),rgba(25,23,26,.4) 78%);
+  animation:glow 2.6s var(--ease) .3s both;
+}
+@keyframes veil{from{opacity:1}to{opacity:0}}
+@keyframes glow{from{opacity:0}to{opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* Despre */
+.split{display:grid;gap:3rem;align-items:center}
+.photo{margin:0}
+.photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.facts{list-style:none;padding:0;margin:2rem 0 0}
+.facts li{padding:1rem 0;border-top:1px solid rgba(201,164,76,.55);color:var(--ink)}
+.facts li:last-child{border-bottom:1px solid rgba(201,164,76,.55)}
+
+/* Servicii */
+.services{list-style:none;padding:0;margin:0 0 2.5rem}
+.service{padding:1.4rem 0;border-top:1px solid var(--line-dark)}
+.service:last-child{border-bottom:1px solid var(--line-dark)}
+.service h3{font-size:1.25rem;color:#fff;margin:0 0 .35rem;letter-spacing:.01em}
+.service p{margin:0;color:var(--text-light)}
+.service:nth-child(2){transition-delay:.08s}
+.service:nth-child(3){transition-delay:.16s}
+.service:nth-child(4){transition-delay:.24s}
+
+/* Galerie */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gallery figure{margin:0}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover}
+
+/* Avantaje */
+.perks{display:grid;gap:2.75rem;text-align:center;grid-template-columns:1fr}
+.perk h3{font-size:1.1rem;color:#fff;margin:0 0 .5rem;letter-spacing:.01em}
+.perk p{margin:0;color:var(--text-light)}
+.perk__icon{
+  width:64px;height:64px;border-radius:50%;
+  border:1px solid var(--gold);
+  display:grid;place-items:center;
+  font-size:1.6rem;margin:0 auto 1.25rem;
+}
+.perk:nth-child(2){transition-delay:.12s}
+.perk:nth-child(3){transition-delay:.24s}
+
+/* Contact */
+.contact{display:grid;gap:3.5rem;align-items:start}
+.info{margin:0 0 2rem}
+.info div{padding:.9rem 0;border-top:1px solid rgba(25,23,26,.12)}
+.info div:last-child{border-bottom:1px solid rgba(25,23,26,.12)}
+.info dt{font-family:Cinzel,Georgia,serif;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-ink);margin:0 0 .2rem}
+.info dd{margin:0;color:var(--ink);font-size:1.05rem;line-height:1.5}
+.info dd a{color:var(--ink);text-underline-offset:3px}
+.actions{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
+.before h3{font-size:1.05rem;color:var(--ink);margin:0 0 .3rem}
+.before p{margin:0 0 1.25rem;max-width:52ch}
+.map{min-height:340px}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+/* Subsol */
+.foot{background:var(--ink);color:rgba(255,255,255,.7);padding:4.5rem 0 3rem;text-align:center}
+.foot img{height:96px;width:auto;margin:0 auto 2rem}
+.foot .brand-text{font-size:1.4rem;display:inline-block;margin-bottom:2rem}
+.foot__list{list-style:none;padding:0;margin:0 0 2.25rem;display:grid;gap:.45rem}
+.foot a{color:#fff;text-underline-offset:3px}
+.foot__small{font-size:.8rem;letter-spacing:.02em;margin:.35rem auto;max-width:60ch;color:rgba(255,255,255,.62)}
+
+/* Desktop */
+@media (min-width:700px){
+  .perks{grid-template-columns:repeat(3,1fr)}
+  .actions{flex-direction:row;flex-wrap:wrap}
+  .actions .btn{flex:0 0 auto}
+  .gallery{gap:2rem}
+  .gallery__offset{margin-top:4rem}
+  .gallery img{aspect-ratio:4/5}
+}
+@media (min-width:860px){
+  .menu-btn{display:none}
+  .nav{display:block;position:static;background:none;border:0}
+  .nav ul{display:flex;gap:2.25rem;padding:0;align-items:center}
+  .nav a{min-height:auto;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.86);transition:color .25s ease}
+  .nav a:hover{color:var(--gold-hi)}
+  .bar__actions .btn--small{min-height:44px}
+}
+@media (min-width:900px){
+  .hero{padding:4rem 0 6rem}
+  .hero__inner{
+    display:grid;grid-template-columns:1fr 1fr;
+    text-align:left;align-items:center;gap:5rem;
+  }
+  .hero__text{align-items:flex-start}
+  .hero__logo img{height:auto;width:min(100%,360px)}
+  .hero__desc{margin:0}
+  .hero__actions{flex-direction:row;max-width:none;width:auto}
+  .hero__actions .btn{width:auto}
+  .mirror{width:min(100%,420px)}
+  .split{grid-template-columns:1fr 1fr;gap:6rem}
+  .contact{grid-template-columns:1fr 1.1fr;gap:6rem}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.2s !important;
+    animation-delay:0s !important;
+    transition-duration:.2s !important;
+    scroll-behavior:auto !important;
+  }
+  .rv,.rl,.intro > *{transform:none !important}
+  .mirror__veil{animation:none;opacity:0}
+  .mirror__glow{animation:fade .2s ease both}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--ink);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--text-dark:var(--ink);--text-light:#fff;--line-dark:var(--gold)}
+  .site-header{background:var(--ink);border-top-color:var(--gold)}
+  .btn{border-width:2px}
+  .info div,.info div:last-child{border-color:var(--ink)}
+  .gallery img,.photo img{outline:1px solid var(--ink)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Mergi la conținut</a>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Salon SARAH, începutul paginii">
+      <img src="img/logo.png" alt="Salon SARAH" onerror="this.outerHTML='<span class=brand-text>Salon SARAH</span>'">
+    </a>
+    <nav id="meniu" class="nav" aria-label="Principal">
+      <ul>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="bar__actions">
+      <a class="btn btn--gold btn--small" href="tel:0722404111">Sună acum</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="meniu">Meniu</button>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top">
+    <div class="hero__inner intro">
+      <div class="hero__text">
+        <h1 class="hero__logo">
+          <img src="img/logo.png" alt="Salon SARAH, București" onerror="this.outerHTML='<span class=brand-text>Salon SARAH</span>'">
+        </h1>
+        <p class="hero__slogan">Frumusețe la fiecare pas</p>
+        <p class="hero__desc">Salonul tău pentru coafură, manichiură și machiaj.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="tel:0722404111">Sună acum</a>
+          <a class="btn btn--ghost" href="https://wa.me/40722404111?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20SARAH.">Programează-te pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="mirror">
+        <div class="mirror__glass">
+          <img src="img/5.jpg" alt="Portret de femeie cu machiaj de seară, în salon">
+          <span class="mirror__veil" aria-hidden="true"></span>
+          <span class="mirror__glow" aria-hidden="true"></span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="despre">
+    <div class="wrap split">
+      <div>
+        <h2 class="title rv">Despre Salon SARAH</h2>
+        <span class="rule rl"></span>
+        <p>Salon SARAH oferă într-un spațiu plăcut servicii de coafură, manichiură, pedichiură și machiaj. Echipa noastră dedicată îți stă la dispoziție pentru o experiență relaxantă și răsfăț total. Recomandăm programarea în avans pentru confortul tău.</p>
+        <ul class="facts">
+          <li>Coafură, manichiură, pedichiură și servicii de machiaj.</li>
+          <li>Programare recomandată; parcare accesibilă pentru scaun rulant.</li>
+        </ul>
+      </div>
+      <figure class="photo rf">
+        <img src="img/2.jpg" alt="Tuns cu foarfecă și pieptene, în salon" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec sec--dark" id="servicii">
+    <div class="wrap split">
+      <figure class="photo rf">
+        <img src="img/4.jpg" alt="Manichiură și pedichiură" loading="lazy">
+      </figure>
+      <div>
+        <h2 class="title rv">Servicii</h2>
+        <span class="rule rl"></span>
+        <ul class="services">
+          <li class="service rv">
+            <h3>Coafură</h3>
+            <p>Serviciu disponibil la Salon SARAH.</p>
+          </li>
+          <li class="service rv">
+            <h3>Manichiură</h3>
+            <p>Serviciu disponibil la Salon SARAH.</p>
+          </li>
+          <li class="service rv">
+            <h3>Pedichiură</h3>
+            <p>Răsfăț pentru picioarele tale</p>
+          </li>
+          <li class="service rv">
+            <h3>Machiaj</h3>
+            <p>Serviciu disponibil la Salon SARAH.</p>
+          </li>
+        </ul>
+        <a class="btn btn--gold" href="https://wa.me/40722404111?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20SARAH.">Programează-te pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="galerie">
+    <div class="wrap">
+      <h2 class="title center rv">Galerie</h2>
+      <div class="gallery">
+        <figure class="rf">
+          <img src="img/1.jpg" alt="Coafură aranjată cu uscătorul" loading="lazy">
+        </figure>
+        <figure class="rf gallery__offset">
+          <img src="img/3.jpg" alt="Tuns și aranjat de coafor" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--dark" aria-labelledby="perks-titlu">
+    <div class="wrap">
+      <h2 class="title center rv" id="perks-titlu">Ce găsești la noi</h2>
+      <div class="perks">
+        <div class="perk rv">
+          <span class="perk__icon" aria-hidden="true">🪑</span>
+          <h3>Parcare accesibilă</h3>
+          <p>Acces comod, inclusiv scaun rulant</p>
+        </div>
+        <div class="perk rv">
+          <span class="perk__icon" aria-hidden="true">📅</span>
+          <h3>Programare recomandată</h3>
+          <p>Te primim la ora potrivită</p>
+        </div>
+        <div class="perk rv">
+          <span class="perk__icon" aria-hidden="true">🌺</span>
+          <h3>Atmosferă relaxantă</h3>
+          <p>Te răsfeți și te încarci cu energie</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2 class="title rv">Contact</h2>
+        <span class="rule rl"></span>
+        <dl class="info">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0722404111">0722 404 111</a></dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:salon_sarah@yahoo.com">salon_sarah@yahoo.com</a></dd>
+          </div>
+          <div>
+            <dt>Oraș</dt>
+            <dd>București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Luni–sâmbătă 08:00–19:30<br>Duminică 08:00–14:00</dd>
+          </div>
+        </dl>
+
+        <div class="actions">
+          <a class="btn btn--gold" href="tel:0722404111">Sună acum</a>
+          <a class="btn btn--line" href="https://wa.me/40722404111?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20Salon%20SARAH.">Programează-te pe WhatsApp</a>
+          <a class="btn btn--line" href="https://www.google.com/maps/search/?api=1&amp;query=Salon+SARAH+Bucure%C8%99ti">Deschide harta în Google Maps</a>
+        </div>
+
+        <div class="before">
+          <h3>Parcare accesibilă</h3>
+          <p>Locurile de parcare sunt accesibile și pentru persoanele cu dizabilități.</p>
+          <h3>Programări</h3>
+          <p>Îți recomandăm să faci programare pentru a evita așteptarea.</p>
+        </div>
+      </div>
+
+      <div class="map rf">
+        <iframe
+          title="Harta zonei în care se află Salon SARAH, București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.034021499999998,44.4849634,26.0420215,44.4889634&amp;layer=mapnik&amp;marker=44.4869634,26.0380215"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="img/logo.png" alt="Salon SARAH" onerror="this.outerHTML='<span class=brand-text>Salon SARAH</span>'">
+    <ul class="foot__list">
+      <li><a href="tel:0722404111">0722 404 111</a></li>
+      <li><a href="mailto:salon_sarah@yahoo.com">salon_sarah@yahoo.com</a></li>
+      <li>București</li>
+      <li>Luni–sâmbătă 08:00–19:30, duminică 08:00–14:00</li>
+    </ul>
+    <p class="foot__small">Model de site (demo)</p>
+    <p class="foot__small">Fotografii ilustrative de pe Pixabay: Jo_Johnston, kaleido-dp, xenostral, Bru-nO, whitedaemon</p>
+    <p class="foot__small">© <span id="an">2025</span> Salon SARAH</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.site-header');
+  var onScroll = function () {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var btn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('meniu');
+
+  function setMenu(open) {
+    nav.classList.toggle('is-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Închide' : 'Meniu';
+  }
+
+  btn.addEventListener('click', function () {
+    setMenu(!nav.classList.contains('is-open'));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      setMenu(false);
+      btn.focus();
+    }
+  });
+
+  var items = document.querySelectorAll('.rv, .rf, .rl');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  document.getElementById('an').textContent = new Date().getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
