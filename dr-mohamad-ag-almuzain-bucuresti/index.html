@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Mohamad Ag Almuzain, cabinet stomatologic în București</title>
+<meta name="description" content="Cabinet stomatologic în București, pe Aleea Circului 15, lângă Parcul Circului. Consultații, tratamente și igienizare dentară.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#ffffff;
+  --mist:#EAF7F7;
+  --turq:#1BA6A6;
+  --teal:#0f766e;
+  --teal-dk:#0b5f59;
+  --navy:#12324A;
+  --body:#3f5a6b;
+  --line:rgba(18,50,74,.12);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --r-lg:28px;
+  --r-md:20px;
+  --shadow:0 1px 2px rgba(18,50,74,.06),0 14px 34px -18px rgba(18,50,74,.22);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;line-height:1.5;letter-spacing:0;
+  color:var(--body);background:var(--white);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+section{scroll-margin-top:4.5rem}
+:focus-visible{outline:3px solid var(--turq);outline-offset:3px;border-radius:8px}
+
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--navy);color:#fff;padding:.7rem 1rem;border-radius:999px;text-decoration:none;font-weight:700}
+.skip:focus{top:1rem}
+
+.wrap{width:100%;max-width:1160px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,2.5rem)}
+.section{padding-block:clamp(4.5rem,9vw,7.5rem)}
+.tint{background:var(--mist)}
+
+h1,h2,h3{color:var(--navy);text-wrap:balance}
+h1{font-size:clamp(2.4rem,7.2vw,4.75rem);font-weight:800;letter-spacing:-.02em;line-height:1.06}
+h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+p{max-width:65ch}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:52px;padding:.85rem 1.6rem;border:0;border-radius:999px;
+  font:inherit;font-weight:700;font-size:1rem;line-height:1;text-decoration:none;
+  cursor:pointer;transition:background-color .3s var(--ease),box-shadow .3s var(--ease),color .3s var(--ease);
+}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 1px 2px rgba(15,118,110,.2)}
+.btn-primary:hover{background:var(--teal-dk);box-shadow:0 10px 22px -12px rgba(15,118,110,.7)}
+.btn-soft{background:var(--mist);color:var(--navy)}
+.btn-soft:hover{background:#d9efef}
+.link-text{display:inline-flex;align-items:center;min-height:52px;color:var(--teal);font-weight:700;text-decoration:none;text-underline-offset:4px}
+.link-text:hover{text-decoration:underline}
+
+/* Antet cu sticlă */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .4s var(--ease);
+}
+.site-header.scrolled{box-shadow:0 12px 28px -20px rgba(18,50,74,.35)}
+.header-in{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--navy);font-weight:700;font-size:.95rem;letter-spacing:-.01em}
+.brand-mark{width:2.25rem;height:2.25rem;border-radius:50%;background:var(--mist);display:grid;place-items:center;font-size:1.1rem;flex:none}
+.menu-btn{width:2.75rem;height:2.75rem;border:0;border-radius:50%;background:transparent;color:var(--navy);display:grid;place-items:center;cursor:pointer;transition:background-color .3s var(--ease)}
+.menu-btn:hover{background:var(--mist)}
+.menu-btn svg{width:24px;height:24px}
+.nav{
+  position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;
+  background:var(--white);padding:.25rem clamp(1.25rem,5vw,2.5rem) 1.25rem;
+  box-shadow:0 22px 30px -24px rgba(18,50,74,.35);
+}
+.nav.open{display:flex;animation:drop .35s var(--ease) both}
+.nav a:not(.btn){display:flex;align-items:center;min-height:52px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line)}
+.nav .btn{margin-top:1rem}
+@keyframes drop{from{opacity:0;transform:translate3d(0,-8px,0)}to{opacity:1;transform:none}}
+
+@media (min-width:880px){
+  .menu-btn{display:none}
+  .nav{position:static;display:flex;flex-direction:row;align-items:center;gap:2.25rem;padding:0;background:none;box-shadow:none;animation:none}
+  .nav a:not(.btn){min-height:0;padding:.4rem 0;border:0;font-size:.95rem;transition:color .3s var(--ease)}
+  .nav a:not(.btn):hover{color:var(--teal)}
+  .nav .btn{margin:0;min-height:44px;padding:.6rem 1.25rem;font-size:.95rem}
+}
+
+/* Prima secțiune */
+.hero{padding-top:calc(4.25rem + clamp(2.5rem,7vw,5.5rem));padding-bottom:clamp(4rem,8vw,6.5rem);background:var(--white)}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:center}
+@media (min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero-kicker{color:var(--teal);font-weight:700;margin-bottom:1.1rem}
+.hero h1{margin-bottom:.9rem}
+.pulse{display:block;width:min(100%,300px);height:auto;margin:0 0 1.6rem;overflow:visible}
+.pulse path{
+  fill:none;stroke:var(--turq);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:draw 1.6s var(--ease) .5s both;
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+.slogan{font-size:clamp(1.2rem,2.6vw,1.45rem);font-weight:600;color:var(--navy);letter-spacing:-.01em;margin-bottom:.6rem}
+.lead{font-size:1.02rem;max-width:34ch;margin-bottom:2rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-addr{display:flex;align-items:center;gap:.5rem;margin-top:1.75rem;font-size:.95rem;font-weight:600;color:var(--navy)}
+.hero-addr svg{width:18px;height:18px;color:var(--teal);flex:none}
+.hero-media{margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+.hero-media img{width:100%;height:100%;object-fit:cover}
+@media (min-width:880px){.hero-media{aspect-ratio:4/5}}
+
+@keyframes rise{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.h-in{animation:rise .6s var(--ease) both}
+.d1{animation-delay:.05s}
+.d2{animation-delay:.15s}
+.d3{animation-delay:.25s}
+.d4{animation-delay:.4s}
+.d5{animation-delay:.5s}
+.d6{animation-delay:.6s}
+.d7{animation-delay:.7s}
+
+/* Titluri de secțiune */
+.sec-head{max-width:40rem;margin-bottom:clamp(2.5rem,5vw,3.75rem)}
+.sec-head p{margin-top:1rem;font-size:1.05rem}
+
+/* Despre */
+.split{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+@media (min-width:880px){.split{grid-template-columns:1fr 1fr}}
+.split-media{margin:0;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+.split-media img{width:100%;height:100%;object-fit:cover}
+@media (min-width:880px){.split-media{aspect-ratio:4/5}}
+.split-text h2{margin-bottom:1.25rem}
+.split-text p{margin-bottom:1rem}
+.facts{margin-top:2.25rem;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:.9rem;font-weight:700;color:var(--teal);letter-spacing:.01em}
+.facts dd{color:var(--navy);font-weight:600}
+.facts a{color:var(--navy);text-underline-offset:4px}
+.facts a:hover{color:var(--teal)}
+
+/* Avantaje */
+.perks{display:grid;gap:clamp(2.25rem,4vw,2.5rem)}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.perk{display:flex;flex-direction:column;gap:1rem}
+.perk-ic{width:3.5rem;height:3.5rem;border-radius:50%;background:var(--white);color:var(--teal);display:grid;place-items:center;box-shadow:0 1px 2px rgba(18,50,74,.06)}
+.perk-ic svg{width:26px;height:26px}
+.perk h3{margin-bottom:.35rem}
+
+/* Servicii */
+.svc-list{list-style:none;border-top:1px solid var(--line);margin-bottom:2.75rem}
+.svc{
+  display:grid;gap:.4rem;padding:1.6rem 0;border-bottom:1px solid var(--line);
+  border-radius:0;transition:padding .4s var(--ease),background-color .4s var(--ease),border-radius .4s var(--ease);
+}
+.svc:hover{padding-inline:1.25rem;background:var(--mist);border-radius:18px;border-bottom-color:transparent}
+@media (min-width:760px){.svc{grid-template-columns:1fr 1.2fr;align-items:baseline;gap:2rem}}
+.svc h3{font-size:1.25rem}
+.svc p{color:var(--body)}
+
+/* Galerie */
+.gal{display:grid;gap:.9rem;grid-template-columns:1fr}
+.gal figure{margin:0;border-radius:var(--r-md);overflow:hidden;aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gal figure:hover img{transform:scale(1.02)}
+@media (min-width:760px){
+  .gal{grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;height:clamp(420px,44vw,560px)}
+  .gal .g1{grid-row:1 / 3;aspect-ratio:auto}
+  .gal .g2,.gal .g3{aspect-ratio:auto}
+}
+
+/* Contact */
+.contact-grid{display:grid;gap:clamp(2.5rem,5vw,4rem)}
+@media (min-width:880px){.contact-grid{grid-template-columns:5fr 7fr;align-items:stretch}}
+.contact-info h2{margin-bottom:1rem}
+.contact-info > p{margin-bottom:2rem;max-width:40ch}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;margin-top:2rem}
+.map{border-radius:var(--r-lg);overflow:hidden;min-height:340px;box-shadow:var(--shadow);background:var(--mist)}
+.map iframe{display:block;width:100%;height:100%;min-height:340px;border:0}
+
+/* Subsol */
+.site-footer{background:var(--navy);color:rgba(255,255,255,.78);padding:4rem 0 2rem;font-size:.95rem}
+.foot-grid{display:grid;gap:2.5rem}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-name{color:#fff;font-weight:700;font-size:1.05rem;margin-bottom:.5rem}
+.foot-nav a,.foot-contact a{display:block;color:#fff;text-decoration:none;padding:.35rem 0;width:fit-content}
+.foot-nav a:hover,.foot-contact a:hover{text-decoration:underline;text-underline-offset:4px}
+.foot-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);display:grid;gap:.5rem;font-size:.85rem;color:rgba(255,255,255,.65)}
+
+/* Bară rapidă pe telefon */
+.dock{
+  position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));z-index:40;
+  display:flex;gap:.6rem;padding:.5rem;border-radius:999px;background:var(--white);
+  box-shadow:0 12px 30px -12px rgba(18,50,74,.4);
+  transform:translate3d(0,150%,0);opacity:0;visibility:hidden;
+  transition:transform .5s var(--ease),opacity .5s var(--ease),visibility .5s;
+}
+.dock.show{transform:none;opacity:1;visibility:visible}
+.dock .btn-primary{flex:1}
+.dock .wa-ic{width:52px;height:52px;border-radius:50%;background:var(--mist);color:var(--navy);display:grid;place-items:center;flex:none;transition:background-color .3s var(--ease)}
+.dock .wa-ic:active{transform:scale(.97)}
+.dock .wa-ic svg{width:22px;height:22px}
+@media (min-width:880px){.dock{display:none}}
+@media (max-width:879px){.site-footer{padding-bottom:6.5rem}}
+
+/* Animații la derulare: variante discrete */
+.js .rv{opacity:0;transform:translate3d(0,22px,0);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .rv-l{opacity:0;transform:translate3d(-24px,0,0);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js .rv-s{opacity:0;transform:scale(.98);transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.js .rv-f{opacity:0;transition:opacity .6s ease}
+.js .rv.in,.js .rv-l.in,.js .rv-s.in,.js .rv-f.in{opacity:1;transform:none}
+.js .perk:nth-child(2){transition-delay:.12s}
+.js .perk:nth-child(3){transition-delay:.24s}
+.js .svc:nth-child(2){transition-delay:.06s}
+.js .svc:nth-child(3){transition-delay:.12s}
+.js .svc:nth-child(4){transition-delay:.18s}
+.js .gal figure:nth-child(2){transition-delay:.12s}
+.js .gal figure:nth-child(3){transition-delay:.24s}
+
+/* Preferințe de accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .h-in{animation:fade .2s linear both !important}
+  .pulse path{animation:none !important;stroke-dashoffset:0}
+  .js .rv,.js .rv-l,.js .rv-s,.js .rv-f{transform:none !important;transition:opacity .2s linear !important}
+  .nav.open{animation:fade .2s linear both}
+  .gal img{transition:none}
+  .gal figure:hover img{transform:none}
+  .dock{transform:none !important;transition:opacity .2s linear,visibility .2s !important}
+  .svc:hover{padding-inline:0;border-radius:0}
+}
+@media (prefers-reduced-transparency:reduce){
+  .site-header{background:var(--white);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--line:rgba(18,50,74,.5);--body:#1d3649}
+  .site-header{background:var(--white);box-shadow:inset 0 -1px 0 var(--navy)}
+  .btn-soft{background:var(--white);box-shadow:inset 0 0 0 2px var(--navy)}
+  .facts div,.svc,.svc-list{border-color:var(--navy)}
+  .hero-media,.split-media,.map{box-shadow:0 0 0 2px var(--navy)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Sari la conținut</a>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="#hero">
+      <span class="brand-mark" aria-hidden="true">🦷</span>
+      <span>Dr. Mohamad Ag Almuzain</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 8h16M4 16h16"/>
+      </svg>
+    </button>
+    <nav id="menu" class="nav" aria-label="Meniu principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="tel:+40722607167">Sună acum</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-kicker h-in d1">Cabinet stomatologic în București</p>
+        <h1 id="titlu" class="h-in d2">Dr. Mohamad Ag Almuzain</h1>
+        <svg class="pulse h-in d3" viewBox="0 0 400 40" aria-hidden="true" focusable="false">
+          <path pathLength="1" d="M0 20H120L136 20L146 8L160 34L174 4L186 26L194 20H400"/>
+        </svg>
+        <p class="slogan h-in d4">Zâmbet sănătos, zi de zi</p>
+        <p class="lead h-in d5">Îngrijire dentară cu atenție și profesionalism.</p>
+        <div class="actions h-in d6">
+          <a class="btn btn-primary" href="tel:+40722607167">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-soft" href="https://wa.me/40722607167?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener">
+            Întreabă pe WhatsApp
+          </a>
+        </div>
+        <p class="hero-addr h-in d7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Aleea Circului 15, lângă Parcul Circului
+        </p>
+      </div>
+      <figure class="hero-media h-in d3">
+        <img src="img/1.jpg" alt="Fotoliu stomatologic și instrumente, într-un cabinet luminos" width="1000" height="1250">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap split">
+      <figure class="split-media rv-l">
+        <img src="img/2.jpg" alt="Medic stomatolog discutând cu o pacientă" loading="lazy" width="1000" height="1250">
+      </figure>
+      <div class="split-text rv">
+        <h2 id="despre-titlu">Un cabinet sigur și prietenos, pentru toată familia</h2>
+        <p>Cabinetul nostru oferă servicii stomatologice într-un mediu sigur și prietenos.</p>
+        <p>Suntem dedicați sănătății dentare pentru toată familia.</p>
+        <dl class="facts">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Aleea Circului 15, lângă Parcul Circului, București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Luni – vineri, 10:00 – 19:00</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:+40722607167">+40 (722) 607 167</a></dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="avantaje-titlu">
+    <div class="wrap">
+      <header class="sec-head rv">
+        <h2 id="avantaje-titlu">Ce vă oferim</h2>
+      </header>
+      <div class="perks">
+        <article class="perk rv">
+          <div class="perk-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0"/><path d="M9 9.5h.01M15 9.5h.01"/></svg>
+          </div>
+          <div>
+            <h3>Ambianță plăcută</h3>
+            <p>Atmosferă calmă și primitoare</p>
+          </div>
+        </article>
+        <article class="perk rv">
+          <div class="perk-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></svg>
+          </div>
+          <div>
+            <h3>Atenție la detalii</h3>
+            <p>Ne ocupăm de fiecare pacient</p>
+          </div>
+        </article>
+        <article class="perk rv">
+          <div class="perk-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <div>
+            <h3>Program convenabil</h3>
+            <p>Deschis de luni până vineri</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <header class="sec-head rv-l">
+        <h2 id="servicii-titlu">Servicii</h2>
+      </header>
+      <ul class="svc-list">
+        <li class="svc rv">
+          <h3>Consultație stomatologică</h3>
+          <p>Evaluare completă pentru sănătatea dinților</p>
+        </li>
+      </ul>
+      <a class="btn btn-primary rv" href="tel:+40722607167">Sună pentru programare</a>
+    </div>
+  </section>
+
+  <section class="section tint" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <header class="sec-head rv">
+        <h2 id="galerie-titlu">Galerie</h2>
+      </header>
+      <div class="gal">
+        <figure class="g1 rv-s">
+          <img src="img/3.jpg" alt="Medic cu stetoscop, într-un cadru de îngrijire medicală" loading="lazy">
+        </figure>
+        <figure class="g2 rv-f">
+          <img src="img/4.jpg" alt="Stomatolog verificând dinții unui pacient" loading="lazy">
+        </figure>
+        <figure class="g3 rv-f">
+          <img src="img/5.jpg" alt="Instrumente stomatologice pentru igienizare și tratament" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-info rv-l">
+        <h2 id="contact-titlu">Programați o vizită</h2>
+        <p>Sunați sau scrieți-ne pe WhatsApp în timpul programului cabinetului.</p>
+        <dl class="facts">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:+40722607167">+40 (722) 607 167</a></dd>
+          </div>
+          <div>
+            <dt>Adresă</dt>
+            <dd>Aleea Circului 15, lângă Parcul Circului, București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Luni – vineri, 10:00 – 19:00</dd>
+          </div>
+        </dl>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:+40722607167">Sună acum</a>
+          <a class="btn btn-soft" href="https://wa.me/40722607167?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener">Întreabă pe WhatsApp</a>
+        </div>
+        <p style="margin-top:.75rem">
+          <a class="link-text" href="https://www.google.com/maps/search/?api=1&amp;query=Dr.+Mohamad+Ag+Almuzain+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </p>
+      </div>
+      <div class="map rv-s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1049145,44.4511997,26.112914500000002,44.4551997&amp;layer=mapnik&amp;marker=44.4531997,26.1089145" title="Harta: Aleea Circului 15, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">Dr. Mohamad Ag Almuzain</p>
+      <p>Zâmbet sănătos, zi de zi</p>
+    </div>
+    <nav class="foot-nav" aria-label="Meniu subsol">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="foot-contact">
+      <a href="tel:+40722607167">+40 (722) 607 167</a>
+      <p>Aleea Circului 15, București</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: StockSnap, oswaldoruiz, DarkoStojanovic, drshohmelian, rgerber</p>
+    <p>© <span id="an"></span> Dr. Mohamad Ag Almuzain</p>
+  </div>
+</footer>
+
+<div class="dock" aria-label="Contact rapid">
+  <a class="btn btn-primary" href="tel:+40722607167">Sună acum</a>
+  <a class="wa-ic" href="https://wa.me/40722607167?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20mai%20multe%20informa%C8%9Bii%20despre%20serviciile%20stomatologice." target="_blank" rel="noopener" aria-label="Întreabă pe WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20z"/></svg>
+  </a>
+</div>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  // Antet: umbră fină la derulare
+  var header = document.querySelector('.site-header');
+  var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Meniu mobil
+  var btn = document.querySelector('.menu-btn');
+  var nav = document.getElementById('menu');
+  function setMenu(open) {
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', String(open));
+    btn.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  }
+  btn.addEventListener('click', function () {
+    setMenu(!nav.classList.contains('open'));
+  });
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  // Dezvăluire la derulare
+  var els = document.querySelectorAll('.rv, .rv-l, .rv-s, .rv-f');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Bara rapidă pe telefon apare după prima secțiune
+  var dock = document.querySelector('.dock');
+  var hero = document.getElementById('hero');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      dock.classList.toggle('show', !entries[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
+  }
+
+  document.getElementById('an').textContent = new Date().getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
