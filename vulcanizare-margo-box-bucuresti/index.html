@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vulcanizare Margo-box | Service auto în București</title>
+<meta name="description" content="Vulcanizare Margo-box: service auto pentru șoferi și motocicliști din București. Reparații, diagnoză și întreținere. Sună la 0765 666 257.">
+<meta name="theme-color" content="#1E2124">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#1E2124;
+  --g2:#181A1D;
+  --g3:#25292D;
+  --steel:#9AA3AB;
+  --w:#F5F6F7;
+  --a:#38bdf8;
+  --a-hover:#62cdfa;
+  --ink:#04202D;
+  --line:rgba(154,163,171,.22);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --cut:1.5rem;
+  --head:"Barlow Condensed", "Arial Narrow", sans-serif;
+  --body:"Barlow", system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--g);color:var(--w);
+  font-family:var(--body);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(100% - 2.5rem, 72rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--a);color:var(--ink);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+h1,h2,h3{font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02}
+h2{font-size:clamp(2.2rem, 6vw, 4rem);margin-bottom:1.25rem}
+h3{font-size:clamp(1.5rem, 3.2vw, 2rem);line-height:1.08}
+p{max-width:38em}
+.muted{color:var(--steel)}
+
+/* Butoane cu colțuri tăiate */
+.btn{
+  --c:.7rem;
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:.8rem 1.4rem;
+  font-family:var(--head);font-weight:600;font-size:1.125rem;line-height:1;
+  letter-spacing:.04em;text-transform:uppercase;text-decoration:none;
+  border:0;cursor:pointer;
+  clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c));
+  transition:transform .1s ease, background-color .2s ease, color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-a{background:var(--a);color:var(--ink)}
+.btn-a:hover{background:var(--a-hover)}
+.btn-g{background:rgba(245,246,247,.09);color:var(--w)}
+.btn-g:hover{background:rgba(245,246,247,.16)}
+.btn:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--w)}
+.btn-a:focus-visible{box-shadow:inset 0 0 0 3px var(--ink)}
+.btn small{font-family:var(--body);font-weight:500;font-size:.85rem;letter-spacing:.02em;text-transform:none;opacity:.8}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Navigare de sticlă */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(30,33,36,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+  transition:box-shadow .3s ease;
+  padding-top:env(safe-area-inset-top);
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 .6rem 1.6rem -1rem rgba(0,0,0,.75)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:4rem;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--head);font-weight:700;font-size:1.35rem;letter-spacing:.01em;text-transform:uppercase}
+.brand svg{width:1.7rem;height:1.7rem}
+.links{display:none;gap:2rem;list-style:none}
+.links a{text-decoration:none;font-weight:600;font-size:.98rem;color:var(--w);opacity:.86;transition:opacity .2s}
+.links a:hover{opacity:1}
+.nav .btn{min-height:2.75rem;padding:.6rem 1rem;font-size:1rem}
+@media (min-width:860px){.links{display:flex}}
+
+/* Primul ecran */
+.hero{position:relative;padding:calc(6rem + env(safe-area-inset-top)) 0 0;background:var(--g)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center;padding-bottom:3rem}
+.hero h1{font-size:clamp(3.1rem, 13.5vw, 7.6rem);font-weight:700;line-height:.95;letter-spacing:-.005em;margin-bottom:1.1rem}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln span{display:block}
+.slogan{font-family:var(--head);font-weight:500;font-size:clamp(1.35rem, 3.6vw, 1.9rem);line-height:1.15;letter-spacing:-.005em;color:var(--w);margin-bottom:.6rem}
+.lead{color:var(--steel);margin-bottom:1.75rem;max-width:30em}
+.hero .actions .btn{flex:1 1 15rem}
+@media (min-width:560px){.hero .actions .btn{flex:0 0 auto}}
+
+.gauge-wrap{position:relative;width:min(100%, 24rem);margin-inline:auto}
+.gauge{width:100%;height:auto;display:block;overflow:visible}
+.gauge text{font-family:var(--head);fill:var(--steel)}
+#needle{transform-box:view-box;transform-origin:200px 200px;transform:rotate(-135deg)}
+.lit{opacity:0;transition:opacity .14s linear}
+.lit.on{opacity:1}
+.gauge-cap{display:flex;justify-content:space-between;font-family:var(--head);font-size:.85rem;letter-spacing:.08em;color:var(--steel);margin-top:.4rem;padding-inline:.5rem}
+
+.ruler{
+  height:.7rem;border-top:1px solid var(--line);
+  background:repeating-linear-gradient(90deg, rgba(154,163,171,.38) 0 1px, transparent 1px 1rem);
+  -webkit-mask:linear-gradient(#000,#000);
+}
+
+@media (min-width:900px){
+  .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:5rem}
+  .hero-grid{grid-template-columns:1.2fr .8fr;gap:3.5rem;padding-bottom:4rem}
+  .gauge-wrap{width:100%}
+  .hero .ruler{position:absolute;left:0;right:0;bottom:0}
+}
+
+/* Intrarea primului ecran */
+.js .intro{opacity:0;transform:translateY(1.2rem)}
+.js .hero h1 .ln span{transform:translateY(105%)}
+.js .gauge-wrap{opacity:0}
+.ready .intro{opacity:1;transform:none;transition:opacity .6s var(--ease), transform .6s var(--ease)}
+.ready .hero h1 .ln span{transform:none;transition:transform .75s var(--ease)}
+.ready .hero h1 .ln:nth-child(2) span{transition-delay:.09s}
+.ready .slogan{transition-delay:.3s}
+.ready .lead{transition-delay:.38s}
+.ready .hero .actions{transition-delay:.46s}
+.ready .gauge-wrap{opacity:1;transition:opacity .8s ease .2s}
+
+/* Secțiuni */
+section{padding:clamp(4.5rem, 11vw, 8rem) 0}
+.about{background:var(--g2)}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){.about-grid{grid-template-columns:5fr 7fr;gap:4.5rem}}
+
+.ph{position:relative}
+.ph img{width:100%;height:100%;object-fit:cover;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
+.ph::after{
+  content:"";position:absolute;right:0;bottom:0;width:.85rem;height:.85rem;background:var(--a);
+  clip-path:polygon(100% 0,100% 100%,0 100%);
+}
+.ratio-45{aspect-ratio:4/5}
+.ratio-43{aspect-ratio:4/3}
+.ratio-wide{aspect-ratio:4/3}
+@media (min-width:760px){.ratio-wide{aspect-ratio:16/9}}
+
+.about p + p{margin-top:1rem}
+.specs{list-style:none;display:grid;gap:1.75rem;margin-top:2.75rem}
+@media (min-width:640px){.specs{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.specs li{position:relative;padding-top:1.1rem}
+.specs .rule{position:absolute;top:0;left:0;right:0;height:2px;background:var(--line);overflow:hidden}
+.specs .rule::after{content:"";position:absolute;inset:0;width:2.5rem;background:var(--a)}
+.specs h3{font-size:1.6rem;margin-bottom:.25rem}
+.specs p{color:var(--steel)}
+
+/* Servicii */
+.services{background:var(--g)}
+.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem;margin-bottom:3rem}
+.svc-head p{color:var(--steel);max-width:28em}
+.svc-list{display:grid;gap:clamp(3.5rem, 8vw, 6rem)}
+.svc{display:grid;gap:1.5rem;align-items:center}
+.svc h3{font-size:clamp(2rem, 5vw, 3.2rem);margin-bottom:.7rem}
+.svc p{color:var(--steel)}
+.svc .tag{display:inline-block;margin-top:1.25rem;font-family:var(--head);font-weight:500;font-size:.95rem;letter-spacing:.06em;color:var(--a)}
+@media (min-width:860px){
+  .svc{grid-template-columns:7fr 5fr;gap:4rem}
+  .svc:nth-child(even){grid-template-columns:5fr 7fr}
+  .svc:nth-child(even) .ph{order:2}
+}
+
+/* Programare */
+.book{background:var(--g3)}
+.book-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){.book-grid{grid-template-columns:7fr 5fr;gap:4rem}}
+.book p{color:var(--steel);margin-bottom:1.75rem}
+
+/* Contact */
+.contact{background:var(--g2)}
+.contact-grid{display:grid;gap:2.5rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:5fr 7fr;gap:4rem;align-items:start}}
+.phone-big{display:inline-block;font-family:var(--head);font-weight:700;font-size:clamp(2.4rem, 9vw, 4.2rem);line-height:1;letter-spacing:-.01em;text-decoration:none;margin:.5rem 0 1rem;font-variant-numeric:tabular-nums}
+.phone-big:hover{color:var(--a)}
+.contact p{color:var(--steel);margin-bottom:1.5rem}
+.contact .actions{flex-direction:column;align-items:stretch;max-width:24rem}
+.map{position:relative}
+.map iframe{display:block;width:100%;height:clamp(20rem, 55vw, 30rem);border:0;
+  filter:grayscale(1) brightness(.92) contrast(1.05);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%)}
+.map::after{content:"";position:absolute;right:0;bottom:0;width:.85rem;height:.85rem;background:var(--a);clip-path:polygon(100% 0,100% 100%,0 100%)}
+.map-link{display:inline-flex;align-items:center;min-height:2.75rem;margin-top:.75rem;color:var(--a);font-weight:600;text-underline-offset:.2em}
+
+/* Subsol */
+footer{background:var(--g);padding:3rem 0 calc(3rem + env(safe-area-inset-bottom))}
+footer .ruler{margin-bottom:2.25rem}
+.foot{display:grid;gap:1.25rem;font-size:.9rem;letter-spacing:.02em;color:var(--steel)}
+.foot .brand{color:var(--w)}
+.foot a{text-underline-offset:.2em}
+@media (min-width:760px){.foot{grid-template-columns:1fr 1fr;align-items:end}.foot .right{text-align:right}}
+
+/* Bara de jos pe telefon */
+.dock{
+  position:fixed;left:.75rem;right:.75rem;bottom:calc(.75rem + env(safe-area-inset-bottom));z-index:40;
+  display:flex;gap:.5rem;padding:.5rem;
+  background:rgba(30,33,36,.7);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 .8rem 2rem -1rem rgba(0,0,0,.8);
+  clip-path:polygon(.7rem 0,100% 0,100% calc(100% - .7rem),calc(100% - .7rem) 100%,0 100%,0 .7rem);
+  transform:translateY(140%);opacity:0;
+  transition:transform .45s var(--ease), opacity .45s var(--ease);
+}
+.dock.show{transform:none;opacity:1}
+.dock .btn{flex:1;min-height:3rem;padding:.6rem .5rem;font-size:1rem}
+@media (min-width:760px){.dock{display:none}}
+@media (max-width:759px){body{padding-bottom:5rem}}
+
+/* Dezvăluiri la derulare, variate */
+.js [data-r]{transition:opacity .55s var(--ease), transform .55s var(--ease)}
+.js [data-r="fade"]{opacity:0}
+.js [data-r="zoom"]{opacity:0;transform:scale(1.035)}
+.js [data-r="left"]{opacity:0;transform:translateX(-1.5rem)}
+.js [data-r="right"]{opacity:0;transform:translateX(1.5rem)}
+.js [data-r="rise"]{opacity:0;transform:translateY(1rem)}
+.js [data-r].in{opacity:1;transform:none}
+.js .specs .rule::after{transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.js .specs.in .rule::after{transform:scaleX(1)}
+.js .specs.in li:nth-child(2) .rule::after{transition-delay:.1s}
+.js .specs.in li:nth-child(3) .rule::after{transition-delay:.2s}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .intro,.js .hero h1 .ln span,.js [data-r],.js .specs .rule::after{transform:none !important}
+  .ready .intro,.ready .hero h1 .ln span,.js [data-r],.ready .gauge-wrap{transition:opacity .2s linear !important;transition-delay:0s !important}
+  .dock{transform:none;transition:opacity .2s linear}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav,.dock{background:var(--g);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--steel:#D3D8DD;--line:rgba(245,246,247,.6)}
+  .nav,.dock{background:#111315;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--w)}
+  .btn-g{background:transparent;box-shadow:inset 0 0 0 2px var(--w)}
+  .map iframe{filter:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#sus" aria-label="Vulcanizare Margo-box, începutul paginii">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 23a12 12 0 1 1 20 0" fill="none" stroke="#9AA3AB" stroke-width="2.4" stroke-linecap="round"/><path d="M16 18l6-7" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round"/><circle cx="16" cy="18" r="2.4" fill="#F5F6F7"/></svg>
+      Margo-box
+    </a>
+    <nav aria-label="Navigare principală">
+      <ul class="links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-a" href="tel:0765666257">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+      Sună acum
+    </a>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="hero" id="sus" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="titlu">
+          <span class="ln"><span>Vulcanizare</span></span>
+          <span class="ln"><span>Margo-box</span></span>
+        </h1>
+        <p class="slogan intro">Reparăm. Întreținem. Mergi mai departe.</p>
+        <p class="lead intro">Service auto pentru șoferi și motocicliști din București.</p>
+        <div class="actions intro">
+          <a class="btn btn-a" href="tel:0765666257">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            Sună acum <small>0765 666 257</small>
+          </a>
+          <a class="btn btn-g" href="https://wa.me/40765666257?text=Bun%C4%83%20ziua%21%20Mi-a%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20vulcanizare." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.7 2.6 4.1 3.6 1.5.7 2.1.7 2.9.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.3-.2z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="gauge-wrap">
+        <svg class="gauge" id="gauge" viewBox="0 0 400 350" role="img" aria-label="Vitezometru decorativ al atelierului Margo-box">
+          <g fill="none" stroke="#9AA3AB" stroke-width="1.5" opacity=".55">
+            <path d="M6 26V6h20M374 6h20v20M394 324v20h-20M26 344H6v-20"/>
+          </g>
+          <path id="arc" fill="none" stroke="rgba(154,163,171,.25)" stroke-width="2"/>
+          <g id="ticks" stroke="#9AA3AB" stroke-linecap="square"></g>
+          <g id="lit" stroke="#38bdf8" stroke-linecap="square"></g>
+          <g id="labels" font-size="17" font-weight="500" text-anchor="middle"></g>
+          <g id="needle">
+            <path d="M196.5 214 L199 66 L201 66 L203.5 214 Z" fill="#38bdf8"/>
+            <path d="M197 200 L197 226 L203 226 L203 200 Z" fill="#9AA3AB"/>
+          </g>
+          <circle cx="200" cy="200" r="13" fill="#25292D" stroke="#9AA3AB" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="4" fill="#F5F6F7"/>
+          <text id="readout" x="200" y="296" text-anchor="middle" font-size="58" font-weight="600" style="fill:#F5F6F7;font-variant-numeric:tabular-nums">0</text>
+          <text x="200" y="322" text-anchor="middle" font-size="15" letter-spacing="3">KM/H</text>
+        </svg>
+        <div class="gauge-cap" aria-hidden="true"><span>MARGO-BOX</span><span>BUCUREȘTI</span></div>
+      </div>
+    </div>
+    <div class="ruler" aria-hidden="true"></div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-t">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="ph ratio-45" data-r="zoom">
+          <img src="img/3.jpg" alt="Mecanic lângă roata unei mașini, în atelier" loading="lazy">
+        </div>
+        <div data-r="fade">
+          <h2 id="despre-t">Grijă pentru mașina sau motocicleta ta</h2>
+          <p>La Margo-box te așteptăm cu grijă pentru mașina sau motocicleta ta.</p>
+          <p class="muted">Ne ocupăm de reparații, diagnoză și întreținere, ca tu să conduci fără griji. Suntem aproape și gata să te ajutăm.</p>
+        </div>
+      </div>
+
+      <ul class="specs" data-r="fade">
+        <li><span class="rule" aria-hidden="true"></span><h3>Aproape</h3><p>În București, la un telefon distanță.</p></li>
+        <li><span class="rule" aria-hidden="true"></span><h3>Flexibil</h3><p>Șoferi și motocicliști, bineveniți.</p></li>
+        <li><span class="rule" aria-hidden="true"></span><h3>Direct</h3><p>Ne suni sau ne scrii pe WhatsApp.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="services" id="servicii" aria-labelledby="servicii-t">
+    <div class="wrap">
+      <div class="svc-head" data-r="fade">
+        <h2 id="servicii-t">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p>Ce facem pentru mașina sau motocicleta ta. Dacă nu știi exact ce are, sună-ne și îți spunem direct.</p>
+      </div>
+
+      <div class="svc-list">
+        <article class="svc">
+          <div class="ph ratio-43" data-r="left">
+            <img src="img/5.jpg" alt="Mecanic lucrând la o motocicletă într-un garaj" loading="lazy">
+          </div>
+          <div data-r="fade">
+            <h3>Reparații auto</h3>
+            <p>Pentru mașini și motociclete. Ne spui ce simți la volan sau la ghidon, ne uităm atent și îți spunem clar ce e de reparat.</p>
+            <span class="tag">Mașini și motociclete</span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="ph ratio-43" data-r="right">
+            <img src="img/2.jpg" alt="Mașină ridicată pe elevator, cu aparatură de verificare a roților" loading="lazy">
+          </div>
+          <div data-r="fade">
+            <h3>Diagnoză</h3>
+            <p>Un bec aprins în bord sau un zgomot nou? Căutăm cauza înainte de orice, ca să nu schimbi piese la noroc.</p>
+            <span class="tag">Întâi aflăm cauza</span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="ph ratio-43" data-r="left">
+            <img src="img/4.jpg" alt="Mâini care montează o anvelopă, în alb-negru" loading="lazy">
+          </div>
+          <div data-r="fade">
+            <h3>Întreținere</h3>
+            <p>Verificările de rutină țin vehiculul în formă și te scutesc de surprize pe drum.</p>
+            <span class="tag">Fără surprize pe drum</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" aria-labelledby="prog-t">
+    <div class="wrap book-grid">
+      <div class="ph ratio-wide" data-r="zoom">
+        <img src="img/1.jpg" alt="Anvelope așezate în atelierul de vulcanizare" loading="lazy">
+      </div>
+      <div data-r="rise">
+        <h2 id="prog-t">Ai o întrebare?</h2>
+        <p>Scrie-ne pe WhatsApp ce mașină sau motocicletă ai și ce nu e în regulă. Mesajul e deja pregătit, doar apeși trimite.</p>
+        <div class="actions">
+          <a class="btn btn-a" href="https://wa.me/40765666257?text=Bun%C4%83%20ziua%21%20Mi-a%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20vulcanizare." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-t">
+    <div class="wrap contact-grid">
+      <div data-r="fade">
+        <h2 id="contact-t">Contact</h2>
+        <a class="phone-big" href="tel:0765666257" aria-label="Sună la 0765 666 257">0765 666 257</a>
+        <p>Sună-ne înainte să pornești la drum și stabilim împreună când treci pe la atelier, în București.</p>
+        <div class="actions">
+          <a class="btn btn-a" href="tel:0765666257">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+            Sună acum
+          </a>
+          <a class="btn btn-g" href="https://wa.me/40765666257?text=Bun%C4%83%20ziua%21%20Mi-a%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20vulcanizare." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Scrie pe WhatsApp
+          </a>
+          <a class="btn btn-g" href="https://www.google.com/maps/search/?api=1&amp;query=Vulcanizare+Margo-box+Bucure%C8%99ti" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            Deschide în Google Maps
+          </a>
+        </div>
+      </div>
+      <div class="map" data-r="fade">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0482585,44.4500087,26.056258500000002,44.4540087&amp;layer=mapnik&amp;marker=44.4520087,26.0522585" title="Harta cu locul atelierului Vulcanizare Margo-box" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ruler" aria-hidden="true"></div>
+    <div class="foot">
+      <div>
+        <a class="brand" href="#sus">Vulcanizare Margo-box</a>
+        <p style="margin-top:.5rem">Service auto în București. Telefon: <a href="tel:0765666257">0765 666 257</a></p>
+      </div>
+      <div class="right">
+        <p>Model de site (demo)</p>
+        <p>Fotografii ilustrative de pe Pixabay: HutchRock, delphinmedia, peterscode, Mylene2401, SplitShire</p>
+        <p>© <span id="an">2025</span> Margo-box</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="dock" id="dock" aria-label="Contact rapid">
+  <a class="btn btn-a" href="tel:0765666257">Sună acum</a>
+  <a class="btn btn-g" href="https://wa.me/40765666257?text=Bun%C4%83%20ziua%21%20Mi-a%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20la%20vulcanizare." target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var doc=document.documentElement;
+  doc.classList.add('js');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('an').textContent=new Date().getFullYear();
+
+  /* Vitezometru */
+  var NS='http://www.w3.org/2000/svg', CX=200, CY=200, MAX=220, TARGET=130;
+  function pt(r,deg){var a=deg*Math.PI/180;return [CX+r*Math.sin(a), CY-r*Math.cos(a)];}
+  function ang(v){return -135+270*v/MAX;}
+  var s=pt(158,-135), e=pt(158,135);
+  document.getElementById('arc').setAttribute('d','M'+s[0]+' '+s[1]+' A158 158 0 1 1 '+e[0]+' '+e[1]);
+  var ticks=document.getElementById('ticks'), lit=document.getElementById('lit'), labels=document.getElementById('labels');
+  var litTicks=[];
+  for(var v=0; v<=MAX; v+=5){
+    var major=v%20===0, mid=v%10===0;
+    var r2=major?126:(mid?136:142), a=ang(v);
+    var p1=pt(150,a), p2=pt(r2,a);
+    [ticks,lit].forEach(function(g,i){
+      var l=document.createElementNS(NS,'line');
+      l.setAttribute('x1',p1[0].toFixed(2));l.setAttribute('y1',p1[1].toFixed(2));
+      l.setAttribute('x2',p2[0].toFixed(2));l.setAttribute('y2',p2[1].toFixed(2));
+      l.setAttribute('stroke-width',major?3:(mid?2:1.4));
+      if(i===0){l.setAttribute('opacity',major?.85:.45);}
+      else{l.setAttribute('class','lit');l.dataset.v=v;litTicks.push(l);}
+      g.appendChild(l);
+    });
+    if(major){
+      var lp=pt(106,a), t=document.createElementNS(NS,'text');
+      t.setAttribute('x',lp[0].toFixed(2));t.setAttribute('y',(lp[1]+6).toFixed(2));
+      t.textContent=v;labels.appendChild(t);
+    }
+  }
+  var needle=document.getElementById('needle'), readout=document.getElementById('readout');
+  function setVal(val){
+    needle.style.transform='rotate('+ang(val)+'deg)';
+    readout.textContent=Math.round(val);
+    for(var i=0;i<litTicks.length;i++){
+      litTicks[i].classList.toggle('on', +litTicks[i].dataset.v<=val+.01);
+    }
+  }
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+  function climb(){
+    if(reduce){setVal(TARGET);return;}
+    var dur=1900, start=null;
+    function step(ts){
+      if(!start)start=ts;
+      var t=Math.min(1,(ts-start)/dur);
+      setVal(TARGET*ease(t));
+      if(t<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  setVal(0);
+
+  /* Intrare */
+  function go(){
+    document.body.classList.add('ready');
+    setTimeout(climb, reduce?0:650);
+  }
+  if(document.fonts&&document.fonts.ready){
+    var done=false;
+    document.fonts.ready.then(function(){if(!done){done=true;requestAnimationFrame(go);}});
+    setTimeout(function(){if(!done){done=true;go();}},1200);
+  } else { requestAnimationFrame(go); }
+
+  /* Navigare la derulare */
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled', window.scrollY>8);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* Dezvăluiri */
+  var els=document.querySelectorAll('[data-r], .specs');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+
+    var dock=document.getElementById('dock'), hero=document.getElementById('sus');
+    new IntersectionObserver(function(en){
+      dock.classList.toggle('show', !en[0].isIntersecting);
+    },{threshold:.05}).observe(hero);
+  } else {
+    els.forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
