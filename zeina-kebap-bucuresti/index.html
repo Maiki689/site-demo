@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zeina Kebap – kebab și shaorma, București</title>
+<meta name="description" content="Kebab și shaorma, deschis non-stop pe Calea Giulești 95, București. Sună acum sau scrie pe WhatsApp.">
+<meta name="theme-color" content="#FFD23F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --galben:#FFD23F;
+  --negru:#111111;
+  --rosu:#be123c;
+  --alb:#ffffff;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --f-title:'Anton',Impact,'Arial Narrow',sans-serif;
+  --f-text:'Rubik',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--f-text);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--negru);
+  background:var(--alb);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{
+  font-family:var(--f-title);
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+  line-height:1.05;
+  margin:0;
+}
+h2{font-size:clamp(2.6rem,7.5vw,5.25rem);margin-bottom:1.25rem}
+section{padding:clamp(4rem,10vw,7.5rem) 0;scroll-margin-top:4rem}
+.wrap{width:min(72rem,100% - 2.5rem);margin-inline:auto}
+
+:focus-visible{outline:3px solid var(--rosu);outline-offset:3px}
+
+.skip{
+  position:absolute;left:1rem;top:-4rem;z-index:100;
+  background:var(--negru);color:#fff;padding:.7rem 1rem;text-decoration:none;font-weight:600;
+}
+.skip:focus{top:1rem}
+
+/* ---------- Botoane ---------- */
+.btn{
+  --sh:var(--negru);
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:3rem;padding:.8rem 1.4rem;
+  font:700 1rem/1.2 var(--f-text);letter-spacing:0;text-decoration:none;text-align:center;
+  border:3px solid var(--negru);
+  box-shadow:4px 4px 0 var(--sh);
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  transition:transform .12s var(--ease),box-shadow .15s var(--ease),background-color .2s ease;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--sh)}
+.btn:active{transform:scale(.97);box-shadow:0 0 0 var(--sh);transition-duration:.1s}
+.btn-red{background:var(--rosu);color:#fff;border-color:var(--negru);--sh:var(--negru)}
+.btn-dark{background:var(--negru);color:#fff;border-color:var(--negru);--sh:var(--rosu)}
+.btn-light{background:#fff;color:var(--negru);border-color:var(--negru);--sh:var(--negru)}
+.btn-yellow{background:var(--galben);color:var(--negru);border-color:var(--galben);--sh:var(--rosu)}
+.btn-sm{min-height:2.75rem;padding:.55rem .85rem;font-size:.92rem;border-width:2px;box-shadow:3px 3px 0 var(--sh)}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  transition:box-shadow .3s var(--ease),background-color .3s ease;
+}
+.nav.is-scrolled{box-shadow:0 8px 24px rgba(17,17,17,.14)}
+.nav-in{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  width:min(72rem,100% - 2rem);min-height:4rem;margin-inline:auto;
+}
+.brand{
+  display:inline-flex;align-items:center;gap:.35rem;
+  font-family:var(--f-title);font-size:1.2rem;line-height:1;text-transform:uppercase;
+  letter-spacing:.02em;text-decoration:none;color:var(--negru);
+}
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.nav-links{display:none;list-style:none;margin:0;padding:0;gap:1.75rem}
+.nav-links a,.nav-panel a{font-weight:600;font-size:.95rem;text-decoration:none;color:var(--negru);padding:.5rem 0}
+.nav-links a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.nav-toggle{
+  width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  background:none;border:0;cursor:pointer;padding:0;
+}
+.nav-toggle span{display:block;width:20px;height:2px;background:var(--negru);border-radius:2px;transition:transform .35s var(--ease)}
+.nav-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.nav-panel{
+  position:absolute;top:100%;left:0;right:0;
+  background:rgba(255,255,255,.96);
+  padding:.25rem 1.25rem 1.25rem;
+  opacity:0;transform:translateY(-8px);visibility:hidden;pointer-events:none;
+  transition:opacity .3s var(--ease),transform .4s var(--ease),visibility .3s;
+}
+.nav-panel.is-open{opacity:1;transform:none;visibility:visible;pointer-events:auto}
+.nav-panel ul{list-style:none;margin:0;padding:0}
+.nav-panel a{display:flex;align-items:center;min-height:48px;font-family:var(--f-title);font-weight:400;font-size:1.6rem;text-transform:uppercase;letter-spacing:-.01em}
+
+@media (min-width:800px){
+  .nav-links{display:flex}
+  .nav-toggle,.nav-panel{display:none}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;
+  background:var(--galben);
+  padding:6rem 0 3.5rem;
+  overflow:hidden;overflow:clip;
+}
+.hero-in{position:relative;z-index:2;width:min(72rem,100% - 2.5rem);margin-inline:auto}
+.hero-title{
+  font-size:clamp(4.6rem,25vw,13.5rem);
+  line-height:.88;
+  letter-spacing:-.02em;
+  margin:0 0 1.1rem;
+}
+.ln{display:block;overflow:hidden;padding-bottom:.04em}
+.ln>span{display:inline-block;animation:rise .9s var(--ease) both}
+.ln:nth-child(2)>span{animation-delay:.12s}
+@keyframes rise{from{transform:translate3d(0,105%,0)}to{transform:none}}
+.lead{
+  font-weight:700;font-size:clamp(1.2rem,3vw,1.6rem);line-height:1.25;
+  max-width:24ch;margin-bottom:.5rem;
+}
+.hero-desc{font-size:1.05rem;max-width:40ch;margin-bottom:1.75rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Abțibilduri */
+.stk{
+  position:absolute;z-index:1;
+  width:var(--w,8rem);
+  transform:rotate(var(--r,0deg));
+  opacity:0;
+  animation:drop .8s var(--ease) var(--d,.5s) both;
+  cursor:pointer;
+}
+.stk-in,.tag-art{
+  display:block;width:100%;height:auto;overflow:visible;
+  filter:
+    drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff)
+    drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
+    drop-shadow(0 10px 14px rgba(17,17,17,.22));
+  touch-action:manipulation;user-select:none;-webkit-user-select:none;
+}
+@keyframes drop{
+  from{opacity:0;transform:translate3d(0,-30px,0) rotate(calc(var(--r,0deg) - 22deg))}
+  to{opacity:1;transform:rotate(var(--r,0deg))}
+}
+@keyframes hop{
+  0%{transform:none}
+  35%{transform:translate3d(0,-14px,0) rotate(-4deg)}
+  65%{transform:translate3d(0,2px,0) rotate(2deg)}
+  100%{transform:none}
+}
+.hop-el.is-hop{animation:hop .45s var(--ease)}
+
+.stk-wrap{--w:8.5rem;--r:14deg;right:-2.5rem;bottom:.5rem}
+.stk-plate{display:none;--w:13rem;--r:-10deg;bottom:-2%;right:30%}
+.stk-tomato{display:none;--w:7rem;--r:-8deg;top:20%;right:40%}
+.stk-fries{display:none;--w:10rem;--r:9deg;bottom:12%;right:21%}
+
+.badge{
+  position:absolute;z-index:3;
+  top:4.75rem;right:.9rem;
+  width:5.75rem;aspect-ratio:1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--rosu);color:#fff;border-radius:50%;
+  text-align:center;text-transform:uppercase;line-height:1;
+  outline:2px dashed rgba(255,255,255,.75);outline-offset:-8px;
+  box-shadow:0 10px 18px rgba(17,17,17,.2);
+  opacity:0;transform:rotate(-12deg);
+  animation:pop .6s var(--ease) 1s forwards;
+  font-family:var(--f-text);
+}
+.badge span{font-size:.62rem;font-weight:700;letter-spacing:.06em}
+.badge strong{font-family:var(--f-title);font-weight:400;font-size:1.35rem;letter-spacing:-.01em;margin:.12rem 0}
+@keyframes pop{
+  from{opacity:0;transform:rotate(-30deg) scale(.6)}
+  to{opacity:1;transform:rotate(-12deg) scale(1)}
+}
+
+@media (min-width:900px){
+  .hero-title{font-size:clamp(7rem,15vw,13.5rem)}
+  .stk-wrap{--w:clamp(18rem,26vw,24rem);top:6%;right:3%;bottom:auto}
+  .stk-plate,.stk-tomato,.stk-fries{display:block}
+  .badge{top:52%;right:4%;width:8.5rem;bottom:auto}
+  .badge span{font-size:.75rem}
+  .badge strong{font-size:1.9rem}
+}
+
+/* ---------- Despre ---------- */
+.about{background:var(--alb)}
+.about-grid{display:grid;gap:2.75rem;align-items:center}
+.about-photo{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--negru)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-text p{max-width:60ch;font-size:1.08rem;margin-bottom:1rem}
+.about-text p strong{font-weight:600}
+.perks{list-style:none;padding:0;margin:2.25rem 0 0;display:grid;gap:1.5rem}
+.perk{display:flex;align-items:center;gap:1rem}
+.perk-ico{
+  flex:0 0 3.5rem;width:3.5rem;height:3.5rem;border-radius:50%;
+  background:var(--galben);display:grid;place-items:center;font-size:1.6rem;line-height:1;
+}
+.perk h3{font-size:1.5rem;margin-bottom:.15rem}
+.perk p{font-size:.98rem;margin:0}
+
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:5rem}
+}
+
+/* ---------- Bandă foto ---------- */
+.band{
+  position:relative;margin:0;
+  height:clamp(12rem,38vw,24rem);
+  overflow:hidden;overflow:clip;
+  background:var(--negru);
+}
+.band img{width:100%;height:100%;object-fit:cover}
+.stk-sauce{display:block;--w:6.5rem;--r:-12deg;left:8%;bottom:1rem}
+@media (min-width:900px){.stk-sauce{--w:9rem;left:14%}}
+
+/* ---------- Meniu ---------- */
+.menu{background:var(--negru);color:var(--alb);overflow:hidden;overflow:clip}
+.menu h2{color:var(--alb)}
+.menu-intro{font-size:1.1rem;max-width:40ch;color:rgba(255,255,255,.86)}
+.menu :focus-visible{outline-color:var(--galben)}
+.menu-list{
+  list-style:none;padding:0;margin:3rem 0 0;
+  display:grid;grid-template-columns:1fr;gap:3.25rem 1.5rem;
+}
+.tag{
+  position:relative;
+  background:var(--bg,#fff);color:var(--negru);
+  padding:1.6rem 1.25rem 1.5rem;
+  transform:rotate(var(--r,0deg));
+  box-shadow:6px 6px 0 var(--rosu);
+  cursor:pointer;
+  transition:transform .4s var(--ease);
+}
+.tag:hover{transform:rotate(0deg)}
+.tag-art{
+  position:absolute;top:-2.25rem;right:-.5rem;
+  width:6rem;
+}
+.tag h3{font-size:clamp(1.6rem,4vw,2rem);line-height:1.02;padding-right:3.5rem;margin-bottom:.5rem}
+.tag p{font-size:.98rem;color:#333}
+.menu-cta{margin-top:3.5rem}
+
+@media (min-width:640px){
+  .menu-list{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1024px){
+  .menu-list{grid-template-columns:repeat(4,1fr);gap:3.5rem 1.75rem}
+  .tag-art{width:6.5rem}
+}
+
+/* ---------- Galerie ---------- */
+.gallery{background:var(--galben)}
+.gallery h2{margin-bottom:2.25rem}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.gal>div{min-width:0}
+.gal>div:first-child{grid-column:1/-1}
+.gal figure{
+  margin:0;background:#fff;padding:.5rem;
+  transform:rotate(var(--r,0deg));
+  transition:transform .4s var(--ease);
+}
+.gal figure:hover{transform:rotate(0deg)}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.gal>div:first-child img{aspect-ratio:16/10}
+
+@media (min-width:900px){
+  .gal{grid-template-columns:repeat(4,1fr);grid-auto-rows:15rem}
+  .gal>div:first-child{grid-column:span 2;grid-row:span 2}
+  .gal>div{height:100%}
+  .gal figure{height:100%}
+  .gal img,.gal>div:first-child img{height:calc(100% - 0px);aspect-ratio:auto}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--alb)}
+.contact-grid{display:grid;gap:2.5rem}
+.addr{font-size:1.25rem;font-weight:600;margin:1.25rem 0 1.5rem}
+.open{
+  display:inline-block;background:var(--rosu);color:#fff;
+  padding:.9rem 1.15rem 1rem;transform:rotate(-2deg);
+  margin-bottom:1.75rem;
+}
+.open strong{display:block;font-family:var(--f-title);font-weight:400;font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.05;text-transform:uppercase;letter-spacing:-.01em}
+.open span{display:block;font-size:.95rem;font-weight:500;margin-top:.25rem}
+.contact-actions{display:flex;flex-direction:column;gap:.75rem}
+.contact-actions .btn{width:100%}
+.phone{margin-top:1.5rem;font-size:1rem}
+.phone a{font-weight:700}
+.map-wrap{position:relative;min-height:20rem;border:3px solid var(--negru);background:#eee}
+.map{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+@media (min-width:640px){
+  .contact-actions{flex-direction:row;flex-wrap:wrap}
+  .contact-actions .btn{width:auto}
+}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.15fr;gap:5rem;align-items:stretch}
+  .map-wrap{min-height:28rem}
+}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--negru);color:#fff;padding:3.5rem 0 2.5rem;overflow:hidden;overflow:clip}
+.foot-name{
+  font-family:var(--f-title);font-size:clamp(3rem,14vw,8rem);line-height:.9;
+  text-transform:uppercase;letter-spacing:-.02em;color:var(--galben);margin-bottom:.75rem;
+}
+.foot-slogan{font-weight:600;font-size:1.15rem;margin-bottom:1.5rem}
+.foot p{font-size:.95rem;color:rgba(255,255,255,.82);letter-spacing:.01em;margin-bottom:.4rem}
+.foot-small{font-size:.8rem !important;margin-top:1.5rem}
+.foot a{color:var(--galben);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;margin-top:1rem}
+.foot a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- Reveal la derulare ---------- */
+.js .rv,.js .rv-l,.js .rv-s{
+  opacity:0;
+  transition:opacity .5s var(--ease),transform .5s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.js .rv{transform:translate3d(0,28px,0)}
+.js .rv-l{transform:translate3d(-28px,0,0)}
+.js .rv-s{transform:scale(.96)}
+.js .rv.is-in,.js .rv-l.is-in,.js .rv-s.is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .nav-panel{background:var(--alb)}
+}
+@media (prefers-contrast:more){
+  .btn{border-width:4px}
+  .nav{background:var(--alb)}
+  .nav-links a,.nav-panel a,.brand{text-decoration:underline}
+  .tag{outline:3px solid var(--negru)}
+  .gal figure{outline:3px solid var(--negru)}
+  .map-wrap{border-width:4px}
+}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ln>span{animation:fadein .2s ease both;transform:none}
+  .stk{animation:fadein .2s ease both}
+  .badge{animation:fadein .2s ease .2s both;transform:rotate(-12deg)}
+  .hop-el.is-hop{animation:none}
+  .js .rv,.js .rv-l,.js .rv-s{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .btn,.tag,.gal figure{transition-duration:.15s}
+  .btn:active{transform:none}
+  .nav-panel{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-wrap" viewBox="0 0 120 120">
+      <g transform="rotate(-18 60 60)">
+        <rect x="8" y="40" width="104" height="40" rx="20" fill="#F3D08A"/>
+        <rect x="16" y="48" width="88" height="24" rx="12" fill="#8C3B1C"/>
+        <path d="M20 52 q7 -6 14 0 t14 0 t14 0 t14 0 t14 0 t14 0" fill="none" stroke="#7BC043" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="52" cy="66" r="5" fill="#E63946"/>
+        <circle cx="74" cy="64" r="4.5" fill="#E63946"/>
+        <path d="M92 44 q-4 16 0 32" fill="none" stroke="#C98B3A" stroke-width="3"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-plate" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="54" fill="#FFFFFF"/>
+      <circle cx="60" cy="60" r="42" fill="none" stroke="#111111" stroke-width="2" stroke-dasharray="2 5" opacity=".35"/>
+      <rect x="38" y="20" width="8" height="24" rx="3" fill="#FFD23F" transform="rotate(-14 42 32)"/>
+      <rect x="56" y="16" width="8" height="28" rx="3" fill="#FFD23F"/>
+      <rect x="74" y="20" width="8" height="24" rx="3" fill="#FFD23F" transform="rotate(14 78 32)"/>
+      <path d="M26 74 Q32 62 40 74 Q48 62 56 74 Q64 62 72 74 Q80 62 88 74 Q94 66 96 74 Z" fill="#7BC043"/>
+      <path d="M28 72 Q28 46 60 46 Q92 46 92 72 Z" fill="#8C3B1C"/>
+      <path d="M40 60 q5 -5 10 0 t10 0 t10 0 t10 0" fill="none" stroke="#E0A458" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="88" cy="40" r="6" fill="#E63946"/>
+    </symbol>
+
+    <symbol id="i-lipie" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="54" fill="#F3D08A"/>
+      <g fill="#C98B3A">
+        <circle cx="30" cy="36" r="3"/>
+        <circle cx="90" cy="34" r="3"/>
+        <circle cx="24" cy="78" r="3"/>
+        <circle cx="94" cy="84" r="3"/>
+        <circle cx="58" cy="100" r="2.5"/>
+        <circle cx="46" cy="22" r="2.5"/>
+      </g>
+      <rect x="26" y="56" width="68" height="18" rx="9" fill="#8C3B1C"/>
+      <path d="M24 56 q8 -8 16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#7BC043" stroke-width="4" stroke-linecap="round"/>
+      <path d="M30 80 q15 6 30 0 t30 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="80" cy="46" r="6" fill="#E63946"/>
+      <circle cx="40" cy="92" r="5" fill="#E63946"/>
+    </symbol>
+
+    <symbol id="i-spit" viewBox="0 0 120 120">
+      <g transform="rotate(-35 60 60)">
+        <rect x="4" y="58" width="112" height="5" rx="2.5" fill="#C9A66B"/>
+        <rect x="22" y="44" width="20" height="32" rx="8" fill="#8C3B1C"/>
+        <rect x="48" y="44" width="20" height="32" rx="8" fill="#8C3B1C"/>
+        <rect x="74" y="44" width="20" height="32" rx="8" fill="#8C3B1C"/>
+        <rect x="98" y="48" width="12" height="24" rx="5" fill="#E63946"/>
+        <rect x="8" y="48" width="12" height="24" rx="5" fill="#F3D08A"/>
+      </g>
+    </symbol>
+
+    <symbol id="i-tomato" viewBox="0 0 120 120">
+      <circle cx="60" cy="66" r="42" fill="#E63946"/>
+      <path d="M40 34 L50 44 L56 28 L60 44 L64 28 L70 44 L80 34 L74 50 L46 50 Z" fill="#7BC043"/>
+      <ellipse cx="44" cy="70" rx="6" ry="11" fill="#FFFFFF" opacity=".35" transform="rotate(20 44 70)"/>
+    </symbol>
+
+    <symbol id="i-fries" viewBox="0 0 120 120">
+      <rect x="40" y="18" width="9" height="46" rx="3" fill="#FFD23F" transform="rotate(-10 44 40)"/>
+      <rect x="56" y="10" width="9" height="54" rx="3" fill="#FFD23F"/>
+      <rect x="72" y="18" width="9" height="46" rx="3" fill="#FFD23F" transform="rotate(10 76 40)"/>
+      <path d="M30 56 H90 L84 110 H36 Z" fill="#E63946"/>
+      <path d="M30 56 H90 L88 68 H32 Z" fill="#111111"/>
+    </symbol>
+
+    <symbol id="i-sauce" viewBox="0 0 120 120">
+      <path d="M60 10 C72 34 92 50 92 74 A32 32 0 0 1 28 74 C28 50 48 34 60 10 Z" fill="#E63946"/>
+      <ellipse cx="46" cy="70" rx="7" ry="13" fill="#FFFFFF" opacity=".4" transform="rotate(18 46 70)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Zeina Kebap, înapoi sus"><span aria-hidden="true">🌯</span>Zeina Kebap</a>
+    <div class="nav-right">
+      <nav aria-label="Principal">
+        <ul class="nav-links">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#meniu">Meniu</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-red btn-sm" href="tel:+40727841531">Sună acum</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="panel" aria-label="Deschide secțiunile paginii">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-panel" id="panel" aria-hidden="true">
+    <nav aria-label="Secțiuni">
+      <ul>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="stk stk-wrap" data-hop style="--r:14deg;--d:.5s" aria-hidden="true">
+      <svg class="stk-in hop-el" viewBox="0 0 120 120" focusable="false"><use href="#i-wrap"/></svg>
+    </div>
+    <div class="stk stk-plate" data-hop style="--r:-10deg;--d:.65s" aria-hidden="true">
+      <svg class="stk-in hop-el" viewBox="0 0 120 120" focusable="false"><use href="#i-plate"/></svg>
+    </div>
+    <div class="stk stk-tomato" data-hop style="--r:-8deg;--d:.8s" aria-hidden="true">
+      <svg class="stk-in hop-el" viewBox="0 0 120 120" focusable="false"><use href="#i-tomato"/></svg>
+    </div>
+    <div class="stk stk-fries" data-hop style="--r:9deg;--d:.9s" aria-hidden="true">
+      <svg class="stk-in hop-el" viewBox="0 0 120 120" focusable="false"><use href="#i-fries"/></svg>
+    </div>
+
+    <p class="badge"><span>Deschis</span><strong>non-stop</strong><span>24/24</span></p>
+
+    <div class="hero-in">
+      <h1 class="hero-title" id="hero-title">
+        <span class="ln"><span>Zeina</span></span>
+        <span class="ln"><span>Kebap</span></span>
+      </h1>
+      <p class="lead">Gust autentic, oricând ți-e poftă</p>
+      <p class="hero-desc">Kebab și shaorma pe gustul oricui.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:+40727841531">Sună acum</a>
+        <a class="btn btn-dark" href="https://wa.me/40727841531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20kebab%20sau%20shaorma.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-title">
+    <div class="wrap about-grid">
+      <figure class="about-photo rv-l">
+        <img src="img/4.jpg" alt="Kebab cu roșii și salată, servit pe farfurie" loading="lazy">
+      </figure>
+      <div class="about-text rv">
+        <h2 id="despre-title">Kebab și shaorma</h2>
+        <p>Zeina Kebap te întâmpină non-stop cu cele mai savuroase kebaburi și shaorma. Fie că vii la miezul zilei sau noaptea târziu, găsești mereu gustul pe care îl dorești. E locul ideal pentru o pauză rapidă, gustoasă și satisfăcătoare.</p>
+        <p><strong>Deschis non-stop, 24 de ore din 24, 7 zile din 7.</strong></p>
+        <ul class="perks">
+          <li class="perk rv" style="--d:.05s">
+            <span class="perk-ico" aria-hidden="true">🕒</span>
+            <div>
+              <h3>Non-stop</h3>
+              <p>Deschis la orice oră</p>
+            </div>
+          </li>
+          <li class="perk rv" style="--d:.15s">
+            <span class="perk-ico" aria-hidden="true">👨‍🍳</span>
+            <div>
+              <h3>Rapid</h3>
+              <p>Pauză rapidă, gustoasă și satisfăcătoare</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <figure class="band" style="margin:0">
+    <img src="img/5.jpg" alt="Grătar cu jar, pe care se pregătește carnea" loading="lazy">
+    <div class="stk stk-sauce" data-hop style="--r:-12deg;--d:.3s" aria-hidden="true">
+      <svg class="stk-in hop-el" viewBox="0 0 120 120" focusable="false"><use href="#i-sauce"/></svg>
+    </div>
+  </figure>
+
+  <section class="menu" id="meniu" aria-labelledby="meniu-title">
+    <div class="wrap">
+      <h2 id="meniu-title" class="rv">Meniu</h2>
+      <p class="menu-intro rv">Alege ce ți-e poftă și spune-ne pe WhatsApp.</p>
+      <ul class="menu-list">
+        <li class="rv" style="--d:0s">
+          <article class="tag" data-hop style="--r:-1.5deg;--bg:#ffffff">
+            <svg class="tag-art hop-el" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-wrap"/></svg>
+            <h3>Shaorma clasică</h3>
+            <p>Shaorma cu carne, legume și sosuri</p>
+          </article>
+        </li>
+        <li class="rv" style="--d:.08s">
+          <article class="tag" data-hop style="--r:1.2deg;--bg:var(--galben)">
+            <svg class="tag-art hop-el" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-lipie"/></svg>
+            <h3>Kebab la lipie</h3>
+            <p>Kebab delicios, servit cald</p>
+          </article>
+        </li>
+        <li class="rv" style="--d:.16s">
+          <article class="tag" data-hop style="--r:-.8deg;--bg:var(--galben)">
+            <svg class="tag-art hop-el" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-plate"/></svg>
+            <h3>Shaorma la farfurie</h3>
+            <p>Carne, cartofi, salată, sosuri</p>
+          </article>
+        </li>
+        <li class="rv" style="--d:.24s">
+          <article class="tag" data-hop style="--r:1.6deg;--bg:#ffffff">
+            <svg class="tag-art hop-el" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#i-spit"/></svg>
+            <h3>Kebab la farfurie</h3>
+            <p>Kebab, garnituri, salate</p>
+          </article>
+        </li>
+      </ul>
+      <div class="menu-cta rv">
+        <a class="btn btn-yellow" href="https://wa.me/40727841531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20kebab%20sau%20shaorma.">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="galerie" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 id="galerie-title" class="rv">Ca să-ți fie poftă</h2>
+      <div class="gal">
+        <div class="rv-s" style="--d:0s">
+          <figure style="--r:-.6deg">
+            <img src="img/1.jpg" alt="Mix grill cu carne și legume, pe grătar" loading="lazy">
+          </figure>
+        </div>
+        <div class="rv-l" style="--d:.08s">
+          <figure style="--r:1deg">
+            <img src="img/2.jpg" alt="Kebab cu legume și ardei iute" loading="lazy">
+          </figure>
+        </div>
+        <div class="rv-s" style="--d:.14s">
+          <figure style="--r:-1deg">
+            <img src="img/3.jpg" alt="Sandviș cu kebab, roșii și ceapă" loading="lazy">
+          </figure>
+        </div>
+        <div class="rv-l" style="--d:.2s">
+          <figure style="--r:.8deg">
+            <img src="img/4.jpg" alt="Kebab cu roșii și salată, servit cald" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <h2 id="contact-title">Ne găsești pe Calea Giulești</h2>
+        <p class="addr">Calea Giulești 95, București</p>
+        <div class="open">
+          <strong>Deschis non-stop</strong>
+          <span>24 de ore din 24, 7 zile din 7</span>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-red" href="tel:+40727841531">Sună acum</a>
+          <a class="btn btn-dark" href="https://wa.me/40727841531?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20kebab%20sau%20shaorma.">Scrie pe WhatsApp</a>
+          <a class="btn btn-light" href="https://www.google.com/maps/search/?api=1&amp;query=Zeina+Kebap+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+        <p class="phone">Telefon: <a href="tel:+40727841531">+40 727 841 531</a></p>
+      </div>
+      <div class="map-wrap rv-s">
+        <iframe class="map" src="https://www.openstreetmap.org/export/embed.html?bbox=26.0508991,44.4548334,26.0588991,44.4588334&amp;layer=mapnik&amp;marker=44.4568334,26.0548991" title="Harta: Zeina Kebap, Calea Giulești 95, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-name">Zeina Kebap</p>
+    <p class="foot-slogan">Gust autentic, oricând ți-e poftă</p>
+    <p>Calea Giulești 95, București</p>
+    <p>Deschis non-stop, 24 de ore din 24, 7 zile din 7</p>
+    <p class="foot-small">Model de site (demo)</p>
+    <p class="foot-small">Fotografii ilustrative de pe Pixabay: 2SIF, FreeToUseSounds, angelorosa, HutchRock, rieracanler</p>
+    <a href="#top">Înapoi sus</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // Dezvăluire la derulare
+  var reveals = document.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: .15, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  // Săritura scurtă la atingere
+  document.querySelectorAll('.hop-el').forEach(function(t){
+    t.addEventListener('animationend', function(){ t.classList.remove('is-hop'); });
+  });
+  document.querySelectorAll('[data-hop]').forEach(function(el){
+    el.addEventListener('pointerdown', function(){
+      var t = el.querySelector('.hop-el');
+      if (!t) return;
+      t.classList.remove('is-hop');
+      void t.getBoundingClientRect();
+      t.classList.add('is-hop');
+    });
+  });
+
+  // Bara de navigare: umbră când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('is-scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Meniul de pe telefon
+  var toggle = document.querySelector('.nav-toggle');
+  var panel = document.getElementById('panel');
+  var setOpen = function(open){
+    panel.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    panel.setAttribute('aria-hidden', String(!open));
+  };
+  toggle.addEventListener('click', function(){
+    setOpen(!panel.classList.contains('is-open'));
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setOpen(false); });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
