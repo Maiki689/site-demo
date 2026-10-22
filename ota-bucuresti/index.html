@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ota | Bar în Cotroceni, București</title>
+<meta name="description" content="Ota, bar în Cotroceni, București. Supe calde și băuturi într-o atmosferă prietenoasă. Strada Doctor Nicolae D. Staicovici 26.">
+<meta name="theme-color" content="#0A0A12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍸%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A12;
+  --bg-2:#0E0E18;
+  --bg-3:#06060C;
+  --text:#EEEEF5;
+  --text-2:#C9C9D6;
+  --muted:#8A8AA0;
+  --line:rgba(138,138,160,.18);
+  --y:#eab308;
+  --pink:#FF2E88;
+  --blue:#2EC5FF;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bg)}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--text-2);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0 0 1rem}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:4px}
+
+.wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  background:rgba(10,10,18,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07);
+  transition:box-shadow .4s var(--ease);
+}
+.nav.is-scrolled{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 30px rgba(0,0,0,.45);
+}
+.nav-in{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  height:64px;
+}
+.brand{
+  font-family:Unbounded,sans-serif;
+  font-weight:500;
+  font-size:1.1rem;
+  letter-spacing:-.02em;
+  color:#fff;
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:1.75rem}
+.nav-links a{
+  font-size:.9rem;
+  font-weight:500;
+  color:#fff;
+  text-decoration:none;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--pink)}
+@media (max-width:720px){.nav-links{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:.75rem 1.5rem;
+  border-radius:999px;
+  font:600 .95rem/1.2 Inter,system-ui,sans-serif;
+  letter-spacing:.01em;
+  text-decoration:none;
+  white-space:nowrap;
+  -webkit-tap-highlight-color:transparent;
+  transition:background-color .2s,color .2s,box-shadow .25s,border-color .2s,transform .1s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--y);color:#0A0A12}
+.btn-primary:hover{box-shadow:0 0 0 1px rgba(234,179,8,.5),0 0 22px rgba(234,179,8,.4)}
+.btn-neon{
+  color:var(--blue);
+  border:1.5px solid var(--blue);
+  background:transparent;
+  box-shadow:inset 0 0 14px rgba(46,197,255,.12);
+}
+.btn-neon:hover{
+  background:rgba(46,197,255,.08);
+  box-shadow:inset 0 0 14px rgba(46,197,255,.2),0 0 18px rgba(46,197,255,.3);
+}
+.btn-sm{min-height:44px;padding:.6rem 1.1rem;font-size:.875rem}
+
+/* ---------- Primul ecran: firma de neon ---------- */
+.hero{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:6.5rem 1.25rem 3.5rem;
+  text-align:center;
+  overflow:hidden;
+  background:
+    radial-gradient(60% 40% at 15% 92%,rgba(255,46,136,.10),transparent 70%),
+    radial-gradient(50% 40% at 88% 8%,rgba(46,197,255,.09),transparent 70%),
+    var(--bg);
+}
+.hero-in{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.25rem;
+  max-width:100%;
+}
+.hero-in::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:30%;
+  width:min(130vw,920px);
+  aspect-ratio:1;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(closest-side,rgba(234,179,8,.13),rgba(234,179,8,0));
+  pointer-events:none;
+}
+.hero-in > *{position:relative}
+
+.sign{
+  margin:0;
+  font-family:Unbounded,sans-serif;
+  font-weight:500;
+  font-size:clamp(5rem,34vw,15rem);
+  line-height:1;
+  letter-spacing:-.02em;
+  color:#FFF8D6;
+}
+.sign-l{display:inline-block;opacity:1;animation:ignite 1.6s linear var(--d,0s) both}
+.sign-l > span{
+  display:inline-block;
+  color:#FFF8D6;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 6px #FFF3A0,
+    0 0 14px var(--y),
+    0 0 32px var(--y),
+    0 0 70px rgba(234,179,8,.55),
+    0 0 140px rgba(234,179,8,.28);
+}
+.sign-flick{animation:flick 9s linear 3s infinite}
+
+@keyframes ignite{
+  0%{opacity:0}
+  5%{opacity:.8}
+  9%{opacity:.05}
+  15%{opacity:1}
+  20%{opacity:.3}
+  27%{opacity:1}
+  33%{opacity:.7}
+  38%{opacity:1}
+  100%{opacity:1}
+}
+@keyframes flick{
+  0%,100%{opacity:1}
+  2%{opacity:.3}
+  2.6%{opacity:1}
+  3.4%{opacity:.5}
+  4%{opacity:1}
+  70%{opacity:1}
+}
+
+.slogan{
+  margin:0;
+  max-width:24ch;
+  font-size:clamp(1.05rem,2.6vw,1.35rem);
+  line-height:1.45;
+  font-weight:500;
+  color:var(--text);
+}
+.hero-actions{
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  width:100%;
+  max-width:300px;
+  margin-top:.75rem;
+}
+@media (min-width:560px){
+  .hero-actions{flex-direction:row;max-width:none;justify-content:center}
+}
+.hero-addr{
+  margin:.5rem 0 0;
+  font-size:.875rem;
+  color:var(--muted);
+  letter-spacing:.02em;
+}
+
+/* ---------- Secțiuni ---------- */
+main section{padding:clamp(5rem,12vw,8.5rem) 0}
+.bg-2{background:var(--bg-2)}
+.h2{
+  margin:0 0 1.25rem;
+  font-family:Unbounded,sans-serif;
+  font-weight:500;
+  font-size:clamp(1.9rem,5vw,3.25rem);
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--text);
+}
+.lead{
+  margin:0 0 1.5rem;
+  max-width:32ch;
+  font-size:clamp(1.15rem,2.2vw,1.45rem);
+  line-height:1.45;
+  color:var(--text);
+}
+.muted{color:var(--muted)}
+
+.split{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){
+  .split{grid-template-columns:1fr 1fr;gap:6rem}
+}
+
+.photo,.tile{
+  margin:0;
+  overflow:hidden;
+  border-radius:6px;
+  aspect-ratio:4/3;
+  background:var(--bg-2);
+}
+.photo{aspect-ratio:4/3}
+@media (min-width:900px){.photo{aspect-ratio:4/5}}
+.photo img,.tile img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:saturate(.9) brightness(.88);
+  transition:transform .8s var(--ease);
+}
+.photo:hover img,.tile:hover img{transform:scale(1.03)}
+
+.pillars{
+  list-style:none;
+  margin:4.5rem 0 0;
+  padding:0;
+  display:grid;
+  gap:2.5rem;
+}
+@media (min-width:760px){
+  .pillars{grid-template-columns:repeat(3,1fr);gap:2rem}
+}
+.pillars li{padding-top:1.5rem;border-top:1px solid var(--line)}
+.pillar-emoji{display:block;font-size:1.75rem;margin-bottom:.9rem}
+.pillars h3{
+  margin:0 0 .4rem;
+  font-family:Unbounded,sans-serif;
+  font-weight:500;
+  font-size:1.05rem;
+  letter-spacing:-.01em;
+  color:var(--text);
+}
+.pillars p{margin:0;font-size:.95rem;color:var(--muted)}
+
+/* ---------- Meniu ---------- */
+.menu{
+  list-style:none;
+  margin:3rem 0 0;
+  padding:0;
+  display:grid;
+}
+@media (min-width:760px){
+  .menu{grid-template-columns:1fr 1fr;column-gap:4rem}
+}
+.menu li{padding:1.75rem 0;border-top:1px solid var(--line)}
+.menu h3{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  margin:0 0 .45rem;
+  font-family:Unbounded,sans-serif;
+  font-weight:500;
+  font-size:1.15rem;
+  letter-spacing:-.01em;
+  color:var(--text);
+}
+.menu h3::before{
+  content:"";
+  flex:none;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--dot,var(--y));
+}
+.menu p{margin:0;color:var(--muted)}
+.menu-cta{margin-top:2.5rem}
+
+/* ---------- Galerie ---------- */
+.gallery{
+  display:grid;
+  gap:1rem;
+  margin-top:3rem;
+  grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .gallery{grid-template-columns:1fr 1fr;gap:1.25rem}
+}
+
+/* ---------- Contact ---------- */
+.contact{display:grid;gap:3rem;align-items:start}
+@media (min-width:900px){
+  .contact{grid-template-columns:1fr 1.1fr;gap:6rem}
+}
+.addr{
+  margin:0 0 1.5rem;
+  font-style:normal;
+  font-size:1.15rem;
+  line-height:1.5;
+  color:var(--text);
+}
+.phone-big{
+  display:inline-block;
+  font-family:Unbounded,sans-serif;
+  font-size:clamp(1.4rem,4vw,2rem);
+  letter-spacing:-.01em;
+  color:var(--text);
+  text-decoration:none;
+  transition:color .2s;
+}
+.phone-big:hover{color:var(--pink)}
+.contact-actions{
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  margin:2rem 0 0;
+  max-width:320px;
+}
+@media (min-width:560px){
+  .contact-actions{flex-direction:row;flex-wrap:wrap;max-width:none}
+}
+.map-wrap{
+  position:relative;
+  height:360px;
+  border-radius:6px;
+  overflow:hidden;
+  background:var(--bg-2);
+}
+@media (min-width:900px){
+  .map-wrap{height:460px}
+}
+.map{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  filter:invert(.92) hue-rotate(180deg) saturate(.7) brightness(.9);
+}
+
+/* ---------- Subsol ---------- */
+.footer{
+  background:var(--bg-3);
+  padding:3rem 0 4rem;
+  font-size:.85rem;
+  letter-spacing:.02em;
+  color:var(--muted);
+}
+.footer p{margin:0 0 .4rem}
+.f-brand{
+  font-family:Unbounded,sans-serif;
+  font-size:1.1rem;
+  letter-spacing:-.02em;
+  color:var(--text);
+}
+.credit{max-width:60ch;font-size:.8rem;line-height:1.5}
+
+/* ---------- Dezvăluire la derulare ---------- */
+.js .reveal,.js .reveal-side,.js .reveal-fade{
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+.js .reveal{opacity:0;transform:translateY(18px)}
+.js .reveal-side{opacity:0;transform:translateX(-18px)}
+.js .reveal-fade{opacity:0}
+.js .tile.reveal-fade{transition-delay:calc(var(--i,0) * 90ms)}
+.js .is-in{opacity:1;transform:none}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sign-l,.sign-l > span{animation:none !important}
+  .js .reveal,.js .reveal-side,.js .reveal-fade{
+    transform:none;
+    transition:opacity .2s linear;
+  }
+  .photo img,.tile img{transition:none}
+  .photo:hover img,.tile:hover img{transform:none}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{
+    background:#0A0A12;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast:more){
+  .nav{background:#0A0A12;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-neon{border-width:2px;color:#7FDCFF}
+  .muted,.menu p,.pillars p,.hero-addr,.footer{color:#C9C9D6}
+  .menu li,.pillars li{border-top-color:#8A8AA0}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#acasa" class="brand">Ota</a>
+    <nav aria-label="Principal" class="nav-links">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0721840723">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="acasa" aria-labelledby="titlu">
+    <div class="hero-in">
+      <h1 class="sign" id="titlu"><span class="sign-l" style="--d:.3s"><span>O</span></span><span class="sign-l" style="--d:.9s"><span class="sign-flick">t</span></span><span class="sign-l" style="--d:1.5s"><span>a</span></span></h1>
+      <p class="slogan">Locul din Cotroceni pentru supe și relaxare</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:0721840723">Sună acum</a>
+        <a class="btn btn-neon" href="https://wa.me/40721840723?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniul%20Ota.">Întreabă pe WhatsApp</a>
+      </div>
+      <p class="hero-addr">Strada Doctor Nicolae D. Staicovici 26, București</p>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <h2 class="h2" id="titlu-despre">Despre Ota</h2>
+          <p class="lead">Ota este barul din Cotroceni unde găsești supe gustoase și băuturi diverse.</p>
+          <p>Locul perfect pentru a te relaxa după o zi plină sau pentru o întâlnire cu prietenii.</p>
+          <p>Suntem aici pentru cei care caută un spațiu cu personalitate și gust.</p>
+        </div>
+        <figure class="photo reveal">
+          <img src="img/2.jpg" alt="Sticle de vin și un blat de lemn vechi, la bar" loading="lazy">
+        </figure>
+      </div>
+
+      <ul class="pillars">
+        <li class="reveal-side">
+          <span class="pillar-emoji" aria-hidden="true">🏙️</span>
+          <h3>Cotroceni</h3>
+          <p>Ne găsești în inima cartierului</p>
+        </li>
+        <li class="reveal-side">
+          <span class="pillar-emoji" aria-hidden="true">🥣</span>
+          <h3>Supe savuroase</h3>
+          <p>Servim zilnic supe delicioase</p>
+        </li>
+        <li class="reveal-side">
+          <span class="pillar-emoji" aria-hidden="true">🍹</span>
+          <h3>Atmosferă relaxantă</h3>
+          <p>Ideal pentru întâlniri cu prietenii</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-2" id="meniu" aria-labelledby="titlu-meniu">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="titlu-meniu">Meniu</h2>
+      <p class="lead reveal">Supe calde și băuturi de bar, de la un pahar de vin la un cocktail.</p>
+
+      <ul class="menu">
+        <li class="reveal-side" style="--dot:var(--y)">
+          <h3>Supă de casă</h3>
+          <p>Supă gustoasă, servită proaspăt</p>
+        </li>
+        <li class="reveal-side" style="--dot:var(--pink)">
+          <h3>Cocktail</h3>
+          <p>Băuturi de bar, din meniul Ota</p>
+        </li>
+        <li class="reveal-side" style="--dot:var(--blue)">
+          <h3>Băuturi non-alcoolice</h3>
+          <p>Băuturi fără alcool, din meniul Ota</p>
+        </li>
+        <li class="reveal-side" style="--dot:var(--y)">
+          <h3>Vin la pahar</h3>
+          <p>Un pahar de vin, din meniul Ota</p>
+        </li>
+      </ul>
+
+      <div class="menu-cta reveal">
+        <a class="btn btn-neon" href="https://wa.me/40721840723?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniul%20Ota.">Întreabă pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <h2 class="h2 reveal-fade" id="titlu-galerie">Galerie</h2>
+      <div class="gallery">
+        <figure class="tile reveal-fade" style="--i:0">
+          <img src="img/1.jpg" alt="Băuturi reci și colorate, servite în pahare cu paie" loading="lazy">
+        </figure>
+        <figure class="tile reveal-fade" style="--i:1">
+          <img src="img/3.jpg" alt="O femeie ridică un toast la bar" loading="lazy">
+        </figure>
+        <figure class="tile reveal-fade" style="--i:2">
+          <img src="img/4.jpg" alt="Cocktailuri cu lime și căpșuni, în pahare reci" loading="lazy">
+        </figure>
+        <figure class="tile reveal-fade" style="--i:3">
+          <img src="img/5.jpg" alt="Seară la masă, cu zâmbete și băuturi" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-2" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap contact">
+      <div class="reveal">
+        <h2 class="h2" id="titlu-contact">Vino pe la Ota</h2>
+        <p class="addr">Strada Doctor Nicolae D. Staicovici 26<br>București</p>
+        <a class="phone-big" href="tel:0721840723">0721 840 723</a>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:0721840723">Sună acum</a>
+          <a class="btn btn-neon" href="https://wa.me/40721840723?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20meniul%20Ota.">Întreabă pe WhatsApp</a>
+          <a class="btn btn-neon" href="https://www.google.com/maps/search/?api=1&amp;query=Ota+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="map-wrap reveal">
+        <iframe class="map" title="Harta: Ota, Strada Doctor Nicolae D. Staicovici 26, București" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=26.0752579,44.4303557,26.083257900000003,44.434355700000005&amp;layer=mapnik&amp;marker=44.4323557,26.0792579"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="f-brand">Ota 🍸</p>
+    <p>Strada Doctor Nicolae D. Staicovici 26, București</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: bridgesward, tianya1223, OurWhiskyFoundation, Pexels</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var nav = document.querySelector('.nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var items = document.querySelectorAll('.reveal, .reveal-side, .reveal-fade');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
