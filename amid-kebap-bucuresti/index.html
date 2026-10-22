@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AMID Kebap, shaorma arăbească cu condimente orientale în București. Sună sau comandă pe WhatsApp.">
+<meta name="theme-color" content="#F6A623">
+<title>AMID Kebap | Shaorma arăbească în București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sun:#F6A623;
+  --terra:#D87233;
+  --red:#B8202E;
+  --white:#FFFFFF;
+  --ink:#2B0D0F;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;font-family:Montserrat,system-ui,sans-serif;font-size:1rem;line-height:1.5;letter-spacing:0;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{font-family:Bangers,Impact,sans-serif;font-weight:400;margin:0;letter-spacing:-.01em;line-height:1.02}
+h2{font-size:clamp(2.8rem,9vw,5.5rem)}
+h3{font-size:clamp(1.7rem,4vw,2.1rem)}
+.page{overflow-x:clip}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:1.25rem}
+.section{padding-block:clamp(4rem,9vw,7rem)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* ---------- Navigare (sticlă) ---------- */
+.site-nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);box-shadow:inset 0 1px 0 rgba(255,255,255,.7);transition:box-shadow .3s var(--ease)}
+.site-nav.scrolled{box-shadow:0 8px 24px rgba(43,13,15,.14)}
+.nav-inner{max-width:1120px;margin-inline:auto;height:64px;padding-inline:1.25rem;display:flex;align-items:center;gap:.75rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:Bangers,Impact,sans-serif;font-size:1.5rem;letter-spacing:.01em;min-height:44px}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--red)}
+.nav-links{display:none;margin-left:auto;gap:1.5rem}
+.nav-links a{font-weight:700;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.nav-inner .btn{margin-left:auto}
+@media (min-width:600px){
+  .nav-links{display:flex}
+  .nav-inner .btn{margin-left:0}
+}
+
+/* ---------- Butoane ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.4rem;border-radius:999px;font:700 1rem/1.2 Montserrat,sans-serif;text-decoration:none;transition:box-shadow .2s var(--ease),background-color .2s,color .2s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 4px 0 #7A1219}
+.btn-red:hover{background:#A11B27;box-shadow:0 3px 0 #7A1219,0 8px 18px rgba(184,32,46,.35)}
+.btn-ink{background:var(--ink);color:#fff;box-shadow:0 4px 0 #000}
+.btn-ink:hover{box-shadow:0 3px 0 #000,0 8px 18px rgba(43,13,15,.3)}
+.btn-ghost{background:#fff;color:var(--ink);box-shadow:0 4px 0 var(--ink)}
+.btn-ghost:hover{box-shadow:0 3px 0 var(--ink),0 8px 18px rgba(43,13,15,.2)}
+.btn-line{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn-line:hover{background:#FFF4DC}
+.btn-sm{min-height:44px;padding:.5rem 1rem;font-size:.9rem}
+
+/* ---------- Etichete (taguri rotite) ---------- */
+.tag{display:inline-block;background:var(--red);color:#fff;font-family:Bangers,Impact,sans-serif;font-size:1.25rem;letter-spacing:.02em;padding:.3rem .8rem .25rem;border-radius:6px;box-shadow:4px 4px 0 var(--ink);white-space:nowrap}
+.tag-ink{background:var(--ink);color:#fff;box-shadow:4px 4px 0 var(--red)}
+
+/* ---------- Primul ecran ---------- */
+.hero{position:relative;background:var(--sun);padding:6rem 0 3.5rem;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Ccircle cx='4' cy='4' r='1.5' fill='%232B0D0F' fill-opacity='.14'/%3E%3C/svg%3E")}
+.hero-inner{max-width:1120px;margin-inline:auto;padding-inline:1.25rem;display:grid;gap:2rem;text-align:center;justify-items:center}
+.hero-text{width:100%}
+.hero-logo{position:relative;width:clamp(150px,42vw,300px);margin:0 auto;animation:logoIn .8s var(--ease) both}
+.logo-frame{width:100%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:8px solid #fff;box-shadow:0 0 0 6px var(--red),0 20px 40px rgba(43,13,15,.28);background:#fff}
+.logo-frame img{width:100%;height:100%;object-fit:cover}
+.bubble{position:absolute;top:-4%;right:-6%;width:3.1rem;height:3.1rem;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 6px 14px rgba(43,13,15,.25);transform:rotate(12deg)}
+.tag-hero{position:absolute;left:-6%;bottom:6%;transform:rotate(-7deg)}
+.hero h1{font-size:clamp(3.4rem,13vw,7rem);color:#fff;-webkit-text-stroke:2px var(--red);paint-order:stroke fill;text-shadow:0 .06em 0 var(--ink)}
+.slogan{font-weight:800;font-size:clamp(1.15rem,3.4vw,1.4rem);margin-top:.6rem}
+.lead{margin:.6rem auto 0;max-width:34ch}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.6rem}
+@media (min-width:900px){
+  .hero{padding-top:7.5rem;padding-bottom:6rem}
+  .hero-inner{grid-template-columns:1.1fr .9fr;text-align:left;justify-items:stretch;gap:3rem}
+  .hero-logo{order:2;width:clamp(280px,30vw,380px)}
+  .hero-text{order:1}
+  .lead{margin-left:0}
+  .actions{justify-content:flex-start}
+  .hero h1{font-size:clamp(4.6rem,8.5vw,7.5rem)}
+  .tag-hero{left:-8%}
+}
+
+/* ---------- Meniu (abțibilduri pe fundal închis) ---------- */
+.menu{background:var(--ink);color:#fff}
+.menu h2{color:var(--sun)}
+.intro{margin-top:.75rem;max-width:40ch}
+.menu-grid{display:grid;gap:2.75rem 1.75rem;margin-top:3rem;grid-template-columns:1fr}
+@media (min-width:640px){.menu-grid{grid-template-columns:1fr 1fr}}
+.menu-grid > .reveal{padding:8px}
+.sticker{position:relative;color:var(--ink);padding:1.1rem 1.15rem 1.35rem;box-shadow:0 0 0 6px #fff,0 16px 28px rgba(0,0,0,.35);transform:rotate(var(--r,0deg));cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;transition:box-shadow .25s var(--ease)}
+.sticker:hover{box-shadow:0 0 0 6px #fff,0 22px 34px rgba(0,0,0,.42)}
+.sticker .art svg{width:100%;height:auto;display:block;margin-bottom:.7rem}
+.sticker p{font-size:.95rem;margin-top:.35rem;max-width:34ch}
+.s1{background:var(--sun);border-radius:26px 10px 26px 10px}
+.s2{background:#fff;border-radius:10px 28px 10px 28px}
+.s3{background:var(--red);color:#fff;border-radius:22px}
+.s4{background:var(--terra);border-radius:40px 14px 40px 14px}
+.s3 p{color:#fff}
+
+/* ---------- Galerie (colaj cu benzi adezive) ---------- */
+.gallery{background:#fff}
+.collage{margin-top:2.5rem;display:grid;gap:1.75rem}
+.photo{position:relative;margin:0}
+.photo::before{content:"";position:absolute;top:-12px;left:50%;width:96px;height:28px;margin-left:-48px;background:rgba(246,166,35,.92);transform:rotate(-3deg);z-index:2;border-radius:2px}
+.photo:nth-child(2)::before{transform:rotate(4deg)}
+.photo:nth-child(3)::before{transform:rotate(-6deg)}
+.photo-in{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;box-shadow:0 0 0 6px #fff,0 14px 28px rgba(43,13,15,.2);transform:rotate(var(--r,0deg))}
+.photo-in img{width:100%;height:100%;object-fit:cover}
+@media (min-width:760px){
+  .collage{grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto}
+  .p1{grid-row:span 2}
+  .p1 .photo-in{aspect-ratio:auto;height:100%;min-height:460px}
+}
+
+/* ---------- Despre (roșu) ---------- */
+.about{background:var(--red);color:#fff}
+.about h2{color:#fff}
+.about-grid{display:grid;gap:3rem}
+.facts{font-weight:800;font-size:clamp(1.2rem,3.6vw,1.5rem);line-height:1.35;margin-top:1.25rem}
+.about .body{margin-top:1.25rem;max-width:52ch}
+.about .mood{margin-top:1rem;font-weight:700}
+.adv{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.adv li{display:flex;gap:.9rem;align-items:center;background:#fff;color:var(--ink);padding:1rem 1.2rem;border-radius:6px;box-shadow:6px 6px 0 var(--ink);transform:rotate(var(--r,0deg));max-width:420px}
+.adv li:nth-child(2){margin-left:auto}
+.adv .emo{font-size:2rem;line-height:1}
+.adv strong{display:block;font-family:Bangers,Impact,sans-serif;font-weight:400;font-size:1.6rem;line-height:1.05;letter-spacing:.01em}
+.adv .txt{font-size:.95rem}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1.1fr .9fr;align-items:center}
+}
+
+/* ---------- Livrare (gradient) ---------- */
+.band{background:linear-gradient(110deg,var(--sun) 0%,var(--terra) 100%);color:var(--ink);padding-block:clamp(3.5rem,8vw,5.5rem)}
+.band h2{color:var(--ink)}
+.band p{margin-top:1rem;font-size:1.15rem;max-width:36ch}
+.band .tag{margin-top:1.5rem;transform:rotate(-5deg)}
+
+/* ---------- Contact ---------- */
+.contact{background:#fff}
+.contact-grid{display:grid;gap:2.5rem}
+.info{margin:2rem 0 0;display:grid;gap:1.25rem}
+.info div{display:grid;gap:.15rem}
+.info dt{font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--red)}
+.info dd{margin:0;font-size:1.2rem;font-weight:700}
+.info dd a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px}
+.contact .actions{justify-content:flex-start;margin-top:2rem}
+.map iframe{width:100%;height:320px;border:0;border-radius:18px;display:block;box-shadow:0 0 0 6px var(--sun)}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.1fr;align-items:center}
+  .map iframe{height:420px}
+}
+
+/* ---------- Subsol ---------- */
+.site-footer{background:var(--ink);color:#fff;padding:3.5rem 0 2.5rem}
+.foot-in{display:grid;gap:1.5rem;justify-items:start}
+.foot-in .logo-frame{width:88px;border-width:4px;box-shadow:0 0 0 3px var(--red)}
+.foot-name{font-family:Bangers,Impact,sans-serif;font-size:2.2rem;line-height:1;margin-bottom:.4rem}
+.site-footer p{margin:.2rem 0}
+.site-footer a{color:#fff}
+.credits{font-size:.8rem;letter-spacing:.02em;color:#E9D9D6;margin-top:.5rem}
+@media (min-width:900px){
+  .foot-in{grid-template-columns:auto 1fr 1fr;align-items:center}
+}
+
+/* ---------- Mișcare ---------- */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .55s var(--ease) var(--d,0s),transform .55s var(--ease) var(--d,0s)}
+.js .reveal.left{transform:translateX(-32px)}
+.js .reveal.right{transform:translateX(32px)}
+.js .reveal.pop{transform:scale(.92)}
+.js .reveal.in{opacity:1;transform:none}
+
+@keyframes logoIn{
+  from{opacity:0;transform:scale(.45) rotate(-30deg)}
+  70%{opacity:1;transform:scale(1.04) rotate(4deg)}
+  to{opacity:1;transform:none}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+.fade-up{animation:fadeUp .7s var(--ease) var(--d,0s) both}
+
+/* Sărituri la atingere */
+[data-hop]{--r:0deg}
+@keyframes hop{
+  0%{transform:rotate(var(--r)) translateY(0)}
+  35%{transform:rotate(calc(var(--r) + 3deg)) translateY(-12px)}
+  65%{transform:rotate(var(--r)) translateY(-3px)}
+  100%{transform:rotate(var(--r)) translateY(0)}
+}
+[data-hop].hop{animation:hop .5s var(--ease)}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .site-nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .site-nav{background:#fff;box-shadow:0 2px 0 var(--ink)}
+  .btn-ghost,.btn-line{box-shadow:inset 0 0 0 2px var(--ink)}
+  .sticker{box-shadow:0 0 0 6px #fff,0 0 0 8px var(--ink)}
+  .photo-in{box-shadow:0 0 0 3px var(--ink)}
+  .hero h1{-webkit-text-stroke:3px var(--red)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{transform:none !important;transition:opacity .2s linear !important}
+  .hero-logo,.fade-up{animation:fadeOnly .2s linear both !important;animation-delay:0s !important}
+  [data-hop].hop{animation:none !important}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<main class="page">
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="#acasa"><img src="logo.jpg" alt="" width="44" height="44"><span>AMID Kebap</span></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-red btn-sm" href="tel:0775182629">Sună acum</a>
+  </div>
+</header>
+
+<section class="hero" id="acasa">
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <div class="logo-frame" data-hop>
+        <img src="logo.jpg" alt="Logo AMID Kebap" width="400" height="400">
+      </div>
+      <span class="bubble" aria-hidden="true">🌯</span>
+      <span class="tag tag-hero">Condimente orientale</span>
+    </div>
+    <div class="hero-text">
+      <h1 class="fade-up" style="--d:.15s">AMID Kebap</h1>
+      <p class="slogan fade-up" style="--d:.25s">Shaorma arăbească, gust autentic</p>
+      <p class="lead fade-up" style="--d:.32s">Savurează shaorma arăbească cu condimente orientale.</p>
+      <div class="actions fade-up" style="--d:.4s">
+        <a class="btn btn-red" href="tel:0775182629">Sună acum</a>
+        <a class="btn btn-ink" href="https://wa.me/40775182629?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        <a class="btn btn-ghost" href="#meniu">Vezi meniul</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section menu" id="meniu">
+  <div class="wrap">
+    <h2 class="reveal">Meniu</h2>
+    <p class="intro reveal" style="--d:.05s">Alege ce ți-e poftă și lipește-l pe farfurie.</p>
+
+    <div class="menu-grid">
+      <div class="reveal left">
+        <article class="sticker s1" data-hop style="--r:-3deg">
+          <div class="art">
+            <svg viewBox="0 0 160 100" aria-hidden="true" focusable="false">
+              <g transform="rotate(-10 80 50)">
+                <rect x="10" y="30" width="140" height="44" rx="22" fill="#FFFFFF"/>
+                <rect x="20" y="37" width="120" height="30" rx="15" fill="#D87233"/>
+                <path d="M24 46q6 6 12 0t12 0t12 0t12 0t12 0t12 0t12 0t12 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="56" cy="60" r="6" fill="#B8202E"/>
+                <circle cx="104" cy="44" r="5" fill="#B8202E"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Shaorma arăbească pui</h3>
+          <p>Shaorma arăbească cu condimente orientale.</p>
+        </article>
+      </div>
+
+      <div class="reveal right" style="--d:.08s">
+        <article class="sticker s2" data-hop style="--r:2.5deg">
+          <div class="art">
+            <svg viewBox="0 0 160 100" aria-hidden="true" focusable="false">
+              <g transform="rotate(8 80 50)">
+                <rect x="10" y="30" width="140" height="44" rx="22" fill="#F6A623"/>
+                <rect x="20" y="37" width="120" height="30" rx="15" fill="#7A2A16"/>
+                <path d="M28 44h104M28 52h96M32 60h88" stroke="#D87233" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="120" cy="52" r="5" fill="#B8202E"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Shaorma arăbească vită</h3>
+          <p>Shaorma arăbească cu condimente orientale.</p>
+        </article>
+      </div>
+
+      <div class="reveal left">
+        <article class="sticker s3" data-hop style="--r:-1.5deg">
+          <div class="art">
+            <svg viewBox="0 0 160 100" aria-hidden="true" focusable="false">
+              <g transform="rotate(-6 80 50)">
+                <rect x="10" y="30" width="140" height="44" rx="22" fill="#FFFFFF"/>
+                <rect x="72" y="37" width="68" height="30" rx="15" fill="#7A2A16"/>
+                <rect x="20" y="37" width="60" height="30" rx="15" fill="#D87233"/>
+                <circle cx="50" cy="52" r="4" fill="#F6A623"/>
+                <circle cx="112" cy="50" r="4" fill="#F6A623"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Shaorma arăbească mixtă</h3>
+          <p>Shaorma arăbească cu condimente orientale.</p>
+        </article>
+      </div>
+
+      <div class="reveal right" style="--d:.08s">
+        <article class="sticker s4" data-hop style="--r:3deg">
+          <div class="art">
+            <svg viewBox="0 0 160 100" aria-hidden="true" focusable="false">
+              <ellipse cx="80" cy="56" rx="64" ry="34" fill="#FFFFFF"/>
+              <ellipse cx="80" cy="56" rx="48" ry="24" fill="none" stroke="#F6A623" stroke-width="3"/>
+              <g transform="rotate(-8 80 56)">
+                <rect x="46" y="44" width="68" height="24" rx="12" fill="#D87233"/>
+                <rect x="50" y="46" width="60" height="20" rx="10" fill="#7A2A16"/>
+              </g>
+              <g fill="#F6A623">
+                <rect x="104" y="42" width="6" height="22" rx="2" transform="rotate(18 107 53)"/>
+                <rect x="114" y="40" width="6" height="22" rx="2" transform="rotate(18 117 51)"/>
+                <rect x="124" y="42" width="6" height="22" rx="2" transform="rotate(18 127 53)"/>
+              </g>
+            </svg>
+          </div>
+          <h3>Shaorma la farfurie</h3>
+          <p>Shaorma arăbească cu condimente orientale.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery" id="galerie">
+  <div class="wrap">
+    <h2 class="reveal">Uite cum arată</h2>
+    <div class="collage">
+      <figure class="photo p1 reveal">
+        <div class="photo-in" data-hop style="--r:-1.5deg">
+          <img src="img/1.jpg" alt="Shaorma arăbească în pâine, cu carne și sos" loading="lazy" width="800" height="600">
+        </div>
+      </figure>
+      <figure class="photo p2 reveal right" style="--d:.1s">
+        <div class="photo-in" data-hop style="--r:2deg">
+          <img src="img/2.jpg" alt="Sandviș cu kebab și legume proaspete" loading="lazy" width="800" height="600">
+        </div>
+      </figure>
+      <figure class="photo p3 reveal left" style="--d:.15s">
+        <div class="photo-in" data-hop style="--r:-2.5deg">
+          <img src="img/3.jpg" alt="Shaorma arăbească tăiată, gata de savurat" loading="lazy" width="800" height="600">
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="despre">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <h2>Despre AMID Kebap</h2>
+      <p class="facts">Shaorma arăbească cu condimente orientale.<br>Livrare prin Glovo.</p>
+      <p class="body">AMID Kebap oferă shaorma arăbească preparată cu condimente orientale atent alese pentru un gust autentic. Sună sau scrie-ne pe WhatsApp pentru detalii și comenzi.</p>
+      <p class="mood">Pauză scurtă? Intră, comandă, savurează.</p>
+    </div>
+    <ul class="adv">
+      <li class="reveal" data-hop style="--r:-2deg">
+        <span class="emo" aria-hidden="true">⏱️</span>
+        <div><strong>Shaorma arăbească</strong><span class="txt">Gata de savurat.</span></div>
+      </li>
+      <li class="reveal" data-hop style="--r:1.5deg;--d:.08s">
+        <span class="emo" aria-hidden="true">🥙</span>
+        <div><strong>Condimente orientale</strong><span class="txt">Atent alese, pentru un gust autentic.</span></div>
+      </li>
+      <li class="reveal" data-hop style="--r:-1deg;--d:.16s">
+        <span class="emo" aria-hidden="true">😋</span>
+        <div><strong>Livrare prin Glovo</strong><span class="txt">Comandă shaorma direct acasă, cu Glovo.</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="glovo">
+  <div class="wrap reveal">
+    <h2 id="glovo">Livrare prin Glovo</h2>
+    <p>Comandă shaorma preferată direct la tine acasă cu Glovo.</p>
+    <span class="tag tag-ink">Livrare la domiciliu</span>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <h2>Contact</h2>
+      <dl class="info">
+        <div>
+          <dt>Adresă</dt>
+          <dd>Strada Împăratul Traian, București</dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href="tel:0775182629">0775 182 629</a></dd>
+        </div>
+        <div>
+          <dt>Program</dt>
+          <dd>Sună ca să afli programul.</dd>
+        </div>
+      </dl>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:0775182629">Sună acum</a>
+        <a class="btn btn-ink" href="https://wa.me/40775182629?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20o%20shaorma." target="_blank" rel="noopener">Comandă pe WhatsApp</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=AMID+Kebap+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+    </div>
+    <div class="map reveal right">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.104592699999998,44.390101699999995,26.1125927,44.3941017&amp;layer=mapnik&amp;marker=44.3921017,26.1085927" title="Harta: AMID Kebap, Strada Împăratul Traian, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-in">
+    <div class="logo-frame" data-hop>
+      <img src="logo.jpg" alt="Logo AMID Kebap" width="200" height="200">
+    </div>
+    <div>
+      <p class="foot-name">AMID Kebap</p>
+      <p>Shaorma arăbească, gust autentic</p>
+      <p>Strada Împăratul Traian, București</p>
+      <p><a href="tel:0775182629">0775 182 629</a></p>
+    </div>
+    <p class="credits">Model de site (demo)<br>Fotografii ilustrative de pe Pixabay: 2SIF, angelorosa, PaulIstoan</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  // Dezvăluire la derulare
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Sărituri la atingere
+  document.querySelectorAll('[data-hop]').forEach(function (el) {
+    el.addEventListener('pointerdown', function () {
+      el.classList.remove('hop');
+      void el.offsetWidth;
+      el.classList.add('hop');
+    });
+    el.addEventListener('animationend', function (e) {
+      if (e.target === el) el.classList.remove('hop');
+    });
+  });
+
+  // Umbră la navigare doar când pagina se derulează
+  var nav = document.querySelector('.site-nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
