@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coclinart, cafenea din București</title>
+<meta name="description" content="Coclinart, cafenea caldă din București, cu preparate vegetale, ouă poșate cu pesto de leurdă și cafea proaspătă.">
+<meta name="theme-color" content="#FFF9F2">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Jost:wght@300..500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF9F2;
+  --pink:#F6E3E1;
+  --pink-2:#EFD2CD;
+  --mint:#A8D5C2;
+  --mint-2:#86BDA5;
+  --choc:#4A2C2A;
+  --choc-soft:#6B4A46;
+  --caramel:#b45309;
+  --caramel-d:#8f3f06;
+  --serif:'Bodoni Moda','Didot','Times New Roman',serif;
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--choc);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:1.0625rem;
+  line-height:1.6;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0;text-wrap:pretty}
+h1,h2,h3{margin:0;text-wrap:balance}
+section[id]{scroll-margin-top:4.5rem}
+:focus-visible{outline:2px solid var(--caramel);outline-offset:3px}
+
+.wrap{width:min(calc(100% - 2.5rem),1120px);margin-inline:auto}
+.section{padding-block:clamp(4.5rem,11vw,8rem)}
+.bg-cream{background:var(--cream)}
+.bg-pink{background:var(--pink)}
+.bg-mint{background:var(--mint)}
+.bg-choc{background:var(--choc);color:var(--cream)}
+
+h2{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(2.2rem,6vw,3.6rem);
+  line-height:1.08;
+  letter-spacing:-.02em;
+  margin-bottom:1.25rem;
+}
+h3{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:1.4rem;
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:.8rem 1.6rem;
+  border-radius:999px;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:1rem;
+  letter-spacing:.01em;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background-color .2s ease,box-shadow .25s ease,color .2s ease,transform .1s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--caramel);color:#fff}
+.btn-primary:hover{background:var(--caramel-d);box-shadow:0 10px 20px -14px rgba(143,63,6,.8)}
+.btn-ghost{color:var(--choc);box-shadow:inset 0 0 0 1.5px rgba(74,44,42,.55)}
+.btn-ghost:hover{background:rgba(74,44,42,.06)}
+.btn-sm{min-height:44px;padding:.6rem 1.15rem;font-size:.95rem}
+
+/* ---------- Navigație (sticlă) ---------- */
+.nav{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:50;
+  background:rgba(255,249,242,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 12px 28px -24px rgba(74,44,42,.45)}
+.nav-in{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  font-family:var(--serif);
+  font-weight:600;
+  font-size:1.35rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  color:var(--choc);
+}
+.nav-links{display:none;gap:1.75rem}
+.nav-links a{
+  color:var(--choc);
+  font-weight:500;
+  text-decoration:none;
+  padding:.5rem 0;
+  letter-spacing:.02em;
+  background:linear-gradient(currentColor,currentColor) left bottom/0 1px no-repeat;
+  transition:background-size .35s var(--ease),color .2s ease;
+}
+.nav-links a:hover{background-size:100% 1px;color:var(--caramel-d)}
+@media (min-width:720px){.nav-links{display:flex}}
+
+/* ---------- Primul ecran ---------- */
+.hero{padding:7rem 0 4.5rem}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+.hero h1{
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:clamp(3.2rem,16vw,6.6rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+.slogan{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(1.35rem,3.6vw,1.75rem);
+  line-height:1.3;
+  margin-top:1.1rem;
+  max-width:22ch;
+}
+.lead{margin-top:.85rem;color:var(--choc-soft);max-width:40ch}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hero-photo{margin:0;aspect-ratio:5/4;overflow:hidden;background:var(--pink)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+@media (min-width:900px){
+  .hero{min-height:100svh;display:flex;align-items:center;padding:7rem 0 5rem}
+  .hero-grid{grid-template-columns:1fr 1fr;gap:5.5rem}
+  .hero-photo{aspect-ratio:4/5;max-height:76vh;justify-self:end;width:100%}
+}
+
+/* ---------- Despre ---------- */
+.split{display:grid;gap:3rem;align-items:center}
+.split-photo{margin:0;overflow:hidden}
+.split-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.split-text p+p{margin-top:1rem}
+.split-text .lead-big{font-size:1.15rem;line-height:1.55;color:var(--choc)}
+.facts{list-style:none;padding:0;margin:1.75rem 0 0;display:grid;gap:.6rem}
+.facts li{position:relative;padding-left:1.4rem;color:var(--choc)}
+.facts li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.62em;
+  width:.42rem;
+  height:.42rem;
+  border-radius:50%;
+  background:var(--caramel);
+}
+.avantaje{
+  list-style:none;
+  padding:0;
+  margin:clamp(3.5rem,7vw,5rem) 0 0;
+  display:grid;
+  gap:2.5rem;
+}
+.avantaje .emo{
+  display:grid;
+  place-items:center;
+  width:3.25rem;
+  height:3.25rem;
+  border-radius:50%;
+  background:var(--cream);
+  font-size:1.45rem;
+  margin-bottom:1rem;
+}
+.avantaje h3{margin-bottom:.4rem}
+.avantaje p{color:var(--choc-soft)}
+@media (min-width:760px){.avantaje{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+@media (min-width:900px){
+  .split{grid-template-columns:1fr 1fr;gap:6rem}
+  .split.reverse .split-photo{order:2}
+}
+
+/* ---------- Meniu: vitrina cu cutii ---------- */
+.section-head{max-width:36rem;margin-bottom:clamp(3rem,6vw,4.5rem)}
+.section-head p{color:var(--choc-soft);font-size:1.05rem}
+.vitrina{display:grid;grid-template-columns:1fr;gap:clamp(3.5rem,7vw,4.5rem) 2rem}
+@media (min-width:640px){.vitrina{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.vitrina{grid-template-columns:repeat(4,1fr);gap:4rem 2.25rem}}
+.item{text-align:center}
+.item p{margin:0 auto;max-width:28ch;color:var(--choc-soft);font-size:.975rem;line-height:1.5}
+
+.box{
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:300px;
+  aspect-ratio:1/.9;
+  margin:0 auto 1.6rem;
+  padding:0;
+  border:0;
+  border-radius:4px;
+  background:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.box:focus-visible{outline:2px solid var(--caramel);outline-offset:6px}
+
+/* corpul cutiei */
+.base{
+  position:absolute;
+  left:5%;
+  right:5%;
+  bottom:0;
+  height:64%;
+  background:var(--pink-2);
+  border-radius:3px;
+  box-shadow:0 26px 30px -24px rgba(74,44,42,.55);
+}
+/* interiorul hârtiei, vizibil când capacul se ridică */
+.base::before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:26%;
+  background:var(--cream);
+  border-radius:3px 3px 0 0;
+}
+/* panglica de pe corp */
+.base::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:14%;
+  transform:translateX(-50%);
+  background:var(--mint);
+}
+
+/* capacul */
+.lid{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:44%;
+  background:var(--pink);
+  border-radius:3px;
+  box-shadow:0 10px 16px -12px rgba(74,44,42,.45);
+  transform:translate3d(0,0,0);
+  transition:transform .6s var(--ease),box-shadow .6s var(--ease);
+}
+.lid .rib{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:14%;
+  transform:translateX(-50%);
+  background:var(--mint);
+}
+.lid .bow{
+  position:absolute;
+  left:50%;
+  top:-24%;
+  width:38%;
+  height:44%;
+  transform:translateX(-50%);
+}
+.lid .bow::before,
+.lid .bow::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:52%;
+  height:100%;
+  background:var(--mint-2);
+  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+}
+.lid .bow::before{left:4%;transform:rotate(-22deg);transform-origin:100% 100%}
+.lid .bow::after{right:4%;transform:rotate(22deg);transform-origin:0 100%}
+.lid .seal{
+  position:absolute;
+  left:12%;
+  bottom:14%;
+  width:22%;
+  aspect-ratio:1/1;
+  display:grid;
+  place-items:center;
+  background:var(--cream);
+  border-radius:2px;
+  font-family:var(--serif);
+  font-weight:500;
+  font-size:1rem;
+  line-height:1;
+  color:var(--choc);
+  box-shadow:0 1px 2px rgba(74,44,42,.15);
+}
+
+/* capacul se ridică ușor: la atingere, la click, la hover pe desktop */
+.box:active .lid,
+.item.is-open .lid{
+  transform:translate3d(0,-14px,0) rotate(-2deg);
+  box-shadow:0 24px 26px -18px rgba(74,44,42,.5);
+}
+@media (hover:hover) and (pointer:fine){
+  .box:hover .lid{
+    transform:translate3d(0,-14px,0) rotate(-2deg);
+    box-shadow:0 24px 26px -18px rgba(74,44,42,.5);
+  }
+}
+
+.cta-row{display:flex;justify-content:center;margin-top:clamp(3.5rem,7vw,5rem)}
+
+/* ---------- Livrare Glovo ---------- */
+.glovo-text p{font-size:1.1rem;line-height:1.55;max-width:34ch}
+.glovo-text h2{color:var(--choc)}
+.split-photo--tall img{aspect-ratio:4/5}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;gap:1.25rem}
+.gallery figure{margin:0;overflow:hidden;background:var(--pink)}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:700px){
+  .gallery{grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+  .gallery img{aspect-ratio:4/5}
+  .gallery figure:nth-child(2){margin-top:4.5rem}
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+.contact-grid p.intro{color:var(--choc-soft);max-width:36ch}
+.phone{
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,4vw,2rem);
+  line-height:1.2;
+  margin-top:1.5rem;
+  letter-spacing:-.01em;
+}
+.contact-actions{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+@media (min-width:520px){.contact-actions{flex-direction:row;flex-wrap:wrap}}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.map-link{
+  display:inline-block;
+  margin-top:.9rem;
+  color:var(--caramel-d);
+  font-weight:500;
+  text-underline-offset:4px;
+}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:start}
+  .map iframe{height:420px}
+}
+
+/* ---------- Subsol ---------- */
+.site-foot{padding:3.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+.foot-brand{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:-.01em}
+.foot-brand + p{margin-top:.5rem;color:rgba(255,249,242,.82)}
+.foot-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.foot-links a{color:var(--pink);text-decoration:none;padding:.4rem 0;letter-spacing:.02em}
+.foot-links a:hover{text-decoration:underline;text-underline-offset:4px}
+.credit{
+  font-size:.85rem;
+  letter-spacing:.02em;
+  color:rgba(255,249,242,.78);
+  line-height:1.6;
+  border-top:none;
+}
+.credit span{display:block}
+@media (min-width:760px){.foot-grid{grid-template-columns:1fr auto}}
+
+/* ---------- Mișcare: intrarea din primul ecran ---------- */
+@keyframes rise{
+  from{opacity:0;transform:translate3d(0,22px,0)}
+  to{opacity:1;transform:none}
+}
+@keyframes clipIn{
+  from{opacity:0;clip-path:inset(0 0 100% 0)}
+  to{opacity:1;clip-path:inset(0 0 0 0)}
+}
+@keyframes fadeOnly{
+  from{opacity:0}
+  to{opacity:1}
+}
+.hero-in{
+  animation:rise .7s var(--ease) both;
+  animation-delay:calc(var(--d,0) * 130ms + 120ms);
+}
+.hero-photo{animation:clipIn 1s var(--ease) .3s both}
+
+/* ---------- Dezvăluiri la derulare: variate, discrete ---------- */
+.js .reveal{
+  opacity:0;
+  transition:
+    opacity .55s var(--ease),
+    transform .55s var(--ease),
+    clip-path .75s var(--ease);
+  transition-delay:calc(var(--d,0) * 110ms);
+}
+.js .reveal[data-reveal="rise"]{transform:translate3d(0,26px,0)}
+.js .reveal[data-reveal="left"]{transform:translate3d(-28px,0,0)}
+.js .reveal[data-reveal="clip"]{opacity:1;clip-path:inset(0 0 100% 0)}
+.js .reveal[data-reveal="fade"]{transform:none}
+.js .reveal.is-in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--cream);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  body{color:#2b1716}
+  .nav{background:var(--cream)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--choc)}
+  .lid{box-shadow:0 0 0 1.5px var(--choc-soft)}
+  .item p,.lead,.section-head p{color:var(--choc)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-in,.hero-photo{
+    animation-name:fadeOnly;
+    animation-duration:.2s;
+    animation-delay:0s !important;
+  }
+  .js .reveal{
+    transform:none !important;
+    clip-path:none !important;
+    transition:opacity .2s linear !important;
+    transition-delay:0s !important;
+  }
+  .js .reveal[data-reveal="clip"]{opacity:0}
+  .js .reveal.is-in{opacity:1}
+  .lid{transition:box-shadow .2s linear}
+  .box:active .lid,
+  .item.is-open .lid{transform:none;box-shadow:0 0 0 1.5px var(--choc-soft)}
+  @media (hover:hover) and (pointer:fine){
+    .box:hover .lid{transform:none;box-shadow:0 0 0 1.5px var(--choc-soft)}
+  }
+  .btn:active{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">Coclinart <span aria-hidden="true">🥚</span></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0772017955">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Primul ecran -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 class="hero-in" style="--d:0">Coclinart</h1>
+        <p class="slogan hero-in" style="--d:1">Descoperă gustul vegetal la cafea</p>
+        <p class="lead hero-in" style="--d:2">Cafenea caldă, ideală pentru preparate vegetale.</p>
+        <div class="actions hero-in" style="--d:3">
+          <a class="btn btn-primary" href="tel:0772017955">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40772017955?text=Bun%C4%83%20ziua%21%20Doresc%20detalii%20despre%20meniul%20Coclinart.">Întreabă pe WhatsApp</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/5.jpg" width="1000" height="800" alt="Ouă poșate pe pâine prăjită, cu roșii și verdețuri, servite la cafenea">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="section bg-pink" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <div class="split">
+        <figure class="split-photo reveal" data-reveal="clip">
+          <img src="img/4.jpg" width="800" height="1000" loading="lazy" alt="Sparanghel verde și ouă, cu pesto de leurdă, pe farfurie">
+        </figure>
+        <div class="split-text">
+          <h2 id="despre-titlu" class="reveal" data-reveal="left">Despre noi</h2>
+          <p class="lead-big reveal" data-reveal="rise" style="--d:1">Coclinart este o cafenea primitoare unde savurezi momente liniștite și preparate vegetale. Ne dedicăm gustului autentic și opțiunilor vegetale, într-un spațiu plin de căldură. Fie că vii pentru o pauză sau o conversație, te așteptăm cu drag.</p>
+          <ul class="facts reveal" data-reveal="rise" style="--d:2">
+            <li>Ouă poșate cu pesto de leurdă, din meniul nostru</li>
+            <li>Comenzile se pot face și prin Glovo</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul class="avantaje">
+        <li class="reveal" data-reveal="rise" style="--d:0">
+          <span class="emo" aria-hidden="true">🌱</span>
+          <h3>Ingrediente vegetale</h3>
+          <p>Preparăm cu grijă și prospețime</p>
+        </li>
+        <li class="reveal" data-reveal="rise" style="--d:1">
+          <span class="emo" aria-hidden="true">🫶</span>
+          <h3>Atmosferă prietenoasă</h3>
+          <p>Loc relaxant pentru toți</p>
+        </li>
+        <li class="reveal" data-reveal="rise" style="--d:2">
+          <span class="emo" aria-hidden="true">🚴</span>
+          <h3>Livrare prin Glovo</h3>
+          <p>Comandă preparatele preferate direct la tine</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Meniu: vitrina cu cutii -->
+  <section class="section bg-cream" id="meniu" aria-labelledby="meniu-titlu">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="meniu-titlu" class="reveal" data-reveal="left">Meniu</h2>
+        <p class="reveal" data-reveal="rise" style="--d:1">Atinge o cutie ca să ridici capacul.</p>
+      </header>
+
+      <div class="vitrina">
+        <article class="item reveal" data-reveal="rise" style="--d:0">
+          <button class="box" type="button" aria-pressed="false" aria-label="Ridică capacul: Ouă poșate cu pesto de leurdă">
+            <span class="base"></span>
+            <span class="lid"><span class="rib"></span><span class="bow"></span><span class="seal">C</span></span>
+          </button>
+          <h3>Ouă poșate cu pesto de leurdă</h3>
+          <p>Ouă poșate cu sos aromat de leurdă</p>
+        </article>
+
+        <article class="item reveal" data-reveal="rise" style="--d:1">
+          <button class="box" type="button" aria-pressed="false" aria-label="Ridică capacul: Cafea proaspătă">
+            <span class="base"></span>
+            <span class="lid"><span class="rib"></span><span class="bow"></span><span class="seal">C</span></span>
+          </button>
+          <h3>Cafea proaspătă</h3>
+          <p>Din meniul nostru</p>
+        </article>
+
+        <article class="item reveal" data-reveal="rise" style="--d:2">
+          <button class="box" type="button" aria-pressed="false" aria-label="Ridică capacul: Ceaiuri naturale">
+            <span class="base"></span>
+            <span class="lid"><span class="rib"></span><span class="bow"></span><span class="seal">C</span></span>
+          </button>
+          <h3>Ceaiuri naturale</h3>
+          <p>Din meniul nostru</p>
+        </article>
+
+        <article class="item reveal" data-reveal="rise" style="--d:3">
+          <button class="box" type="button" aria-pressed="false" aria-label="Ridică capacul: Gustări vegetale">
+            <span class="base"></span>
+            <span class="lid"><span class="rib"></span><span class="bow"></span><span class="seal">C</span></span>
+          </button>
+          <h3>Gustări vegetale</h3>
+          <p>Din meniul nostru</p>
+        </article>
+      </div>
+
+      <div class="cta-row reveal" data-reveal="fade">
+        <a class="btn btn-ghost" href="https://wa.me/40772017955?text=Bun%C4%83%20ziua%21%20Doresc%20detalii%20despre%20meniul%20Coclinart.">Întreabă pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Livrare Glovo -->
+  <section class="section bg-mint" id="glovo" aria-labelledby="glovo-titlu">
+    <div class="wrap">
+      <div class="split reverse">
+        <figure class="split-photo split-photo--tall reveal" data-reveal="clip">
+          <img src="img/3.jpg" width="800" height="1000" loading="lazy" alt="Croissant și preparate pentru micul dejun, pe masă">
+        </figure>
+        <div class="glovo-text">
+          <h2 id="glovo-titlu" class="reveal" data-reveal="left">Livrare prin Glovo</h2>
+          <p class="reveal" data-reveal="rise" style="--d:1">Comandă preparatele preferate direct la tine prin Glovo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="section bg-cream" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu" class="reveal" data-reveal="left" style="margin-bottom:clamp(2.5rem,5vw,3.5rem)">Pe farfurie</h2>
+      <div class="gallery">
+        <figure class="reveal" data-reveal="clip">
+          <img src="img/1.jpg" width="800" height="1000" loading="lazy" alt="Pâine prăjită cu avocado și ou poșat">
+        </figure>
+        <figure class="reveal" data-reveal="clip" style="--d:1">
+          <img src="img/2.jpg" width="800" height="1000" loading="lazy" alt="Ouă cremoase pe pâine, servite la micul dejun">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section bg-pink" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-titlu" class="reveal" data-reveal="left">Contact</h2>
+        <p class="intro reveal" data-reveal="rise" style="--d:1">Sună-ne, scrie-ne pe WhatsApp sau trimite un email. Răspundem cu drag.</p>
+        <p class="phone reveal" data-reveal="rise" style="--d:2">0772017955</p>
+        <div class="contact-actions reveal" data-reveal="rise" style="--d:3">
+          <a class="btn btn-primary" href="tel:0772017955">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40772017955?text=Bun%C4%83%20ziua%21%20Doresc%20detalii%20despre%20meniul%20Coclinart.">Întreabă pe WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:bistrocoolinart@gmail.com">Scrie un email</a>
+        </div>
+      </div>
+      <div class="map reveal" data-reveal="fade" style="--d:1">
+        <iframe
+          title="Harta locației Coclinart, în București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0884152,44.4426225,26.096415200000003,44.446622500000004&amp;layer=mapnik&amp;marker=44.4446225,26.0924152"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Coclinart+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot bg-choc">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">Coclinart <span aria-hidden="true">🥚</span></p>
+      <p>Cafenea caldă din București, cu preparate vegetale.</p>
+    </div>
+    <nav class="foot-links" aria-label="Subsol">
+      <a href="#meniu">Meniu</a>
+      <a href="#despre">Despre</a>
+      <a href="#contact">Contact</a>
+      <a href="#top">Sus</a>
+    </nav>
+  </div>
+  <div class="wrap" style="margin-top:2.5rem">
+    <p class="credit">
+      <span>Model de site (demo)</span>
+      <span>Fotografii ilustrative de pe Pixabay: pen_ash, aedrozda, 4793641, RitaE, Mitrey</span>
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Capacul cutiei se ridică la atingere sau click
+  document.querySelectorAll('.box').forEach(function (box) {
+    box.addEventListener('click', function () {
+      var on = box.getAttribute('aria-pressed') !== 'true';
+      box.setAttribute('aria-pressed', on ? 'true' : 'false');
+      box.closest('.item').classList.toggle('is-open', on);
+    });
+  });
+
+  // Dezvăluirea elementelor la derulare
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  }
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
