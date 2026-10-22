@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITP Mondo Auto Sotirescu, servicii auto rapide și sigure în București</title>
+<meta name="description" content="ITP Mondo Auto Sotirescu, București. Reparații auto, diagnoză și întreținere. Grijă pentru mașina ta, de la profesioniști. Sună sau scrie-ne pe WhatsApp.">
+<meta name="theme-color" content="#1E2124">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --graf:#1E2124;
+  --graf-2:#262A2E;
+  --graf-3:#2E3338;
+  --graf-deep:#17191C;
+  --otel:#9AA3AB;
+  --alb:#F5F6F7;
+  --acc:#38bdf8;
+  --line:rgba(154,163,171,.2);
+  --cut:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));
+  --cut-sm:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cond:"Barlow Condensed","Barlow",system-ui,sans-serif;
+  --mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{
+  background:var(--graf);
+  color:var(--alb);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--acc);color:var(--graf);padding:.6rem 1rem;font-weight:600;text-decoration:none}
+.skip:focus{top:1rem}
+
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+
+/* ---------- Navigare: sticlă ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(30,33,36,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(245,246,247,.08);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.is-scrolled{box-shadow:inset 0 1px 0 rgba(245,246,247,.08),0 12px 28px -20px rgba(0,0,0,.8)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4rem}
+.brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--cond);font-weight:700;font-size:1.3rem;letter-spacing:-.01em;color:var(--alb)}
+.brand svg{width:28px;height:28px;flex:none}
+.nav-links{display:flex;gap:1.75rem}
+.nav-links a{text-decoration:none;font-size:.95rem;font-weight:600;color:var(--alb);transition:color .2s}
+.nav-links a:hover{color:var(--acc)}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.5rem;
+  font-family:var(--sans);font-weight:600;font-size:1rem;line-height:1.2;
+  text-decoration:none;text-align:center;border:0;cursor:pointer;
+  clip-path:var(--cut-sm);
+  transition:background-color .2s var(--ease),color .2s var(--ease),box-shadow .2s var(--ease),transform .18s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--acc);color:var(--graf)}
+.btn-primary:hover{background:#7dd3fc;box-shadow:0 8px 20px -12px rgba(56,189,248,.9)}
+.btn-ghost{background:var(--graf-3);color:var(--alb)}
+.btn-ghost:hover{background:#3a4148}
+.btn-sm{min-height:44px;padding:.5rem 1.1rem;font-size:.95rem}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:6.5rem 0 4rem}
+.hero .wrap{width:100%}
+.hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero-addr{font-family:var(--mono);font-size:.82rem;letter-spacing:.06em;color:var(--otel);margin-bottom:1.25rem}
+h1{
+  font-family:var(--cond);font-weight:700;
+  font-size:clamp(2.6rem,7.4vw,5.6rem);
+  line-height:1.04;letter-spacing:-.02em;
+  text-wrap:balance;
+}
+.slogan{margin-top:1.5rem;font-family:var(--cond);font-weight:600;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.15;letter-spacing:-.01em}
+.lead{margin-top:.5rem;color:var(--otel);max-width:34ch}
+.actions{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem}
+
+.dial-wrap{position:relative;width:min(100%,440px);aspect-ratio:1;justify-self:center}
+.dial{width:100%;height:100%;opacity:0;animation:fadeIn .6s .1s var(--ease) forwards}
+.dial svg{width:100%;height:100%;display:block;overflow:visible}
+.dial-read{position:absolute;left:50%;top:70%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+#speed{display:block;font-family:var(--cond);font-weight:700;font-size:clamp(3rem,9vw,4.25rem);line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.dial-read small{display:block;font-family:var(--mono);font-size:.8rem;color:var(--otel);letter-spacing:.06em;margin-top:.25rem}
+
+/* elementele SVG ale vitezometrului */
+.g-ring{fill:none;stroke:rgba(154,163,171,.22);stroke-width:1}
+.g-face{fill:var(--graf-deep);stroke:rgba(154,163,171,.12);stroke-width:1}
+.t-min{stroke:rgba(154,163,171,.5);stroke-width:1.5}
+.t-maj{stroke:var(--alb);stroke-width:3}
+.lbl{font-family:var(--cond);font-weight:600;font-size:21px;fill:var(--otel)}
+.trk{fill:none;stroke:#2A2F34;stroke-width:8}
+.prog{fill:none;stroke:var(--acc);stroke-width:8}
+.zone{fill:none;stroke:var(--otel);stroke-width:2;opacity:.6}
+.needle{stroke:var(--alb);stroke-width:3;stroke-linecap:square}
+.hub{fill:var(--alb)}
+.hub-c{fill:var(--acc)}
+
+/* ---------- Secțiuni ---------- */
+.sec{padding-block:clamp(5rem,11vw,8.5rem);border-top:1px solid var(--line)}
+.sec-dark{background:var(--graf-deep)}
+h2{
+  font-family:var(--cond);font-weight:700;
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  line-height:1.05;letter-spacing:-.02em;
+  margin-bottom:1.5rem;
+}
+.body-l{font-size:clamp(1.05rem,1.6vw,1.2rem);line-height:1.6;max-width:52ch;opacity:.92}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+
+.adv{list-style:none;border-top:1px solid var(--line)}
+.adv li{display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:center;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.adv-ico{width:52px;height:52px;display:grid;place-items:center;font-size:1.5rem;background:var(--graf-2);clip-path:var(--cut-sm)}
+.adv h3{font-family:var(--cond);font-weight:600;font-size:1.45rem;line-height:1.15;letter-spacing:-.01em}
+.adv p{color:var(--otel);margin-top:.15rem}
+
+/* Servicii: panouri cu colțuri tăiate */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.svc{
+  position:relative;display:flex;flex-direction:column;
+  background:var(--graf-2);clip-path:var(--cut);
+  padding:2.25rem 2rem 2.5rem;min-height:15rem;
+}
+.svc::before{content:"";position:absolute;left:0;top:0;width:3px;height:0;background:var(--acc);transition:height .35s var(--ease)}
+.svc:hover{background:var(--graf-3)}
+.svc:hover::before{height:100%}
+.svc h3{font-family:var(--cond);font-weight:700;font-size:1.9rem;line-height:1.05;letter-spacing:-.015em;margin-bottom:.75rem}
+.svc p{color:var(--otel)}
+.svc-cta{margin-top:3rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+.svc-cta p{font-family:var(--cond);font-weight:600;font-size:1.5rem;line-height:1.2}
+
+/* Galerie */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.gal figure{margin:0;overflow:hidden;clip-path:var(--cut)}
+.gal figure:first-child{grid-column:span 2}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .8s var(--ease)}
+.gal figure:hover img{transform:scale(1.03)}
+.note{margin-top:1rem;font-family:var(--mono);font-size:.8rem;color:var(--otel);letter-spacing:.04em}
+
+/* Contact */
+.contact-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+.addr{font-size:1.15rem;line-height:1.5}
+.phone{
+  display:inline-block;margin-top:1.5rem;min-height:44px;
+  font-family:var(--cond);font-weight:700;font-size:clamp(2.4rem,6vw,3.6rem);line-height:1;letter-spacing:-.01em;
+  color:var(--acc);text-decoration:none;font-variant-numeric:tabular-nums;
+}
+.muted{color:var(--otel);margin-top:.75rem}
+.stack{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem;max-width:360px}
+.stack .btn{width:100%}
+.map{clip-path:var(--cut);height:360px;background:var(--graf-2)}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.35) brightness(.94)}
+.coords{margin-top:.75rem;font-family:var(--mono);font-size:.8rem;color:var(--otel);letter-spacing:.04em}
+
+/* Subsol */
+.foot{border-top:1px solid var(--line);padding:2.5rem 0 3rem;background:var(--graf-deep)}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;color:var(--otel);font-size:.92rem}
+.foot-name{font-family:var(--cond);font-weight:700;font-size:1.25rem;color:var(--alb);margin-bottom:.25rem}
+.foot-meta{max-width:46ch}
+.foot-meta p+p{margin-top:.5rem}
+
+/* ---------- Mișcare ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.hero-copy>*{animation:rise .7s var(--ease) both}
+.hero-copy>:nth-child(1){animation-delay:.05s}
+.hero-copy>:nth-child(2){animation-delay:.12s}
+.hero-copy>:nth-child(3){animation-delay:.2s}
+.hero-copy>:nth-child(4){animation-delay:.28s}
+.hero-copy>:nth-child(5){animation-delay:.36s}
+
+.js .rv,.js .rv-l,.js .rv-s{opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .rv{transform:translateY(24px)}
+.js .rv-l{transform:translateX(-24px)}
+.js .rv-s{transform:scale(.98)}
+.js .svc.rv-l{transition:opacity .55s var(--ease),transform .55s var(--ease),background-color .3s var(--ease)}
+.js .is-in{opacity:1;transform:none}
+
+/* ---------- Responsiv ---------- */
+@media (max-width:900px){
+  .hero-in{grid-template-columns:1fr;gap:3rem}
+  .dial-wrap{width:min(78vw,340px)}
+  .split{grid-template-columns:1fr;gap:3rem}
+  .contact-in{grid-template-columns:1fr;gap:3rem}
+  .map{height:320px}
+}
+@media (max-width:820px){
+  .svc-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+}
+@media (max-width:600px){
+  .hero{padding:6rem 0 3.5rem;min-height:auto}
+  .actions{margin-top:1.75rem}
+  .actions .btn{flex:1 1 100%}
+  .gal{grid-template-columns:1fr}
+  .gal figure:first-child{grid-column:auto}
+  .svc{padding:2rem 1.5rem 2.25rem}
+  .svc-cta .btn{width:100%}
+  .map{height:280px}
+  .foot-in{flex-direction:column}
+}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .hero-copy>*{animation-name:fadeIn;animation-duration:.2s;animation-delay:0s}
+  .dial{animation-name:fadeIn;animation-duration:.2s;animation-delay:0s}
+  .js .rv,.js .rv-l,.js .rv-s,.js .svc.rv-l{transform:none;transition:opacity .2s linear}
+  .btn:active{transform:none}
+  .gal figure:hover img{transform:none}
+  .svc::before{transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .nav{background:var(--graf);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  :root{--line:rgba(245,246,247,.45);--otel:#C4CBD2}
+  .nav{background:var(--graf);box-shadow:inset 0 -1px 0 rgba(245,246,247,.5)}
+  .btn-ghost{background:#3a4148}
+  .svc{background:#343a40}
+  .adv-ico{background:#343a40}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Treci la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="ITP Mondo Auto Sotirescu, înapoi la început">
+      <svg viewBox="0 0 28 28" aria-hidden="true">
+        <circle cx="14" cy="14" r="12.5" fill="none" stroke="#38bdf8" stroke-width="2"/>
+        <path d="M14 14 L20 8" stroke="#F5F6F7" stroke-width="2.2" stroke-linecap="square"/>
+        <circle cx="14" cy="14" r="2.2" fill="#F5F6F7"/>
+      </svg>
+      <span>ITP Mondo Auto</span>
+    </a>
+    <nav aria-label="Principal" class="nav-links">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0724207620">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-in">
+        <div class="hero-copy">
+          <p class="hero-addr">Strada Sfânta Maria 50, București</p>
+          <h1>ITP Mondo Auto Sotirescu</h1>
+          <p class="slogan">Servicii auto rapide și sigure</p>
+          <p class="lead">Grijă pentru mașina ta, de la profesioniști.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:0724207620">Sună acum</a>
+            <a class="btn btn-ghost" href="https://wa.me/40724207620?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20programez%20la%20ITP%20Mondo%20Auto%20Sotirescu.">Scrie pe WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="dial-wrap">
+          <div class="dial" id="dial"></div>
+          <div class="dial-read" aria-hidden="true">
+            <span id="speed">0</span>
+            <small>km/h</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="despre">
+    <div class="wrap split">
+      <div>
+        <h2 class="rv-l">Despre noi</h2>
+        <p class="body-l rv-l">La ITP Mondo Auto Sotirescu găsești soluții pentru problemele mașinii tale, indiferent de marcă. Echipa noastră oferă servicii eficiente și atenție la detalii. Venim în ajutorul tău pentru reparații, diagnoză și întreținere.</p>
+      </div>
+      <ul class="adv">
+        <li class="rv">
+          <span class="adv-ico" aria-hidden="true">💡</span>
+          <div>
+            <h3>Diagnoză modernă</h3>
+            <p>Diagnoză pentru a afla ce are mașina</p>
+          </div>
+        </li>
+        <li class="rv" style="transition-delay:.08s">
+          <span class="adv-ico" aria-hidden="true">⏱️</span>
+          <div>
+            <h3>Rapid și clar</h3>
+            <p>Spune-ne simptomele mașinii</p>
+          </div>
+        </li>
+        <li class="rv" style="transition-delay:.16s">
+          <span class="adv-ico" aria-hidden="true">🔧</span>
+          <div>
+            <h3>Soluții eficiente</h3>
+            <p>Reparații, diagnoză și întreținere</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec sec-dark" id="servicii">
+    <div class="wrap">
+      <h2 class="rv">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <div class="svc-grid">
+        <article class="svc rv-l">
+          <h3>Reparații auto</h3>
+          <p>Ne ocupăm de defecțiunea mașinii tale. Îți spunem clar ce trebuie făcut și în ce ordine.</p>
+        </article>
+        <article class="svc rv-l" style="transition-delay:.1s">
+          <h3>Diagnoză</h3>
+          <p>Găsim cauza problemei cu aparatură modernă, înainte să schimbăm piese la întâmplare.</p>
+        </article>
+        <article class="svc rv-l" style="transition-delay:.2s">
+          <h3>Întreținere</h3>
+          <p>Verificări și revizii care țin mașina în stare bună și sigură pe drum.</p>
+        </article>
+      </div>
+      <div class="svc-cta rv">
+        <p>Nu știi ce are mașina? Spune-ne simptomele.</p>
+        <a class="btn btn-primary" href="tel:0724207620">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="galerie">
+    <div class="wrap">
+      <h2 class="rv">În atelier</h2>
+      <div class="gal">
+        <figure class="rv-s">
+          <img src="img/1.jpg" alt="Atelier auto cu o mașină ridicată pe elevator" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="rv-s" style="transition-delay:.08s">
+          <img src="img/2.jpg" alt="Mecanic care face schimbul de ulei la motor" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="rv-s" style="transition-delay:.04s">
+          <img src="img/3.jpg" alt="Disc de frână demontat la o mașină, în atelier" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="rv-s" style="transition-delay:.12s">
+          <img src="img/4.jpg" alt="Mașină în atelierul de service auto" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="rv-s" style="transition-delay:.16s">
+          <img src="img/5.jpg" alt="Lucru la motorul unei mașini, în atelier" loading="lazy" width="1200" height="900">
+        </figure>
+      </div>
+      <p class="note rv">Imagini ilustrative.</p>
+    </div>
+  </section>
+
+  <section class="sec sec-dark" id="contact">
+    <div class="wrap contact-in">
+      <div class="rv-l">
+        <h2>Contact</h2>
+        <p class="addr">Strada Sfânta Maria 50<br>București</p>
+        <a class="phone" href="tel:0724207620">0724 207 620</a>
+        <p class="muted">Programul îl confirmăm la telefon.</p>
+        <div class="stack">
+          <a class="btn btn-primary" href="tel:0724207620">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40724207620?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20m%C4%83%20programez%20la%20ITP%20Mondo%20Auto%20Sotirescu.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=ITP+Mondo+Auto+Sotirescu+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="rv-s">
+        <div class="map">
+          <iframe
+            title="Harta locației: ITP Mondo Auto Sotirescu, Strada Sfânta Maria 50, București"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=26.0648295,44.4581723,26.0728295,44.462172300000006&amp;layer=mapnik&amp;marker=44.4601723,26.0688295"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="coords">44.4602° N, 26.0688° E</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-name">ITP Mondo Auto Sotirescu</p>
+      <p>Strada Sfânta Maria 50, București</p>
+    </div>
+    <div class="foot-meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: stux, DokaRyan, NoName_13, autotop_service, ExcelAutomotive</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Navigare: umbră doar când pagina se derulează sub ea */
+  var nav = document.getElementById('nav');
+  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 8); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Dezvăluire la derulare */
+  var revealEls = document.querySelectorAll('.rv, .rv-l, .rv-s');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (n) { io.observe(n); });
+  } else {
+    revealEls.forEach(function (n) { n.classList.add('is-in'); });
+  }
+
+  /* Vitezometru: urcă la încărcare */
+  var dial = document.getElementById('dial');
+  if (!dial) return;
+
+  var NS = 'http://www.w3.org/2000/svg';
+  var C = 200, R = 170, START = 225, SWEEP = 270, MAX = 200, TARGET = 168;
+
+  function ang(v) { return START + (v / MAX) * SWEEP; }
+  function P(deg, r) {
+    var a = deg * Math.PI / 180;
+    return [C + r * Math.sin(a), C - r * Math.cos(a)];
+  }
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function arcD(v1, v2, r) {
+    var p1 = P(ang(v1), r), p2 = P(ang(v2), r);
+    var large = (v2 - v1) / MAX * SWEEP > 180 ? 1 : 0;
+    return 'M' + p1[0].toFixed(2) + ' ' + p1[1].toFixed(2) +
+           ' A' + r + ' ' + r + ' 0 ' + large + ' 1 ' +
+           p2[0].toFixed(2) + ' ' + p2[1].toFixed(2);
+  }
+
+  var svg = el('svg', { viewBox: '0 0 400 400', 'aria-hidden': 'true', focusable: 'false' });
+  dial.appendChild(svg);
+
+  el('circle', { cx: C, cy: C, r: 196, class: 'g-ring' }, svg);
+  el('circle', { cx: C, cy: C, r: 186, class: 'g-face' }, svg);
+  el('path', { d: arcD(0, MAX, R), class: 'trk' }, svg);
+  el('path', { d: arcD(160, MAX, 180), class: 'zone' }, svg);
+
+  for (var v = 0; v <= MAX; v += 4) {
+    var a = ang(v), maj = (v % 20 === 0);
+    var p1 = P(a, 160), p2 = P(a, maj ? 144 : 152);
+    el('line', { x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1], class: maj ? 't-maj' : 't-min' }, svg);
+    if (maj) {
+      var q = P(a, 118);
+      var t = el('text', {
+        x: q[0].toFixed(2), y: q[1].toFixed(2), class: 'lbl',
+        'text-anchor': 'middle', 'dominant-baseline': 'central'
+      }, svg);
+      t.textContent = v;
+    }
+  }
+
+  var prog = el('path', {
+    d: arcD(0, MAX, R), class: 'prog', pathLength: 100, 'stroke-dasharray': '0 100'
+  }, svg);
+
+  var needle = el('g', { transform: 'rotate(' + ang(0) + ' 200 200)' }, svg);
+  el('line', { x1: 200, y1: 212, x2: 200, y2: 52, class: 'needle' }, needle);
+  el('circle', { cx: C, cy: C, r: 9, class: 'hub' }, svg);
+  el('circle', { cx: C, cy: C, r: 3.5, class: 'hub-c' }, svg);
+
+  var read = document.getElementById('speed');
+
+  function set(val) {
+    prog.setAttribute('stroke-dasharray', (val / MAX * 100).toFixed(2) + ' 100');
+    needle.setAttribute('transform', 'rotate(' + ang(val).toFixed(2) + ' 200 200)');
+    read.textContent = Math.round(val);
+  }
+
+  set(0);
+  if (reduce) { set(TARGET); return; }
+
+  var D = 2200, DELAY = 500, t0 = null;
+  function ease(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function step(ts) {
+    if (t0 === null) t0 = ts;
+    var t = (ts - t0 - DELAY) / D;
+    if (t < 0) { requestAnimationFrame(step); return; }
+    if (t >= 1) { set(TARGET); return; }
+    set(ease(t) * TARGET);
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
