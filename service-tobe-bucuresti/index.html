@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1E2124">
+<title>Service Tobe, reparații auto în București</title>
+<meta name="description" content="Service Tobe, service auto în București pentru reparații, diagnoză și întreținere. Sună acum sau scrie pe WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  :root{
+    --graphite:#1E2124;
+    --graphite-2:#262A2E;
+    --graphite-3:#2A2F34;
+    --steel:#9AA3AB;
+    --text-2:#C3C9CF;
+    --white:#F5F6F7;
+    --accent:#38bdf8;
+    --accent-hi:#7DD3FC;
+    --line:rgba(154,163,171,.22);
+    --ease:cubic-bezier(.2,.8,.2,1);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--graphite)}
+  body{
+    margin:0;
+    background:var(--graphite);
+    color:var(--text-2);
+    font-family:Barlow,system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:1.0625rem;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  h1,h2,h3{margin:0;color:var(--white);font-family:"Barlow Condensed",Barlow,sans-serif}
+  p{margin:0}
+  section{scroll-margin-top:4rem}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  .wrap{width:min(calc(100% - 2.5rem),1120px);margin-inline:auto}
+  .section{padding:clamp(4.5rem,11vw,8rem) 0}
+  .band{background:#23272B}
+
+  /* Panou cu colț tăiat (sus-stânga și jos-dreapta) */
+  .cut{
+    --c:18px;
+    clip-path:polygon(var(--c) 0,100% 0,100% calc(100% - var(--c)),calc(100% - var(--c)) 100%,0 100%,0 var(--c));
+  }
+
+  .sec-rule{width:3rem;height:3px;background:var(--accent);margin-bottom:1.1rem}
+  .sec-head{max-width:40rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+  .sec-head p{margin-top:.6rem;font-size:1.1rem;color:var(--text-2)}
+
+  h2{
+    font-weight:700;
+    font-size:clamp(2.4rem,6vw,4rem);
+    line-height:1.04;
+    letter-spacing:-.02em;
+    text-transform:uppercase;
+    margin-bottom:1rem;
+  }
+
+  .lead{
+    font-size:clamp(1.15rem,2.2vw,1.35rem);
+    line-height:1.45;
+    font-weight:500;
+    color:var(--white);
+  }
+
+  /* Butoane */
+  .btn{
+    --cut:12px;
+    position:relative;
+    isolation:isolate;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.5rem;
+    min-height:48px;
+    padding:.8rem 1.5rem;
+    border:0;
+    background:none;
+    color:var(--white);
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:700;
+    font-size:1.2rem;
+    letter-spacing:.02em;
+    text-decoration:none;
+    text-align:center;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+    transition:transform .1s linear,color .2s;
+  }
+  .btn::before,.btn::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));
+    transition:background-color .2s;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn-sm{min-height:44px;padding:.5rem 1rem;font-size:1.05rem;--cut:10px}
+
+  .btn-primary::before{background:var(--accent)}
+  .btn-primary{color:var(--graphite)}
+  .btn-primary:hover::before{background:var(--accent-hi)}
+
+  .btn-ghost::before{background:rgba(154,163,171,.6)}
+  .btn-ghost::after{
+    inset:1.5px;
+    background:var(--graphite);
+    clip-path:polygon(calc(var(--cut) - 2px) 0,100% 0,100% calc(100% - calc(var(--cut) - 2px)),calc(100% - calc(var(--cut) - 2px)) 100%,0 100%,0 calc(var(--cut) - 2px));
+  }
+  .btn-ghost:hover{color:var(--accent)}
+  .btn-ghost:hover::before{background:var(--accent)}
+
+  /* Bara de navigare: sticlă */
+  .site-nav{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:50;
+    background:rgba(30,33,36,.6);
+    -webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(18px) saturate(1.2);
+    border-top:1px solid rgba(245,246,247,.12);
+    transition:box-shadow .3s var(--ease);
+  }
+  .site-nav.scrolled{box-shadow:0 16px 30px -20px rgba(0,0,0,.8)}
+  .site-nav .bar{
+    width:min(calc(100% - 2.5rem),1120px);
+    margin-inline:auto;
+    min-height:64px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+  }
+  .brand{
+    display:inline-flex;
+    align-items:center;
+    gap:.6rem;
+    color:var(--white);
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:800;
+    font-size:1.35rem;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+  .brand-mark{
+    display:inline-grid;
+    place-items:center;
+    width:2.2rem;height:2.2rem;
+    background:rgba(56,189,248,.16);
+    font-size:1.15rem;
+    line-height:1;
+    clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+  }
+  .nav-links{display:none;gap:1.75rem}
+  .nav-links a{
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+    letter-spacing:.02em;
+    color:#E6E9EC;
+    text-decoration:none;
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--accent)}
+
+  /* Primul ecran */
+  .hero{
+    position:relative;
+    isolation:isolate;
+    display:flex;
+    align-items:center;
+    padding:6.5rem 0 3rem;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background-image:
+      linear-gradient(to right,rgba(154,163,171,.09) 1px,transparent 1px),
+      linear-gradient(to bottom,rgba(154,163,171,.09) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 15%,transparent 72%);
+    mask-image:radial-gradient(ellipse at 70% 40%,#000 15%,transparent 72%);
+  }
+  .hero-grid{display:grid;gap:3rem;align-items:center}
+
+  .kicker{
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:600;
+    font-size:1.1rem;
+    letter-spacing:.04em;
+    color:var(--accent);
+  }
+  .kicker::before{content:"";width:2.25rem;height:2px;background:var(--accent)}
+
+  h1{
+    margin-top:1rem;
+    font-weight:800;
+    font-size:clamp(3.6rem,12vw,8rem);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    text-transform:uppercase;
+  }
+  h1 span{display:block}
+
+  .slogan{
+    margin-top:1rem;
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:600;
+    font-size:clamp(1.6rem,4.2vw,2.3rem);
+    line-height:1.12;
+    letter-spacing:-.01em;
+    color:var(--white);
+  }
+  .hero-text{
+    margin-top:.9rem;
+    max-width:34rem;
+    font-size:clamp(1.02rem,1.6vw,1.15rem);
+    color:var(--text-2);
+  }
+  .hero-actions{
+    display:grid;
+    gap:.75rem;
+    margin-top:2rem;
+  }
+  @media (min-width:480px){
+    .hero-actions{grid-auto-flow:column;justify-content:start}
+  }
+
+  /* Vitezometru */
+  .gauge{
+    --c:28px;
+    position:relative;
+    width:100%;
+    max-width:460px;
+    margin-inline:auto;
+    padding:1.75rem 1.25rem 1.25rem;
+    background:var(--graphite-2);
+  }
+  .dial{
+    display:block;
+    width:100%;
+    max-width:380px;
+    height:auto;
+    margin:0 auto;
+    overflow:visible;
+  }
+  .arc-track{fill:none;stroke:rgba(154,163,171,.22);stroke-width:2}
+  .arc-active{fill:none;stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+  .tick{stroke:rgba(154,163,171,.5);stroke-width:1.5}
+  .tick.major{stroke:var(--white);stroke-width:3}
+  .num{
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:700;
+    font-size:22px;
+    fill:var(--steel);
+    font-variant-numeric:tabular-nums;
+  }
+  .needle{stroke:var(--accent);stroke-width:4;stroke-linecap:round}
+  .hub{fill:var(--graphite-2);stroke:var(--accent);stroke-width:3}
+  .hub-dot{fill:var(--accent)}
+
+  .readout{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:.6rem;
+    margin-top:.25rem;
+  }
+  .readout output{
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:800;
+    font-size:clamp(4rem,12vw,5.5rem);
+    line-height:1;
+    letter-spacing:-.02em;
+    color:var(--white);
+    font-variant-numeric:tabular-nums;
+  }
+  .readout span{
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:600;
+    font-size:1.4rem;
+    color:var(--steel);
+  }
+  .gauge-cells{
+    list-style:none;
+    margin:1.25rem 0 0;
+    padding:1rem 0 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:.5rem;
+    border-top:1px solid var(--line);
+  }
+  .gauge-cells li{
+    font-size:.875rem;
+    line-height:1.35;
+    letter-spacing:.02em;
+    text-align:center;
+    color:var(--steel);
+  }
+
+  @media (min-width:900px){
+    .hero{min-height:100svh}
+    .hero-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+  }
+
+  /* Despre */
+  .split{display:grid;gap:2.5rem;align-items:center}
+  .photo{position:relative;margin:0;overflow:hidden;background:var(--graphite-2);--c:24px}
+  .photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .split .lead{margin-bottom:1.25rem}
+  .split p + p{margin-top:1rem;max-width:36rem}
+
+  .perks{
+    display:grid;
+    gap:1rem;
+    margin-top:clamp(3rem,7vw,5rem);
+  }
+  .perk{
+    --c:18px;
+    position:relative;
+    padding:1.75rem 1.5rem 2rem;
+    background:var(--graphite-2);
+  }
+  .perk-ico{display:block;font-size:1.75rem;line-height:1;margin-bottom:1rem}
+  .perk h3{
+    font-weight:700;
+    font-size:1.6rem;
+    line-height:1.1;
+    letter-spacing:-.01em;
+    margin-bottom:.5rem;
+  }
+  .perk p{color:var(--text-2)}
+
+  @media (min-width:820px){
+    .split{grid-template-columns:1fr 1fr;gap:5rem}
+    .perks{grid-template-columns:repeat(3,1fr)}
+  }
+
+  /* Servicii */
+  .services{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+  .services li{
+    display:grid;
+    gap:.6rem;
+    padding:clamp(1.5rem,3.5vw,2.25rem) 0;
+    border-top:1px solid var(--line);
+    transition:color .2s;
+  }
+  .services h3{
+    font-weight:700;
+    font-size:clamp(2rem,5vw,3.25rem);
+    line-height:1;
+    letter-spacing:-.02em;
+    transition:color .25s var(--ease);
+  }
+  .services li:hover h3{color:var(--accent)}
+  .services p{max-width:52ch;color:var(--text-2)}
+  @media (min-width:820px){
+    .services li{grid-template-columns:1fr 1.1fr;gap:3rem;align-items:baseline}
+  }
+
+  /* Galerie */
+  .gallery{display:grid;gap:.75rem}
+  .gallery figure{
+    --c:20px;
+    position:relative;
+    margin:0;
+    overflow:hidden;
+    background:var(--graphite-2);
+  }
+  .gallery img{
+    width:100%;
+    height:100%;
+    min-height:240px;
+    object-fit:cover;
+    transition:transform .6s var(--ease);
+  }
+  .gallery figure:hover img{transform:scale(1.02)}
+  .gallery figcaption{
+    position:absolute;
+    left:0;
+    bottom:0;
+    padding:.45rem .9rem;
+    background:rgba(30,33,36,.9);
+    color:var(--white);
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:600;
+    font-size:1rem;
+    letter-spacing:.03em;
+  }
+  @media (min-width:820px){
+    .gallery{grid-template-columns:1.5fr 1fr;grid-template-rows:repeat(2,300px)}
+    .gallery .g-big{grid-row:1 / span 2}
+    .gallery img{min-height:0}
+  }
+
+  /* Contact */
+  .contact-grid{display:grid;gap:3rem;align-items:center}
+  .contact-label{
+    margin-top:2rem;
+    margin-bottom:.25rem;
+    font-size:.9rem;
+    letter-spacing:.04em;
+    color:var(--steel);
+  }
+  .contact-label:first-of-type{margin-top:1.75rem}
+  .phone a{
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:700;
+    font-size:clamp(2.6rem,8vw,4.25rem);
+    line-height:1.1;
+    letter-spacing:-.01em;
+    color:var(--white);
+    text-decoration:none;
+    font-variant-numeric:tabular-nums;
+    transition:color .2s;
+  }
+  .phone a:hover{color:var(--accent)}
+  .contact-actions{display:grid;gap:.75rem;margin-top:2.25rem;max-width:24rem}
+  .map{
+    --c:24px;
+    position:relative;
+    height:clamp(320px,46vw,420px);
+    background:var(--graphite-2);
+    overflow:hidden;
+  }
+  .map iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border:0;
+    filter:invert(.9) hue-rotate(180deg) saturate(.6) brightness(.95);
+  }
+  @media (min-width:900px){
+    .contact-grid{grid-template-columns:1fr 1.1fr;gap:4rem}
+  }
+
+  /* Subsol */
+  .site-footer{
+    padding:3rem 0;
+    border-top:1px solid var(--line);
+    font-size:.9rem;
+    line-height:1.6;
+    letter-spacing:.02em;
+    color:var(--steel);
+  }
+  .foot{display:grid;gap:.4rem}
+  .foot-brand{
+    font-family:"Barlow Condensed",Barlow,sans-serif;
+    font-weight:700;
+    font-size:1.4rem;
+    text-transform:uppercase;
+    color:var(--white);
+    margin-bottom:.4rem;
+  }
+  .foot a{text-decoration:none;transition:color .2s}
+  .foot a:hover{color:var(--accent)}
+  .credit{max-width:60ch;margin-top:.6rem}
+
+  /* Bară fixă de contact, doar pe telefon */
+  .mbar{
+    position:fixed;
+    left:0;right:0;bottom:0;
+    z-index:60;
+    display:grid;
+    grid-template-columns:1fr 1.25fr;
+    gap:.5rem;
+    padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));
+    background:rgba(30,33,36,.72);
+    -webkit-backdrop-filter:blur(18px) saturate(1.2);
+    backdrop-filter:blur(18px) saturate(1.2);
+    box-shadow:0 -12px 28px -16px rgba(0,0,0,.6);
+  }
+  .mbar .btn{width:100%;padding-inline:.75rem;font-size:1.1rem}
+  @media (max-width:719px){
+    body{padding-bottom:5.25rem}
+  }
+  @media (min-width:720px){
+    .mbar{display:none}
+    .nav-links{display:flex}
+  }
+  @media (min-width:640px){
+    .nav-links{display:flex}
+  }
+
+  /* Mișcare */
+  @keyframes rise{
+    from{opacity:0;transform:translateY(16px)}
+    to{opacity:1;transform:none}
+  }
+  @keyframes fade{
+    from{opacity:0}
+    to{opacity:1}
+  }
+  .rise{animation:rise .7s var(--ease) both;animation-delay:var(--d,0ms)}
+
+  .js [data-reveal]{
+    opacity:0;
+    transition:opacity .55s var(--ease),transform .55s var(--ease);
+    transition-delay:var(--d,0ms);
+  }
+  .js [data-reveal="up"]{transform:translateY(24px)}
+  .js [data-reveal="left"]{transform:translateX(-32px)}
+  .js [data-reveal="right"]{transform:translateX(32px)}
+  .js [data-reveal="scale"]{transform:scale(.97)}
+  .js [data-reveal].in{opacity:1;transform:none}
+
+  /* Transparență redusă și contrast mărit */
+  @media (prefers-reduced-transparency:reduce){
+    .site-nav,.mbar{
+      background:var(--graphite);
+      -webkit-backdrop-filter:none;
+      backdrop-filter:none;
+    }
+  }
+  @media (prefers-contrast:more){
+    :root{--line:rgba(245,246,247,.55);--steel:#D5DAE0;--text-2:#E8EBEE}
+    .site-nav,.mbar{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+    .btn-ghost::before{background:var(--white)}
+    .gauge,.perk,.photo,.gallery figure,.map{outline:1px solid var(--white)}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .rise{animation-name:fade;animation-duration:.2s;animation-delay:0ms}
+    .js [data-reveal]{
+      transform:none!important;
+      transition-duration:.2s;
+      transition-delay:0ms!important;
+    }
+    .btn,.btn::before,.btn::after,.gallery img,.nav-links a,.services li,.services h3,.phone a{
+      transition-duration:.2s;
+    }
+    .btn:active{transform:none}
+    .gallery figure:hover img{transform:none}
+  }
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="bar">
+    <a class="brand" href="#top" aria-label="Service Tobe, înapoi sus">
+      <span class="brand-mark" aria-hidden="true">🛠️</span>
+      <span>Service Tobe</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#servicii">Servicii</a>
+      <a href="#despre">Despre</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="tel:0721828496">Sună acum</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker rise" style="--d:0ms">Service auto în București</p>
+        <h1 id="titlu" class="rise" style="--d:90ms"><span>Service</span><span>Tobe</span></h1>
+        <p class="slogan rise" style="--d:180ms">Reparații, diagnoză și întreținere</p>
+        <p class="hero-text rise" style="--d:260ms">Service auto din București pentru reparații, diagnoză și întreținere.</p>
+        <div class="hero-actions rise" style="--d:340ms">
+          <a class="btn btn-primary" href="tel:0721828496">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40721828496?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20auto.">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="gauge cut rise" style="--d:160ms" aria-hidden="true">
+        <svg id="dial" class="dial" viewBox="0 0 400 400" focusable="false"></svg>
+        <p class="readout"><output id="speed">0</output><span>km/h</span></p>
+        <ul class="gauge-cells">
+          <li>Fiecare autoturism</li>
+          <li>Ajutor rapid</li>
+          <li>București</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" class="section" aria-labelledby="titlu-despre">
+    <div class="wrap split">
+      <figure class="photo cut" data-reveal="scale">
+        <img src="img/2.jpg" alt="Disc de frână și platformă de ridicare într-un atelier auto" loading="lazy">
+      </figure>
+      <div data-reveal="right" style="--d:120ms">
+        <div class="sec-rule"></div>
+        <h2 id="titlu-despre">Despre noi</h2>
+        <p class="lead">Suntem un service auto din București, dedicat șoferilor care au nevoie de ajutor rapid și de încredere.</p>
+        <p>Oferim servicii generale de reparații, diagnoză și întreținere pentru orice mașină. Ne ocupăm de fiecare autoturism cu profesionalism și atenție.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="perks">
+        <article class="perk cut" data-reveal="up" style="--d:0ms">
+          <span class="perk-ico" aria-hidden="true">🚗</span>
+          <h3>Pentru oricine</h3>
+          <p>Ne ocupăm de fiecare autoturism cu profesionalism și atenție.</p>
+        </article>
+        <article class="perk cut" data-reveal="up" style="--d:110ms">
+          <span class="perk-ico" aria-hidden="true">🔧</span>
+          <h3>Intervenții rapide</h3>
+          <p>Pentru șoferii care au nevoie de ajutor rapid.</p>
+        </article>
+        <article class="perk cut" data-reveal="up" style="--d:220ms">
+          <span class="perk-ico" aria-hidden="true">💬</span>
+          <h3>Comunicare clară</h3>
+          <p>Îți explicăm fiecare pas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicii" class="section band" aria-labelledby="titlu-servicii">
+    <div class="wrap">
+      <header class="sec-head" data-reveal="up">
+        <div class="sec-rule"></div>
+        <h2 id="titlu-servicii">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p>Ce facem la service, pe scurt.</p>
+      </header>
+
+      <ul class="services">
+        <li data-reveal="left">
+          <h3>Reparații auto</h3>
+          <p>Servicii generale de reparații pentru autoturismul tău.</p>
+        </li>
+        <li data-reveal="left" style="--d:80ms">
+          <h3>Diagnoză</h3>
+          <p>Căutăm cauza problemei înainte să schimbăm piese. Îți spunem ce am găsit și ce urmează.</p>
+        </li>
+        <li data-reveal="left" style="--d:160ms">
+          <h3>Întreținere</h3>
+          <p>Servicii de întreținere pentru autoturismul tău.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galerie" class="section" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <header class="sec-head" data-reveal="up">
+        <div class="sec-rule"></div>
+        <h2 id="titlu-galerie">Galerie</h2>
+        <p>Imagini ilustrative din lumea reparațiilor auto.</p>
+      </header>
+
+      <div class="gallery">
+        <figure class="g-big cut" data-reveal="scale">
+          <img src="img/1.jpg" alt="Mecanic lucrând la un autoturism într-un garaj" loading="lazy">
+          <figcaption>Întreținere</figcaption>
+        </figure>
+        <figure class="cut" data-reveal="up" style="--d:120ms">
+          <img src="img/3.jpg" alt="Roată și jantă pregătite pentru lucru" loading="lazy">
+          <figcaption>Atelier</figcaption>
+        </figure>
+        <figure class="cut" data-reveal="up" style="--d:220ms">
+          <img src="img/4.jpg" alt="Autoturism conectat la un sistem de măsurare pentru diagnoză" loading="lazy">
+          <figcaption>Diagnoză</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section band" aria-labelledby="titlu-contact">
+    <div class="wrap contact-grid">
+      <div data-reveal="left">
+        <div class="sec-rule"></div>
+        <h2 id="titlu-contact">Contact</h2>
+        <p class="lead">Sună sau scrie-ne. Spune-ne ce mașină ai și ce problemă observi.</p>
+
+        <p class="contact-label">Telefon</p>
+        <p class="phone"><a href="tel:0721828496">0721 828 496</a></p>
+
+        <p class="contact-label">Locație</p>
+        <p>București</p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:0721828496">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40721828496?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20auto.">Scrie pe WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Service+Tobe+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map cut" data-reveal="right" style="--d:120ms">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.142361899999997,44.4679728,26.1503619,44.4719728&amp;layer=mapnik&amp;marker=44.4699728,26.1463619" title="Harta zonei Service Tobe, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p class="foot-brand"><span aria-hidden="true">🛠️</span> Service Tobe</p>
+    <p>București</p>
+    <p><a href="tel:0721828496">0721 828 496</a></p>
+    <p>© <span id="an">2025</span> Service Tobe</p>
+    <p><a href="#top">Înapoi sus</a></p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: DokaRyan, NoName_13, Eugen_Tomas, Dewesoft</p>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Contact rapid">
+  <a class="btn btn-primary" href="tel:0721828496">Sună acum</a>
+  <a class="btn btn-ghost" href="https://wa.me/40721828496?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20detalii%20despre%20serviciile%20auto.">Scrie pe WhatsApp</a>
+</nav>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Bara de navigare primește o umbră când pagina se derulează sub ea */
+  var nav = document.querySelector('.site-nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Vitezometru: se construiește din cod și urcă la încărcare */
+  var NS = 'http://www.w3.org/2000/svg';
+  var dial = document.getElementById('dial');
+  var out = document.getElementById('speed');
+  var C = 200, MAX = 200, TARGET = 120, A0 = -135, A1 = 135;
+
+  function ang(v) { return A0 + (v / MAX) * (A1 - A0); }
+  function pt(r, a) {
+    var t = a * Math.PI / 180;
+    return [C + r * Math.sin(t), C - r * Math.cos(t)];
+  }
+  function arc(r, a1, a2) {
+    var s = pt(r, a1), e = pt(r, a2);
+    var large = (a2 - a1) > 180 ? 1 : 0;
+    return 'M' + s[0].toFixed(2) + ' ' + s[1].toFixed(2) +
+           ' A' + r + ' ' + r + ' 0 ' + large + ' 1 ' +
+           e[0].toFixed(2) + ' ' + e[1].toFixed(2);
+  }
+  function make(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    Object.keys(attrs).forEach(function (k) { n.setAttribute(k, attrs[k]); });
+    parent.appendChild(n);
+    return n;
+  }
+
+  make('path', { d: arc(176, A0, A1), class: 'arc-track' }, dial);
+  var active = make('path', { d: '', class: 'arc-active' }, dial);
+
+  for (var v = 0; v <= MAX; v += 10) {
+    var a = ang(v);
+    var major = v % 20 === 0;
+    var p1 = pt(major ? 152 : 160, a);
+    var p2 = pt(168, a);
+    make('line', {
+      x1: p1[0].toFixed(2), y1: p1[1].toFixed(2),
+      x2: p2[0].toFixed(2), y2: p2[1].toFixed(2),
+      class: major ? 'tick major' : 'tick'
+    }, dial);
+  }
+  for (v = 0; v <= MAX; v += 20) {
+    var lp = pt(128, ang(v));
+    var t = make('text', {
+      x: lp[0].toFixed(2), y: lp[1].toFixed(2),
+      class: 'num', 'text-anchor': 'middle', 'dominant-baseline': 'central'
+    }, dial);
+    t.textContent = v;
+  }
+
+  var hub = make('circle', { cx: C, cy: C, r: 12, class: 'hub' }, dial);
+  var needle = make('line', { x1: C, y1: C, x2: C, y2: C, class: 'needle' }, dial);
+  make('circle', { cx: C, cy: C, r: 4, class: 'hub-dot' }, dial);
+
+  function render(val) {
+    var a = ang(val);
+    var tip = pt(150, a);
+    needle.setAttribute('x2', tip[0].toFixed(2));
+    needle.setAttribute('y2', tip[1].toFixed(2));
+    active.setAttribute('d', val > 0.5 ? arc(176, A0, a) : '');
+    out.textContent = Math.round(val);
+  }
+
+  function easeInOut(t) {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  render(0);
+  if (reduce) {
+    render(TARGET);
+  } else {
+    var start = null, DUR = 1900, DELAY = 350;
+    requestAnimationFrame(function step(ts) {
+      if (start === null) start = ts;
+      var p = (ts - start - DELAY) / DUR;
+      if (p < 0) p = 0;
+      if (p > 1) p = 1;
+      render(TARGET * easeInOut(p));
+      if (p < 1) requestAnimationFrame(step);
+    });
+  }
+
+  /* Dezvăluire la derulare, cu tranziții diferite pe elemente */
+  var items = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    items.forEach(function (n) { io.observe(n); });
+  } else {
+    items.forEach(function (n) { n.classList.add('in'); });
+  }
+
+  document.getElementById('an').textContent = new Date().getFullYear();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
