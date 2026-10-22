@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dragma Impex: vulcanizare auto în București</title>
+<meta name="description" content="Dragma Impex, vulcanizare auto în București, pe strada Gheorghe Polizu. Reparații roți, schimb anvelope, echilibrare și verificare presiune.">
+<meta name="theme-color" content="#1E2124">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛞</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- Tokeni ---------- */
+:root{
+  --graphite:#1E2124;
+  --graphite-2:#23272B;
+  --graphite-3:#2A2F34;
+  --contact-bg:#181B1E;
+  --foot-bg:#15171A;
+  --steel:#9AA3AB;
+  --steel-soft:#C4CAD0;
+  --white:#F5F6F7;
+  --accent:#22c55e;
+  --accent-hover:#34d46f;
+  --line:rgba(154,163,171,.22);
+  --f-head:"Barlow Condensed",system-ui,sans-serif;
+  --f-text:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --cut:12px;
+  --cut-lg:24px;
+}
+
+/* ---------- Bază ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--graphite);
+  color:var(--steel-soft);
+  font-family:var(--f-text);
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  margin:0;
+  font-family:var(--f-head);
+  color:var(--white);
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:1.05;
+  text-wrap:balance;
+}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+figure{margin:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.container{
+  width:100%;
+  max-width:74rem;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,5vw,3rem);
+}
+.label{
+  font-family:var(--f-mono);
+  font-size:.8rem;
+  letter-spacing:.06em;
+  color:var(--steel);
+}
+section{padding-block:clamp(4.5rem,10vw,8rem)}
+
+.sec-head{
+  display:grid;
+  padding-top:1.5rem;
+  border-top:1px solid var(--line);
+  margin-bottom:clamp(2.5rem,5vw,4rem);
+}
+.sec-head h2{font-size:clamp(2.4rem,6vw,4.25rem);text-transform:uppercase}
+
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  min-height:2.75rem;
+  padding:.75rem 1.4rem;
+  font:600 1rem/1.1 var(--f-text);
+  letter-spacing:.01em;
+  text-decoration:none;
+  border:0;
+  background:none;
+  color:var(--white);
+  cursor:pointer;
+  transition:background-color .2s var(--ease),box-shadow .2s var(--ease),color .2s var(--ease),transform .1s linear;
+  -webkit-tap-highlight-color:transparent;
+  clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--accent);color:var(--graphite)}
+.btn-primary:hover{background:var(--accent-hover);box-shadow:0 8px 24px -10px rgba(34,197,94,.6)}
+.btn-ghost{background:rgba(245,246,247,.06);box-shadow:inset 0 0 0 1px rgba(245,246,247,.22)}
+.btn-ghost:hover{background:rgba(245,246,247,.12);box-shadow:inset 0 0 0 1px rgba(245,246,247,.4)}
+.btn-sm{padding:.6rem 1rem;font-size:.95rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  background:rgba(30,33,36,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-top:1px solid rgba(255,255,255,.1);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.is-scrolled{box-shadow:0 10px 30px -14px rgba(0,0,0,.7)}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  min-height:4rem;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  text-decoration:none;
+  color:var(--white);
+  font:700 1.3rem/1 var(--f-head);
+  letter-spacing:.01em;
+  text-transform:uppercase;
+}
+.brand-mark{
+  display:grid;
+  place-items:center;
+  width:2.25rem;
+  height:2.25rem;
+  background:rgba(34,197,94,.14);
+  font-size:1.15rem;
+  line-height:1;
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+}
+.nav-links{display:none}
+.nav-links a{
+  display:flex;
+  align-items:center;
+  min-height:2.75rem;
+  padding:.5rem .25rem;
+  text-decoration:none;
+  color:var(--white);
+  font-weight:600;
+  font-size:.95rem;
+}
+.nav-links a:hover{color:var(--accent)}
+.nav-links.is-open{
+  display:grid;
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  padding:.5rem clamp(1.25rem,5vw,3rem) 1rem;
+  background:var(--graphite);
+  border-top:1px solid var(--line);
+}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+.menu-toggle{
+  display:grid;
+  place-items:center;
+  width:2.75rem;
+  height:2.75rem;
+  padding:0;
+  border:0;
+  background:rgba(245,246,247,.1);
+  color:var(--white);
+  cursor:pointer;
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+}
+.menu-toggle i{
+  position:relative;
+  display:block;
+  width:18px;
+  height:2px;
+  background:var(--white);
+  transition:background-color .25s var(--ease);
+}
+.menu-toggle i::before,
+.menu-toggle i::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:var(--white);
+  transition:transform .3s var(--ease),top .3s var(--ease);
+}
+.menu-toggle i::before{top:-6px}
+.menu-toggle i::after{top:6px}
+.menu-toggle[aria-expanded="true"] i{background:transparent}
+.menu-toggle[aria-expanded="true"] i::before{top:0;transform:rotate(45deg)}
+.menu-toggle[aria-expanded="true"] i::after{top:0;transform:rotate(-45deg)}
+
+@media (min-width:52rem){
+  .nav-links{display:flex;gap:2.25rem}
+  .nav-links a{min-height:0;padding:.5rem 0}
+  .nav-links.is-open{position:static;padding:0;background:none;border:0}
+  .menu-toggle{display:none}
+}
+
+/* ---------- Primul ecran ---------- */
+.hero{
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding-top:6.5rem;
+  padding-bottom:4rem;
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background-image:
+    linear-gradient(rgba(154,163,171,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(154,163,171,.07) 1px,transparent 1px);
+  background-size:4rem 4rem;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 70% 45%,#000 20%,transparent 75%);
+  mask-image:radial-gradient(ellipse 70% 60% at 70% 45%,#000 20%,transparent 75%);
+}
+.hero-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.hero h1{
+  font-size:clamp(2.9rem,14vw,7rem);
+  text-transform:uppercase;
+  margin:.6rem 0 1rem;
+}
+.hero-slogan{
+  font:600 clamp(1.4rem,3.4vw,2rem)/1.2 var(--f-head);
+  color:var(--white);
+  letter-spacing:-.01em;
+}
+.hero-desc{
+  margin-top:.75rem;
+  max-width:34ch;
+  color:var(--steel-soft);
+}
+.hero .actions{margin-top:2rem}
+.hero-hours{margin-top:1.5rem}
+
+/* Vitezometru */
+.gauge{
+  position:relative;
+  width:min(86vw,22rem);
+  aspect-ratio:1;
+  margin-inline:auto;
+}
+.gauge svg{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.gauge-read{
+  position:absolute;
+  left:50%;
+  top:66%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  pointer-events:none;
+}
+.gauge-num{
+  display:block;
+  font:700 clamp(3.2rem,11vw,5.5rem)/.9 var(--f-head);
+  color:var(--white);
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-.02em;
+}
+.gauge-unit{
+  font-family:var(--f-mono);
+  font-size:.8rem;
+  color:var(--steel);
+}
+
+@media (min-width:52rem){
+  .hero{min-height:100vh;min-height:100svh}
+  .hero-grid{grid-template-columns:1.05fr .95fr}
+  .gauge{width:100%;max-width:34rem;justify-self:end;margin-inline:0}
+}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:2.5rem}
+.spec{
+  margin-top:.5rem;
+  font:700 clamp(1.8rem,4vw,2.5rem)/1.05 var(--f-head);
+  color:var(--white);
+  text-transform:uppercase;
+  letter-spacing:-.01em;
+}
+.lead{
+  max-width:42rem;
+  font-size:clamp(1.15rem,2.2vw,1.4rem);
+  line-height:1.55;
+  color:var(--white);
+}
+.perks{
+  margin-top:clamp(3rem,6vw,5rem);
+  display:grid;
+}
+.perk{
+  display:grid;
+  gap:.9rem;
+  padding:1.75rem 0;
+  border-top:1px solid var(--line);
+}
+.perk-ico{
+  display:grid;
+  place-items:center;
+  width:3rem;
+  height:3rem;
+  font-size:1.5rem;
+  line-height:1;
+  background:rgba(34,197,94,.1);
+  clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);
+}
+.perk h3{font-size:1.6rem;text-transform:uppercase}
+.perk p{color:var(--steel-soft)}
+
+@media (min-width:52rem){
+  .about-grid{grid-template-columns:5fr 7fr;gap:5rem;align-items:start}
+  .perks{grid-template-columns:repeat(3,1fr)}
+  .perk{padding:2rem 2rem 0 0}
+  .perk + .perk{padding-left:2rem;border-left:1px solid var(--line)}
+}
+
+/* ---------- Servicii ---------- */
+.services{background:var(--graphite-2)}
+.svc-grid{display:grid;gap:1rem;grid-template-columns:1fr}
+.svc{
+  position:relative;
+  padding:clamp(1.5rem,3vw,2rem);
+  background:var(--graphite-3);
+  clip-path:polygon(var(--cut-lg) 0,100% 0,100% calc(100% - var(--cut-lg)),calc(100% - var(--cut-lg)) 100%,0 100%,0 var(--cut-lg));
+  transition:background-color .3s var(--ease);
+}
+.svc:hover{background:#323940}
+.svc-ico{
+  display:block;
+  width:2.75rem;
+  height:2.75rem;
+  margin-bottom:1.5rem;
+  color:var(--accent);
+}
+.svc h3{font-size:1.75rem;text-transform:uppercase;margin-bottom:.5rem}
+.svc p{color:var(--steel-soft)}
+.svc::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:2px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transform-origin:left center;
+  transition:transform .45s var(--ease);
+}
+.svc:hover::after{transform:scaleX(1)}
+.services .actions{margin-top:2.5rem}
+
+@media (min-width:40rem){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:60rem){
+  .svc-grid{grid-template-columns:repeat(4,1fr)}
+}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;gap:1rem;grid-template-columns:1fr}
+.shot{
+  position:relative;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:var(--graphite-3);
+}
+.shot img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .8s var(--ease);
+}
+.shot:hover img{transform:scale(1.03)}
+
+@media (min-width:48rem){
+  .gallery{grid-template-columns:repeat(6,1fr)}
+  .g-1{grid-column:span 6;aspect-ratio:21/9}
+  .g-2,.g-3,.g-4{grid-column:span 2;aspect-ratio:4/5}
+}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--contact-bg)}
+.contact-grid{display:grid;gap:3rem}
+.info{display:grid;gap:2rem}
+.info-item .label{display:block;margin-bottom:.35rem}
+.val{
+  font:600 1.5rem/1.25 var(--f-head);
+  color:var(--white);
+}
+.phone-big{
+  display:inline-block;
+  font:700 clamp(2.4rem,7vw,3.5rem)/1 var(--f-head);
+  color:var(--white);
+  text-decoration:none;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:-.01em;
+  min-height:2.75rem;
+  transition:color .2s var(--ease);
+}
+.phone-big:hover{color:var(--accent)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.map-wrap{
+  position:relative;
+  min-height:20rem;
+  background:var(--graphite-3);
+  clip-path:polygon(var(--cut-lg) 0,100% 0,100% calc(100% - var(--cut-lg)),calc(100% - var(--cut-lg)) 100%,0 100%,0 var(--cut-lg));
+}
+.map-wrap iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:20rem;
+  border:0;
+  filter:grayscale(1) invert(1) contrast(.85) brightness(.9);
+}
+
+@media (min-width:52rem){
+  .contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+  .map-wrap{min-height:28rem}
+  .map-wrap iframe{min-height:28rem}
+}
+
+/* ---------- Subsol ---------- */
+.site-foot{
+  padding-block:3.5rem 2rem;
+  background:var(--foot-bg);
+}
+.foot-grid{display:grid;gap:2.25rem}
+.foot-slogan{margin-top:.75rem;color:var(--steel)}
+.foot-links a{
+  display:flex;
+  align-items:center;
+  min-height:2.75rem;
+  text-decoration:none;
+  color:var(--steel-soft);
+  transition:color .2s var(--ease);
+}
+.foot-links a:hover{color:var(--accent)}
+.foot-credit{
+  display:grid;
+  gap:.4rem;
+  margin-top:2.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--line);
+  font-size:.875rem;
+  color:var(--steel);
+}
+.foot-credit p{letter-spacing:.01em}
+
+@media (min-width:48rem){
+  .foot-grid{grid-template-columns:1.2fr 1fr 1fr}
+}
+
+/* ---------- Mișcare la derulare ---------- */
+.js .reveal{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0ms);
+}
+.js .reveal-side{transform:translateX(-18px)}
+.js .reveal-scale{transform:scale(.97)}
+.js .reveal.is-in{
+  opacity:1;
+  transform:none;
+}
+
+/* ---------- Preferințe de accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important}
+  .js .reveal,
+  .js .reveal-side,
+  .js .reveal-scale{transform:none !important}
+  .shot:hover img{transform:none}
+  .btn:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{
+    background:var(--graphite);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast:more){
+  :root{
+    --steel:#D5DADF;
+    --steel-soft:#EEF0F2;
+    --line:rgba(245,246,247,.5);
+  }
+  .nav{background:var(--graphite);border-bottom:1px solid var(--white)}
+  .btn-ghost{box-shadow:inset 0 0 0 2px var(--white)}
+  .svc{background:#353c43}
+  .map-wrap{background:#353c43}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body id="top">
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Dragma Impex, la început">
+      <span class="brand-mark" aria-hidden="true">🛞</span>
+      <span>Dragma Impex</span>
+    </a>
+
+    <ul class="nav-links" id="menu">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#servicii">Servicii</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="tel:0748212091">Sună acum</a>
+      <button class="menu-toggle" type="button" id="toggle" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+        <i aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Primul ecran: numele, butonul de contact și vitezometrul -->
+  <section class="hero" aria-labelledby="titlu">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="label reveal">Vulcanizare auto, București</p>
+        <h1 id="titlu" class="reveal" style="--d:80ms">Dragma Impex</h1>
+        <p class="hero-slogan reveal" style="--d:160ms">Strada Gheorghe Polizu, București</p>
+        <p class="hero-desc reveal" style="--d:220ms">Vulcanizare auto eficientă, pentru drumuri fără stres.</p>
+
+        <div class="actions reveal" style="--d:300ms">
+          <a class="btn btn-primary" href="tel:0748212091">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40748212091?text=Bun%C4%83%20ziua%21%20Am%20nevoie%20de%20servicii%20de%20vulcanizare." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+
+        <p class="label hero-hours reveal" style="--d:380ms">Luni – vineri: 08:00 – 19:00</p>
+      </div>
+
+      <div class="gauge" aria-hidden="true">
+        <svg viewBox="0 0 400 400" focusable="false">
+          <!-- Linii de ghidaj -->
+          <g fill="none" stroke="#9AA3AB" stroke-opacity=".18" stroke-dasharray="2 6">
+            <line x1="200" y1="14" x2="200" y2="386"/>
+            <line x1="14" y1="200" x2="386" y2="200"/>
+          </g>
+          <circle cx="200" cy="200" r="186" fill="none" stroke="#9AA3AB" stroke-opacity=".1"/>
+
+          <!-- Traseul arcului (270°) -->
+          <path d="M79.8 320.2 A170 170 0 1 1 320.2 320.2" pathLength="100" fill="none" stroke="#3A4046" stroke-width="6" stroke-linecap="butt"/>
+          <!-- Progresul, în verde -->
+          <path id="g-prog" d="M79.8 320.2 A170 170 0 1 1 320.2 320.2" pathLength="100" fill="none" stroke="#22c55e" stroke-width="6" stroke-linecap="butt" stroke-dasharray="60 100"/>
+
+          <g id="g-ticks" stroke="#9AA3AB" stroke-linecap="butt"></g>
+          <g id="g-labels" font-family="Barlow Condensed, sans-serif" font-weight="600" font-size="17" fill="#9AA3AB" text-anchor="middle" dominant-baseline="middle"></g>
+
+          <g id="needle" transform="rotate(27 200 200)">
+            <polygon points="196,212 200,62 204,212" fill="#22c55e"/>
+          </g>
+          <circle cx="200" cy="200" r="9" fill="#F5F6F7"/>
+          <circle cx="200" cy="200" r="3.5" fill="#1E2124"/>
+        </svg>
+
+        <div class="gauge-read">
+          <span class="gauge-num" id="g-num">120</span>
+          <span class="gauge-unit">km/h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2>Despre noi</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal-side">
+          <p class="label">Specialitatea noastră</p>
+          <p class="spec">Vulcanizare auto</p>
+        </div>
+        <p class="lead reveal" style="--d:120ms">Suntem aici să îți oferim servicii de vulcanizare auto fără bătăi de cap, chiar în inima cartierului. Echipa noastră te ajută să revii rapid pe traseu, indiferent de problemă. Te așteptăm cu seriozitate și promptitudine.</p>
+      </div>
+
+      <ul class="perks">
+        <li class="perk reveal">
+          <span class="perk-ico" aria-hidden="true">⚡</span>
+          <h3>Program</h3>
+          <p>Luni – vineri: 08:00 – 19:00</p>
+        </li>
+        <li class="perk reveal" style="--d:100ms">
+          <span class="perk-ico" aria-hidden="true">🤝</span>
+          <h3>Servicii locale</h3>
+          <p>Strada Gheorghe Polizu, București</p>
+        </li>
+        <li class="perk reveal" style="--d:200ms">
+          <span class="perk-ico" aria-hidden="true">🛣️</span>
+          <h3>Siguranță rutieră</h3>
+          <p>Verificare presiune și echilibrare roți</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Servicii -->
+  <section class="services" id="servicii">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2>Servicii</h2>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc reveal" style="--d:0ms">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M8 12h8M12 8v8"/>
+          </svg>
+          <h3>Vulcanizare roți</h3>
+          <p>Reparații la roțile autovehiculului</p>
+        </article>
+
+        <article class="svc reveal" style="--d:90ms">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="2.5"/>
+            <path d="M12 9.5V3M14.2 13.2l5.2 3M9.8 13.2l-5.2 3"/>
+          </svg>
+          <h3>Schimb anvelope</h3>
+          <p>Demontare și montare anvelope auto</p>
+        </article>
+
+        <article class="svc reveal" style="--d:180ms">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/>
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+          </svg>
+          <h3>Echilibrare roți</h3>
+          <p>Echilibrarea roților autovehiculului</p>
+        </article>
+
+        <article class="svc reveal" style="--d:270ms">
+          <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 16a8 8 0 1 1 16 0"/>
+            <path d="M12 16l4-4"/>
+            <circle cx="12" cy="16" r="1.2" fill="currentColor"/>
+          </svg>
+          <h3>Verificare presiune</h3>
+          <p>Control presiune anvelope</p>
+        </article>
+      </div>
+
+      <div class="actions reveal">
+        <a class="btn btn-primary" href="tel:0748212091">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40748212091?text=Bun%C4%83%20ziua%21%20Am%20nevoie%20de%20servicii%20de%20vulcanizare." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2>Galerie</h2>
+      </div>
+
+      <div class="gallery">
+        <figure class="shot g-1 reveal-scale">
+          <img src="img/1.jpg" alt="Anvelope de iarnă și de vară, într-un atelier" loading="lazy">
+        </figure>
+        <figure class="shot g-2 reveal-scale" style="--d:90ms">
+          <img src="img/2.jpg" alt="Mecanic în echipament de lucru, lângă un elevator auto" loading="lazy">
+        </figure>
+        <figure class="shot g-3 reveal-scale" style="--d:180ms">
+          <img src="img/3.jpg" alt="Mecanic care schimbă o roată la o mașină" loading="lazy">
+        </figure>
+        <figure class="shot g-4 reveal-scale" style="--d:270ms">
+          <img src="img/4.jpg" alt="Roată de aluminiu montată cu cheie pneumatică" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="info reveal-side">
+          <div class="info-item">
+            <p class="label">Telefon</p>
+            <a class="phone-big" href="tel:0748212091">0748 212 091</a>
+          </div>
+
+          <div class="info-item">
+            <p class="label">Adresă</p>
+            <p class="val">Strada Gheorghe Polizu, București</p>
+          </div>
+
+          <div class="info-item">
+            <p class="label">Program</p>
+            <p class="val">Luni – vineri: 08:00 – 19:00</p>
+          </div>
+
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="tel:0748212091">Sună acum</a>
+            <a class="btn btn-ghost" href="https://wa.me/40748212091?text=Bun%C4%83%20ziua%21%20Am%20nevoie%20de%20servicii%20de%20vulcanizare." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Dragma+Impex+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </div>
+        </div>
+
+        <div class="map-wrap reveal" style="--d:120ms">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=26.077561199999998,44.4461489,26.0855612,44.4501489&amp;layer=mapnik&amp;marker=44.4481489,26.0815612"
+            title="Harta: Dragma Impex, Strada Gheorghe Polizu, București"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">🛞</span>
+          <span>Dragma Impex</span>
+        </a>
+        <p class="foot-slogan">Strada Gheorghe Polizu, București</p>
+      </div>
+
+      <nav aria-label="Subsol">
+        <ul class="foot-links">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#servicii">Servicii</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <ul class="foot-links">
+        <li><a href="tel:0748212091">Sună acum: 0748 212 091</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Dragma+Impex+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-credit">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: HutchRock, stux, Counselling, Ralphs_Fotos</p>
+      <p>© <span id="year"></span> Dragma Impex, București</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  /* Navigare: bara de sus și meniul pe telefon */
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('toggle');
+  var menu = document.getElementById('menu');
+
+  toggle.addEventListener('click', function () {
+    var open = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  });
+
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Deschide meniul');
+    }
+  });
+
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Dezvăluire la derulare */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-side, .reveal-scale').forEach(function (el) {
+      io.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal, .reveal-side, .reveal-scale').forEach(function (el) {
+      el.classList.add('is-in');
+    });
+  }
+
+  /* Vitezometru: construire și urcare la încărcare */
+  var NS = 'http://www.w3.org/2000/svg';
+  var ticks = document.getElementById('g-ticks');
+  var labels = document.getElementById('g-labels');
+  var needle = document.getElementById('needle');
+  var prog = document.getElementById('g-prog');
+  var num = document.getElementById('g-num');
+
+  var START = 135, SWEEP = 270, STEPS = 40, MAX = 200, TARGET = 120;
+
+  function polar(a, r) {
+    var t = a * Math.PI / 180;
+    return [200 + r * Math.cos(t), 200 + r * Math.sin(t)];
+  }
+
+  for (var k = 0; k <= STEPS; k++) {
+    var a = START + k * SWEEP / STEPS;
+    var major = k % 4 === 0;
+    var p1 = polar(a, major ? 140 : 150);
+    var p2 = polar(a, 160);
+    var line = document.createElementNS(NS, 'line');
+    line.setAttribute('x1', p1[0].toFixed(1));
+    line.setAttribute('y1', p1[1].toFixed(1));
+    line.setAttribute('x2', p2[0].toFixed(1));
+    line.setAttribute('y2', p2[1].toFixed(1));
+    line.setAttribute('stroke-width', major ? 2.5 : 1.25);
+    if (major) line.setAttribute('stroke', '#C4CAD0');
+    ticks.appendChild(line);
+
+    if (major) {
+      var lp = polar(a, 122);
+      var txt = document.createElementNS(NS, 'text');
+      txt.setAttribute('x', lp[0].toFixed(1));
+      txt.setAttribute('y', lp[1].toFixed(1));
+      txt.textContent = String(k * 5);
+      labels.appendChild(txt);
+    }
+  }
+
+  function render(v) {
+    needle.setAttribute('transform', 'rotate(' + ((v - 100) * SWEEP / MAX).toFixed(2) + ' 200 200)');
+    prog.setAttribute('stroke-dasharray', (v / MAX * 100).toFixed(2) + ' 100');
+    num.textContent = String(Math.round(v));
+  }
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduce) {
+    render(TARGET);
+  } else {
+    render(0);
+    var dur = 1600, delay = 300, t0 = null;
+    var ease = function (t) { return 1 - Math.pow(1 - t, 4); };
+
+    var step = function (ts) {
+      if (t0 === null) t0 = ts;
+      var p = Math.min((ts - t0 - delay) / dur, 1);
+      if (p < 0) {
+        requestAnimationFrame(step);
+        return;
+      }
+      render(TARGET * ease(p));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  document.getElementById('year').textContent = String(new Date().getFullYear());
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
