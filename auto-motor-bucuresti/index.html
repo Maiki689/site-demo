@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Auto-motor, service auto în București: reparații, diagnoză și întreținere. Sună sau scrie pentru o programare.">
+<meta name="theme-color" content="#1E2124">
+<meta name="color-scheme" content="dark">
+<title>Auto-motor, service auto în București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{
+  --graphite:#1E2124;
+  --panel:#262B30;
+  --deep:#17191C;
+  --track:#3B424A;
+  --steel:#9AA3AB;
+  --steel-2:#5C656E;
+  --steel-line:rgba(154,163,171,.2);
+  --white:#F5F6F7;
+  --accent:#38bdf8;
+  --accent-hover:#5AC9FA;
+  --ink:#0A1820;
+  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-text:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --cut-s:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+  --cut-l:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));
+}
+
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  background:var(--graphite);color:var(--white);font-family:var(--f-text);
+  font-size:1rem;line-height:1.5;letter-spacing:0;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,72rem);margin-inline:auto;position:relative}
+section{padding-block:clamp(4.5rem,10vw,7.5rem);position:relative}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);text-transform:uppercase}
+h3{font-size:clamp(1.4rem,2.6vw,1.75rem);text-transform:uppercase;font-weight:700;line-height:1.1}
+p{max-width:60ch}
+.readout{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;color:var(--steel)}
+.lead{color:var(--steel);margin-top:1rem;font-size:1.0625rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(30,33,36,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.nav.scrolled{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 14px 30px -18px rgba(0,0,0,.7)}
+.nav-in{height:4.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;
+  font-family:var(--f-display);font-weight:800;font-size:1.3rem;letter-spacing:.02em;
+  text-transform:uppercase;color:var(--white);
+}
+.brand-mark{
+  width:2.4rem;height:2.4rem;display:grid;place-items:center;
+  background:var(--accent);clip-path:var(--cut-s);font-size:1.1rem;line-height:1;
+  font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",system-ui,sans-serif;
+}
+.nav-links{display:none;gap:2rem}
+.nav-links a{
+  font-family:var(--f-display);font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+  font-size:1rem;text-decoration:none;color:var(--steel);padding:.5rem 0;transition:color .2s;
+}
+.nav-links a:hover{color:var(--white)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:3rem;padding:.7rem 1.4rem;border:0;cursor:pointer;
+  font-family:var(--f-display);font-weight:700;font-size:1.1rem;letter-spacing:.04em;
+  text-transform:uppercase;text-decoration:none;clip-path:var(--cut-s);
+  transition:background-color .2s var(--ease),box-shadow .2s var(--ease),transform .1s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97);transition-duration:.1s}
+.btn-primary{background:var(--accent);color:var(--ink)}
+.btn-primary:hover{background:var(--accent-hover);box-shadow:0 8px 20px -10px rgba(56,189,248,.7)}
+.btn-ghost{background:rgba(245,246,247,.07);color:var(--white)}
+.btn-ghost:hover{background:rgba(245,246,247,.13)}
+.nav .btn{min-height:2.75rem;padding:.5rem 1.05rem;font-size:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.actions .btn{flex:1 1 auto}
+@media (min-width:520px){.actions .btn{flex:0 0 auto}}
+
+/* ---------- Prima secțiune ---------- */
+.hero{
+  min-height:100vh;min-height:100svh;display:flex;align-items:center;
+  padding-top:7rem;padding-bottom:4.5rem;overflow:hidden;
+}
+.guides i{position:absolute;top:0;bottom:0;width:1px;background:var(--steel-line);pointer-events:none}
+.guides i:nth-child(1){left:max(1.25rem,calc(50% - 36rem))}
+.guides i:nth-child(2){right:max(1.25rem,calc(50% - 36rem))}
+.guides i:nth-child(3){top:auto;bottom:18%;left:0;right:0;width:auto;height:1px}
+.hero-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:4rem}}
+.hero h1{
+  font-size:clamp(3.25rem,11vw,8.75rem);text-transform:uppercase;
+  margin-block:.9rem 1.1rem;
+}
+.slogan{
+  font-family:var(--f-display);font-weight:600;font-size:clamp(1.5rem,3.4vw,2.2rem);
+  line-height:1.15;letter-spacing:-.01em;
+}
+.phone-line{margin-top:1.1rem}
+.gauge{width:min(100%,25rem);justify-self:center}
+.gauge svg{width:100%;height:auto}
+.gauge figcaption{margin-top:.75rem;text-align:center}
+
+/* ---------- Mișcare la intrare (o singură secvență) ---------- */
+.js .hero [data-intro]{animation:intro .7s var(--ease) both;animation-delay:var(--d,0ms)}
+@keyframes intro{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* ---------- Dezvăluiri la derulare (variate) ---------- */
+.js [data-reveal]{
+  opacity:0;transition:opacity .55s var(--ease),transform .55s var(--ease);
+  transition-delay:var(--d,0ms);
+}
+.js [data-reveal="up"]{transform:translate3d(0,18px,0)}
+.js [data-reveal="left"]{transform:translate3d(-24px,0,0)}
+.js [data-reveal="right"]{transform:translate3d(24px,0,0)}
+.js [data-reveal="scale"]{transform:scale(.97)}
+.js [data-reveal].in{opacity:1;transform:none}
+
+/* ---------- Despre ---------- */
+.about{background:var(--deep)}
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:5rem}}
+.about-photo{margin:0}
+.about-photo .frame{position:relative;overflow:hidden;clip-path:var(--cut-l);aspect-ratio:4/3;background:var(--panel)}
+.about-photo img{width:100%;height:100%;object-fit:cover}
+.about-photo figcaption{margin-top:.6rem}
+@media (min-width:900px){.about-photo .frame{aspect-ratio:5/4}}
+.about-text p + p{margin-top:1rem}
+.about-text p:not(.readout){color:#C9CFD4;margin-top:1.25rem}
+.perks{margin-top:2.75rem}
+.perk{
+  display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.1rem;align-items:start;
+  padding-block:1.25rem;border-top:1px solid var(--steel-line);
+}
+.perk:last-child{border-bottom:1px solid var(--steel-line)}
+.perk-icon{
+  width:2.75rem;height:2.75rem;display:grid;place-items:center;background:var(--panel);
+  clip-path:var(--cut-s);font-size:1.25rem;grid-row:span 2;
+  font-family:"Segoe UI Emoji","Apple Color Emoji","Noto Color Emoji",system-ui,sans-serif;
+}
+.perk h3{font-size:1.3rem;padding-top:.45rem}
+.perk p{color:var(--steel);grid-column:2}
+
+/* ---------- Servicii (fundal deschis) ---------- */
+.services{background:var(--white);color:var(--graphite)}
+.services h2{color:var(--graphite)}
+.services .lead{color:#4A525A}
+.svc-grid{display:grid;gap:1.25rem;margin-top:3rem}
+@media (min-width:760px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{
+  position:relative;display:flex;flex-direction:column;gap:.9rem;
+  background:var(--graphite);color:var(--white);clip-path:var(--cut-l);
+  padding:2.25rem 1.75rem 2rem;
+}
+.svc::before{content:"";position:absolute;top:0;left:0;width:3rem;height:3px;background:var(--accent)}
+.svc p{color:var(--steel)}
+.svc .readout{margin-top:auto;padding-top:1rem}
+.services .btn-ghost{background:rgba(30,33,36,.07);color:var(--graphite)}
+.services .btn-ghost:hover{background:rgba(30,33,36,.12)}
+
+/* ---------- Galerie ---------- */
+.gallery-grid{display:grid;gap:1rem;margin-top:3rem}
+@media (min-width:760px){.gallery-grid{grid-template-columns:1fr 1fr;gap:1.25rem}}
+.shot{margin:0;overflow:hidden;clip-path:var(--cut-s);aspect-ratio:4/3;background:var(--panel)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+@media (hover:hover){.shot:hover img{transform:scale(1.035)}}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.1fr;gap:4.5rem;align-items:start}}
+.contact-list{margin-top:2rem;border-top:1px solid var(--steel-line)}
+.contact-list li{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+  padding-block:1rem;border-bottom:1px solid var(--steel-line);
+}
+.contact-list .readout{flex:0 0 auto}
+.contact-list a{
+  font-family:var(--f-display);font-weight:700;font-size:1.35rem;text-decoration:none;
+  text-align:right;transition:color .2s;
+}
+.contact-list a:hover{color:var(--accent)}
+.map{position:relative;clip-path:var(--cut-l);overflow:hidden;height:22rem;background:var(--panel)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) brightness(.9) contrast(1.05)}
+@media (min-width:900px){.map{height:28rem}}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--deep);padding-block:2.75rem 3.25rem;color:var(--steel);font-size:.9rem}
+.foot-in{display:grid;gap:1.5rem}
+@media (min-width:760px){.foot-in{grid-template-columns:1fr 1fr;align-items:end}}
+.foot .brand{font-size:1.1rem}
+.foot p{margin-top:.5rem}
+.foot .readout{color:var(--steel)}
+
+/* ---------- Mișcare redusă ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .hero [data-intro]{animation:fade .2s linear both;animation-delay:0ms}
+  .js [data-reveal],.js [data-reveal].in{transform:none !important;transition:opacity .2s linear !important;transition-delay:0ms !important}
+  .shot img{transition:none}
+  .btn:active{transform:none}
+}
+
+/* ---------- Transparență redusă ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* ---------- Contrast crescut ---------- */
+@media (prefers-contrast:more){
+  :root{--steel:#C4CBD1;--steel-line:rgba(245,246,247,.45)}
+  .nav{background:var(--graphite);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-ghost{background:#3A4147}
+  .services .btn-ghost{background:#E2E5E8}
+  .svc,.perk-icon,.shot{background:var(--panel)}
+  .services .svc{background:var(--graphite)}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Auto-motor, sus la început">
+      <span class="brand-mark" aria-hidden="true">🛠️</span>
+      <span>Auto-motor</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="tel:0723589234">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="guides" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="readout" data-intro style="--d:60ms">service auto, București</p>
+        <h1 id="titlu" data-intro style="--d:140ms">Auto-motor</h1>
+        <p class="slogan" data-intro style="--d:220ms">Mașina ta, din nou pe drum</p>
+        <p class="lead" data-intro style="--d:280ms">Service auto prietenos, gata să ajute.</p>
+        <div class="actions" data-intro style="--d:340ms">
+          <a class="btn btn-primary" href="tel:0723589234">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723589234?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20pentru%20ma%C8%99in%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <p class="readout phone-line" data-intro style="--d:400ms">0723 589 234</p>
+      </div>
+
+      <figure class="gauge" data-intro style="--d:200ms">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Vitezometru decorativ">
+          <path class="housing" d="M24 10H376L390 24V376L376 390H24L10 376V24Z"/>
+          <circle class="guide" cx="200" cy="200" r="186"/>
+          <path class="track" d="M86.86 313.14 A160 160 0 1 1 313.14 313.14"/>
+          <path id="arc" class="arc" pathLength="100" d="M86.86 313.14 A160 160 0 1 1 313.14 313.14"/>
+          <g id="ticks" aria-hidden="true"></g>
+          <text id="speed" class="g-num" x="200" y="262" text-anchor="middle">0</text>
+          <text class="g-unit" x="200" y="296" text-anchor="middle">km/h</text>
+          <polygon id="needle" class="needle" points="197,200 200,96 203,200" transform="rotate(225 200 200)"/>
+          <circle class="hub" cx="200" cy="200" r="10"/>
+        </svg>
+        <figcaption class="readout">stare: gata de drum</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="about" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap about-grid">
+      <figure class="about-photo" data-reveal="left">
+        <div class="frame">
+          <img src="img/1.jpg" alt="Mecanic care lucrează la o mașină, alături de client" loading="lazy">
+        </div>
+        <figcaption class="readout">fotografie ilustrativă</figcaption>
+      </figure>
+
+      <div class="about-text">
+        <h2 id="despre-titlu" data-reveal="right">Despre Auto-motor</h2>
+        <p data-reveal="up" style="--d:80ms">Oferim servicii auto de bază pentru șoferii din București. Suntem aici să intervenim când ai nevoie de reparații, diagnoză sau întreținere.</p>
+        <p data-reveal="up" style="--d:140ms">Vino cu încredere pentru verificări sau revizii simple. Îți spunem clar ce are mașina ta și ce trebuie făcut.</p>
+
+        <ul class="perks">
+          <li class="perk" data-reveal="up">
+            <span class="perk-icon" aria-hidden="true">🚗</span>
+            <h3>Pentru orice marcă</h3>
+            <p>Servicii pentru orice autoturism</p>
+          </li>
+          <li class="perk" data-reveal="up" style="--d:90ms">
+            <span class="perk-icon" aria-hidden="true">🧑‍🔧</span>
+            <h3>Personal amabil</h3>
+            <p>Spune-ne ce se întâmplă cu mașina, la telefon sau pe WhatsApp.</p>
+          </li>
+          <li class="perk" data-reveal="up" style="--d:180ms">
+            <span class="perk-icon" aria-hidden="true">💡</span>
+            <h3>Diagnoză</h3>
+            <p>Găsim cauza înainte să schimbăm ceva.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <h2 id="servicii-titlu" data-reveal="up">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="lead" data-reveal="up" style="--d:60ms">Pentru ce vii la noi, de la o problemă urgentă la o revizie simplă.</p>
+
+      <div class="svc-grid">
+        <article class="svc" data-reveal="up">
+          <h3>Reparații auto</h3>
+          <p>Intervenim când ceva nu merge și repunem mașina pe drum, cu explicații pe înțeles.</p>
+          <p class="readout">pentru: defecțiuni</p>
+        </article>
+        <article class="svc" data-reveal="up" style="--d:100ms">
+          <h3>Diagnoză</h3>
+          <p>Găsim cauza problemei înainte să schimbăm ceva la întâmplare.</p>
+          <p class="readout">pentru: probleme neclare</p>
+        </article>
+        <article class="svc" data-reveal="up" style="--d:200ms">
+          <h3>Întreținere</h3>
+          <p>Revizii și verificări simple, ca să eviți surprizele pe drum.</p>
+          <p class="readout">pentru: revizii și verificări</p>
+        </article>
+      </div>
+
+      <div class="actions" data-reveal="up" style="--d:120ms">
+        <a class="btn btn-primary" href="tel:0723589234">Sună acum</a>
+        <a class="btn btn-ghost" href="https://wa.me/40723589234?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20pentru%20ma%C8%99in%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu" data-reveal="up">Din atelier</h2>
+      <p class="lead" data-reveal="up" style="--d:60ms">Câteva imagini din lucrările de service.</p>
+
+      <div class="gallery-grid">
+        <figure class="shot" data-reveal="scale">
+          <img src="img/2.jpg" alt="Lucru la frânele unei mașini, într-un atelier" loading="lazy">
+        </figure>
+        <figure class="shot" data-reveal="scale" style="--d:90ms">
+          <img src="img/3.jpg" alt="Schimbarea uleiului la motor" loading="lazy">
+        </figure>
+        <figure class="shot" data-reveal="scale" style="--d:60ms">
+          <img src="img/4.jpg" alt="Anvelopă și jantă, într-un atelier" loading="lazy">
+        </figure>
+        <figure class="shot" data-reveal="scale" style="--d:150ms">
+          <img src="img/5.jpg" alt="Motor în timpul unei intervenții de întreținere" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contact-titlu" data-reveal="up">Contact</h2>
+        <p class="lead" data-reveal="up" style="--d:60ms">Sună sau scrie-ne și stabilim împreună o oră potrivită pentru mașina ta.</p>
+
+        <ul class="contact-list" data-reveal="up" style="--d:120ms">
+          <li>
+            <span class="readout">telefon</span>
+            <a href="tel:0723589234">0723 589 234</a>
+          </li>
+          <li>
+            <span class="readout">oraș</span>
+            <span class="contact-city">București</span>
+          </li>
+          <li>
+            <span class="readout">hartă</span>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Auto-motor+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </li>
+        </ul>
+
+        <div class="actions" data-reveal="up" style="--d:160ms">
+          <a class="btn btn-primary" href="tel:0723589234">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40723589234?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20fac%20o%20programare%20pentru%20ma%C8%99in%C4%83." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal="scale" style="--d:100ms">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1471429,44.468493599999995,26.1551429,44.4724936&amp;layer=mapnik&amp;marker=44.4704936,26.1511429" title="Harta locației Auto-motor, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">🛠️</span>
+        <span>Auto-motor</span>
+      </a>
+      <p>Service auto, București.</p>
+    </div>
+    <div>
+      <p class="readout">Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: DokaRyan, NoName_13, Skica911, Eugen_Tomas</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Bara de navigare: umbră doar când pagina se derulează sub ea */
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Dezvăluire la derulare */
+  var els = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Vitezometru */
+  var NS = 'http://www.w3.org/2000/svg';
+  var MAX = 240, TARGET = 120, DUR = 1900;
+  var START = 225, SWEEP = 270;
+
+  function ang(v) { return START + (v / MAX) * SWEEP; }
+  function pt(r, a) {
+    var rad = a * Math.PI / 180;
+    return [200 + r * Math.sin(rad), 200 - r * Math.cos(rad)];
+  }
+  function mk(tag, attrs, parent) {
+    var el = document.createElementNS(NS, tag);
+    for (var k in attrs) { el.setAttribute(k, attrs[k]); }
+    parent.appendChild(el);
+    return el;
+  }
+
+  var ticks = document.getElementById('ticks');
+  for (var v = 0; v <= MAX; v += 10) {
+    var a = ang(v);
+    var major = (v % 20 === 0);
+    var p1 = pt(160, a), p2 = pt(major ? 140 : 150, a);
+    mk('line', {
+      x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1],
+      'class': major ? 'g-major' : 'g-tick'
+    }, ticks);
+    if (major) {
+      var lp = pt(126, a);
+      var t = mk('text', {
+        x: lp[0], y: lp[1], 'class': 'g-label',
+        'text-anchor': 'middle', 'dominant-baseline': 'central'
+      }, ticks);
+      t.textContent = v;
+    }
+  }
+
+  var needle = document.getElementById('needle');
+  var arc = document.getElementById('arc');
+  var speed = document.getElementById('speed');
+
+  function set(val) {
+    needle.setAttribute('transform', 'rotate(' + ang(val) + ' 200 200)');
+    arc.style.strokeDashoffset = String(100 - (val / MAX) * 100);
+    speed.textContent = String(Math.round(val));
+  }
+
+  if (reduce) {
+    set(TARGET);
+  } else {
+    set(0);
+    var t0 = performance.now() + 350;
+    var step = function (now) {
+      var p = Math.min(1, Math.max(0, (now - t0) / DUR));
+      var e = 1 - Math.pow(1 - p, 3);
+      set(TARGET * e);
+      if (p < 1) { requestAnimationFrame(step); }
+    };
+    requestAnimationFrame(step);
+  }
+})();
+</script>
+
+<style>
+/* Stiluri SVG ale vitezometrului (aici, ca să rămână lângă scriptul lui) */
+.housing{fill:var(--panel)}
+.guide{fill:none;stroke:var(--steel-line);stroke-width:1}
+.track{fill:none;stroke:var(--track);stroke-width:5}
+.arc{fill:none;stroke:var(--accent);stroke-width:5;stroke-dasharray:100;stroke-dashoffset:100}
+.g-tick{stroke:var(--steel-2);stroke-width:2}
+.g-major{stroke:var(--steel);stroke-width:2.5}
+.g-label{font-family:var(--f-display);font-weight:600;font-size:15px;fill:var(--steel)}
+.g-num{font-family:var(--f-display);font-weight:800;font-size:76px;fill:var(--white);letter-spacing:-.02em}
+.g-unit{font-family:var(--f-mono);font-size:15px;fill:var(--steel)}
+.needle{fill:var(--white)}
+.hub{fill:var(--accent)}
+</style>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
