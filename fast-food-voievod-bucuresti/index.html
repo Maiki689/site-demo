@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fast-food Voievod, București. Gustări rapide, aproape de tine. Preparate proaspete pentru pauza ta de masă.">
+<meta name="theme-color" content="#FFD23F">
+<title>Fast-food Voievod, București</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yel:#FFD23F;
+  --ink:#111111;
+  --red:#E63946;
+  --red-btn:#D42D3C;
+  --wh:#FFFFFF;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --pad:clamp(1.25rem,5vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{
+  font-family:"Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;line-height:1.5;letter-spacing:0;
+  color:var(--ink);background:var(--wh);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+figure{margin:0}
+section[id]{scroll-margin-top:4rem}
+.wrap{width:calc(100% - 2*var(--pad));max-width:1200px;margin-inline:auto}
+h1,h2,h3,.display{
+  font-family:"Anton",Impact,"Arial Narrow",sans-serif;
+  font-weight:400;text-transform:uppercase;
+  letter-spacing:-.02em;line-height:1.05;
+}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--yel);padding:.75rem 1rem;font-weight:700}
+.skip:focus{left:1rem;top:1rem}
+
+/* ---------- Navigare (sticlă) ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;color:#fff;
+  background:rgba(17,17,17,.78);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-top:1px solid rgba(255,255,255,.16);
+  transition:box-shadow .3s var(--ease);
+}
+.nav.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.22)}
+.nav-in{height:64px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{
+  display:inline-flex;align-items:center;gap:.4rem;min-height:44px;
+  font-family:"Anton",Impact,sans-serif;font-size:1.45rem;text-transform:uppercase;
+  letter-spacing:.01em;text-decoration:none;color:#fff;
+}
+.logo-emoji{font-size:1.3rem;line-height:1}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-weight:600;font-size:.95rem;letter-spacing:.01em;text-decoration:none;color:#fff;padding:.5rem 0;transition:color .2s}
+.nav-links a:hover{color:var(--yel)}
+.nav :focus-visible{outline-color:var(--yel)}
+@media (max-width:819px){.nav-links{display:none}}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:48px;padding:.85rem 1.4rem;
+  border:3px solid var(--ink);border-radius:6px;
+  font:700 1rem/1.1 "Rubik",sans-serif;letter-spacing:.01em;text-decoration:none;text-align:center;
+  box-shadow:4px 4px 0 var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:transform .1s linear,box-shadow .2s var(--ease),background-color .2s,color .2s;
+}
+.btn:hover{box-shadow:6px 6px 0 var(--ink)}
+.btn:active{transform:scale(.97);box-shadow:2px 2px 0 var(--ink)}
+.btn-red{background:var(--red-btn);color:#fff}
+.btn-dark{background:var(--ink);color:var(--yel)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-sm{min-height:44px;padding:.6rem 1rem;font-size:.95rem}
+
+/* ---------- Etichete (taguri rotite) ---------- */
+.tag{
+  display:inline-block;font-family:"Anton",Impact,sans-serif;text-transform:uppercase;
+  font-size:1.4rem;line-height:1;letter-spacing:.01em;
+  padding:.6rem .9rem .55rem;background:var(--yel);color:var(--ink);
+  box-shadow:4px 4px 0 var(--ink);transform:rotate(var(--r,0deg));
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;background:var(--yel);
+  padding:calc(64px + 2.75rem) 0 2.75rem;
+}
+.hero-text{position:relative;z-index:2}
+.hero-title{font-size:clamp(3.6rem,17vw,9rem);line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+.ln{display:block;overflow:hidden;padding-bottom:.03em}
+.ln>span{display:block;animation:rise .9s var(--ease) both}
+.ln+.ln>span{animation-delay:.12s}
+.slogan{margin-top:1.1rem;font-size:clamp(1.35rem,3.4vw,2rem);font-weight:800;line-height:1.2}
+.hero-desc{margin-top:.6rem;font-size:1.05rem;max-width:34ch}
+.hero-loc{margin-top:.35rem;font-size:.9rem;color:#2a2a2a}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.75rem}
+
+/* Stickere: pe telefon/tabletă, un rând sub butoane */
+.stickers{
+  position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:.75rem 1rem;margin-top:2.25rem;padding-inline:var(--pad);
+}
+.stk{
+  position:relative;width:clamp(64px,11vw,104px);
+  transform:rotate(var(--r,0deg));
+  animation:pop .8s var(--ease) both;animation-delay:var(--d,0s);
+}
+.stk .sv{
+  width:100%;height:auto;cursor:pointer;overflow:visible;
+  filter:drop-shadow(4px 5px 0 rgba(17,17,17,.85));
+  user-select:none;-webkit-user-select:none;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;
+}
+.s-burger{--r:8deg;--d:.25s}
+.s-pizza{--r:-12deg;--d:.4s}
+.s-fries{--r:-10deg;--d:.6s}
+.s-cup{--r:14deg;--d:.55s}
+.s-dog{--r:-5deg;--d:.8s}
+@media (max-width:759px){.s-dog{display:none}}
+
+/* Desktop: stickerele sunt lipite pe pagină, în jurul textului */
+@media (min-width:1100px){
+  .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:6rem 0 4rem}
+  .stickers{position:absolute;inset:0;display:block;padding:0;margin:0;pointer-events:none}
+  .stk{position:absolute;width:var(--w);pointer-events:auto}
+  .s-burger{top:7%;left:62%;--w:clamp(150px,17vw,230px)}
+  .s-pizza{top:40%;left:83%;--w:clamp(110px,12vw,160px)}
+  .s-fries{top:62%;left:57%;--w:clamp(110px,12vw,160px)}
+  .s-cup{top:20%;left:86%;--w:clamp(84px,8vw,110px)}
+  .s-dog{top:auto;bottom:6%;left:74%;--w:clamp(150px,16vw,215px);display:block}
+}
+
+/* ---------- Secțiuni ---------- */
+.sec-title{font-size:clamp(2.8rem,9vw,6.5rem)}
+.sec-lead{margin-top:1rem;font-size:1.1rem;max-width:44ch}
+
+/* Despre */
+.about{background:var(--wh);padding-block:clamp(4.5rem,11vw,8.5rem)}
+.about-grid{display:grid;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.about-text .sec-title{margin-bottom:1.5rem}
+.about-text p{font-size:1.1rem;max-width:58ch}
+.about-text p+p{margin-top:1rem}
+.about-photo{position:relative;margin-right:.9rem;margin-bottom:.9rem}
+.about-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;box-shadow:12px 12px 0 var(--yel)}
+.about-photo figcaption{margin-top:.9rem;font-size:.8rem;letter-spacing:.02em;color:#4a4a4a}
+.about-photo .tag{position:absolute;left:-.9rem;bottom:2.5rem;--r:-4deg}
+@media (min-width:900px){
+  .about-grid{grid-template-columns:1fr 1fr}
+  .about-photo img{aspect-ratio:4/5}
+}
+
+/* Meniu */
+.menu{background:var(--ink);color:#fff;padding-block:clamp(4.5rem,11vw,8.5rem)}
+.menu .sec-title{color:#fff}
+.menu .sec-lead{color:#dcdcdc}
+.menu-grid{list-style:none;display:grid;gap:3.5rem;margin-top:clamp(2.5rem,6vw,4rem)}
+.menu-media{position:relative;aspect-ratio:4/3;margin-bottom:1.5rem;background:#1f1f1f}
+.menu-media img{width:100%;height:100%;object-fit:cover}
+.menu-media--red{background:var(--red);display:grid;place-items:center}
+.menu-media--red .sv{width:46%;height:auto;cursor:pointer;filter:drop-shadow(5px 6px 0 rgba(0,0,0,.45));touch-action:manipulation;user-select:none}
+.menu-name{position:absolute;left:1rem;bottom:-1.2rem;font-size:clamp(1.6rem,4vw,2rem);box-shadow:5px 5px 0 var(--red)}
+.menu-item p{max-width:32ch;color:#dcdcdc;font-size:1.05rem}
+.menu-cta{margin-top:clamp(3rem,7vw,4.5rem);display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.menu-cta p{color:#dcdcdc;max-width:36ch}
+.menu .btn{border-color:var(--yel);box-shadow:4px 4px 0 var(--yel)}
+.menu .btn:hover{box-shadow:6px 6px 0 var(--yel)}
+.menu .btn:active{box-shadow:2px 2px 0 var(--yel)}
+@media (min-width:820px){
+  .menu-grid{grid-template-columns:repeat(3,1fr);gap:2.25rem}
+}
+
+/* Avantaje (roșu) */
+.adv{background:var(--red);padding-block:clamp(4.5rem,11vw,8.5rem)}
+.adv .sec-title{color:#fff}
+.adv-list{list-style:none;display:grid;gap:1.75rem;margin-top:clamp(2.5rem,6vw,4rem)}
+.adv-tag{
+  background:var(--wh);color:var(--ink);padding:1.6rem 1.5rem 1.7rem;
+  box-shadow:8px 8px 0 var(--ink);transform:rotate(var(--r,0deg));
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.adv-ico{display:block;font-size:2.4rem;line-height:1;margin-bottom:.9rem}
+.adv-tag h3{font-size:clamp(1.9rem,4vw,2.4rem);line-height:1}
+.adv-tag p{margin-top:.6rem;font-size:1.05rem;max-width:22ch}
+@media (min-width:880px){
+  .adv-list{grid-template-columns:repeat(3,1fr);gap:2.25rem}
+}
+
+/* Galerie (colaj) */
+.gallery{background:var(--wh);padding-block:clamp(4.5rem,11vw,8.5rem)}
+.coll{display:grid;gap:1.5rem;margin-top:clamp(2.5rem,6vw,4rem)}
+.coll figure{position:relative}
+.coll img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.coll-b img{aspect-ratio:1/1}
+.coll figcaption{margin-top:.6rem;font-size:.85rem;letter-spacing:.02em;color:#4a4a4a}
+.coll .tag{position:absolute;left:-.7rem;top:1.25rem}
+.coll-a .tag{--r:-5deg}
+.coll-b .tag{--r:4deg;background:var(--red)}
+@media (min-width:880px){
+  .coll{grid-template-columns:repeat(12,1fr);align-items:start;gap:2rem}
+  .coll-a{grid-column:1/span 7}
+  .coll-a img{aspect-ratio:4/5}
+  .coll-b{grid-column:9/span 4;margin-top:9rem}
+}
+
+/* Contact */
+.contact{background:var(--yel);padding-block:clamp(4.5rem,11vw,8.5rem)}
+.contact-grid{display:grid;gap:clamp(2.5rem,5vw,4rem);align-items:center}
+.contact .actions{margin-top:2rem}
+.phone{margin-top:1.5rem;font-size:1.05rem}
+.phone a{font-weight:700}
+.map{background:var(--wh);border:3px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+.map iframe{display:block;width:100%;height:clamp(300px,42vw,420px);border:0}
+.map-note{padding:.7rem 1rem;font-size:.9rem;background:var(--wh);border-top:3px solid var(--ink)}
+@media (min-width:900px){
+  .contact-grid{grid-template-columns:1fr 1.1fr}
+}
+
+/* Subsol */
+.foot{background:var(--ink);color:#e6e6e6;padding:clamp(3rem,7vw,4.5rem) 0 2.5rem;font-size:.9rem;letter-spacing:.02em}
+.foot-name{font-family:"Anton",Impact,sans-serif;text-transform:uppercase;font-size:clamp(2rem,5vw,3rem);line-height:1;color:var(--yel)}
+.foot p{margin-top:.75rem;max-width:60ch}
+.foot a{color:var(--yel);font-weight:700}
+.foot .credit{margin-top:2rem;color:#bdbdbd;font-size:.8rem}
+
+/* ---------- Mișcare ---------- */
+@keyframes rise{from{transform:translateY(105%)}to{transform:translateY(0)}}
+@keyframes pop{
+  from{opacity:0;transform:rotate(var(--r,0deg)) scale(.3)}
+  60%{opacity:1;transform:rotate(var(--r,0deg)) scale(1.06)}
+  to{opacity:1;transform:rotate(var(--r,0deg)) scale(1)}
+}
+@keyframes hop{
+  0%{transform:translateY(0) rotate(var(--r,0deg))}
+  30%{transform:translateY(-16px) rotate(calc(var(--r,0deg) + 6deg))}
+  55%{transform:translateY(0) rotate(calc(var(--r,0deg) - 3deg))}
+  75%{transform:translateY(-5px) rotate(var(--r,0deg))}
+  100%{transform:translateY(0) rotate(var(--r,0deg))}
+}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hop{animation:hop .6s var(--ease) both}
+
+/* Dezvăluire la derulare: variante discrete */
+.js .rv{opacity:0;translate:0 28px;transition:opacity .55s var(--ease),translate .55s var(--ease),scale .55s var(--ease)}
+.js .rv.rv-left{translate:-28px 0}
+.js .rv.rv-pop{scale:.94}
+.js .rv.d1{transition-delay:.08s}
+.js .rv.d2{transition-delay:.16s}
+.js .rv.in{opacity:1;translate:0 0;scale:1}
+
+/* ---------- Accesibilitate ---------- */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav{background:#111}
+}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#111;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:#000;border-top:2px solid #fff}
+  .btn{border-width:4px}
+  .tag,.adv-tag{outline:3px solid var(--ink);outline-offset:-3px}
+  .about-photo img,.coll img{outline:3px solid var(--ink);outline-offset:-3px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ln>span{animation:fade .2s linear both}
+  .stk{animation:fade .2s linear both}
+  .hop{animation:none}
+  .js .rv,.js .rv.rv-left,.js .rv.rv-pop{translate:none;scale:none;transition:opacity .2s linear}
+  .btn:active{transform:none}
+  .nav{transition:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<!-- Filtru pentru conturul alb al stickerelor -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="sk" x="-15%" y="-15%" width="130%" height="130%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="4" result="big"/>
+      <feFlood flood-color="#FFFFFF"/>
+      <feComposite in2="big" operator="in" result="border"/>
+      <feMerge>
+        <feMergeNode in="border"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
+
+<a class="skip" href="#continut">Mergi la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="Fast-food Voievod, acasă">
+      <span class="logo-emoji" aria-hidden="true">🍔</span>
+      <span>Voievod</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Din bucătărie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-red btn-sm" href="tel:0745010446">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <!-- Hero -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-text">
+      <h1 class="hero-title" id="hero-title">
+        <span class="ln"><span>Fast-food</span></span>
+        <span class="ln"><span>Voievod</span></span>
+      </h1>
+      <p class="slogan">Gustări rapide, aproape de tine.</p>
+      <p class="hero-desc">Servim preparate proaspete pentru pauza ta de masă.</p>
+      <p class="hero-loc">București.</p>
+      <div class="actions">
+        <a class="btn btn-red" href="tel:0745010446">Sună acum</a>
+        <a class="btn btn-dark" href="https://wa.me/40745010446?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva%20de%20la%20fast-food." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="stickers" aria-hidden="true">
+      <div class="stk s-burger">
+        <svg class="sv" data-hop viewBox="0 0 120 120" focusable="false">
+          <g filter="url(#sk)">
+            <path d="M18 58 C18 30 36 18 60 18 C84 18 102 30 102 58 Z" fill="#E8A33D"/>
+            <circle cx="42" cy="34" r="2.4" fill="#FFFFFF"/>
+            <circle cx="60" cy="27" r="2.4" fill="#FFFFFF"/>
+            <circle cx="78" cy="34" r="2.4" fill="#FFFFFF"/>
+            <circle cx="50" cy="44" r="2.4" fill="#FFFFFF"/>
+            <circle cx="70" cy="44" r="2.4" fill="#FFFFFF"/>
+            <rect x="14" y="54" width="92" height="12" rx="6" fill="#FFD23F"/>
+            <rect x="16" y="62" width="88" height="10" rx="5" fill="#E63946"/>
+            <rect x="16" y="68" width="88" height="16" rx="8" fill="#3B1F12"/>
+            <path d="M18 84 H102 V96 Q102 108 90 108 H30 Q18 108 18 96 Z" fill="#E8A33D"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="stk s-pizza">
+        <svg class="sv" data-hop viewBox="0 0 120 120" focusable="false">
+          <g filter="url(#sk)">
+            <path d="M60 12 L106 98 Q60 112 14 98 Z" fill="#FFD23F"/>
+            <path d="M14 98 Q60 112 106 98 L102 84 Q60 98 18 84 Z" fill="#E8A33D"/>
+            <circle cx="50" cy="48" r="9" fill="#E63946"/>
+            <circle cx="72" cy="68" r="9" fill="#E63946"/>
+            <circle cx="52" cy="80" r="8" fill="#E63946"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="stk s-fries">
+        <svg class="sv" data-hop viewBox="0 0 120 120" focusable="false">
+          <g filter="url(#sk)">
+            <rect x="34" y="16" width="9" height="46" rx="3" fill="#F6B93B" transform="rotate(-10 38 60)"/>
+            <rect x="50" y="10" width="9" height="52" rx="3" fill="#F6B93B"/>
+            <rect x="66" y="14" width="9" height="48" rx="3" fill="#F6B93B" transform="rotate(10 70 60)"/>
+            <path d="M28 58 L36 108 Q37 112 42 112 H78 Q83 112 84 108 L92 58 Z" fill="#E63946"/>
+            <path d="M31 70 H89 L88 80 H32 Z" fill="#FFD23F"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="stk s-cup">
+        <svg class="sv" data-hop viewBox="0 0 120 120" focusable="false">
+          <g filter="url(#sk)">
+            <rect x="60" y="6" width="8" height="34" rx="4" fill="#FFD23F"/>
+            <path d="M28 40 L36 110 Q37 114 42 114 H78 Q83 114 84 110 L92 40 Z" fill="#E63946"/>
+            <path d="M33 62 H87 L84 88 H36 Z" fill="#FFD23F"/>
+            <text x="60" y="82" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="20" fill="#111111">V</text>
+            <rect x="24" y="30" width="72" height="12" rx="6" fill="#111111"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="stk s-dog">
+        <svg class="sv" data-hop viewBox="0 0 120 120" focusable="false">
+          <g filter="url(#sk)">
+            <rect x="8" y="58" width="104" height="32" rx="16" fill="#E8A33D"/>
+            <rect x="4" y="44" width="112" height="24" rx="12" fill="#B5402A"/>
+            <path d="M10 56 Q20 48 30 56 T50 56 T70 56 T90 56 T110 56" fill="none" stroke="#FFD23F" stroke-width="4" stroke-linecap="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section class="about" id="despre" aria-labelledby="despre-title">
+    <div class="wrap about-grid">
+      <div class="about-text rv">
+        <h2 class="sec-title" id="despre-title">Mâncare rapidă, la un pas de tine</h2>
+        <p>La fast-food Voievod găsești mereu mâncare rapidă, într-un loc accesibil din București.</p>
+        <p>Preparatele sunt realizate pe loc, pentru orice poftă sau nevoie de energie la drum.</p>
+        <p>Fie că vrei să iei prânzul sau o gustare, suntem aproape de tine.</p>
+      </div>
+      <figure class="about-photo rv rv-left d1">
+        <img src="img/1.jpg" alt="Hamburger cu cheddar și bacon, pe un blat de bucătărie" width="1200" height="1200" loading="lazy" decoding="async">
+        <figcaption>Fotografie ilustrativă.</figcaption>
+        <span class="tag" style="--r:-4deg">Făcut pe loc</span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Meniu -->
+  <section class="menu" id="meniu" aria-labelledby="meniu-title">
+    <div class="wrap">
+      <h2 class="sec-title rv" id="meniu-title">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="sec-lead rv">Ce găsești la noi, pe scurt.</p>
+
+      <ul class="menu-grid">
+        <li class="menu-item rv">
+          <div class="menu-media">
+            <img src="img/2.jpg" alt="Hot dog cu ketchup" width="1200" height="900" loading="lazy" decoding="async">
+            <h3 class="tag menu-name" data-hop style="--r:-3deg">Preparate calde</h3>
+          </div>
+          <p>De exemplu: burgeri și hot dogs, pregătite pe loc.</p>
+        </li>
+
+        <li class="menu-item rv d1">
+          <div class="menu-media">
+            <img src="img/5.jpg" alt="Cartofi prăjiți, aurii și crocanți" width="1200" height="900" loading="lazy" decoding="async">
+            <h3 class="tag menu-name" data-hop style="--r:2deg">Gustări</h3>
+          </div>
+          <p>De exemplu: cartofi prăjiți și alte gustări rapide, pentru drum.</p>
+        </li>
+
+        <li class="menu-item rv d2">
+          <div class="menu-media menu-media--red">
+            <svg class="sv" data-hop viewBox="0 0 120 120" focusable="false" aria-hidden="true">
+              <g filter="url(#sk)">
+                <rect x="60" y="6" width="8" height="34" rx="4" fill="#FFD23F"/>
+                <path d="M28 40 L36 110 Q37 114 42 114 H78 Q83 114 84 110 L92 40 Z" fill="#111111"/>
+                <path d="M33 62 H87 L84 88 H36 Z" fill="#FFD23F"/>
+                <text x="60" y="82" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="20" fill="#111111">V</text>
+                <rect x="24" y="30" width="72" height="12" rx="6" fill="#FFFFFF"/>
+              </g>
+            </svg>
+            <h3 class="tag menu-name" data-hop style="--r:-2deg">Băuturi</h3>
+          </div>
+          <p>Ceva rece sau cald, ca să duci masa până la capăt.</p>
+        </li>
+      </ul>
+
+      <div class="menu-cta rv">
+        <a class="btn btn-red" href="tel:0745010446">Sună și întreabă de prețuri</a>
+        <p>Prețurile și disponibilitatea le afli la telefon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantaje -->
+  <section class="adv" aria-labelledby="adv-title">
+    <div class="wrap">
+      <h2 class="sec-title rv" id="adv-title">Pe scurt</h2>
+      <ul class="adv-list">
+        <li class="adv-tag rv" data-hop style="--r:-2deg">
+          <span class="adv-ico" aria-hidden="true">⏱️</span>
+          <h3>Servire rapidă</h3>
+          <p>Fără așteptări îndelungate.</p>
+        </li>
+        <li class="adv-tag rv d1" data-hop style="--r:1.5deg">
+          <span class="adv-ico" aria-hidden="true">🥡</span>
+          <h3>La pachet</h3>
+          <p>Ideal pentru masa la drum.</p>
+        </li>
+        <li class="adv-tag rv d2" data-hop style="--r:-1deg">
+          <span class="adv-ico" aria-hidden="true">📍</span>
+          <h3>Accesibil</h3>
+          <p>În apropiere de zona Obor.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Galerie -->
+  <section class="gallery" id="galerie" aria-labelledby="galerie-title">
+    <div class="wrap">
+      <h2 class="sec-title rv" id="galerie-title">Din bucătărie</h2>
+      <p class="sec-lead rv">Fotografii ilustrative, ca să vezi ce poftă îți putem face.</p>
+      <div class="coll">
+        <figure class="coll-a rv">
+          <img src="img/3.jpg" alt="Cartofi prăjiți cu ketchup" width="1200" height="1000" loading="lazy" decoding="async">
+          <span class="tag" style="--r:-5deg">Cartofi</span>
+          <figcaption>Cartofi prăjiți, la pachet sau la masă.</figcaption>
+        </figure>
+        <figure class="coll-b rv rv-left d2">
+          <img src="img/4.jpg" alt="Preparat din bucătărie, fotografie ilustrativă" width="1000" height="1000" loading="lazy" decoding="async">
+          <span class="tag" style="--r:4deg">Proaspăt</span>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <h2 class="sec-title" id="contact-title">Sună sau scrie</h2>
+        <p class="sec-lead">Suntem aproape de tine, în zona Obor.</p>
+        <div class="actions">
+          <a class="btn btn-red" href="tel:0745010446">Sună acum</a>
+          <a class="btn btn-dark" href="https://wa.me/40745010446?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20comand%20ceva%20de%20la%20fast-food." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Fast-food+Voievod+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+        <p class="phone">Telefon: <a href="tel:0745010446">0745010446</a></p>
+      </div>
+
+      <div class="map rv rv-pop d1">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.129314299999997,44.453371999999995,26.1373143,44.457372&amp;layer=mapnik&amp;marker=44.455372,26.1333143" title="Harta zonei fast-food Voievod, lângă Obor, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="map-note">Harta arată zona din apropierea Obor.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot-name">Fast-food Voievod</p>
+    <p>București. Telefon: <a href="tel:0745010446">0745010446</a></p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: Fotorech, HannahChen, Pexels, marckbass8, matthiasboeckel</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Bara de sus capătă umbră când pagina se derulează sub ea
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Dezvăluire la derulare
+  var rv = Array.prototype.slice.call(document.querySelectorAll('.rv'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else {
+    rv.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // Săritură scurtă la atingere (stickere și etichete)
+  document.querySelectorAll('[data-hop]').forEach(function (el) {
+    el.addEventListener('pointerdown', function () {
+      el.classList.remove('hop');
+      void el.offsetWidth;
+      el.classList.add('hop');
+    });
+    el.addEventListener('animationend', function (e) {
+      if (e.animationName === 'hop') el.classList.remove('hop');
+    });
+  });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
