@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="La Mamaia, magazin de cartier în București, cu produse variate pentru toată familia.">
+<meta name="theme-color" content="#FFD447">
+<title>La Mamaia — magazin de cartier în București</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --amber:#b45309;
+  --amber-ink:#8a3f06;
+  --yellow:#FFD447;
+  --yellow-soft:#FFF1BE;
+  --ink:#111;
+  --muted:#4a4a4a;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:Rubik,system-ui,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  color:var(--ink);
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  font-family:Outfit,system-ui,sans-serif;
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:1.1;
+}
+.wrap{max-width:var(--wrap);width:calc(100% - 2.5rem);margin-inline:auto}
+.section{padding:clamp(4rem,9vw,7rem) 0}
+h2{font-size:clamp(2rem,4.6vw,3.25rem)}
+
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:.6rem 1rem;z-index:100}
+.skip:focus{left:1rem;top:1rem}
+
+/* Bara de navigare: sticlă */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7);
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 8px 24px -12px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.7)}
+.nav-inner{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-family:Outfit,sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.brand-mark{font-size:1.4rem;line-height:1}
+.nav-links{display:none;gap:1.75rem}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.98rem;transition:color .2s}
+.nav-links a:hover{color:var(--amber)}
+@media (min-width:760px){.nav-links{display:flex}}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3.25rem;padding:.8rem 1.4rem;
+  border:2px solid transparent;border-radius:16px;
+  font-family:Rubik,sans-serif;font-weight:600;font-size:1.02rem;
+  text-decoration:none;text-align:center;cursor:pointer;
+  transition:background-color .2s,color .2s,box-shadow .2s,transform .1s;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--amber);color:#fff}
+.btn-primary:hover{background:var(--amber-ink);box-shadow:0 8px 18px -8px rgba(138,63,6,.6)}
+.btn-ghost{background:#fff;color:var(--ink)}
+.btn-ghost:hover{box-shadow:0 8px 18px -10px rgba(0,0,0,.35)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#2b2b2b}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-small{min-height:2.75rem;padding:.5rem 1rem;font-size:.95rem}
+.btn-block{width:100%}
+
+/* Prima secțiune */
+.hero{background:var(--yellow);padding:clamp(2.5rem,7vw,6rem) 0 clamp(3.5rem,8vw,6rem)}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:3rem}}
+.hero h1{font-size:clamp(3.4rem,13vw,6.8rem);line-height:1}
+.slogan{font-family:Outfit,sans-serif;font-weight:600;font-size:clamp(1.25rem,3.2vw,1.65rem);line-height:1.2;margin-top:.75rem;letter-spacing:-.01em}
+.hero-desc{margin-top:1rem;max-width:36ch}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero-bag{justify-self:center;width:min(72vw,320px)}
+@media (min-width:900px){.hero-bag{width:min(100%,400px)}}
+
+/* Despre */
+.about-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:4rem}}
+.photo{border-radius:20px;overflow:hidden;aspect-ratio:4/5;background:var(--yellow-soft)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.about-text p{margin-top:1rem;max-width:58ch;color:var(--muted)}
+.about-text h2{max-width:18ch}
+
+.perks{list-style:none;display:grid;gap:1rem;margin-top:clamp(3rem,6vw,4.5rem)}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr)}}
+.perk{padding:1.75rem;border-radius:20px;transition:box-shadow .25s}
+.perk:hover{box-shadow:0 14px 26px -18px rgba(0,0,0,.45)}
+.perk-ico{font-size:2rem;line-height:1}
+.perk h3{font-size:1.3rem;margin:.9rem 0 .35rem}
+.perk p{font-size:.98rem}
+.p-yellow{background:var(--yellow);color:var(--ink)}
+.p-black{background:var(--ink);color:#fff}
+.p-amber{background:var(--amber);color:#fff}
+
+/* Produse */
+.sec-head{max-width:40rem}
+.sec-head p{margin-top:.9rem;color:var(--muted);font-size:1.05rem}
+.photo-wide{margin-top:2.5rem;border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.photo-wide img{width:100%;height:100%;object-fit:cover}
+@media (min-width:760px){.photo-wide{aspect-ratio:21/9}}
+.tiles{list-style:none;display:grid;gap:1rem;grid-template-columns:1fr;margin-top:1rem}
+@media (min-width:720px){
+  .tiles{grid-template-columns:repeat(6,1fr)}
+  .tile:nth-child(-n+3){grid-column:span 2}
+  .tile:nth-child(n+4){grid-column:span 3}
+}
+.tile{
+  border-radius:20px;padding:1.75rem;min-height:12rem;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:.4rem;
+  transition:box-shadow .25s;
+}
+.tile:hover{box-shadow:0 14px 26px -16px rgba(0,0,0,.45)}
+.tile-ico{font-size:2.4rem;line-height:1;margin-bottom:auto;padding-top:.5rem}
+.tile h3{font-size:1.4rem}
+.tile p{font-size:.98rem;max-width:30ch}
+.t-yellow{background:var(--yellow);color:var(--ink)}
+.t-black{background:var(--ink);color:#fff}
+.t-amber{background:var(--amber);color:#fff}
+.t-tint{background:var(--yellow-soft);color:var(--ink)}
+.products-cta{margin-top:2.5rem;display:flex;justify-content:center}
+
+/* Fotografie largă */
+.band{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:440px;display:flex;align-items:flex-end;color:#fff;
+}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.band::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top,rgba(17,17,17,.82) 0%,rgba(17,17,17,.2) 72%);
+}
+.band-text{padding-block:clamp(2.5rem,6vw,4.5rem);width:100%}
+.band h2{max-width:16ch}
+.band .btn{margin-top:1.5rem}
+
+/* Contact */
+.contact-grid{display:grid;gap:2.5rem}
+@media (min-width:900px){.contact-grid{grid-template-columns:1fr 1.15fr;gap:3.5rem;align-items:center}}
+.contact-text p{margin-top:1rem;max-width:44ch;color:var(--muted)}
+.phone{font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(1.8rem,4vw,2.4rem);margin-top:1.5rem;letter-spacing:-.01em}
+.phone a{text-decoration:none}
+.phone a:hover{text-decoration:underline;text-underline-offset:6px}
+.stack{display:grid;gap:.75rem;margin-top:1.75rem;max-width:26rem}
+.map{border-radius:20px;overflow:hidden;height:320px;background:var(--yellow-soft)}
+@media (min-width:900px){.map{height:440px}}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* Subsol */
+.foot{background:var(--ink);color:#e9e9e9;padding:3rem 0 2.5rem;font-size:.92rem;letter-spacing:.01em}
+.foot-grid{display:grid;gap:1.75rem}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1.2fr;align-items:start}}
+.foot-brand{font-family:Outfit,sans-serif;font-weight:800;font-size:1.2rem;color:#fff}
+.foot-brand + p{margin-top:.35rem;color:#bdbdbd}
+.foot-links{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem}
+.foot a{color:#fff;text-underline-offset:4px}
+.foot-meta p + p{margin-top:.5rem;color:#bdbdbd}
+.foot :focus-visible{outline-color:var(--yellow)}
+
+/* Pungă: intrare o singură dată */
+.item{animation:drop .8s var(--ease) both;animation-delay:var(--d,0s)}
+@keyframes drop{
+  from{transform:translateY(-120px);opacity:0}
+  to{transform:none;opacity:1}
+}
+
+/* Dezvăluire la derulare */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .reveal-left{opacity:0;transform:translateX(-18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .reveal-scale{opacity:0;transform:scale(.98);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js .in{opacity:1;transform:none}
+
+/* Accesibilitate */
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .nav{background:#fff;box-shadow:inset 0 -2px 0 var(--ink)}
+  .btn{border-color:currentColor}
+  .btn-ghost{border-color:var(--ink)}
+  .perk,.tile{outline:2px solid var(--ink);outline-offset:-2px}
+  .map{outline:2px solid var(--ink)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .item{animation:fadeIn .2s ease both;animation-delay:0s}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .js .reveal,.js .reveal-left,.js .reveal-scale{transform:none;transition:opacity .2s ease}
+  .btn:active{transform:none}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#continut">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="La Mamaia, pagina de început">
+      <span class="brand-mark" aria-hidden="true">🛒</span>
+      <span>La Mamaia</span>
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#despre">Despre</a>
+      <a href="#produse">Produse</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-small" href="tel:0758635726">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <!-- Prima secțiune -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1>La Mamaia</h1>
+        <p class="slogan">Tot ce ai nevoie, aproape de tine</p>
+        <p class="hero-desc">Magazin de cartier cu produse variate pentru toată familia.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:0758635726">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40758635726?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20produsele%20disponibile." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-bag">
+        <svg class="bag" viewBox="0 0 320 376" role="img" aria-label="Pungă de cumpărături care se umple cu produse">
+          <path d="M104 126 V92 Q104 46 160 46 Q216 46 216 92 V126" fill="none" stroke="#111" stroke-width="11" stroke-linecap="round"/>
+          <rect x="44" y="118" width="232" height="236" rx="20" fill="#7a3305"/>
+
+          <g transform="translate(98 152)">
+            <g class="item" style="--d:.15s">
+              <rect x="-30" y="-17" width="60" height="34" rx="17" fill="#E9A54A" stroke="#111" stroke-width="3"/>
+              <path d="M-14 -6 L-6 6 M4 -6 L12 6" stroke="#8a3f06" stroke-width="3" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <g transform="translate(158 132)">
+            <g class="item" style="--d:0s">
+              <rect x="-22" y="-36" width="44" height="72" rx="5" fill="#fff" stroke="#111" stroke-width="3"/>
+              <path d="M-22 -26 H22" stroke="#111" stroke-width="3"/>
+              <rect x="-10" y="-14" width="20" height="14" fill="#FFD447"/>
+            </g>
+          </g>
+
+          <g transform="translate(218 150)">
+            <g class="item" style="--d:.3s">
+              <rect x="-13" y="-30" width="26" height="60" rx="8" fill="#FFD447" stroke="#111" stroke-width="3"/>
+              <rect x="-6" y="-42" width="12" height="14" rx="3" fill="#111"/>
+            </g>
+          </g>
+
+          <g transform="translate(80 160)">
+            <g class="item" style="--d:.45s">
+              <rect x="-24" y="-28" width="48" height="56" rx="4" fill="#FFF1BE" stroke="#111" stroke-width="3"/>
+              <rect x="-24" y="-8" width="48" height="10" fill="#111"/>
+            </g>
+          </g>
+
+          <g transform="translate(252 166)">
+            <g class="item" style="--d:.6s">
+              <circle r="19" fill="#F3C98B" stroke="#111" stroke-width="3"/>
+              <circle r="5" fill="#8a3f06"/>
+            </g>
+          </g>
+
+          <path d="M44 176 H276 V336 Q276 354 258 354 H62 Q44 354 44 336 Z" fill="#b45309"/>
+          <rect x="64" y="200" width="56" height="8" rx="4" fill="#fff" opacity=".28"/>
+          <text x="160" y="284" text-anchor="middle" font-family="Outfit, sans-serif" font-weight="800" font-size="30" fill="#FFD447">La Mamaia</text>
+          <ellipse cx="160" cy="366" rx="120" ry="8" fill="#111" opacity=".15"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre" class="section">
+    <div class="wrap about-grid">
+      <figure class="photo reveal-left">
+        <img src="img/1.jpg" alt="Rafturi cu produse de zi cu zi într-un magazin" loading="lazy">
+      </figure>
+      <div class="about-text reveal">
+        <h2>Produse variate, la magazinul din cartier</h2>
+        <p>La Mamaia este un magazin de cartier din București, unde găsești produse variate pentru toată familia.</p>
+        <p>Ne străduim să îți fim mereu la îndemână cu ceea ce ai nevoie. Te așteptăm cu o atmosferă prietenoasă și produse pentru toată familia.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <ul class="perks">
+        <li class="perk p-yellow reveal" style="transition-delay:0s">
+          <span class="perk-ico" aria-hidden="true">👍</span>
+          <h3>Rapid și aproape</h3>
+          <p>Magazin chiar în cartier.</p>
+        </li>
+        <li class="perk p-black reveal" style="transition-delay:.1s">
+          <span class="perk-ico" aria-hidden="true">🛍️</span>
+          <h3>Varietate</h3>
+          <p>Produse diverse pentru toți.</p>
+        </li>
+        <li class="perk p-amber reveal" style="transition-delay:.2s">
+          <span class="perk-ico" aria-hidden="true">😊</span>
+          <h3>Atmosferă prietenoasă</h3>
+          <p>Servire cu zâmbetul pe buze.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Produse -->
+  <section id="produse" class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2>Produse</h2>
+        <p>Ce găsești la noi, de la pâine și lapte până la baterii.</p>
+      </div>
+
+      <figure class="photo-wide reveal-scale">
+        <img src="img/3.jpg" alt="Frigidere cu produse proaspete într-un magazin" loading="lazy">
+      </figure>
+
+      <ul class="tiles">
+        <li class="tile t-yellow reveal">
+          <span class="tile-ico" aria-hidden="true">🍞</span>
+          <h3>Alimente de bază</h3>
+          <p>Produse esențiale pentru fiecare zi.</p>
+        </li>
+        <li class="tile t-black reveal" style="transition-delay:.08s">
+          <span class="tile-ico" aria-hidden="true">🥤</span>
+          <h3>Băuturi răcoritoare</h3>
+          <p>Băuturi pentru fiecare zi.</p>
+        </li>
+        <li class="tile t-amber reveal" style="transition-delay:.16s">
+          <span class="tile-ico" aria-hidden="true">🍪</span>
+          <h3>Dulciuri și gustări</h3>
+          <p>Gustări pentru acasă sau pe drum.</p>
+        </li>
+        <li class="tile t-tint reveal">
+          <span class="tile-ico" aria-hidden="true">🧼</span>
+          <h3>Produse de igienă</h3>
+          <p>Pentru igienă zilnică.</p>
+        </li>
+        <li class="tile t-yellow reveal" style="transition-delay:.08s">
+          <span class="tile-ico" aria-hidden="true">💡</span>
+          <h3>Articole pentru casă</h3>
+          <p>Pentru nevoile din gospodărie.</p>
+        </li>
+      </ul>
+
+      <div class="products-cta reveal">
+        <a class="btn btn-dark" href="https://wa.me/40758635726?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20produsele%20disponibile." target="_blank" rel="noopener">Întreabă-ne pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fotografie largă -->
+  <section class="band" aria-labelledby="band-titlu">
+    <img src="img/2.jpg" alt="Cumpărături în magazin" loading="lazy">
+    <div class="wrap band-text reveal">
+      <h2 id="band-titlu">Te așteptăm cu zâmbetul pe buze</h2>
+      <a class="btn btn-primary" href="tel:0758635726">Sună acum</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="wrap contact-grid">
+      <div class="contact-text reveal-left">
+        <h2>Sună-ne sau scrie-ne</h2>
+        <p>Scrie-ne pe WhatsApp sau sună direct. Ne găsești pe hartă.</p>
+        <p class="phone"><a href="tel:0758635726">0758 635 726</a></p>
+        <div class="stack">
+          <a class="btn btn-primary btn-block" href="tel:0758635726">Sună acum</a>
+          <a class="btn btn-dark btn-block" href="https://wa.me/40758635726?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83%20aflu%20detalii%20despre%20produsele%20disponibile." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+          <a class="btn btn-line btn-block" href="https://www.google.com/maps/search/?api=1&amp;query=La+Mamaia+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map reveal-scale">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.039208,44.4872673,26.047208,44.491267300000004&amp;layer=mapnik&amp;marker=44.4892673,26.043208" title="Harta zonei în care se află La Mamaia, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-brand">🛒 La Mamaia</p>
+      <p>Magazin de cartier în București.</p>
+    </div>
+    <nav aria-label="Subsol">
+      <ul class="foot-links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:0758635726">Sună acum</a></li>
+      </ul>
+    </nav>
+    <div class="foot-meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: ccipeggy, Alexas_Fotos, 27707, kasjanf</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
