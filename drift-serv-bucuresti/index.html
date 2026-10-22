@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drift Serv | Reparații motor și vopsitorie auto, București</title>
+<meta name="description" content="Reparații motor și vopsitorie auto în București, Șoseaua Viilor 52-54. Sună sau scrie pe WhatsApp.">
+<meta name="theme-color" content="#1E2124">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='%2338bdf8' stroke-width='2'/%3E%3Cpath d='M12 12L17 7' stroke='%23F5F6F7' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --g-900: #1E2124;
+  --g-800: #262A2E;
+  --g-700: #2F343A;
+  --g-600: #3C424A;
+  --steel: #9AA3AB;
+  --white: #F5F6F7;
+  --accent: #38bdf8;
+  --accent-hi: #7DD3FC;
+  --ink-on-accent: #0A1820;
+  --panel: #262A2E;
+  --line: rgba(154, 163, 171, .22);
+  --pad: clamp(1.25rem, 4vw, 2.5rem);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --cut: clamp(14px, 2vw, 22px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--g-900);
+  color: var(--white);
+  font-family: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+@media (max-width: 899px) {
+  body { padding-bottom: 5.5rem; }
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+figure { margin: 0; }
+
+h1, h2, h3 {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3.25rem, 13vw, 7rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+h2 { font-size: clamp(2.2rem, 6vw, 4rem); }
+h3 { font-size: 1.5rem; font-weight: 700; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0.5rem;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--ink-on-accent);
+  padding: .6rem 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip:focus { left: 1rem; }
+
+.wrap {
+  width: min(72rem, calc(100% - 2 * var(--pad)));
+  margin-inline: auto;
+}
+
+.cut {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--cut)) 0,
+    100% var(--cut),
+    100% 100%,
+    var(--cut) 100%,
+    0 calc(100% - var(--cut))
+  );
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(4rem, 9vw, 7.5rem);
+}
+
+section[id] { scroll-margin-top: 4.5rem; }
+
+/* Linii de ghidaj: se trasează la intrarea în secțiune */
+.guide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
+  transform-origin: 0 50%;
+}
+.guide::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: max(var(--pad), calc(50% - 36rem));
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+}
+.js .guide::before {
+  transform: scaleX(0);
+  transition: transform 1.1s var(--ease);
+}
+.js .guide.in::before { transform: scaleX(1); }
+.js .guide::after {
+  transform: scale(0);
+  transition: transform .5s var(--ease) .6s;
+}
+.js .guide.in::after { transform: scale(1); }
+
+/* Dezvăluiri la derulare: fiecare tip are drumul lui */
+.js .reveal {
+  opacity: 0;
+  transition: opacity .55s var(--ease), transform .55s var(--ease);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.reveal-up { transform: translate3d(0, 18px, 0); }
+.js .reveal.reveal-left { transform: translate3d(-18px, 0, 0); }
+.js .reveal.reveal-scale { transform: scale(.98); }
+.js .reveal.reveal-fade { transform: none; }
+.js .reveal.in { opacity: 1; transform: none; }
+
+/* Antet din sticlă */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(30, 33, 36, .72);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border-top: 1px solid rgba(245, 246, 247, .08);
+  transition: box-shadow .3s var(--ease);
+}
+.site-header.scrolled {
+  box-shadow: 0 12px 30px -18px rgba(0, 0, 0, .75);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 4rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 1.35rem;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+.brand svg { width: 1.6rem; height: 1.6rem; flex: none; }
+
+.nav-links {
+  display: none;
+}
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--g-900);
+  padding: .5rem var(--pad) 1.5rem;
+  box-shadow: 0 24px 40px -22px rgba(0, 0, 0, .7);
+}
+.nav-links a {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  padding: .5rem 0;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--line);
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links.open a:last-child { border-bottom: 0; }
+
+.menu-btn {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--g-700);
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color .2s var(--ease), transform .1s ease-out;
+}
+.menu-btn:hover { background: var(--g-600); }
+.menu-btn:active { transform: scale(.97); }
+.menu-btn svg { width: 1.25rem; height: 1.25rem; }
+.menu-btn .i-close { display: none; }
+.menu-btn[aria-expanded="true"] .i-open { display: none; }
+.menu-btn[aria-expanded="true"] .i-close { display: block; }
+
+.nav-cta { display: none; }
+
+@media (min-width: 900px) {
+  .menu-btn { display: none; }
+  .nav-links,
+  .nav-links.open {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    gap: .25rem;
+    margin-left: auto;
+  }
+  .nav-links a {
+    min-height: 2.75rem;
+    padding: .4rem .85rem;
+    border-bottom: 0;
+    font-size: 1rem;
+  }
+  .nav-cta { display: inline-flex; }
+}
+
+/* Butoane */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: .8rem 1.5rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: .01em;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color .2s var(--ease), box-shadow .25s var(--ease), color .2s var(--ease), transform .1s ease-out;
+}
+.btn:active { transform: scale(.97); }
+.btn-primary {
+  background: var(--accent);
+  color: var(--ink-on-accent);
+}
+.btn-primary:hover {
+  background: var(--accent-hi);
+  box-shadow: 0 10px 26px -12px rgba(56, 189, 248, .6);
+}
+.btn-ghost {
+  background: var(--g-700);
+  color: var(--white);
+}
+.btn-ghost:hover {
+  background: var(--g-600);
+}
+.nav-cta.btn { min-height: 2.75rem; padding: .6rem 1.1rem; }
+
+/* Primul ecran */
+.hero {
+  display: flex;
+  align-items: center;
+  padding-block: 6.5rem 3.5rem;
+}
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-block: 7rem 5rem;
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: 5rem;
+  }
+}
+
+.slogan {
+  margin-top: 1.25rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3.4vw, 2rem);
+  line-height: 1.15;
+  color: var(--white);
+}
+.hero-desc {
+  margin-top: 1rem;
+  max-width: 34rem;
+  color: var(--steel);
+  font-size: clamp(1.0625rem, 2vw, 1.2rem);
+  line-height: 1.55;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+.actions .btn { flex: 1 1 auto; }
+@media (min-width: 560px) {
+  .actions .btn { flex: 0 1 auto; }
+}
+
+/* Vitezometru */
+.gauge {
+  position: relative;
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  background: var(--panel);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 28px) 0,
+    100% 28px,
+    100% 100%,
+    28px 100%,
+    0 calc(100% - 28px)
+  );
+  animation: rise .7s var(--ease) .15s both;
+}
+@media (min-width: 900px) {
+  .gauge { width: min(100%, 30rem); }
+}
+.gauge svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.gauge .track {
+  fill: none;
+  stroke: var(--g-600);
+  stroke-width: 8;
+}
+.gauge .progress {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 8;
+}
+.gauge .tick {
+  stroke: var(--steel);
+  stroke-width: 2;
+}
+.gauge .tick.major {
+  stroke: var(--white);
+  stroke-width: 3;
+}
+.gauge .tick-label {
+  fill: var(--steel);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+.gauge #needle line {
+  stroke: var(--white);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.gauge .cap {
+  fill: var(--accent);
+}
+.gauge-readout {
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+.gauge-value {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.25rem, 11vw, 5rem);
+  line-height: 1;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+}
+.gauge-unit {
+  display: block;
+  margin-top: .3rem;
+  color: var(--steel);
+  font-size: .8rem;
+  letter-spacing: .14em;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.hero-copy > * {
+  animation: rise .6s var(--ease) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Despre */
+.about {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .about {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5rem;
+  }
+}
+.photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--panel);
+}
+.photo img,
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .photo { aspect-ratio: 4 / 5; }
+}
+.lead {
+  margin-top: 1.5rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  line-height: 1.2;
+}
+.about-text p.body {
+  margin-top: 1.25rem;
+  max-width: 36rem;
+  color: var(--steel);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Servicii */
+.services {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) {
+  .services {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+.service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  min-height: 13rem;
+  padding: 2rem 1.75rem;
+  background: var(--panel);
+  transition: background-color .3s var(--ease);
+}
+.service:hover { background: var(--g-700); }
+.service::before {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 3px;
+  background: var(--steel);
+}
+.service h3 { margin-bottom: .75rem; }
+.service p { color: var(--steel); }
+
+.perks {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+@media (min-width: 800px) {
+  .perks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+}
+.perk {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.perk-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent);
+}
+.perk h3 { margin-top: 1.25rem; }
+.perk p {
+  margin-top: .5rem;
+  color: var(--steel);
+}
+
+/* Galerie */
+.gallery {
+  display: grid;
+  gap: .75rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+.shot {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--panel);
+}
+@media (min-width: 700px) {
+  .shot { aspect-ratio: 4 / 5; }
+}
+.shot img {
+  transition: transform .6s var(--ease);
+}
+.shot:hover img { transform: scale(1.03); }
+
+/* Contact */
+.contact {
+  display: grid;
+  gap: 3.5rem;
+}
+@media (min-width: 900px) {
+  .contact {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: 5rem;
+    align-items: start;
+  }
+}
+.facts {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+.facts > div {
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.facts dt {
+  color: var(--steel);
+  font-size: .875rem;
+  letter-spacing: .04em;
+}
+.facts dd {
+  margin: .25rem 0 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.15;
+}
+.facts dd a {
+  text-decoration: none;
+  transition: color .2s var(--ease);
+}
+.facts dd a:hover { color: var(--accent); }
+.contact-actions {
+  margin-top: 2.25rem;
+}
+.contact-actions .btn { width: 100%; }
+@media (min-width: 560px) {
+  .contact-actions .btn { width: auto; }
+}
+
+.map-frame {
+  position: relative;
+  height: clamp(20rem, 46vw, 30rem);
+  background: var(--panel);
+}
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(.85) contrast(1.02) brightness(.92);
+}
+
+/* Subsol */
+.site-footer {
+  position: relative;
+  padding-block: 4rem 2.5rem;
+  color: var(--steel);
+  font-size: .9rem;
+}
+.foot-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.foot-brand {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  letter-spacing: -.01em;
+}
+.foot-top p { margin-top: .25rem; }
+.foot-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+}
+.foot-nav a {
+  text-decoration: none;
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  transition: color .2s var(--ease);
+}
+.foot-nav a:hover { color: var(--white); }
+.foot-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: .4rem;
+  font-size: .8125rem;
+  letter-spacing: .02em;
+}
+
+/* Bara de jos, pe telefon */
+.mobile-bar {
+  display: none;
+}
+@media (max-width: 899px) {
+  .mobile-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 45;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+    padding: .6rem var(--pad) calc(.6rem + env(safe-area-inset-bottom));
+    background: var(--g-900);
+    box-shadow: 0 -12px 30px -18px rgba(0, 0, 0, .8);
+  }
+  .mobile-bar .btn {
+    width: 100%;
+    padding-inline: .5rem;
+    font-size: .95rem;
+  }
+}
+
+/* Mișcare redusă */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal {
+    transform: none !important;
+    transition: opacity .2s linear !important;
+    transition-delay: 0ms !important;
+  }
+  .js .guide::before,
+  .js .guide::after {
+    transform: none !important;
+    transition: none !important;
+  }
+  .js .guide::before { opacity: 1; }
+  .gauge,
+  .hero-copy > * {
+    animation: fade .2s linear both !important;
+  }
+  .shot img { transition: none; }
+  .shot:hover img { transform: none; }
+}
+
+/* Transparență redusă: fundaluri pline, fără blur */
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    background: var(--g-900);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Contrast mărit: fundaluri pline, margini clare */
+@media (prefers-contrast: more) {
+  :root {
+    --steel: #C9D0D6;
+    --line: rgba(245, 246, 247, .45);
+    --panel: #0E1012;
+  }
+  .site-header {
+    background: var(--g-900);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .btn-ghost {
+    background: var(--g-900);
+    box-shadow: inset 0 0 0 2px var(--white);
+  }
+  .service { background: #0E1012; }
+  .service:hover { background: #1A1D20; }
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Sari la conținut</a>
+
+<header class="site-header">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Drift Serv, înapoi sus">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="none" stroke="#38bdf8" stroke-width="2"/>
+        <path d="M12 12L17 7" stroke="#F5F6F7" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="1.8" fill="#38bdf8"/>
+      </svg>
+      Drift Serv
+    </a>
+
+    <nav id="menu" class="nav-links" aria-label="Meniu principal">
+      <a href="#despre">Despre</a>
+      <a href="#servicii">Servicii</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn btn-primary nav-cta" href="tel:0758094903">Sună acum</a>
+
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Deschide meniul">
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-label="Prezentare">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 style="--d:0ms">Drift Serv</h1>
+        <p class="slogan" style="--d:90ms">Servicii auto, simplu și corect</p>
+        <p class="hero-desc" style="--d:170ms">Rezolvăm rapid problemele motorului și oferim vopsitorie auto.</p>
+        <div class="actions" style="--d:250ms">
+          <a class="btn btn-primary" href="tel:0758094903">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40758094903?text=Bun%C4%83%20ziua%21%20Doresc%20detalii%20despre%20serviciile%20de%20repara%C8%9Bii%20motor%20sau%20vopsitorie." target="_blank" rel="noopener">Trimite solicitare pe WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="gauge" aria-hidden="true">
+        <svg viewBox="0 0 400 400" focusable="false">
+          <path class="track" d="M82.62 317.38 A166 166 0 1 1 317.38 317.38" pathLength="100"/>
+          <path id="progress" class="progress" d="M82.62 317.38 A166 166 0 1 1 317.38 317.38" pathLength="100" stroke-dasharray="0 100"/>
+          <g id="ticks"></g>
+          <g id="needle" transform="rotate(-135 200 200)">
+            <line x1="200" y1="216" x2="200" y2="82"/>
+          </g>
+          <circle class="cap" cx="200" cy="200" r="9"/>
+        </svg>
+        <div class="gauge-readout">
+          <span id="gauge-value" class="gauge-value">0</span>
+          <span class="gauge-unit">KM/H</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="despre" class="section guide" aria-labelledby="despre-titlu">
+    <div class="wrap about">
+      <figure class="photo reveal reveal-fade cut">
+        <img src="img/4.jpg" alt="Vopsire de autoturism cu pistolul de pulverizare" loading="lazy" width="1200" height="900">
+      </figure>
+      <div class="reveal reveal-up">
+        <h2 id="despre-titlu">Despre Drift Serv</h2>
+        <p class="lead">Reparații de motor și vopsitorie auto.</p>
+        <p class="body">La Drift Serv, ne ocupăm cu reparații de motor și vopsitorie pentru autoturisme, indiferent de marcă. Suntem aici să readucem mașina ta pe șosea, în condiții bune. Echipa noastră oferă soluții eficiente pentru fiecare client.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicii" class="section guide" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <h2 id="servicii-titlu" class="reveal reveal-up">Servicii</h2>
+
+      <div class="services">
+        <article class="service cut reveal reveal-up" style="--d:0ms">
+          <div>
+            <h3>Reparații motor</h3>
+            <p>Reparații pentru motoarele autoturismelor</p>
+          </div>
+        </article>
+        <article class="service cut reveal reveal-up" style="--d:80ms">
+          <div>
+            <h3>Vopsitorie auto</h3>
+            <p>Vopsitorie pentru caroserie și elemente auto</p>
+          </div>
+        </article>
+        
+        
+      </div>
+
+      <ul class="perks">
+        <li class="perk reveal reveal-left" style="--d:0ms">
+          <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+          </svg>
+          <h3>Rapid și sigur</h3>
+          <p>Timp scurt de intervenție</p>
+        </li>
+        <li class="perk reveal reveal-left" style="--d:120ms">
+          <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/>
+          </svg>
+          <h3>Lucru precis</h3>
+          <p>Atenție la fiecare detaliu</p>
+        </li>
+        <li class="perk reveal reveal-left" style="--d:240ms">
+          <svg class="perk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 12V4.5A1.5 1.5 0 0 1 4.5 3H12l9 9-9 9z"/><circle cx="8" cy="8" r="1.5"/>
+          </svg>
+          <h3>Costuri echilibrate</h3>
+          <p>Fără costuri ascunse</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galerie" class="section guide" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 id="galerie-titlu" class="reveal reveal-up">Galerie</h2>
+
+      <div class="gallery">
+        <figure class="shot cut reveal reveal-scale" style="--d:0ms">
+          <img src="img/1.jpg" alt="Vopsitor cu pistolul de pulverizare, lucrând la o mașină" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="shot cut reveal reveal-scale" style="--d:100ms">
+          <img src="img/2.jpg" alt="Reparație de caroserie cu pistolul de vopsit" loading="lazy" width="1200" height="900">
+        </figure>
+        <figure class="shot cut reveal reveal-scale" style="--d:200ms">
+          <img src="img/3.jpg" alt="Protecție anticorozivă aplicată pe partea de jos a unei mașini" loading="lazy" width="1200" height="900">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section guide" aria-labelledby="contact-titlu">
+    <div class="wrap contact">
+      <div class="reveal reveal-fade">
+        <h2 id="contact-titlu">Contact</h2>
+
+        <dl class="facts">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0758094903">0758 094 903</a></dd>
+          </div>
+          <div>
+            <dt>Adresă</dt>
+            <dd>Șoseaua Viilor 52-54, București</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd><a href="mailto:office@driftserv.ro">office@driftserv.ro</a></dd>
+          </div>
+        </dl>
+
+        <div class="actions contact-actions">
+          <a class="btn btn-primary" href="tel:0758094903">Sună acum</a>
+          <a class="btn btn-ghost" href="https://wa.me/40758094903?text=Bun%C4%83%20ziua%21%20Doresc%20detalii%20despre%20serviciile%20de%20repara%C8%9Bii%20motor%20sau%20vopsitorie." target="_blank" rel="noopener">Trimite solicitare pe WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:office@driftserv.ro">Scrie un email</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Drift+Serv+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map-frame cut reveal reveal-fade" style="--d:120ms">
+        <iframe
+          title="Harta locației Drift Serv, Șoseaua Viilor 52-54, București"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.0834574,44.4083538,26.091457400000003,44.412353800000005&amp;layer=mapnik&amp;marker=44.4103538,26.0874574"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer guide">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <p class="foot-brand">Drift Serv</p>
+        <p>Șoseaua Viilor 52-54, București</p>
+      </div>
+      <nav class="foot-nav" aria-label="Subsol">
+        <a href="#despre">Despre</a>
+        <a href="#servicii">Servicii</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div class="foot-bottom">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: MertSabanci, HutchRock</p>
+      <p>© <span id="an"></span> Drift Serv</p>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" role="region" aria-label="Contact rapid">
+  <a class="btn btn-primary" href="tel:0758094903">Sună acum</a>
+  <a class="btn btn-ghost" href="https://wa.me/40758094903?text=Bun%C4%83%20ziua%21%20Doresc%20detalii%20despre%20serviciile%20de%20repara%C8%9Bii%20motor%20sau%20vopsitorie." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+</div>
+
+<script>
+(function () {
+  var html = document.documentElement;
+  html.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Antet: umbră doar când pagina se derulează sub el */
+  var header = document.querySelector('.site-header');
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* Meniu mobil */
+  var toggle = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Închide meniul' : 'Deschide meniul');
+  }
+  toggle.addEventListener('click', function () {
+    setMenu(!menu.classList.contains('open'));
+  });
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  /* Dezvăluire la derulare și linii de ghidaj */
+  var targets = document.querySelectorAll('.reveal, .guide');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          obs.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    targets.forEach(function (el) { io.observe(el); });
+  } else {
+    targets.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Vitezometru: se urcă o singură dată, la încărcare */
+  var NS = 'http://www.w3.org/2000/svg';
+  var CX = 200, MAX = 240, TARGET = 180;
+
+  function angle(v) { return -135 + (v / MAX) * 270; }
+  function point(r, a) {
+    var rad = a * Math.PI / 180;
+    return [CX + r * Math.sin(rad), CX - r * Math.cos(rad)];
+  }
+
+  var ticks = document.getElementById('ticks');
+  if (ticks) {
+    for (var v = 0; v <= MAX; v += 10) {
+      var a = angle(v);
+      var major = (v % 40 === 0);
+      var p1 = point(major ? 146 : 154, a);
+      var p2 = point(166, a);
+
+      var ln = document.createElementNS(NS, 'line');
+      ln.setAttribute('x1', p1[0].toFixed(2));
+      ln.setAttribute('y1', p1[1].toFixed(2));
+      ln.setAttribute('x2', p2[0].toFixed(2));
+      ln.setAttribute('y2', p2[1].toFixed(2));
+      ln.setAttribute('class', major ? 'tick major' : 'tick');
+      ticks.appendChild(ln);
+
+      if (major) {
+        var lp = point(124, a);
+        var tx = document.createElementNS(NS, 'text');
+        tx.setAttribute('x', lp[0].toFixed(2));
+        tx.setAttribute('y', lp[1].toFixed(2));
+        tx.setAttribute('class', 'tick-label');
+        tx.textContent = String(v);
+        ticks.appendChild(tx);
+      }
+    }
+  }
+
+  var needle = document.getElementById('needle');
+  var bar = document.getElementById('progress');
+  var readout = document.getElementById('gauge-value');
+
+  function paint(value) {
+    if (needle) {
+      needle.setAttribute('transform', 'rotate(' + angle(value).toFixed(2) + ' 200 200)');
+    }
+    if (bar) {
+      bar.setAttribute('stroke-dasharray', (value / MAX * 100).toFixed(2) + ' 100');
+    }
+    if (readout) {
+      readout.textContent = String(Math.round(value));
+    }
+  }
+
+  paint(0);
+
+  if (reduce) {
+    paint(TARGET);
+  } else {
+    var t0 = null;
+    var DUR = 1700;
+    var WAIT = 350;
+    var step = function (ts) {
+      if (t0 === null) t0 = ts;
+      var t = (ts - t0 - WAIT) / DUR;
+      if (t < 0) t = 0;
+      if (t > 1) t = 1;
+      var eased = 1 - Math.pow(1 - t, 3);
+      paint(TARGET * eased);
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  /* Anul în subsol */
+  var an = document.getElementById('an');
+  if (an) an.textContent = String(new Date().getFullYear());
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
