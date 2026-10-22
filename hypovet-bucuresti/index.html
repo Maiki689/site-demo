@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HypoVet, totul pentru animalele tale de companie | București</title>
+<meta name="description" content="HypoVet, totul pentru animalele tale de companie, în București, pe strada Ceahlăul 5. Deschis și în weekend.">
+<meta name="theme-color" content="#EFE6D8">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE6D8;
+  --sand-deep:#E2D5BF;
+  --paper:#F8F3EA;
+  --maro:#3B2B22;
+  --maro-soft:#6B5649;
+  --teal:#0E7490;
+  --teal-deep:#0B5F76;
+  --teal-ink:#0A5C72;
+  --olive:#6B7046;
+  --terra:#B5583A;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{
+  font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;line-height:1.5;color:var(--maro);background:var(--sand);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;font-variation-settings:"SOFT" 50;text-wrap:balance}
+h1{font-size:clamp(3.4rem,13vw,6.5rem);line-height:1;letter-spacing:-.025em}
+h2{font-size:clamp(2rem,4.4vw,3.25rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:1.25rem}
+h3{font-size:clamp(1.35rem,2.2vw,1.7rem);line-height:1.15;letter-spacing:-.015em;margin-bottom:.5rem}
+p{max-width:62ch}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+
+.wrap{width:min(70rem,100% - 2.5rem);margin-inline:auto}
+.sec{padding-block:clamp(4.5rem,10vw,8rem)}
+.sec--paper{background:var(--paper)}
+.lead{font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--maro-soft);line-height:1.55}
+
+/* ---------- Navigare (sticla) ---------- */
+.top{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(239,230,216,.74);
+  -webkit-backdrop-filter:blur(18px) saturate(1.15);
+  backdrop-filter:blur(18px) saturate(1.15);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+  transition:box-shadow .4s var(--ease),background-color .4s var(--ease);
+}
+.top.is-scrolled{box-shadow:0 12px 28px -20px rgba(59,43,34,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+.top-in{height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{
+  display:inline-flex;align-items:center;gap:.45rem;min-height:44px;
+  text-decoration:none;font-family:Fraunces,serif;font-weight:650;font-size:1.3rem;
+  letter-spacing:-.015em;color:var(--maro);
+}
+.brand-mark{font-size:1.1rem}
+.nav-links{display:none;gap:2rem;list-style:none}
+@media (min-width:760px){.nav-links{display:flex}}
+.nav-links a{
+  position:relative;display:inline-block;padding:.5rem 0;
+  text-decoration:none;font-weight:600;font-size:.98rem;color:var(--maro);
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:.2rem;height:2px;border-radius:2px;
+  background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
+}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1)}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:3rem;
+  padding:.8rem 1.5rem;border:0;border-radius:999px;
+  background:rgba(59,43,34,.08);color:var(--maro);
+  font-family:Figtree,sans-serif;font-size:1rem;font-weight:600;line-height:1.1;
+  text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:background-color .25s var(--ease),box-shadow .3s var(--ease),color .25s var(--ease),transform .1s ease;
+}
+.btn:hover{background:rgba(59,43,34,.14)}
+.btn:active{transform:scale(.97)}
+.btn--primary{background:var(--teal);color:#fff}
+.btn--primary:hover{background:var(--teal-deep);box-shadow:0 10px 22px -12px rgba(11,95,118,.85)}
+.btn--sm{min-height:2.5rem;padding:.5rem 1.05rem;font-size:.95rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* ---------- Prima secțiune ---------- */
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:7.5rem 0 4.5rem}
+@media (min-width:960px){.hero{padding:9rem 0 6rem}}
+.hero-grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:960px){.hero-grid{grid-template-columns:1fr 1.05fr;gap:4rem}}
+.hero-text{position:relative;z-index:1}
+.hero-place{font-size:1rem;color:var(--maro-soft);margin-bottom:1.1rem;letter-spacing:.01em}
+.slogan{
+  font-family:Fraunces,serif;font-weight:400;font-size:clamp(1.3rem,2.6vw,1.7rem);
+  line-height:1.3;letter-spacing:-.01em;max-width:22ch;margin:1.1rem 0 2rem;
+}
+.hours-note{margin-top:1.4rem;font-size:.97rem;color:var(--maro-soft)}
+.hero-photo{
+  position:relative;z-index:1;margin:0;aspect-ratio:4/5;overflow:hidden;
+  border-radius:44% 56% 48% 52% / 40% 46% 54% 60%;
+}
+@media (min-width:960px){.hero-photo{aspect-ratio:5/6}}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+
+/* Bule: doar în prima secțiune, discrete */
+.bubbles{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bule{
+  position:absolute;bottom:-2.5rem;left:var(--x);width:var(--s);height:var(--s);
+  border-radius:50%;border:1.5px solid rgba(14,116,144,.3);background:rgba(255,255,255,.45);
+  opacity:0;animation:bule-up var(--d) linear var(--l) infinite;will-change:transform,opacity;
+}
+@keyframes bule-up{
+  0%{opacity:0;transform:translate3d(0,0,0)}
+  12%{opacity:.9}
+  80%{opacity:.6}
+  100%{opacity:0;transform:translate3d(var(--dx),-90vh,0)}
+}
+
+/* Intrarea din prima secțiune: o singură secvență */
+.intro{animation:intro-in .8s var(--ease) both;animation-delay:var(--t,0s)}
+@keyframes intro-in{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+
+/* Dezvăluiri la derulare: tranziții variate */
+.js .rv{opacity:0;transform:translate3d(0,26px,0);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.from-left{transform:translate3d(-30px,0,0)}
+.js .rv.from-right{transform:translate3d(30px,0,0)}
+.js .rv.grow{transform:scale(.96)}
+.js .rv.in{opacity:1;transform:none}
+
+/* ---------- Despre ---------- */
+.about-grid{display:grid;gap:3rem;align-items:center}
+@media (min-width:960px){.about-grid{grid-template-columns:5fr 6fr;gap:6rem}}
+.arch{margin:0;aspect-ratio:4/5;overflow:hidden;border-radius:999px 999px 28px 28px}
+.arch img{width:100%;height:100%;object-fit:cover}
+@media (min-width:960px){.about-text{padding-top:3rem}}
+.about-text p{font-size:1.08rem}
+.about-text p+p{margin-top:1rem}
+
+/* ---------- Produse ---------- */
+.items{display:grid;gap:2.75rem 3rem;margin-top:3rem}
+@media (min-width:760px){
+  .items{grid-template-columns:1fr 1fr}
+  .item:nth-child(even){margin-top:5.5rem}
+}
+.item p{color:var(--maro-soft)}
+.items-note{margin-top:3.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem}
+.items-note p{color:var(--maro-soft)}
+
+/* ---------- Drumul (harta desenată) ---------- */
+.map{position:relative;margin:2.75rem 0 1.25rem;border-radius:28px;overflow:hidden;background:var(--sand-deep)}
+.map-svg{display:block;width:100%;height:auto}
+.m-label{font-family:Fraunces,serif;font-style:italic;font-weight:500;font-size:30px;fill:#3B2B22}
+.m-street{font-family:Fraunces,serif;font-style:italic;font-size:26px;fill:#3B2B22}
+.m-shop{font-family:Figtree,sans-serif;font-weight:700;font-size:24px;fill:#fff}
+.m-tu{font-family:Figtree,sans-serif;font-weight:700;font-size:28px;fill:#3B2B22}
+.route{
+  fill:none;stroke:var(--teal);stroke-width:7;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:1;
+}
+.js .route{stroke-dashoffset:1;transition:stroke-dashoffset 2.6s cubic-bezier(.45,.05,.25,1) .35s}
+.js .map.in .route{stroke-dashoffset:0}
+.js .tu,.js .pin{opacity:0;transition:opacity .5s var(--ease)}
+.js .map.in .tu{opacity:1;transition-delay:.05s}
+.js .map.in .pin{opacity:1;transition-delay:2.7s}
+.caption{font-size:.95rem;color:var(--maro-soft);margin-bottom:4rem}
+
+.perks{display:grid;gap:2.25rem}
+@media (min-width:760px){.perks{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.perk-e{display:block;font-size:2rem;line-height:1;margin-bottom:1rem}
+.perk p{color:var(--maro-soft)}
+
+/* ---------- Program ---------- */
+.program-grid{display:grid;gap:2.5rem}
+@media (min-width:960px){.program-grid{grid-template-columns:5fr 6fr;gap:6rem;align-items:start}}
+.hours-list{display:grid}
+.hours-list div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;
+  padding:1.2rem 0;border-bottom:1px solid rgba(59,43,34,.14);
+}
+.hours-list div:first-child{border-top:1px solid rgba(59,43,34,.14)}
+.hours-list dt{font-weight:600}
+.hours-list dd{
+  font-family:Fraunces,serif;font-size:clamp(1.25rem,2.4vw,1.5rem);font-weight:500;
+  letter-spacing:-.01em;font-variant-numeric:tabular-nums;text-align:right;
+}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:960px){.contact-grid{grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center}}
+.phone{margin-top:2rem;font-family:Fraunces,serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:600;letter-spacing:-.01em}
+.phone a{text-decoration:none;color:var(--maro)}
+.phone a:hover{color:var(--teal-ink);text-decoration:underline;text-underline-offset:.2em}
+.address{margin-top:.5rem;color:var(--maro-soft)}
+.gmap{border-radius:28px;overflow:hidden;background:var(--sand-deep)}
+.gmap iframe{display:block;width:100%;height:320px;border:0}
+@media (min-width:960px){.gmap iframe{height:440px}}
+
+/* ---------- Subsol ---------- */
+.foot{background:var(--maro);color:var(--sand);padding:4.5rem 0 2.5rem}
+.foot-grid{display:grid;gap:2rem}
+@media (min-width:760px){.foot-grid{grid-template-columns:1.2fr 1fr 1fr}}
+.foot-brand{font-family:Fraunces,serif;font-weight:650;font-size:1.8rem;letter-spacing:-.015em;color:var(--sand)}
+.foot p{color:rgba(239,230,216,.82);max-width:none}
+.foot a{color:var(--sand)}
+.foot-small{margin-top:3rem;font-size:.88rem;color:rgba(239,230,216,.74);letter-spacing:.01em;line-height:1.6}
+
+/* ---------- Accesibilitate și preferințe ---------- */
+@media (prefers-reduced-transparency: reduce){
+  .top{background:var(--sand);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .top{background:var(--paper);box-shadow:0 2px 0 var(--maro)}
+  .btn{box-shadow:inset 0 0 0 2px var(--maro)}
+  .btn--primary{box-shadow:inset 0 0 0 2px var(--teal-deep)}
+  .bubbles{display:none}
+  .map,.gmap,.arch{outline:2px solid var(--maro);outline-offset:-2px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .bubbles{display:none}
+  .intro{animation:fade-in .2s ease both;animation-delay:0s}
+  .js .rv,.js .rv.from-left,.js .rv.from-right,.js .rv.grow{transform:none;transition:opacity .2s ease;transition-delay:0s}
+  .js .route{stroke-dashoffset:0 !important;transition:none}
+  .js .tu,.js .pin{transition:opacity .2s ease;transition-delay:0s}
+  .btn:active{transform:scale(.97);transition-duration:.1s}
+}
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">🐾</span>HypoVet</a>
+    <ul class="nav-links">
+      <li><a href="#produse">Produse</a></li>
+      <li><a href="#drum">Drumul</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary btn--sm" href="tel:0757235238">Sună acum</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="bubbles" aria-hidden="true">
+      <span class="bule" style="--x:8%;--s:12px;--d:13s;--l:-2s;--dx:10px"></span>
+      <span class="bule" style="--x:18%;--s:22px;--d:17s;--l:-9s;--dx:-14px"></span>
+      <span class="bule" style="--x:31%;--s:8px;--d:11s;--l:-5s;--dx:6px"></span>
+      <span class="bule" style="--x:44%;--s:16px;--d:15s;--l:-12s;--dx:-8px"></span>
+      <span class="bule" style="--x:57%;--s:10px;--d:12s;--l:-7s;--dx:12px"></span>
+      <span class="bule" style="--x:66%;--s:26px;--d:19s;--l:-1s;--dx:-18px"></span>
+      <span class="bule" style="--x:78%;--s:12px;--d:14s;--l:-10s;--dx:8px"></span>
+      <span class="bule" style="--x:88%;--s:18px;--d:16s;--l:-4s;--dx:-10px"></span>
+      <span class="bule" style="--x:94%;--s:9px;--d:10s;--l:-6s;--dx:4px"></span>
+      <span class="bule" style="--x:38%;--s:30px;--d:21s;--l:-15s;--dx:-6px"></span>
+    </div>
+
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="hero-place intro" style="--t:.05s">Strada Ceahlăul 5, București</p>
+        <h1 class="intro" style="--t:.12s">HypoVet</h1>
+        <p class="slogan intro" style="--t:.22s">Totul pentru animalele tale de companie</p>
+        <div class="actions intro" style="--t:.32s">
+          <a class="btn btn--primary" href="tel:0757235238">Sună acum</a>
+          <a class="btn" href="https://wa.me/40757235238?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse%20pentru%20animale%20de%20companie.">Întreabă pe WhatsApp</a>
+        </div>
+        <p class="hours-note intro" style="--t:.42s">Deschis și în weekend: sâmbătă până la 17:00, duminică până la 14:00.</p>
+      </div>
+
+      <figure class="hero-photo intro" style="--t:.2s">
+        <img src="img/1.jpg" alt="O pisică neagră și un câine alb, stând împreună" width="1200" height="1500">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec sec--paper" id="despre" aria-labelledby="despre-t">
+    <div class="wrap about-grid">
+      <figure class="arch rv from-left">
+        <img src="img/2.jpg" alt="Un câine maro și o pisică neagră, alături" loading="lazy" width="1200" height="1500">
+      </figure>
+      <div class="about-text rv from-right" style="--d:.1s">
+        <h2 id="despre-t">Totul pentru animalul tău, în București</h2>
+        <p>HypoVet, totul pentru animalele tale de companie, este pe strada Ceahlăul 5, în București.</p>
+        <p>Vii cu o întrebare sau doar ca să te uiți, și te ajutăm să alegi ce îi trebuie animalului tău. Fără grabă.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="produse" aria-labelledby="produse-t">
+    <div class="wrap">
+      <h2 id="produse-t" class="rv">Produse</h2>
+      <p class="lead rv" style="--d:.08s">Scrie-ne sau sună-ne și spune-ne ce îi trebuie animalului tău.</p>
+
+
+      <div class="items-note rv">
+        <p>Ai o întrebare despre animalul tău? Scrie-ne.</p>
+        <a class="btn btn--primary" href="https://wa.me/40757235238?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse%20pentru%20animale%20de%20companie.">Întreabă pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--paper" id="drum" aria-labelledby="drum-t">
+    <div class="wrap">
+      <h2 id="drum-t" class="rv">Drumul până la noi</h2>
+      <p class="lead rv" style="--d:.08s">Strada Ceahlăul 5, din București, lângă Oficiul Poștal 56. Urmărește drumul de la tine până la noi.</p>
+
+      <figure class="map">
+        <svg class="map-svg" viewBox="0 0 800 560" role="img" aria-labelledby="map-t map-d">
+          <title id="map-t">Schiță a cartierului, cu drumul până la HypoVet</title>
+          <desc id="map-d">Din punctul în care ești, pe străzi, până la HypoVet, pe strada Ceahlăul 5, în București.</desc>
+
+          <rect width="800" height="560" fill="#E2D5BF"/>
+
+          <g fill="none" stroke="#F8F3EA" stroke-width="2" stroke-dasharray="12 12" stroke-linecap="round" opacity=".9">
+            <path d="M0 302 H800"/>
+            <path d="M274 0 V560"/>
+          </g>
+
+          <g fill="#F8F3EA" stroke="#3B2B22" stroke-opacity=".32" stroke-width="2" stroke-linejoin="round">
+            <path d="M28 70 C90 30 205 40 238 98 C262 150 226 226 150 232 C84 238 22 200 22 140 C22 110 24 92 28 70Z" fill="#6B7046" fill-opacity=".2" stroke="#6B7046" stroke-opacity=".5"/>
+            <path d="M300 26 C380 20 462 24 486 30 C492 120 480 200 488 262 C420 268 360 262 300 268 C296 200 304 110 300 26Z"/>
+            <path d="M530 26 C610 22 690 30 762 24 C766 110 758 190 764 266 C690 270 610 262 534 268 C538 190 526 110 530 26Z"/>
+            <path d="M22 330 C80 324 180 326 238 332 C244 400 234 470 240 536 C180 540 90 538 26 536 C20 470 26 400 22 330Z"/>
+            <path d="M304 340 C360 336 420 338 462 342 C466 410 458 470 464 536 C410 540 350 538 306 536 C302 470 310 400 304 340Z"/>
+            <path d="M624 336 C680 330 740 332 780 338 C784 420 776 480 782 540 C730 544 680 540 620 538 C626 470 618 400 624 336Z"/>
+          </g>
+
+          <g fill="#6B7046" opacity=".75">
+            <circle cx="92" cy="112" r="13"/>
+            <circle cx="160" cy="150" r="11"/>
+            <circle cx="196" cy="92" r="10"/>
+            <circle cx="120" cy="186" r="9"/>
+          </g>
+
+          
+
+          <text x="548" y="298" class="m-street">Strada Ceahlăul</text>
+
+          <rect x="480" y="318" width="118" height="58" rx="6" fill="#B5583A"/>
+          <text x="539" y="354" text-anchor="middle" class="m-shop">HypoVet</text>
+
+          <path class="route" pathLength="1" d="M274 468 C274 410 270 350 274 306 C276 298 284 300 300 301 L470 302 C500 303 512 303 516 318"/>
+
+          <circle class="pin" cx="516" cy="318" r="8" fill="#0E7490" stroke="#EFE6D8" stroke-width="3"/>
+
+          <g class="tu">
+            <circle cx="274" cy="468" r="11" fill="#3B2B22" stroke="#EFE6D8" stroke-width="3"/>
+            <text x="274" y="436" text-anchor="middle" class="m-tu">Tu</text>
+          </g>
+        </svg>
+      </figure>
+      <p class="caption">Schiță, nu hartă la scară. Adresa exactă o găsești în secțiunea de contact.</p>
+
+      <div class="perks">
+        <article class="perk rv" style="--d:.02s">
+          <span class="perk-e" aria-hidden="true">🏪</span>
+          <h3>Aproape de tine</h3>
+          <p>Pe strada Ceahlăul 5, în București</p>
+        </article>
+        <article class="perk rv" style="--d:.1s">
+          <span class="perk-e" aria-hidden="true">🐶</span>
+          <h3>Varietate mare</h3>
+          <p>Pentru câini, pisici și alte animale</p>
+        </article>
+        <article class="perk rv" style="--d:.18s">
+          <span class="perk-e" aria-hidden="true">🕒</span>
+          <h3>Program extins</h3>
+          <p>Deschis și în weekend</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="program" aria-labelledby="program-t">
+    <div class="wrap program-grid">
+      <div class="rv">
+        <h2 id="program-t">Program</h2>
+        <p class="lead">Deschis și în weekend, ca să poți trece și când ai timp liber.</p>
+      </div>
+      <dl class="hours-list rv" style="--d:.1s">
+        <div><dt>Luni – vineri</dt><dd>08:00 – 21:00</dd></div>
+        <div><dt>Sâmbătă</dt><dd>08:00 – 17:00</dd></div>
+        <div><dt>Duminică</dt><dd>08:00 – 14:00</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec sec--paper" id="contact" aria-labelledby="contact-t">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <h2 id="contact-t">Sună, scrie sau treci pe la noi</h2>
+        <p class="lead">Pentru o întrebare rapidă, scrie-ne pe WhatsApp. Pentru o discuție mai lungă, sună.</p>
+        <div class="actions" style="margin-top:2rem">
+          <a class="btn btn--primary" href="tel:0757235238">Sună acum</a>
+          <a class="btn" href="https://wa.me/40757235238?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20informa%C8%9Bii%20despre%20produse%20pentru%20animale%20de%20companie.">Întreabă pe WhatsApp</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=HypoVet+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+        <p class="phone"><a href="tel:0757235238">0757 235 238</a></p>
+        <p class="address">Strada Ceahlăul 5, București</p>
+      </div>
+
+      <div class="gmap rv from-right" style="--d:.1s">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.0474028,44.452160899999996,26.055402800000003,44.4561609&amp;layer=mapnik&amp;marker=44.4541609,26.0514028" title="Harta: HypoVet, strada Ceahlăul 5, București" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-brand"><span aria-hidden="true">🐾</span> HypoVet</p>
+        <p>Totul pentru animalele tale de companie.</p>
+      </div>
+      <div>
+        <p>Strada Ceahlăul 5<br>București</p>
+      </div>
+      <div>
+        <p><a href="tel:0757235238">0757 235 238</a></p>
+        <p><a href="https://wa.me/40757235238">Scrie pe WhatsApp</a></p>
+      </div>
+    </div>
+    <p class="foot-small">
+      Model de site (demo)<br>
+      Fotografii ilustrative de pe Pixabay: paula_olly, StockSnap, mirkosajkov, 12019
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var header = document.querySelector('.top');
+
+  function onScroll() {
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  var targets = document.querySelectorAll('.rv, .map');
+
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
