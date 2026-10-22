@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta name="generator" content="jarvis-v2">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spălătoria Tei, spălătorie auto în București</title>
+<meta name="description" content="Spălătoria Tei, spălătorie auto în cartierul Tei din București. Spălare auto, pentru șoferii din cartierul Tei. Sună sau scrie-ne pe WhatsApp.">
+<meta name="theme-color" content="#1E2124">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚗%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1E2124;
+    --bg-2: #22272B;
+    --panel: #2A3035;
+    --panel-2: #343B41;
+    --steel: #9AA3AB;
+    --line: rgba(154, 163, 171, .2);
+    --white: #F5F6F7;
+    --accent: #38bdf8;
+    --accent-2: #7DD3FC;
+    --ink: #06141C;
+    --ease: cubic-bezier(.2, .8, .2, 1);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--white);
+    font-family: Barlow, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  p, ul, dl, dd, figure { margin: 0; }
+  ul { padding: 0; list-style: none; }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .skip {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    padding: .6rem 1rem;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .skip:focus { top: 1rem; }
+
+  .wrap { width: min(1120px, calc(100% - 2.5rem)); margin-inline: auto; }
+
+  /* Tăieturi la colț: panourile și butoanele */
+  .cut {
+    clip-path: polygon(
+      0 0,
+      calc(100% - var(--cut, 16px)) 0,
+      100% var(--cut, 16px),
+      100% 100%,
+      var(--cut, 16px) 100%,
+      0 calc(100% - var(--cut, 16px))
+    );
+  }
+
+  .mono {
+    font-family: var(--mono);
+    font-size: .8rem;
+    letter-spacing: .04em;
+    color: var(--steel);
+  }
+
+  h1, h2, h3 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.08;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 13vw, 8.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
+  h2 { font-size: clamp(2rem, 5vw, 3.25rem); }
+  h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -.01em; }
+
+  /* ---------- Navigare (sticlă) ---------- */
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    background: rgba(30, 33, 36, .62);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    backdrop-filter: blur(18px) saturate(140%);
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    transition: box-shadow .4s var(--ease), background-color .4s var(--ease);
+  }
+  .nav.is-scrolled { box-shadow: 0 12px 32px -16px rgba(0, 0, 0, .7); }
+
+  .nav-in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 4rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    text-decoration: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: -.01em;
+    color: #fff;
+  }
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--panel-2);
+    font-size: 1.1rem;
+    --cut: 7px;
+  }
+
+  .links { display: flex; gap: .25rem; }
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 .85rem;
+    text-decoration: none;
+    color: rgba(245, 246, 247, .82);
+    font-weight: 500;
+    transition: color .2s;
+  }
+  .links a:hover { color: #fff; }
+
+  /* ---------- Butoane ---------- */
+  .btn {
+    --cut: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-height: 3rem;
+    padding: 0 1.4rem;
+    border: 0;
+    font-family: Barlow, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: .01em;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color .2s, color .2s, transform .1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-primary { background: var(--accent); color: var(--ink); }
+  .btn-primary:hover { background: var(--accent-2); }
+  .btn-ghost { background: rgba(245, 246, 247, .08); color: var(--white); }
+  .btn-ghost:hover { background: rgba(245, 246, 247, .15); }
+  .btn:active { transform: scale(.97); transition-duration: .1s; }
+  .btn-sm { min-height: 2.75rem; padding: 0 1.1rem; font-size: .95rem; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 7.5rem 0 4.5rem;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-copy .mono { margin-bottom: 1.25rem; }
+
+  .slogan {
+    margin-top: .6rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 3.6vw, 2rem);
+    letter-spacing: -.01em;
+    line-height: 1.15;
+  }
+
+  .lead {
+    margin-top: 1rem;
+    max-width: 34ch;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    color: var(--steel);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 2rem;
+  }
+  .actions .btn { flex: 1 1 14rem; }
+
+  /* Linie de ghidaj la baza primei secțiuni */
+  .hero-rule {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--line);
+  }
+  .hero-rule::before {
+    content: "";
+    position: absolute;
+    left: max(1.25rem, calc((100% - 1120px) / 2));
+    bottom: -1px;
+    width: 3.5rem;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  /* Vitezometrul: elementul memorabil */
+  .dial {
+    --cut: 24px;
+    position: relative;
+    width: min(78vw, 25rem);
+    aspect-ratio: 1;
+    margin-inline: auto;
+    background: var(--panel);
+  }
+  .dial svg { width: 100%; height: 100%; display: block; }
+  .dial-face { fill: #1A1D20; stroke: var(--line); stroke-width: 1; }
+  .t-minor { stroke: rgba(154, 163, 171, .5); stroke-width: 1.5; }
+  .t-major { stroke: var(--steel); stroke-width: 2.5; }
+  .hot { stroke: var(--accent) !important; }
+  .dial text {
+    fill: var(--steel);
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  .needle {
+    transform-box: view-box;
+    transform-origin: 200px 200px;
+    transform: rotate(-135deg);
+    transition: transform 1.8s var(--ease);
+  }
+  .needle.go { transform: rotate(108deg); }
+  .needle line {
+    stroke: var(--accent);
+    stroke-width: 3.5;
+    stroke-linecap: round;
+  }
+  .cap { fill: var(--white); }
+
+  .read {
+    position: absolute;
+    left: 50%;
+    top: 63%;
+    transform: translate(-50%, 0);
+    display: grid;
+    justify-items: center;
+    line-height: 1;
+    pointer-events: none;
+  }
+  #readout {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: clamp(3.2rem, 14vw, 5rem);
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .read small {
+    margin-top: .3rem;
+    font-family: var(--mono);
+    font-size: .8rem;
+    color: var(--steel);
+  }
+
+  /* ---------- Secțiuni ---------- */
+  .section { padding: clamp(4.5rem, 10vw, 8rem) 0; }
+  .section--alt { background: var(--bg-2); }
+
+  .sec-head {
+    display: grid;
+    gap: 1rem;
+    max-width: 40rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .sec-head::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: var(--accent);
+    transform-origin: left center;
+    transform: scaleX(1);
+    transition: transform .7s var(--ease) .15s;
+  }
+
+  .about {
+    display: grid;
+    gap: 3rem;
+  }
+  .about-text .lead-strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 1.9rem);
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    max-width: 26ch;
+  }
+  .about-text p + p { margin-top: 1rem; }
+  .about-text .body { color: var(--steel); max-width: 60ch; }
+
+  .adv { border-top: 1px solid var(--line); }
+  .adv li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .adv svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .adv h3 { margin-bottom: .25rem; }
+  .adv p { color: var(--steel); }
+
+  /* Servicii */
+  .cards {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .card {
+    --cut: 18px;
+    position: relative;
+    padding: 2rem 1.75rem 2.25rem;
+    background: var(--panel);
+    transition: background-color .3s var(--ease);
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s var(--ease);
+  }
+  .card:hover { background: var(--panel-2); }
+  .card:hover::before,
+  .card:focus-within::before { transform: scaleX(1); }
+  .card .mono {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    padding: .25rem .55rem;
+    background: rgba(154, 163, 171, .12);
+  }
+  .card h3 { font-size: 1.6rem; margin-bottom: .5rem; }
+  .card p { color: var(--steel); }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    margin-top: 3rem;
+  }
+  .cta-row .btn { flex: 1 1 14rem; }
+
+  /* Galerie */
+  .shots {
+    display: grid;
+    gap: 1rem;
+  }
+  .shot {
+    --cut: 16px;
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: var(--panel);
+  }
+  .shot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Contact */
+  .contact {
+    display: grid;
+    gap: 2rem;
+  }
+  .spec {
+    --cut: 18px;
+    padding: 2rem;
+    background: var(--panel);
+  }
+  .spec-row {
+    display: grid;
+    gap: .3rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .spec-row:first-child { padding-top: 0; }
+  .spec-row:last-of-type { border-bottom: 0; }
+  .spec-row dd {
+    font-size: 1.15rem;
+    color: var(--white);
+  }
+  .phone-big {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 3.25rem);
+    letter-spacing: -.01em;
+    line-height: 1.1;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .phone-big:hover { color: var(--accent-2); }
+  .spec-actions {
+    display: grid;
+    gap: .75rem;
+    margin-top: 1.75rem;
+  }
+
+  .map {
+    --cut: 18px;
+    position: relative;
+    min-height: 22rem;
+    overflow: hidden;
+    background: #1A1D20;
+  }
+  .map iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: invert(.9) hue-rotate(180deg) saturate(.6) brightness(.92);
+  }
+
+  /* Subsol */
+  .foot {
+    padding: 3rem 0 3.5rem;
+    background: #16191C;
+  }
+  .foot-in {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .foot-name {
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -.01em;
+  }
+  .foot-in .mono { margin-top: .35rem; }
+  .foot-meta {
+    display: grid;
+    gap: .5rem;
+    font-size: .95rem;
+    color: var(--steel);
+  }
+  .foot-meta a { color: var(--white); }
+
+  /* ---------- Mișcare: intrarea din hero ---------- */
+  .js .hero-copy > * {
+    animation: rise .7s var(--ease) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+  }
+  .js .dial {
+    animation: dialIn .9s var(--ease) .1s both;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes dialIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* ---------- Mișcare: dezvăluire la derulare (variată) ---------- */
+  .js [data-rv] {
+    opacity: 0;
+    transition: opacity .55s var(--ease), transform .55s var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
+  .js [data-rv="up"]   { transform: translateY(18px); }
+  .js [data-rv="left"] { transform: translateX(-18px); }
+  .js [data-rv="zoom"] { transform: scale(.98); }
+  .js [data-rv].in {
+    opacity: 1;
+    transform: none;
+  }
+  .js .sec-head::before { transform: scaleX(0); }
+  .js .sec-head.in::before { transform: scaleX(1); }
+
+  .js .shot img {
+    transform: scale(1.06);
+    transition: transform 1.2s var(--ease);
+  }
+  .js .shot.in img { transform: scale(1); }
+
+  /* ---------- Acces: transparență, contrast, mișcare ---------- */
+  @media (prefers-reduced-transparency: reduce) {
+    .nav {
+      background: var(--bg);
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    :root {
+      --steel: #C9D0D6;
+      --line: rgba(245, 246, 247, .55);
+    }
+    .nav { background: var(--bg); }
+    .btn-ghost { background: var(--panel-2); }
+    .card, .spec, .map { background: var(--panel-2); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition-duration: .2s !important;
+      animation-duration: .2s !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+    .js .hero-copy > *,
+    .js .dial {
+      animation-name: fadeOnly !important;
+    }
+    .js [data-rv] { transform: none !important; }
+    .needle { transition: none !important; }
+    .js .shot img { transform: none !important; transition: none !important; }
+  }
+  @keyframes fadeOnly {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ---------- Ecrane mari ---------- */
+  @media (min-width: 560px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+    .shots { grid-template-columns: 1fr 1fr; }
+    .shot--wide { grid-column: 1 / -1; aspect-ratio: 16 / 8; }
+    .foot-in { grid-template-columns: 1fr auto; align-items: end; }
+    .foot-meta { grid-column: 1 / -1; }
+  }
+
+  @media (min-width: 760px) {
+    .links { display: flex; }
+    .spec-actions { grid-template-columns: repeat(3, auto); justify-content: start; }
+    .spec-actions .btn { width: auto; }
+    .spec-actions .btn:first-child { min-width: 11rem; }
+  }
+
+  @media (max-width: 759px) {
+    .links { display: none; }
+    .spec-actions .btn { width: 100%; }
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      min-height: min(100vh, 52rem);
+      min-height: min(100svh, 52rem);
+      display: flex;
+      align-items: center;
+      padding: 7rem 0 5.5rem;
+    }
+    .hero-grid {
+      grid-template-columns: 1.1fr .9fr;
+      gap: 4rem;
+      width: 100%;
+    }
+    .dial { width: 26rem; }
+    .about { grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .cards { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .contact { grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: stretch; }
+    .map { min-height: 100%; }
+  }
+</style>
+<style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+</head>
+<body>
+<a class="skip" href="#main">Sari la conținut</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <span class="brand-mark cut" aria-hidden="true">🚗</span>
+      <span>Spălătoria Tei</span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="links">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary btn-sm cut" href="tel:0726173109">Sună acum</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="mono" style="--i:0">Spălătorie auto, cartierul Tei</p>
+        <h1 id="titlu" style="--i:1">Spălătoria Tei</h1>
+        <p class="slogan" style="--i:2">Mașina ta, mereu curată</p>
+        <p class="lead" style="--i:3">Spălare auto, pentru șoferii din cartierul Tei.</p>
+        <div class="actions" style="--i:4">
+          <a class="btn btn-primary cut" href="tel:0726173109">Sună acum</a>
+          <a class="btn btn-ghost cut" href="https://wa.me/40726173109?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83-mi%20sp%C4%83l%20ma%C8%99ina." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+        </div>
+      </div>
+
+      <figure class="dial cut" aria-label="Vitezometru decorativ">
+        <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+          <circle class="dial-face" cx="200" cy="200" r="190"/>
+          <g id="ticks"></g>
+          <g class="needle">
+            <line x1="200" y1="232" x2="200" y2="50"/>
+          </g>
+          <circle class="cap" cx="200" cy="200" r="9"/>
+        </svg>
+        <div class="read" aria-hidden="true">
+          <span id="readout">0</span>
+          <small>km/h</small>
+        </div>
+      </figure>
+    </div>
+    <div class="hero-rule" aria-hidden="true"></div>
+  </section>
+
+  <section class="section" id="despre" aria-labelledby="t-despre">
+    <div class="wrap about">
+      <div class="about-text" data-rv="up">
+        <h2 id="t-despre" class="sec-head" style="display:none"></h2>
+        <p class="lead-strong">Spălare auto, din cartierul Tei, pentru șoferii din București.</p>
+        <p class="body">Suntem spălătoria auto din cartierul Tei, dedicată șoferilor din București. Ne ocupăm cu grijă de fiecare autoturism, pentru ca tu să te bucuri de o mașină curată în fiecare zi.</p>
+        <p class="body">Îți oferim servicii de spălare auto simple și accesibile.</p>
+      </div>
+
+      <div>
+        <div class="sec-head" data-rv="left" style="--d:80ms">
+          <h2>Despre noi</h2>
+        </div>
+        <ul class="adv">
+          <li data-rv="up" style="--d:60ms">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="13" r="8"/>
+              <path d="M12 9v4l2.5 2.5M9.5 2.5h5"/>
+            </svg>
+            <div>
+              <h3>Servicii rapide</h3>
+              <p>Curățenie fără așteptare lungă</p>
+            </div>
+          </li>
+          <li data-rv="up" style="--d:140ms">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5"/>
+              <path d="m15.5 15.5 5 5"/>
+            </svg>
+            <div>
+              <h3>Atenție la detalii</h3>
+              <p>Fiecare mașină tratată cu grijă</p>
+            </div>
+          </li>
+          <li data-rv="up" style="--d:220ms">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21.5s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/>
+              <circle cx="12" cy="10.5" r="2.4"/>
+            </svg>
+            <div>
+              <h3>La îndemâna ta</h3>
+              <p>Strada Grigore C. Moisil 38, București</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="servicii" aria-labelledby="t-servicii">
+    <div class="wrap">
+      <div class="sec-head" data-rv="left">
+        <h2 id="t-servicii">Servicii</h2>
+        <p class="lead">Servicii simple de spălare auto, făcute cu grijă, pentru orice mașină.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card cut" data-rv="zoom" style="--d:0ms">
+          <span class="mono">exterior</span>
+          <h3>Spălare exterior</h3>
+          <p>Curățăm temeinic caroseria mașinii</p>
+        </article>
+        <article class="card cut" data-rv="zoom" style="--d:90ms">
+          <span class="mono">auto</span>
+          <h3>Spălare auto</h3>
+          <p>Spălăm mașina ta, cu grijă, în cartierul Tei</p>
+        </article>
+      </div>
+
+      <div class="cta-row" data-rv="up">
+        <a class="btn btn-primary cut" href="tel:0726173109">Sună acum</a>
+        <a class="btn btn-ghost cut" href="https://wa.me/40726173109?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83-mi%20sp%C4%83l%20ma%C8%99ina." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="sec-head" data-rv="left">
+        <h2 id="t-galerie">Galerie</h2>
+      </div>
+
+      <div class="shots">
+        <figure class="shot shot--wide cut" data-rv="zoom">
+          <img src="img/1.jpg" alt="Mașină roșie acoperită cu spumă albă de șampon" loading="lazy" width="1600" height="900">
+        </figure>
+        <figure class="shot cut" data-rv="zoom" style="--d:100ms">
+          <img src="img/2.jpg" alt="Spălare auto cu burete și spumă, cu mașina albastră în prim plan" loading="lazy">
+        </figure>
+        <figure class="shot cut" data-rv="zoom" style="--d:200ms">
+          <img src="img/3.jpg" alt="Mașină gri spălată cu săpun și burete" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact">
+      <div data-rv="left">
+        <div class="sec-head" style="margin-bottom:2rem">
+          <h2 id="t-contact">Contact</h2>
+          <p class="lead">Sună, scrie sau treci pe la noi pe strada Grigore C. Moisil.</p>
+        </div>
+
+        <div class="spec cut">
+          <dl>
+            <div class="spec-row">
+              <dt class="mono">Adresă</dt>
+              <dd>Strada Grigore C. Moisil 38, București</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="mono">Program</dt>
+              <dd>Luni – Sâmbătă, 08:00 – 22:00</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="mono">Telefon</dt>
+              <dd><a class="phone-big" href="tel:0726173109">0726 173 109</a></dd>
+            </div>
+          </dl>
+
+          <div class="spec-actions">
+            <a class="btn btn-primary cut" href="tel:0726173109">Sună acum</a>
+            <a class="btn btn-ghost cut" href="https://wa.me/40726173109?text=Bun%C4%83%20ziua%21%20A%C8%99%20dori%20s%C4%83-mi%20sp%C4%83l%20ma%C8%99ina." target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
+            <a class="btn btn-ghost cut" href="https://www.google.com/maps/search/?api=1&amp;query=Sp%C4%83l%C4%83toria+Tei+Bucure%C8%99ti" target="_blank" rel="noopener">Deschide în Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map cut" data-rv="zoom" style="--d:120ms">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=26.1127212,44.4638729,26.120721200000002,44.4678729&amp;layer=mapnik&amp;marker=44.4658729,26.1167212"
+          title="Harta: Spălătoria Tei, Strada Grigore C. Moisil 38, București"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-name">Spălătoria Tei</p>
+      <p class="mono">Strada Grigore C. Moisil 38, București</p>
+    </div>
+    <p class="mono">Luni – Sâmbătă, 08:00 – 22:00</p>
+    <div class="foot-meta">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: JLMedia, sasint, VintageBlue</p>
+      <p><a href="#top">Înapoi sus</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Vitezometru: gradație construită din cod --- */
+  var NS = 'http://www.w3.org/2000/svg';
+  var ticks = document.getElementById('ticks');
+  var needle = document.querySelector('.needle');
+  var out = document.getElementById('readout');
+  var TARGET = 180;
+
+  function pt(deg, r) {
+    var a = deg * Math.PI / 180;
+    return [200 + r * Math.sin(a), 200 - r * Math.cos(a)];
+  }
+
+  for (var v = 0; v <= 200; v += 10) {
+    var deg = -135 + v * 1.35;
+    var major = v % 20 === 0;
+    var hot = v >= 160;
+
+    var p1 = pt(deg, 172);
+    var p2 = pt(deg, major ? 158 : 166);
+    var line = document.createElementNS(NS, 'line');
+    line.setAttribute('x1', p1[0].toFixed(2));
+    line.setAttribute('y1', p1[1].toFixed(2));
+    line.setAttribute('x2', p2[0].toFixed(2));
+    line.setAttribute('y2', p2[1].toFixed(2));
+    line.setAttribute('class', (major ? 't-major' : 't-minor') + (hot ? ' hot' : ''));
+    ticks.appendChild(line);
+
+    if (major) {
+      var tp = pt(deg, 134);
+      var t = document.createElementNS(NS, 'text');
+      t.setAttribute('x', tp[0].toFixed(2));
+      t.setAttribute('y', tp[1].toFixed(2));
+      t.setAttribute('text-anchor', 'middle');
+      t.setAttribute('dominant-baseline', 'central');
+      t.textContent = v;
+      ticks.appendChild(t);
+    }
+  }
+
+  function show(val) {
+    out.textContent = Math.round(val);
+  }
+
+  if (reduce) {
+    show(TARGET);
+    needle.classList.add('go');
+  } else {
+    /* Acul urcă o singură dată, la încărcare */
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        needle.classList.add('go');
+        var dur = 1800;
+        var t0 = performance.now();
+        (function step(now) {
+          var p = Math.min(1, Math.max(0, (now - t0) / dur));
+          var e = 1 - Math.pow(1 - p, 3);
+          show(TARGET * e);
+          if (p < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+    });
+  }
+
+  /* --- Dezvăluire la derulare --- */
+  var items = document.querySelectorAll('[data-rv], .sec-head');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* --- Bara de navigare: umbră doar când pagina se derulează --- */
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script id="jarvis-vizita">(function(){try{if(location.hash==='#eu')localStorage.setItem('mk-eu','1');if(localStorage.getItem('mk-eu'))return;}catch(e){}if(!/(github\.io|mk-studio\.ro)$/.test(location.hostname))return;var p=location.pathname.split('/').filter(Boolean),s=p.pop()||'';if(/\.html?$/.test(s))s=p.pop()||'';var u='https://mk-vizite.eni-wear.workers.dev/v?s='+encodeURIComponent(s);function b(e){var x=u+(e?'&e='+e:'');try{if(navigator.sendBeacon&&navigator.sendBeacon(x))return;}catch(r){}fetch(x,{method:'POST',mode:'no-cors',keepalive:true}).catch(function(){});}b('');var c=0;document.addEventListener('click',function(v){var a=v.target.closest&&v.target.closest('a[href*="wa.me"],a[href^="tel:"],a[href^="mailto:"]');if(a&&c++<3)b('contact');},true);})();</script><script id="jarvis-poze-vizibile">(function(){function f(){document.querySelectorAll('img').forEach(function(i){var r=i.getBoundingClientRect();if(r.width<40||r.bottom<0||r.top>innerHeight)return;var e=i,ascunse=[];while(e&&e!==document.body){var s=getComputedStyle(e);if(s.position==='fixed'||/fallback|lightbox|modal|preload|loader|placeholder/i.test(String(e.className)))return;if(+s.opacity<0.05||s.visibility==='hidden')ascunse.push(e);e=e.parentElement;}ascunse.forEach(function(x){x.style.setProperty('opacity','1','important');x.style.setProperty('visibility','visible','important');});});}var t;addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(f,1200);},{passive:true});addEventListener('load',function(){setTimeout(f,2500);});})();</script></body>
+</html>
