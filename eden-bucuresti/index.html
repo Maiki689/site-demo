@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eden, magazin de cartier în București</title>
+<meta name="description" content="Eden, magazin de cartier în București, cu produse pentru ziua de zi, noutăți și consiliere la alegere.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Syne:wght@600;700;800&amp;display=swap">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --negru:#121212;
+  --acc:#0d9488;
+  --acc-inchis:#0b7f74;
+  --gri:#4d4d4d;
+  --gri-deschis:#cfcfcf;
+  --lat:clamp(1.25rem,5vw,3.5rem);
+  --sect:clamp(4.5rem,9vw,7.5rem);
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--alb);
+  color:var(--negru);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{
+  font-family:Syne,Inter,system-ui,sans-serif;
+  letter-spacing:-.02em;
+  line-height:1.05;
+  margin:0;
+  font-weight:700;
+}
+p{margin:0}
+ul{margin:0;padding:0}
+section[id]{scroll-margin-top:4rem}
+.wrap{max-width:1440px;margin:0 auto}
+
+/* ---------- Antet ---------- */
+.antet{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:50;
+  background:rgba(255,255,255,.7);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-bottom:1px solid transparent;
+  transition:background-color .3s,border-color .3s;
+}
+.antet.derulat{
+  background:rgba(255,255,255,.9);
+  border-bottom-color:rgba(18,18,18,.12);
+}
+.antet-in{
+  max-width:1440px;
+  margin:0 auto;
+  padding:0 var(--lat);
+  height:4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+}
+.marca{
+  font-family:Syne,Inter,sans-serif;
+  font-weight:800;
+  font-size:1.375rem;
+  letter-spacing:-.02em;
+  color:var(--negru);
+  text-decoration:none;
+}
+.meniu-buton{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  min-height:44px;
+  min-width:44px;
+  padding:0 .25rem;
+  background:none;
+  border:0;
+  font:600 1rem/1 Inter,system-ui,sans-serif;
+  color:var(--negru);
+  cursor:pointer;
+}
+.meniu-buton:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.linii{position:relative;width:22px;height:14px;display:block}
+.linii::before,.linii::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;
+  height:2px;
+  background:var(--negru);
+  transition:transform .3s var(--curba);
+}
+.linii::before{top:0}
+.linii::after{bottom:0}
+.meniu-buton[aria-expanded="true"] .linii::before{transform:translateY(6px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii::after{transform:translateY(-6px) rotate(-45deg)}
+
+.meniu-lista{
+  position:absolute;
+  top:100%;
+  left:0;right:0;
+  display:none;
+  flex-direction:column;
+  list-style:none;
+  background:var(--alb);
+  border-bottom:1px solid var(--negru);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista li{border-top:1px solid rgba(18,18,18,.12)}
+.meniu-lista li a{
+  display:flex;
+  align-items:center;
+  min-height:52px;
+  padding:0 var(--lat);
+  color:var(--negru);
+  font-weight:500;
+  text-decoration:none;
+}
+.meniu-lista li a:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
+.meniu-lista .meniu-tel{background:var(--acc);color:var(--negru);font-weight:600}
+
+/* ---------- Butoane ---------- */
+.buton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:.8rem 1.4rem;
+  border:2px solid var(--negru);
+  background:var(--negru);
+  color:var(--alb);
+  font:600 1rem/1.2 Inter,system-ui,sans-serif;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .15s var(--curba),background-color .25s,color .25s,border-color .25s;
+}
+.buton:hover{background:#2c2c2c;border-color:#2c2c2c}
+.buton:active{transform:scale(.97)}
+.buton:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.buton-acc{background:var(--acc);border-color:var(--acc);color:var(--negru)}
+.buton-acc:hover{background:var(--acc-inchis);border-color:var(--acc-inchis);color:var(--alb)}
+.buton-contur{background:transparent;color:var(--negru)}
+.buton-contur:hover{background:var(--negru);color:var(--alb)}
+
+/* ---------- Început ---------- */
+.inceput{
+  padding:calc(4rem + clamp(2.5rem,7vw,4.5rem)) var(--lat) var(--sect);
+  max-width:1440px;
+  margin:0 auto;
+}
+.inceput-top{display:grid;gap:1.75rem;align-items:end}
+.inceput h1{
+  font-size:clamp(5.5rem,27vw,17rem);
+  font-weight:800;
+  line-height:1;
+  margin-left:-.04em;
+}
+.slogan{
+  font-family:Syne,Inter,sans-serif;
+  font-weight:600;
+  font-size:clamp(1.375rem,3vw,2rem);
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+.desc{margin-top:.75rem;font-size:1.0625rem;color:var(--gri);max-width:28rem}
+.acoes{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+
+.vitrina{
+  position:relative;
+  overflow:hidden;
+  margin:clamp(2.5rem,6vw,4.5rem) 0 0;
+  aspect-ratio:4/5;
+  background:#ececec;
+}
+.vitrina img{width:100%;height:100%;object-fit:cover}
+.vitrina::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);
+  transform:translateX(-100%);
+  animation:reflexie 1.8s var(--curba) .5s 1 both;
+  pointer-events:none;
+}
+@keyframes reflexie{to{transform:translateX(100%)}}
+
+/* ---------- Despre ---------- */
+.despre{padding:var(--sect) var(--lat)}
+.despre-in{max-width:1440px;margin:0 auto;display:grid;gap:3rem}
+.despre h2,.produse h2,.contact h2{font-size:clamp(2.5rem,6vw,4.5rem)}
+.despre-text{margin-top:1.5rem;font-size:1.125rem;max-width:36rem}
+.avantaje{list-style:none}
+.avantaje li{border-top:1px solid var(--negru);padding:1.5rem 0 1.75rem}
+.avantaje li:last-child{border-bottom:1px solid var(--negru)}
+.avantaje h3{font-size:1.5rem}
+.avantaje p{margin-top:.5rem;color:var(--gri)}
+
+/* ---------- Produse (vitrina) ---------- */
+.produse{background:var(--negru);color:var(--alb);padding:var(--sect) var(--lat)}
+.produse-in{max-width:1440px;margin:0 auto}
+.produse-intro{margin-top:1.25rem;color:var(--gri-deschis);max-width:36rem}
+.bento{display:grid;gap:1rem;margin-top:3rem;grid-template-columns:1fr}
+.tile{margin:0;display:flex;flex-direction:column}
+.foto{position:relative;overflow:hidden;background:#262626;aspect-ratio:4/3}
+.tile-1 .foto{aspect-ratio:4/5}
+.poza{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  background:none;
+  cursor:zoom-in;
+  display:block;
+}
+.poza:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
+.foto img,.poza img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--curba)}
+.poza:hover img{transform:scale(1.03)}
+.tile figcaption{padding-top:1.25rem}
+.tile h3{font-size:1.5rem}
+.tile p{margin-top:.5rem;color:var(--gri-deschis);max-width:30rem}
+
+@media (min-width:860px){
+  .despre-in{grid-template-columns:1.1fr 1fr;gap:6rem;align-items:start}
+  .bento{grid-template-columns:repeat(12,1fr);gap:1.25rem}
+  .tile-1{grid-column:span 7;grid-row:span 2}
+  .tile-2,.tile-3{grid-column:span 5}
+  .tile-1 .foto{aspect-ratio:auto;flex:1;min-height:28rem}
+  .vitrina{aspect-ratio:21/9}
+  .inceput-top{grid-template-columns:1fr minmax(18rem,26rem);gap:3rem}
+}
+
+/* ---------- Contact ---------- */
+.contact{padding:var(--sect) var(--lat)}
+.contact-in{max-width:1440px;margin:0 auto;display:grid;gap:2.5rem}
+.contact-text{margin-top:1.25rem;font-size:1.125rem;color:var(--gri);max-width:30rem}
+.tel-mare{
+  display:inline-block;
+  margin-top:2rem;
+  font-family:Syne,Inter,sans-serif;
+  font-weight:700;
+  font-size:clamp(2rem,5.5vw,3.75rem);
+  line-height:1.1;
+  letter-spacing:-.02em;
+  color:var(--negru);
+  text-decoration:none;
+  border-bottom:3px solid var(--acc);
+  padding-bottom:.1rem;
+}
+.tel-mare:focus-visible{outline:3px solid var(--acc);outline-offset:4px}
+.contact .acoes{margin-top:2rem}
+.harta{border:1px solid var(--negru)}
+.harta iframe{display:block;width:100%;height:300px;border:0}
+
+@media (min-width:860px){
+  .contact-in{grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start}
+  .harta iframe{height:440px}
+}
+
+/* ---------- Subsol ---------- */
+.pied{background:var(--negru);color:var(--alb);padding:3rem var(--lat) 2.5rem}
+.pied-in{max-width:1440px;margin:0 auto;display:grid;gap:1.5rem}
+.pied .marca{color:var(--alb);font-size:1.75rem}
+.pied p{color:#c9c9c9;font-size:.9375rem}
+.pied-nav{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.pied-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--alb);text-decoration:none}
+.pied-nav a:hover{text-decoration:underline}
+.pied-nav a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.pied-credit{font-size:.875rem;color:#b5b5b5}
+@media (min-width:860px){
+  .pied-in{grid-template-columns:auto 1fr;align-items:end}
+  .pied-nav{justify-content:flex-end}
+  .pied-credit{grid-column:1 / -1;border-top:1px solid #2e2e2e;padding-top:1.25rem}
+}
+
+/* ---------- Meniu pe desktop ---------- */
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:2rem;
+    background:none;
+    border:0;
+  }
+  .meniu-lista li{border:0}
+  .meniu-lista li a{min-height:44px;padding:0;font-weight:500}
+  .meniu-lista li a:hover{text-decoration:underline;text-underline-offset:4px}
+  .meniu-lista .meniu-tel{
+    padding:0 1.1rem;
+    background:var(--acc);
+    border-radius:0;
+    font-weight:600;
+  }
+  .meniu-lista .meniu-tel:hover{text-decoration:none;background:var(--acc-inchis);color:var(--alb)}
+}
+
+/* ---------- Galerie: mărire ---------- */
+.marita{
+  position:fixed;
+  inset:auto;
+  top:4vh;
+  left:3vw;
+  width:94vw;
+  height:92vh;
+  z-index:90;
+  margin:0;
+  padding:0;
+  border:0;
+  aspect-ratio:auto;
+  flex:none;
+  transform:none;
+  background:var(--negru);
+  object-fit:contain;
+  cursor:zoom-out;
+}
+.marita .foto,.marita .poza{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  flex:none;
+  min-height:0;
+}
+.marita img,img.marita{width:100%;height:100%;object-fit:contain}
+.marita figcaption{display:none}
+html.galerie-deschisa{overflow:hidden}
+html.galerie-deschisa body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:85;
+  background:rgba(18,18,18,.94);
+}
+
+/* ---------- Apariții la derulare ---------- */
+html.js .apare{
+  opacity:0;
+  transform:translateY(1.5rem);
+  transition:opacity .55s var(--curba),transform .55s var(--curba);
+}
+html.js .apare.vizibil{opacity:1;transform:none}
+html.js .tile-2.apare,html.js .tile-3.apare{transition-delay:.08s}
+
+/* ---------- Accesibilitate ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .vitrina::after{animation:none;display:none}
+  html.js .apare{transform:none;transition:opacity .3s linear}
+  html.js .tile-2.apare,html.js .tile-3.apare{transition-delay:0s}
+  .foto img,.poza img,.buton,.antet,.linii::before,.linii::after{transition-duration:.01ms}
+  .poza:hover img{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet.derulat{background:var(--alb)}
+}
+@media (prefers-contrast:more){
+  :root{--gri:#222;--gri-deschis:#ececec;--acc:#0b7f74}
+  .buton{border-width:3px}
+  .antet{border-bottom:2px solid var(--negru)}
+  .avantaje li{border-top-width:2px}
+  .tile p{color:#fff}
+  .pied p{color:#fff}
+  .pied-credit{color:#fff}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#0d9488;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Eden</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Eden%20%28demo.mk-studio.ro%2Feden-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#0d9488;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#inceput">Eden</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+      <span class="linii" aria-hidden="true"></span>
+      <span>Meniu</span>
+    </button>
+    <nav aria-label="Principal">
+      <ul id="meniu-lista" class="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="meniu-tel" href="tel:0735868537">Sună acum</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="inceput" id="inceput">
+    <div class="inceput-top">
+      <h1>Eden</h1>
+      <div class="inceput-info">
+        <p class="slogan">Tot ce ai nevoie, aproape</p>
+        <p class="desc">Magazin de cartier cu produse esențiale, în București.</p>
+        <div class="acoes">
+          <a class="buton buton-acc" href="tel:0735868537">Sună acum</a>
+          <a class="buton buton-contur" href="#produse">Vezi produsele</a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="vitrina">
+      <img src="img/5.jpg" alt="Rafturi cu băuturi răcoritoare și sticle aliniate într-un magazin">
+    </figure>
+  </section>
+
+  <section class="despre" id="despre">
+    <div class="despre-in">
+      <div class="apare" data-jarvis="apare">
+        <h2>Despre Eden</h2>
+        <p class="despre-text">Eden este un magazin de proximitate din București unde găsești rapid produse pentru ziua de zi. Oferim un portofoliu variat, noutăți și consiliere la alegere. Te așteptăm să descoperi ce ai nevoie aproape de tine.</p>
+      </div>
+      <ul class="avantaje apare" data-jarvis="apare">
+        <li>
+          <h3>Aproape de tine</h3>
+          <p>Găsești rapid tot ce cauți</p>
+        </li>
+        <li>
+          <h3>Varietate</h3>
+          <p>Produse diverse pentru toate nevoile</p>
+        </li>
+        <li>
+          <h3>Ajutor la raft</h3>
+          <p>Consiliere prietenoasă clienților</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="produse" id="produse">
+    <div class="produse-in">
+      <div class="apare" data-jarvis="apare">
+        <h2>Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="produse-intro">Pe raft găsești produsele pentru ziua de zi. Apasă pe o fotografie ca s-o vezi mai mare.</p>
+      </div>
+
+      <div class="bento" data-jarvis="galerie">
+        <figure class="tile tile-1 apare" data-jarvis="apare">
+          <div class="foto">
+            <button class="poza" type="button">
+              <img src="img/1.jpg" alt="Raft cu fructe și legume proaspete">
+            </button>
+          </div>
+          <figcaption>
+            <h3>Produse</h3>
+            <p>Produsele pentru ziua de zi, de la cele de bază la cele pe care le cumperi des.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="tile tile-2 apare" data-jarvis="apare">
+          <div class="foto">
+            <button class="poza" type="button">
+              <img src="img/3.jpg" alt="Banane galbene expuse pe un raft cu fructe">
+            </button>
+          </div>
+          <figcaption>
+            <h3>Noutăți</h3>
+            <p>Produse noi, adăugate pe măsură ce ajung în magazin.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="tile tile-3 apare" data-jarvis="apare">
+          <div class="foto">
+            <button class="poza" type="button">
+              <img src="img/2.jpg" alt="Mere proaspete la vânzare pe o tejghea">
+            </button>
+          </div>
+          <figcaption>
+            <h3>Consiliere la alegere</h3>
+            <p>Nu știi ce să alegi? Întreabă la raft, îți spunem ce avem și ce ți se potrivește.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-in">
+      <div class="apare" data-jarvis="apare">
+        <h2>Contact</h2>
+        <p class="contact-text">Sună sau treci pe la magazin. Harta arată unde este Eden, în București.</p>
+        <a class="tel-mare" href="tel:0735868537">0735 868 537</a>
+        <div class="acoes">
+          <a class="buton buton-acc" href="tel:0735868537">Sună acum</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Eden+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta apare" data-jarvis="apare">
+        <iframe title="Harta cu locul magazinului Eden în București" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=26.129306,44.459249,26.137306,44.463249&amp;layer=mapnik&amp;marker=44.461249,26.133306" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="pied-in">
+    <p class="marca">Eden</p>
+    <nav aria-label="Subsol">
+      <ul class="pied-nav">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="tel:0735868537">0735 868 537</a></li>
+      </ul>
+    </nav>
+    <p class="pied-credit">Model de site (demo). Fotografii ilustrative de pe Pixabay: Surprising_Media, Pexels, StockSnap, Squirrel_photos, igorovsyannykov</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
