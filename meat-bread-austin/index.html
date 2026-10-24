@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-LRBFunFVFeiamOUPVBYcsYBx3G6h7xb9c8AdK6HSo8k='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meat &amp; Bread | Sandwiches in downtown Austin</title>
+<meta name="description" content="Fresh sandwiches with quality ingredients in downtown Austin. Porchetta carved fresh to order at 360 Nueces Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Rubik:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#FFD23F;
+  --black:#111111;
+  --red:#E63946;
+  --white:#FFFFFF;
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --sans:"Rubik",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+p{max-width:60ch}
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:860px){.wrap{padding-inline:2.5rem}}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:1.05;text-transform:uppercase}
+h2{font-size:clamp(2.6rem,8vw,5.25rem)}
+h3{font-size:1.75rem;line-height:1.1}
+
+/* Header */
+.antet{position:sticky;top:0;z-index:20;background:rgba(17,17,17,.78);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);color:var(--white);transition:background-color .3s var(--ease)}
+.antet.derulat{background:rgba(17,17,17,.94)}
+.antet .wrap{display:flex;align-items:center;gap:1rem;min-height:4rem;transition:min-height .3s var(--ease)}
+.antet.derulat .wrap{min-height:3.25rem}
+.brand{font-family:var(--display);font-size:1.45rem;line-height:1;text-transform:uppercase;letter-spacing:-.01em;color:var(--yellow);text-decoration:none;margin-right:auto;padding:.6rem 0}
+nav{display:contents}
+.meniu-buton{min-height:44px;min-width:44px;padding:0 1.1rem;border:0;border-radius:0;background:var(--yellow);color:var(--black);font:700 1rem/1 var(--sans);cursor:pointer;transition:transform .15s var(--ease)}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-lista{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;list-style:none;background:var(--black);padding:.25rem 1.25rem 1.25rem;border-top:1px solid rgba(255,255,255,.14)}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{display:flex;align-items:center;min-height:48px;color:var(--white);text-decoration:none;font-weight:500;border-bottom:1px solid rgba(255,255,255,.14)}
+.meniu-lista li.apel a{margin-top:.75rem;justify-content:center;background:var(--yellow);color:var(--black);font-weight:700;border:0}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{position:static;display:flex;flex-direction:row;align-items:center;gap:1.75rem;background:none;padding:0;border:0}
+  .meniu-lista a{border:0;min-height:44px;padding:0 .25rem}
+  .meniu-lista li.apel a{margin-top:0;padding:.7rem 1.1rem;min-height:44px;transition:transform .15s var(--ease)}
+  .meniu-lista li.apel a:active{transform:scale(.97)}
+}
+
+/* Shared */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.9rem 1.5rem;border:3px solid var(--black);background:var(--black);color:var(--yellow);font:700 1.05rem/1.1 var(--sans);text-decoration:none;text-align:center;transition:transform .15s var(--ease),box-shadow .2s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn:hover{box-shadow:.35rem .35rem 0 var(--red)}
+.btn-2{background:transparent;color:var(--black)}
+.btn-2:hover{box-shadow:.35rem .35rem 0 var(--black)}
+.actions{margin-top:1.75rem;display:grid;gap:.75rem}
+@media (min-width:480px){.actions{grid-auto-flow:column;justify-content:start}}
+
+/* Sticker: a photo cut out with a white border, like a label stuck on the page */
+.sticker{position:relative;margin:0;aspect-ratio:1;overflow:hidden;background:var(--white);border:.6rem solid var(--white);border-radius:47% 53% 44% 56% / 52% 46% 54% 48%;box-shadow:0 .6rem 0 var(--black)}
+.sticker img{width:100%;height:100%;object-fit:cover}
+.sticker:active,.eticheta:active{animation:hop .45s var(--ease)}
+@keyframes hop{
+  0%{transform:translateY(0)}
+  30%{transform:translateY(-.9rem)}
+  60%{transform:translateY(.15rem)}
+  100%{transform:translateY(0)}
+}
+.tape{position:absolute;background:var(--red);color:var(--black);font-weight:700;font-size:.8rem;line-height:1;padding:.45rem .65rem;rotate:-4deg;z-index:2;white-space:nowrap}
+
+/* Hero */
+.hero{position:relative;background:var(--yellow);padding:2rem 0 4rem;overflow:hidden}
+.hero-grid{position:relative;z-index:1;display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(4.25rem,21vw,10.5rem);line-height:.95}
+.slogan{margin-top:1.5rem;font-size:clamp(1.35rem,3.4vw,2rem);font-weight:700;line-height:1.2;max-width:18ch}
+.desc{margin-top:.9rem;max-width:36ch}
+.sticker-wrap{position:relative;width:min(70vw,300px);margin:2.5rem -.5rem 0 auto;rotate:-6deg}
+.sticker-wrap .sticker{width:100%}
+.sticker-wrap .tape{top:8%;left:-.6rem;font-size:1rem;rotate:-8deg}
+.hero-plata{display:none}
+@media (min-width:860px){
+  .hero{padding:4rem 0 6rem}
+  .hero-grid{grid-template-columns:1.25fr .9fr;gap:3rem}
+  .sticker-wrap{width:min(100%,460px);margin:0 0 0 auto}
+  .hero-plata{display:block;position:absolute;z-index:0;top:50%;right:-6%;width:min(600px,52vw);height:auto;translate:0 -50%}
+}
+
+/* About */
+.about{padding:5rem 0}
+.about-grid{display:grid;gap:3rem}
+.squiggle{display:block;width:min(260px,70%);height:auto;margin-top:1.5rem}
+.about-text p{font-size:1.125rem}
+.facts{list-style:none;margin-top:2rem;border-top:3px solid var(--black)}
+.facts li{padding:1.4rem 0;border-bottom:1px solid var(--black)}
+.facts h3{font-size:1.6rem}
+.facts p{margin-top:.3rem}
+@media (min-width:860px){
+  .about{padding:7rem 0}
+  .about-grid{grid-template-columns:1.1fr .9fr;gap:5rem;align-items:start}
+  .about-text{padding-top:.5rem}
+}
+
+/* Menu */
+.menu{background:var(--black);color:var(--white);padding:5rem 0}
+.menu h2{color:var(--yellow)}
+.menu .intro{margin-top:1.25rem;color:#ececec;max-width:44ch}
+.menu-lista{list-style:none;display:grid;gap:2.5rem 1.75rem;margin-top:3.5rem;padding-top:.5rem}
+.eticheta{position:relative;background:var(--white);color:var(--black);padding:1.9rem 1.5rem 1.6rem;box-shadow:.5rem .5rem 0 var(--red)}
+.eticheta h3{font-size:2rem}
+.eticheta p{margin-top:.5rem;font-size:1rem;color:#333}
+.eticheta.special{background:var(--yellow)}
+.eticheta .tape{top:-.85rem;left:1.25rem}
+.menu-lista li:nth-child(1){rotate:-1.6deg}
+.menu-lista li:nth-child(2){rotate:1.2deg}
+.menu-lista li:nth-child(3){rotate:-.7deg}
+.menu-lista li:nth-child(4){rotate:1.6deg}
+.menu-lista li:nth-child(5){rotate:-1.1deg}
+@media (min-width:560px){.menu-lista{grid-template-columns:1fr 1fr}}
+@media (min-width:960px){
+  .menu{padding:7rem 0}
+  .menu-lista{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Gallery */
+.galerie-secc{background:var(--yellow);padding:5rem 0;overflow:hidden}
+.galerie{position:relative;display:grid;gap:3rem;margin-top:3.5rem}
+.galerie .foto{width:min(78vw,380px);cursor:zoom-in;transition:rotate .3s var(--ease)}
+.galerie .foto:nth-child(1){justify-self:start;rotate:-4deg}
+.galerie .foto:nth-child(2){justify-self:end;rotate:5deg}
+html.galerie-deschisa .galerie::before{content:"";position:fixed;inset:0;background:rgba(17,17,17,.92);z-index:30}
+.galerie .foto.marita{position:fixed;z-index:40;inset:7vh 5vw;width:auto;height:auto;aspect-ratio:auto;rotate:0deg;justify-self:auto;margin:0;border-width:.5rem;border-radius:1rem;box-shadow:none;cursor:zoom-out}
+.galerie .foto.marita img{object-fit:contain;background:var(--white)}
+@media (min-width:760px){
+  .galerie-secc{padding:7rem 0}
+  .galerie{grid-template-columns:1fr 1fr;align-items:center}
+  .galerie .foto{width:min(100%,400px)}
+  .galerie .foto:nth-child(2){margin-top:7rem}
+}
+
+/* Contact */
+.contact{background:var(--red);color:var(--black);padding:5rem 0}
+.contact-grid{display:grid;gap:3rem;margin-top:3rem}
+.info{list-style:none;border-top:3px solid var(--black)}
+.info li{display:grid;gap:.15rem;padding:1.1rem 0;border-bottom:1px solid var(--black)}
+.info strong{font-weight:700}
+.contact .btn:hover{box-shadow:.35rem .35rem 0 var(--white)}
+.contact .btn-2:hover{box-shadow:.35rem .35rem 0 var(--black)}
+.map{display:block;width:100%;height:320px;border:3px solid var(--black);background:var(--white)}
+@media (min-width:860px){
+  .contact{padding:7rem 0}
+  .contact-grid{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+  .map{height:440px}
+}
+
+/* Footer */
+.site-foot{background:var(--black);color:var(--white);padding:3.5rem 0 2.5rem}
+.brand-big{font-family:var(--display);font-size:clamp(2.5rem,8vw,4.5rem);line-height:1;letter-spacing:-.01em;color:var(--yellow);text-transform:uppercase}
+.foot-links{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;list-style:none;margin-top:1.5rem}
+.foot-links a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.foot-txt{margin-top:1.5rem;color:#d9d9d9;font-size:.95rem}
+.foot-txt + .foot-txt{margin-top:.5rem}
+
+/* Reveal on scroll (only when the page has the js class) */
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(1.75rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Accessibility preferences */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .sticker:active,.eticheta:active{animation:none}
+  .btn,.meniu-buton,.galerie .foto{transition:none}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet,.antet.derulat{background:var(--black);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .antet{background:var(--black)}
+  .btn,.info li,.facts li,.map{border-width:3px}
+  .facts li,.info li{border-bottom-width:2px}
+  .eticheta{box-shadow:0 0 0 3px var(--black)}
+  .eticheta p{color:var(--black)}
+  .sticker{box-shadow:0 0 0 3px var(--black)}
+  .menu .intro{color:var(--white)}
+}
+</style>
+</head>
+<body>
+<header class="antet" id="top" data-jarvis="antet">
+  <div class="wrap">
+    <a class="brand" href="#top">Meat &amp; Bread</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Visit</a></li>
+        <li class="apel"><a href="tel:+15129477320">Call (512) 947-7320</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="hero-plata" viewbox="0 0 400 400" aria-hidden="true" focusable="false">
+      <circle cx="200" cy="200" r="196" fill="none" stroke="#111111" stroke-width="3"/>
+      <circle cx="200" cy="200" r="150" fill="#FFFFFF"/>
+      <circle cx="200" cy="200" r="120" fill="none" stroke="#111111" stroke-width="2"/>
+    </svg>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 id="hero-title">Meat &amp; Bread</h1>
+        <p class="slogan">Sandwiches made fresh every day</p>
+        <p class="desc">Fresh sandwiches with quality ingredients in downtown Austin.</p>
+        <div class="actions">
+          <a class="btn" href="tel:+15129477320">Call (512) 947-7320</a>
+          <a class="btn btn-2" href="#menu">See the menu</a>
+        </div>
+      </div>
+      <div class="sticker-wrap" data-jarvis="apare">
+        <span class="tape">Carved to order</span>
+        <figure class="sticker">
+          <img src="img/1.jpg" alt="Sandwich on toasted bread, cut in half">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div data-jarvis="apare">
+        <h2 id="about-title">Every porchetta is carved fresh to order.</h2>
+        <svg class="squiggle" viewbox="0 0 300 40" aria-hidden="true" focusable="false">
+          <path d="M4 26 C40 4 60 44 100 22 S160 4 196 24 S260 42 296 14" fill="none" stroke="#E63946" stroke-width="10" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="about-text">
+        <p data-jarvis="apare">Meat &amp; Bread serves sandwiches made with high quality ingredients. Our menu includes classics and a rotating feature sandwich each day.</p>
+        <ul class="facts" data-jarvis="apare">
+          <li>
+            <h3>Freshly carved</h3>
+            <p>Porchetta is sliced to order.</p>
+          </li>
+          <li>
+            <h3>Quality ingredients</h3>
+            <p>Sandwiches made with select ingredients.</p>
+          </li>
+          <li>
+            <h3>Central location</h3>
+            <p>Easy to find in downtown Austin.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <h2 id="menu-title" data-jarvis="apare">Menu</h2>
+      <p class="intro" data-jarvis="apare">Classic sandwiches, plus a feature that changes each day.</p>
+      <ul class="menu-lista">
+        <li class="eticheta" data-jarvis="apare">
+          <h3>Porchetta sandwich</h3>
+          <p>Carved to order with fresh ingredients.</p>
+        </li>
+        <li class="eticheta" data-jarvis="apare">
+          <h3>Meatball sandwich</h3>
+          <p>Topped with house sauce on fresh bread.</p>
+        </li>
+        <li class="eticheta" data-jarvis="apare">
+          <h3>Buffalo chicken sandwich</h3>
+          <p>Crispy chicken tossed in buffalo sauce.</p>
+        </li>
+        <li class="eticheta" data-jarvis="apare">
+          <h3>Grilled cheese sandwich</h3>
+          <p>Melted cheese on toasted bread.</p>
+        </li>
+        <li class="eticheta special" data-jarvis="apare">
+          <span class="tape">Changes daily</span>
+          <h3>Feature sandwich</h3>
+          <p>A rotating specialty with quality meats.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galerie-secc" id="gallery" aria-labelledby="gallery-title">
+    <div class="wrap">
+      <h2 id="gallery-title" data-jarvis="apare">Made to order</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="sticker foto" data-jarvis="apare">
+          <img src="img/2.jpg" alt="Sandwich with tomato on toasted bread">
+        </figure>
+        <figure class="sticker foto" data-jarvis="apare">
+          <img src="img/3.jpg" alt="Close-up of a sandwich on fresh bread">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div data-jarvis="apare">
+        <h2 id="contact-title">Stop by on Nueces Street</h2>
+        <ul class="info">
+          <li><strong>Address</strong><span>360 Nueces Street, Austin</span></li>
+          <li><strong>Hours</strong><span>Monday to Saturday, 11:00 AM to 4:00 PM</span></li>
+          <li><strong>Phone</strong><span>(512) 947-7320</span></li>
+        </ul>
+        <div class="actions">
+          <a class="btn" href="tel:+15129477320">Call (512) 947-7320</a>
+          <a class="btn btn-2" href="https://www.google.com/maps/search/?api=1&amp;query=Meat+%26+Bread+Austin" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+      </div>
+      <iframe class="map" data-jarvis="apare" src="https://www.openstreetmap.org/export/embed.html?bbox=-97.753813,30.265098,-97.745813,30.269098&amp;layer=mapnik&amp;marker=30.267098,-97.749813" title="Map of Meat &amp; Bread at 360 Nueces Street, Austin" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="brand-big">Meat &amp; Bread</p>
+    <ul class="foot-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <p class="foot-txt">360 Nueces Street, Austin. Monday to Saturday, 11:00 AM to 4:00 PM.</p>
+    <p class="foot-txt">Website concept (demo)</p>
+    <p class="foot-txt">Illustrative photos from Pixabay: DanielaElenaTentis, ctwtn, alexisdoncheff</p>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://maiki689.github.io' || location.hash === '#eu') return;
+  var m = /^\/site-demo-proba\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var apasari = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a || apasari >= 3) return;
+    if (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com') {
+      apasari++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
