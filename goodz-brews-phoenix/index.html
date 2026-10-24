@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goodz &amp; Brews | Craft beer and fine wine in Central Phoenix</title>
+<meta name="description" content="Goodz &amp; Brews sells craft beer and fine wine in Central Phoenix, open daily from 10am to 11pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&amp;family=Montserrat:wght@400;500;600&amp;display=swap">
+<style>
+:root{
+  --negru:#161212;
+  --negru-2:#1e1818;
+  --piatra:#D8D2C8;
+  --albastru:#38bdf8;
+  --albastru-deschis:#7dd3fc;
+  --linie:rgba(216,210,200,.16);
+  --text-discret:rgba(216,210,200,.80);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--negru)}
+body{
+  margin:0;
+  font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--piatra);
+  background:var(--negru);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+h1,h2,h3{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:500;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  margin:0;
+}
+p{margin:0}
+a{color:inherit}
+section{scroll-margin-top:4.5rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.contine{width:min(1120px,calc(100% - 2.5rem));margin-inline:auto}
+
+/* Buttons */
+.buton{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.7rem 1.4rem;
+  background:var(--albastru);color:var(--negru);
+  border:1px solid var(--albastru);
+  font:600 .9rem/1 Montserrat,system-ui,sans-serif;
+  letter-spacing:.02em;text-decoration:none;text-align:center;
+  transition:transform .2s var(--ease),background-color .3s,color .3s,border-color .3s;
+}
+.buton:hover{background:var(--albastru-deschis);border-color:var(--albastru-deschis)}
+.buton:active{transform:scale(.97)}
+.buton-contur{background:transparent;color:var(--piatra);border-color:rgba(216,210,200,.45)}
+.buton-contur:hover{background:transparent;color:var(--albastru);border-color:var(--albastru)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--albastru);outline-offset:3px}
+
+/* Top bar (glass) */
+.antet{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(22,18,18,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-bottom:1px solid transparent;
+  transition:background-color .5s,border-color .5s;
+}
+.antet.derulat{background:rgba(22,18,18,.78);border-bottom-color:var(--linie)}
+.antet-in{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  width:min(1120px,calc(100% - 2.5rem));margin-inline:auto;
+  min-height:64px;transition:min-height .5s var(--ease);
+}
+.antet.derulat .antet-in{min-height:56px}
+.marca{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;line-height:1;
+  color:var(--piatra);text-decoration:none;white-space:nowrap;
+}
+.antet-dreapta{display:flex;align-items:center;gap:.5rem}
+.meniu-buton{
+  display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;padding:0;
+  background:none;border:1px solid var(--linie);color:var(--piatra);cursor:pointer;
+}
+.linii{position:relative;display:block;width:18px;height:1px;background:currentColor;transition:background-color .3s}
+.linii::before,.linii::after{
+  content:"";position:absolute;left:0;width:18px;height:1px;background:currentColor;
+  transition:transform .4s var(--ease),top .4s var(--ease);
+}
+.linii::before{top:-6px}
+.linii::after{top:6px}
+.meniu-buton[aria-expanded="true"] .linii{background:transparent}
+.meniu-buton[aria-expanded="true"] .linii::before{top:0;transform:rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii::after{top:0;transform:rotate(-45deg)}
+.meniu-lista{
+  display:none;list-style:none;margin:0;padding:0;
+}
+.meniu-lista.deschis{
+  display:flex;flex-direction:column;
+  position:absolute;top:100%;left:0;right:0;
+  padding:.25rem 0 1rem;margin-top:.5rem;
+  background:var(--negru);border-top:1px solid var(--linie);
+}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:44px;padding:.6rem 0;
+  font-size:1rem;color:var(--piatra);text-decoration:none;
+  border-bottom:1px solid var(--linie);
+}
+.meniu-lista li:last-child a{border-bottom:0}
+.meniu-lista a:hover{color:var(--albastru)}
+
+/* First screen: the wine label */
+.inicio{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:100vh;min-height:100svh;
+  display:grid;place-items:center;
+  padding:6rem 1.25rem 3rem;
+}
+.inicio-fundal{
+  position:absolute;inset:-20%;z-index:-1;
+  background:
+    radial-gradient(40% 35% at 30% 35%,rgba(56,189,248,.16),transparent 70%),
+    radial-gradient(35% 30% at 72% 68%,rgba(56,189,248,.09),transparent 70%);
+  animation:deriva 26s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes deriva{
+  from{transform:translate3d(-2%,-1%,0) scale(1)}
+  to{transform:translate3d(2%,1%,0) scale(1.06)}
+}
+.eticheta{
+  position:relative;
+  width:min(560px,100%);
+  padding:clamp(2rem,6vw,3.5rem) clamp(1.5rem,6vw,3.5rem);
+  text-align:center;
+  background:rgba(22,18,18,.62);
+  border:1px solid rgba(216,210,200,.35);
+}
+.eticheta::before{
+  content:"";position:absolute;inset:10px;
+  border:1px solid rgba(56,189,248,.45);pointer-events:none;
+}
+.stema{
+  width:34px;height:52px;margin:0 auto 1.25rem;
+  fill:none;stroke:var(--albastru);stroke-width:1;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.eticheta-slogan{
+  font-size:.68rem;font-weight:500;line-height:1.5;
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--piatra);
+}
+.eticheta h1{
+  margin-top:1rem;
+  font-size:clamp(3rem,13vw,6.4rem);
+  line-height:1;
+}
+.eticheta-loc{
+  display:flex;align-items:center;justify-content:center;gap:.75rem;
+  margin-top:1.25rem;font-size:.95rem;font-weight:500;
+}
+.eticheta-loc::before,.eticheta-loc::after{content:"";width:28px;height:1px;background:var(--albastru)}
+.eticheta-ore{margin-top:.6rem;font-size:.92rem;color:var(--text-discret)}
+.eticheta-tel{margin-top:.2rem;font-size:.92rem;color:var(--text-discret)}
+.actiuni{
+  display:flex;flex-direction:column;gap:.75rem;
+  margin-top:2rem;
+}
+.actiuni .buton{width:100%}
+
+/* Sections */
+.despre{padding:clamp(5rem,12vw,9rem) 0}
+.despre .contine{display:grid;gap:3rem;align-items:center}
+.despre h2,.produse h2,.galerie-sectiune h2,.visita h2{
+  font-size:clamp(2.2rem,5.5vw,3.75rem);
+}
+.despre-text{display:grid;gap:1.25rem}
+.despre-text p{color:var(--text-discret);max-width:34rem}
+.despre-foto{margin:0}
+.despre-foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+.produse{
+  padding:clamp(5rem,12vw,9rem) 0;
+  background:var(--negru-2);
+}
+.produse-cap{display:grid;gap:1rem;margin-bottom:3rem}
+.produse-cap p{color:var(--text-discret);max-width:34rem}
+.paneles{
+  display:grid;gap:1px;
+  background:var(--linie);
+  border:1px solid var(--linie);
+}
+.panou{background:var(--negru-2);padding:2.5rem 2rem;display:grid;gap:.75rem;align-content:start}
+.panou h3{font-size:2rem}
+.panou p{color:var(--text-discret)}
+.avantaje{
+  display:grid;gap:2.25rem;margin-top:4.5rem;
+}
+.avantaj{border-top:1px solid rgba(56,189,248,.5);padding-top:1.25rem;display:grid;gap:.5rem;align-content:start}
+.avantaj h3{font-size:1.6rem}
+.avantaj p{color:var(--text-discret)}
+
+.galerie-sectiune{padding:clamp(5rem,12vw,9rem) 0}
+.galerie-cap{display:grid;gap:1rem}
+.galerie-cap p{color:var(--text-discret)}
+.galerie{
+  display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:2.5rem;
+}
+.galerie img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in;
+  transition:transform .6s var(--ease),opacity .6s var(--ease);
+}
+.galerie img:first-child{aspect-ratio:4/3}
+@media (hover:hover){
+  .galerie img:hover{transform:scale(1.015)}
+}
+
+/* Enlarged photo (added by the program) */
+html.galerie-deschisa body::after{
+  content:"";position:fixed;inset:0;z-index:150;
+  background:rgba(10,8,8,.92);
+  animation:apareFaza .4s ease both;
+}
+.galerie img.marita{
+  position:fixed;z-index:200;
+  inset:50% auto auto 50%;
+  transform:translate(-50%,-50%);
+  width:min(92vw,1100px);height:min(86vh,800px);
+  aspect-ratio:auto;object-fit:contain;
+  background:var(--negru);cursor:zoom-out;
+  animation:apareMarita .5s var(--ease) both;
+}
+@keyframes apareFaza{from{opacity:0}to{opacity:1}}
+@keyframes apareMarita{
+  from{opacity:0;transform:translate(-50%,-48%)}
+  to{opacity:1;transform:translate(-50%,-50%)}
+}
+
+.visita{
+  padding:clamp(5rem,12vw,9rem) 0;
+  border-top:1px solid var(--linie);
+}
+.visita .contine{display:grid;gap:3rem}
+.visita-info{display:grid;gap:2rem}
+.visita dl{display:grid;gap:1.25rem;margin:0}
+.visita dt{font-size:.85rem;color:var(--albastru);font-weight:500}
+.visita dd{margin:.2rem 0 0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;line-height:1.25;letter-spacing:-0.01em}
+.acces{display:flex;flex-direction:column;gap:.75rem}
+.acces .buton{width:100%}
+.harta{
+  margin:0;position:relative;
+  aspect-ratio:4/3;border:1px solid var(--linie);
+  background:var(--negru-2);
+}
+.harta iframe{
+  position:absolute;inset:0;width:100%;height:100%;border:0;
+  filter:grayscale(.6) brightness(.9);
+}
+
+.subsol{
+  padding:2.5rem 0 3rem;
+  border-top:1px solid var(--linie);
+  background:var(--negru);
+}
+.subsol .contine{display:grid;gap:1.25rem}
+.subsol-linie{display:flex;flex-wrap:wrap;align-items:baseline;gap:.5rem 1.5rem;color:var(--text-discret);font-size:.88rem}
+.subsol-credit{font-size:.8rem;color:rgba(216,210,200,.65);max-width:52rem}
+
+/* Reveal on scroll (only when JavaScript is on) */
+html.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translate3d(0,18px,0);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Tablet and desktop */
+@media (min-width:600px){
+  .actiuni{flex-direction:row;justify-content:center}
+  .actiuni .buton{width:auto;min-width:11rem}
+  .acces{flex-direction:row}
+  .acces .buton{width:auto}
+  .paneles{grid-template-columns:1fr 1fr}
+  .avantaje{grid-template-columns:1fr 1fr}
+}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .antet-in{min-height:68px}
+  .meniu-lista,.meniu-lista.deschis{
+    display:flex;flex-direction:row;align-items:center;
+    position:static;margin:0 auto;padding:0;gap:2.5rem;
+    background:none;border:0;
+  }
+  .meniu-lista a{
+    border:0;padding:0;min-height:44px;font-size:.95rem;
+  }
+  .meniu-lista a:hover{color:var(--albastru)}
+  .despre .contine{grid-template-columns:1fr 1fr;gap:6rem}
+  .despre-foto img{aspect-ratio:4/5}
+  .produse-cap{grid-template-columns:1fr 1fr;align-items:end;gap:4rem}
+  .produse-cap .produse-cap-text{justify-self:end}
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:3rem}
+  .galerie-cap{grid-template-columns:1fr 1fr;align-items:end;gap:4rem}
+  .galerie{grid-template-columns:repeat(3,1fr);gap:1rem}
+  .galerie img{aspect-ratio:4/3}
+  .galerie img:first-child{grid-column:1 / -1;aspect-ratio:21/9}
+  .visita .contine{grid-template-columns:.9fr 1.1fr;align-items:start;gap:6rem}
+  .harta{aspect-ratio:16/11}
+  .subsol .contine{grid-template-columns:auto 1fr;align-items:start;gap:3rem}
+  .subsol-credit{justify-self:end;text-align:right}
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .inicio-fundal{animation:none}
+  .galerie img,.buton,.linii::before,.linii::after{transition-duration:.01ms!important}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  html.galerie-deschisa body::after,
+  .galerie img.marita{animation:apareFaza .2s ease both}
+  .galerie img.marita{transform:translate(-50%,-50%)}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet.derulat{background:var(--negru)}
+  .eticheta{background:var(--negru)}
+}
+@media (prefers-contrast:more){
+  :root{--linie:rgba(216,210,200,.45);--text-discret:#ece7de}
+  .eticheta{border-width:2px}
+  .eticheta::before{border-color:var(--albastru)}
+  .buton-contur{border-color:var(--piatra)}
+  .subsol-credit{color:#ece7de}
+}
+</style>
+</head>
+<body id="sus">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#inicio">Goodz &amp; Brews</a>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#produse">Products</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#contact">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="antet-dreapta">
+      <a class="buton" href="tel:+14809121854">Call now</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+        <span class="sr">Menu</span>
+        <span class="linii" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="inicio" id="inicio">
+  <div class="inicio-fundal" aria-hidden="true"></div>
+  <div class="eticheta">
+    <svg class="stema" viewbox="0 0 34 52" aria-hidden="true">
+      <path d="M5 3h24c0 11-4.5 19-12 21C9.5 22 5 14 5 3z"/>
+      <line x1="17" y1="24" x2="17" y2="46"/>
+      <line x1="9" y1="47" x2="25" y2="47"/>
+      <line x1="11" y1="11" x2="23" y2="11"/>
+    </svg>
+    <p class="eticheta-slogan">Craft beer and fine wine, daily</p>
+    <h1>Goodz &amp; Brews</h1>
+    <p class="eticheta-loc">Central Phoenix</p>
+    <p class="eticheta-ore">Open daily, 10am to 11pm</p>
+    <p class="eticheta-tel">(480) 912-1854</p>
+    <div class="actiuni">
+      <a class="buton" href="tel:+14809121854">Call now</a>
+      <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Goodz+%26+Brews+Phoenix">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section class="despre" id="despre">
+  <div class="contine">
+    <div class="despre-text" data-jarvis="apare">
+      <h2>Craft beer and fine wine in Central Phoenix</h2>
+      <p>Goodz &amp; Brews is a shop in Central Phoenix that sells craft beer and fine wine. It is open every day from 10am to 11pm, so local customers can stop in at any time during those hours.</p>
+      <p>The shop focuses on these two drinks and nothing else. You can find it at 2927 North 24th Street.</p>
+    </div>
+    <figure class="despre-foto" data-jarvis="apare">
+      <img src="img/5.jpg" alt="Wooden beer barrel with brass hoops in a dim cellar" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="produse" id="produse">
+  <div class="contine">
+    <div class="produse-cap" data-jarvis="apare">
+      <h2>Products</h2>
+    </div>
+    <div class="paneles" data-jarvis="apare">
+      <article class="panou">
+        <h3>Craft beer</h3>
+        <p>Craft beer sold every day in Central Phoenix.</p>
+      </article>
+      <article class="panou">
+        <h3>Fine wine</h3>
+        <p>Fine wine sold every day in Central Phoenix.</p>
+      </article>
+    </div>
+    <div class="avantaje">
+      <div class="avantaj" data-jarvis="apare">
+        <h3>Open daily</h3>
+        <p>Available 10am to 11pm every day.</p>
+      </div>
+      <div class="avantaj" data-jarvis="apare">
+        <h3>Central location</h3>
+        <p>Right in Central Phoenix.</p>
+      </div>
+      <div class="avantaj" data-jarvis="apare">
+        <h3>Craft &amp; wine</h3>
+        <p>Offers craft beer and fine wine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="galerie-sectiune" id="galerie">
+  <div class="contine">
+    <div class="galerie-cap" data-jarvis="apare">
+      <h2>Photos</h2>
+      <p>Illustrative photos. Tap a photo to see it larger.</p>
+    </div>
+    <div class="galerie" data-jarvis="galerie">
+      <img src="img/1.jpg" alt="Glasses of white and red wine on a table" loading="lazy">
+      <img src="img/2.jpg" alt="A bottle of red wine beside a filled glass" loading="lazy">
+      <img src="img/4.jpg" alt="Red wine in a glass against a dark background" loading="lazy">
+      <img src="img/3.jpg" alt="Illustrative photo of a beer glass beside a wooden board" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="visita" id="contact">
+  <div class="contine">
+    <div class="visita-info" data-jarvis="apare">
+      <h2>Visit us in Central Phoenix</h2>
+      <dl>
+        <div>
+          <dt>Address</dt>
+          <dd>2927 North 24th Street, Phoenix, AZ</dd>
+        </div>
+        <div>
+          <dt>Hours</dt>
+          <dd>Open daily, 10am to 11pm</dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd>(480) 912-1854</dd>
+        </div>
+      </dl>
+      <div class="acces">
+        <a class="buton" href="tel:+14809121854">Call now</a>
+        <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Goodz+%26+Brews+Phoenix">Get directions</a>
+      </div>
+    </div>
+    <div class="harta" data-jarvis="apare">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-112.033859,33.479326,-112.025859,33.483326&amp;layer=mapnik&amp;marker=33.481326,-112.029859" title="Map showing Goodz &amp; Brews at 2927 North 24th Street, Phoenix" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="subsol">
+  <div class="contine">
+    <div class="subsol-linie">
+      <span class="marca">Goodz &amp; Brews</span>
+      <span>Website concept (demo)</span>
+    </div>
+    <p class="subsol-credit">Illustrative photos from Pixabay: AS_Photography, Vinotecarium, TheAngryTeddy, congerdesign, stevepb</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
