@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-LRBFunFVFeiamOUPVBYcsYBx3G6h7xb9c8AdK6HSo8k='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polkadots Bakery, custom hand-iced cookies in Austin</title>
+<meta name="description" content="Polkadots Bakery in Austin makes custom hand-iced cookies to order. Pick up in person or have them delivered.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Jost:wght@300..600&amp;display=swap">
+<style>
+:root{
+  --roz:#F6E3E1;
+  --menta:#A8D5C2;
+  --crem:#FFF9F2;
+  --maro:#4A2C2A;
+  --accent:#be123c;
+  --accent-inchis:#9c0f30;
+  --serif:"Bodoni Moda",Didot,"Bodoni 72",Georgia,serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --margine:clamp(1.25rem,5vw,3rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--crem);color:var(--maro);font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-0.02em;line-height:1.08;margin:0}
+p{margin:0}
+ul,dl,dd{margin:0;padding:0}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{max-width:75rem;margin-inline:auto;padding-inline:var(--margen,var(--margine))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+/* Buttons */
+.buton{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;font:500 1rem/1 var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;transition:transform .2s var(--curba),background-color .3s,color .3s,border-color .3s}
+.buton:active{transform:scale(.97)}
+.buton-principal{background:var(--accent);color:#fff}
+.buton-principal:hover{background:var(--accent-inchis)}
+.buton-contur{border-color:var(--maro);color:var(--maro);background:transparent}
+.buton-contur:hover{background:var(--maro);color:var(--crem)}
+
+/* Header (glass) */
+.antet{position:sticky;top:0;z-index:50;background:rgba(255,249,242,.74);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:background-color .4s,border-color .4s}
+.antet.derulat{background:rgba(255,249,242,.9);border-color:rgba(74,44,42,.12)}
+.antet-interior{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4rem;transition:min-height .4s var(--curba)}
+.antet.derulat .antet-interior{min-height:3.4rem}
+.marca{display:flex;align-items:center;gap:.5rem;text-decoration:none;font-family:var(--serif);font-size:clamp(1rem,4.6vw,1.25rem);font-weight:500;letter-spacing:-0.01em;white-space:nowrap}
+.marca svg{width:1.25rem;height:1.25rem;flex:none}
+.antet-actiuni{display:flex;align-items:center;gap:.5rem}
+.buton-mic{min-height:44px;padding:.55rem .95rem;font-size:.9rem}
+.meniu-buton{display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--maro);cursor:pointer;transition:transform .2s var(--curba)}
+.meniu-buton:active{transform:scale(.94)}
+.linii{display:block;position:relative;width:20px;height:1.5px;background:currentColor;transition:background-color .2s}
+.linii::before,.linii::after{content:"";position:absolute;left:0;width:20px;height:1.5px;background:currentColor;transition:transform .3s var(--curba),top .3s var(--curba)}
+.linii::before{top:-6px}
+.linii::after{top:6px}
+.meniu-buton[aria-expanded="true"] .linii{background:transparent}
+.meniu-buton[aria-expanded="true"] .linii::before{top:0;transform:rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii::after{top:0;transform:rotate(-45deg)}
+.meniu-lista{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;background:var(--crem);border-bottom:1px solid rgba(74,44,42,.12);box-shadow:0 1px 0 rgba(74,44,42,.04)}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{display:flex;align-items:center;min-height:52px;padding-inline:var(--margine);text-decoration:none;border-top:1px solid rgba(74,44,42,.1);font-size:1.05rem}
+.meniu-lista li:first-child a{border-top:0}
+
+/* Hero */
+.inceput{padding-block:clamp(2.5rem,6vw,4.5rem) clamp(4rem,9vw,7rem)}
+.inceput-grid{display:grid;gap:2.75rem;align-items:center}
+h1{font-size:clamp(3.4rem,10vw,6.75rem);line-height:.98;letter-spacing:-0.025em;font-weight:500}
+.slogan{margin-top:1.5rem;font-size:clamp(1.2rem,2.4vw,1.4rem);font-weight:300;line-height:1.35;max-width:24ch}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.program{margin-top:1.75rem;font-size:.95rem}
+.arcada{margin:0}
+.arcada img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 0 0}
+
+/* Sections */
+.sectiune{padding-block:clamp(4rem,10vw,7.5rem)}
+.sectiune-menta{background:var(--menta)}
+.sectiune-roz{background:var(--roz)}
+.titlu-sectiune{font-size:clamp(2.2rem,5.5vw,3.75rem);line-height:1.05;max-width:18ch}
+.text-sectiune{max-width:52ch;margin-top:1.25rem}
+
+/* About */
+.despre-grid{display:grid;gap:1.5rem}
+.despre-text{display:grid;gap:1rem;max-width:56ch}
+.avantaje{display:grid;gap:2.25rem;margin-top:4rem}
+.avantaj{border-top:1px solid rgba(74,44,42,.22);padding-top:1.25rem}
+.avantaj h3{font-size:1.5rem}
+.avantaj p{margin-top:.5rem}
+
+/* Products: pastry boxes */
+.produse{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.75rem) clamp(1rem,2.5vw,2rem);margin-top:3.5rem}
+.produs{display:block;text-decoration:none;color:inherit;transition:transform .2s var(--curba)}
+.produs:active{transform:scale(.985)}
+.cutie{display:block;position:relative;aspect-ratio:5/4;margin-bottom:1.25rem}
+.cutie-baza{position:absolute;left:8%;right:8%;top:40%;bottom:0;display:flex;align-items:center;justify-content:space-evenly;padding:0 6%;background:var(--crem);border-radius:3px;box-shadow:inset 0 -6px 0 rgba(74,44,42,.07)}
+.galeta{position:relative;display:block;width:26%;aspect-ratio:1;border-radius:50%;background:#E7C29A;box-shadow:0 0 0 1px rgba(74,44,42,.08)}
+.galeta:nth-child(2){background:#D9B58F}
+.galeta::after{content:"";position:absolute;inset:18%;border-radius:50%;background:var(--roz)}
+.galeta:nth-child(2)::after{background:var(--menta)}
+.cutie-capac{position:absolute;left:4%;right:4%;top:12%;height:30%;background:var(--roz);border-radius:3px;box-shadow:0 1px 0 rgba(74,44,42,.12),inset 0 0 0 1px rgba(255,255,255,.55);transform-origin:0% 50%;transition:transform .7s var(--curba)}
+.panglica{position:absolute;top:0;bottom:0;left:50%;width:12%;transform:translateX(-50%);background:var(--accent)}
+.panglica::before,.panglica::after{content:"";position:absolute;top:-45%;width:150%;height:60%;border-radius:50%;background:var(--accent)}
+.panglica::before{right:50%;transform-origin:100% 50%;transform:rotate(-25deg)}
+.panglica::after{left:50%;transform-origin:0 50%;transform:rotate(25deg)}
+.produs:hover .cutie-capac,
+.produs:focus-visible .cutie-capac,
+.produs:active .cutie-capac{transform:translate(-3%,-44%) rotate(-9deg)}
+.produs h3{font-size:clamp(1.2rem,2.4vw,1.5rem);line-height:1.15}
+.produs-desc{display:block;margin-top:.45rem;font-size:.95rem;line-height:1.45}
+
+/* Gallery */
+.galerie{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.75rem,2vw,1.5rem);margin-top:3rem}
+.foto{margin:0}
+.foto img{width:100%;aspect-ratio:3/4;object-fit:cover;cursor:zoom-in;transition:opacity .3s}
+.foto img:active{opacity:.9}
+html.galerie-deschisa{overflow:hidden}
+html.galerie-deschisa::before{content:"";position:fixed;inset:0;z-index:70;background:rgba(74,44,42,.82)}
+.galerie .marita{position:fixed;z-index:80;top:50%;left:50%;transform:translate(-50%,-50%);width:min(92vw,820px);max-height:88vh;margin:0}
+.galerie img.marita{width:min(92vw,820px);height:auto;max-height:88vh;aspect-ratio:auto;object-fit:contain;background:var(--crem);cursor:zoom-out}
+
+/* Contact */
+.contact-grid{display:grid;gap:3rem;align-items:start}
+.lista-detalii{display:grid;gap:0;margin-top:2.25rem}
+.lista-detalii>div{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;padding-block:1rem;border-top:1px solid rgba(74,44,42,.18)}
+.lista-detalii>div:last-child{border-bottom:1px solid rgba(74,44,42,.18)}
+.lista-detalii dt{font-weight:500}
+.lista-detalii dd a{text-underline-offset:4px}
+.livrare{margin-top:2.5rem}
+.livrare h3{font-size:1.5rem}
+.livrare p{margin-top:.6rem;max-width:44ch}
+.harta{border:1px solid rgba(74,44,42,.15);background:var(--roz)}
+.harta iframe{display:block;width:100%;height:clamp(300px,40vw,420px);border:0}
+
+/* Footer */
+.subsol{background:var(--maro);color:var(--crem);padding-block:3.5rem 2.5rem;font-size:.95rem}
+.subsol-grid{display:grid;gap:2rem}
+.subsol-marca{font-family:var(--serif);font-size:1.5rem;letter-spacing:-0.01em;margin-bottom:.5rem}
+.subsol-links{display:grid;gap:.6rem}
+.subsol a{color:var(--roz);text-underline-offset:4px}
+.subsol-note p+p{margin-top:.5rem;opacity:.85}
+
+/* Reveal on scroll (only when JS has run; otherwise everything is visible) */
+.apare{transition:opacity .6s var(--curba),transform .6s var(--curba)}
+html.js .apare:not(.vizibil){opacity:0;transform:translateY(16px)}
+
+/* Breakpoints */
+@media (min-width:600px){
+  .produse{gap:2rem 1.75rem}
+}
+@media (min-width:700px){
+  .avantaje{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}
+  .subsol-grid{grid-template-columns:1.2fr 1fr 1.2fr;align-items:start}
+}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{position:static;display:flex;flex-direction:row;gap:2.5rem;margin-inline-start:auto;margin-inline-end:2.5rem;background:none;border:0;box-shadow:none}
+  .meniu-lista a{min-height:44px;padding:0;border:0;font-size:1rem}
+  .meniu-lista a:hover{color:var(--accent)}
+  .buton-mic{font-size:.95rem;padding:.6rem 1.1rem}
+  .marca{font-size:1.3rem}
+  .antet-interior{min-height:4.5rem}
+}
+@media (min-width:900px){
+  .inceput-grid{grid-template-columns:1.05fr .95fr;gap:4rem}
+  .despre-grid{grid-template-columns:.9fr 1.1fr;gap:4rem}
+  .produse{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .galerie{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .contact-grid{grid-template-columns:.9fr 1.1fr;gap:5rem}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .apare:not(.vizibil){transform:none}
+  .apare{transition:opacity .3s ease}
+  .cutie-capac{transition:none}
+  .produs,.buton,.linii,.linii::before,.linii::after,.antet,.antet-interior{transition-duration:.01ms}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .antet,.antet.derulat{border-color:var(--maro)}
+  .buton-contur{border-width:2px}
+  .lista-detalii>div,.avantaj{border-color:var(--maro)}
+  .galeta::after{background:#fff}
+  .subsol a{color:#fff}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap antet-interior">
+    <a class="marca" href="#top">
+      <svg viewbox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="7" cy="7" r="5" fill="#be123c"/><circle cx="17" cy="17" r="5" fill="#be123c"/><circle cx="17" cy="7" r="3" fill="#A8D5C2"/><circle cx="7" cy="17" r="3" fill="#A8D5C2"/></svg>
+      <span>Polkadots Bakery</span>
+    </a>
+    <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#designs">Cookie designs</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <div class="antet-actiuni">
+      <a class="buton buton-principal buton-mic" href="tel:+15124763687">Call now</a>
+      <button type="button" class="meniu-buton" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+        <span class="sr">Menu</span>
+        <span class="linii" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="inceput" aria-labelledby="titlu-principal">
+    <div class="wrap inceput-grid">
+      <div>
+        <h1 id="titlu-principal">Polkadots Bakery</h1>
+        <p class="slogan">Custom hand-iced cookies for every event.</p>
+        <div class="actiuni">
+          <a class="buton buton-principal" href="tel:+15124763687">Call now</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Polkadots+Bakery+Austin">Get directions</a>
+        </div>
+        <p class="program">Open Monday to Saturday, 12:00 PM to 5:00 PM.</p>
+      </div>
+      <figure class="arcada">
+        <img src="img/1.jpg" alt="Heart-shaped cookies in pink and white icing, laid out for Valentine's Day">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sectiune" id="about" aria-labelledby="titlu-despre">
+    <div class="wrap">
+      <div class="despre-grid apare">
+        <h2 class="titlu-sectiune" id="titlu-despre">Made to order, by hand</h2>
+        <div class="despre-text">
+          <p>Polkadots Bakery in Austin creates hand-iced cookies based on your custom designs. Each cookie is made to order, perfect for gifts or celebrations.</p>
+          <p>Place your order and pick up in person or have them delivered.</p>
+        </div>
+      </div>
+      <div class="avantaje">
+        <div class="avantaj apare">
+          <h3>Custom designs</h3>
+          <p>Cookies decorated just as you want.</p>
+        </div>
+        <div class="avantaj apare">
+          <h3>Delivery available</h3>
+          <p>Order cookies to your door.</p>
+        </div>
+        <div class="avantaj apare">
+          <h3>Freshly made</h3>
+          <p>Each cookie baked to order.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune-menta" id="products" aria-labelledby="titlu-produse">
+    <div class="wrap">
+      <h2 class="titlu-sectiune" id="titlu-produse">Products</h2>
+      <div class="produse">
+        <a class="produs apare" href="#contact">
+          <span class="cutie" aria-hidden="true">
+            <span class="cutie-baza"><span class="galeta"></span><span class="galeta"></span><span class="galeta"></span></span>
+            <span class="cutie-capac"><span class="panglica"></span></span>
+          </span>
+          <h3>Custom hand-iced cookies</h3>
+          <span class="produs-desc">Cookies decorated to your design, made to order.</span>
+        </a>
+        <a class="produs apare" href="#contact">
+          <span class="cutie" aria-hidden="true">
+            <span class="cutie-baza"><span class="galeta"></span><span class="galeta"></span><span class="galeta"></span></span>
+            <span class="cutie-capac"><span class="panglica"></span></span>
+          </span>
+          <h3>Delivery service</h3>
+          <span class="produs-desc">Local delivery for all custom cookie orders in Austin.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune-roz" id="designs" aria-labelledby="titlu-modele">
+    <div class="wrap">
+      <h2 class="titlu-sectiune" id="titlu-modele">Cookie designs</h2>
+      <p class="text-sectiune">Illustrative photos of hand-iced cookies.</p>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="foto apare">
+          <img src="img/2.jpg" alt="Christmas royal icing cookies decorated in festive designs" loading="lazy">
+        </figure>
+        <figure class="foto apare">
+          <img src="img/3.jpg" alt="Piping bags and tips beside a cookie being decorated with royal icing" loading="lazy">
+        </figure>
+        <figure class="foto apare">
+          <img src="img/4.jpg" alt="Red, white and blue flag cookies decorated with royal icing" loading="lazy">
+        </figure>
+        <figure class="foto apare">
+          <img src="img/5.jpg" alt="Snowflake cookies decorated with white icing" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap contact-grid">
+      <div class="apare">
+        <h2 class="titlu-sectiune" id="titlu-contact">Order or visit</h2>
+        <p class="text-sectiune">Call to place your order, then pick up in person or have it delivered.</p>
+        <dl class="lista-detalii">
+          <div>
+            <dt>Address</dt>
+            <dd>2826 Rio Grande Street<br>Austin, TX</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+15124763687">(512) 476-3687</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Monday to Saturday, 12:00 PM to 5:00 PM</dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="buton buton-principal" href="tel:+15124763687">Call now</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Polkadots+Bakery+Austin">Get directions</a>
+        </div>
+        <div class="livrare">
+          <h3>Delivery information</h3>
+          <p>We offer local delivery for all custom cookie orders in Austin.</p>
+        </div>
+      </div>
+      <div class="harta apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-97.748156,30.293530,-97.740156,30.297530&amp;layer=mapnik&amp;marker=30.295530,-97.744156" title="Map of Polkadots Bakery, 2826 Rio Grande Street, Austin" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-grid">
+    <div>
+      <p class="subsol-marca">Polkadots Bakery</p>
+      <p>2826 Rio Grande Street, Austin, TX</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="subsol-links">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#designs">Cookie designs</a></li>
+        <li><a href="#contact">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="subsol-note">
+      <p>Website concept (demo)</p>
+      <p>Illustrative photos from Pixabay: JillWellington</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://maiki689.github.io' || location.hash === '#eu') return;
+  var m = /^\/site-demo-proba\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var apasari = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a || apasari >= 3) return;
+    if (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com') {
+      apasari++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
