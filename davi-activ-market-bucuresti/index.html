@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davi Activ Market, magazin deschis non-stop în București</title>
+<meta name="description" content="Magazin deschis non-stop pentru cumpărături zilnice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&amp;family=Rubik:wght@400;500;600&amp;display=swap">
+<style>
+:root{
+  --galben:#FFD447;
+  --verde:#0f766e;
+  --verde-inchis:#0b5e58;
+  --alb:#ffffff;
+  --negru:#111111;
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:5rem;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  font-family:Rubik,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  color:var(--negru);
+  background:var(--alb);
+  overflow-x:clip;
+}
+
+h1,h2,h3{
+  font-family:Outfit,system-ui,sans-serif;
+  margin:0;
+  letter-spacing:-.02em;
+  line-height:1.1;
+}
+
+h1{
+  font-size:clamp(3rem,13vw,7.5rem);
+  font-weight:800;
+  line-height:1.05;
+}
+
+h2{
+  font-size:clamp(2.2rem,5.5vw,3.75rem);
+  font-weight:800;
+}
+
+h3{
+  font-size:1.3rem;
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+
+p{margin:0}
+
+a{color:inherit}
+
+.wrap{
+  width:min(100% - 2.5rem,72rem);
+  margin-inline:auto;
+}
+
+.sectiune{padding:clamp(4rem,10vw,7.5rem) 0}
+
+.text-mare{
+  font-size:clamp(1.1rem,2vw,1.25rem);
+  line-height:1.6;
+  max-width:42rem;
+  margin-top:1.25rem;
+}
+
+.sare{
+  position:absolute;
+  left:1rem;
+  top:-4rem;
+  z-index:100;
+  padding:.75rem 1rem;
+  background:var(--negru);
+  color:#fff;
+  border-radius:.5rem;
+  transition:top .2s var(--curba);
+}
+.sare:focus{top:1rem}
+
+/* Antet */
+.antet{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.82);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  transition:box-shadow .3s ease;
+}
+.antet.derulat{box-shadow:0 1px 0 rgba(17,17,17,.14)}
+
+.bara{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  min-height:4.25rem;
+}
+
+.marca{
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  font-family:Outfit,sans-serif;
+  font-weight:800;
+  font-size:1.1rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  color:var(--negru);
+  min-height:2.75rem;
+}
+.marca-ico{width:1.6rem;height:1.6rem;flex:none}
+
+.meniu-btn{
+  margin-left:auto;
+  min-height:2.75rem;
+  min-width:2.75rem;
+  padding:0 1.1rem;
+  border:2px solid var(--negru);
+  border-radius:999px;
+  background:var(--galben);
+  color:var(--negru);
+  font:600 1rem/1 Rubik,system-ui,sans-serif;
+  cursor:pointer;
+  transition:transform .15s var(--curba);
+}
+
+.nav-lista{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  display:none;
+  flex-direction:column;
+  margin:0;
+  padding:.5rem 1.25rem 1.25rem;
+  list-style:none;
+  background:var(--alb);
+  border-bottom:2px solid var(--negru);
+}
+.nav-lista.deschis{display:flex}
+.nav-lista a{
+  display:flex;
+  align-items:center;
+  min-height:3rem;
+  font-family:Outfit,sans-serif;
+  font-weight:700;
+  font-size:1.2rem;
+  text-decoration:none;
+  color:var(--negru);
+}
+
+.btn-bara{display:none}
+
+/* Butoane */
+.btn{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:3.5rem;
+  padding:.85rem 1.75rem;
+  border:2px solid var(--negru);
+  border-radius:999px;
+  background:var(--alb);
+  color:var(--negru);
+  font-family:Outfit,sans-serif;
+  font-weight:700;
+  font-size:1.15rem;
+  line-height:1.2;
+  text-align:center;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .15s var(--curba),background-color .2s ease;
+}
+.btn:active,
+.meniu-btn:active{transform:scale(.97)}
+.btn .cifre{
+  font-family:Rubik,sans-serif;
+  font-weight:500;
+  font-size:.95rem;
+  margin-top:.15rem;
+}
+.btn-verde{
+  background:var(--verde);
+  border-color:var(--verde);
+  color:#fff;
+}
+.btn-galben{
+  background:var(--galben);
+  border-color:var(--galben);
+  color:var(--negru);
+}
+.btn-mic{
+  min-height:2.75rem;
+  padding:.5rem 1.25rem;
+  font-size:1rem;
+  flex-direction:row;
+}
+
+.btn:focus-visible,
+.meniu-btn:focus-visible,
+.nav-lista a:focus-visible,
+.marca:focus-visible,
+.sare:focus-visible,
+.subsol a:focus-visible{
+  outline:3px solid var(--negru);
+  outline-offset:3px;
+}
+.contact .btn:focus-visible,
+.contact a:focus-visible{outline-color:#fff}
+
+@media (hover:hover){
+  .btn-verde:hover{background:var(--verde-inchis);border-color:var(--verde-inchis)}
+  .btn:not(.btn-verde):not(.btn-galben):hover{background:var(--galben)}
+  .btn-galben:hover{background:#ffe27a}
+  .nav-lista a:hover{color:var(--verde)}
+}
+
+.actiuni{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.9rem;
+  margin-top:2rem;
+}
+.actiuni .btn{flex:1 1 15rem}
+
+/* Prima secțiune */
+.hero{
+  background:var(--galben);
+  padding:clamp(2.5rem,7vw,5.5rem) 0 clamp(3.5rem,8vw,6rem);
+}
+
+.hero-grid{
+  display:grid;
+  gap:2.75rem;
+  align-items:center;
+}
+
+.slogan{
+  margin-top:1.25rem;
+  font-family:Outfit,sans-serif;
+  font-weight:600;
+  font-size:clamp(1.3rem,3vw,1.75rem);
+  letter-spacing:-.01em;
+}
+
+.program{
+  display:inline-block;
+  margin-top:1.5rem;
+  padding:.65rem 1rem;
+  border-radius:.75rem;
+  background:var(--negru);
+  color:var(--galben);
+  font-weight:500;
+  line-height:1.4;
+}
+
+.punga-caja{
+  width:100%;
+}
+
+.punga{
+  display:block;
+  width:min(70vw,19rem);
+  height:auto;
+  margin-inline:auto;
+  overflow:visible;
+}
+
+/* Despre */
+.despre h2{margin-bottom:0}
+
+.avantaje{
+  list-style:none;
+  margin:clamp(2.5rem,6vw,4rem) 0 0;
+  padding:0;
+  display:grid;
+  gap:1rem;
+}
+
+.bloc{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  min-height:14rem;
+  padding:1.75rem 1.6rem 2rem;
+  border-radius:1.5rem;
+}
+.bloc h3{font-size:1.4rem}
+.bloc p{font-size:1.02rem}
+.bloc-galben{background:var(--galben);color:var(--negru)}
+.bloc-verde{background:var(--verde);color:#fff}
+.bloc-negru{background:var(--negru);color:var(--galben)}
+.bloc-negru p{color:#fff}
+.ico{
+  font-size:2rem;
+  line-height:1;
+  margin-bottom:auto;
+  padding-bottom:1.25rem;
+}
+
+/* Produse */
+.lista-servicii{
+  list-style:none;
+  margin:clamp(2.5rem,5vw,3.5rem) 0 0;
+  padding:0;
+}
+.rand{
+  display:grid;
+  gap:.5rem;
+  padding:1.6rem 0;
+  border-top:2px solid var(--negru);
+}
+.rand:last-child{border-bottom:2px solid var(--negru)}
+.rand h3{
+  font-size:clamp(1.6rem,3.6vw,2.4rem);
+  font-weight:800;
+}
+.rand p{max-width:34rem;font-size:1.05rem}
+
+/* Galerie */
+.galerie-sectiune .text-mare{margin-bottom:0}
+.grila{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.75rem;
+  margin-top:clamp(2rem,4vw,2.75rem);
+}
+
+.foto{
+  position:relative;
+  margin:0;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-radius:1rem;
+  background:var(--galben);
+  cursor:zoom-in;
+}
+.foto:first-child{
+  grid-column:1/-1;
+  aspect-ratio:16/10;
+}
+.foto img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s var(--curba);
+}
+@media (hover:hover){
+  .foto:hover img{transform:scale(1.04)}
+}
+
+.foto.marita{
+  position:fixed;
+  inset:4vh 4vw;
+  z-index:60;
+  aspect-ratio:auto;
+  width:auto;
+  height:auto;
+  border-radius:1rem;
+  background:var(--negru);
+  cursor:zoom-out;
+  animation:marire .35s var(--curba);
+}
+.foto.marita img{object-fit:contain}
+.foto.marita:hover img{transform:none}
+
+html.galerie-deschisa::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:55;
+  background:rgba(17,17,17,.88);
+}
+
+@keyframes marire{
+  from{transform:scale(.94);opacity:0}
+  to{transform:none;opacity:1}
+}
+
+@media (min-width:860px){
+  .grila{
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:minmax(13rem,auto);
+  }
+  .foto{aspect-ratio:auto}
+  .foto:first-child{
+    grid-column:span 2;
+    grid-row:span 2;
+    aspect-ratio:auto;
+  }
+}
+
+/* Contact */
+.contact{
+  background:var(--verde);
+  color:#fff;
+}
+.contact h2{color:#fff}
+.contact .text-mare{color:#fff}
+
+.contact-grid{display:grid;gap:2.75rem}
+
+.detalii{
+  margin:2.25rem 0 0;
+  display:grid;
+  gap:1rem;
+}
+.detalii > div{
+  display:grid;
+  gap:.2rem;
+  padding-top:1rem;
+  border-top:1px solid rgba(255,255,255,.5);
+}
+.detalii dt{
+  font-size:.9rem;
+  color:#fff;
+}
+.detalii dd{
+  margin:0;
+  font-family:Outfit,sans-serif;
+  font-weight:700;
+  font-size:1.25rem;
+}
+.detalii a{text-decoration:underline;text-underline-offset:.2em}
+
+.harta{
+  height:min(26rem,78vw);
+  overflow:hidden;
+  border-radius:1.25rem;
+  background:var(--alb);
+}
+.harta iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+@media (min-width:860px){
+  .contact-grid{
+    grid-template-columns:1fr 1.15fr;
+    align-items:start;
+    gap:4.5rem;
+  }
+  .harta{height:100%;min-height:28rem}
+}
+
+/* Subsol */
+.subsol{
+  background:var(--negru);
+  color:#fff;
+  padding:3rem 0 2.5rem;
+  font-size:.95rem;
+}
+.subsol p + p{margin-top:.4rem}
+.subsol-nume{
+  font-family:Outfit,sans-serif;
+  font-weight:800;
+  font-size:1.4rem;
+  color:var(--galben);
+  letter-spacing:-.01em;
+}
+.credit{
+  margin-top:1.5rem !important;
+  font-size:.85rem;
+  color:#d4d4d4;
+}
+
+/* Desktop */
+@media (min-width:720px){
+  .avantaje{grid-template-columns:repeat(3,1fr)}
+}
+
+@media (min-width:860px){
+  .meniu-btn{display:none}
+  .bara nav{margin-left:auto}
+  .nav-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:2rem;
+    padding:0;
+    background:none;
+    border:0;
+  }
+  .nav-lista a{
+    min-height:auto;
+    font-size:1rem;
+    font-weight:600;
+  }
+  .btn-bara{display:inline-flex}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:4rem}
+  .punga{width:100%;max-width:25rem}
+  .rand{
+    grid-template-columns:1fr 1.2fr;
+    align-items:baseline;
+    gap:2rem;
+  }
+}
+
+/* Animații: pornesc doar cu html.js (scrie-l programul) */
+html.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .5s var(--curba),transform .5s var(--curba);
+}
+html.js [data-jarvis="apare"].vizibil{
+  opacity:1;
+  transform:none;
+}
+
+html.js .punga-caja .produs{
+  opacity:0;
+  transform:translateY(-150px);
+  transition:
+    transform .9s cubic-bezier(.3,1.3,.5,1) var(--d,0s),
+    opacity .35s ease var(--d,0s);
+}
+html.js .punga-caja.vizibil .produs{
+  opacity:1;
+  transform:none;
+}
+.punga .produs:nth-child(1){--d:.25s}
+.punga .produs:nth-child(2){--d:.4s}
+.punga .produs:nth-child(3){--d:.55s}
+.punga .produs:nth-child(4){--d:.7s}
+.punga .produs:nth-child(5){--d:.85s}
+
+/* Preferințe */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  html.js .punga-caja .produs{transform:none;transition:opacity .3s ease}
+  .foto.marita{animation:none}
+  .foto img,.btn,.meniu-btn{transition:none}
+}
+
+@media (prefers-reduced-transparency:reduce){
+  .antet{
+    background:var(--alb);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+
+@media (prefers-contrast:more){
+  .btn{border-width:3px}
+  .antet{box-shadow:0 2px 0 var(--negru)}
+  .rand,.rand:last-child{border-color:var(--negru)}
+  .bloc-verde{background:var(--verde-inchis)}
+  .program{background:#000;color:#fff}
+  .text-mare,.rand p,.bloc p{color:#000}
+  .bloc-verde p,.bloc-negru p,.contact .text-mare,.contact .detalii dt{color:#fff}
+  .credit{color:#fff}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#0f766e;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Davi Activ Market</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Davi%20Activ%20Market%20%28demo.mk-studio.ro%2Fdavi-activ-market-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#0f766e;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<a class="sare" href="#continut">Sari la conținut</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap bara">
+    <a class="marca" href="#top">
+      <svg class="marca-ico" viewbox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M4 9h16l-1.2 11H5.2z" fill="#0f766e" stroke="#111" stroke-width="1.6" stroke-linejoin="round"></path>
+        <path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"></path>
+      </svg>
+      <span>Davi Activ Market</span>
+    </a>
+    <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="nav-lista">Meniu</button>
+    <nav aria-label="Principal">
+      <ul class="nav-lista" id="nav-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-verde btn-mic btn-bara" href="tel:0761490155">Sună acum</a>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="top" aria-labelledby="titlu">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu">Davi Activ Market</h1>
+        <p class="slogan">Oricând, aproape de tine</p>
+        <p class="program">Deschis non-stop, 24 de ore din 24, 7 zile pe săptămână.</p>
+        <div class="actiuni">
+          <a class="btn btn-verde" href="tel:0761490155">
+            <span>Sună acum</span>
+            <span class="cifre">0761 490 155</span>
+          </a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Davi+Activ+Market+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="punga-caja" data-jarvis="apare">
+        <svg class="punga" viewbox="0 0 300 380" aria-hidden="true" focusable="false">
+          <path d="M96 156 V92 Q96 36 150 36 Q204 36 204 92 V156" fill="none" stroke="#111" stroke-width="12" stroke-linecap="round"></path>
+          <g class="produse">
+            <circle class="produs" cx="122" cy="140" r="30" fill="#FFD447" stroke="#111" stroke-width="4"></circle>
+            <rect class="produs" x="150" y="92" width="50" height="92" rx="6" fill="#fff" stroke="#111" stroke-width="4"></rect>
+            <ellipse class="produs" cx="208" cy="132" rx="30" ry="20" fill="#fff" stroke="#111" stroke-width="4"></ellipse>
+            <rect class="produs" x="88" y="78" width="36" height="84" rx="10" fill="#111"></rect>
+            <rect class="produs" x="170" y="52" width="28" height="110" rx="12" fill="#0f766e" stroke="#111" stroke-width="4"></rect>
+          </g>
+          <path d="M50 158 H250 L268 346 Q270 370 244 370 H56 Q30 370 32 346 Z" fill="#0f766e" stroke="#111" stroke-width="4" stroke-linejoin="round"></path>
+          <rect x="78" y="214" width="144" height="46" rx="12" fill="#fff" stroke="#111" stroke-width="4"></rect>
+          <circle cx="150" cy="237" r="10" fill="#FFD447" stroke="#111" stroke-width="3"></circle>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune despre" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <h2 id="t-despre" data-jarvis="apare">Despre magazin</h2>
+      <p class="text-mare" data-jarvis="apare">Davi Activ Market este un magazin alimentar deschis permanent, pentru cumpărături rapide. Este deschis non-stop, la orice oră. Ce găsești exact pe rafturi vezi când ajungi, iar dacă vrei să verifici ceva înainte de drum, sună-ne.</p>
+
+      <ul class="avantaje">
+        <li class="bloc bloc-galben" data-jarvis="apare">
+          <span class="ico" aria-hidden="true">⏰</span>
+          <h3>Deschis mereu</h3>
+          <p>Program non-stop, 24 de ore</p>
+        </li>
+        <li class="bloc bloc-verde" data-jarvis="apare">
+          <span class="ico" aria-hidden="true">🧑‍🤝‍🧑</span>
+          <h3>Cumpărături rapide</h3>
+          <p>Util când ai nevoie de ceva în puțin timp</p>
+        </li>
+        <li class="bloc bloc-negru" data-jarvis="apare">
+          <span class="ico" aria-hidden="true">🧴</span>
+          <h3>Pentru zi cu zi</h3>
+          <p>De exemplu, alimente și băuturi pentru acasă</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune produse" id="produse" aria-labelledby="t-produse">
+    <div class="wrap">
+      <h2 id="t-produse" data-jarvis="apare">Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+
+      <ul class="lista-servicii">
+        <li class="rand" data-jarvis="apare">
+          <h3>Produse</h3>
+          <p>De exemplu, alimente de bază și băuturi pentru cumpărăturile de zi cu zi.</p>
+        </li>
+        <li class="rand" data-jarvis="apare">
+          <h3>Noutăți</h3>
+          <p>De exemplu, produse noi, pe măsură ce ajung în magazin.</p>
+        </li>
+        <li class="rand" data-jarvis="apare">
+          <h3>Consiliere la alegere</h3>
+          <p>De exemplu, ajutor pentru a găsi un produs când nu știi unde este.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune galerie-sectiune" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <h2 id="t-galerie" data-jarvis="apare">Galerie</h2>
+      <p class="text-mare" data-jarvis="apare">Fotografiile sunt ilustrative. Apasă pe o imagine ca să o vezi mai mare.</p>
+
+      <div class="grila" data-jarvis="galerie">
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/1.jpg" alt="Culoar de magazin alimentar cu produse pe rafturi" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/2.jpg" alt="Rafturi cu băuturi răcoritoare" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/3.jpg" alt="Banane și alte fructe expuse la vânzare" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/4.jpg" alt="Frigidere cu produse răcoritoare" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/5.jpg" alt="Cumpărături la un magazin alimentar" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="t-contact" data-jarvis="apare">Contact</h2>
+        <p class="text-mare" data-jarvis="apare">Sună sau caută magazinul pe hartă. Este în București și este deschis non-stop.</p>
+
+        <dl class="detalii" data-jarvis="apare">
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0761490155">0761 490 155</a></dd>
+          </div>
+          <div>
+            <dt>Oraș</dt>
+            <dd>București</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Non-stop, 24 de ore din 24, 7 zile pe săptămână</dd>
+          </div>
+        </dl>
+
+        <div class="actiuni" data-jarvis="apare">
+          <a class="btn btn-galben" href="tel:0761490155">Sună acum</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Davi+Activ+Market+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.116450,44.438733,26.124450,44.442733&amp;layer=mapnik&amp;marker=44.440733,26.120450" title="Harta: Davi Activ Market, București" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <p class="subsol-nume">Davi Activ Market</p>
+    <p>București. Deschis non-stop, 24 de ore din 24, 7 zile pe săptămână.</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: ccipeggy, igorovsyannykov, StockSnap, 27707, Alexas_Fotos</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
