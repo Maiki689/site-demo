@@ -1,530 +1,530 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="2"><meta name="generator" content="jarvis2-v2"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Eden, magazin de cartier în București</title>
-<meta name="description" content="Eden, magazin de cartier în București, cu produse pentru ziua de zi, noutăți și consiliere la alegere.">
+<title>Eden, magazin de proximitate în Colentina, București</title>
+<meta name="description" content="Eden, magazin de proximitate pe Șoseaua Gherase, Colentina, Sector 2, București. Produse esențiale pentru casă și masă.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Syne:wght@600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&amp;family=Jost:wght@400;500;600&amp;display=swap">
 <style>
 :root{
-  --alb:#FFFFFF;
-  --negru:#121212;
-  --acc:#0d9488;
-  --acc-inchis:#0b7f74;
-  --gri:#4d4d4d;
-  --gri-deschis:#cfcfcf;
-  --lat:clamp(1.25rem,5vw,3.5rem);
-  --sect:clamp(4.5rem,9vw,7.5rem);
+  --crem:#F5EFE6;
+  --negru:#141414;
+  --nisip:#D8C3A5;
+  --culoare:#be123c;
+  --serif:"Bodoni Moda","Didot",Georgia,serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
   --curba:cubic-bezier(.2,.8,.2,1);
 }
-
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.galerie-deschisa{overflow:hidden}
 body{
   margin:0;
-  background:var(--alb);
+  background:var(--crem);
   color:var(--negru);
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:1rem;
-  line-height:1.5;
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.55;
   letter-spacing:0;
-  overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
 img{display:block;max-width:100%;height:auto}
-h1,h2,h3{
-  font-family:Syne,Inter,system-ui,sans-serif;
-  letter-spacing:-.02em;
-  line-height:1.05;
-  margin:0;
-  font-weight:700;
-}
-p{margin:0}
-ul{margin:0;padding:0}
+a{color:inherit}
+h1,h2,h3,p,dl,dd{margin:0}
 section[id]{scroll-margin-top:4rem}
-.wrap{max-width:1440px;margin:0 auto}
+:focus-visible{outline:2px solid var(--culoare);outline-offset:3px}
 
-/* ---------- Antet ---------- */
-.antet{
-  position:fixed;
-  top:0;left:0;right:0;
-  z-index:50;
-  background:rgba(255,255,255,.7);
-  -webkit-backdrop-filter:blur(18px) saturate(1.2);
-  backdrop-filter:blur(18px) saturate(1.2);
-  border-bottom:1px solid transparent;
-  transition:background-color .3s,border-color .3s;
-}
-.antet.derulat{
-  background:rgba(255,255,255,.9);
-  border-bottom-color:rgba(18,18,18,.12);
-}
-.antet-in{
-  max-width:1440px;
-  margin:0 auto;
-  padding:0 var(--lat);
-  height:4rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:relative;
-}
-.marca{
-  font-family:Syne,Inter,sans-serif;
-  font-weight:800;
-  font-size:1.375rem;
+.contein{width:100%;max-width:1200px;margin:0 auto;padding:0 1.25rem}
+@media (min-width:860px){.contein{padding:0 2.5rem}}
+
+.titlu{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2rem,4.6vw,3.5rem);
+  line-height:1.08;
   letter-spacing:-.02em;
-  color:var(--negru);
+}
+
+/* Antet */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,239,230,.8);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s var(--curba),border-color .4s var(--curba);
+}
+.antet.derulat{background:rgba(245,239,230,.95);border-bottom-color:rgba(20,20,20,.1)}
+.antet-rand{display:flex;align-items:center;justify-content:space-between;min-height:4rem}
+.marca{
+  font-family:var(--serif);
+  font-size:1.6rem;
+  letter-spacing:-.02em;
+  line-height:1;
   text-decoration:none;
+  padding:.5rem 0;
 }
 .meniu-buton{
-  display:inline-flex;
-  align-items:center;
-  gap:.6rem;
-  min-height:44px;
-  min-width:44px;
+  min-height:44px;min-width:44px;
   padding:0 .25rem;
-  background:none;
-  border:0;
-  font:600 1rem/1 Inter,system-ui,sans-serif;
+  background:none;border:0;
+  font:500 .95rem/1 var(--sans);
+  letter-spacing:.02em;
   color:var(--negru);
   cursor:pointer;
-}
-.meniu-buton:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.linii{position:relative;width:22px;height:14px;display:block}
-.linii::before,.linii::after{
-  content:"";
-  position:absolute;
-  left:0;right:0;
-  height:2px;
-  background:var(--negru);
-  transition:transform .3s var(--curba);
-}
-.linii::before{top:0}
-.linii::after{bottom:0}
-.meniu-buton[aria-expanded="true"] .linii::before{transform:translateY(6px) rotate(45deg)}
-.meniu-buton[aria-expanded="true"] .linii::after{transform:translateY(-6px) rotate(-45deg)}
-
-.meniu-lista{
-  position:absolute;
-  top:100%;
-  left:0;right:0;
-  display:none;
-  flex-direction:column;
-  list-style:none;
-  background:var(--alb);
   border-bottom:1px solid var(--negru);
 }
-.meniu-lista.deschis{display:flex}
-.meniu-lista li{border-top:1px solid rgba(18,18,18,.12)}
-.meniu-lista li a{
-  display:flex;
-  align-items:center;
-  min-height:52px;
-  padding:0 var(--lat);
-  color:var(--negru);
-  font-weight:500;
-  text-decoration:none;
-}
-.meniu-lista li a:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
-.meniu-lista .meniu-tel{background:var(--acc);color:var(--negru);font-weight:600}
-
-/* ---------- Butoane ---------- */
-.buton{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  padding:.8rem 1.4rem;
-  border:2px solid var(--negru);
-  background:var(--negru);
-  color:var(--alb);
-  font:600 1rem/1.2 Inter,system-ui,sans-serif;
-  text-decoration:none;
-  cursor:pointer;
-  transition:transform .15s var(--curba),background-color .25s,color .25s,border-color .25s;
-}
-.buton:hover{background:#2c2c2c;border-color:#2c2c2c}
-.buton:active{transform:scale(.97)}
-.buton:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
-.buton-acc{background:var(--acc);border-color:var(--acc);color:var(--negru)}
-.buton-acc:hover{background:var(--acc-inchis);border-color:var(--acc-inchis);color:var(--alb)}
-.buton-contur{background:transparent;color:var(--negru)}
-.buton-contur:hover{background:var(--negru);color:var(--alb)}
-
-/* ---------- Început ---------- */
-.inceput{
-  padding:calc(4rem + clamp(2.5rem,7vw,4.5rem)) var(--lat) var(--sect);
-  max-width:1440px;
-  margin:0 auto;
-}
-.inceput-top{display:grid;gap:1.75rem;align-items:end}
-.inceput h1{
-  font-size:clamp(5.5rem,27vw,17rem);
-  font-weight:800;
-  line-height:1;
-  margin-left:-.04em;
-}
-.slogan{
-  font-family:Syne,Inter,sans-serif;
-  font-weight:600;
-  font-size:clamp(1.375rem,3vw,2rem);
-  line-height:1.2;
-  letter-spacing:-.01em;
-}
-.desc{margin-top:.75rem;font-size:1.0625rem;color:var(--gri);max-width:28rem}
-.acoes{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
-
-.vitrina{
-  position:relative;
-  overflow:hidden;
-  margin:clamp(2.5rem,6vw,4.5rem) 0 0;
-  aspect-ratio:4/5;
-  background:#ececec;
-}
-.vitrina img{width:100%;height:100%;object-fit:cover}
-.vitrina::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);
-  transform:translateX(-100%);
-  animation:reflexie 1.8s var(--curba) .5s 1 both;
-  pointer-events:none;
-}
-@keyframes reflexie{to{transform:translateX(100%)}}
-
-/* ---------- Despre ---------- */
-.despre{padding:var(--sect) var(--lat)}
-.despre-in{max-width:1440px;margin:0 auto;display:grid;gap:3rem}
-.despre h2,.produse h2,.contact h2{font-size:clamp(2.5rem,6vw,4.5rem)}
-.despre-text{margin-top:1.5rem;font-size:1.125rem;max-width:36rem}
-.avantaje{list-style:none}
-.avantaje li{border-top:1px solid var(--negru);padding:1.5rem 0 1.75rem}
-.avantaje li:last-child{border-bottom:1px solid var(--negru)}
-.avantaje h3{font-size:1.5rem}
-.avantaje p{margin-top:.5rem;color:var(--gri)}
-
-/* ---------- Produse (vitrina) ---------- */
-.produse{background:var(--negru);color:var(--alb);padding:var(--sect) var(--lat)}
-.produse-in{max-width:1440px;margin:0 auto}
-.produse-intro{margin-top:1.25rem;color:var(--gri-deschis);max-width:36rem}
-.bento{display:grid;gap:1rem;margin-top:3rem;grid-template-columns:1fr}
-.tile{margin:0;display:flex;flex-direction:column}
-.foto{position:relative;overflow:hidden;background:#262626;aspect-ratio:4/3}
-.tile-1 .foto{aspect-ratio:4/5}
-.poza{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  padding:0;
+.meniu{
+  display:none;
+  list-style:none;
   margin:0;
-  border:0;
-  background:none;
-  cursor:zoom-in;
-  display:block;
+  padding:.25rem 1.25rem 1.25rem;
+  position:absolute;top:100%;left:0;right:0;
+  background:var(--crem);
+  border-bottom:1px solid rgba(20,20,20,.1);
 }
-.poza:focus-visible{outline:3px solid var(--acc);outline-offset:-3px}
-.foto img,.poza img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--curba)}
-.poza:hover img{transform:scale(1.03)}
-.tile figcaption{padding-top:1.25rem}
-.tile h3{font-size:1.5rem}
-.tile p{margin-top:.5rem;color:var(--gri-deschis);max-width:30rem}
-
-@media (min-width:860px){
-  .despre-in{grid-template-columns:1.1fr 1fr;gap:6rem;align-items:start}
-  .bento{grid-template-columns:repeat(12,1fr);gap:1.25rem}
-  .tile-1{grid-column:span 7;grid-row:span 2}
-  .tile-2,.tile-3{grid-column:span 5}
-  .tile-1 .foto{aspect-ratio:auto;flex:1;min-height:28rem}
-  .vitrina{aspect-ratio:21/9}
-  .inceput-top{grid-template-columns:1fr minmax(18rem,26rem);gap:3rem}
-}
-
-/* ---------- Contact ---------- */
-.contact{padding:var(--sect) var(--lat)}
-.contact-in{max-width:1440px;margin:0 auto;display:grid;gap:2.5rem}
-.contact-text{margin-top:1.25rem;font-size:1.125rem;color:var(--gri);max-width:30rem}
-.tel-mare{
-  display:inline-block;
-  margin-top:2rem;
-  font-family:Syne,Inter,sans-serif;
-  font-weight:700;
-  font-size:clamp(2rem,5.5vw,3.75rem);
-  line-height:1.1;
-  letter-spacing:-.02em;
-  color:var(--negru);
+.meniu.deschis{display:block}
+.meniu a{
+  display:flex;align-items:center;
+  min-height:44px;
+  font-family:var(--serif);
+  font-size:1.4rem;
   text-decoration:none;
-  border-bottom:3px solid var(--acc);
-  padding-bottom:.1rem;
 }
-.tel-mare:focus-visible{outline:3px solid var(--acc);outline-offset:4px}
-.contact .acoes{margin-top:2rem}
-.harta{border:1px solid var(--negru)}
-.harta iframe{display:block;width:100%;height:300px;border:0}
-
-@media (min-width:860px){
-  .contact-in{grid-template-columns:1fr 1.2fr;gap:6rem;align-items:start}
-  .harta iframe{height:440px}
-}
-
-/* ---------- Subsol ---------- */
-.pied{background:var(--negru);color:var(--alb);padding:3rem var(--lat) 2.5rem}
-.pied-in{max-width:1440px;margin:0 auto;display:grid;gap:1.5rem}
-.pied .marca{color:var(--alb);font-size:1.75rem}
-.pied p{color:#c9c9c9;font-size:.9375rem}
-.pied-nav{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
-.pied-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--alb);text-decoration:none}
-.pied-nav a:hover{text-decoration:underline}
-.pied-nav a:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.pied-credit{font-size:.875rem;color:#b5b5b5}
-@media (min-width:860px){
-  .pied-in{grid-template-columns:auto 1fr;align-items:end}
-  .pied-nav{justify-content:flex-end}
-  .pied-credit{grid-column:1 / -1;border-top:1px solid #2e2e2e;padding-top:1.25rem}
-}
-
-/* ---------- Meniu pe desktop ---------- */
+.meniu a:hover{text-decoration:underline;text-underline-offset:.2em}
 @media (min-width:860px){
   .meniu-buton{display:none}
-  .meniu-lista{
-    position:static;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    gap:2rem;
-    background:none;
-    border:0;
+  .meniu{
+    display:flex;position:static;
+    flex-direction:row;gap:2.25rem;
+    padding:0;background:none;border:0;
   }
-  .meniu-lista li{border:0}
-  .meniu-lista li a{min-height:44px;padding:0;font-weight:500}
-  .meniu-lista li a:hover{text-decoration:underline;text-underline-offset:4px}
-  .meniu-lista .meniu-tel{
-    padding:0 1.1rem;
-    background:var(--acc);
-    border-radius:0;
-    font-weight:600;
-  }
-  .meniu-lista .meniu-tel:hover{text-decoration:none;background:var(--acc-inchis);color:var(--alb)}
+  .meniu a{font-family:var(--sans);font-size:.95rem;letter-spacing:.02em}
 }
 
-/* ---------- Galerie: mărire ---------- */
-.marita{
-  position:fixed;
-  inset:auto;
-  top:4vh;
-  left:3vw;
-  width:94vw;
-  height:92vh;
-  z-index:90;
-  margin:0;
-  padding:0;
-  border:0;
-  aspect-ratio:auto;
-  flex:none;
-  transform:none;
+/* Butoane */
+.buton{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;
+  padding:.8rem 1.5rem;
+  border:1px solid var(--negru);
+  background:transparent;
+  color:var(--negru);
+  font:500 .95rem/1 var(--sans);
+  letter-spacing:.02em;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .15s ease,background-color .25s ease,color .25s ease,border-color .25s ease;
+}
+.buton:hover{background:var(--negru);color:var(--crem)}
+.buton:active{transform:scale(.97)}
+.buton-principal{background:var(--culoare);border-color:var(--culoare);color:var(--crem)}
+.buton-principal:hover{background:var(--negru);border-color:var(--negru);color:var(--crem)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+
+/* Prima secțiune */
+.intro{padding:2.25rem 0 4.5rem}
+@media (min-width:860px){.intro{padding:3.5rem 0 7rem}}
+.nume{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(6rem,32vw,20rem);
+  line-height:.88;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+  margin:0 0 1.75rem -.04em;
+}
+.intro-grid{display:grid;gap:2.5rem;align-items:end}
+@media (min-width:860px){
+  .intro-grid{grid-template-columns:5fr 6fr;gap:4rem}
+}
+.slogan{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,4vw,2.25rem);
+  line-height:1.15;
+  letter-spacing:-.01em;
+  margin-bottom:1rem;
+}
+.slogan em{font-style:italic}
+.lead{max-width:30ch;margin-bottom:1rem}
+.adresa{font-size:.95rem;color:rgba(20,20,20,.78)}
+.intro-foto{margin:0}
+.intro-foto img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:860px){
+  .intro-foto img{max-height:82vh}
+}
+
+/* Despre */
+.despre{background:var(--crem);padding:clamp(4.5rem,10vw,8.5rem) 0}
+.despre-grid{display:grid;gap:3rem}
+@media (min-width:860px){
+  .despre-grid{grid-template-columns:5fr 6fr;gap:6rem}
+}
+.despre-text p{max-width:58ch;margin-bottom:2.5rem}
+.avantaje{list-style:none;margin:0;padding:0;border-top:1px solid var(--negru)}
+.avantaje li{
+  display:grid;
+  grid-template-columns:minmax(8rem,11rem) 1fr;
+  gap:1rem;
+  align-items:baseline;
+  padding:1.25rem 0;
+  border-bottom:1px solid rgba(20,20,20,.14);
+}
+.avantaje h3{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:1.35rem;
+  line-height:1.2;
+}
+@media (max-width:420px){
+  .avantaje li{grid-template-columns:1fr;gap:.25rem}
+}
+
+/* Produse: etichete de carton pe sfoară */
+.produse{
   background:var(--negru);
-  object-fit:contain;
+  color:var(--crem);
+  padding:clamp(4.5rem,10vw,8.5rem) 0;
+}
+.produse .titlu{color:var(--crem)}
+.produse-cap{max-width:40rem;margin-bottom:clamp(3.5rem,7vw,5.5rem)}
+.produse-cap p{margin-top:1.25rem;color:var(--nisip)}
+.etichete{
+  list-style:none;margin:0;padding:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:2.5rem 1.25rem;
+}
+@media (min-width:640px){
+  .etichete{grid-template-columns:repeat(3,minmax(0,1fr));gap:3rem 1.5rem}
+}
+@media (min-width:1100px){
+  .etichete{grid-template-columns:repeat(6,minmax(0,1fr));gap:0 1.25rem}
+}
+.etichete li{
+  position:relative;
+  min-width:0;
+  transform-origin:50% 0;
+}
+/* bara de unde atârnă eticheta */
+.etichete li::after{
+  content:"";
+  position:absolute;top:0;left:0;right:0;
+  height:1px;
+  background:rgba(245,239,230,.35);
+}
+/* sfoara */
+.etichete li::before{
+  content:"";
+  position:absolute;top:0;left:50%;
+  width:1px;height:3.5rem;
+  background:var(--nisip);
+  z-index:2;
+}
+.eticheta{
+  position:relative;
+  display:block;
+  margin-top:2.5rem;
+  min-height:10rem;
+  padding:2.1rem 1.1rem 1.35rem;
+  background:var(--nisip);
+  color:var(--negru);
+  font-family:var(--serif);
+  font-size:1.2rem;
+  line-height:1.15;
+  letter-spacing:-.01em;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 1.25rem),calc(100% - 1.25rem) 100%,0 100%);
+}
+/* gaura etichetei */
+.eticheta::before{
+  content:"";
+  position:absolute;
+  top:.6rem;left:50%;
+  width:.8rem;height:.8rem;
+  margin-left:-.4rem;
+  border-radius:50%;
+  background:var(--negru);
+}
+@keyframes leagan{
+  0%{transform:rotate(0)}
+  20%{transform:rotate(7deg)}
+  40%{transform:rotate(-6deg)}
+  60%{transform:rotate(3.5deg)}
+  80%{transform:rotate(-1.5deg)}
+  100%{transform:rotate(0)}
+}
+.etichete li:hover,
+.etichete li:focus-within,
+.etichete li:active{
+  animation:leagan 1.1s cubic-bezier(.3,.6,.3,1) 1;
+}
+
+/* Galerie */
+.galerie-sectiune{background:var(--crem);padding:clamp(4.5rem,10vw,8.5rem) 0}
+.galerie-cap{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.galerie-cap p{margin-top:1.25rem;max-width:40ch;color:rgba(20,20,20,.78)}
+.galerie{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:11rem;
+  gap:.75rem;
+}
+.galerie .poza:first-child{grid-column:1 / -1;grid-row:span 2}
+.poza{
+  position:relative;
+  display:block;
+  width:100%;height:100%;
+  margin:0;padding:0;
+  border:0;
+  background:var(--nisip);
+  overflow:hidden;
+  cursor:zoom-in;
+}
+.poza img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--curba);
+}
+.poza:hover img{transform:scale(1.03)}
+@media (min-width:860px){
+  .galerie{grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:15rem}
+  .galerie .poza:first-child{grid-column:span 2;grid-row:span 2}
+}
+.galerie .poza.marita{
+  position:fixed;
+  inset:1rem;
+  z-index:60;
+  width:auto;height:auto;
+  grid-column:auto;grid-row:auto;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--negru);
   cursor:zoom-out;
 }
-.marita .foto,.marita .poza{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  aspect-ratio:auto;
-  flex:none;
-  min-height:0;
+.galerie .poza.marita img{
+  width:auto;height:auto;
+  max-width:100%;max-height:100%;
+  object-fit:contain;
 }
-.marita img,img.marita{width:100%;height:100%;object-fit:contain}
-.marita figcaption{display:none}
-html.galerie-deschisa{overflow:hidden}
-html.galerie-deschisa body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:85;
-  background:rgba(18,18,18,.94);
-}
+.galerie .poza.marita:hover img{transform:none}
 
-/* ---------- Apariții la derulare ---------- */
-html.js .apare{
+/* Contact */
+.contact{background:var(--nisip);padding:clamp(4.5rem,10vw,8.5rem) 0}
+.contact-grid{display:grid;gap:3rem}
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:5fr 6fr;gap:5rem;align-items:center}
+}
+.detalii{margin:2rem 0 0;display:grid;gap:1.25rem}
+.detalii dt{font-size:.9rem;font-weight:500;color:rgba(20,20,20,.7);margin-bottom:.25rem}
+.detalii dd{font-family:var(--serif);font-size:1.25rem;line-height:1.3}
+.detalii a{text-underline-offset:.2em}
+.harta{height:20rem;background:var(--crem)}
+.harta iframe{display:block;width:100%;height:100%;border:0}
+@media (min-width:860px){.harta{height:30rem}}
+
+/* Subsol */
+.subsol{background:var(--negru);color:var(--crem);padding:3.5rem 0 2.5rem}
+.subsol-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:1.5rem 2rem;
+  align-items:start;
+}
+.subsol-marca{font-family:var(--serif);font-size:2.25rem;line-height:1;letter-spacing:-.02em}
+.subsol p{color:var(--nisip);font-size:.95rem}
+.subsol .credit{grid-column:1 / -1;font-size:.85rem;padding-top:1.5rem;border-top:1px solid rgba(216,195,165,.25)}
+
+/* Apariție la derulare (doar cu html.js) */
+html.js [data-jarvis="apare"]{
   opacity:0;
   transform:translateY(1.5rem);
-  transition:opacity .55s var(--curba),transform .55s var(--curba);
+  transition:opacity .6s var(--curba),transform .6s var(--curba);
 }
-html.js .apare.vizibil{opacity:1;transform:none}
-html.js .tile-2.apare,html.js .tile-3.apare{transition-delay:.08s}
+html.js [data-jarvis="apare"].vizibil{
+  opacity:1;
+  transform:none;
+}
 
-/* ---------- Accesibilitate ---------- */
+/* Preferințe de accesibilitate */
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .vitrina::after{animation:none;display:none}
-  html.js .apare{transform:none;transition:opacity .3s linear}
-  html.js .tile-2.apare,html.js .tile-3.apare{transition-delay:0s}
-  .foto img,.poza img,.buton,.antet,.linii::before,.linii::after{transition-duration:.01ms}
+  html.js [data-jarvis="apare"]{
+    transform:none;
+    transition:opacity .3s ease;
+  }
+  .etichete li,
+  .etichete li:hover,
+  .etichete li:focus-within,
+  .etichete li:active{animation:none}
+  .poza img{transition:none}
   .poza:hover img{transform:none}
+  .buton{transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+  .buton:active{transform:none}
+  .antet{transition:none}
 }
 @media (prefers-reduced-transparency:reduce){
-  .antet{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
-  .antet.derulat{background:var(--alb)}
+  .antet,
+  .antet.derulat{
+    background:var(--crem);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
 }
 @media (prefers-contrast:more){
-  :root{--gri:#222;--gri-deschis:#ececec;--acc:#0b7f74}
-  .buton{border-width:3px}
-  .antet{border-bottom:2px solid var(--negru)}
-  .avantaje li{border-top-width:2px}
-  .tile p{color:#fff}
-  .pied p{color:#fff}
-  .pied-credit{color:#fff}
+  body{color:#000}
+  .antet,.antet.derulat{border-bottom-color:#000}
+  .buton{border-width:2px;border-color:#000}
+  .buton-principal{background:#9f0f31;border-color:#9f0f31}
+  .adresa,.galerie-cap p,.detalii dt{color:#000}
+  .eticheta{color:#000}
+  .subsol p{color:var(--nisip)}
 }
 </style>
 </head>
-<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#0d9488;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Eden</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Eden%20%28demo.mk-studio.ro%2Feden-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#0d9488;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Eden</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Eden%20%28demo.mk-studio.ro%2Feden-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
 
 <header class="antet" data-jarvis="antet">
-  <div class="antet-in">
-    <a class="marca" href="#inceput">Eden</a>
-    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
-      <span class="linii" aria-hidden="true"></span>
-      <span>Meniu</span>
-    </button>
+  <div class="contein antet-rand">
+    <a class="marca" href="#">Eden</a>
     <nav aria-label="Principal">
-      <ul id="meniu-lista" class="meniu-lista" data-jarvis="meniu-lista">
+      <ul class="meniu" id="meniu-lista" data-jarvis="meniu-lista">
         <li><a href="#despre">Despre</a></li>
         <li><a href="#produse">Produse</a></li>
+        <li><a href="#galerie">Imagini</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="meniu-tel" href="tel:0735868537">Sună acum</a></li>
       </ul>
     </nav>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Meniu</button>
   </div>
 </header>
 
 <main>
 
-  <section class="inceput" id="inceput">
-    <div class="inceput-top">
-      <h1>Eden</h1>
-      <div class="inceput-info">
-        <p class="slogan">Tot ce ai nevoie, aproape</p>
-        <p class="desc">Magazin de cartier cu produse esențiale, în București.</p>
-        <div class="acoes">
-          <a class="buton buton-acc" href="tel:0735868537">Sună acum</a>
-          <a class="buton buton-contur" href="#produse">Vezi produsele</a>
+  <section class="intro">
+    <div class="contein">
+      <h1 class="nume">Eden</h1>
+      <div class="intro-grid">
+        <div class="intro-text">
+          <p class="slogan">Tot ce ai nevoie, <em>aproape</em></p>
+          <p class="lead">Un magazin pentru cumpărături zilnice în Colentina, București.</p>
+          <p class="adresa">Șoseaua Gherase, Colentina, Sector 2</p>
+          <p class="adresa">0735 868 537</p>
+          <div class="actiuni">
+            <a class="buton buton-principal" href="tel:0735868537">Sună acum</a>
+            <a class="buton" href="https://www.google.com/maps/search/?api=1&amp;query=Eden+Bucure%C8%99ti">Vezi pe Google Maps</a>
+          </div>
         </div>
+        <figure class="intro-foto">
+          <img src="img/1.jpg" alt="Banane galbene și alte fructe expuse pe raft">
+        </figure>
       </div>
     </div>
-
-    <figure class="vitrina">
-      <img src="img/5.jpg" alt="Rafturi cu băuturi răcoritoare și sticle aliniate într-un magazin">
-    </figure>
   </section>
 
-  <section class="despre" id="despre">
-    <div class="despre-in">
-      <div class="apare" data-jarvis="apare">
-        <h2>Despre Eden</h2>
-        <p class="despre-text">Eden este un magazin de proximitate din București unde găsești rapid produse pentru ziua de zi. Oferim un portofoliu variat, noutăți și consiliere la alegere. Te așteptăm să descoperi ce ai nevoie aproape de tine.</p>
+  <section class="despre" id="despre" aria-labelledby="despre-titlu">
+    <div class="contein despre-grid">
+      <div data-jarvis="apare">
+        <h2 class="titlu" id="despre-titlu">Cumpărături de zi cu zi, pe Șoseaua Gherase</h2>
       </div>
-      <ul class="avantaje apare" data-jarvis="apare">
-        <li>
-          <h3>Aproape de tine</h3>
-          <p>Găsești rapid tot ce cauți</p>
-        </li>
-        <li>
-          <h3>Varietate</h3>
-          <p>Produse diverse pentru toate nevoile</p>
-        </li>
-        <li>
-          <h3>Ajutor la raft</h3>
-          <p>Consiliere prietenoasă clienților</p>
-        </li>
+      <div class="despre-text" data-jarvis="apare">
+        <p>Eden are produse esențiale pentru casă și masă. Este un magazin de proximitate în București, în Colentina, pe Șoseaua Gherase. Poți lua rapid tot ce ai nevoie pentru familie.</p>
+        <ul class="avantaje">
+          <li>
+            <h3>La îndemână</h3>
+            <p>Magazin aproape de casă.</p>
+          </li>
+          <li>
+            <h3>Rapid</h3>
+            <p>Cumpărături fără aglomerație.</p>
+          </li>
+          <li>
+            <h3>Diversitate</h3>
+            <p>Produse pentru toată casa.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="produse" id="produse" aria-labelledby="produse-titlu">
+    <div class="contein">
+      <div class="produse-cap" data-jarvis="apare">
+        <h2 class="titlu" id="produse-titlu">Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p>Categoriile pe care le găsești în magazin.</p>
+      </div>
+      <ul class="etichete" data-jarvis="apare">
+        <li><span class="eticheta">Pâine și produse de panificație</span></li>
+        <li><span class="eticheta">Lactate și brânzeturi</span></li>
+        <li><span class="eticheta">Fructe și legume</span></li>
+        <li><span class="eticheta">Băuturi și răcoritoare</span></li>
+        <li><span class="eticheta">Dulciuri și gustări</span></li>
+        <li><span class="eticheta">Produse de curățenie și pentru casă</span></li>
       </ul>
     </div>
   </section>
 
-  <section class="produse" id="produse">
-    <div class="produse-in">
-      <div class="apare" data-jarvis="apare">
-        <h2>Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
-        <p class="produse-intro">Pe raft găsești produsele pentru ziua de zi. Apasă pe o fotografie ca s-o vezi mai mare.</p>
+  <section class="galerie-sectiune" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="contein">
+      <div class="galerie-cap" data-jarvis="apare">
+        <h2 class="titlu" id="galerie-titlu">Imagini</h2>
+        <p>Fotografii ilustrative, de stoc. Atinge o imagine ca să o vezi mai mare.</p>
       </div>
-
-      <div class="bento" data-jarvis="galerie">
-        <figure class="tile tile-1 apare" data-jarvis="apare">
-          <div class="foto">
-            <button class="poza" type="button">
-              <img src="img/1.jpg" alt="Raft cu fructe și legume proaspete">
-            </button>
-          </div>
-          <figcaption>
-            <h3>Produse</h3>
-            <p>Produsele pentru ziua de zi, de la cele de bază la cele pe care le cumperi des.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="tile tile-2 apare" data-jarvis="apare">
-          <div class="foto">
-            <button class="poza" type="button">
-              <img src="img/3.jpg" alt="Banane galbene expuse pe un raft cu fructe">
-            </button>
-          </div>
-          <figcaption>
-            <h3>Noutăți</h3>
-            <p>Produse noi, adăugate pe măsură ce ajung în magazin.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="tile tile-3 apare" data-jarvis="apare">
-          <div class="foto">
-            <button class="poza" type="button">
-              <img src="img/2.jpg" alt="Mere proaspete la vânzare pe o tejghea">
-            </button>
-          </div>
-          <figcaption>
-            <h3>Consiliere la alegere</h3>
-            <p>Nu știi ce să alegi? Întreabă la raft, îți spunem ce avem și ce ți se potrivește.</p>
-          </figcaption>
-        </figure>
+      <div class="galerie" data-jarvis="galerie">
+        <button class="poza" type="button">
+          <img src="img/1.jpg" alt="Banane galbene expuse în magazin">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/2.jpg" alt="Mere proaspete la tejghea">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/3.jpg" alt="Băuturi răcoritoare aliniate pe raft">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/4.jpg" alt="Familie cu un coș de cumpărături în magazin">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/5.jpg" alt="Interior de supermarket cu coșuri de cumpărături">
+        </button>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="contact-in">
-      <div class="apare" data-jarvis="apare">
-        <h2>Contact</h2>
-        <p class="contact-text">Sună sau treci pe la magazin. Harta arată unde este Eden, în București.</p>
-        <a class="tel-mare" href="tel:0735868537">0735 868 537</a>
-        <div class="acoes">
-          <a class="buton buton-acc" href="tel:0735868537">Sună acum</a>
-          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Eden+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="contein contact-grid">
+      <div data-jarvis="apare">
+        <h2 class="titlu" id="contact-titlu">Pe Șoseaua Gherase</h2>
+        <dl class="detalii">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Șoseaua Gherase, Colentina, Sector 2, București</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0735868537">0735 868 537</a></dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="buton buton-principal" href="tel:0735868537">Sună acum</a>
+          <a class="buton" href="https://www.google.com/maps/search/?api=1&amp;query=Eden+Bucure%C8%99ti">Deschide în Google Maps</a>
         </div>
       </div>
-      <div class="harta apare" data-jarvis="apare">
-        <iframe title="Harta cu locul magazinului Eden în București" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=26.129306,44.459249,26.137306,44.463249&amp;layer=mapnik&amp;marker=44.461249,26.133306" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.129306,44.459249,26.137306,44.463249&amp;layer=mapnik&amp;marker=44.461249,26.133306" title="Harta: Eden, Șoseaua Gherase, București" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="pied">
-  <div class="pied-in">
-    <p class="marca">Eden</p>
-    <nav aria-label="Subsol">
-      <ul class="pied-nav">
-        <li><a href="#despre">Despre</a></li>
-        <li><a href="#produse">Produse</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="tel:0735868537">0735 868 537</a></li>
-      </ul>
-    </nav>
-    <p class="pied-credit">Model de site (demo). Fotografii ilustrative de pe Pixabay: Surprising_Media, Pexels, StockSnap, Squirrel_photos, igorovsyannykov</p>
+<footer class="subsol">
+  <div class="contein subsol-grid">
+    <p class="subsol-marca">Eden</p>
+    <p>Șoseaua Gherase, Colentina, Sector 2, București</p>
+    <p>0735 868 537</p>
+    <p>Model de site (demo)</p>
+    <p class="credit">Fotografii ilustrative de pe Pixabay: StockSnap, Pexels, igorovsyannykov, Sunriseforever</p>
   </div>
 </footer>
 
