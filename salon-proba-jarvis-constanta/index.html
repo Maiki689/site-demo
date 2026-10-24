@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="7"><meta name="generator" content="jarvis2-v7"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salon Proba Jarvis | Tuns și coafat în Constanța</title>
+<meta name="description" content="Salon Proba Jarvis din Constanța: tuns, coafat și tratamente, pe bază de programare telefonică. Strada Probei 1.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Instrument+Serif&amp;display=swap">
+<style>
+:root{
+  --alb:#ffffff;
+  --piatra:#E7E5E1;
+  --grafit:#2B2D2F;
+  --grafit-adanc:#232527;
+  --accent:#b45309;
+  --accent-inchis:#92400e;
+  --text-slab:#585b5f;
+  --linie:rgba(43,45,47,.16);
+  --linie-deschisa:rgba(255,255,255,.18);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sans:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --margine:clamp(1.25rem,5vw,3rem);
+  --sectiune:clamp(5rem,12vw,9.5rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  color:var(--grafit);
+  background:var(--alb);
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+html.meniu-deschis body{overflow:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul{margin:0}
+ul{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.cadru{width:100%;max-width:80rem;margin-inline:auto;padding-inline:var(--margine)}
+.grila{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem}
+
+/* Butoane */
+.buton{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:0 1.5rem;
+  font:500 1rem/1 var(--sans);letter-spacing:0;
+  text-decoration:none;border-radius:.25rem;border:1px solid transparent;
+  transition:transform .15s var(--ease),background-color .2s ease,color .2s ease,border-color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.buton:active{transform:scale(.97)}
+.buton-plin{background:var(--accent);color:#fff}
+.buton-plin:hover{background:var(--accent-inchis)}
+.buton-contur{border-color:var(--grafit);color:var(--grafit)}
+.buton-contur:hover{background:var(--grafit);color:#fff}
+.buton-contur-alb{border-color:rgba(255,255,255,.55);color:#fff}
+.buton-contur-alb:hover{background:#fff;color:var(--grafit);border-color:#fff}
+
+/* Antet */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.74);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .3s ease,border-color .3s ease;
+}
+.antet.derulat{background:rgba(255,255,255,.86);border-bottom-color:var(--linie)}
+.antet-interior{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;min-height:4rem}
+.marca{font-weight:600;font-size:1rem;letter-spacing:-.01em;text-decoration:none;padding:.75rem 0;margin-right:auto}
+.nav-lista{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;order:3;width:100%;padding-bottom:.5rem}
+.nav-lista a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none;font-size:.975rem;color:var(--text-slab);transition:color .2s ease}
+.nav-lista a:hover{color:var(--grafit)}
+.antet-suna{min-height:2.75rem;padding:0 1.1rem;font-size:.95rem}
+.buton-meniu{
+  display:none;align-items:center;justify-content:center;
+  width:2.75rem;height:2.75rem;padding:0;margin-right:-.5rem;
+  background:none;border:0;color:var(--grafit);cursor:pointer;border-radius:.25rem;
+  -webkit-tap-highlight-color:transparent;
+}
+.buton-meniu:active{transform:scale(.97)}
+.buton-meniu span{position:relative;display:block;width:1.25rem;height:1px;background:currentColor;transition:transform .3s var(--ease)}
+.buton-meniu span::before{content:"";position:absolute;left:0;top:-.35rem;width:100%;height:1px;background:currentColor;transition:transform .3s var(--ease)}
+.buton-meniu span::after{content:"";position:absolute;left:0;top:.35rem;width:100%;height:1px;background:currentColor;transition:transform .3s var(--ease),opacity .2s ease}
+.buton-meniu[aria-expanded="true"] span{transform:rotate(45deg)}
+.buton-meniu[aria-expanded="true"] span::before{transform:translateY(.35rem) rotate(90deg)}
+.buton-meniu[aria-expanded="true"] span::after{opacity:0}
+.eticheta-ascunsa{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media (max-width:859px){
+  html.js .antet-interior{flex-wrap:nowrap}
+  html.js .buton-meniu{display:inline-flex}
+  html.js .nav-lista{
+    position:absolute;top:100%;left:0;right:0;width:auto;
+    display:block;padding:.5rem var(--margine) 1.5rem;
+    background:var(--alb);border-bottom:1px solid var(--linie);
+    opacity:0;visibility:hidden;transform:translateY(-.5rem);
+    transition:opacity .25s ease,transform .3s var(--ease),visibility 0s linear .3s;
+  }
+  html.js .nav-lista.deschis{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .3s var(--ease),visibility 0s}
+  html.js .nav-lista li{border-top:1px solid var(--linie)}
+  html.js .nav-lista li:first-child{border-top:0}
+  html.js .nav-lista a{display:flex;min-height:3.5rem;font-size:1.375rem;letter-spacing:-.015em;color:var(--grafit)}
+}
+@media (min-width:860px){
+  .antet-interior{flex-wrap:nowrap;gap:2rem}
+  .nav-lista{order:0;width:auto;padding:0;gap:2rem}
+  .marca{margin-right:auto}
+}
+
+/* Prima secțiune */
+.hero{padding-top:clamp(2rem,6vw,5rem);padding-bottom:var(--sectiune)}
+.hero-loc{grid-column:1/-1;font-size:.95rem;color:var(--text-slab);margin-bottom:1rem}
+.hero h1{
+  grid-column:1/-1;
+  font-weight:600;
+  font-size:clamp(2.85rem,13vw,9.25rem);
+  line-height:.98;
+  letter-spacing:-.04em;
+  margin-bottom:clamp(1.5rem,4vw,3.5rem);
+}
+.hero-text{grid-column:1/-1;display:flex;flex-direction:column;gap:1.25rem;margin-bottom:2.5rem}
+.slogan{font-family:var(--serif);font-weight:400;font-size:clamp(1.75rem,5.5vw,2.75rem);line-height:1.1;letter-spacing:-.01em}
+.hero-desc{color:var(--text-slab);max-width:30rem}
+.butoane{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-foto{grid-column:1/-1;margin:0}
+.hero-foto img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--piatra)}
+@media (min-width:860px){
+  .hero-text{grid-column:1/6;align-self:end;margin-bottom:0}
+  .hero-foto{grid-column:6/-1}
+  .hero-foto img{aspect-ratio:3/2}
+}
+
+/* Titluri de secțiune */
+.titlu-sectiune{font-weight:600;font-size:clamp(2.25rem,6.5vw,4.25rem);line-height:1.05;letter-spacing:-.03em}
+
+/* Despre */
+.despre{background:var(--piatra);padding-block:var(--sectiune)}
+.despre .titlu-sectiune{grid-column:1/-1;margin-bottom:1.75rem}
+.despre-text{grid-column:1/-1;display:flex;flex-direction:column;gap:1.25rem;margin-bottom:clamp(3rem,7vw,6rem)}
+.lead{font-family:var(--serif);font-size:clamp(1.65rem,4.6vw,2.6rem);line-height:1.15;letter-spacing:-.005em;max-width:36rem}
+.despre-text p:not(.lead){max-width:34rem;color:#45484c}
+.despre-foto{grid-column:1/-1;margin:0 0 3rem}
+.despre-foto img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.avantaje{grid-column:1/-1;display:grid;gap:0}
+.avantaje li{border-top:1px solid rgba(43,45,47,.25);padding:1.25rem 0 1.75rem}
+.avantaje h3{font-weight:600;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2;margin-bottom:.35rem}
+.avantaje p{color:#4c4f53}
+@media (min-width:860px){
+  .despre .titlu-sectiune{grid-column:1/5;margin-bottom:0}
+  .despre-text{grid-column:6/-1}
+  .despre-foto{grid-column:1/8;margin:0}
+  .avantaje{grid-column:9/-1;align-self:end}
+}
+
+/* Servicii: meniul tipografic */
+.servicii{padding-block:var(--sectiune)}
+.servicii .titlu-sectiune{grid-column:1/-1;margin-bottom:1rem}
+.servicii-intro{grid-column:1/-1;color:var(--text-slab);max-width:32rem;margin-bottom:clamp(2.5rem,6vw,5rem)}
+.servicii-grid{display:flex;flex-direction:column;gap:2rem}
+.panou{order:-1;margin:0}
+.panou-cadru{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--piatra)}
+.panou figure{position:absolute;inset:0;margin:0;transition:opacity .45s var(--ease),transform .6s var(--ease)}
+.panou figure img{width:100%;height:100%;object-fit:cover}
+.panou .f2,.panou .f3{opacity:0;transform:scale(1.03)}
+.indiciu{margin-top:.75rem;font-size:.875rem;color:var(--text-slab)}
+.indiciu-mouse{display:none}
+@media (hover:hover) and (pointer:fine){
+  .indiciu-atinge{display:none}
+  .indiciu-mouse{display:inline}
+}
+.servicii-grid:has(.s2:hover) .f2,
+.servicii-grid:has(.s2:focus) .f2,
+.servicii-grid:has(.s3:hover) .f3,
+.servicii-grid:has(.s3:focus) .f3{opacity:1;transform:none}
+
+.meniu-servicii{border-bottom:1px solid var(--linie)}
+.serviciu{
+  position:relative;display:grid;gap:.6rem;
+  padding:1.75rem 0;border-top:1px solid var(--linie);
+  cursor:default;outline:none;-webkit-tap-highlight-color:transparent;
+}
+.serviciu:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.serviciu::before{
+  content:"";position:absolute;left:0;top:1.75rem;bottom:1.75rem;width:2px;
+  background:var(--accent);transform:scaleY(0);transform-origin:top;
+  transition:transform .35s var(--ease);
+}
+.serviciu-nume{
+  font-weight:500;font-size:clamp(1.9rem,6.5vw,3.25rem);line-height:1.05;letter-spacing:-.03em;
+  transition:transform .35s var(--ease),color .25s ease;
+}
+.serviciu-text{color:var(--text-slab);max-width:26rem;transition:transform .35s var(--ease)}
+.serviciu:hover::before,.serviciu:focus::before{transform:scaleY(1)}
+.serviciu:hover .serviciu-nume,.serviciu:focus .serviciu-nume{color:var(--accent);transform:translateX(1rem)}
+.serviciu:hover .serviciu-text,.serviciu:focus .serviciu-text{transform:translateX(1rem)}
+.servicii-grid:not(:has(.s2:hover,.s2:focus,.s3:hover,.s3:focus)) .s1::before{transform:scaleY(1)}
+.servicii-grid:not(:has(.s2:hover,.s2:focus,.s3:hover,.s3:focus)) .s1 .serviciu-nume{color:var(--accent);transform:translateX(1rem)}
+.servicii-grid:not(:has(.s2:hover,.s2:focus,.s3:hover,.s3:focus)) .s1 .serviciu-text{transform:translateX(1rem)}
+
+@media (min-width:860px){
+  .servicii .titlu-sectiune{grid-column:1/5;margin-bottom:0}
+  .servicii-intro{grid-column:6/11}
+  .servicii-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:1.5rem;align-items:start}
+  .meniu-servicii{grid-column:1/8;grid-row:1}
+  .panou{order:0;grid-column:9/-1;grid-row:1;position:sticky;top:6rem}
+  .panou-cadru{aspect-ratio:4/5}
+  .serviciu{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);column-gap:1.5rem;align-items:baseline;padding:2.25rem 0}
+  .serviciu::before{top:2.25rem;bottom:2.25rem}
+}
+
+/* Contact */
+.contact{background:var(--grafit);color:#fff;padding-block:var(--sectiune)}
+.contact .titlu-sectiune{grid-column:1/-1;margin-bottom:1.25rem}
+.contact-text{grid-column:1/-1;color:#d6d4d0;max-width:28rem;margin-bottom:3rem}
+.contact-date{grid-column:1/-1;border-top:1px solid var(--linie-deschisa);padding-top:2rem}
+.telefon-mare{
+  display:inline-block;font-weight:500;font-size:clamp(2.25rem,9vw,4.75rem);
+  line-height:1.05;letter-spacing:-.035em;text-decoration:none;color:#fff;
+  margin-bottom:1rem;
+  background-image:linear-gradient(currentColor,currentColor);
+  background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;
+  transition:background-size .4s var(--ease);
+}
+.telefon-mare:hover{background-size:100% 1px}
+.adresa{font-style:normal;font-family:var(--serif);font-size:clamp(1.4rem,3.6vw,1.9rem);line-height:1.2;color:#ece9e4;margin-bottom:2.25rem}
+@media (min-width:860px){
+  .contact .titlu-sectiune{grid-column:1/6}
+  .contact-text{grid-column:1/6;margin-bottom:0}
+  .contact-date{grid-column:7/-1;grid-row:1/3;border-top:0;padding-top:0}
+}
+
+/* Subsol */
+.subsol{background:var(--grafit-adanc);color:#b9b7b3;padding-block:2.5rem 3rem;font-size:.9rem}
+.subsol-interior{display:flex;flex-direction:column;gap:.5rem;border-top:1px solid var(--linie-deschisa);padding-top:2rem}
+.subsol strong{color:#fff;font-weight:600;font-size:1rem}
+@media (min-width:860px){
+  .subsol-interior{flex-direction:row;justify-content:space-between;align-items:baseline;gap:2rem}
+}
+
+/* Apariții la derulare */
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(1.25rem);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Preferințe */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-property:opacity!important;transition-duration:.2s!important;animation:none!important}
+  html.js [data-jarvis="apare"]{transform:none}
+  .panou .f2,.panou .f3{transform:none}
+  .serviciu:hover .serviciu-nume,.serviciu:focus .serviciu-nume,.serviciu:hover .serviciu-text,.serviciu:focus .serviciu-text{transform:none}
+  .servicii-grid:not(:has(.s2:hover,.s2:focus,.s3:hover,.s3:focus)) .s1 .serviciu-nume,
+  .servicii-grid:not(:has(.s2:hover,.s2:focus,.s3:hover,.s3:focus)) .s1 .serviciu-text{transform:none}
+  .buton:active,.buton-meniu:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--text-slab:#2B2D2F;--linie:rgba(43,45,47,.6);--linie-deschisa:rgba(255,255,255,.6)}
+  .antet,.antet.derulat{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:var(--grafit)}
+  .buton-plin{background:var(--accent-inchis);border-color:#000}
+  .contact-text,.adresa,.subsol{color:#fff}
+  .despre-text p:not(.lead),.avantaje p{color:var(--grafit)}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#b45309;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Salon Proba Jarvis</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Salon%20Proba%20Jarvis%20%28demo.mk-studio.ro%2Fsalon-proba-jarvis-constanta%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#b45309;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="cadru antet-interior">
+    <a class="marca" href="#acasa">Salon Proba Jarvis</a>
+    <nav aria-label="Navigare principală">
+      <ul class="nav-lista" id="nav-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#contact">Programări</a></li>
+      </ul>
+    </nav>
+    <a class="buton buton-plin antet-suna" href="tel:0700000000">Sună acum</a>
+    <button class="buton-meniu" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="nav-lista">
+      <span aria-hidden="true"></span>
+      <span class="eticheta-ascunsa">Deschide meniul</span>
+    </button>
+  </div>
+</header>
+
+<main id="acasa">
+
+  <section class="hero" aria-labelledby="titlu-salon">
+    <div class="cadru grila">
+      <p class="hero-loc">Salon de coafură în Constanța, pe Strada Probei 1</p>
+      <h1 id="titlu-salon">Salon Proba Jarvis</h1>
+      <div class="hero-text">
+        <p class="slogan">Tuns și coafat pentru oricine.</p>
+        <p class="hero-desc">Salon pentru tuns și coafat. Programările se fac la telefon.</p>
+        <div class="butoane">
+          <a class="buton buton-plin" href="tel:0700000000">Sună acum</a>
+          <a class="buton buton-contur" href="#servicii">Vezi serviciile</a>
+        </div>
+      </div>
+      <figure class="hero-foto">
+        <img src="img/2.jpg" width="1200" height="800" alt="Coafeză care tunde părul unei cliente în salon">
+      </figure>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="titlu-despre">
+    <div class="cadru grila">
+      <h2 class="titlu-sectiune" id="titlu-despre" data-jarvis="apare">Despre salon</h2>
+      <div class="despre-text" data-jarvis="apare">
+        <p class="lead">La Salon Proba Jarvis ai grijă de părul tău așa cum vrei.</p>
+        <p>Tunsul, coafatul și tratamentele se fac pe bază de programare. Salonul se află în Constanța, pe Strada Probei 1, și primește clienți cu orice tip de păr.</p>
+      </div>
+      <figure class="despre-foto" data-jarvis="apare">
+        <img src="img/3.jpg" width="1200" height="900" loading="lazy" alt="Coafeză care lucrează cu foarfeca la părul unei cliente">
+      </figure>
+      <ul class="avantaje" data-jarvis="apare">
+        <li>
+          <h3>Tunsori moderne</h3>
+          <p>Pentru toate tipurile de păr.</p>
+        </li>
+        <li>
+          <h3>Îngrijire</h3>
+          <p>Pentru detalii, sună la salon.</p>
+        </li>
+        <li>
+          <h3>În Constanța</h3>
+          <p>Strada Probei 1.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="servicii" id="servicii" aria-labelledby="titlu-servicii">
+    <div class="cadru">
+      <div class="grila">
+        <h2 class="titlu-sectiune" id="titlu-servicii" data-jarvis="apare">Servicii</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p class="servicii-intro" data-jarvis="apare">Pentru programări, durată și prețuri, sună la salon.</p>
+      </div>
+      <div class="servicii-grid">
+        <ul class="meniu-servicii">
+          <li class="serviciu s1" tabindex="0">
+            <h3 class="serviciu-nume">Tuns și coafat</h3>
+            <p class="serviciu-text">Tuns pentru păr scurt, mediu sau lung și coafat pentru o zi obișnuită sau pentru o ocazie.</p>
+          </li>
+          <li class="serviciu s2" tabindex="0">
+            <h3 class="serviciu-nume">Îngrijire</h3>
+            <p class="serviciu-text">Pentru detalii despre îngrijire, sună la salon.</p>
+          </li>
+          <li class="serviciu s3" tabindex="0">
+            <h3 class="serviciu-nume">Tratamente</h3>
+            <p class="serviciu-text">Pentru detalii despre tratamente, sună la salon.</p>
+          </li>
+        </ul>
+        <div class="panou">
+          <div class="panou-cadru">
+            <figure class="f1"><img src="img/1.jpg" width="900" height="1125" loading="lazy" alt="Foarfecă și pieptăn în mâinile unui coafor, în timpul tunsului"></figure>
+            <figure class="f2"><img src="img/4.jpg" width="900" height="1125" loading="lazy" alt="Spălarea părului la chiuveta salonului"></figure>
+            <figure class="f3"><img src="img/5.jpg" width="900" height="1125" loading="lazy" alt="Stilistă care aranjează părul unei cliente"></figure>
+          </div>
+          <p class="indiciu">
+            <span class="indiciu-atinge">Atinge un serviciu ca să vezi fotografia lui.</span>
+            <span class="indiciu-mouse">Treci peste un serviciu ca să vezi fotografia lui.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="titlu-contact">
+    <div class="cadru grila">
+      <h2 class="titlu-sectiune" id="titlu-contact" data-jarvis="apare">Programări</h2>
+      <p class="contact-text" data-jarvis="apare">Recomandăm programare telefonică înainte de vizită.</p>
+      <div class="contact-date" data-jarvis="apare">
+        <a class="telefon-mare" href="tel:0700000000">0700 000 000</a>
+        <address class="adresa">Strada Probei 1, Constanța</address>
+        <div class="butoane">
+          <a class="buton buton-plin" href="tel:0700000000">Sună acum</a>
+          <a class="buton buton-contur-alb" href="https://www.google.com/maps/search/?api=1&amp;query=Salon+Proba+Jarvis+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="cadru subsol-interior">
+    <p><strong>Salon Proba Jarvis</strong>, Strada Probei 1, Constanța</p>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: kaleido-dp, Jo_Johnston, Positive_Images, planet_fox, xenostral</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
