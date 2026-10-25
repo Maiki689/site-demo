@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Service House | Car Repair in Denver, CO</title>
+<meta name="description" content="Auto repair and maintenance in Denver, Colorado. Drivetrain repair, bumper to bumper service, loaner cars, and pickup and delivery at 2240 South Quebec Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Outfit:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --apa:#1E88E5;
+  --bleu:#D6ECFF;
+  --bleumarin:#0B2545;
+  --text:#0B2545;
+  --text-moale:rgba(11,37,69,.8);
+  --linie:rgba(11,37,69,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --margine:clamp(1.25rem,5vw,3rem);
+  --max:74rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--text);
+  background:var(--alb);
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Outfit,Inter,system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+ul{margin:0;padding:0}
+.wrap{width:min(calc(100% - 2*var(--margine)),var(--max));margin-inline:auto}
+.acc{color:var(--apa)}
+
+/* ---------- Header (glass) ---------- */
+.antet{
+  position:fixed;inset:0 0 auto 0;z-index:40;
+  color:#fff;
+  background:rgba(11,37,69,.7);
+  backdrop-filter:blur(18px) saturate(1.2);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  transition:background-color .4s var(--ease);
+}
+.antet.derulat{background:rgba(11,37,69,.92)}
+.bara{display:flex;align-items:center;justify-content:space-between;min-height:4rem}
+.marca{
+  font-family:Outfit,sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
+  text-decoration:none;display:inline-flex;align-items:center;min-height:44px;
+}
+.meniu-nav{position:static}
+.meniu-buton{
+  display:inline-flex;align-items:center;gap:.6rem;
+  min-height:44px;min-width:44px;padding:0 .9rem;
+  background:none;color:#fff;font:inherit;font-size:.9rem;font-weight:500;
+  border:1px solid rgba(255,255,255,.35);border-radius:999px;cursor:pointer;
+  transition:transform .2s var(--ease),border-color .2s;
+}
+.meniu-buton:active{transform:scale(.97)}
+.linii{display:grid;gap:5px;width:16px}
+.linie{display:block;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--ease)}
+.meniu-buton[aria-expanded="true"] .linie:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linie:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+.meniu-lista{
+  display:none;
+  position:absolute;top:100%;left:0;right:0;
+  flex-direction:column;
+  list-style:none;
+  background:var(--bleumarin);
+  padding:.25rem var(--margine) 1.25rem;
+  border-top:1px solid rgba(255,255,255,.12);
+  border-radius:0 0 1.25rem 1.25rem;
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:48px;
+  font-size:1.05rem;text-decoration:none;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.meniu-lista a:focus-visible{outline-offset:-3px}
+html.meniu-deschis .antet{background:var(--bleumarin)}
+
+/* ---------- Buttons ---------- */
+.butoane{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.8rem 1.5rem;border-radius:999px;
+  font-family:Inter,sans-serif;font-size:1rem;font-weight:600;line-height:1;
+  text-decoration:none;
+  transition:transform .25s var(--ease),background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn-alb{background:#fff;color:var(--bleumarin)}
+.btn-alb:hover{background:var(--bleu)}
+.btn-contur{border:1px solid rgba(255,255,255,.5);color:#fff}
+.btn-contur:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-plin{background:var(--bleumarin);color:#fff}
+.btn-plin:hover{background:var(--apa)}
+.btn-contur-inchis{border:1px solid var(--bleumarin);color:var(--bleumarin)}
+.btn-contur-inchis:hover{background:var(--bleumarin);color:#fff}
+:focus-visible{outline:3px solid var(--apa);outline-offset:3px}
+.inicio :focus-visible,.antet :focus-visible,.subsol :focus-visible{outline-color:var(--bleu)}
+
+/* ---------- Hero ---------- */
+.inicio{
+  background:var(--bleumarin);color:#fff;
+  padding:6.5rem 0 3.5rem;
+  border-radius:0 0 2rem 2rem;
+  overflow:hidden;
+}
+.inicio .wrap{display:grid;gap:2.5rem;align-items:center}
+.text-inicio{display:grid;gap:1.25rem;justify-items:start}
+.inicio h1{font-size:clamp(2.75rem,10vw,6.25rem);letter-spacing:-.025em;line-height:1.02}
+.slogan{font-family:Outfit,sans-serif;font-size:clamp(1.2rem,2.6vw,1.6rem);font-weight:500;line-height:1.3;color:var(--bleu)}
+.descriere-inicio{color:rgba(214,236,255,.88);max-width:34rem}
+.inicio .butoane{margin-top:.5rem}
+
+/* Hero photo with water droplets */
+.foto-principala{
+  position:relative;margin:0;
+  height:22rem;
+  border-radius:1.75rem;overflow:hidden;
+  background:var(--bleumarin);
+  container-type:size;
+}
+.foto-principala img{width:100%;height:100%;object-fit:cover}
+.picatura{
+  --pos:30cqh;
+  position:absolute;top:0;
+  left:var(--x);
+  width:var(--w);height:var(--h);
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  background:rgba(214,236,255,.3);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:inset 0 2px 3px rgba(255,255,255,.7);
+  opacity:0;
+  pointer-events:none;
+  animation:cade var(--d) cubic-bezier(.5,0,.9,.6) var(--t) infinite;
+  will-change:transform,opacity;
+}
+.picatura::after{
+  content:"";position:absolute;left:20%;top:22%;
+  width:24%;height:26%;border-radius:50%;
+  background:rgba(255,255,255,.9);
+}
+.p1{--x:12%;--w:.5rem;--h:.72rem;--d:9s;--t:-2s;--pos:34cqh}
+.p2{--x:27%;--w:.4rem;--h:.6rem;--d:11s;--t:-6s;--pos:62cqh}
+.p3{--x:41%;--w:.62rem;--h:.9rem;--d:8s;--t:-1s;--pos:18cqh}
+.p4{--x:56%;--w:.45rem;--h:.66rem;--d:12s;--t:-8s;--pos:48cqh}
+.p5{--x:70%;--w:.55rem;--h:.8rem;--d:10s;--t:-4s;--pos:76cqh}
+.p6{--x:84%;--w:.38rem;--h:.56rem;--d:13s;--t:-10s;--pos:28cqh}
+.p7{--x:93%;--w:.5rem;--h:.72rem;--d:9.5s;--t:-5.5s;--pos:58cqh}
+@keyframes cade{
+  0%{transform:translate3d(0,-2rem,0);opacity:0}
+  10%{opacity:.95}
+  85%{opacity:.95}
+  100%{transform:translate3d(0,calc(100cqh + 2rem),0);opacity:0}
+}
+
+/* ---------- Shared sections ---------- */
+.bloc{padding-block:clamp(4.5rem,10vw,7.5rem)}
+.titlu-bloc h2{font-size:clamp(2rem,4.6vw,3.25rem);line-height:1.08}
+.grila-2{display:grid;gap:3rem}
+
+/* About */
+.despre{background:var(--alb)}
+.despre p+p{margin-top:1.1rem}
+.despre .lead{font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.5;color:var(--text)}
+.fapte{list-style:none;margin-top:2.25rem;border-top:1px solid var(--linie)}
+.fapte li{padding:1.1rem 0;border-bottom:1px solid var(--linie);display:grid;gap:.2rem}
+.fapte strong{font-family:Outfit,sans-serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.fapte span{color:var(--text-moale)}
+
+/* Services */
+.servicii{background:var(--bleu);border-radius:2.5rem 2.5rem 0 0}
+.lista-servicii{
+  list-style:none;display:grid;
+  border-top:1px solid rgba(11,37,69,.2);
+}
+.lista-servicii li{
+  padding:1.5rem 0;border-bottom:1px solid rgba(11,37,69,.2);
+  display:grid;gap:.45rem;
+}
+.lista-servicii h3{font-size:1.25rem;letter-spacing:-.01em}
+.lista-servicii p{color:var(--text-moale)}
+
+/* Gallery */
+.galerie-lista{list-style:none;display:grid;gap:1rem}
+.galerie-lista li{
+  position:relative;margin:0;
+  border-radius:1.25rem;overflow:hidden;
+  aspect-ratio:4/3;background:var(--bleu);
+  cursor:zoom-in;
+}
+.galerie-lista img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+@media (hover:hover){
+  .galerie-lista li:hover img{transform:scale(1.03)}
+}
+.galerie .marita{
+  position:fixed;inset:5vh 4vw;z-index:60;
+  width:auto;height:auto;max-width:none;aspect-ratio:auto;
+  border-radius:1rem;cursor:zoom-out;
+}
+.galerie li.marita img{position:static;width:100%;height:100%;object-fit:contain;transform:none}
+.galerie img.marita{object-fit:contain;background:var(--bleumarin)}
+html.galerie-deschisa body::before{
+  content:"";position:fixed;inset:0;z-index:55;
+  background:rgba(11,37,69,.92);
+}
+
+/* Contact */
+.contact{background:var(--alb)}
+.date{display:grid;gap:1.25rem;margin:2.25rem 0 2.25rem}
+.date div{display:grid;gap:.3rem;border-top:1px solid var(--linie);padding-top:1rem}
+.date dt{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--text-moale)}
+.date dd{margin:0;font-family:Outfit,sans-serif;font-size:1.2rem;font-weight:500;letter-spacing:-.01em}
+.contact .butoane{margin:0}
+.harta{
+  border-radius:1.75rem;overflow:hidden;
+  height:22rem;background:var(--bleu);
+}
+.harta iframe{width:100%;height:100%;border:0;display:block}
+
+/* Footer */
+.subsol{background:var(--bleumarin);color:rgba(255,255,255,.84);padding:3.5rem 0 2.5rem;font-size:.9rem}
+.subsol .wrap{display:grid;gap:1.75rem}
+.subsol .marca{color:#fff;font-size:1.15rem}
+.subsol-linkuri{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.subsol-linkuri a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.subsol-linkuri a:hover{color:var(--bleu)}
+.subsol-note{display:grid;gap:.4rem;color:rgba(214,236,255,.7);font-size:.85rem}
+
+/* ---------- Reveal on scroll ---------- */
+html.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translate3d(0,1.25rem,0);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* ---------- Wider screens ---------- */
+@media (min-width:720px){
+  .galerie-lista{grid-template-columns:1fr 1fr}
+  .lista-servicii{grid-template-columns:1fr 1fr;column-gap:4rem}
+  .foto-principala{height:26rem}
+}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-nav{margin-left:auto}
+  .meniu-lista{
+    display:flex;position:static;flex-direction:row;align-items:center;
+    gap:2.25rem;background:none;padding:0;border:0;border-radius:0;
+  }
+  .meniu-lista a{min-height:44px;border:0;font-size:.95rem;opacity:.92;transition:color .2s}
+  .meniu-lista a:hover{color:var(--bleu)}
+  .inicio{min-height:100vh;padding:0;display:flex;align-items:center}
+  .inicio .wrap{
+    grid-template-columns:1fr 1.05fr;gap:4.5rem;
+    padding-block:7.5rem 4rem;align-items:center;
+  }
+  .foto-principala{height:min(74vh,46rem)}
+  .despre .wrap{grid-template-columns:.9fr 1.1fr;gap:6rem;align-items:start}
+  .contact .wrap{grid-template-columns:1fr 1.15fr;gap:5rem;align-items:start}
+  .harta{height:100%;min-height:26rem}
+  .subsol .wrap{grid-template-columns:1fr auto;align-items:start}
+  .galerie-lista{grid-template-columns:repeat(2,1fr);gap:1.25rem}
+}
+
+/* ---------- Accessibility preferences ---------- */
+@media (prefers-contrast:more){
+  :root{--linie:rgba(11,37,69,.5);--text-moale:#0B2545}
+  .btn-contur{border-width:2px}
+  .btn-contur-inchis{border-width:2px}
+  .lista-servicii li,.fapte li,.date div{border-color:rgba(11,37,69,.45)}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--bleumarin);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .antet.derulat{background:var(--bleumarin)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.2s !important}
+  .picatura{animation:none !important;opacity:.75;transform:translate3d(0,var(--pos),0)}
+  html.js [data-jarvis="apare"]{transform:none}
+  .galerie-lista li:hover img{transform:none}
+}
+</style>
+</head>
+<body id="top">
+<header class="antet" data-jarvis="antet">
+  <div class="wrap bara">
+    <a class="marca" href="#top">Auto Service House</a>
+    <nav class="meniu-nav" aria-label="Main">
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+        <span>Menu</span>
+        <span class="linii" aria-hidden="true"><span class="linie"></span><span class="linie"></span></span>
+      </button>
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#servicii">Services</a></li>
+        <li><a href="#galerie">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="inicio" aria-labelledby="titlu-inicio">
+    <div class="wrap">
+      <div class="text-inicio">
+        <h1 id="titlu-inicio">Auto Service House</h1>
+        <p class="slogan">Auto repair and maintenance you need</p>
+        <p class="descriere-inicio">Full service car repair shop on South Quebec Street.</p>
+        <div class="butoane">
+          <a class="btn btn-alb" href="tel:+13037556217">Call now</a>
+          <a class="btn btn-contur" href="#servicii">See services</a>
+        </div>
+      </div>
+      <figure class="foto-principala" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Mechanic working on a car in a repair shop">
+        <span class="picatura p1" aria-hidden="true"></span>
+        <span class="picatura p2" aria-hidden="true"></span>
+        <span class="picatura p3" aria-hidden="true"></span>
+        <span class="picatura p4" aria-hidden="true"></span>
+        <span class="picatura p5" aria-hidden="true"></span>
+        <span class="picatura p6" aria-hidden="true"></span>
+        <span class="picatura p7" aria-hidden="true"></span>
+      </figure>
+    </div>
+  </section>
+
+  <section class="bloc despre" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap">
+      <div data-jarvis="apare">
+        <h2 id="titlu-despre" class="titlu-bloc">About Auto Service House</h2>
+        <p class="lead" style="margin-top:1.5rem">Auto Service House handles all types of auto repair and maintenance.</p>
+        <p>You can count on drivetrain repair and bumper to bumper service for your car. Loaner cars and vehicle pickup and delivery are available when you need them.</p>
+      </div>
+      <ul class="fapte" data-jarvis="apare">
+        <li>
+          <strong>Early hours</strong>
+          <span>Open from 7:30am weekdays</span>
+        </li>
+        <li>
+          <strong>Loaner cars</strong>
+          <span>Loaner cars when your car stays</span>
+        </li>
+        <li>
+          <strong>Pickup available</strong>
+          <span>Vehicle pickup and delivery offered</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc servicii" id="servicii" aria-labelledby="titlu-servicii">
+    <div class="wrap">
+      <div class="titlu-bloc" data-jarvis="apare">
+        <h2 id="titlu-servicii">Services</h2>
+      </div>
+      <ul class="lista-servicii" style="margin-top:2.5rem" data-jarvis="apare">
+        <li>
+          <h3>Auto repair and maintenance services</h3>
+          <p>Auto repair and maintenance services for your car.</p>
+        </li>
+        <li>
+          <h3>Bumper to bumper car service</h3>
+          <p>Bumper to bumper service for your vehicle.</p>
+        </li>
+        <li>
+          <h3>Drivetrain repair and maintenance</h3>
+          <p>Drivetrain repair and maintenance available.</p>
+        </li>
+        <li>
+          <h3>Loaner cars available</h3>
+          <p>Loaner cars are available if you need one.</p>
+        </li>
+        <li>
+          <h3>Vehicle pickup and delivery</h3>
+          <p>Vehicle pickup and delivery for service visits.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc galerie" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <div class="titlu-bloc" data-jarvis="apare">
+        <h2 id="titlu-galerie">Gallery</h2>
+      </div>
+      <ul class="galerie-lista" style="margin-top:2.5rem" data-jarvis="galerie">
+        <li><img src="img/1.jpg" alt="Mechanic working on a Volkswagen Beetle in a repair shop" loading="lazy"></li>
+        <li><img src="img/2.jpg" alt="Technician changing engine oil during a car service" loading="lazy"></li>
+        <li><img src="img/3.jpg" alt="Mechanic checking a brake disc on a lifted car" loading="lazy"></li>
+        <li><img src="img/4.jpg" alt="Car being serviced in an auto repair shop" loading="lazy"></li>
+        <li><img src="img/5.jpg" alt="Car in for service at an auto repair shop" loading="lazy"></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc contact" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap grila-2">
+      <div data-jarvis="apare">
+        <h2 id="titlu-contact" class="titlu-bloc">Visit or call</h2>
+        <p style="margin-top:1.25rem">Call us or stop by at 2240 South Quebec Street during opening hours.</p>
+        <dl class="date">
+          <div>
+            <dt>Address</dt>
+            <dd>2240 South Quebec Street, Denver</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd>(303) 755-6217</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Open Monday to Friday, 7:30am to 5:00pm</dd>
+          </div>
+        </dl>
+        <div class="butoane">
+          <a class="btn btn-plin" href="tel:+13037556217">Call now</a>
+          <a class="btn btn-contur-inchis" href="https://www.google.com/maps/search/?api=1&amp;query=Auto+Service+House+Denver">Get directions</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-104.907224,39.673662,-104.899224,39.677662&amp;layer=mapnik&amp;marker=39.675662,-104.903224" title="Map of Auto Service House at 2240 South Quebec Street, Denver" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <a class="marca" href="#top">Auto Service House</a>
+    <nav class="subsol-linkuri" aria-label="Footer">
+      <a href="#despre">About</a>
+      <a href="#servicii">Services</a>
+      <a href="#galerie">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="subsol-note">
+      <p>Website concept (demo)</p>
+      <p>Illustrative photos from Pixabay: RyanMcGuire, DokaRyan, NoName_13, autotop_service</p>
+    </div>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
