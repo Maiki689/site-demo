@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardy &amp; Fuller | Custom steel in Denver</title>
+<meta name="description" content="Hardy &amp; Fuller makes custom steel pieces for architectural, artistic, commercial and home projects in Denver.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --negru:#0F1012;
+  --alb:#FFFFFF;
+  --gri:#8B8F98;
+  --accent:#be123c;
+  --linie:rgba(255,255,255,.09);
+  --m:clamp(1.25rem,5vw,4rem);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--gri);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Space Grotesk",Inter,system-ui,sans-serif;
+  color:var(--alb);
+  margin:0;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  font-weight:600;
+}
+p{margin:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--alb);outline-offset:3px}
+
+/* ---------- Top bar ---------- */
+.antet{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:50;
+  background:rgba(15,16,18,.5);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s var(--ease),border-color .4s var(--ease);
+}
+.antet.derulat{
+  background:rgba(15,16,18,.84);
+  border-bottom-color:var(--linie);
+}
+.antet-in{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:4.25rem;
+  padding:0 var(--m);
+}
+.marca{
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-weight:600;
+  font-size:1.05rem;
+  letter-spacing:-0.01em;
+  color:var(--alb);
+  text-decoration:none;
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+}
+.meniu{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:44px;
+  height:44px;
+  margin-right:-10px;
+  padding:0;
+  background:none;
+  border:0;
+  cursor:pointer;
+}
+.meniu span{
+  display:block;
+  width:22px;
+  height:1.5px;
+  background:var(--alb);
+  transition:transform .4s var(--ease),opacity .3s var(--ease);
+}
+.meniu[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.meniu[aria-expanded="true"] span:nth-child(2){opacity:0}
+.meniu[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.meniu-lista{
+  position:absolute;
+  top:100%;
+  left:0;right:0;
+  display:flex;
+  flex-direction:column;
+  list-style:none;
+  margin:0;
+  padding:.5rem var(--m) 1.25rem;
+  background:rgba(15,16,18,.98);
+  border-bottom:1px solid var(--linie);
+}
+.meniu-lista a{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  color:var(--alb);
+  text-decoration:none;
+  font-size:1.0625rem;
+  border-bottom:1px solid var(--linie);
+}
+.meniu-lista li:last-child a{border-bottom:0}
+html.js .meniu-lista:not(.deschis){display:none}
+
+@media (min-width:860px){
+  .meniu{display:none}
+  .meniu-lista,
+  html.js .meniu-lista:not(.deschis){
+    position:static;
+    flex-direction:row;
+    gap:2.5rem;
+    display:flex;
+    padding:0;
+    background:none;
+    border:0;
+  }
+  .meniu-lista a{
+    min-height:auto;
+    border:0;
+    font-size:.9375rem;
+    color:var(--gri);
+    transition:color .3s var(--ease);
+  }
+  .meniu-lista a:hover{color:var(--alb)}
+}
+
+/* ---------- Opening: split screen ---------- */
+.inceput{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  min-height:100vh;
+  min-height:100svh;
+}
+.inceput-text{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:6.5rem var(--m) 3.5rem;
+}
+h1{
+  font-size:clamp(3.25rem,14vw,6.5rem);
+  line-height:1;
+  margin:0 0 1.5rem;
+}
+.slogan{
+  font-family:"Space Grotesk",Inter,sans-serif;
+  color:var(--alb);
+  font-size:clamp(1.25rem,2.4vw,1.75rem);
+  line-height:1.25;
+  letter-spacing:-0.01em;
+  max-width:22ch;
+  margin-bottom:1rem;
+}
+.descriere{
+  max-width:40ch;
+  font-size:1.0625rem;
+  margin-bottom:2.25rem;
+}
+.actiuni{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+}
+.buton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:0 1.5rem;
+  border:1px solid transparent;
+  border-radius:2px;
+  font-family:Inter,system-ui,sans-serif;
+  font-size:.9375rem;
+  font-weight:500;
+  line-height:1;
+  text-decoration:none;
+  transition:transform .2s var(--ease),background-color .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease);
+}
+.buton:active{transform:scale(.97)}
+.buton-principal{
+  background:var(--accent);
+  color:#fff;
+}
+.buton-principal:hover{box-shadow:inset 0 0 0 999px rgba(255,255,255,.08)}
+.buton-secundar{
+  border-color:rgba(255,255,255,.24);
+  color:var(--alb);
+}
+.buton-secundar:hover{border-color:var(--alb)}
+
+.inceput-foto{
+  position:relative;
+  overflow:hidden;
+  background:#000;
+  aspect-ratio:4/5;
+}
+.inceput-foto > img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 40%;
+}
+.inceput-foto::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(to bottom,var(--negru) 0,rgba(15,16,18,0) 28%);
+}
+
+/* Warm light that follows the pointer: a 3x3 grid of hover zones
+   moves the light (CSS only, no script). */
+.zona{
+  position:absolute;
+  z-index:2;
+  width:33.34%;
+  height:33.34%;
+}
+.za{left:0;top:0}
+.zb{left:33.33%;top:0}
+.zc{left:66.66%;top:0}
+.zd{left:0;top:33.33%}
+.ze{left:33.33%;top:33.33%}
+.zf{left:66.66%;top:33.33%}
+.zg{left:0;top:66.66%}
+.zh{left:33.33%;top:66.66%}
+.zi{left:66.66%;top:66.66%}
+.lumina{
+  position:absolute;
+  z-index:1;
+  left:-10%;
+  top:-10%;
+  width:120%;
+  height:120%;
+  border-radius:50%;
+  pointer-events:none;
+  mix-blend-mode:screen;
+  opacity:.85;
+  background:radial-gradient(circle at center,rgba(190,18,60,.6) 0,rgba(190,18,60,.2) 34%,rgba(190,18,60,0) 62%);
+  --x:0%;
+  --y:0%;
+  transform:translate(var(--x),var(--y));
+  transition:transform 1s var(--ease),opacity .6s var(--ease);
+}
+.za:hover ~ .lumina{--x:-18%;--y:-18%}
+.zb:hover ~ .lumina{--x:0%;--y:-18%}
+.zc:hover ~ .lumina{--x:18%;--y:-18%}
+.zd:hover ~ .lumina{--x:-18%;--y:0%}
+.ze:hover ~ .lumina{--x:0%;--y:0%}
+.zf:hover ~ .lumina{--x:18%;--y:0%}
+.zg:hover ~ .lumina{--x:-18%;--y:18%}
+.zh:hover ~ .lumina{--x:0%;--y:18%}
+.zi:hover ~ .lumina{--x:18%;--y:18%}
+.inceput-foto:hover .lumina{opacity:1}
+
+@media (min-width:860px){
+  .inceput{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}
+  .inceput-text{padding:8rem 5vw 5rem var(--m)}
+  .inceput-foto{aspect-ratio:auto;min-height:100vh;min-height:100svh}
+  .inceput-foto::after{
+    background:linear-gradient(to right,var(--negru) 0,rgba(15,16,18,0) 26%);
+  }
+}
+
+/* ---------- Sections ---------- */
+.bloc{
+  padding:clamp(5rem,11vw,8.5rem) var(--m);
+  border-top:1px solid var(--linie);
+}
+.bloc-in{
+  max-width:72rem;
+  margin:0 auto;
+}
+.cap{margin-bottom:2.75rem}
+h2{
+  font-size:clamp(2.1rem,4.6vw,3.5rem);
+  line-height:1.06;
+}
+.lead{
+  font-size:clamp(1.0625rem,1.8vw,1.25rem);
+  line-height:1.5;
+  max-width:52ch;
+}
+
+.despre-grid{
+  display:grid;
+  gap:2rem;
+}
+.despre-grid p{
+  font-size:clamp(1.0625rem,1.8vw,1.25rem);
+  line-height:1.6;
+  max-width:52ch;
+}
+.despre-grid p + p{margin-top:1.25rem}
+
+.servicii-lista{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+}
+.serviciu{
+  padding:2rem 0;
+  border-top:1px solid var(--linie);
+}
+.serviciu h3{
+  font-size:1.5rem;
+  margin-bottom:.75rem;
+}
+.serviciu p{max-width:30ch}
+
+.galerie{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:1rem;
+}
+.foto-item{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  padding:0;
+  border:0;
+  border-radius:0;
+  background:#1A1C20;
+  overflow:hidden;
+  cursor:zoom-in;
+}
+.foto-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--ease);
+}
+.foto-item:hover img{transform:scale(1.03)}
+.foto-item.marita{
+  position:fixed;
+  inset:4vh 4vw;
+  z-index:80;
+  width:auto;
+  height:auto;
+  aspect-ratio:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--negru);
+  cursor:zoom-out;
+  animation:deschidere .5s var(--ease) both;
+}
+.foto-item.marita img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+html.galerie-deschisa{overflow:hidden}
+@keyframes deschidere{
+  from{opacity:0;transform:scale(.97)}
+  to{opacity:1;transform:none}
+}
+@keyframes estompare{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.contact-grid{
+  display:grid;
+  gap:3rem;
+}
+.date{
+  margin:2.25rem 0 2.5rem;
+  display:grid;
+  gap:1.5rem;
+}
+.date dt{
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gri);
+  margin-bottom:.35rem;
+}
+.date dd{
+  margin:0;
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-size:clamp(1.25rem,2.4vw,1.625rem);
+  color:var(--alb);
+  letter-spacing:-0.01em;
+}
+.harta iframe{
+  display:block;
+  width:100%;
+  height:300px;
+  border:0;
+  filter:grayscale(1) invert(.92) contrast(.9);
+}
+
+.subsol{
+  padding:2.5rem var(--m) 3rem;
+  border-top:1px solid var(--linie);
+  font-size:.875rem;
+}
+.subsol-in{
+  max-width:72rem;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem 2rem;
+}
+.subsol-in p{margin:0}
+.subsol-marca{
+  font-family:"Space Grotesk",Inter,sans-serif;
+  color:var(--alb);
+  font-weight:600;
+}
+.subsol a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  color:var(--alb);
+  text-decoration:none;
+}
+.subsol a:hover{text-decoration:underline;text-underline-offset:4px}
+
+@media (min-width:860px){
+  .despre-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:4rem}
+  .servicii-lista{grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}
+  .serviciu{border-top:1px solid var(--linie);padding:2.25rem 0 0}
+  .galerie{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+  .contact-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:start}
+  .harta iframe{height:440px}
+}
+
+/* ---------- Reveal on scroll (only when JS is present) ---------- */
+html.js .apare{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+html.js .apare.vizibil{
+  opacity:1;
+  transform:none;
+}
+
+/* ---------- Preferences ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .apare{transform:none;transition:opacity .4s linear}
+  .lumina{transition:opacity .4s linear}
+  .foto-item img{transition:none}
+  .foto-item:hover img{transform:none}
+  .buton{transition:background-color .2s linear,border-color .2s linear,color .2s linear}
+  .buton:active{transform:none}
+  .antet{transition:none}
+  .meniu span{transition:opacity .2s linear}
+  .meniu[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .meniu[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  .foto-item.marita{animation:estompare .3s linear both}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,
+  .antet.derulat{
+    background:var(--negru);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast:more){
+  :root{--gri:#C9CCD2;--linie:rgba(255,255,255,.35)}
+  .buton-secundar{border-color:var(--alb)}
+  .inceput-foto::after{opacity:.6}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">Hardy &amp; Fuller</a>
+    <button class="meniu" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+      <span></span><span></span><span></span>
+      <span class="ascuns" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Menu</span>
+    </button>
+    <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#despre">About</a></li>
+      <li><a href="#servicii">Services</a></li>
+      <li><a href="#galerie">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="inceput" aria-labelledby="titlu-principal">
+    <div class="inceput-text">
+      <h1 id="titlu-principal">Hardy &amp; Fuller</h1>
+      <p class="slogan">Crafted steel shapes your vision.</p>
+      <p class="descriere">We create custom metal pieces for Denver projects.</p>
+      <div class="actiuni">
+        <a class="buton buton-principal" href="tel:+17206136359">Call now</a>
+        <a class="buton buton-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Hardy+%26+Fuller+Denver">Get directions</a>
+      </div>
+    </div>
+
+    <div class="inceput-foto">
+      <img src="img/5.jpg" alt="Welder in a face mask working on steel, with sparks flying" width="1200" height="1500">
+      <span class="zona za" aria-hidden="true"></span>
+      <span class="zona zb" aria-hidden="true"></span>
+      <span class="zona zc" aria-hidden="true"></span>
+      <span class="zona zd" aria-hidden="true"></span>
+      <span class="zona ze" aria-hidden="true"></span>
+      <span class="zona zf" aria-hidden="true"></span>
+      <span class="zona zg" aria-hidden="true"></span>
+      <span class="zona zh" aria-hidden="true"></span>
+      <span class="zona zi" aria-hidden="true"></span>
+      <span class="lumina" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <section class="bloc" id="despre" aria-labelledby="t-despre">
+    <div class="bloc-in despre-grid">
+      <div class="apare" data-jarvis="apare">
+        <h2 id="t-despre">Skill and attention on every job</h2>
+      </div>
+      <div class="apare" data-jarvis="apare">
+        <p>Hardy &amp; Fuller works with steel for architectural and artistic projects.</p>
+        <p>Our team brings skill and attention to every job.</p>
+        <p>We welcome both individual and commercial requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="servicii" aria-labelledby="t-servicii">
+    <div class="bloc-in">
+      <div class="cap apare" data-jarvis="apare">
+        <h2 id="t-servicii">Services</h2>
+      </div>
+      <ul class="servicii-lista">
+        <li class="serviciu apare" data-jarvis="apare">
+          <h3>Custom fabrication</h3>
+          <p>Steel pieces built to fit your specs.</p>
+        </li>
+        <li class="serviciu apare" data-jarvis="apare">
+          <h3>Commercial projects</h3>
+          <p>Work for businesses and contractors.</p>
+        </li>
+        <li class="serviciu apare" data-jarvis="apare">
+          <h3>Residential jobs</h3>
+          <p>Metal features for any home.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc" id="galerie" aria-labelledby="t-galerie">
+    <div class="bloc-in">
+      <div class="cap apare" data-jarvis="apare">
+        <h2 id="t-galerie">Steel and welding</h2>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <button class="foto-item" type="button">
+          <img src="img/1.jpg" alt="Worker with a grinder in a factory workshop" loading="lazy" width="1200" height="900">
+        </button>
+        <button class="foto-item" type="button">
+          <img src="img/3.jpg" alt="Welder in a protective mask working on a steel piece" loading="lazy" width="1200" height="900">
+        </button>
+        <button class="foto-item" type="button">
+          <img src="img/4.jpg" alt="Welder joining sheet metal in a workshop" loading="lazy" width="1200" height="900">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="contact" aria-labelledby="t-contact">
+    <div class="bloc-in contact-grid">
+      <div class="apare" data-jarvis="apare">
+        <h2 id="t-contact">Tell us about your project</h2>
+        <p class="lead">Call us about a custom piece, a commercial job, or a project for your home.</p>
+        <dl class="date">
+          <div>
+            <dt>Phone</dt>
+            <dd>(720) 613-6359</dd>
+          </div>
+          <div>
+            <dt>Address</dt>
+            <dd>900 West 1st Avenue, Denver</dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="buton buton-principal" href="tel:+17206136359">Call now</a>
+          <a class="buton buton-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Hardy+%26+Fuller+Denver">Get directions</a>
+        </div>
+      </div>
+      <div class="harta apare" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-105.002905,39.716181,-104.994905,39.720181&amp;layer=mapnik&amp;marker=39.718181,-104.998905" title="Map showing Hardy &amp; Fuller at 900 West 1st Avenue, Denver" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="subsol-in">
+    <p class="subsol-marca">Hardy &amp; Fuller</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: jannonivergall, TheOtherKev, JonKline, jwvein</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
