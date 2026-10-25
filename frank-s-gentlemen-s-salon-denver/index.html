@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Frank's Gentlemen's Salon | Men's grooming in Denver</title>
+<meta name="description" content="Frank's Gentlemen's Salon offers men's haircuts, shaves, beard trims, and spa services in Denver, on Larimer Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap">
+<style>
+:root{
+  --verde:#1E3B2F;
+  --coniac:#8A4B2A;
+  --alama:#C2A15F;
+  --os:#EFE6D6;
+  --serif:"Libre Caslon Display","Times New Roman",serif;
+  --sans:"Work Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--verde);color:var(--os);font-family:var(--sans);font-size:1rem;line-height:1.5;letter-spacing:0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+ul{margin:0;padding:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.08;margin:0}
+h3{letter-spacing:-.01em;line-height:1.2}
+address{font-style:normal}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+.sectiune{padding:clamp(5rem,11vw,8.5rem) 0}
+.sectiune--os{background:var(--os);color:var(--verde)}
+.eticheta{display:block;font-size:.75rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--alama);margin-bottom:1.25rem}
+.sectiune--os .eticheta{color:var(--coniac)}
+.accent{color:var(--alama)}
+.sectiune--os .accent{color:var(--coniac)}
+
+.cap{text-align:center;margin-bottom:clamp(2.75rem,6vw,4.5rem)}
+.cap h2{font-size:clamp(2rem,5vw,3.25rem);max-width:16em;margin:0 auto}
+.cap::after{content:"";display:block;width:3.5rem;height:1px;background:var(--alama);margin:1.75rem auto 0}
+
+.boton{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:44px;padding:.9rem 1.75rem;border:1px solid var(--alama);background:transparent;color:var(--os);font-family:var(--sans);font-size:.95rem;font-weight:500;letter-spacing:.06em;line-height:1;text-decoration:none;transition:background-color .3s,color .3s,border-color .3s,transform .2s}
+.boton:hover{background:var(--alama);color:var(--verde)}
+.boton:active{transform:scale(.97)}
+.boton--pe{background:var(--os);border-color:var(--os);color:var(--verde)}
+.boton--pe:hover{background:var(--alama);border-color:var(--alama);color:var(--verde)}
+.boton:focus-visible,.antet a:focus-visible,.meniu-buton:focus-visible,.pe a:focus-visible,.telefon:focus-visible{outline:2px solid var(--alama);outline-offset:3px}
+.sectiune--os .boton:focus-visible{outline-color:var(--coniac)}
+
+/* Top bar */
+.antet{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(30,59,47,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:background-color .4s,border-color .4s}
+.antet.derulat{background:rgba(30,59,47,.9);border-bottom-color:rgba(194,161,95,.3)}
+.antet__in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.25rem;max-width:1120px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+.antet__nume{font-family:var(--serif);font-size:1.15rem;letter-spacing:-.01em;color:var(--os);text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.meniu-buton{display:inline-flex;align-items:center;gap:.7rem;min-height:44px;min-width:44px;padding:0 .95rem;background:none;border:1px solid rgba(194,161,95,.6);color:var(--os);font-family:var(--sans);font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;flex-shrink:0;transition:transform .2s}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton__linii{position:relative;display:block;width:18px;height:9px;border-top:1px solid currentColor;border-bottom:1px solid currentColor}
+.meniu-buton__linii::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid currentColor;transform:translateY(-50%)}
+.meniu-lista{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;list-style:none;padding:.25rem clamp(1.25rem,5vw,3rem) 1.25rem;background:rgba(30,59,47,.97);border-bottom:1px solid rgba(194,161,95,.3)}
+.meniu-lista.deschis{display:flex}
+.meniu-lista li{border-bottom:1px solid rgba(194,161,95,.2)}
+.meniu-lista li a:not(.boton){display:block;padding:.95rem 0;font-size:1rem;color:var(--os);text-decoration:none}
+.meniu-lista .antet__apel{border-bottom:0;padding-top:1rem}
+.meniu-lista .antet__apel .boton{width:100%}
+html.meniu-deschis{overflow:hidden}
+
+/* Hero */
+.erou{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 0 5rem;background:var(--verde)}
+.erou::before{content:"";position:absolute;inset:.75rem;border:1px solid rgba(194,161,95,.28);pointer-events:none}
+.erou .wrap{position:relative;width:100%}
+.emblema{display:block;width:clamp(7.5rem,20vw,11.5rem);height:auto;margin:0 auto 2.25rem;color:var(--alama);overflow:visible}
+.erou .eticheta{margin-bottom:1rem}
+.erou h1{font-size:clamp(2.6rem,8.4vw,5.75rem);max-width:12em;margin:0 auto}
+.erou__slogan{max-width:26ch;margin:1.5rem auto 2.25rem;font-size:clamp(1.05rem,2.2vw,1.25rem);color:rgba(239,230,214,.88)}
+.erou__butoane{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+.erou__adresa{margin-top:2rem;font-size:.9rem;letter-spacing:.04em;color:rgba(239,230,214,.78)}
+
+/* Emblem: the monogram seal draws itself on load */
+.emblema .cerc{fill:none;stroke:currentColor;stroke-width:1.2}
+.emblema .cerc--fin{stroke-width:.6}
+.emblema .punctat{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.1 6.2}
+.emblema .trasa{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.emblema .linie{stroke-width:1}
+.emblema .trasa,
+.emblema .cerc--desen{stroke-dasharray:100;stroke-dashoffset:100;animation:deseneaza 2.6s cubic-bezier(.45,0,.2,1) forwards}
+.emblema .d0{animation-delay:.5s}
+.emblema .d1{animation-delay:.3s}
+.emblema .d2{animation-delay:1s}
+.emblema .d3{animation-delay:1.7s}
+@keyframes deseneaza{to{stroke-dashoffset:0}}
+
+/* About */
+.despre{display:grid;gap:clamp(2.5rem,6vw,4.5rem);align-items:center}
+.despre__foto{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--verde)}
+.despre__foto img{width:100%;height:100%;object-fit:cover}
+.despre__texto p{max-width:36rem}
+.despre__texto p+p{margin-top:1rem}
+.despre__lead{font-size:clamp(1.15rem,2.3vw,1.35rem);line-height:1.5;color:var(--verde)}
+.avantaje{list-style:none;display:grid;gap:1.75rem;margin-top:2.5rem}
+.avantaje li{border-top:1px solid rgba(138,75,42,.45);padding-top:1.1rem}
+.avantaje h3{font-size:1.3rem;margin-bottom:.4rem}
+.avantaje p{font-size:.95rem;color:rgba(30,59,47,.86)}
+
+/* Services */
+.servicii{list-style:none;max-width:52rem;margin:0 auto;border-bottom:1px solid rgba(194,161,95,.35)}
+.serviciu{padding:1.6rem 0;border-top:1px solid rgba(194,161,95,.35)}
+.serviciu h3{font-size:clamp(1.4rem,3vw,1.75rem);margin-bottom:.35rem}
+.serviciu p{max-width:34rem;color:rgba(239,230,214,.84)}
+
+/* Gallery */
+.galerie{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.foto{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--verde);cursor:zoom-in}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--curba)}
+@media (hover:hover){.foto:hover img{transform:scale(1.04)}}
+.marita{position:fixed;inset:0;z-index:200;aspect-ratio:auto;margin:0;padding:1.25rem;display:flex;align-items:center;justify-content:center;background:rgba(30,59,47,.97);cursor:zoom-out;overflow:hidden}
+.marita img,
+.foto.marita img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;transform:none}
+img.marita{width:100%;height:100%;object-fit:contain;padding:1.25rem;box-sizing:border-box}
+html.galerie-deschisa{overflow:hidden}
+
+/* Visit */
+.contact{display:grid;gap:3.5rem}
+.contact__info{text-align:center}
+.contact__adresa{font-family:var(--serif);font-size:clamp(1.3rem,2.6vw,1.6rem);line-height:1.3;letter-spacing:-.01em;margin-bottom:.9rem}
+.telefon{display:inline-flex;align-items:center;min-height:44px;font-family:var(--serif);font-size:1.35rem;color:var(--os);text-decoration:underline;text-decoration-color:rgba(194,161,95,.7);text-underline-offset:.3em}
+.contact__botoane{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;margin:2rem 0 3rem}
+.program{max-width:26rem;margin:0 auto;text-align:left}
+.program .etichetă,
+.program .eticheta{margin-bottom:.5rem}
+.program__rand{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid rgba(194,161,95,.3)}
+.program__rand:first-of-type{border-top:1px solid rgba(194,161,95,.3)}
+.program dt,.program dd{margin:0}
+.program dd{text-align:right}
+.contact__harta{margin:0;padding:.5rem;border:1px solid rgba(194,161,95,.45)}
+.contact__harta iframe{display:block;width:100%;height:clamp(300px,42vw,420px);border:0}
+
+/* Footer */
+.pe{background:var(--coniac);color:var(--os);padding:3.5rem 0 2.75rem}
+.pe__in{display:grid;gap:1.5rem;text-align:center}
+.pe__linie{width:3.5rem;height:1px;background:var(--alama);margin:0 auto}
+.pe__nume{font-family:var(--serif);font-size:1.5rem;letter-spacing:-.01em}
+.pe__nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem 1.75rem}
+.pe__nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--os)}
+.pe__nav a:hover{text-decoration:underline;text-underline-offset:.3em}
+.pe__nota{font-size:.875rem;color:rgba(239,230,214,.9);max-width:48rem;margin:0 auto}
+
+/* Reveal on scroll (only when JS is on) */
+html.js .apare{opacity:0;transform:translateY(18px);transition:opacity .7s var(--curba),transform .7s var(--curba)}
+html.js .apare.vizibil{opacity:1;transform:none}
+
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{position:static;display:flex;flex-direction:row;align-items:center;gap:2.25rem;padding:0;background:none;border:0}
+  .meniu-lista li{border:0}
+  .meniu-lista li a:not(.boton){display:inline-flex;align-items:center;min-height:44px;padding:0;font-size:.95rem;letter-spacing:.04em;transition:color .3s}
+  .meniu-lista li a:not(.boton):hover{color:var(--alama)}
+  .meniu-lista .antet__apel{padding:0}
+  .meniu-lista .antet__apel .boton{width:auto;min-height:44px;padding:.7rem 1.25rem}
+  .erou{padding:8rem 0 6rem}
+  .despre{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+  .contact{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center}
+  .galerie{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+  .avantaje{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+  .serviciu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:2rem;align-items:baseline}
+  .serviciu h3{margin:0}
+  .pe__in{grid-template-columns:1fr;text-align:center}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.2s !important;scroll-behavior:auto !important}
+  .emblema .trasa,
+  .emblema .cerc--desen{animation:none;stroke-dashoffset:0}
+  html.js .apare{transform:none;transition:opacity .4s ease}
+  html.js .apare.vizibil{transform:none}
+  .foto:hover img{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--verde);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .eticheta{color:#D7B977}
+  .sectiune--os .eticheta{color:var(--coniac)}
+  .boton{border-width:2px}
+  .serviciu,.servicii,.avantaje li,.program__rand{border-color:rgba(194,161,95,.7)}
+  .serviciu p,.erou__slogan,.erou__adresa{color:var(--os)}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet__in">
+    <a class="antet__nume" href="#top">Frank's Gentlemen's Salon</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="lista-meniu">
+      <span>Menu</span>
+      <span class="meniu-buton__linii" aria-hidden="true"></span>
+    </button>
+    <ul class="meniu-lista" id="lista-meniu" data-jarvis="meniu-lista">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Visit</a></li>
+      <li class="antet__apel"><a class="boton boton--pe" href="tel:+13035930640">Call now</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section class="erou" id="top" aria-labelledby="titlu-principal">
+    <div class="wrap">
+      <svg class="emblema" viewbox="0 0 200 200" aria-hidden="true" focusable="false">
+        <circle class="cerc cerc--desen" cx="100" cy="100" r="96" pathlength="100"/>
+        <circle class="cerc cerc--fin cerc--desen d0" cx="100" cy="100" r="88" pathlength="100"/>
+        <circle class="punctat" cx="100" cy="100" r="80"/>
+        <path class="trasa d1" pathlength="100" d="M96 62H60V140M50 140H72M60 100H88"/>
+        <path class="trasa d2" pathlength="100" d="M150 74C150 66 142 62 132 62C120 62 110 68 110 80C110 94 150 96 150 112C150 126 140 138 128 138C118 138 110 132 108 124"/>
+        <line class="trasa linie d3" pathlength="100" x1="80" y1="158" x2="120" y2="158"/>
+        <circle cx="100" cy="158" r="2" fill="currentColor"/>
+      </svg>
+      <h1 id="titlu-principal">Frank's Gentlemen's Salon</h1>
+      <p class="erou__slogan">Classic grooming for men in Denver.</p>
+      <div class="erou__butoane">
+        <a class="boton boton--pe" href="tel:+13035930640">Call now</a>
+        <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Frank%27s+Gentlemen%27s+Salon+Denver" target="_blank" rel="noopener noreferrer">Get directions</a>
+      </div>
+      <p class="erou__adresa">2111 Larimer Street</p>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune--os" id="about" aria-labelledby="titlu-despre">
+    <div class="wrap">
+      <header class="cap apare">
+        <h2 id="titlu-despre"><span class="accent">Traditional</span> grooming for men</h2>
+      </header>
+      <div class="despre">
+        <figure class="despre__foto apare">
+          <img src="img/2.jpg" alt="A barber shaving a man's beard with a razor" loading="lazy" width="800" height="1000">
+        </figure>
+        <div class="despre__texto apare">
+          <p class="despre__lead">Frank's Gentlemen's Salon is a place for men in Denver to get a haircut, shave, beard trim, or spa service.</p>
+          <p>The team uses traditional techniques suited for men's grooming.</p>
+          <p>Walk in on Larimer Street for your next haircut or beard trim.</p>
+          <ul class="avantaje apare">
+            <li>
+              <h3>Traditional shaves</h3>
+              <p>Straight razor available for shaves</p>
+            </li>
+            <li>
+              <h3>Men's focus</h3>
+              <p>All services for men's grooming</p>
+            </li>
+            <li>
+              <h3>Spa options</h3>
+              <p>Spa services are on the menu</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="services" aria-labelledby="titlu-servicii">
+    <div class="wrap">
+      <header class="cap apare">
+        <h2 id="titlu-servicii">Our <span class="accent">services</span></h2>
+      </header>
+      <ul class="servicii apare">
+        <li class="serviciu">
+          <h3>Men's haircuts</h3>
+          <p>Haircuts for men using traditional methods.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Razor cuts</h3>
+          <p>Cuts using a razor for precise results.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Beard trims</h3>
+          <p>Beard trims for shaping and neatness.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Spa services</h3>
+          <p>Spa services including care for men.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Straight razor shaves</h3>
+          <p>Straight razor shaves for a close finish.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune--os" id="gallery" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <header class="cap apare">
+        <h2 id="titlu-galerie">Work at the chair, <span class="accent">close</span> up</h2>
+      </header>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="foto">
+          <img src="img/3.jpg" alt="A barber cutting a man's hair" loading="lazy" width="800" height="1000">
+        </figure>
+        <figure class="foto">
+          <img src="img/4.jpg" alt="Close view of a barber shaving a man's beard" loading="lazy" width="800" height="1000">
+        </figure>
+        <figure class="foto">
+          <img src="img/5.jpg" alt="Razor and scissors on a barbershop counter" loading="lazy" width="800" height="1000">
+        </figure>
+        <figure class="foto">
+          <img src="img/1.jpg" alt="Inside a barbershop with people at work" loading="lazy" width="800" height="1000">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap contact">
+      <div class="contact__info apare">
+        <h2 id="titlu-contact" class="contact__adresa">Find us on <span class="accent">Larimer</span> Street</h2>
+        <address class="contact__adresa">2111 Larimer Street<br>Denver, Colorado</address>
+        <p><a class="telefon" href="tel:+13035930640">(303) 593-0640</a></p>
+        <div class="contact__botoane">
+          <a class="boton boton--pe" href="tel:+13035930640">Call now</a>
+          <a class="boton" href="https://www.google.com/maps/search/?api=1&amp;query=Frank%27s+Gentlemen%27s+Salon+Denver" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+        <p class="eticheta">Hours</p>
+        <dl class="program">
+          <div class="program__rand">
+            <dt>Monday</dt>
+            <dd>10:00 am to 5:00 pm</dd>
+          </div>
+          <div class="program__rand">
+            <dt>Tuesday to Friday</dt>
+            <dd>10:00 am to 7:00 pm</dd>
+          </div>
+          <div class="program__rand">
+            <dt>Saturday and Sunday</dt>
+            <dd>9:30 am to 4:30 pm</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="contact__harta apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-104.995226,39.752198,-104.987226,39.756198&amp;layer=mapnik&amp;marker=39.754198,-104.991226" title="Map showing Frank's Gentlemen's Salon at 2111 Larimer Street, Denver" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pe">
+  <div class="wrap pe__in">
+    <p class="pe__nume">Frank's Gentlemen's Salon</p>
+    <span class="pe__linie" aria-hidden="true"></span>
+    <p>2111 Larimer Street, Denver</p>
+    <nav class="pe__nav" aria-label="Footer">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <p class="pe__nota">Website concept (demo)</p>
+    <p class="pe__nota">Illustrative photos from Pixabay: mostafa_meraji, jackmac34, annmariephotography</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
