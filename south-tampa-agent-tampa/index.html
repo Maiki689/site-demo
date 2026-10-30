@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="South Tampa Agent helps buyers and sellers in Tampa, from viewing homes to final paperwork. Open daily, 9:00 am to 7:00 pm.">
+<title>South Tampa Agent | Your next home, right here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Fraunces:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{--sand:#EFE6D8;--terra:#B5583A;--olive:#6B7046;--brown:#3B2B22;--line:rgba(59,43,34,.22);--ease:cubic-bezier(.2,.8,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{margin:0;background:var(--sand);color:var(--brown);font-family:"Figtree",sans-serif;font-size:1rem;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;width:100%;object-fit:cover}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{font-family:"Fraunces",serif;font-weight:400;letter-spacing:-.035em}
+h1{font-size:clamp(4rem,7.8vw,7.8rem);line-height:1.01}
+h2{font-size:clamp(2.5rem,4.6vw,4.4rem);line-height:1.1}
+h3{font-size:1.65rem;line-height:1.2}
+p{max-width:40rem}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,iframe:focus-visible{outline:3px solid var(--terra);outline-offset:5px}
+.wrap{width:min(100% - 7rem,1320px);margin-inline:auto}
+.header{position:sticky;top:0;z-index:20;background:rgba(239,230,216,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header.derulat{background:rgba(239,230,216,.96)}
+.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.brand{display:flex;align-items:center;gap:.75rem;font-weight:700;font-size:1.1rem;line-height:1.2}
+.brand svg{width:32px;height:36px;flex-shrink:0;color:var(--terra)}
+.nav-links{display:flex;gap:2.2rem;align-items:center;list-style:none;padding:0;margin:0}
+.nav-links a:not(.nav-contact){padding:.7rem 0;font-size:.95rem}
+.nav-links a:not(.nav-contact):hover{text-decoration:underline;text-underline-offset:6px}
+.nav-contact{display:inline-flex;min-height:46px;align-items:center;padding:.55rem 1.35rem;border:1px solid var(--brown);border-radius:3px;font-weight:600}
+.menu-toggle{display:none}
+.button{min-height:54px;display:inline-flex;align-items:center;justify-content:center;gap:1rem;padding:.9rem 1.6rem;background:var(--brown);color:var(--sand);border:1px solid var(--brown);border-radius:3px;font-weight:600;transition:transform .2s var(--ease),opacity .2s var(--ease)}
+.button svg{width:18px;height:18px}
+.button:hover{opacity:.87}
+.button:active,.nav-contact:active,.menu-toggle:active{transform:scale(.97)}
+.hero{padding:4.6rem 0 4.3rem}
+.hero-grid{display:grid;grid-template-columns:1.03fr 1fr;align-items:center;gap:3rem}
+.location{display:flex;align-items:center;gap:.65rem;margin-bottom:1.8rem;font-size:1rem}
+.location span{width:8px;height:8px;background:var(--olive);border-radius:50%}
+.hero h1{max-width:8em}
+.hero .slogan{font-size:clamp(1.3rem,2vw,1.65rem);margin:1.7rem 0 .7rem}
+.hero .intro{max-width:28rem;margin-bottom:1.8rem}
+.hero-action{display:flex;gap:1.25rem;align-items:center}
+.hero-action small{font-size:.85rem;line-height:1.5;max-width:8rem}
+.sketch{position:relative;isolation:isolate;aspect-ratio:1.06;margin-top:1rem}
+.sketch svg{width:100%;height:100%;overflow:visible}
+.map-ground{fill:var(--olive);opacity:.085}
+.map-block{fill:var(--olive);opacity:.13}
+.map-road{fill:none;stroke:var(--brown);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;opacity:.34}
+.map-route{fill:none;stroke:var(--terra);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.route-part{animation:route-in .6s var(--ease) both}
+.route-part:nth-child(2){animation-delay:.25s}
+.route-part:nth-child(3){animation-delay:.5s}
+.route-part:nth-child(4){animation-delay:.75s}
+.map-house{stroke:var(--brown);stroke-width:2.2;fill:var(--sand);stroke-linecap:round;stroke-linejoin:round}
+.map-house .roof{fill:var(--terra);stroke:var(--terra)}
+.map-tree{stroke:var(--olive);stroke-width:1.6;fill:none;stroke-linecap:round}
+.sketch-label{position:absolute;top:12%;left:9%;font-family:"Fraunces",serif;font-size:1.85rem;line-height:1.1;transform:rotate(-5deg)}
+.sketch-address{position:absolute;right:2%;top:32%;font-size:.8rem;line-height:1.4;max-width:7.2rem}
+.sketch-address strong{display:block;font-size:.95rem;margin-bottom:.25rem}
+.sketch-note{position:absolute;bottom:4%;left:8%;font-size:.76rem;max-width:16rem;line-height:1.5}
+@keyframes route-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.property{position:relative}
+.property img{height:clamp(300px,42vw,570px);object-position:center 55%;border-radius:44% 44% 0 0 / 7% 7% 0 0}
+.property-caption{display:flex;justify-content:space-between;gap:1rem;padding-top:1rem;font-size:.85rem}
+.property-caption span:last-child{opacity:.75}
+.about{padding:7rem 0 6.5rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem}
+.about-heading h2{max-width:10em}
+.about-heading .place{display:block;margin-top:1.6rem;color:var(--olive);font-weight:600}
+.about-copy>p{font-size:1.2rem;line-height:1.65}
+.about-copy>p+p{margin-top:1rem}
+.values{margin-top:2.3rem;padding-top:1.7rem;border-top:1px solid var(--line);display:grid;gap:1.3rem}
+.value{display:grid;grid-template-columns:1.5rem 1fr;gap:.8rem}
+.value svg{width:22px;height:22px;stroke:var(--olive);fill:none;stroke-width:1.6;margin-top:3px}
+.value strong{font-weight:600;display:block}
+.value p{font-size:.95rem}
+.services{background:var(--olive);color:var(--sand);padding:5.5rem 0 6rem}
+.service-header{display:flex;justify-content:space-between;align-items:end;gap:3rem;margin-bottom:3.5rem}
+.service-header p{max-width:25rem}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
+.service{padding-top:1.6rem;border-top:1px solid rgba(239,230,216,.45)}
+.service h3{font-size:2rem;margin-bottom:1rem}
+.service p{max-width:22rem}
+.gallery-section{padding:6rem 0}
+.gallery-heading{display:flex;justify-content:space-between;gap:3rem;align-items:end;margin-bottom:2.5rem}
+.gallery-heading p{max-width:23rem}
+.gallery{display:grid;grid-template-columns:1.15fr 1fr;gap:2rem;align-items:start}
+.gallery figure:nth-child(2){padding-top:4rem}
+.gallery img{aspect-ratio:1.2;cursor:zoom-in;transition:transform .5s var(--ease)}
+.gallery figure:nth-child(2) img{aspect-ratio:1.08}
+.gallery figcaption{font-size:.9rem;padding-top:.85rem}
+.gallery img.marita{position:fixed;z-index:100;inset:5vh 5vw;width:90vw;height:90vh;object-fit:contain;aspect-ratio:auto;background:var(--sand);box-shadow:0 0 0 100vmax rgba(59,43,34,.94);cursor:zoom-out}
+html.galerie-deschisa{overflow:hidden}
+.contact{padding:5.5rem 0 4rem;border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:start}
+.contact h2{max-width:8em;margin-bottom:1.4rem}
+.contact-intro{font-size:1.1rem;max-width:25rem}
+.contact-details{margin:2.4rem 0;display:grid;grid-template-columns:1fr 1fr;gap:1.7rem 1rem}
+.contact-details dt{font-size:.85rem;margin-bottom:.3rem}
+.contact-details dd{margin:0;font-size:1.05rem;line-height:1.55}
+.contact-details .full{grid-column:1/-1}
+.contact-phone{font-family:"Fraunces",serif;font-size:1.8rem!important;letter-spacing:-.02em}
+.map-panel{padding-top:.4rem}
+.map-panel iframe{width:100%;height:390px;border:0;display:block;background:var(--sand)}
+.map-caption{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:1rem;font-size:.85rem}
+.map-caption svg{height:18px;width:18px;color:var(--olive)}
+footer{padding:1.8rem 0 2rem;border-top:1px solid var(--line);font-size:.78rem}
+.footer-row{display:flex;justify-content:space-between;align-items:start;gap:2rem}
+.footer-brand{font-family:"Fraunces",serif;font-size:1.4rem;line-height:1.2;margin-bottom:.6rem}
+.credit{max-width:24rem;text-align:right}
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(18px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:translateY(0)}
+@media(min-width:861px){.nav-links{display:flex!important}}
+@media(max-width:1100px){
+.wrap{width:calc(100% - 4rem)}
+.hero-grid{gap:1rem}
+.sketch-address{right:-1%;font-size:.7rem;max-width:6rem}
+.sketch-address strong{font-size:.8rem}
+.about-grid{gap:3rem}
+.contact-grid{gap:3rem}
+.service-grid{gap:2rem}
+}
+@media(max-width:860px){
+.wrap{width:calc(100% - 3rem)}
+.nav{min-height:76px}
+.brand{font-size:1rem}
+.menu-toggle{display:flex;align-items:center;justify-content:center;width:46px;height:46px;background:none;border:1px solid var(--line);border-radius:3px;color:var(--brown)}
+.menu-toggle svg{width:21px;height:21px}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;padding:1.5rem;background:var(--sand);border-bottom:1px solid var(--line);align-items:stretch;gap:.5rem}
+.nav-links.deschis{display:flex;flex-direction:column}
+.nav-links a{display:flex;align-items:center;min-height:48px}
+.nav-links .nav-contact{margin-top:.5rem;justify-content:center}
+html.meniu-deschis{overflow:hidden}
+.hero{padding-top:2.8rem}
+.hero-grid{grid-template-columns:1fr 1fr}
+h1{font-size:clamp(3.8rem,8vw,5.8rem)}
+.sketch-label{font-size:1.4rem}
+.sketch-address{top:30%;font-size:.65rem;max-width:5rem}
+.sketch-address strong{font-size:.72rem}
+.sketch-note{font-size:.65rem}
+.hero-action{align-items:start;flex-direction:column;gap:.7rem}
+.hero-action small{max-width:none}
+.about{padding:5rem 0}
+.about-grid{gap:2.5rem}
+.about-copy>p{font-size:1.05rem}
+.service-header{align-items:start}
+.service-grid{gap:1.5rem}
+.service h3{font-size:1.65rem}
+.contact-grid{grid-template-columns:1fr}
+.contact h2{max-width:none}
+.contact-details{max-width:32rem}
+.map-panel iframe{height:360px}
+}
+@media(max-width:600px){
+.wrap{width:calc(100% - 2.5rem)}
+.brand svg{width:27px}
+.hero{padding:2rem 0 2.5rem}
+.hero-grid{grid-template-columns:1fr;gap:1.8rem}
+.location{margin-bottom:1.3rem;font-size:.9rem}
+h1{font-size:clamp(3.8rem,16vw,5.2rem);max-width:7em!important}
+.hero .slogan{margin-top:1.25rem;font-size:1.35rem}
+.hero .intro{font-size:.95rem;margin-bottom:1.3rem;max-width:21rem}
+.hero-action{flex-direction:row;align-items:center;gap:1rem}
+.hero-action small{max-width:7rem;font-size:.75rem}
+.button{padding:.8rem 1.3rem;min-height:52px}
+.sketch{width:100%;max-width:430px;margin:0 auto}
+.sketch-label{font-size:1.5rem}
+.sketch-address{right:1%;font-size:.7rem;max-width:6rem}
+.sketch-address strong{font-size:.8rem}
+.sketch-note{font-size:.68rem}
+.property img{height:310px;border-radius:45% 45% 0 0 / 5% 5% 0 0}
+.property-caption{font-size:.75rem;align-items:start}
+.property-caption span:first-child{max-width:12rem}
+.about{padding:4rem 0}
+.about-grid{grid-template-columns:1fr;gap:2rem}
+.about-heading h2{max-width:10em}
+.about-heading .place{margin-top:1rem;font-size:.9rem}
+.about-copy>p{font-size:1.05rem}
+.values{margin-top:1.8rem}
+.services{padding:3.5rem 0 4rem}
+.service-header{display:block;margin-bottom:2rem}
+.service-header p{margin-top:1.3rem}
+.service-grid{grid-template-columns:1fr;gap:1.8rem}
+.service{padding-top:1.3rem}
+.service h3{font-size:1.8rem;margin-bottom:.65rem}
+.service p{max-width:none}
+.gallery-section{padding:4rem 0}
+.gallery-heading{display:block;margin-bottom:1.8rem}
+.gallery-heading p{margin-top:1.2rem}
+.gallery{gap:2rem;grid-template-columns:1fr}
+.gallery figure:nth-child(2){padding-top:0}
+.gallery img,.gallery figure:nth-child(2) img{aspect-ratio:1.25}
+.contact{padding:3.5rem 0 3rem}
+.contact-grid{gap:2.5rem}
+.contact-details{gap:1.5rem .6rem}
+.contact-details dd{font-size:1rem}
+.map-panel iframe{height:310px}
+.footer-row{display:block}
+.credit{text-align:left;margin-top:1.4rem;max-width:22rem}
+}
+@media(prefers-reduced-transparency:reduce){.header,.header.derulat{background:var(--sand);backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-contrast:more){
+:root{--line:var(--brown)}
+.header,.header.derulat{background:var(--sand)}
+.property-caption span:last-child{opacity:1}
+.map-road{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;transition-duration:.01s!important}
+html.js [data-jarvis="apare"]{transform:none}
+}
+</style>
+</head>
+<body>
+<header class="header" data-jarvis="antet">
+<nav class="nav wrap" aria-label="Main navigation">
+<a class="brand" href="#home" aria-label="South Tampa Agent home">
+<svg viewbox="0 0 36 40" aria-hidden="true"><path d="M3 19 18 5l15 14M8 16v20h20V16M15 36V25h7v11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span>South Tampa Agent</span>
+</a>
+<button class="menu-toggle" data-jarvis="meniu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+<svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+</button>
+<ul class="nav-links" id="nav-links" data-jarvis="meniu-lista">
+<li><a href="#about">About</a></li>
+<li><a href="#services">How we help</a></li>
+<li><a href="#contact" class="nav-contact">Get in touch</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="hero wrap" id="home" aria-labelledby="hero-heading">
+<div class="hero-grid">
+<div>
+<p class="location"><span aria-hidden="true"></span>Tampa, Florida</p>
+<h1 id="hero-heading">South<br>Tampa Agent</h1>
+<p class="slogan">Your next home, right here.</p>
+<p class="intro">Local real estate guidance for buyers and sellers, from the first viewing to the final paperwork.</p>
+<div class="hero-action">
+<a class="button" href="tel:+18136448671">
+<svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 3 3 5-2.5 2.5a15 15 0 0 0 6 6L16 14l5 3c-1 4-3 5-6 3C9 18 5 14 3 8 2 5 3 3 7 3Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+Call now
+</a>
+<small>Open daily<br>9:00 am to 7:00 pm</small>
+</div>
+</div>
+
+<figure class="sketch" aria-label="Hand-drawn neighborhood illustration with a terracotta route leading to South Tampa Agent. This is an illustrative sketch, not a navigation map.">
+<svg viewbox="0 0 560 530" aria-hidden="true">
+<path class="map-ground" d="M53 117C83 47 172 24 274 43c106-21 218 35 239 126 47 92 10 231-66 292-94 56-222 45-307 0C45 427 11 322 31 231c-15-48-4-87 22-114Z"/>
+<path class="map-block" d="m95 154 76-18 24 57-78 22ZM237 104l77-10 12 74-69 10ZM132 269l78-23 15 81-74 21ZM307 251l63-9 19 67-65 15ZM388 357l64-16 21 69-67 17ZM205 388l72-16 19 69-73 16Z"/>
+<g class="map-road">
+<path d="M54 241c91-19 176-43 257-53s133-7 194-4M72 374c107-38 201-43 286-60 56-12 96-29 143-37"/>
+<path d="M184 67c12 82 48 154 61 236s25 123 43 187M349 68c-10 65 3 136 21 201 13 55 21 119 46 187M80 132c102-19 204-54 345-24"/>
+<path d="M107 190c10 92 37 194 57 256M69 439c105-26 202-64 412-52"/>
+</g>
+<g class="map-tree">
+<path d="M67 302v24m-10-13c-9-12-3-25 10-26 14 0 20 16 9 27M454 128v22m-10-12c-10-13-2-25 10-25 13 0 19 14 8 25M338 407v22m-10-11c-10-13-2-25 10-25 14 0 19 15 9 25"/>
+<path d="m454 459 4-11 5 10m-12 8 5-9 9 7M69 165l5-10 4 10"/>
+</g>
+<g class="map-route">
+<path class="route-part" d="M103 402c26-8 53-17 78-24"/>
+<path class="route-part" d="M181 378c26-7 52-13 77-17"/>
+<path class="route-part" d="M258 361c-6-31-11-59-16-85"/>
+<path class="route-part" d="M242 276c-4-23-10-48-17-70l94-18"/>
+</g>
+<circle cx="103" cy="402" r="6" fill="var(--terra)"/>
+<circle cx="103" cy="402" r="13" fill="none" stroke="var(--terra)" stroke-width="1" opacity=".5"/>
+<g class="map-house">
+<path d="M304 147v49h58v-49"/>
+<path class="roof" d="m294 151 38-35 41 34-7 7-34-28-31 29Z"/>
+<path d="M328 196v-27h14v27M311 157h10v11h-10ZM346 157h10v11h-10Z"/>
+<path d="M350 128v-15h9v23"/>
+</g>
+<path d="M390 182c13 0 20-7 24-17" fill="none" stroke="var(--brown)" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
+<span class="sketch-label">Around the<br>neighborhood.</span>
+<span class="sketch-address"><strong>Find us here</strong>4201 West<br>Watrous Avenue</span>
+<figcaption class="sketch-note">A neighborhood sketch, not a navigation map. Find directions in the contact section.</figcaption>
+</figure>
+</div>
+</section>
+
+<figure class="property wrap" data-jarvis="apare">
+<img src="img/1.jpg" alt="A house exterior with illuminated windows, a front yard and a garage" fetchpriority="high" width="1440" height="800">
+<figcaption class="property-caption"><span>A home search starts with what matters to you.</span><span>Illustrative photo</span></figcaption>
+</figure>
+
+<section class="about wrap" id="about" aria-labelledby="about-heading">
+<div class="about-grid">
+<div class="about-heading" data-jarvis="apare">
+<h2 id="about-heading">Local guidance.<br>Room for your plans.</h2>
+<span class="place">Based in Tampa. Focused on South Tampa.</span>
+</div>
+<div class="about-copy" data-jarvis="apare">
+<p>South Tampa Agent works with buyers and sellers in the Tampa area. We help you work through each step, from viewing homes to final paperwork.</p>
+<p>Tell us whether you’re buying or selling, and we’ll talk through where to begin.</p>
+<div class="values">
+<div class="value">
+<svg viewbox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+<div><strong>Local expertise</strong><p>Focused on South Tampa neighborhoods.</p></div>
+</div>
+<div class="value">
+<svg viewbox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H9l-5 4V4Z"/><path d="M8 8h8M8 12h5"/></svg>
+<div><strong>Clear guidance</strong><p>Support through every real estate step.</p></div>
+</div>
+<div class="value">
+<svg viewbox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M8 2v6M16 2v6M4 10h16M8 14h3M8 17h7"/></svg>
+<div><strong>Flexible hours</strong><p>Appointments every day, morning to evening.</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="services" id="services" aria-labelledby="services-heading">
+<div class="wrap">
+<div class="service-header" data-jarvis="apare">
+<h2 id="services-heading">Where we can help.</h2>
+<p>Buying and selling come with different decisions. Here are some of the steps we can discuss with you.</p>
+</div>
+<div class="service-grid">
+<article class="service" data-jarvis="apare">
+<h3>Buying a home</h3>
+<p>Talk through your home search, the neighborhoods you’re considering and what to look for during viewings.</p>
+</article>
+<article class="service" data-jarvis="apare">
+<h3>Selling a home</h3>
+<p>Discuss your plans to sell and get guidance on the steps involved in bringing your home to market.</p>
+</article>
+<article class="service" data-jarvis="apare">
+<h3>Moving toward closing</h3>
+<p>Get support as you move from viewing homes to the final paperwork, with guidance along the way.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="gallery-section wrap" aria-labelledby="gallery-heading">
+<div class="gallery-heading" data-jarvis="apare">
+<h2 id="gallery-heading">From homes to handshakes.</h2>
+<p>Our work covers both the property and the paperwork that comes with a move.</p>
+</div>
+<div class="gallery" data-jarvis="galerie">
+<figure data-jarvis="apare">
+<img src="img/5.jpg" alt="A modern white residence with clean architectural lines, shown as an illustrative home" loading="lazy" width="900" height="750">
+<figcaption>Exploring the possibilities. Illustrative photo.</figcaption>
+</figure>
+<figure data-jarvis="apare">
+<img src="img/3.jpg" alt="A close-up of real estate paperwork being signed" loading="lazy" width="900" height="830">
+<figcaption>Working through the details. Illustrative photo.</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+<div class="contact-grid wrap">
+<div data-jarvis="apare">
+<h2 id="contact-heading">Tell us about your next move.</h2>
+<p class="contact-intro">Buying or selling in Tampa? Call South Tampa Agent to talk through your plans.</p>
+<dl class="contact-details">
+<div class="full">
+<dt>Call South Tampa Agent</dt>
+<dd class="contact-phone">(813) 644-8671</dd>
+</div>
+<div>
+<dt>Find us</dt>
+<dd>4201 West Watrous Avenue<br>Tampa, Florida</dd>
+</div>
+<div>
+<dt>Hours</dt>
+<dd>Open daily<br>9:00 am to 7:00 pm</dd>
+</div>
+</dl>
+<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=South+Tampa+Agent+Tampa" target="_blank" rel="noopener noreferrer">Get directions</a>
+</div>
+<div class="map-panel">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-82.518256,27.930318,-82.510256,27.934318&amp;layer=mapnik&amp;marker=27.932318,-82.514256" title="Map showing South Tampa Agent at 4201 West Watrous Avenue, Tampa" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+<div class="map-caption">
+<span>4201 West Watrous Avenue</span>
+<svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 9c0 5-6 11-6 11S6 14 6 9a6 6 0 1 1 12 0Z"/><circle cx="12" cy="9" r="2"/></svg>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-row wrap">
+<div>
+<p class="footer-brand">South Tampa Agent</p>
+<p>Website concept (demo)</p>
+</div>
+<p class="credit">Illustrative photos from Pixabay: Pexels, geralt, dimitrisvetsikas1969</p>
+</div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
