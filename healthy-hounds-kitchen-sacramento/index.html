@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Healthy Hounds Kitchen | Fresh and frozen dog meals in East Sacramento</title>
+<meta name="description" content="Fresh and frozen packaged dog meals in East Sacramento. 3608 McKinley Boulevard, Sacramento. Call (916) 346-4416.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap">
+<style>
+:root {
+  --teal: #0f766e;
+  --ink: #0b0b0b;
+  --paper: #ffffff;
+  --gris: rgba(11, 11, 11, .8);
+  --linie: rgba(11, 11, 11, .14);
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --titlu: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --wrap: 75rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--ink);
+  background: var(--paper);
+  overflow-x: hidden;
+}
+
+img, iframe { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; }
+h1, h2, h3 {
+  font-family: var(--titlu);
+  letter-spacing: -.02em;
+  line-height: 1.08;
+  margin: 0;
+  font-weight: 700;
+}
+p { margin: 0; }
+ul, dl, figure, address { margin: 0; padding: 0; font-style: normal; }
+ul { list-style: none; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+@media (min-width: 860px) {
+  .wrap { padding: 0 2.5rem; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.sarite {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--ink);
+  color: #fff;
+  padding: .75rem 1rem;
+  text-decoration: none;
+}
+.sarite:focus { top: 1rem; }
+
+/* Top bar */
+.antet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .74);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid transparent;
+}
+.antet.derulat { border-bottom-color: var(--linie); }
+
+.antet-rand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.marca {
+  font-family: var(--titlu);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.meniu-buton {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: -.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .375rem;
+  -webkit-tap-highlight-color: transparent;
+}
+.meniu-linie {
+  display: block;
+  width: 1.375rem;
+  height: 2px;
+  background: currentColor;
+  transition: transform .3s var(--ease), opacity .2s linear;
+}
+.meniu-buton[aria-expanded="true"] .meniu-linie:nth-child(1) { transform: translateY(4px) rotate(45deg); }
+.meniu-buton[aria-expanded="true"] .meniu-linie:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+
+.meniu-lista {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-bottom: 1px solid var(--linie);
+  padding: .5rem 1.25rem 1.25rem;
+}
+.meniu-lista.deschis { display: flex; }
+.meniu-lista a {
+  display: flex;
+  align-items: center;
+  min-height: 3rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--linie);
+}
+.meniu-lista .boton {
+  margin-top: 1rem;
+  border-bottom: 1px solid var(--teal);
+  justify-content: center;
+}
+
+@media (min-width: 860px) {
+  .meniu-buton { display: none; }
+  .meniu-lista {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.25rem;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+  .meniu-lista a {
+    min-height: auto;
+    border: 0;
+    font-size: .9375rem;
+    padding: .5rem 0;
+  }
+  .meniu-lista .boton {
+    min-height: 2.75rem;
+    margin: 0;
+    padding: 0 1.1rem;
+    font-size: .9375rem;
+    border-bottom: 1px solid var(--teal);
+  }
+}
+
+/* Buttons */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.5rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-decoration: none;
+  color: #fff;
+  background: var(--teal);
+  border: 1px solid var(--teal);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform .15s var(--ease), background-color .25s linear, color .25s linear, border-color .25s linear;
+}
+.boton:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.boton:active { transform: scale(.97); }
+.boton-contur {
+  background: transparent;
+  color: var(--teal);
+  border-color: var(--teal);
+}
+.boton-contur:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+/* Hero: typography only */
+.intro {
+  padding: calc(4rem + 1.75rem) 0 2.5rem;
+}
+.intro-titlu {
+  font-size: clamp(2.75rem, 11vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+}
+.intro-fila {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--linie);
+  display: grid;
+  gap: 1.5rem;
+}
+.intro-lead {
+  font-size: 1.375rem;
+  line-height: 1.35;
+  max-width: 26ch;
+}
+.intro-actiuni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.intro-actiuni .boton { flex: 1 1 auto; }
+.intro-adresa {
+  color: var(--ink);
+  line-height: 1.5;
+}
+@media (min-width: 860px) {
+  .intro { padding: calc(4rem + 3rem) 0 3.5rem; }
+  .intro-fila {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+  .intro-lead { grid-column: 1 / 6; }
+  .intro-actiuni { grid-column: 6 / 9; flex-wrap: nowrap; }
+  .intro-actiuni .boton { flex: 0 0 auto; }
+  .intro-adresa { grid-column: 9 / 13; }
+}
+
+/* Compact full-colour band that unrolls on scroll */
+.umplere {
+  position: relative;
+  overflow: hidden;
+}
+.umplere-strat {
+  position: absolute;
+  inset: 0;
+  background: var(--teal);
+}
+.umplere-caseta {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+.umplere-continut {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: .875rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.75rem;
+}
+.umplere-titlu {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -.02em;
+  max-width: 13ch;
+}
+.umplere-text {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.35;
+  max-width: 28ch;
+}
+@media (min-width: 860px) {
+  .umplere-continut {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@supports (view-timeline-name: --umplere) {
+  .umplere { view-timeline: --umplere block; }
+  .umplere-strat {
+    transform-origin: 50% 0;
+    animation: desfasurare linear both;
+    animation-timeline: --umplere;
+    animation-range: entry 0% entry 100%;
+  }
+}
+@keyframes desfasurare {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+/* Sections */
+.seccion { padding: 4.5rem 0; }
+.grila {
+  display: grid;
+  gap: 2.5rem;
+}
+.titlu-2 {
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.02em;
+  margin-bottom: 1.75rem;
+}
+
+/* About */
+.despre-foto img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.despre-text p { font-size: 1.125rem; }
+.despre-text p + p { margin-top: 1.25rem; }
+
+@media (min-width: 860px) {
+  .seccion { padding: 7rem 0; }
+  .grila {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+  .despre-foto { grid-column: 1 / 6; }
+  .despre-text { grid-column: 8 / 13; padding-top: .5rem; }
+}
+
+/* Products */
+.foto-larga { margin-bottom: 3.5rem; }
+.foto-larga img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.produse { border-top: 1px solid var(--ink); }
+.produs {
+  display: grid;
+  gap: .75rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--linie);
+}
+.produs h3 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  letter-spacing: -.015em;
+}
+.produs p { color: var(--gris); }
+
+.avantaje {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 4.5rem;
+}
+.avantaje li {
+  border-top: 1px solid var(--ink);
+  padding-top: 1.25rem;
+}
+.avantaje h3 {
+  font-size: 1.25rem;
+  letter-spacing: -.015em;
+  margin-bottom: .5rem;
+}
+.avantaje p { color: var(--gris); }
+
+@media (min-width: 860px) {
+  .foto-larga img { aspect-ratio: 21 / 9; }
+  .produs {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    align-items: baseline;
+    padding: 2rem 0;
+  }
+  .produs h3 { grid-column: 1 / 6; }
+  .produs p { grid-column: 7 / 13; }
+  .avantaje {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
+}
+
+/* Visit */
+.contact-adresa {
+  font-size: 1.375rem;
+  line-height: 1.35;
+}
+.contact-tel { margin-top: 1.5rem; }
+.contact-tel a {
+  font-family: var(--titlu);
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--teal);
+}
+.orar {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--ink);
+}
+.orar h3 {
+  font-size: 1.125rem;
+  padding: 1rem 0 .25rem;
+}
+.orar div {
+  display: grid;
+  gap: .15rem;
+  padding: .9rem 0;
+  border-bottom: 1px solid var(--linie);
+}
+.orar dl { margin: 0; }
+.orar dt { color: var(--gris); }
+.orar dd { margin: 0; font-weight: 600; }
+.contact-actiuni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2.5rem;
+}
+.contact-actiuni .boton { flex: 1 1 auto; }
+.harta iframe {
+  width: 100%;
+  height: 22rem;
+  border: 1px solid var(--linie);
+  filter: grayscale(.6);
+}
+
+@media (min-width: 860px) {
+  .contact-text { grid-column: 1 / 6; }
+  .harta { grid-column: 7 / 13; }
+  .contact-actiuni { flex-wrap: nowrap; }
+  .contact-actiuni .boton { flex: 0 0 auto; }
+  .harta iframe { height: 100%; min-height: 30rem; }
+}
+
+/* Footer */
+.subsol {
+  background: var(--ink);
+  color: #fff;
+  padding: 3.5rem 0 2.5rem;
+}
+.subsol p {
+  color: rgba(255, 255, 255, .74);
+  line-height: 1.6;
+}
+.subsol a { color: #fff; }
+.subsol-nume {
+  font-family: var(--titlu);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -.01em;
+  color: #fff !important;
+  margin-bottom: .5rem;
+}
+.subsol-credit {
+  margin-top: 2rem;
+  font-size: .875rem;
+}
+
+/* Reveal on scroll (only when JavaScript marks the page with html.js) */
+html.js [data-jarvis="apare"] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil {
+  opacity: 1;
+  transform: none;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js [data-jarvis="apare"] {
+    transform: none;
+    transition: opacity .2s linear;
+  }
+  .meniu-linie { transition: none; }
+  .boton { transition: background-color .2s linear, color .2s linear; }
+  .umplere-strat { animation: none !important; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .antet {
+    background: #fff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --gris: var(--ink);
+    --linie: rgba(11, 11, 11, .55);
+  }
+  .antet { border-bottom-color: var(--ink); }
+  .intro-fila, .orar div, .produs { border-color: var(--ink); }
+  .boton { border-width: 2px; }
+  .subsol p { color: #fff; }
+}
+</style>
+</head>
+<body>
+
+<a class="sarite" href="#continut">Skip to content</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap antet-rand">
+    <a class="marca" href="#top">Healthy Hounds Kitchen</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista" aria-label="Menu">
+      <span class="meniu-linie"></span>
+      <span class="meniu-linie"></span>
+    </button>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#produse">Products</a></li>
+        <li><a href="#contact">Visit</a></li>
+        <li><a class="boton" href="tel:+19163464416">Call now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="intro" id="top" aria-labelledby="titlu">
+    <div class="wrap">
+      <h1 id="titlu" class="intro-titlu" data-jarvis="apare">Healthy Hounds Kitchen</h1>
+      <div class="intro-fila">
+        <p class="intro-lead" data-jarvis="apare">Fresh and frozen packaged dog meals in East Sacramento.</p>
+        <div class="intro-actiuni" data-jarvis="apare">
+          <a class="boton" href="tel:+19163464416">Call now</a>
+          <a class="boton boton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Healthy+Hounds+Kitchen+Sacramento">Get directions</a>
+        </div>
+        <address class="intro-adresa" data-jarvis="apare">3608 McKinley Boulevard<br>Sacramento</address>
+      </div>
+    </div>
+  </section>
+
+  <section class="umplere" aria-labelledby="slogan">
+    <div class="umplere-strat" aria-hidden="true"></div>
+    <div class="wrap umplere-caseta">
+      <div class="umplere-continut">
+        <h2 id="slogan" class="umplere-titlu">Nutritious meals for your dog</h2>
+        <p class="umplere-text">Stop in to find the right meal for your pet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap grila">
+      <figure class="despre-foto" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Golden retriever puppy standing in a grassy meadow" loading="lazy">
+      </figure>
+      <div class="despre-text" data-jarvis="apare">
+        <h2 id="despre-titlu" class="titlu-2">About the kitchen</h2>
+        <p>Healthy Hounds Kitchen prepares fresh and frozen packaged dog meals.</p>
+        <p>Dogs in East Sacramento can enjoy nutritious food options made for them.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="produse" aria-labelledby="produse-titlu">
+    <div class="wrap">
+      <h2 id="produse-titlu" class="titlu-2" data-jarvis="apare">Products</h2>
+      <figure class="foto-larga" data-jarvis="apare">
+        <img src="img/2.jpg" alt="Fresh turkey meat prepared for a dog meal" loading="lazy">
+      </figure>
+      <ul class="produse">
+        <li class="produs" data-jarvis="apare">
+          <h3>Fresh packaged dog meals</h3>
+          <p>Packaged dog meals, ready for your dog.</p>
+        </li>
+        <li class="produs" data-jarvis="apare">
+          <h3>Frozen packaged dog meals</h3>
+          <p>Frozen dog meals, packaged for freshness.</p>
+        </li>
+      </ul>
+      <ul class="avantaje">
+        <li data-jarvis="apare">
+          <h3>Fresh options</h3>
+          <p>Meals kept fresh for your dog.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Frozen meals</h3>
+          <p>Frozen dog meals always in stock.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Packaged food</h3>
+          <p>Packaged servings, easy to store.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap grila">
+      <div class="contact-text" data-jarvis="apare">
+        <h2 id="contact-titlu" class="titlu-2">Visit us</h2>
+        <p class="contact-adresa">3608 McKinley Boulevard<br>Sacramento</p>
+        <p class="contact-tel"><a href="tel:+19163464416">(916) 346-4416</a></p>
+        <div class="orar">
+          <h3>Hours</h3>
+          <dl>
+            <div>
+              <dt>Monday to Friday</dt>
+              <dd>10 am to 7 pm</dd>
+            </div>
+            <div>
+              <dt>Saturday and Sunday</dt>
+              <dd>10 am to 5 pm</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="contact-actiuni">
+          <a class="boton" href="tel:+19163464416">Call now</a>
+          <a class="boton boton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Healthy+Hounds+Kitchen+Sacramento">Get directions</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-121.458906,38.573941,-121.450906,38.577941&amp;layer=mapnik&amp;marker=38.575941,-121.454906" title="Map showing Healthy Hounds Kitchen at 3608 McKinley Boulevard, Sacramento" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <p class="subsol-nume">Healthy Hounds Kitchen</p>
+    <p>3608 McKinley Boulevard, Sacramento</p>
+    <p><a href="tel:+19163464416">(916) 346-4416</a></p>
+    <p class="subsol-credit">Website concept (demo)</p>
+    <p class="subsol-credit">Illustrative photos from Pixabay: Chiemsee2024, A_Different_Perspective</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
