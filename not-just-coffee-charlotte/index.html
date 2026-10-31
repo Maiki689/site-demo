@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not Just Coffee | Coffee, cuppings, and classes in Charlotte</title>
+<meta name="description" content="Not Just Coffee is a cafe in Charlotte with coffee cuppings and classes. Five locations, each with its own hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --portocaliu:#E07A3F;
+  --f-titlu:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --margine:clamp(1.25rem,5vw,3rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-text);font-size:1rem;line-height:1.5;letter-spacing:0;color:var(--espresso);background:var(--alb);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-titlu);font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+iframe{display:block;max-width:100%}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.contenitor{max-width:1200px;margin-inline:auto;padding-inline:var(--margine)}
+.sectiune{padding-block:clamp(4.5rem,10vw,8rem)}
+.fundal-lapte{background:var(--lapte)}
+.fundal-espresso{background:var(--espresso);color:var(--lapte)}
+.titlu{font-size:clamp(2rem,4.6vw,3.5rem);max-width:16ch}
+.text-mare{font-size:clamp(1.0625rem,1.6vw,1.1875rem);max-width:46ch;margin-top:1.5rem}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.5rem;border:1px solid var(--alb);border-radius:2px;background:var(--alb);color:var(--espresso);font-family:var(--f-text);font-size:1rem;font-weight:600;line-height:1;text-align:center;text-decoration:none;transition:background-color .2s ease,border-color .2s ease,transform .15s ease}
+.btn:hover{background:var(--lapte);border-color:var(--lapte)}
+.btn:active{transform:scale(.97)}
+.btn-inchis{background:var(--espresso);border-color:var(--espresso);color:var(--alb)}
+.btn-inchis:hover{background:#4d372b;border-color:#4d372b}
+.btn-contur{background:transparent;border:1.5px solid var(--alb);color:var(--alb)}
+.btn-contur:hover{background:rgba(255,255,255,.12);border-color:var(--alb)}
+.btn-contur:active{transform:scale(.97)}
+
+:focus-visible{outline:2px solid var(--portocaliu);outline-offset:3px}
+.fundal-lapte :focus-visible{outline-color:var(--espresso)}
+.hero :focus-visible{outline-color:var(--alb)}
+
+/* Top bar */
+.antet{position:fixed;top:0;left:0;right:0;z-index:40;color:var(--alb);background:rgba(59,42,32,.55);-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1);border-bottom:1px solid transparent;transition:background-color .3s ease,border-color .3s ease}
+.antet.derulat{background:rgba(59,42,32,.88);border-bottom-color:rgba(234,223,211,.14)}
+.antet-in{position:relative;max-width:1200px;height:4rem;margin-inline:auto;padding-inline:var(--margine);display:flex;align-items:center;justify-content:space-between}
+.marca{display:inline-flex;align-items:center;min-height:44px;font-family:var(--f-titlu);font-size:1.125rem;font-weight:600;letter-spacing:-0.01em;text-decoration:none;color:var(--alb)}
+
+.meniu-buton{position:relative;width:44px;height:44px;margin-right:-10px;padding:0;border:0;background:none;color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.linii{position:relative;display:block;width:22px;height:2px;background:currentColor;transition:background-color .2s ease}
+.linii::before,.linii::after{content:"";position:absolute;left:0;width:22px;height:2px;background:currentColor;transition:transform .3s var(--ease)}
+.linii::before{top:-7px}
+.linii::after{top:7px}
+[aria-expanded="true"] .linii{background:transparent}
+[aria-expanded="true"] .linii::before{transform:translateY(7px) rotate(45deg)}
+[aria-expanded="true"] .linii::after{transform:translateY(-7px) rotate(-45deg)}
+
+#meniu-lista{display:none;position:absolute;top:100%;left:0;right:0;background:var(--espresso);padding:.25rem var(--margine) 1rem;border-top:1px solid rgba(234,223,211,.14)}
+#meniu-lista.deschis{display:block}
+#meniu-lista a{display:flex;align-items:center;min-height:48px;text-decoration:none;color:var(--alb);border-bottom:1px solid rgba(234,223,211,.12)}
+#meniu-lista li:last-child a{border-bottom:0}
+
+/* Hero: photo first on phone, text and both actions visible together */
+.hero{position:relative;background:var(--espresso);color:var(--lapte);padding-bottom:2.5rem}
+.hero-in{display:grid;gap:0}
+.hero-text{padding-top:1.75rem}
+.hero h1{font-size:clamp(2.9rem,11vw,6.5rem);line-height:1.02;color:var(--alb)}
+.hero .lead{margin-top:1rem;max-width:30ch;font-size:clamp(1.125rem,2vw,1.3rem);color:var(--lapte)}
+.hero .actiuni{margin-top:1.75rem;display:grid;gap:.75rem}
+.hero .actiuni .btn{width:100%}
+.ceasca{order:-1;margin:0 calc(var(--margine) * -1)}
+.ceasca img{width:100%;height:clamp(12rem,36svh,20rem);object-fit:cover}
+.hero-text{animation:intra .8s var(--ease) both}
+
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  #meniu-lista{display:flex;position:static;background:none;border:0;padding:0;gap:2.25rem}
+  #meniu-lista a{min-height:44px;border:0;opacity:.88;transition:opacity .2s ease}
+  #meniu-lista a:hover{opacity:1}
+  .hero{padding-top:6.5rem;padding-bottom:4rem}
+  .hero-in{grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+  .hero-text{padding-top:0}
+  .hero .actiuni{display:flex;flex-wrap:wrap;gap:1rem}
+  .hero .actiuni .btn{width:auto}
+  .ceasca{order:0;margin:0}
+  .ceasca img{height:min(62svh,34rem);border-radius:2px}
+}
+
+/* About */
+.about-grid{display:grid;gap:3rem;align-items:center}
+.foto-mare{margin:0}
+.foto-mare img{width:100%;aspect-ratio:4/5;object-fit:cover}
+@media (min-width:860px){
+  .about-grid{grid-template-columns:1fr 1fr;gap:6rem}
+}
+
+/* Menu */
+.menu-lista{margin-top:3rem;border-top:1px solid rgba(59,42,32,.22)}
+.menu-lista li{display:grid;gap:.5rem;padding:2rem 0;border-bottom:1px solid rgba(59,42,32,.22)}
+.menu-lista h3{font-size:clamp(1.375rem,2.6vw,1.75rem)}
+.menu-lista p{font-size:1.0625rem;color:rgba(59,42,32,.88)}
+@media (min-width:860px){
+  .menu-lista li{grid-template-columns:1fr 1.2fr;gap:3rem;align-items:baseline}
+}
+
+/* Gallery */
+.galerie-grid{display:grid;gap:.75rem;margin-top:3rem;grid-template-columns:1fr}
+.galerie-grid figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3;cursor:zoom-in}
+.galerie-grid img{width:100%;height:100%;object-fit:cover}
+@media (hover:hover){
+  .galerie-grid figure img{transition:transform .6s var(--ease)}
+  .galerie-grid figure:hover img{transform:scale(1.03)}
+}
+@media (min-width:860px){
+  .galerie-grid{grid-template-columns:1fr 1fr;gap:1rem}
+}
+.galerie-grid figure.marita{position:fixed;inset:1rem;z-index:60;width:auto;height:auto;aspect-ratio:auto;margin:0;display:flex;align-items:center;justify-content:center;background:var(--espresso);cursor:zoom-out}
+.galerie-grid figure.marita img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain}
+.galerie-grid img.marita{position:fixed;inset:1rem;z-index:60;width:auto;height:auto;max-width:calc(100vw - 2rem);max-height:calc(100svh - 2rem);margin:auto;object-fit:contain;background:var(--espresso);cursor:zoom-out}
+html.galerie-deschisa{overflow:hidden}
+
+/* Locations */
+.locatii{margin-top:3rem;border-top:1px solid rgba(59,42,32,.22)}
+.locatii li{display:grid;gap:.5rem;padding:1.75rem 0;border-bottom:1px solid rgba(59,42,32,.22)}
+.locatii h3{font-size:clamp(1.25rem,2.4vw,1.5rem)}
+.locatii p{color:rgba(59,42,32,.88)}
+.locatii span{display:block}
+@media (min-width:860px){
+  .locatii{display:grid;grid-template-columns:1fr 1fr;column-gap:4rem}
+}
+
+/* Visit */
+.vizita-grid{display:grid;gap:3rem}
+.vizita-grid .btn{margin-top:2rem}
+.harta{width:100%;height:320px;border:0;display:block}
+@media (min-width:860px){
+  .vizita-grid{grid-template-columns:.8fr 1.2fr;gap:5rem;align-items:start}
+  .harta{height:440px}
+}
+
+/* Footer */
+.subsol{padding-block:3.5rem 2.5rem;background:var(--espresso);color:var(--lapte);font-size:.9375rem}
+.subsol-in{display:grid;gap:2.5rem}
+.marca-f{font-family:var(--f-titlu);font-size:1.25rem;font-weight:600;letter-spacing:-0.01em;color:var(--alb)}
+.mic{color:rgba(234,223,211,.82);font-size:.875rem;line-height:1.5;max-width:70ch;margin-top:.5rem}
+.subsol nav ul{display:flex;flex-wrap:wrap;gap:.25rem 1.75rem}
+.subsol nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--lapte);text-decoration:none}
+.subsol nav a:hover{color:var(--alb);text-decoration:underline;text-underline-offset:.3em}
+.credit{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(234,223,211,.14);display:grid;gap:.5rem}
+@media (min-width:860px){
+  .subsol-in{grid-template-columns:1fr auto;align-items:start}
+}
+
+/* Motion */
+@keyframes intra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fondu{from{opacity:0}to{opacity:1}}
+
+.js [data-jarvis="apare"]{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-text{animation-name:fondu;animation-duration:.4s}
+  .js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  .js [data-jarvis="apare"].vizibil{transform:none}
+  .galerie-grid figure img,.btn{transition:none}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--espresso);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .antet.derulat{border-bottom-color:var(--lapte)}
+  .hero .lead,.mic,.menu-lista p,.locatii p{color:inherit}
+  .menu-lista li,.locatii li,.menu-lista,.locatii{border-color:var(--espresso)}
+  .btn{border-width:2px}
+  .btn-contur{border-width:2px}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">Not Just Coffee</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+      <span class="sr-only">Menu</span>
+      <span class="linii" aria-hidden="true"></span>
+    </button>
+    <nav aria-label="Main">
+      <ul id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="titlu-principal">
+  <div class="contenitor hero-in">
+    <div class="hero-text">
+      <h1 id="titlu-principal">Not Just Coffee</h1>
+      <p class="lead">Coffee, cuppings, and classes in Charlotte.</p>
+      <div class="actiuni">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Not+Just+Coffee+Charlotte">Open in Google Maps</a>
+        <a class="btn btn-contur" href="#locations">See all five locations</a>
+      </div>
+    </div>
+
+    <figure class="ceasca">
+      <img src="img/4.jpg" alt="A barista pouring milk into a latte at the counter" loading="eager">
+    </figure>
+  </div>
+</section>
+
+<section id="about" class="sectiune" aria-labelledby="despre-titlu">
+  <div class="contenitor about-grid">
+    <figure class="foto-mare" data-jarvis="apare">
+      <img src="img/3.jpg" alt="A barista serving a customer at the cafe counter" loading="lazy">
+    </figure>
+    <div data-jarvis="apare">
+      <h2 class="titlu" id="despre-titlu">A cafe with five locations in Charlotte</h2>
+      <p class="text-mare">Not Just Coffee is a cafe in Charlotte that runs coffee cuppings and classes. Each of our five locations has its own hours, listed below.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="sectiune fundal-lapte" aria-labelledby="meniu-titlu">
+  <div class="contenitor">
+    <h2 class="titlu" id="meniu-titlu" data-jarvis="apare">Menu</h2>
+    <ul class="menu-lista">
+      <li data-jarvis="apare">
+        <h3>Coffee</h3>
+        <p>Served at the cafe.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Coffee cuppings</h3>
+        <p>Coffee cuppings available at the cafe.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Classes</h3>
+        <p>Classes, along with coffee cuppings, are the services we offer.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sectiune fundal-espresso" aria-labelledby="galerie-titlu">
+  <div class="contenitor">
+    <h2 class="titlu" id="galerie-titlu" data-jarvis="apare">Around the cafe</h2>
+    <div class="galerie-grid" data-jarvis="galerie">
+      <figure tabindex="0" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Cafe interior with furniture, framed walls and a large window" loading="lazy">
+      </figure>
+      <figure tabindex="0" data-jarvis="apare">
+        <img src="img/5.jpg" alt="A cup of coffee on a table" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="locations" class="sectiune" aria-labelledby="locatii-titlu">
+  <div class="contenitor">
+    <h2 class="titlu" id="locatii-titlu" data-jarvis="apare">Our five locations in Charlotte</h2>
+    <ul class="locatii">
+      <li data-jarvis="apare">
+        <h3>224 E 7th St</h3>
+        <p><span>Mon-Thu 8-5</span><span>Fri-Sat 8-6</span><span>Sun 9-5</span></p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>2000 South Blvd</h3>
+        <p><span>Mon-Fri 7-6</span><span>Sat-Sun 7:30-6</span></p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>421 Providence Road</h3>
+        <p><span>Mon-Fri 7-3</span><span>Sat 8-3</span></p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>2230 Park Road</h3>
+        <p><span>Mon-Fri 7-5</span><span>Sat-Sun 7:30-5</span></p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>1026 Jay Street</h3>
+        <p><span>Mon-Fri 7-5</span><span>Sat-Sun 7:30-5</span></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="visit" class="sectiune fundal-lapte" aria-labelledby="vizita-titlu">
+  <div class="contenitor vizita-grid">
+    <div data-jarvis="apare">
+      <h2 class="titlu" id="vizita-titlu">Visit us</h2>
+      <p class="text-mare">Open the map, or use Google Maps for directions to any of the five locations.</p>
+      <a class="btn btn-inchis" href="https://www.google.com/maps/search/?api=1&amp;query=Not+Just+Coffee+Charlotte">Open in Google Maps</a>
+    </div>
+    <iframe class="harta" data-jarvis="apare" title="Map of the Not Just Coffee area in Charlotte" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-80.864899,35.207291,-80.856899,35.211291&amp;layer=mapnik&amp;marker=35.209291,-80.860899" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+  </div>
+</section>
+
+</main>
+
+<footer class="subsol">
+  <div class="contenitor">
+    <div class="subsol-in">
+      <div>
+        <p class="marca-f">Not Just Coffee</p>
+        <p class="mic">Coffee, cuppings, and classes in Charlotte.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="credit">
+      <p class="mic">Website concept (demo)</p>
+      <p class="mic">Photos: Illustrative photos from Pixabay: uh_yeah_20101995, ALEXNEWWORLD, StockSnap, picturexphotobnb, 13758299</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
