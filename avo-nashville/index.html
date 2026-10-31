@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AVO | Plant-based restaurant in Nashville</title>
+<meta name="description" content="AVO is a plant-based restaurant with gluten-free options in oneC1ty, just west of downtown Nashville.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&amp;family=Karla:wght@400;500;700&amp;display=swap">
+<style>
+:root{
+  --crem:#F3EDE2;
+  --rosu:#A4161A;
+  --negru:#1B1B1B;
+  --lemn:#7B5B3A;
+  --linie:rgba(27,27,27,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;
+  background:var(--crem);
+  color:var(--negru);
+  font-family:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+}
+h1{font-size:clamp(5.5rem,22vw,11rem);line-height:.92;letter-spacing:-.03em}
+h2{font-size:clamp(2.5rem,6vw,4.25rem)}
+h3{font-size:1.45rem;line-height:1.15}
+em{font-style:italic;font-weight:500;color:var(--rosu)}
+p{margin:0}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+.contenitor{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+.seccion{padding:clamp(4.5rem,11vw,8rem) 0}
+
+/* Top bar: translucent, glass */
+.antet{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(243,237,226,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s var(--ease),border-color .4s var(--ease);
+}
+.antet.derulat{
+  background:rgba(243,237,226,.92);
+  border-bottom-color:rgba(123,91,58,.28);
+}
+.antet-interior{
+  position:relative;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 1.25rem;
+  height:4.5rem;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.marca{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:2rem;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.06em;
+  text-decoration:none;
+  color:var(--negru);
+  padding:.5rem 0;
+}
+.antet-dreapta{margin-left:auto;display:flex;align-items:center;gap:.5rem}
+.meniu-buton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  min-width:44px;
+  padding:0 .9rem;
+  background:transparent;
+  color:var(--negru);
+  border:1px solid rgba(27,27,27,.3);
+  border-radius:2px;
+  font-family:"Karla",system-ui,sans-serif;
+  font-size:.9rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .15s var(--ease);
+}
+.meniu-buton:active{transform:scale(.97)}
+.nav-lista{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  display:none;
+  flex-direction:column;
+  margin:0;
+  padding:.5rem 1.25rem 1rem;
+  list-style:none;
+  background:var(--crem);
+  border-bottom:1px solid rgba(123,91,58,.28);
+}
+.nav-lista.deschis{display:flex}
+.nav-lista a{
+  display:flex;
+  align-items:center;
+  min-height:44px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.4rem;
+  font-weight:500;
+  text-decoration:none;
+  border-bottom:1px solid var(--linie);
+}
+.nav-lista li:last-child a{border-bottom:0}
+
+/* Buttons */
+.butoane{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.boton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:0 1.6rem;
+  font-family:"Karla",system-ui,sans-serif;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  text-decoration:none;
+  text-align:center;
+  background:var(--rosu);
+  color:var(--crem);
+  border:1px solid var(--rosu);
+  border-radius:2px;
+  transition:background-color .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .15s var(--ease);
+}
+.boton:hover{background:var(--negru);border-color:var(--negru);color:var(--crem)}
+.boton:active{transform:scale(.97)}
+.boton-contur{background:transparent;color:var(--negru);border-color:var(--negru)}
+.boton-contur:hover{background:var(--negru);color:var(--crem)}
+.boton-mic{min-height:44px;padding:0 1rem;font-size:.9rem}
+
+/* Hero */
+.intro{
+  position:relative;
+  overflow:hidden;
+  max-width:1120px;
+  margin:0 auto;
+  padding:2.5rem 1.25rem 4.5rem;
+  display:grid;
+  gap:2.5rem;
+  align-items:center;
+}
+.intro-text{position:relative;z-index:1}
+.slogan{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(1.6rem,4.5vw,2.2rem);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:-.01em;
+  margin-top:1.25rem;
+}
+.plata{
+  position:relative;
+  isolation:isolate;
+  margin:0;
+  justify-self:center;
+  width:min(76vw,400px);
+  aspect-ratio:1;
+}
+.plata::before{
+  content:"";
+  position:absolute;
+  inset:-16%;
+  z-index:-1;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(164,22,26,.14) 0%,rgba(164,22,26,0) 62%);
+  animation:respira 10s ease-in-out infinite alternate;
+}
+.plata img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  box-shadow:0 0 0 .6rem var(--crem),0 0 0 .7rem rgba(123,91,58,.45);
+}
+@keyframes respira{
+  from{transform:scale(.94);opacity:.55}
+  to{transform:scale(1.05);opacity:1}
+}
+
+/* Section headings with the embroidered border */
+.titlu{max-width:40rem}
+.motiv{
+  display:block;
+  width:100%;
+  max-width:520px;
+  height:auto;
+  margin-top:1.25rem;
+  overflow:visible;
+  --fir:var(--lemn);
+  --cusatura:var(--rosu);
+}
+.motiv path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.motiv .fir{stroke:var(--fir);stroke-width:.8}
+.motiv .cusatura{stroke:var(--cusatura);stroke-width:2}
+
+/* About */
+.sobre-grila{display:grid;gap:2.5rem}
+.text-lead{font-size:1.15rem;line-height:1.6;max-width:36rem}
+.foto-larga{margin:3.5rem 0 0}
+.foto-larga img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  border-radius:2px;
+}
+.avantaje{
+  list-style:none;
+  margin:3.5rem 0 0;
+  padding:0;
+  display:grid;
+}
+.avantaje li{padding:1.5rem 0;border-top:1px solid var(--linie)}
+.avantaje p{margin-top:.5rem}
+
+/* Menu, on wood */
+.meniu-sectiune{background:var(--lemn);color:var(--crem)}
+.meniu-sectiune em{color:var(--crem)}
+.meniu-sectiune .motiv{--fir:rgba(243,237,226,.7);--cusatura:var(--crem)}
+.meniu-grila{display:grid;gap:3rem}
+.plata-mica{
+  margin:0;
+  justify-self:center;
+  width:min(78vw,340px);
+  aspect-ratio:1;
+}
+.plata-mica img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+  box-shadow:0 0 0 .5rem var(--lemn),0 0 0 .6rem rgba(243,237,226,.5);
+}
+.menu-lista{list-style:none;margin:2.5rem 0 0;padding:0}
+.menu-lista li{padding:1.5rem 0;border-top:1px solid rgba(243,237,226,.3)}
+.menu-lista li:last-child{border-bottom:1px solid rgba(243,237,226,.3)}
+.menu-lista p{margin-top:.4rem;color:rgba(243,237,226,.92)}
+
+/* Visit, on black */
+.vizita{background:var(--negru);color:var(--crem)}
+.vizita em{color:var(--crem)}
+.vizita .motiv{--fir:rgba(243,237,226,.4);--cusatura:var(--crem)}
+.vizita-grila{display:grid;gap:3rem}
+.adresa{
+  font-style:normal;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.6rem;
+  font-weight:500;
+  line-height:1.3;
+  margin-top:2.5rem;
+}
+.program{margin:2rem 0 0;border-top:1px solid rgba(243,237,226,.2)}
+.program div{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1rem 0;
+  border-bottom:1px solid rgba(243,237,226,.2);
+}
+.program dt{font-weight:500}
+.program dd{margin:0;text-align:right}
+.vizita .boton-contur{color:var(--crem);border-color:var(--crem)}
+.vizita .boton-contur:hover{background:var(--crem);color:var(--negru)}
+.harta-cadru iframe{
+  display:block;
+  width:100%;
+  height:300px;
+  border:1px solid rgba(243,237,226,.25);
+  border-radius:2px;
+}
+
+/* Footer */
+.subsol{
+  background:var(--negru);
+  color:rgba(243,237,226,.78);
+  border-top:1px solid rgba(243,237,226,.15);
+  padding:2.5rem 0 3rem;
+  font-size:.9rem;
+}
+.subsol-grila{display:grid;gap:.9rem}
+.marca-mare{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:2rem;
+  font-weight:600;
+  line-height:1;
+  letter-spacing:.06em;
+  color:var(--crem);
+}
+
+/* Reveal on scroll (only when the script marks html.js) */
+.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translateY(16px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* The stitch: the border sews itself as it enters the screen */
+.js .motiv path{
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  transition:stroke-dashoffset 2.6s cubic-bezier(.45,0,.25,1);
+}
+.js .motiv .cusatura{transition:stroke-dashoffset 3.2s cubic-bezier(.45,0,.25,1) .2s}
+.js .vizibil .motiv path{stroke-dashoffset:0}
+
+/* Breakpoints */
+@media (min-width:600px){
+  .meniu-grila{grid-template-columns:1fr 1fr}
+}
+@media (min-width:860px){
+  .intro{
+    grid-template-columns:1.05fr .95fr;
+    gap:4rem;
+    padding:4rem 1.25rem 6rem;
+    min-height:calc(100vh - 4.5rem);
+  }
+  .plata{width:min(100%,460px)}
+  .meniu-buton{display:none}
+  .nav-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    gap:2.25rem;
+    margin:0 0 0 auto;
+    padding:0;
+    background:none;
+    border:0;
+  }
+  .nav-lista a{
+    min-height:0;
+    border:0;
+    font-family:"Karla",system-ui,sans-serif;
+    font-size:.95rem;
+    font-weight:500;
+    letter-spacing:.02em;
+    text-decoration:none;
+  }
+  .nav-lista a:hover{color:var(--rosu)}
+  .nav-lista li:last-child a{border:0}
+  .antet-dreapta{margin-left:1.5rem}
+  .sobre-grila{grid-template-columns:1fr 1fr;gap:4rem;align-items:end}
+  .foto-larga img{aspect-ratio:21/9;object-position:50% 60%}
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+  .avantaje li{border-top:1px solid var(--linie)}
+  .meniu-grila{grid-template-columns:.8fr 1.2fr;align-items:center;gap:5rem}
+  .vizita-grila{grid-template-columns:1fr 1fr;align-items:start;gap:5rem}
+  .harta-cadru iframe{height:420px}
+  .subsol-grila{grid-template-columns:auto 1fr auto;align-items:center;gap:2.5rem}
+  .subsol-grila p:last-child{text-align:right}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet.derulat{background:var(--crem)}
+}
+@media (prefers-contrast:more){
+  :root{--linie:rgba(27,27,27,.6)}
+  .boton{border-width:2px}
+  .meniu-buton{border-color:var(--negru)}
+  .slogan{font-weight:600}
+}
+@media (prefers-reduced-motion:reduce){
+  .plata::before{animation:none}
+  .js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+  .js .motiv path{transition:none}
+  .boton,.meniu-buton,.antet{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-interior">
+    <a class="marca" href="#top" aria-label="AVO, back to top">AVO</a>
+    <ul class="nav-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#despre">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Find us</a></li>
+    </ul>
+    <div class="antet-dreapta">
+      <a class="boton boton-mic" href="tel:+16153292377">Call now</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" id="top">
+    <div class="intro-text">
+      <h1>AVO</h1>
+      <p class="slogan">Plant-based food in oneC1ty</p>
+      <div class="butoane">
+        <a class="boton" href="tel:+16153292377">Call (615) 329-2377</a>
+        <a class="boton boton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=AVO+Nashville">Get directions</a>
+      </div>
+    </div>
+    <figure class="plata">
+      <img src="img/1.jpg" width="800" height="800" alt="A bowl of curry with vegetables, served as a plant-based dish">
+    </figure>
+  </section>
+
+  <section class="seccion" id="despre">
+    <div class="contenitor">
+      <div class="sobre-grila">
+        <div class="titlu" data-jarvis="apare">
+          <h2>A plant-based kitchen in <em>oneC1ty</em></h2>
+          <svg class="motiv" viewbox="0 0 600 30" aria-hidden="true" focusable="false">
+            <path class="fir" pathlength="1" d="M0 15H600"/>
+            <path class="cusatura" pathlength="1" d="M10 10L20 20M20 10L10 20M40 10L50 20M50 10L40 20M70 10L80 20M80 10L70 20M100 10L110 20M110 10L100 20M130 10L140 20M140 10L130 20M160 10L170 20M170 10L160 20M190 10L200 20M200 10L190 20M220 10L230 20M230 10L220 20M250 10L260 20M260 10L250 20M280 10L290 20M290 10L280 20M310 10L320 20M320 10L310 20M340 10L350 20M350 10L340 20M370 10L380 20M380 10L370 20M400 10L410 20M410 10L400 20M430 10L440 20M440 10L430 20M460 10L470 20M470 10L460 20M490 10L500 20M500 10L490 20M520 10L530 20M530 10L520 20M550 10L560 20M560 10L550 20M580 10L590 20M590 10L580 20"/>
+          </svg>
+        </div>
+        <p class="text-lead" data-jarvis="apare">AVO makes plant-based restaurant food in oneC1ty, just west of downtown Nashville. The menu includes gluten-free options. Reservations are available for your visit.</p>
+      </div>
+
+      <figure class="foto-larga" data-jarvis="apare">
+        <img src="img/2.jpg" width="1200" height="900" alt="Fresh vegetables on a table, including avocado and asparagus">
+      </figure>
+
+      <ul class="avantaje">
+        <li data-jarvis="apare">
+          <h3>Plant-based menu</h3>
+          <p>Plant-based food for all guests.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Central location</h3>
+          <p>Close to downtown Nashville.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Gluten-free</h3>
+          <p>Gluten-free menu options available.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion meniu-sectiune" id="menu">
+    <div class="contenitor meniu-grila">
+      <figure class="plata-mica" data-jarvis="apare">
+        <img src="img/3.jpg" width="800" height="800" alt="Fresh broccoli and carrots, the vegetables used in the kitchen">
+      </figure>
+      <div>
+        <div class="titlu" data-jarvis="apare">
+          <h2><em>Menu</em></h2>
+          <svg class="motiv" viewbox="0 0 600 30" aria-hidden="true" focusable="false">
+            <path class="fir" pathlength="1" d="M0 15H600"/>
+            <path class="cusatura" pathlength="1" d="M10 10L20 20M20 10L10 20M40 10L50 20M50 10L40 20M70 10L80 20M80 10L70 20M100 10L110 20M110 10L100 20M130 10L140 20M140 10L130 20M160 10L170 20M170 10L160 20M190 10L200 20M200 10L190 20M220 10L230 20M230 10L220 20M250 10L260 20M260 10L250 20M280 10L290 20M290 10L280 20M310 10L320 20M320 10L310 20M340 10L350 20M350 10L340 20M370 10L380 20M380 10L370 20M400 10L410 20M410 10L400 20M430 10L440 20M440 10L430 20M460 10L470 20M470 10L460 20M490 10L500 20M500 10L490 20M520 10L530 20M530 10L520 20M550 10L560 20M560 10L550 20M580 10L590 20M590 10L580 20"/>
+          </svg>
+        </div>
+        <ul class="menu-lista">
+          <li data-jarvis="apare">
+            <h3>Plant-based restaurant food</h3>
+            <p>Plant-based restaurant food is served.</p>
+          </li>
+          <li data-jarvis="apare">
+            <h3>Gluten-free menu options</h3>
+            <p>There are gluten-free menu options.</p>
+          </li>
+          <li data-jarvis="apare">
+            <h3>Reservations</h3>
+            <p>Reservations are offered.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion vizita" id="contact">
+    <div class="contenitor vizita-grila">
+      <div>
+        <div class="titlu" data-jarvis="apare">
+          <h2>Visit <em>AVO</em></h2>
+          <svg class="motiv" viewbox="0 0 600 30" aria-hidden="true" focusable="false">
+            <path class="fir" pathlength="1" d="M0 15H600"/>
+            <path class="cusatura" pathlength="1" d="M10 10L20 20M20 10L10 20M40 10L50 20M50 10L40 20M70 10L80 20M80 10L70 20M100 10L110 20M110 10L100 20M130 10L140 20M140 10L130 20M160 10L170 20M170 10L160 20M190 10L200 20M200 10L190 20M220 10L230 20M230 10L220 20M250 10L260 20M260 10L250 20M280 10L290 20M290 10L280 20M310 10L320 20M320 10L310 20M340 10L350 20M350 10L340 20M370 10L380 20M380 10L370 20M400 10L410 20M410 10L400 20M430 10L440 20M440 10L430 20M460 10L470 20M470 10L460 20M490 10L500 20M500 10L490 20M520 10L530 20M530 10L520 20M550 10L560 20M560 10L550 20M580 10L590 20M590 10L580 20"/>
+          </svg>
+        </div>
+        <address class="adresa" data-jarvis="apare">3 C1TY Avenue<br>Nashville</address>
+        <dl class="program" data-jarvis="apare">
+          <div>
+            <dt>Tuesday to Saturday</dt>
+            <dd>11am to 9pm</dd>
+          </div>
+          <div>
+            <dt>Sunday</dt>
+            <dd>11am to 8pm</dd>
+          </div>
+        </dl>
+        <div class="butoane" data-jarvis="apare">
+          <a class="boton" href="tel:+16153292377">Call (615) 329-2377</a>
+          <a class="boton boton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=AVO+Nashville">Open in Google Maps</a>
+        </div>
+      </div>
+      <div class="harta-cadru" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.824117,36.150632,-86.816117,36.154632&amp;layer=mapnik&amp;marker=36.152632,-86.820117" title="Map showing AVO at 3 C1TY Avenue, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="contenitor subsol-grila">
+    <p class="marca-mare">AVO</p>
+    <p>Plant-based restaurant in oneC1ty, just west of downtown Nashville.</p>
+    <p>Website concept (demo). Illustrative photos from Pixabay: joannawielgosz, JillWellington, RitaE</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
