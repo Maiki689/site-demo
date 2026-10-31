@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midtown Cafe, Nashville | Breakfast, lunch, and dinner</title>
+<meta name="description" content="Midtown Cafe serves breakfast, lunch, and dinner on 19th Avenue South in Nashville.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+:root{
+  --ink:#141311;
+  --moss:#6B7A4B;
+  --mustard:#D4A72C;
+  --cream:#EDE6D8;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--ink);
+  color:var(--cream);
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,iframe{display:block;max-width:100%}
+a{color:inherit}
+em{font-style:italic;color:var(--mustard)}
+:focus-visible{outline:2px solid var(--mustard);outline-offset:3px}
+
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:-.02em;
+  line-height:1.05;
+}
+
+/* Header */
+.antet{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:20;
+  padding:1rem 0;
+  background:rgba(20,19,17,.28);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-bottom:1px solid transparent;
+  transition:background-color .5s var(--ease),padding .5s var(--ease),border-color .5s var(--ease);
+}
+.antet.derulat{
+  padding:.65rem 0;
+  background:rgba(20,19,17,.8);
+  border-bottom-color:rgba(107,122,75,.45);
+}
+.antet-in{
+  position:relative;
+  width:min(calc(100% - 2.5rem),72rem);
+  margin-inline:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.marca{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  font-family:var(--serif);
+  font-size:1.5rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+}
+nav{position:static}
+.meniu-buton{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  min-width:44px;
+  padding:0 1.1rem;
+  background:none;
+  border:1px solid rgba(237,230,216,.45);
+  border-radius:2px;
+  color:var(--cream);
+  font:500 .9375rem/1 var(--sans);
+  cursor:pointer;
+  transition:transform .3s var(--ease),border-color .3s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton:hover{border-color:var(--cream)}
+.meniu-lista{
+  display:none;
+  position:absolute;
+  top:calc(100% + 1rem);
+  left:-1.25rem;
+  right:-1.25rem;
+  flex-direction:column;
+  list-style:none;
+  padding:.5rem 1.25rem 1.25rem;
+  background:rgba(20,19,17,.97);
+  border-top:1px solid rgba(107,122,75,.5);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  font-size:1.0625rem;
+  text-decoration:none;
+  border-bottom:1px solid rgba(107,122,75,.6);
+  transition:color .3s var(--ease);
+}
+.meniu-lista a:hover{color:var(--mustard)}
+.meniu-lista li:last-child{margin-top:1rem}
+.meniu-lista li:last-child a{border:0}
+.meniu-lista .buton{width:100%;min-height:52px}
+
+/* Buttons */
+.buton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:.75rem 1.4rem;
+  border:1px solid transparent;
+  border-radius:2px;
+  font:500 1rem/1.1 var(--sans);
+  text-decoration:none;
+  text-align:center;
+  transition:transform .35s var(--ease),background-color .35s var(--ease),border-color .35s var(--ease),color .35s var(--ease);
+  -webkit-tap-highlight-color:transparent;
+}
+.buton:active{transform:scale(.97)}
+.buton-principal{background:var(--mustard);color:var(--ink)}
+.buton-principal:hover{background:var(--cream)}
+.buton-contur{border-color:rgba(237,230,216,.55);color:var(--cream)}
+.buton-contur:hover{border-color:var(--cream);background:rgba(237,230,216,.08)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.25rem}
+
+/* Chapters: full-bleed photo with text over it */
+.cadru{width:min(calc(100% - 2.5rem),72rem);margin-inline:auto}
+.capitol{
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  min-height:92vh;
+  min-height:92svh;
+  overflow:hidden;
+  isolation:isolate;
+  background:var(--ink);
+}
+.capitol-intai{min-height:100vh;min-height:100svh}
+.capitol .cadru{padding-top:9rem;padding-bottom:4rem}
+.foto{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.foto img{width:100%;height:100%;object-fit:cover;object-position:center}
+.voal{
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(to top,rgba(20,19,17,.94) 0%,rgba(20,19,17,.62) 42%,rgba(20,19,17,.2) 100%);
+}
+.capitol-intai .voal{
+  background:linear-gradient(to top,rgba(20,19,17,.94) 0%,rgba(20,19,17,.66) 40%,rgba(20,19,17,.25) 100%);
+}
+
+/* About: photo band on top, text sits on the solid dark area below it */
+.capitol.capitol-despre{
+  display:block;
+  min-height:0;
+  padding-bottom:0;
+}
+.capitol-despre .foto{
+  position:relative;
+  inset:auto;
+  z-index:0;
+  height:clamp(16rem,52vh,30rem);
+}
+.capitol-despre .foto img{object-position:center 35%}
+.capitol-despre .voal{
+  top:0;
+  left:0;
+  right:0;
+  bottom:auto;
+  height:clamp(16rem,52vh,30rem);
+  z-index:0;
+  background:linear-gradient(to bottom,rgba(20,19,17,.04) 0%,rgba(20,19,17,.12) 55%,rgba(20,19,17,1) 100%);
+}
+.capitol.capitol-despre .cadru{padding-top:2rem;padding-bottom:5rem}
+
+.eticheta{
+  margin:0 0 1.25rem;
+  font-size:.75rem;
+  font-weight:500;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--mustard);
+}
+h1{
+  font-size:clamp(3.6rem,18vw,10.5rem);
+  line-height:.95;
+}
+h2{
+  font-size:clamp(2.6rem,7.5vw,6rem);
+  max-width:14ch;
+}
+.slogan{
+  margin-top:1.25rem;
+  max-width:28ch;
+  font-size:clamp(1.125rem,2vw,1.375rem);
+  line-height:1.4;
+}
+.texte p{
+  margin-top:1.25rem;
+  max-width:36ch;
+  font-size:clamp(1.0625rem,1.4vw,1.25rem);
+  color:rgba(237,230,216,.92);
+}
+
+/* Menu list */
+.carte{
+  list-style:none;
+  margin-top:2.5rem;
+  max-width:40rem;
+  border-top:1px solid var(--moss);
+}
+.carte li{
+  padding:1.25rem 0;
+  border-bottom:1px solid var(--moss);
+}
+.carte h3{font-size:clamp(1.75rem,4vw,2.4rem)}
+.carte p{
+  margin-top:.35rem;
+  font-size:.95rem;
+  color:rgba(237,230,216,.85);
+}
+
+/* Visit information */
+.info{
+  background:var(--ink);
+  padding:5rem 0 4.5rem;
+}
+.info-grid{display:grid;gap:3rem}
+.info h3{
+  margin-bottom:1.25rem;
+  font-size:clamp(1.75rem,3.5vw,2.25rem);
+}
+.info p{
+  margin-top:.5rem;
+  max-width:36ch;
+  color:rgba(237,230,216,.9);
+}
+.ore{
+  display:grid;
+  gap:.25rem;
+}
+.ore dt{
+  margin-top:.75rem;
+  font-weight:500;
+}
+.ore dt:first-child{margin-top:0}
+.ore dd{
+  color:rgba(237,230,216,.85);
+}
+.harta{
+  width:100%;
+  height:clamp(18rem,45vw,26rem);
+  border:0;
+  border-radius:2px;
+  filter:grayscale(.35) contrast(.95);
+}
+.harta-bloc p{margin-top:.5rem}
+
+/* Footer */
+.pe{
+  padding:3rem 0 2.5rem;
+  border-top:1px solid var(--moss);
+  font-size:.875rem;
+  color:rgba(237,230,216,.78);
+}
+.pe p{margin-top:.5rem}
+.marca-pe{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  color:var(--cream);
+}
+
+/* Reveal on scroll (only when JavaScript marks the page) */
+html.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translateY(1.25rem);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil{
+  opacity:1;
+  transform:none;
+}
+
+/* Slow zoom into the photos while scrolling */
+@keyframes apropiere{
+  from{transform:scale(1)}
+  to{transform:scale(1.12)}
+}
+@supports (animation-timeline: view()){
+  .foto img{
+    animation:apropiere linear both;
+    animation-timeline:view();
+  }
+  .capitol-intai .foto img{
+    animation-timeline:scroll(root);
+    animation-range:0px 70vh;
+  }
+}
+
+/* Desktop */
+@media (min-width:600px){
+  .texte p{margin-top:1.5rem}
+}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    display:flex;
+    position:static;
+    flex-direction:row;
+    align-items:center;
+    gap:2.25rem;
+    padding:0;
+    background:none;
+    border:0;
+  }
+  .meniu-lista li:last-child{margin-top:0}
+  .meniu-lista a{
+    min-height:44px;
+    font-size:.95rem;
+    border:0;
+  }
+  .meniu-lista .buton{
+    width:auto;
+    min-height:44px;
+    padding:.6rem 1.1rem;
+  }
+  .info-grid{
+    grid-template-columns:1fr 1fr;
+    gap:4rem 5rem;
+  }
+  .harta-bloc{grid-column:1/-1}
+  .capitol .cadru{padding-bottom:6rem}
+  .capitol.capitol-despre .cadru{padding-top:2.5rem;padding-bottom:7rem}
+}
+
+/* Reduced motion: only short fades, no zoom */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .foto img{animation:none}
+  html.js [data-jarvis="apare"]{
+    transform:none;
+    transition:opacity .4s linear;
+  }
+  .buton,.meniu-buton{transition-duration:.2s}
+}
+
+/* Accessibility preferences */
+@media (prefers-contrast:more){
+  .voal,.capitol-intai .voal{background:rgba(20,19,17,.86)}
+  .capitol-despre .voal{background:linear-gradient(to bottom,rgba(20,19,17,.5) 0%,rgba(20,19,17,.7) 55%,rgba(20,19,17,1) 100%)}
+  .texte p,.info p,.carte p{color:var(--cream)}
+  .buton-contur{border-color:var(--cream)}
+  .carte,.carte li,.meniu-lista a{border-color:var(--cream)}
+  .antet.derulat{background:var(--ink)}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{
+    background:var(--ink);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">Midtown Cafe</a>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#meniu">Meals</a></li>
+        <li><a href="#vizita">Visit</a></li>
+        <li><a class="buton buton-principal" href="tel:+16153207176">Call now</a></li>
+      </ul>
+    </nav>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+  </div>
+</header>
+
+<main>
+
+<section class="capitol capitol-intai" aria-labelledby="titlu-principal">
+  <div class="foto">
+    <img src="img/3.jpg" alt="A dinner table set with wine glasses, plates and napkins" fetchpriority="high">
+  </div>
+  <div class="voal" aria-hidden="true"></div>
+  <div class="cadru">
+    <h1 id="titlu-principal">Midtown Cafe</h1>
+    <p class="slogan">Breakfast and lunch every day, dinner Monday to Saturday.</p>
+    <div class="actiuni">
+      <a class="buton buton-principal" href="tel:+16153207176">Call (615) 320-7176</a>
+      <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Midtown+Cafe+Nashville">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section class="capitol capitol-despre" id="despre" aria-labelledby="t-despre">
+  <div class="foto">
+    <img src="img/5.jpg" alt="A cup of coffee on a table" loading="lazy">
+  </div>
+  <div class="voal" aria-hidden="true"></div>
+  <div class="cadru texte" data-jarvis="apare">
+    <h2 id="t-despre">Come in for any meal of the day</h2>
+    <p>Midtown Cafe is a neighborhood spot in Nashville where you can come in for breakfast, lunch, or dinner.</p>
+    <p>Our team sets you up for a relaxed meal in the heart of the city.</p>
+  </div>
+</section>
+
+<section class="capitol" id="meniu" aria-labelledby="t-meniu">
+  <div class="foto">
+    <img src="img/2.jpg" alt="Toast with avocado and a healthy breakfast plate" loading="lazy">
+  </div>
+  <div class="voal" aria-hidden="true"></div>
+  <div class="cadru texte" data-jarvis="apare">
+    <p class="eticheta">What we serve</p>
+    <h2 id="t-meniu">Three meals a <em>day</em></h2>
+    <ul class="carte">
+      <li>
+        <h3>Breakfast</h3>
+        <p>Served every day.</p>
+      </li>
+      <li>
+        <h3>Lunch</h3>
+        <p>Served every day.</p>
+      </li>
+      <li>
+        <h3>Dinner</h3>
+        <p>Served Monday to Saturday, from 4:30 PM to 8:30 PM.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="capitol" aria-labelledby="t-seara">
+  <div class="foto">
+    <img src="img/4.jpg" alt="A plate of pesto farfalle pasta" loading="lazy">
+  </div>
+  <div class="voal" aria-hidden="true"></div>
+  <div class="cadru texte" data-jarvis="apare">
+    <p class="eticheta">Evenings</p>
+    <h2 id="t-seara">Dinner starts at <em>4:30 PM</em></h2>
+    <p>We serve dinner Monday to Saturday, until 8:30 PM. On Sunday we are open from 8:00 AM to 2:00 PM.</p>
+  </div>
+</section>
+
+<section class="capitol" id="vizita" aria-labelledby="t-vizita">
+  <div class="foto">
+    <img src="img/1.jpg" alt="Diners eating together at a restaurant table" loading="lazy">
+  </div>
+  <div class="voal" aria-hidden="true"></div>
+  <div class="cadru texte" data-jarvis="apare">
+    <p class="eticheta">Visit</p>
+    <h2 id="t-vizita">102 19th Avenue <em>South</em></h2>
+    <p>Midtown Cafe, Nashville.</p>
+    <div class="actiuni">
+      <a class="buton buton-principal" href="tel:+16153207176">Call (615) 320-7176</a>
+      <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Midtown+Cafe+Nashville">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<section class="info" aria-label="Hours, parking, and map">
+  <div class="cadru info-grid">
+    <div data-jarvis="apare">
+      <h3>Hours</h3>
+      <dl class="ore">
+        <dt>Monday to Saturday</dt>
+        <dd>8:00 AM to 2:00 PM and 4:30 PM to 8:30 PM</dd>
+        <dt>Sunday</dt>
+        <dd>8:00 AM to 2:00 PM</dd>
+      </dl>
+    </div>
+    <div data-jarvis="apare">
+      <h3>Parking and shuttle</h3>
+      <p>Valet parking is complimentary for all guests.</p>
+      <p>We offer a shuttle for event venues.</p>
+    </div>
+    <div class="harta-bloc" data-jarvis="apare">
+      <h3>Find us</h3>
+      <p>102 19th Avenue South, Nashville</p>
+      <iframe class="harta" src="https://www.openstreetmap.org/export/embed.html?bbox=-86.800884,36.149974,-86.792884,36.153974&amp;layer=mapnik&amp;marker=36.151974,-86.796884" title="Map of Midtown Cafe at 102 19th Avenue South, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pe">
+  <div class="cadru">
+    <p class="marca-pe">Midtown Cafe</p>
+    <p>102 19th Avenue South, Nashville</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: Mariakray, Heribertoaguirrefotograf, neshom, Pexels, fancycrave1</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
