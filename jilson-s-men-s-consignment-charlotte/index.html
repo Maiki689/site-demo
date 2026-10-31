@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jilson's Men's Consignment | Myers Park, Charlotte</title>
+<meta name="description" content="Men's consignment clothing, accessories, shoes, artwork and home decor in Myers Park, Charlotte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Syne:wght@600;700;800&amp;display=swap">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --negru:#121212;
+  --albastru:#0f4c81;
+  --text-moale:#333;
+  --linie:rgba(18,18,18,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--alb);
+  color:var(--negru);
+  font:400 1rem/1.5 Inter,system-ui,-apple-system,sans-serif;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  font-family:Syne,system-ui,sans-serif;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+  font-weight:700;
+}
+p{margin:0}
+.wrap{width:min(1200px,calc(100% - 2.5rem));margin-inline:auto}
+section{scroll-margin-top:80px}
+.sec{padding:clamp(4rem,9vw,7.5rem) 0}
+h2{font-size:clamp(2rem,5vw,3.6rem)}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--text-moale);max-width:36rem;line-height:1.5}
+.lead + .lead{margin-top:1rem}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 1.35rem;
+  border:1.5px solid var(--albastru);
+  background:var(--albastru);color:#fff;
+  font:600 1rem/1 Inter,sans-serif;text-decoration:none;
+  border-radius:2px;cursor:pointer;
+  transition:transform .15s var(--ease),background-color .3s,color .3s,border-color .3s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{background:var(--negru);border-color:var(--negru)}
+.btn:active{transform:scale(.97)}
+.btn-contur{background:transparent;color:var(--negru);border-color:var(--negru)}
+.btn-contur:hover{background:var(--negru);color:#fff}
+.btn-mic{min-height:44px;padding:0 1rem;white-space:nowrap}
+a:focus-visible,button:focus-visible{outline:3px solid var(--albastru);outline-offset:3px}
+
+/* Top bar (glass) */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);
+  backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,background-color .3s;
+}
+.antet.derulat{border-bottom-color:var(--linie);background:rgba(255,255,255,.86)}
+.antet-in{
+  position:relative;
+  width:min(1200px,calc(100% - 2.5rem));margin-inline:auto;
+  min-height:64px;
+  display:flex;align-items:center;gap:1rem;
+}
+.marca{font:800 1.3rem/1 Syne,sans-serif;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.meniu-btn{
+  margin-left:auto;
+  min-height:44px;min-width:64px;padding:0 .9rem;
+  background:none;border:1px solid var(--linie);border-radius:2px;
+  font:600 .95rem/1 Inter,sans-serif;color:var(--negru);cursor:pointer;
+  transition:transform .15s var(--ease);
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-btn[aria-expanded="true"]{border-color:var(--negru)}
+.lista{display:none;list-style:none;margin:0;padding:0}
+.lista.deschis{
+  display:flex;flex-direction:column;
+  position:absolute;top:100%;left:0;right:0;
+  background:#fff;border-bottom:1px solid var(--linie);
+  padding:.5rem 0 1rem;
+}
+.lista a{
+  display:flex;align-items:center;min-height:48px;padding:0 .25rem;
+  font-weight:500;text-decoration:none;
+}
+.lista a:hover{text-decoration:underline;text-underline-offset:4px}
+.antet-in nav{display:contents}
+
+/* Hero */
+.hero{padding:clamp(1.25rem,3vw,2.5rem) 0 clamp(2.5rem,6vw,4.5rem)}
+.hero-grid{display:grid;gap:1.75rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,8vw,6.8rem);line-height:1;letter-spacing:-.03em}
+.hero .lead{margin-top:1rem}
+.acoes{
+  display:grid;grid-template-columns:minmax(0,1fr);gap:.75rem;
+  margin-top:1.5rem;
+}
+.acoes .btn{width:100%}
+.deschis-azi{margin-top:.75rem;font-size:.95rem;color:var(--text-moale)}
+
+/* The window and its reflection (the memorable element) */
+.vitrina{
+  position:relative;overflow:hidden;margin:0;
+  background:var(--negru);
+}
+.vitrina img{
+  width:100%;
+  height:clamp(220px,28vw,280px);
+  object-fit:cover;object-position:center 35%;
+}
+.vitrina::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.38) 50%,transparent 60%);
+  transform:translateX(-120%);
+  animation:reflexie 1.6s var(--ease) .5s 1 forwards;
+  pointer-events:none;
+}
+@keyframes reflexie{
+  from{transform:translateX(-120%)}
+  to{transform:translateX(120%)}
+}
+
+/* About */
+.despre-grid{display:grid;gap:2.5rem}
+.fapte{display:grid;gap:1.5rem;margin-top:3.5rem}
+.fapte > div{border-top:1px solid var(--negru);padding-top:1.25rem}
+.fapte h3{font-size:1.2rem;margin-bottom:.5rem}
+.fapte p{color:var(--text-moale);font-size:.97rem}
+
+/* Products bento */
+.bento{display:grid;gap:12px;margin-top:3rem;grid-template-columns:1fr}
+.bento > div{
+  position:relative;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:.5rem;
+  min-height:200px;padding:1.5rem;
+  background:#fff;border:1px solid var(--linie);
+}
+.bento h3{font-size:clamp(1.3rem,2.4vw,1.75rem)}
+.bento p{color:var(--text-moale);font-size:.95rem}
+.bento .mare{background:var(--negru);border-color:var(--negru);color:#fff;min-height:320px;padding:2rem}
+.bento .mare p{color:rgba(255,255,255,.78)}
+.bento .albastru{background:var(--albastru);border-color:var(--albastru);color:#fff}
+.bento .albastru p{color:rgba(255,255,255,.88)}
+
+/* Gallery */
+.galerie-sec{background:var(--negru);color:#fff}
+.galerie-sec h2{color:#fff}
+.galerie{display:grid;gap:12px;margin-top:3rem;grid-template-columns:1fr}
+.galerie figure{
+  margin:0;position:relative;overflow:hidden;
+  background:#262626;cursor:zoom-in;
+}
+.galerie img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+@media (hover:hover){
+  .galerie figure:hover img{transform:scale(1.03)}
+}
+.galerie img{transition:transform .6s var(--ease)}
+.galerie figure.marita{
+  position:fixed;inset:0;z-index:200;margin:0;
+  display:flex;align-items:center;justify-content:center;
+  padding:1.25rem;background:rgba(18,18,18,.96);
+  cursor:zoom-out;
+}
+.galerie figure.marita img{
+  width:auto;height:auto;
+  max-width:100%;max-height:100%;
+  aspect-ratio:auto;object-fit:contain;transform:none;
+}
+html.galerie-deschisa{overflow:hidden}
+
+/* Visit */
+.contact-grid{display:grid;gap:3rem}
+.horas{margin:0;display:grid;gap:0}
+.horas > div{
+  display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;
+  padding:1.1rem 0;border-bottom:1px solid var(--linie);
+}
+.horas > div:first-child{border-top:1px solid var(--negru)}
+.horas dt{font-weight:600}
+.horas dd{margin:0;color:var(--text-moale)}
+.harta{
+  display:block;width:100%;height:340px;border:0;margin-top:3.5rem;
+  filter:grayscale(1) contrast(1.05);
+}
+
+/* Footer */
+.pied{background:var(--negru);color:#fff;padding:3rem 0}
+.pied-in{display:grid;gap:1.25rem}
+.pied-nume{font:700 1.2rem/1.2 Syne,sans-serif;letter-spacing:-.02em}
+.pied p{color:rgba(255,255,255,.72);font-size:.92rem}
+.pied nav{display:flex;flex-wrap:wrap;gap:0 1.75rem}
+.pied nav a{display:inline-flex;align-items:center;min-height:44px;color:#fff;text-decoration:none}
+.pied nav a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* Reveal on scroll (without html.js everything stays visible) */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Breakpoints */
+@media (min-width:560px){
+  .bento{grid-template-columns:1fr 1fr}
+  .bento .mare{grid-column:span 2}
+  .bento .lat{grid-column:span 2}
+  .acoes{grid-template-columns:repeat(2,16rem);justify-content:start}
+}
+@media (min-width:700px){
+  .fapte{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .galerie{grid-template-columns:1fr 1fr}
+}
+@media (min-width:861px){
+  .meniu-btn{display:none}
+  .antet-in nav{display:block;margin-left:auto}
+  .lista{
+    display:flex;flex-direction:row;gap:2.25rem;
+    position:static;padding:0;background:none;border:0;
+  }
+  .lista a{min-height:44px}
+  .hero-grid{grid-template-columns:1.05fr 1fr;gap:4rem}
+  .hero-grid > div{max-width:38rem}
+  .despre-grid{grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(220px,auto)}
+  .bento .mare{grid-column:span 2;grid-row:span 2;min-height:0}
+  .bento .lat{grid-column:span 2}
+  .galerie{grid-template-columns:repeat(3,1fr);grid-auto-rows:280px}
+  .galerie figure:first-child{grid-column:span 2;grid-row:span 2}
+  .galerie img{height:100%;aspect-ratio:auto}
+  .contact-grid{grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .pied-in{grid-template-columns:auto 1fr;align-items:center;column-gap:3rem}
+  .pied-in nav{grid-column:1 / -1}
+  .harta{height:420px}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .vitrina::after{animation:none;opacity:0}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .4s linear}
+  .btn:active,.meniu-btn:active{transform:none}
+  .galerie img{transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet{
+    background:#fff;
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+  .antet.derulat{background:#fff}
+  .vitrina::after{opacity:.5}
+}
+@media (prefers-contrast: more){
+  :root{--text-moale:#121212;--linie:rgba(18,18,18,.6)}
+  .antet{border-bottom-color:var(--negru)}
+  .btn-contur,.meniu-btn{border-width:2px}
+  .bento .mare p,.bento .albastru p{color:#fff}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">Jilson's</a>
+    <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    <nav aria-label="Main">
+      <ul class="lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#produse">Products</a></li>
+        <li><a href="#galerie">Gallery</a></li>
+        <li><a href="#contact">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-mic" href="tel:+17043349191">Call now</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Jilson's Men's Consignment</h1>
+        <p class="lead">Fresh finds for men in Myers Park, Charlotte.</p>
+        <p class="lead">Consignment clothing, accessories, shoes, artwork and home decor.</p>
+        <div class="acoes">
+          <a class="btn" href="tel:+17043349191">Call (704) 334-9191</a>
+          <a class="btn btn-contur" href="#contact">See hours and map</a>
+        </div>
+        <p class="deschis-azi">Open Tuesday to Saturday.</p>
+      </div>
+      <figure class="vitrina">
+        <img src="img/4.jpg" alt="Men's shirts and t-shirts folded on a store display" width="1200" height="1500">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="despre">
+    <div class="wrap despre-grid">
+      <div data-jarvis="apare">
+        <h2>A local shop for men updating their wardrobes and homes.</h2>
+      </div>
+      <div data-jarvis="apare">
+        <p class="lead">Jilson's Men's Consignment in Myers Park carries men's consignment clothing, accessories, and shoes. You can also find artwork and home decor in the shop.</p>
+        <p class="lead">It is a local spot for men looking to update their wardrobes and living spaces.</p>
+      </div>
+    </div>
+    <div class="wrap fapte">
+      <div data-jarvis="apare">
+        <h3>Consignment finds</h3>
+        <p>Men's clothing and accessories on consignment.</p>
+      </div>
+      <div data-jarvis="apare">
+        <h3>Home decor</h3>
+        <p>Artwork and decor items in store.</p>
+      </div>
+      <div data-jarvis="apare">
+        <h3>Local shop</h3>
+        <p>Located in Myers Park, Charlotte.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="produse" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-jarvis="apare">Products</h2>
+      <div class="bento">
+        <div class="mare" data-jarvis="apare">
+          <h3>Men's consignment clothing</h3>
+          <p>Men's consignment clothing, available in store.</p>
+        </div>
+        <div class="albastru" data-jarvis="apare">
+          <h3>Men's accessories</h3>
+          <p>Men's accessories on consignment.</p>
+        </div>
+        <div data-jarvis="apare">
+          <h3>Shoes</h3>
+          <p>Shoes for men on consignment.</p>
+        </div>
+        <div class="lat" data-jarvis="apare">
+          <h3>Artwork and home decor</h3>
+          <p>Artwork and home decor for sale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec galerie-sec" id="galerie">
+    <div class="wrap">
+      <h2 data-jarvis="apare">Gallery</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure>
+          <img src="img/1.jpg" alt="Clothing racks in a men's clothing store" width="1200" height="900" loading="lazy">
+        </figure>
+        <figure>
+          <img src="img/2.jpg" alt="Jackets and shirts hanging on a clothing rail" width="1200" height="900" loading="lazy">
+        </figure>
+        <figure>
+          <img src="img/5.jpg" alt="Pullover and scarf displayed on a mannequin" width="1200" height="900" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap contact-grid">
+      <div data-jarvis="apare">
+        <h2>Visit us in Myers Park.</h2>
+        <p class="lead">Jilson's Men's Consignment is open Tuesday to Saturday, in Myers Park, Charlotte.</p>
+        <div class="acoes">
+          <a class="btn" href="tel:+17043349191">Call (704) 334-9191</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Jilson%27s+Men%27s+Consignment+Charlotte">Open in Google Maps</a>
+        </div>
+      </div>
+      <dl class="horas" data-jarvis="apare">
+        <div>
+          <dt>Tuesday</dt>
+          <dd>10:30 am to 7 pm</dd>
+        </div>
+        <div>
+          <dt>Wednesday to Friday</dt>
+          <dd>10:30 am to 6 pm</dd>
+        </div>
+        <div>
+          <dt>Saturday</dt>
+          <dd>11 am to 4 pm</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="wrap">
+      <iframe class="harta" title="Map of Jilson's Men's Consignment in Myers Park, Charlotte" src="https://www.openstreetmap.org/export/embed.html?bbox=-80.829534,35.195943,-80.821534,35.199943&amp;layer=mapnik&amp;marker=35.197943,-80.825534" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="wrap pied-in">
+    <p class="pied-nume">Jilson's Men's Consignment</p>
+    <p>Myers Park, Charlotte</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay (Pexels, jarmoluk, ranjatm, Tho-Ge).</p>
+    <nav aria-label="Footer">
+      <a href="#despre">About</a>
+      <a href="#produse">Products</a>
+      <a href="#galerie">Gallery</a>
+      <a href="#contact">Visit</a>
+    </nav>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
