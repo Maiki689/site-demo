@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JLA Comics | Comic shop in Sacramento</title>
+<meta name="description" content="JLA Comics in Pocket-Greenhaven, Sacramento. New and vintage comics, Magic, Pokémon, One Piece and Lorcana cards, figures, toys and play events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundal:#0F1012;
+  --fundal-2:#15171B;
+  --alb:#FFFFFF;
+  --gri:#8B8F98;
+  --accent:#be123c;
+  --linie:rgba(255,255,255,.12);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--fundal);color:var(--alb);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.5;letter-spacing:0;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+figure{margin:0}
+ul{margin:0;padding:0}
+.accent{color:var(--accent)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+.seccion{padding:6rem 0}
+.seccion-inchis{background:var(--fundal-2);border-top:1px solid var(--linie);border-bottom:1px solid var(--linie)}
+.grila-doua{display:grid;gap:2.5rem}
+h2{font-size:clamp(2rem,4.6vw,3.5rem)}
+.grila-doua>div+div p+p{margin-top:1rem}
+.gri{color:var(--gri)}
+:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1.25rem;border-radius:4px;border:1px solid transparent;font-family:Inter,system-ui,sans-serif;font-size:1rem;font-weight:500;line-height:1.2;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s var(--ease),filter .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
+.btn-principal{background:var(--accent);color:#fff}
+.btn-principal:hover{filter:brightness(1.12)}
+.btn-contur{border-color:rgba(255,255,255,.26);color:#fff}
+.btn-contur:hover{border-color:#fff}
+.btn:active{transform:scale(.97)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Header (translucent bar) */
+.antet{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,16,18,.42);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:background-color .4s var(--ease),border-color .4s var(--ease)}
+.antet.derulat{background:rgba(15,16,18,.84);border-bottom-color:var(--linie)}
+.antet-interior{position:relative;display:flex;align-items:center;gap:1rem;height:64px;max-width:1200px;margin:0 auto;padding:0 1.25rem}
+.marca{font-family:"Space Grotesk",Inter,sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;color:#fff;white-space:nowrap}
+.meniu-buton{margin-left:auto;min-height:44px;min-width:44px;padding:0 1rem;background:none;border:1px solid rgba(255,255,255,.26);border-radius:4px;color:#fff;font:500 .95rem/1 Inter,system-ui,sans-serif;cursor:pointer;transition:transform .2s var(--ease),border-color .3s}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton:hover{border-color:#fff}
+.meniu-lista{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;background:rgba(15,16,18,.97);border-bottom:1px solid var(--linie);padding:.25rem 1.25rem 1.25rem}
+.meniu-lista.deschis{display:flex}
+.meniu-lista li{list-style:none}
+.link-antet{display:flex;align-items:center;min-height:48px;text-decoration:none;color:#fff;border-bottom:1px solid var(--linie);transition:color .3s}
+.meniu-lista .btn{margin-top:1rem;width:100%}
+.link-antet:hover{color:var(--gri)}
+
+/* First section: split screen */
+.inceput{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column}
+.inceput-texte{position:relative;z-index:2;padding:6.5rem 1.25rem 3rem}
+h1{font-size:clamp(3.25rem,14vw,8.5rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 1.5rem}
+.slogan{font-family:"Space Grotesk",Inter,sans-serif;font-size:clamp(1.2rem,3vw,1.6rem);font-weight:500;letter-spacing:-.01em;line-height:1.25;margin-bottom:.75rem}
+.descriere{color:var(--gri);max-width:28rem;margin-bottom:2rem}
+.program{margin-top:1.5rem;font-size:.9rem;color:var(--gri)}
+.inceput-foto{position:relative;z-index:0;margin:2.5rem 0 0;height:56svh;min-height:300px;overflow:hidden}
+.inceput-foto img{width:100%;height:100%;object-fit:cover;object-position:center}
+/* Warm light: drifts slowly, brightens when the pointer or focus is in the section */
+.lumina{position:absolute;z-index:1;left:50%;top:50%;width:110vmax;height:110vmax;margin:-55vmax 0 0 -55vmax;border-radius:50%;background:radial-gradient(closest-side,rgba(190,18,60,.42),rgba(190,18,60,.12) 45%,rgba(190,18,60,0) 100%);mix-blend-mode:screen;opacity:.5;pointer-events:none;transition:opacity .8s var(--ease);animation:derivare 24s ease-in-out infinite alternate}
+.inceput:hover .lumina,.inceput:focus-within .lumina{opacity:1}
+@keyframes derivare{
+  from{transform:translate3d(-14vw,-8vh,0)}
+  to{transform:translate3d(14vw,8vh,0)}
+}
+
+/* About */
+.lista-avantaje{list-style:none;display:grid;gap:2.5rem;margin-top:5rem}
+.lista-avantaje li{border-top:1px solid var(--linie);padding-top:1.5rem}
+.lista-avantaje h3{font-size:1.25rem;margin-bottom:.5rem}
+.lista-avantaje p{color:var(--gri)}
+
+/* Products */
+.lista-produse{list-style:none;border-bottom:1px solid var(--linie)}
+.lista-produse li{padding:1.5rem 0;border-top:1px solid var(--linie)}
+.lista-produse h3{font-size:1.2rem;margin-bottom:.35rem}
+.lista-produse p{color:var(--gri)}
+
+/* Visit */
+.visita{display:grid;gap:3rem}
+.detalii{display:grid;gap:1.5rem;margin:0 0 2.5rem}
+.detalii dt{font-size:.75rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gri);margin-bottom:.35rem}
+.detalii dd{margin:0;font-size:1.125rem}
+.harta{min-height:340px;background:var(--fundal);border-radius:4px;overflow:hidden}
+.harta iframe{display:block;width:100%;height:380px;border:0;filter:grayscale(1) invert(.92) contrast(.95)}
+
+/* Footer */
+.pios{padding:3rem 0 2.5rem;border-top:1px solid var(--linie)}
+.pios .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem 2rem;color:var(--gri);font-size:.9rem}
+.pios .marca{color:#fff}
+
+/* Reveal on scroll: only when JavaScript has marked the page */
+.js [data-jarvis="apare"]{opacity:0;transform:translate3d(0,18px,0);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Tablet and up */
+@media (min-width:600px){
+  .lista-avantaje{grid-template-columns:repeat(3,1fr);gap:2rem}
+}
+@media (min-width:860px){
+  .wrap{padding:0 2rem}
+  .antet-interior{padding:0 2rem}
+  .meniu-buton{display:none}
+  .meniu-lista{position:static;display:flex;flex-direction:row;align-items:center;gap:2rem;margin-left:auto;background:none;border:0;padding:0}
+  .meniu-lista li{list-style:none}
+  .link-antet{min-height:44px;border:0;font-size:.9rem;color:var(--gri)}
+  .meniu-lista .btn{width:auto;margin-top:0;min-height:40px;padding:.5rem 1rem}
+  .inceput{flex-direction:row;min-height:100vh;min-height:100svh}
+  .inceput-texte{width:50%;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 5rem max(1.5rem,calc(50% - 600px + 1.5rem))}
+  .inceput-foto{position:absolute;top:0;right:0;bottom:0;width:50%;height:auto;min-height:0;margin:0}
+  .grila-doua{grid-template-columns:1fr 2fr;gap:4rem}
+  .seccion{padding:8rem 0}
+  .visita{grid-template-columns:1fr 1.2fr;align-items:start;gap:4rem}
+  .harta{min-height:0}
+}
+
+/* Reduced motion: only short fades */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lumina{animation:none;transition:opacity .4s linear}
+  .btn:active,.meniu-buton:active{transform:none}
+  .js [data-jarvis="apare"]{transform:none;transition:opacity .4s linear}
+}
+/* Reduced transparency: solid bar */
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--fundal);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .meniu-lista{background:var(--fundal)}
+}
+/* More contrast */
+@media (prefers-contrast:more){
+  :root{--gri:#C9CDD4;--linie:rgba(255,255,255,.35)}
+  .btn-contur{border-color:#fff}
+  .meniu-buton{border-color:#fff}
+}
+</style>
+</head>
+<body>
+<header class="antet" data-jarvis="antet">
+  <div class="antet-interior">
+    <a class="marca" href="#top">JLA Comics</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a class="link-antet" href="#despre">About</a></li>
+        <li><a class="link-antet" href="#produse">Products</a></li>
+        <li><a class="link-antet" href="#contact">Visit</a></li>
+        <li><a class="btn btn-principal" href="tel:+19168982217">Call now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="inceput" id="top" aria-labelledby="titlu-principal">
+    <div class="inceput-texte">
+      <h1 id="titlu-principal">JLA<br>Comics</h1>
+      <p class="slogan">Where comics come to life.</p>
+      <p class="descriere">Find comics, card games, toys, and supplies in Pocket-Greenhaven.</p>
+      <div class="actiuni">
+        <a class="btn btn-principal" href="tel:+19168982217">Call (916) 898-2217</a>
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=JLA+Comics+Sacramento" target="_blank" rel="noopener noreferrer">Get directions</a>
+      </div>
+      <p class="program">Open Sunday and Monday, 12 to 4:30 pm.</p>
+    </div>
+    <figure class="inceput-foto">
+      <img src="img/1.jpg" alt="Stacks of comic books and albums on a table">
+    </figure>
+    <span class="lumina" aria-hidden="true"></span>
+  </section>
+
+  <section class="seccion" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap grila-doua">
+      <div data-jarvis="apare">
+        <h2 id="titlu-despre">New and <span class="accent">vintage</span> comics, plus the card games and figures that go with them.</h2>
+      </div>
+      <div data-jarvis="apare">
+        <p class="gri">JLA Comics in Pocket-Greenhaven brings together comic lovers and collectors. The shop has a mix of new and vintage comics, card games, figures, and accessories.</p>
+        <p class="gri">Visit for your favorite series, or join a Magic or Pokémon play event.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <ul class="lista-avantaje">
+        <li data-jarvis="apare">
+          <h3>Wide selection</h3>
+          <p>New and vintage comics for collectors</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Play events</h3>
+          <p>Magic and Pokémon events hosted here</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Figures and toys</h3>
+          <p>Find statues, figures, and toys</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion seccion-inchis" id="produse" aria-labelledby="titlu-produse">
+    <div class="wrap grila-doua">
+      <div data-jarvis="apare">
+        <h2 id="titlu-produse">Products</h2>
+      </div>
+      <div data-jarvis="apare">
+        <ul class="lista-produse">
+          <li>
+            <h3>New and vintage comics</h3>
+            <p>Sells new and vintage comics.</p>
+          </li>
+          <li>
+            <h3>Magic, Pokémon, One Piece, Lorcana cards</h3>
+            <p>Sells Magic, Pokémon, One Piece, Lorcana cards.</p>
+          </li>
+          <li>
+            <h3>Statues, figures, and toys</h3>
+            <p>Sells statues, figures, and toys.</p>
+          </li>
+          <li>
+            <h3>Comics and card supplies</h3>
+            <p>Sells comics and card supplies.</p>
+          </li>
+          <li>
+            <h3>Magic and Pokémon play events</h3>
+            <p>Hosts Magic and Pokémon play events.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap visita">
+      <div data-jarvis="apare">
+        <h2 id="titlu-contact">Find the shop in <span class="accent">Pocket-Greenhaven</span>.</h2>
+        <p class="gri" style="margin-top:1.25rem">Stop by on a Sunday or Monday afternoon, or call with questions about a series or an event.</p>
+        <dl class="detalii" style="margin-top:2.5rem">
+          <div>
+            <dt>Hours</dt>
+            <dd>Sunday and Monday, 12 to 4:30 pm</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>Pocket-Greenhaven, Sacramento, California</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd>(916) 898-2217</dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="btn btn-principal" href="tel:+19168982217">Call (916) 898-2217</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=JLA+Comics+Sacramento" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-121.546764,38.505985,-121.538764,38.509985&amp;layer=mapnik&amp;marker=38.507985,-121.542764" title="Map showing JLA Comics in Pocket-Greenhaven, Sacramento" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pios">
+  <div class="wrap">
+    <p class="marca">JLA Comics</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: jackmac34</p>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
