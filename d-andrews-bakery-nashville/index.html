@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>d'Andrews Bakery, Downtown Nashville</title>
+<meta name="description" content="Pastries, sandwiches, and custom cakes, made daily in downtown Nashville. d'Andrews Bakery is at 555 Church Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Manrope:wght@400..700&amp;display=swap">
+<style>
+:root{--verde:#1F2E2A;--alama:#B8925A;--crem:#F2EBDD;--bordo:#5E1F2A;--ease:cubic-bezier(.2,.8,.2,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--verde);color:var(--crem);font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.5;letter-spacing:0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.08;margin:0}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+/* Butoane */
+.buton{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.7rem 1.2rem;font-family:Manrope,sans-serif;font-weight:700;font-size:.95rem;line-height:1;text-decoration:none;border:1px solid transparent;transition:transform .2s var(--ease),border-color .3s,color .3s}
+.buton:active{transform:scale(.97)}
+.buton-principal{background:var(--bordo);color:var(--crem);border-color:rgba(242,235,221,.25)}
+.buton-principal:hover{border-color:var(--alama)}
+.buton-secund{border-color:rgba(242,235,221,.5);color:var(--crem)}
+.buton-secund:hover{border-color:var(--alama);color:var(--alama)}
+.buton-mic{min-height:44px;padding:.6rem .95rem;font-size:.9rem;background:var(--bordo);color:var(--crem);border-color:rgba(242,235,221,.25)}
+
+/* Antet, sticla translucida */
+.antet{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(31,46,42,.5);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);border-bottom:1px solid rgba(184,146,90,0);transition:background-color .4s var(--ease),border-color .4s var(--ease)}
+.antet.derulat{background:rgba(31,46,42,.92);border-bottom-color:rgba(184,146,90,.3)}
+.antet-in{max-width:72rem;margin-inline:auto;padding:0 1.25rem;min-height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.marca{font-family:Fraunces,Georgia,serif;font-size:1.1rem;letter-spacing:-.01em;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+.antet-dreapta{display:flex;flex-direction:row-reverse;align-items:center;gap:.5rem}
+.meniu-buton{position:relative;width:44px;height:44px;background:none;border:0;padding:0;cursor:pointer;color:var(--crem)}
+.linii{position:absolute;left:12px;right:12px;top:50%;height:1px;background:currentColor;transition:background-color .3s}
+.linii::before,.linii::after{content:"";position:absolute;left:0;right:0;height:1px;background:currentColor;transition:transform .3s var(--ease)}
+.linii::before{top:-6px}
+.linii::after{top:6px}
+.meniu-buton[aria-expanded="true"] .linii{background:none}
+.meniu-buton[aria-expanded="true"] .linii::before{transform:translateY(6px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii::after{transform:translateY(-6px) rotate(-45deg)}
+.meniu-lista{display:none;position:absolute;top:100%;left:0;right:0;list-style:none;margin:0;padding:.25rem 1.25rem 1rem;background:rgba(31,46,42,.97);border-bottom:1px solid rgba(184,146,90,.3);flex-direction:column}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{display:flex;align-items:center;min-height:44px;text-decoration:none;font-size:1.05rem;border-bottom:1px solid rgba(242,235,221,.12)}
+.meniu-lista a:hover{color:var(--alama)}
+
+/* Prima sectiune: lampa si titlul */
+.inceput{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--verde)}
+.inceput-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 85% 0%,rgba(184,146,90,.22),transparent 70%);animation:aprinde 2.8s var(--ease) .2s both;pointer-events:none}
+.lampa{position:absolute;top:4.5rem;right:1.25rem;width:8.5rem;height:auto;overflow:visible;pointer-events:none}
+.cono{animation:aprinde 3s var(--ease) .5s both}
+.inceput-in{position:relative;width:100%;max-width:72rem;margin-inline:auto;padding:7rem 1.25rem 3.5rem}
+.inceput h1{font-size:clamp(3.2rem,11vw,8.5rem);line-height:.98;letter-spacing:-.025em;margin-bottom:1.5rem;animation:aprinde-titlu 2.8s var(--ease) .4s both}
+.intro{font-size:1.125rem;max-width:30rem;color:rgba(242,235,221,.88)}
+.butoane{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.program{margin-top:1.5rem;font-size:.9rem;color:rgba(242,235,221,.7)}
+
+@keyframes aprinde{from{opacity:0}to{opacity:1}}
+@keyframes aprinde-titlu{from{opacity:.35}to{opacity:1}}
+
+/* Despre: pagini de carte */
+.despre{background:var(--crem);color:var(--verde);padding-block:clamp(4rem,9vw,7.5rem)}
+.libro{display:grid;gap:3rem;position:relative}
+.despre-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;height:auto}
+.despre-foto{margin:0}
+.despre h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1.5rem}
+.despre-text p{max-width:34rem;font-size:1.05rem}
+.avantaje{list-style:none;margin:2.5rem 0 0;padding:0;max-width:34rem}
+.avantaje li{padding:1.1rem 0;border-top:1px solid rgba(31,46,42,.2)}
+.avantaje li:last-child{border-bottom:1px solid rgba(31,46,42,.2)}
+.avantaje h3{font-size:1.25rem;margin-bottom:.25rem}
+.avantaje p{font-size:.95rem;color:rgba(31,46,42,.85)}
+
+/* Meniu, pe bordo */
+.carte{background:var(--bordo);color:var(--crem);padding-block:clamp(4rem,9vw,7.5rem)}
+.carte-cap{max-width:36rem;margin-bottom:3rem}
+.carte h2{font-size:clamp(2.4rem,6vw,4rem)}
+.carte-lista{list-style:none;margin:0;padding:0;display:grid;gap:0 3rem;grid-template-columns:1fr}
+.carte-lista li{border-top:1px solid rgba(184,146,90,.55);padding:1.75rem 0 2.25rem}
+.carte-lista h3{font-size:clamp(1.4rem,3vw,1.8rem);margin-bottom:.5rem}
+.carte-lista p{color:rgba(242,235,221,.85)}
+
+/* Galerie */
+.galerie-sectiune{background:var(--crem);color:var(--verde);padding-block:clamp(4rem,9vw,7.5rem)}
+.galerie-cap{margin-bottom:2.5rem}
+.galerie-sectiune h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.galerie{display:grid;gap:.75rem;grid-template-columns:1fr}
+.galerie figure{margin:0}
+.galerie img{width:100%;aspect-ratio:4/3;object-fit:cover;height:auto;cursor:zoom-in}
+html.galerie-deschisa{overflow:hidden}
+html.galerie-deschisa::after{content:"";position:fixed;inset:0;background:rgba(31,46,42,.94);z-index:110;animation:aprinde .4s var(--ease) both}
+.marita{position:fixed !important;top:50%;left:50%;z-index:120;width:auto !important;height:auto !important;max-width:94vw;max-height:88vh;aspect-ratio:auto !important;object-fit:contain;margin:0;cursor:zoom-out;transform:translate(-50%,-50%);animation:marita-in .45s var(--ease) both}
+@keyframes marita-in{from{opacity:0;transform:translate(-50%,-50%) scale(.97)}to{opacity:1;transform:translate(-50%,-50%)}}
+
+/* Contact, pe verde */
+.contact{background:var(--verde);padding-block:clamp(4rem,9vw,7.5rem);border-top:1px solid rgba(184,146,90,.25)}
+.contact-in{display:grid;gap:3rem}
+.contact h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1.5rem}
+.adresa{font-style:normal;font-family:Fraunces,Georgia,serif;font-size:1.4rem;line-height:1.3;margin-bottom:2rem}
+.program-lista{margin:0 0 2.25rem;max-width:26rem}
+.program-lista div{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-top:1px solid rgba(242,235,221,.15)}
+.program-lista div:last-child{border-bottom:1px solid rgba(242,235,221,.15)}
+.program-lista dt{color:rgba(242,235,221,.85)}
+.program-lista dd{margin:0;font-weight:700;text-align:right}
+.mapa iframe{display:block;width:100%;height:20rem;border:1px solid rgba(184,146,90,.4)}
+
+/* Subsol */
+.pied{padding:2.5rem 0 3rem;background:var(--verde);border-top:1px solid rgba(184,146,90,.25);font-size:.9rem;color:rgba(242,235,221,.75)}
+.pied-nume{font-family:Fraunces,Georgia,serif;font-size:1.25rem;color:var(--crem);margin-bottom:.75rem}
+.pied p+p{margin-top:.35rem}
+
+/* Aparitie la derulare */
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Tablete */
+@media (min-width:600px){
+  .carte-lista{grid-template-columns:1fr 1fr}
+  .galerie{grid-template-columns:1fr 1fr;gap:1rem}
+}
+
+/* Desktop */
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{display:flex;position:static;flex-direction:row;gap:2rem;padding:0;background:none;border:0}
+  .meniu-lista a{border:0;min-height:44px;font-size:.95rem}
+  .antet-dreapta{flex-direction:row;gap:2.25rem}
+  .lampa{top:6rem;right:9vw;width:16rem}
+  .inceput-in{padding:10rem 1.25rem 5rem}
+  .libro{grid-template-columns:1fr 1fr;gap:0 6rem;align-items:center}
+  .libro::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:rgba(31,46,42,.15)}
+  .contact-in{grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center}
+  .mapa iframe{height:30rem}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-transparency: reduce){
+  .antet{background:var(--verde);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .meniu-lista{background:var(--verde)}
+}
+@media (prefers-contrast: more){
+  .intro{color:var(--crem)}
+  .carte-lista p,.despre-text p{color:var(--crem)}
+  .despre-text p{color:var(--verde)}
+  .buton-secund{border-color:var(--crem)}
+  .carte-lista li{border-top-color:var(--alama)}
+  .program-lista div,.program-lista div:last-child{border-color:rgba(242,235,221,.5)}
+  .antet.derulat{border-bottom-color:var(--alama)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .inceput-glow,.cono,.inceput h1{animation:aprinde .4s linear both}
+  html.galerie-deschisa::after,.marita{animation:aprinde .3s linear both}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .4s linear}
+  .buton{transition:border-color .2s,color .2s}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">d'Andrews Bakery</a>
+    <div class="antet-dreapta">
+      <nav aria-label="Main">
+        <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="lista-meniu">
+          <span class="sr">Menu</span>
+          <span class="linii" aria-hidden="true"></span>
+        </button>
+        <ul class="meniu-lista" id="lista-meniu" data-jarvis="meniu-lista">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Visit</a></li>
+        </ul>
+      </nav>
+      <a class="buton buton-mic" href="tel:+16153754934">Call now</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="inceput" aria-labelledby="titlu-principal">
+    <div class="inceput-glow" aria-hidden="true"></div>
+    <svg class="lampa" viewbox="0 0 240 300" aria-hidden="true" focusable="false">
+      <defs>
+        <lineargradient id="razacon" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F2EBDD" stop-opacity=".42"/>
+          <stop offset="1" stop-color="#F2EBDD" stop-opacity="0"/>
+        </lineargradient>
+      </defs>
+      <polygon class="cono" points="26,114 100,92 330,300 -330,300" fill="url(#razacon)"/>
+      <polyline points="190,282 150,140 72,48" fill="none" stroke="#B8925A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <ellipse cx="190" cy="288" rx="44" ry="7" fill="#B8925A"/>
+      <circle cx="150" cy="140" r="6" fill="#B8925A"/>
+      <polygon points="52,44 80,40 100,92 26,114" fill="#1F2E2A" stroke="#B8925A" stroke-width="3" stroke-linejoin="round"/>
+      <line x1="26" y1="114" x2="100" y2="92" stroke="#B8925A" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="63" cy="110" r="7" fill="#F2EBDD"/>
+    </svg>
+    <div class="inceput-in">
+      <h1 id="titlu-principal">d'Andrews Bakery</h1>
+      <p class="intro">Pastries, sandwiches, and custom cakes, made daily in downtown Nashville.</p>
+      <div class="butoane">
+        <a class="buton buton-principal" href="tel:+16153754934">Call now</a>
+        <a class="buton buton-secund" href="https://www.google.com/maps/search/?api=1&amp;query=d%27Andrews+Bakery+Nashville" target="_blank" rel="noopener noreferrer">Get directions</a>
+      </div>
+      <p class="program">Monday to Friday, 7 AM to 2 PM. Saturday and Sunday, 8 AM to 2 PM.</p>
+    </div>
+  </section>
+
+  <section class="despre" id="about" aria-labelledby="t-despre">
+    <div class="wrap libro">
+      <figure class="despre-foto" data-jarvis="apare">
+        <img src="img/3.jpg" alt="Fresh pastries on a table" loading="lazy">
+      </figure>
+      <div class="despre-text" data-jarvis="apare">
+        <h2 id="t-despre">Bread and pastries from our own ovens.</h2>
+        <p>At d'Andrews Bakery, our team bakes fresh pastries and makes sandwiches right in downtown Nashville. Enjoy a relaxed breakfast or lunch with friends, or order custom cakes for special events. Online ordering is available for extra convenience.</p>
+        <ul class="avantaje">
+          <li>
+            <h3>Fresh baking</h3>
+            <p>Everything is baked on site daily.</p>
+          </li>
+          <li>
+            <h3>Order online</h3>
+            <p>Pick up orders made on the website.</p>
+          </li>
+          <li>
+            <h3>Central location</h3>
+            <p>Right on Church Street downtown.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="carte" id="menu" aria-labelledby="t-menu">
+    <div class="wrap">
+      <header class="carte-cap" data-jarvis="apare">
+        <h2 id="t-menu">Menu</h2>
+      </header>
+      <ul class="carte-lista">
+        <li data-jarvis="apare">
+          <h3>Pastries</h3>
+          <p>Made fresh each day in the bakery.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Sandwiches on freshly-baked bread</h3>
+          <p>Prepared daily with bread from our ovens.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Custom cakes for events</h3>
+          <p>Order cakes made for your occasion.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Breakfast and lunch café</h3>
+          <p>Dine in or take away from our bakery.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Online ordering</h3>
+          <p>Order pastries, sandwiches, or cakes online.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune" id="gallery" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <header class="galerie-cap" data-jarvis="apare">
+        <h2 id="t-galerie">Fresh from the bakery</h2>
+      </header>
+      <div class="galerie" data-jarvis="galerie">
+        <figure data-jarvis="apare">
+          <img src="img/1.jpg" alt="Assorted pastries on display" loading="lazy">
+        </figure>
+        <figure data-jarvis="apare">
+          <img src="img/2.jpg" alt="Bread dough and a baker at work" loading="lazy">
+        </figure>
+        <figure data-jarvis="apare">
+          <img src="img/4.jpg" alt="Strawberry cake with whipped cream and an eclair" loading="lazy">
+        </figure>
+        <figure data-jarvis="apare">
+          <img src="img/5.jpg" alt="Chocolate cupcakes with frosting" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-in">
+      <div class="contact-text" data-jarvis="apare">
+        <h2 id="t-contact">Find us on Church Street</h2>
+        <address class="adresa">555 Church Street<br>Nashville, TN</address>
+        <dl class="program-lista">
+          <div>
+            <dt>Monday to Friday</dt>
+            <dd>7 AM to 2 PM</dd>
+          </div>
+          <div>
+            <dt>Saturday and Sunday</dt>
+            <dd>8 AM to 2 PM</dd>
+          </div>
+        </dl>
+        <div class="butoane">
+          <a class="buton buton-principal" href="tel:+16153754934">Call (615) 375-4934</a>
+          <a class="buton buton-secund" href="https://www.google.com/maps/search/?api=1&amp;query=d%27Andrews+Bakery+Nashville" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+      <div class="mapa" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.784982,36.160627,-86.776982,36.164627&amp;layer=mapnik&amp;marker=36.162627,-86.780982" title="Map showing d'Andrews Bakery at 555 Church Street, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <p class="pied-nume">d'Andrews Bakery</p>
+    <p>555 Church Street, Nashville, TN. <a href="tel:+16153754934">(615) 375-4934</a></p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: Pexels, RitaE, blandinejoannic</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
