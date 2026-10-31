@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Games: games, tournaments, cards, and more in Indianapolis</title>
+<meta name="description" content="Good Games in downtown Indianapolis: board games, Magic: The Gathering singles, unique dice bags, and Pokémon, Digimon, and One Piece tournaments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --nisip: #EFE6D8;
+  --teracota: #B5583A;
+  --maslin: #6B7046;
+  --maro: #3B2B22;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--nisip);
+  color: var(--maro);
+  font-family: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+p { margin: 0; }
+a { color: inherit; }
+ul { margin: 0; padding: 0; }
+
+h1, h2, h3 {
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.wrap {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--teracota);
+  outline-offset: 3px;
+}
+
+/* Header (glass) */
+.antet {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(239, 230, 216, .78);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(59, 43, 34, .1);
+  transition: background-color .4s var(--ease);
+}
+
+.antet.derulat {
+  background: rgba(239, 230, 216, .94);
+}
+
+.antet-interior {
+  position: relative;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: .7rem 1.25rem;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: padding .4s var(--ease);
+}
+
+.antet.derulat .antet-interior { padding-block: .45rem; }
+
+.marca {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  text-decoration: none;
+}
+
+.antet-actiuni {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.buton-mic {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1.1rem;
+  border-radius: 999px;
+  background: var(--maro);
+  color: var(--nisip);
+  font-weight: 600;
+  font-size: .95rem;
+  text-decoration: none;
+  transition: transform .2s var(--ease);
+}
+
+.meniu-buton {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 1rem;
+  border: 1px solid rgba(59, 43, 34, .35);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--maro);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s var(--ease);
+}
+
+.buton-mic:active, .meniu-buton:active { transform: scale(.97); }
+
+.navigatie ul {
+  list-style: none;
+}
+
+.navigatie a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.navigatie a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Phone menu: solid panel, no glass on glass */
+.navigatie ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: .25rem 1.25rem 1rem;
+  background: var(--nisip);
+  border-bottom: 1px solid rgba(59, 43, 34, .12);
+}
+
+.navigatie ul.deschis { display: block; }
+
+.navigatie li + li { border-top: 1px solid rgba(59, 43, 34, .1); }
+
+@media (min-width: 860px) {
+  .meniu-buton { display: none; }
+  .navigatie ul {
+    display: flex;
+    position: static;
+    padding: 0;
+    gap: 2rem;
+    background: none;
+    border: 0;
+  }
+  .navigatie li + li { border-top: 0; }
+  .navigatie a { min-height: 44px; }
+}
+
+/* Hero */
+.inceput {
+  padding: clamp(2.5rem, 7vw, 5.5rem) 0 clamp(4rem, 9vw, 7rem);
+}
+
+.inceput .wrap {
+  display: grid;
+  gap: 2.75rem;
+  align-items: center;
+}
+
+.inceput h1 {
+  font-size: clamp(3.6rem, 17vw, 9.5rem);
+  line-height: 1.02;
+}
+
+.inceput .lead {
+  font-size: 1.2rem;
+  max-width: 30ch;
+  margin-top: 1.5rem;
+}
+
+.program-scurt {
+  margin-top: 1.25rem;
+  font-size: .95rem;
+}
+
+.actiuni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+.buton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .8rem 1.6rem;
+  border-radius: 30px 12px 30px 12px;
+  background: var(--maro);
+  color: var(--nisip);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .2s var(--ease), text-decoration-color .3s;
+}
+
+.buton:hover { text-decoration: underline; text-underline-offset: 4px; }
+.buton:active { transform: scale(.97); }
+
+.buton-contur {
+  background: transparent;
+  color: var(--maro);
+  box-shadow: inset 0 0 0 1.5px var(--maro);
+}
+
+.inceput-foto {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 50% 50% 1.75rem 1.75rem / 30% 30% 1.75rem 1.75rem;
+}
+
+.inceput-foto img,
+.despre-foto img,
+.galerie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 860px) {
+  .inceput .wrap {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: 4rem;
+  }
+  .inceput-foto {
+    margin-top: 5rem;
+    aspect-ratio: 4 / 5;
+    max-height: 680px;
+  }
+}
+
+/* About */
+.despre {
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.despre .wrap {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.despre-foto {
+  margin: 0;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 1.75rem 8rem 1.75rem 1.75rem;
+}
+
+.despre h2 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  max-width: 16ch;
+  margin-bottom: 1.5rem;
+}
+
+.despre p {
+  max-width: 46ch;
+  margin-top: 1rem;
+}
+
+.despre p a {
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 860px) {
+  .despre .wrap {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 5rem;
+  }
+  .despre-foto { aspect-ratio: 1 / 1.2; }
+  .despre-text { padding-left: clamp(0rem, 3vw, 3rem); }
+}
+
+/* Products (dark band) */
+.produse {
+  background: var(--maro);
+  color: var(--nisip);
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.produse h2 {
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  max-width: 18ch;
+  margin-bottom: 3.5rem;
+}
+
+.grup {
+  margin-bottom: 3.5rem;
+}
+
+.grup-eticheta {
+  font-size: .95rem;
+  font-weight: 600;
+  opacity: .85;
+  margin-bottom: 1.25rem;
+}
+
+.lista-produse {
+  list-style: none;
+  display: grid;
+  gap: 2.25rem 2rem;
+  grid-template-columns: 1fr;
+}
+
+.lista-produse li {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(239, 230, 216, .22);
+}
+
+.lista-produse h3 {
+  font-size: 1.55rem;
+  line-height: 1.15;
+  margin-bottom: .5rem;
+}
+
+.lista-produse p {
+  opacity: .85;
+  max-width: 30ch;
+}
+
+@media (min-width: 860px) {
+  .lista-produse { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lista-produse li:nth-child(3n+2) { margin-top: 3rem; }
+}
+
+/* Gallery */
+.galerie-sectiune {
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.galerie-sectiune h2 {
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  margin-bottom: 2.5rem;
+}
+
+.galerie {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.galerie-item {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: zoom-in;
+  border-radius: 1.5rem;
+}
+
+.galerie-item:nth-child(2) { border-radius: 1.5rem 1.5rem 1.5rem 5rem; }
+.galerie-item:nth-child(3) { border-radius: 5rem 1.5rem 1.5rem 1.5rem; }
+
+@media (min-width: 860px) {
+  .galerie {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    grid-auto-rows: 310px;
+    gap: 1.25rem;
+  }
+  .galerie-item { aspect-ratio: auto; }
+  .galerie-item:nth-child(1) { grid-row: span 2; }
+}
+
+/* Enlarged photo (added by the program) */
+.galerie .marita {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  margin: 0;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59, 43, 34, .94);
+  border-radius: 0;
+  aspect-ratio: auto;
+  transform: none;
+  opacity: 1;
+  cursor: zoom-out;
+}
+
+.galerie .marita img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.galerie img.marita {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  width: 100vw;
+  height: 100vh;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  object-fit: contain;
+  background: rgba(59, 43, 34, .94);
+  border-radius: 0;
+}
+
+html.galerie-deschisa { overflow: hidden; }
+
+/* Visit: hand-drawn map */
+.vizita {
+  padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 7vw, 5rem);
+}
+
+.vizita h2 {
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  max-width: 18ch;
+  margin-bottom: 2.5rem;
+}
+
+.harta-desenata {
+  margin: 0 0 1.25rem;
+}
+
+.harta-cadru {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem .5rem 1.5rem .5rem;
+  border: 1px solid rgba(59, 43, 34, .18);
+  background: var(--nisip);
+}
+
+.harta-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.traseu-linie {
+  fill: none;
+  stroke: var(--teracota);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.harta-etichet {
+  position: absolute;
+  color: var(--maro);
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.harta-strada {
+  left: 48%;
+  top: 4%;
+  writing-mode: vertical-rl;
+  transform: translateX(-50%);
+  font-family: Fraunces, Georgia, serif;
+  font-style: italic;
+  font-size: clamp(.8rem, 2.4vw, 1rem);
+  letter-spacing: .02em;
+}
+
+.harta-start {
+  left: 18.75%;
+  top: 63%;
+  transform: translateX(-50%);
+  font-family: Fraunces, Georgia, serif;
+  font-style: italic;
+  font-size: clamp(.85rem, 2.6vw, 1.05rem);
+}
+
+.harta-magazin {
+  left: 53%;
+  top: 36%;
+  padding: .25rem .6rem;
+  background: var(--nisip);
+  border: 1px solid rgba(59, 43, 34, .3);
+  border-radius: 6px 12px 6px 12px;
+  font-weight: 600;
+  font-size: clamp(.8rem, 2.4vw, .95rem);
+  white-space: nowrap;
+}
+
+.vizita figcaption {
+  margin-top: 1rem;
+  font-size: .92rem;
+  max-width: 60ch;
+}
+
+/* Contact */
+.kontakt {
+  padding-bottom: clamp(4rem, 10vw, 7rem);
+}
+
+.kontakt-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+}
+
+.kontakt h2 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  margin-bottom: 1.75rem;
+}
+
+.kontakt address {
+  font-style: normal;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 1.75rem;
+}
+
+.program {
+  display: grid;
+  gap: .75rem;
+  margin: 0 0 1.5rem;
+  max-width: 460px;
+}
+
+.program div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid rgba(59, 43, 34, .16);
+}
+
+.program dt { font-weight: 600; }
+.program dd { margin: 0; text-align: right; }
+
+.harta-iframe {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1.75rem 1.75rem 1.75rem 7rem;
+  background: rgba(59, 43, 34, .05);
+}
+
+.harta-iframe iframe {
+  display: block;
+  width: 100%;
+  height: clamp(300px, 40vw, 420px);
+  border: 0;
+}
+
+@media (min-width: 860px) {
+  .kontakt-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 5rem; }
+}
+
+/* Footer */
+.pied {
+  background: var(--maro);
+  color: var(--nisip);
+  padding: 3.5rem 0 2.5rem;
+  font-size: .95rem;
+}
+
+.pied .wrap {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.pied-marca {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 2rem;
+  letter-spacing: -.02em;
+  line-height: 1.1;
+}
+
+.pied p { opacity: .85; }
+
+.pied ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin-top: .5rem;
+}
+
+.pied ul a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  text-underline-offset: 4px;
+}
+
+/* Reveal on scroll (only when the program marks html with js) */
+html.js [data-jarvis="apare"] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .55s var(--ease), transform .55s var(--ease);
+}
+
+html.js [data-jarvis="apare"].vizibil {
+  opacity: 1;
+  transform: none;
+}
+
+/* The route draws itself */
+html.js [data-jarvis="apare"] .traseu-linie {
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: 100;
+}
+
+html.js [data-jarvis="apare"].vizibil .traseu-linie {
+  animation: deseneaza 2.8s cubic-bezier(.45, 0, .25, 1) .5s forwards;
+}
+
+html.js [data-jarvis="apare"] .harta-punct,
+html.js [data-jarvis="apare"] .harta-magazin {
+  opacity: 0;
+}
+
+html.js [data-jarvis="apare"].vizibil .harta-punct,
+html.js [data-jarvis="apare"].vizibil .harta-magazin {
+  animation: aparitie .6s ease 3.1s forwards;
+}
+
+@keyframes deseneaza {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes aparitie {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js [data-jarvis="apare"] {
+    transform: none;
+    transition: opacity .4s ease;
+  }
+  html.js [data-jarvis="apare"].vizibil .traseu-linie {
+    animation: none;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+  .harta-punct, .harta-magazin {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .buton, .buton-mic, .meniu-buton { transition: none; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .antet {
+    background: var(--nisip);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .grup-eticheta { font-weight: 700; }
+  .buton-contur, .meniu-buton { box-shadow: inset 0 0 0 2px var(--maro); }
+  .meniu-buton { border-width: 2px; }
+  .antet { border-bottom: 2px solid var(--maro); }
+  .harta-cadru { border-width: 2px; }
+  .lista-produse li { border-top-width: 2px; }
+  .program div { border-bottom-width: 2px; }
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-interior">
+    <a class="marca" href="#top">Good Games</a>
+    <nav class="navigatie" aria-label="Main">
+      <ul id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#produse">Products</a></li>
+        <li><a href="#galerie">Gallery</a></li>
+        <li><a href="#vizita">Visit</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="antet-actiuni">
+      <a class="buton-mic" href="tel:+13174931423">Call now</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="inceput" aria-labelledby="titlu-principal">
+    <div class="wrap">
+      <div class="inceput-text">
+        <h1 id="titlu-principal">Good Games</h1>
+        <p class="lead">Board games, Magic singles, tournaments, and dice bags in downtown Indianapolis.</p>
+        <div class="actiuni">
+          <a class="buton" href="tel:+13174931423">Call (317) 493-1423</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Good+Games+Indianapolis">Get directions</a>
+        </div>
+        <p class="program-scurt">Open daily from 11:00 AM, at 111 South Meridian Street.</p>
+      </div>
+      <figure class="inceput-foto">
+        <img src="img/3.jpg" alt="Dice spread across a table during a board game">
+      </figure>
+    </div>
+  </section>
+
+  <section class="despre" id="despre">
+    <div class="wrap">
+      <figure class="despre-foto" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Board game pieces laid out on a game board">
+      </figure>
+      <div class="despre-text" data-jarvis="apare">
+        <h2>A game store in downtown Indianapolis</h2>
+        <p>Good Games is located in downtown Indianapolis. We have board games, Magic: The Gathering singles, and unique dice bags.</p>
+        <p>Tournaments include Pokémon, Digimon, and One Piece.</p>
+        <p><a href="#vizita">See the map and hours</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="produse" id="produse">
+    <div class="wrap">
+      <h2>Board games, singles, dice bags, and tournaments</h2>
+
+      <div class="grup" data-jarvis="apare">
+        <p class="grup-eticheta">Games, cards, and dice</p>
+        <ul class="lista-produse">
+          <li>
+            <h3>Board games</h3>
+            <p>Board games sold at Good Games in downtown Indianapolis.</p>
+          </li>
+          <li>
+            <h3>Magic: The Gathering singles</h3>
+            <p>Magic: The Gathering singles available.</p>
+          </li>
+          <li>
+            <h3>Unique dice bags</h3>
+            <p>Unique dice bags in different styles.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="grup" data-jarvis="apare">
+        <p class="grup-eticheta">Tournaments</p>
+        <ul class="lista-produse">
+          <li>
+            <h3>Pokémon tournaments</h3>
+            <p>Pokémon tournaments in the store.</p>
+          </li>
+          <li>
+            <h3>Digimon tournaments</h3>
+            <p>Digimon tournaments in the store.</p>
+          </li>
+          <li>
+            <h3>One Piece tournaments</h3>
+            <p>One Piece tournaments in the store.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune" id="galerie">
+    <div class="wrap">
+      <h2>Games on the table</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="galerie-item" data-jarvis="apare">
+          <img src="img/2.jpg" alt="Colorful game characters and tokens on a wooden table">
+        </figure>
+        <figure class="galerie-item" data-jarvis="apare">
+          <img src="img/4.jpg" alt="Game pieces standing on a board">
+        </figure>
+        <figure class="galerie-item" data-jarvis="apare">
+          <img src="img/5.jpg" alt="Game pieces set out on a board">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="vizita" id="vizita">
+    <div class="wrap">
+      <h2>Find us on South Meridian Street</h2>
+
+      <figure class="harta-desenata" data-jarvis="apare">
+        <div class="harta-cadru">
+          <svg class="harta-svg" viewbox="0 0 800 560" role="img" aria-label="Hand-drawn sketch of the streets around Good Games, with a walking route to the store">
+            <rect x="0" y="0" width="800" height="560" fill="#3B2B22" fill-opacity=".04"/>
+
+            <path d="M 385 -10 C 390 120, 380 200, 388 260 C 396 320, 384 430, 392 580" fill="none" stroke="#3B2B22" stroke-opacity=".32" stroke-width="2" stroke-dasharray="12 12"/>
+            <path d="M -10 162 C 200 158, 300 168, 810 160" fill="none" stroke="#3B2B22" stroke-opacity=".28" stroke-width="2" stroke-dasharray="12 12"/>
+            <path d="M -10 336 C 200 340, 300 332, 810 338" fill="none" stroke="#3B2B22" stroke-opacity=".28" stroke-width="2" stroke-dasharray="12 12"/>
+
+            <path d="M 48 28 C 140 22, 250 34, 336 26 C 338 70, 332 118, 338 146 C 250 152, 150 146, 52 152 C 50 110, 46 70, 48 28 Z" fill="#3B2B22" fill-opacity=".09" stroke="#3B2B22" stroke-opacity=".45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M 430 26 C 470 30, 480 24, 504 28 C 506 80, 500 130, 506 150 C 470 154, 440 146, 432 150 C 436 110, 428 70, 430 26 Z" fill="#3B2B22" fill-opacity=".09" stroke="#3B2B22" stroke-opacity=".45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M 520 40 C 600 26, 700 40, 738 90 C 760 130, 730 158, 670 160 C 600 162, 530 150, 516 110 C 506 78, 500 50, 520 40 Z" fill="#6B7046" fill-opacity=".3" stroke="#6B7046" stroke-opacity=".8" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="560" cy="90" r="6" fill="#6B7046" fill-opacity=".7"/>
+            <circle cx="600" cy="70" r="5" fill="#6B7046" fill-opacity=".7"/>
+            <circle cx="652" cy="112" r="7" fill="#6B7046" fill-opacity=".7"/>
+            <circle cx="702" cy="82" r="5" fill="#6B7046" fill-opacity=".7"/>
+            <path d="M 48 176 C 120 170, 240 180, 336 172 C 340 230, 332 280, 338 318 C 260 324, 150 318, 46 322 C 50 270, 44 220, 48 176 Z" fill="#3B2B22" fill-opacity=".09" stroke="#3B2B22" stroke-opacity=".45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M 432 180 C 520 174, 600 186, 760 178 C 758 240, 764 290, 756 330 C 680 336, 560 326, 436 332 C 440 280, 428 230, 432 180 Z" fill="#3B2B22" fill-opacity=".09" stroke="#3B2B22" stroke-opacity=".45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M 48 352 C 130 346, 250 356, 336 350 C 340 410, 332 460, 338 506 C 250 512, 140 506, 50 510 C 52 460, 46 410, 48 352 Z" fill="#3B2B22" fill-opacity=".09" stroke="#3B2B22" stroke-opacity=".45" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M 432 356 C 520 350, 620 360, 760 352 C 758 410, 764 460, 756 508 C 660 514, 540 504, 436 510 C 440 460, 428 410, 432 356 Z" fill="#3B2B22" fill-opacity=".09" stroke="#3B2B22" stroke-opacity=".45" stroke-width="2" stroke-linejoin="round"/>
+
+            <path class="traseu-linie" pathlength="100" d="M 150 336 C 250 340, 320 334, 382 332 C 392 310, 388 282, 410 250"/>
+
+            <circle cx="150" cy="336" r="9" fill="#6B7046" stroke="#EFE6D8" stroke-width="3"/>
+            <circle class="harta-punct" cx="410" cy="250" r="26" fill="#B5583A" fill-opacity=".18"/>
+            <circle class="harta-punct" cx="410" cy="250" r="11" fill="#B5583A" stroke="#EFE6D8" stroke-width="4"/>
+          </svg>
+
+          <span class="harta-etichet harta-strada">South Meridian Street</span>
+          <span class="harta-etichet harta-start">Start</span>
+          <span class="harta-etichet harta-magazin">Good Games</span>
+        </div>
+        <figcaption>A sketch of the area, not to scale. Good Games is at 111 South Meridian Street.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="kontakt" id="contact">
+    <div class="wrap kontakt-grid">
+      <div class="kontakt-text" data-jarvis="apare">
+        <h2>Stop by or call</h2>
+        <address>
+          111 South Meridian Street<br>
+          Indianapolis, IN
+        </address>
+        <dl class="program">
+          <div>
+            <dt>Sunday to Thursday</dt>
+            <dd>11:00 AM to 9:00 PM</dd>
+          </div>
+          <div>
+            <dt>Friday and Saturday</dt>
+            <dd>11:00 AM to 10:00 PM</dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="buton" href="tel:+13174931423">Call (317) 493-1423</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Good+Games+Indianapolis">Get directions</a>
+        </div>
+      </div>
+      <figure class="harta-iframe" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.162002,39.763052,-86.154002,39.767052&amp;layer=mapnik&amp;marker=39.765052,-86.158002" title="Map showing Good Games at 111 South Meridian Street, Indianapolis" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <p class="pied-marca">Good Games</p>
+    <p>111 South Meridian Street, Indianapolis, IN</p>
+    <ul>
+      <li><a href="#despre">About</a></li>
+      <li><a href="#produse">Products</a></li>
+      <li><a href="#galerie">Gallery</a></li>
+      <li><a href="#vizita">Visit</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: ClickerHappy, Alexas_Fotos, MolnarSzabolcsErdely, stevepb, Bru-nO</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
