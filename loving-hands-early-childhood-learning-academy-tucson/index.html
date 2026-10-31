@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loving Hands Early Childhood Learning Academy | Tucson</title>
+<meta name="description" content="Early childhood education and care for infants, toddlers, and preschoolers in Tucson, on North Swan Road.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundal:#F7F4EE;
+  --text:#1B1D21;
+  --gri:#4B5059;
+  --accent:#0f766e;
+  --accent-inchis:#0c5f58;
+  --linie:rgba(27,29,33,.12);
+  --linie-tare:rgba(27,29,33,.36);
+  --bloc:rgba(27,29,33,.04);
+  --placeholder:#E7E2D8;
+  --sticla:rgba(247,244,238,.6);
+  --sticla-derulat:rgba(247,244,238,.9);
+  --margine:clamp(1.25rem,5vw,3rem);
+  --max:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--fundal);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.1;
+}
+section{scroll-margin-top:3rem}
+.contine{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--margine)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Header: translucent bar */
+.antet{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:60;
+  background:var(--sticla);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s cubic-bezier(.2,.8,.2,1),background-color .4s cubic-bezier(.2,.8,.2,1);
+}
+.antet.derulat{background:var(--sticla-derulat);border-bottom-color:var(--linie)}
+.antet-in{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  height:4.25rem;
+}
+.marca{
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  font-size:1.05rem;
+  letter-spacing:-0.01em;
+  text-decoration:none;
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+}
+.dreapta{display:flex;align-items:center;gap:.75rem}
+.nav{position:static}
+.lista{
+  list-style:none;
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;right:0;
+  flex-direction:column;
+  background:rgba(247,244,238,.97);
+  border-bottom:1px solid var(--linie);
+  padding:.25rem var(--margine) 1rem;
+}
+.lista.deschis{display:flex}
+.lista a{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  text-decoration:none;
+  color:var(--text);
+  border-top:1px solid var(--linie);
+}
+.lista li:first-child a{border-top:0}
+.lista a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+.meniu-buton{
+  position:relative;
+  width:44px;height:44px;
+  background:none;
+  border:1px solid var(--linie-tare);
+  border-radius:4px;
+  color:var(--text);
+  cursor:pointer;
+  transition:transform .15s cubic-bezier(.2,.8,.2,1),border-color .3s;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton:hover{border-color:var(--text)}
+.linii{
+  position:absolute;
+  left:12px;right:12px;
+  top:50%;
+  height:1.5px;
+  margin-top:-.75px;
+  background:currentColor;
+  transition:background-color .3s;
+}
+.linii::before,.linii::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;
+  height:1.5px;
+  background:currentColor;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.linii::before{top:-6px}
+.linii::after{top:6px}
+.meniu-buton[aria-expanded="true"] .linii{background:none}
+.meniu-buton[aria-expanded="true"] .linii::before{transform:translateY(6px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:.75rem 1.4rem;
+  border-radius:4px;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:#fff;
+  font-family:Inter,sans-serif;
+  font-size:1rem;
+  font-weight:500;
+  line-height:1;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .15s cubic-bezier(.2,.8,.2,1),background-color .3s,border-color .3s;
+}
+.btn:hover{background:var(--accent-inchis);border-color:var(--accent-inchis)}
+.btn:active{transform:scale(.97)}
+.btn-contur{background:transparent;border-color:var(--linie-tare);color:var(--text)}
+.btn-contur:hover{background:transparent;border-color:var(--text)}
+.btn-mic{min-height:44px;padding:.6rem 1rem}
+.btn:focus-visible,.meniu-buton:focus-visible,.contact-tel:focus-visible,.pied a:focus-visible,.marca:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:3px;
+}
+
+/* First section: split screen */
+.intro{position:relative;display:flex;flex-direction:column;isolation:isolate}
+.intro-text{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:1.125rem;
+  padding:6.5rem var(--margine) 2.5rem;
+}
+.intro-text>*:not(.lumina){position:relative;z-index:1}
+.lumina{
+  position:absolute;
+  z-index:0;
+  width:90vmax;
+  height:90vmax;
+  left:-30vmax;
+  top:-20vmax;
+  border-radius:50%;
+  background:radial-gradient(closest-side,rgba(15,118,110,.12),rgba(15,118,110,.05) 55%,rgba(15,118,110,0) 100%);
+  opacity:.7;
+  pointer-events:none;
+  animation:deriva 24s ease-in-out infinite alternate;
+  transition:opacity 1.2s cubic-bezier(.2,.8,.2,1);
+}
+.intro:hover .lumina{opacity:1}
+@keyframes deriva{
+  from{transform:translate3d(0,0,0) scale(1)}
+  to{transform:translate3d(12vmax,8vmax,0) scale(1.08)}
+}
+.intro h1{
+  font-size:clamp(2.25rem,5.6vw,4.25rem);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+}
+.slogan{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(1.25rem,2.4vw,1.6rem);
+  font-weight:500;
+  letter-spacing:-0.01em;
+  line-height:1.25;
+}
+.descriere{color:var(--gri);max-width:34rem;font-size:1.0625rem}
+.adresa{
+  color:var(--gri);
+  font-size:.95rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.adresa::before{content:"";width:2rem;height:2px;background:var(--accent)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
+.intro-foto{
+  position:relative;
+  margin:0;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--placeholder);
+}
+.intro-foto img{width:100%;height:100%;object-fit:cover}
+
+/* Sections */
+.sectiune{padding:5rem 0}
+.sectiune h2{
+  font-size:clamp(2.1rem,4.6vw,3.25rem);
+  margin-bottom:1.5rem;
+}
+.despre h2{margin-bottom:.75rem}
+.despre-grid{display:grid;gap:2.5rem}
+.lead{
+  font-size:clamp(1.25rem,2vw,1.5rem);
+  line-height:1.4;
+  letter-spacing:-0.01em;
+  color:var(--text);
+  margin-bottom:1rem;
+  max-width:36rem;
+}
+.despre p:not(.lead){color:var(--gri);max-width:38rem;font-size:1.0625rem}
+.avantaje{
+  list-style:none;
+  display:grid;
+  gap:1.25rem;
+  margin-top:2rem;
+}
+.avantaje li{border-top:1px solid var(--linie);padding-top:1rem}
+.avantaje h3{font-size:1.125rem;margin-bottom:.35rem}
+.avantaje p{color:var(--gri)}
+
+.servicii{background:var(--bloc)}
+.lista-servicii{list-style:none;display:grid}
+.lista-servicii li{border-top:1px solid var(--linie);padding:2rem 0}
+.lista-servicii h3{
+  font-size:clamp(1.25rem,2.4vw,1.6rem);
+  margin-bottom:.6rem;
+}
+.lista-servicii p{color:var(--gri);max-width:30rem}
+
+/* Gallery */
+.galerie{display:grid;gap:.75rem;grid-template-columns:1fr}
+.galerie figure{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:var(--placeholder);
+  cursor:zoom-in;
+}
+.galerie img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,.8,.2,1);
+}
+@media (hover:hover){
+  .galerie figure:hover img{transform:scale(1.03)}
+}
+.galerie .marita{
+  position:fixed;
+  top:3vh;
+  left:4vw;
+  width:92vw;
+  height:94vh;
+  aspect-ratio:auto;
+  margin:0;
+  z-index:80;
+  background:var(--fundal);
+  object-fit:contain;
+  cursor:zoom-out;
+}
+.galerie .marita img{object-fit:contain}
+html.galerie-deschisa{overflow:hidden}
+.nota{color:var(--gri);font-size:.9375rem;margin-top:1rem}
+
+/* Contact */
+.contact{background:var(--bloc)}
+.contact-grid{display:grid;gap:3rem;align-items:center}
+.contact h2{margin-bottom:1.5rem}
+.contact-tel{
+  display:inline-block;
+  min-height:44px;
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  font-size:clamp(2rem,5vw,3rem);
+  letter-spacing:-0.02em;
+  line-height:1.1;
+  color:var(--text);
+  text-decoration:none;
+  margin-bottom:1rem;
+}
+.contact-tel:hover{text-decoration:underline;text-underline-offset:.2em}
+.text-mare{color:var(--gri);font-size:1.125rem;margin-bottom:2rem}
+.harta iframe{
+  display:block;
+  width:100%;
+  height:22rem;
+  border:1px solid var(--linie);
+  filter:grayscale(1) contrast(1.05);
+}
+
+/* Footer */
+.pied{border-top:1px solid var(--linie);padding:3rem 0 4rem;color:var(--gri);font-size:.9375rem}
+.pied-in{display:grid;gap:.5rem}
+.pied-nume{
+  color:var(--text);
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:700;
+  font-size:1.125rem;
+  letter-spacing:-0.01em;
+  margin-bottom:.25rem;
+}
+.pied a{color:var(--text);text-underline-offset:.2em}
+
+/* Reveal on scroll (without JS everything stays visible) */
+html.js .apare{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .5s cubic-bezier(.2,.8,.2,1);
+}
+html.js .apare.vizibil{opacity:1;transform:none}
+
+/* Tablet and desktop */
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .nav{display:block}
+  .lista{
+    display:flex;
+    position:static;
+    flex-direction:row;
+    gap:2.25rem;
+    background:none;
+    border:0;
+    padding:0;
+  }
+  .lista a{
+    min-height:auto;
+    border-top:0;
+    color:var(--gri);
+    transition:color .3s;
+  }
+  .lista a:hover{color:var(--text)}
+  .lista li:first-child a{border-top:0}
+
+  .intro{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    min-height:100vh;
+    min-height:100svh;
+  }
+  .intro-text{
+    justify-content:center;
+    padding:8rem clamp(2.5rem,5vw,5rem) 5rem max(var(--margine),calc((100vw - var(--max)) / 2 + var(--margine)));
+  }
+  .intro-foto{aspect-ratio:auto;min-height:100%;height:100%}
+
+  .sectiune{padding:8rem 0}
+  .despre-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:5rem;align-items:start}
+  .avantaje{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
+  .lista-servicii{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:4rem}
+  .galerie{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .galerie figure{aspect-ratio:3/4}
+  .contact-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:5rem}
+  .harta iframe{height:26rem}
+  .pied-in{grid-template-columns:2fr 1fr 1fr 2fr 2fr;align-items:start}
+  .pied-in p:nth-child(n+1){min-width:0}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lumina{animation:none}
+  html.js .apare{transform:none;transition:opacity .3s linear}
+  .btn,.meniu-buton,.galerie img{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--fundal);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet.derulat{background:var(--fundal)}
+  .lista{background:var(--fundal)}
+}
+@media (prefers-contrast:more){
+  :root{--gri:#2E333B;--linie:rgba(27,29,33,.45);--linie-tare:var(--text)}
+  .btn-contur{border-color:var(--text)}
+  .lista a{border-top-color:var(--linie)}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="contine antet-in">
+    <a class="marca" href="#top">Loving Hands</a>
+    <nav class="nav" aria-label="Main">
+      <ul class="lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About us</a></li>
+        <li><a href="#servicii">Services</a></li>
+        <li><a href="#galerie">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="dreapta">
+      <a class="btn btn-mic" href="tel:+15207471153">Call now</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+        <span class="sr">Open menu</span>
+        <span class="linii" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" id="top" aria-labelledby="titlu">
+    <div class="intro-text">
+      <span class="lumina" aria-hidden="true"></span>
+      <h1 id="titlu">Loving Hands Early Childhood Learning Academy</h1>
+      <p class="slogan">Early learning for little hands.</p>
+      <p class="descriere">We provide early childhood education and care for infants, toddlers, and preschoolers.</p>
+      <p class="adresa">920 North Swan Road, Tucson</p>
+      <div class="actiuni">
+        <a class="btn" href="tel:+15207471153">Call now</a>
+        <a class="btn btn-contur" href="#contact">Find us</a>
+      </div>
+    </div>
+    <figure class="intro-foto">
+      <img src="img/3.jpg" alt="Toddler playroom with a blue play kitchen and small furniture">
+    </figure>
+  </section>
+
+  <section class="sectiune despre" id="despre">
+    <div class="contine despre-grid">
+      <h2 class="apare" data-jarvis="apare">About us</h2>
+      <div class="apare" data-jarvis="apare">
+        <p class="lead">Loving Hands Early Childhood Learning Academy helps young children in Tucson learn and grow in a safe setting.</p>
+        <p>Our academy offers early childhood education services, infant childcare, toddler classes, and preschool classes on North Swan Road. Children learn, play, and develop skills with caring staff.</p>
+        <ul class="avantaje">
+          <li>
+            <h3>Supportive staff</h3>
+            <p>Teachers help children daily.</p>
+          </li>
+          <li>
+            <h3>Play and learning</h3>
+            <p>Children learn with activities.</p>
+          </li>
+          <li>
+            <h3>Safe environment</h3>
+            <p>Child safety is a priority.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune servicii" id="servicii">
+    <div class="contine">
+      <h2 class="apare" data-jarvis="apare">Services</h2>
+      <ul class="lista-servicii">
+        <li class="apare" data-jarvis="apare">
+          <h3>Early childhood education services</h3>
+          <p>Learning and care for young children.</p>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <h3>Infant childcare</h3>
+          <p>Care for the youngest children.</p>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <h3>Toddler classes</h3>
+          <p>Classes for children starting to explore.</p>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <h3>Preschool classes</h3>
+          <p>Classes for children before kindergarten.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune" id="galerie">
+    <div class="contine">
+      <h2 class="apare" data-jarvis="apare">Gallery</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure>
+          <img src="img/1.jpg" alt="Kids at a holiday event with a clown performer" loading="lazy">
+        </figure>
+        <figure>
+          <img src="img/2.jpg" alt="Bright kindergarten classroom with yellow accents, small tables and high chairs" loading="lazy">
+        </figure>
+        <figure>
+          <img src="img/4.jpg" alt="A child painting and drawing at a table in a classroom" loading="lazy">
+        </figure>
+      </div>
+      <p class="nota">Illustrative photos.</p>
+    </div>
+  </section>
+
+  <section class="sectiune contact" id="contact">
+    <div class="contine contact-grid">
+      <div class="apare" data-jarvis="apare">
+        <h2>Contact us</h2>
+        <a class="contact-tel" href="tel:+15207471153">(520) 747-1153</a>
+        <p class="text-mare">920 North Swan Road, Tucson</p>
+        <div class="actiuni">
+          <a class="btn" href="tel:+15207471153">Call now</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Loving+Hands+Early+Childhood+Learning+Academy+Tucson" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+      </div>
+      <div class="harta apare" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-110.896234,32.232298,-110.888234,32.236299&amp;layer=mapnik&amp;marker=32.234299,-110.892234" title="Map of Loving Hands Early Childhood Learning Academy on North Swan Road, Tucson" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied">
+  <div class="contine pied-in">
+    <p class="pied-nume">Loving Hands Early Childhood Learning Academy</p>
+    <p>920 North Swan Road, Tucson</p>
+    <p><a href="tel:+15207471153">(520) 747-1153</a></p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: tolmacho, Katrina_S, Brendacfeyc, Tho-Ge</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
