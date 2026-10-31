@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Continental Barber Shop | Tucson, AZ</title>
+<meta name="description" content="Precision styling, manicures, and pedicures in Tucson. Book an appointment at 3015 East Speedway Boulevard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --negru:#0F0F0F;
+  --alb:#FFFFFF;
+  --albastru:#38bdf8;
+  --m:clamp(1.25rem,4vw,3rem);
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--alb);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+}
+h1,h2,h3{
+  font-family:"Space Grotesk",Inter,system-ui,sans-serif;
+  font-weight:600;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  margin:0;
+}
+p{margin:0;color:rgba(255,255,255,.74)}
+ul{margin:0;padding:0}
+dl,dd,dt{margin:0}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--albastru);outline-offset:3px}
+section{scroll-margin-top:4.25rem}
+
+.container{max-width:1200px;margin:0 auto;padding-inline:var(--m)}
+
+/* ---------- Header (glass) ---------- */
+.antet{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(15,15,15,.5);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s var(--curba),border-color .4s var(--curba);
+}
+.antet.derulat{
+  background:rgba(15,15,15,.8);
+  border-bottom-color:rgba(255,255,255,.1);
+}
+.antet-in{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;
+  height:4.25rem;
+  padding-inline:var(--m);
+  max-width:1200px;margin:0 auto;
+}
+.marca{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;font-size:.9375rem;
+  letter-spacing:-0.01em;text-decoration:none;white-space:nowrap;
+}
+.meniu-btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  min-height:44px;min-width:44px;padding:0 .25rem;
+  background:none;border:0;color:inherit;font-weight:500;font-size:.9375rem;cursor:pointer;
+}
+.meniu-linii{position:relative;display:block;width:20px;height:12px}
+.meniu-linii::before,.meniu-linii::after{
+  content:"";position:absolute;left:0;right:0;height:1.5px;background:currentColor;
+  transition:transform .35s var(--curba);
+}
+.meniu-linii::before{top:0}
+.meniu-linii::after{bottom:0}
+.meniu-btn[aria-expanded="true"] .meniu-linii::before{transform:translateY(5.25px) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] .meniu-linii::after{transform:translateY(-5.25px) rotate(-45deg)}
+.meniu-lista{
+  position:absolute;top:100%;left:0;right:0;
+  display:none;flex-direction:column;
+  background:var(--negru);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  padding:.25rem var(--m) 1.5rem;
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista li{border-bottom:1px solid rgba(255,255,255,.1)}
+.meniu-lista li:last-child{border-bottom:0}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:52px;
+  font-family:"Space Grotesk",Inter,sans-serif;font-size:1.5rem;font-weight:500;
+  text-decoration:none;letter-spacing:-0.01em;
+}
+.meniu-lista li:last-child a{margin-top:1rem;justify-content:center;font-family:Inter,sans-serif;font-size:1rem;font-weight:500;border-radius:0}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 1.5rem;
+  font-family:Inter,sans-serif;font-size:.9375rem;font-weight:500;line-height:1;
+  text-decoration:none;border:1px solid transparent;border-radius:0;cursor:pointer;
+  transition:transform .15s var(--curba),opacity .2s,background-color .2s,color .2s;
+}
+.btn:active{transform:scale(.97)}
+.btn-mare{background:var(--albastru);color:var(--negru)}
+.btn-mare:hover{opacity:.88}
+.btn-contur{background:transparent;color:inherit;border-color:currentColor}
+.btn-contur:hover{background:rgba(255,255,255,.08)}
+.alb .btn-contur:hover{background:rgba(15,15,15,.06)}
+
+/* ---------- Hero (split screen) ---------- */
+.intro{position:relative;padding-top:4.25rem}
+.intro-texto{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:2.75rem var(--m) 2.5rem;
+}
+.intro h1{
+  font-size:clamp(2.375rem,9vw,5.75rem);
+  font-weight:700;
+  line-height:1.05;
+  letter-spacing:-0.02em;
+}
+.intro-slogan{
+  margin-top:1.25rem;
+  font-size:clamp(1.0625rem,1.5vw,1.25rem);
+  color:rgba(255,255,255,.8);
+  max-width:28ch;
+}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.intro-adresa{margin-top:1.5rem;font-size:.9375rem;color:rgba(255,255,255,.6)}
+.intro-foto{
+  position:relative;margin:0;overflow:hidden;
+  aspect-ratio:4/3;background:#1a1a1a;
+}
+.intro-foto img{position:absolute;inset:0;object-position:center 35%}
+
+/* ---------- Sections ---------- */
+.sectiune{padding:clamp(5rem,12vw,9rem) 0}
+.alb{background:var(--alb);color:var(--negru)}
+.alb p{color:rgba(15,15,15,.74)}
+.sectiune h2{font-size:clamp(2rem,4.6vw,3.5rem)}
+.grila-doua{display:grid;gap:2.5rem}
+
+.about-text p{font-size:clamp(1.0625rem,1.5vw,1.25rem);color:rgba(255,255,255,.8);max-width:40ch}
+.about-text p + p{margin-top:1rem}
+.fapte{margin-top:2.5rem;border-top:1px solid rgba(255,255,255,.14)}
+.fapte div{
+  display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1rem;
+  padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.14);
+}
+.fapte dt{color:rgba(255,255,255,.5);font-size:.9375rem}
+.fapte dd{font-size:.9375rem;color:var(--alb)}
+
+.servicii{list-style:none;margin-top:3rem;border-top:1px solid rgba(15,15,15,.16)}
+.servicii li{
+  display:grid;gap:.5rem;padding:1.75rem 0;
+  border-bottom:1px solid rgba(15,15,15,.16);
+}
+.servicii h3{font-size:clamp(1.5rem,3vw,2.25rem)}
+.servicii p{font-size:1rem}
+
+.galerie-grila{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:3rem}
+.poza{
+  position:relative;display:block;width:100%;
+  aspect-ratio:4/3;padding:0;margin:0;overflow:hidden;
+  border:0;background:#1a1a1a;color:inherit;cursor:zoom-in;
+}
+.poza img{transition:transform .6s var(--curba)}
+.poza:hover img{transform:scale(1.03)}
+.poza:not(.marita):active{transform:scale(.985)}
+.poza.marita{
+  position:fixed;
+  inset:clamp(1rem,4vh,3rem) clamp(1rem,4vw,3rem);
+  z-index:80;width:auto;height:auto;aspect-ratio:auto;
+  background:transparent;cursor:zoom-out;
+  animation:aparitie .35s var(--curba);
+}
+.poza.marita img{object-fit:contain;transform:none}
+html.galerie-deschisa body::after{
+  content:"";position:fixed;inset:0;z-index:70;
+  background:rgba(15,15,15,.94);
+  animation:aparitie .3s ease;
+}
+
+/* ---------- Visit ---------- */
+.adresa-mare{
+  margin-top:1.5rem;
+  font-family:"Space Grotesk",Inter,sans-serif;
+  font-size:clamp(1.5rem,3vw,2.25rem);
+  line-height:1.2;letter-spacing:-0.01em;
+}
+.visit .actiuni{margin-top:2rem}
+.harta{position:relative;border:1px solid rgba(15,15,15,.16);background:#e9e9e9}
+.harta iframe{
+  display:block;width:100%;height:clamp(300px,40vw,420px);border:0;
+  filter:grayscale(1) contrast(1.05);
+}
+
+/* ---------- Scissor cut (memorable line) ---------- */
+.taietura{
+  position:relative;
+  display:flex;align-items:center;gap:clamp(1rem,3vw,2rem);
+  height:clamp(3rem,6vw,4.5rem);
+  color:var(--albastru);
+  background:var(--negru);
+}
+.taietura--alb{background:var(--alb);color:var(--negru)}
+.taietura span{
+  position:relative;display:block;flex:1;height:1px;
+  background:currentColor;
+  transition:transform .9s var(--curba);
+}
+.taietura span:first-child{transform-origin:left center}
+.taietura span:last-child{transform-origin:right center}
+.taietura span::after{
+  content:"";position:absolute;top:50%;width:1px;height:.9rem;margin-top:-.45rem;
+  background:currentColor;
+}
+.taietura span:first-child::after{right:0}
+.taietura span:last-child::after{left:0}
+
+/* ---------- Footer ---------- */
+.subsol{padding:3.5rem 0 3rem;background:var(--negru)}
+.subsol-in{display:grid;gap:.5rem;font-size:.875rem;color:rgba(255,255,255,.6)}
+.subsol-nume{
+  font-family:"Space Grotesk",Inter,sans-serif;font-weight:600;font-size:1.125rem;
+  color:var(--alb);letter-spacing:-0.01em;margin-bottom:.5rem;
+}
+.subsol-in p{color:rgba(255,255,255,.6);font-size:.875rem}
+.subsol-in p:nth-child(4){margin-top:1.5rem;max-width:60ch}
+
+/* ---------- Reveal on scroll ---------- */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .5s var(--curba),transform .5s var(--curba);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+html.js .taietura[data-jarvis="apare"]{opacity:1;transform:none}
+html.js .taietura:not(.vizibil) span{transform:scaleX(0)}
+@keyframes aparitie{from{opacity:0}to{opacity:1}}
+
+/* ---------- Wider screens ---------- */
+@media (min-width:600px){
+  .galerie-grila{grid-template-columns:1fr 1fr}
+  .servicii li{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:baseline;gap:2rem}
+}
+@media (min-width:860px){
+  .meniu-btn{display:none}
+  .meniu-lista{
+    position:static;display:flex;flex-direction:row;align-items:center;gap:2.25rem;
+    background:none;border:0;padding:0;
+  }
+  .meniu-lista li{border:0}
+  .meniu-lista a{
+    min-height:44px;padding:0;
+    font-family:Inter,sans-serif;font-size:.9375rem;font-weight:500;
+    transition:color .2s;
+  }
+  .meniu-lista a:hover{color:var(--albastru)}
+  .meniu-lista li:last-child a{margin-top:0;padding:0 1.25rem;min-height:44px;font-size:.9375rem;justify-content:center}
+  .meniu-lista li:last-child a:hover{color:var(--negru)}
+
+  .intro{
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    min-height:100vh;min-height:100svh;padding-top:0;
+  }
+  .intro-texto{padding:8rem clamp(2rem,4vw,4rem) 4.5rem var(--m)}
+  .intro-foto{aspect-ratio:auto;min-height:100%}
+  .intro-foto img{object-position:center 30%}
+
+  .grila-doua{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:6rem;align-items:start}
+}
+
+/* ---------- Accessibility preferences ---------- */
+@media (prefers-reduced-transparency:reduce){
+  .antet{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--negru)}
+}
+@media (prefers-contrast:more){
+  p,.about-text p,.servicii p{color:var(--alb)}
+  .alb p,.alb .servicii p{color:var(--negru)}
+  .fapte dt{color:rgba(255,255,255,.8)}
+  .btn-contur{border-width:2px}
+  .intro-slogan,.intro-adresa{color:var(--alb)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  html.js .taietura:not(.vizibil) span{transform:none;opacity:0}
+  .taietura span{transition:opacity .3s ease}
+  .poza img{transition:none}
+  .poza:hover img{transform:none}
+  .btn:active,.poza:not(.marita):active{transform:none}
+  .meniu-linii::before,.meniu-linii::after{transition:none}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">El Continental Barber Shop</a>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a class="btn btn-mare" href="tel:+15207951981">Call now</a></li>
+      </ul>
+    </nav>
+    <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista"><span class="meniu-linii" aria-hidden="true"></span>Menu</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" aria-labelledby="titlu-principal">
+    <div class="intro-texto">
+      <h1 id="titlu-principal">El Continental Barber Shop</h1>
+      <p class="intro-slogan">Precision styling and nail care for Tucson clients.</p>
+      <div class="actiuni">
+        <a class="btn btn-mare" href="tel:+15207951981">Call now</a>
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=El+Continental+Barber+Shop+Tucson">Get directions</a>
+      </div>
+      <p class="intro-adresa">3015 East Speedway Boulevard, Tucson, AZ</p>
+    </div>
+    <figure class="intro-foto">
+      <img src="img/1.jpg" alt="Barber cutting a client's hair with a comb and scissors">
+    </figure>
+  </section>
+
+  <div class="taietura" data-jarvis="apare" aria-hidden="true"><span></span><span></span></div>
+
+  <section id="about" class="sectiune">
+    <div class="container grila-doua">
+      <h2 data-jarvis="apare">Precision styling and nail care on East Speedway</h2>
+      <div class="about-text" data-jarvis="apare">
+        <p>El Continental Barber Shop provides precision styling, manicures, and pedicures for Tucson clients.</p>
+        <p>Services are available for men and women, and clients can book an appointment for any of them.</p>
+        <dl class="fapte">
+          <div><dt>Location</dt><dd>3015 East Speedway Boulevard, Tucson</dd></div>
+          <div><dt>Services</dt><dd>Precision styling, manicures, pedicures</dd></div>
+          <div><dt>Booking</dt><dd>Appointments available</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="taietura taietura--alb" data-jarvis="apare" aria-hidden="true"><span></span><span></span></div>
+
+  <section id="services" class="sectiune alb">
+    <div class="container">
+      <h2 data-jarvis="apare">Services</h2>
+      <ul class="servicii">
+        <li data-jarvis="apare">
+          <h3>Precision styling</h3>
+          <p>Precision styling for men and women.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Manicures</h3>
+          <p>Hand and nail care.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Pedicures</h3>
+          <p>Foot and nail care.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Appointments</h3>
+          <p>Book a time for any of these services.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="taietura taietura--alb" data-jarvis="apare" aria-hidden="true"><span></span><span></span></div>
+
+  <section id="gallery" class="sectiune">
+    <div class="container">
+      <h2 data-jarvis="apare">Gallery</h2>
+      <div class="galerie-grila" data-jarvis="galerie">
+        <button class="poza" type="button">
+          <img src="img/2.jpg" alt="Barber at work on a client in a barber shop" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/3.jpg" alt="Hairdresser styling a client's hair in a salon" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/4.jpg" alt="Manicurist caring for a client's nails" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/5.jpg" alt="Barber working on a client in a barbershop chair" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="taietura" data-jarvis="apare" aria-hidden="true"><span></span><span></span></div>
+
+  <section id="visit" class="sectiune alb">
+    <div class="container grila-doua">
+      <div data-jarvis="apare">
+        <h2>Visit us</h2>
+        <p class="adresa-mare">3015 East Speedway Boulevard<br>Tucson, AZ</p>
+        <div class="actiuni">
+          <a class="btn btn-mare" href="tel:+15207951981">Call (520) 795-1981</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=El+Continental+Barber+Shop+Tucson">Get directions</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-110.931437,32.234422,-110.923437,32.238422&amp;layer=mapnik&amp;marker=32.236422,-110.927437" title="Map of El Continental Barber Shop, 3015 East Speedway Boulevard, Tucson" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <div class="taietura taietura--alb" data-jarvis="apare" aria-hidden="true"><span></span><span></span></div>
+
+</main>
+
+<footer class="subsol">
+  <div class="container subsol-in">
+    <p class="subsol-nume">El Continental Barber Shop</p>
+    <p>3015 East Speedway Boulevard, Tucson, AZ</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: OrnaW, mostafa_meraji, andrey_braynsk, spabielenda, NanuVisual</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
