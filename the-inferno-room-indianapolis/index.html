@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Inferno Room | Bar and cocktails in Indianapolis</title>
+<meta name="description" content="The Inferno Room is a neighborhood bar on Virginia Avenue in Indianapolis, for drinks, cocktails, and snacks. Open late on Friday and Saturday.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Unbounded:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundal:#0A0A12;
+  --fundal-2:#0F0F19;
+  --text:#F3F3F8;
+  --text-2:#C9C9D6;
+  --gri:#8A8AA0;
+  --albastru:#38bdf8;
+  --linie:rgba(138,138,160,.2);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:4.5rem;
+  background:var(--fundal);
+  color-scheme:dark;
+}
+
+body{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--text);
+  background:var(--fundal);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+
+:focus-visible{outline:2px solid var(--albastru);outline-offset:3px}
+
+h1,h2,h3{
+  font-family:Unbounded,system-ui,sans-serif;
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.1;
+}
+
+.contein{
+  max-width:1120px;
+  margin-inline:auto;
+  padding-inline:1.25rem;
+}
+
+section{padding-block:clamp(4.5rem,11vw,8.5rem)}
+
+/* ---------- Top bar (glass) ---------- */
+.antet{
+  position:fixed;
+  inset:0 0 auto 0;
+  z-index:40;
+  background:rgba(10,10,18,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-bottom:1px solid rgba(138,138,160,.12);
+  transition:background .3s ease;
+}
+.antet.derulat{background:rgba(10,10,18,.84)}
+
+.bara{
+  max-width:1120px;
+  margin-inline:auto;
+  padding-inline:1.25rem;
+  min-height:4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:min-height .3s ease;
+}
+.antet.derulat .bara{min-height:3.25rem}
+
+.marca{
+  font-family:Unbounded,sans-serif;
+  font-weight:700;
+  font-size:.85rem;
+  letter-spacing:-.01em;
+  color:var(--albastru);
+  text-decoration:none;
+  min-height:2.75rem;
+  display:inline-flex;
+  align-items:center;
+}
+
+.meniu-buton{
+  width:2.75rem;
+  height:2.75rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  background:none;
+  border:0;
+  cursor:pointer;
+  border-radius:2px;
+}
+.meniu-buton span{
+  display:block;
+  width:1.25rem;
+  height:2px;
+  background:var(--text);
+  transition:transform .3s ease,opacity .3s ease;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] span:nth-child(2){opacity:0}
+.meniu-buton[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.meniu-lista{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  display:none;
+  flex-direction:column;
+  list-style:none;
+  background:var(--fundal);
+  border-bottom:1px solid var(--linie);
+  padding:.5rem 1.25rem 1rem;
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;
+  align-items:center;
+  min-height:3rem;
+  font-size:1rem;
+  text-decoration:none;
+  color:var(--text);
+  border-bottom:1px solid rgba(138,138,160,.12);
+}
+.meniu-lista li:last-child a{border-bottom:0}
+html.meniu-deschis .antet{background:var(--fundal)}
+
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    gap:2rem;
+    background:none;
+    border:0;
+    padding:0;
+  }
+  .meniu-lista a{
+    min-height:2.75rem;
+    border:0;
+    font-size:.9rem;
+    color:var(--gri);
+    transition:color .2s ease;
+  }
+  .meniu-lista a:hover{color:var(--text)}
+}
+
+/* ---------- Hero: the sign ---------- */
+.intro{
+  padding:5.5rem 0 2rem;
+}
+
+.slogan{
+  font-size:.95rem;
+  color:var(--gri);
+  margin-bottom:1.25rem;
+}
+
+.sign{
+  font-size:clamp(2.6rem,13vw,9.5rem);
+  line-height:.98;
+  letter-spacing:-.03em;
+  color:var(--albastru);
+  text-shadow:none;
+}
+.sign span{display:block;width:max-content}
+
+.sign .c1{animation:vinde 1.2s .2s linear both}
+.sign .c2{animation:vinde 1.4s .9s linear both}
+.sign .c3{animation:vinde 1.2s 1.7s linear both}
+
+@keyframes vinde{
+  0%{opacity:0}
+  10%{opacity:.2}
+  14%{opacity:.05}
+  24%{opacity:.6}
+  30%{opacity:.25}
+  40%{opacity:1}
+  100%{opacity:1}
+}
+@keyframes aparitie{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.linie-neon{
+  width:min(18rem,70%);
+  height:2px;
+  border-radius:2px;
+  background:var(--albastru);
+  margin:1.5rem 0 1.25rem;
+}
+
+.intro-text{
+  font-size:clamp(1.05rem,2.4vw,1.25rem);
+  color:var(--text-2);
+  max-width:30rem;
+}
+
+.actiuni{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:.75rem 1.75rem;
+  margin-top:1.75rem;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:3rem;
+  padding:.8rem 1.6rem;
+  background:var(--albastru);
+  color:var(--fundal);
+  font-weight:600;
+  font-size:.95rem;
+  text-decoration:none;
+  border-radius:2px;
+  transition:opacity .2s ease,transform .15s ease;
+}
+.btn:hover{opacity:.85}
+.btn:active{transform:scale(.97)}
+
+.link-secundar{
+  display:inline-flex;
+  align-items:center;
+  min-height:3rem;
+  color:var(--text);
+  text-decoration:underline;
+  text-decoration-color:var(--albastru);
+  text-decoration-thickness:2px;
+  text-underline-offset:.4em;
+  transition:color .2s ease;
+}
+.link-secundar:hover{color:var(--albastru)}
+.link-secundar:active{transform:scale(.97)}
+
+.adresa{
+  margin-top:1.75rem;
+  font-size:clamp(1.05rem,2.4vw,1.25rem);
+  font-weight:500;
+  color:var(--text);
+}
+
+/* ---------- About ---------- */
+.despre{
+  border-top:1px solid var(--linie);
+  padding-top:clamp(1.5rem,4vw,3rem);
+}
+
+.doi-col{
+  display:grid;
+  gap:3rem;
+  align-items:center;
+}
+@media (min-width:860px){
+  .doi-col{grid-template-columns:1fr 1fr;gap:5.5rem}
+}
+
+h2{
+  font-size:clamp(1.85rem,4.6vw,3.25rem);
+  margin-bottom:1.5rem;
+  max-width:18ch;
+}
+
+.despre p{
+  color:var(--text-2);
+  max-width:36rem;
+  font-size:1.0625rem;
+}
+
+.figura{margin:0}
+.figura img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  border-radius:2px;
+}
+
+.avantaje{
+  list-style:none;
+  display:grid;
+  gap:1.5rem;
+  margin-top:2.75rem;
+  border-top:1px solid var(--linie);
+  padding-top:2rem;
+}
+@media (min-width:600px){
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:1.5rem}
+}
+.avantaje h3{
+  font-size:.95rem;
+  margin-bottom:.4rem;
+}
+.avantaje h3::before{
+  content:"•";
+  color:var(--albastru);
+  margin-right:.5rem;
+}
+.avantaje p{
+  font-size:.9rem;
+  color:var(--gri);
+  max-width:none;
+}
+
+/* ---------- Menu ---------- */
+.carta{
+  background:var(--fundal-2);
+  border-top:1px solid var(--linie);
+}
+
+.carte{
+  list-style:none;
+  margin-top:3rem;
+  border-top:1px solid var(--linie);
+}
+.carte li{
+  display:grid;
+  gap:.5rem;
+  padding:2rem 0;
+  border-bottom:1px solid var(--linie);
+}
+@media (min-width:700px){
+  .carte li{
+    grid-template-columns:1fr 1.2fr;
+    align-items:baseline;
+    gap:2rem;
+  }
+}
+.carte h3{
+  font-size:clamp(1.5rem,4vw,2.5rem);
+}
+.carte p{
+  color:var(--text-2);
+  max-width:28rem;
+}
+
+/* ---------- Gallery ---------- */
+.galerie-titlu{margin-bottom:0}
+
+.galerie{
+  display:grid;
+  gap:.75rem;
+  margin-top:3rem;
+}
+@media (min-width:700px){
+  .galerie{grid-template-columns:1fr 1fr;gap:1rem}
+  .poza-b:first-child{grid-column:1 / -1}
+  .poza-b:first-child .poza{aspect-ratio:16/8}
+}
+
+.poza-b{margin:0}
+
+.poza{
+  position:relative;
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  padding:0;
+  border:0;
+  border-radius:2px;
+  overflow:hidden;
+  background:var(--fundal-2);
+  cursor:zoom-in;
+}
+.poza img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:opacity .4s ease;
+}
+.poza:hover img{opacity:.85}
+.poza:active{transform:scale(.98)}
+
+.poza .inchide{display:none}
+
+.poza.marita{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  z-index:60;
+  display:grid;
+  place-items:center;
+  padding:1.25rem;
+  background:rgba(10,10,18,.97);
+  border-radius:0;
+  cursor:zoom-out;
+  transform:none;
+}
+.poza.marita:active{transform:none}
+.poza.marita img{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:calc(100% - 2.5rem);
+  object-fit:contain;
+}
+.poza.marita:hover img{opacity:1}
+.poza.marita .inchide{
+  display:block;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:1.25rem;
+  text-align:center;
+  font-size:.875rem;
+  color:var(--gri);
+}
+
+/* ---------- Hours and map ---------- */
+.contact{border-top:1px solid var(--linie)}
+
+.program{
+  margin-top:2rem;
+  border-top:1px solid var(--linie);
+}
+.program div{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.9rem 0;
+  border-bottom:1px solid var(--linie);
+}
+.program dt{color:var(--text)}
+.program dd{
+  color:var(--gri);
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+
+address{
+  font-style:normal;
+  margin-top:2rem;
+  color:var(--text-2);
+}
+
+.contact .btn{margin-top:2rem}
+
+.harta iframe{
+  width:100%;
+  height:22rem;
+  border:0;
+  border-radius:2px;
+  filter:invert(.92) hue-rotate(180deg) saturate(.6);
+}
+@media (min-width:860px){
+  .harta iframe{height:100%;min-height:28rem}
+}
+
+/* ---------- Footer ---------- */
+.pie{
+  border-top:1px solid var(--linie);
+  padding:3rem 0 4rem;
+  font-size:.875rem;
+  color:var(--gri);
+}
+.pie .marca-mare{
+  font-family:Unbounded,sans-serif;
+  font-weight:700;
+  font-size:1.05rem;
+  color:var(--albastru);
+  margin-bottom:.75rem;
+}
+.pie p{margin-top:.35rem}
+
+/* ---------- Reveal on scroll (only when JS is on) ---------- */
+.js .apare{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);
+}
+.js .apare.vizibil{
+  opacity:1;
+  transform:none;
+}
+
+/* ---------- Accessibility preferences ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sign .c1,
+  .sign .c2,
+  .sign .c3{animation:aparitie .5s ease both}
+  .js .apare{
+    transform:none;
+    transition:opacity .4s ease;
+  }
+  .poza img,.btn,.link-secundar,.meniu-buton span{transition-duration:.01ms}
+}
+
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{
+    background:var(--fundal);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+
+@media (prefers-contrast:more){
+  :root{
+    --gri:#B9B9CA;
+    --text-2:#E6E6EE;
+    --linie:rgba(255,255,255,.35);
+  }
+  .btn{border:2px solid var(--albastru)}
+}
+</style>
+</head>
+<body id="sus">
+
+<header class="antet" data-jarvis="antet">
+  <div class="bara">
+    <a class="marca" href="#top">The Inferno Room</a>
+    <button class="meniu-buton" type="button" aria-label="Menu" aria-expanded="false" aria-controls="meniu-lista" data-jarvis="meniu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#contact">Hours and map</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" id="top" aria-label="Introduction">
+    <div class="contein">
+      <p class="slogan">A bold spot for good drinks.</p>
+      <h1 class="sign">
+        <span class="c1">The</span>
+        <span class="c2">Inferno</span>
+        <span class="c3">Room</span>
+      </h1>
+      <div class="linie-neon" aria-hidden="true"></div>
+      <p class="intro-text">A neighborhood bar for drinks, cocktails, and snacks.</p>
+      <div class="actiuni">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Inferno+Room+Indianapolis" target="_blank" rel="noopener noreferrer">Get directions</a>
+        <a class="link-secundar" href="#menu">See the menu</a>
+      </div>
+      <p class="adresa">902 Virginia Avenue, Indianapolis</p>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="despre-titlu">
+    <div class="contein doi-col">
+      <figure class="figura apare" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Shelves of bottles behind a bar counter" loading="lazy" width="1200" height="1500">
+      </figure>
+      <div class="apare" data-jarvis="apare">
+        <h2 id="despre-titlu">A casual evening out with friends</h2>
+        <p>The Inferno Room welcomes you for a casual evening out with friends. You’ll find a relaxed space to unwind with cocktails or a cold drink. Drop by after work or on the weekend for a laid-back night.</p>
+        <ul class="avantaje">
+          <li>
+            <h3>Evening hours</h3>
+            <p>Open late on weekends</p>
+          </li>
+          <li>
+            <h3>Group friendly</h3>
+            <p>A spot for friends or dates</p>
+          </li>
+          <li>
+            <h3>Classic menu</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Examples — to be replaced with your own offers</p>
+            <p>Drinks for every taste</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="carta" id="menu" aria-labelledby="menu-titlu">
+    <div class="contein">
+      <h2 id="menu-titlu" class="apare" data-jarvis="apare">Menu</h2>
+      <ul class="carte">
+        <li class="apare" data-jarvis="apare">
+          <h3>Drinks</h3>
+          <p>Cold beers, wine, and soft drinks.</p>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <h3>Cocktails</h3>
+          <p>Classic and tropical cocktails for a night out.</p>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <h3>Snacks</h3>
+          <p>Small plates to share with your drinks.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="galerie" aria-labelledby="galerie-titlu">
+    <div class="contein">
+      <h2 id="galerie-titlu" class="galerie-titlu apare" data-jarvis="apare">Drinks for a night out</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="poza-b">
+          <button class="poza" type="button">
+            <img src="img/2.jpg" alt="A cocktail served in a glass on a bar" loading="lazy">
+            <span class="inchide">Tap to close</span>
+          </button>
+        </figure>
+        <figure class="poza-b">
+          <button class="poza" type="button">
+            <img src="img/3.jpg" alt="A woman raising a drink in a toast" loading="lazy">
+            <span class="inchide">Tap to close</span>
+          </button>
+        </figure>
+        <figure class="poza-b">
+          <button class="poza" type="button">
+            <img src="img/4.jpg" alt="A margarita with salt on the rim and ice" loading="lazy">
+            <span class="inchide">Tap to close</span>
+          </button>
+        </figure>
+        <figure class="poza-b">
+          <button class="poza" type="button">
+            <img src="img/5.jpg" alt="A cold drink with ice, lemon and a straw" loading="lazy">
+            <span class="inchide">Tap to close</span>
+          </button>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-titlu">
+    <div class="contein doi-col">
+      <div class="apare" data-jarvis="apare">
+        <h2 id="contact-titlu">Hours and location</h2>
+        <dl class="program">
+          <div><dt>Tuesday to Thursday</dt><dd>4pm–11pm</dd></div>
+          <div><dt>Friday</dt><dd>4pm–1am</dd></div>
+          <div><dt>Saturday</dt><dd>2pm–1am</dd></div>
+          <div><dt>Sunday</dt><dd>4pm–11pm</dd></div>
+        </dl>
+        <address>902 Virginia Avenue<br>Indianapolis</address>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Inferno+Room+Indianapolis" target="_blank" rel="noopener noreferrer">Get directions</a>
+      </div>
+      <div class="harta apare" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.146367,39.752768,-86.138367,39.756768&amp;layer=mapnik&amp;marker=39.754768,-86.142367" title="Map showing The Inferno Room at 902 Virginia Avenue, Indianapolis" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contein">
+    <p class="marca-mare">The Inferno Room</p>
+    <p>902 Virginia Avenue, Indianapolis</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: Pexels, PhungNguyenPhotography, OurWhiskyFoundation</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
