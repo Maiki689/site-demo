@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Peacock Tattoo Parlor | Tattoos and Art in Sacramento</title>
+<meta name="description" content="Royal Peacock Tattoo Parlor on P Street in Sacramento. Walk-in tattoos, custom artwork, T-shirts, prints and flash sheets. Open daily, 12:00 pm to 12:00 am.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --negru:#0E0E0E;
+  --gri:#9A9A9A;
+  --linie-alb:rgba(255,255,255,.16);
+  --linie-negru:rgba(14,14,14,.16);
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.galerie-deschisa{overflow:hidden}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--alb);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+ul{margin:0;padding:0}
+section{padding:clamp(4.5rem,11vw,9rem) 0;scroll-margin-top:3rem}
+.wrap{max-width:76rem;margin:0 auto;padding:0 1.25rem}
+
+h1,h2,h3{
+  font-family:Anton,Impact,"Arial Narrow",sans-serif;
+  font-weight:400;
+  text-transform:uppercase;
+  letter-spacing:-.02em;
+  line-height:1.02;
+  margin:0;
+}
+h2{font-size:clamp(3.25rem,13vw,10rem)}
+h3{font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.05}
+.brk{margin-top:0}
+@media (min-width:1100px){
+  .brk{margin-left:-3vw;margin-right:-3vw}
+}
+
+a:not(.btn):not(.marca):not(.meniu){text-underline-offset:4px}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:3rem;
+  min-width:44px;
+  padding:.8rem 1.4rem;
+  font:600 .95rem/1 Inter,system-ui,sans-serif;
+  letter-spacing:0;
+  text-decoration:none;
+  border:1px solid currentColor;
+  border-radius:0;
+  cursor:pointer;
+  transition:transform .15s ease,background-color .25s ease,color .25s ease,border-color .25s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-alb{background:#FFFFFF;color:#0E0E0E;border-color:#FFFFFF}
+.btn-alb:hover{background:#9A9A9A;border-color:#9A9A9A}
+.btn-contur{background:transparent;color:#FFFFFF;border-color:#FFFFFF}
+.btn-contur:hover{background:#FFFFFF;color:#0E0E0E}
+.btn:focus-visible{outline:2px solid #9A9A9A;outline-offset:3px}
+
+/* Top bar */
+.antet{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  background:rgba(14,14,14,.6);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s ease,border-color .4s ease;
+}
+.antet.derulat{
+  background:rgba(14,14,14,.88);
+  border-bottom-color:var(--linie-alb);
+}
+.antet .rand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  min-height:4rem;
+}
+.marca{
+  margin-right:auto;
+  font-family:Anton,Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:1.15rem;
+  line-height:1;
+  letter-spacing:.01em;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.antet .btn{min-height:44px;padding:.6rem 1rem;font-size:.875rem}
+.antet .btn-mic{order:1}
+.nav{order:2;position:static}
+.meniu{
+  min-height:44px;
+  min-width:44px;
+  padding:0 .75rem;
+  background:none;
+  border:1px solid rgba(255,255,255,.45);
+  color:#FFFFFF;
+  font:600 .875rem/1 Inter,system-ui,sans-serif;
+  cursor:pointer;
+  transition:transform .15s ease,background-color .25s ease,color .25s ease;
+}
+.meniu:active{transform:scale(.97)}
+.meniu[aria-expanded="true"]{background:#FFFFFF;color:#0E0E0E}
+.meniu-lista{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  flex-direction:column;
+  list-style:none;
+  padding:.25rem 1.25rem 1.25rem;
+  background:#0E0E0E;
+  border-top:1px solid var(--linie-alb);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  font-family:Anton,Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:1.5rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  border-bottom:1px solid var(--linie-alb);
+}
+@media (min-width:860px){
+  .antet .rand{gap:2.5rem}
+  .antet .btn-mic{order:3}
+  .meniu{display:none}
+  .nav{order:2}
+  .meniu-lista{
+    display:flex;
+    position:static;
+    flex-direction:row;
+    gap:2.25rem;
+    padding:0;
+    border:0;
+    background:none;
+  }
+  .meniu-lista a{
+    min-height:auto;
+    padding:0;
+    font-family:Inter,system-ui,sans-serif;
+    font-size:.9375rem;
+    font-weight:500;
+    text-transform:none;
+    letter-spacing:0;
+    border:0;
+  }
+}
+
+/* Hero: typography only */
+.tapa{
+  position:relative;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:7rem 0 2.5rem;
+}
+.tapa .wrap{width:100%}
+.masthead h1{
+  font-size:clamp(4.25rem,23vw,17.5rem);
+  line-height:.86;
+  letter-spacing:-.02em;
+  margin-left:-.04em;
+}
+.masthead span{display:block}
+.masthead .l2{color:var(--gri)}
+.masthead .l3{
+  font-size:clamp(1.6rem,5.6vw,5rem);
+  line-height:1;
+  margin-top:.9rem;
+  letter-spacing:-.01em;
+}
+@keyframes glisare{
+  from{opacity:0;transform:translate3d(-2rem,0,0)}
+  to{opacity:1;transform:none}
+}
+.masthead span{animation:glisare .7s var(--curba) both}
+.masthead .l2{animation-delay:.1s}
+.masthead .l3{animation-delay:.2s}
+.tapa-jos{
+  display:grid;
+  gap:1.5rem;
+  margin-top:3rem;
+  animation:glisare .7s .3s var(--curba) both;
+}
+.deck{
+  font-size:clamp(1.25rem,2.6vw,1.75rem);
+  font-weight:500;
+  line-height:1.25;
+  letter-spacing:0;
+}
+.tapa-jos .text{max-width:30rem;font-size:1.0625rem}
+.ore{color:var(--gri);font-size:.9375rem}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+.telefon{font-weight:500;font-size:1rem}
+
+/* Photos: grayscale until they enter the screen, or on tap */
+.cadru{
+  position:relative;
+  margin:0;
+  overflow:hidden;
+  aspect-ratio:4/5;
+  background:#0E0E0E;
+}
+.cadru img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.cadru .gri{filter:grayscale(1) contrast(1.08)}
+.cadru .culoare{opacity:0;transition:opacity 1.2s var(--curba)}
+.cadru:hover .culoare,
+.cadru:focus-visible .culoare,
+.vizibil .culoare,
+.marita .culoare{opacity:1}
+.cadru:focus-visible{outline:2px solid var(--gri);outline-offset:4px}
+.larg{aspect-ratio:4/5}
+@media (min-width:760px){
+  .larg{aspect-ratio:21/9}
+}
+
+/* Scroll reveal (only when JS is on) */
+.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translate3d(-2.5rem,0,0);
+  transition:opacity .55s var(--curba),transform .55s var(--curba);
+}
+.js [data-jarvis="apare"].vizibil{
+  opacity:1;
+  transform:none;
+}
+
+/* About: light section */
+.blanc{background:#FFFFFF;color:#0E0E0E}
+.despre{display:grid;gap:2.5rem;margin-top:3rem}
+.lead{
+  font-size:clamp(1.125rem,2vw,1.375rem);
+  line-height:1.5;
+  max-width:36rem;
+}
+.fapte{list-style:none}
+.fapte li{
+  padding:1.25rem 0 1.5rem;
+  border-top:1px solid var(--linie-negru);
+}
+.fapte h3{font-size:1.5rem;margin-bottom:.45rem}
+.fapte p{font-size:1rem}
+@media (min-width:860px){
+  .despre{grid-template-columns:1fr 1fr;align-items:start;gap:4rem}
+}
+
+/* Gallery */
+.galeria{
+  list-style:none;
+  display:grid;
+  gap:1.25rem;
+  margin-top:3rem;
+}
+@media (min-width:760px){
+  .galeria{grid-template-columns:1fr 1fr}
+  .galeria li:first-child{grid-column:1/-1}
+  .galeria li:first-child .cadru{aspect-ratio:21/9}
+}
+.galerie .marita{
+  position:fixed;
+  inset:0;
+  z-index:90;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  margin:0;
+  background:#0E0E0E;
+  cursor:zoom-out;
+}
+.galerie .marita .cadru{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+}
+.galerie .marita img{object-fit:contain}
+
+/* Services: light section */
+.servicii{list-style:none;margin-top:3rem}
+.servicii li{
+  display:grid;
+  gap:.6rem;
+  padding:1.75rem 0;
+  border-top:1px solid var(--linie-negru);
+}
+.servicii li:last-child{border-bottom:1px solid var(--linie-negru)}
+.servicii p{font-size:1.0625rem;max-width:30rem}
+@media (min-width:760px){
+  .servicii li{grid-template-columns:1fr 1fr;align-items:baseline;gap:2rem}
+}
+
+/* Visit */
+.vizita{display:grid;gap:2.5rem;margin-top:3rem}
+.adresa{
+  font-style:normal;
+  font-size:clamp(1.25rem,2.4vw,1.625rem);
+  line-height:1.35;
+  margin-bottom:1.5rem;
+}
+.vizita .actiuni{margin-top:1.75rem}
+.harta{
+  height:22rem;
+  border:1px solid var(--linie-alb);
+  background:#0E0E0E;
+}
+.harta iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  filter:grayscale(1) contrast(1.05);
+}
+@media (min-width:860px){
+  .vizita{grid-template-columns:1fr 1.2fr;align-items:start;gap:4rem}
+  .harta{height:28rem}
+}
+
+/* Footer */
+.subsol{
+  border-top:1px solid var(--linie-alb);
+  padding:3rem 0 2.5rem;
+  font-size:.9375rem;
+  color:var(--gri);
+}
+.subsol .wrap{display:grid;gap:.6rem}
+.subsol-nume{
+  font-family:Anton,Impact,sans-serif;
+  text-transform:uppercase;
+  font-size:1.5rem;
+  line-height:1.1;
+  letter-spacing:-.01em;
+  color:#FFFFFF;
+  margin-bottom:.5rem;
+}
+.subsol a{color:#FFFFFF;margin-top:.9rem;justify-self:start;min-height:44px;display:inline-flex;align-items:center}
+
+/* Accessibility and preferences */
+@media (prefers-reduced-transparency:reduce){
+  .antet{
+    background:#0E0E0E;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast:more){
+  .masthead .l2{color:#FFFFFF}
+  .ore,.subsol{color:#FFFFFF}
+  .btn-contur{border-width:2px}
+  .harta,.antet .meniu{border-color:#FFFFFF}
+  .cadru .gri{filter:grayscale(1) contrast(1.2)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .masthead span,.tapa-jos{animation:none}
+  .js [data-jarvis="apare"]{
+    transform:none!important;
+    transition:opacity .3s linear;
+  }
+  .cadru .culoare{transition:opacity .3s linear}
+  .btn,.meniu{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap rand">
+    <a class="marca" href="#top">Royal Peacock</a>
+    <a class="btn btn-alb btn-mic" href="tel:+19164481979">Call now</a>
+    <nav class="nav" aria-label="Main">
+      <button class="meniu" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="tapa" id="top" aria-labelledby="titlu">
+    <div class="wrap">
+      <h1 class="masthead" id="titlu"><span class="l1">Royal</span><span class="l2">Peacock</span><span class="l3">Tattoo Parlor</span></h1>
+      <div class="tapa-jos">
+        <p class="deck">Tattoos and art in Sacramento</p>
+        <p class="text">Royal Peacock Tattoo Parlor makes tattoos and sells art daily in Sacramento. Walk-ins are welcome.</p>
+        <p class="ore">Open daily, 12:00 pm to 12:00 am</p>
+        <p class="telefon">(916) 448-1979</p>
+        <div class="actiuni">
+          <a class="btn btn-alb" href="tel:+19164481979">Call now</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Peacock+Tattoo+Parlor+Sacramento">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <figure class="cadru larg" data-jarvis="apare">
+    <img class="gri" src="img/1.jpg" alt="A tattoo artist inking a client's skin in the shop">
+    <img class="culoare" src="img/1.jpg" alt="" aria-hidden="true">
+  </figure>
+
+  <section class="blanc" id="about" aria-labelledby="despre-titlu">
+    <div class="wrap">
+      <h2 class="brk" id="despre-titlu" data-jarvis="apare">Walk-ins welcome</h2>
+      <div class="despre">
+        <p class="lead" data-jarvis="apare">Royal Peacock Tattoo Parlor is open from noon to midnight every day in Sacramento. Walk-ins are welcome for tattoos or to shop T-shirts, prints, and flash sheets. Free parking is available near the shop.</p>
+        <ul class="fapte">
+          <li data-jarvis="apare">
+            <h3>Noon to midnight</h3>
+            <p>Open daily, 12:00 pm to 12:00 am.</p>
+          </li>
+          <li data-jarvis="apare">
+            <h3>Free parking</h3>
+            <p>Free parking for all customers, near the shop.</p>
+          </li>
+          <li data-jarvis="apare">
+            <h3>Art for sale</h3>
+            <p>T-shirts, prints, and flash sheets available.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="fotografii" id="gallery" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 class="brk" id="galerie-titlu" data-jarvis="apare">Tattoo work</h2>
+      <ul class="galeria galerie" data-jarvis="galerie">
+        <li>
+          <figure class="cadru" data-jarvis="apare" tabindex="0">
+            <img class="gri" src="img/2.jpg" alt="Close-up of a tattooed arm">
+            <img class="culoare" src="img/2.jpg" alt="" aria-hidden="true">
+          </figure>
+        </li>
+        <li>
+          <figure class="cadru" data-jarvis="apare" tabindex="0">
+            <img class="gri" src="img/3.jpg" alt="Tattoo artist drawing on a client's body in a studio">
+            <img class="culoare" src="img/3.jpg" alt="" aria-hidden="true">
+          </figure>
+        </li>
+        <li>
+          <figure class="cadru" data-jarvis="apare" tabindex="0">
+            <img class="gri" src="img/4.jpg" alt="Portrait of a person with a tattoo on the hand">
+            <img class="culoare" src="img/4.jpg" alt="" aria-hidden="true">
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="blanc" id="services" aria-labelledby="servicii-titlu">
+    <div class="wrap">
+      <h2 class="brk" id="servicii-titlu" data-jarvis="apare">Services</h2>
+      <ul class="servicii">
+        <li data-jarvis="apare">
+          <h3>Tattoos</h3>
+          <p>Get a tattoo any day, 12 pm to 12 am.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Custom Artwork Tattoos</h3>
+          <p>Get a tattoo made from your own idea.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>T-shirts</h3>
+          <p>Buy T-shirts at the tattoo parlor.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Prints</h3>
+          <p>Purchase art prints at the shop.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Tattoo Flash Sheets</h3>
+          <p>Shop flash sheets for tattoo designs.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="visit" aria-labelledby="vizita-titlu">
+    <div class="wrap">
+      <h2 class="brk" id="vizita-titlu" data-jarvis="apare">2101 P Street</h2>
+      <div class="vizita">
+        <div>
+          <p class="adresa">Royal Peacock Tattoo Parlor<br>2101 P Street<br>Sacramento, CA</p>
+          <p class="ore">Open daily, 12:00 pm to 12:00 am</p>
+          <p class="telefon">(916) 448-1979</p>
+          <div class="actiuni">
+            <a class="btn btn-alb" href="tel:+19164481979">Call now</a>
+            <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Peacock+Tattoo+Parlor+Sacramento">Get directions</a>
+          </div>
+        </div>
+        <div class="harta">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-121.485195,38.567808,-121.477194,38.571808&amp;layer=mapnik&amp;marker=38.569808,-121.481195" title="Map showing Royal Peacock Tattoo Parlor at 2101 P Street, Sacramento" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <p class="subsol-nume">Royal Peacock Tattoo Parlor</p>
+    <p>2101 P Street, Sacramento, CA</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: kmckaskle, ilovetattoos, TeeFarm</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
