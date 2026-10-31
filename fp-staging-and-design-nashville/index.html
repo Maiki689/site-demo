@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FP Staging and Design | Home staging in Nashville</title>
+<meta name="description" content="FP Staging and Design stages homes for sale in Nashville, from the plan design to the installation. Same day staging and photography on Lyle Lane.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#EFE6D8;
+  --accent:#be123c;
+  --olive:#6B7046;
+  --brown:#3B2B22;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --wrap:1200px;
+  --gutter:clamp(1.25rem,4vw,3rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{
+  margin:0;
+  background:var(--sand);
+  color:var(--brown);
+  font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  font-family:Fraunces,Georgia,serif;
+  font-weight:500;
+  letter-spacing:-.02em;
+  line-height:1.08;
+  margin:0;
+}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.45rem;
+  border:1.5px solid transparent;border-radius:999px;
+  font:600 1rem/1 Figtree,system-ui,sans-serif;
+  text-decoration:none;cursor:pointer;
+  transition:transform .2s var(--ease),background-color .2s,color .2s,filter .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--accent);color:#fff}
+.btn-principal:hover{filter:brightness(.9)}
+.btn-contur{background:transparent;border-color:var(--brown);color:var(--brown)}
+.btn-contur:hover{background:var(--brown);color:var(--sand)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* Top bar */
+.antet{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(239,230,216,.62);
+  -webkit-backdrop-filter:blur(18px) saturate(1.1);
+  backdrop-filter:blur(18px) saturate(1.1);
+  border-bottom:1px solid rgba(59,43,34,.1);
+}
+.antet.derulat{background:rgba(239,230,216,.88)}
+.antet-in{
+  position:relative;max-width:var(--wrap);margin-inline:auto;
+  padding-inline:var(--gutter);
+  min-height:4rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.marca{
+  font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.05rem;
+  letter-spacing:-.01em;text-decoration:none;
+}
+.meniu-buton{
+  display:inline-flex;align-items:center;gap:.55rem;
+  min-height:44px;min-width:44px;padding:0 .95rem;
+  background:transparent;border:1.5px solid rgba(59,43,34,.35);border-radius:999px;
+  font:600 .95rem/1 Figtree,system-ui,sans-serif;color:var(--brown);cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton svg{width:18px;height:18px}
+.meniu-buton .linie-sus,.meniu-buton .linie-jos{transition:transform .35s var(--ease)}
+.meniu-buton[aria-expanded="true"] .linie-sus{transform:translateY(3px) rotate(45deg);transform-origin:center}
+.meniu-buton[aria-expanded="true"] .linie-jos{transform:translateY(-3px) rotate(-45deg);transform-origin:center}
+.meniu-lista{
+  list-style:none;margin:0;padding:0;
+  display:none;position:absolute;top:100%;left:0;right:0;
+  flex-direction:column;
+  background:var(--sand);
+  border-bottom:1px solid rgba(59,43,34,.12);
+  padding:.25rem var(--gutter) 1.25rem;
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a:not(.btn){
+  display:flex;align-items:center;min-height:48px;
+  text-decoration:none;font-weight:500;font-size:1.05rem;
+  border-bottom:1px solid rgba(59,43,34,.1);
+}
+.meniu-lista li:last-child{padding-top:1rem}
+.meniu-lista .btn{width:100%}
+
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    display:flex;position:static;flex-direction:row;align-items:center;gap:2.2rem;
+    background:none;border:0;padding:0;
+  }
+  .meniu-lista li:last-child{padding-top:0}
+  .meniu-lista a:not(.btn){
+    min-height:44px;border:0;font-size:1rem;
+    background-image:linear-gradient(var(--accent),var(--accent));
+    background-size:0 1.5px;background-repeat:no-repeat;background-position:0 100%;
+    transition:background-size .3s var(--ease);
+  }
+  .meniu-lista a:not(.btn):hover{background-size:100% 1.5px}
+  .meniu-lista .btn{width:auto;min-height:44px;padding:.6rem 1.2rem}
+}
+
+/* Hero */
+.inceput{padding:5.5rem 0 2.5rem}
+.inceput .wrap{display:grid;gap:1.75rem}
+.inceput h1{
+  font-size:clamp(2.85rem,7.4vw,5.6rem);
+}
+.inceput .slogan{
+  margin-top:1.1rem;
+  font-size:clamp(1.2rem,2.2vw,1.45rem);
+  font-weight:500;line-height:1.35;
+}
+.inceput .descriere{margin-top:.8rem;max-width:34ch;color:rgba(59,43,34,.85)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.adresa-linie{margin-top:1rem;font-size:.95rem;font-weight:500;color:rgba(59,43,34,.85)}
+.foto-mare{margin:0}
+.foto-mare img{
+  width:100%;
+  height:clamp(240px,34vw,280px);
+  object-fit:cover;
+  object-position:center;
+  border-radius:1.25rem;
+}
+@media (min-width:860px){
+  .inceput{padding:7rem 0 3.5rem}
+  .inceput .wrap{gap:2.25rem}
+}
+
+/* About */
+.sobre{padding:clamp(4.5rem,10vw,8rem) 0}
+.sobre-text{display:grid;gap:1.25rem;max-width:44rem}
+.sobre h2,.servicii h2,.galerie-sectiune h2,.visita h2{
+  margin-top:1rem;
+  font-size:clamp(2.1rem,5vw,3.6rem);
+}
+.sobre-text p{color:rgba(59,43,34,.88)}
+.avantaje{
+  list-style:none;margin:3.5rem 0 0;padding:0;
+  display:grid;gap:2.25rem;
+}
+.avantaj{
+  display:grid;gap:.9rem;align-content:start;
+  padding-top:1.5rem;border-top:1px solid rgba(59,43,34,.18);
+}
+.avantaj h3{font-size:1.35rem}
+.avantaj p{color:rgba(59,43,34,.82)}
+.pictograma{
+  width:3.25rem;height:3.25rem;flex:none;
+  display:grid;place-items:center;
+  background:var(--accent);color:var(--sand);
+  border-radius:50% 46% 54% 50% / 48% 52% 48% 52%;
+}
+.pictograma svg{width:26px;height:26px}
+@media (min-width:860px){
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:3rem}
+}
+
+/* Services */
+.servicii{
+  background:var(--brown);color:var(--sand);
+  padding:clamp(5rem,10vw,8rem) 0 clamp(4.5rem,9vw,7rem);
+  border-radius:clamp(3rem,10vw,7rem) clamp(3rem,10vw,7rem) 0 0 / clamp(2rem,4.5vw,4rem) clamp(2rem,4.5vw,4rem) 0 0;
+}
+.servicii h2{color:var(--sand)}
+.lista-servicii{list-style:none;margin:3rem 0 0;padding:0;display:grid}
+.serviciu{
+  display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;
+  padding:1.75rem 0;
+  border-top:1px solid rgba(239,230,216,.2);
+}
+.serviciu:last-child{border-bottom:1px solid rgba(239,230,216,.2)}
+.serviciu h3{font-size:1.45rem;color:var(--sand)}
+.serviciu p{margin-top:.35rem;color:rgba(239,230,216,.84)}
+@media (min-width:860px){
+  .lista-servicii{grid-template-columns:1fr 1fr;column-gap:4rem}
+  .serviciu:nth-child(2){border-bottom:1px solid rgba(239,230,216,.2)}
+  .serviciu:nth-child(3){border-top:1px solid rgba(239,230,216,.2)}
+}
+
+/* Gallery */
+.galerie-sectiune{padding:clamp(4.5rem,10vw,8rem) 0}
+.galerie-antet h2{margin-top:1rem}
+.galerie-antet p{margin-top:1rem;color:rgba(59,43,34,.8);max-width:48ch}
+.galerie{display:grid;gap:1rem;margin-top:2.75rem;grid-template-columns:1fr}
+.foto{
+  position:relative;margin:0;overflow:hidden;
+  aspect-ratio:4/3;cursor:zoom-in;
+  border-radius:30px 42px 30px 42px / 34px 26px 38px 30px;
+  background:rgba(59,43,34,.08);
+}
+.foto:nth-child(even){border-radius:42px 30px 42px 30px / 26px 36px 26px 40px}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+@media (hover:hover){.foto:hover img{transform:scale(1.03)}}
+@media (min-width:640px){
+  .galerie{grid-template-columns:1fr 1fr}
+}
+
+/* Enlarged photo (class added by the program) */
+.marita,
+.galerie .marita{
+  position:fixed !important;
+  inset:0 !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:none !important;
+  aspect-ratio:auto !important;
+  margin:0 !important;
+  padding:clamp(1rem,4vw,3rem) !important;
+  border-radius:0 !important;
+  z-index:80;
+  background:rgba(59,43,34,.94);
+  display:flex;align-items:center;justify-content:center;
+  cursor:zoom-out;
+}
+.marita img,
+img.marita{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  border-radius:0 !important;
+  transform:none !important;
+}
+html.galerie-deschisa{overflow:hidden}
+
+/* Visit */
+.visita{padding:clamp(4.5rem,10vw,8rem) 0;border-top:1px solid rgba(59,43,34,.12)}
+.visita .wrap{display:grid;gap:3rem}
+.visita-text{display:grid;gap:1.25rem;align-content:start}
+.visita-text p{color:rgba(59,43,34,.85)}
+.detalii{margin:1.75rem 0 0;display:grid;gap:1.1rem}
+.detalii div{display:grid;gap:.2rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(59,43,34,.14)}
+.detalii dt{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em}
+.detalii dd{margin:0;font-size:1.15rem;font-weight:500}
+.actiuni-vizita{margin-top:1.75rem}
+.harta-bloc{margin-top:0}
+.harta-desen{
+  position:relative;overflow:hidden;
+  background:rgba(59,43,34,.035);
+  border:1.5px solid rgba(59,43,34,.22);
+  border-radius:30px 38px 32px 42px / 36px 28px 40px 32px;
+}
+.harta-desen svg{display:block;width:100%;height:auto}
+.harta-eticheta{
+  position:absolute;left:68.1%;top:56.2%;
+  transform:translate(-50%,calc(-100% - 1.1rem));
+  background:var(--sand);
+  padding:.3rem .7rem;border-radius:999px;
+  border:1px solid rgba(59,43,34,.22);
+  font-size:.85rem;font-weight:600;white-space:nowrap;
+}
+.harta-nota{margin-top:.8rem;font-size:.9rem;color:rgba(59,43,34,.78)}
+.mapa-reala{margin-top:2rem;overflow:hidden;border-radius:26px 34px 26px 34px / 30px 24px 30px 24px}
+.mapa-reala iframe{display:block;width:100%;height:320px;border:0}
+
+/* Footer */
+.subsol{background:var(--brown);color:var(--sand);padding:4.5rem 0 2.5rem}
+.subsol-grid{display:grid;gap:2.25rem}
+.subsol .marca-mare{font-family:Fraunces,Georgia,serif;font-size:1.5rem;font-weight:500;letter-spacing:-.01em}
+.subsol p{color:rgba(239,230,216,.88)}
+.subsol a{text-underline-offset:3px}
+.subsol .mic{font-size:.88rem;color:rgba(239,230,216,.74)}
+.subsol-linie{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(239,230,216,.18);display:grid;gap:.5rem}
+@media (min-width:860px){
+  .subsol-grid{grid-template-columns:1.2fr 1fr 1.4fr}
+}
+
+/* Reveal on scroll (only when the page runs the script) */
+.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Hand-drawn route: draws itself when the map enters the screen */
+.js .harta-bloc .drum{
+  stroke-dasharray:1;
+  stroke-dashoffset:1;
+  transition:stroke-dashoffset 2.6s cubic-bezier(.45,.05,.3,1) .5s;
+}
+.js .harta-bloc.vizibil .drum{stroke-dashoffset:0}
+.js .harta-bloc .pin,
+.js .harta-bloc .harta-eticheta{
+  opacity:0;
+  transition:opacity .5s ease 3s;
+}
+.js .harta-bloc.vizibil .pin,
+.js .harta-bloc.vizibil .harta-eticheta{opacity:1}
+.js .harta-bloc .harta-eticheta{transform:translate(-50%,calc(-100% - 1.1rem))}
+
+/* Preferences */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  .js .harta-bloc .drum{transition:opacity .4s ease;stroke-dashoffset:0}
+  .js .harta-bloc .pin,
+  .js .harta-bloc .harta-eticheta{transition:opacity .4s ease}
+  .foto img,.btn,.meniu-buton .linie-sus,.meniu-buton .linie-jos,.meniu-lista a:not(.btn){transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--sand);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .btn-contur{border-width:2px}
+  .btn-principal{background:var(--brown)}
+  .btn-principal:hover{filter:none;background:#2a1e17}
+  .detalii div,.avantaj,.serviciu{border-color:var(--brown)}
+  .servicii .serviciu{border-color:var(--sand)}
+  .detalii dt{color:var(--brown)}
+  .inceput .descriere,.adresa-linie,.sobre-text p,.visita-text p{color:var(--brown)}
+  .subsol p,.subsol .mic{color:var(--sand)}
+}
+</style>
+</head>
+<body id="sus">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">FP Staging and Design</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+      <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <line class="linie-sus" x1="4" y1="8" x2="20" y2="8"/>
+        <line class="linie-jos" x1="4" y1="16" x2="20" y2="16"/>
+      </svg>
+      <span>Menu</span>
+    </button>
+    <nav aria-label="Main">
+      <ul id="meniu-lista" class="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#servicii">Services</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#vizita">Visit</a></li>
+        <li><a class="btn btn-principal" href="tel:+16154658086">Call now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="inceput" id="top">
+    <div class="wrap">
+      <div class="inceput-text" data-jarvis="apare">
+        <h1>FP Staging and Design</h1>
+        <p class="slogan">Staging and design for Nashville homes.</p>
+        <p class="descriere">We stage homes for sale, from the first plan to the finished room.</p>
+        <div class="actiuni">
+          <a class="btn btn-principal" href="tel:+16154658086">Call now</a>
+          <a class="btn btn-contur" href="#servicii">See our services</a>
+        </div>
+        <p class="adresa-linie">145 Lyle Lane, Nashville</p>
+      </div>
+      <figure class="foto-mare" data-jarvis="apare">
+        <img src="img/3.jpg" alt="Model home living room with a brown couch, a fireplace and large windows" width="1200" height="700">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sobre" id="despre">
+    <div class="wrap">
+      <div class="sobre-text" data-jarvis="apare">
+        <h2>Staging for homes on the market</h2>
+        <p>FP Staging and Design focuses on staging homes for sale in Nashville. The team takes a home through the full staging process, from the plan design to the installation at the property.</p>
+        <p>Same day staging and photography are available on Lyle Lane.</p>
+      </div>
+      <ul class="avantaje">
+        <li class="avantaj" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </span>
+          <h3>Fast staging</h3>
+          <p>Same day staging and photos.</p>
+        </li>
+        <li class="avantaj" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+          </span>
+          <h3>Nashville based</h3>
+          <p>Staging available in Nashville.</p>
+        </li>
+        <li class="avantaj" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/></svg>
+          </span>
+          <h3>Full process</h3>
+          <p>Plan, install, and photograph.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="servicii" id="servicii">
+    <div class="wrap">
+      <div data-jarvis="apare">
+        <h2>Services</h2>
+      </div>
+      <ul class="lista-servicii">
+        <li class="serviciu" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+          </span>
+          <div>
+            <h3>Home staging service</h3>
+            <p>Home staging service for Nashville properties.</p>
+          </div>
+        </li>
+        <li class="serviciu" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h8v10M12 14h8"/></svg>
+          </span>
+          <div>
+            <h3>Custom staging plan design</h3>
+            <p>Custom staging plan design for homes.</p>
+          </div>
+        </li>
+        <li class="serviciu" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v2h12v-2a2 2 0 0 1 4 0v5H2z"/></svg>
+          </span>
+          <div>
+            <h3>Home staging installation</h3>
+            <p>Home staging installation at the property.</p>
+          </div>
+        </li>
+        <li class="serviciu" data-jarvis="apare">
+          <span class="pictograma" aria-hidden="true">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+          </span>
+          <div>
+            <h3>Same day staging and photography</h3>
+            <p>Same day staging and photography service.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune" id="galerie">
+    <div class="wrap">
+      <div class="galerie-antet" data-jarvis="apare">
+        <h2>What staging looks like</h2>
+        <p>Tap a photo to enlarge it. These are illustrative stock images.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/1.jpg" alt="Gray living room with neutral furniture, styled for a home sale" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/2.jpg" alt="Living room with a sofa, a table, chairs and a fireplace" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/4.jpg" alt="Open lounge and dining area with chairs and a table" loading="lazy">
+        </figure>
+        <figure class="foto" data-jarvis="apare">
+          <img src="img/5.jpg" alt="Kitchen counter and living area furnished for a home sale" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="visita" id="vizita">
+    <div class="wrap">
+      <div class="visita-text" data-jarvis="apare">
+        <h2>145 Lyle Lane, Nashville</h2>
+        <p>Same day staging and photography are available on Lyle Lane. Call or get directions before you come by.</p>
+        <dl class="detalii">
+          <div>
+            <dt>Address</dt>
+            <dd>145 Lyle Lane, Nashville</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>Monday to Friday, 8am to 4pm</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd>(615) 465-8086</dd>
+          </div>
+        </dl>
+        <div class="actiuni actiuni-vizita">
+          <a class="btn btn-principal" href="tel:+16154658086">Call now</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=FP+Staging+and+Design+Nashville" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+      </div>
+
+      <div class="harta-bloc" data-jarvis="apare">
+        <div class="harta-desen">
+          <svg viewbox="0 0 800 520" role="img" aria-label="Hand-drawn sketch of the streets around 145 Lyle Lane. A route runs from the bottom edge of the map along the roads to the business on Lyle Lane.">
+            
+            <path d="M60 300c30-40 110-38 130 0s-20 70-70 52-80-30-60-52z" fill="#6B7046" fill-opacity=".28"/>
+            <path d="M600 60c60-22 130 18 116 66-14 44-92 40-112 4-12-22-10-48-4-70z" fill="#6B7046" fill-opacity=".28"/>
+            <path d="M800 430c-60 6-90 40-150 44s-70 52-120 46" fill="none" stroke="#6B7046" stroke-opacity=".42" stroke-width="18" stroke-linecap="round"/>
+            
+            <g fill="#3B2B22" fill-opacity=".1">
+              <rect x="60" y="150" width="50" height="40" rx="8"/>
+              <rect x="200" y="120" width="60" height="46" rx="8"/>
+              <rect x="330" y="236" width="40" height="36" rx="7"/>
+              <rect x="386" y="232" width="50" height="42" rx="7"/>
+              <rect x="580" y="220" width="60" height="44" rx="7"/>
+              <rect x="400" y="312" width="50" height="40" rx="7"/>
+              <rect x="560" y="320" width="50" height="36" rx="7"/>
+              <rect x="40" y="420" width="60" height="40" rx="7"/>
+              <rect x="700" y="130" width="56" height="40" rx="7"/>
+              <rect x="150" y="470" width="56" height="36" rx="7"/>
+            </g>
+            <g fill="none" stroke="#3B2B22" stroke-linecap="round" stroke-linejoin="round">
+              
+              <path d="M300 0c-6 80 10 140 4 210" stroke-opacity=".3" stroke-width="5"/>
+              <path d="M650 0c-10 80 10 150 2 200" stroke-opacity=".3" stroke-width="5"/>
+              <path d="M40 120c120 10 200-14 260-10" stroke-opacity=".3" stroke-width="5"/>
+              <path d="M600 300c20 40 40 100 60 220" stroke-opacity=".3" stroke-width="5"/>
+              <path d="M140 430c60 10 110 40 160 90" stroke-opacity=".3" stroke-width="5"/>
+              <path d="M700 420c40 10 80 30 120 50" stroke-opacity=".3" stroke-width="5"/>
+              
+              <path d="M120 -10c30 130 95 260 142 402 28 78 56 108 68 148" stroke-opacity=".5" stroke-width="10"/>
+              <path d="M-10 214c120-24 240 24 380 2s260-34 440-12" stroke-opacity=".5" stroke-width="10"/>
+              <path d="M-10 380c120-20 240 16 420-12s280-38 830-12" stroke-opacity=".5" stroke-width="10"/>
+              <path d="M470-10c-15 110 30 170 22 240s-16 90 -8 180 30 110 50 150" stroke-opacity=".5" stroke-width="10"/>
+              
+              <path d="M380 300c60-8 120-4 180-12s160-18 260-8" stroke-opacity=".7" stroke-width="9"/>
+              
+              <path class="drum" pathlength="1" d="M330 538c-8-46-38-96-68-146 C300 378 370 384 430 368c54-14 70-42 90-62 " stroke="#be123c" stroke-width="7" stroke-opacity="1"/>
+              <path class="drum" pathlength="1" d="M520 306c8-4 16-8 25-14" stroke="#be123c" stroke-width="7" stroke-opacity="1"/>
+              
+              <circle cx="330" cy="538" r="9" fill="#EFE6D8" stroke="#3B2B22" stroke-width="3"/>
+              
+              <circle class="pin" cx="545" cy="292" r="13" fill="#be123c" stroke="#EFE6D8" stroke-width="5"/>
+            </g>
+          </svg>
+          <span class="harta-eticheta">145 Lyle Lane</span>
+        </div>
+        <p class="harta-nota">Hand-drawn sketch of the streets around 145 Lyle Lane. Not to scale.</p>
+      </div>
+
+      <div class="mapa-reala" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.743939,36.125675,-86.735939,36.129675&amp;layer=mapnik&amp;marker=36.127675,-86.739939" title="Map showing 145 Lyle Lane, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <div class="subsol-grid">
+      <div>
+        <p class="marca-mare">FP Staging and Design</p>
+        <p>Staging and design for Nashville homes.</p>
+      </div>
+      <div>
+        <p>145 Lyle Lane, Nashville</p>
+        <p>Monday to Friday, 8am to 4pm</p>
+        <p><a href="tel:+16154658086">(615) 465-8086</a></p>
+      </div>
+      <div>
+        <p class="mic">Website concept (demo)</p>
+      </div>
+    </div>
+    <div class="subsol-linie">
+      <p class="mic">Illustrative photos from Pixabay: Ernest_Roy, ErikaWittlieb, jessebridgewater, encoreuniverse, user32212</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
