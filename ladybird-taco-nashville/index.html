@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ladybird Taco, Nashville | Breakfast and lunch tacos</title>
+<meta name="description" content="Ladybird Taco in Nashville: breakfast and lunch tacos with house-made tortillas, salads, queso and salsa, barista service, catering and private events.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Karla:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --crem:#F3EDE2;
+  --rosu:#A4161A;
+  --negru:#1B1B1B;
+  --lemn:#7B5B3A;
+  --fir:rgba(27,27,27,.16);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Karla,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--crem);color:var(--negru);font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:.22em}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+h1,h2,h3,p,ul,figure{margin:0}
+ul{padding:0;list-style:none}
+.wrap{width:min(100% - 2.5rem,70rem);margin-inline:auto}
+
+/* Header */
+.antet{position:sticky;top:0;z-index:50;background:rgba(243,237,226,.8);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:background-color .4s,border-color .4s}
+.antet.derulat{background:rgba(243,237,226,.93);border-bottom-color:rgba(123,91,58,.35)}
+.antet-in{position:relative;display:flex;align-items:center;gap:.5rem;min-height:4.25rem}
+.marca{font-family:var(--serif);font-weight:600;font-size:1.35rem;line-height:1;letter-spacing:-.01em;text-decoration:none;white-space:nowrap;margin-right:auto}
+.antet nav{margin-left:0}
+.meniu-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--crem);padding:.25rem 1.25rem 1rem;border-bottom:1px solid var(--fir)}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{display:flex;align-items:center;min-height:48px;font-family:var(--serif);font-weight:500;font-size:1.5rem;text-decoration:none;border-bottom:1px dotted rgba(123,91,58,.6)}
+.meniu-lista li:last-child a{border-bottom:0}
+.deschide{display:block;min-height:44px;min-width:44px;padding:0 .7rem;border:1px solid var(--negru);border-radius:2px;background:transparent;color:var(--negru);font:inherit;font-size:.9rem;font-weight:500;cursor:pointer;transition:background-color .3s,color .3s,transform .15s}
+.deschide:active{transform:scale(.97)}
+.deschide[aria-expanded="true"]{background:var(--negru);color:var(--crem)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.4rem;border:1px solid var(--rosu);border-radius:2px;font-family:var(--sans);font-weight:700;font-size:.98rem;line-height:1.2;text-decoration:none;text-align:center;transition:background-color .3s,color .3s,border-color .3s,transform .15s}
+.btn:active{transform:scale(.97)}
+.btn-rosu{background:var(--rosu);color:var(--crem)}
+.btn-rosu:hover{background:var(--negru);border-color:var(--negru)}
+.btn-contur{background:transparent;color:var(--negru);border-color:var(--negru)}
+.btn-contur:hover{background:var(--negru);color:var(--crem)}
+.btn-mic{min-height:44px;padding:.5rem .85rem;font-size:.9rem}
+.botoane{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.botoane .btn{flex:1 1 10rem}
+
+/* Hero */
+.intro{padding:2.5rem 0 4.5rem}
+.intro-grid{display:grid;gap:2.75rem;align-items:center}
+.intro h1{font-family:var(--serif);font-weight:600;font-size:clamp(3.5rem,15vw,8.5rem);line-height:.98;letter-spacing:-.02em}
+.slogan{margin-top:1.25rem;font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.2;letter-spacing:-.01em}
+.lead{margin-top:1.75rem;max-width:32rem}
+.orar{margin-top:.75rem;color:var(--lemn);font-weight:500}
+.farfurie{justify-self:center;width:min(80%,26rem);aspect-ratio:1;padding:5%;border-radius:50%;border:1px solid rgba(123,91,58,.55)}
+.farfurie img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+
+/* Sections */
+.seccion{padding:5rem 0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(2.5rem,6vw,4.25rem);line-height:1.04;letter-spacing:-.02em}
+
+/* About */
+.despre-grid{display:grid;gap:2.5rem}
+.despre-text p{max-width:38rem;font-size:1.125rem}
+.despre-text p + p{margin-top:1.1rem}
+.avantaje{margin-top:2.5rem;border-top:1px solid var(--fir)}
+.avantaje li{padding:1.25rem 0;border-bottom:1px solid var(--fir)}
+.avantaje h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.15}
+.avantaje p{margin-top:.25rem}
+
+/* Menu (the one embroidered band lives here) */
+.carte-sect{background:var(--lemn);color:var(--crem)}
+.carte-sect h2{color:var(--crem)}
+.bordura-bloc{max-width:52rem;margin-bottom:2.25rem}
+.bordura{display:block;width:100%;height:auto;color:var(--crem);overflow:visible}
+.bordura g{stroke-linecap:round;stroke-linejoin:round}
+.carte{margin-top:2.5rem}
+.carte li{padding:1.4rem 0;border-bottom:1px dotted rgba(243,237,226,.55)}
+.carte h3{font-family:var(--serif);font-weight:600;font-size:1.65rem;line-height:1.1}
+.carte p{margin-top:.35rem}
+
+/* Gallery */
+.galeria-sect{background:var(--negru);color:var(--crem)}
+.galeria-sect h2{color:var(--crem)}
+.galerie{display:grid;gap:.75rem;margin-top:2.5rem}
+.pic{position:relative}
+.pic img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.pic.marita{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1.25rem;background:rgba(27,27,27,.95);animation:marire .35s var(--curba)}
+.pic.marita img{width:auto;height:auto;max-width:100%;max-height:100%;aspect-ratio:auto;object-fit:contain}
+html.galerie-deschisa body{overflow:hidden}
+@keyframes marire{from{opacity:0}to{opacity:1}}
+
+/* Visit */
+.visita-grid{display:grid;gap:3rem}
+.info-bloc{padding:1.25rem 0;border-bottom:1px solid var(--fir)}
+.info-bloc:first-child{border-top:1px solid var(--fir)}
+.info-bloc h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;line-height:1.15}
+.info-bloc p{margin-top:.2rem}
+.info-bloc a{font-weight:500}
+.harta iframe{display:block;width:100%;height:22rem;border:1px solid var(--fir);background:var(--crem)}
+
+/* Footer */
+.pie{background:var(--negru);color:var(--crem);padding:3.5rem 0 2.5rem;font-size:.9375rem}
+.pie-in{display:grid;gap:2rem}
+.pie-marca{font-family:var(--serif);font-weight:600;font-size:1.75rem;line-height:1}
+.pie-links{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.pie-links a{display:inline-flex;align-items:center;min-height:44px}
+.pie-nota{color:rgba(243,237,226,.82)}
+.pie-nota p + p{margin-top:.5rem}
+
+/* Reveal on scroll: without html.js everything stays visible */
+html.js [data-jarvis="apare"]{opacity:0;transform:translate3d(0,22px,0);transition:opacity .55s var(--curba),transform .55s var(--curba)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* The stitch: the band is sewn from left to right as it enters the screen */
+html.js .mc{transform:scaleX(0);transform-box:fill-box;transform-origin:0 50%}
+html.js .vizibil .mc{transform:scaleX(1);transition:transform 1.8s cubic-bezier(.45,0,.2,1) .25s}
+
+/* Breakpoints */
+@media (min-width:560px){
+  .galerie{grid-template-columns:1fr 1fr}
+  .pic:first-child{grid-column:1 / -1}
+}
+@media (min-width:720px){
+  .carte{display:grid;grid-template-columns:1fr 1fr;column-gap:4rem}
+}
+@media (min-width:860px){
+  .deschide{display:none}
+  .marca{margin-right:0}
+  .antet nav{margin-left:auto}
+  .meniu-lista{display:flex;position:static;flex-direction:row;align-items:center;gap:2.25rem;background:none;padding:0;border:0}
+  .meniu-lista a{min-height:44px;padding:0;border:0;font-family:var(--sans);font-size:.9375rem;font-weight:500;text-decoration:none}
+  .meniu-lista a:hover{text-decoration:underline}
+  .intro{padding:5.5rem 0 8rem}
+  .intro-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:5rem}
+  .farfurie{width:100%;max-width:26rem}
+  .seccion{padding:7.5rem 0}
+  .despre-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:6rem;align-items:start}
+  .avantaje{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;border-top:0}
+  .avantaje li{border-top:1px solid var(--fir);border-bottom:0;padding:1.25rem 0 0}
+  .visita-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:5rem;align-items:start}
+  .harta iframe{height:26rem}
+  .pie-in{grid-template-columns:1fr auto 1.2fr;align-items:start;gap:4rem}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+  html.js .mc,html.js .vizibil .mc{transform:none;transition:none}
+  .btn,.deschide{transition:none}
+  .pic.marita{animation:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  body{color:#000}
+  .btn-contur{border-width:2px}
+  .antet{border-bottom-color:var(--negru)}
+  .orar,.info-bloc a{color:var(--negru)}
+  .pie-nota{color:var(--crem)}
+  .avantaje li,.info-bloc,.carte li{border-color:currentColor}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap antet-in">
+    <a class="marca" href="#top">Ladybird Taco</a>
+    <nav aria-label="Sections">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#despre">About</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#vizita">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-rosu btn-mic" href="tel:+16152062204">Call now</a>
+    <button class="deschide" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Contents</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" id="top">
+    <div class="wrap intro-grid">
+      <div>
+        <h1>Ladybird Taco</h1>
+        <p class="slogan">Breakfast and lunch tacos, all day</p>
+        <div class="botoane">
+          <a class="btn btn-rosu" href="tel:+16152062204">Call now</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Ladybird+Taco+Nashville">Get directions</a>
+        </div>
+        <p class="lead">Breakfast and lunch tacos made with house-made tortillas and fresh sides.</p>
+        <p class="orar">Open every day from 7 am to 4 pm</p>
+      </div>
+      <figure class="farfurie">
+        <img src="img/1.jpg" alt="Tacos served on a plate">
+      </figure>
+    </div>
+  </section>
+
+  <section class="seccion" id="despre" aria-labelledby="t-despre">
+    <div class="wrap despre-grid">
+      <h2 id="t-despre">About us</h2>
+      <div class="despre-text" data-jarvis="apare">
+        <p>Ladybird Taco serves breakfast tacos and lunch tacos with fresh house-made tortillas, plus salads, queso and salsa, in Nashville.</p>
+        <p>The barista service runs throughout the day, and coffee drinks are made any time you come in. Catering and private event hosting are available for groups.</p>
+        <ul class="avantaje">
+          <li>
+            <h3>Barista service</h3>
+            <p>Coffee drinks made any time.</p>
+          </li>
+          <li>
+            <h3>Fresh salads</h3>
+            <p>Salads with house-made tortillas.</p>
+          </li>
+          <li>
+            <h3>Group events</h3>
+            <p>Private event hosting for gatherings.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion carte-sect" id="menu" aria-labelledby="t-menu">
+    <div class="wrap">
+      <div class="bordura-bloc" data-jarvis="apare">
+        <svg class="bordura" viewbox="0 0 360 30" aria-hidden="true" focusable="false">
+          <defs>
+            <mask id="cusatura" maskunits="userSpaceOnUse" x="0" y="0" width="360" height="30">
+              <rect class="mc" x="0" y="0" width="360" height="30" fill="#fff"/>
+            </mask>
+          </defs>
+          <g mask="url(#cusatura)" fill="none" stroke="currentColor" stroke-width="1">
+            <path stroke-dasharray="3 2" d="M0 3H360M0 27H360"/>
+            <path d="M6 11l8 8m0-8l-8 8M26 11l8 8m0-8l-8 8M46 11l8 8m0-8l-8 8M66 11l8 8m0-8l-8 8M86 11l8 8m0-8l-8 8M106 11l8 8m0-8l-8 8M126 11l8 8m0-8l-8 8M146 11l8 8m0-8l-8 8M166 11l8 8m0-8l-8 8M186 11l8 8m0-8l-8 8M206 11l8 8m0-8l-8 8M226 11l8 8m0-8l-8 8M246 11l8 8m0-8l-8 8M266 11l8 8m0-8l-8 8M286 11l8 8m0-8l-8 8M306 11l8 8m0-8l-8 8M326 11l8 8m0-8l-8 8M346 11l8 8m0-8l-8 8"/>
+            <path d="M20 11l4 4-4 4-4-4zM40 11l4 4-4 4-4-4zM60 11l4 4-4 4-4-4zM80 11l4 4-4 4-4-4zM100 11l4 4-4 4-4-4zM120 11l4 4-4 4-4-4zM140 11l4 4-4 4-4-4zM160 11l4 4-4 4-4-4zM180 11l4 4-4 4-4-4zM200 11l4 4-4 4-4-4zM220 11l4 4-4 4-4-4zM240 11l4 4-4 4-4-4zM260 11l4 4-4 4-4-4zM280 11l4 4-4 4-4-4zM300 11l4 4-4 4-4-4zM320 11l4 4-4 4-4-4zM340 11l4 4-4 4-4-4z"/>
+          </g>
+        </svg>
+      </div>
+      <h2 id="t-menu">Menu</h2>
+      <ul class="carte" data-jarvis="apare">
+        <li>
+          <h3>Breakfast tacos</h3>
+          <p>Served from 7 am to 4 pm, every day.</p>
+        </li>
+        <li>
+          <h3>Lunch tacos</h3>
+          <p>Served on house-made tortillas.</p>
+        </li>
+        <li>
+          <h3>House-made tortillas</h3>
+          <p>Made fresh in-house and used in the tacos and salads.</p>
+        </li>
+        <li>
+          <h3>Queso and salsa</h3>
+          <p>To add to your tacos.</p>
+        </li>
+        <li>
+          <h3>Salads</h3>
+          <p>Served with house-made tortillas.</p>
+        </li>
+        <li>
+          <h3>Full barista service</h3>
+          <p>Coffee drinks all day.</p>
+        </li>
+        <li>
+          <h3>Catering</h3>
+          <p>Food for groups.</p>
+        </li>
+        <li>
+          <h3>Private event hosting</h3>
+          <p>Hosting for private events and gatherings.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion galeria-sect" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <h2 id="t-galerie">From the kitchen</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="pic">
+          <img src="img/1.jpg" alt="Tacos on tortillas, close up" loading="lazy" decoding="async">
+        </figure>
+        <figure class="pic">
+          <img src="img/2.jpg" alt="Tacos on warm tortillas" loading="lazy" decoding="async">
+        </figure>
+        <figure class="pic">
+          <img src="img/3.jpg" alt="Close view of a taco on a tortilla" loading="lazy" decoding="async">
+        </figure>
+        <figure class="pic">
+          <img src="img/4.jpg" alt="Tacos with salsa on a table" loading="lazy" decoding="async">
+        </figure>
+        <figure class="pic">
+          <img src="img/5.jpg" alt="Tacos on a plate on a table" loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="vizita" aria-labelledby="t-vizita">
+    <div class="wrap visita-grid">
+      <div data-jarvis="apare">
+        <h2 id="t-vizita">Visit us</h2>
+        <div class="info-lista" style="margin-top:2rem">
+          <div class="info-bloc">
+            <h3>Address</h3>
+            <p>2300 Riverside Drive, Nashville</p>
+          </div>
+          <div class="info-bloc">
+            <h3>Opening hours</h3>
+            <p>Open every day from 7 am to 4 pm</p>
+          </div>
+          <div class="info-bloc">
+            <h3>Phone</h3>
+            <p><a href="tel:+16152062204">(615) 206-2204</a></p>
+          </div>
+        </div>
+        <div class="botoane">
+          <a class="btn btn-rosu" href="tel:+16152062204">Call now</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Ladybird+Taco+Nashville">Get directions</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.728714,36.202810,-86.720714,36.206811&amp;layer=mapnik&amp;marker=36.204811,-86.724714" title="Map of Ladybird Taco at 2300 Riverside Drive, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap pie-in">
+    <div>
+      <p class="pie-marca">Ladybird Taco</p>
+      <p>2300 Riverside Drive, Nashville</p>
+      <p><a href="tel:+16152062204">(615) 206-2204</a></p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="pie-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#despre">About</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#vizita">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="pie-nota">
+      <p>Website concept (demo)</p>
+      <p>Illustrative photos from Pixabay: JaimeAP, Yezmin, adamlot, guerita76</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
