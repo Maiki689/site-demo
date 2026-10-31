@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Thai cuisine and craft cocktails at Orchard Thai in Sacramento. Open late every day, with reservations and delivery available.">
+<title>Orchard Thai | Thai Cuisine &amp; Craft Cocktails in Sacramento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #1f4e79;
+  --white: #fafaf7;
+  --ochre: #d9a441;
+  --olive: #7a8450;
+  --line: rgba(31,78,121,.22);
+  --serif: "DM Serif Display", Georgia, serif;
+  --sans: "DM Sans", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+body { margin: 0; background: var(--white); color: var(--blue); font-family: var(--sans); line-height: 1.6; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-underline-offset: .25em; }
+button { font: inherit; }
+img { display: block; width: 100%; object-fit: cover; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-weight: 400; }
+h1, h2 { font-family: var(--serif); line-height: 1.05; letter-spacing: -.025em; }
+h2 { font-size: clamp(2.5rem, 4.8vw, 4.6rem); }
+p { max-width: 38rem; }
+a:focus-visible, button:focus-visible, img[tabindex]:focus-visible { outline: 3px solid var(--ochre); outline-offset: 6px; }
+.wrap { width: min(100% - 4rem, 76rem); margin-inline: auto; }
+.skip { position: fixed; left: 1rem; top: -6rem; z-index: 100; padding: 1rem; background: var(--blue); color: var(--white); }
+.skip:focus { top: 1rem; }
+.header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(250,250,247,.88);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+.header.derulat { background: rgba(250,250,247,.96); }
+.nav { min-height: 5.4rem; display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.wordmark { font-family: var(--serif); font-size: 1.65rem; text-decoration: none; letter-spacing: -.03em; white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 2.25rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { display: inline-flex; min-height: 44px; align-items: center; text-decoration: none; font-size: .9rem; }
+.nav-links a:hover { text-decoration: underline; }
+.nav-links .nav-contact { border-bottom: 1px solid var(--blue); }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line); color: var(--blue); padding: .6rem 1rem; min-height: 44px; }
+.button {
+  display: inline-flex; justify-content: center; align-items: center;
+  min-height: 52px; padding: .85rem 1.65rem;
+  background: var(--blue); color: var(--white);
+  text-decoration: none; font-weight: 600; font-size: .95rem;
+  transition: transform .18s ease, opacity .18s ease;
+}
+.button:hover { opacity: .88; }
+.button:active, .menu-toggle:active { transform: scale(.97); }
+.hero { padding-top: 3.6rem; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 5rem; align-items: center; padding-bottom: 4.5rem; }
+.hero-copy { padding: 2rem 0; }
+.hero-intro { font-size: 1.05rem; margin-bottom: 1.6rem; }
+h1 { font-size: clamp(4.5rem, 8.7vw, 8.2rem); max-width: 40rem; }
+.hero-description { font-size: clamp(1.2rem, 2.1vw, 1.6rem); margin-top: 1.7rem; max-width: 24rem; line-height: 1.4; }
+.hero-actions { margin-top: 2rem; }
+.hero-hours { font-size: .88rem; margin-top: 1.25rem; max-width: 24rem; }
+.hero-photo { margin: 0; }
+.hero-photo img { height: 35rem; border-radius: 50% 50% 0 0 / 38% 38% 0 0; }
+.hero-photo figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-top: .85rem; font-size: .78rem; }
+.wave { height: 4.5rem; overflow: hidden; color: var(--blue); }
+.wave svg { display: block; width: 200%; height: 100%; animation: tide 24s linear infinite alternate; }
+@keyframes tide { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+.about { background: var(--blue); color: var(--white); padding: 5.5rem 0 6.5rem; }
+.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 7rem; }
+.about h2 { max-width: 34rem; }
+.about-copy { padding-top: .4rem; font-size: 1.12rem; }
+.about-copy p + p { margin-top: 1.3rem; }
+.about-note { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(250,250,247,.3); font-size: .9rem; }
+.menu-section { padding: 7rem 0; }
+.section-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: end; margin-bottom: 3.25rem; }
+.section-heading > p { max-width: 28rem; font-size: 1.05rem; }
+.menu-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 5rem; }
+.menu-item { padding: 2rem 0 2.25rem; border-top: 1px solid var(--line); }
+.menu-item h3 { font-family: var(--serif); font-size: 1.9rem; line-height: 1.15; letter-spacing: -.02em; }
+.menu-item p { margin-top: .75rem; max-width: 28rem; font-size: .98rem; }
+.gallery-section { padding-bottom: 7rem; }
+.gallery-heading { display: flex; justify-content: space-between; align-items: end; gap: 2rem; margin-bottom: 2rem; }
+.gallery-heading h2 { font-size: clamp(2.3rem, 4vw, 3.5rem); }
+.gallery-heading p { font-size: .85rem; }
+.gallery { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: 1.25rem; align-items: start; }
+.gallery figure { margin: 0; }
+.gallery figure:nth-child(2) { padding-top: 3rem; }
+.gallery img { aspect-ratio: 3 / 4; cursor: zoom-in; }
+.gallery figure:nth-child(2) img { aspect-ratio: 1 / 1; }
+.gallery figcaption { margin-top: .8rem; font-size: .85rem; }
+.gallery img.marita {
+  position: fixed; z-index: 60; inset: 4vh 4vw;
+  width: 92vw; height: 92vh; max-width: none;
+  object-fit: contain; background: var(--blue);
+  box-shadow: 0 0 0 100vmax rgba(31,78,121,.96);
+  cursor: zoom-out;
+}
+html.galerie-deschisa { overflow: hidden; }
+.contact { border-top: 1px solid var(--line); padding: 6rem 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 6rem; align-items: start; }
+.contact h2 { margin-bottom: 1.4rem; }
+.contact-intro { font-size: 1.1rem; }
+.phone { display: block; font-size: 1.4rem; margin-top: 1.5rem; }
+.hours { margin: 2rem 0; padding: 1.4rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.hours h3 { font-size: 1rem; font-weight: 600; margin-bottom: .8rem; }
+.hours dl { margin: 0; }
+.hours dl > div { display: flex; justify-content: space-between; gap: 1rem; margin: .4rem 0; font-size: .95rem; }
+.hours dd { margin: 0; white-space: nowrap; }
+.contact-note { margin-top: 1.25rem; font-size: .9rem; }
+.map { margin: 0; }
+.map iframe { width: 100%; height: 29rem; display: block; border: 0; background: var(--white); }
+.map figcaption { padding-top: .85rem; font-size: .85rem; }
+footer { padding: 2rem 0; background: var(--blue); color: var(--white); }
+.footer-main { display: flex; justify-content: space-between; gap: 1.5rem; align-items: baseline; }
+.footer-name { font-family: var(--serif); font-size: 1.65rem; }
+.footer-demo { font-size: .8rem; }
+.credit { font-size: .72rem; margin-top: 1.2rem; max-width: 50rem; opacity: .85; }
+html.js [data-jarvis="apare"] { opacity: 0; transform: translateY(18px); transition: opacity .55s cubic-bezier(.2,.8,.2,1), transform .55s cubic-bezier(.2,.8,.2,1); }
+html.js [data-jarvis="apare"].vizibil { opacity: 1; transform: translateY(0); }
+@media (min-width: 861px) {
+  .nav-links { display: flex !important; }
+}
+@media (max-width: 1000px) {
+  .hero-grid { gap: 2.5rem; }
+  .hero-photo img { height: 30rem; }
+  .about-grid, .contact-grid { gap: 3rem; }
+}
+@media (max-width: 860px) {
+  .nav { flex-wrap: wrap; gap: 0; min-height: 4.5rem; }
+  html.js .menu-toggle { display: block; }
+  .nav-links { width: 100%; gap: 1.6rem; padding-bottom: .8rem; }
+  html.js .nav-links { display: none; }
+  html.js .nav-links.deschis { display: flex; flex-wrap: wrap; }
+  .hero { padding-top: 2.2rem; }
+  .hero-grid { gap: 2rem; }
+  h1 { font-size: clamp(4.3rem, 9vw, 6.5rem); }
+  .hero-photo img { height: 27rem; }
+  .hero-photo figcaption { display: block; }
+  .hero-photo figcaption span { display: block; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about h2 { max-width: 36rem; }
+  .about-copy { max-width: 37rem; }
+  .section-heading { gap: 2rem; }
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .hours dl > div { flex-direction: column; gap: 0; margin-bottom: .8rem; }
+}
+@media (max-width: 600px) {
+  .wrap { width: calc(100% - 2.5rem); }
+  .wordmark { font-size: 1.45rem; }
+  .nav-links { gap: 1.25rem; }
+  .nav-links a { font-size: .84rem; }
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 2.5rem; }
+  .hero-copy { padding: .4rem 0 0; }
+  .hero-intro { font-size: .95rem; margin-bottom: 1.1rem; }
+  h1 { font-size: clamp(4.6rem, 19vw, 6.8rem); }
+  .hero-description { font-size: 1.3rem; margin-top: 1.2rem; max-width: 19rem; }
+  .hero-actions { margin-top: 1.5rem; }
+  .hero-hours { font-size: .82rem; margin-top: 1rem; }
+  .hero-photo { margin-inline: 1rem; }
+  .hero-photo img { height: 23rem; }
+  .hero-photo figcaption { display: flex; font-size: .72rem; }
+  .wave { height: 2.8rem; }
+  .about { padding: 3rem 0 3.5rem; }
+  .about-copy { font-size: 1rem; }
+  .menu-section { padding: 4rem 0 2.5rem; }
+  .section-heading { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+  .section-heading > p { font-size: 1rem; }
+  .menu-list { grid-template-columns: 1fr; }
+  .menu-item { padding: 1.5rem 0 1.75rem; }
+  .menu-item h3 { font-size: 1.7rem; }
+  .gallery-section { padding-bottom: 4rem; }
+  .gallery-heading { display: block; }
+  .gallery-heading p { margin-top: .75rem; }
+  .gallery { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .gallery figure:nth-child(2) { padding-top: 0; }
+  .gallery figure:nth-child(2) img { aspect-ratio: 3 / 4; }
+  .gallery figure:last-child { grid-column: 1 / -1; }
+  .gallery figure:last-child img { aspect-ratio: 4 / 3; }
+  .gallery figcaption { font-size: .77rem; }
+  .contact { padding: 3.5rem 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hours dl > div { flex-direction: row; margin: .5rem 0; font-size: .87rem; }
+  .map iframe { height: 22rem; }
+  .footer-main { flex-direction: column; gap: .5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wave svg { animation: none; }
+  html.js [data-jarvis="apare"] { transform: none; transition: opacity .1s linear; }
+  .button { transition: opacity .1s linear; }
+  .button:active, .menu-toggle:active { transform: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .header, .header.derulat { background: var(--white); backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  :root { --line: var(--blue); }
+  .header, .header.derulat { background: var(--white); }
+  .credit { opacity: 1; }
+  .about-note { border-color: var(--white); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" data-jarvis="antet">
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="wordmark" href="#main" aria-label="Orchard Thai home">Orchard Thai</a>
+    <button class="menu-toggle" type="button" data-jarvis="meniu" aria-controls="navigation" aria-expanded="false">Menu</button>
+    <ul class="nav-links" id="navigation" data-jarvis="meniu-lista">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Food &amp; drinks</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a class="nav-contact" href="#contact">Plan your visit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid wrap">
+      <div class="hero-copy">
+        <p class="hero-intro">Thai cuisine &amp; craft cocktails in Sacramento</p>
+        <h1 id="hero-title">Orchard<br>Thai</h1>
+        <p class="hero-description">Come for Thai food. Stay for a cocktail.</p>
+        <div class="hero-actions">
+          <a class="button" href="tel:+19164763681">Call now</a>
+        </div>
+        <p class="hero-hours">Open daily at 11 am. Here until midnight Sunday–Thursday and 1 am Friday–Saturday.</p>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/1.jpg" alt="An iced cocktail, illustrating the drinks side of Orchard Thai" fetchpriority="high" width="700" height="900">
+        <figcaption><span>Thai food. Craft cocktails.</span><span>Sacramento, CA</span></figcaption>
+      </figure>
+    </div>
+    <div class="wave" aria-hidden="true">
+      <svg viewbox="0 0 2400 100" preserveaspectratio="none">
+        <path fill="currentColor" d="M0 45 Q150 0 300 45 T600 45 T900 45 T1200 45 T1500 45 T1800 45 T2100 45 T2400 45 V100 H0Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid" data-jarvis="apare">
+      <h2 id="about-title">A table for dinner.<br>A bar for later.</h2>
+      <div class="about-copy">
+        <p>Orchard Thai brings Thai cuisine and a craft cocktail bar together in Sacramento. Join us for food, a drink, or both.</p>
+        <p>We’re open from 11 am every day, with the evening stretching to midnight during the week and 1 am on Friday and Saturday.</p>
+        <div class="about-note">Reservations are welcome, and delivery is available.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section wrap" id="menu" aria-labelledby="menu-title">
+    <div class="section-heading" data-jarvis="apare">
+      <h2 id="menu-title">Food, drinks &amp;<br>your plans.</h2>
+      <p>Take a seat for Thai cuisine and craft cocktails, reserve a table ahead of time, or arrange delivery.</p>
+    </div>
+    <div class="menu-list">
+      <article class="menu-item" data-jarvis="apare">
+        <h3>Thai cuisine</h3>
+        <p>Join us for lunch or dinner in Sacramento. Call to ask about the menu and place your order.</p>
+      </article>
+      <article class="menu-item" data-jarvis="apare">
+        <h3>Craft cocktail bar</h3>
+        <p>Have a cocktail with your meal, or make the bar part of your evening.</p>
+      </article>
+      <article class="menu-item" data-jarvis="apare">
+        <h3>Reservations</h3>
+        <p>Planning to dine in? Call to reserve a table and ask about availability.</p>
+      </article>
+      <article class="menu-item" data-jarvis="apare">
+        <h3>Delivery</h3>
+        <p>Have Thai food at home. Call to ask about delivery and arrange your order.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="gallery-section wrap" id="gallery" aria-labelledby="gallery-title">
+    <div class="gallery-heading">
+      <h2 id="gallery-title">On the cocktail side.</h2>
+      <p>Illustrative photos of drinks and bar moments.</p>
+    </div>
+    <div class="gallery" data-jarvis="galerie">
+      <figure data-jarvis="apare">
+        <img src="img/4.jpg" alt="Citrus fruit and cocktails at a bar" loading="lazy" width="600" height="800" tabindex="0">
+        <figcaption>Citrus at the bar</figcaption>
+      </figure>
+      <figure data-jarvis="apare">
+        <img src="img/3.jpg" alt="A selection of cocktails in drinking glasses" loading="lazy" width="800" height="800" tabindex="0">
+        <figcaption>A round of cocktails</figcaption>
+      </figure>
+      <figure data-jarvis="apare">
+        <img src="img/5.jpg" alt="A woman raising a drink for a toast at a bar" loading="lazy" width="600" height="800" tabindex="0">
+        <figcaption>A toast together</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-grid">
+      <div data-jarvis="apare">
+        <h2 id="contact-title">Join us in<br>Sacramento.</h2>
+        <p class="contact-intro">Call for a reservation, menu questions, or delivery.</p>
+        <span class="phone">(916) 476-3681</span>
+        <div class="hours">
+          <h3>Opening hours</h3>
+          <dl>
+            <div><dt>Sunday–Thursday</dt><dd>11 am–12 am</dd></div>
+            <div><dt>Friday–Saturday</dt><dd>11 am–1 am</dd></div>
+          </dl>
+        </div>
+        <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Orchard+Thai+Sacramento" target="_blank" rel="noopener noreferrer">Get directions</a>
+        <p class="contact-note">Find Orchard Thai on Google Maps.</p>
+      </div>
+      <figure class="map">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-121.492032,38.569160,-121.484032,38.573160&amp;layer=mapnik&amp;marker=38.571160,-121.488032" title="Map showing Orchard Thai in Sacramento" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+        <figcaption>Orchard Thai, Sacramento, California</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <span class="footer-name">Orchard Thai</span>
+      <span class="footer-demo">Website concept (demo)</span>
+    </div>
+    <p class="credit">Illustrative photos from Pixabay: u_f2b9hb39id, tianya1223, bridgesward, PatricioHurtado, OurWhiskyFoundation. Photos do not depict the restaurant or its menu.</p>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
