@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ladybird Taco - The Gulch, Nashville</title>
+<meta name="description" content="Ladybird Taco in The Gulch, Nashville. Warm dishes, snacks, and drinks served daily from 7 am to 4 pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --azur:#1F4E79;
+  --var:#FAFAF7;
+  --ocru:#D9A441;
+  --masline:#7A8450;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--azur);
+  background:var(--var);
+  overflow-x:clip;
+}
+img{display:block;max-width:100%;height:auto}
+iframe{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-0.02em;line-height:1.05;margin:0}
+h1{font-size:clamp(3.4rem,9vw,7.5rem)}
+h2{font-size:clamp(2.4rem,5.5vw,4.5rem)}
+h3{font-size:clamp(1.6rem,3vw,2.2rem)}
+p{margin:0}
+section[id]{scroll-margin-top:4.5rem}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+@media (min-width:860px){.wrap{padding:0 2.5rem}}
+
+/* Header */
+.antet{
+  position:sticky;top:0;z-index:40;
+  background:rgba(250,250,247,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s var(--ease),background-color .4s var(--ease);
+}
+.antet.derulat{border-bottom-color:rgba(31,78,121,.14);background:rgba(250,250,247,.88)}
+.antet-in{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:64px}
+.marca{font-family:"DM Serif Display",Georgia,serif;font-size:1.35rem;letter-spacing:-0.01em;line-height:1.2;text-decoration:none;color:var(--azur)}
+.meniu-buton{
+  min-height:44px;min-width:44px;padding:.5rem 1.1rem;
+  font:inherit;font-weight:500;color:var(--azur);
+  background:transparent;border:1px solid rgba(31,78,121,.35);border-radius:999px;cursor:pointer;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-lista{
+  position:absolute;top:100%;left:0;right:0;
+  display:none;flex-direction:column;
+  margin:0;padding:.5rem 1.25rem 1.25rem;list-style:none;
+  background:var(--var);
+  border-bottom:1px solid rgba(31,78,121,.14);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista li{margin:0}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:48px;
+  font-size:1.1rem;text-decoration:none;color:var(--azur);
+  border-bottom:1px solid rgba(31,78,121,.1);
+}
+.meniu-lista li:last-child a{border-bottom:0}
+.meniu-lista .btn{margin-top:.75rem;width:100%;min-height:52px;color:var(--var);border-bottom:1px solid var(--azur)}
+.meniu-lista .btn-mare{background:var(--azur);color:var(--var)}
+
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{position:static;display:flex;flex-direction:row;align-items:center;gap:2.25rem;padding:0;background:none;border:0}
+  .meniu-lista a{min-height:44px;font-size:1rem;border:0}
+  .meniu-lista .btn{width:auto;margin:0;min-height:44px;padding:.6rem 1.25rem}
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:.75rem 1.5rem;border-radius:999px;
+  border:1px solid var(--azur);font:inherit;font-weight:500;text-decoration:none;
+  transition:transform .2s var(--ease),opacity .2s;
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn:hover{opacity:.88}
+.btn-mare{background:var(--azur);color:var(--var)}
+.btn-contur{background:transparent;color:var(--azur)}
+
+/* Waves (the one memorable element) */
+.val{
+  position:absolute;left:0;right:0;bottom:-1px;
+  height:clamp(36px,6vw,64px);
+  overflow:hidden;pointer-events:none;z-index:1;
+  color:var(--azur);
+}
+.val--crem{color:var(--var)}
+.val-mis{
+  position:absolute;top:0;left:0;
+  width:200%;height:100%;
+  animation:deriva 70s linear infinite;
+  will-change:transform;
+}
+.val svg{display:block;width:100%;height:100%}
+.val path{fill:currentColor}
+@keyframes deriva{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(-50%,0,0)}
+}
+
+/* Hero */
+.intro{position:relative;padding:2.5rem 0 clamp(6rem,13vw,9rem);overflow:hidden;background:var(--var)}
+@media (min-width:860px){.intro{padding-top:5rem}}
+.intro-in{display:grid;gap:3rem;align-items:center}
+@media (min-width:860px){.intro-in{grid-template-columns:1.05fr 1fr;gap:5rem}}
+.intro h1{margin-bottom:1.25rem}
+.intro-slogan{font-size:1.3rem;font-weight:500;line-height:1.35;margin-bottom:.75rem}
+.intro-desc{max-width:30ch;margin-bottom:2rem}
+.intro-btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.intro-foto{margin:0;position:relative;isolation:isolate}
+.intro-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:999px 999px 0 0}
+.intro-foto::before{
+  content:"";position:absolute;
+  top:-14px;right:-14px;bottom:14px;left:14px;
+  border:1px solid var(--ocru);border-radius:999px 999px 0 0;
+  z-index:-1;
+}
+
+/* Menu */
+.menu{position:relative;background:var(--azur);color:var(--var);padding:clamp(5rem,11vw,8rem) 0 clamp(7rem,14vw,10rem)}
+.menu h2{margin-bottom:1.25rem}
+.menu-intro{max-width:36ch;margin-bottom:3rem;color:rgba(250,250,247,.86)}
+.menu-lista{list-style:none;margin:0;padding:0}
+.menu-lista li{padding:1.75rem 0;border-top:1px solid rgba(250,250,247,.22)}
+.menu-lista li:last-child{border-bottom:1px solid rgba(250,250,247,.22)}
+.menu-lista h3{margin-bottom:.5rem;font-size:clamp(2.2rem,5vw,3.6rem)}
+.menu-lista p{max-width:40ch;color:rgba(250,250,247,.86)}
+@media (min-width:860px){
+  .menu-lista li{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:baseline}
+  .menu-lista h3{margin:0}
+}
+
+/* About */
+.despre{padding:clamp(5rem,11vw,8rem) 0}
+.despre-in{display:grid;gap:3.5rem;align-items:center}
+@media (min-width:860px){.despre-in{grid-template-columns:.9fr 1.1fr;gap:6rem}}
+.despre-farfurie{margin:0;padding:14px}
+.despre-farfurie img{
+  width:100%;max-width:440px;aspect-ratio:1;object-fit:cover;margin:0 auto;
+  border-radius:50%;
+  box-shadow:0 0 0 12px var(--var),0 0 0 13px var(--ocru);
+}
+.despre-text h2{margin-bottom:1.5rem}
+.despre-text p{max-width:58ch;margin-bottom:1rem}
+.avantaje{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:1.75rem}
+@media (min-width:600px){.avantaje{grid-template-columns:repeat(3,1fr);gap:1.5rem}}
+.avantaje li{display:grid;gap:.4rem;align-content:start;padding-top:1.25rem;border-top:1px solid rgba(31,78,121,.18)}
+.avantaje svg{width:28px;height:28px;color:var(--masline);margin-bottom:.5rem}
+.avantaje h3{font-size:1.4rem}
+.avantaje p{font-size:.98rem}
+
+/* Photos */
+.fotografii{padding:0 0 clamp(5rem,11vw,8rem)}
+.fotografii-sus{margin-bottom:2.5rem}
+.fotografii-sus h2{margin-bottom:.9rem}
+.fotografii-sus p{color:rgba(31,78,121,.85)}
+.galerie{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.galerie li{margin:0}
+.galerie li:nth-child(5){grid-column:1 / -1;}
+.galerie li:nth-child(5) .foto{aspect-ratio:16/9}
+.foto{
+  display:block;width:100%;margin:0;padding:0;border:0;
+  aspect-ratio:3/4;overflow:hidden;
+  border-radius:999px 999px 0 0;
+  background:rgba(31,78,121,.08);
+  cursor:zoom-in;-webkit-tap-highlight-color:transparent;
+}
+.foto:active{opacity:.85}
+.foto img{width:100%;height:100%;object-fit:cover}
+@media (min-width:860px){
+  .galerie{grid-template-columns:repeat(5,1fr);gap:1.25rem}
+  .galerie li:nth-child(5){grid-column:auto}
+  .galerie li:nth-child(5) .foto{aspect-ratio:3/4}
+}
+html.galerie-deschisa::before{content:"";position:fixed;inset:0;z-index:55;background:rgba(31,78,121,.94)}
+.galerie .marita{
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:min(92vw,880px);height:min(80vh,820px);
+  aspect-ratio:auto;margin:0;
+  z-index:60;border-radius:0;overflow:visible;
+  object-fit:contain;cursor:zoom-out;
+  animation:intra .45s var(--ease) both;
+}
+.galerie .marita img{width:100%;height:100%;object-fit:contain;border-radius:0}
+@keyframes intra{
+  from{opacity:0;transform:translate(-50%,-46%) scale(.97)}
+  to{opacity:1;transform:translate(-50%,-50%) scale(1)}
+}
+
+/* Visit */
+.vizita{position:relative;padding:clamp(5rem,11vw,8rem) 0 clamp(7rem,14vw,10rem);background:var(--var)}
+.vizita-in{display:grid;gap:3rem}
+@media (min-width:860px){.vizita-in{grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center}}
+.vizita h2{margin-bottom:1.5rem}
+.vizita address{font-style:normal;font-size:1.25rem;line-height:1.4;margin-bottom:1rem}
+.vizita-text p{margin-bottom:2rem}
+.vizita-btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.vizita-harta{margin:0;height:clamp(320px,50vw,460px)}
+.vizita-harta iframe{width:100%;height:100%;border:0;border-radius:999px 999px 0 0;background:var(--var)}
+
+/* Footer */
+.subsol{position:relative;background:var(--azur);color:var(--var);padding:3.5rem 0 2.5rem;font-size:.95rem}
+.subsol p{margin-bottom:.45rem;color:rgba(250,250,247,.84)}
+.subsol-marca{font-family:"DM Serif Display",Georgia,serif;font-size:1.5rem;letter-spacing:-0.01em;color:var(--var);margin-bottom:.75rem!important}
+
+/* Reveal on scroll (only when JS has added html.js) */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Preferences */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .val-mis{animation:none}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+  .galerie .marita{animation:none;transform:translate(-50%,-50%)}
+  .btn,.meniu-buton{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--var);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet.derulat{background:var(--var)}
+}
+@media (prefers-contrast:more){
+  .btn{border-width:2px}
+  .meniu-buton{border-width:2px}
+  .menu-lista li,.menu-lista li:last-child{border-color:var(--var)}
+  .menu-lista p,.menu-intro{color:var(--var)}
+  .intro-foto::before{border-color:var(--azur)}
+  .avantaje li{border-top-color:var(--azur)}
+  .fotografii-sus p{color:var(--azur)}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap antet-in">
+    <a class="marca" href="#top">Ladybird Taco</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#menu">Food</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a class="btn btn-mare" href="tel:+16156013202">Call (615) 601-3202</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" id="top" aria-labelledby="titlu-principal">
+    <div class="wrap intro-in">
+      <div class="intro-text">
+        <h1 id="titlu-principal">Ladybird Taco</h1>
+        <p class="intro-slogan">Fresh bites, every day.</p>
+        <p class="intro-desc">Warm dishes, snacks, and drinks served daily in the Gulch.</p>
+        <div class="intro-btns">
+          <a class="btn btn-mare" href="tel:+16156013202">Call (615) 601-3202</a>
+          <a class="btn btn-contur" href="#menu">See the menu</a>
+        </div>
+      </div>
+      <figure class="intro-foto">
+        <img src="img/1.jpg" alt="Illustrative photo of a meal served on a tray" width="1200" height="1500">
+      </figure>
+    </div>
+    <div class="val val--albastru" aria-hidden="true">
+      <div class="val-mis">
+        <svg viewbox="0 0 1200 90" preserveaspectratio="none" focusable="false"><path d="M0 30Q75 0 150 30T300 30T450 30T600 30T750 30T900 30T1050 30T1200 30V90H0Z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="titlu-menu">
+    <div class="wrap">
+      <h2 id="titlu-menu" data-jarvis="apare">Menu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Examples — to be replaced with your own offers</p>
+      <p class="menu-intro" data-jarvis="apare">Open every day from 7 am to 4 pm.</p>
+      <ul class="menu-lista">
+        <li data-jarvis="apare">
+          <h3>Hot dishes</h3>
+          <p>Comforting plates for a sit-down meal, indoors or to take with you.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Snacks</h3>
+          <p>Light bites for a quick stop on your way through Nashville.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Drinks</h3>
+          <p>A range of drinks for everyone who stops by.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="val val--crem" aria-hidden="true">
+      <div class="val-mis">
+        <svg viewbox="0 0 1200 90" preserveaspectratio="none" focusable="false"><path d="M0 30Q75 0 150 30T300 30T450 30T600 30T750 30T900 30T1050 30T1200 30V90H0Z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre" id="about" aria-labelledby="titlu-despre">
+    <div class="wrap despre-in">
+      <figure class="despre-farfurie" data-jarvis="apare">
+        <img src="img/4.jpg" alt="Illustrative photo of a meal on a plate" width="1200" height="1200" loading="lazy">
+      </figure>
+      <div class="despre-text">
+        <h2 id="titlu-despre" data-jarvis="apare">Warm food in the Gulch</h2>
+        <p data-jarvis="apare">Ladybird Taco in the Gulch serves comforting hot dishes, light snacks, and a range of drinks for everyone who stops by. You can relax with a meal indoors or grab something quick on your way through Nashville.</p>
+        <ul class="avantaje">
+          <li data-jarvis="apare">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+            <h3>Open daily</h3>
+            <p>Drop in any day of the week</p>
+          </li>
+          <li data-jarvis="apare">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <h3>Central location</h3>
+            <p>Easy stop in the Gulch</p>
+          </li>
+          <li data-jarvis="apare">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></svg>
+            <h3>Dine in or takeout</h3>
+            <p>Order to stay or for the road</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="fotografii" id="photos" aria-labelledby="titlu-foto">
+    <div class="wrap">
+      <div class="fotografii-sus" data-jarvis="apare">
+        <h2 id="titlu-foto">Photos</h2>
+        <p>Tap a photo to enlarge it.</p>
+      </div>
+      <ul class="galerie" data-jarvis="galerie">
+        <li data-jarvis="apare">
+          <button class="foto" type="button"><img src="img/1.jpg" alt="Illustrative photo of a meal served on a tray" loading="lazy"></button>
+        </li>
+        <li data-jarvis="apare">
+          <button class="foto" type="button"><img src="img/2.jpg" alt="Illustrative close-up of a meal" loading="lazy"></button>
+        </li>
+        <li data-jarvis="apare">
+          <button class="foto" type="button"><img src="img/3.jpg" alt="Illustrative photo of food on a table" loading="lazy"></button>
+        </li>
+        <li data-jarvis="apare">
+          <button class="foto" type="button"><img src="img/4.jpg" alt="Illustrative photo of a meal on a plate" loading="lazy"></button>
+        </li>
+        <li data-jarvis="apare">
+          <button class="foto" type="button"><img src="img/5.jpg" alt="Illustrative photo of a plate of food" loading="lazy"></button>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="vizita" id="visit" aria-labelledby="titlu-vizita">
+    <div class="wrap vizita-in">
+      <div class="vizita-text">
+        <h2 id="titlu-vizita" data-jarvis="apare">Find us in the Gulch</h2>
+        <address data-jarvis="apare">1206 Demonbreun Street<br>Nashville, TN</address>
+        <p data-jarvis="apare">Open daily, 7 am to 4 pm.</p>
+        <div class="vizita-btns" data-jarvis="apare">
+          <a class="btn btn-mare" href="tel:+16156013202">Call (615) 601-3202</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Ladybird+Taco+-+The+Gulch+Nashville">Open in Google Maps</a>
+        </div>
+      </div>
+      <figure class="vizita-harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.790824,36.152624,-86.782823,36.156624&amp;layer=mapnik&amp;marker=36.154624,-86.786823" title="Map showing Ladybird Taco at 1206 Demonbreun Street, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </figure>
+    </div>
+    <div class="val val--albastru" aria-hidden="true">
+      <div class="val-mis">
+        <svg viewbox="0 0 1200 90" preserveaspectratio="none" focusable="false"><path d="M0 30Q75 0 150 30T300 30T450 30T600 30T750 30T900 30T1050 30T1200 30V90H0Z"/></svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <p class="subsol-marca">Ladybird Taco - The Gulch</p>
+    <p>1206 Demonbreun Street, Nashville. Open daily, 7 am to 4 pm.</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: covertnine, adamlot, Yezmin, JaimeAP, jenniferva</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
