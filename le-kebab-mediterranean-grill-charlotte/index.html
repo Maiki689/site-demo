@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Kebab Mediterranean Grill, Charlotte</title>
+<meta name="description" content="Authentic Mediterranean entrees and kebabs on East McCullough Drive in Charlotte. Open daily from 11:30am, closing at 9pm or 9:30pm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --negru:#141311;
+  --muschi:#6B7A4B;
+  --mustar:#D4A72C;
+  --crem:#EDE6D8;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--negru);color:var(--crem);font-family:var(--sans);font-size:1.0625rem;line-height:1.5;letter-spacing:0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.05;margin:0}
+p{margin:0}
+ul,ol{margin:0;padding:0}
+figure{margin:0}
+:focus-visible{outline:2px solid var(--mustar);outline-offset:3px}
+
+/* Surfaces */
+.crem{background:var(--crem);color:var(--negru)}
+.inchis{background:var(--negru);color:var(--crem)}
+.seccsiune{padding:6rem 0}
+@media (min-width:860px){.seccsiune{padding:10rem 0}}
+.container{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+@media (min-width:860px){.container{padding:0 2.5rem}}
+.crem h2,.inchis h2{font-size:clamp(2.6rem,6vw,5.25rem);max-width:16ch;margin-bottom:1.5rem}
+.crem h2 em{font-style:italic;color:var(--muschi)}
+.inchis h2 em{font-style:italic;color:var(--mustar)}
+
+/* Buttons */
+.buton{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;font:600 1rem/1 var(--sans);text-decoration:none;border:1px solid transparent;border-radius:2px;cursor:pointer;white-space:nowrap;transition:transform .15s var(--ease),background-color .3s var(--ease),color .3s var(--ease),filter .3s var(--ease)}
+.buton:active{transform:scale(.97)}
+.buton-principal{background:var(--mustar);color:var(--negru)}
+.buton-principal:hover{filter:brightness(1.07)}
+.buton-contur{background:transparent;border-color:currentColor;color:inherit}
+.buton-contur:hover{background:rgba(237,230,216,.12)}
+.crem .buton-contur{color:var(--negru)}
+.crem .buton-contur:hover{background:rgba(20,19,17,.06)}
+
+.legatura{display:inline-flex;align-items:center;min-height:44px;font-weight:500;color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em;transition:transform .15s var(--ease)}
+.legatura:active{transform:scale(.97)}
+
+/* Top bar */
+.antet{position:fixed;top:0;left:0;right:0;z-index:100;color:var(--crem);background:rgba(20,19,17,.25);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);transition:background-color .4s var(--ease)}
+.antet.derulat{background:rgba(20,19,17,.82)}
+.antet-interior{position:relative;max-width:1200px;height:4rem;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;gap:1rem}
+.marca{display:flex;align-items:center;gap:.6rem;min-height:44px;margin-right:auto;font-family:var(--serif);font-size:1.5rem;line-height:1;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.marca span{display:none;font-family:var(--sans);font-size:.6875rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--mustar)}
+.antet-actiuni{display:flex;align-items:center;gap:.5rem}
+.antet .buton{min-height:44px;padding:.6rem 1.1rem;font-size:.9375rem}
+.meniu-buton{position:relative;width:44px;height:44px;padding:0;border:0;background:none;color:inherit;cursor:pointer}
+.meniu-buton span{position:absolute;left:11px;width:22px;height:1.5px;background:currentColor;transition:transform .4s var(--ease),opacity .3s var(--ease)}
+.meniu-buton span:nth-child(1){top:16px}
+.meniu-buton span:nth-child(2){top:26px}
+.meniu-buton[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] span:nth-child(2){transform:translateY(-5px) rotate(-45deg)}
+nav{display:flex}
+.meniu-lista{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;list-style:none;padding:.25rem 1.25rem 1rem;background:var(--negru);border-top:1px solid rgba(237,230,216,.12)}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{display:flex;align-items:center;min-height:52px;font-size:1.125rem;text-decoration:none;border-bottom:1px solid rgba(237,230,216,.1)}
+.meniu-lista li:last-child a{border-bottom:0}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista,.meniu-lista.deschis{position:static;display:flex;flex-direction:row;gap:2.25rem;padding:0;background:none;border:0}
+  .meniu-lista a,.meniu-lista li:last-child a{min-height:44px;border:0;font-size:.9375rem;letter-spacing:.02em;transition:color .3s var(--ease)}
+  .meniu-lista a:hover{color:var(--mustar)}
+}
+@media (min-width:600px){.marca span{display:inline}}
+
+/* Full-bleed photo chapters */
+.capitol{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--negru);color:var(--crem)}
+.capitol::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,19,17,.35) 0%,rgba(20,19,17,0) 28%,rgba(20,19,17,.18) 48%,rgba(20,19,17,.9) 100%)}
+.fundal{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.fundal img{width:100%;height:100%;object-fit:cover;object-position:center}
+.continut{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:7rem 1.25rem 3.5rem}
+@media (min-width:860px){.continut{padding:8rem 2.5rem 6rem}}
+.capitol h1{font-size:clamp(3.4rem,11vw,9.5rem);line-height:1;margin-bottom:1.5rem}
+.capitol h2{font-size:clamp(2.6rem,7vw,6rem);max-width:12ch;margin-bottom:1.25rem}
+.capitol h1 em,.capitol h2 em{font-style:italic;color:var(--mustar)}
+.ro{display:block}
+.capitol p{max-width:36ch;color:rgba(237,230,216,.9)}
+.slogan{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.2;letter-spacing:-.01em;margin-bottom:1rem;color:var(--crem)!important}
+.intro{margin-bottom:2rem}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+.capitol .actiuni .buton{min-height:52px}
+
+@supports (animation-timeline: view()) {
+  .capitol{view-timeline-name:--capitol}
+  .fundal img{animation:apropiere linear both;animation-timeline:--capitol;animation-range:cover 0% cover 100%}
+}
+@keyframes apropiere{
+  from{transform:scale(1.02)}
+  to{transform:scale(1.14)}
+}
+
+/* About */
+.grila-despre{display:grid;gap:4rem;align-items:center}
+@media (min-width:860px){.grila-despre{grid-template-columns:5fr 6fr;gap:7rem}}
+.plata-cadru{position:relative;width:min(72vw,380px);aspect-ratio:1;margin:0 auto 1.5rem}
+.plata-cadru::before{content:"";position:absolute;inset:-14px;border:1px solid var(--muschi);border-radius:50%;pointer-events:none}
+@media (min-width:860px){.plata-cadru{width:100%;max-width:440px;margin:0 0 0 auto}}
+.plata{width:100%;height:100%;border-radius:50%;overflow:hidden}
+.plata img{width:100%;height:100%;object-fit:cover}
+.crem p{max-width:44ch}
+.crem .texte p+p{margin-top:1rem}
+.fapte{list-style:none;margin-top:2.5rem;border-top:1px solid rgba(20,19,17,.2)}
+.fapte li{padding:1rem 0;border-bottom:1px solid rgba(20,19,17,.2)}
+.avantaje{display:grid;gap:2.25rem;margin-top:6rem;padding-top:2.5rem;border-top:1px solid rgba(20,19,17,.2)}
+@media (min-width:860px){.avantaje{grid-template-columns:repeat(3,1fr);gap:3rem;margin-top:8rem}}
+.avantaje h3{font-size:clamp(1.75rem,3vw,2.25rem);margin-bottom:.75rem}
+.avantaje p{opacity:.8}
+
+/* Menu */
+.carte-sectiune{position:relative;overflow:hidden}
+.carte-sectiune::before{content:"";position:absolute;top:-22%;right:-34%;width:min(130vw,860px);aspect-ratio:1;border:1px solid rgba(107,122,75,.6);border-radius:50%;pointer-events:none}
+.carte-sectiune .container{position:relative}
+.carte{list-style:none;margin-top:3.5rem;border-top:1px solid rgba(237,230,216,.16)}
+.carte li{display:grid;gap:.75rem;padding:2rem 0;border-bottom:1px solid rgba(237,230,216,.16)}
+@media (min-width:860px){.carte li{grid-template-columns:1fr 1fr;align-items:baseline;gap:4rem;padding:2.5rem 0}}
+.carte h3{font-size:clamp(2rem,4vw,3.25rem)}
+.carte p{color:rgba(237,230,216,.8)}
+
+/* Gallery */
+.galerie{display:grid;gap:.75rem;margin-top:3.5rem}
+@media (min-width:600px){.galerie{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:900px){.galerie{grid-template-columns:repeat(3,1fr);gap:1rem}}
+.foto-buton{display:block;width:100%;aspect-ratio:4/3;padding:0;border:0;background:var(--negru);overflow:hidden;cursor:zoom-in}
+.foto-buton img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.foto-buton:hover img{transform:scale(1.03)}
+.foto-buton:active{transform:scale(.99)}
+.galerie .marita{position:fixed;inset:0;z-index:300;width:auto;height:auto;aspect-ratio:auto;margin:0;padding:1rem;background:var(--negru);display:flex}
+.galerie .marita .foto-buton,.galerie .marita > img{aspect-ratio:auto;width:100%;height:100%;cursor:zoom-out}
+.galerie .marita img{object-fit:contain;transition:none}
+.galerie .marita .foto-buton img{object-fit:contain}
+html.galerie-deschisa{overflow:hidden}
+
+/* Visit */
+.vizita-grila{display:grid;gap:4rem}
+@media (min-width:860px){.vizita-grila{grid-template-columns:1fr 1.1fr;gap:6rem;align-items:start}}
+.adresa{font-style:normal;font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.25rem);line-height:1.2;margin-bottom:1rem}
+.telefon{display:inline-flex;align-items:center;min-height:44px;font-weight:500;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em}
+.program{display:grid;grid-template-columns:auto 1fr;gap:.9rem 2rem;margin:2.5rem 0;padding-top:1.5rem;border-top:1px solid rgba(20,19,17,.2)}
+.program dt{font-weight:500}
+.program dd{margin:0;justify-self:end;text-align:right}
+.vizita-actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+.harta{width:100%;height:300px;border:0;display:block;border-top:1px solid rgba(20,19,17,.2)}
+@media (min-width:860px){.harta{height:440px}}
+
+/* Footer */
+.subsol{background:var(--negru);color:var(--crem);padding:4rem 0 3rem;border-top:1px solid rgba(237,230,216,.12)}
+.subsol-grila{display:grid;gap:2.5rem}
+@media (min-width:860px){.subsol-grila{grid-template-columns:1fr auto;align-items:end}}
+.subsol-nume{font-family:var(--serif);font-size:clamp(2rem,4vw,2.75rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:.75rem}
+.subsol small,.subsol .credit{display:block;font-size:.875rem;color:rgba(237,230,216,.7);max-width:60ch}
+.subsol small+small{margin-top:.5rem}
+.subsol-linkuri{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.subsol-linkuri a{display:inline-flex;align-items:center;min-height:44px;font-size:.9375rem;text-decoration:none;color:rgba(237,230,216,.85)}
+.subsol-linkuri a:hover{color:var(--mustar)}
+
+/* Reveal on scroll (without html.js everything stays visible) */
+html.js .apare{opacity:0;transform:translateY(24px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+html.js .apare.vizibil{opacity:1;transform:none}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.js .apare{transform:none;transition:opacity .4s ease}
+  .fundal img{animation:none!important}
+  .foto-buton img{transition:none}
+  .foto-buton:hover img{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .buton-contur{border-width:2px}
+  .carte li,.fapte li,.program,.avantaje{border-color:rgba(237,230,216,.55)}
+  .crem .fapte,.crem .fapte li,.crem .program,.crem .avantaje,.crem .harta{border-color:rgba(20,19,17,.6)}
+  .capitol::before{background:linear-gradient(180deg,rgba(20,19,17,.5) 0%,rgba(20,19,17,.2) 30%,rgba(20,19,17,.5) 50%,rgba(20,19,17,.95) 100%)}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-interior">
+    <a class="marca" href="#top">Le Kebab <span>Mediterranean Grill</span></a>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" data-jarvis="meniu-lista" id="meniu-lista">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#despre">About</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#vizita">Visit</a></li>
+      </ul>
+    </nav>
+    <div class="antet-actiuni">
+      <a class="buton buton-principal" href="tel:+17045477217">Call now</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="capitol" id="top" aria-labelledby="titlu-principal">
+    <div class="fundal">
+      <img src="img/5.jpg" alt="Skewers of grilled meat turning over an open flame">
+    </div>
+    <div class="continut">
+      <h1 id="titlu-principal">
+        <span class="ro">Le Kebab</span>
+        <span class="ro">Mediterranean</span>
+        <span class="ro">Grill</span>
+      </h1>
+      <p class="slogan">Real Mediterranean taste in Charlotte.</p>
+      <p class="intro">Entrees and kebabs made with recipes from the region. Open daily from 11:30am. Closing at 9pm, or 9:30pm on Friday and Saturday.</p>
+      <div class="actiuni">
+        <a class="buton buton-principal" href="tel:+17045477217">Call now</a>
+        <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Kebab+Mediterranean+Grill+Charlotte">Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="crem seccsiune" id="despre" aria-labelledby="titlu-despre">
+    <div class="container">
+      <div class="grila-despre">
+        <div class="plata-cadru apare">
+          <div class="plata">
+            <img src="img/3.jpg" alt="Mixed grill with kebabs, meat and sides on a platter">
+          </div>
+        </div>
+        <div class="texte apare">
+          <h2 id="titlu-despre">Recipes from <em>the region</em>, served in Charlotte.</h2>
+          <p>Le Kebab Mediterranean Grill serves authentic Mediterranean cuisine on East McCullough Drive. Entrees and kebabs are made with recipes from the region. The restaurant is open daily from 11:30am, closing at 9pm, or 9:30pm on Friday and Saturday.</p>
+          <ul class="fapte">
+            <li>Authentic Mediterranean cuisine</li>
+            <li>Entrees and kebabs</li>
+            <li>Open daily from 11:30am, until 9pm or 9:30pm</li>
+          </ul>
+        </div>
+      </div>
+      <div class="avantaje">
+        <div class="apare">
+          <h3>Fresh flavors</h3>
+          <p>Mediterranean dishes each day.</p>
+        </div>
+        <div class="apare">
+          <h3>Dine-in meals</h3>
+          <p>Entrees and kebabs, served in the restaurant.</p>
+        </div>
+        <div class="apare">
+          <h3>Easy access</h3>
+          <p>Located on East McCullough Drive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="capitol" aria-labelledby="titlu-platou">
+    <div class="fundal">
+      <img src="img/2.jpg" alt="Mix grill platter with kebab, rice, bread and salad">
+    </div>
+    <div class="continut apare">
+      <h2 id="titlu-platou">Entrees and <em>kebabs</em></h2>
+      <p>Made with recipes from the region.</p>
+      <p style="margin-top:1.5rem"><a class="legatura" href="#menu">See the menu</a></p>
+    </div>
+  </section>
+
+  <section class="inchis carte-sectiune seccsiune" id="menu" aria-labelledby="titlu-meniu">
+    <div class="container">
+      <h2 id="titlu-meniu">Menu</h2>
+      <ul class="carte">
+        <li class="apare">
+          <h3>Authentic Mediterranean cuisine</h3>
+          <p>Dishes made from Mediterranean recipes.</p>
+        </li>
+        <li class="apare">
+          <h3>Entrees</h3>
+          <p>Mediterranean entrees made from regional recipes.</p>
+        </li>
+        <li class="apare">
+          <h3>Kebabs</h3>
+          <p>Kebabs cooked with authentic Mediterranean flavors.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="crem seccsiune" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="container">
+      <h2 id="titlu-galerie">A look at the <em>food</em></h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="foto apare">
+          <button class="foto-buton" type="button" aria-label="Enlarge photo: mix grill platter">
+            <img src="img/1.jpg" alt="Grilled meat and barbecue dishes ready to serve" loading="lazy">
+          </button>
+        </figure>
+        <figure class="foto apare">
+          <button class="foto-buton" type="button" aria-label="Enlarge photo: mix grill platter">
+            <img src="img/2.jpg" alt="Mix grill platter with kebab, rice, bread and salad" loading="lazy">
+          </button>
+        </figure>
+        <figure class="foto apare">
+          <button class="foto-buton" type="button" aria-label="Enlarge photo: kebab platter">
+            <img src="img/3.jpg" alt="Kebab platter with chicken and meat skewers" loading="lazy">
+          </button>
+        </figure>
+        <figure class="foto apare">
+          <button class="foto-buton" type="button" aria-label="Enlarge photo: grill with flames">
+            <img src="img/4.jpg" alt="Meat cooking over flames on an outdoor grill" loading="lazy">
+          </button>
+        </figure>
+        <figure class="foto apare">
+          <button class="foto-buton" type="button" aria-label="Enlarge photo: skewers on the grill">
+            <img src="img/5.jpg" alt="Skewers of meat cooking over charcoal" loading="lazy">
+          </button>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="capitol" aria-labelledby="titlu-groupuri">
+    <div class="fundal">
+      <img src="img/1.jpg" alt="Grilled meat and barbecue dishes ready to serve">
+    </div>
+    <div class="continut apare">
+      <h2 id="titlu-groupuri">Eat in at the <em>grill</em></h2>
+      <p>Entrees and kebabs, served in the restaurant on East McCullough Drive.</p>
+      <div class="actiuni" style="margin-top:2rem">
+        <a class="buton buton-principal" href="tel:+17045477217">Call (704) 547-7217</a>
+        <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Kebab+Mediterranean+Grill+Charlotte">Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="crem seccsiune" id="vizita" aria-labelledby="titlu-vizita">
+    <div class="container vizita-grila">
+      <div class="apare">
+        <h2 id="titlu-vizita">Visit <em>us</em></h2>
+        <address class="adresa">350 East McCullough Drive<br>Charlotte, NC</address>
+        <p><a class="telefon" href="tel:+17045477217">(704) 547-7217</a></p>
+        <dl class="program">
+          <dt>Mon–Thu</dt><dd>11:30am–9pm</dd>
+          <dt>Fri–Sat</dt><dd>11:30am–9:30pm</dd>
+          <dt>Sunday</dt><dd>11:30am–9pm</dd>
+        </dl>
+        <div class="vizita-actiuni">
+          <a class="buton buton-principal" href="tel:+17045477217">Call now</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Le+Kebab+Mediterranean+Grill+Charlotte">Get directions</a>
+        </div>
+      </div>
+      <div class="apare">
+        <iframe class="harta" title="Map showing Le Kebab Mediterranean Grill on East McCullough Drive, Charlotte" src="https://www.openstreetmap.org/export/embed.html?bbox=-80.753064,35.299948,-80.745064,35.303948&amp;layer=mapnik&amp;marker=35.301948,-80.749064" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="container subsol-grila">
+    <div>
+      <p class="subsol-nume">Le Kebab Mediterranean Grill</p>
+      <small>350 East McCullough Drive, Charlotte, NC</small>
+      <small>Website concept (demo)</small>
+      <small class="credit">Illustrative photos from Pixabay: salahgraphic, 2SIF, zaclyric, PublicDomainPictures</small>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="subsol-linkuri">
+        <li><a href="#top">Top</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#despre">About</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#vizita">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
