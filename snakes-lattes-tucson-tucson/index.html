@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snakes &amp; Lattes Tucson | Board Game Bar and Restaurant</title>
+<meta name="description" content="A board game bar and restaurant in Tucson with thousands of playable board games, food and drinks, online ordering for pickup, and group dining at 988 East University Boulevard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#FAF8F5;
+  --negru:#161616;
+  --accent:#38bdf8;
+  --gri:rgba(250,248,245,.72);
+  --linie:rgba(250,248,245,.14);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--negru);scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--papel);
+  font-family:Geist,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-weight:400;
+  letter-spacing:-.02em;
+  line-height:1.05;
+  margin:0;
+}
+p{margin:0}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+section[id]{scroll-margin-top:4.5rem}
+
+.wrap{max-width:80rem;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:860px){.wrap{padding-inline:2.5rem}}
+.grila{display:grid;gap:2.5rem}
+@media (min-width:860px){
+  .grila{grid-template-columns:repeat(12,1fr);column-gap:1.5rem}
+}
+
+/* Buttons */
+.buton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:3rem;
+  padding:.75rem 1.4rem;
+  border-radius:2px;
+  font-size:.9375rem;
+  font-weight:500;
+  line-height:1.1;
+  text-decoration:none;
+  transition:transform .2s cubic-bezier(.2,.8,.2,1),background-color .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.buton:active{transform:scale(.97)}
+.buton-accent{background:var(--accent);color:var(--negru)}
+.buton-accent:hover{background:#7dd3fc}
+.buton-contur{border:1px solid currentColor;color:inherit;background:transparent}
+.buton-contur:hover{background:rgba(250,248,245,.08)}
+.cald .buton-contur:hover{background:rgba(22,22,22,.06)}
+
+/* Top bar (glass) */
+.antet{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  background:rgba(22,22,22,.55);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s,border-color .4s;
+}
+.antet.derulat{
+  background:rgba(22,22,22,.82);
+  border-bottom-color:var(--linie);
+}
+.antet-in{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  max-width:80rem;
+  height:4rem;
+  margin-inline:auto;
+  padding-inline:1.25rem;
+}
+.marca{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:1.2rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  white-space:nowrap;
+  margin-right:auto;
+}
+.marca .oras{display:none}
+.antet .buton{min-height:2.75rem;padding:.5rem .9rem;font-size:.875rem}
+.meniu-buton{
+  min-height:2.75rem;
+  min-width:2.75rem;
+  padding:0 .9rem;
+  background:transparent;
+  border:1px solid rgba(250,248,245,.3);
+  border-radius:2px;
+  color:inherit;
+  font:500 .875rem/1 Geist,system-ui,sans-serif;
+  cursor:pointer;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-lista{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  flex-direction:column;
+  margin:0;
+  padding:.5rem 1.25rem 1.5rem;
+  list-style:none;
+  background:var(--negru);
+  border-bottom:1px solid var(--linie);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;
+  align-items:center;
+  min-height:3rem;
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:1.75rem;
+  letter-spacing:-.01em;
+  text-decoration:none;
+}
+@media (min-width:560px){
+  .marca .oras{display:inline}
+  .marca .oras::before{content:" "}
+}
+@media (min-width:860px){
+  .marca{font-size:1.35rem}
+  .meniu-buton{display:none}
+  .meniu-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:2rem;
+    padding:0;
+    margin-right:1.5rem;
+    background:none;
+    border:0;
+  }
+  .meniu-lista a{
+    min-height:2.75rem;
+    font-family:Geist,system-ui,sans-serif;
+    font-size:.9375rem;
+    font-weight:500;
+  }
+  .antet .buton{padding:.6rem 1.1rem}
+}
+
+/* Hero: typography only */
+.intro{padding:8.5rem 0 3rem}
+@media (min-width:860px){.intro{padding:10rem 0 4rem}}
+.titlu-mare{
+  font-size:clamp(3.4rem,13vw,10.5rem);
+  line-height:.96;
+  letter-spacing:-.025em;
+}
+.mascara{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.linie{display:block}
+.intro-jos{margin-top:2.5rem;display:grid;gap:2rem}
+.dek{
+  font-size:clamp(1.125rem,2vw,1.35rem);
+  line-height:1.45;
+  color:var(--gri);
+  max-width:30em;
+}
+.acciuni{display:flex;flex-direction:column;gap:.75rem}
+.acciuni .buton{width:100%}
+@media (min-width:860px){
+  .intro-jos{grid-template-columns:repeat(12,1fr);column-gap:1.5rem;margin-top:3.5rem}
+  .dek{grid-column:7/span 5}
+  .acciuni{grid-column:7/span 5;flex-direction:row;flex-wrap:wrap;gap:1rem}
+  .acciuni .buton{width:auto}
+}
+.intro-linie{
+  margin-top:4rem;
+  padding-top:1rem;
+  border-top:1px solid var(--linie);
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem 2rem;
+  font-size:.9375rem;
+  color:var(--gri);
+}
+
+/* Warm sections */
+.cald{
+  background:var(--papel);
+  color:var(--negru);
+  --gri:rgba(22,22,22,.72);
+  --linie:rgba(22,22,22,.14);
+}
+.cald :focus-visible{outline-color:var(--negru)}
+
+/* Pull quote */
+.cita{padding:clamp(5rem,12vw,10rem) 0}
+.citat{margin:0}
+.citat blockquote{margin:0;grid-column:1/-1}
+@media (min-width:860px){
+  .citat{grid-column:3/span 10}
+}
+.citat p{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:clamp(2.1rem,5vw,4.6rem);
+  line-height:1.08;
+  letter-spacing:-.02em;
+}
+.citat figcaption{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  margin-top:2.5rem;
+  font-size:.9375rem;
+  color:var(--gri);
+}
+.citat figcaption::before{
+  content:"";
+  flex:none;
+  width:3rem;
+  height:2px;
+  background:var(--accent);
+}
+
+/* About */
+.despre{padding:clamp(5rem,12vw,10rem) 0}
+.despre-foto{margin:0;grid-column:1/-1;aspect-ratio:4/3;overflow:hidden}
+.despre-foto img{width:100%;height:100%;object-fit:cover}
+.despre-text{grid-column:1/-1}
+@media (min-width:860px){
+  .despre-foto{grid-column:1/span 6;aspect-ratio:4/5}
+  .despre-text{grid-column:8/span 5;align-self:end}
+}
+.titlu-mijloc{
+  font-size:clamp(2.4rem,4.6vw,4rem);
+  line-height:1.04;
+  margin-bottom:2rem;
+}
+.despre-text p{color:var(--gri);margin-bottom:1.25rem;max-width:34em}
+
+/* Services */
+.servicii{padding:clamp(4rem,10vw,8rem) 0 clamp(5rem,12vw,10rem)}
+.servicii .titlu-mijloc{grid-column:1/-1;margin-bottom:3rem}
+@media (min-width:860px){.servicii .titlu-mijloc{grid-column:1/span 7}}
+.lista-servicii{
+  grid-column:1/-1;
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-top:1px solid var(--linie);
+}
+.lista-servicii li{
+  display:grid;
+  gap:.75rem;
+  padding:2rem 0;
+  border-bottom:1px solid var(--linie);
+}
+.lista-servicii h3{font-size:clamp(1.9rem,3.2vw,2.75rem);line-height:1.08}
+.lista-servicii p{color:var(--gri);max-width:28em}
+@media (min-width:860px){
+  .lista-servicii li{
+    grid-template-columns:repeat(12,1fr);
+    column-gap:1.5rem;
+    align-items:baseline;
+  }
+  .lista-servicii h3{grid-column:1/span 6}
+  .lista-servicii p{grid-column:8/span 5}
+}
+
+/* Gallery */
+.galerie-sectiune{padding:clamp(5rem,12vw,10rem) 0}
+.galerie-sectiune .titlu-mijloc{margin-bottom:3rem}
+.galerie{display:grid;gap:1.25rem}
+.galerie figure{
+  margin:0;
+  overflow:hidden;
+  background:#1f1f1f;
+  aspect-ratio:4/3;
+  cursor:zoom-in;
+}
+.galerie figure img{width:100%;height:100%;object-fit:cover}
+.galerie .g2,.galerie .g3{aspect-ratio:3/4}
+@media (min-width:860px){
+  .galerie{grid-template-columns:repeat(12,1fr);column-gap:1.5rem;row-gap:2rem}
+  .galerie .g1{grid-column:1/span 7}
+  .galerie .g2{grid-column:9/span 4;margin-top:6rem}
+  .galerie .g3{grid-column:2/span 4}
+  .galerie .g4{grid-column:7/span 6;margin-top:4rem}
+}
+/* Enlarged photo (added by the program) */
+html.galerie-deschisa{overflow:hidden}
+.galerie figure.marita{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  margin:0;
+  padding:1.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(22,22,22,.96);
+  cursor:zoom-out;
+}
+.galerie figure.marita img{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+.galerie img.marita{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  width:100%;
+  height:100%;
+  padding:1.25rem;
+  box-sizing:border-box;
+  object-fit:contain;
+  background:rgba(22,22,22,.96);
+}
+
+/* Visit */
+.visita{padding:clamp(5rem,12vw,10rem) 0}
+.visita-text{grid-column:1/-1}
+.visita-text h2{
+  font-size:clamp(2.6rem,5vw,4.5rem);
+  line-height:1.04;
+  margin-bottom:1.75rem;
+}
+.visita address{
+  font-style:normal;
+  font-size:1.25rem;
+  line-height:1.4;
+  margin-bottom:1.25rem;
+}
+.visita-text p{color:var(--gri);margin-bottom:2rem;max-width:30em}
+.visita .acciuni{margin-top:0}
+.harta{grid-column:1/-1;aspect-ratio:4/3;min-height:18rem;background:#e7e4df}
+.harta iframe{width:100%;height:100%;min-height:18rem;border:0;display:block}
+@media (min-width:860px){
+  .visita-text{grid-column:1/span 5}
+  .harta{grid-column:7/span 6;aspect-ratio:auto;min-height:26rem}
+  .harta iframe{min-height:26rem}
+}
+
+/* Footer */
+.subsol{
+  padding:4rem 0 2.5rem;
+  background:var(--negru);
+  color:var(--gri);
+  font-size:.9375rem;
+  border-top:1px solid var(--linie);
+}
+.subsol-grila{display:grid;gap:2rem}
+.subsol-marca{
+  font-family:"Instrument Serif",Georgia,serif;
+  font-size:2rem;
+  letter-spacing:-.02em;
+  color:var(--papel);
+  margin-bottom:.75rem;
+  line-height:1.1;
+}
+.subsol-linkuri{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.subsol-linkuri a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none}
+.subsol-linkuri a:hover,.subsol a:hover{color:var(--papel)}
+.subsol-jos{
+  margin-top:3rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--linie);
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem 2rem;
+  font-size:.8125rem;
+}
+@media (min-width:860px){
+  .subsol-grila{grid-template-columns:2fr 1.2fr 1.2fr;gap:3rem}
+}
+
+/* Reveal: mask (headings, quote) and gentle rise (other blocks) */
+html.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translateY(1.5rem);
+  transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+html.js .mascara>[data-jarvis="apare"]{
+  opacity:1;
+  transform:translateY(105%);
+  transition:transform .9s cubic-bezier(.2,.8,.2,1);
+}
+html.js .mascara>[data-jarvis="apare"].vizibil{transform:none}
+
+/* Accessibility */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"],
+  html.js .mascara>[data-jarvis="apare"]{
+    transform:none;
+    transition:opacity .4s ease;
+  }
+  html.js [data-jarvis="apare"]:not(.vizibil){opacity:0}
+  .buton{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--gri:#FAF8F5;--linie:rgba(250,248,245,.5)}
+  .cald{--gri:#161616;--linie:rgba(22,22,22,.5)}
+  .buton-contur{border-width:2px}
+  .antet{border-bottom-color:var(--linie)}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top"><span>Snakes &amp; Lattes</span><span class="oras">Tucson</span></a>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#servicii">Services</a></li>
+        <li><a href="#galerie">Gallery</a></li>
+        <li><a href="#visita">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="buton buton-accent" href="tel:+15203825855">Call now</a>
+    <button class="meniu-buton" type="button" aria-expanded="false" aria-controls="meniu-lista" data-jarvis="meniu">Menu</button>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" id="top" aria-labelledby="titlu">
+    <div class="wrap">
+      <h1 class="titlu-mare" id="titlu">
+        <span class="mascara"><span class="linie" data-jarvis="apare">Snakes &amp; Lattes</span></span>
+        <span class="mascara"><span class="linie" data-jarvis="apare" style="transition-delay:.12s">Tucson</span></span>
+      </h1>
+      <div class="intro-jos">
+        <p class="dek">Thousands of board games, good food. Walk in, book group dining, or order food and drinks online for pickup.</p>
+        <div class="acciuni">
+          <a class="buton buton-accent" href="tel:+15203825855">Call (520) 382-5855</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Snakes+%26+Lattes+Tucson+Tucson">Get directions</a>
+        </div>
+      </div>
+      <div class="intro-linie">
+        <p>988 East University Boulevard</p>
+        <p>Main Gate Square, Tucson</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cita cald" aria-label="In a few words">
+    <div class="wrap grila">
+      <figure class="citat">
+        <blockquote>
+          <div class="mascara"><p data-jarvis="apare">Choose from thousands of board games to play while enjoying food and drinks.</p></div>
+        </blockquote>
+        <figcaption>Snakes &amp; Lattes Tucson, a board game bar and restaurant</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="despre-titlu">
+    <div class="wrap grila">
+      <figure class="despre-foto" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Game pieces set out on a board, ready for a match.">
+      </figure>
+      <div class="despre-text">
+        <h2 class="titlu-mijloc" id="despre-titlu"><span class="mascara"><span class="linie" data-jarvis="apare">A board game bar in Main Gate Square</span></span></h2>
+        <p>Snakes &amp; Lattes Tucson is a board game bar and restaurant in the Main Gate Square area, at 988 East University Boulevard. The bar has thousands of playable board games.</p>
+        <p>Food and drinks are served in the restaurant, so you can eat and drink while you play.</p>
+        <p>The space welcomes walk-ins, group dining, and online ordering for pickup.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicii" id="servicii" aria-labelledby="servicii-titlu">
+    <div class="wrap grila">
+      <h2 class="titlu-mijloc" id="servicii-titlu"><span class="mascara"><span class="linie" data-jarvis="apare">Services</span></span></h2>
+      <ul class="lista-servicii">
+        <li data-jarvis="apare">
+          <h3>Board game bar and restaurant</h3>
+          <p>Thousands of playable board games, plus food and drinks.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Food and drinks</h3>
+          <p>Available in the restaurant, while you play.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Online ordering for pickup</h3>
+          <p>Order food and drinks online and pick them up.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Event and group dining booking</h3>
+          <p>Booking is available for events and group dining.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune" id="galerie" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <h2 class="titlu-mijloc" id="galerie-titlu"><span class="mascara"><span class="linie" data-jarvis="apare">Games on the table</span></span></h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="g1"><img src="img/2.jpg" alt="Chess pieces on a chessboard." loading="lazy"></figure>
+        <figure class="g2"><img src="img/3.jpg" alt="A chess match on a board, with the pieces in a tense position." loading="lazy"></figure>
+        <figure class="g3"><img src="img/4.jpg" alt="Colorful wooden game pieces in red, green, blue, and yellow." loading="lazy"></figure>
+        <figure class="g4"><img src="img/5.jpg" alt="Dice on a table during a game." loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="visita cald" id="visita" aria-labelledby="visita-titlu">
+    <div class="wrap grila">
+      <div class="visita-text">
+        <h2 id="visita-titlu">Find us on East University Boulevard</h2>
+        <address>988 East University Boulevard<br>Tucson, AZ</address>
+        <p>In the Main Gate Square area. Call to ask about hours.</p>
+        <div class="acciuni">
+          <a class="buton buton-accent" href="tel:+15203825855">Call (520) 382-5855</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Snakes+%26+Lattes+Tucson+Tucson">Get directions</a>
+        </div>
+      </div>
+      <div class="harta">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-110.961020,32.229512,-110.953020,32.233512&amp;layer=mapnik&amp;marker=32.231512,-110.957020" title="Map showing Snakes &amp; Lattes Tucson at 988 East University Boulevard" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <div class="subsol-grila">
+      <div>
+        <p class="subsol-marca">Snakes &amp; Lattes Tucson</p>
+        <p>A board game bar and restaurant in the Main Gate Square area.</p>
+      </div>
+      <div>
+        <p>988 East University Boulevard<br>Tucson, AZ</p>
+        <p><a href="tel:+15203825855">(520) 382-5855</a></p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="subsol-linkuri">
+          <li><a href="#despre">About</a></li>
+          <li><a href="#servicii">Services</a></li>
+          <li><a href="#galerie">Gallery</a></li>
+          <li><a href="#visita">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="subsol-jos">
+      <p>Website concept (demo)</p>
+      <p>Illustrative photos from Pixabay: ClickerHappy, Bru-nO, stevepb, Alexas_Fotos, MolnarSzabolcsErdely</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
