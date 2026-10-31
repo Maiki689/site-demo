@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blue Mind Coffee | Coffee and bakery in Indianapolis</title>
+<meta name="description" content="Blue Mind Coffee offers fresh coffee, pastries and cakes in Indianapolis. 646 East 38th Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+<style>
+:root {
+  --alb: #FFFFFF;
+  --espresso: #3B2A20;
+  --lapte: #EADFD3;
+  --portocaliu: #E07A3F;
+  --text-moale: rgba(59, 42, 32, .82);
+  --linie: rgba(59, 42, 32, .16);
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--espresso);
+  background: var(--alb);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+
+h1, h2, h3 {
+  font-family: "Space Grotesk", Inter, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0;
+}
+
+h1 { font-size: clamp(3rem, 9vw, 6.5rem); }
+h2 { font-size: clamp(2rem, 4.6vw, 3.5rem); }
+h3 { font-size: 1.25rem; letter-spacing: -0.01em; }
+
+p { margin: 0; }
+
+a { color: inherit; }
+
+.wrap { width: min(100% - 2.5rem, 75rem); margin-inline: auto; }
+
+/* Buttons */
+.buton, .buton-contur {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  transition: transform .15s var(--ease), box-shadow .25s var(--ease), background-color .25s var(--ease);
+}
+.buton {
+  background: var(--espresso);
+  color: var(--alb);
+}
+.buton:hover { box-shadow: inset 0 -3px 0 var(--portocaliu); }
+.buton-contur {
+  color: var(--espresso);
+  border: 1px solid var(--espresso);
+  background: transparent;
+}
+.buton-contur:hover { background: rgba(59, 42, 32, .06); }
+.buton:active, .buton-contur:active, .meniu-buton:active { transform: scale(.97); }
+
+:focus-visible {
+  outline: 2px solid var(--portocaliu);
+  outline-offset: 3px;
+}
+
+/* Top bar (glass, dark like the hero) */
+.antet {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  color: var(--alb);
+  background: rgba(59, 42, 32, .92);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(234, 223, 211, .14);
+  transition: background-color .4s var(--ease);
+}
+.antet.derulat { background: rgba(59, 42, 32, .97); }
+
+.antet-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.marca {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.meniu-buton {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 1rem;
+  background: transparent;
+  color: var(--alb);
+  border: 1px solid rgba(234, 223, 211, .75);
+  border-radius: 0;
+  font: inherit;
+  font-size: .95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform .15s var(--ease);
+}
+
+.meniu-lista {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: .5rem 1.25rem 1.25rem;
+  list-style: none;
+  flex-direction: column;
+  background: var(--espresso);
+  border-bottom: 1px solid rgba(234, 223, 211, .14);
+}
+.meniu-lista.deschis { display: flex; }
+.meniu-lista li + li { border-top: 1px solid rgba(234, 223, 211, .14); }
+.meniu-lista a:not(.buton) {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  text-decoration: none;
+  color: var(--alb);
+  opacity: .92;
+}
+.meniu-lista .buton {
+  width: 100%;
+  margin-top: .75rem;
+  background: var(--alb);
+  color: var(--espresso);
+}
+
+/* Hero */
+.intro {
+  background: var(--espresso);
+  color: var(--alb);
+  padding: 2.75rem 0 3.25rem;
+}
+
+.intro-text { max-width: 44rem; }
+
+.intro-lead {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--lapte);
+  margin: 1.25rem 0 .5rem;
+}
+
+.intro-adresa {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--lapte);
+  margin: 0 0 2rem;
+}
+
+.intro .buton { background: var(--alb); color: var(--espresso); }
+.intro .buton-contur { color: var(--alb); border-color: rgba(234, 223, 211, .6); }
+.intro .buton-contur:hover { background: rgba(234, 223, 211, .08); }
+
+.actiuni {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+/* Sections */
+.sectiune { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+.sectiune.lapte { background: var(--lapte); }
+
+.grid-doua {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* About: wide photo, then the intro block under it */
+.despre-foto {
+  margin: 0;
+  max-width: 48rem;
+}
+.despre-foto img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.despre-text {
+  margin-top: 2.25rem;
+  max-width: 44rem;
+}
+.despre-text h2 { margin-bottom: 1.25rem; }
+.despre-text p { color: var(--text-moale); max-width: 52ch; }
+
+.avantaje {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0 0;
+  display: grid;
+  gap: 0;
+}
+.avantaje li {
+  border-top: 1px solid var(--linie);
+  padding: 1.25rem 0;
+}
+.avantaje h3 { margin-bottom: .35rem; }
+.avantaje p { color: var(--text-moale); }
+
+.cap-sectiune { max-width: 40rem; }
+.cap-sectiune p { color: var(--text-moale); margin-top: 1.25rem; }
+
+/* Menu */
+.menu-lista {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0 0;
+  display: grid;
+  gap: 2.5rem;
+}
+.menu-lista li {
+  border-top: 1px solid var(--espresso);
+  padding-top: 1.5rem;
+}
+.menu-lista h3 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-bottom: .75rem;
+}
+.menu-lista p { color: var(--text-moale); max-width: 30ch; }
+
+/* Gallery */
+.galerie {
+  display: grid;
+  gap: .75rem;
+  margin-top: 3rem;
+}
+.galerie figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.galerie figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .6s var(--ease);
+}
+.galerie figure:hover img { transform: scale(1.03); }
+
+.marita {
+  position: fixed !important;
+  inset: 3.5vh 3vw !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  z-index: 60;
+  overflow: visible !important;
+  cursor: zoom-out !important;
+  animation: marire .4s var(--ease) both;
+}
+.marita img {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+html.galerie-deschisa::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgba(59, 42, 32, .94);
+}
+@keyframes marire {
+  from { opacity: 0; transform: scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Visit */
+.visita .adresa {
+  margin-top: 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--text-moale);
+}
+.visita h2 { margin-bottom: 1.25rem; }
+.visita h3 { margin: 2.5rem 0 0; }
+
+.ore {
+  margin: 1.25rem 0 2.25rem;
+}
+.ore div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .9rem 0;
+  border-top: 1px solid var(--linie);
+}
+.ore div:last-child { border-bottom: 1px solid var(--linie); }
+.ore dt { font-weight: 500; }
+.ore dd { margin: 0; color: var(--text-moale); }
+
+.harta iframe {
+  width: 100%;
+  height: 20rem;
+  border: 0;
+  display: block;
+  background: var(--lapte);
+}
+
+/* Footer */
+.subsol {
+  background: var(--espresso);
+  color: var(--lapte);
+  padding: 3.5rem 0 2.5rem;
+  font-size: .9rem;
+}
+.subsol-in {
+  display: grid;
+  gap: .75rem;
+}
+.subsol-nume {
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--alb);
+  letter-spacing: -0.01em;
+}
+.subsol .credit { opacity: .8; font-size: .8rem; max-width: 60ch; }
+
+/* Reveal on scroll (only when JS adds html.js) */
+html.js .apare {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+html.js .apare.vizibil {
+  opacity: 1;
+  transform: none;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  .galerie { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 860px) {
+  .meniu-buton { display: none; }
+
+  .meniu-lista {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.25rem;
+    padding: 0;
+    background: none;
+    border: 0;
+  }
+  .meniu-lista li + li { border-top: 0; }
+  .meniu-lista a:not(.buton) { min-height: 44px; font-size: .95rem; }
+  .meniu-lista .buton {
+    width: auto;
+    margin-top: 0;
+    min-height: 44px;
+    padding: 0 1.1rem;
+  }
+
+  .intro { padding: 4.5rem 0 5rem; }
+
+  .avantaje { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .avantaje li { border-top: 1px solid var(--linie); }
+
+  .grid-doua { grid-template-columns: 1fr 1fr; gap: 6rem; }
+
+  .menu-lista { grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+
+  .galerie { grid-template-columns: repeat(3, 1fr); }
+  .galerie figure img { aspect-ratio: 4 / 5; }
+
+  .visita .grid-doua { align-items: start; }
+  .harta iframe { height: 28rem; }
+}
+
+/* Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html.js .apare { transform: none; transition: opacity .3s linear; }
+  .marita { animation: none; }
+  .galerie figure:hover img { transform: none; }
+}
+
+/* Transparency preference */
+@media (prefers-reduced-transparency: reduce) {
+  .antet, .antet.derulat {
+    background: var(--espresso);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Contrast preference */
+@media (prefers-contrast: more) {
+  body, .despre-text p, .avantaje p, .menu-lista p, .cap-sectiune p, .visita .adresa, .ore dd {
+    color: var(--espresso);
+  }
+  .intro-lead, .intro-adresa { color: var(--alb); }
+  .intro .buton-contur { border-color: var(--alb); }
+  .buton-contur { border-width: 2px; }
+  .meniu-buton { border-color: var(--alb); }
+  .avantaje li, .ore div { border-color: var(--espresso); }
+  .subsol { color: var(--alb); }
+  .subsol .credit { opacity: 1; }
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap antet-in">
+    <a class="marca" href="#top">Blue Mind Coffee</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+        <li><a class="buton" href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Mind+Coffee+Indianapolis" target="_blank" rel="noopener noreferrer">Get directions</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro" aria-labelledby="titlu">
+    <div class="wrap">
+      <div class="intro-text">
+        <h1 id="titlu">Blue Mind Coffee</h1>
+        <p class="intro-lead">Fresh coffee, warm bakery treats.</p>
+        <p class="intro-adresa">646 East 38th Street, Indianapolis</p>
+        <div class="actiuni">
+          <a class="buton" href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Mind+Coffee+Indianapolis" target="_blank" rel="noopener noreferrer">Get directions</a>
+          <a class="buton-contur" href="#menu">See the menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="about" aria-labelledby="t-despre">
+    <div class="wrap">
+      <figure class="despre-foto apare">
+        <img src="img/2.jpg" alt="Barista pouring a drink at the coffee counter" loading="lazy" width="800" height="600">
+      </figure>
+      <div class="despre-text apare">
+        <h2 id="t-despre">Craft coffee and baked goods on East 38th Street</h2>
+        <p>Blue Mind Coffee is a spot for craft coffee, pastries and cakes on East 38th Street. Guests can relax in a warm, inviting setting with freshly made drinks and bakery goods. Drop by for a break or meet up with friends over a cup.</p>
+      </div>
+      <ul class="avantaje apare">
+        <li>
+          <h3>Fresh options</h3>
+          <p>Drinks and treats made every day</p>
+        </li>
+        <li>
+          <h3>Sweet bakery</h3>
+          <p>Selection of cakes and pastries</p>
+        </li>
+        <li>
+          <h3>Welcoming place</h3>
+          <p>Easy stop to relax or meet friends</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune lapte" id="menu" aria-labelledby="t-menu">
+    <div class="wrap">
+      <div class="cap-sectiune apare">
+        <h2 id="t-menu">Menu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Examples — to be replaced with your own offers</p>
+        <p>Examples of what you can order. Ask at the counter for the current selection.</p>
+      </div>
+      <ul class="menu-lista apare">
+        <li>
+          <h3>Coffee and drinks</h3>
+          <p>Freshly made coffee and other drinks.</p>
+        </li>
+        <li>
+          <h3>Cakes</h3>
+          <p>Cakes from the bakery.</p>
+        </li>
+        <li>
+          <h3>Pastries</h3>
+          <p>Pastries from the bakery.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune" id="gallery" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="cap-sectiune apare">
+        <h2 id="t-galerie">A look at the coffee bar</h2>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <figure>
+          <img src="img/1.jpg" alt="A cup of coffee on a table" loading="lazy" width="800" height="800">
+        </figure>
+        <figure>
+          <img src="img/2.jpg" alt="Barista pouring a drink at the counter" loading="lazy" width="800" height="800">
+        </figure>
+        <figure>
+          <img src="img/3.jpg" alt="Coffee beans and a latte on a wooden table" loading="lazy" width="800" height="800">
+        </figure>
+        <figure>
+          <img src="img/4.jpg" alt="Cappuccino and latte in cups" loading="lazy" width="800" height="800">
+        </figure>
+        <figure>
+          <img src="img/5.jpg" alt="Latte art on a coffee cup" loading="lazy" width="800" height="800">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="visit" aria-labelledby="t-visit">
+    <div class="wrap grid-doua visita">
+      <div class="apare">
+        <h2 id="t-visit">Visit Blue Mind Coffee</h2>
+        <p class="adresa">646 East 38th Street<br>Indianapolis</p>
+        <h3>Hours</h3>
+        <dl class="ore">
+          <div>
+            <dt>Monday to Friday</dt>
+            <dd>7 AM to 3 PM</dd>
+          </div>
+          <div>
+            <dt>Saturday</dt>
+            <dd>8 AM to 3 PM</dd>
+          </div>
+        </dl>
+        <a class="buton" href="https://www.google.com/maps/search/?api=1&amp;query=Blue+Mind+Coffee+Indianapolis" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+      </div>
+      <div class="harta apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.149855,39.823290,-86.141854,39.827290&amp;layer=mapnik&amp;marker=39.825290,-86.145854" title="Map showing Blue Mind Coffee at 646 East 38th Street, Indianapolis" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-in">
+    <p class="subsol-nume">Blue Mind Coffee</p>
+    <p>646 East 38th Street, Indianapolis</p>
+    <p>Website concept (demo)</p>
+    <p class="credit">Photos: Illustrative photos from Pixabay: 13758299, 20926038, StockSnap, 13027327, Pexels</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
