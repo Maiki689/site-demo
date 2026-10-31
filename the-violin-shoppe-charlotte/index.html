@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Violin Shoppe | Violins, Repairs and Workshops in Charlotte</title>
+<meta name="description" content="The Violin Shoppe in Charlotte sells violins, violas, cellos, and bass, and offers expert repairs, professional bow rehairs, and fiddle workshops.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500;600&amp;display=swap">
+<style>
+:root{
+  --negru:#0F1012;
+  --alb:#FFFFFF;
+  --gri:#8B8F98;
+  --accent:#be123c;
+  --fundal-2:#16171B;
+  --linie:rgba(255,255,255,.12);
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --titlu:"Space Grotesk", system-ui, sans-serif;
+  --text:"Inter", system-ui, sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--negru);color:var(--alb);
+  font-family:var(--text);font-size:1.0625rem;line-height:1.5;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--titlu);font-weight:600;letter-spacing:-.02em;line-height:1.06;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+figure{margin:0}
+:focus-visible{outline:2px solid var(--alb);outline-offset:3px}
+
+.wrap{max-width:1200px;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:860px){.wrap{padding-inline:2rem}}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.75rem 1.5rem;border-radius:2px;
+  font-family:var(--titlu);font-weight:500;font-size:1rem;letter-spacing:0;
+  text-decoration:none;white-space:nowrap;cursor:pointer;
+  transition:transform .15s var(--curba),filter .3s var(--curba),border-color .3s var(--curba),color .3s var(--curba)
+}
+.btn:active{transform:scale(.97)}
+.btn-acc{background:var(--accent);color:var(--alb);border:1px solid var(--accent)}
+.btn-acc:hover{filter:brightness(1.12)}
+.btn-linie{background:transparent;color:var(--alb);border:1px solid rgba(255,255,255,.28)}
+.btn-linie:hover{border-color:var(--alb)}
+
+/* Header (glass) */
+.antet{
+  position:sticky;top:0;z-index:30;
+  background:rgba(15,16,18,.5);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .4s var(--curba),border-color .4s var(--curba)
+}
+.antet.derulat{background:rgba(15,16,18,.8);border-bottom-color:var(--linie)}
+.antet-in{
+  max-width:1200px;margin-inline:auto;height:4rem;padding:0 1.25rem;
+  display:flex;align-items:center;justify-content:space-between
+}
+@media (min-width:860px){.antet-in{padding:0 2rem}}
+.marca{
+  font-family:var(--titlu);font-weight:600;font-size:1rem;letter-spacing:-.01em;
+  text-decoration:none;color:var(--alb)
+}
+.meniu-buton{
+  min-height:44px;min-width:44px;padding:0 .9rem;
+  background:none;border:1px solid var(--linie);border-radius:2px;color:var(--alb);
+  font:500 .9375rem/1 var(--text);cursor:pointer;transition:transform .15s var(--curba)
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-lista{
+  display:none;position:absolute;top:100%;left:0;right:0;
+  flex-direction:column;background:var(--negru);
+  border-bottom:1px solid var(--linie);padding:.25rem 1.25rem 1.25rem
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a:not(.btn){
+  display:flex;align-items:center;min-height:48px;
+  font-family:var(--titlu);font-size:1.125rem;text-decoration:none;
+  border-bottom:1px solid var(--linie)
+}
+.meniu-lista li:last-child{padding-top:.75rem}
+.meniu-lista .btn{width:100%}
+
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    display:flex;position:static;flex-direction:row;align-items:center;
+    gap:2rem;background:none;border:0;padding:0
+  }
+  .meniu-lista li:last-child{padding-top:0}
+  .meniu-lista a:not(.btn){
+    min-height:auto;border:0;font-family:var(--text);font-size:.9375rem;
+    color:var(--gri);transition:color .3s var(--curba)
+  }
+  .meniu-lista a:not(.btn):hover{color:var(--alb)}
+  .meniu-lista .btn{width:auto;min-height:44px;padding:.5rem 1.25rem}
+}
+
+/* Hero: split screen */
+.hero{position:relative;display:grid;grid-template-columns:1fr;overflow:hidden}
+.hero-text{
+  position:relative;isolation:isolate;
+  padding:3rem 1.25rem 2.5rem;display:flex;flex-direction:column;justify-content:center
+}
+/* Warm light: drifts slowly, brightens when the visitor touches or hovers the text side */
+.hero-text::before{
+  content:"";position:absolute;z-index:-1;
+  width:80vmax;height:80vmax;left:-25vmax;top:8%;
+  background:radial-gradient(closest-side, rgba(190,18,60,.26), rgba(139,143,152,.08) 55%, rgba(15,16,18,0) 100%);
+  opacity:.7;pointer-events:none;
+  transition:opacity .9s var(--curba);
+  animation:lumina 18s ease-in-out infinite alternate
+}
+.hero-text:hover::before,.hero-text:focus-within::before{opacity:1}
+@keyframes lumina{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(14vmax,-4vmax,0)}
+}
+.hero h1{font-size:clamp(3rem,8vw,6rem);margin-bottom:1.5rem}
+.slogan{
+  font-family:var(--titlu);font-size:clamp(1.25rem,2.4vw,1.6rem);
+  line-height:1.25;letter-spacing:-.01em;margin-bottom:.75rem
+}
+.descriere{color:var(--gri);max-width:34ch;margin-bottom:2rem}
+.butoane{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2rem}
+.adresa{color:var(--gri);font-size:.9375rem}
+.hero-foto{position:relative;z-index:1;aspect-ratio:4/3;overflow:hidden;background:#1a1b1f}
+.hero-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+@media (min-width:860px){
+  .hero{grid-template-columns:1.05fr .95fr;min-height:calc(100svh - 4rem)}
+  .hero-text{
+    padding:5rem 4rem 5rem max(2rem, calc((100vw - 1200px)/2 + 2rem))
+  }
+  .hero-foto{aspect-ratio:auto;min-height:100%}
+}
+
+/* Sections */
+.seccion{padding:4.5rem 0}
+@media (min-width:860px){.seccion{padding:7.5rem 0}}
+.seccion h2{font-size:clamp(2rem,4.5vw,3.25rem);margin-bottom:1.5rem}
+
+.despre-in{display:grid;gap:3rem}
+@media (min-width:860px){
+  .despre-in{grid-template-columns:1fr .9fr;align-items:center;gap:6rem}
+}
+.despre-text p:not(.etich){
+  font-size:clamp(1.0625rem,1.5vw,1.2rem);color:rgba(255,255,255,.86);max-width:52ch
+}
+.despre-foto{position:relative;aspect-ratio:4/5;overflow:hidden;background:#1a1b1f}
+.despre-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.produse{background:var(--fundal-2)}
+.lista-produse{display:grid;grid-template-columns:1fr;margin-top:3rem}
+@media (min-width:700px){
+  .lista-produse{grid-template-columns:1fr 1fr;column-gap:4rem}
+}
+.lista-produse li{border-top:1px solid var(--linie);padding:1.5rem 0 1.75rem}
+.lista-produse h3{font-size:1.25rem;margin-bottom:.4rem}
+.lista-produse p{color:var(--gri);font-size:.9375rem}
+
+.galerie-grid{display:grid;gap:.75rem;grid-template-columns:1fr;margin-top:3rem}
+@media (min-width:700px){.galerie-grid{grid-template-columns:repeat(3,1fr)}}
+.poza{
+  position:relative;overflow:hidden;cursor:zoom-in;
+  aspect-ratio:4/3;background:#1a1b1f;border-radius:2px
+}
+@media (min-width:700px){.poza{aspect-ratio:3/4}}
+.poza img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s var(--curba)}
+@media (hover:hover){.poza:hover img{transform:scale(1.03)}}
+.poza:focus-visible{outline:2px solid var(--alb);outline-offset:4px}
+.marita{
+  position:fixed;inset:4vh 4vw;z-index:60;aspect-ratio:auto;
+  background:var(--negru);padding:.75rem;box-sizing:border-box;cursor:zoom-out;
+  display:flex;align-items:center;justify-content:center
+}
+.marita img{position:static;object-fit:contain;width:100%;height:100%}
+.marita:hover img{transform:none}
+html.galerie-deschisa .poza:not(.marita){opacity:.2;transition:opacity .4s var(--curba)}
+
+.contacto-in{display:grid;gap:3rem}
+@media (min-width:860px){
+  .contacto-in{grid-template-columns:1fr 1.1fr;align-items:center;gap:6rem}
+}
+.contacto-text p:not(.etich){color:rgba(255,255,255,.86);max-width:48ch;margin-bottom:2rem}
+.contacto-text address{font-style:normal;color:var(--gri);margin-bottom:2rem;line-height:1.6}
+.mapa-caja{border:1px solid var(--linie)}
+.mapa{width:100%;height:22rem;border:0;display:block;filter:grayscale(1) invert(.92) contrast(.9)}
+
+.subsol{border-top:1px solid var(--linie);padding:2.5rem 0 3rem;font-size:.875rem;color:var(--gri)}
+.subsol-in{display:grid;gap:1rem}
+.subsol .marca{font-size:1rem}
+.subsol p{max-width:70ch}
+
+/* Scroll reveal: only when JavaScript is on */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translate3d(0,18px,0);
+  transition:opacity .6s var(--curba),transform .6s var(--curba)
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Accessibility */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-text::before{animation:none}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+  .btn,.meniu-buton,.poza img,.antet{transition-duration:.2s}
+  .poza:hover img{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--gri:#C5C9D0;--linie:rgba(255,255,255,.4)}
+  .btn-linie{border-color:var(--alb)}
+  .mapa-caja{border-color:rgba(255,255,255,.6)}
+}
+@media (max-width:859px){
+  html.meniu-deschis{overflow:hidden}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#hero">The Violin Shoppe</a>
+    <nav aria-label="Main">
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">About</a></li>
+        <li><a href="#produse">Products</a></li>
+        <li><a href="#galerie">Photos</a></li>
+        <li><a href="#contacto">Visit</a></li>
+        <li><a class="btn btn-acc" href="tel:+17043730551">Call now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <h1>The Violin Shoppe</h1>
+    <p class="slogan">Strings for every stage of play.</p>
+    <p class="descriere">Instruments, repairs, and workshops for string musicians.</p>
+    <div class="butoane">
+      <a class="btn btn-acc" href="tel:+17043730551">Call now</a>
+      <a class="btn btn-linie" href="https://www.google.com/maps/search/?api=1&amp;query=The+Violin+Shoppe+Charlotte">Get directions</a>
+    </div>
+    <p class="adresa">2112 East 7th Street, Charlotte</p>
+  </div>
+  <figure class="hero-foto">
+    <img src="img/1.jpg" alt="Close view of a violin">
+  </figure>
+</section>
+
+<section class="seccion despre" id="despre">
+  <div class="wrap despre-in">
+    <div class="despre-text">
+      <h2 data-jarvis="apare">Bring your instrument in</h2>
+      <p data-jarvis="apare">The Violin Shoppe on East 7th Street sells violins, violas, cellos, and bass. Bring your instrument in for expert repairs, professional bow rehairs, or join a fiddle workshop. The shop serves musicians across Charlotte.</p>
+    </div>
+    <figure class="despre-foto" data-jarvis="apare">
+      <img src="img/3.jpg" alt="Young woman playing the violin">
+    </figure>
+  </div>
+</section>
+
+<section class="seccion produse" id="produse">
+  <div class="wrap">
+    <h2 data-jarvis="apare">Instruments, repairs, and workshops</h2>
+    <ul class="lista-produse">
+      <li data-jarvis="apare">
+        <h3>Violins</h3>
+        <p>Sold on site.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Violas</h3>
+        <p>Sold on site.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Cellos</h3>
+        <p>Sold on site.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Bass</h3>
+        <p>Sold on site.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Fiddle workshops</h3>
+        <p>Offered in the shop.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Expert repairs and restorations</h3>
+        <p>Available at the shop.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Professional bow rehairs</h3>
+        <p>Available at the shop.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="seccion" id="galerie">
+  <div class="wrap">
+    <h2 data-jarvis="apare">Playing strings</h2>
+    <div class="galerie-grid" data-jarvis="galerie">
+      <figure class="poza" tabindex="0">
+        <img src="img/2.jpg" alt="Musicians with instruments outdoors, near tall columns">
+      </figure>
+      <figure class="poza" tabindex="0">
+        <img src="img/4.jpg" alt="Man playing violin while sitting on a bench">
+      </figure>
+      <figure class="poza" tabindex="0">
+        <img src="img/5.jpg" alt="Man playing violin on a park bench">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="seccion contacto" id="contacto">
+  <div class="wrap contacto-in">
+    <div class="contacto-text">
+      <h2 data-jarvis="apare">2112 East 7th Street</h2>
+      <p data-jarvis="apare">The Violin Shoppe is on East 7th Street in Charlotte. Call if you have a question about an instrument, a repair, or a workshop.</p>
+      <address data-jarvis="apare">
+        The Violin Shoppe<br>
+        2112 East 7th Street<br>
+        Charlotte
+      </address>
+      <div class="butoane" data-jarvis="apare">
+        <a class="btn btn-acc" href="tel:+17043730551">Call (704) 373-0551</a>
+        <a class="btn btn-linie" href="https://www.google.com/maps/search/?api=1&amp;query=The+Violin+Shoppe+Charlotte">Get directions</a>
+      </div>
+    </div>
+    <div class="mapa-caja" data-jarvis="apare">
+      <iframe class="mapa" title="Map showing The Violin Shoppe on East 7th Street, Charlotte" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-80.820559,35.208960,-80.812559,35.212960&amp;layer=mapnik&amp;marker=35.210960,-80.816559" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-in">
+    <p class="marca">The Violin Shoppe</p>
+    <p>2112 East 7th Street, Charlotte. Phone (704) 373-0551.</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: HeungSoon, Surprising_Media, Pexels, Icsilviu</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
