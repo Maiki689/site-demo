@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>At One Muscle Therapy | Massage and Yoga in Charlotte</title>
+<meta name="description" content="Sports, medical, and therapeutic massage, plus individual and group yoga, at 1812 Lyndhurst Avenue in Charlotte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap">
+<style>
+:root{
+  --papel:#F4EFE8;
+  --cerneala:#1F1B18;
+  --roz:#D9B8B0;
+  --gri:#8C847C;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Jost,"Helvetica Neue",Arial,sans-serif;
+  --margine:clamp(1.25rem,5vw,3.5rem);
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--papel);
+  color:var(--cerneala);
+  font-family:var(--sans);
+  font-weight:400;
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+ul,dl{list-style:none}
+h1,h2,h3{font-weight:300;font-family:var(--serif)}
+address{font-style:normal}
+.wrap{max-width:1280px;margin-inline:auto;padding-inline:var(--margine)}
+em{font-style:italic}
+
+/* Labels */
+.eticheta{
+  font-family:var(--sans);
+  font-size:.75rem;
+  line-height:1.4;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:400;
+}
+
+/* Buttons */
+.boton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  padding:.75rem 1.6rem;
+  background:var(--cerneala);
+  color:var(--papel);
+  border:1px solid var(--cerneala);
+  text-decoration:none;
+  font-family:var(--sans);
+  font-size:1rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  transition:transform .15s var(--curba),opacity .2s ease;
+}
+.boton:hover{opacity:.86}
+.boton:active{transform:scale(.97)}
+.boton-linie{background:transparent;color:var(--cerneala)}
+.boton-linie:hover{opacity:1;background:rgba(31,27,24,.06)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--cerneala);outline-offset:3px}
+
+/* Header (glass) */
+.antet{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:30;
+  background:rgba(244,239,232,.78);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s ease;
+}
+.antet.derulat{border-bottom-color:rgba(140,132,124,.45)}
+.bara{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  min-height:4rem;
+  transition:min-height .4s var(--curba);
+}
+.antet.derulat .bara{min-height:3.25rem}
+.marca{
+  font-family:var(--serif);
+  font-size:1.35rem;
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.01em;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.meniu-buton{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:.7rem;
+  min-height:44px;
+  min-width:44px;
+  padding:0 .25rem;
+  background:none;
+  border:0;
+  color:var(--cerneala);
+  font:inherit;
+  font-size:.75rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.linii{
+  position:relative;
+  display:block;
+  width:20px;
+  height:1px;
+  background:var(--cerneala);
+  transition:background .2s ease;
+}
+.linii::before,.linii::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:20px;
+  height:1px;
+  background:var(--cerneala);
+  transition:transform .35s var(--curba);
+}
+.linii::before{top:-6px}
+.linii::after{top:6px}
+.meniu-buton[aria-expanded="true"] .linii{background:transparent}
+.meniu-buton[aria-expanded="true"] .linii::before{transform:translateY(6px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii::after{transform:translateY(-6px) rotate(-45deg)}
+.meniu-lista{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  flex-direction:column;
+  background:var(--papel);
+  border-bottom:1px solid var(--gri);
+  padding:.25rem var(--margine) 1.25rem;
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:block;
+  padding:.8rem 0;
+  min-height:44px;
+  font-family:var(--serif);
+  font-size:1.6rem;
+  line-height:1.2;
+  text-decoration:none;
+  border-top:1px solid rgba(140,132,124,.45);
+}
+.boton-mic{display:none}
+
+/* Hero */
+.inicio{padding:6.5rem 0 4.5rem}
+.inicio-grila{display:grid;gap:1.5rem}
+.inicio .eticheta{color:var(--cerneala)}
+.nume{
+  font-size:clamp(3.6rem,18vw,5.6rem);
+  line-height:.95;
+  letter-spacing:-.02em;
+  position:relative;
+  z-index:2;
+}
+.nume span{display:block}
+.nume em{font-style:italic;font-weight:300}
+.texto .lead{
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,3.4vw,2rem);
+  line-height:1.2;
+  margin-bottom:.9rem;
+}
+.texto .descriere{
+  max-width:34ch;
+  color:rgba(31,27,24,.84);
+  margin-bottom:1.75rem;
+}
+.accion{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.25rem}
+.numar{font-size:1rem;letter-spacing:.04em}
+.foto{margin:0;position:relative;z-index:1;aspect-ratio:5/4}
+.masca{position:relative;height:100%;overflow:hidden}
+.masca img{height:100%}
+
+/* Sections */
+.bloc{padding:clamp(5rem,10vw,8.5rem) 0}
+.bloc h2{
+  font-size:clamp(2.5rem,5.4vw,4.25rem);
+  line-height:1.04;
+  letter-spacing:-.02em;
+  margin-top:1rem;
+}
+.bloc h2 em{font-style:italic}
+.corp{max-width:36ch}
+.corp + .corp{margin-top:1rem}
+
+/* About */
+.despre-grila{display:grid;gap:3.5rem;align-items:center}
+.despre-foto{margin:0;aspect-ratio:4/5}
+.despre-text .corp{margin-top:1.5rem;max-width:40ch}
+.avantaje{margin-top:3rem;display:grid;gap:0}
+.avantaje li{
+  padding:1.4rem 0;
+  border-top:1px solid rgba(140,132,124,.55);
+}
+.avantaje li:last-child{border-bottom:1px solid rgba(140,132,124,.55)}
+.avantaje h3{font-size:1.6rem;line-height:1.1}
+.avantaje p{margin-top:.4rem;color:rgba(31,27,24,.84)}
+
+/* Services */
+.servicii{background:var(--papel)}
+.servicii-grila{display:grid;gap:3rem}
+.servicii-cap .corp{margin-top:1.25rem}
+.lista-servicii{display:grid}
+.lista-servicii li{
+  display:grid;
+  gap:.5rem;
+  padding:1.6rem 0;
+  border-top:1px solid rgba(140,132,124,.55);
+}
+.lista-servicii li:last-child{border-bottom:1px solid rgba(140,132,124,.55)}
+.lista-servicii h3{font-size:1.75rem;line-height:1.1}
+.lista-servicii p{color:rgba(31,27,24,.84);max-width:44ch}
+
+/* Gallery */
+.galerie-bloc{padding-top:0}
+.bloc-cap{display:grid;gap:.5rem}
+.galerie-nota{color:rgba(31,27,24,.7);font-size:.9rem;margin-top:.75rem}
+.galerie{
+  margin-top:3rem;
+  display:grid;
+  gap:2.5rem;
+}
+.galerie figure{
+  margin:0;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  cursor:zoom-in;
+  background:var(--roz);
+}
+.galerie img{transition:opacity .3s ease}
+
+/* Visit (pink) */
+.visita{background:var(--roz)}
+.visita-grila{display:grid;gap:3rem}
+.adresa{
+  margin-top:1.75rem;
+  font-family:var(--serif);
+  font-size:clamp(1.6rem,3vw,2rem);
+  line-height:1.2;
+}
+.numar-mare{margin-top:.6rem;font-size:1.1rem;letter-spacing:.03em}
+.visita .accion{margin-top:2rem}
+.visita .eticheta-mica{margin-top:2.75rem;font-family:var(--sans)}
+.program{margin-top:1rem;border-top:1px solid rgba(31,27,24,.3)}
+.program div{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:1rem;
+  padding:.85rem 0;
+  border-bottom:1px solid rgba(31,27,24,.3);
+}
+.program dt{font-weight:500}
+.program dd{text-align:right}
+.harta{position:relative;min-height:320px;background:var(--papel)}
+.harta iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* Footer */
+.pie{background:var(--cerneala);color:var(--papel);padding:4.5rem 0 3rem}
+.pie-grila{display:grid;gap:2rem}
+.pie-nume{font-family:var(--serif);font-size:2.25rem;font-weight:300;line-height:1;letter-spacing:-.02em}
+.pie p{color:rgba(244,239,232,.85)}
+.pie .pie-mic{font-size:.85rem;color:rgba(244,239,232,.72);max-width:44ch}
+.pie-linie{border-top:1px solid var(--gri);padding-top:1.5rem}
+
+/* Phone and desktop */
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    display:flex;
+    position:static;
+    flex-direction:row;
+    gap:2.5rem;
+    background:none;
+    border:0;
+    padding:0;
+    margin-left:auto;
+  }
+  .meniu-lista a{
+    min-height:auto;
+    padding:.5rem 0;
+    border:0;
+    font-family:var(--sans);
+    font-size:.78rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+  }
+  .boton-mic{display:inline-flex;margin-left:1.5rem;min-height:44px;padding:.6rem 1.25rem;font-size:.95rem}
+
+  .inicio{padding:8.5rem 0 6rem}
+  .inicio-grila{
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    column-gap:1.5rem;
+    row-gap:0;
+    align-items:start;
+  }
+  .inicio .eticheta{grid-column:1/5;grid-row:1;align-self:start}
+  .nume{grid-column:1/-1;grid-row:2;font-size:clamp(6rem,10.5vw,11rem);margin:1.25rem 0 0}
+  .nume .ultima{margin-left:28%}
+  .texto{grid-column:1/5;grid-row:3;padding-top:2.5rem}
+  .foto{grid-column:6/13;grid-row:1/4;aspect-ratio:auto;min-height:600px}
+
+  .despre-grila{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem}
+  .despre-foto{grid-column:1/6}
+  .despre-text{grid-column:8/13}
+  .avantaje{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin-top:3.5rem}
+  .avantaje li{border-bottom:0;padding-top:1.5rem}
+  .avantaje li:last-child{border-bottom:0}
+
+  .servicii-grila{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;align-items:start}
+  .servicii-cap{grid-column:1/5;position:sticky;top:7rem}
+  .lista-servicii{grid-column:6/13}
+  .lista-servicii li{
+    grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);
+    align-items:baseline;
+    gap:2rem;
+    padding:1.9rem 0;
+  }
+  .lista-servicii li:last-child{border-bottom:1px solid rgba(140,132,124,.55)}
+
+  .galerie{
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    column-gap:1.5rem;
+    row-gap:3rem;
+    margin-top:4rem;
+  }
+  .galerie .g1{grid-column:1/8;grid-row:1;aspect-ratio:4/5}
+  .galerie .g2{grid-column:9/13;grid-row:1;margin-top:9rem;aspect-ratio:3/4}
+  .galerie .g3{grid-column:3/10;grid-row:2;aspect-ratio:16/10}
+
+  .visita-grila{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;align-items:stretch}
+  .visita-text{grid-column:1/6;padding-top:.5rem}
+  .harta{grid-column:7/13;min-height:520px}
+
+  .pie-grila{grid-template-columns:1.2fr 1fr 1.4fr;gap:3rem;align-items:start}
+}
+
+/* Reveal on scroll (only when JS is on) */
+html.js .apare:not(.foto){
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .6s var(--curba),transform .6s var(--curba);
+}
+html.js .apare.vizibil:not(.foto){opacity:1;transform:none}
+html.js .foto .masca img{
+  transform:translateY(100%);
+  transition:transform 1.4s var(--curba);
+}
+html.js .foto.vizibil .masca img{transform:translateY(0)}
+html.js .despre-foto .masca img{
+  transform:translateY(100%);
+  transition:transform 1.2s var(--curba);
+}
+html.js .despre-foto.vizibil .masca img{transform:translateY(0)}
+
+/* Gallery enlargement */
+html.galerie-deschisa body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:40;
+  background:rgba(244,239,232,.97);
+}
+html.galerie-deschisa .galerie figure.marita{
+  position:fixed;
+  inset:0;
+  z-index:50;
+  aspect-ratio:auto;
+  padding:4.5rem var(--margine);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:zoom-out;
+  overflow:visible;
+}
+html.galerie-deschisa .galerie figure.marita img{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--papel);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  body{color:var(--cerneala)}
+  .antet.derulat{border-bottom-color:var(--cerneala)}
+  .avantaje li,.lista-servicii li,.program div{border-color:var(--cerneala)}
+  .boton-linie{border-color:var(--cerneala)}
+  .corp,.lista-servicii p,.avantaje p,.texto .descriere{color:var(--cerneala)}
+  .galerie-nota{color:var(--cerneala)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .apare:not(.foto){transform:none;transition:opacity .4s linear}
+  html.js .foto .masca img,
+  html.js .despre-foto .masca img{
+    transform:none;
+    opacity:0;
+    transition:opacity .4s linear;
+  }
+  html.js .foto.vizibil .masca img,
+  html.js .despre-foto.vizibil .masca img{opacity:1}
+  .boton{transition:opacity .2s linear}
+  .boton:active{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap bara">
+    <a class="marca" href="#top">At One Muscle Therapy</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+      <span>Menu</span>
+      <span class="linii" aria-hidden="true"></span>
+    </button>
+    <nav aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <a class="boton boton-mic" href="tel:+16178207345">Call now</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="inicio" id="top" aria-labelledby="titlu-principal">
+    <div class="wrap inicio-grila">
+      <h1 class="nume" id="titlu-principal">
+        <span>At One</span>
+        <span>Muscle</span>
+        <span class="ultima">Therapy</span>
+      </h1>
+      <div class="texto">
+        <p class="lead">Massage and yoga for your health.</p>
+        <p class="descriere">Sports, medical, and therapeutic massage, plus yoga sessions in Charlotte.</p>
+        <div class="accion">
+          <a class="boton" href="tel:+16178207345">Call now</a>
+          <span class="numar">(617) 820-7345</span>
+        </div>
+      </div>
+      <figure class="foto apare" data-jarvis="apare">
+        <div class="masca">
+          <img src="img/2.jpg" alt="A massage therapist's hands working on a client's hand">
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="bloc despre" id="about" aria-labelledby="t-despre">
+    <div class="wrap despre-grila">
+      <figure class="despre-foto apare" data-jarvis="apare">
+        <div class="masca">
+          <img src="img/5.jpg" alt="A woman in a standing stretch during a yoga pose">
+        </div>
+      </figure>
+      <div class="despre-text apare" data-jarvis="apare">
+        <h2 id="t-despre">Massage and yoga on Lyndhurst Avenue</h2>
+        <p class="corp">At One Muscle Therapy offers massage and yoga for your health. Choose sports, medical, or therapeutic massage, or join individual or group yoga on Lyndhurst Avenue. Gift certificates are available for anyone looking to share wellness.</p>
+        <ul class="avantaje">
+          <li>
+            <h3>Three kinds of massage</h3>
+            <p>Sports, medical, or therapeutic, by your choice.</p>
+          </li>
+          <li>
+            <h3>Yoga options</h3>
+            <p>Individual and group yoga sessions.</p>
+          </li>
+          <li>
+            <h3>Gift certificates</h3>
+            <p>Share a session with someone.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc servicii" id="services" aria-labelledby="t-servicii">
+    <div class="wrap servicii-grila">
+      <div class="servicii-cap">
+        <h2 id="t-servicii">What you can <em>book</em></h2>
+        <p class="corp">Choose a massage or a yoga session. Gift certificates are available too.</p>
+      </div>
+      <ul class="lista-servicii apare" data-jarvis="apare">
+        <li>
+          <h3>Sports massage</h3>
+          <p>Work on the muscles used in training and competition, and on muscles that are sore after a hard workout.</p>
+        </li>
+        <li>
+          <h3>Medical massage</h3>
+          <p>Massage aimed at a specific health concern.</p>
+        </li>
+        <li>
+          <h3>Therapeutic massage</h3>
+          <p>Steady work on tight, stiff muscles, for relief and rest.</p>
+        </li>
+        <li>
+          <h3>Individual yoga session</h3>
+          <p>Yoga one on one, in a session just for you.</p>
+        </li>
+        <li>
+          <h3>Group yoga session</h3>
+          <p>Yoga with others in a class, at a pace the whole group can follow.</p>
+        </li>
+        <li>
+          <h3>Gift certificates</h3>
+          <p>Give a massage or a yoga session to someone you care about.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc galerie-bloc" id="gallery" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="bloc-cap">
+        <h2 id="t-galerie">Massage and <em>yoga</em></h2>
+        <p class="galerie-nota">Tap a photo to see it larger.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="g1 apare" data-jarvis="apare">
+          <img src="img/1.jpg" alt="A woman lying down during a head massage">
+        </figure>
+        <figure class="g2 apare" data-jarvis="apare">
+          <img src="img/3.jpg" alt="A person resting in a yoga pose on a mat">
+        </figure>
+        <figure class="g3 apare" data-jarvis="apare">
+          <img src="img/4.jpg" alt="A group yoga class on mats">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc visita" id="visit" aria-labelledby="t-visita">
+    <div class="wrap visita-grila">
+      <div class="visita-text">
+        <h2 id="t-visita">Find us on <em>Lyndhurst</em> Avenue</h2>
+        <address class="adresa">1812 Lyndhurst Avenue<br>Charlotte</address>
+        <p class="numar-mare">(617) 820-7345</p>
+        <div class="accion">
+          <a class="boton" href="tel:+16178207345">Call now</a>
+          <a class="boton boton-linie" href="https://www.google.com/maps/search/?api=1&amp;query=At+One+Muscle+Therapy+Charlotte">Open in Google Maps</a>
+        </div>
+        <h3 class="eticheta eticheta-mica">Hours</h3>
+        <dl class="program">
+          <div>
+            <dt>Monday to Wednesday</dt>
+            <dd>10:00 am to 5:00 pm</dd>
+          </div>
+          <div>
+            <dt>Thursday</dt>
+            <dd>12:30 pm to 5:00 pm</dd>
+          </div>
+          <div>
+            <dt>Friday and Saturday</dt>
+            <dd>10:00 am to 2:00 pm</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="harta">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-80.858935,35.206840,-80.850935,35.210840&amp;layer=mapnik&amp;marker=35.208840,-80.854935" title="Map showing At One Muscle Therapy at 1812 Lyndhurst Avenue, Charlotte" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap pie-grila">
+    <div>
+      <p class="pie-nume">At One Muscle Therapy</p>
+    </div>
+    <div>
+      <p>1812 Lyndhurst Avenue, Charlotte</p>
+      <p>(617) 820-7345</p>
+    </div>
+    <div>
+      <p class="pie-mic">Website concept (demo)</p>
+      <p class="pie-mic">Illustrative photos from Pixabay: graceie, andreas160578, laurajuarez, shushipu, Pexels</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
