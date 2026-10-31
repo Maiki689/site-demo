@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grand Canyon Janitorial Supply | Tucson, AZ</title>
+<meta name="description" content="Commercial-grade chemicals and janitorial products for Tucson businesses. Find Grand Canyon Janitorial Supply at 3670 East Speedway Boulevard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;display=swap" rel="stylesheet">
+<style>
+/* Plan: a neighborhood supply-house feel, with a single hand-drawn Speedway locator.
+   Keep product photography quiet and clearly illustrative; put practical visit details first. */
+:root{--sand:#EFE6D8;--clay:#B5583A;--olive:#6B7046;--brown:#3B2B22;--line:rgba(59,43,34,.22)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{margin:0;background:var(--sand);color:var(--brown);font-family:"Figtree",sans-serif;font-size:1rem;line-height:1.6}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-underline-offset:.25em}
+a:focus-visible,button:focus-visible{outline:3px solid var(--olive);outline-offset:5px}
+button{font:inherit}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{font-family:"Fraunces",serif;font-weight:400;letter-spacing:-.035em;line-height:1.08}
+h2{font-size:clamp(2.4rem,4.5vw,4.25rem)}
+h3{font-size:1.65rem}
+p{max-width:38rem}
+.wrap{width:min(100% - 4rem,78rem);margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(239,230,216,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.topbar.derulat{background:rgba(239,230,216,.96)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:5.5rem;gap:2rem}
+.wordmark{font-family:"Fraunces",serif;font-size:1.2rem;line-height:1.15;letter-spacing:-.025em;text-decoration:none;max-width:15rem}
+.nav-links{display:flex;gap:2.25rem;align-items:center;margin:0;padding:0;list-style:none}
+.nav-links a{font-size:.95rem;text-decoration:none;display:flex;align-items:center;min-height:44px}
+.nav-links a:hover{text-decoration:underline}
+.nav-links .nav-contact{border-bottom:1px solid var(--clay)}
+.menu-toggle{display:none;border:1px solid var(--line);color:var(--brown);background:transparent;padding:.5rem 1rem;min-height:44px}
+.hero{padding:5rem 0 3rem}
+.hero-grid{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;gap:3rem}
+.hero h1{font-size:clamp(3.25rem,6.5vw,6rem);max-width:12ch}
+.hero-intro{font-size:1.17rem;line-height:1.55;max-width:26rem;margin-top:1.75rem}
+.actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2rem}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:.8rem;min-height:52px;padding:.85rem 1.5rem;text-decoration:none;font-weight:600;border:1px solid var(--clay);background:var(--clay);color:var(--sand);transition:transform .18s ease,opacity .18s ease}
+.button:hover{opacity:.87}
+.button:active,.menu-toggle:active{transform:scale(.97)}
+.button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+.hero-location{margin-top:1.25rem;font-size:.9rem}
+.locator{position:relative;padding:1.5rem 0 .5rem}
+.locator-title{font-family:"Fraunces",serif;font-size:1.55rem;text-align:center;transform:rotate(-3deg)}
+.neighborhood{width:100%;height:auto;display:block;overflow:visible;margin-top:.75rem}
+.street{stroke:var(--brown);stroke-width:1.2;opacity:.3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.block{stroke:var(--olive);stroke-width:1.1;fill:none;opacity:.5}
+.route{fill:none;stroke:var(--clay);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;animation:route-appear 1.4s ease both}
+.map-label{position:absolute;left:9%;top:52%;font-size:.9rem;transform:rotate(-3deg)}
+.map-destination{position:absolute;right:4%;top:29%;font-family:"Fraunces",serif;font-size:1.4rem;line-height:1.15;max-width:7rem;transform:rotate(3deg)}
+.map-caption{text-align:center;font-size:.78rem;opacity:.8}
+@keyframes route-appear{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+.hero-bottom{margin-top:3.75rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:2rem;font-size:.94rem}
+.hero-bottom span:last-child{color:var(--olive)}
+.about{padding:6.5rem 0 7rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.about h2{max-width:12ch}
+.about-copy{padding-top:.4rem}
+.about-copy p{font-size:1.15rem}
+.about-copy p+p{margin-top:1.35rem}
+.usa-note{display:flex;align-items:center;gap:1.15rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.usa-mark{flex-shrink:0;display:grid;place-items:center;width:3.8rem;height:3.8rem;border:1px solid var(--olive);border-radius:50%;color:var(--olive);font-weight:700;font-size:.9rem}
+.usa-note p{font-size:1rem}
+.products{background:var(--brown);color:var(--sand);padding:6rem 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:3rem;margin-bottom:3rem}
+.section-head p{max-width:22rem}
+.product-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.product{padding-top:1.5rem;border-top:1px solid rgba(239,230,216,.35)}
+.product h3{font-size:clamp(1.7rem,2.5vw,2.3rem);max-width:14ch;min-height:2.4em}
+.product p{margin-top:1.2rem;color:rgba(239,230,216,.85)}
+.photos{padding:5.5rem 0 6rem}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.4rem}
+.photo-grid figure{min-width:0}
+.photo-grid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.photo-grid figure:nth-child(2){padding-top:3rem}
+.photo-note{margin-top:1.5rem;font-size:.85rem;opacity:.8}
+.contact{padding:1rem 0 6rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:5rem}
+.contact h2{margin-bottom:2.5rem}
+.address{font-size:1.25rem;font-style:normal;line-height:1.6}
+.phone-text{margin-top:1rem;font-size:1.2rem}
+.hours{margin:2rem 0 0}
+.hours div{display:flex;justify-content:space-between;gap:1.5rem;max-width:26rem;padding:.65rem 0;border-top:1px solid var(--line)}
+.hours dt,.hours dd{margin:0}
+.hours dd{white-space:nowrap}
+.contact .button{margin-top:2rem}
+.map-frame{display:flex;flex-direction:column;min-width:0}
+.map-frame iframe{width:100%;height:100%;min-height:440px;border:0;filter:grayscale(1)}
+.map-frame figcaption{font-size:.85rem;margin-top:.75rem}
+footer{border-top:1px solid var(--line);padding:2rem 0}
+.footer-top{display:flex;justify-content:space-between;gap:2rem;align-items:center}
+.footer-name{font-family:"Fraunces",serif;font-size:1.25rem}
+.footer-demo{font-size:.85rem}
+.credit{font-size:.75rem;margin-top:1.25rem;max-width:none;opacity:.8}
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:translateY(0)}
+@media(min-width:861px){.nav-links{display:flex!important}}
+@media(max-width:1000px){.hero-grid{gap:1rem}.about-grid{gap:3rem}.contact-grid{gap:3rem}.product-list{gap:1.5rem}}
+@media(max-width:860px){
+.wrap{width:calc(100% - 3rem)}
+.nav-inner{min-height:4.5rem}
+.wordmark{font-size:1.05rem;max-width:13rem}
+.menu-toggle{display:block}
+.nav-links{display:none;position:absolute;top:100%;left:0;right:0;padding:1rem 1.5rem 1.5rem;background:var(--sand);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:.5rem}
+.nav-links.deschis{display:flex}
+.nav-links a{padding:.25rem 0}
+.hero{padding-top:3rem}
+.hero-grid{grid-template-columns:1fr;gap:2rem}
+.hero h1{font-size:clamp(3.15rem,9.5vw,5rem);max-width:13ch}
+.hero-intro{max-width:32rem}
+.locator{width:min(100%,33rem);margin:1rem auto 0}
+.hero-bottom{margin-top:2rem}
+.about{padding:4rem 0 5rem}
+.about-grid{gap:2.5rem}
+.about-copy p{font-size:1.05rem}
+.products{padding:4.5rem 0}
+.section-head{align-items:start}
+.product-list{grid-template-columns:1fr}
+.product{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.product h3{min-height:0}
+.product p{margin:0}
+.photos{padding:4rem 0}
+.photo-grid{gap:.8rem}
+.contact-grid{grid-template-columns:1fr 1fr;gap:2rem}
+.hours div{display:block}
+.hours dd{margin-top:.15rem}
+.map-frame iframe{min-height:400px}
+}
+@media(max-width:580px){
+.wrap{width:calc(100% - 2.5rem)}
+.hero{padding-top:2.5rem}
+.hero h1{font-size:clamp(2.95rem,12.5vw,4.3rem)}
+.hero-intro{font-size:1.08rem;margin-top:1.4rem}
+.actions{margin-top:1.5rem}
+.hero-bottom{flex-direction:column;gap:.5rem;font-size:.9rem}
+.locator{margin-top:1.5rem}
+.locator-title{font-size:1.45rem}
+.map-destination{font-size:1.15rem}
+.map-label{font-size:.8rem}
+.about-grid{grid-template-columns:1fr;gap:1.75rem}
+.about h2{max-width:14ch}
+.usa-note{margin-top:1.75rem}
+.section-head{display:block}
+.section-head p{margin-top:1.2rem}
+.product{grid-template-columns:1fr;gap:.8rem;padding-top:1.4rem;padding-bottom:1rem}
+.product h3{max-width:none;font-size:1.9rem}
+.product-list{gap:1.5rem}
+.photo-grid{grid-template-columns:1fr 1fr;gap:.75rem}
+.photo-grid figure:nth-child(2){padding-top:2rem}
+.photo-grid figure:last-child{display:none}
+.photo-grid img{aspect-ratio:3/4}
+.contact{padding-bottom:4rem}
+.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+.contact h2{margin-bottom:1.75rem}
+.hours div{display:flex}
+.hours dd{margin:0}
+.map-frame iframe{min-height:330px}
+.footer-top{display:block}
+.footer-demo{margin-top:.65rem}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:opacity .1s!important}
+html.js [data-jarvis="apare"]{transform:none}
+}
+@media(prefers-reduced-transparency:reduce){.topbar,.topbar.derulat{background:var(--sand);backdrop-filter:none;-webkit-backdrop-filter:none}}
+@media(prefers-contrast:more){
+:root{--line:var(--brown)}
+.topbar{background:var(--sand)}
+.product p{color:var(--sand)}
+.photo-note,.credit,.map-caption{opacity:1}
+.street{opacity:.65}
+}
+</style>
+</head>
+<body>
+<header class="topbar" data-jarvis="antet">
+<div class="wrap nav-inner">
+<a class="wordmark" href="#home" aria-label="Grand Canyon Janitorial Supply home">Grand Canyon<br>Janitorial Supply</a>
+<button class="menu-toggle" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="navigation">Menu</button>
+<nav aria-label="Main navigation">
+<ul class="nav-links" id="navigation" data-jarvis="meniu-lista">
+<li><a href="#about">About us</a></li>
+<li><a href="#products">Products</a></li>
+<li><a class="nav-contact" href="#contact">Visit &amp; hours</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main id="home">
+<section class="hero" aria-labelledby="hero-title">
+<div class="wrap">
+<div class="hero-grid">
+<div>
+<h1 id="hero-title">Grand Canyon Janitorial Supply</h1>
+<p class="hero-intro">Commercial-grade chemicals and janitorial products for Tucson businesses.</p>
+<div class="actions">
+<a class="button" href="tel:+15207953393">
+<svg viewbox="0 0 24 24" aria-hidden="true"><path d="M7 3H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3l-5-2-2 2c-3.1-1.4-5.6-3.9-7-7l2-2-2-5Z"/></svg>
+Call (520) 795-3393
+</a>
+</div>
+<p class="hero-location">Find us at 3670 East Speedway Boulevard.</p>
+</div>
+
+<figure class="locator" aria-label="Hand-drawn locator showing the business on East Speedway Boulevard. Schematic, not to scale.">
+<p class="locator-title">Right here on Speedway.</p>
+<svg class="neighborhood" viewbox="0 0 480 355" fill="none" aria-hidden="true">
+<g class="street">
+<path d="M18 200C115 194 206 200 285 197S405 195 465 199M17 228C113 222 204 228 285 225S406 224 465 226"/>
+<path d="M94 35L98 190M116 35L120 191M101 236L103 324M123 236L125 324"/>
+<path d="M277 24L280 188M299 25L302 188M284 235L287 329M307 235L309 328"/>
+<path d="M20 94L86 96M125 96L269 94M310 95L460 92"/>
+<path d="M22 113L87 115M127 114L270 113M310 113L459 111"/>
+<path d="M20 292L91 289M133 290L276 290M318 290L463 288"/>
+</g>
+<g class="block">
+<path d="M37 137L68 136L69 169L37 170Z"/>
+<path d="M150 41L189 43L188 72L149 71Z"/>
+<path d="M218 44L249 43L250 75L219 76Z"/>
+<path d="M159 137L199 135L201 170L159 172Z"/>
+<path d="M220 136L250 137L251 168L219 169Z"/>
+<path d="M335 43L378 41L380 70L337 73Z"/>
+<path d="M406 40L438 40L441 68L405 70Z"/>
+<path d="M151 252L187 251L188 274L151 274Z"/>
+<path d="M222 250L254 250L255 275L221 276Z"/>
+<path d="M340 247L375 246L377 274L340 275Z"/>
+<path d="M402 249L441 248L443 271L402 273Z"/>
+</g>
+<path class="route" d="M49 213C114 208 165 215 222 212S308 212 349 211L350 177"/>
+<path d="M44 208L52 213L45 219" stroke="#B5583A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M350 170C345 163 333 151 334 140C335 120 364 119 366 139C367 150 356 163 350 170Z" fill="#B5583A"/>
+<circle cx="350" cy="139" r="5" fill="#EFE6D8"/>
+<path d="M377 173Q397 179 410 166M401 163L412 164L410 175" stroke="#6B7046" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<span class="map-label">East Speedway Blvd.</span>
+<span class="map-destination">Your supply stop</span>
+<figcaption class="map-caption">Tucson, Arizona. Sketch not to scale.</figcaption>
+</figure>
+</div>
+<div class="hero-bottom">
+<span>Commercial supplies, close to work.</span>
+<span>Featuring Walker Chemicals, made in the USA.</span>
+</div>
+</div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-title">
+<div class="wrap about-grid" data-jarvis="apare">
+<h2 id="about-title">For the businesses that keep Tucson clean.</h2>
+<div class="about-copy">
+<p>Grand Canyon Janitorial Supply provides commercial-grade chemicals and janitorial products for businesses in Tucson.</p>
+<p>You’ll find us on East Speedway Boulevard, with a selection that includes Walker Chemicals, made exclusively in the USA.</p>
+<div class="usa-note">
+<span class="usa-mark" aria-hidden="true">USA</span>
+<p>Walker Chemicals<br>Made exclusively in the USA.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="products" id="products" aria-labelledby="products-title">
+<div class="wrap">
+<div class="section-head" data-jarvis="apare">
+<h2 id="products-title">Janitorial products<br>for your business.</h2>
+<p>Call to ask about the chemicals and janitorial products you need.</p>
+</div>
+<div class="product-list" data-jarvis="apare">
+<article class="product">
+<h3>Commercial-grade chemicals</h3>
+<p>Chemicals for commercial janitorial use.</p>
+</article>
+<article class="product">
+<h3>Janitorial products</h3>
+<p>Cleaning supplies for businesses here in Tucson.</p>
+</article>
+<article class="product">
+<h3>Walker Chemicals</h3>
+<p>Our selection includes Walker Chemicals, made exclusively in the USA.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="photos" aria-label="Illustrative cleaning supply photographs">
+<div class="wrap" data-jarvis="apare">
+<div class="photo-grid">
+<figure><img src="img/4.jpg" alt="Close-up of broom bristles and wooden cleaning tools" loading="lazy" width="600" height="750"></figure>
+<figure><img src="img/2.jpg" alt="Cleaning cloths for wiping surfaces" loading="lazy" width="600" height="750"></figure>
+<figure><img src="img/1.jpg" alt="A colorful display of brooms" loading="lazy" width="600" height="750"></figure>
+</div>
+<p class="photo-note">Illustrative cleaning supply photos. Call for current product availability.</p>
+</div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+<div class="wrap contact-grid">
+<div data-jarvis="apare">
+<h2 id="contact-title">Come by Speedway.</h2>
+<address class="address">Grand Canyon Janitorial Supply<br>3670 East Speedway Boulevard<br>Tucson, AZ</address>
+<p class="phone-text">(520) 795-3393</p>
+<dl class="hours">
+<div><dt>Monday–Friday</dt><dd>9 am–5 pm</dd></div>
+<div><dt>Saturday</dt><dd>9 am–3 pm</dd></div>
+</dl>
+<a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Grand+Canyon+Janitorial+Supply+Tucson">Get directions</a>
+</div>
+<figure class="map-frame">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-110.918014,32.233695,-110.910014,32.237695&amp;layer=mapnik&amp;marker=32.235695,-110.914014" title="Map showing Grand Canyon Janitorial Supply on East Speedway Boulevard in Tucson" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+<figcaption>3670 East Speedway Boulevard, Tucson</figcaption>
+</figure>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="footer-top">
+<p class="footer-name">Grand Canyon Janitorial Supply</p>
+<p class="footer-demo">Website concept (demo)</p>
+</div>
+<p class="credit">Illustrative photos from Pixabay: Shirley810, congerdesign, raggio5, OpenRoadPR, Mylene2401</p>
+</div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
