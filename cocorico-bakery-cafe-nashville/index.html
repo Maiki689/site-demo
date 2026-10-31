@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cocorico Bakery &amp; Café, Nashville</title>
+<meta name="description" content="Cocorico Bakery &amp; Café is a French bakery and café with catering on Division Street in Nashville.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --kraft: #C8A27A;
+  --faina: #F7F2EA;
+  --coaja: #7A4A26;
+  --negru: #1E1A17;
+  --rosu: #be123c;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--faina);
+  color: var(--negru);
+  font-family: "Figtree", system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  overflow-x: clip;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+:focus-visible {
+  outline: 3px solid var(--coaja);
+  outline-offset: 3px;
+}
+
+.interior {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.titlu-sectiune {
+  font-size: clamp(2.25rem, 5.6vw, 4.25rem);
+  max-width: 16ch;
+}
+
+.seciune {
+  padding: clamp(4.5rem, 10vw, 8rem) 1.25rem;
+}
+
+/* Buttons */
+.buton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: .75rem 1.5rem;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1.5px solid var(--negru);
+  transition: transform .15s var(--ease), background-color .2s ease, color .2s ease, filter .2s ease;
+}
+
+.buton:active {
+  transform: scale(.97);
+}
+
+.buton-principal {
+  background: var(--rosu);
+  border-color: var(--rosu);
+  color: var(--faina);
+}
+
+.buton-principal:hover {
+  filter: brightness(.9);
+}
+
+.buton-secundar {
+  background: transparent;
+  color: var(--negru);
+}
+
+.buton-secundar:hover {
+  background: var(--negru);
+  color: var(--faina);
+}
+
+.buton-mic {
+  min-height: 44px;
+  padding: .5rem 1rem;
+  font-size: .9375rem;
+  background: var(--rosu);
+  border-color: var(--rosu);
+  color: var(--faina);
+}
+
+.buton-mic:hover {
+  filter: brightness(.9);
+}
+
+/* Header (glass) */
+.antet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(247, 242, 234, .72);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  backdrop-filter: blur(18px) saturate(1.1);
+  border-bottom: 1px solid transparent;
+  transition: background-color .3s ease, border-color .3s ease;
+}
+
+.antet.derulat {
+  background: rgba(247, 242, 234, .9);
+  border-color: rgba(122, 74, 38, .2);
+}
+
+.antet-interior {
+  position: relative;
+  height: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--negru);
+}
+
+.marca-rest {
+  display: none;
+  font-weight: 500;
+  margin-left: .3em;
+}
+
+.antet-dreapta {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.meniu-buton {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0 .25rem;
+  background: none;
+  border: 0;
+  font-family: "Figtree", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--negru);
+  cursor: pointer;
+}
+
+.meniu-buton:active {
+  transform: scale(.97);
+}
+
+.meniu-linii {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+}
+
+.navigatie {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--faina);
+  border-bottom: 1px solid rgba(122, 74, 38, .2);
+}
+
+.meniu-lista {
+  list-style: none;
+  margin: 0;
+  padding: .5rem 1.25rem 1rem;
+  display: none;
+  flex-direction: column;
+}
+
+.meniu-lista.deschis {
+  display: flex;
+}
+
+.meniu-lista a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  text-decoration: none;
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(30, 26, 23, .12);
+}
+
+@media (min-width: 520px) {
+  .marca-rest {
+    display: inline;
+  }
+}
+
+@media (min-width: 860px) {
+  .meniu-buton {
+    display: none;
+  }
+
+  .navigatie {
+    position: static;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: none;
+    border: 0;
+  }
+
+  .meniu-lista {
+    display: flex;
+    flex-direction: row;
+    gap: 2.25rem;
+    padding: 0;
+  }
+
+  .meniu-lista a {
+    min-height: 44px;
+    padding: 0 .25rem;
+    border: 0;
+    font-family: "Figtree", system-ui, sans-serif;
+    font-size: .95rem;
+    font-weight: 600;
+  }
+}
+
+/* Hero: typography and stamp */
+.erou {
+  padding: 6.5rem 1.25rem 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.erou .interior {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.erou-titlu {
+  font-size: clamp(3.4rem, 17vw, 12rem);
+  line-height: .92;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.linie-1 {
+  display: block;
+}
+
+.linie-2 {
+  display: block;
+  font-size: .6em;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-top: .15em;
+}
+
+.erou-descriere {
+  font-size: clamp(1.125rem, 2vw, 1.35rem);
+  max-width: 28ch;
+  margin-top: 1.5rem;
+}
+
+.erou-butoane {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+/* Memorable element: the stamp that presses in on load */
+.stampila {
+  width: clamp(10.5rem, 34vw, 17rem);
+  aspect-ratio: 1;
+  container-type: inline-size;
+  border-radius: 50%;
+  border: 2.5px solid var(--rosu);
+  box-shadow: inset 0 0 0 4px var(--faina), inset 0 0 0 5.5px var(--rosu);
+  color: var(--rosu);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-self: center;
+  transform: rotate(-6deg);
+  animation: apasa .75s var(--ease) .2s both;
+}
+
+.stampila-nume {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  font-size: 15cqi;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stampila-linie {
+  width: 34%;
+  border-top: 1.5px solid currentColor;
+  margin: 5cqi 0;
+}
+
+.stampila-text {
+  font-size: .75rem;
+  font-size: 5.2cqi;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.stampila-oras {
+  margin-top: 1cqi;
+}
+
+@keyframes apasa {
+  0% {
+    opacity: 0;
+    transform: rotate(-6deg) scale(1.45);
+  }
+  45% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(.93);
+  }
+  65% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-6deg) scale(1);
+  }
+}
+
+@media (min-width: 860px) {
+  .erou {
+    min-height: 100vh;
+    padding: 8rem 3rem 5rem;
+  }
+
+  .erou .interior {
+    grid-template-columns: 1fr auto;
+    gap: 5rem;
+  }
+}
+
+/* About: kraft background, bag label */
+.despre {
+  background: var(--kraft);
+  color: var(--negru);
+}
+
+.despre .interior {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.despre-text p + p {
+  margin-top: 1rem;
+}
+
+.despre-text {
+  max-width: 36rem;
+}
+
+.despre-text .titlu-sectiune {
+  margin-bottom: 1.5rem;
+}
+
+.despre-foto {
+  margin: 0;
+}
+
+.despre-foto img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.etiheta-punga {
+  position: relative;
+  padding: 2rem 1.5rem;
+  border: 1.5px solid var(--coaja);
+}
+
+.etiheta-punga::before {
+  content: "";
+  position: absolute;
+  inset: .55rem;
+  border: 1px dashed rgba(122, 74, 38, .6);
+  pointer-events: none;
+}
+
+.etiheta-punga--alb {
+  background: var(--faina);
+  margin-top: 2.5rem;
+}
+
+.etiheta-punga--kraft {
+  background: var(--kraft);
+}
+
+.lista-punga {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lista-punga li {
+  padding: .75rem 0;
+  border-bottom: 1px solid rgba(30, 26, 23, .15);
+  font-weight: 600;
+}
+
+.lista-punga li:first-child {
+  padding-top: 0;
+}
+
+.lista-punga li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+@media (min-width: 860px) {
+  .despre .interior {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+
+  .despre-foto img {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* Menu: labels */
+.grila-menu {
+  list-style: none;
+  margin: 3rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.grila-menu li {
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.grila-menu h3 {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  margin-bottom: .75rem;
+}
+
+.grila-menu p {
+  max-width: 24ch;
+}
+
+@media (min-width: 640px) {
+  .grila-menu {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .grila-menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Gallery */
+.galerie-sec {
+  background: var(--coaja);
+  color: var(--faina);
+}
+
+.galerie-grila {
+  display: grid;
+  gap: .75rem;
+  margin-top: 2.5rem;
+  grid-template-columns: 1fr;
+}
+
+.galerie-grila figure {
+  margin: 0;
+}
+
+.galerie-grila img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+@media (min-width: 640px) {
+  .galerie-grila {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+html.galerie-deschisa::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 26, 23, .94);
+  z-index: 40;
+}
+
+.galerie-grila img.marita {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 1100px);
+  max-height: 88vh;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  z-index: 50;
+  cursor: zoom-out;
+  animation: marita .45s var(--ease);
+}
+
+.galerie-grila figure.marita {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(94vw, 1100px);
+  z-index: 50;
+}
+
+.galerie-grila figure.marita img {
+  aspect-ratio: auto;
+  max-height: 88vh;
+  object-fit: contain;
+  cursor: zoom-out;
+}
+
+@keyframes marita {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Visit */
+.vizita-grila {
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+}
+
+.vizita-punga h3 {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 .5rem;
+}
+
+.vizita-punga h3:first-child {
+  margin-top: 0;
+}
+
+.vizita-punga p,
+.vizita-punga address {
+  font-style: normal;
+}
+
+.vizita-punga a {
+  font-weight: 600;
+}
+
+.vizita-butoane {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.harta iframe {
+  display: block;
+  width: 100%;
+  height: 22rem;
+  border: 1.5px solid var(--negru);
+}
+
+@media (min-width: 860px) {
+  .vizita-grila {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5rem;
+  }
+
+  .harta iframe {
+    height: 30rem;
+  }
+}
+
+/* Footer */
+.subsol {
+  background: var(--negru);
+  color: var(--faina);
+  padding: 3rem 1.25rem 2.5rem;
+}
+
+.subsol-grila {
+  display: grid;
+  gap: .5rem;
+}
+
+.subsol-grila p {
+  color: rgba(247, 242, 234, .82);
+}
+
+.subsol-nume {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--faina) !important;
+  margin-bottom: .5rem;
+}
+
+/* Scroll reveal (only when the script marks html as js) */
+html.js .apare {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+
+html.js .apare.vizibil {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .grila-menu li:nth-child(2) {
+  transition-delay: .08s;
+}
+
+html.js .grila-menu li:nth-child(3) {
+  transition-delay: .16s;
+}
+
+html.js .grila-menu li:nth-child(4) {
+  transition-delay: .24s;
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-transparency: reduce) {
+  .antet {
+    background: var(--faina);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  body {
+    color: #000;
+  }
+
+  .etiheta-punga {
+    border-width: 2px;
+  }
+
+  .etiheta-punga::before {
+    border-color: #000;
+  }
+
+  .buton-secundar {
+    border-width: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .stampila {
+    animation: fadein .3s ease both;
+    transform: rotate(-6deg);
+  }
+
+  html.js .apare {
+    transform: none;
+    transition: opacity .3s ease;
+  }
+
+  html.js .grila-menu li {
+    transition-delay: 0s !important;
+  }
+
+  .galerie-grila img.marita,
+  .galerie-grila figure.marita {
+    animation: fadein .3s ease both;
+  }
+
+  .buton,
+  .meniu-buton {
+    transition: none;
+  }
+
+  .buton:active,
+  .meniu-buton:active {
+    transform: none;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-interior">
+    <a class="marca" href="#top">Cocorico<span class="marca-rest">Bakery &amp; Café</span></a>
+
+    <nav class="navigatie" aria-label="Main">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+
+    <div class="antet-dreapta">
+      <a class="buton buton-mic" href="tel:+16153140436">Call now</a>
+      <button type="button" class="meniu-buton" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+        <span class="meniu-linii" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="erou" aria-labelledby="titlu-erou">
+    <div class="interior erou-grila">
+      <div class="erou-text">
+        <h1 id="titlu-erou" class="erou-titlu"><span class="linie-1">Cocorico</span><span class="linie-2">Bakery &amp; Café</span></h1>
+        <p class="erou-descriere">French bakery and café with catering on Division Street.</p>
+        <div class="erou-butoane">
+          <a class="buton buton-principal" href="tel:+16153140436">Call (615) 314-0436</a>
+          <a class="buton buton-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Cocorico+Bakery+%26+Caf%C3%A9+Nashville">Get directions</a>
+        </div>
+      </div>
+
+      <div class="stampila" role="img" aria-label="Round stamp: Cocorico Bakery and Café, Nashville">
+        <span class="stampila-nume">Cocorico</span>
+        <span class="stampila-linie"></span>
+        <span class="stampila-text">Bakery &amp; Café</span>
+        <span class="stampila-text stampila-oras">Nashville</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="seciune despre" aria-labelledby="titlu-despre">
+    <div class="interior">
+      <div class="despre-text apare" data-jarvis="apare">
+        <h2 id="titlu-despre" class="titlu-sectiune">We bake <em>daily</em> in our shop.</h2>
+        <p>Cocorico Bakery &amp; Café serves French food in Nashville at 1600 Division Street.</p>
+        <p>We bake daily in our shop and offer a welcoming place to sit down.</p>
+        <p>There is also a catering option available.</p>
+
+        <div class="etiheta-punga etiheta-punga--alb">
+          <ul class="lista-punga">
+            <li>French food</li>
+            <li>1600 Division Street, Nashville</li>
+            <li>Catering</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="despre-foto apare" data-jarvis="apare">
+        <img src="img/2.jpg" alt="Illustrative photo of bakery items" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="menu" class="seciune" aria-labelledby="titlu-menu">
+    <div class="interior">
+      <h2 id="titlu-menu" class="titlu-sectiune">Menu</h2>
+
+      <ul class="grila-menu">
+        <li class="etiheta-punga etiheta-punga--kraft apare" data-jarvis="apare">
+          <h3>French food</h3>
+          <p>French food made fresh daily.</p>
+        </li>
+        <li class="etiheta-punga etiheta-punga--kraft apare" data-jarvis="apare">
+          <h3>Bakery</h3>
+          <p>Bakery items prepared in-house.</p>
+        </li>
+        <li class="etiheta-punga etiheta-punga--kraft apare" data-jarvis="apare">
+          <h3>Café</h3>
+          <p>Café seating and service.</p>
+        </li>
+        <li class="etiheta-punga etiheta-punga--kraft apare" data-jarvis="apare">
+          <h3>Catering</h3>
+          <p>Catering for events and gatherings.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="gallery" class="seciune galerie-sec" aria-labelledby="titlu-galerie">
+    <div class="interior">
+      <h2 id="titlu-galerie" class="titlu-sectiune">Bread, pastries and macarons.</h2>
+
+      <div class="galerie-grila" data-jarvis="galerie">
+        <figure class="apare" data-jarvis="apare">
+          <img src="img/1.jpg" alt="Illustrative photo of bakery items" loading="lazy">
+        </figure>
+        <figure class="apare" data-jarvis="apare">
+          <img src="img/3.jpg" alt="Illustrative photo of bakery items" loading="lazy">
+        </figure>
+        <figure class="apare" data-jarvis="apare">
+          <img src="img/4.jpg" alt="Illustrative photo of desserts" loading="lazy">
+        </figure>
+        <figure class="apare" data-jarvis="apare">
+          <img src="img/5.jpg" alt="Illustrative photo of desserts" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" class="seciune" aria-labelledby="titlu-vizita">
+    <div class="interior vizita-grila">
+      <div class="apare" data-jarvis="apare">
+        <h2 id="titlu-vizita" class="titlu-sectiune">Come by on Division Street.</h2>
+
+        <div class="etiheta-punga vizita-punga" style="margin-top:2.5rem">
+          <h3>Address</h3>
+          <address>1600 Division Street<br>Nashville</address>
+
+          <h3>Hours</h3>
+          <p>Monday, Wednesday–Friday 7am–2pm</p>
+          <p>Saturday–Sunday 8am–2:30pm</p>
+
+          <h3>Phone</h3>
+          <p><a href="tel:+16153140436">(615) 314-0436</a></p>
+        </div>
+
+        <div class="vizita-butoane">
+          <a class="buton buton-principal" href="tel:+16153140436">Call (615) 314-0436</a>
+          <a class="buton buton-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Cocorico+Bakery+%26+Caf%C3%A9+Nashville">Get directions</a>
+        </div>
+      </div>
+
+      <div class="harta apare" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-86.796071,36.150372,-86.788071,36.154372&amp;layer=mapnik&amp;marker=36.152372,-86.792071" title="Map of Cocorico Bakery &amp; Café, 1600 Division Street, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="interior subsol-grila">
+    <p class="subsol-nume">Cocorico Bakery &amp; Café</p>
+    <p>1600 Division Street, Nashville</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: Pexels, Intuitivmedia, Photowill</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
