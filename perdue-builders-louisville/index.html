@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perdue Builders | Home and Commercial Building in Louisville, KY</title>
+<meta name="description" content="Perdue Builders handles custom home remodeling, new home construction, and commercial remodeling in metro Louisville. Call (502) 895-3663.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,400..700&amp;display=swap">
+<style>
+:root{
+  --nisip:#EFE6D8;
+  --teracota:#B5583A;
+  --maslin:#6B7046;
+  --maro:#3B2B22;
+  --maro-moale:rgba(59,43,34,.8);
+  --linie:rgba(59,43,34,.2);
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --margine:clamp(1.25rem,5vw,3.5rem);
+  --lat:72rem;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--nisip);
+  color:var(--maro);
+  font-family:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%;height:auto}
+p{margin:0}
+h1,h2,h3{
+  font-family:Fraunces,Georgia,"Times New Roman",serif;
+  font-weight:600;
+  letter-spacing:-.02em;
+  line-height:1.06;
+  margin:0;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teracota);outline-offset:3px}
+
+.sarit{position:absolute;left:-999px;top:0}
+.sarit:focus{left:1rem;top:1rem;z-index:100;background:var(--maro);color:var(--nisip);padding:.75rem 1rem}
+
+/* ---------- Header ---------- */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(239,230,216,.8);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,background-color .3s;
+}
+.antet.derulat{border-bottom-color:var(--linie);background:rgba(239,230,216,.92)}
+.antet-in{
+  max-width:var(--lat);margin:0 auto;
+  padding:.5rem var(--margine);
+  min-height:4.25rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  transition:padding .3s var(--curba);
+}
+.antet.derulat .antet-in{padding-top:.25rem;padding-bottom:.25rem}
+.marca{
+  font-family:Fraunces,Georgia,serif;font-weight:600;
+  font-size:1.05rem;letter-spacing:-.01em;line-height:1.1;
+  text-decoration:none;min-height:44px;display:flex;align-items:center;
+}
+.antet-act{display:flex;align-items:center;gap:.5rem}
+.buton-mic{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:0 .85rem;border-radius:999px;
+  background:var(--maro);color:var(--nisip);
+  text-decoration:none;font-weight:600;font-size:.95rem;
+  transition:transform .15s var(--curba),opacity .3s;
+}
+.buton-mic:active{transform:scale(.97)}
+.buton-mic:hover{opacity:.88}
+.meniu-btn{
+  min-height:44px;min-width:44px;padding:0 .8rem;
+  border:1.5px solid var(--maro);border-radius:999px;
+  background:transparent;color:var(--maro);
+  font:600 .95rem/1 Figtree,system-ui,sans-serif;
+  cursor:pointer;transition:transform .15s var(--curba);
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-lista{
+  list-style:none;margin:0;padding:.25rem var(--margine) 1.25rem;
+  position:absolute;top:100%;left:0;right:0;
+  background:var(--nisip);border-bottom:1px solid var(--linie);
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .3s var(--curba),transform .3s var(--curba),visibility .3s;
+}
+.meniu-lista.deschis{opacity:1;visibility:visible;transform:none}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:52px;
+  font-family:Fraunces,Georgia,serif;font-size:1.3rem;font-weight:600;
+  text-decoration:none;border-bottom:1px solid var(--linie);
+}
+
+/* ---------- Opening ---------- */
+.intro{padding:clamp(2.25rem,6vw,5rem) var(--margine) clamp(4rem,10vw,7rem)}
+.intro-in{max-width:var(--lat);margin:0 auto;display:grid;gap:2.75rem;align-items:center}
+.rol{color:var(--maro-moale);margin-bottom:1.25rem;font-size:1rem}
+.intro h1{
+  font-size:clamp(3.1rem,14vw,9.5rem);
+  letter-spacing:-.025em;line-height:.95;
+  margin-bottom:1.5rem;
+}
+.lead{font-size:clamp(1.1rem,2vw,1.3rem);line-height:1.45;max-width:34ch;color:var(--maro-moale);margin-bottom:2rem}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem}
+.buton{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:.75rem 1.4rem;border-radius:999px;
+  border:1.5px solid var(--maro);
+  font-weight:600;font-size:1.05rem;text-decoration:none;
+  transition:transform .15s var(--curba),background-color .3s,color .3s,opacity .3s;
+}
+.buton:active{transform:scale(.97)}
+.buton-mare{background:var(--maro);color:var(--nisip)}
+.buton-mare:hover{opacity:.88}
+.buton-contur{background:transparent;color:var(--maro)}
+.buton-contur:hover{background:var(--maro);color:var(--nisip)}
+.program{margin-top:1.25rem;font-size:.95rem;color:var(--maro-moale)}
+
+.intro-foto{margin:0}
+.intro-foto img{
+  width:100%;aspect-ratio:1/1;object-fit:cover;
+  border-radius:999px 999px 1.25rem 1.25rem;
+}
+
+/* ---------- Sections ---------- */
+.bloc{padding:clamp(4.5rem,11vw,8rem) var(--margine)}
+.bloc-in{max-width:var(--lat);margin:0 auto}
+h2{
+  font-size:clamp(2.1rem,6vw,3.6rem);
+  line-height:1.05;
+  max-width:20ch;
+  margin-bottom:1.5rem;
+}
+.despre-text p{max-width:38rem;margin-bottom:1.1rem;font-size:1.1rem;line-height:1.55}
+.despre-text p:last-child{margin-bottom:0}
+
+.avantaje{list-style:none;padding:0;margin:3rem 0 0;display:grid}
+.avantaje li{
+  padding:1.4rem 0 1.6rem;
+  border-top:1px solid var(--linie);
+  display:grid;gap:.4rem;
+}
+.avantaje h3{font-size:1.5rem}
+.avantaje p{color:var(--maro-moale)}
+
+.servicii{background:rgba(107,112,70,.13)}
+.lista-servicii{list-style:none;padding:0;margin:0;display:grid}
+.lista-servicii li{
+  padding:2rem 0;
+  border-top:1px solid var(--linie);
+  display:grid;gap:.5rem;
+}
+.lista-servicii li:last-child{border-bottom:1px solid var(--linie)}
+.lista-servicii h3{font-size:clamp(1.5rem,3.4vw,2.1rem)}
+.lista-servicii p{color:var(--maro-moale)}
+.servicii-nota{margin-top:2.5rem;font-size:1.1rem}
+.servicii-nota a{text-decoration:underline;text-underline-offset:.2em;font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+
+.galerie-intro{color:var(--maro-moale);margin-top:-.75rem;max-width:40rem}
+.galerie{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.5rem;align-items:start}
+.poza{
+  position:relative;display:block;width:100%;
+  padding:0;margin:0;border:0;background:none;cursor:zoom-in;
+  aspect-ratio:4/5;overflow:hidden;
+  border-radius:999px 999px 1.25rem 1.25rem;
+}
+.poza img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--curba)}
+.poza:hover img{transform:scale(1.03)}
+.poza:active img{transform:scale(.98)}
+.galerie .poza:nth-child(2n){margin-top:2.75rem}
+
+/* ---------- Visit ---------- */
+.vizita{background:var(--maro);color:var(--nisip)}
+.vizita h2{color:var(--nisip)}
+.vizita-in{display:grid;gap:3rem;align-items:start}
+.vizita address{
+  font-style:normal;
+  font-family:Fraunces,Georgia,serif;
+  font-size:clamp(1.4rem,3vw,1.9rem);
+  line-height:1.25;
+  margin-bottom:2rem;
+}
+.vizita .actiuni{margin-bottom:0}
+.vizita .buton-mare{background:var(--nisip);color:var(--maro);border-color:var(--nisip)}
+.vizita .buton-contur{color:var(--nisip);border-color:var(--nisip)}
+.vizita .buton-contur:hover{background:var(--nisip);color:var(--maro)}
+.ore h3{font-size:1.5rem;margin-bottom:.5rem}
+.ore p{color:rgba(239,230,216,.86)}
+
+.harta-desen{margin:4.5rem 0 0}
+.harta-cadru{position:relative;aspect-ratio:600/440;border-radius:1.25rem;overflow:hidden;background:var(--nisip)}
+.harta-cadru svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.etich{position:absolute;white-space:nowrap;font-size:.8rem;font-weight:600;line-height:1;color:var(--maro)}
+.etich-strada{left:63%;top:47%;transform:translateY(-50%) rotate(-12deg);transform-origin:left center}
+.etich-start{left:17%;top:84.5%;transform:translateY(-50%)}
+.etich-pin{
+  left:56.7%;top:41%;transform:translate(-50%,-100%);
+  background:var(--nisip);padding:.4rem .6rem;border-radius:.5rem;
+  box-shadow:0 0 0 1px var(--linie);
+}
+.harta-desen figcaption{margin-top:1rem;font-size:.95rem;color:rgba(239,230,216,.8);max-width:46rem}
+
+.harta-iframe{margin-top:2.5rem}
+.harta-iframe iframe{width:100%;height:320px;border:0;border-radius:1.25rem;display:block}
+
+/* ---------- Footer ---------- */
+.pe{background:var(--nisip);border-top:1px solid var(--linie);padding:3rem var(--margine) 2.5rem;font-size:.95rem;color:var(--maro-moale)}
+.pe-in{max-width:var(--lat);margin:0 auto;display:grid;gap:1.25rem}
+.pe-marca{font-family:Fraunces,Georgia,serif;font-size:1.5rem;font-weight:600;color:var(--maro);letter-spacing:-.01em}
+.pe-nav ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.25rem 1.5rem}
+.pe-nav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;color:var(--maro)}
+.pe-nav a:hover{text-decoration:underline;text-underline-offset:.25em}
+.pe-tel{color:var(--maro)}
+.pe-mic{font-size:.9rem}
+
+/* ---------- Motion (only with JS, and only transform/opacity) ---------- */
+.js .apare{opacity:0;transform:translateY(18px);transition:opacity .6s var(--curba),transform .6s var(--curba)}
+.js .apare.vizibil{opacity:1;transform:none}
+
+/* Route drawing: the path is drawn by the stroke, from pathLength 100 */
+.harta .traseu{stroke-dasharray:100 200;stroke-dashoffset:0}
+.js .harta .traseu{stroke-dashoffset:101}
+.js .harta.vizibil .traseu{stroke-dashoffset:0;transition:stroke-dashoffset 2.4s cubic-bezier(.45,.05,.35,1)}
+.pin{transform-box:fill-box;transform-origin:center}
+.js .harta .pin{opacity:0;transform:scale(.4)}
+.js .harta.vizibil .pin{opacity:1;transform:scale(1);transition:transform .5s var(--curba) 2.3s,opacity .4s ease 2.3s}
+.js .harta .etich-pin{opacity:0}
+.js .harta.vizibil .etich-pin{opacity:1;transition:opacity .5s ease 2.5s}
+
+/* Gallery enlargement */
+.galerie .poza.marita{
+  position:fixed;inset:0;z-index:80;
+  width:100%;height:100%;aspect-ratio:auto;
+  margin:0;padding:1.25rem;
+  border-radius:0;
+  background:rgba(59,43,34,.94);
+  display:flex;align-items:center;justify-content:center;
+  cursor:zoom-out;
+}
+.galerie .poza.marita img{
+  width:auto;height:auto;
+  max-width:100%;max-height:100%;
+  object-fit:contain;
+  border-radius:1rem;
+}
+html.galerie-deschisa{overflow:hidden}
+
+/* ---------- Desktop ---------- */
+@media (min-width:860px){
+  .meniu-btn{display:none}
+  .meniu-lista{
+    position:static;flex-direction:row;gap:2.25rem;
+    background:none;border:0;padding:0;margin-left:auto;
+    opacity:1;visibility:visible;transform:none;
+  }
+  .meniu-lista a{border:0;min-height:44px;font-family:Figtree,system-ui,sans-serif;font-size:1rem;font-weight:500;padding:0}
+  .meniu-lista a:hover{text-decoration:underline;text-underline-offset:.3em}
+  .antet-act{margin-left:2.25rem}
+
+  .intro-in{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:4rem}
+  .intro-foto{margin-top:4rem}
+  .intro-foto img{aspect-ratio:4/5}
+
+  .despre-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3rem 6rem;align-items:start}
+  .despre-text{padding-top:.6rem}
+  .avantaje{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem;margin-top:2rem}
+  .avantaje li:nth-child(2){padding-top:2.75rem}
+  .avantaje li:nth-child(3){padding-top:1.25rem}
+
+  .lista-servicii li{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem 5rem;align-items:baseline}
+  .lista-servicii li:nth-child(even){margin-left:clamp(0rem,9vw,8rem)}
+
+  .galerie{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+  .galerie .poza:nth-child(2n){margin-top:0}
+  .galerie .poza:nth-child(even){margin-top:4.5rem}
+
+  .vizita-in{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:5rem}
+  .harta-iframe iframe{height:420px}
+}
+
+/* ---------- Accessibility preferences ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .apare{transform:none;transition:opacity .3s linear}
+  .js .harta .traseu{stroke-dashoffset:0}
+  .js .harta.vizibil .traseu{transition:none}
+  .js .harta .pin,
+  .js .harta.vizibil .pin{transform:none;transition:opacity .3s linear}
+  .js .harta .etich-pin,
+  .js .harta.vizibil .etich-pin{transition:opacity .3s linear}
+  .poza img,.buton,.buton-mic,.meniu-btn{transition-duration:.01ms}
+  .poza:hover img{transform:none}
+  .meniu-lista{transform:none;transition:opacity .2s linear,visibility .2s}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--nisip);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet.derulat{background:var(--nisip)}
+}
+@media (prefers-contrast:more){
+  :root{--maro-moale:var(--maro);--linie:rgba(59,43,34,.6)}
+  .buton,.meniu-btn{border-width:2px}
+  .vizita .ore p,.harta-desen figcaption{color:var(--nisip)}
+}
+</style>
+</head>
+<body>
+
+<a class="sarit" href="#continut">Skip to content</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">Perdue Builders</a>
+    <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <div class="antet-act">
+      <a class="buton-mic" href="tel:+15028953663">Call now</a>
+      <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="intro" id="top">
+    <div class="intro-in">
+      <div class="intro-text">
+        <p class="rol">Home and commercial building in Louisville, KY</p>
+        <h1>Perdue Builders</h1>
+        <p class="lead">Perdue Builders handles home remodeling and construction in the Louisville area.</p>
+        <div class="actiuni">
+          <a class="buton buton-mare" href="tel:+15028953663">Call (502) 895-3663</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Perdue+Builders+Louisville">Get directions</a>
+        </div>
+        <p class="program">Open Monday through Friday, 8 am to 5 pm.</p>
+      </div>
+      <figure class="intro-foto">
+        <img src="img/3.jpg" alt="Red bricks stacked along a wall beside a wheelbarrow on a building site">
+      </figure>
+    </div>
+  </section>
+
+  <section class="bloc" id="about">
+    <div class="bloc-in despre-in">
+      <h2 data-jarvis="apare">Homes and commercial spaces in metro Louisville</h2>
+      <div class="despre-text" data-jarvis="apare">
+        <p>Perdue Builders works on custom home remodeling, new home construction, and commercial remodeling projects in metro Louisville and the surrounding area.</p>
+        <p>The team manages both residential and commercial building needs.</p>
+        <p>You can visit us at 2248 Frankfort Avenue, Louisville.</p>
+      </div>
+      <ul class="avantaje">
+        <li data-jarvis="apare">
+          <h3>Local work</h3>
+          <p>Metro Louisville and the surrounding area.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Residential and commercial</h3>
+          <p>Both home and office spaces.</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Hands-on team</h3>
+          <p>Handles complete building projects.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc servicii" id="services">
+    <div class="bloc-in">
+      <h2 data-jarvis="apare">Services</h2>
+      <ul class="lista-servicii">
+        <li data-jarvis="apare">
+          <h3>Custom home remodeling services</h3>
+          <p>Custom home remodeling services in metro Louisville</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>New home construction services</h3>
+          <p>New home construction services in metro Louisville</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Commercial remodeling projects</h3>
+          <p>Commercial remodeling in metro Louisville and nearby</p>
+        </li>
+      </ul>
+      <p class="servicii-nota" data-jarvis="apare">To talk about your project, call <a href="tel:+15028953663">(502) 895-3663</a>.</p>
+    </div>
+  </section>
+
+  <section class="bloc" id="gallery">
+    <div class="bloc-in">
+      <h2 data-jarvis="apare">Gallery</h2>
+      <p class="galerie-intro" data-jarvis="apare">Illustrative photos of kitchens, building sites, and house plans. Tap a photo to see it larger.</p>
+      <div class="galerie" data-jarvis="galerie">
+        <button class="poza" type="button" data-jarvis="apare">
+          <img src="img/1.jpg" alt="Kitchen with a countertop and cabinets in a home interior">
+        </button>
+        <button class="poza" type="button" data-jarvis="apare">
+          <img src="img/4.jpg" alt="A builder reviewing house plans">
+        </button>
+        <button class="poza" type="button" data-jarvis="apare">
+          <img src="img/2.jpg" alt="A worker in a safety helmet on a building site">
+        </button>
+        <button class="poza" type="button" data-jarvis="apare">
+          <img src="img/5.jpg" alt="Construction site with workers and a half-built structure">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc vizita" id="visit">
+    <div class="bloc-in">
+      <div class="vizita-in">
+        <div data-jarvis="apare">
+          <h2>Visit us on Frankfort Avenue</h2>
+          <address>2248 Frankfort Avenue, Louisville</address>
+          <div class="actiuni">
+            <a class="buton buton-mare" href="tel:+15028953663">Call (502) 895-3663</a>
+            <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Perdue+Builders+Louisville">Get directions</a>
+          </div>
+        </div>
+        <div class="ore" data-jarvis="apare">
+          <h3>Business hours</h3>
+          <p>Open Monday through Friday, from 8 am to 5 pm.</p>
+        </div>
+      </div>
+
+      <figure class="harta-desen" data-jarvis="apare">
+        <div class="harta-cadru" data-jarvis="apare">
+          <svg viewbox="0 0 600 440" role="img" aria-labelledby="harta-titlu" preserveaspectratio="xMidYMid meet">
+            <title id="harta-titlu">Hand-drawn sketch of the neighborhood with the route to Perdue Builders</title>
+            <rect x="10" y="10" width="580" height="420" rx="18" fill="#EFE6D8" stroke="#3B2B22" stroke-opacity=".45" stroke-width="1.5"/>
+            <g fill="#6B7046" fill-opacity=".22">
+              <path d="M40 40 C70 34 118 42 128 48 L124 118 C96 126 60 120 38 116 Z"/>
+              <path d="M108 16 C150 10 200 14 222 18 L220 82 C190 88 140 84 112 86 Z"/>
+              <path d="M262 16 C300 12 350 18 384 14 L384 84 C350 90 300 86 264 84 Z"/>
+              <path d="M418 16 C460 12 500 16 530 14 L530 84 C500 90 460 86 420 84 Z"/>
+              <path d="M112 112 C150 106 200 112 222 116 L220 222 C190 226 150 222 110 226 Z"/>
+              <path d="M258 118 C300 112 340 120 384 116 L384 190 C350 184 300 190 262 194 Z"/>
+              <path d="M420 116 C460 110 500 118 530 114 L530 180 C500 176 460 182 420 178 Z"/>
+              <path d="M112 352 C160 346 200 354 222 358 L222 420 C190 426 150 420 112 424 Z"/>
+              <path d="M262 352 C300 346 340 354 384 350 L384 420 C350 424 300 418 262 420 Z"/>
+              <path d="M420 354 C460 350 500 356 530 352 L530 420 C500 424 460 420 420 420 Z"/>
+            </g>
+            <ellipse cx="470" cy="262" rx="46" ry="24" fill="#6B7046" fill-opacity=".35" transform="rotate(-6 470 262)"/>
+            <g fill="none" stroke="#EFE6D8" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M92 0 C98 90 84 180 96 260 S104 380 96 440"/>
+              <path d="M236 0 C244 80 228 170 240 262 C246 320 236 380 244 440"/>
+              <path d="M400 0 C396 90 412 180 402 262 C396 330 410 390 404 440"/>
+              <path d="M548 0 C540 100 556 200 546 300 C540 360 552 400 546 440"/>
+              <path d="M0 96 C160 88 320 104 600 92"/>
+              <path d="M0 330 C180 336 360 322 600 340"/>
+            </g>
+            <path d="M-10 262 C120 240 200 290 330 236 S480 160 610 176" fill="none" stroke="#3B2B22" stroke-opacity=".16" stroke-width="26"/>
+            <path d="M-10 262 C120 240 200 290 330 236 S480 160 610 176" fill="none" stroke="#3B2B22" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="10 9"/>
+            <path class="traseu" pathlength="100" d="M86 372 C92 338 98 300 102 254 C150 246 196 270 246 256 C280 246 306 232 340 212" fill="none" stroke="#B5583A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="86" cy="372" r="7" fill="#EFE6D8" stroke="#3B2B22" stroke-width="2.5"/>
+            <g class="pin">
+              <circle cx="340" cy="212" r="12" fill="#B5583A" stroke="#3B2B22" stroke-width="2.5"/>
+              <circle cx="340" cy="212" r="4" fill="#EFE6D8"/>
+            </g>
+          </svg>
+          <span class="etich etich-strada">Frankfort Avenue</span>
+          <span class="etich etich-start">Start</span>
+          <span class="etich etich-pin etich-final">Perdue Builders</span>
+        </div>
+        <figcaption>A hand-drawn sketch of the neighborhood, not to scale. The line ends at Perdue Builders on Frankfort Avenue.</figcaption>
+      </figure>
+
+      <div class="harta-iframe" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-85.707826,38.251187,-85.699826,38.255187&amp;layer=mapnik&amp;marker=38.253187,-85.703826" title="Map of 2248 Frankfort Avenue, Louisville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pe">
+  <div class="pe-in">
+    <p class="pe-marca">Perdue Builders</p>
+    <p>2248 Frankfort Avenue, Louisville. <a class="pe-tel" href="tel:+15028953663">(502) 895-3663</a></p>
+    <p>Open Monday through Friday, 8 am to 5 pm.</p>
+    <nav class="pe-nav" aria-label="Footer">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+    <p class="pe-mic">Website concept (demo)</p>
+    <p class="pe-mic">Illustrative photos from Pixabay: user32212, jarmoluk, sandid, joffi</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
