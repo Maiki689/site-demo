@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metro Gnome Music &amp; Cycling, Tucson</title>
+<meta name="description" content="Metro Gnome Music &amp; Cycling in Tucson sells bicycles, including folding bikes, buys and trades used equipment, and repairs musical instruments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundal:#FAF8F5;
+  --negru:#161616;
+  --acc:#be123c;
+  --linie:rgba(22,22,22,.18);
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --pas:clamp(3.5rem,8vw,6rem);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--fundal);color:var(--negru);font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+@media (min-width:860px){body{font-size:1.125rem}}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul,dl,dd,figure,blockquote{margin:0}
+ul{padding:0}
+h1,h2,h3{font-weight:400}
+.grila{width:100%;max-width:78rem;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3.5rem)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.vizita :focus-visible{outline-color:var(--fundal)}
+
+/* Top bar */
+.antet{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(250,248,245,.62);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid var(--linie);transition:background-color .4s var(--ease)}
+.antet.derulat{background:rgba(250,248,245,.9)}
+.antet-in{height:4.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.marca{font-family:var(--sans);font-weight:600;font-size:1.25rem;line-height:1;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.marca .ext{font-weight:500}
+@media (max-width:559px){.marca .ext{display:none}}
+.meniu-buton{display:inline-flex;align-items:center;justify-content:center;min-height:2.75rem;min-width:5.5rem;padding:0 1.1rem;background:transparent;border:1px solid var(--negru);border-radius:0;font:500 1rem/1 var(--sans);letter-spacing:0;color:var(--negru);cursor:pointer;transition:transform .2s var(--ease),background-color .3s,color .3s}
+.meniu-buton:hover,.meniu-buton[aria-expanded="true"]{background:var(--negru);color:var(--fundal)}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-lista{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:.25rem clamp(1.25rem,5vw,3.5rem) 1.25rem;background:var(--fundal);border-bottom:1px solid var(--linie)}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a.link{display:flex;align-items:center;min-height:3.25rem;font-family:var(--serif);font-size:1.75rem;letter-spacing:-.01em;text-decoration:none;border-top:1px solid var(--linie)}
+.meniu-lista a.link:hover{text-decoration:underline;text-underline-offset:.3em}
+.meniu-lista .apel-mic{margin-top:1rem;justify-content:center;min-height:3rem;font-family:var(--sans);font-size:1rem;letter-spacing:0;border:0}
+
+/* Buttons */
+.buton{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.5rem;border:1px solid var(--negru);border-radius:0;background:transparent;color:var(--negru);font:500 1rem/1.2 var(--sans);letter-spacing:0;text-decoration:none;cursor:pointer;transition:transform .2s var(--ease),opacity .2s,background-color .3s,color .3s}
+.buton:active{transform:scale(.97)}
+.buton-plin{background:var(--acc);border-color:var(--acc);color:var(--fundal)}
+.buton-plin:hover{opacity:.9}
+.buton-contur:hover{background:var(--negru);color:var(--fundal)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+
+/* Bubbles */
+.bule{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.bule span{position:absolute;bottom:-12rem;border-radius:50%;border:1px solid rgba(190,18,60,.3);animation:urca linear infinite;will-change:transform,opacity}
+.bule span:nth-child(1){left:62%;width:56px;height:56px;animation-duration:19s;animation-delay:-4s}
+.bule span:nth-child(2){left:74%;width:96px;height:96px;animation-duration:24s;animation-delay:-11s}
+.bule span:nth-child(3){left:84%;width:34px;height:34px;animation-duration:14s;animation-delay:-2s}
+.bule span:nth-child(4){left:91%;width:72px;height:72px;animation-duration:27s;animation-delay:-17s}
+.bule span:nth-child(5){left:56%;width:22px;height:22px;animation-duration:12s;animation-delay:-6s}
+.bule span:nth-child(6){left:68%;width:44px;height:44px;animation-duration:21s;animation-delay:-13s}
+.bule span:nth-child(7){left:88%;width:120px;height:120px;animation-duration:31s;animation-delay:-21s}
+@keyframes urca{
+  0%{transform:translate3d(0,0,0);opacity:0}
+  12%{opacity:1}
+  100%{transform:translate3d(0,-130vh,0);opacity:0}
+}
+
+/* Hero: typography only */
+.inceput{position:relative;overflow:hidden;padding:6.5rem 0 clamp(2.5rem,5vw,3.5rem)}
+.inceput-in{position:relative;z-index:1}
+.inceput-sus{display:flex;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;font-size:clamp(1.1rem,2.4vw,1.4rem);font-weight:500;line-height:1.3;letter-spacing:-.01em;color:var(--negru);padding-bottom:1rem;border-bottom:1px solid var(--linie);margin-bottom:clamp(1.75rem,4.5vw,3rem)}
+.titlu-mare{font-family:var(--serif);font-size:clamp(3.25rem,10.5vw,9.5rem);line-height:1.05;letter-spacing:-.02em;text-wrap:balance;max-width:11em}
+.inceput-jos{margin-top:clamp(1.5rem,4vw,2.5rem)}
+.dek{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.4;max-width:30ch}
+@media (min-width:860px){
+  .inceput-jos{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem}
+  .dek{grid-column:7/span 5}
+  .actiuni{grid-column:7/span 5;margin-top:2rem}
+}
+
+/* Sections */
+.sectiune{padding:var(--pas) 0;border-top:1px solid var(--linie)}
+.titlu-mijlociu{font-family:var(--serif);font-size:clamp(2.5rem,6vw,4.75rem);line-height:1.05;letter-spacing:-.02em;text-wrap:balance;padding-bottom:.08em}
+.text{max-width:36em;line-height:1.6}
+.text+.text{margin-top:1rem}
+
+/* About */
+.despre-grila{display:grid;gap:2.25rem}
+.despre-foto{position:relative;overflow:hidden;aspect-ratio:4/5;background:rgba(22,22,22,.06)}
+.despre-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.3) brightness(1.02)}
+@media (min-width:860px){
+  .despre-grila{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;row-gap:0;align-items:end}
+  .despre-cap{grid-column:1/span 7;grid-row:1}
+  .despre-foto{grid-column:8/span 5;grid-row:1/span 2;aspect-ratio:3/4}
+  .despre-text{grid-column:2/span 4;grid-row:2;padding-bottom:0}
+}
+
+/* Pull quote */
+.citat-sectiune{padding:var(--pas) 0;border-top:1px solid var(--linie)}
+.citat{position:relative;overflow:hidden;max-width:58rem}
+.citat p{font-family:var(--serif);font-style:italic;font-size:clamp(2.5rem,6.6vw,5.75rem);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+.citat footer{display:flex;align-items:center;gap:1rem;margin-top:2rem;font-size:.95rem;color:rgba(22,22,22,.72)}
+.citat footer::before{content:"";width:2.5rem;height:1px;background:var(--acc);flex:none}
+@media (min-width:860px){
+  .citat{margin-left:auto;width:calc(100% - 25%);padding-left:0}
+}
+
+/* Products */
+.produse-grila{display:grid;gap:2.25rem}
+.lista-produse{list-style:none}
+.lista-produse li{position:relative;overflow:hidden;padding:1.75rem 0;border-top:1px solid var(--linie)}
+.lista-produse li:last-child{border-bottom:1px solid var(--linie)}
+.lista-produse h3{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.15rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:.5rem}
+.lista-produse p{color:rgba(22,22,22,.74);max-width:32em}
+@media (min-width:860px){
+  .produse-grila{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;align-items:start}
+  .produse-cap{grid-column:1/span 4}
+  .lista-produse{grid-column:6/span 7}
+}
+
+/* Gallery */
+.galerie-cap{max-width:40rem}
+.galerie-grid{display:grid;gap:1rem;margin-top:2.5rem}
+.galerie-grid figure{position:relative;margin:0;overflow:hidden;aspect-ratio:4/3;background:rgba(22,22,22,.06)}
+.galerie-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+.galerie-grid figure:nth-child(3):not(.marita) img{filter:saturate(.3) brightness(1.02)}
+@media (min-width:760px){
+  .galerie-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;align-items:start}
+  .galerie-grid figure:nth-child(1){grid-column:1/span 7;aspect-ratio:4/5}
+  .galerie-grid figure:nth-child(2){grid-column:9/span 4;margin-top:6rem;aspect-ratio:3/4}
+  .galerie-grid figure:nth-child(3){grid-column:2/span 4;aspect-ratio:1/1}
+  .galerie-grid figure:nth-child(4){grid-column:7/span 6;margin-top:3rem;aspect-ratio:3/2}
+  .galerie-grid figure:nth-child(5){grid-column:1/span 6;aspect-ratio:3/2}
+}
+html.galerie-deschisa{overflow:hidden}
+.galerie-grid figure.marita{position:fixed;inset:0;z-index:70;margin:0;aspect-ratio:auto;width:100vw;height:100vh;background:rgba(22,22,22,.94);overflow:visible}
+.galerie-grid figure.marita img{top:1rem;left:1rem;inset:auto;width:calc(100vw - 2rem);height:calc(100vh - 2rem);object-fit:contain;cursor:zoom-out}
+.galerie-grid img.marita{position:fixed;top:1rem;left:1rem;inset:auto;width:calc(100vw - 2rem);height:calc(100vh - 2rem);object-fit:contain;z-index:70;background:rgba(22,22,22,.94);cursor:zoom-out}
+
+/* Visit (dark) */
+.vizita{background:var(--negru);color:var(--fundal);padding:var(--pas) 0}
+.vizita-grila{display:grid;gap:2.5rem}
+.vizita-harta{position:relative;overflow:hidden}
+.vizita-harta iframe{display:block;width:100%;height:24rem;border:0;filter:grayscale(1)}
+.detalii{display:grid;gap:1.5rem;margin-top:2rem}
+.detalii dt{font-size:.9rem;color:rgba(250,248,245,.62);margin-bottom:.25rem}
+.detalii dd{font-size:1.125rem;line-height:1.5}
+.detalii a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.vizita .buton-contur{color:var(--fundal);border-color:var(--fundal)}
+.vizita .buton-contur:hover{background:var(--fundal);color:var(--negru)}
+@media (min-width:860px){
+  .vizita-grila{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:2rem;align-items:start}
+  .vizita-stanga{grid-column:1/span 5}
+  .vizita-harta{grid-column:7/span 6}
+}
+
+/* Footer */
+.subsol{padding:2.5rem 0 3rem;font-size:.9rem;color:rgba(22,22,22,.8)}
+.subsol-in{display:grid;gap:1rem}
+.subsol-in p:first-child{color:var(--negru)}
+@media (min-width:860px){
+  .subsol-in{grid-template-columns:1fr auto;align-items:end}
+  .subsol-in .credit{grid-column:1/-1;max-width:50em;font-size:.82rem;color:rgba(22,22,22,.66)}
+}
+
+/* Desktop header */
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{display:flex;position:static;flex-direction:row;align-items:center;gap:2rem;padding:0;background:none;border:0}
+  .meniu-lista a.link{font-family:var(--sans);font-size:.95rem;letter-spacing:0;min-height:2.75rem;border:0}
+  .meniu-lista .apel-mic{margin-top:0;min-height:2.75rem;padding:0 1.1rem;background:var(--acc);color:var(--fundal)}
+}
+
+/* Reveal: mask that slides away */
+html.js .apare{--cover:var(--fundal);position:relative;overflow:hidden}
+.vizita .apare{--cover:var(--negru)}
+html.js .apare::after{content:"";position:absolute;inset:0;z-index:2;background:var(--cover);transform:translateX(0);transition:transform .9s var(--ease);pointer-events:none}
+html.js .apare.vizibil::after{transform:translateX(101%);transition-delay:.05s}
+
+/* Motion and accessibility preferences */
+@media (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .bule{display:none}
+  html.js .apare::after{display:none}
+  html.js .apare{opacity:0;transition:opacity .4s ease}
+  html.js .apare.vizibil{opacity:1}
+  .buton,.meniu-buton{transition-duration:.01ms}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--fundal);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--linie:rgba(22,22,22,.6)}
+  .buton,.meniu-buton{border-width:2px}
+  .lista-produse p,.citat footer,.despre-text p{color:var(--negru)}
+  .vizita .detalii dt{color:var(--fundal)}
+  .vizita .buton-contur{border-width:2px}
+}
+</style>
+</head>
+<body>
+
+<header class="antet" data-jarvis="antet">
+  <div class="grila antet-in">
+    <a class="marca" href="#top">Metro Gnome<span class="ext"> Music &amp; Cycling</span></a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Menu</button>
+    <nav class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista" aria-label="Main">
+      <a class="link" href="#produse">Products</a>
+      <a class="link" href="#despre">About</a>
+      <a class="link" href="#galerie">Gallery</a>
+      <a class="link" href="#vizita">Visit</a>
+      <a class="link apel-mic buton-plin" href="tel:+15203203780">Call now</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="inceput" id="top">
+  <div class="bule" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="grila inceput-in">
+    <div class="inceput-sus">
+      <span>Tucson, Arizona</span>
+      <span>East Speedway Boulevard</span>
+    </div>
+    <h1 class="titlu-mare">Metro Gnome Music &amp; Cycling</h1>
+    <div class="inceput-jos">
+      <p class="dek">The shop sells bicycles, including folding bikes, buys and trades used equipment, and repairs musical instruments.</p>
+      <div class="actiuni">
+        <a class="buton buton-plin" href="tel:+15203203780">Call now</a>
+        <a class="buton buton-contur" href="#produse">See what we do</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectiune" id="despre" aria-labelledby="despre-titlu">
+  <div class="grila despre-grila">
+    <div class="despre-cap">
+      <h2 id="despre-titlu" class="titlu-mijlociu apare" data-jarvis="apare">Instruments and bikes under one roof</h2>
+    </div>
+    <figure class="despre-foto apare" data-jarvis="apare">
+      <img src="img/3.jpg" alt="Bicycle handlebar and front wheel">
+    </figure>
+    <div class="despre-text">
+      <p class="text">The shop has school instrument rentals for band or orchestra, and sells bicycles, including folding models.</p>
+      <p class="text">It buys and trades used equipment. Repairs for musical instruments are available.</p>
+    </div>
+  </div>
+</section>
+
+<section class="citat-sectiune" aria-label="Shop motto">
+  <div class="grila">
+    <blockquote class="citat apare" data-jarvis="apare">
+      <p>“The shop buys and trades used gear and sells bicycles.”</p>
+      <footer>Metro Gnome Music &amp; Cycling, Tucson</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="sectiune" id="produse" aria-labelledby="produse-titlu">
+  <div class="grila produse-grila">
+    <div class="produse-cap">
+      <h2 id="produse-titlu" class="titlu-mijlociu apare" data-jarvis="apare">Bikes, instruments and repairs</h2>
+    </div>
+    <ul class="lista-produse">
+      <li class="apare" data-jarvis="apare">
+        <h3>Used equipment, bought and traded</h3>
+        <p>Bring in used equipment to sell or trade.</p>
+      </li>
+      <li class="apare" data-jarvis="apare">
+        <h3>Bicycles, including folding bikes</h3>
+        <p>Regular bicycles and folding models for sale.</p>
+      </li>
+      <li class="apare" data-jarvis="apare">
+        <h3>Musical instrument repairs</h3>
+        <p>Repairs for musical instruments are available.</p>
+      </li>
+      <li class="apare" data-jarvis="apare">
+        <h3>Band and orchestra rentals for school</h3>
+        <p>Rent instruments for school band or orchestra.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sectiune" id="galerie" aria-labelledby="galerie-titlu">
+  <div class="grila">
+    <div class="galerie-cap">
+      <h2 id="galerie-titlu" class="titlu-mijlociu apare" data-jarvis="apare">Bikes and parts up close</h2>
+    </div>
+    <div class="galerie-grid" data-jarvis="galerie">
+      <figure><img src="img/1.jpg" alt="Bicycle, close view" loading="lazy"></figure>
+      <figure><img src="img/2.jpg" alt="Bicycle gearshift and chain" loading="lazy"></figure>
+      <figure><img src="img/3.jpg" alt="Bicycle handlebar and front wheel" loading="lazy"></figure>
+      <figure><img src="img/4.jpg" alt="Black and white close-up of bicycle gears" loading="lazy"></figure>
+      <figure><img src="img/5.jpg" alt="Woman riding an electric bike through a city" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="vizita" id="vizita" aria-labelledby="vizita-titlu">
+  <div class="grila vizita-grila">
+    <div class="vizita-stanga">
+      <h2 id="vizita-titlu" class="titlu-mijlociu apare" data-jarvis="apare">Visit the shop on Speedway</h2>
+      <dl class="detalii">
+        <div>
+          <dt>Address</dt>
+          <dd>4044 East Speedway Boulevard<br>Tucson, AZ</dd>
+        </div>
+        <div>
+          <dt>Phone</dt>
+          <dd><a href="tel:+15203203780">(520) 320-3780</a></dd>
+        </div>
+        <div>
+          <dt>Hours</dt>
+          <dd>Monday, Wednesday to Friday: 10 am to 6 pm<br>Saturday: 10 am to 5 pm</dd>
+        </div>
+      </dl>
+      <div class="actiuni">
+        <a class="buton buton-plin" href="tel:+15203203780">Call now</a>
+        <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Metro+Gnome+Music+%26+Cycling+Tucson">Get directions</a>
+      </div>
+    </div>
+    <div class="vizita-harta apare" data-jarvis="apare">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-110.910038,32.233878,-110.902038,32.237879&amp;layer=mapnik&amp;marker=32.235878,-110.906038" title="Map of Metro Gnome Music &amp; Cycling on East Speedway Boulevard, Tucson" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="subsol">
+  <div class="grila subsol-in">
+    <p><strong>Metro Gnome Music &amp; Cycling</strong><br>4044 East Speedway Boulevard, Tucson, AZ</p>
+    <p>Website concept (demo)</p>
+    <p class="credit">Illustrative photos from Pixabay: donterase, danielkirsch, matthiasboeckel, 661512, u_d7hddm5o</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
