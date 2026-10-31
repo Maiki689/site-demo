@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5th and Taylor | American-inspired restaurant meals in Nashville</title>
+<meta name="description" content="5th and Taylor serves American-inspired restaurant meals for dinner in Nashville's Germantown neighborhood. Call (615) 242-4747.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap">
+<style>
+:root{
+  --egeu:#1F4E79;
+  --var:#FAFAF7;
+  --ocru:#D9A441;
+  --masline:#7A8450;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--var);
+  color:var(--egeu);
+  font-family:"DM Sans",system-ui,-apple-system,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{margin:0}
+p{margin:0}
+:focus-visible{outline:3px solid var(--egeu);outline-offset:3px}
+
+/* Header */
+.antet{
+  position:fixed;top:0;left:0;right:0;z-index:40;
+  background:rgba(250,250,247,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(31,78,121,.08);
+  transition:background-color .4s ease,box-shadow .4s ease;
+}
+.antet.derulat{background:rgba(250,250,247,.92);box-shadow:0 1px 0 rgba(31,78,121,.12)}
+.antet-in{
+  position:relative;
+  max-width:1200px;margin:0 auto;padding:0 1.25rem;
+  height:4.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  transition:height .4s ease;
+}
+.antet.derulat .antet-in{height:3.75rem}
+.marca{
+  font-family:"DM Serif Display",Georgia,serif;
+  font-size:1.2rem;letter-spacing:-.01em;
+  text-decoration:none;white-space:nowrap;color:var(--egeu);
+}
+.antet-dreapta{display:flex;align-items:center;gap:.5rem}
+.meniu-lista{
+  list-style:none;margin:0;padding:.5rem 1.25rem 1.25rem;
+  position:absolute;top:100%;left:0;right:0;
+  display:none;flex-direction:column;
+  background:var(--var);
+  border-bottom:1px solid rgba(31,78,121,.12);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:44px;
+  text-decoration:none;font-size:1.05rem;
+}
+.meniu-buton{
+  min-height:44px;min-width:44px;padding:0 .9rem;
+  border:1.5px solid rgba(31,78,121,.35);border-radius:999px;
+  background:transparent;color:var(--egeu);
+  font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;
+  transition:transform .15s ease;
+}
+.meniu-buton:active{transform:scale(.97)}
+
+/* Buttons */
+.buton{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:.7rem 1.4rem;border-radius:999px;
+  border:1.5px solid var(--egeu);background:var(--egeu);color:var(--var);
+  font:inherit;font-weight:600;text-decoration:none;text-align:center;
+  transition:transform .15s ease,background-color .2s ease,color .2s ease;
+  -webkit-tap-highlight-color:transparent;
+}
+.buton:active{transform:scale(.97)}
+.buton-contur{background:transparent;color:var(--egeu)}
+.buton-mic{min-height:44px;padding:.6rem .95rem;font-size:.95rem}
+.bloc-albastru .buton{background:var(--var);color:var(--egeu);border-color:var(--var)}
+.bloc-albastru .buton-contur{background:transparent;color:var(--var);border-color:rgba(250,250,247,.6)}
+.buton:focus-visible{outline:3px solid var(--ocru);outline-offset:3px}
+
+/* Hero */
+.inceput{
+  max-width:1200px;margin:0 auto;
+  padding:7.5rem 1.25rem 3rem;
+  display:grid;gap:2.5rem;align-items:center;
+}
+h1{
+  font-family:"DM Serif Display",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(3.25rem,13vw,8.5rem);
+  line-height:1;letter-spacing:-.02em;
+  margin-bottom:1.5rem;
+}
+.inceput-lead{font-size:1.2rem;max-width:30ch;margin-bottom:.75rem}
+.inceput-nota{opacity:.8;margin-bottom:2rem}
+.butoane{display:flex;flex-wrap:wrap;gap:.75rem}
+.inceput-adresa{margin-top:2rem;font-size:.95rem;opacity:.8}
+.arc-foto{
+  margin:0;position:relative;isolation:isolate;
+  width:100%;max-width:30rem;aspect-ratio:4/5;
+  justify-self:center;
+}
+.arc-foto::before{
+  content:"";position:absolute;
+  inset:1.25rem -1.25rem -1.25rem 1.25rem;
+  border:1px solid rgba(122,132,80,.6);
+  border-radius:999px 999px 1.5rem 1.5rem;
+  z-index:-1;
+}
+.arc-foto img{
+  width:100%;height:100%;object-fit:cover;
+  border-radius:999px 999px 1.5rem 1.5rem;
+}
+
+/* Wave edge */
+.onda{height:2.5rem;overflow:hidden;position:relative}
+.onda-banda{display:flex;width:200%;height:100%;animation:onda 48s linear infinite}
+.onda svg{width:50%;height:100%;flex:0 0 50%;display:block}
+@keyframes onda{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* Sections */
+.bloc{padding:6rem 1.25rem}
+.bloc-in{max-width:1200px;margin:0 auto}
+.bloc-albastru{background:var(--egeu);color:var(--var)}
+.bloc-albastru em{color:var(--ocru)}
+h2{
+  font-family:"DM Serif Display",Georgia,serif;
+  font-weight:400;
+  font-size:clamp(2.2rem,5.5vw,3.75rem);
+  line-height:1.08;letter-spacing:-.02em;
+  margin-bottom:2.5rem;
+  max-width:18ch;
+}
+h2 em{font-style:italic}
+h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em}
+
+/* About */
+.despre-in{display:grid;gap:2.5rem}
+.despre-texte p{max-width:36rem}
+.despre-texte p+p{margin-top:1.25rem}
+.fapte{
+  list-style:none;margin:4rem 0 0;padding:0;
+  display:grid;gap:2.25rem;
+}
+.fapt{border-top:1px solid rgba(217,164,65,.75);padding-top:1.25rem}
+.fapt h3{font-size:1.5rem;margin-bottom:.5rem}
+.fapt p{opacity:.85;max-width:26ch}
+
+/* Menu */
+.carte{list-style:none;margin:0;padding:0;border-top:1px solid rgba(31,78,121,.18)}
+.carte li{
+  display:grid;gap:.6rem;
+  padding:1.75rem 0;
+  border-bottom:1px solid rgba(31,78,121,.18);
+}
+.carte h3{font-size:1.65rem;line-height:1.15}
+.carte p{max-width:40ch}
+
+/* Gallery */
+.galerie{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.galerie img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+  border-radius:999px 999px 1rem 1rem;
+  cursor:zoom-in;
+}
+
+/* Visit */
+.vizita-in{display:grid;gap:3rem;align-items:start}
+.vizita-date address{font-style:normal;font-size:1.25rem;line-height:1.4;margin-bottom:1.5rem}
+.telefon{font-size:1.25rem;margin-top:.5rem}
+.ore{margin-top:2.5rem}
+.ore h3{font-size:1.5rem;margin-bottom:1rem}
+.ore dl{margin:0;display:grid;gap:.75rem}
+.ore dl div{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;padding-bottom:.75rem;border-bottom:1px solid rgba(250,250,247,.22)}
+.ore dt{font-weight:600}
+.ore dd{margin:0;text-align:right}
+.harta{
+  width:100%;height:22rem;border:0;display:block;
+  border-radius:1.25rem;
+}
+
+/* Footer */
+.subsol{
+  background:var(--egeu);color:var(--var);
+  padding:2.5rem 1.25rem 3rem;
+  border-top:1px solid rgba(250,250,247,.2);
+  font-size:.9rem;
+}
+.subsol-in{max-width:1200px;margin:0 auto;display:grid;gap:.6rem}
+.subsol-in p{opacity:.85}
+.subsol-nume{font-family:"DM Serif Display",Georgia,serif;font-size:1.25rem;opacity:1!important}
+
+/* Gallery enlargement */
+html.galerie-deschisa{overflow:hidden}
+html.galerie-deschisa::after{
+  content:"";position:fixed;inset:0;z-index:50;
+  background:rgba(31,78,121,.94);
+}
+html.galerie-deschisa .galerie img.marita{
+  position:fixed;inset:0;margin:auto;
+  width:auto;height:auto;
+  max-width:min(92vw,820px);max-height:88vh;
+  aspect-ratio:auto;object-fit:contain;
+  border-radius:1.25rem;
+  z-index:60;cursor:zoom-out;
+}
+
+/* Reveal on scroll (only when JS is present) */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Breakpoints */
+@media (min-width:600px){
+  .fapte{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .carte li{grid-template-columns:1fr 1fr;align-items:center;gap:3rem}
+  .carte p{max-width:none}
+}
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    display:flex;position:static;flex-direction:row;gap:1.75rem;
+    padding:0;background:none;border:0;
+  }
+  .meniu-lista a{min-height:44px}
+  .antet-dreapta{gap:1.5rem}
+  .inceput{
+    grid-template-columns:1.05fr .95fr;
+    padding:8rem 2.5rem 5rem;gap:4rem;
+    min-height:90vh;
+  }
+  .bloc{padding:9rem 2.5rem}
+  .despre-in{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+  .despre-in h2{margin-bottom:0}
+  .vizita-in{grid-template-columns:.85fr 1.15fr;gap:5rem}
+  .harta{height:28rem}
+}
+@media (min-width:1000px){
+  .galerie{grid-template-columns:repeat(4,1fr);gap:1.5rem}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--var);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .antet{border-bottom:1px solid var(--egeu)}
+  .carte li,.carte{border-color:var(--egeu)}
+  .buton{border-width:2px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .onda-banda{animation:none}
+  .buton,.meniu-buton{transition:none}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+}
+</style>
+</head>
+<body id="top">
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#top">5th and Taylor</a>
+    <div class="antet-dreapta">
+      <nav aria-label="Main">
+        <ul class="meniu-lista" id="meniu-principal" data-jarvis="meniu-lista">
+          <li><a href="#despre">About</a></li>
+          <li><a href="#mancare">Menu</a></li>
+          <li><a href="#poze">Gallery</a></li>
+          <li><a href="#vizita">Visit</a></li>
+        </ul>
+      </nav>
+      <a class="buton buton-mic" href="tel:+16152424747">Call now</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-principal">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="inceput" aria-labelledby="titlu-principal">
+    <div>
+      <h1 id="titlu-principal">5th and Taylor</h1>
+      <p class="inceput-lead">American-inspired restaurant meals in Nashville's Germantown neighborhood.</p>
+      <p class="inceput-nota">Open for dinner every evening, with hours that vary by day.</p>
+      <div class="butoane">
+        <a class="buton" href="tel:+16152424747">Call now</a>
+        <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=5th+and+Taylor+Nashville">Get directions</a>
+      </div>
+      <p class="inceput-adresa">1411 5th Avenue North, Nashville</p>
+    </div>
+    <figure class="arc-foto">
+      <img src="img/3.jpg" alt="Salmon fillet with salad and green vegetables on a plate">
+    </figure>
+  </section>
+
+  <div class="onda" aria-hidden="true">
+    <div class="onda-banda">
+      <svg viewbox="0 0 1200 40" preserveaspectratio="none"><path fill="#1F4E79" d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+      <svg viewbox="0 0 1200 40" preserveaspectratio="none"><path fill="#1F4E79" d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+    </div>
+  </div>
+
+  <section class="bloc bloc-albastru" id="despre" aria-labelledby="titlu-despre">
+    <div class="bloc-in despre-in">
+      <div data-jarvis="apare">
+        <h2 id="titlu-despre">American cooking, <em>served for dinner</em></h2>
+      </div>
+      <div class="despre-texte" data-jarvis="apare">
+        <p>5th and Taylor is a restaurant on 5th Avenue North, in the Germantown area of Nashville.</p>
+        <p>The menu is built on a range of dishes rooted in American cooking. Dinner is served throughout the week, with hours that change between weeknights and weekends.</p>
+      </div>
+    </div>
+    <div class="bloc-in">
+      <ul class="fapte">
+        <li class="fapt" data-jarvis="apare">
+          <h3>Dinner each evening</h3>
+          <p>Open for dinner every evening. Hours are listed under Visit.</p>
+        </li>
+        <li class="fapt" data-jarvis="apare">
+          <h3>In Germantown</h3>
+          <p>Located in Nashville's Germantown neighborhood.</p>
+        </li>
+        <li class="fapt" data-jarvis="apare">
+          <h3>Weekends too</h3>
+          <p>Open in the evening on weekends as well as weeknights.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="onda" aria-hidden="true">
+    <div class="onda-banda">
+      <svg viewbox="0 0 1200 40" preserveaspectratio="none"><path fill="#FAFAF7" d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+      <svg viewbox="0 0 1200 40" preserveaspectratio="none"><path fill="#FAFAF7" d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+    </div>
+  </div>
+
+  <section class="bloc" id="mancare" aria-labelledby="titlu-menu">
+    <div class="bloc-in">
+      <div data-jarvis="apare">
+        <h2 id="titlu-menu">Dinner at 5th and Taylor</h2>
+      </div>
+      <ul class="carte" data-jarvis="apare">
+        <li>
+          <h3>American-inspired restaurant meals</h3>
+          <p>Dishes rooted in American cooking, prepared in the kitchen on 5th Avenue North.</p>
+        </li>
+        <li>
+          <h3>Dinner service</h3>
+          <p>Dinner is served each evening. Hours are listed under Visit.</p>
+        </li>
+        <li>
+          <h3>Reservations available</h3>
+          <p>Reservations can be made. Call now to ask for a table.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bloc" id="poze" aria-labelledby="titlu-galerie">
+    <div class="bloc-in">
+      <div data-jarvis="apare">
+        <h2 id="titlu-galerie">From the kitchen to the table</h2>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <img src="img/1.jpg" alt="Friends raising wine glasses at a dinner table" loading="lazy">
+        <img src="img/2.jpg" alt="Set restaurant table with glassware, plates and napkins" loading="lazy">
+        <img src="img/4.jpg" alt="Diners seated at a restaurant table in the evening" loading="lazy">
+        <img src="img/5.jpg" alt="Cook preparing a dish in a restaurant kitchen" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <div class="onda" aria-hidden="true">
+    <div class="onda-banda">
+      <svg viewbox="0 0 1200 40" preserveaspectratio="none"><path fill="#1F4E79" d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+      <svg viewbox="0 0 1200 40" preserveaspectratio="none"><path fill="#1F4E79" d="M0 20Q75 0 150 20T300 20T450 20T600 20T750 20T900 20T1050 20T1200 20V40H0Z"/></svg>
+    </div>
+  </div>
+
+  <section class="bloc bloc-albastru" id="vizita" aria-labelledby="titlu-vizita">
+    <div class="bloc-in vizita-in">
+      <div class="vizita-date" data-jarvis="apare">
+        <h2 id="titlu-vizita">Find us on 5th Avenue North</h2>
+        <address>1411 5th Avenue North<br>Nashville</address>
+        <p class="telefon">(615) 242-4747</p>
+        <div class="butoane" style="margin-top:2rem">
+          <a class="buton" href="tel:+16152424747">Call now</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=5th+and+Taylor+Nashville">Get directions</a>
+        </div>
+        <div class="ore">
+          <h3>Hours</h3>
+          <dl>
+            <div><dt>Sunday to Thursday</dt><dd>5pm to 8:30pm</dd></div>
+            <div><dt>Friday and Saturday</dt><dd>4:45pm to 9:30pm</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div data-jarvis="apare">
+        <iframe class="harta" src="https://www.openstreetmap.org/export/embed.html?bbox=-86.794586,36.176598,-86.786586,36.180598&amp;layer=mapnik&amp;marker=36.178598,-86.790586" title="Map showing 5th and Taylor at 1411 5th Avenue North, Nashville" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="subsol-in">
+    <p class="subsol-nume">5th and Taylor</p>
+    <p>1411 5th Avenue North, Nashville</p>
+    <p>Website concept (demo)</p>
+    <p>Illustrative photos from Pixabay: elle_kh, neshom, cattalin, Mariakray, Pexels</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
