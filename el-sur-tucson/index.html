@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Sur, Restaurant Food Service in Tucson</title>
+<meta name="description" content="El Sur provides restaurant food service in Tucson, with online ordering. Find us at 5603 East 22nd Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Rubik:wght@400;500;700&amp;display=swap">
+<style>
+:root{
+  --y:#FFD23F;
+  --k:#111111;
+  --r:#E63946;
+  --w:#FFFFFF;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --jump:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{
+  font-family:Rubik,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:1.0625rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--k);
+  background:var(--w);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+p+p{margin-top:.9rem}
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.pasul-sarit{position:absolute;left:1rem;top:-4rem;z-index:80;background:var(--y);color:var(--k);padding:.75rem 1rem;font-weight:700;text-decoration:none}
+.pasul-sarit:focus{top:1rem}
+
+section{padding-block:clamp(4rem,10vw,7.5rem)}
+.titlu{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(2.4rem,6vw,4.5rem);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+  margin-bottom:clamp(1.5rem,3vw,2.5rem);
+}
+
+/* Header */
+.antet{
+  position:sticky;top:0;z-index:30;
+  background:rgba(17,17,17,.8);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  color:var(--w);
+  transition:background .3s var(--ease);
+}
+.antet.derulat{background:rgba(17,17,17,.94)}
+.bara{
+  position:relative;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  min-height:4rem;
+  transition:min-height .3s var(--ease);
+}
+.antet.derulat .bara{min-height:3.25rem}
+.marca{
+  font-family:Anton,Impact,sans-serif;
+  font-size:1.6rem;
+  line-height:1;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  color:var(--y);
+  text-decoration:none;
+}
+.bara-dreapta{display:flex;align-items:center;gap:.5rem}
+.telefon-mic{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:2.75rem;padding:.5rem 1rem;
+  background:var(--y);color:var(--k);
+  font-weight:700;text-decoration:none;
+  border:2px solid var(--y);
+  transition:transform .15s var(--ease);
+}
+.telefon-mic:active{transform:scale(.97)}
+.meniu-btn{
+  width:2.75rem;height:2.75rem;
+  display:grid;place-items:center;
+  background:transparent;color:var(--w);
+  border:2px solid rgba(255,255,255,.5);
+  cursor:pointer;
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-linii{display:block;width:1.1rem;height:2px;background:var(--w);box-shadow:0 -6px 0 var(--w),0 6px 0 var(--w)}
+.meniu-lista{
+  display:none;
+  list-style:none;
+  position:absolute;top:100%;left:-1.25rem;right:-1.25rem;
+  flex-direction:column;
+  background:var(--k);
+  padding:.25rem 1.25rem 1rem;
+  border-top:1px solid rgba(255,255,255,.15);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:3rem;
+  color:var(--w);text-decoration:none;font-weight:500;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+.meniu-lista a:focus-visible,.marca:focus-visible,.telefon-mic:focus-visible,.meniu-btn:focus-visible,.btn:focus-visible,.footer-nav a:focus-visible{outline:3px solid var(--r);outline-offset:3px}
+
+/* Buttons */
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;min-width:44px;
+  padding:.85rem 1.5rem;
+  font:700 1rem/1 Rubik,system-ui,sans-serif;
+  text-decoration:none;
+  border:3px solid var(--k);
+  transition:transform .15s var(--ease), background-color .2s var(--ease), color .2s var(--ease);
+}
+.btn-neg{background:var(--k);color:var(--y)}
+.btn-neg:hover{background:#2a2a2a}
+.btn-contur{background:transparent;color:var(--k)}
+.btn-contur:hover{background:var(--k);color:var(--y)}
+.btn:active{transform:scale(.97)}
+
+/* Hero */
+.intro{
+  background:var(--y);
+  padding:clamp(2rem,6vw,4.5rem) 0 clamp(3rem,7vw,5rem);
+  border-bottom:.75rem solid var(--r);
+  overflow:hidden;
+}
+.nume-mare{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(5rem,27vw,21rem);
+  line-height:.84;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  color:var(--k);
+  margin-left:-.04em;
+}
+.lead{
+  font-size:clamp(1.15rem,2.2vw,1.4rem);
+  font-weight:500;
+  max-width:30ch;
+  margin-top:clamp(1.5rem,3vw,2.5rem);
+}
+.intro-jos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-top:2.5rem}
+.adresa-mica{font-weight:700}
+
+/* Stickers */
+.abtibil{
+  position:relative;
+  background:var(--w);
+  color:var(--k);
+  border:3px solid var(--k);
+  box-shadow:6px 6px 0 var(--umbra,var(--k));
+  padding:1.5rem;
+  width:100%;
+  max-width:26rem;
+  transform:rotate(var(--rot,0deg));
+  transition:transform .4s var(--jump), box-shadow .4s var(--jump);
+}
+.abtibil:hover,.abtibil:active{
+  transform:translateY(-10px) rotate(0deg);
+  box-shadow:10px 14px 0 var(--umbra,var(--k));
+}
+.r1{--rot:-2.5deg}
+.r2{--rot:2deg}
+.r3{--rot:-3.5deg}
+.abtibil h3{
+  font-family:Anton,Impact,sans-serif;
+  font-weight:400;
+  font-size:clamp(1.6rem,3.5vw,2.2rem);
+  line-height:1.05;
+  letter-spacing:-.01em;
+  text-transform:uppercase;
+  margin:1rem 0 .5rem;
+}
+.abtibil p{font-size:1rem}
+.pictograma{display:block;width:3.5rem;height:3.5rem}
+.rotund{
+  width:8.5rem;height:8.5rem;max-width:none;
+  border-radius:50%;
+  display:grid;place-items:center;
+  text-align:center;
+  padding:.75rem;
+  font-family:Anton,Impact,sans-serif;
+  font-size:1.35rem;
+  line-height:1.05;
+  text-transform:uppercase;
+  box-shadow:5px 5px 0 var(--k);
+  background:var(--w);
+}
+.rotund:hover,.rotund:active{box-shadow:8px 10px 0 var(--k)}
+
+/* About */
+.grila-doua{display:grid;gap:3rem;align-items:center}
+.despre .grila-doua > div:first-child p{font-size:1.1rem;max-width:40ch}
+.foto-mare{aspect-ratio:4/5;overflow:hidden;background:var(--k)}
+
+/* Services */
+.servicii{background:var(--k);color:var(--w);--umbra:var(--r)}
+.servicii .titlu{color:var(--y)}
+.abtibilduri{display:grid;gap:3rem}
+.abtibilduri > .apare{display:flex}
+.abtibilduri .abtibil{max-width:none}
+
+/* Advantages */
+.avantaje{background:var(--r);color:var(--k)}
+.avantaje .titlu{color:var(--k)}
+.lista-abtibile{list-style:none;display:grid;gap:2.75rem}
+.lista-abtibile li{display:flex}
+.lista-abtibile .abtibil{max-width:none;--umbra:var(--k)}
+
+/* Gallery */
+.galerie-sectiune{background:var(--w)}
+.galerie{display:grid;gap:.75rem}
+.foto{
+  position:relative;
+  margin:0;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  background:var(--k);
+  cursor:zoom-in;
+  transition:transform .4s var(--ease);
+}
+.foto:focus-visible{outline:3px solid var(--r);outline-offset:3px}
+.foto.marita{
+  position:fixed;
+  inset:4vh 4vw;
+  z-index:60;
+  aspect-ratio:auto;
+  padding:.75rem;
+  cursor:zoom-out;
+}
+.foto.marita img{object-fit:contain}
+html.galerie-deschisa{overflow:hidden}
+
+/* Contact */
+.contacto{background:var(--y)}
+.date{border-top:3px solid var(--k)}
+.date > div{
+  display:grid;grid-template-columns:7rem 1fr;gap:1rem;
+  padding:1.1rem 0;
+  border-bottom:2px solid var(--k);
+}
+.date dt{font-weight:700}
+.date dd{font-size:1.1rem}
+.date dd span{display:block}
+.date dd a{font-weight:700;text-decoration:underline;text-underline-offset:.2em}
+.date dd a:focus-visible{outline:3px solid var(--k);outline-offset:3px}
+.contacto .actiuni{margin-top:2rem}
+.harta{border:3px solid var(--k);min-height:22rem;background:var(--w)}
+.harta iframe{display:block;width:100%;height:100%;min-height:22rem;border:0}
+
+/* Footer */
+.pietre{background:var(--k);color:var(--w);padding-block:3rem}
+.marca-mare{
+  font-family:Anton,Impact,sans-serif;
+  font-size:clamp(3rem,10vw,5rem);
+  line-height:.9;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+  color:var(--y);
+}
+.pietre address{font-style:normal;margin-top:1rem}
+.footer-nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.5rem}
+.footer-nav a{color:var(--w);min-height:44px;display:inline-flex;align-items:center;text-decoration:none;font-weight:500}
+.footer-nav a:hover{color:var(--y)}
+.pietre .demo{margin-top:2rem;font-weight:700}
+.pietre .credit{margin-top:.5rem;font-size:.9rem;color:#d6d6d6}
+
+/* Reveal on scroll (only when JS is on) */
+html.js .apare{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .5s var(--ease), transform .5s var(--ease);
+}
+html.js .apare.vizibil{opacity:1;transform:none}
+
+/* Tablet and up */
+@media (min-width:600px){
+  .galerie{grid-template-columns:1fr 1fr}
+  .galerie .foto:first-child{grid-column:1/-1;aspect-ratio:21/9}
+}
+@media (min-width:860px){
+  .meniu-btn{display:none}
+  .meniu-lista{
+    display:flex;position:static;flex-direction:row;align-items:center;
+    gap:2.25rem;background:none;padding:0;border:0;left:auto;right:auto;
+  }
+  .meniu-lista a{border:0;min-height:auto;padding:.5rem 0}
+  .meniu-lista a:hover{color:var(--y)}
+  .grila-doua{grid-template-columns:1fr 1fr;gap:5rem}
+  .abtibilduri{grid-template-columns:1fr 1fr;gap:4rem 5rem}
+  .abtibilduri > .apare:nth-child(2){margin-top:5rem}
+  .lista-abtibile{grid-template-columns:repeat(3,1fr);gap:2rem;align-items:start}
+  .galerie{grid-template-columns:1fr 1fr}
+  .galerie .foto:first-child{aspect-ratio:21/9}
+  .date > div{grid-template-columns:9rem 1fr}
+}
+
+/* Accessibility preferences */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  html.js .apare{transform:none;transition:opacity .3s ease}
+  .abtibil:hover,.abtibil:active{transform:rotate(var(--rot,0deg));box-shadow:6px 6px 0 var(--umbra,var(--k))}
+  .rotund:hover,.rotund:active{box-shadow:5px 5px 0 var(--k)}
+  .btn:active,.telefon-mic:active,.meniu-btn:active{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet,.antet.derulat{background:var(--k);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .abtibil,.btn,.harta{border-width:4px}
+  .date > div{border-bottom-width:3px}
+  .antet{background:var(--k)}
+  .pietre .credit{color:var(--w)}
+}
+</style>
+</head>
+<body>
+
+<a class="pasul-sarit" href="#continut">Skip to content</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap bara">
+    <a class="marca" href="#top">El Sur</a>
+    <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#despre">About</a></li>
+      <li><a href="#servicii">Services</a></li>
+      <li><a href="#galerie">Gallery</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <div class="bara-dreapta">
+      <a class="telefon-mic" href="tel:+15207481032">Call now</a>
+      <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+        <span class="meniu-linii" aria-hidden="true"></span>
+        <span class="sr">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="intro" id="top" aria-labelledby="titlu-principal">
+    <div class="wrap">
+      <h1 id="titlu-principal" class="nume-mare">El Sur</h1>
+      <p class="lead">El Sur serves restaurant food on East 22nd Street in Tucson, with online ordering available.</p>
+      <div class="actiuni">
+        <a class="btn btn-neg" href="tel:+15207481032">Call now</a>
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=El+Sur+Tucson">Get directions</a>
+      </div>
+      <div class="intro-jos">
+        <div class="abtibil rotund r1" aria-hidden="false">
+          <span>Open daily from 8am</span>
+        </div>
+        <p class="adresa-mica">5603 East 22nd Street, Tucson</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap grila-doua">
+      <div class="apare" data-jarvis="apare">
+        <h2 id="titlu-despre" class="titlu">Restaurant food service in Tucson</h2>
+        <p>El Sur provides restaurant food service to the Tucson community.</p>
+        <p>Online ordering is available for your convenience.</p>
+        <p>Stop by our location on East 22nd Street for a meal.</p>
+      </div>
+      <figure class="foto-mare apare" data-jarvis="apare">
+        <img src="img/2.jpg" alt="Dinner table set with plates, napkins and wine glasses">
+      </figure>
+    </div>
+  </section>
+
+  <section class="servicii" id="servicii" aria-labelledby="titlu-servicii">
+    <div class="wrap">
+      <h2 id="titlu-servicii" class="titlu">Services</h2>
+      <div class="abtibilduri">
+        <div class="apare" data-jarvis="apare">
+          <div class="abtibil r1">
+            <svg class="pictograma" viewbox="0 0 64 64" aria-hidden="true" focusable="false">
+              <circle cx="32" cy="32" r="29" fill="#FFD23F" stroke="#111111" stroke-width="3"/>
+              <circle cx="32" cy="32" r="18" fill="#E63946"/>
+              <circle cx="32" cy="32" r="9" fill="#FFFFFF"/>
+            </svg>
+            <h3>Restaurant food service</h3>
+            <p>Available to customers at our location on East 22nd Street.</p>
+          </div>
+        </div>
+        <div class="apare" data-jarvis="apare">
+          <div class="abtibil r2">
+            <svg class="pictograma" viewbox="0 0 64 64" aria-hidden="true" focusable="false">
+              <rect x="18" y="4" width="28" height="56" rx="6" fill="#111111"/>
+              <rect x="22" y="12" width="20" height="36" fill="#FFD23F"/>
+              <rect x="25" y="18" width="14" height="5" fill="#E63946"/>
+              <rect x="25" y="28" width="14" height="5" fill="#111111"/>
+              <rect x="25" y="38" width="9" height="5" fill="#111111"/>
+              <circle cx="32" cy="54" r="2.5" fill="#FFFFFF"/>
+            </svg>
+            <h3>Online ordering</h3>
+            <p>Online ordering is available for your convenience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="avantaje" aria-labelledby="titlu-avantaje">
+    <div class="wrap">
+      <h2 id="titlu-avantaje" class="titlu">Why stop by</h2>
+      <ul class="lista-abtibile">
+        <li class="apare" data-jarvis="apare">
+          <div class="abtibil r1">
+            <svg class="pictograma" viewbox="0 0 64 64" aria-hidden="true" focusable="false">
+              <circle cx="32" cy="32" r="28" fill="#FFD23F" stroke="#111111" stroke-width="3"/>
+              <polyline points="32 14 32 32 44 40" fill="none" stroke="#111111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Flexible hours</h3>
+            <p>Open every day of the week.</p>
+          </div>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <div class="abtibil r2">
+            <svg class="pictograma" viewbox="0 0 64 64" aria-hidden="true" focusable="false">
+              <rect x="18" y="4" width="28" height="56" rx="6" fill="#111111"/>
+              <rect x="22" y="12" width="20" height="36" fill="#FFD23F"/>
+              <rect x="25" y="18" width="14" height="5" fill="#E63946"/>
+              <rect x="25" y="28" width="14" height="5" fill="#111111"/>
+              <circle cx="32" cy="54" r="2.5" fill="#FFFFFF"/>
+            </svg>
+            <h3>Online ordering</h3>
+            <p>Order food online.</p>
+          </div>
+        </li>
+        <li class="apare" data-jarvis="apare">
+          <div class="abtibil r3">
+            <svg class="pictograma" viewbox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M32 6c-12 0-20 9-20 20 0 15 20 32 20 32s20-17 20-32c0-11-8-20-20-20z" fill="#E63946" stroke="#111111" stroke-width="3"/>
+              <circle cx="32" cy="26" r="7" fill="#FFFFFF" stroke="#111111" stroke-width="3"/>
+            </svg>
+            <h3>Easy to find</h3>
+            <p>Located on East 22nd Street.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <h2 id="titlu-galerie" class="titlu">Gallery</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure class="foto" tabindex="0">
+          <img src="img/3.jpg" alt="Dining room with a brick wall, chairs and warm lights above the tables">
+        </figure>
+        <figure class="foto" tabindex="0">
+          <img src="img/4.jpg" alt="Table set with glassware and cutlery in warm evening light">
+        </figure>
+        <figure class="foto" tabindex="0">
+          <img src="img/1.jpg" alt="Diners sitting down to dinner at a restaurant table">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap grila-doua">
+      <div class="apare" data-jarvis="apare">
+        <h2 id="titlu-contact" class="titlu">Find us on East 22nd Street</h2>
+        <dl class="date">
+          <div>
+            <dt>Address</dt>
+            <dd>5603 East 22nd Street, Tucson</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+15207481032">(520) 748-1032</a></dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>
+              <span>Monday to Thursday: 8am to 9pm</span>
+              <span>Friday and Saturday: 8am to 10pm</span>
+              <span>Sunday: 8am to 9pm</span>
+            </dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="btn btn-neg" href="tel:+15207481032">Call now</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=El+Sur+Tucson">Get directions</a>
+        </div>
+      </div>
+      <div class="harta apare" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-110.876740,32.204609,-110.868740,32.208609&amp;layer=mapnik&amp;marker=32.206609,-110.872740" title="Map showing El Sur at 5603 East 22nd Street, Tucson" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pietre">
+  <div class="wrap">
+    <p class="marca-mare">El Sur</p>
+    <address>
+      5603 East 22nd Street<br>
+      Tucson, Arizona<br>
+      <a href="tel:+15207481032">(520) 748-1032</a>
+    </address>
+    <nav aria-label="Footer">
+      <div class="footer-nav">
+        <a href="#despre">About</a>
+        <a href="#servicii">Services</a>
+        <a href="#galerie">Gallery</a>
+        <a href="#contact">Visit</a>
+      </div>
+    </nav>
+    <p class="demo">Website concept (demo)</p>
+    <p class="credit">Illustrative photos from Pixabay: Mariakray, neshom, Pexels, JoelFazhari</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
