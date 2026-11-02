@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayahuasca, cocktailuri peruviene în Timișoara</title>
+<meta name="description" content="Ayahuasca, bar cu cocktailuri cu specific peruvian pe strada Gheorghe Lazăr din Timișoara.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&amp;family=Outfit:wght@500;600;700&amp;display=swap">
+<style>
+:root{
+  --fundal:#1d120e;
+  --fundal-2:#291a13;
+  --text:#fff6e5;
+  --text-2:#f5e9d6;
+  --culoare:#f59e0b;
+  --linie:rgba(255,246,229,.14);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;background:var(--fundal);color:var(--text);font-family:Lora,Georgia,serif;font-size:1.0625rem;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Outfit,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.1;margin:0;font-weight:600}
+p{margin:0}
+ul{margin:0;padding:0}
+.wrap{width:min(72rem,calc(100% - 2.5rem));margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.saltare{position:absolute;left:1rem;top:-4rem;z-index:100;padding:.6rem 1rem;border-radius:999px;background:var(--culoare);color:#1d120e;font-family:Outfit,sans-serif;font-weight:600;text-decoration:none;transition:top .2s}
+.saltare:focus{top:1rem}
+
+/* Butoane */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.5rem;border-radius:999px;font-family:Outfit,sans-serif;font-weight:600;font-size:1rem;line-height:1;text-decoration:none;transition:transform .15s var(--ease),filter .2s,border-color .2s,color .2s;-webkit-tap-highlight-color:transparent}
+.btn-main{background:var(--culoare);color:#1d120e}
+.btn-main:hover{filter:brightness(1.08)}
+.btn-contur{border:1.5px solid rgba(255,246,229,.82);color:var(--text)}
+.btn-contur:hover{border-color:var(--culoare);color:var(--culoare)}
+.btn:active{transform:scale(.97)}
+.btn-mic{min-height:2.75rem;padding:.5rem 1rem;font-size:.95rem}
+.botoane{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:2.25rem}
+.botoane .btn{flex:1 1 13rem}
+:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+
+/* Antet cu sticlă */
+.antet{position:sticky;top:0;z-index:40;background:rgba(29,18,14,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:background-color .3s var(--ease),border-color .3s}
+.antet.derulat{background:rgba(29,18,14,.84);border-bottom-color:var(--linie)}
+.antet-in{display:flex;align-items:center;justify-content:space-between;min-height:4rem;gap:1rem}
+.marca{display:inline-flex;align-items:center;gap:.5rem;font-family:Outfit,sans-serif;font-weight:600;font-size:1.15rem;letter-spacing:-.01em;text-decoration:none;border-radius:.5rem}
+.antet-dr{display:flex;align-items:center;gap:.5rem}
+.antet-dr nav{order:0}
+.btn-mic{order:1}
+.meniu-btn{order:2}
+.meniu-lista{display:none;position:absolute;top:100%;left:0;right:0;padding:.25rem 1.25rem 1.25rem;list-style:none;background:var(--fundal-2);border-bottom:1px solid var(--linie)}
+.meniu-lista.deschis{display:block}
+.meniu-lista a{display:flex;align-items:center;min-height:3rem;font-family:Outfit,sans-serif;font-size:1.1rem;font-weight:500;text-decoration:none;border-bottom:1px solid var(--linie)}
+.meniu-btn{width:2.75rem;height:2.75rem;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0;border:1px solid var(--linie);border-radius:50%;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.meniu-btn span{display:block;width:1.1rem;height:2px;border-radius:2px;background:var(--text);transition:transform .3s var(--ease),opacity .2s}
+.meniu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.meniu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (min-width:860px){
+  .meniu-btn{display:none}
+  .meniu-lista{display:flex;position:static;gap:2rem;padding:0;background:none;border:0}
+  .meniu-lista a{min-height:auto;border:0;font-size:.98rem;font-weight:500;color:var(--text-2);transition:color .2s}
+  .meniu-lista a:hover{color:var(--text)}
+  .antet-dr{gap:2.25rem}
+}
+
+/* Prima secțiune */
+.inicio{position:relative;overflow:hidden;padding:4rem 0 clamp(3.75rem,8vw,5rem)}
+.inicio::before{content:"";position:absolute;width:min(60rem,140vw);aspect-ratio:1;right:-18vw;top:-22rem;border-radius:50%;background:radial-gradient(closest-side,rgba(245,158,11,.22),rgba(245,158,11,0));animation:deriva 16s ease-in-out infinite alternate;pointer-events:none}
+.inicio-in{position:relative;display:grid;gap:2.75rem;align-items:center}
+.inicio-foto{width:min(100%,20rem);aspect-ratio:4/5;margin-inline:auto;object-fit:cover;border-radius:1.75rem;border:1px solid var(--linie)}
+@media (min-width:860px){
+  .inicio{padding-top:6rem}
+  .inicio-in{grid-template-columns:1.2fr .8fr;gap:4rem}
+  .inicio-foto{width:min(100%,26rem);margin-inline:0 0}
+}
+.inicio h1{font-size:clamp(3.5rem,15vw,9rem);font-weight:700;line-height:1;letter-spacing:-.02em}
+.lead{margin-top:1.25rem;font-family:Lora,Georgia,serif;font-style:italic;font-size:clamp(1.25rem,3vw,1.55rem);line-height:1.4;color:var(--text)}
+.inicio-adresa{margin-top:1rem;max-width:30rem;color:var(--text-2)}
+.i1,.i2,.i3,.i4{animation:entra .7s var(--ease) both}
+.i1{animation-delay:.05s}
+.i2{animation-delay:.15s}
+.i3{animation-delay:.25s}
+.i4{animation-delay:.35s}
+
+/* Secțiuni */
+.sectiune{padding:clamp(3.75rem,8vw,5rem) 0}
+.sectiune-alt{background:var(--fundal-2)}
+h2{font-size:clamp(2rem,5vw,3.25rem);font-weight:600}
+
+.despre-text{max-width:44rem}
+.despre-text h2{margin-bottom:1.75rem}
+.despre-text p{font-size:clamp(1.15rem,2.4vw,1.35rem);line-height:1.6;color:var(--text)}
+.despre-text p+p{margin-top:1.25rem;font-size:1.0625rem;color:var(--text-2)}
+
+.meniu h2{margin-bottom:3rem}
+.item-meniu{max-width:40rem;padding-top:2rem;border-top:1px solid var(--linie)}
+.item-meniu h3{font-size:clamp(1.5rem,3.5vw,2rem);margin-bottom:.75rem}
+.item-meniu p{font-size:1.1rem;color:var(--text-2)}
+.merite{list-style:none;margin:3.5rem 0 0;display:grid;gap:1.5rem}
+.merite li{display:flex;align-items:flex-start;gap:1rem;padding-top:1.5rem;border-top:1px solid var(--linie)}
+.merite span{flex:none;font-size:1.6rem;line-height:1}
+@media (min-width:700px){.merite{grid-template-columns:1fr 1fr}}
+
+.galerie-cap{display:grid;gap:1rem;margin-bottom:3rem}
+.galerie-cap p{color:var(--text-2)}
+.galerie{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem}
+.foto{position:relative;display:block;margin:0;padding:0;border:0;border-radius:1.5rem;overflow:hidden;background:var(--fundal-2);aspect-ratio:1/1;cursor:zoom-in;-webkit-tap-highlight-color:transparent;transition:transform .2s var(--ease)}
+.foto:first-child{grid-column:span 2;aspect-ratio:4/3}
+.foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.foto:hover img{transform:scale(1.04)}
+.foto:active{transform:scale(.98)}
+@media (min-width:860px){
+  .galerie{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:15rem}
+  .foto,.foto:first-child{aspect-ratio:auto;grid-column:span 3}
+  .foto:first-child{grid-row:span 2}
+}
+.foto.marita{position:fixed;inset:3vh 3vw;z-index:60;width:auto;height:auto;aspect-ratio:auto;grid-column:auto;grid-row:auto;border-radius:1.75rem;background:#120a07;cursor:zoom-out}
+.foto.marita img{object-fit:contain}
+.foto.marita:hover img{transform:none}
+html.galerie-deschisa{overflow:hidden}
+html.galerie-deschisa body::before{content:"";position:fixed;inset:0;z-index:55;background:rgba(12,7,5,.82)}
+
+.contact-in{display:grid;gap:3.5rem}
+@media (min-width:860px){.contact-in{grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}}
+.contact-in h2{margin-bottom:1.25rem}
+.contact-in .texte{color:var(--text-2);max-width:30rem}
+.fapte{margin:2.5rem 0 0;display:grid}
+.fapte>div{padding:1.1rem 0;border-top:1px solid var(--linie)}
+.fapte dt{margin-bottom:.3rem;font-family:Outfit,sans-serif;font-weight:500;font-size:.95rem;color:var(--culoare)}
+.fapte dd{margin:0;font-size:1.05rem}
+.fapte dd+dd{margin-top:.25rem}
+.harta{overflow:hidden;border-radius:2rem;border:1px solid var(--linie)}
+.harta iframe{display:block;width:100%;height:min(26rem,70vw);border:0;filter:saturate(.75) brightness(.92)}
+
+.subsol{padding:2.5rem 0 3rem;border-top:1px solid var(--linie);font-size:.9rem;color:var(--text-2)}
+.subsol-in{display:grid;gap:.5rem}
+
+/* Dezvăluire la derulare (fără JS, totul e vizibil) */
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(1.25rem);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Animații */
+@keyframes entra{from{opacity:0;transform:translateY(1rem)}to{opacity:1;transform:none}}
+@keyframes deriva{from{transform:translate(0,0) scale(1)}to{transform:translate(-4rem,3rem) scale(1.08)}}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+
+/* Preferințe */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .inicio::before{animation:none}
+  .i1,.i2,.i3,.i4{animation-name:estompare;animation-duration:.4s;animation-delay:0s}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+  html.js [data-jarvis="apare"].vizibil{transform:none}
+  .btn:active{transform:none;opacity:.85}
+  .foto:active{transform:none;opacity:.9}
+  .foto img,.foto:hover img{transition:none;transform:none}
+  .meniu-btn span{transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet{-webkit-backdrop-filter:none;backdrop-filter:none;background:var(--fundal)}
+  .antet.derulat{background:var(--fundal)}
+}
+@media (prefers-contrast: more){
+  :root{--text-2:#fff6e5;--linie:rgba(255,246,229,.5)}
+  .btn-contur{border-color:var(--text)}
+  .lead{font-style:normal}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Ayahuasca</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Ayahuasca%20%28demo.mk-studio.ro%2Fayahuasca-timisoara%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+<a class="saltare" href="#continut">Mergi la conținut</a>
+
+<header class="antet" data-jarvis="antet" id="sus">
+  <div class="wrap antet-in">
+    <a class="marca" href="#sus"><span aria-hidden="true">🍹</span>Ayahuasca</a>
+    <div class="antet-dr">
+      <nav aria-label="Principal">
+        <ul class="meniu-lista" id="nav-lista" data-jarvis="meniu-lista">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#meniu">Meniu</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-main btn-mic" href="tel:0721729943">Sună acum</a>
+      <button class="meniu-btn" type="button" aria-label="Deschide navigarea" aria-expanded="false" aria-controls="nav-lista" data-jarvis="meniu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="inicio" aria-labelledby="titlu-inicio">
+    <div class="wrap inicio-in">
+      <div>
+        <h1 class="i1" id="titlu-inicio">Ayahuasca</h1>
+        <p class="lead i2">Cocktailuri peruviene în Timișoara</p>
+        <p class="inicio-adresa i3">Bar pe strada Gheorghe Lazăr, în Antene. Deschis seara, de la 16:00.</p>
+        <div class="botoane i4">
+          <a class="btn btn-main" href="tel:0721729943">Sună acum</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Ayahuasca+Timi%C8%99oara">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="i2">
+        <img class="inicio-foto" src="img/1.jpg" alt="Cocktailuri servite la bar, în pahare cu gheață">
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="despre-text" data-jarvis="apare">
+        <h2 id="t-despre">Despre Ayahuasca</h2>
+        <p>Ayahuasca este un bar pe strada Gheorghe Lazăr din Timișoara, unde se servesc cocktailuri cu specific peruvian.</p>
+        <p>Programul este gândit pentru serile în oraș. Locul se adresează celor care caută băuturi inspirate de cultura Perului.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune-alt meniu" id="meniu" aria-labelledby="t-meniu">
+    <div class="wrap">
+      <h2 id="t-meniu" data-jarvis="apare">Meniu</h2>
+      <div class="item-meniu" data-jarvis="apare">
+        <h3>Cocktailuri cu specific peruvian</h3>
+        <p>Băuturi inspirate de cultura Perului, servite la bar.</p>
+      </div>
+      <ul class="merite">
+        <li data-jarvis="apare"><span aria-hidden="true">🍸</span><p>Bar specializat în cocktailuri.</p></li>
+        <li data-jarvis="apare"><span aria-hidden="true">🌙</span><p>Deschis seara, de la 16:00. Vineri și sâmbătă până la 02:00.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sectiune" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <div class="galerie-cap">
+        <h2 id="t-galerie" data-jarvis="apare">Galerie</h2>
+        <p data-jarvis="apare">Apasă pe o fotografie ca să o vezi mai mare.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <button class="foto" type="button"><img src="img/1.jpg" alt="Cocktailuri servite la bar, în pahare cu gheață" loading="lazy"></button>
+        <button class="foto" type="button"><img src="img/2.jpg" alt="Margarita rece, într-un pahar cu gheață" loading="lazy"></button>
+        <button class="foto" type="button"><img src="img/3.jpg" alt="Cocktail cu gheață, lămâie și pai" loading="lazy"></button>
+        <button class="foto" type="button"><img src="img/4.jpg" alt="Cocktailuri colorate, cu lime și căpșuni" loading="lazy"></button>
+        <button class="foto" type="button"><img src="img/5.jpg" alt="Femeie care ridică un pahar la bar" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune-alt" id="contact" aria-labelledby="t-contact">
+    <div class="wrap contact-in">
+      <div>
+        <h2 id="t-contact" data-jarvis="apare">Contact</h2>
+        <p class="texte" data-jarvis="apare">Sună dacă ai o întrebare sau deschide harta ca să vezi drumul până la bar.</p>
+        <dl class="fapte" data-jarvis="apare">
+          <div>
+            <dt>Adresă</dt>
+            <dd>Strada Gheorghe Lazăr, Antene, Timișoara</dd>
+          </div>
+          <div>
+            <dt>Program</dt>
+            <dd>Marți până joi și duminică: 16:00 – 24:00</dd>
+            <dd>Vineri și sâmbătă: 16:00 – 02:00</dd>
+          </div>
+          <div>
+            <dt>Telefon</dt>
+            <dd><a href="tel:0721729943">0721 729 943</a></dd>
+          </div>
+        </dl>
+        <div class="botoane" data-jarvis="apare">
+          <a class="btn btn-main" href="tel:0721729943">Sună acum</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Ayahuasca+Timi%C8%99oara">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=21.221464,45.755855,21.229464,45.759855&amp;layer=mapnik&amp;marker=45.757855,21.225464" title="Harta Ayahuasca, strada Gheorghe Lazăr, Timișoara" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-in">
+    <p>Ayahuasca, strada Gheorghe Lazăr, Timișoara</p>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: PhungNguyenPhotography, Pexels, OurWhiskyFoundation</p>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
