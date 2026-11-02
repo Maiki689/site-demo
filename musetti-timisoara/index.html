@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musetti, cafenea în Cetate, Timișoara</title>
+<meta name="description" content="Loc pentru cafea în cartierul Cetate, pe strada Eugeniu de Savoya din Timișoara.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --accent:#b45309;
+  --titlu:'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --curba:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--alb);
+  color:var(--espresso);
+  font-family:var(--text);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+img{display:block;max-width:100%}
+a{color:inherit;text-underline-offset:.25em}
+p{margin:0}
+h1,h2,h3{font-family:var(--titlu);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin:0}
+ul{margin:0;padding:0}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.container{
+  max-width:72rem;
+  margin-inline:auto;
+  padding-inline:clamp(1.25rem,5vw,3rem);
+}
+
+.sectiune{padding:clamp(3.5rem,8vw,6rem) 0}
+.sectiune-lapte{background:var(--lapte)}
+
+.titlu-sectiune{
+  font-size:clamp(2.25rem,5vw,3.5rem);
+  margin-bottom:1rem;
+}
+
+.text-mare{
+  font-size:clamp(1.125rem,2vw,1.375rem);
+  line-height:1.6;
+}
+
+.muted{color:rgba(59,42,32,.8)}
+
+/* Butoane */
+.buton{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:2.75rem;
+  padding:.6rem 1.25rem;
+  border:1px solid transparent;
+  border-radius:.25rem;
+  font:500 .95rem/1.2 var(--text);
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .15s var(--curba),background-color .25s,color .25s,border-color .25s;
+}
+.buton:active{transform:scale(.97)}
+.buton-principal{background:var(--espresso);color:var(--alb)}
+.buton-principal:hover{background:var(--accent)}
+.buton-contur{background:transparent;border-color:var(--espresso);color:var(--espresso)}
+.buton-contur:hover{background:var(--lapte)}
+
+/* Antet */
+.antet{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s,background-color .3s;
+}
+.antet.derulat{border-bottom-color:rgba(59,42,32,.12)}
+.antet-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  min-height:4.25rem;
+}
+.logo{
+  font-family:var(--titlu);
+  font-weight:600;
+  font-size:1.25rem;
+  letter-spacing:-.02em;
+  text-decoration:none;
+  padding:.5rem 0;
+}
+.antet-dreapta{display:flex;align-items:center;gap:.5rem}
+.buton-mic{display:none;min-height:2.75rem;padding:.5rem 1rem}
+
+.meniu-buton{
+  display:inline-flex;
+  align-items:center;
+  min-height:2.75rem;
+  padding:0 .9rem;
+  background:transparent;
+  border:1px solid rgba(59,42,32,.25);
+  border-radius:.25rem;
+  color:var(--espresso);
+  font:500 .95rem/1 var(--text);
+  cursor:pointer;
+  transition:transform .15s var(--curba),background-color .25s;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton:hover{background:var(--lapte)}
+
+.meniu-lista{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  display:none;
+  flex-direction:column;
+  background:var(--alb);
+  border-bottom:1px solid var(--lapte);
+  list-style:none;
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a{
+  display:flex;
+  align-items:center;
+  min-height:3rem;
+  padding:0 clamp(1.25rem,5vw,3rem);
+  border-top:1px solid var(--lapte);
+  text-decoration:none;
+  font-size:1rem;
+  transition:color .2s;
+}
+.meniu-lista a:hover{color:var(--accent)}
+
+/* Prima secțiune */
+.intro{padding:1.5rem 0 0}
+.titlu-mare{
+  font-size:clamp(2.5rem,9vw,4.75rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
+  margin:0 0 .75rem -.04em;
+}
+.lead{
+  font-family:var(--titlu);
+  font-weight:500;
+  font-size:clamp(1.25rem,2.4vw,1.5rem);
+  line-height:1.35;
+  letter-spacing:-.01em;
+}
+.adresa-scurta{margin-top:.5rem}
+.actiuni{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.75rem;
+  max-width:32rem;
+  margin-top:1.25rem;
+}
+.actiuni .buton{width:100%;padding-inline:.75rem}
+
+.foto-principala{
+  margin:2rem 0 0;
+  border-radius:.375rem;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:var(--lapte);
+}
+.foto-principala img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 40%;
+}
+
+/* Despre */
+.intro + .sectiune{padding-top:clamp(2.5rem,6vw,4rem)}
+.despre-grila{display:grid;gap:0}
+.avantaje{
+  list-style:none;
+  display:grid;
+  gap:1.5rem;
+  margin-top:2rem;
+}
+.avantaje li{
+  border-top:1px solid var(--lapte);
+  padding-top:1.25rem;
+}
+.avantaje h3{font-size:1.25rem;margin-bottom:.5rem}
+
+/* Meniu */
+.produs{
+  display:grid;
+  gap:.5rem;
+  padding:2rem 0;
+  border-top:1px solid rgba(59,42,32,.2);
+}
+.produs:last-of-type{border-bottom:1px solid rgba(59,42,32,.2)}
+.produs h3{font-size:clamp(1.75rem,4vw,2.5rem)}
+.meniu-nota{margin-top:2.5rem}
+.meniu-nota a{font-weight:500}
+
+/* Galerie */
+.galerie-nota{margin-top:.75rem;font-size:.9rem;color:rgba(59,42,32,.8)}
+.galerie-grila{
+  display:grid;
+  gap:.75rem;
+  grid-template-columns:1fr;
+  margin-top:3rem;
+}
+.poza{
+  position:relative;
+  display:block;
+  width:100%;
+  padding:0;
+  margin:0;
+  border:0;
+  background:var(--lapte);
+  aspect-ratio:4/3;
+  overflow:hidden;
+  cursor:zoom-in;
+  transition:transform .15s var(--curba);
+}
+.poza:active{transform:scale(.99)}
+.poza img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s var(--curba);
+}
+.poza:hover img{transform:scale(1.03)}
+.poza.marita{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  width:auto;
+  aspect-ratio:auto;
+  display:grid;
+  place-items:center;
+  padding:1.25rem;
+  background:rgba(59,42,32,.94);
+  cursor:zoom-out;
+}
+.poza.marita img{
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:calc(100dvh - 2.5rem);
+  object-fit:contain;
+  transform:none;
+}
+html.galerie-deschisa{overflow:hidden}
+
+/* Contact */
+.contact-grila{display:grid;gap:3rem}
+.telefon{
+  display:inline-flex;
+  align-items:center;
+  min-height:2.75rem;
+  font-family:var(--titlu);
+  font-weight:600;
+  font-size:clamp(1.75rem,4vw,2.5rem);
+  letter-spacing:-.01em;
+  text-decoration:none;
+}
+.telefon-rand{margin-top:1.5rem}
+.contact-detalii p{margin-bottom:.5rem}
+.contact-actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.harta iframe{
+  display:block;
+  width:100%;
+  height:24rem;
+  min-height:18rem;
+  border:0;
+  background:var(--lapte);
+}
+
+/* Subsol */
+.subsol{
+  background:var(--espresso);
+  color:var(--alb);
+  padding:4rem 0 2.5rem;
+}
+.subsol a:focus-visible{outline-color:var(--alb)}
+.subsol-grila{display:grid;gap:2.5rem}
+.subsol-nume{
+  font-family:var(--titlu);
+  font-weight:600;
+  font-size:1.5rem;
+  letter-spacing:-.02em;
+  margin-bottom:.5rem;
+}
+.subsol p{color:rgba(255,255,255,.85)}
+.subsol-dreapta p+p{margin-top:.5rem}
+.credit{font-size:.85rem;color:rgba(255,255,255,.7)!important;margin-top:1.5rem!important}
+.subsol-sus{
+  display:inline-flex;
+  align-items:center;
+  min-height:2.75rem;
+  color:var(--alb)!important;
+}
+
+/* Apariția la derulare (doar cu JS) */
+html.js [data-jarvis="apare"]{
+  opacity:0;
+  transform:translateY(1.25rem);
+  transition:opacity .5s var(--curba),transform .5s var(--curba);
+}
+html.js [data-jarvis="apare"].vizibil{
+  opacity:1;
+  transform:none;
+}
+
+/* Breakpoints */
+@media (min-width:480px){
+  .buton-mic{display:inline-flex}
+}
+
+@media (min-width:640px){
+  .galerie-grila{grid-template-columns:repeat(2,1fr)}
+  .produs{grid-template-columns:1fr 1fr;align-items:baseline;gap:2rem}
+}
+
+@media (min-width:860px){
+  .intro{padding-top:2.5rem}
+  .foto-principala{aspect-ratio:21/9;margin-top:2.5rem}
+
+  .meniu-buton{display:none}
+  .meniu-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    gap:2.25rem;
+    background:transparent;
+    border:0;
+    margin-right:auto;
+    margin-left:2.5rem;
+  }
+  .meniu-lista.deschis{display:flex}
+  .meniu-lista a{
+    min-height:auto;
+    padding:0;
+    border:0;
+    font-size:.95rem;
+    font-weight:500;
+  }
+  .meniu-lista a:hover{color:var(--accent)}
+
+  .despre-grila{grid-template-columns:5fr 7fr;gap:3rem}
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2.5rem}
+
+  .galerie-grila{grid-template-columns:repeat(3,1fr);gap:1rem}
+
+  .contact-grila{grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
+  .harta iframe{height:28rem}
+
+  .subsol-grila{grid-template-columns:1.2fr 1fr;align-items:start}
+  .subsol-dreapta{text-align:right}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition-property:opacity,background-color,border-color,color!important;
+    transition-duration:.2s!important;
+  }
+  html.js [data-jarvis="apare"]{transform:none}
+  .poza:hover img{transform:none}
+  .poza:active{transform:none}
+  .buton:active,.meniu-buton:active{transform:none}
+}
+
+@media (prefers-reduced-transparency: reduce){
+  .antet{
+    background:var(--alb);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+
+@media (prefers-contrast: more){
+  body{color:#000}
+  .muted,.galerie-nota{color:var(--espresso)}
+  .antet.derulat,.meniu-lista a{border-color:var(--espresso)}
+  .buton-contur,.meniu-buton{border-width:2px;border-color:var(--espresso)}
+  .produs{border-color:var(--espresso)}
+  .avantaje li{border-top-color:var(--espresso)}
+  .subsol p,.credit{color:var(--alb)!important}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Musetti</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Musetti%20%28demo.mk-studio.ro%2Fmusetti-timisoara%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="container antet-inner">
+    <a class="logo" href="#acasa">Musetti</a>
+    <nav aria-label="Principal">
+      <ul class="meniu-lista" data-jarvis="meniu-lista" id="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="antet-dreapta">
+      <a class="buton buton-principal buton-mic" href="tel:0730101546">Sună acum</a>
+      <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">Meniu</button>
+    </div>
+  </div>
+</header>
+
+<main id="continut">
+
+  <section class="intro" id="acasa">
+    <div class="container">
+      <h1 class="titlu-mare">Musetti</h1>
+      <p class="lead">Cafea în Cetate, Timișoara</p>
+      <p class="adresa-scurta muted">Strada Eugeniu de Savoya 7, Timișoara</p>
+      <div class="actiuni">
+        <a class="buton buton-principal" href="tel:0730101546">Sună acum</a>
+        <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Musetti+Timi%C8%99oara">Deschide în Google Maps</a>
+      </div>
+      <figure class="foto-principala">
+        <img src="img/1.jpg" alt="Mâini care toarnă cafea într-o ceașcă">
+      </figure>
+    </div>
+  </section>
+
+  <section class="sectiune" id="despre">
+    <div class="container despre-grila">
+      <div data-jarvis="apare">
+        <h2 class="titlu-sectiune">Despre</h2>
+      </div>
+      <div data-jarvis="apare">
+        <p class="text-mare">Musetti este o cafenea în cartierul Cetate, din Timișoara. Poți veni cu prietenii sau să iei o pauză liniștită. Cafeneaua se află pe strada Eugeniu de Savoya 7.</p>
+        <ul class="avantaje">
+          <li data-jarvis="apare">
+            <h3>Cartierul Cetate</h3>
+            <p class="muted">Strada Eugeniu de Savoya 7, Timișoara</p>
+          </li>
+          <li data-jarvis="apare">
+            <h3>Atmosferă relaxată</h3>
+            <p class="muted">Potrivit pentru întâlniri cu prietenii</p>
+          </li>
+          <li data-jarvis="apare">
+            <h3>Cafea simplă</h3>
+            <p class="muted">Cafea pentru orice moment al zilei</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune-lapte" id="meniu">
+    <div class="container">
+      <h2 class="titlu-sectiune" data-jarvis="apare">Meniu</h2>
+      <div data-jarvis="apare">
+        <div class="produs">
+          <h3>Cafea</h3>
+          <p class="muted">Cafea servită în cartierul Cetate</p>
+        </div>
+      </div>
+      <p class="meniu-nota" data-jarvis="apare">Pentru prețuri și detalii, sunați la <a href="tel:0730101546">0730 101 546</a>.</p>
+    </div>
+  </section>
+
+  <section class="sectiune" id="galerie">
+    <div class="container">
+      <h2 class="titlu-sectiune" data-jarvis="apare">Galerie</h2>
+      <p class="galerie-nota" data-jarvis="apare">Fotografii ilustrative, de stoc. Apăsați pe o fotografie ca să o vedeți mai mare.</p>
+
+      <div class="galerie-grila" data-jarvis="galerie">
+        <button class="poza" type="button">
+          <img src="img/1.jpg" alt="Mâini care toarnă cafea într-o ceașcă" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/2.jpg" alt="Prieteni care stau la o masă și discută" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/3.jpg" alt="Boabe de cafea lângă o ceașcă" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/4.jpg" alt="Cafea cu lapte și zahăr pe masă" loading="lazy">
+        </button>
+        <button class="poza" type="button">
+          <img src="img/5.jpg" alt="Doi oameni la o masă într-o cafenea" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune sectiune-lapte" id="contact">
+    <div class="container contact-grila">
+      <div class="contact-detalii" data-jarvis="apare">
+        <h2 class="titlu-sectiune">Contact</h2>
+        <p class="text-mare">Strada Eugeniu de Savoya 7, Timișoara</p>
+        <p class="telefon-rand"><a class="telefon" href="tel:0730101546">0730 101 546</a></p>
+        <div class="contact-actiuni">
+          <a class="buton buton-principal" href="tel:0730101546">Sună acum</a>
+          <a class="buton buton-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Musetti+Timi%C8%99oara">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=21.224920,45.754607,21.232920,45.758608&amp;layer=mapnik&amp;marker=45.756608,21.228920" title="Harta cu locul Musetti, pe strada Eugeniu de Savoya 7" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="container subsol-grila">
+    <div>
+      <p class="subsol-nume">Musetti</p>
+      <p>Strada Eugeniu de Savoya 7, Timișoara</p>
+      <p><a class="subsol-sus" href="#acasa">Înapoi sus</a></p>
+    </div>
+    <div class="subsol-dreapta">
+      <p>Model de site (demo)</p>
+      <p class="credit">Fotografii ilustrative de pe Pixabay: Pexels, StockSnap, acekreations, shixugang, Cloud1902</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
