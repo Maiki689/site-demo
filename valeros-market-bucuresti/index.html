@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valeros Market, magazin de proximitate în București</title>
+<meta name="description" content="Valeros Market, magazin de proximitate pe Strada Teiul Doamnei 5, București. Pâine, lactate, fructe, legume, băuturi și produse pentru casă.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&amp;family=Rubik:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --gri:#F4F4F2;
+  --negru:#161616;
+  --culoare:#be123c;
+  --titlu:"Outfit", system-ui, sans-serif;
+  --text:"Rubik", system-ui, sans-serif;
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --margine:clamp(1.25rem,4vw,2rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--text);font-size:1.0625rem;line-height:1.5;color:var(--negru);
+  background:var(--alb);overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+ul{list-style:none}
+h1,h2,h3{font-family:var(--titlu);letter-spacing:-.02em;line-height:1.08;font-weight:700}
+a:focus-visible,button:focus-visible{outline:3px solid var(--negru);outline-offset:3px}
+
+.wrap{width:min(1120px, 100% - 2 * var(--margine));margin-inline:auto}
+section{padding-block:clamp(4.5rem,10vw,7.5rem)}
+.fundal-gri{background:var(--gri)}
+.titlu-sectiune{font-size:clamp(2.1rem,5vw,3.4rem);max-width:16ch}
+.muted{color:rgba(22,22,22,.74)}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:52px;
+  padding:.875rem 1.6rem;border-radius:999px;font:600 1.0625rem/1 var(--titlu);
+  letter-spacing:0;text-decoration:none;
+  transition:transform .15s var(--curba),filter .2s,background-color .2s,color .2s;
+}
+.btn:active{transform:scale(.97)}
+.btn-principal{background:var(--culoare);color:var(--alb)}
+.btn-principal:hover{filter:brightness(.92)}
+.btn-secundar{color:var(--negru);box-shadow:inset 0 0 0 2px var(--negru)}
+.btn-secundar:hover{background:var(--negru);color:var(--alb)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+@media (max-width:520px){.actiuni .btn{flex:1 1 100%}}
+
+/* Antet */
+.antet{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(255,255,255,.7);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:background-color .3s,border-color .3s;
+}
+.antet.derulat{background:rgba(255,255,255,.9);border-bottom-color:rgba(22,22,22,.08)}
+.bara{display:flex;align-items:center;justify-content:space-between;min-height:4.25rem;gap:1rem}
+.marca{font:800 1.2rem/1 var(--titlu);letter-spacing:-.02em;text-decoration:none}
+.meniu-buton{
+  display:inline-flex;align-items:center;gap:.6rem;min-height:44px;padding:.5rem .9rem;
+  border:2px solid var(--negru);border-radius:999px;background:transparent;
+  font:600 1rem/1 var(--titlu);cursor:pointer;transition:transform .15s;
+}
+.meniu-buton:active{transform:scale(.97)}
+.linii{display:grid;gap:4px;width:18px}
+.linii i{display:block;height:2px;border-radius:2px;background:var(--negru);transition:transform .3s var(--curba),opacity .2s}
+.meniu-buton[aria-expanded="true"] .linii i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linii i:nth-child(2){opacity:0}
+.meniu-buton[aria-expanded="true"] .linii i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.meniu-lista{
+  display:none;position:absolute;top:100%;left:0;right:0;
+  flex-direction:column;gap:0;padding:.5rem var(--margine) 1.5rem;
+  background:var(--alb);border-bottom:1px solid rgba(22,22,22,.08);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista a:not(.btn){
+  display:flex;align-items:center;min-height:48px;
+  font:600 1.125rem/1.2 var(--titlu);text-decoration:none;
+  border-bottom:1px solid rgba(22,22,22,.08);
+}
+.meniu-lista .sunat{padding-top:1rem}
+.meniu-lista .btn{width:100%}
+
+@media (min-width:861px){
+  .meniu-buton{display:none}
+  .meniu-lista{display:flex;position:static;flex-direction:row;align-items:center;gap:.25rem;padding:0;background:none;border:0}
+  .meniu-lista a:not(.btn){min-height:44px;padding:0 .9rem;border-radius:999px;font-size:1rem;font-weight:500;border:0;transition:background-color .2s}
+  .meniu-lista a:not(.btn):hover{background:rgba(22,22,22,.05)}
+  .meniu-lista .sunat{padding:0 0 0 .5rem}
+  .meniu-lista .btn{width:auto;min-height:44px;padding:.6rem 1.25rem;font-size:1rem}
+}
+
+/* Prima secțiune */
+.acasa{
+  padding-top:calc(4.25rem + clamp(2.5rem,7vw,5rem));
+  padding-bottom:clamp(3.5rem,8vw,6rem);
+}
+.grila-acasa{display:grid;gap:clamp(3rem,6vw,5rem);align-items:center}
+@media (min-width:900px){.grila-acasa{grid-template-columns:1.1fr .9fr}}
+.acasa h1{font-size:clamp(3rem,13vw,7.5rem);line-height:1.02;letter-spacing:-.02em}
+.slogan{margin-top:1.5rem;font:600 clamp(1.375rem,3vw,2rem)/1.2 var(--titlu);letter-spacing:-.01em}
+.accent{color:var(--culoare)}
+.descriere{margin-top:1rem;max-width:32ch}
+.adresa{margin-top:.5rem;font-weight:500}
+
+/* Punga, elementul memorabil */
+.punga{width:min(100%,22rem);justify-self:center}
+.punga svg{width:100%;height:auto;transition:transform .5s var(--curba)}
+@media (hover:hover){.punga:hover svg{transform:rotate(-1.5deg)}}
+
+/* Despre */
+.despre-cap{display:grid;gap:2rem}
+@media (min-width:860px){.despre-cap{grid-template-columns:1fr 1fr;gap:4rem;align-items:end}}
+.despre-text p+p{margin-top:1rem}
+.despre-text p{max-width:36rem}
+.avantaje{display:grid;gap:2.5rem;margin-top:clamp(3rem,6vw,4.5rem)}
+@media (min-width:760px){.avantaje{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.avantaje li{border-top:2px solid var(--negru);padding-top:1.25rem}
+.avantaje h3{font-size:1.75rem;margin-bottom:.5rem}
+
+/* Produse, pe raioane */
+.lead{margin-top:1rem}
+.raioane{
+  margin-top:clamp(2.5rem,5vw,3.5rem);display:grid;
+  border-top:2px solid var(--negru);
+}
+@media (min-width:760px){.raioane{grid-template-columns:1fr 1fr;column-gap:3rem}}
+.raioane li{
+  display:flex;align-items:center;gap:1rem;padding:1.4rem 0;
+  border-bottom:2px solid var(--negru);
+  font:600 clamp(1.25rem,2.4vw,1.6rem)/1.2 var(--titlu);letter-spacing:-.01em;
+}
+.raioane li::before{content:"";flex:none;width:.6rem;height:.6rem;border-radius:50%;background:var(--culoare)}
+
+/* Galerie */
+.galerie-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.poza{position:relative;margin:0;overflow:hidden;border-radius:18px;aspect-ratio:4/3;background:var(--alb)}
+.poza:first-child{grid-column:1 / -1}
+.poza-btn{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.poza img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--curba)}
+.poza-btn:hover img{transform:scale(1.03)}
+@media (min-width:760px){
+  .galerie-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(11rem,20vw,15rem)}
+  .poza{aspect-ratio:auto}
+  .poza:first-child{grid-column:span 2;grid-row:span 2}
+}
+.galerie-nota{margin-top:1.25rem;font-size:.9375rem}
+html.galerie-deschisa{overflow:hidden}
+.marita{
+  position:fixed;top:50%;left:50%;translate:-50% -50%;
+  width:min(92vw,1000px);height:min(78vh,720px);max-width:none;aspect-ratio:auto;
+  z-index:70;border-radius:18px;
+  box-shadow:0 0 0 100vmax rgba(22,22,22,.9);
+  animation:marire .45s var(--curba);
+}
+img.marita,.marita img{object-fit:contain}
+@keyframes marire{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+
+/* Contact */
+.grila-contact{display:grid;gap:clamp(2.5rem,5vw,4rem)}
+@media (min-width:900px){.grila-contact{grid-template-columns:1fr 1.1fr;align-items:center}}
+.grila-contact .muted{margin-top:1rem;max-width:34rem}
+address{font-style:normal;margin-top:1.5rem;font-weight:500;font-size:1.125rem;line-height:1.5}
+.harta iframe{display:block;width:100%;height:340px;border:0;border-radius:18px;background:var(--gri)}
+@media (min-width:900px){.harta iframe{height:440px}}
+
+/* Subsol */
+.subsol{background:var(--negru);color:rgba(255,255,255,.8);padding-block:3.5rem 2.5rem;font-size:.9375rem}
+.subsol-marca{font:800 1.5rem/1 var(--titlu);letter-spacing:-.02em;color:var(--alb)}
+.subsol-cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem}
+.subsol-nav ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:0}
+.subsol a{color:var(--alb);text-decoration:none}
+.subsol a:hover{text-decoration:underline}
+.credit{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);font-size:.875rem;max-width:none}
+
+/* Apariții la derulare (doar cu html.js) */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s var(--curba),transform .5s var(--curba);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Produsele care cad în pungă (declanșate de .punga, care e marcat cu apare) */
+html.js .punga[data-jarvis="apare"]{opacity:1;transform:none;transition:none}
+html.js .punga .produs-punga{
+  opacity:0;transform:translateY(96px);
+  transition:opacity .45s var(--curba),transform .6s var(--curba);
+  transition-delay:calc(var(--i,0) * 110ms + 250ms);
+}
+html.js .punga.vizibil .produs-punga{opacity:1;transform:none}
+
+/* Preferințe de accesibilitate */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s linear}
+  html.js .punga .produs-punga{transform:none;transition:opacity .3s linear;transition-delay:0s}
+  .punga svg{transition:none}
+  .poza img{transition:none}
+  .poza-btn:hover img{transform:none}
+  .marita{animation:estompare .3s linear}
+  .meniu-buton{transition:none}
+  .linii i{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--negru:#000}
+  body{color:#000}
+  .muted,.despre-text p{color:#000}
+  .antet.derulat{border-bottom-color:#000}
+  .btn-secundar{box-shadow:inset 0 0 0 3px #000}
+  .raioane li{border-bottom-width:3px}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Valeros Market</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Valeros%20Market%20%28demo.mk-studio.ro%2Fvaleros-market-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap bara">
+    <a class="marca" href="#acasa">Valeros Market</a>
+    <nav class="nav" aria-label="Principal">
+      <button class="meniu-buton" type="button" aria-expanded="false" aria-controls="meniu-lista" data-jarvis="meniu">
+        <span>Meniu</span>
+        <span class="linii" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#produse">Produse</a></li>
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="sunat"><a class="btn btn-principal" href="tel:0740229257">Sună acum</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="acasa" id="acasa">
+    <div class="wrap grila-acasa">
+      <div class="acasa-text">
+        <h1>Valeros Market</h1>
+        <p class="slogan">Tot ce ai nevoie, <span class="accent">aproape</span> de tine</p>
+        <p class="descriere muted">Magazin de proximitate cu produse esențiale pentru întreaga familie.</p>
+        <p class="adresa">Strada Teiul Doamnei 5, București</p>
+        <div class="actiuni">
+          <a class="btn btn-principal" href="tel:0740229257">Sună acum</a>
+          <a class="btn btn-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Valeros+Market+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+
+      <div class="punga" data-jarvis="apare">
+        <svg viewbox="0 0 320 360" role="img" aria-label="Pungă de cumpărături plină cu pâine, un fruct, lactate și o sticlă">
+          <ellipse cx="160" cy="344" rx="130" ry="9" fill="#161616" opacity=".08"/>
+          <path d="M106 126V94C106 58 130 40 160 40S214 58 214 94V126" fill="none" stroke="#161616" stroke-width="10" stroke-linecap="round"/>
+
+          <g class="produs-punga" style="--i:0">
+            <path d="M74 126C70 96 88 74 111 74S150 96 148 126Z" fill="#FFFFFF" stroke="#161616" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M100 92l11-8 11 8" fill="none" stroke="#161616" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+          <g class="produs-punga" style="--i:1">
+            <circle cx="166" cy="100" r="19" fill="#FFFFFF" stroke="#161616" stroke-width="3"/>
+            <path d="M166 81c1-7 5-11 11-12" fill="none" stroke="#161616" stroke-width="3" stroke-linecap="round"/>
+          </g>
+          <g class="produs-punga" style="--i:2">
+            <rect x="190" y="58" width="36" height="68" rx="3" fill="#FFFFFF" stroke="#161616" stroke-width="3"/>
+            <path d="M190 72h36" stroke="#161616" stroke-width="2.5"/>
+          </g>
+          <g class="produs-punga" style="--i:3">
+            <path d="M234 126V88c0-4 2-6 5-6h1V60h12v22h1c3 0 5 2 5 6v38Z" fill="#FFFFFF" stroke="#161616" stroke-width="3" stroke-linejoin="round"/>
+          </g>
+
+          <path d="M52 118h216l-12 208c-1 7-7 12-14 12H78c-7 0-13-5-14-12Z" fill="#be123c"/>
+          <rect x="82" y="170" width="156" height="8" rx="4" fill="#FFFFFF" opacity=".9"/>
+          <rect x="122" y="206" width="76" height="60" rx="10" fill="#FFFFFF"/>
+          <rect x="136" y="224" width="48" height="6" rx="3" fill="#161616" opacity=".85"/>
+          <rect x="136" y="240" width="30" height="6" rx="3" fill="#be123c"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre fundal-gri" id="despre">
+    <div class="wrap">
+      <div class="despre-cap">
+        <h2 class="titlu-sectiune">Aproape de casă</h2>
+        <div class="despre-text" data-jarvis="apare">
+          <p class="muted">Valeros Market este un magazin de cartier, unde găsești rapid produse pentru casă și masă.</p>
+          <p class="muted">Te așteptăm zilnic cu alimente proaspete și articole de bază. Magazinul este situat pe Strada Teiul Doamnei, potrivit pentru cumpărături aproape de casă.</p>
+        </div>
+      </div>
+
+      <ul class="avantaje">
+        <li data-jarvis="apare">
+          <h3>Rapid</h3>
+          <p class="muted">Cumpărături pentru orice moment al zilei</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Divers</h3>
+          <p class="muted">Produse de bază pentru casă la un loc</p>
+        </li>
+        <li data-jarvis="apare">
+          <h3>Aproape</h3>
+          <p class="muted">Pe strada principală, la doi pași</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="produse">
+    <div class="wrap">
+      <h2 class="titlu-sectiune">Produse</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="lead muted">Principalele raioane ale magazinului.</p>
+      <ul class="raioane" data-jarvis="apare">
+        <li>Pâine și produse de panificație</li>
+        <li>Lactate și brânzeturi</li>
+        <li>Fructe și legume</li>
+        <li>Băuturi și răcoritoare</li>
+        <li>Dulciuri și gustări</li>
+        <li>Produse de curățenie și pentru casă</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fundal-gri" id="galerie">
+    <div class="wrap">
+      <h2 class="titlu-sectiune">Din magazin</h2>
+      <p class="galerie-nota muted">Fotografii ilustrative. Apasă pe o imagine ca s-o vezi mai mare.</p>
+      <div class="galerie-grid" data-jarvis="galerie">
+        <figure class="poza">
+          <button class="poza-btn" type="button"><img src="img/1.jpg" alt="Rafturi cu legume și fructe" loading="lazy" decoding="async"></button>
+        </figure>
+        <figure class="poza">
+          <button class="poza-btn" type="button"><img src="img/2.jpg" alt="Cumpărături cu coș printre rafturi" loading="lazy" decoding="async"></button>
+        </figure>
+        <figure class="poza">
+          <button class="poza-btn" type="button"><img src="img/3.jpg" alt="Banane pe un raft cu fructe" loading="lazy" decoding="async"></button>
+        </figure>
+        <figure class="poza">
+          <button class="poza-btn" type="button"><img src="img/4.jpg" alt="Băuturi răcoritoare pe raft" loading="lazy" decoding="async"></button>
+        </figure>
+        <figure class="poza">
+          <button class="poza-btn" type="button"><img src="img/5.jpg" alt="Roșii și legume pentru cumpărături" loading="lazy" decoding="async"></button>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap grila-contact">
+      <div>
+        <h2 class="titlu-sectiune">Ne găsești pe Strada Teiul Doamnei</h2>
+        <p class="muted">Sună la 0740 229 257 dacă vrei să știi ce e în magazin acum. Pentru program, sună înainte să vii.</p>
+        <address>
+          Strada Teiul Doamnei 5<br>
+          București
+        </address>
+        <div class="actiuni">
+          <a class="btn btn-principal" href="tel:0740229257">Sună acum</a>
+          <a class="btn btn-secundar" href="https://www.google.com/maps/search/?api=1&amp;query=Valeros+Market+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.123711,44.456340,26.131711,44.460340&amp;layer=mapnik&amp;marker=44.458340,26.127711" title="Harta locației Valeros Market, Strada Teiul Doamnei 5, București" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <div class="subsol-cap">
+      <div>
+        <p class="subsol-marca">Valeros Market</p>
+        <p>Strada Teiul Doamnei 5, București</p>
+      </div>
+      <nav class="subsol-nav" aria-label="Subsol">
+        <ul>
+          <li><a href="#acasa">Acasă</a></li>
+          <li><a href="#produse">Produse</a></li>
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="credit">Model de site (demo). Fotografii ilustrative de pe Pixabay: ElasticComputeFarm, Sunriseforever, StockSnap, igorovsyannykov, Alexas_Fotos.</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
