@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terasa Maliuc | Andronache, București</title>
+<meta name="description" content="Terasa Maliuc, pe Strada Maliuc din Andronache, Sector 2, București. Preparate calde, gustări și băuturi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..600&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<style>
+:root{
+  --negru:#141311;
+  --muschi:#6B7A4B;
+  --mustar:#D4A72C;
+  --crem:#EDE6D8;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:4.5rem;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  margin:0;
+  background:var(--crem);
+  color:var(--negru);
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  margin:0;
+}
+:focus-visible{outline:2px solid var(--mustar);outline-offset:3px}
+
+/* Butoane */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:3.25rem;
+  padding:0 1.6rem;
+  border:1px solid var(--mustar);
+  border-radius:2px;
+  background:var(--mustar);
+  color:var(--negru);
+  font-family:var(--sans);
+  font-size:1rem;
+  font-weight:500;
+  line-height:1;
+  letter-spacing:0;
+  text-decoration:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .2s var(--ease),opacity .2s var(--ease);
+}
+.btn:hover{opacity:.9}
+.btn:active{transform:scale(.97)}
+.btn-contur{
+  background:transparent;
+  color:var(--crem);
+  border-color:rgba(237,230,216,.6);
+}
+.btn-contur-inchis{
+  background:transparent;
+  color:var(--negru);
+  border-color:var(--negru);
+}
+.btn-mic{min-height:44px;padding:0 1.1rem;font-size:.9rem}
+
+/* Antet */
+.antet{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  color:var(--crem);
+  transition:background-color .5s var(--ease),box-shadow .5s var(--ease);
+}
+.antet.derulat{
+  background:rgba(20,19,17,.62);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  box-shadow:0 1px 0 rgba(237,230,216,.08);
+}
+.antet-interior{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  max-width:72rem;
+  height:4.25rem;
+  margin:0 auto;
+  padding:0 1.25rem;
+}
+.logo{
+  font-family:var(--serif);
+  font-size:1.45rem;
+  letter-spacing:-0.01em;
+  line-height:1;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.meniu-buton{
+  display:inline-flex;
+  align-items:center;
+  gap:.65rem;
+  min-height:44px;
+  min-width:44px;
+  padding:0 .25rem 0 .5rem;
+  background:none;
+  border:0;
+  color:inherit;
+  font-family:var(--sans);
+  font-size:.95rem;
+  font-weight:500;
+  line-height:1;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.meniu-buton i{
+  position:relative;
+  display:block;
+  width:1.25rem;
+  height:1.5px;
+  background:currentColor;
+  box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;
+}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-lista{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  display:none;
+  flex-direction:column;
+  margin:0;
+  padding:.25rem 1.25rem 1.5rem;
+  list-style:none;
+  background:var(--negru);
+}
+.meniu-lista.deschis{display:flex}
+.meniu-lista li{border-bottom:1px solid rgba(237,230,216,.12)}
+.meniu-lista li:last-child{border-bottom:0;padding-top:1rem}
+.meniu-lista a:not(.btn){
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  font-family:var(--serif);
+  font-size:1.6rem;
+  letter-spacing:-0.01em;
+  text-decoration:none;
+}
+.meniu-lista .btn{width:100%;margin-top:.25rem}
+
+/* Secțiuni cu fotografie pe tot ecranul */
+.sectiune-foto{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:flex-end;
+  color:var(--crem);
+}
+.sectiune-foto .fundal{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  overflow:hidden;
+}
+.sectiune-foto .fundal img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:50% 50%;
+}
+.sectiune-foto::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(to top,rgba(20,19,17,.92) 0%,rgba(20,19,17,.55) 55%,rgba(20,19,17,.42) 100%);
+}
+.text-foto{
+  position:relative;
+  width:100%;
+  max-width:72rem;
+  margin:0 auto;
+  padding:6rem 1.25rem 3.5rem;
+}
+
+/* Hero */
+.hero h1{
+  font-size:clamp(3.4rem,15vw,9.5rem);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+}
+.hero .slogan{
+  margin-top:1.25rem;
+  font-size:clamp(1.125rem,2.4vw,1.5rem);
+  line-height:1.35;
+  max-width:26ch;
+}
+.hero .descriere{
+  margin-top:.5rem;
+  max-width:44ch;
+  opacity:.85;
+}
+.butoane{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-top:2rem;
+}
+
+/* Capitole cu text pe fotografie */
+.text-foto h2{
+  font-size:clamp(2.6rem,8vw,5.25rem);
+}
+.text-foto p{
+  margin-top:1rem;
+  max-width:36rem;
+  font-size:1.0625rem;
+  line-height:1.55;
+}
+.text-foto h2 + p{margin-top:1.5rem}
+
+.avantaje{
+  list-style:none;
+  margin:3rem 0 0;
+  padding:0;
+  display:grid;
+  gap:2.25rem;
+}
+.avantaje li{
+  border-top:1px solid rgba(237,230,216,.4);
+  padding-top:1.25rem;
+}
+.avantaje h3{
+  font-size:1.8rem;
+  line-height:1.15;
+  margin-bottom:.5rem;
+}
+.avantaje p{
+  margin:0;
+  color:rgba(237,230,216,.9);
+  font-size:1rem;
+}
+
+/* Meniu pe fond crem */
+.seccion{
+  position:relative;
+  padding:7rem 0;
+}
+.contenur{
+  position:relative;
+  z-index:1;
+  max-width:72rem;
+  margin:0 auto;
+  padding:0 1.25rem;
+}
+.rand{
+  display:block;
+  width:3rem;
+  height:2px;
+  background:var(--mustar);
+  margin-bottom:1.75rem;
+}
+.seccion h2{font-size:clamp(2.6rem,7vw,5rem)}
+.meniu{overflow:hidden}
+.farfurie{
+  position:absolute;
+  right:-9rem;
+  top:2rem;
+  width:28rem;
+  height:auto;
+  opacity:.3;
+  pointer-events:none;
+  z-index:0;
+}
+.lista-meniu{
+  list-style:none;
+  margin:3rem 0 0;
+  padding:0;
+  max-width:40rem;
+}
+.lista-meniu li{
+  border-top:1px solid rgba(20,19,17,.18);
+  padding:1.5rem 0;
+}
+.lista-meniu li:last-child{border-bottom:1px solid rgba(20,19,17,.18)}
+.lista-meniu h3{
+  font-size:clamp(2rem,5.5vw,3.25rem);
+  line-height:1.1;
+}
+.meniu-nota{
+  margin-top:2rem;
+  max-width:36rem;
+  color:rgba(20,19,17,.8);
+}
+.meniu-nota a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  color:var(--negru);
+  text-underline-offset:3px;
+}
+
+/* Contact */
+.contact-grid{
+  display:grid;
+  gap:3rem;
+  align-items:start;
+}
+.adresa{
+  margin-top:1.25rem;
+  font-style:normal;
+  font-size:1.0625rem;
+  line-height:1.6;
+}
+.numar{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  margin-top:1.5rem;
+  font-family:var(--serif);
+  font-size:clamp(2rem,6vw,3rem);
+  line-height:1;
+  letter-spacing:-0.01em;
+  text-decoration:none;
+}
+.program{
+  margin-top:1rem;
+  color:rgba(20,19,17,.8);
+}
+.contact .butoane{margin-top:2rem}
+.harta iframe{
+  display:block;
+  width:100%;
+  height:clamp(18rem,40vw,26rem);
+  border:1px solid rgba(20,19,17,.15);
+  border-radius:2px;
+}
+
+/* Subsol */
+.subsol{
+  background:var(--negru);
+  color:var(--crem);
+  padding:4.5rem 0 3rem;
+}
+.subsol-grid{
+  display:grid;
+  gap:1.25rem;
+}
+.logo-mare{
+  font-family:var(--serif);
+  font-size:2.25rem;
+  letter-spacing:-0.02em;
+  line-height:1;
+}
+.subsol a{text-underline-offset:3px}
+.credite{
+  margin-top:1.5rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(237,230,216,.14);
+  font-size:.875rem;
+  color:rgba(237,230,216,.78);
+}
+.credite p + p{margin-top:.5rem}
+
+/* Mișcare: apropiere lentă a fotografiilor și dezvăluiri discrete */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .foto-lenta img{
+      animation:apropiere linear both;
+      animation-timeline:view();
+      animation-range:cover 0% cover 100%;
+    }
+  }
+}
+@keyframes apropiere{
+  from{transform:scale(1)}
+  to{transform:scale(1.12)}
+}
+
+html.js .apare{
+  opacity:0;
+  transform:translateY(1.25rem);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+html.js .apare.vizibil{
+  opacity:1;
+  transform:none;
+}
+
+/* Telefon și tabletă */
+@media (min-width:600px){
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:2.5rem}
+  .subsol-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Desktop */
+@media (min-width:860px){
+  .meniu-buton{display:none}
+  .meniu-lista{
+    position:static;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:2.25rem;
+    padding:0;
+    background:none;
+  }
+  .meniu-lista li{border:0}
+  .meniu-lista li:last-child{padding-top:0}
+  .meniu-lista a:not(.btn){
+    min-height:44px;
+    font-family:var(--sans);
+    font-size:.95rem;
+    font-weight:500;
+    letter-spacing:0;
+  }
+  .meniu-lista a:not(.btn):hover{opacity:.75}
+  .meniu-lista .btn{width:auto;margin-top:0}
+  .avantaje{gap:3rem}
+  .contact-grid{
+    grid-template-columns:1fr 1.25fr;
+    gap:5rem;
+    align-items:center;
+  }
+  .subsol-grid{grid-template-columns:repeat(3,1fr);align-items:start}
+  .farfurie{width:40rem;right:-12rem;top:50%;transform:translateY(-50%)}
+}
+
+/* Accesibilitate */
+@media (prefers-reduced-transparency: reduce){
+  .antet.derulat{
+    background:var(--negru);
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+@media (prefers-contrast: more){
+  .sectiune-foto::before{background:rgba(20,19,17,.88)}
+  .btn{border-width:2px}
+  .btn-contur{border-color:var(--crem)}
+  .btn-contur-inchis{border-width:2px}
+  .lista-meniu li{border-color:var(--negru)}
+  .credite{color:var(--crem)}
+  .program,.meniu-nota{color:var(--negru)}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.js .apare{
+    transform:none;
+    transition:opacity .4s ease;
+  }
+  .btn,.meniu-buton{transition:none}
+  .btn:active,.meniu-buton:active{transform:none;opacity:.9}
+  .antet{transition:none}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Terasa Maliuc</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Terasa%20Maliuc%20%28demo.mk-studio.ro%2Fterasa-maliuc-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-interior">
+    <a class="logo" href="#sus">Terasa Maliuc</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="lista-meniu">
+      <span>Navigare</span><i aria-hidden="true"></i>
+    </button>
+    <nav aria-label="Principal">
+      <ul class="meniu-lista" id="lista-meniu" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-mic" href="tel:0722727700">Sună acum</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="sectiune-foto hero" id="sus" aria-labelledby="titlu-sus">
+    <div class="fundal foto-lenta">
+      <img src="img/2.jpg" alt="Farfurii cu mâncare și pahare pe o masă de terasă, în soare" fetchpriority="high">
+    </div>
+    <div class="text-foto">
+      <h1 id="titlu-sus">Terasa Maliuc</h1>
+      <p class="slogan">O pauză pe terasa din Maliuc</p>
+      <p class="descriere">Terasa cu preparate calde, gustări și băuturi.</p>
+      <div class="butoane">
+        <a class="btn" href="tel:0722727700">Sună acum</a>
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Terasa+Maliuc+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Vezi pe Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune-foto" id="despre" aria-labelledby="titlu-despre">
+    <div class="fundal foto-lenta">
+      <img src="img/1.jpg" alt="Oameni stând împreună pe terasă, seara" loading="lazy">
+    </div>
+    <div class="text-foto">
+      <h2 id="titlu-despre" class="apare">O masă, cu prietenii</h2>
+      <p class="apare">Terasa Maliuc este locul unde poți lua masa sau te poți relaxa cu prietenii.</p>
+      <p class="apare">Ai la alegere preparate calde, gustări și băuturi. Suntem pe Strada Maliuc, în cartierul Andronache.</p>
+    </div>
+  </section>
+
+  <section class="seccion meniu" id="meniu" aria-labelledby="titlu-meniu">
+    <svg class="farfurie" viewbox="0 0 400 400" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="#6B7A4B" stroke-width="1.2">
+        <circle cx="200" cy="200" r="190"/>
+        <circle cx="200" cy="200" r="150"/>
+        <circle cx="200" cy="200" r="104"/>
+        <circle cx="200" cy="200" r="58"/>
+      </g>
+    </svg>
+    <div class="contenur">
+      <span class="rand" aria-hidden="true"></span>
+      <h2 id="titlu-meniu" class="apare">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <ul class="lista-meniu">
+        <li class="apare"><h3>Preparate calde</h3></li>
+        <li class="apare"><h3>Gustări</h3></li>
+        <li class="apare"><h3>Băuturi</h3></li>
+      </ul>
+      <p class="meniu-nota apare">Prețurile le aflați la telefon, la <a href="tel:0722727700">0722 727 700</a>.</p>
+    </div>
+  </section>
+
+  <section class="sectiune-foto" id="atmosfera" aria-labelledby="titlu-atmosfera">
+    <div class="fundal foto-lenta">
+      <img src="img/5.jpg" alt="Prieteni stând la o masă și vorbind" loading="lazy">
+    </div>
+    <div class="text-foto">
+      <h2 id="titlu-atmosfera" class="apare">Cum este pe terasă</h2>
+      <ul class="avantaje">
+        <li class="apare">
+          <h3>Terasa aerisită</h3>
+          <p>Loc liniștit pe Strada Maliuc</p>
+        </li>
+        <li class="apare">
+          <h3>Meniu variat</h3>
+          <p>Preparate calde, gustări și băuturi</p>
+        </li>
+        <li class="apare">
+          <h3>Relaxare ușoară</h3>
+          <p>Spațiu prietenos cu atmosferă relaxată</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion contact" id="contact" aria-labelledby="titlu-contact">
+    <div class="contenur contact-grid">
+      <div class="contact-text">
+        <span class="rand" aria-hidden="true"></span>
+        <h2 id="titlu-contact" class="apare">Vino pe terasă</h2>
+        <address class="adresa apare">Strada Maliuc, Andronache, Sector 2, București</address>
+        <a class="numar apare" href="tel:0722727700">0722 727 700</a>
+        <p class="program apare">Programul îl aflați la telefon.</p>
+        <div class="butoane apare">
+          <a class="btn" href="tel:0722727700">Sună acum</a>
+          <a class="btn btn-contur-inchis" href="https://www.google.com/maps/search/?api=1&amp;query=Terasa+Maliuc+Bucure%C8%99ti" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.153305,44.473056,26.161306,44.477056&amp;layer=mapnik&amp;marker=44.475056,26.157305" title="Harta: Terasa Maliuc, Strada Maliuc, Andronache, București" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="contenur subsol-grid">
+    <div>
+      <p class="logo-mare">Terasa Maliuc</p>
+      <p style="margin-top:.75rem">Strada Maliuc, Andronache, Sector 2, București</p>
+    </div>
+    <div>
+      <p><a href="tel:0722727700">0722 727 700</a></p>
+      <p style="margin-top:.5rem"><a href="#sus">Înapoi sus</a></p>
+    </div>
+    <div class="credite">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: OrnaW, StockSnap, mairaali1121.</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
