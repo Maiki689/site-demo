@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Symphony, cafenea în Timișoara</title>
+<meta name="description" content="Symphony, cafenea pe strada Mărășești din Timișoara. Cafea, prăjituri și produse de patiserie, deschis zilnic între 09:00 și 24:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --blanc:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --accent:#b45309;
+  --muted:rgba(59,42,32,.78);
+  --linie:rgba(59,42,32,.14);
+  --f-titlu:'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-text:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--f-text);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--espresso);
+  background:var(--blanc);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--f-titlu);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+ul,ol{margin:0;padding:0}
+section[id]{scroll-margin-top:3.5rem}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{max-width:72rem;margin-inline:auto;padding-inline:1.25rem}
+@media (min-width:768px){.wrap{padding-inline:2.5rem}}
+
+.bloc{padding-block:clamp(5rem,11vw,9rem)}
+.lapte{background:var(--lapte)}
+.oscur{background:var(--espresso);color:var(--lapte)}
+.oscur :focus-visible{outline-color:var(--lapte)}
+.oscur h2{color:var(--blanc)}
+
+.titlu{font-size:clamp(2rem,4.8vw,3.5rem)}
+
+.sari{
+  position:absolute;left:1rem;top:-4rem;z-index:100;
+  padding:.75rem 1rem;border-radius:4px;
+  background:var(--espresso);color:var(--blanc);text-decoration:none;
+  transition:top .2s var(--ease);
+}
+.sari:focus{top:1rem}
+
+/* butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:.75rem 1.5rem;border-radius:4px;
+  font-family:var(--f-titlu);font-weight:500;font-size:1rem;line-height:1;
+  text-decoration:none;cursor:pointer;
+  transition:transform .15s var(--ease),background-color .25s var(--ease),color .25s var(--ease),filter .25s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn-accent{background:var(--accent);color:var(--blanc);border:1.5px solid var(--accent)}
+.btn-accent:hover{filter:brightness(.92)}
+.btn-linie{background:transparent;color:var(--espresso);border:1.5px solid var(--espresso)}
+.btn-linie:hover{background:var(--espresso);color:var(--blanc)}
+.oscur .btn-linie{color:var(--lapte);border-color:var(--lapte)}
+.oscur .btn-linie:hover{background:var(--lapte);color:var(--espresso)}
+.btn-mic{min-height:2.75rem;padding:.5rem 1.125rem}
+
+.link-text{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--f-titlu);font-weight:500;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.3em;
+}
+
+/* antet */
+.antet{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  transition:background-color .4s var(--ease),border-color .4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.antet.derulat{
+  background:rgba(255,255,255,.72);
+  -webkit-backdrop-filter:blur(18px) saturate(1.2);
+  backdrop-filter:blur(18px) saturate(1.2);
+  border-bottom-color:var(--linie);
+}
+.bara{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.marca{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--f-titlu);font-weight:600;font-size:1.125rem;letter-spacing:-.01em;
+  text-decoration:none;
+}
+.meniu-btn{
+  display:none;position:relative;width:44px;height:44px;
+  padding:0;border:0;background:transparent;color:inherit;cursor:pointer;
+}
+.meniu-btn span{
+  position:absolute;left:11px;right:11px;height:1.5px;background:currentColor;
+  transition:transform .3s var(--ease);
+}
+.meniu-btn span:first-child{top:16px}
+.meniu-btn span:last-child{top:26px}
+.meniu-btn[aria-expanded="true"] span:first-child{transform:translateY(5px) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] span:last-child{transform:translateY(-5px) rotate(-45deg)}
+
+.lista{
+  list-style:none;display:flex;align-items:center;gap:2.25rem;
+}
+.lista a{
+  position:relative;display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--f-titlu);font-weight:500;font-size:.9375rem;text-decoration:none;
+}
+.lista a:not(.btn)::after{
+  content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);
+}
+.lista a:not(.btn):hover::after,
+.lista a:not(.btn):focus-visible::after{transform:scaleX(1)}
+
+@media (max-width:859.98px){
+  html.js .meniu-btn{display:block}
+  .lista{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    padding:.25rem 1.25rem 1.5rem;
+    background:var(--blanc);border-bottom:1px solid var(--linie);
+  }
+  .lista.deschis{display:flex}
+  .lista li{border-top:1px solid var(--linie)}
+  .lista a:not(.btn){display:flex;width:100%;min-height:3.25rem;font-size:1.0625rem}
+  .lista a:not(.btn)::after{display:none}
+  .lista .btn{width:100%;min-height:3.25rem;margin-top:1rem}
+}
+
+/* hero */
+.hero{padding-top:6.5rem;padding-bottom:5rem}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:3rem;justify-items:start}
+.hero h1{
+  grid-column:1/-1;
+  font-size:clamp(3.25rem,17.5vw,11rem);
+  line-height:1;letter-spacing:-.02em;font-weight:600;
+  margin-left:-.04em;
+}
+.hero-texte{max-width:34rem}
+.lead{
+  font-family:var(--f-titlu);font-weight:500;
+  font-size:clamp(1.25rem,2.6vw,1.75rem);line-height:1.3;letter-spacing:-.01em;
+  max-width:24ch;
+}
+.hero-desc{margin-top:1rem;color:var(--muted);max-width:42ch}
+.actiuni{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem;margin-top:2.25rem}
+.mica{font-size:.875rem;line-height:1.5;color:var(--muted)}
+.hero-texte .mica{margin-top:2rem}
+.hero-cup{justify-self:center;width:min(78vw,300px);margin-top:.5rem}
+.ceasca{display:block;width:100%;height:auto}
+
+@keyframes desen{
+  from{opacity:0;transform:scale(.7)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes estompare{
+  from{opacity:0}
+  to{opacity:1}
+}
+.latte{
+  transform-box:fill-box;transform-origin:center;
+  animation:desen .9s var(--ease) .25s both;
+}
+
+@media (min-width:860px){
+  .hero{padding-top:9.5rem;padding-bottom:7.5rem}
+  .hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    column-gap:6rem;align-items:end;justify-items:stretch;
+  }
+  .hero-texte{grid-column:1;grid-row:2}
+  .hero-cup{grid-column:2;grid-row:2;justify-self:end;width:min(100%,380px);margin-top:0}
+}
+
+/* despre */
+.despre-grid{display:grid;gap:2.5rem}
+.lead-text{font-size:1.25rem;line-height:1.6}
+.despre-text p{max-width:60ch}
+.despre-text p+p{margin-top:1.25rem;color:var(--muted)}
+.avantaje{
+  list-style:none;margin-top:5rem;
+  display:grid;gap:2.5rem;
+}
+.avantaje li{border-top:1px solid var(--linie);padding-top:1.5rem}
+.avantaje h3{font-size:1.25rem}
+.avantaje p{margin-top:.5rem;color:var(--muted)}
+@media (min-width:860px){
+  .despre-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:6rem}
+  .avantaje{grid-template-columns:repeat(3,minmax(0,1fr));gap:3rem}
+}
+
+/* meniu */
+.meniu-lista{
+  list-style:none;margin-top:3.5rem;
+  display:grid;gap:0;
+}
+.meniu-lista li{border-top:1px solid rgba(59,42,32,.28);padding:1.5rem 0 2rem}
+.meniu-lista h3{font-size:clamp(1.5rem,3vw,2rem);font-weight:500}
+.meniu-nota{margin-top:2.5rem;color:var(--muted);max-width:52ch}
+@media (min-width:860px){
+  .meniu-lista{grid-template-columns:repeat(3,minmax(0,1fr));gap:3rem}
+}
+
+/* galerie */
+.cap{margin-bottom:0}
+.galeria{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.75rem;margin-top:3rem;
+}
+.poza{
+  position:relative;margin:0;overflow:hidden;
+  aspect-ratio:4/5;background:var(--lapte);border-radius:2px;cursor:zoom-in;
+}
+.poza img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;transition:transform .6s var(--ease);
+}
+.poza:hover img{transform:scale(1.03)}
+.galeria .poza:first-child{grid-column:1/-1;aspect-ratio:4/3}
+.poza.marita{
+  position:fixed;inset:0;z-index:90;margin:0;
+  aspect-ratio:auto;display:flex;align-items:center;justify-content:center;
+  padding:1.25rem;background:rgba(59,42,32,.94);border-radius:0;cursor:zoom-out;
+}
+.poza.marita img{
+  position:static;width:auto;height:auto;
+  max-width:100%;max-height:100%;object-fit:contain;transform:none;
+}
+html.galerie-deschisa{overflow:hidden}
+@media (min-width:860px){
+  .galeria{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+  .galeria .poza:first-child{grid-column:1/-1;aspect-ratio:21/9}
+}
+
+/* contact */
+.contacte{display:grid;gap:3rem}
+.contacte dl{display:grid;gap:1.5rem;margin:2.5rem 0 0}
+.contacte dt{font-size:.875rem;color:rgba(234,223,211,.78);margin-bottom:.25rem}
+.contacte dd{margin:0;font-size:1.125rem;color:var(--blanc)}
+.contacte dd a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.25em}
+.contacte .actiuni{margin-top:2.5rem}
+.harta{
+  position:relative;aspect-ratio:4/3;overflow:hidden;
+  background:var(--lapte);border-radius:2px;
+}
+.harta iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (min-width:860px){
+  .contacte{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:6rem;align-items:start}
+  .harta{aspect-ratio:5/4}
+}
+
+/* subsol */
+.subsol{padding-block:3rem;border-top:1px solid var(--linie);font-size:.875rem;line-height:1.6;color:var(--muted)}
+.subsol .wrap{display:grid;gap:.75rem}
+.subsol a{color:var(--espresso);font-weight:500}
+@media (min-width:860px){
+  .subsol .wrap{grid-template-columns:auto auto;justify-content:space-between;align-items:center}
+}
+
+/* dezvăluire la derulare */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translateY(16px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* preferințe */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  .latte{animation:estompare .3s ease both}
+  .poza img,.meniu-btn span,.antet{transition-duration:.01ms}
+  .poza:hover img{transform:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  .antet.derulat{
+    background:var(--blanc);
+    -webkit-backdrop-filter:none;backdrop-filter:none;
+  }
+}
+@media (prefers-contrast: more){
+  :root{--muted:var(--espresso)}
+  .oscur{--muted:var(--lapte)}
+  .btn-linie{border-width:2px}
+  .oscur .btn-linie{border-width:2px}
+  .link-text,.lista a{text-decoration:underline}
+  .antet.derulat{border-bottom-color:var(--espresso)}
+  .avantaje li,.meniu-lista li,.subsol{border-color:var(--espresso)}
+  .meniu-lista li{border-top-width:2px}
+  .poza{border-radius:0}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Symphony</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Symphony%20%28demo.mk-studio.ro%2Fsymphony-timisoara%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<a class="sari" href="#despre">Treci la conținut</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap bara">
+    <a class="marca" href="#sus">Symphony</a>
+    <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista" aria-label="Meniu">
+      <span></span><span></span>
+    </button>
+    <nav aria-label="Principal">
+      <ul class="lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-accent btn-mic" href="tel:0724521527">Sună acum</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="sus" aria-label="Symphony">
+  <div class="wrap hero-grid">
+    <h1>Symphony</h1>
+
+    <div class="hero-texte">
+      <p class="lead">O pauză dulce în centrul orașului.</p>
+      <p class="hero-desc">O cafenea primitoare cu cafea, prăjituri și produse de patiserie.</p>
+      <div class="actiuni">
+        <a class="btn btn-accent" href="tel:0724521527">Sună acum</a>
+        <a class="link-text" href="#meniu">Vezi meniul</a>
+      </div>
+      <p class="mica">Strada Mărășești 2, Cetate. Deschis zilnic între 09:00 și 24:00.</p>
+    </div>
+
+    <div class="hero-cup" data-jarvis="apare">
+      <svg class="ceasca" viewbox="0 0 400 400" aria-hidden="true" focusable="false">
+        <circle cx="200" cy="200" r="196" fill="#EADFD3"/>
+        <circle cx="200" cy="200" r="170" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="2"/>
+        <path d="M340 182C376 176 384 224 340 218" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+        <circle cx="200" cy="200" r="150" fill="#FFFFFF"/>
+        <circle cx="200" cy="200" r="130" fill="#3B2A20"/>
+        <path class="latte" d="M200 269C150 233 128 203 128 177C128 149 150 131 172 131C186 131 196 139 200 149C204 139 214 131 228 131C250 131 272 149 272 177C272 203 250 233 200 269Z" fill="#EADFD3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="despre" aria-labelledby="t-despre">
+  <div class="wrap">
+    <div class="despre-grid">
+      <div data-jarvis="apare">
+        <h2 class="titlu" id="t-despre">Despre Symphony</h2>
+      </div>
+      <div class="despre-text" data-jarvis="apare">
+        <p class="lead-text">Symphony este o cafenea din Timișoara, pe strada Mărășești, unde găsești cafea, prăjituri și produse de patiserie.</p>
+        <p>Atmosfera este potrivită atât pentru discuții liniștite, cât și pentru o întâlnire înainte de spectacole.</p>
+        <p>Oprirea aici înseamnă o pauză plăcută în mijlocul orașului.</p>
+      </div>
+    </div>
+
+    <ul class="avantaje">
+      <li data-jarvis="apare">
+        <h3>Loc central</h3>
+        <p>Strada Mărășești 2, în Cetate.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Meniu variat</h3><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+        <p>Opțiuni dulci și sărate.</p>
+      </li>
+      <li data-jarvis="apare">
+        <h3>Program extins</h3>
+        <p>Deschis zilnic până la miezul nopții.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bloc lapte" id="meniu" aria-labelledby="t-meniu">
+  <div class="wrap">
+    <h2 class="titlu cap" id="t-meniu" data-jarvis="apare">Meniu</h2>
+    <ul class="meniu-lista">
+      <li data-jarvis="apare"><h3>Cafea și băuturi</h3></li>
+      <li data-jarvis="apare"><h3>Prăjituri</h3></li>
+      <li data-jarvis="apare"><h3>Produse de patiserie</h3></li>
+    </ul>
+    <p class="meniu-nota" data-jarvis="apare">Lista e generală. Produsele se schimbă, iar prețurile le afli direct la cafenea.</p>
+  </div>
+</section>
+
+<section class="bloc" id="galerie" aria-labelledby="t-galerie">
+  <div class="wrap">
+    <h2 class="titlu cap" id="t-galerie" data-jarvis="apare">Galerie</h2>
+    <div class="galeria" data-jarvis="galerie">
+      <figure class="poza" data-jarvis="apare">
+        <img src="img/1.jpg" alt="Cuplu la o masă cu prăjituri, într-o cafenea" loading="lazy">
+      </figure>
+      <figure class="poza" data-jarvis="apare">
+        <img src="img/2.jpg" alt="Clătite cu căpșuni și cafea pe masă" loading="lazy">
+      </figure>
+      <figure class="poza" data-jarvis="apare">
+        <img src="img/3.jpg" alt="Cappuccino într-o ceașcă de ceramică, lângă o prăjitură" loading="lazy">
+      </figure>
+      <figure class="poza" data-jarvis="apare">
+        <img src="img/4.jpg" alt="Croissante și pâine proaspătă de la cuptor" loading="lazy">
+      </figure>
+      <figure class="poza" data-jarvis="apare">
+        <img src="img/5.jpg" alt="Cană de cappuccino și o farfurioară pe masă" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="bloc oscur" id="contact" aria-labelledby="t-contact">
+  <div class="wrap contacte">
+    <div data-jarvis="apare">
+      <h2 class="titlu" id="t-contact">Contact</h2>
+      <dl>
+        <div>
+          <dt>Adresă</dt>
+          <dd>Strada Mărășești 2, Cetate, Timișoara</dd>
+        </div>
+        <div>
+          <dt>Telefon</dt>
+          <dd><a href="tel:0724521527">0724 521 527</a></dd>
+        </div>
+        <div>
+          <dt>Program</dt>
+          <dd>Deschis zilnic între 09:00 și 24:00</dd>
+        </div>
+      </dl>
+      <div class="actiuni">
+        <a class="btn btn-accent" href="tel:0724521527">Sună acum</a>
+        <a class="btn btn-linie" href="https://www.google.com/maps/search/?api=1&amp;query=Symphony+Timi%C8%99oara" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+      </div>
+    </div>
+    <div class="harta" data-jarvis="apare">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=21.221714,45.752173,21.229714,45.756173&amp;layer=mapnik&amp;marker=45.754173,21.225714" title="Harta cu locația cafenelei Symphony, strada Mărășești 2, Timișoara" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <p>Symphony, cafenea pe strada Mărășești 2, Timișoara. Model de site (demo).</p>
+    <p>Fotografii ilustrative de pe Pixabay: StockSnap, SkloStudio, Pexels, Photowill.</p>
+    <p><a href="#sus">Înapoi sus</a></p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
