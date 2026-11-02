@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Pisici | Cafenea în Timișoara</title>
+<meta name="description" content="La Pisici, cafenea în Timișoara, Strada Mihail Jora 3. Cafea, prăjituri și produse de patiserie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&amp;family=Jost:wght@300..600&amp;display=swap">
+<style>
+:root{
+  --rozl:#F6E3E1;
+  --menta:#A8D5C2;
+  --crem:#FFF9F2;
+  --ciocolata:#4A2C2A;
+  --serif:"Bodoni Moda","Bodoni 72",Didot,"Times New Roman",serif;
+  --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --margine:clamp(1.25rem,4vw,3rem);
+  --sectiune:clamp(4.5rem,10vw,8rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--crem);color:var(--ciocolata);font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+ul{list-style:none;margin:0;padding:0}
+figure{margin:0}
+address{font-style:normal}
+.wrap{width:min(100% - 2*var(--margine),72rem);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+section[id]{scroll-margin-top:4.5rem}
+
+/* Antet */
+.antet{position:sticky;top:0;z-index:50;background:rgba(255,249,242,.74);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-bottom:1px solid transparent;transition:border-color .4s}
+.antet.derulat{border-bottom-color:rgba(74,44,42,.14)}
+.antet-in{display:flex;align-items:center;justify-content:space-between;height:4.25rem}
+.marca{font-family:var(--serif);font-size:1.45rem;font-weight:500;letter-spacing:-.01em;line-height:1;text-decoration:none}
+.meniu-buton{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;width:2.75rem;height:2.75rem;margin-right:-.5rem;padding:0;background:none;border:0;border-radius:.25rem;color:var(--ciocolata);cursor:pointer;transition:transform .25s var(--ease)}
+.meniu-buton:active{transform:scale(.97)}
+.meniu-buton .linie{display:block;width:1.375rem;height:1.5px;background:currentColor;transition:transform .4s var(--ease)}
+.meniu-buton[aria-expanded="true"] .linie-sus{transform:translateY(.25rem) rotate(45deg)}
+.meniu-buton[aria-expanded="true"] .linie-jos{transform:translateY(-.25rem) rotate(-45deg)}
+.meniu-lista{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;padding:.25rem var(--margine) 1rem;background:var(--crem);border-bottom:1px solid rgba(74,44,42,.14)}
+.meniu-lista.deschis,html:not(.js) .meniu-lista{display:flex}
+.meniu-lista a{display:flex;align-items:center;min-height:3rem;font-size:1.0625rem;text-decoration:none;border-bottom:1px solid rgba(74,44,42,.1)}
+.meniu-lista li:last-child a{border-bottom:0}
+html:not(.js) .meniu-buton{display:none}
+
+/* Butoane */
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.75rem 1.5rem;font-family:var(--sans);font-size:1rem;font-weight:500;line-height:1.2;text-decoration:none;border:1px solid var(--ciocolata);border-radius:.25rem;cursor:pointer;transition:transform .25s var(--ease),background-color .3s,color .3s,opacity .3s}
+.btn-principal{background:var(--ciocolata);color:var(--crem)}
+.btn-principal:hover{opacity:.9}
+.btn-secund{background:transparent;color:var(--ciocolata)}
+.btn-secund:hover{background:var(--ciocolata);color:var(--crem)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.marca:focus-visible,.meniu-lista a:focus-visible,.telefon-mare a:focus-visible,.subsol a:focus-visible{outline:2px solid var(--ciocolata);outline-offset:3px}
+
+/* Prima secțiune */
+.hero{background:var(--rozl);padding:clamp(2rem,6vw,4.5rem) 0 var(--sectiune)}
+.hero-in{display:grid;gap:2.5rem;align-items:center}
+.hero-loc{font-size:1rem;font-weight:500}
+.hero h1{font-size:clamp(3.6rem,18vw,5.6rem);line-height:1;letter-spacing:-.025em;margin:.35rem 0 1.25rem}
+.slogan{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.7rem);line-height:1.3;max-width:22ch}
+.descriere{margin-top:1rem;max-width:34ch;font-size:1.125rem}
+.hero-foto{aspect-ratio:4/3;overflow:hidden;border-radius:50% 50% .25rem .25rem / 26% 26% .25rem .25rem}
+.hero-foto img{width:100%;height:100%;object-fit:cover}
+
+/* Despre */
+.despre{background:var(--crem);padding:var(--sectiune) 0}
+.despre-in{display:grid;gap:2rem}
+.despre-text{font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.6;max-width:36em}
+.avantaje{display:grid;gap:2.5rem;margin-top:clamp(3.5rem,7vw,5.5rem)}
+.avantaj{border-top:1px solid rgba(74,44,42,.22);padding-top:1.5rem;max-width:26rem}
+.avantaj h3{font-size:1.5rem}
+.avantaj p{margin-top:.5rem}
+
+/* Meniu, vitrina cu cutii */
+.meniu{background:var(--menta);padding:var(--sectiune) 0}
+.meniu-intro{margin-top:1.25rem;max-width:36em;font-size:1.125rem}
+.vitrina{display:grid;gap:4.5rem 2rem;margin-top:clamp(3.5rem,7vw,5rem)}
+.produs{display:flex;flex-direction:column;align-items:center;text-align:center}
+.produs h3{font-size:1.5rem}
+.cutie{position:relative;width:min(100%,16rem);height:12rem;margin-bottom:1.25rem}
+.corp{position:absolute;left:0;right:0;bottom:0;top:4rem;background:var(--crem);border-radius:.2rem;overflow:hidden}
+.corp::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:.6rem;margin-left:-.3rem;background:var(--ciocolata)}
+.capac{position:absolute;left:-.5rem;right:-.5rem;top:2rem;height:2.5rem;background:var(--rozl);border-radius:.2rem;transform-origin:0 100%;transition:transform .6s var(--ease)}
+.capac::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:.6rem;margin-left:-.3rem;background:var(--ciocolata)}
+.capac::after{content:"";position:absolute;left:50%;top:-1.2rem;width:3rem;height:2rem;margin-left:-1.5rem;border:.45rem solid var(--ciocolata);border-radius:50%}
+.produs:hover .capac,.produs:active .capac{transform:translateY(-.5rem) rotate(-4deg)}
+
+/* Galerie */
+.galerie-sec{background:var(--rozl);padding:var(--sectiune) 0}
+.galerie{display:grid;gap:1rem;margin-top:clamp(2.5rem,5vw,3.5rem)}
+.galerie figure{overflow:hidden;border-radius:.25rem;aspect-ratio:4/3}
+.galerie img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .8s var(--ease)}
+.galerie figure:hover img:not(.marita){transform:scale(1.03)}
+.galerie img.marita{position:fixed;top:50%;left:50%;width:min(92vw,56rem);height:auto;max-height:88vh;aspect-ratio:auto;object-fit:contain;transform:translate(-50%,-50%);z-index:70;background:var(--crem);border-radius:.25rem;cursor:zoom-out}
+html.galerie-deschisa{overflow:hidden}
+html.galerie-deschisa body::after{content:"";position:fixed;inset:0;z-index:60;background:rgba(74,44,42,.6)}
+
+/* Contact */
+.kontakt{background:var(--crem);padding:var(--sectiune) 0}
+.kontakt-in{display:grid;gap:3rem}
+.adresa{font-size:1.25rem;line-height:1.5;margin-top:1.5rem}
+.telefon-mare{margin-top:1.25rem}
+.telefon-mare a{font-family:var(--serif);font-size:clamp(1.75rem,4vw,2.25rem);letter-spacing:-.01em;text-decoration:none}
+.telefon-mare a:hover{text-decoration:underline;text-underline-offset:.2em}
+.kontakt .actiuni{margin-top:2rem}
+.harta{aspect-ratio:4/3;overflow:hidden;border-radius:.25rem;border:1px solid rgba(74,44,42,.16);background:var(--rozl)}
+.harta iframe{display:block;width:100%;height:100%;border:0}
+
+/* Subsol */
+.subsol{background:var(--ciocolata);color:var(--crem);padding:clamp(3rem,7vw,4.5rem) 0 clamp(2.5rem,5vw,3.5rem);font-size:.95rem}
+.subsol-in{display:grid;gap:.75rem}
+.subsol-marca{font-family:var(--serif);font-size:2rem;line-height:1;letter-spacing:-.02em;margin-bottom:.5rem}
+.subsol-credit{margin-top:1.5rem;font-size:.85rem;max-width:60ch;color:rgba(255,249,242,.86)}
+
+/* Apariții la derulare */
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(1.5rem);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Breakpoint tabletă și desktop */
+@media (min-width:600px){
+  .avantaje{grid-template-columns:repeat(3,1fr);gap:2.5rem 2rem}
+  .avantaj{max-width:none}
+  .galerie{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+  .galerie figure{aspect-ratio:3/4}
+  .vitrina{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:861px){
+  .meniu-buton{display:none}
+  .antet-in nav{margin-left:auto}
+  .meniu-lista{position:static;display:flex;flex-direction:row;gap:2.25rem;padding:0;background:none;border:0}
+  .meniu-lista a{min-height:auto;padding:.25rem 0;border:0;font-size:1rem;letter-spacing:.01em}
+  .meniu-lista a:hover{text-decoration:underline;text-underline-offset:.35em;text-decoration-thickness:1px}
+  .hero-in{grid-template-columns:1fr 1fr;gap:5rem}
+  .hero h1{font-size:clamp(5rem,9.5vw,7.5rem)}
+  .hero-foto{aspect-ratio:4/5;max-height:38rem;border-radius:50% 50% .25rem .25rem / 34% 34% .25rem .25rem}
+  .despre-in{grid-template-columns:5fr 6fr;gap:6rem;align-items:start}
+  .kontakt-in{grid-template-columns:1fr 1.15fr;gap:6rem;align-items:center}
+  .harta{aspect-ratio:auto;height:28rem}
+}
+
+/* Accesibilitate și preferințe */
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--crem);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  .antet,.antet.derulat{border-bottom-color:var(--ciocolata)}
+  .btn,.btn-secund{border-width:2px}
+  .avantaj{border-top-width:2px;border-top-color:var(--ciocolata)}
+  .harta{border-color:var(--ciocolata)}
+  .meniu-lista a{border-bottom-color:var(--ciocolata)}
+  .corp,.capac{outline:1px solid var(--ciocolata)}
+  .subsol-credit{color:var(--crem)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js [data-jarvis="apare"],html.js [data-jarvis="apare"]:not(.vizibil){transform:none;transition:opacity .3s linear}
+  .capac{transition:none}
+  .btn,.meniu-buton,.meniu-buton .linie,.galerie img,.antet{transition-duration:.01ms}
+  .galerie figure:hover img:not(.marita){transform:none}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>La Pisici</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20La%20Pisici%20%28demo.mk-studio.ro%2Fla-pisici-timisoara%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="wrap antet-in">
+    <a class="marca" href="#top">La Pisici</a>
+    <nav aria-label="Principal">
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista">
+      <span class="linie linie-sus"></span>
+      <span class="linie linie-jos"></span>
+      <span class="sr">Secțiuni</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="top" aria-labelledby="titlu-principal">
+    <div class="wrap hero-in">
+      <div>
+        <p class="hero-loc">Cafenea în Timișoara</p>
+        <h1 id="titlu-principal">La Pisici</h1>
+        <p class="slogan">Pauze dulci, cafea și pisici</p>
+        <p class="descriere">Cafea, prăjituri și produse de patiserie, pe Strada Mihail Jora 3 din Timișoara.</p>
+        <div class="actiuni">
+          <a class="btn btn-principal" href="tel:0726118186">Sună acum</a>
+          <a class="btn btn-secund" href="#meniu">Vezi meniul</a>
+        </div>
+      </div>
+      <figure class="hero-foto">
+        <img src="img/4.jpg" alt="Cană de cafea și o carte pe masă">
+      </figure>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="t-despre">
+    <div class="wrap">
+      <div class="despre-in">
+        <h2 id="t-despre" data-jarvis="apare">Despre La Pisici</h2>
+        <p class="despre-text" data-jarvis="apare">La Pisici este o cafenea din Timișoara unde găsești cafea, prăjituri și produse de patiserie într-un spațiu cald. Oricine caută o pauză relaxată găsește aici ceva bun de savurat. Atmosfera e liniștită și prietenoasă.</p>
+      </div>
+      <ul class="avantaje">
+        <li class="avantaj" data-jarvis="apare">
+          <h3>Cafea</h3>
+          <p>Cafea și băuturi în cafenea din Timișoara</p>
+        </li>
+        <li class="avantaj" data-jarvis="apare">
+          <h3>Relaxare</h3>
+          <p>Spațiu liniștit cu detalii simpatice</p>
+        </li>
+        <li class="avantaj" data-jarvis="apare">
+          <h3>Dulciuri simple</h3>
+          <p>Prăjituri pentru orice poftă</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="meniu" id="meniu" aria-labelledby="t-meniu">
+    <div class="wrap">
+      <h2 id="t-meniu" data-jarvis="apare">Meniu</h2><p class="jarvis-exemple" style="margin:.4em auto 1em;padding:.35em .9em;border-radius:999px;display:table;font:600 13px system-ui,sans-serif;background:rgba(127,127,127,.15)">Exemple — de completat cu ofertele dvs.</p>
+      <p class="meniu-intro" data-jarvis="apare">Cafea, prăjituri și produse de patiserie. Pentru prețuri, sună sau treci pe la cafenea.</p>
+      <ul class="vitrina">
+        <li class="produs" data-jarvis="apare">
+          <div class="cutie" aria-hidden="true">
+            <div class="corp"></div>
+            <div class="capac"></div>
+          </div>
+          <h3>Cafea și băuturi</h3>
+        </li>
+        <li class="produs" data-jarvis="apare">
+          <div class="cutie" aria-hidden="true">
+            <div class="corp"></div>
+            <div class="capac"></div>
+          </div>
+          <h3>Prăjituri</h3>
+        </li>
+        <li class="produs" data-jarvis="apare">
+          <div class="cutie" aria-hidden="true">
+            <div class="corp"></div>
+            <div class="capac"></div>
+          </div>
+          <h3>Produse de patiserie</h3>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galerie-sec" id="galerie" aria-labelledby="t-galerie">
+    <div class="wrap">
+      <h2 id="t-galerie" data-jarvis="apare">Galerie</h2>
+      <div class="galerie" data-jarvis="galerie">
+        <figure data-jarvis="apare">
+          <img src="img/1.jpg" alt="Desert servit pe o farfurie, fotografie ilustrativă" loading="lazy">
+        </figure>
+        <figure data-jarvis="apare">
+          <img src="img/3.jpg" alt="Femeie la o masă cu o prăjitură și o cafea" loading="lazy">
+        </figure>
+        <figure data-jarvis="apare">
+          <img src="img/5.jpg" alt="Boabe de cafea prăjită" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="kontakt" id="contact" aria-labelledby="t-contact">
+    <div class="wrap kontakt-in">
+      <div data-jarvis="apare">
+        <h2 id="t-contact">Contact</h2>
+        <address class="adresa">Strada Mihail Jora 3<br>Timișoara</address>
+        <p class="telefon-mare"><a href="tel:0726118186">0726 118 186</a></p>
+        <div class="actiuni">
+          <a class="btn btn-principal" href="tel:0726118186">Sună acum</a>
+          <a class="btn btn-secund" href="https://www.google.com/maps/search/?api=1&amp;query=La+Pisici+Timi%C8%99oara" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <figure class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=21.232652,45.744364,21.240652,45.748364&amp;layer=mapnik&amp;marker=45.746364,21.236652" title="Harta cu locația La Pisici, Strada Mihail Jora 3, Timișoara" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="wrap subsol-in">
+    <p class="subsol-marca">La Pisici</p>
+    <p>Cafenea în Timișoara, Strada Mihail Jora 3.</p>
+    <p>Model de site (demo)</p>
+    <p class="subsol-credit">Fotografii ilustrative de pe Pixabay: SkloStudio, StockSnap, freestocks-photos, Engin_Akyurt, rahulsankraft</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
