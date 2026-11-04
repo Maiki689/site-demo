@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sLFNZ7VbDEPHVqwLEGz8sJ0IeZRfbq1kRRBlsGcpFqI=' 'sha256-w1n1sqwgoZnruKCP/qgWTZ0/e+NcWbtXXsdXsFkRavU=' 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-puE5468vghHOGtPR/ljPq0DzJBxYHJVDp9J/ZIJYJaI=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-krualkdvmD0hKivE9UyIkDnBaW3URh1ApzaGCThXD7s=' 'sha256-VA2G+SQDhtWfTE43kXT4xzTQR8rgDOMAyARYUTnYjNk=' 'sha256-Jfg9hVmRH260kEa/Oep9Wji/X5ymyJoR4tqK4sjIIAU=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-RdrSowyf1NMJ2YG2JBXlZP0QD7J4A2bjDIEklqhzN0A=' 'sha256-Ucp8Ovzkk9PGJghZsTutrVaVbjxTco1JmANMYiEDg5w=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Main Sushi | Sushi, hibachi and rolls in Memphis</title>
+<meta name="description" content="South Main Sushi makes sushi, hibachi, nigiri, and sushi rolls at 520 South Main Street in Memphis. Call (901) 249-2194.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Instrument+Serif&amp;display=swap">
+<style>
+:root{
+  --ink:#141311;
+  --moss:#6B7A4B;
+  --mustard:#D4A72C;
+  --cream:#EDE6D8;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --focus:var(--ink);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-0.02em;margin:0}
+p{margin:0}
+.wrap{width:100%;max-width:78rem;margin-inline:auto;padding-inline:clamp(1.25rem,5vw,3rem)}
+.dark{--focus:var(--mustard)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:3rem;padding:0 1.5rem;border-radius:.25rem;
+  font:500 1rem/1 var(--sans);text-decoration:none;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .15s var(--ease),opacity .2s var(--ease);
+}
+.btn:active{transform:scale(.97)}
+.btn svg{width:1.05em;height:1.05em;flex:none}
+.btn-plin{background:var(--mustard);color:var(--ink)}
+.dark .btn-plin:hover{background:var(--cream)}
+.light .btn-plin:hover{background:var(--ink);color:var(--cream)}
+.btn-contur{background:transparent;color:inherit;border-color:currentColor}
+.dark .btn-contur:hover{background:rgba(237,230,216,.14)}
+.light .btn-contur:hover{background:rgba(20,19,17,.07)}
+.btn-mic{min-height:2.75rem;padding:0 1.15rem;font-size:1rem;font-weight:600}
+
+/* Header: solid cream bar */
+.antet{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--cream);
+  border-bottom:1px solid rgba(20,19,17,.14);
+}
+.antet.derulat{border-bottom-color:rgba(20,19,17,.3)}
+.antet-in{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;min-height:4.25rem}
+.marca{
+  font-family:var(--serif);font-size:1.7rem;line-height:1;letter-spacing:-0.01em;
+  text-decoration:none;margin-right:auto;padding:.5rem 0;color:var(--ink);
+}
+.antet .btn-mic{order:2;background:var(--ink);color:var(--cream)}
+.antet .btn-mic:hover{background:var(--moss);color:var(--cream)}
+.antet nav{order:3;flex-basis:100%}
+.meniu-btn{
+  display:none;width:2.75rem;height:2.75rem;align-items:center;justify-content:center;
+  background:transparent;border:1.5px solid var(--ink);border-radius:.25rem;color:var(--ink);cursor:pointer;
+  transition:transform .15s var(--ease);
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-btn span.bar{display:block;width:1.1rem;height:2px;background:currentColor;position:relative;transition:transform .3s var(--ease),opacity .2s}
+.meniu-btn .bars{display:grid;gap:5px}
+.meniu-btn[aria-expanded="true"] .bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] .bar:nth-child(2){opacity:0}
+.meniu-btn[aria-expanded="true"] .bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-lista{list-style:none;margin:0;padding:0 0 .5rem;display:flex;flex-wrap:wrap;gap:0 1.75rem}
+.nav-lista a{
+  display:inline-flex;align-items:center;min-height:3rem;text-decoration:none;
+  font-family:var(--sans);font-size:1.0625rem;font-weight:600;color:var(--ink);position:relative;
+}
+.nav-lista a::after{
+  content:"";position:absolute;left:0;right:0;bottom:.65rem;height:2px;background:currentColor;
+  transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);
+}
+.nav-lista a:hover::after{transform:scaleX(1)}
+
+@media (max-width:859px){
+  html.js .antet nav{flex-basis:auto;order:3}
+  html.js .meniu-btn{display:inline-flex}
+  html.js .nav-lista{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    padding:.5rem clamp(1.25rem,5vw,3rem) 1.5rem;
+    background:var(--cream);border-bottom:1px solid rgba(20,19,17,.2);
+    opacity:0;visibility:hidden;transform:translateY(-.5rem);
+    transition:opacity .35s var(--ease),transform .35s var(--ease),visibility 0s linear .35s;
+  }
+  html.js .nav-lista.deschis{opacity:1;visibility:visible;transform:none;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+  html.js .nav-lista li + li{border-top:1px solid rgba(20,19,17,.14)}
+  html.js .nav-lista a{display:flex;font-size:1.4rem;min-height:3.75rem}
+  html.js .nav-lista a::after{bottom:.9rem;right:auto;width:2.5rem}
+}
+@media (min-width:860px){
+  .antet-in{flex-wrap:nowrap;gap:3rem;min-height:4.5rem}
+  .antet nav{order:1;flex-basis:auto}
+  .antet .btn-mic{order:2}
+  .meniu-btn{display:none !important}
+  .nav-lista{position:static;opacity:1;visibility:visible;transform:none;padding:0;gap:2.75rem;flex-wrap:nowrap}
+}
+
+/* Hero */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:flex-end;color:var(--cream);background:var(--ink);overflow:hidden;
+}
+.hero-foto{position:absolute;inset:0}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:center 40%;animation:dolly 16s var(--ease) both}
+@keyframes dolly{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,
+    rgba(20,19,17,.95) 0%,
+    rgba(20,19,17,.78) 32%,
+    rgba(20,19,17,.5) 62%,
+    rgba(20,19,17,.42) 80%,
+    rgba(20,19,17,.68) 100%);
+}
+.hero-in{position:relative;z-index:1;padding-top:7.5rem;padding-bottom:clamp(2.5rem,7vh,4.5rem)}
+.hero h1{
+  font-size:clamp(3.9rem,17vw,11.5rem);line-height:1;letter-spacing:-0.025em;margin-bottom:1.25rem;
+}
+.hero-lead{font-size:clamp(1.08rem,2.4vw,1.35rem);max-width:30ch;color:var(--cream)}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.hero-adresa{margin-top:1.5rem;font-size:.95rem;color:rgba(237,230,216,.92)}
+
+/* About */
+.despre{padding-block:clamp(5rem,11vw,8.5rem)}
+.despre-grid{display:grid;row-gap:clamp(2rem,4.5vw,3rem)}
+.despre h2{font-size:clamp(2.6rem,7.2vw,5.4rem);line-height:1.05;max-width:13ch}
+.despre-text{display:grid;gap:1.1rem;max-width:36rem;color:rgba(20,19,17,.84);font-size:1.1rem}
+.puncte{list-style:none;margin:0;padding:0;display:grid;gap:clamp(2rem,4.5vw,3rem)}
+.puncte li{border-top:1px solid var(--moss);padding-top:1.25rem}
+.puncte h3{font-size:clamp(1.7rem,3vw,2.1rem);line-height:1.1;margin-bottom:.5rem}
+.puncte p{color:rgba(20,19,17,.8)}
+@media (min-width:860px){
+  .despre-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem}
+  .despre h2{grid-column:1/8}
+  .despre-text{grid-column:8/13;align-self:end}
+  .puncte{grid-column:1/-1;grid-template-columns:repeat(3,1fr);gap:2rem}
+}
+
+/* Menu */
+.meniu{background:var(--ink);color:var(--cream)}
+.meniu-intro{padding-block:clamp(5rem,12vw,8.5rem) clamp(3rem,7vw,5rem);display:grid;gap:1.25rem}
+.meniu-intro h2{font-size:clamp(3rem,9vw,6.5rem);line-height:1.02}
+.meniu-intro p{max-width:34rem;color:rgba(237,230,216,.85);font-size:1.1rem}
+@media (min-width:860px){
+  .meniu-intro{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:end}
+  .meniu-intro h2{grid-column:1/7}
+  .meniu-intro p{grid-column:8/13}
+}
+.capitol{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:flex-end;overflow:hidden;color:var(--cream);background:var(--ink);
+}
+.cine{position:absolute;inset:0;overflow:hidden}
+.cine img{width:100%;height:100%;object-fit:cover;transform-origin:center 55%}
+.capitol .cine::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,19,17,.9) 0%,rgba(20,19,17,.5) 42%,rgba(20,19,17,.12) 100%);
+}
+.capitol-text{position:relative;z-index:1;padding-block:clamp(3rem,10vh,6rem)}
+.capitol h3{font-size:clamp(3.6rem,13vw,9.5rem);line-height:1;margin-bottom:1rem}
+.capitol p{max-width:30ch;font-size:clamp(1.08rem,2vw,1.3rem);color:rgba(237,230,216,.92)}
+.capitol-hibachi{background:var(--ink)}
+.farfurie{
+  position:absolute;width:min(92vw,44rem);height:auto;
+  right:-18vw;top:9%;
+}
+@media (min-width:860px){
+  .farfurie{right:4vw;top:50%;transform:translateY(-50%)}
+}
+
+/* Slow approach on scroll */
+html.js .cine img{transition:transform 9s var(--ease)}
+html.js .cine.vizibil img{transform:scale(1.08)}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference){
+    html .cine img,html.js .cine img,html.js .cine.vizibil img{
+      transition:none;transform:none;
+      animation:apropiere linear both;
+      animation-timeline:view();
+      animation-range:cover 0% cover 100%;
+    }
+  }
+}
+@keyframes apropiere{from{transform:scale(1)}to{transform:scale(1.14)}}
+
+/* Gallery */
+.galerie-sec{padding-block:clamp(5rem,12vw,9rem)}
+.galerie-cap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.galerie-cap h2{font-size:clamp(2.6rem,7vw,5rem);line-height:1.05}
+.galerie-cap p{color:rgba(20,19,17,.75)}
+.galerie{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.galerie figure{margin:0;overflow:hidden;aspect-ratio:4/5;background:rgba(20,19,17,.08)}
+.galerie figure:first-child{grid-column:1/-1;aspect-ratio:16/10}
+.galerie img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .8s var(--ease)}
+.galerie figure:hover img{transform:scale(1.03)}
+@media (min-width:860px){
+  .galerie{grid-template-columns:repeat(4,1fr);gap:1rem}
+  .galerie figure{aspect-ratio:1/1}
+  .galerie figure:first-child{grid-column:1/3;grid-row:1/3;aspect-ratio:1/1}
+}
+html.galerie-deschisa{overflow:hidden}
+.galerie img.marita{
+  position:fixed;inset:0;z-index:200;width:100vw;height:100vh;height:100dvh;
+  object-fit:contain;padding:clamp(1rem,4vw,3rem);background:rgba(20,19,17,.95);
+  transform:none;cursor:zoom-out;animation:fade .3s var(--ease);
+}
+.galerie figure.marita{
+  position:fixed;inset:0;z-index:200;aspect-ratio:auto;display:grid;place-items:center;
+  padding:clamp(1rem,4vw,3rem);background:rgba(20,19,17,.95);animation:fade .3s var(--ease);
+}
+.galerie figure.marita img{object-fit:contain;transform:none;cursor:zoom-out}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+
+/* Visit chapter */
+.vizita{min-height:88vh;min-height:88svh}
+.vizita .para{position:absolute;inset:0}
+.vizita .cine::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,19,17,.9) 0%,rgba(20,19,17,.58) 50%,rgba(20,19,17,.32) 100%);
+}
+.vizita h2{font-size:clamp(2.8rem,8vw,6.2rem);line-height:1.04;max-width:14ch;margin-bottom:1.25rem}
+
+/* Contact */
+.contact{padding-block:clamp(5rem,12vw,9rem)}
+.contact-grid{display:grid;gap:3rem}
+.contact h2{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;margin-bottom:2rem}
+.date{margin:0;display:grid;gap:1.5rem}
+.date div{border-top:1px solid var(--moss);padding-top:1rem}
+.date dt{font-size:.9rem;color:rgba(20,19,17,.7);margin-bottom:.3rem}
+.date dd{margin:0;font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.15;letter-spacing:-0.01em}
+.date dd a{text-decoration:none}
+.date dd a:hover{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.contact .actiuni{margin-top:2.25rem}
+.harta{margin:0;aspect-ratio:4/3;background:rgba(20,19,17,.08);overflow:hidden}
+.harta iframe{display:block;width:100%;height:100%;border:0;filter:saturate(.6)}
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:repeat(12,1fr);column-gap:2rem;align-items:start}
+  .contact-info{grid-column:1/6}
+  .harta{grid-column:7/13;aspect-ratio:5/4}
+}
+
+/* Footer */
+.subsol{background:var(--ink);color:var(--cream);padding-block:3.5rem 2.5rem}
+.subsol-in{display:grid;gap:1.5rem}
+.subsol .marca-f{font-family:var(--serif);font-size:2.2rem;line-height:1;letter-spacing:-0.02em;color:var(--cream)}
+.subsol p{font-size:.92rem;color:rgba(237,230,216,.78)}
+.subsol a{text-decoration:underline;text-underline-offset:.2em;text-decoration-thickness:1px}
+.subsol .mic{border-top:1px solid rgba(237,230,216,.16);padding-top:1.5rem;display:grid;gap:.4rem;font-size:.85rem}
+@media (min-width:860px){
+  .subsol-in{grid-template-columns:1fr auto;align-items:end}
+  .subsol .mic{grid-column:1/-1}
+}
+
+/* Preferences */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important}
+  .hero-foto img,.cine img,html.js .cine img,html.js .cine.vizibil img{animation:none !important;transform:none !important;transition:none !important}
+  .galerie img{transition:none}
+  .galerie figure:hover img{transform:none}
+  html.js .nav-lista{transform:none !important;transition:opacity .2s linear,visibility 0s linear .2s}
+  .nav-lista a::after{transition:none}
+  .galerie img.marita,.galerie figure.marita{animation:fade .2s linear}
+  .btn,.meniu-btn{transition:opacity .2s linear}
+  .meniu-btn span.bar{transition:opacity .2s linear}
+}
+@media (prefers-reduced-transparency:reduce){
+  .hero::after,.capitol .cine::after,.vizita .cine::after{background:rgba(20,19,17,.8)}
+}
+@media (prefers-contrast:more){
+  .antet,.antet.derulat{border-bottom:2px solid var(--ink)}
+  .hero::after,.capitol .cine::after,.vizita .cine::after{background:rgba(20,19,17,.85)}
+  .hero-lead,.hero-adresa,.capitol p,.meniu-intro p,.subsol p{color:var(--cream)}
+  .despre-text,.puncte p,.galerie-cap p,.date dt{color:var(--ink)}
+  .puncte li,.date div{border-top-color:var(--ink)}
+  .btn-contur{border-width:2px}
+  .nav-lista a{text-decoration:underline;text-underline-offset:.3em}
+}
+</style>
+</head>
+<body>
+
+<header class="antet light" data-jarvis="antet">
+  <div class="wrap antet-in">
+    <a href="#top" class="marca">South Main Sushi</a>
+    <a class="btn btn-plin btn-mic" href="tel:+19012492194">Call now</a>
+    <nav aria-label="Main">
+      <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="nav-lista" aria-label="Open navigation">
+        <span class="bars" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+      </button>
+      <ul class="nav-lista" id="nav-lista" data-jarvis="meniu-lista">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero dark" id="top">
+    <div class="hero-foto">
+      <img src="img/2.jpg" alt="A chef preparing sushi rolls at the counter" width="1600" height="1067">
+    </div>
+    <div class="wrap hero-in">
+      <h1>South Main<br> Sushi</h1>
+      <p class="hero-lead">Sushi, hibachi, nigiri, and rolls on South Main Street in Memphis.</p>
+      <div class="actiuni">
+        <a class="btn btn-plin" href="tel:+19012492194">
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Call (901) 249-2194
+        </a>
+        <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=South+Main+Sushi+Memphis">Get directions</a>
+      </div>
+      <p class="hero-adresa">520 South Main Street, Memphis</p>
+    </div>
+  </section>
+
+  <section class="despre light" id="about">
+    <div class="wrap despre-grid">
+      <h2>Sushi and hibachi on South Main Street</h2>
+      <div class="despre-text">
+        <p>South Main Sushi is a local restaurant in Memphis that makes sushi, hibachi, nigiri, and sushi rolls.</p>
+        <p>Come in for a meal at 520 South Main Street and order the dishes you already like. The staff is friendly and ready to take your order.</p>
+      </div>
+      <ul class="puncte">
+        <li>
+          <h3>Made fresh</h3>
+          <p>Every plate is prepared on site, when you order it.</p>
+        </li>
+        <li>
+          <h3>On South Main</h3>
+          <p>At 520 South Main Street, easy to find in Memphis.</p>
+        </li>
+        <li>
+          <h3>A full menu</h3>
+          <p>Sushi, hibachi, nigiri, and rolls, all from one kitchen.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="meniu dark" id="menu" aria-labelledby="menu-titlu">
+    <div class="wrap meniu-intro">
+      <h2 id="menu-titlu">Menu</h2>
+      <p>Four kinds of dishes come out of the kitchen at South Main Sushi. Call ahead if you want to ask about anything on the menu.</p>
+    </div>
+
+    <div class="poveste">
+      <article class="capitol">
+        <div class="cine" data-jarvis="apare">
+          <img src="img/1.jpg" alt="Sushi and sushi rolls laid out on a table, seen from above" loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="wrap capitol-text">
+          <h3>Sushi</h3>
+          <p>Sushi made in the kitchen on South Main and served at your table.</p>
+        </div>
+      </article>
+
+      <article class="capitol capitol-hibachi">
+        <svg class="farfurie" viewbox="0 0 400 400" fill="none" aria-hidden="true">
+          <circle cx="200" cy="200" r="190" stroke="#D4A72C" stroke-width="1" opacity=".55"/>
+          <circle cx="200" cy="200" r="150" stroke="#EDE6D8" stroke-width="1" opacity=".22"/>
+          <circle cx="200" cy="200" r="104" stroke="#6B7A4B" stroke-width="1.5" opacity=".9"/>
+          <path d="M150 210c12-18 22 18 34 0s22 18 34 0 22 18 34 0" stroke="#D4A72C" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>
+          <path d="M150 180c12-18 22 18 34 0s22 18 34 0 22 18 34 0" stroke="#D4A72C" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+          <line x1="300" y1="40" x2="380" y2="250" stroke="#EDE6D8" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+          <line x1="322" y1="34" x2="396" y2="238" stroke="#EDE6D8" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+        </svg>
+        <div class="wrap capitol-text">
+          <h3>Hibachi</h3>
+          <p>Hibachi prepared on site and brought out hot from the grill.</p>
+        </div>
+      </article>
+
+      <article class="capitol">
+        <div class="cine" data-jarvis="apare">
+          <img src="img/3.jpg" alt="Nigiri with salmon and tuna over rice" loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="wrap capitol-text">
+          <h3>Nigiri</h3>
+          <p>Nigiri served to order, with sliced fish over pressed rice.</p>
+        </div>
+      </article>
+
+      <article class="capitol">
+        <div class="cine" data-jarvis="apare">
+          <img src="img/4.jpg" alt="A plate of salmon sushi rolls" loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="wrap capitol-text">
+          <h3>Sushi rolls</h3>
+          <p>Rolls made fresh, cut and plated when you order them.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="galerie-sec light" id="gallery" aria-labelledby="galerie-titlu">
+    <div class="wrap">
+      <div class="galerie-cap">
+        <h2 id="galerie-titlu">From the kitchen</h2>
+        <p>Tap a photo to see it larger.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <figure><img src="img/2.jpg" alt="A chef shaping sushi by hand" loading="lazy" width="1600" height="1067"></figure>
+        <figure><img src="img/4.jpg" alt="Salmon rolls arranged on a plate" loading="lazy" width="1200" height="1500"></figure>
+        <figure><img src="img/3.jpg" alt="Tuna and salmon nigiri" loading="lazy" width="1200" height="1500"></figure>
+        <figure><img src="img/1.jpg" alt="An assortment of sushi on the table" loading="lazy" width="1200" height="1500"></figure>
+        <figure><img src="img/5.jpg" alt="Sushi served in the restaurant" loading="lazy" width="1200" height="1500"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="capitol vizita dark" aria-labelledby="vizita-titlu">
+    <div class="para">
+      <div class="cine" data-jarvis="apare">
+        <img src="img/5.jpg" alt="Sushi on the table at the restaurant" loading="lazy" width="1600" height="1067">
+      </div>
+    </div>
+    <div class="wrap capitol-text">
+      <h2 id="vizita-titlu">Sit down for sushi on South Main Street</h2>
+      <p>Call with questions about the menu, or come by 520 South Main Street and order at the restaurant.</p>
+      <div class="actiuni">
+        <a class="btn btn-plin" href="tel:+19012492194">Call now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact light" id="contact" aria-labelledby="contact-titlu">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <h2 id="contact-titlu">Address and phone</h2>
+        <dl class="date">
+          <div>
+            <dt>Address</dt>
+            <dd>520 South Main Street<br>Memphis, Tennessee</dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href="tel:+19012492194">(901) 249-2194</a></dd>
+          </div>
+        </dl>
+        <div class="actiuni">
+          <a class="btn btn-plin" href="tel:+19012492194">Call (901) 249-2194</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=South+Main+Sushi+Memphis">Open in Google Maps</a>
+        </div>
+      </div>
+      <figure class="harta">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-90.062689,35.131225,-90.054689,35.135225&amp;layer=mapnik&amp;marker=35.133225,-90.058689" title="Map showing South Main Sushi at 520 South Main Street, Memphis" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="subsol dark">
+  <div class="wrap subsol-in">
+    <div>
+      <p class="marca-f">South Main Sushi</p>
+      <p>Sushi, hibachi, nigiri, and rolls in Memphis.</p>
+    </div>
+    <p>520 South Main Street, Memphis<br><a href="tel:+19012492194">(901) 249-2194</a></p>
+    <div class="mic">
+      <p>Website concept (demo)</p>
+      <p>Illustrative photos from Pixabay: Mayorga-Photo, kantnews1, omisido, Mekan_4</p>
+    </div>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
