@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sLFNZ7VbDEPHVqwLEGz8sJ0IeZRfbq1kRRBlsGcpFqI=' 'sha256-w1n1sqwgoZnruKCP/qgWTZ0/e+NcWbtXXsdXsFkRavU=' 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-puE5468vghHOGtPR/ljPq0DzJBxYHJVDp9J/ZIJYJaI=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-krualkdvmD0hKivE9UyIkDnBaW3URh1ApzaGCThXD7s=' 'sha256-VA2G+SQDhtWfTE43kXT4xzTQR8rgDOMAyARYUTnYjNk=' 'sha256-Jfg9hVmRH260kEa/Oep9Wji/X5ymyJoR4tqK4sjIIAU=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-RdrSowyf1NMJ2YG2JBXlZP0QD7J4A2bjDIEklqhzN0A=' 'sha256-Ucp8Ovzkk9PGJghZsTutrVaVbjxTco1JmANMYiEDg5w=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="2"><meta name="generator" content="jarvis2-v2"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arthur Pub, Constanța: bere irlandeză și fish and chips</title>
+<meta name="description" content="Arthur Pub, pe Bulevardul Mamaia în Constanța, vizavi de Universitatea Ovidius. Bere irlandeză și fish and chips. Rezervări la 0733 449 583.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap">
+<style>
+:root{
+  --verde:#1D3B2A;
+  --maro:#6B3E1E;
+  --crem:#F3E9D2;
+  --negru:#151515;
+  --crem-70:rgba(243,233,210,.78);
+  --crem-30:rgba(243,233,210,.3);
+  --crem-14:rgba(243,233,210,.14);
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --titlu:"Archivo Black", "Arial Black", sans-serif;
+  --text:"Lora", Georgia, serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--crem);
+  font-family:var(--text);
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{
+  font-family:var(--titlu);
+  font-weight:400;
+  letter-spacing:-.02em;
+  line-height:1.06;
+  margin:0;
+}
+p{margin:0}
+.cutie{width:min(100% - 2.5rem, 72rem);margin-inline:auto}
+
+.sari{
+  position:absolute;left:1rem;top:-4rem;z-index:500;
+  background:var(--crem);color:var(--negru);
+  padding:.75rem 1rem;border-radius:.3rem;text-decoration:none;font-weight:600;
+}
+.sari:focus{top:1rem}
+
+/* Butoane */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:0 1.4rem;
+  font-family:var(--titlu);font-size:.95rem;letter-spacing:.01em;text-transform:uppercase;
+  text-decoration:none;border-radius:.3rem;border:2px solid transparent;
+  transition:transform .15s var(--curba);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.nav-lista a:focus-visible,.meniu-btn:focus-visible,.galerie img:focus-visible{
+  outline:3px solid var(--crem);outline-offset:3px;
+}
+.btn-plin{background:var(--crem);color:var(--negru)}
+.btn-plin:hover{border-color:var(--crem);background:transparent;color:var(--crem)}
+.btn-gol{border-color:var(--crem-30);color:var(--crem)}
+.btn-gol:hover{border-color:var(--crem)}
+
+/* Antet */
+.antet{
+  position:sticky;top:0;z-index:100;
+  background:rgba(21,21,21,.72);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+}
+.antet.derulat{background:rgba(21,21,21,.88);border-bottom-color:var(--crem-14)}
+.antet-in{
+  width:min(100% - 2rem, 72rem);margin-inline:auto;
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;
+  padding:.6rem 0;
+}
+.sigla{
+  font-family:var(--titlu);font-size:1.15rem;letter-spacing:-.01em;
+  text-decoration:none;text-transform:uppercase;margin-right:auto;
+  min-height:44px;display:inline-flex;align-items:center;
+}
+.antet .btn{min-height:2.75rem;padding:0 1rem;font-size:.85rem}
+.meniu-btn{
+  display:none;
+  width:2.75rem;height:2.75rem;border-radius:.3rem;
+  background:transparent;border:2px solid var(--crem-30);color:var(--crem);
+  cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:.35rem;
+  transition:transform .15s var(--curba);
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-btn span{display:block;width:1.2rem;height:2px;background:var(--crem);transition:transform .3s var(--curba)}
+.meniu-btn[aria-expanded="true"] span:first-child{transform:translateY(.22rem) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] span:last-child{transform:translateY(-.22rem) rotate(-45deg)}
+html.js .meniu-btn{display:inline-flex}
+.nav-lista{
+  list-style:none;margin:0;padding:0;
+  order:3;width:100%;
+  display:flex;flex-wrap:wrap;gap:0 1.25rem;
+}
+.nav-lista a{
+  display:inline-flex;align-items:center;min-height:44px;
+  text-decoration:none;font-weight:500;
+  border-bottom:2px solid transparent;
+}
+.nav-lista a:hover{border-bottom-color:var(--crem)}
+html.js .nav-lista{display:none}
+html.js .nav-lista.deschis{display:flex;flex-direction:column;padding:.25rem 0 .75rem}
+html.js .nav-lista.deschis a{font-family:var(--titlu);font-size:1.4rem;text-transform:uppercase;letter-spacing:-.01em}
+
+@media (min-width:860px){
+  .antet-in{flex-wrap:nowrap}
+  .nav-lista,html.js .nav-lista,html.js .nav-lista.deschis{
+    display:flex;flex-direction:row;order:0;width:auto;padding:0;gap:1.75rem;margin-right:1rem;
+  }
+  html.js .nav-lista.deschis a{font-family:var(--text);font-size:1rem;text-transform:none;letter-spacing:0}
+  .meniu-btn,html.js .meniu-btn{display:none}
+}
+
+/* Prima secțiune: fond verde simplu */
+.erou{
+  background:var(--verde);
+  padding:clamp(2.75rem,8vw,6rem) 0 clamp(2.25rem,5vw,3.75rem);
+}
+.erou-grid{
+  display:grid;
+  gap:1.25rem;
+  max-width:60rem;
+}
+.erou h1{
+  font-size:clamp(3.5rem,15vw,9.5rem);
+  line-height:1;
+  text-transform:uppercase;
+}
+.erou h1 span{display:block}
+.slogan{font-style:italic;font-size:clamp(1.25rem,3.6vw,1.75rem);line-height:1.3;font-weight:500}
+.erou-adresa{
+  margin-top:.75rem;
+  color:var(--crem);
+  font-size:clamp(1.1rem,2.6vw,1.25rem);
+  line-height:1.5;
+  max-width:34rem;
+}
+.erou-butoane{margin-top:.75rem;display:flex;flex-direction:column;gap:.75rem}
+@media (min-width:600px){
+  .erou-butoane{flex-direction:row;flex-wrap:wrap}
+}
+
+/* Secțiuni */
+.sectiune{padding-block:clamp(4.5rem,12vw,8.5rem)}
+.titlu-mare{font-size:clamp(2.25rem,7.5vw,4.25rem);text-transform:uppercase}
+
+/* Despre */
+.despre{background:var(--negru);padding-top:clamp(1.25rem,3vw,2.5rem)}
+.despre-grid{display:grid;gap:2.5rem}
+.despre-foto{
+  width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;
+  border-radius:.35rem;
+}
+.despre-text p{margin-top:1.25rem;max-width:34rem}
+.despre-text p:first-of-type{margin-top:1.5rem;font-size:1.2rem}
+.repere{margin:2.5rem 0 0;padding:0}
+.repere div{padding:1.1rem 0;border-top:1px solid var(--crem-14);display:grid;gap:.2rem}
+.repere div:last-child{border-bottom:1px solid var(--crem-14)}
+.repere dt{font-family:var(--titlu);font-size:1rem;text-transform:uppercase;letter-spacing:0}
+.repere dd{margin:0;color:var(--crem-70)}
+@media (min-width:860px){
+  .despre-grid{grid-template-columns:6fr 5fr;gap:4.5rem;align-items:start}
+  .repere div{grid-template-columns:11rem 1fr;gap:1rem}
+}
+
+/* Banda */
+.banda-loc{background:var(--maro);padding:1.15rem 0}
+.banda{
+  list-style:none;margin:0 auto;padding:0;
+  width:min(100% - 2.5rem, 72rem);
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem 1.5rem;
+}
+.banda li{
+  font-family:var(--titlu);text-transform:uppercase;
+  font-size:clamp(1rem,3vw,1.5rem);letter-spacing:-.01em;line-height:1.2;
+  display:flex;align-items:center;gap:1.5rem;
+}
+.banda li + li::before{content:"•";color:var(--crem-70)}
+
+/* Meniu */
+.meniu{background:var(--verde)}
+.meniu h2{font-size:clamp(3rem,13vw,7.5rem);text-transform:uppercase}
+.meniu-intro{margin-top:1.25rem;font-size:1.2rem;max-width:32rem}
+.placi{margin-top:3rem;display:grid;gap:1.75rem}
+.placa{
+  position:relative;
+  background:var(--maro);
+  border-radius:.35rem;
+  padding:clamp(2rem,5vw,3.25rem) clamp(1.5rem,4vw,2.75rem);
+  box-shadow:
+    inset 0 0 0 .55rem var(--maro),
+    inset 0 0 0 calc(.55rem + 1px) rgba(243,233,210,.5),
+    0 .5rem 0 rgba(21,21,21,.45);
+}
+.placa h3{font-size:clamp(2rem,7.5vw,3.4rem);text-transform:uppercase}
+.placa p{margin-top:1rem;max-width:26rem}
+.rezervare-rand{
+  margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--crem-30);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem;
+}
+.rezervare-rand p{font-size:1.15rem;max-width:30rem}
+@media (min-width:860px){
+  .placi{grid-template-columns:1fr 1fr}
+  .placa:nth-child(2){margin-top:3rem}
+}
+
+/* Galerie */
+.galerie-sectiune{background:var(--negru)}
+.galerie-cap{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:.75rem;margin-bottom:2.25rem}
+.nota{color:var(--crem-70);font-style:italic;font-size:.95rem}
+.galerie{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.galerie img{
+  width:100%;height:100%;object-fit:cover;border-radius:.3rem;
+  aspect-ratio:1/1;cursor:zoom-in;
+  transition:opacity .3s var(--curba);
+}
+.galerie img:hover{opacity:.88}
+.galerie img:first-child{grid-column:1 / -1;aspect-ratio:16/10}
+.galerie img.marita{
+  position:fixed;inset:0;z-index:300;
+  width:100vw;height:100vh;height:100dvh;max-width:none;
+  aspect-ratio:auto;object-fit:contain;
+  background:rgba(21,21,21,.95);padding:1rem;border-radius:0;
+  cursor:zoom-out;opacity:1;
+  animation:mareste .35s var(--curba) both;
+}
+@keyframes mareste{from{opacity:0}to{opacity:1}}
+html.galerie-deschisa,html.galerie-deschisa body{overflow:hidden}
+@media (min-width:860px){
+  .galerie{grid-template-columns:2fr 1fr;gap:1rem}
+  .galerie img{aspect-ratio:4/3}
+  .galerie img:first-child{grid-column:1;grid-row:1 / span 2;aspect-ratio:auto}
+}
+
+/* Contact */
+.contact{background:var(--crem);color:var(--negru)}
+.contact h2{color:var(--verde)}
+.contact-grid{display:grid;gap:3rem}
+.contact-text > p{margin-top:1.25rem;max-width:32rem;font-size:1.1rem}
+.moduri{margin-top:2rem;display:flex;align-items:baseline;gap:.75rem;flex-wrap:wrap}
+.moduri strong{font-family:var(--titlu);font-weight:400;font-size:clamp(3rem,10vw,4.5rem);line-height:1;color:var(--maro)}
+.moduri span{font-size:1.1rem}
+.date{margin:2rem 0 0;padding:0}
+.date div{padding:1rem 0;border-top:1px solid rgba(21,21,21,.18)}
+.date div:last-child{border-bottom:1px solid rgba(21,21,21,.18)}
+.date dt{font-family:var(--titlu);text-transform:uppercase;font-size:.9rem;color:var(--verde)}
+.date dd{margin:.2rem 0 0;font-size:1.1rem}
+.date a{text-decoration-thickness:1px;text-underline-offset:.2em}
+.contact-butoane{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem}
+.contact .btn-plin{background:var(--verde);color:var(--crem)}
+.contact .btn-plin:hover{background:transparent;color:var(--verde);border-color:var(--verde)}
+.contact .btn-gol{border-color:rgba(21,21,21,.4);color:var(--negru)}
+.contact .btn-gol:hover{border-color:var(--negru)}
+.contact .btn:focus-visible{outline-color:var(--verde)}
+.harta{
+  width:100%;aspect-ratio:4/3;border:0;border-radius:.35rem;display:block;
+  box-shadow:0 0 0 1px rgba(21,21,21,.18), 0 .5rem 0 rgba(29,59,42,.25);
+}
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:1fr 1fr;gap:5rem;align-items:stretch}
+  .contact-butoane{flex-direction:row;flex-wrap:wrap}
+  .harta{height:100%;min-height:28rem;aspect-ratio:auto}
+}
+
+/* Subsol */
+.subsol{background:var(--negru);padding:3.5rem 0 2.5rem;color:var(--crem-70);font-size:.95rem}
+.subsol-grid{display:grid;gap:1.5rem}
+.subsol-nume{font-family:var(--titlu);font-size:1.6rem;text-transform:uppercase;color:var(--crem);letter-spacing:-.02em;line-height:1.1}
+.subsol p + p{margin-top:.35rem}
+.subsol a{min-height:44px;display:inline-flex;align-items:center}
+.subsol-jos{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--crem-14);font-size:.85rem}
+@media (min-width:860px){.subsol-grid{grid-template-columns:1fr auto;align-items:end}}
+
+/* Apariții la derulare (doar cu JavaScript activ) */
+html.js [data-jarvis="apare"]{
+  opacity:0;transform:translateY(.75rem);
+  transition:opacity .55s var(--curba), transform .55s var(--curba);
+}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Preferințe */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .meniu-btn span,.btn,.meniu-btn{transition:none}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .3s ease}
+  .galerie img.marita{animation:mareste .2s ease both}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--crem-70:var(--crem);--crem-30:rgba(243,233,210,.75);--crem-14:rgba(243,233,210,.5)}
+  .antet,.antet.derulat{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:var(--crem)}
+  .placa{box-shadow:inset 0 0 0 .55rem var(--maro), inset 0 0 0 calc(.55rem + 2px) var(--crem)}
+  .btn-gol{border-color:var(--crem)}
+  .contact .btn-gol{border-color:var(--negru)}
+  .nav-lista a{text-decoration:underline}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Arthur Pub</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Arthur%20Pub%20%28demo.mk-studio.ro%2Farthur-pub-constanta%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+<a class="sari" href="#continut">Sari la conținut</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="sigla" href="#acasa">Arthur Pub</a>
+    <ul class="nav-lista" id="meniu-principal" data-jarvis="meniu-lista">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#meniu">Meniu</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-plin" href="tel:0733449583">Sună acum</a>
+    <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-principal" aria-label="Deschide meniul">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="continut">
+  <section class="erou" id="acasa" aria-labelledby="titlu-pub">
+    <div class="cutie erou-grid">
+      <h1 id="titlu-pub"><span>Arthur</span><span>Pub</span></h1>
+      <div class="erou-text">
+        <p class="slogan">Bere irlandeză și fish and chips</p>
+        <p class="erou-adresa">Pe Bulevardul Mamaia, vizavi de Universitatea Ovidius, în Constanța.</p>
+      </div>
+      <div class="erou-butoane">
+        <a class="btn btn-plin" href="tel:0733449583">Sună pentru rezervare</a>
+        <a class="btn btn-gol" href="https://www.google.com/maps/search/?api=1&amp;query=Arthur+Pub+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Vezi pe hartă</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre sectiune" id="despre" aria-labelledby="titlu-despre">
+    <div class="cutie despre-grid">
+      <img class="despre-foto" src="img/1.jpg" alt="Bar de pub cu robineți de bere și sticle pe rafturi" width="1200" height="900">
+      <div class="despre-text" data-jarvis="apare">
+        <h2 class="titlu-mare" id="titlu-despre">Vizavi de Universitatea Ovidius</h2>
+        <p>Arthur Pub este pe Bulevardul Mamaia, în Constanța, chiar vizavi de Universitatea Ovidius.</p>
+        <p>La noi bei bere irlandeză și mănânci fish and chips. Dacă vii cu un grup de prieteni, rezervă o masă la telefon sau pe e-mail.</p>
+        <dl class="repere">
+          <div><dt>Unde</dt><dd>Bulevardul Mamaia, Constanța</dd></div>
+          <div><dt>Ce bei</dt><dd>Bere irlandeză</dd></div>
+          <div><dt>Cum rezervi</dt><dd>La telefon sau pe e-mail</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="banda-loc">
+    <ul class="banda" aria-label="Pe scurt despre Arthur Pub">
+      <li>Bere irlandeză</li>
+      <li>Fish and chips</li>
+      <li>Bulevardul Mamaia</li>
+      <li>Vizavi de Universitatea Ovidius</li>
+      <li>Rezervări la 0733 449 583</li>
+    </ul>
+  </div>
+
+  <section class="meniu sectiune" id="meniu" aria-labelledby="titlu-meniu">
+    <div class="cutie">
+      <h2 id="titlu-meniu">Meniu</h2>
+      <p class="meniu-intro">La Arthur Pub găsești bere irlandeză și fish and chips.</p>
+      <div class="placi" data-jarvis="apare">
+        <article class="placa">
+          <h3>Bere irlandeză</h3>
+          <p>Bere irlandeză, de băut la o masă cu prietenii, după cursuri sau după serviciu.</p>
+        </article>
+        <article class="placa">
+          <h3>Fish and chips</h3>
+          <p>Pește prăjit în aluat și cartofi prăjiți, mâncarea clasică de pub, care se comandă lângă o bere.</p>
+        </article>
+      </div>
+      <div class="rezervare-rand">
+        <p>Rezervările se fac la telefon sau pe e-mail. Cel mai repede rezervi sunând la 0733 449 583.</p>
+        <a class="btn btn-plin" href="tel:0733449583">Rezervă la telefon</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune sectiune" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="cutie">
+      <div class="galerie-cap">
+        <h2 class="titlu-mare" id="titlu-galerie">Seara, la pub</h2>
+        <p class="nota">Fotografii ilustrative. Apasă pe o poză ca s-o vezi mare.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <img src="img/3.jpg" alt="Prieteni care ciocnesc halbe de bere la o masă" width="1200" height="900" loading="lazy" tabindex="0">
+        <img src="img/4.jpg" alt="Halbă de sticlă plină cu bere și spumă" width="800" height="600" loading="lazy" tabindex="0">
+        <img src="img/5.jpg" alt="Pahare cu bere văzute de sus, pe o masă" width="800" height="600" loading="lazy" tabindex="0">
+      </div>
+    </div>
+  </section>
+
+  <section class="contact sectiune" id="contact" aria-labelledby="titlu-contact">
+    <div class="cutie contact-grid">
+      <div class="contact-text" data-jarvis="apare">
+        <h2 class="titlu-mare" id="titlu-contact">Rezervă o masă</h2>
+        <p>Sună la 0733 449 583 și spune-ne câți veniți și la ce oră. Rezervările se fac și pe e-mail.</p>
+        <p class="moduri"><strong>2</strong><span>moduri de a rezerva: telefon și e-mail</span></p>
+        <dl class="date">
+          <div><dt>Adresa</dt><dd>Bulevardul Mamaia, Constanța, vizavi de Universitatea Ovidius</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:0733449583">0733 449 583</a></dd></div>
+        </dl>
+        <div class="contact-butoane">
+          <a class="btn btn-plin" href="tel:0733449583">Sună acum</a>
+          <a class="btn btn-gol" href="https://www.google.com/maps/search/?api=1&amp;query=Arthur+Pub+Constan%C8%9Ba" target="_blank" rel="noopener noreferrer">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <iframe class="harta" src="https://www.openstreetmap.org/export/embed.html?bbox=28.621316,44.230978,28.629316,44.234979&amp;layer=mapnik&amp;marker=44.232979,28.625316" title="Hartă: Arthur Pub pe Bulevardul Mamaia, Constanța" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </section>
+</main>
+
+<footer class="subsol">
+  <div class="cutie">
+    <div class="subsol-grid">
+      <div>
+        <p class="subsol-nume">Arthur Pub</p>
+        <p>Bulevardul Mamaia, Constanța</p>
+        <p><a href="tel:0733449583">0733 449 583</a></p>
+      </div>
+      <p>Bere irlandeză și fish and chips</p>
+    </div>
+    <div class="subsol-jos">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: Christian_Birkholz, Life-Of-Pix, DomPixabay, Alexas_Fotos, Lernestorod</p>
+    </div>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
