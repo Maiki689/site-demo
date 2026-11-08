@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sLFNZ7VbDEPHVqwLEGz8sJ0IeZRfbq1kRRBlsGcpFqI=' 'sha256-w1n1sqwgoZnruKCP/qgWTZ0/e+NcWbtXXsdXsFkRavU=' 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-puE5468vghHOGtPR/ljPq0DzJBxYHJVDp9J/ZIJYJaI=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-krualkdvmD0hKivE9UyIkDnBaW3URh1ApzaGCThXD7s=' 'sha256-VA2G+SQDhtWfTE43kXT4xzTQR8rgDOMAyARYUTnYjNk=' 'sha256-Jfg9hVmRH260kEa/Oep9Wji/X5ymyJoR4tqK4sjIIAU=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-RdrSowyf1NMJ2YG2JBXlZP0QD7J4A2bjDIEklqhzN0A=' 'sha256-Ucp8Ovzkk9PGJghZsTutrVaVbjxTco1JmANMYiEDg5w=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perpedes Coffee | Cafea și gustări în parcarea Grand Arena Mall, București</title>
+<meta name="description" content="Perpedes Coffee este o rulotă în parcarea exterioară a Grand Arena Mall din București: cafea, clătite, mini-clătite, panini, hot dog și limonadă. Deschis zilnic între 10:00 și 22:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+<style>
+:root{
+  --alb:#FFFFFF;
+  --espresso:#3B2A20;
+  --lapte:#EADFD3;
+  --accent:#E07A3F;
+  --text-stins:rgba(59,42,32,.74);
+  --linie:rgba(59,42,32,.16);
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --titlu:"Space Grotesk",system-ui,sans-serif;
+  --corp:"Inter",system-ui,sans-serif;
+  --lat:72rem;
+  --margine:clamp(1.25rem,5vw,3rem);
+  --sectiune:clamp(5rem,12vw,9rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{
+  margin:0;overflow-x:clip;background:var(--alb);color:var(--espresso);
+  font-family:var(--corp);font-size:1.0625rem;line-height:1.55;letter-spacing:0;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg,iframe{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--lapte);color:var(--espresso)}
+:focus-visible{outline:2px solid var(--espresso);outline-offset:3px;border-radius:.25rem}
+.contact :focus-visible,.subsol :focus-visible{outline-color:var(--lapte)}
+h1,h2,h3,h4{font-family:var(--titlu);margin:0;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+p{margin:0}
+.wrap{width:100%;max-width:var(--lat);margin-inline:auto;padding-inline:var(--margine)}
+section{scroll-margin-top:4rem}
+
+/* Butoane: singurul loc cu accent de culoare */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:3rem;padding:0 1.4rem;border-radius:.5rem;
+  font-family:var(--corp);font-weight:600;font-size:1rem;line-height:1;text-decoration:none;
+  border:1.5px solid transparent;cursor:pointer;
+  transition:transform .15s var(--curba),opacity .2s var(--curba);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-plin{background:var(--espresso);color:var(--alb);box-shadow:inset 0 -3px 0 var(--accent)}
+.btn-plin:hover{opacity:.92}
+.btn-contur{border-color:var(--espresso);color:var(--espresso);background:transparent}
+.btn-contur:hover{background:var(--lapte)}
+.btn-mic{min-height:2.75rem;padding:0 1rem;font-size:.9375rem}
+
+/* Antet */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.76);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+}
+.antet::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--linie);
+  opacity:0;transition:opacity .3s var(--curba);
+}
+.antet.derulat::after{opacity:1}
+.antet-inner{display:flex;align-items:center;gap:.75rem;min-height:3.5rem;flex-wrap:wrap}
+.marca{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font-family:var(--titlu);font-weight:600;font-size:1.0625rem;letter-spacing:-.01em;min-height:2.75rem}
+.marca svg{width:1.6rem;height:1.6rem;flex:none}
+.nav{order:3;width:100%}
+.nav-lista{list-style:none;margin:0;padding:0 0 .25rem;display:flex;flex-wrap:wrap;gap:0 1rem}
+.nav-lista a{display:inline-flex;align-items:center;min-height:2.75rem;text-decoration:none;font-weight:500;font-size:.9375rem}
+.nav-lista a:hover{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:.35em}
+.antet .btn-mic{order:1;margin-left:auto}
+.nav-buton{
+  order:2;display:none;align-items:center;justify-content:center;position:relative;
+  width:2.75rem;height:2.75rem;border:0;border-radius:.5rem;background:transparent;color:var(--espresso);cursor:pointer;
+  transition:transform .15s var(--curba);
+}
+.nav-buton:active{transform:scale(.97)}
+.nav-buton span{position:absolute;width:1.25rem;height:2px;background:currentColor;border-radius:1px;transition:transform .3s var(--curba)}
+.nav-buton span:first-child{transform:translateY(-4px)}
+.nav-buton span:last-child{transform:translateY(4px)}
+.nav-buton[aria-expanded="true"] span:first-child{transform:rotate(45deg)}
+.nav-buton[aria-expanded="true"] span:last-child{transform:rotate(-45deg)}
+
+@media (max-width:859px){
+  html.js .antet-inner{flex-wrap:nowrap}
+  html.js .nav-buton{display:inline-flex}
+  html.js .nav{order:3;width:auto}
+  html.js .nav-lista{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;background:var(--alb);
+    padding:.25rem var(--margine) 1.25rem;border-bottom:1px solid var(--linie);
+  }
+  html.js .nav-lista.deschis{display:flex;animation:panou .3s var(--curba) both}
+  html.js .nav-lista a{width:100%;min-height:3rem;font-family:var(--titlu);font-size:1.25rem;border-bottom:1px solid var(--linie)}
+}
+@keyframes panou{from{opacity:0;transform:translateY(-.5rem)}to{opacity:1;transform:none}}
+@media (min-width:860px){
+  .antet-inner{flex-wrap:nowrap;min-height:4rem;gap:1.5rem}
+  .nav{order:0;width:auto;margin-left:auto}
+  .nav-lista{padding:0;gap:1.25rem;flex-wrap:nowrap}
+  .antet .btn-mic{order:0;margin-left:0}
+  .nav-buton{display:none!important}
+}
+
+/* Prima secțiune */
+.hero{padding-block:clamp(1.25rem,4vw,3rem) clamp(2.5rem,6vw,4.5rem)}
+.hero-grid{display:grid;gap:2rem;align-items:center}
+.hero h1{
+  font-size:clamp(3.2rem,13vw,6rem);font-weight:600;line-height:1.02;letter-spacing:-.03em;
+  max-width:9ch;
+}
+.hero-text{max-width:34rem}
+.hero .lead{margin-top:1.25rem;font-size:clamp(1.125rem,2.4vw,1.3rem);line-height:1.5;color:var(--text-stins);max-width:30rem}
+.info{margin:1.25rem 0 0;display:grid;gap:.5rem;padding-left:.9rem;border-left:2px solid var(--lapte)}
+.info div{display:flex;flex-wrap:wrap;gap:0 .6rem;align-items:baseline}
+.info dt{font-size:.8125rem;color:var(--text-stins);min-width:4.25rem}
+.info dd{margin:0;font-weight:500;font-size:.975rem;line-height:1.45}
+.actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+.ceasca-cadru{width:100%;max-width:13rem;margin-inline:auto}
+.ceasca{width:100%;height:auto}
+@media (min-width:860px){
+  .hero{padding-top:clamp(2rem,4vw,3.5rem)}
+  .hero-grid{grid-template-columns:1.35fr .65fr;gap:3rem}
+  .hero h1{font-size:clamp(4.5rem,8vw,7rem)}
+  .ceasca-cadru{max-width:21rem;margin-right:0}
+}
+
+/* Ceașca: animație o singură dată */
+.toarna,.inima,.tras{transform-box:fill-box}
+.toarna{transform-origin:center;animation:toarna .9s var(--curba) .3s both}
+.inima{transform-origin:50% 25%;animation:inima .6s var(--curba) .8s both}
+.tras{transform-origin:50% 0;animation:tras .5s var(--curba) 1.25s both}
+@keyframes toarna{0%{opacity:0;transform:scale(.12)}40%{opacity:1}100%{opacity:0;transform:scale(1)}}
+@keyframes inima{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+@keyframes tras{from{opacity:0;transform:scaleY(0)}to{opacity:1;transform:none}}
+
+/* Despre */
+.despre{background:var(--lapte);padding-block:var(--sectiune)}
+.despre-grid{display:grid;gap:3rem}
+.despre h2,.meniu h2,.galerie-sec h2,.contact h2{font-size:clamp(2.1rem,6vw,3.6rem);max-width:16ch}
+.despre .text p{margin-top:1.25rem;max-width:34rem}
+.despre .text p:first-of-type{margin-top:1.75rem;font-size:1.1875rem}
+.fapte{margin:2.75rem 0 0;display:grid;gap:0}
+.fapte div{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding-block:1.1rem;border-top:1px solid var(--linie)}
+.fapte div:last-child{border-bottom:1px solid var(--linie)}
+.fapte dt{font-family:var(--titlu);font-weight:600;font-size:1.125rem;letter-spacing:-.01em}
+.fapte dd{margin:0;color:var(--text-stins)}
+.despre-foto{margin:0;border-radius:.5rem;overflow:hidden;aspect-ratio:4/5}
+.despre-foto img{width:100%;height:100%;object-fit:cover}
+@media (min-width:860px){
+  .despre-grid{grid-template-columns:7fr 5fr;gap:clamp(3rem,7vw,6rem);align-items:end}
+}
+
+/* Meniu */
+.meniu{padding-block:var(--sectiune)}
+.meniu-cap{display:grid;gap:1.25rem;margin-bottom:clamp(3rem,7vw,5rem)}
+.meniu-cap p{color:var(--text-stins);max-width:28rem;font-size:1.125rem}
+.meniu-grid{display:grid;gap:3rem}
+.categorie h3{
+  position:relative;padding-top:1rem;font-size:1rem;font-weight:500;letter-spacing:0;color:var(--text-stins);
+}
+.categorie h3::before{content:"";position:absolute;top:0;left:0;width:2rem;height:2px;background:var(--espresso)}
+.categorie ul{list-style:none;margin:1rem 0 0;padding:0}
+.categorie li{padding-block:1.25rem;border-bottom:1px solid var(--linie)}
+.categorie h4{font-size:clamp(1.5rem,3.5vw,1.85rem);font-weight:600}
+.categorie li p{margin-top:.4rem;color:var(--text-stins)}
+.meniu-nota{margin-top:3rem;color:var(--text-stins)}
+.meniu-nota a{color:var(--espresso);font-weight:600;text-decoration-thickness:1.5px;text-underline-offset:.25em;display:inline-block;padding-block:.6rem}
+@media (min-width:860px){
+  .meniu-cap{grid-template-columns:1fr 1fr;align-items:end}
+  .meniu-cap p{justify-self:end}
+  .meniu-grid{grid-template-columns:repeat(3,1fr);gap:clamp(2rem,4vw,3.5rem)}
+}
+
+/* Galerie */
+.galerie-sec{background:var(--lapte);padding-block:var(--sectiune)}
+.galerie-cap{display:grid;gap:1rem;margin-bottom:clamp(2.5rem,6vw,4rem)}
+.galerie-cap p{color:var(--text-stins)}
+.galerie{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.galerie figure{margin:0;border-radius:.5rem;overflow:hidden;aspect-ratio:1/1;background:var(--alb)}
+.galerie figure:nth-child(1),.galerie figure:nth-child(4){grid-column:span 2;aspect-ratio:3/2}
+.galerie img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;transition:transform .5s var(--curba)}
+@media (hover:hover){.galerie figure:hover img:not(.marita){transform:scale(1.03)}}
+@media (min-width:860px){
+  .galerie{grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(16rem,28vw,24rem);gap:1rem}
+  .galerie figure{aspect-ratio:auto!important}
+  .galerie figure:nth-child(1){grid-column:span 7}
+  .galerie figure:nth-child(2){grid-column:span 5}
+  .galerie figure:nth-child(3){grid-column:span 5}
+  .galerie figure:nth-child(4){grid-column:span 7}
+}
+.galerie img.marita,.galerie figure.marita img{
+  position:fixed;inset:0;margin:auto;z-index:70;
+  width:92vw;height:86vh;max-width:none;object-fit:contain;
+  background:transparent;cursor:zoom-out;transform:none;
+  animation:mareste .3s var(--curba) both;
+}
+html.galerie-deschisa::after{
+  content:"";position:fixed;inset:0;z-index:60;background:rgba(59,42,32,.94);
+  animation:estompare .25s ease both;
+}
+@keyframes mareste{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+
+/* Contact */
+.contact{background:var(--espresso);color:var(--alb);padding-block:var(--sectiune)}
+.contact-grid{display:grid;gap:3rem}
+.contact .intro{margin-top:1.5rem;color:rgba(255,255,255,.8);max-width:30rem;font-size:1.125rem}
+.date{margin:2.5rem 0 0;display:grid;gap:1.5rem}
+.date dt{font-size:.875rem;color:var(--lapte)}
+.date dd{margin:.25rem 0 0;font-family:var(--titlu);font-size:clamp(1.2rem,3vw,1.45rem);letter-spacing:-.01em;line-height:1.3}
+.date a{text-decoration:none;display:inline-block;padding-block:.35rem}
+.date a:hover{text-decoration:underline;text-underline-offset:.25em}
+.contact .actiuni{margin-top:2.5rem}
+.btn-lapte{background:var(--lapte);color:var(--espresso);box-shadow:inset 0 -3px 0 var(--accent)}
+.btn-lapte:hover{opacity:.92}
+.btn-contur-deschis{border-color:var(--lapte);color:var(--alb)}
+.btn-contur-deschis:hover{background:rgba(234,223,211,.12)}
+.harta{border-radius:.5rem;overflow:hidden;aspect-ratio:4/3;background:var(--lapte)}
+.harta iframe{width:100%;height:100%;border:0}
+@media (min-width:860px){
+  .contact-grid{grid-template-columns:5fr 6fr;gap:clamp(3rem,6vw,5rem);align-items:start}
+  .harta{aspect-ratio:1/1}
+}
+
+/* Subsol */
+.subsol{background:var(--espresso);color:rgba(255,255,255,.78);font-size:.9375rem;padding-block:2.5rem 3rem}
+.subsol .wrap{display:grid;gap:.6rem;border-top:1px solid rgba(234,223,211,.18);padding-top:2rem}
+.subsol strong{font-family:var(--titlu);font-weight:600;color:var(--alb);font-size:1.0625rem}
+@media (min-width:860px){.subsol .wrap{grid-template-columns:1fr auto auto;gap:2rem;align-items:baseline}}
+
+/* Apariție la derulare (doar cu html.js) */
+html.js [data-jarvis="apare"]{opacity:0;transform:translateY(.75rem);transition:opacity .55s var(--curba),transform .55s var(--curba)}
+html.js [data-jarvis="apare"].vizibil{opacity:1;transform:none}
+
+/* Preferințe */
+@media (prefers-reduced-motion:reduce){
+  .toarna{animation:none;opacity:0}
+  .inima,.tras{animation:none}
+  html.js [data-jarvis="apare"]{transform:none;transition:opacity .2s ease}
+  .galerie img,.btn,.nav-buton,.nav-buton span{transition:none}
+  .galerie img.marita,.galerie figure.marita img,html.js .nav-lista.deschis{animation:estompare .15s ease both}
+  .btn:active,.nav-buton:active{transform:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--text-stins:#3B2A20;--linie:rgba(59,42,32,.6)}
+  .antet{background:var(--alb);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .antet::after{opacity:1}
+  .info{border-left-color:var(--espresso)}
+  .contact .intro,.subsol{color:var(--alb)}
+  .btn-contur,.btn-contur-deschis{border-width:2px}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Perpedes Coffee</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Perpedes%20Coffee%20%28demo.mk-studio.ro%2Fperpedes-coffee-bucuresti%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-inner wrap">
+    <a class="marca" href="#acasa">
+      <svg viewbox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="#EADFD3"/>
+        <circle cx="16" cy="16" r="10.5" fill="#3B2A20"/>
+        <path d="M16 21.5c-3.2-2.2-4.6-4.2-3.8-6 .8-1.7 2.8-1.6 3.8.1 1-1.7 3-1.8 3.8-.1.8 1.8-.6 3.8-3.8 6z" fill="#EADFD3"/>
+      </svg>
+      Perpedes Coffee
+    </a>
+    <nav class="nav" aria-label="Navigare principală">
+      <ul class="nav-lista" id="lista-nav" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#meniu">Meniu</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-plin btn-mic" href="tel:+40761577654">Sună acum</a>
+    <button class="nav-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="lista-nav" aria-label="Deschide navigarea">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="acasa" aria-labelledby="titlu-principal">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <h1 id="titlu-principal">Perpedes Coffee</h1>
+        <p class="lead">Cafea și gustări lângă tine, dintr-o rulotă din parcarea exterioară a Grand Arena Mall.</p>
+        <dl class="info">
+          <div><dt>Program</dt><dd>Deschis zilnic între 10:00 și 22:00.</dd></div>
+          <div><dt>Adresa</dt><dd>Bulevardul Metalurgiei 12-18, București</dd></div>
+        </dl>
+        <div class="actiuni">
+          <a class="btn btn-plin" href="tel:+40761577654">Sună acum</a>
+          <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Perpedes+Coffee+Bucure%C8%99ti">Vezi pe hartă</a>
+        </div>
+      </div>
+
+      <div class="ceasca-cadru">
+        <svg class="ceasca" viewbox="20 22 388 378" role="img" aria-label="Ceașcă de cafea văzută de sus, cu o inimă desenată în spuma de lapte">
+          <defs>
+            <radialgradient id="crema" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#3B2A20"/>
+              <stop offset=".72" stop-color="#3B2A20"/>
+              <stop offset="1" stop-color="#EADFD3" stop-opacity=".38"/>
+            </radialgradient>
+          </defs>
+          <circle cx="212" cy="214" r="182" fill="#3B2A20" opacity=".05"/>
+          <circle cx="204" cy="206" r="180" fill="#FFFFFF" stroke="#EADFD3" stroke-width="2"/>
+          <circle cx="204" cy="206" r="150" fill="none" stroke="#EADFD3" stroke-width="1.5"/>
+          <rect x="318" y="188" width="86" height="36" rx="18" fill="#FFFFFF" stroke="#EADFD3" stroke-width="2"/>
+          <circle cx="210" cy="214" r="130" fill="#3B2A20" opacity=".07"/>
+          <circle cx="204" cy="206" r="128" fill="#FFFFFF" stroke="#EADFD3" stroke-width="2"/>
+          <circle cx="204" cy="206" r="108" fill="url(#crema)"/>
+          <circle class="toarna" cx="204" cy="210" r="64" fill="#EADFD3"/>
+          <g class="inima">
+            <path d="M204 274C154 238 132 206 144 178C156 152 190 152 204 178C218 152 252 152 264 178C276 206 254 238 204 274Z" fill="#EADFD3"/>
+            <path d="M204 246C172 224 160 204 168 188C176 172 194 174 204 192C214 174 232 172 240 188C248 204 236 224 204 246Z" fill="none" stroke="#3B2A20" stroke-opacity=".16" stroke-width="2"/>
+            <path d="M204 220C190 210 184 202 188 194C192 186 200 188 204 198C208 188 216 186 220 194C224 202 218 210 204 220Z" fill="none" stroke="#3B2A20" stroke-opacity=".14" stroke-width="1.75"/>
+          </g>
+          <rect class="tras" x="202.75" y="140" width="2.5" height="164" rx="1.25" fill="#EADFD3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="titlu-despre">
+    <div class="wrap despre-grid">
+      <div class="text">
+        <h2 id="titlu-despre">O rulotă de cafea în parcarea Grand Arena Mall</h2>
+        <p>Perpedes Coffee este o rulotă în parcarea exterioară a Grand Arena Mall din București. Facem cafea, clătite, mini-clătite, panini, hot dog și limonadă.</p>
+        <p>Te oprești pentru o pauză între cumpărături sau pentru o gustare la drum, înainte să pleci mai departe.</p>
+        <dl class="fapte">
+          <div><dt>Rapid</dt><dd>O oprire ușoară între drumuri.</dd></div>
+          <div><dt>Pentru toți</dt><dd>Avem și gustări dulci, și gustări sărate.</dd></div>
+          <div><dt>La mall</dt><dd>În parcarea exterioară a Grand Arena Mall.</dd></div>
+        </dl>
+      </div>
+      <figure class="despre-foto" data-jarvis="apare">
+        <img src="img/2.jpg" alt="Ceașcă de cafea lângă boabe de cafea prăjite" loading="lazy" width="800" height="1000">
+      </figure>
+    </div>
+  </section>
+
+  <section class="meniu" id="meniu" aria-labelledby="titlu-meniu">
+    <div class="wrap">
+      <div class="meniu-cap">
+        <h2 id="titlu-meniu">Meniu</h2>
+        <p>Ai de ales între băuturi, gustări dulci și gustări sărate, toate servite la rulotă.</p>
+      </div>
+      <div class="meniu-grid" data-jarvis="apare">
+        <div class="categorie">
+          <h3>De băut</h3>
+          <ul>
+            <li><h4>Cafea</h4><p>Cafea preparată pe loc, la rulotă.</p></li>
+            <li><h4>Limonadă</h4><p>Limonadă răcoritoare, servită la pahar.</p></li>
+          </ul>
+        </div>
+        <div class="categorie">
+          <h3>Dulce</h3>
+          <ul>
+            <li><h4>Clătite</h4><p>Clătite făcute pe loc, la rulotă.</p></li>
+            <li><h4>Mini-clătite</h4><p>Mini-clătite proaspete, făcute la rulotă.</p></li>
+          </ul>
+        </div>
+        <div class="categorie">
+          <h3>Sărat</h3>
+          <ul>
+            <li><h4>Panini</h4><p>Panini servit cald.</p></li>
+            <li><h4>Hot dog</h4><p>Hot dog servit la rulotă, pentru o gustare sărată la drum.</p></li>
+          </ul>
+        </div>
+      </div>
+      <p class="meniu-nota">Ai o întrebare despre meniu? Sună-ne la <a href="tel:+40761577654">+40 761 577 654</a>.</p>
+    </div>
+  </section>
+
+  <section class="galerie-sec" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="wrap">
+      <div class="galerie-cap">
+        <h2 id="titlu-galerie">Galerie</h2>
+        <p>Fotografii ilustrative cu cafea și clătite. Apasă pe o fotografie ca să o vezi mai mare.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <figure><img src="img/4.jpg" alt="Teanc de clătite cu zmeură, peste care se toarnă sirop" loading="lazy" width="1200" height="800"></figure>
+        <figure><img src="img/1.jpg" alt="Clătite cu căpșuni și ciocolată, lângă o ceașcă de cafea" loading="lazy" width="800" height="800"></figure>
+        <figure><img src="img/3.jpg" alt="Clătite pufoase pe farfurie, presărate cu zahăr" loading="lazy" width="800" height="800"></figure>
+        <figure><img src="img/5.jpg" alt="Ceașcă de sticlă cu cafea, înconjurată de boabe prăjite" loading="lazy" width="1200" height="800"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="titlu-contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="titlu-contact">Ne găsești în parcarea Grand Arena Mall</h2>
+        <p class="intro">Rulota stă în parcarea exterioară a mall-ului, pe Bulevardul Metalurgiei, în București.</p>
+        <dl class="date">
+          <div><dt>Adresa</dt><dd>Bulevardul Metalurgiei 12-18, București</dd></div>
+          <div><dt>Program</dt><dd>Deschis zilnic între 10:00 și 22:00.</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+40761577654">+40 761 577 654</a></dd></div>
+        </dl>
+        <div class="actiuni">
+          <a class="btn btn-lapte" href="tel:+40761577654">Sună acum</a>
+          <a class="btn btn-contur-deschis" href="https://www.google.com/maps/search/?api=1&amp;query=Perpedes+Coffee+Bucure%C8%99ti">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta" data-jarvis="apare">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.115586,44.372442,26.123587,44.376443&amp;layer=mapnik&amp;marker=44.374443,26.119587" title="Hartă: Perpedes Coffee, parcarea Grand Arena Mall, București" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="subsol">
+  <div class="wrap">
+    <strong>Perpedes Coffee</strong>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: SkloStudio, Negative-Space, RitaE, piviso, pixel2013</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
