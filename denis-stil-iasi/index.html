@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sLFNZ7VbDEPHVqwLEGz8sJ0IeZRfbq1kRRBlsGcpFqI=' 'sha256-w1n1sqwgoZnruKCP/qgWTZ0/e+NcWbtXXsdXsFkRavU=' 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-puE5468vghHOGtPR/ljPq0DzJBxYHJVDp9J/ZIJYJaI=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-krualkdvmD0hKivE9UyIkDnBaW3URh1ApzaGCThXD7s=' 'sha256-VA2G+SQDhtWfTE43kXT4xzTQR8rgDOMAyARYUTnYjNk=' 'sha256-Jfg9hVmRH260kEa/Oep9Wji/X5ymyJoR4tqK4sjIIAU=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-RdrSowyf1NMJ2YG2JBXlZP0QD7J4A2bjDIEklqhzN0A=' 'sha256-Ucp8Ovzkk9PGJghZsTutrVaVbjxTco1JmANMYiEDg5w=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Denis Stil · Coafură în Iași, Bulevardul Alexandru cel Bun 64</title>
+<meta name="description" content="Denis Stil este un salon de coafură pe Bulevardul Alexandru cel Bun 64, Iași. Coafură pentru femei, bărbați și copii, spălat și coafat. Deschis de luni până sâmbătă.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap">
+<style>
+:root{
+  --prune:#2A1622;
+  --auriu:#C9A46A;
+  --sampanie:#EAD9C0;
+  --negru:#140B10;
+  --linie-auriu:rgba(201,164,106,.45);
+  --serif:"Bodoni Moda", "Didot", "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --lat:78rem;
+  --pad:1.25rem;
+  --colt:.75rem;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.5;
+  letter-spacing:0;
+  color:var(--prune);
+  background:var(--sampanie);
+  overflow-x:clip;
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--auriu);outline-offset:3px}
+
+.sari{
+  position:absolute;left:1rem;top:-4rem;z-index:300;
+  background:var(--auriu);color:var(--negru);
+  padding:.75rem 1rem;text-decoration:none;font-weight:600;
+}
+.sari:focus{top:1rem}
+
+/* ---------- Butoane ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:0 1.75rem;
+  font-family:var(--sans);font-weight:600;font-size:.95rem;line-height:1;
+  letter-spacing:.02em;text-decoration:none;
+  border-radius:999px;
+  transition:transform .15s var(--curba), opacity .25s var(--curba);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(.97)}
+.btn-plin{background:var(--auriu);color:var(--negru)}
+.btn-plin:hover{opacity:.88}
+.btn-contur{border:1px solid rgba(201,164,106,.75);color:var(--sampanie)}
+.btn-contur:hover{opacity:.8}
+
+/* ---------- Antet ---------- */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(42,22,34,.88);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(201,164,106,.28);
+  color:var(--sampanie);
+}
+.antet::after{
+  content:"";position:absolute;left:0;right:0;top:100%;height:.75rem;
+  background:linear-gradient(rgba(20,11,16,.18), rgba(20,11,16,0));
+  opacity:0;pointer-events:none;
+  transition:opacity .4s var(--curba);
+}
+.antet.derulat::after{opacity:1}
+.antet-int{
+  max-width:var(--lat);margin:0 auto;
+  padding:.55rem var(--pad);
+  display:flex;flex-wrap:wrap;align-items:center;
+  position:relative;
+}
+.marca{
+  order:1;flex:1 1 auto;
+  font-family:var(--serif);font-size:1.35rem;font-weight:500;
+  letter-spacing:-.01em;text-decoration:none;
+  min-height:2.75rem;display:flex;align-items:center;
+}
+.antet-suna{order:2;min-height:2.75rem;padding:0 1.15rem;font-size:.85rem;margin-left:.75rem}
+.meniu-btn{
+  order:3;
+  display:none;
+  width:2.75rem;height:2.75rem;margin-left:.5rem;
+  border:1px solid rgba(201,164,106,.5);border-radius:50%;
+  background:transparent;color:var(--sampanie);cursor:pointer;
+  flex-direction:column;align-items:center;justify-content:center;gap:.32rem;
+  transition:transform .15s var(--curba);
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-btn span{display:block;width:1.05rem;height:1px;background:var(--sampanie);transition:transform .3s var(--curba)}
+.meniu-btn[aria-expanded="true"] span:first-child{transform:translateY(.17rem) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] span:last-child{transform:translateY(-.17rem) rotate(-45deg)}
+.antet nav{order:4;flex-basis:100%}
+.meniu-lista{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:0 1.25rem;
+}
+.meniu-lista a{
+  display:flex;align-items:center;min-height:2.75rem;
+  font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;color:var(--sampanie);
+  transition:opacity .25s var(--curba);
+}
+.meniu-lista a:hover{opacity:.7}
+
+@media (max-width:859.98px){
+  html.js .meniu-btn{display:flex}
+  html.js .meniu-lista{
+    display:none;
+    position:absolute;left:0;right:0;top:100%;
+    flex-direction:column;gap:0;
+    background:var(--prune);
+    padding:.5rem var(--pad) 1.25rem;
+    border-bottom:1px solid rgba(201,164,106,.3);
+  }
+  html.js .meniu-lista.deschis{display:flex;animation:estompare .35s var(--curba)}
+  html.js .meniu-lista li{border-top:1px solid rgba(201,164,106,.18)}
+  html.js .meniu-lista a{min-height:3.25rem}
+}
+@media (min-width:860px){
+  :root{--pad:2rem}
+  .antet-int{flex-wrap:nowrap}
+  .marca{flex:0 1 auto}
+  .antet nav{order:2;flex-basis:auto;margin-left:auto}
+  .meniu-lista{flex-wrap:nowrap;gap:2rem}
+  .antet-suna{order:3;margin-left:2rem}
+}
+
+/* ---------- Prima secțiune ---------- */
+.hero{
+  background:var(--prune);color:var(--sampanie);
+  padding:2.5rem var(--pad) 4.5rem;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-int{
+  max-width:var(--lat);margin:0 auto;
+  display:flex;flex-direction:column;align-items:center;
+}
+.hero-loc{
+  order:1;margin:0;
+  font-size:1.0625rem;font-weight:500;letter-spacing:0;line-height:1.4;
+  color:var(--auriu);
+}
+.hero h1{
+  order:2;
+  margin:.75rem 0 1.75rem;
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(3.4rem, 17vw, 5.5rem);
+  line-height:1.04;letter-spacing:-.02em;
+}
+.hero-actiuni{
+  order:3;
+  display:flex;flex-direction:column;
+  width:100%;max-width:20rem;
+}
+.hero-linkuri{
+  order:4;margin:1rem 0 0;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0 1.5rem;
+  font-size:.95rem;color:rgba(234,217,192,.85);
+}
+.hero-linkuri a{
+  display:inline-flex;align-items:center;min-height:2.75rem;
+  text-decoration:underline;text-decoration-color:var(--linie-auriu);
+  text-underline-offset:.3em;text-decoration-thickness:1px;
+  transition:opacity .25s var(--curba);
+}
+.hero-linkuri a:hover{opacity:.75}
+.oglinda{
+  order:5;
+  width:min(84vw, 21rem);
+  margin-top:3rem;
+}
+.rama{
+  margin:0;
+  aspect-ratio:4 / 5;
+  border-radius:var(--colt);
+  overflow:hidden;
+}
+.rama img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;
+  animation:estompare .6s var(--curba) both;
+}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+
+@media (min-width:860px){
+  :root{--ov:clamp(15rem, 24vw, 21rem);--g:clamp(1.5rem, 3vw, 3rem)}
+  .hero{padding:3.5rem var(--pad) 5rem}
+  .hero-int{
+    display:grid;
+    grid-template-columns:1fr var(--ov) 1fr;
+    column-gap:var(--g);
+    align-items:center;
+  }
+  .hero-loc{grid-column:1 / -1;grid-row:1;margin-bottom:2.25rem;font-size:1.125rem}
+  .hero h1{
+    grid-column:1 / -1;grid-row:2;margin:0;
+    display:grid;grid-template-columns:1fr var(--ov) 1fr;column-gap:var(--g);
+    font-size:clamp(4.5rem, 9.4vw, 9.25rem);
+    line-height:1;
+  }
+  .hero h1 span:first-child{grid-column:1;justify-self:end}
+  .hero h1 span:last-child{grid-column:3;justify-self:start}
+  .oglinda{grid-column:2;grid-row:2;width:var(--ov);margin:0}
+  .hero-actiuni{
+    grid-column:1 / -1;grid-row:3;
+    flex-direction:row;justify-content:center;
+    max-width:none;margin-top:2.75rem;
+  }
+  .hero-linkuri{grid-column:1 / -1;grid-row:4}
+}
+
+/* ---------- Secțiuni comune ---------- */
+.sectiune{padding:clamp(5rem, 12vw, 9rem) var(--pad)}
+.int{max-width:var(--lat);margin:0 auto}
+h2{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(2.2rem, 5.2vw, 3.6rem);
+  line-height:1.08;letter-spacing:-.02em;
+  margin:0 0 1.25rem;
+}
+h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.15;margin:0}
+.fir{width:4rem;height:1px;background:var(--auriu);border:0;margin:0 auto}
+
+html.js [data-jarvis="apare"]{opacity:0;transition:opacity .6s var(--curba)}
+html.js [data-jarvis="apare"].vizibil{opacity:1}
+
+/* ---------- Manifest și despre ---------- */
+.manifest{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.85rem, 4.6vw, 3.35rem);
+  line-height:1.16;letter-spacing:-.015em;
+  text-align:center;
+  max-width:24ch;margin:0 auto clamp(4rem, 9vw, 7rem);
+}
+.despre-grila{
+  display:grid;gap:3rem;
+  margin-top:clamp(4rem, 9vw, 7rem);
+}
+.despre-foto{margin:0}
+.despre-foto img{
+  width:100%;aspect-ratio:4 / 5;object-fit:cover;
+  border-radius:var(--colt);
+}
+.despre-text p{max-width:36rem;margin:0 0 1rem;color:rgba(42,22,34,.86)}
+.avantaje{margin:2.5rem 0 0;padding:0;display:grid;gap:0}
+.avantaj{padding:1.25rem 0;border-top:1px solid var(--auriu)}
+.avantaj:last-child{border-bottom:1px solid var(--auriu)}
+.avantaj dt{font-family:var(--serif);font-size:1.4rem;font-weight:500;letter-spacing:-.01em;line-height:1.2}
+.avantaj dd{margin:.35rem 0 0;color:rgba(42,22,34,.82)}
+@media (min-width:860px){
+  .despre-grila{grid-template-columns:5fr 6fr;gap:clamp(3rem, 7vw, 6rem);align-items:center}
+}
+
+/* ---------- Servicii ---------- */
+.servicii{background:var(--prune);color:var(--sampanie)}
+.servicii .cap{text-align:center;max-width:34rem;margin:0 auto 3.5rem}
+.servicii .cap p{margin:0;color:rgba(234,217,192,.82)}
+.lista-servicii{list-style:none;margin:0 auto;padding:0;max-width:56rem}
+.serviciu{
+  padding:1.75rem 0;
+  border-top:1px solid var(--linie-auriu);
+  display:grid;gap:.5rem;
+}
+.serviciu:last-child{border-bottom:1px solid var(--linie-auriu)}
+.serviciu h3{font-size:clamp(1.6rem, 3.4vw, 2.2rem);color:var(--sampanie)}
+.serviciu p{margin:0;color:rgba(234,217,192,.8);max-width:30rem}
+.servicii-nota{text-align:center;margin:3rem auto 0;max-width:34rem}
+.servicii-nota p{margin:0 0 1.5rem;color:rgba(234,217,192,.86)}
+@media (min-width:860px){
+  .serviciu{grid-template-columns:1fr 1fr;gap:2rem;align-items:baseline;padding:2.1rem 0}
+}
+
+/* ---------- Galerie ---------- */
+.galerie .cap{text-align:center;max-width:34rem;margin:0 auto 3rem}
+.galerie .cap p{margin:0;color:rgba(42,22,34,.8)}
+.galerie-grila{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(.75rem, 2.5vw, 1.75rem);
+  max-width:56rem;margin:0 auto;
+}
+.galerie-grila img{
+  width:100%;height:auto;
+  aspect-ratio:3 / 4;object-fit:cover;
+  border-radius:var(--colt);
+  cursor:zoom-in;
+  transition:opacity .3s var(--curba);
+}
+.galerie-grila img:hover{opacity:.9}
+.galerie-grila img.marita{
+  position:fixed;inset:0;z-index:200;
+  width:100%;height:100%;margin:0;
+  aspect-ratio:auto;border-radius:0;
+  object-fit:contain;
+  padding:4vmin;
+  background:rgba(20,11,16,.95);
+  cursor:zoom-out;
+  opacity:1;
+  animation:estompare .4s var(--curba);
+}
+html.galerie-deschisa{overflow:hidden}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--negru);color:var(--sampanie)}
+.contact .cap{text-align:center;max-width:36rem;margin:0 auto 3.5rem}
+.contact .cap p{margin:0;color:rgba(234,217,192,.82)}
+.contact-grila{display:grid;gap:3rem}
+.adresa{font-style:normal}
+.adresa .strada{
+  font-family:var(--serif);font-size:clamp(1.6rem, 3.6vw, 2.3rem);
+  line-height:1.15;letter-spacing:-.015em;margin:0 0 .35rem;
+}
+.adresa .oras{margin:0;color:rgba(234,217,192,.8)}
+.telefon-mare{
+  display:inline-flex;align-items:center;min-height:2.75rem;
+  margin-top:1.75rem;
+  font-family:var(--serif);font-size:clamp(1.9rem, 5vw, 2.6rem);letter-spacing:-.01em;
+  text-decoration:none;color:var(--auriu);
+}
+.program{margin:1.75rem 0 0;padding:0}
+.program div{
+  display:flex;justify-content:space-between;gap:1rem;
+  padding:.85rem 0;border-top:1px solid rgba(201,164,106,.3);
+}
+.program div:last-child{border-bottom:1px solid rgba(201,164,106,.3)}
+.program dt{color:rgba(234,217,192,.85)}
+.program dd{margin:0;font-weight:600}
+.contact-actiuni{display:flex;flex-direction:column;gap:.75rem;margin-top:2.25rem}
+.harta{
+  border:1px solid var(--linie-auriu);
+  border-radius:var(--colt);
+  padding:.5rem;
+}
+.harta iframe{display:block;width:100%;aspect-ratio:4 / 3;border:0;border-radius:calc(var(--colt) - .25rem);background:var(--prune)}
+@media (min-width:560px){
+  .contact-actiuni{flex-direction:row;flex-wrap:wrap}
+}
+@media (min-width:860px){
+  .contact-grila{grid-template-columns:5fr 6fr;gap:clamp(3rem, 6vw, 5.5rem);align-items:center}
+}
+
+/* ---------- Subsol ---------- */
+.subsol{
+  background:var(--negru);color:rgba(234,217,192,.75);
+  border-top:1px solid rgba(201,164,106,.22);
+  padding:2.5rem var(--pad) 3rem;
+  font-size:.875rem;text-align:center;
+}
+.subsol .marca-subsol{
+  font-family:var(--serif);font-size:1.5rem;color:var(--sampanie);
+  letter-spacing:-.01em;margin:0 0 .75rem;
+}
+.subsol p{margin:.25rem 0}
+
+/* ---------- Preferințe ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rama img{animation:estompare .3s ease both}
+  html.js [data-jarvis="apare"]{transition:opacity .3s ease}
+  .btn,.meniu-btn,.galerie-grila img,.antet::after,.hero-linkuri a{transition:opacity .2s ease}
+  .btn:active,.meniu-btn:active{transform:none}
+  .meniu-btn span{transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--prune);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--linie-auriu:var(--auriu)}
+  .antet{background:var(--prune);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:var(--auriu)}
+  .hero-linkuri,.servicii .cap p,.serviciu p,.servicii-nota p,.contact .cap p,.adresa .oras,.program dt,.subsol{color:var(--sampanie)}
+  .despre-text p,.avantaj dd,.galerie .cap p{color:var(--prune)}
+  .btn-contur{border-color:var(--sampanie)}
+  .antet::after{display:none}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Denis Stil</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Denis%20Stil%20%28demo.mk-studio.ro%2Fdenis-stil-iasi%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+<a class="sari" href="#despre">Sari la conținut</a>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-int">
+    <a class="marca" href="#acasa">Denis Stil</a>
+    <nav aria-label="Navigare principală">
+      <ul class="meniu-lista" id="meniu" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-plin antet-suna" href="tel:0755400888">Sună</a>
+    <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu" aria-label="Deschide meniul">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="acasa" aria-labelledby="titlu">
+    <div class="hero-int">
+      <p class="hero-loc">Coafură în Iași, pe Alexandru cel Bun</p>
+      <h1 id="titlu"><span>Denis</span> <span>Stil</span></h1>
+      <div class="oglinda">
+        <figure class="rama">
+          <img src="img/1.jpg" alt="Coafeză aranjând părul unei cliente în fața oglinzii" width="800" height="1000">
+        </figure>
+      </div>
+      <div class="hero-actiuni">
+        <a class="btn btn-plin" href="tel:0755400888">Sună acum</a>
+      </div>
+      <p class="hero-linkuri">
+        <a href="tel:0755400888">Telefon: 0755400888</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Denis+Stil+Ia%C8%99i">Vezi drumul pe hartă</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="sectiune" id="despre" aria-labelledby="titlu-despre">
+    <div class="int">
+      <p class="manifest">La Denis Stil se tunde, se spală și se coafează părul femeilor, al bărbaților și al copiilor, pe Bulevardul Alexandru cel Bun 64, în Iași.</p>
+      <hr class="fir">
+      <div class="despre-grila">
+        <figure class="despre-foto" data-jarvis="apare">
+          <img src="img/5.jpg" alt="Foarfecă și pieptene în timpul unei tunsori" width="800" height="1000" loading="lazy">
+        </figure>
+        <div class="despre-text">
+          <h2 id="titlu-despre">Un salon de coafură pe Alexandru cel Bun</h2>
+          <p>Denis Stil este un salon de coafură pe Bulevardul Alexandru cel Bun 64, în Iași. Programul începe dimineața la 08:30 și ține până seara, așa că poți veni înainte sau după serviciu.</p>
+          <p>Ne spui cum porți părul de obicei și ce ai vrea să schimbi, iar înainte să începem stabilim împreună forma.</p>
+          <dl class="avantaje">
+            <div class="avantaj">
+              <dt>Deschis și sâmbăta</dt>
+              <dd>De luni până vineri între 08:30 și 20:00, sâmbăta între 08:30 și 19:00.</dd>
+            </div>
+            <div class="avantaj">
+              <dt>Pe Alexandru cel Bun</dt>
+              <dd>Pe Bulevardul Alexandru cel Bun 64, în Iași.</dd>
+            </div>
+            <div class="avantaj">
+              <dt>Salon primitor</dt>
+              <dd>O atmosferă liniștită și confortabilă cât timp stai pe scaun.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune servicii" id="servicii" aria-labelledby="titlu-servicii">
+    <div class="int">
+      <div class="cap">
+        <h2 id="titlu-servicii">Servicii</h2>
+        <p>Coafură pentru toată familia, de la tunsoarea celui mic până la coafatul pentru o seară în oraș.</p>
+      </div>
+      <ul class="lista-servicii" data-jarvis="apare">
+        <li class="serviciu">
+          <h3>Coafură pentru femei</h3>
+          <p>Tuns, coafat și aranjat părul, pentru o zi obișnuită sau pentru o ocazie.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Coafură pentru bărbați</h3>
+          <p>Tuns și aranjat, scurt sau mai lung, după cum îți place să-l porți.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Coafură pentru copii</h3>
+          <p>Tuns pentru cei mici, cu răbdare și fără grabă.</p>
+        </li>
+        <li class="serviciu">
+          <h3>Spălat și coafat</h3>
+          <p>Spălat, uscat și coafat, ca să pleci din salon cu părul gata aranjat.</p>
+        </li>
+      </ul>
+      <div class="servicii-nota">
+        <p>Prețurile le afli la telefon.</p>
+        <a class="btn btn-plin" href="tel:0755400888">Sună acum</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune galerie" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="int">
+      <div class="cap">
+        <h2 id="titlu-galerie">Din salon</h2>
+        <p>Fotografii ilustrative. Apasă pe o imagine ca să o vezi mai mare.</p>
+      </div>
+      <div class="galerie-grila" data-jarvis="galerie">
+        <img src="img/3.jpg" alt="Clientă la coafat, cu părul aranjat în salon" width="800" height="1066" loading="lazy">
+        <img src="img/4.jpg" alt="Portret al unei cliente cu coafura terminată" width="800" height="1066" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="sectiune contact" id="contact" aria-labelledby="titlu-contact">
+    <div class="int">
+      <div class="cap">
+        <h2 id="titlu-contact">Telefon și adresă</h2>
+        <p>Sună-ne pentru orice întrebare despre serviciile de coafură.</p>
+      </div>
+      <div class="contact-grila">
+        <div>
+          <address class="adresa">
+            <p class="strada">Bulevardul Alexandru cel Bun 64</p>
+            <p class="oras">Iași</p>
+          </address>
+          <a class="telefon-mare" href="tel:0755400888">0755400888</a>
+          <dl class="program">
+            <div><dt>Luni – vineri</dt><dd>08:30 – 20:00</dd></div>
+            <div><dt>Sâmbătă</dt><dd>08:30 – 19:00</dd></div>
+          </dl>
+          <div class="contact-actiuni">
+            <a class="btn btn-plin" href="tel:0755400888">Sună acum</a>
+            <a class="btn btn-contur" href="https://www.google.com/maps/search/?api=1&amp;query=Denis+Stil+Ia%C8%99i">Deschide în Google Maps</a>
+          </div>
+        </div>
+        <div class="harta" data-jarvis="apare">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=27.555891,47.163651,27.563891,47.167651&amp;layer=mapnik&amp;marker=47.165651,27.559891" title="Harta: Denis Stil, Bulevardul Alexandru cel Bun 64, Iași" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="subsol">
+  <p class="marca-subsol">Denis Stil</p>
+  <p>Salon de coafură, Bulevardul Alexandru cel Bun 64, Iași</p>
+  <p>Model de site (demo)</p>
+  <p>Fotografii ilustrative de pe Pixabay: Engin_Akyurt, kaleido-dp</p>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
