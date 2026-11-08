@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sLFNZ7VbDEPHVqwLEGz8sJ0IeZRfbq1kRRBlsGcpFqI=' 'sha256-w1n1sqwgoZnruKCP/qgWTZ0/e+NcWbtXXsdXsFkRavU=' 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-puE5468vghHOGtPR/ljPq0DzJBxYHJVDp9J/ZIJYJaI=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-krualkdvmD0hKivE9UyIkDnBaW3URh1ApzaGCThXD7s=' 'sha256-VA2G+SQDhtWfTE43kXT4xzTQR8rgDOMAyARYUTnYjNk=' 'sha256-Jfg9hVmRH260kEa/Oep9Wji/X5ymyJoR4tqK4sjIIAU=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-RdrSowyf1NMJ2YG2JBXlZP0QD7J4A2bjDIEklqhzN0A=' 'sha256-Ucp8Ovzkk9PGJghZsTutrVaVbjxTco1JmANMYiEDg5w=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No Name | Bufet pentru petreceri în Piața Muzeului, Cluj-Napoca</title>
+<meta name="description" content="Bufet pentru aniversări și evenimente private în Piața Muzeului.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Unbounded:wght@400;500;700&amp;display=swap">
+<style>
+:root{
+  --negru:#0A0A12;
+  --roz:#FF2E88;
+  --gri:#8A8AA0;
+  --alb:#F4F4FA;
+  --text2:rgba(244,244,250,.84);
+  --linie:rgba(138,138,160,.26);
+  --strat:rgba(138,138,160,.06);
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --titlu:"Unbounded", system-ui, sans-serif;
+  --text:"Inter", system-ui, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--alb);
+  font-family:var(--text);
+  font-size:1.0625rem;
+  line-height:1.55;
+  letter-spacing:0;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--alb);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--titlu);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin:0}
+p{margin:0}
+.cutie{width:min(100% - 2.5rem, 72rem);margin-inline:auto}
+section{scroll-margin-top:4.5rem}
+
+/* Butoane: un singur stil */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3.25rem;min-width:14rem;padding:.9rem 2rem;
+  border-radius:999px;border:0;
+  background:var(--roz);color:var(--negru);
+  font:600 1.0625rem/1.2 var(--text);letter-spacing:0;text-decoration:none;
+  transition:transform .15s var(--curba), opacity .2s var(--curba);
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:hover{opacity:.88}
+.btn:active{transform:scale(.97)}
+.btn-mic{min-width:0;min-height:2.75rem;padding:.6rem 1.25rem;font-size:.9375rem}
+
+/* Antet */
+.antet{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  background:rgba(10,10,18,.62);
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+}
+.antet.derulat{background:rgba(10,10,18,.82);border-bottom-color:var(--linie)}
+.antet-in{
+  width:min(100% - 2.5rem, 72rem);margin-inline:auto;
+  display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
+  min-height:4rem;padding-block:.5rem;
+}
+.marca{
+  font-family:var(--titlu);font-weight:700;font-size:1.05rem;letter-spacing:-.02em;
+  text-decoration:none;margin-right:auto;
+  min-height:2.75rem;display:inline-flex;align-items:center;
+}
+.meniu-btn{
+  display:none;align-items:center;justify-content:center;flex-direction:column;gap:.4rem;
+  width:2.75rem;height:2.75rem;padding:0;border:1px solid var(--linie);border-radius:999px;
+  background:transparent;color:var(--alb);cursor:pointer;
+  transition:transform .15s var(--curba);
+}
+.meniu-btn:active{transform:scale(.97)}
+.meniu-btn span{display:block;width:1.1rem;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--curba)}
+.meniu-btn[aria-expanded="true"] span:first-child{transform:translateY(.25rem) rotate(45deg)}
+.meniu-btn[aria-expanded="true"] span:last-child{transform:translateY(-.25rem) rotate(-45deg)}
+.meniu-lista{list-style:none;margin:0;padding:0;display:flex;gap:.25rem 1.75rem;flex-wrap:wrap}
+.meniu-lista a{
+  display:inline-flex;align-items:center;min-height:2.75rem;
+  text-decoration:none;color:var(--text2);font-weight:500;font-size:.9375rem;
+}
+.meniu-lista a:hover{color:var(--alb)}
+
+@media (max-width:860px){
+  .antet nav{order:3;width:100%}
+  .antet .btn-mic{order:2}
+  html.js .antet nav{width:auto}
+  html.js .meniu-btn{display:inline-flex}
+  html.js .meniu-lista{
+    display:none;position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:var(--negru);border-bottom:1px solid var(--linie);
+    padding:.75rem 1.25rem 1.5rem;
+  }
+  html.js .meniu-lista.deschis{display:flex;animation:panou .3s var(--curba) both}
+  html.js .meniu-lista a{
+    font-family:var(--titlu);font-size:1.5rem;color:var(--alb);
+    width:100%;min-height:3.5rem;border-bottom:1px solid var(--linie);
+  }
+}
+@keyframes panou{from{opacity:0}to{opacity:1}}
+
+/* Primul ecran */
+.scena{
+  padding:clamp(6.5rem, 14vw, 8.5rem) 0 clamp(3rem, 7vw, 5rem);
+  text-align:center;
+}
+.scena-in{display:flex;flex-direction:column;align-items:center;gap:1.25rem}
+.loc{color:var(--text2);font-size:1rem}
+.scena h1{
+  font-size:clamp(3rem, 14vw, 7.5rem);
+  font-weight:700;line-height:1.02;letter-spacing:-.03em;
+  color:var(--alb);
+}
+.scena h1::after{
+  content:"";display:block;
+  width:.9em;height:.07em;margin:.2em auto 0;
+  background:var(--roz);border-radius:999px;
+}
+.slogan{
+  font-family:var(--titlu);font-weight:400;
+  font-size:clamp(1.1rem, 4.2vw, 1.6rem);line-height:1.25;letter-spacing:-.01em;
+  max-width:22ch;
+}
+.actiuni{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;margin-top:.5rem}
+.actiuni-stanga{justify-content:flex-start}
+.scena-poza{
+  margin:clamp(2.25rem, 6vw, 3.5rem) auto 0;
+  width:100%;max-width:64rem;
+  border-radius:.75rem;overflow:hidden;
+  background:var(--strat);
+}
+.scena-poza img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* Despre */
+.despre{background:var(--strat);padding-block:clamp(5rem, 12vw, 9rem)}
+.despre-grila{display:grid;gap:2rem}
+.despre h2{font-size:clamp(1.9rem, 5.6vw, 3.4rem);max-width:16ch}
+.despre-text{display:grid;gap:1rem;color:var(--alb);max-width:38rem}
+.despre-text p + p{color:var(--text2)}
+.plusuri{
+  list-style:none;margin:clamp(3rem, 8vw, 5rem) 0 0;padding:0;
+  display:grid;gap:0;
+}
+.plusuri li{padding:1.5rem 0;border-top:1px solid var(--linie);display:grid;gap:.35rem}
+.plusuri li:last-child{border-bottom:1px solid var(--linie)}
+.plusuri h3{font-size:1.15rem;font-weight:500;color:var(--roz)}
+.plusuri p{color:var(--text2)}
+
+/* Servicii */
+.servicii{padding-block:clamp(5rem, 12vw, 9rem)}
+.servicii-cap{display:grid;gap:1rem;margin-bottom:clamp(2.5rem, 6vw, 4rem)}
+.servicii h2{font-size:clamp(1.9rem, 5.6vw, 3.4rem)}
+.servicii-cap p{color:var(--text2);max-width:36rem}
+.lista-servicii{list-style:none;margin:0;padding:0}
+.lista-servicii li{
+  display:grid;gap:.9rem;
+  padding-block:clamp(1.75rem, 4vw, 2.75rem);
+  border-top:1px solid var(--linie);
+}
+.lista-servicii li:last-child{border-bottom:1px solid var(--linie)}
+.lista-servicii h3{font-size:clamp(1.5rem, 4.6vw, 2.6rem);line-height:1.08;max-width:18ch}
+.lista-servicii p{color:var(--text2);max-width:34rem}
+.servicii-final{margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+
+/* Galerie */
+.galerie-sec{background:var(--strat);padding-block:clamp(5rem, 12vw, 9rem)}
+.galerie-cap{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.75rem 2rem;margin-bottom:clamp(2rem, 5vw, 3rem)}
+.galerie-sec h2{font-size:clamp(1.9rem, 5.6vw, 3.4rem)}
+.galerie-cap p{color:var(--text2);font-size:.9375rem}
+.galerie{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.galerie figure{margin:0;overflow:hidden;border-radius:.5rem;background:var(--negru)}
+.galerie img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:zoom-in}
+.galerie img.marita,
+.galerie .marita img{
+  position:fixed;inset:0;z-index:100;
+  width:100%;height:100%;aspect-ratio:auto;
+  object-fit:contain;padding:1rem;
+  background:rgba(10,10,18,.96);cursor:zoom-out;
+  animation:panou .35s var(--curba) both;
+}
+html.galerie-deschisa{overflow:hidden}
+
+/* Contact */
+.contact{padding-block:clamp(5rem, 12vw, 9rem)}
+.contact-grila{display:grid;gap:2.5rem}
+.contact h2{font-size:clamp(1.9rem, 5.6vw, 3.4rem)}
+.contact-info{display:grid;gap:1.25rem;align-content:start}
+.contact-info > p{color:var(--text2);max-width:30rem}
+.telefon{
+  font-family:var(--titlu);font-weight:500;
+  font-size:clamp(1.6rem, 6vw, 2.6rem);letter-spacing:-.02em;line-height:1.1;
+  text-decoration:none;display:inline-block;padding-block:.25rem;
+}
+.telefon:hover{color:var(--roz)}
+.adresa{font-style:normal;color:var(--alb)}
+.adresa span{display:block;color:var(--text2);font-size:.9375rem}
+.harta{border-radius:.5rem;overflow:hidden;border:1px solid var(--linie);min-height:20rem}
+.harta iframe{
+  display:block;width:100%;height:100%;min-height:20rem;border:0;
+  filter:grayscale(1) invert(.92) contrast(.9);
+}
+
+/* Subsol */
+.subsol{border-top:1px solid var(--linie);padding-block:2.5rem 3rem;color:var(--text2);font-size:.875rem}
+.subsol-in{display:grid;gap:.5rem}
+.subsol strong{font-family:var(--titlu);font-weight:500;color:var(--alb);font-size:1rem}
+
+/* Apariții la derulare: doar estompare */
+html.js [data-jarvis="apare"]{opacity:0;transition:opacity .6s var(--curba)}
+html.js [data-jarvis="apare"].vizibil{opacity:1}
+
+@media (max-width:520px){
+  .actiuni{flex-direction:column;align-items:stretch;width:100%;max-width:24rem}
+  .actiuni .btn{width:100%;min-width:0}
+  .servicii-final .btn{width:100%}
+}
+@media (min-width:700px){
+  .scena-poza img{aspect-ratio:16/9}
+  .plusuri{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .plusuri li,.plusuri li:last-child{border-bottom:0}
+  .lista-servicii li{grid-template-columns:1.1fr 1fr;align-items:baseline;gap:2rem}
+  .galerie{grid-template-columns:repeat(3,1fr);gap:1.25rem}
+  .galerie img{aspect-ratio:4/5}
+}
+@media (min-width:861px){
+  .meniu-btn{display:none !important}
+  .antet nav{order:0;width:auto}
+  .meniu-lista{display:flex !important;position:static;flex-direction:row;background:none;padding:0;border:0}
+  .despre-grila{grid-template-columns:5fr 6fr;gap:4rem;align-items:start}
+  .contact-grila{grid-template-columns:5fr 6fr;gap:4rem}
+  .harta,.harta iframe{min-height:26rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.meniu-btn,.meniu-btn span{transition:none}
+  .btn:active,.meniu-btn:active{transform:none}
+  html.js .meniu-lista.deschis,.galerie img.marita,.galerie .marita img{animation:none}
+  html.js [data-jarvis="apare"]{transition:opacity .2s linear}
+}
+@media (prefers-reduced-transparency:reduce){
+  .antet,.antet.derulat{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--text2:var(--alb);--linie:rgba(244,244,250,.6)}
+  .antet,.antet.derulat{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom-color:var(--alb)}
+  .btn{outline:2px solid var(--alb);outline-offset:0}
+  .harta iframe{filter:none}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>No Name</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20No%20Name%20%28demo.mk-studio.ro%2Fno-name-cluj-napoca%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+
+<header class="antet" data-jarvis="antet">
+  <div class="antet-in">
+    <a class="marca" href="#acasa">No Name</a>
+    <nav aria-label="Navigare principală">
+      <button class="meniu-btn" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista" aria-label="Deschide meniul"><span></span><span></span></button>
+      <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#bufet">Bufet</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-mic" href="tel:0745005965">Sună acum</a>
+  </div>
+</header>
+
+<main>
+  <section class="scena" id="acasa" aria-label="No Name">
+    <div class="cutie scena-in">
+      <p class="loc">Bufet în Piața Muzeului, Cluj-Napoca</p>
+      <h1>No Name</h1>
+      <p class="slogan">Bufet pentru petreceri cu prietenii</p>
+      <div class="actiuni">
+        <a class="btn" href="tel:0745005965">Sună acum</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=No+Name+Cluj-Napoca">Vezi pe hartă</a>
+      </div>
+      <figure class="scena-poza">
+        <img src="img/2.jpg" alt="Masă de bufet cu platouri și măsline, pregătită pentru un eveniment" width="1200" height="900" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section class="despre" id="despre">
+    <div class="cutie">
+      <div class="despre-grila" data-jarvis="apare">
+        <h2>Bufet pentru aniversări, în Piața Muzeului</h2>
+        <div class="despre-text">
+          <p>No Name are bufet pentru aniversări și evenimente private. Ne găsești în Piața Muzeului, în centrul Clujului.</p>
+          <p>Vii cu prietenii, cu colegii sau cu familia, iar bufetul se pune pentru tot grupul. Sărbătoriți împreună, la aceeași masă.</p>
+        </div>
+      </div>
+      <ul class="plusuri">
+        <li>
+          <h3>Pentru grupuri</h3>
+          <p>Bufetul e gândit pentru grupuri care sărbătoresc împreună.</p>
+        </li>
+        <li>
+          <h3>Central</h3>
+          <p>Piața Muzeului, în centrul orașului Cluj-Napoca.</p>
+        </li>
+        <li>
+          <h3>Petreceri</h3>
+          <p>Bufet pentru aniversări și evenimente private.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="servicii" id="bufet">
+    <div class="cutie">
+      <div class="servicii-cap">
+        <h2>Servicii</h2>
+        <p>Bufetul se pregătește pentru grupul tău. Ne suni, ne spui ocazia, data și câți veniți, iar detaliile le stabilim la telefon.</p>
+      </div>
+      <ul class="lista-servicii" data-jarvis="apare">
+        <li>
+          <h3>Bufet pentru aniversări</h3>
+          <p>Ziua ta sau a cuiva din gașcă, sărbătorită cu bufet pentru toți invitații.</p>
+        </li>
+        <li>
+          <h3>Bufet pentru evenimente private</h3>
+          <p>De la o reuniune de colegi la o petrecere de plecare, bufetul se face pentru evenimentul vostru.</p>
+        </li>
+      </ul>
+      <div class="servicii-final">
+        <a class="btn" href="tel:0745005965">Sună pentru detalii</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie-sec" id="galerie">
+    <div class="cutie">
+      <div class="galerie-cap">
+        <h2>Bufet de petrecere</h2>
+        <p>Fotografii ilustrative</p>
+      </div>
+      <ul class="galerie" data-jarvis="galerie">
+        <li><figure><img src="img/1.jpg" alt="Frigărui aperitiv cu mozzarella, măsline și legume" width="1200" height="900" loading="lazy"></figure></li>
+        <li><figure><img src="img/4.jpg" alt="Biscuiți cu mesajul la mulți ani și pahare pentru o aniversare" width="1200" height="900" loading="lazy"></figure></li>
+        <li><figure><img src="img/3.jpg" alt="Boluri cu salate și fructe proaspete pe o masă de bufet" width="1200" height="900" loading="lazy"></figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="cutie contact-grila">
+      <div class="contact-info" data-jarvis="apare">
+        <h2>Sună pentru bufet</h2>
+        <p>Sună la No Name și spune-ne data, ocazia și câte persoane vin.</p>
+        <a class="telefon" href="tel:0745005965">0745 005 965</a>
+        <address class="adresa">Piața Muzeului, Cluj-Napoca<span>No Name, bufet pentru aniversări și evenimente private</span></address>
+        <div class="actiuni actiuni-stanga">
+          <a class="btn" href="tel:0745005965">Sună acum</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=No+Name+Cluj-Napoca">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.583140,46.769884,23.591140,46.773884&amp;layer=mapnik&amp;marker=46.771884,23.587140" title="Harta: No Name în Piața Muzeului, Cluj-Napoca" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="subsol">
+  <div class="cutie subsol-in">
+    <strong>No Name</strong>
+    <p>Piața Muzeului, Cluj-Napoca. Telefon: <a href="tel:0745005965">0745 005 965</a></p>
+    <p>Model de site (demo)</p>
+    <p>Fotografii ilustrative de pe Pixabay: TheUjulala, andreaegger, MakaraEk, maxpalominos</p>
+  </div>
+</footer>
+
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
