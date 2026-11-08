@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-sLFNZ7VbDEPHVqwLEGz8sJ0IeZRfbq1kRRBlsGcpFqI=' 'sha256-w1n1sqwgoZnruKCP/qgWTZ0/e+NcWbtXXsdXsFkRavU=' 'sha256-7FWRKzVFOXUmKsgZ2FocamzPO1UKv3vc/qEJdOs3KCc=' 'sha256-Su2moCxM0CHR/TQTbldOhQR4y2ckFDIfxhVllNninIk=' 'sha256-puE5468vghHOGtPR/ljPq0DzJBxYHJVDp9J/ZIJYJaI=' 'sha256-MYWIwffdMWRjCmTbWyMClAe8Zkk6ETeA2I5KY+n9usI=' 'sha256-krualkdvmD0hKivE9UyIkDnBaW3URh1ApzaGCThXD7s=' 'sha256-VA2G+SQDhtWfTE43kXT4xzTQR8rgDOMAyARYUTnYjNk=' 'sha256-Jfg9hVmRH260kEa/Oep9Wji/X5ymyJoR4tqK4sjIIAU=' 'sha256-XkULS7a1aZFUTs3NX3sqy9HO+X08kDtL0AoiWN5Uyl0=' 'sha256-RdrSowyf1NMJ2YG2JBXlZP0QD7J4A2bjDIEklqhzN0A=' 'sha256-Ucp8Ovzkk9PGJghZsTutrVaVbjxTco1JmANMYiEDg5w=' 'sha256-0Qt0mN42xkO9EYjhjm9i4EvGNQRVrJMG2S0HfgBPX+8='; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src https://www.openstreetmap.org; connect-src https://mk2-vizite.eni-wear.workers.dev; form-action 'none'; base-uri 'none'; object-src 'none'"><meta name="jarvis-versiune" content="1"><meta name="generator" content="jarvis2-v1"><style id="jarvis-fara-lateral">html,body{max-width:100%;overflow-x:clip}</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crama Murfatlar | Vinuri în Piața Mărăști, Cluj-Napoca</title>
+<meta name="description" content="Crama Murfatlar, pe Bulevardul 21 Decembrie 1989 nr. 150, în Piața Mărăști, Cluj-Napoca. Vin Murfatlar și alte băuturi alcoolice pentru seara cu prietenii sau pentru acasă.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Montserrat:wght@400;500;600&amp;display=swap">
+<style>
+:root{
+  --bordo:#5B1A2A;
+  --piatra:#D8D2C8;
+  --negru:#161212;
+  --auriu:#A88B5B;
+  --piatra-stinsa:rgba(216,210,200,.78);
+  --linie:rgba(216,210,200,.18);
+  --curba:cubic-bezier(.2,.8,.2,1);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--negru);
+  color:var(--piatra);
+  font-family:var(--sans);
+  font-size:1rem;
+  line-height:1.6;
+  letter-spacing:0;
+  overflow-x:hidden;
+}
+html.galerie-deschisa body{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:-0.02em;line-height:1.08}
+p{margin:0}
+:focus-visible{outline:2px solid var(--auriu);outline-offset:3px}
+
+.sari{
+  position:absolute;left:1rem;top:-4rem;z-index:100;
+  background:var(--auriu);color:var(--negru);padding:.75rem 1rem;text-decoration:none;font-weight:600;
+}
+.sari:focus{top:1rem}
+
+.inner{max-width:72rem;margin:0 auto;padding:0 1.25rem}
+section{scroll-margin-top:4.5rem}
+
+/* Butoane */
+.buton{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:3rem;padding:0 1.5rem;
+  font-family:var(--sans);font-size:.875rem;font-weight:600;letter-spacing:.02em;
+  text-decoration:none;border-radius:2px;border:1px solid transparent;
+  transition:transform .15s var(--curba);
+  -webkit-tap-highlight-color:transparent;
+}
+.buton:active{transform:scale(.97)}
+.buton-plin{background:var(--auriu);color:var(--negru)}
+.buton-plin:hover{background:var(--piatra)}
+.buton-contur{
+  border:2px solid var(--piatra);color:var(--piatra);
+  background:rgba(216,210,200,.08);
+}
+.buton-contur:hover{background:rgba(216,210,200,.16)}
+.buton-bordo{background:var(--bordo);color:var(--piatra)}
+.buton-bordo:hover{background:var(--negru)}
+.buton-contur-inchis{border:2px solid var(--negru);color:var(--negru)}
+.buton-contur-inchis:hover{background:var(--negru);color:var(--piatra)}
+
+/* Antet */
+.antet{
+  position:sticky;top:0;z-index:50;
+  background:rgba(22,18,18,.62);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+}
+.antet::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;
+  background:rgba(22,18,18,.55);
+  border-bottom:1px solid rgba(168,139,91,.35);
+  opacity:0;transition:opacity .5s var(--curba);
+}
+.antet.derulat::after{opacity:1}
+.nav{
+  position:relative;
+  max-width:72rem;margin:0 auto;padding:.625rem 1.25rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;
+  min-height:4rem;
+}
+.marca{
+  font-family:var(--serif);font-size:1.4rem;font-weight:600;letter-spacing:-0.01em;
+  text-decoration:none;color:var(--piatra);margin-right:auto;line-height:1;
+  min-height:2.75rem;display:inline-flex;align-items:center;
+}
+.buton-mic{min-height:2.75rem;padding:0 1rem;font-size:.8rem;order:3}
+.meniu-lista{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.25rem 1.75rem;
+  order:4;width:100%;
+}
+.meniu-lista a{
+  display:inline-flex;align-items:center;min-height:3rem;
+  text-decoration:none;font-size:1rem;font-weight:600;color:var(--piatra);
+}
+.meniu-lista a:hover{color:var(--auriu)}
+.meniu-buton{
+  display:none;order:3;
+  width:2.75rem;height:2.75rem;padding:0;
+  background:transparent;border:1px solid rgba(216,210,200,.5);border-radius:2px;
+  color:var(--piatra);cursor:pointer;
+  align-items:center;justify-content:center;flex-direction:column;gap:.375rem;
+}
+.meniu-buton span{display:block;width:1.125rem;height:1px;background:currentColor;transition:transform .3s var(--curba)}
+.meniu-buton:active{transform:scale(.97)}
+html.meniu-deschis .meniu-buton span:first-child{transform:translateY(.22rem) rotate(45deg)}
+html.meniu-deschis .meniu-buton span:last-child{transform:translateY(-.22rem) rotate(-45deg)}
+
+@media (max-width:859px){
+  html.js .meniu-buton{display:inline-flex}
+  html.js .meniu-lista{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;width:auto;
+    flex-direction:column;gap:0;
+    background:var(--negru);
+    border-bottom:1px solid rgba(168,139,91,.45);
+    padding:.75rem 1.25rem 1.75rem;
+  }
+  html.js .meniu-lista.deschis{display:flex}
+  html.js .meniu-lista a{
+    font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--piatra);
+    min-height:4rem;width:100%;border-top:1px solid rgba(216,210,200,.28);
+  }
+}
+@media (min-width:860px){
+  .nav{flex-wrap:nowrap;padding:0 2.5rem}
+  .meniu-lista{order:2;width:auto;gap:0 2.25rem;margin-right:1.25rem}
+  .meniu-lista a{font-size:.95rem}
+  .meniu-buton{display:none !important}
+}
+
+/* Prima secțiune: eticheta */
+.hero{
+  display:grid;justify-items:center;
+  padding:1rem 1.25rem 2rem;
+  gap:1.25rem;
+}
+.eticheta{
+  width:100%;max-width:38rem;
+  background:var(--piatra);color:var(--negru);
+  padding:.5rem;
+  border-radius:50% 50% .25rem .25rem / 2.75rem 2.75rem .25rem .25rem;
+  box-shadow:0 2.5rem 5rem rgba(0,0,0,.55);
+  animation:eticheta 1.6s var(--curba) both;
+}
+.eticheta-in{
+  border:1px solid var(--bordo);
+  border-radius:50% 50% .125rem .125rem / 2.4rem 2.4rem .125rem .125rem;
+  box-shadow:inset 0 0 0 4px var(--piatra), inset 0 0 0 5px var(--auriu);
+  padding:2rem 1.25rem 1.5rem;
+  text-align:center;
+  display:grid;justify-items:center;gap:.75rem;
+}
+.vita{width:7.5rem;height:auto;color:var(--auriu)}
+.eticheta-loc{
+  font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--bordo);line-height:1.2;
+}
+.eticheta h1{color:var(--bordo);font-weight:600;line-height:.95}
+.eticheta h1 .h1-mic{display:block;font-size:clamp(1.6rem,6vw,2.4rem);font-weight:500;letter-spacing:0;margin-bottom:.15em}
+.eticheta h1 .h1-mare{display:block;font-size:clamp(3.2rem,14.5vw,6.5rem)}
+.desp{width:min(14rem,70%);height:auto;color:var(--auriu)}
+.slogan{
+  font-family:var(--serif);font-size:clamp(1.25rem,4.6vw,1.6rem);line-height:1.2;color:var(--negru);
+}
+.eticheta-adresa{
+  font-size:.75rem;font-weight:500;color:var(--bordo);line-height:1.4;
+  padding-top:.75rem;border-top:1px solid rgba(91,26,42,.35);
+}
+.hero-actiuni{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;width:100%;max-width:38rem}
+.hero-actiuni .buton{flex:1 1 9rem}
+@keyframes eticheta{
+  from{opacity:0;transform:scale(.975)}
+  to{opacity:1;transform:none}
+}
+@media (min-width:860px){
+  .hero{gap:2rem;padding:2rem 2.5rem 3.5rem}
+  .eticheta-in{padding:2.75rem 2.5rem 2rem;gap:1rem}
+  .vita{width:9rem}
+  .eticheta-adresa{font-size:.8rem}
+  .hero-actiuni .buton{flex:0 0 auto;min-width:12rem}
+}
+
+/* Despre */
+.despre{background:var(--bordo);padding:clamp(3.5rem,10vw,9rem) 0}
+.despre-grila{display:grid;gap:2rem}
+.despre-foto{overflow:hidden;aspect-ratio:16/10;background:var(--negru)}
+.despre-foto img{width:100%;height:100%;object-fit:cover}
+.despre h2{
+  font-size:clamp(2.5rem,6.4vw,4.5rem);font-weight:700;letter-spacing:-0.015em;
+  color:var(--piatra);margin-bottom:1.25rem;
+  text-shadow:0 1px 0 rgba(22,18,18,.35);
+}
+.despre-text p{max-width:34rem;color:var(--piatra)}
+.despre-text p + p{margin-top:1rem}
+.fisa{margin-top:2.75rem;max-width:34rem}
+.fisa h3{font-size:1.6rem;font-style:italic;font-weight:500;margin-bottom:.75rem;color:var(--piatra)}
+.fisa dl{margin:0;border-top:1px solid var(--auriu)}
+.fisa div{
+  display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;
+  padding:.9rem 0;border-bottom:1px solid rgba(168,139,91,.45);
+}
+.fisa dt{font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.3}
+.fisa dd{margin:0;font-size:.95rem;line-height:1.5}
+@media (min-width:860px){
+  .inner{padding:0 2.5rem}
+  .despre-grila{grid-template-columns:5fr 6fr;gap:5rem;align-items:center}
+  .despre-foto{aspect-ratio:4/5}
+}
+
+/* Produse */
+.produse{padding:clamp(5rem,12vw,9rem) 0}
+.produse-cap{display:grid;gap:1rem;margin-bottom:2.5rem}
+.produse-cap h2{font-size:clamp(2.4rem,6vw,4.25rem)}
+.produse-cap p{color:var(--piatra-stinsa);max-width:30rem}
+.produse-cap a{color:var(--piatra);text-underline-offset:3px}
+.poveste{border-bottom:1px solid var(--linie)}
+.pas{
+  display:grid;gap:1rem;
+  padding:2.5rem 0;
+  border-top:1px solid var(--linie);
+  background:var(--negru);
+}
+.guler{
+  justify-self:start;
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1px solid var(--auriu);border-radius:999px;
+  padding:.3rem .9rem;
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--auriu);line-height:1.3;
+}
+.guler svg{width:.6rem;height:.6rem}
+.pas h3{font-size:clamp(2.4rem,7vw,5rem);font-weight:500;color:var(--piatra)}
+.pas p{color:var(--piatra-stinsa);max-width:28rem}
+@media (min-width:860px){
+  .produse-cap{grid-template-columns:1fr 1fr;align-items:end;gap:4rem;margin-bottom:4rem}
+  .pas{grid-template-columns:1fr 1fr;align-items:end;gap:1.25rem 4rem;padding:4.5rem 0;min-height:22rem;align-content:center}
+  .pas .guler{grid-column:1 / -1}
+  .pas p{font-size:1.05rem}
+}
+
+/* Galerie */
+.galerie-sectiune{padding:0 0 clamp(5rem,12vw,9rem)}
+.galerie-cap{display:grid;gap:.75rem;margin-bottom:2rem}
+.galerie-cap h2{font-size:clamp(2.4rem,6vw,4.25rem)}
+.galerie-cap p{color:var(--piatra-stinsa);font-size:.9rem}
+.galerie{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin:0}
+.galerie figure{margin:0;overflow:hidden;aspect-ratio:3/4;background:var(--bordo)}
+.galerie img{
+  width:100%;height:100%;object-fit:cover;cursor:zoom-in;
+  transition:transform .8s var(--curba), opacity .4s var(--curba);
+}
+.galerie figure:hover img{transform:scale(1.03)}
+.galerie img.marita,
+.galerie figure.marita img{
+  position:fixed;inset:0;z-index:200;
+  width:100vw;height:100vh;height:100dvh;
+  object-fit:contain;padding:1.25rem;
+  background:rgba(22,18,18,.95);
+  cursor:zoom-out;transform:none;
+  animation:marire .45s var(--curba) both;
+}
+@keyframes marire{from{opacity:0}to{opacity:1}}
+@media (min-width:860px){
+  .galerie-cap{grid-template-columns:1fr 1fr;align-items:end;gap:4rem;margin-bottom:3rem}
+  .galerie-cap p{justify-self:end}
+  .galerie{grid-template-columns:repeat(4,1fr);gap:1rem}
+  .galerie figure:nth-child(even){margin-top:3rem}
+}
+
+/* Contact */
+.contact{background:var(--piatra);color:var(--negru);padding:clamp(5rem,12vw,9rem) 0}
+.contact-grila{display:grid;gap:3rem}
+.contact h2{font-size:clamp(2.4rem,6vw,4.25rem);color:var(--bordo);margin-bottom:1.25rem}
+.contact-text > p{max-width:30rem}
+.telefon{
+  display:inline-block;margin:1.75rem 0 .25rem;
+  font-family:var(--serif);font-size:clamp(2.2rem,8vw,3.25rem);font-weight:500;letter-spacing:-0.01em;line-height:1.1;
+  color:var(--bordo);text-decoration:none;
+}
+.telefon:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.adresa{font-style:normal;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(22,18,18,.25);line-height:1.6}
+.contact-actiuni{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.contact-actiuni .buton{flex:1 1 12rem}
+.harta{border:1px solid var(--bordo);background:var(--negru);aspect-ratio:4/3}
+.harta iframe{display:block;width:100%;height:100%;border:0;filter:grayscale(.35) sepia(.12)}
+@media (min-width:860px){
+  .contact-grila{grid-template-columns:5fr 6fr;gap:5rem;align-items:stretch}
+  .harta{aspect-ratio:auto;min-height:28rem}
+  .contact-actiuni .buton{flex:0 0 auto}
+}
+
+/* Subsol */
+.subsol{padding:3.5rem 0 2.5rem;font-size:.85rem;color:var(--piatra-stinsa)}
+.subsol-grila{display:grid;gap:1.5rem}
+.subsol-marca{font-family:var(--serif);font-size:1.75rem;color:var(--piatra);font-weight:600;letter-spacing:-0.01em;line-height:1.1}
+.subsol p + p{margin-top:.35rem}
+.subsol a{display:inline-flex;align-items:center;min-height:2.75rem}
+.subsol-jos{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid var(--linie);display:grid;gap:.5rem}
+@media (min-width:860px){
+  .subsol-grila{grid-template-columns:1fr 1fr;align-items:end}
+  .subsol-grila > div:last-child{justify-self:end;text-align:right}
+  .subsol-jos{grid-template-columns:1fr 1fr}
+  .subsol-jos p:last-child{text-align:right}
+}
+
+/* Apariții la derulare: doar opacitate */
+html.js [data-jarvis="apare"]{opacity:0;transition:opacity .6s var(--curba)}
+html.js [data-jarvis="apare"].vizibil{opacity:1}
+
+/* Preferințe */
+@media (prefers-reduced-motion:reduce){
+  .eticheta{animation:estompare .3s ease both}
+  html.js [data-jarvis="apare"]{transition:opacity .25s ease}
+  .galerie img{transition:opacity .25s ease}
+  .galerie figure:hover img{transform:none}
+  .galerie img.marita,.galerie figure.marita img{animation:estompare .2s ease both}
+  .meniu-buton span,.antet::after,.buton{transition:none}
+  .buton:active{transform:none}
+}
+@keyframes estompare{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-transparency:reduce){
+  .antet{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+@media (prefers-contrast:more){
+  :root{--piatra-stinsa:var(--piatra);--linie:rgba(216,210,200,.6)}
+  .antet{background:var(--negru);-webkit-backdrop-filter:none;backdrop-filter:none}
+  .buton-contur{background:transparent}
+  .eticheta-adresa{border-top-color:var(--bordo)}
+  .fisa div{border-bottom-color:var(--piatra)}
+  .despre h2{text-shadow:none}
+}
+</style>
+</head>
+<body><div id="mk-bloc" style="position:sticky;top:0;z-index:998;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:10px 16px;background:#161616;color:#fff;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 2px 12px rgba(0,0,0,.25)"><p style="margin:0;text-align:center">Pagină de probă făcută de MK Studio pentru <strong>Crama Murfatlar</strong> · 600 lei + 100 lei/lună · gata în 5 zile</p><a id="mk-whatsapp" href="https://wa.me/40741167871?text=Bun%C4%83%20ziua%21%20Am%20v%C4%83zut%20pagina%20de%20prob%C4%83%20pentru%20Crama%20Murfatlar%20%28demo.mk-studio.ro%2Fcrama-murfatlar-cluj-napoca%2F%29." style="display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;color:#161616;font:700 15px system-ui,sans-serif;text-decoration:none;white-space:nowrap">Scrie-ne pe WhatsApp</a></div>
+<a class="sari" href="#continut">Sari la conținut</a>
+
+<header class="antet" data-jarvis="antet">
+  <nav class="nav" aria-label="Navigare principală">
+    <a class="marca" href="#sus">Crama Murfatlar</a>
+    <ul class="meniu-lista" id="meniu-lista" data-jarvis="meniu-lista">
+      <li><a href="#despre">Despre</a></li>
+      <li><a href="#produse">Produse</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="buton buton-plin buton-mic" href="tel:0740754124">Sună acum</a>
+    <button class="meniu-buton" type="button" data-jarvis="meniu" aria-expanded="false" aria-controls="meniu-lista" aria-label="Deschide meniul">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="continut">
+
+  <section class="hero" id="sus" aria-label="Crama Murfatlar">
+    <div class="eticheta">
+      <div class="eticheta-in">
+        <svg class="vita" viewbox="0 0 140 34" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+          <path d="M4 12 C24 2, 46 2, 62 11"/>
+          <path d="M136 12 C116 2, 94 2, 78 11"/>
+          <path d="M26 6 C30 0, 38 0, 40 5 C34 6, 30 8, 26 6 Z"/>
+          <path d="M114 6 C110 0, 102 0, 100 5 C106 6, 110 8, 114 6 Z"/>
+          <path d="M70 2 L70 9"/>
+          <circle cx="66" cy="13" r="3"/>
+          <circle cx="74" cy="13" r="3"/>
+          <circle cx="70" cy="18.5" r="3"/>
+          <circle cx="62" cy="18.5" r="3"/>
+          <circle cx="78" cy="18.5" r="3"/>
+          <circle cx="66" cy="24" r="3"/>
+          <circle cx="74" cy="24" r="3"/>
+          <circle cx="70" cy="29.5" r="3"/>
+        </svg>
+        <p class="eticheta-loc">Piața Mărăști, Cluj-Napoca</p>
+        <h1><span class="h1-mic">Crama</span><span class="h1-mare">Murfatlar</span></h1>
+        <svg class="desp" viewbox="0 0 220 12" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+          <line x1="0" y1="6" x2="96" y2="6"/>
+          <polygon points="110,1 115,6 110,11 105,6"/>
+          <line x1="124" y1="6" x2="220" y2="6"/>
+        </svg>
+        <p class="slogan">Vinuri pentru serile din Mărăști</p>
+        <p class="eticheta-adresa">Bulevardul 21 Decembrie 1989, nr. 150</p>
+      </div>
+    </div>
+    <div class="hero-actiuni">
+      <a class="buton buton-plin" href="tel:0740754124">Sună acum</a>
+      <a class="buton buton-contur" href="#contact">Cum ajungi</a>
+    </div>
+  </section>
+
+  <section class="despre" id="despre" aria-labelledby="titlu-despre">
+    <div class="inner despre-grila">
+      <div class="despre-foto">
+        <img src="img/2.jpg" alt="Sticlă de vin roșu lângă un pahar plin" loading="lazy" width="900" height="1125">
+      </div>
+      <div class="despre-text" data-jarvis="apare">
+        <h2 id="titlu-despre">Pe bulevard, în Piața Mărăști</h2>
+        <p>Crama Murfatlar este pe Bulevardul 21 Decembrie 1989, la numărul 150, în Piața Mărăști. Vinul și celelalte băuturi alcoolice se vând direct aici, în magazinul de pe bulevard.</p>
+        <p>Iei o sticlă pentru seara cu prietenii sau una pentru cina de acasă. Băuturile alcoolice se vând doar adulților.</p>
+        <div class="fisa">
+          <h3>Pe scurt</h3>
+          <dl>
+            <div><dt>Adresa</dt><dd>Bulevardul 21 Decembrie 1989, nr. 150</dd></div>
+            <div><dt>Zona</dt><dd>Piața Mărăști, Cluj-Napoca</dd></div>
+            <div><dt>Pe raft</dt><dd>Vin Murfatlar și alte băuturi alcoolice</dd></div>
+            <div><dt>Intrarea</dt><dd>Direct de pe bulevard, la numărul 150</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="produse" id="produse" aria-labelledby="titlu-produse">
+    <div class="inner">
+      <div class="produse-cap" data-jarvis="apare">
+        <h2 id="titlu-produse">Produse</h2>
+        <p>Ce găsești pe rafturile cramei din Mărăști. Ca să afli ce sticle sunt acum în magazin, sună la <a href="tel:0740754124">0740 754 124</a>.</p>
+      </div>
+      <div class="poveste">
+        <article class="pas">
+          <span class="guler"><svg viewbox="0 0 10 10" aria-hidden="true"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>Vin</span>
+          <h3>Vin Murfatlar</h3>
+          <p>Sticle Murfatlar pentru cina de acasă sau pentru o masă cu prietenii, luate direct de pe Bulevardul 21 Decembrie 1989.</p>
+        </article>
+        <article class="pas">
+          <span class="guler"><svg viewbox="0 0 10 10" aria-hidden="true"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>Pentru seară</span>
+          <h3>Băuturi alcoolice</h3>
+          <p>Pe lângă vin, în cramă găsești și alte băuturi alcoolice pentru seară. Se vând doar persoanelor adulte.</p>
+        </article>
+        <article class="pas">
+          <span class="guler"><svg viewbox="0 0 10 10" aria-hidden="true"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>În magazin</span>
+          <h3>Sticle la raft</h3>
+          <p>Sticlele de vin stau la vedere, pe rafturi, ca să alegi pe loc ce iei acasă.</p>
+        </article>
+        <article class="pas">
+          <span class="guler"><svg viewbox="0 0 10 10" aria-hidden="true"><polygon points="5,0 10,5 5,10 0,5" fill="currentColor"/></svg>Mărăști</span>
+          <h3>Produs local</h3>
+          <p>Crama e în Piața Mărăști, la numărul 150. Treci pe drum spre casă și iei o sticlă pentru seară.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="galerie-sectiune" id="galerie" aria-labelledby="titlu-galerie">
+    <div class="inner">
+      <div class="galerie-cap" data-jarvis="apare">
+        <h2 id="titlu-galerie">Pentru serile de acasă</h2>
+        <p>Fotografii ilustrative. Apasă pe o poză ca s-o vezi mare.</p>
+      </div>
+      <div class="galerie" data-jarvis="galerie">
+        <figure><img src="img/1.jpg" alt="Pahare cu vin alb și vin roșu ridicate pentru un toast" loading="lazy" width="900" height="1200"></figure>
+        <figure><img src="img/3.jpg" alt="Pahar cu vin alb lângă o sticlă" loading="lazy" width="900" height="1200"></figure>
+        <figure><img src="img/4.jpg" alt="Sticlă de vin roșu și pahar, în lumină caldă" loading="lazy" width="900" height="1200"></figure>
+        <figure><img src="img/5.jpg" alt="Pahar cu vin roșu pe fundal de sărbătoare" loading="lazy" width="900" height="1200"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="titlu-contact">
+    <div class="inner contact-grila">
+      <div class="contact-text">
+        <h2 id="titlu-contact">Vino la cramă</h2>
+        <p>Crama Murfatlar este în Piața Mărăști, pe Bulevardul 21 Decembrie 1989. Sună dacă vrei să afli ce vinuri sunt acum pe raft.</p>
+        <a class="telefon" href="tel:0740754124">0740 754 124</a>
+        <address class="adresa">Bulevardul 21 Decembrie 1989, nr. 150<br>Piața Mărăști, Cluj-Napoca</address>
+        <div class="contact-actiuni">
+          <a class="buton buton-bordo" href="tel:0740754124">Sună acum</a>
+          <a class="buton buton-contur-inchis" href="https://www.google.com/maps/search/?api=1&amp;query=Crama+Murfatlar+Cluj-Napoca">Deschide în Google Maps</a>
+        </div>
+      </div>
+      <div class="harta">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=23.608519,46.775465,23.616520,46.779465&amp;layer=mapnik&amp;marker=46.777465,23.612520" title="Harta: Crama Murfatlar, Bulevardul 21 Decembrie 1989 nr. 150, Cluj-Napoca" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="subsol">
+  <div class="inner">
+    <div class="subsol-grila">
+      <div>
+        <p class="subsol-marca">Crama Murfatlar</p>
+        <p>Vinuri pentru serile din Mărăști</p>
+      </div>
+      <div>
+        <p>Bulevardul 21 Decembrie 1989, nr. 150, Cluj-Napoca</p>
+        <p><a href="tel:0740754124">0740 754 124</a></p>
+      </div>
+    </div>
+    <div class="subsol-jos">
+      <p>Model de site (demo)</p>
+      <p>Fotografii ilustrative de pe Pixabay: AS_Photography, Vinotecarium, stevepb, WolfBlur, congerdesign</p>
+    </div>
+  </div>
+</footer>
+<script>(function () {
+  var antet = document.querySelector('[data-jarvis="antet"]');
+  if (!antet) return;
+  function pune() { antet.classList.toggle('derulat', window.scrollY > 12); }
+  window.addEventListener('scroll', pune, { passive: true });
+  pune();
+})();
+</script><script>(function () {
+  var toate = document.querySelectorAll('[data-jarvis="apare"]');
+  function arata(x) { x.classList.add('vizibil'); }
+  var linistit = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || linistit) { toate.forEach(arata); return; }
+  document.documentElement.classList.add('js');
+  var paznic = new IntersectionObserver(function (intrari) {
+    intrari.forEach(function (i) {
+      if (i.isIntersecting) { arata(i.target); paznic.unobserve(i.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  toate.forEach(function (x) { paznic.observe(x); });
+  // plasa de siguranță (ca în Mark I): ce e deja deasupra marginii de jos a ecranului apare singur
+  function plasa() {
+    toate.forEach(function (x) { if (x.getBoundingClientRect().top < window.innerHeight) arata(x); });
+  }
+  var t;
+  window.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(plasa, 1200); }, { passive: true });
+  window.addEventListener('load', function () { setTimeout(plasa, 2500); });
+})();
+</script><script>(function () {
+  var marita = null;
+  function inchide() {
+    if (!marita) return;
+    marita.classList.remove('marita');
+    document.documentElement.classList.remove('galerie-deschisa');
+    marita = null;
+  }
+  document.querySelectorAll('[data-jarvis="galerie"] img').forEach(function (img) {
+    img.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var era = marita === img;
+      inchide();
+      if (era) return;
+      marita = img;
+      img.classList.add('marita');
+      document.documentElement.classList.add('galerie-deschisa');
+    });
+  });
+  document.addEventListener('click', inchide);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') inchide(); });
+})();
+</script><script>(function () {
+  var buton = document.querySelector('[data-jarvis="meniu"]');
+  var lista = document.querySelector('[data-jarvis="meniu-lista"]');
+  if (!buton || !lista) return;
+  function pune(deschis) {
+    lista.classList.toggle('deschis', deschis);
+    document.documentElement.classList.toggle('meniu-deschis', deschis);
+    buton.setAttribute('aria-expanded', deschis ? 'true' : 'false');
+  }
+  buton.addEventListener('click', function (e) {
+    e.stopPropagation();
+    pune(!lista.classList.contains('deschis'));
+  });
+  lista.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { pune(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lista.classList.contains('deschis')) { pune(false); buton.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!lista.contains(e.target) && !buton.contains(e.target)) pune(false);
+  });
+  window.addEventListener('resize', function () { if (window.innerWidth > 860) pune(false); });
+  pune(false);
+})();
+</script><script>(function () {
+  var NUMARATOR = 'https://mk2-vizite.eni-wear.workers.dev';
+  if (location.origin !== 'https://demo.mk-studio.ro' || location.hash === '#eu') return;
+  var m = /^\/([a-z0-9][a-z0-9-]{0,100})\/(?:index\.html)?$/.exec(location.pathname);
+  if (!m) return;
+  var marcaj = document.querySelector('meta[name="jarvis-versiune"]');
+  var v = marcaj && /^[1-9][0-9]{0,5}$/.test(marcaj.content) ? '&v=' + marcaj.content : '';
+  function trimite(fel) {
+    try { navigator.sendBeacon(NUMARATOR + '/v?s=' + m[1] + '&e=' + fel + v); } catch (e) {}
+  }
+  trimite('deschis');
+  var contacte = 0, mk = 0;
+  document.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[href]') : null;
+    if (!a) return;
+    if (a.id === 'mk-whatsapp') {
+      if (mk >= 1) return;
+      mk++;
+      trimite('mk');
+    } else if (contacte < 3 && (a.protocol === 'tel:' || a.protocol === 'mailto:' || a.hostname === 'wa.me' || a.hostname === 'api.whatsapp.com')) {
+      contacte++;
+      trimite('contact');
+    }
+  }, true);
+})();
+</script></body>
+</html>
